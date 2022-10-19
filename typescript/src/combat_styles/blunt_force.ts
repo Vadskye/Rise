@@ -153,7 +153,7 @@ export const bluntForce: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {

@@ -444,7 +444,7 @@ def generate_tools():
                     description="""
                         The damage increases to 2d8+5, and the condition must be removed twice before the effect ends.
                     """,
-                    short_description="Throw to deal 2d8+5 cold damage and extensively slow",
+                    short_description="Throw to deal 2d8+5 cold damage and persistently slow",
                 ),
             ],
         ),
@@ -509,7 +509,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag",
-            rank=1,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -523,18 +523,11 @@ def generate_tools():
             short_description="Slows a foe, though it is easily removable",
             upgrades=[
                 Upgrade(
-                    rank=3,
+                    rank=5,
                     description="""
                         The condition cannot be removed with a Strength check.
                     """,
                     short_description="Slows a foe",
-                ),
-                Upgrade(
-                    rank=5,
-                    description="""
-                        The condition cannot be removed with a Strength check, and it must be removed twice before the effect ends.
-                    """,
-                    short_description="Resiliently slows a foe",
                 ),
             ],
         ),

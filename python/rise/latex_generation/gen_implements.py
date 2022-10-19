@@ -189,17 +189,7 @@ def generate_implements():
     implements += [
         create_implement(
             name="Staff of Hindrance",
-            rank=1,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever you cause an enemy to be \\slowed as a \\glossterm<condition>, you can make that condition \\glossterm<briefly> impossible to remove.
-            """,
-            short_description="Your slowing effects last longer",
-        ),
-        create_implement(
-            name="Staff of Hindrance, Greater",
-            rank=5,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""

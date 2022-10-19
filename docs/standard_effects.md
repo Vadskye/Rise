@@ -160,7 +160,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Instant effects: push 30'
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 1.5
-  * Instant effects: prone
+  * Instant effects: prone, teleport 30'
 * Rank 2
   * Generally give -2 to a category (accuracy/defenses)
   * Conditions: goaded, frightened, slowed, stunned
@@ -168,6 +168,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Special: end of round medium damage
 * Rank 2.5
   * Conditions: submerged (swimming penalties)
+  * Instant effects: teleport 60'
 * Rank 3
   * Generally cause partial action denial or debilitating penalties
   * Conditions: confused, blinded, panicked, vulnerable to all damage
@@ -302,6 +303,8 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
   * Close range, 2d6 + power
 * Rank 3
   * Med range, 2d8 + power
+  * Med range, 1d10 + half power this round and next round
+  * Med range, 1d10 + half power, doubled if you beat an extra defense
   * t1 area, 2d6 + half power
 * Rank 4
   * Close range, 4d6 + power
@@ -353,24 +356,21 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 
 #### Spells: AOE debuff
 For the purpose of pure debuffs, treat single-target Medium range as being a t1 area, and scale from there.
-Zone-type spells that only function in the area have a -2 rank modifier
 * Rank 1
   * t3 area, condition: r0.5 debuff, or r1 on crit
   * t1 area, condition: r1 debuff, or r2 on crit
   * t1 area, condition: r2 debuff if/while no DR, also affects DR on crit
 * Rank 3
-  * t1 area, curse: r1 debuff, lasts forever on crit
   * t1 area, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
 * Rank 5
   * t1 area, condition: r2 debuff, or r3 on crit
   * t1 area, condition: r3 debuff if/while no DR, also affects DR on crit
-  * t1 area, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
 * Rank 7
-  * t1 area, curse: r2 debuff, lasts forever on crit
   * t1 area, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
 * Modifiers
   * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
-  * +1 rank: area becomes a zone with Sustain (minor), attack is repeated in each subsequent round
+  * +2 ranks: Zone-type spells with Sustain (minor) where the attack is repeated in each subsequent round with lingering effects
+  * -2 ranks: Zone-type spells with Sustain (attuneable, minor) that only function in the area, with no lingering effects
 
 #### Spells: Deep Attuned AOE debuff
 Example: Fearsome Aura
@@ -397,10 +397,12 @@ The minimum area size here should be a t2 area to make these feel different from
 * Rank 1
   * Strike with half power, r1 debuff condition if beat defense
 * Rank 3
+  * Strike with half power, r1.5 debuff condition if beat defense
   * Strike with half power, r2 debuff condition if lose HP
 * Rank 5
   * Strike with half power, r2 debuff condition if beat defense
 * Rank 7
+  * Strike with half power, r2.5 debuff condition if beat defense
   * Strike with half power, r3 debuff condition if lose HP
 
 #### Maneuvers: single-target low damage + debuff
@@ -413,12 +415,14 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
   * Med range, 1d10 + power damage, r0.5 or r1 debuff condition if lose HP
 * Rank 3
   * Med range, 2d6 + power damage, r0.5 debuff condition if take damage
+  * Med range, 2d6 + power damage, r1.5 debuff condition if lose HP
 * Rank 5
   * Med range, 2d10 + power damage, r1 debuff condition if take damage
   * Med range, 2d10 + power damage, r2 debuff condition if lose HP
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
+  * Med range, 1d6 + half power damage, r1.5 debuff condition if lose HP
   * Dist range, 1d6 + half power damage, r1 debuff condition if lose HP
 * Rank 3
   * Med range, 1d10 + half power damage, r1 debuff condition if take damage
@@ -437,6 +441,7 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
   * t1 area, 1d8 + half power damage, r0.5 or r1 debuff condition if lose HP
 * Rank 3
   * t1 area, 1d10 + half power damage, r0.5 debuff condition if take damage
+  * t1 area, 1d10 + half power damage, r1.5 debuff condition if lose HP
 * Rank 5
   * t1 area, 2d8 + half power damage, r1 debuff condition if take damage
   * t1 area, 2d8 + half power damage, r2 debuff condition if lose HP
