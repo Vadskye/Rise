@@ -74,21 +74,26 @@ export const chronomancy: MysticSphere = {
 
     // This is a very unique combination of triggers and effects, so correct rank is hard
     {
-      name: "Curse of Temporal Dislocation",
+      name: "Temporal Dislocation",
 
       attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `At the end of each round, if the target lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
-        During the next round, it ceases to exist.
-        At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
-        This effect lasts until the target takes a \\glossterm{short rest}.`,
+        crit: `
+          The chance increases to 50\\% if the target takes damage, or 100\\% if it loses hit points.
+        `,
+        hit: `
+          The target is dislocated in time as a \\glossterm{condition}.
+          At the end of each round, if the target took damage during that round, it has a 20\\% chance to be sent forward in time by one round.
+          This chance increases to 50\\% if it lost hit points during the round.
+          During that time, it ceases to exist.
+          At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+        `,
         targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
-      tags: ["Curse"],
+      tags: [],
     },
 
     {
