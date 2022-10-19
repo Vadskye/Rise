@@ -420,9 +420,89 @@ export const bless: MysticSphere = {
         You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{bless} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
       `,
       rank: 4,
-      scaling: {
-        6: 'You gain a +1 accuracy bonus with the strike.',
+    },
+
+    {
+      name: "Curse of Fugue",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\dazed until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
       },
+      rank: 2,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Greater Curse of Fugue",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\stunned until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 6,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Curse of Sloth",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          While the target is below its maximum \\glossterm{hit points}, it is \\slowed.
+          This effect lasts until the target takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Greater Curse of Sloth",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\slowed until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Curse of Blindness",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          While the target is below its maximum \\glossterm{hit points}, it is \\blinded.
+          This effect lasts until the target takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Curse"],
     },
   ],
   rituals: [
