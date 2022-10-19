@@ -43,12 +43,12 @@ export const astromancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Dimensional Grasp",
+      name: "Dispersing Grasp",
 
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d8 + \\glossterm{power} energy damage.
+          The target takes 1d8 + \\glossterm{power} physical damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -65,12 +65,12 @@ export const astromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Dimensional Grasp",
+      name: "Greater Dispersing Grasp",
 
       attack: {
         // crit: '',
         hit: `
-          The target takes 4d6 + \\glossterm{power} energy damage.
+          The target takes 4d6 + \\glossterm{power} physical damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -91,7 +91,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes 1d10 + half \\glossterm{power} physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
@@ -128,7 +128,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 energy damage.
+          The target takes 2d8 physical damage.
           If it loses hit points from this damage, it becomes anchored to its location as a \\glossterm{condition}.
           At the end of each round, the target teleports back to the location it was in when this spell was cast.
         `,
@@ -169,7 +169,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 + half \\glossterm{power} energy damage.
+          The target takes 1d6 + half \\glossterm{power} physical damage.
           If it is Medium or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
           The destination must be within range and on a stable surface that can support its weight.
           If the destination is invalid, the teleportation fails with no effect.
@@ -190,7 +190,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
+          The target takes 2d8 + half \\glossterm{power} physical damage.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
           The destination must be within range and on a stable surface that can support its weight.
           If the destination is invalid, the teleportation fails with no effect.
@@ -248,7 +248,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} energy damage.
+          Each target takes 1d6 + half \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
@@ -265,7 +265,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes 2d8 + half \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
@@ -278,12 +278,12 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Astral Plane",
+      name: "Planar Jaunt -- Astral Plane",
 
       // -1d for long range
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} energy damage.
+          The target takes 1d6 + \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -297,7 +297,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Plane of Air",
+      name: "Planar Jaunt -- Plane of Air",
 
       attack: {
         hit: `
@@ -316,7 +316,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Plane of Earth",
+      name: "Planar Jaunt -- Plane of Earth",
 
       attack: {
         hit: `
@@ -334,7 +334,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Plane of Fire",
+      name: "Planar Jaunt -- Plane of Fire",
 
       attack: {
         crit: `
@@ -358,7 +358,7 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: "Dimensional Jaunt -- Plane of Water",
+      name: "Planar Jaunt -- Plane of Water",
 
       attack: {
         hit: `
@@ -377,7 +377,7 @@ export const astromancy: MysticSphere = {
     },
     // +1 rank for all damage types
     {
-      name: "Dimensional Jaunt -- Myriad",
+      name: "Planar Jaunt -- Myriad",
 
       attack: {
         hit: `
@@ -395,11 +395,11 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Dimensional Jaunt -- Far Realm",
+      name: "Planar Jaunt -- Far Realm",
 
       attack: {
         hit: `
-          The target takes 4d6 energy damage.
+          The target takes 4d6 physical damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
           Otherwise, it is \\stunned instead of confused.
         `,
@@ -504,7 +504,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          Each target takes 1d8 + half \\glossterm{power} physical damage.
           If you hit both subjects, they each teleport into each other's location.
           If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
         `,
@@ -525,7 +525,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} energy damage.
+          Each target takes 4d6 + half \\glossterm{power} physical damage.
           If you hit both subjects, they each teleport into each other's location.
           If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
         `,
