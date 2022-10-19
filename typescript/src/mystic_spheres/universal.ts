@@ -26,7 +26,7 @@ export const universal: MysticSphere = {
         \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Damage Type} \\tableheaderrule
         Aeromancy       & Creatures and objects & Armor     & Bludgeoning \\\\
         Aquamancy       & Creatures and objects & Armor     & Bludgeoning \\\\
-        Astromancy      & Creatures and objects & Mental    & Energy      \\\\
+        Astromancy      & Creatures and objects & Mental    & Physical    \\\\
         Bless           & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Channel Divinity & Creatures            & Mental    & Energy      \\\\
         Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
@@ -50,13 +50,16 @@ export const universal: MysticSphere = {
     \\end{dtable!*}
   `,
   spells: [
+    // The rank 1 effects are on-rate, but the higher rank effects have a -1 rank penalty.
+    // This gives each sphere a useful starting point early, but ensures that spheres feel
+    // strongly differentiated at high levels.
     {
       name: "Mystic Bolt",
 
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack against something within \\shortrange.
+          Make an attack against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
@@ -80,12 +83,12 @@ export const universal: MysticSphere = {
       name: "Mystic Discharge",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
     },
     {
