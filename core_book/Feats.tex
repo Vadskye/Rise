@@ -166,7 +166,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Aeromancy}        & \sphere{Aeromancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Aeromancy}        \\
         \featref{Sphere Focus: Aquamancy}        & \sphere{Aquamancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Aquamancy}        \\
         \featref{Sphere Focus: Astromancy}       & \sphere{Astromancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Astromancy}       \\
-        \featref{Sphere Focus: Bless}            & \sphere{Bless} sphere access            & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Bless}            \\
         \featref{Sphere Focus: Channel Divinity} & \sphere{Channel Divinity} sphere access & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Channel Divinity} \\
         \featref{Sphere Focus: Chronomancy}      & \sphere{Chronomancy} sphere access      & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Chronomancy}      \\
         \featref{Sphere Focus: Cryomancy}        & \sphere{Cryomancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Cryomancy}        \\
@@ -175,6 +174,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Sphere Focus: Fabrication}      & \sphere{Fabrication} sphere access      & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Fabrication}      \\
         \featref{Sphere Focus: Photomancy}       & \sphere{Photomancy} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Photomancy}       \\
         \featref{Sphere Focus: Polymorph}        & \sphere{Polymorph} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Polymorph}        \\
+        \featref{Sphere Focus: Prayer}           & \sphere{Prayer} sphere access           & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Prayer}           \\
         \featref{Sphere Focus: Pyromancy}        & \sphere{Pyromancy} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Pyromancy}        \\
         \featref{Sphere Focus: Revelation}       & \sphere{Revelation} sphere access       & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Revelation}       \\
         \featref{Sphere Focus: Summoning}        & \sphere{Summoning} sphere access        & Improve casting with chosen sphere        & Magical & \featpref{Sphere Focus: Summoning}        \\
@@ -1762,26 +1762,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you gain a \plus30 foot bonus to your range with all \glossterm{magical} abilities that are not from the Astromancy mystic sphere.
     \end{feat}
 
-    \begin{feat}{Sphere Focus: Bless}{Casting, Magical}
-        \featpre Access to the \sphere{Bless} \glossterm{mystic sphere}.
-
-        \ff[1]{Shared Boon} When you cast a targeted spell from the \sphere{Bless} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags on a single \glossterm{ally}, you can target an additional ally within range.
-
-        \ff[3]{Sustained Blessing} Whenever you cast a spell from the \sphere{Bless} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
-        When you do, you must cast the spell as a \glossterm{standard action}, even if it could normally be cast as a \glossterm{minor action}.
-        You can only apply this ability to one spell at a time.
-
-        \ff[9]{Intrinsic Blessing} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Bless} mystic sphere.
-        If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
-        Otherwise, you can attune to it without spending an \glossterm{attunement point}.
-        When you gain access to new spell ranks, you can change which spell you know with this ability.
-
-        \ff[15]{Sustained Blessing+} When you used your \textit{sustained blessing} ability, you can replace the tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
-        You can still only sustain one spell in this way at a time.
-
-        \ff[21]{Shared Boon+} When you use your \textit{shared boon} ability, you can also target yourself or a third ally within range.
-    \end{feat}
-
     \begin{feat}{Sphere Focus: Channel Divinity}{Casting, Magical}
         \featpre Access to the \sphere{Channel Divinity} \glossterm{mystic sphere}.
 
@@ -1960,6 +1940,26 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[21]{Augmented Body+} The bonus from your \textit{augmented body} increases to \plus2.
         In addition, the attribute maximum increases to 5.
+    \end{feat}
+
+    \begin{feat}{Sphere Focus: Prayer}{Casting, Magical}
+        \featpre Access to the \sphere{Prayer} \glossterm{mystic sphere}.
+
+        \ff[1]{Shared Boon} When you cast a targeted spell from the \sphere{Prayer} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags on a single \glossterm{ally}, you can target an additional ally within range.
+
+        \ff[3]{Sustained Blessing} Whenever you cast a spell from the \sphere{Prayer} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
+        When you do, you must cast the spell as a \glossterm{standard action}, even if it could normally be cast as a \glossterm{minor action}.
+        You can only apply this ability to one spell at a time.
+
+        \ff[9]{Intrinsic Blessing} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Prayer} mystic sphere.
+        If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
+        Otherwise, you can attune to it without spending an \glossterm{attunement point}.
+        When you gain access to new spell ranks, you can change which spell you know with this ability.
+
+        \ff[15]{Sustained Blessing+} When you used your \textit{sustained blessing} ability, you can replace the tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
+        You can still only sustain one spell in this way at a time.
+
+        \ff[21]{Shared Boon+} When you use your \textit{shared boon} ability, you can also target yourself or a third ally within range.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Pyromancy}{Casting, Magical}
