@@ -98,7 +98,7 @@ export const enchantment: MysticSphere = {
       tags: ["Compulsion"],
     },
 
-    // "fall prone" is like a brief t1 effect
+    // "fall prone" is a r1.5 effect
     {
       name: "Collapse",
 
@@ -111,7 +111,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },

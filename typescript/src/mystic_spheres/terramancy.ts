@@ -204,7 +204,10 @@ export const terramancy: MysticSphere = {
       name: "Tremor",
 
       attack: {
-        crit: `Each target is also unable to stand up as a \\glossterm{condition}.`,
+        crit: `
+          Each target is also unable to stand up as a \\glossterm{condition}.
+          If it is somehow brought into a standing position, it will immediately fall and become prone again.
+        `,
         // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
@@ -215,7 +218,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create an highly localized tremor that rips through the ground.
       `,
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
     },
 
@@ -223,8 +226,10 @@ export const terramancy: MysticSphere = {
       name: "Fissure",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
-        Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.`,
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.
+        `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea within \\shortrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -233,16 +238,18 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create an intense but highly localized tremor that rips through the ground.
       `,
-      rank: 4,
+      rank: 5,
       scaling: "damage",
     },
 
     {
-      name: "Greater Earthquake",
+      name: "Earthquake",
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
-        Each Huge or smaller target that takes damage this way is also knocked \\prone.`,
+        hit: `
+          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          Each Huge or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.
+        `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange that is on a stable surface.
           This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
@@ -251,7 +258,7 @@ export const terramancy: MysticSphere = {
       narrative: `
         You create an intense tremor that rips through the ground.
       `,
-      rank: 6,
+      rank: 7,
     },
 
     {

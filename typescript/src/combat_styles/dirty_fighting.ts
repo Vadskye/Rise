@@ -216,10 +216,15 @@ export const dirtyFighting: CombatStyle = {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
+        Make a melee \\glossterm{strike} with a +2 damage bonus.
         After making the strike, you fall \\prone.
       `,
-      rank: 3,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
 
     {
@@ -229,9 +234,8 @@ export const dirtyFighting: CombatStyle = {
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
-        A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -242,18 +246,7 @@ export const dirtyFighting: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 1,
-    },
-
-    {
-      name: "Anklebreaker",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {

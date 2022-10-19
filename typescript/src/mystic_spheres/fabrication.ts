@@ -411,7 +411,7 @@ export const fabrication: MysticSphere = {
           Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
@@ -426,9 +426,10 @@ export const fabrication: MysticSphere = {
         `,
         hit: `
           Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
+          This vulnerability ends for a target if takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 7,

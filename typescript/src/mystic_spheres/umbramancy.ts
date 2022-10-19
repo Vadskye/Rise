@@ -479,7 +479,7 @@ export const umbramancy: MysticSphere = {
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size, and you can climb without using any hands.
-          \\item You are always treated as being \\prone.
+          \\item You are always treated as being \\prone, though your movement speed is not reduced.
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 
