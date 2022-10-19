@@ -158,7 +158,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike takes slashing damage equal to half your \\glossterm{power} with that strike during the next \\glossterm{action phase} if your attack result beats its Fortitude defense.
+        Each creature damaged by the strike bleeds if your attack result beats its Fortitude defense.
+        A bleeding creature takes slashing damage equal to half your \\glossterm{power} with that strike during the next \\glossterm{action phase}.
       `,
       rank: 1,
     },

@@ -195,11 +195,10 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: "Called Shot",
 
-      // +2 ranks for choice of debuff?
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike suffers your choice of one of the following effects as a \\glossterm{condition}: \\dazed, \\dazzled, or \\slowed.
+        Choose a number from 1--10, then make a \\glossterm{strike} using a piercing weapon.
+        If you roll that number on your attack roll, you gain a +4 accuracy bonus.
+        Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 1,
     },
@@ -207,11 +206,10 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: "Called Shot+",
 
-      // +2 ranks for choice of debuff?
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed, \\dazzled, and \\slowed as a single condition.
+        Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
+        If you roll either number on your attack roll, you gain a +4 accuracy bonus.
+        Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 5,
     },

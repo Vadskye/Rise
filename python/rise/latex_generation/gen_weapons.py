@@ -32,17 +32,16 @@ def generate_weapons():
                 All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
-                Each creature that loses \\glossterm<hit points> from the strike is \\deafened as a \\glossterm<condition>.
+                Each creature damaged by the strike is \\deafened as a \\glossterm<condition> if your attack results also beats its Fortitude defense.
             """,
             short_description="Deals sonic damage and can deafen",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You do not have to make a special attack to deafen creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature becomes \\deafened as a \\glossterm<condition>.
+                        You gain a +2 accuracy bonus with the concussive strike.
                     """,
-                    short_description="Deals sonic damage and deafens",
+                    short_description="Deals sonic damage and can deafen",
                 ),
             ]
         ),
@@ -58,17 +57,18 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
-                Each creature that loses \\glossterm<hit points> from the strike takes additional fire damage during the next \\glossterm<action phase> equal to your damage dice with that strike.
+                Your \\glossterm<power> with the strike is halved.
+                Each creature damaged by the strike burns if your attack result beats its Reflex defense.
+                A burning creature takes fire damage equal to the damage you dealt with the strike during the next \\glossterm<action phase>.
             """,
             short_description="Deals fire damage and can ignite",
             upgrades=[
                 Upgrade(
                     rank=6,
                     description="""
-                        You do not have to make a special attack to ignite creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature takes additional fire damage during the next \\glossterm<action phase> equal to your damage dice with that strike.
+                        Your power with the fiery strike is not halved.
                     """,
-                    short_description="Deals fire damage and ignites",
+                    short_description="Deals fire damage and can ignite",
                 ),
             ]
         ),
@@ -83,23 +83,20 @@ def generate_weapons():
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
-                % TODO: note that it explicitly *does* work if you hit an object like the ground
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
                 The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
                 This effect triggers even if the primary target was an inanimate object, like the ground.
                 The secondary target does not have to be adjacent to you.
+                Damage dealt to this secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
             short_description="Deals electicity damage and can arc 15 feet",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You do not have to make a special attack to hit extra creatures with the weapon.
-                        Whenever you make a strike, the strike can also affect one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
-                        This effect triggers even if the primary target was an inanimate object, like the ground.
-                        The secondary target does not have to be adjacent to you.
+                        You can choose any number of secondary targets rather than only one.
                     """,
-                    short_description="Deals electricity damage and arcs 15 feet",
+                    short_description="Deals electricity damage and can arc 15 feet",
                 ),
             ]
         ),
@@ -115,17 +112,17 @@ def generate_weapons():
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
-                Each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\slowed.
+                Your \\glossterm<power> with the strike is halved.
+                Each creature that loses \\glossterm<hit points> from the strike is \\slowed as a \\glossterm<condition>.
             """,
-            short_description="Can deal cold damage and briefly slow",
+            short_description="Deals cold damage and can slow",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You do not have to make a special attack to slow creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature becomes \\glossterm<briefly> \\slowed.
+                        Your \\glossterm<power> with the frigid strike is not halved.
                     """,
-                    short_description="Deals cold damage and can briefly slow",
+                    short_description="Deals cold damage and can slow",
                 ),
             ]
         ),

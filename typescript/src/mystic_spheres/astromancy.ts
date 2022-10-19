@@ -127,20 +127,20 @@ export const astromancy: MysticSphere = {
       name: "Dimensional Anchor",
 
       attack: {
-        crit: "The condition must be removed twice before the effect ends.",
         hit: `
-          The target is stuck in place as a \\glossterm{condition}.
+          The target takes 2d8 energy damage.
+          If it loses hit points from this damage, it becomes anchored to its location as a \\glossterm{condition}.
           At the end of each round, the target teleports back to the location it was in when this spell was cast.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\closerange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       narrative: `
         There is no escape.
         Nothing prevents your foe from moving, yet it is trapped more perfectly than any net could achieve.
       `,
-      rank: 7,
+      rank: 5,
       tags: [],
     },
     // TODO: target wording is awkward
@@ -148,7 +148,7 @@ export const astromancy: MysticSphere = {
       name: "Translocation",
 
       effect: `
-        Choose either yourself or one unattended object or \\glossterm{ally} within \\shortrange.
+        Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium size or smaller.
         The target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
         If the destination is invalid, this spell fails with no effect.
@@ -159,10 +159,52 @@ export const astromancy: MysticSphere = {
         The orcs tracking you will never be able to follow your trail now.
       `,
       scaling: {
-        3: "The range increases to \\rngmed.",
-        5: "The range increases to \\rnglong.",
-        7: "The range increases to \\rngdist.",
+        3: "The range increases to \\longrange.",
+        5: "The range increases to \\distrange.",
+        7: "The range increases to \\extrange.",
       },
+    },
+    {
+      name: "Hostile Translocation",
+
+      attack: {
+        hit: `
+          The target takes 1d6 + half \\glossterm{power} energy damage.
+          If it is Medium or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
+          The destination must be within range and on a stable surface that can support its weight.
+          If the destination is invalid, the teleportation fails with no effect.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      narrative: `
+        You teleport your foe across the chasm.
+        The orc will never be able to reach you now.
+      `,
+      scaling: "damage",
+    },
+    {
+      name: "Greater Hostile Translocation",
+
+      attack: {
+        hit: `
+          The target takes 2d8 + half \\glossterm{power} energy damage.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
+          The destination must be within range and on a stable surface that can support its weight.
+          If the destination is invalid, the teleportation fails with no effect.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 5,
+      narrative: `
+        You teleport your foe across the chasm.
+        The ogre will never be able to reach you now.
+      `,
+      scaling: "damage",
     },
     {
       name: "Silent Translocation",
@@ -202,86 +244,154 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: "Dimensional Jaunt -- Plane of Earth",
+      name: "Sudden Rift",
 
       attack: {
         hit: `
-          The target takes 2d10 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+          Each target takes 1d6 + half \\glossterm{power} energy damage.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
-      `,
-      rank: 6,
-      scaling: "accuracy",
-    },
-    {
-      name: "Dimensional Jaunt -- Plane of Air",
-
-      attack: {
-        hit: `
-          The target takes 1d8 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\longrange.
-        `,
-      },
-      narrative: `
-        Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
+        Your foes are caught by a sudden rift that shunts them painfully through dimensions.
       `,
       rank: 2,
-      scaling: "accuracy",
+      scaling: "damage",
     },
-    // +2 levels for +1d; this is applying the r2 version of the ignited debuff
     {
-      name: "Dimensional Jaunt -- Plane of Fire",
+      name: "Greater Sudden Rift",
 
       attack: {
-        crit: `
-          Double damage, and the burning effect becomes a \\glossterm{condition}.
-        `,
         hit: `
-          The target takes 4d6 + half \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it \\glossterm{briefly} catches on fire.
-          During the next \\glossterm{action phase}, it takes 4d6 + half \\glossterm{power} damage.
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
+        `,
+      },
+      narrative: `
+        Your foes are caught by a sudden massive rift that shunts them painfully through dimensions.
+      `,
+      rank: 5,
+      scaling: "damage",
+    },
+    {
+      name: "Dimensional Jaunt -- Astral Plane",
+
+      // -1d for long range
+      attack: {
+        hit: `
+          The target takes 1d6 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of fire, where it is - unsurprisingly - set on fire.
+        Your foe disappears for a second into the Astral Plane.
+        Though its destination is peaceful, the rough transit is jarring by itself.
       `,
-      rank: 6,
+      rank: 1,
+      scaling: "damage",
+    },
+    {
+      name: "Dimensional Jaunt -- Plane of Air",
+
+      attack: {
+        hit: `
+          The target takes 1d10 bludgeoning damage.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving the target upwards costs twice the normal movement cost.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+        `,
+      },
+      narrative: `
+        Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
+      `,
+      rank: 2,
+      scaling: "damage",
+    },
+    {
+      name: "Dimensional Jaunt -- Plane of Earth",
+
+      attack: {
+        hit: `
+          The target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\medrange.
+        `,
+      },
+      narrative: `
+        Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
+      `,
+      rank: 3,
+      scaling: "damage",
+    },
+    {
+      name: "Dimensional Jaunt -- Plane of Fire",
+
+      attack: {
+        crit: `
+          Both instances of damage are doubled, not just the initial damage.
+        `,
+        hit: `
+          The target takes 2d6 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+        `,
+      },
+      narrative: `
+        Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
+      `,
+      rank: 4,
       scaling: {
         special: `
-          The damage of both the initial hit and the subsequent condition increases by +1d for each rank beyond 6.
+          Both instances of damage increase by +1d for each rank beyond 4.
         `,
       },
     },
-    // +1 level for all damage types
+    {
+      name: "Dimensional Jaunt -- Plane of Water",
+
+      attack: {
+        hit: `
+          The target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          If the target is unable to breathe water and your attack result beats its Reflex defense, this damage is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\medrange.
+        `,
+      },
+      narrative: `
+        Your foe disappears for a second into the Plane of Water, where it suddenly begins drowning.
+      `,
+      rank: 5,
+      scaling: "damage",
+    },
+    // +1 rank for all damage types
     {
       name: "Dimensional Jaunt -- Myriad",
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} damage of all types.
+          The target takes 4d10 + \\glossterm{power} damage of all types.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against anything within \\medrange.
         `,
       },
       narrative: `
         Your foe briefly teleports through a number of planes in a rapid sequence.
         No matter what its weaknesses are, one of those planes probably held the key.
       `,
-      rank: 5,
+      rank: 6,
       scaling: "damage",
     },
     {
@@ -289,7 +399,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 energy damage.
+          The target takes 4d6 energy damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
           Otherwise, it is \\stunned instead of confused.
         `,
@@ -298,7 +408,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your foe briefly teleports into the Deep Astral Plane.
+        Your foe briefly teleports into the Far Realm.
         The distance of the journey, combined with the bizarre destination, is deeply unsettling.
       `,
       rank: 7,
@@ -394,11 +504,12 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          If you hit both subjects, they each teleport into each other's locations.
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          If you hit both subjects, they each teleport into each other's location.
+          If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
         `,
         targeting: `
           Make an attack vs. Mental against two Large or smaller creatures within \\medrange.
-          If either target is not standing on solid ground with sufficient space to support the other target, this spell fails.
         `,
       },
       narrative: `
@@ -406,7 +517,28 @@ export const astromancy: MysticSphere = {
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 2,
-      scaling: "accuracy",
+      scaling: "damage",
+    },
+    {
+      name: "Greater Hostile Transposition",
+
+      attack: {
+        // crit: '',
+        hit: `
+          Each target takes 4d6 + half \\glossterm{power} energy damage.
+          If you hit both subjects, they each teleport into each other's location.
+          If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
+        `,
+        targeting: `
+          Make an attack vs. Mental against two Huge or smaller creatures within \\longrange.
+        `,
+      },
+      narrative: `
+        The cultists were confident that they were safe behind their defensive wall of demonic warriors.
+        When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+      `,
+      rank: 6,
+      scaling: "damage",
     },
     {
       name: "Transposition",
@@ -426,20 +558,6 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\distrange.",
         7: "The range increases to \\extrange.",
       },
-    },
-    {
-      name: "Massive Hostile Transposition",
-
-      functionsLike: {
-        exceptThat: "it can affect creatures with a maximum size of Gargantuan.",
-        name: "transposition",
-      },
-      narrative: `
-        The storm giant shamans were confident that they were safe behind their defensive wall of giant warriors.
-        When one of their number was unexpectedly replaced by a fire-breathing dragon, they briefly discovered how wrong they were.
-      `,
-      rank: 5,
-      scaling: "accuracy",
     },
     {
       name: "Phasing Blade",
@@ -558,7 +676,7 @@ export const astromancy: MysticSphere = {
       name: "Distant Spells",
 
       effect: `
-        You gain a +15 foot bonus to the \\glossterm{range} of all of your ranged spells.
+        You gain a +15 foot \\glossterm{magic bonus} to the \\glossterm{range} of all of your ranged spells.
         This does not affect spells that do not have a range listed in feet.
       `,
       narrative: `
@@ -594,7 +712,20 @@ export const astromancy: MysticSphere = {
         5: "The range increases to \\longrange.",
         7: "The range increases to \\distrange.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
+    },
+    {
+      name: "Greater Twinned Portals",
+
+      functionsLike: {
+        name: "twinned portals",
+        exceptThat: "the range increases to \\longrange, and the portals function any number of times per phase intead of only once per phase.",
+      },
+      narrative: `
+        You create a pair of portals that allow instant passage from one to the other.
+      `,
+      rank: 7,
+      type: "Sustain (attuneable, minor)",
     },
   ],
   rituals: [

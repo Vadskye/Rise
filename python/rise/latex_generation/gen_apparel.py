@@ -676,16 +676,6 @@ def generate_apparel():
             """,
             short_description="Move at full speed and defend normally while prone",
         ),
-        create_apparel(
-            name="Belt of Scuttling, Supreme",
-            rank=6,
-            material_type="Belt",
-            tags=[],
-            description="""
-                Being \\prone does not reduce your movement speed, defenses, or accuracy.
-            """,
-            short_description="Act normally while prone",
-        ),
     ]
 
     apparel += [
