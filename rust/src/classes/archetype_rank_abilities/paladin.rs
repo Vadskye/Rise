@@ -176,7 +176,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{bless} or \sphere{channel divinity}.
+                You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{channel divinity} or \sphere{prayer}.
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",

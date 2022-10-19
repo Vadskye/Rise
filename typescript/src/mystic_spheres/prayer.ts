@@ -1,7 +1,7 @@
 import { MysticSphere } from ".";
 
-export const bless: MysticSphere = {
-  name: "Bless",
+export const prayer: MysticSphere = {
+  name: "Prayer",
   shortDescription: "Grant divine blessings to aid allies and improve combat prowess.",
   sources: ["divine"],
 
@@ -417,7 +417,7 @@ export const bless: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
-        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{bless} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
+        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{prayer} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
       `,
       rank: 4,
     },
