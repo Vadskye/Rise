@@ -322,7 +322,7 @@ export const verdamancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
-          It takes 1d4 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
+          It takes 1d4 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
           If it gains a \\glossterm{vital wound} from this damage, the condition ends.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
@@ -346,7 +346,7 @@ export const verdamancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
-          It takes 2d6 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
+          It takes 2d6 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

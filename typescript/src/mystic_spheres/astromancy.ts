@@ -347,7 +347,7 @@ export const astromancy: MysticSphere = {
           Both instances of damage are doubled, not just the initial damage.
         `,
         hit: `
-          The target takes 2d6 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 2d6 + half \\glossterm{power} fire damage immediately, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.

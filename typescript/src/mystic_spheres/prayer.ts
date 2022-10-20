@@ -500,7 +500,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each \\glossterm{action phase}.
+        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each of your actions.
 
         It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.

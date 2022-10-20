@@ -31,7 +31,7 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You can exert minor force on objects and creatures around you.
-        When you cast this spell, and during each subsequent \\glossterm{action phase}, you may choose any object or creature within \\shortrange of you.
+        When you cast this spell, and during each of your subsequent actions, you may choose any object or creature within \\shortrange of you.
         That object or creature feels a push in a direction of your choice.
         The force is sufficient to lift an object with a Diminuitive \\glossterm{weight category}, or to push an object with a Tiny weight category across the ground.
         The force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can be perceived.
@@ -525,7 +525,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} bludgeoning damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 1d8 + half \\glossterm{power} bludgeoning damage immediately, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.
@@ -540,7 +540,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} bludgeoning damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 4d8 + half \\glossterm{power} bludgeoning damage immediately, and again during your next action.
           If it takes a \\glossterm{vital wound} from this damage, it is crushed into a small sphere and immediately dies.
         `,
         targeting: `

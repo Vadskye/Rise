@@ -67,7 +67,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
-          During the next action phase, make an attack vs. Armor with the bolt against anything within \\distrange.
+          During your next action, make an attack vs. Armor with the bolt against anything within \\distrange.
         `,
       },
       rank: 5,
@@ -86,7 +86,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          During the next action phase, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 2,
@@ -102,7 +102,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          During the next action phase, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 6,
@@ -177,7 +177,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
-          When you cast this spell, and during the next \\glossterm{action phase}, make an attack vs. Armor against everything in the area.
+          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
           This attack does not damage any \\glossterm{walls} in the area.
         `,
       },
@@ -196,7 +196,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
-          When you cast this spell, and during the next \\glossterm{action phase}, make an attack vs. Armor against everything in the area.
+          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
           This attack does not damage any \\glossterm{walls} in the area.
         `,
       },
@@ -214,7 +214,7 @@ export const fabrication: MysticSphere = {
           You create a \\smallarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          In addition, when you cast this spell and during each subsequent action phase, make an attack vs. Reflex against any creature currently sharing space with it.
+          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
 

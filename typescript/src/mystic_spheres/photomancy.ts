@@ -261,7 +261,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during the next \\glossterm{action phase}, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during your next action, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
         `,
       },

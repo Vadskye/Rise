@@ -95,7 +95,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        Each creature that loses \\glossterm{hit points} from this strike takes fire damage equal to half your power during the next \\glossterm{action phase}.
+        Each creature that loses \\glossterm{hit points} from this strike takes fire damage equal to half your power during your next action.
       `,
       rank: 1,
     },
@@ -106,7 +106,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        Each creature that loses \\glossterm{hit points} from this strike takes fire damage equal to your power during the next \\glossterm{action phase}.
+        Each creature that loses \\glossterm{hit points} from this strike takes fire damage equal to your power during your next action.
       `,
       rank: 5,
     },
@@ -159,7 +159,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
         Each creature damaged by the strike bleeds if your attack result beats its Fortitude defense.
-        A bleeding creature takes slashing damage equal to half your \\glossterm{power} with that strike during the next \\glossterm{action phase}.
+        A bleeding creature takes slashing damage equal to half your \\glossterm{power} with that strike during your next action.
       `,
       rank: 1,
     },
