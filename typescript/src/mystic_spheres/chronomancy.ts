@@ -4,6 +4,20 @@ export const chronomancy: MysticSphere = {
   name: "Chronomancy",
   shortDescription: "Manipulate the passage of time to inhibit foes and aid allies.",
   sources: ["arcane", "pact"],
+  specialRules: `
+    Some spells from this mystic sphere can create a time lock on creatures.
+    \\spheredef{time lock} A time lock causes an aspect of a creature to be frozen in time.
+    It always locks a specific statistic or status, such as a creature's current \\glossterm{hit points} or location.
+
+    Some effects can unseal the time lock.
+    This restores the creature to match the state it was in when the time lock was created.
+    For example, the creature's hit points might be restored to their original value.
+    Only the specific aspect of the creature sealed by the time lock is changed.
+    Everything else about the creature remains the same unless otherwise stated.
+    Unsealing a time lock ends the effect.
+
+    If a time locked creature dies, the time lock ends without being unsealed.
+  `,
 
   cantrips: [
     {
@@ -99,7 +113,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Disjointed Slow",
+      name: "Disjointed Deceleration",
 
       attack: {
         hit: `
@@ -253,24 +267,13 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the target's mind in time.
-        Note the target's current \\glossterm{conditions}.
-        If the target dies, this effect ends immediately.
+        You create a \\spheredef{time lock} for the target's current \\glossterm{conditions}.
+        You can unseal the time lock as a standard action.
 
-        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
-        If you do, the target's \\glossterm{conditions} become identical to what they were when you cast this spell.
-        It does not affect any other properties of the target, such as any vital wounds gained or resources expended.
-        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by two, and the spell ends.
+        Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
+        This removes any excess conditions and reapplies any missing conditions.
       `,
-      rank: 2,
-      scaling: {
-        4: `
-          The target's fatigue level only increases by one instead of two.
-        `,
-        6: `
-          The target's fatigue level does not increase.
-        `,
-      },
+      rank: 4,
       type: "Sustain (minor)",
     },
 
@@ -279,24 +282,14 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the target's body in time.
-        Note the target's current location.
-        If the target dies, this effect ends immediately.
+        You create a \\spheredef{time lock} for the target's current location.
+        You can unseal the time lock as a standard action.
 
-        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
-        If you do, the target \\glossterm{teleports} back to where it was when you cast this spell.
-        This teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
-        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
+        Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
+        This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
+        If the locked location is occupied, the creature reappears in the closest open space.
       `,
       rank: 2,
-      scaling: {
-        4: `
-          The target's fatigue level does not increase.
-        `,
-        6: `
-          You can target an additional \\glossterm{ally} within range.
-        `,
-      },
       type: "Sustain (minor)",
     },
 
@@ -304,14 +297,14 @@ export const chronomancy: MysticSphere = {
       name: "Time Lock -- Health",
 
       effect: `
-        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{hit points} instead of its conditions.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        You create a \\spheredef{time lock} for the target's current \\glossterm{hit points}.
+        You can unseal the time lock as a standard action.
+
+        Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
+        In addition, the creature increases its \\glossterm{fatigue level} by two.
       `,
       rank: 4,
-      scaling: {
-        6: `
-          The target's fatigue level only increases by one instead of two.
-        `,
-      },
       type: "Sustain (minor)",
     },
 
@@ -319,8 +312,13 @@ export const chronomancy: MysticSphere = {
       name: "Time Lock -- Vitality",
 
       effect: `
-        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{vital wounds} instead of its conditions.
-        In addition, the target's fatigue level increases by four when it is restored instead of only increasing by two.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        You create a \\spheredef{time lock} for the target's current \\glossterm{vital wounds}.
+        You can unseal the time lock as a standard action.
+
+        Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
+        This removes any excess vital wounds and reapplies any missing vital wounds.
+        In addition, the creature increases its \\glossterm{fatigue level} by four.
       `,
       rank: 7,
       type: "Sustain (minor)",
@@ -388,7 +386,6 @@ export const chronomancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       attack: {
-        // crit: '',
         hit: `
           The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
@@ -526,7 +523,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Rewind Damage',
+      name: 'Empowered Rewind Damage',
 
       functionsLike: {
         name: 'rewind damage',
@@ -534,6 +531,67 @@ export const chronomancy: MysticSphere = {
       },
       rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+    },
+
+    {
+      name: 'Wave of Senescence',
+      attack: {
+        hit: `
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against each creature in a \\smallarea cone.
+          In addition, you choose to focus the aging effects of the cone on either sight or hearing.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+
+    {
+      name: 'Intense Wave of Senescence',
+      attack: {
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled and \\deafened.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against each creature in a \\medarea cone.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+    },
+    // +1r for +2 acc
+    {
+      name: 'Unstable Aging',
+      attack: {
+        hit: `
+          The target takes 1d10 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+    // +3r for +4 acc
+    {
+      name: 'Mighty Unstable Aging',
+      attack: {
+        hit: `
+          The target takes 4d8 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          You gain a +4 accuracy bonus against creatures that are too young or too old to be ordinary adults.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
     },
   ],
   rituals: [
