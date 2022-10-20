@@ -146,6 +146,18 @@ situations.
 
 ## Stock effects
 
+### Naming prefixes
+THIS IS AN ORDERED LIST.
+If a spell improves in multiple ways, use the first name in this list that applies.
+* Efficient: lower requirements (on damage instead of on HP loss)
+* Intense: a stronger (non-damaging) hostile effect, like dazed -> stunned
+* Certain: more accuracy
+* Massive: more AOE
+* Empowered: a strong non-hostile numeric effect, like healing
+* Greater: a stronger non-hostile, non-numeric effect, like phasestep -> greater phasestep
+* Distant: more range
+* Mighty: more damage
+
 ### Debuff ranks
 Note: This is duplicated in the Metacaster feat.
 Each debuff rank is +4 spell ranks over its predecessor
@@ -185,30 +197,30 @@ Note that these are used for determining the levels of new effects, not rank upg
 have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
-  * -4 levels: debuff only applies when the target loses HP from the attack
-  * -2 levels: debuff only applies if you beat an additional defense (strike-based attacks only)
-  * +0 levels: trade -1a for +1d or vice versa
-  * +0 levels: trade -1a/-1d for minor benefit
-  * +0 level: add specific crit effect to non-damaging effect; standard crit effects:
+  * -4 ranks: debuff only applies when the target loses HP from the attack
+  * -2 ranks: debuff only applies if you beat an additional defense (strike-based attacks only)
+  * +0 ranks: trade -1a for +1d or vice versa
+  * +0 ranks: trade -1a/-1d for minor benefit
+  * +0 rank: add specific crit effect to non-damaging effect; standard crit effects:
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time
     * condition must be removed twice before it is gone
-  * +1 levels: +1a (any attack other than a high-damage attack)
-  * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
-  * +2 levels: +1a (high-damage attacks)
-  * +2 levels: +1d (above standard rank progression, if any; spells only)
-  * +4 levels: +1 rank to debuff
-  * +4 levels: Add additional debuff of the same rank removed at the same time as existing debuff
+  * +1 ranks: +1a (any attack other than a high-damage attack)
+  * +1 ranks: convert condition to poison (including poison crit and +1r debuff on third stage)
+  * +2 ranks: +1a (high-damage attacks)
+  * +2 ranks: +1d (above standard rank progression, if any; spells only)
+  * +4 ranks: +1 rank to debuff
+  * +4 ranks: Add additional debuff of the same rank removed at the same time as existing debuff
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic (min rank 3)
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
       plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
       different levels, and to solve accuracy-related math.
-  * +1 level: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
-  * +1 level: convert ability to attunement, no-focus, no-component standard action
-  * +2 level: +1 range (for effects that intrinsically scale with range, like teleportation)
-  * +2 level: remove Focus tag (dangerous; only for narratively relevant spells)
+  * +1 ranks: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
+  * +1 ranks: convert ability to attunement, no-focus, no-component standard action
+  * +2 ranks: +1 range (for effects that intrinsically scale with range, like teleportation)
+  * +2 ranks: remove Focus tag (dangerous; only for narratively relevant spells)
 * Strikes only:
 
 ### Standard areas:
@@ -301,6 +313,7 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
   * t1 area, 1d6 + half power
 * Rank 2
   * Close range, 2d6 + power
+  * Grasp, 2d6 + power
 * Rank 3
   * Med range, 2d8 + power
   * Med range, 1d10 + half power this round and next round
@@ -413,9 +426,15 @@ Basically, adding a r0.5 debuff condition on damage adds +2 ranks.
 Note: debuffs on HP loss are tricky here since they are so trivial, but you don't want to directly supercede simple damage spells.
 * Rank 2
   * Med range, 1d10 + power damage, r0.5 or r1 debuff condition if lose HP
+  * Grasp, 1d10 + power damage, r0.5 debuff condition if take damage
+    * Grasp spells are adjacent only, Reflex defense, free hand required
+  * Grasp, 1d10 + power damage, r1.5 debuff condition if lose HP
 * Rank 3
   * Med range, 2d6 + power damage, r0.5 debuff condition if take damage
   * Med range, 2d6 + power damage, r1.5 debuff condition if lose HP
+* Rank 4
+  * Grasp, 2d8 + power damage, r1 debuff condition if take damage
+  * Grasp, 2d8 + power damage, r2 debuff condition if lose HP
 * Rank 5
   * Med range, 2d10 + power damage, r1 debuff condition if take damage
   * Med range, 2d10 + power damage, r2 debuff condition if lose HP
@@ -431,7 +450,6 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
   * Med range, 4d8 + half power damage, r2 debuff condition if take damage
   * Med range, 4d8 + half power damage, r3 debuff condition if lose HP
 * Modifiers
-  * "Med range" can be replaced with "Adjacent, no focus"
   * For +4 levels, you get +5d and full power instead of half power
 
 #### Spells: AOE medium damage + debuff
