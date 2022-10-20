@@ -82,29 +82,8 @@ export const pyromancy: MysticSphere = {
       name: "Burning Grasp",
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} fire damage.`,
-        targeting: `
-        You must have a \\glossterm{free hand} to cast this spell.
-
-        Make a melee attack vs. Reflex against anything adjacent to you.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-
-    // r1 burning effect
-    {
-      name: "Greater Burning Grasp",
-
-      attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it catches on fire as a \\glossterm{condition}.
-          During each subsequent \\glossterm{action phase}, it takes 1d10 + half \\glossterm{power} fire damage.
-
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-          Dropping \\prone as part of this action gives a +5 bonus to this check.
+          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -112,26 +91,24 @@ export const pyromancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 3,
-      scaling: {
-        special: `
-          The damage from both the initial hit and the subsequent burning increases by +1d for each rank beyond 3.
-        `,
-      },
+      rank: 2,
+      scaling: "damage",
     },
 
-    // r2 burning effect
     {
-      name: "Supreme Burning Grasp",
+      name: "Mighty Burning Grasp",
 
-      functionsLike: {
-        name: 'greater burning grasp',
-        exceptThat: `
-          the initial damage increases to 4d8 + \\glossterm{power}, and the subsequent damage increases to 4d6 + half \\glossterm{power}.
-          In addition, the condition cannot be removed with a Dexterity check.
+      attack: {
+        hit: `
+          The target takes 4d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: "damage",
     },
 
@@ -139,14 +116,34 @@ export const pyromancy: MysticSphere = {
       name: "Pyroclasm",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.
-        In addition, if the target is a flammable object, it catches on fire.`,
+        hit: `
+          Each target takes 1d6 + half \\glossterm{power} fire damage.
+        `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
+          Make an attack vs. Reflex against everything in a \\medarea radius from you.
+          In addition, you take fire damage equal to half your \\glossterm{power}.
         `,
       },
 
-      rank: 5,
+      rank: 1,
+      scaling: "damage",
+    },
+
+    {
+      name: "Massive Pyroclasm",
+
+      // +3r to get huge
+      attack: {
+        hit: `
+          Each target takes 2d6 + half \\glossterm{power} fire damage.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\hugearea radius from you.
+          In addition, you take fire damage equal to half your \\glossterm{power}.
+        `,
+      },
+
+      rank: 4,
       scaling: "damage",
     },
 
@@ -165,12 +162,15 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Fireball",
+      name: "Delayed Fireball",
 
+      // +2r for delay, +1r for range
       attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} fire damage.`,
+        hit: `Each target takes 4d6 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall radius within \\medrange.
+          When you cast this spell, you create a small bead of fire in midair within your space.
+          During the next action phase, the bead flies out and explodes as you direct.
+          Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
         `,
       },
       rank: 7,
@@ -181,13 +181,26 @@ export const pyromancy: MysticSphere = {
       name: "Burning Hands",
 
       attack: {
-        hit: `Each target takes 2d10 + \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall cone from you.
+          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
       },
 
-      rank: 5,
+      rank: 1,
+      scaling: "damage",
+    },
+
+    {
+      name: "Massive Burning Hands",
+
+      attack: {
+        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea cone from you.
+        `,
+      },
+      rank: 4,
       scaling: "damage",
     },
 
@@ -210,7 +223,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Ignition",
+      name: "Intense Ignition",
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -230,10 +243,12 @@ export const pyromancy: MysticSphere = {
       name: "Heat Metal",
 
       attack: {
-        hit: `The object becomes burning hot to the touch.
-        It and anything touching it takes 1d10 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.`,
+        hit: `
+          The object becomes burning hot to the touch.
+          It and anything touching it takes 1d10 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
+        `,
         targeting: `
-          Choose one metal object within \\medrange.
+          Choose one \\glossterm{metallic} object within \\medrange.
           It must be no smaller than Tiny size and no larger than Large size.
           If the target is \\glossterm{attended}, make an attack vs. Reflex against the attending creature.
           Otherwise, this attack automatically hits.
@@ -261,7 +276,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Flame Breath",
+      name: "Massive Flame Breath",
 
       functionsLike: {
         name: 'flame breath',
@@ -278,11 +293,14 @@ export const pyromancy: MysticSphere = {
     {
       name: "Eyes of Flame",
 
+      // -1r for attune requirement
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} fire damage.`,
+        hit: `
+          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+        `,
         targeting: `
-          For the duration of this spell, you can set things on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Fortitude against anything within \\shortrange from you.
+          You can set things on fire simply by staring at them as a standard action.
+          When you do, make an attack vs. Fortitude against anything within \\medrange from you.
         `,
       },
       rank: 2,
@@ -310,7 +328,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Flaming Spheres",
+      name: "Mighty Flaming Spheres",
 
       functionsLike: {
         name: 'flaming spheres',
@@ -327,25 +345,12 @@ export const pyromancy: MysticSphere = {
       name: "Flame Serpent",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that starts within \\medrange.
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
         `,
       },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Flame Serpent",
-
-      attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\distrange.
-        `,
-      },
-      rank: 7,
+      rank: 5,
       scaling: "damage",
     },
 
@@ -370,15 +375,11 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Personal Ignition",
+      name: "Mighty Personal Ignition",
 
-      attack: {
-        hit: `The target takes 4d8 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          In addition, during each action phase, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
-          You can only attack a given target with this spell once per \\glossterm{phase}.
-        `,
+      functionsLike: {
+        name: 'personal ignition',
+        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}.',
       },
       narrative: `
         You catch on fire.
@@ -386,7 +387,7 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 6,
       scaling: "damage",
-      type: "Attune",
+      type: "Attune (deep)",
     },
 
     {
@@ -410,11 +411,12 @@ export const pyromancy: MysticSphere = {
 
       effect: `
         Your weapons shed light like a torch.
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
         In addition, all damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
       `,
-      rank: 3,
+      rank: 1,
       scaling: {
+        3: `The power bonus increases to +4.`,
         5: `The power bonus increases to +8.`,
         7: `The power bonus increases to +16.`,
       },
@@ -429,8 +431,9 @@ export const pyromancy: MysticSphere = {
         name: "Flame Blade",
       },
       // narrative: '',
-      rank: 5,
+      rank: 3,
       scaling: {
+        5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
       type: "Attune (target)",
@@ -512,75 +515,51 @@ export const pyromancy: MysticSphere = {
     {
       name: "Pyrohemia",
 
-      // normal damaging effect at short range would be 2d6 + power,
-      // so 2d10 + power with HP restriction seems reasonable.
+      // normal damaging effect would be 1d8 + power; +2d for HP restriction seems fine
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it takes the damage again.
+          The target takes 1d6 + half \\glossterm{power} fire damage.
+          If it loses \\glossterm{hit points} from this damage, it takes 1d6 + half \\glossterm{power} fire damage during the next action phase.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
     },
 
     {
-      name: "Greater Pyrohemia",
+      name: "Mighty Pyrohemia",
 
-        // all four ranks to double power, which is spicy
+      // all four ranks to double power, which is spicy
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it takes the damage again.
+          The target takes 2d8 + \\glossterm{power} fire damage.
+          If it loses \\glossterm{hit points} from this damage, it takes 2d8 + half \\glossterm{power} fire damage during the next action phase.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
-    },
-
-    {
-      name: "Curse of Flammability",
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
-        Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each \\glossterm{action phase}.
-
-        It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
-        Dropping \\prone as part of this action gives a +5 bonus to this check.
-        Putting out the flames in this way does not remove this effect.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
     },
 
     {
       name: "Kindled Fireburst",
 
-      // original targets: One Tiny or larger active fire within \medrange (see text)
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
           Choose one Tiny or larger active fire within \\medrange.
-          Make an attack vs. Reflex against everything within an \\smallarea radius from it.
+          Make an attack vs. Reflex against everything within an \\medarea radius from it.
         `,
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
-      rank: 2,
+      rank: 3,
       scaling: "damage",
     },
 
@@ -625,7 +604,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Flame Dash",
+      name: "Distant Flame Dash",
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} fire damage.`,
@@ -635,62 +614,6 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-    },
-
-    {
-      name: "Cleansing Fire",
-
-      effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the target 4 fire damage.
-      `,
-      rank: 4,
-      scaling: {
-        6: `The target can remove two conditions.`,
-      },
-    },
-
-    {
-      name: "Uncontrolled Inferno",
-
-      attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from you.
-          In addition, you take fire damage equal to half your \\glossterm{power}.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Uncontrolled Inferno",
-
-      attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius from you.
-          In addition, you take fire damage equal to half your \\glossterm{power}.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Uncontrolled Inferno",
-
-      attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius from you.
-          In addition, you take fire damage equal to your \\glossterm{power}.
-        `,
-      },
-      rank: 7,
       scaling: "damage",
     },
   ],
@@ -754,22 +677,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Detect Flame",
-
-      castingTime: "one minute",
-
-      functionsLike: {
-        exceptThat: `
-          the range increases to \\extrange.
-        `,
-        name: "detect flame",
-      },
-      rank: 3,
-      tags: ["Detection"],
-    },
-
-    {
-      name: "Supreme Detect Flame",
+      name: "Distant Detect Flame",
 
       castingTime: "one minute",
 
@@ -779,9 +687,10 @@ export const pyromancy: MysticSphere = {
         `,
         name: "detect flame",
       },
-      rank: 5,
+      rank: 4,
       tags: ["Detection"],
     },
+
     {
       name: "Explosive Runes",
 
@@ -793,7 +702,7 @@ export const pyromancy: MysticSphere = {
         It becomes a \\glossterm{trap}.
         To read the writing, a creature must concentrate on reading it, which requires a standard action.
         If a creature reads the object, the object explodes.
-        You make an attack vs. Reflex against everything within a \\smallarea radius from the object.
+        You make an attack vs. Reflex against everything within a \\medarea radius from the object.
         Your accuracy with this attack is equal to half your level \\add half your Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         Each struck target takes 2d6 + half \\glossterm{power} fire damage.

@@ -409,8 +409,6 @@ export const aeromancy: MysticSphere = {
       name: "Windtheft",
 
       attack: {
-        // crit: '',
-        // No relevant glance effect
         hit: `
           You \\glossterm{knockback} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
