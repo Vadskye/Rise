@@ -76,7 +76,7 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Arcing",
+            name="Chaining",
             rank=2,
             tags=[],
             description="""
@@ -84,19 +84,17 @@ def generate_weapons():
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
-                This effect triggers even if the primary target was an inanimate object, like the ground.
-                The secondary target does not have to be adjacent to you.
-                Damage dealt to this secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
+                The strike \\spheredef<chains> once (see \\pcref<Electromancy>).
+                Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
-            short_description="Deals electicity damage and can arc 15 feet",
+            short_description="Deals electricity damage and can chain 15 feet",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        You can choose any number of secondary targets rather than only one.
+                        The strike \\spheredef<chains> three times (see \\pcref<Electromancy>).
                     """,
-                    short_description="Deals electricity damage and can arc 15 feet",
+                    short_description="Deals electricity damage and can chain multiple times",
                 ),
             ]
         ),

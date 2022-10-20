@@ -509,6 +509,41 @@ export const cryomancy: MysticSphere = {
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
     },
+    {
+      name: "Cryostrike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        Damage dealt by the strike is cold damage in addition to its normal damage types.
+        If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+    {
+      name: "Blood-Chilling Strike",
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        Damage dealt by the strike is cold damage in addition to its normal damage types.
+        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
   ],
   rituals: [
     {
