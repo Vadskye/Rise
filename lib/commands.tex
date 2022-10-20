@@ -395,6 +395,19 @@
     {\termdef{#1}{gloss}}
 }
 
+\DeclareDocumentCommand{\sphereterm}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{sphere}}
+    {\termlink{#2}{sphere}}
+}
+\DeclareDocumentCommand{\spheredef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{sphere}}
+    {\termdef{#1}{sphere}}
+}
+
 \DeclareDocumentCommand{\debuff}{o m}
 {
     \IfValueTF{#1}
