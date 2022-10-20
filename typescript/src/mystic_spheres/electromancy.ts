@@ -8,7 +8,7 @@ export const electromancy: MysticSphere = {
   // +3r for 5 chains (but half power to chained targets)
   specialRules: `
     Some spells from this mystic sphere chain between multiple targets.
-    In addition, some spells from this mystic sphere gain benefits against metallic targets.
+    In addition, some spells from this mystic sphere gain benefits against \\glossterm{metallic} targets.
 
     \\spheredef{chain} A spell can specify that it chains a certain number of times.
     For each time that the spell chains, the caster may choose an additional secondary target for the spell.
@@ -19,14 +19,6 @@ export const electromancy: MysticSphere = {
     Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the spell in the exact same way as the primary target.
     Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
     You can't chain off of the ground.
-
-    \\spheredef{metallic} A creature is considered metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
-    This includes any glossterm{body armor} with a metal material type.
-    It also includes exposed metal objects or parts of objects that are no more than two size categories smaller than the creature.
-    This includes most weapons with any metallic components.
-    It does not include creatures who have small amounts of metal safely stowed in larger containers, such as a common amount of coins or metallic tools stowed in a coin purse or backpack.
-
-    Similarly, an object is generally considered metallic if it has an exposed piece made of metal that is no more than two size categories larger than the object as a whole.
   `,
 
   cantrips: [
@@ -131,7 +123,7 @@ export const electromancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +2 accuracy bonus against each \\spheredef{metallic} target.
+          You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
         `,
       },
       rank: 1,
@@ -148,7 +140,7 @@ export const electromancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +4 accuracy bonus against each \\spheredef{metallic} target.
+          You gain a +4 accuracy bonus against each \\glossterm{metallic} target.
         `,
       },
       rank: 5,
@@ -254,7 +246,7 @@ export const electromancy: MysticSphere = {
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\spheredef{chains} twice.
-          You gain a +2 accuracy bonus against each \\spheredef{metallic} target.
+          You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target.
         `,
       },
@@ -271,7 +263,7 @@ export const electromancy: MysticSphere = {
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\spheredef{chains} twice.
-          You gain a +4 accuracy bonus against each \\spheredef{metallic} target.
+          You gain a +4 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target.
         `,
       },
@@ -283,7 +275,7 @@ export const electromancy: MysticSphere = {
       name: "Magnetic Blade",
 
       effect: `
-        You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\spheredef{metallic} weapons against metallic targets.
+        You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
       rank: 3,
       type: "Attune",
@@ -442,7 +434,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\sphereterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 3,
@@ -456,7 +448,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\sphereterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 7,
