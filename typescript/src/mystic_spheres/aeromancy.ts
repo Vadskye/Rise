@@ -74,7 +74,7 @@ export const aeromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Arrow Attraction",
+      name: "Intense Arrow Attraction",
 
       effect: `
         Choose a creature or object within \\medrange.
@@ -128,7 +128,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Windslash",
+      name: "Mighty Windslash",
 
       attack: {
         // crit: '',
@@ -157,7 +157,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Windsnipe",
+      name: "Efficient Windsnipe",
 
       attack: {
         // crit: '',
@@ -188,7 +188,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Buffet",
+      name: "Intense Buffet",
 
       functionsLike: {
         name: 'buffet',
@@ -278,7 +278,7 @@ export const aeromancy: MysticSphere = {
       tags: ['Sustain (minor)'],
     },
     {
-      name: "Greater Wind Tunnel",
+      name: "Intense Wind Tunnel",
 
       attack: {
         crit: "The target is pushed 60 feet instead.",
@@ -371,7 +371,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Cyclone",
+      name: "Massive Cyclone",
 
       attack: {
         // crit: '',
@@ -547,7 +547,7 @@ export const aeromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Windburst",
+      name: "Massive Windburst",
 
       attack: {
         // crit: '',
@@ -582,7 +582,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: "one minute",
       effect: `
-        You learn the approximate distance and direction to any air within \\rnglong \\glossterm{range} of you.
+        You learn the approximate distance and direction to any air within \\distrange of you.
         Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This ritual can detect air pockets with a minimum size of Fine.
       `,
@@ -591,18 +591,7 @@ export const aeromancy: MysticSphere = {
       tags: ["Detection"],
     },
     {
-      name: "Greater Detect Air",
-
-      castingTime: "one minute",
-      functionsLike: {
-        exceptThat: "the range increases to \\extrange.",
-        name: "detect air",
-      },
-      // narrative: '',
-      rank: 3,
-    },
-    {
-      name: "Supreme Detect Air",
+      name: "Distant Detect Air",
 
       castingTime: "one minute",
       functionsLike: {
@@ -610,7 +599,8 @@ export const aeromancy: MysticSphere = {
         name: "detect air",
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
+      tags: ["Detection"],
     },
   ],
 };

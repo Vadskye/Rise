@@ -76,32 +76,32 @@ export const aquamancy: MysticSphere = {
     },
   ],
   spells: [
-    // +1r for situational +2acc
+    // no rank modifier for extremely situational accuracy bonus
     {
       name: "Desiccate",
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} physical damage.
+          The target takes 2d6 + \\glossterm{power} physical damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +2 accuracy bonus if the target has a swim speed and is not currently touching water.
         `,
       },
       rank: 2,
       scaling: "damage",
     },
-    // +3r for situational +4acc
+    // +2r for situational +4acc
     {
-      name: "Greater Desiccate",
+      name: "Mighty Desiccate",
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} physical damage.
+          The target takes 4d10 + \\glossterm{power} physical damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +4 accuracy bonus if the target has a swim speed and is not currently touching water.
         `,
       },
@@ -146,7 +146,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Crashing Wave",
+      name: "Massive Crashing Wave",
 
       attack: {
         // crit: '',
@@ -180,7 +180,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Aquajet Propulsion",
+      name: "Intense Aquajet Propulsion",
 
       // 3 ranks for movement
       attack: {
@@ -214,7 +214,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Fountain",
+      name: "Mighty Fountain",
 
       attack: {
         // crit: '',
@@ -315,7 +315,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation", "Sustain (minor)"],
     },
     {
-      name: "Greater Geyser",
+      name: "Mighty Geyser",
 
       attack: {
         // This can't be full power due to restrictions on Reflex-based single target
@@ -541,7 +541,7 @@ export const aquamancy: MysticSphere = {
       scaling: "accuracy",
     },
     {
-      name: "Greater Forceful Aquajet",
+      name: "Intense Forceful Aquajet",
 
       functionsLike: {
         name: 'forceful aquajet',
@@ -653,7 +653,7 @@ export const aquamancy: MysticSphere = {
       name: "Detect Water",
 
       effect: `
-        You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm{range} of you.
+        You learn the approximate distance and direction to any bodies of water within \\distrange of you.
         Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This spell can detect bodies of water with a minimum size of Fine.
       `,
@@ -662,24 +662,13 @@ export const aquamancy: MysticSphere = {
       castingTime: "one minute",
     },
     {
-      name: "Greater Detect Water",
+      name: "Distant Detect Water",
 
       functionsLike: {
-        exceptThat: "the range increases to \\extrange.",
+        exceptThat: "the range increases to 2,000 feet.",
         name: "detect water",
       },
-      rank: 3,
-      tags: ["Detection"],
-      castingTime: "one minute",
-    },
-    {
-      name: "Supreme Detect Water",
-
-      functionsLike: {
-        exceptThat: "the range increases to 2,000 foot range.",
-        name: "detect air",
-      },
-      rank: 5,
+      rank: 4,
       tags: ["Detection"],
       castingTime: "one minute",
     },

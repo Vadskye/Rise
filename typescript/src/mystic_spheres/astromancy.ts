@@ -43,34 +43,40 @@ export const astromancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Dispersing Grasp",
+      name: "Translocating Grasp",
 
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d8 + \\glossterm{power} physical damage.
+          The target takes 1d10 + \\glossterm{power} physical damage.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
+          The destination must be within range and on a stable surface that can support its weight.
+          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything adjacent to you.
+          Make a melee attack vs. Reflex against a creature adjacent to you.
         `,
       },
       narrative: `
-        Your touch sends part of your foe's body to the Astral Plane.
-        Although most of its body remains where it was, something important - and painful - was lost.
+        Your touch makes your foe disappear.
+        Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
-      rank: 1,
+      rank: 2,
       scaling: "damage",
     },
 
     {
-      name: "Greater Dispersing Grasp",
+      name: "Intense Translocating Grasp",
 
       attack: {
         // crit: '',
         hit: `
-          The target takes 4d6 + \\glossterm{power} physical damage.
+          The target takes 4d8 + \\glossterm{power} physical damage.
+          If it is Huge or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
+          The destination must be within range and on a stable surface that can support its weight.
+          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -79,10 +85,10 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your touch sends part of your foe's body to the Astral Plane.
-        Although most of its body remains where it was, something important - and painful - was lost.
+        Your touch makes your foe disappear.
+        Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
-      rank: 5,
+      rank: 6,
       scaling: "damage",
     },
 
@@ -186,7 +192,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Hostile Translocation",
+      name: "Intense Hostile Translocation",
 
       attack: {
         hit: `
@@ -261,7 +267,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Sudden Rift",
+      name: "Massive Sudden Rift",
 
       attack: {
         hit: `
@@ -520,7 +526,7 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Hostile Transposition",
+      name: "Distant Hostile Transposition",
 
       attack: {
         // crit: '',

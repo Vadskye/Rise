@@ -149,7 +149,7 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Greater Retributive Judgment",
+      name: "Mighty Retributive Judgment",
 
       // +3 levels for situational +4 accuracy, +2 levels for +1d
       attack: {
@@ -181,32 +181,18 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Greater Word of Faith",
+      name: "Massive Word of Faith",
 
       attack: {
         hit: `
-          Each target takes 2d6 + half \\glossterm{power} energy damage.
+          Each target takes 4d6 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Word of Faith",
-
-      attack: {
-        hit: `
-          Each target takes 2d10 + half \\glossterm{power} energy damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
-        `,
-      },
       rank: 6,
+      scaling: "damage",
     },
 
     {
@@ -258,7 +244,7 @@ export const channelDivinity: MysticSphere = {
       name: "Divine Presence",
 
       attack: {
-        crit: "The condition must be removed twice before the effect ends.",
+        crit: `The target is \\frightened by you instead of shaken.`,
         hit: `
           Each target is \\shaken by you as a \\glossterm{condition}.
         `,
@@ -274,12 +260,13 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Greater Divine Presence",
+      name: "Intense Divine Presence",
 
       functionsLike: {
         name: "divine presence",
         exceptThat: `
           each target is \\frightened by you instead of shaken.
+          On a critical hit, the target is \\panicked by you instead of frightened.
         `,
       },
       rank: 7,
@@ -336,7 +323,7 @@ export const channelDivinity: MysticSphere = {
       scaling: {
         6: "You can choose to create a \\largearea radius instead.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -344,27 +331,17 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage.
-          If it loses \\glossterm{hit points} from this damage, it immediately teleports into a random unoccupied location in the Astral Plane.
+          The target takes 2d6 + half \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
+          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Certain Banish Anathema",
-
-      functionsLike: {
-        name: "banish anathema",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
-      },
-      rank: 6,
+      rank: 4,
       scaling: "damage",
     },
 
@@ -378,20 +355,22 @@ export const channelDivinity: MysticSphere = {
       type: "Attune",
     },
 
+    // +2r for shaken, +2r for +1d, -1r for short range, +1r for retributive
     {
-      name: "Holy Blade",
+      name: "Fearful Judgment",
 
-      effect: `
-        Your weapons shed light like a torch.
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
-        In addition, all damage you deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
-      `,
-      rank: 3,
-      scaling: {
-        5: `The power bonus increases to +8.`,
-        7: `The power bonus increases to +16.`,
+      attack: {
+        hit: `
+          The target takes 2d10 + \\glossterm{power} energy damage.
+          If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\shortrange.
+          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
+        `,
       },
-      type: "Attune",
+      rank: 5,
+      scaling: "damage",
     },
   ],
   rituals: [
