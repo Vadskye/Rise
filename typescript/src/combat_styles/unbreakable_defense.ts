@@ -31,14 +31,13 @@ export const unbreakableDefense: CombatStyle = {
         abilityType: "ability",
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
-          In addition, choose a creature you can see.
-          Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
+          In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
         `,
         name: "total defense",
       },
-      rank: 3,
+      rank: 5,
       tags: ["Swift (see text)"],
     },
 
@@ -56,7 +55,7 @@ export const unbreakableDefense: CombatStyle = {
         `,
         name: "total defense",
       },
-      rank: 5,
+      rank: 3,
       tags: ["Swift"],
     },
 
