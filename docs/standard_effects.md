@@ -314,13 +314,20 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 * Rank 2
   * Close range, 2d6 + power
   * Grasp, 2d6 + power
+  * t1 area zone, 1d6 + half power this round and next round in the same zone
+    * this is +1 rank and -1d for the potential of double damage; can upgrade to +2 ranks and -0d
 * Rank 3
   * Med range, 2d8 + power
   * Med range, 1d10 + half power this round and next round
   * Med range, 1d10 + half power, doubled if you beat an extra defense
+  * t3 area, 1d10 + half power
   * t1 area, 2d6 + half power
+  * t1 area zone, 1d10 + half power this round and next round in the same zone
+  * t1 area zone, 1d8 + half power every round in the same zone (sustainable)
+    * this is +2 ranks and -1d for the potential of double damage; can upgrade to +3 ranks and -0d
 * Rank 4
   * Close range, 4d6 + power
+  * t1 area zone, 2d6 + half power every round in the same zone (sustainable)
 * Rank 5
   * Med range, 4d8 + power
   * t1 area, 4d6 + half power
