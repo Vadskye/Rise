@@ -86,7 +86,8 @@ export const enchantment: MysticSphere = {
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
           At the end of each movement phase, if the target did not dance during that phase, it takes a -2 penalty to its defenses as the compulsion intensifies.
-          This penalty stacks each round until the target dances, which resets the penalties to 0.
+          This penalty stacks each round up to a maximum of -5.
+          When the target dances, it resets its penalties to 0.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -125,10 +126,10 @@ export const enchantment: MysticSphere = {
           Each target with no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       tags: ["Compulsion"],
     },
 
@@ -137,9 +138,12 @@ export const enchantment: MysticSphere = {
 
       // +1 level for super attunement
       attack: {
-        crit: `The target is \\confused instead of stunned.
-        In addition, if the target is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
-        If you do, it becomes \\dominated by you for the duration of that attunement.`,
+        crit: `
+          The target is \\confused instead of stunned.
+          In addition, if the target is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
+          If you do, it becomes \\dominated by you for the duration of that attunement.
+          As normal, you can only attune to this effect once.
+        `,
         hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -156,6 +160,7 @@ export const enchantment: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you are also able to dominate non-humanoid creatures with its critical hit effect.
+          You cannot be attuned to this effect and \\spell{dominate person} at the same time.
         `,
         name: "dominate person",
       },
@@ -219,16 +224,16 @@ export const enchantment: MysticSphere = {
           Each target is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
 
     {
-      name: "Greater Discordant Song",
+      name: "Massive Discordant Song",
 
       attack: {
         crit: `Each target is \\stunned instead of dazed.`,
@@ -239,7 +244,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -248,12 +253,13 @@ export const enchantment: MysticSphere = {
       name: "Cause Fear",
 
       attack: {
-        crit: `The target is \\frightened by you or your ally instead of shaken.`,
+        crit: `The target is \\frightened by the chosen creature instead of shaken.`,
         hit: `
-          As a \\glossterm{condition}, the target is \\shaken by a creature of your choice within range.
+          As a \\glossterm{condition}, each target is \\shaken by the chosen creature.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+          In addition, choose a creature within range.
         `,
       },
       rank: 1,
@@ -262,34 +268,19 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Cause Mass Fear",
+      name: "Cause Intense Fear",
 
       attack: {
-        crit: `Each target is \\frightened instead of shaken.`,
-        // No relevant glance effect
+        crit: `The target is \\panicked by the chosen creature instead of shaken.`,
         hit: `
-          Each target is \\shaken as a \\glossterm{condition} by a creature of your choice within range.
+          As a \\glossterm{condition}, each target is \\frightened by the chosen creature.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
+          In addition, choose a creature within range.
         `,
       },
-      rank: 2,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-    },
-
-    {
-      name: "Frighten",
-
-      attack: {
-        crit: `The target is \\panicked instead of frightened.`,
-        hit: `As a \\glossterm{condition}, the target is \\frightened by a creature of your choice within range.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 3,
+      rank: 5,
       scaling: "accuracy",
       tags: ["Emotion"],
     },
@@ -312,7 +303,7 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: "Greater Fearsome Aura",
+      name: "Intense Fearsome Aura",
 
       attack: {
         crit: `The target is \\panicked by you instead of shaken.`,
@@ -332,7 +323,7 @@ export const enchantment: MysticSphere = {
       name: "Charm",
 
       attack: {
-        crit: `The effect persists for 5 minutes after you stop sustaining it.`,
+        crit: `The effect persists for ten minutes after you stop sustaining it.`,
         hit: `The target is \\charmed by you.`,
         targeting: `
         Make an attack vs. Mental against one creature within \\medrange.
@@ -365,6 +356,7 @@ export const enchantment: MysticSphere = {
     {
       name: "Calm Emotions",
 
+      // TODO: unclear rank
       attack: {
         crit: `Situations which cause the target to feel that it is in danger without harming it do not break the effect.`,
         hit: `Each target has its emotions calmed.
@@ -373,11 +365,11 @@ export const enchantment: MysticSphere = {
         If the target is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
         Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.`,
         targeting: `
-        Make an attack vs. Mental against all creatures in a \\largearea radius from you.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          Make an attack vs. Mental against all creatures in a \\largearea radius from you.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Emotion"],
       type: "Sustain (standard)",
@@ -515,7 +507,7 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Compulsion"],
     },
@@ -538,7 +530,7 @@ export const enchantment: MysticSphere = {
       tags: ['Emotion'],
     },
     {
-      name: "Greater Mind Crush",
+      name: "Certain Mind Crush",
 
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
@@ -570,7 +562,7 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: 'Greater Restore Bravado',
+      name: 'Empowered Restore Bravado',
 
       functionsLike: {
         name: 'restore bravado',
