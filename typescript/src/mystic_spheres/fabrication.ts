@@ -60,11 +60,10 @@ export const fabrication: MysticSphere = {
     {
       name: "Mystic Artillery",
 
-      // Treat delay as net neutral; it comes with +1d, so it can't be too low level, but
-      // it's not strictly good or bad.
+      // +2r for delay, +1r for range
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} piercing damage.
+          The target takes 2d10 + \\glossterm{power} piercing damage.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
@@ -76,7 +75,42 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Bladestorm",
+      name: "Executioner's Axe",
+
+      // +2r for delay
+      // treat "two adjacent targets" as equivalent to close range with the delay;
+      // people can just run from it, so it's hard to actually get the double-hit off.
+      attack: {
+        hit: `
+          Each target takes 1d10 + \\glossterm{power} slashing damage.
+        `,
+        targeting: `
+          When you cast this spell, you create a greataxe in midair within your space.
+          During the next action phase, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+        `,
+      },
+      rank: 2,
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Mighty Executioner's Axe",
+
+      attack: {
+        hit: `
+          Each target takes 4d10 + \\glossterm{power} slashing damage.
+        `,
+        targeting: `
+          When you cast this spell, you create a greataxe in midair within your space.
+          During the next action phase, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+        `,
+      },
+      rank: 6,
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Whirlwind of Blades",
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} slashing damage.`,
@@ -90,7 +124,7 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Mighty Bladestorm",
+      name: "Mighty Whirlwind of Blades",
 
       attack: {
         hit: `Each target takes 2d10 + \\glossterm{power} slashing damage.`,
@@ -136,6 +170,7 @@ export const fabrication: MysticSphere = {
     {
       name: "Rain of Arrows",
 
+      // -1r for -1d
       attack: {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} piercing damage.
@@ -154,6 +189,7 @@ export const fabrication: MysticSphere = {
     {
       name: "Massive Rain of Arrows",
 
+      // offset previous -1d
       attack: {
         hit: `
           Each target takes 4d6 + half \\glossterm{power} piercing damage.
@@ -289,7 +325,7 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      type: "Sustain (minor)",
     },
 
     {
@@ -302,7 +338,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      type: "Sustain (minor)",
     },
 
     {
@@ -402,7 +438,7 @@ export const fabrication: MysticSphere = {
         7: `The field's \\glossterm{hit points} increase to five times your power.`,
       },
       tags: ["Barrier", "Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
