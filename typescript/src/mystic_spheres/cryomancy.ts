@@ -4,6 +4,22 @@ export const cryomancy: MysticSphere = {
   name: "Cryomancy",
   shortDescription: "Drain heat to injure and freeze foes.",
   sources: ["arcane", "nature", "pact"],
+  // In general, creating icy terrain adds +2 ranks to a reasonably sized area.
+  // Target's space + adjacent spaces is only +1 rank.
+  specialRules: `
+    Some spells from this mystic sphere can create icy terrain.
+    \\spheredef{icy terrain} Icy terrain is covered in ice, making it hard to traverse.
+    When an area becomes icy terrain, all water and solid ground in the area becomes covered in a layer of solid ice.
+    This allows creatures to walk on ice-covered water.
+    At the GM's discretion, water-like liquids may also become icy terrain, or they may be unaffected.
+    The ice is similar to natural ice, but since it was created recently by a spell, the effects of icy terrain do not have as much variance as natural terrain.
+
+    Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
+    When a creature takes physical damage while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
+    At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
+
+    If an area of icy terrain takes any fire damage, it is destroyed and becomes normal ground or water again.
+  `,
 
   cantrips: [
     {
@@ -45,23 +61,23 @@ export const cryomancy: MysticSphere = {
       name: "Freezing Grasp",
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} cold damage.`,
         targeting: `
-        You must have a \\glossterm{free hand} to cast this spell.
+          You must have a \\glossterm{free hand} to cast this spell.
 
-        Make a melee attack vs. Reflex against anything adjacent to you.
+          Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
     },
 
     {
-      name: "Greater Freezing Grasp",
+      name: "Intense Freezing Grasp",
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} cold damage.
+          The target takes 4d8 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -70,106 +86,73 @@ export const cryomancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
     },
 
     {
       name: "Cone of Cold",
 
+      // -1d and +1r for icy terrain
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
-        Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
+          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "damage",
     },
 
     {
-      name: "Greater Cone of Cold",
+      name: "Massive Cone of Cold",
 
-      attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Cone of Cold",
-
+      // 2 ranks for larger area, 1 rank to remove the previous -1d
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} cold damage.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\hugearea cone from you.
+          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
+          In addition, all water and ground in the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
         `,
       },
       rank: 5,
+      scaling: "damage",
     },
 
     {
       name: "Frozen Legs",
 
       attack: {
-        hit: `The target takes 2d8 cold damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.`,
+        hit: `
+          The target takes 2d10 cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+          You gain a +2 accuracy bonus if the target is standing or swimming in water.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
     {
-      name: "Ice Lance",
+      name: "Icicle",
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
-          Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
+          Make an attack vs. Armor against anything within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Ice Lance",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} piercing and cold damage.`,
-        targeting: `
-          Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
-        `,
-      },
-      rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Ice Spike",
-
-      attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} piercing and cold damage.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
-        `,
-      },
-      rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Greater Ice Spike",
+      name: "Mighty Icicle",
 
       attack: {
         hit: `The target takes 4d8 + \\glossterm{power} piercing and cold damage.`,
@@ -206,7 +189,7 @@ export const cryomancy: MysticSphere = {
         You can move on top of water as if it were land.
         This also works on other liquids that can be frozen like water.
       `,
-      rank: 3,
+      rank: 2,
       type: "Attune",
     },
 
@@ -218,7 +201,7 @@ export const cryomancy: MysticSphere = {
         name: "Skate",
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       type: "Attune (target)",
     },
 
@@ -266,42 +249,48 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          The target takes 1d6 \\glossterm{power} cold damage.
+          In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
 
-      rank: 3,
+      rank: 1,
       scaling: "damage",
     },
 
     {
-      name: "Greater Frostbite",
+      name: "Mighty Frostbite",
 
       attack: {
         hit: `
-          The target takes 4d6 + half \\glossterm{power} cold damage.
-          If it takes damage, it is \\slowed as a \\glossterm{condition}.
+          The target takes 2d8 + half \\glossterm{power} cold damage.
+          In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
         `,
       },
 
-      rank: 7,
+      rank: 5,
       scaling: "damage",
     },
 
     {
       name: "Hailstorm",
 
+      // +1r for very situational prone
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `
+          Each target takes 2d6 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).
+          If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
+        `,
         targeting: `
-          Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
+          Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
         `,
       },
 
@@ -310,12 +299,16 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Greater Hailstorm",
+      name: "Massive Hailstorm",
 
+      // +1r area, +2r damage
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).`,
+        hit: `
+          Each target takes 4d8 + half \\glossterm{power} bludgeoning and cold damage.
+          If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
+        `,
         targeting: `
-          Make an attack vs. Armor against everything in a \\medarea radius within \\longrange.
+          Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
       },
 
@@ -324,25 +317,16 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Blizzard",
+      name: "Icefield",
 
+      // +2r for icy terrain
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} cold damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea radius from you.
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} cold damage.
         `,
-      },
-      rank: 2,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Blizzard",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea radius from you.
+          Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
+          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
         `,
       },
       rank: 5,
@@ -376,11 +360,14 @@ export const cryomancy: MysticSphere = {
       name: "Frost Breath",
 
       attack: {
-        // +1d for attune + every other round
-        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        // icy terrain for attune + every other round
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} cold damage.
+        `,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
+          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
@@ -390,12 +377,12 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Greater Frost Breath",
+      name: "Mighty Frost Breath",
 
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to 4d10 + half \\glossterm{power}.
+          the damage increases to 4d8 + half \\glossterm{power}.
           In addition, the area increases to a \\hugearea cone.
         `,
       },
@@ -405,63 +392,52 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Frigid Aura",
+      name: "Icicle Carapace",
 
       // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
 
       rank: 3,
       scaling: "damage",
       type: "Attune (deep)",
+      tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Frigid Aura",
+      name: "Mighty Icicle Carapace",
 
       attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes 4d10 + half \\glossterm{power} piercing and cold damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
 
       rank: 7,
       // scaling: "damage",
       type: "Attune (deep)",
+      tags: ["Manifestation"],
     },
 
     {
       name: "Chillwind Dash",
 
-      attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
-        targeting: `
-          You teleport into an unoccupied destination on a stable surface within \\shortrange.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
-        `,
-      },
+      effect: `
+        You teleport into an unoccupied destination on a stable surface within \\shortrange.
+        In addition, everything in a 5 ft.\\ wide line between your starting location and your ending location \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+      `,
       rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Chillwind Dash",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
-        targeting: `
-          You teleport into an unoccupied destination on a stable surface within \\distrange.
-          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
-        `,
+      scaling: {
+        5: "The range increases to \\medrange.",
+        7: "The range increases to \\distrange.",
       },
-      rank: 6,
-      scaling: "damage",
     },
+
     {
       name: "Bonechill",
 
@@ -476,6 +452,62 @@ export const cryomancy: MysticSphere = {
       },
       rank: 4,
       scaling: "damage",
+    },
+
+    {
+      name: "Blizzard",
+
+      // treat persistent icy terrain as a r1 debuff
+      effect: `
+        A \\medarea radius \\glossterm{zone} centered on you becomes \\sphereterm{icy terrain}.
+      `,
+      rank: 2,
+      scaling: {
+        4: "You can choose to create a \\largearea radius instead.",
+        6: "You can choose to create a \\hugearea radius instead.",
+      },
+      tags: ["Sustain (attuneable, minor)"],
+    },
+    {
+      name: "Wall of Ice",
+
+      effect: `
+        You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
+        The wall is visible as a wall of smooth, clear ice that does not block sight.
+        Nothing can pass through the wall until it is destroyed.
+
+        The wall has \\glossterm{hit points} equal to your \\glossterm{power}.
+        If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
+
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 1,
+      scaling: {
+        3: "You can choose to create a \\medarealong wall instead.",
+        5: "You can choose to create a \\largearealong wall instead.",
+        7: "You can choose to create a \\hugearealong wall instead.",
+      },
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
+    },
+    // TODO: unclear rank
+    {
+      name: "Ice Globe",
+
+      effect: `
+        You create a sphere of ice in a \\smallarea sphere within \\medrange.
+        The sphere fails to form in any occupied space, but its walls fill in the space as much as possible.
+        It is visible as smooth, clear ice that does not block sight.
+        Nothing can pass through the sphere until it is destroyed.
+
+        The sphere as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
+        If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
+
+        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+      `,
+      rank: 4,
+      tags: ["Barrier", "Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
   ],
   rituals: [
