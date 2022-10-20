@@ -473,7 +473,7 @@ export const electromancy: MysticSphere = {
           In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\closerange.
+          Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
 
@@ -570,6 +570,38 @@ export const electromancy: MysticSphere = {
       },
       rank: 5,
       scaling: "damage",
+    },
+
+    {
+      name: "Magnetic Strike",
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        Damage dealt by the strike is electricity damage in addition to its normal damage types.
+        You gain a +1 accuracy bonus against \\glossterm{metallic} targets.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The accuracy bonus increases to +2.",
+        5: "The accuracy bonus increases to +3.",
+        7: "The accuracy bonus increases to +4.",
+      },
+    },
+
+    {
+      name: "Arcing Strike",
+      effect: `
+        Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        Damage dealt by the strike is electricity damage in addition to its normal damage types.
+        The strike \\spheredef<chains> once.
+        Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
+      `,
+      rank: 3,
+      scaling: {
+        5: "The strike chains twice.",
+        7: "The strike chains three times.",
+      },
     },
   ],
   rituals: [],
