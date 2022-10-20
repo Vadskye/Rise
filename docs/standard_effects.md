@@ -169,7 +169,7 @@ Each debuff rank is +4 spell ranks over its predecessor
 * Rank 1
   * Generally give -1 to a category (accuracy/defenses)
   * Conditions: Dazed, dazzled, shaken
-  * Instant effects: push 30'
+  * Instant effects: knockback 15', push 30'
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 1.5
   * Instant effects: prone, teleport 30'
@@ -314,12 +314,14 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 * Rank 2
   * Close range, 2d6 + power
   * Grasp, 2d6 + power
+  * Grasp, 1d8 + half power this round and next round
   * t1 area zone, 1d6 + half power this round and next round in the same zone
     * this is +1 rank and -1d for the potential of double damage; can upgrade to +2 ranks and -0d
 * Rank 3
   * Med range, 2d8 + power
   * Med range, 1d10 + half power this round and next round
   * Med range, 1d10 + half power, doubled if you beat an extra defense
+  * Med range, 1d10 + power next round
   * t3 area, 1d10 + half power
   * t1 area, 2d6 + half power
   * t1 area zone, 1d10 + half power this round and next round in the same zone
@@ -450,6 +452,7 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
 * Rank 1
   * Med range, 1d6 + half power damage, r1.5 debuff condition if lose HP
   * Dist range, 1d6 + half power damage, r1 debuff condition if lose HP
+  * Med range, 1d6 + half power damage, r1 debuff condition if beat extra defense
 * Rank 3
   * Med range, 1d10 + half power damage, r1 debuff condition if take damage
   * Med range, 1d10 + half power damage, r2 debuff condition if lose HP
@@ -462,6 +465,8 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
 #### Spells: AOE medium damage + debuff
 Basically, adding a r0.5 debuff condition on damage adds +2 ranks.
 Note: debuffs on HP loss are tricky here since they are so trivial, but you don't want to directly supercede simple damage spells.
+* Rank 1
+  * t1 area, 1d4 + half power damage, r0.5 or r1 debuff condition if lose HP
 * Rank 2
   * t1 area, 1d8 + half power damage, r0.5 or r1 debuff condition if lose HP
 * Rank 3
