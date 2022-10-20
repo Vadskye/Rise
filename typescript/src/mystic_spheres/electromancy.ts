@@ -4,6 +4,30 @@ export const electromancy: MysticSphere = {
   name: "Electromancy",
   shortDescription: "Create electricity to injure and stun foes.",
   sources: ["arcane", "nature", "pact"],
+  // +2r for one chain, +3r for two chains
+  // +3r for 5 chains (but half power to chained targets)
+  specialRules: `
+    Some spells from this mystic sphere chain between multiple targets.
+    In addition, some spells from this mystic sphere gain benefits against metallic targets.
+
+    \\spheredef{chain} A spell can specify that it chains a certain number of times.
+    For each time that the spell chains, the caster may choose an additional secondary target for the spell.
+    Each additional target must be within 15 feet of the previous target in the chain, starting with the spell's primary target.
+    These additional targets must have \\glossterm{line of sight} to the spell's caster and \\glossterm{line of effect} to the previous target in the chain.
+    However, they do not need \\glossterm{line of effect} to the spell's caster, and they can be beyond than the spell's original range.
+
+    Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the spell in the exact same way as the primary target.
+    Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
+    You can't chain off of the ground.
+
+    \\spheredef{metallic} A creature is considered metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
+    This includes any glossterm{body armor} with a metal material type.
+    It also includes exposed metal objects or parts of objects that are no more than two size categories smaller than the creature.
+    This includes most weapons with any metallic components.
+    It does not include creatures who have small amounts of metal safely stowed in larger containers, such as a common amount of coins or metallic tools stowed in a coin purse or backpack.
+
+    Similarly, an object is generally considered metallic if it has an exposed piece made of metal that is no more than two size categories larger than the object as a whole.
+  `,
 
   cantrips: [
     {
@@ -41,51 +65,73 @@ export const electromancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Lightning Bolt",
+      name: 'Lightning Rod',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} electricity damage.`,
+        hit: `
+          The target takes 1d6 electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to lightning damage as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide line from you.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
-      rank: 1,
-      scaling: "damage",
+      rank: 2,
+      scaling: 'damage',
     },
+
     {
-      name: "Greater Lightning Bolt",
+      name: 'Mighty Lightning Rod',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
+        hit: `
+          The target takes 4d8 + \\glossterm{power} electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Lightning Bolt",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\gargarealong, 15 ft. wide line from you.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 6,
+      scaling: 'damage',
+    },
+
+    {
+      name: "Lightning Bolt",
+
+      attack: {
+        hit: `Each target takes 1d8 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+    {
+      name: "Massive Lightning Bolt",
+
+      attack: {
+        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
     },
 
     {
       name: "Shocking Grasp",
 
+      // +1r for situational +2acc
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything adjacent to you.
+          You gain a +2 accuracy bonus against each \\spheredef{metallic} target.
         `,
       },
       rank: 1,
@@ -93,31 +139,19 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Shocking Grasp",
+      name: "Mighty Shocking Grasp",
 
+      // +3r for situational +4acc, +2r for +1d
       attack: {
-        hit: `
-          The target takes 2d6 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
-        `,
+        hit: `The target takes 4d6 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything adjacent to you.
+          You gain a +4 accuracy bonus against each \\spheredef{metallic} target.
         `,
       },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Shocking Grasp",
-
-      functionsLike: {
-        name: 'greater shocking grasp',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage, and the target is \\stunned instead of dazed.',
-      },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
     },
 
@@ -130,10 +164,10 @@ export const electromancy: MysticSphere = {
           Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
     },
 
@@ -146,10 +180,10 @@ export const electromancy: MysticSphere = {
           Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
@@ -168,7 +202,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Energize',
+      name: 'Empowered Energize',
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
@@ -182,52 +216,29 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Lightning Storm",
+      name: "Arc",
 
+      // -1r for -1d
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d6 + \\glossterm{power} electricity damage.`,
         targeting: `
-        Make an attack vs. Reflex against all \\glossterm{enemies} in a \\areasmall radius from you.
+          Make an attack vs. Fortitude against anything within \\shortrange.
+          This attack \\spheredef{chains} once.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
     },
 
     {
-      name: "Greater Lightning Storm",
+      name: "Mighty Arc",
 
+      // +2r for +1d, +1r to offset previous -1d, +1r for medium range
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 4d6 + \\glossterm{power} electricity damage.`,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Lightning Storm",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\gargarea radius from you.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-
-    {
-      name: "Electromagnetic Bolt",
-
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
-          You gain a +2 accuracy bonus against each target that is wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack \\spheredef{chains} once.
         `,
       },
       rank: 5,
@@ -235,10 +246,44 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: "Electromagnetic Arc",
+
+      // +3r for chain, +1r for metallic accuracy, -1r for -1d
+      attack: {
+        hit: `Each target takes 2d6 + \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack \\spheredef{chains} twice.
+          You gain a +2 accuracy bonus against each \\spheredef{metallic} target.
+          In addition, the attack can chain up to 30 feet to reach a metallic target.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+    },
+
+    {
+      name: "Certain Electromagnetic Arc",
+
+      // +2r for extra +2 accuracy, +1r to offset -1d
+      attack: {
+        hit: `Each target takes 4d8 + \\glossterm{power} electricity damage.`,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack \\spheredef{chains} twice.
+          You gain a +4 accuracy bonus against each \\spheredef{metallic} target.
+          In addition, the attack can chain up to 30 feet to reach a metallic target.
+        `,
+      },
+      rank: 7,
+      scaling: "damage",
+    },
+
+    {
       name: "Magnetic Blade",
 
       effect: `
-        Metal weapons you wield gain a +1 bonus to \\glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
+        You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\spheredef{metallic} weapons against metallic targets.
       `,
       rank: 3,
       type: "Attune",
@@ -249,15 +294,15 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The primary target takes 2d10 + \\glossterm{power} electricity damage.
-          Each secondary target takes 2d8 + half \\glossterm{power} electricity damage.
+          The primary target takes 2d8 + \\glossterm{power} electricity damage.
+          Each secondary target takes 2d6 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
-          In addition, regardless of whether you hit that creature, make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from that creature.
+          This attack can \\glossterm{chain} five times.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: {
         special:
           "The damage to both the primary and secondary subjects increases by +1d for each rank beyond 5.",
@@ -268,28 +313,34 @@ export const electromancy: MysticSphere = {
       name: "Electroshock",
 
       attack: {
-        hit: `The target takes 1d6 electricity damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.`,
+        hit: `
+          The target takes 1d10 electricity damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
+          This attack \\spheredef{chains} once.
         `,
       },
-      rank: 1,
-      scaling: "accuracy",
+      rank: 3,
+      scaling: "damage",
     },
 
     {
-      name: "Greater Electroshock",
+      name: "Intense Electroshock",
 
       attack: {
-        hit: `The target takes 2d8 electricity damage.
-        If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.`,
+        hit: `
+          Each target takes 4d6 electricity damage.
+          Each creature that loses \\glossterm{hit points} from this damage, is \\confused as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
+          This attack \\spheredef{chains} once.
         `,
       },
-      rank: 5,
-      scaling: "accuracy",
+      rank: 7,
+      scaling: "damage",
     },
 
     {
@@ -297,40 +348,37 @@ export const electromancy: MysticSphere = {
 
       attack: {
         // +1d from normal AOE due to weird area that probably just hits one person
-        hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} electricity damage.
+        `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide vertical line within \\medrange.
-          If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Reflex against everything in an area.
+          If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
+          Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
           If this spell has its area increased, only the length of the line increases.
         `,
       },
       rank: 2,
       scaling: "damage",
+      tags: ["Sustain (standard)"],
     },
 
     {
-      name: "Greater Call Lightning",
+      name: "Mighty Call Lightning",
 
-      attack: {
-        // crit: '',
-        // +1d from normal AOE due to weird area that probably just hits one person
-        hit: `
-          Each target takes 4d8 + half \\glossterm{power} electricity damage.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
-          If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm{accuracy} with the attack.
-          If this spell has its area increased, only the length of the line increases.
-        `,
+      functionsLike: {
+        name: "call lightning",
+        exceptThat: "the damage increases to 4d8 + half \\glossterm{power}.",
       },
       rank: 6,
       scaling: "damage",
+      tags: ["Sustain (standard)"],
     },
 
     {
-      // The flavor here is a bit of a stretch, so it only affects land speed and there is
-      // no Mass Energize.
-      name: "Energize",
+      // The flavor here is a bit of a stretch, so it's behind Haste and there is no Mass
+      // version.
+      name: "Lightning Speed",
 
       effect: `
         You gain a +10 foot \\glossterm{magic bonus} to your land speed.
@@ -347,7 +395,7 @@ export const electromancy: MysticSphere = {
         hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
+          When you do, make an attack vs. Reflex against everything within a \\hugearealong, 10 ft. wide line from you.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
@@ -357,13 +405,12 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Lightning Breath",
+      name: "Mighty Lightning Breath",
 
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to 4d10 + half \\glossterm{power}.
-          In addition, the area increases to a \\hugearea cone.
+          the damage increases to 4d10 + \\glossterm{power}.
         `,
       },
       rank: 7,
@@ -375,16 +422,16 @@ export const electromancy: MysticSphere = {
       name: "Ball Lightning",
 
       attack: {
-        hit: `Each target takes 2d8 electricity damage.`,
+        hit: `Each target takes 2d6 electricity damage.`,
         targeting: `
-          You create a Medium size ball of lightning in one space within \\longrange.
+          You create a Medium size ball of lightning in one space within \\medrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
           Whenever you sustain this effect, you can move the ball up to 30 feet in any direction, even vertically.
           When you create the ball, and each subsequent \\glossterm{action phase}, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
           Then, if the ball is more than 120 feet from you, it disappears and this effect ends.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: "damage",
       type: "Sustain (minor)",
     },
@@ -395,7 +442,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\sphereterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 3,
@@ -409,7 +456,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\sphereterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 7,
@@ -422,51 +469,15 @@ export const electromancy: MysticSphere = {
       attack: {
         // +2d from level, add trivial extra benefit for fun
         hit: `
-          The target takes 4d8 + \\glossterm{power} electricity damage.
+          The target takes 4d6 + \\glossterm{power} electricity damage.
           In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\closerange.
         `,
       },
 
-      rank: 5,
-      scaling: "damage",
-    },
-
-    {
-      name: "Lightning Rod",
-
-      // -1 level vs Greater Ignition due to minor action cost
-      attack: {
-        crit: `Each bolt deals double damage.`,
-        hit: `As a \\glossterm{condition}, the target attracts lightning.
-          As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
-          When you do, the target takes 2d6 + half \\glossterm{power} electricity damage.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against anything within \\medrange.
-        `,
-      },
       rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Lightning Rod",
-
-      // -1 level vs Greater Ignition due to minor action cost
-      attack: {
-        crit: `Each bolt deals double damage.`,
-        hit: `As a \\glossterm{condition}, the target attracts lightning.
-          As a \\glossterm{minor action}, you can call a bolt of lightning to strike the target.
-          When you do, the target takes 4d8 + half \\glossterm{power} electricity damage.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against anything within \\longrange.
-        `,
-      },
-      rank: 7,
       scaling: "damage",
     },
 
@@ -486,7 +497,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Thunderdash",
+      name: "Distant Thunderdash",
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
@@ -502,31 +513,46 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Cleansing Shock",
-
-      effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the target 4 electricity damage.
-      `,
-      rank: 4,
-      scaling: {
-        6: `The target can remove two effects.`,
+      name: "Short-Circuit",
+      attack: {
+        hit: `
+          The target is \\dazed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+        `,
       },
+      rank: 1,
+      scaling: "accuracy",
+    },
+
+    {
+      name: "Intense Short-Circuit",
+      attack: {
+        hit: `
+          The target is \\stunned as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
     },
 
     {
       name: "Dazing Shock",
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\dazed as a \\glossterm{condition}.
+          The target takes 1d6 + half \\glossterm{power} electricity damage.
+          Each creature that loses \\glossterm{hit points} from this damage is \\dazed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack \\spheredef{chains} once.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
     },
 
@@ -534,43 +560,16 @@ export const electromancy: MysticSphere = {
       name: "Stunning Shock",
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} electricity damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\stunned as a \\glossterm{condition}.
+          Each target takes 2d8 + half \\glossterm{power} electricity damage.
+          Each creature that loses \\glossterm{hit points} from this damage is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-
-    {
-      name: "Shocking Burst",
-
-      attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-      tags: [],
-    },
-
-    {
-      name: "Greater Shocking Burst",
-
-      attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} electricity damage.`,
-        targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Fortitude against anything within \\medrange.
+          This attack \\spheredef{chains} once.
         `,
       },
       rank: 5,
       scaling: "damage",
-      tags: [],
     },
   ],
   rituals: [],
