@@ -468,7 +468,7 @@ export const fabrication: MysticSphere = {
       effect: `
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
-        This strike is considered a \\glossterm{magical} attack, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
