@@ -551,7 +551,7 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          It takes 1d8 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
+          It takes 1d8 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
@@ -571,7 +571,7 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          It takes 2d8 + half \\glossterm{power} physical damage immediately and during each subsequent \\glossterm{action phase}.
+          It takes 2d8 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
         `,
         targeting: `
           Make an attack vs. Fortitude against the one living creature within \\medrange.

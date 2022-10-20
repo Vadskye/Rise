@@ -289,7 +289,7 @@ export const aeromancy: MysticSphere = {
         targeting: `
           You create a continuous flow of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The wind blows in a direction that you choose when you cast the spell.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Fortitude against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },
       // narrative: '',

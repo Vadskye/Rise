@@ -83,7 +83,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -100,7 +100,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 4d8 + half \\glossterm{power} fire damage immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -169,7 +169,7 @@ export const pyromancy: MysticSphere = {
         hit: `Each target takes 4d6 + half \\glossterm{power} fire damage.`,
         targeting: `
           When you cast this spell, you create a small bead of fire in midair within your space.
-          During the next action phase, the bead flies out and explodes as you direct.
+          During your next action, the bead flies out and explodes as you direct.
           Make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
         `,
       },
@@ -210,7 +210,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target catches on fire as a \\glossterm{condition}.
-        It takes 1d6 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
+        It takes 1d6 + half \\glossterm{power} fire damage immediately and during each of your subsequent actions.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
@@ -229,7 +229,7 @@ export const pyromancy: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target catches on fire as a \\glossterm{condition}.
-          It takes 2d8 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
+          It takes 2d8 + half \\glossterm{power} fire damage immediately and during each of your subsequent actions.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -245,7 +245,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `
           The object becomes burning hot to the touch.
-          It and anything touching it takes 1d10 + half \\glossterm{power} fire damage immediately and during each subsequent \\glossterm{action phase}.
+          It and anything touching it takes 1d10 + half \\glossterm{power} fire damage immediately and during each of your subsequent actions.
         `,
         targeting: `
           Choose one \\glossterm{metallic} object within \\medrange.
@@ -296,7 +296,7 @@ export const pyromancy: MysticSphere = {
       // -1r for attune requirement
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during the next \\glossterm{action phase}.
+          The target takes 1d8 + half \\glossterm{power} fire damage immediately, and again during your next action.
         `,
         targeting: `
           You can set things on fire simply by staring at them as a standard action.
@@ -360,8 +360,8 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          In addition, during each action phase, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          During each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },
@@ -447,7 +447,7 @@ export const pyromancy: MysticSphere = {
         targeting: `
           You create a \\smallarealong \\glossterm{wall} of fire within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          In addition, when you cast this spell and during each subsequent action phase, make an attack vs. Reflex against any creature currently sharing space with it.
+          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
 
@@ -519,7 +519,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d6 + half \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it takes 1d6 + half \\glossterm{power} fire damage during the next action phase.
+          If it loses \\glossterm{hit points} from this damage, it takes 1d6 + half \\glossterm{power} fire damage during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -536,7 +536,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 2d8 + \\glossterm{power} fire damage.
-          If it loses \\glossterm{hit points} from this damage, it takes 2d8 + half \\glossterm{power} fire damage during the next action phase.
+          If it loses \\glossterm{hit points} from this damage, it takes 2d8 + half \\glossterm{power} fire damage during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

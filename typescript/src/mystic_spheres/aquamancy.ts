@@ -288,7 +288,7 @@ export const aquamancy: MysticSphere = {
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Fortitude against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },
       rank: 5,
@@ -307,7 +307,7 @@ export const aquamancy: MysticSphere = {
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Reflex against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
       rank: 2,
@@ -326,7 +326,7 @@ export const aquamancy: MysticSphere = {
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Reflex against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
       rank: 5,
@@ -615,7 +615,7 @@ export const aquamancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is transformed into a puddle of water as a \\glossterm{condition}.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes 5d10 damage during each action phase as it dissolves.
+            \\item If it is submerged in water or other liquid, it takes 5d10 damage during each of your subsequent actions as it dissolves.
             \\item It is \\prone and cannot stand up.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
