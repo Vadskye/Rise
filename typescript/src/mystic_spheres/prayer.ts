@@ -154,14 +154,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
+        Each target is \\glossterm{impervious} to \\glossterm{poisons} and \\glossterm{diseases}.
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
       `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +6.`,
-        7: `The bonus increases to +8.`,
-      },
       type: "Attune (target)",
     },
 
@@ -170,14 +166,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
+        Each target is \\glossterm{impervious} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
       `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +6.`,
-        7: `The bonus increases to +8.`,
-      },
       type: "Attune (target)",
     },
 
@@ -293,20 +285,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Blessing of Wakefulness",
-
-      // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target cannot fall asleep or be knocked unconscious, even by \\glossterm{vital wounds}.
-        This does not prevent the target from dying due to vital wounds.
-        If a target is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
-      `,
-      rank: 3,
-      type: "Attune (target)",
-    },
-
-    {
       name: "Blessing of Mastery",
 
       effect: `
@@ -370,7 +348,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Greater Boon of Shielding",
+      name: "Empowered Boon of Shielding",
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
@@ -439,7 +417,7 @@ export const prayer: MysticSphere = {
       tags: ["Curse"],
     },
     {
-      name: "Greater Curse of Fugue",
+      name: "Intense Curse of Fugue",
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -472,7 +450,7 @@ export const prayer: MysticSphere = {
       tags: ["Curse"],
     },
     {
-      name: "Greater Curse of Sloth",
+      name: "Efficient Curse of Sloth",
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -505,19 +483,36 @@ export const prayer: MysticSphere = {
       tags: ["Curse"],
     },
     {
-      name: "Holy Blade",
+      name: "Holy Blades",
 
       effect: `
-        Your weapons shed light like a torch.
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
-        In addition, all damage you deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target's weapons shed light like a torch.
+        In addition, all damage they deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
       `,
-      rank: 3,
-      scaling: {
-        5: `The power bonus increases to +8.`,
-        7: `The power bonus increases to +16.`,
+      rank: 1,
+      type: "Attune (target)",
+    },
+    {
+      name: "Curse of Flammability",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
+        Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
+        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each \\glossterm{action phase}.
+
+        It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        Dropping \\prone as part of this action gives a +5 bonus to this check.
+        Putting out the flames in this way does not remove this curse.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
       },
-      type: "Attune",
+
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Curse"],
     },
   ],
   rituals: [
@@ -552,20 +547,20 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Enduring Greater Fortification",
+      name: "Enduring Empowered Fortification",
 
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "greater fortification",
+        name: "empowered fortification",
       },
       rank: 5,
     },
 
     {
-      name: "Greater Fortification",
+      name: "Empowered Fortification",
 
       castingTime: "one hour",
       functionsLike: {

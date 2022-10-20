@@ -68,13 +68,12 @@ export const revelation: MysticSphere = {
       name: "Purge Invisibility",
 
       effect: `
-        All invisibility effects within a \\medarea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
+        All \\glossterm{invisibility} effects within a \\largearea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You can choose to affect a \\largearea radius instead.",
-        5: "You can choose to affect a \\hugearea radius instead.",
-        7: "You can choose to affect a \\gargarea radius instead.",
+        4: "You can choose to affect a \\hugearea radius instead.",
+        6: "You can choose to affect a \\gargarea radius instead.",
       },
       type: "Attune",
     },
@@ -106,10 +105,10 @@ export const revelation: MysticSphere = {
           it gains a +1 \\glossterm{accuracy} bonus and rolls twice and takes the higher result.
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
+        4: `The bonus increases to +2.`,
+        6: `The bonus increases to +3.`,
       },
       tags: [],
     },
@@ -213,7 +212,7 @@ export const revelation: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Subtle"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -306,44 +305,55 @@ export const revelation: MysticSphere = {
         You are never \\unaware or \\partiallyunaware.
       `,
 
-      rank: 5,
+      rank: 6,
       type: "Attune",
     },
 
     {
       name: "Reveal Weakness",
 
+      // TODO: unclear rank (1.25??)
       attack: {
         crit: `The penalty increases to -4.`,
         hit: `As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
 
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
     },
 
     {
-      name: "Greater Reveal Weakness",
+      name: "Intense Reveal Weakness",
 
       functionsLike: {
         name: 'reveal weakness',
         exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
     {
-      name: "Mass True Strike",
+      name: "Twinned True Strike",
 
       functionsLike: {
-        mass: true,
         name: "True Strike",
+        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+      },
+      rank: 6,
+    },
+
+    {
+      name: "Twinned True Cast",
+
+      functionsLike: {
+        name: "True Cast",
+        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
       },
       rank: 7,
     },

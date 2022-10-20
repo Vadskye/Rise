@@ -63,7 +63,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +1 \\glossterm{accuracy} bonus and a +2d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
+          It gains a +1 \\glossterm{accuracy} bonus and its attacks deal 1d8 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
         name: "summon monster",
       },
@@ -74,28 +74,13 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Greater Summon Offensive Monster",
+      name: "Empowered Summon Offensive Monster",
 
+      // +2 levels for +2acc, +2 levels for +1d
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +2 \\glossterm{accuracy} bonus and a +4d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved and it takes a -1 penalty to all \\glossterm{defenses}.
-        `,
-        name: "summon monster",
-      },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
-    },
-
-    {
-      name: "Supreme Summon Offensive Monster",
-
-      functionsLike: {
-        exceptThat: `
-          the summoned creature is more offensively inclined.
-          It gains a +3 \\glossterm{accuracy} bonus and a +6d damage bonus with its attacks, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved and it takes a -2 penalty to all \\glossterm{defenses}.
+          It gains a +3 \\glossterm{accuracy} bonus and its attacks deal 4d6 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
         name: "summon monster",
       },
@@ -122,28 +107,12 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Greater Summon Defensive Monster",
+      name: "Empowered Summon Defensive Monster",
 
       functionsLike: {
         exceptThat: `
           the summoned creature is much more defensively inclined.
-          It gains a +2 bonus to all defenses, and it gains a +1d damage bonus with its attacks.
-        `,
-        name: "summon monster",
-      },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
-    },
-
-    {
-      name: "Supreme Summon Defensive Monster",
-
-      functionsLike: {
-        exceptThat: `
-          the summoned creature is more defensively inclined.
-          It gains a +3 bonus to all defenses, and it gains a +2d damage bonus with its attacks.
+          It gains a +2 bonus to all defenses, and its \\glossterm{hit points} are doubled.
         `,
         name: "summon monster",
       },
@@ -160,7 +129,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d6 + \\glossterm{power} bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet in a straight line horizontally away from you.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
@@ -175,13 +144,13 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Greater Ramming Summon",
+      name: "Efficient Ramming Summon",
 
       // +4 ranks for on-damage instead of on-hp
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} bludgeoning damage.
-          If it takes damage, you \\glossterm{knockback} it up to 15 feet in a straight line horizontally away from you.
+          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
+          If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\medrange.
@@ -212,33 +181,17 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Greater Trampling Summon",
+      name: "Massive Trampling Summon",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Reflex against everythong on solid ground in a \\largearealong, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
       },
-      rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Supreme Trampling Summon",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 20 ft. wide line from you.
-          You summon a horde of creatures that trample through the area before disappearing.
-          The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
-        `,
-      },
-      rank: 6,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
     },
@@ -304,7 +257,7 @@ export const summoning: MysticSphere = {
 
           The ballista deals 1d10 damage with its attacks.
           It cannot move, and makes projectile \\glossterm{strikes} instead of melee strikes.
-          Its attacks deal piercing damage and have \\glossterm{range limits} of 90/360.
+          Its attacks deal piercing damage and have \\glossterm{range limits} of 90/270.
           The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
         name: "summon weapon",
@@ -433,25 +386,74 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: "Summon Wolfpack",
+      name: "Summon Horde -- Dogs",
 
-      // original targets: One unoccupied square on stable ground within \medrange
-
-      functionsLike: {
-        exceptThat: `
-        it summons a pack of four Medium wolf-shaped creatures instead of a single creature.
-        Their attacks deal 2d10 bludgeoning and piercing damage.
-        Each creature has a -2 penalty to \\glossterm{accuracy} and \\glossterm{defenses} compared to a normal summoned creature.
-        In addition, each creature has half the hit points of a normal summoned creature.
-        % TODO: wording?
-        You must command the creatures as a group, rather than as individuals.
-        Each creature obeys your command to the extent it can.
+      attack: {
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} physical damage.
         `,
-        name: "summon monster",
+        targeting: `
+          A horde of dogs appears in a \\medarea radius \\glossterm{zone} from your location.
+          The dogs disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 3,
+      tags: ["Manifestation", "Sustain (standard)"],
+    },
+
+    {
+      name: "Summon Horde -- Wolves",
+
+      attack: {
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} physical damage.
+          Each creature that loses \\glossterm{hit points} from this damage falls \\prone.
+        `,
+        targeting: `
+          A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
+          The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 5,
+      tags: ["Manifestation", "Sustain (standard)"],
+    },
+
+    {
+      name: "Summon Horde -- Bees",
+
+      attack: {
+        hit: `
+          Each target takes 2d10 + half \\glossterm{power} piercing damage.
+          Each damaged creature is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          A swarm of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
+          The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies in the eyes.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 6,
+      tags: ["Manifestation", "Sustain (standard)"],
+    },
+
+    {
+      name: "Summon Horde -- Bears",
+
+      // +2r for large, +2r for +1d
+      attack: {
+        hit: `
+          Each target takes 4d8 + half \\glossterm{power} physical damage.
+        `,
+        targeting: `
+          A horde of bears appears in a \\largearea radius \\glossterm{zone} from your location.
+          The bears disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to maul your enemies.
+          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+        `,
       },
       rank: 7,
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      tags: ["Manifestation", "Sustain (standard)"],
     },
 
     {
@@ -495,7 +497,7 @@ export const summoning: MysticSphere = {
       name: "Summon Annoying Insects",
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: `The target is \\stunned instead of dazed.`,
         hit: `The target is \\dazed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -506,14 +508,14 @@ export const summoning: MysticSphere = {
       `,
       rank: 1,
       scaling: "accuracy",
-      tags: [],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Greater Summon Annoying Insects",
+      name: "Intense Summon Annoying Insects",
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: `The target is \\confused instead of dazed.`,
         hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -524,7 +526,7 @@ export const summoning: MysticSphere = {
       `,
       rank: 5,
       scaling: "accuracy",
-      tags: [],
+      tags: ['Manifestation'],
     },
   ],
   rituals: [
