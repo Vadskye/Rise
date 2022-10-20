@@ -448,8 +448,6 @@ export const pyromancy: MysticSphere = {
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
 
-          The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
-          It is immune to all damage types except for cold damage.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
@@ -460,7 +458,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Greater Wall of Fire",
+      name: "Massive Wall of Fire",
 
       functionsLike: {
         name: 'wall of fire',
