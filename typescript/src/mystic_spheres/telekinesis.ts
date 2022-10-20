@@ -31,10 +31,10 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You can exert minor force on objects and creatures around you.
-        As part of the action you take to sustain this spell, you may choose any object or creature within \\shortrange of you.
+        When you cast this spell, and during each subsequent \\glossterm{action phase}, you may choose any object or creature within \\shortrange of you.
         That object or creature feels a push in a direction of your choice.
         The force is sufficient to lift an object with a Diminuitive \\glossterm{weight category}, or to push an object with a Tiny weight category across the ground.
-        Generally, the force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can be perceived.
+        The force exerted by this ability is insufficient to physically move or even meaningfully impede any creature, but it can be perceived.
       `,
       scaling: {
         2: `The force increases to lift a Tiny weight object, or to push a Small weight object.`,
@@ -64,39 +64,48 @@ export const telekinesis: MysticSphere = {
     {
       name: "Interposing Force",
 
+      // price as one rank cheaper than slowed; it's better against low-Strength targets, but worse in
+      // general
       attack: {
         crit: `The difficulty value of the Strength check increases by 10.`,
-        hit: `As a \\glossterm{condition}, the target is unable to move closer to you without effort.
-        This does not impede its movement unless its movement would decrease the distance between it and you.
-        As part of movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
+        hit: `\\glossterm{condition}, the target is unable to move closer to you without effort.
+        This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
+        As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
         If it succeeds, it can move towards you at half speed.`,
         targeting: `
         Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
 
-      rank: 2,
+      rank: 4,
       scaling: "accuracy",
     },
 
     {
-      name: "Greater Interposing Force",
+      name: "Intense Interposing Force",
 
       functionsLike: {
         name: "interposing force",
-        exceptThat: "the \\glossterm{difficulty value} of the Strength check increases to 15.",
+        exceptThat: "the \\glossterm{difficulty value} of the Strength check increases to 10, or to 15 on a critical hit.",
       },
       rank: 7,
       scaling: "accuracy",
     },
 
     {
-      name: "Force Lance",
+      name: "Fling Object",
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} piercing damage.`,
+        hit: `
+          The target and the thrown object each take 1d8 bludgeoning damage.
+          Specific objects may add additional damage types appropriately.
+          For example, flinging a sharp spear would also deal piercing damage.
+          You add your \\glossterm{power} to the damage if you fling a Medium object, or half your power if you fling a Small object.
+        `,
         targeting: `
-        Make an attack vs. Armor against everything in a \\medarealong, 5 ft. wide line from you.
+          Choose a Tiny, Small, or Medium unattended nonmagical object within \\medrange of you.
+          You fling that object at another creature or object within \\medrange of you.
+          You gain a +4 accuracy bonus if you fling a Tiny object, or a +2 accuracy bonus if you fling a Small object.
         `,
       },
 
@@ -105,29 +114,14 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Greater Force Lance",
+      name: "Mighty Fling Object",
 
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} piercing damage.`,
-        targeting: `
-          Make an attack vs. Armor against everything in a \\largearealong, 5 ft. wide line from you.
-        `,
+      functionsLike: {
+        name: "fling object",
+        exceptThat: "the damage increases to 4d8.",
       },
-
-      rank: 4,
+      rank: 5,
       scaling: "damage",
-    },
-
-    {
-      name: "Supreme Force Lance",
-
-      attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
-        targeting: `
-          Make an attack vs. Armor against everything in a \\largearealong, 10 ft. wide line from you.
-        `,
-      },
-      rank: 7,
     },
 
     {
@@ -158,9 +152,9 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You can reload weapons from the crossbow weapon group as a \\glossterm{minor action} instead of as a standard action, and without requiring any \\glossterm{free hands}.
-        Each time you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
+        Whenever you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
       `,
-      rank: 3,
+      rank: 2,
       type: "Attune",
     },
 
@@ -180,7 +174,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
 
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
     },
 
@@ -196,10 +190,10 @@ export const telekinesis: MysticSphere = {
           Otherwise, it is \\glossterm{briefly} slowed.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\areasmall radius within \\medrange.
+          Make an attack vs. Fortitude against all creatures in a \\areasmall radius within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
@@ -208,13 +202,11 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          You \\glossterm{knockback} each target up to 30 feet in a straight line away from you.
-          Moving a target upwards costs twice the normal movement cost.
-          If the target impacts a solid object before the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 1d10 + half \\glossterm{power} instead of the normal knockback damage.
-          Any individual object or creature can only take damage once in this way, even if it is hit by multiple targets that are knocked flying.
+          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\areasmall radius from you.
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
       },
       rank: 3,
@@ -222,12 +214,16 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Greater Blastwave",
+      name: "Intense Blastwave",
 
-      functionsLike: {
-        name: 'blastwave',
-        exceptThat: `
-          the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\largearea radius.
+      // +2r for 30' knockback, +1r for med cone
+      attack: {
+        hit: `
+          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
       },
       rank: 6,
@@ -235,24 +231,31 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Distant Shove",
+      name: "Mind Shove",
+      // +1r for a size-limited r1 debuff that sometimes, but not always, has extra damage attached
       attack: {
         hit: `
           You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take bludgoning damage equal to 2d6 + \\glossterm{power}.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Large or smaller within \\shortrange of you.
+          Make an attack vs. Fortitude against anything Large or smaller within \\medrange of you.
         `,
       },
-      rank: 3,
+      rank: 2,
     },
 
     {
-      name: "Greater Distant Shove",
-      functionsLike: {
-        name: 'distant shove',
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}, and the maximum size increases to Huge.",
+      name: "Mighty Mind Shove",
+      // +1r for long range, +2r for full damage, +1r for size limit
+      attack: {
+        hit: `
+          You \\glossterm{push} the target up to 30 feet in a straight line.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 4d6 + \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything Huge or smaller within \\longrange of you.
+        `,
       },
       rank: 6,
     },
@@ -261,42 +264,30 @@ export const telekinesis: MysticSphere = {
       name: "Toss Foe",
 
       attack: {
-        hit: `The target takes 1d6 bludgeoning damage.
-        If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-        Moving the target upwards costs twice the normal movement cost.`,
+        hit: `
+          The target takes 1d6 bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
+        `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
         `,
       },
 
       rank: 1,
-      scaling: "accuracy",
+      scaling: "damage",
     },
     {
-      name: "Greater Toss Foe",
+      name: "Intense Toss Foe",
 
       functionsLike: {
         name: 'toss foe',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the knockback distance increases to 60 feet. In addition, the damage increases to 2d8.",
       },
       // narrative: '',
-      rank: 4,
-      scaling: "accuracy",
+      rank: 5,
+      scaling: "damage",
     },
-    {
-      name: "Supreme Toss Foe",
-
-      functionsLike: {
-        name: 'toss foe',
-        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
-      },
-      // narrative: '',
-      rank: 7,
-      // scaling: "accuracy",
-    },
-
     {
       name: "Telekinetic Lift",
 
@@ -311,22 +302,22 @@ export const telekinesis: MysticSphere = {
         5: `The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
         7: `The bonus increases to +10.`,
       },
-      type: "Attune",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
-      name: "Redirect Attacks",
+      name: "Mind Parry",
 
-      effect: `
-        You immediately take the \\textit{total defense} action.
-        In addition, whenever a creature within \\longrange of you misses or \\glossterm{glances} you with a \\glossterm{strike} this round, that creature treats itself as a target of that strike in addition to any other targets.
-        It cannot choose to reduce its accuracy or damage against itself.
-      `,
-      rank: 3,
-      scaling: {
-        5: `You gain an additional +1 bonus to all defenses.`,
-        7: `The defense bonus increases to +2.`,
+      functionsLike: {
+        name: "total defense",
+        abilityType: "ability",
+        exceptThat: `
+          whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+          It cannot choose to reduce its accuracy or damage against itself.
+          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+        `,
       },
+      rank: 2,
       tags: ['Swift'],
     },
 
@@ -334,12 +325,11 @@ export const telekinesis: MysticSphere = {
       name: "Levitate",
 
       effect: `
-        % TODO: Wording
-        As long as you remain within 30 feet above a surface that could support your weight, you float in midair, unaffected by gravity.
-        During the movement phase, you can move yourself up to ten feet in any direction as a \\glossterm{move action}.
+        You gain a 15 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flying}).
+        Your \\glossterm{maneuverability} with this fly speed is perfect (see \\pcref{Flying Maneuverability}).
       `,
       rank: 4,
-      scaling: { 6: `The maximum height above the surface increases to 60 feet.` },
+      scaling: { 6: `The maximum height above the surface increases to 30 feet.` },
       type: "Attune",
     },
 
@@ -356,9 +346,9 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\largearealong wall instead.",
-        5: "You can choose to create a \\hugearealong wall instead.",
-        7: "You can choose to create a \\gargarealong wall instead.",
+        3: "You can choose to create a \\medarealong wall instead.",
+        5: "You can choose to create a \\largearealong wall instead.",
+        7: "You can choose to create a \\hugearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -384,111 +374,64 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Steal Item",
-
-      attack: {
-        hit: `
-          You \\glossterm{knockback} the object up to 60 feet towards you.
-          You can use a \\glossterm{free hand} to catch the object if it reaches you.
-        `,
-        // No relevant glance effect
-        targeting: `
-          Make an attack vs. Reflex against one Small or smaller object within \\medrange.
-          If the object is attended by a creature, the attack must also beat the attending creature's Reflex defense.
-          If it is held in two hands or well secured, this attack automatically fails.
-
-          After you successfully steal an item from a creature with this spell, it gains a +5 bonus to its defenses against this spell until it takes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Steal Item",
-
-      functionsLike: {
-        name: 'steal item',
-        exceptThat: `
-          the attack does not automatically fail if the item is held in two hands, and the maximum size increases to Medium.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-    },
-
-    {
       name: "Animated Weapon",
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
-        This strike is considered a \\glossterm{magical} ability.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Make a \\glossterm{strike} using a weapon you hold in a single hand.
+        The weapon gains the \\abilitytag{Long} tag for this strike, allowing you to attack more distant targets.
+        You use your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        The weapon flies back into your hand after making the strike.
       `,
-      rank: 4,
-      scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (deep)",
+      rank: 1,
+      scaling: {
+        3: `You gain a +1 accuracy bonus with the strike.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
+      },
     },
 
     {
       name: "Mind Arrow",
 
       effect: `
-        Choose one Tiny or smaller \\glossterm{unattended} projectile within \\longrange.
-        You make a \\glossterm{strike} using the projectile against anything within \\longrange.
-        This strike is considered a \\glossterm{magical} ability, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
-        The projectile flies directly toward the target instead of originating from your position, which may allow you to avoid \\glossterm{cover} and similar obstacles.
+        You can make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
+        You not have to be proficient with bows, and you do not have to manually draw the arrow.
+        It must be easily accessible on your person, such as in a quiver.
+        As normal for a longbow, the strike deals 1d6 damage, and your \\glossterm{range limits} with this strike are 90/270.
+        You use your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The range increases to \\distrange.`,
-        6: `The range increases to \\extrange.`,
+        3: `You gain a +1 accuracy bonus with the strike.`,
+        5: `The accuracy bonus increases to +2.`,
+        7: `The accuracy bonus increases to +3.`,
       },
     },
 
     {
-      name: "Reactive Deflection",
+      name: "Floating Armament",
 
       effect: `
-        You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
+        You can hold a light or medium weapon or shield without using a free hand.
+        It functions as if you were holding it in a single hand.
+        You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +3.`,
-        6: `The bonus increases to +4.`,
-      },
-      type: "Attune",
-    },
-
-    {
-      name: "Floating Shield",
-
-      effect: `
-        You can hold a buckler or standard shield without using a free hand.
-        You still suffer the normal penalties if you are not proficient with it.
-      `,
-      rank: 4,
+      rank: 3,
       tags: [],
       type: "Attune (deep)",
     },
 
     {
-      name: "Distant Grasp",
-      attack: {
-        hit: `
-          The target is \\grappled by telekinetic force.
-          You must use the \\textit{maintain grapple} ability each round to maintain the grapple, as normal for grappling.
-          You may not use your Strength to maintain the grapple.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude and Reflex against one Large or smaller creature within \\shortrange of you.
-        `,
-      },
-      rank: 6,
-      scaling: {
-        special: "Your \\glossterm{accuracy} with the attack and with maintaining the grapple increases by +1 for each rank beyond 6.",
-      },
-      type: "Sustain (minor)",
+      name: "Greater Floating Armament",
+
+      effect: `
+        You can hold any weapon or shield other than a tower shield without using a free hand.
+        It functions as if you were holding it in two hands if possible, or one hand otherwise.
+        You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
+      `,
+      rank: 7,
+      tags: [],
+      type: "Attune (deep)",
     },
 
     {
@@ -558,22 +501,54 @@ export const telekinesis: MysticSphere = {
     {
       name: "Repulsion Field",
 
+      // TODO: correct rank
       attack: {
         crit:
-          "You also \\glossterm{knockback} each target 20 feet in the direction that it tried to enter the area from.",
+          "You also \\glossterm{knockback} the target 15 feet in the direction that it tried to enter the area from.",
         hit: `
-          Each target is unable to enter the spell's area with any part of its body for the duration of the spell.
+          Each target is unable to enter the spell's area for the rest of the round.
           The rest of its movement in the current phase is cancelled.
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
-          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Mental against it.
+          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Fortitude against it.
           Creatures in the area at the time that the spell is cast are unaffected by the spell.
         `,
       },
       rank: 4,
       scaling: "accuracy",
       type: "Sustain (minor)",
+    },
+
+    {
+      name: "Compression",
+
+      attack: {
+        hit: `
+          The target takes 1d8 + half \\glossterm{power} bludgeoning damage immediately, and again during the next \\glossterm{action phase}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange from you.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+
+    {
+      name: "Implosion",
+
+      attack: {
+        hit: `
+          The target takes 4d8 + half \\glossterm{power} bludgeoning damage immediately, and again during the next \\glossterm{action phase}.
+          If it takes a \\glossterm{vital wound} from this damage, it is crushed into a small sphere and immediately dies.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange from you.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
     },
   ],
   rituals: [

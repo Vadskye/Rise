@@ -70,11 +70,6 @@ export const polymorph: MysticSphere = {
         name: 'disguise creature',
       },
       rank: 2,
-      scaling: {
-        2: `The bonus increases to +6.`,
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +10.`,
-      },
       tags: ['Attune'],
     },
 
@@ -265,38 +260,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Reshape Appearance',
-
-      effect: `
-        You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
-        This physically changes your body to match the results of your disguise.
-        You gain a +4 bonus on the check, and you ignore penalties for changing your gender, species, subtype, or age.
-        However, this effect is unable to alter your equipment in any way.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +6.`,
-        6: `The bonus increases to +8.`,
-      },
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Reshape Appearance',
-
-      functionsLike: {
-        mass: true,
-        name: 'Reshape Appearance',
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: {
-        4: `The bonus increases to +6.`,
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Disintegrate',
 
       attack: {
@@ -360,7 +323,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Greater Spikeform',
+      name: 'Mighty Spikeform',
 
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
@@ -466,7 +429,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Greater Mending',
+      name: 'Empowered Mending',
 
       functionsLike: {
         name: 'mending',
@@ -489,7 +452,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Greater Brief Regeneration',
+      name: 'Empowered Brief Regeneration',
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
@@ -530,7 +493,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Greater Regeneration',
+      name: 'Empowered Regeneration',
 
       effect: `
         At the end of each round, you regain 2d6 \\glossterm{hit points}.
@@ -539,18 +502,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
-      type: 'Attune',
-    },
-
-    {
-      name: 'Supreme Regeneration',
-
-      effect: `
-        At the end of each round, you regain 4d6 \\glossterm{hit points}.
-        If you lost hit points this round, you add your \\glossterm{power} to this healing.
-        This healing cannot increase your hit points above half your maximum hit points.
-      `,
-      rank: 7,
       type: 'Attune',
     },
 
@@ -593,22 +544,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Cripple',
-
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\immobilized instead of slowed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 7,
-    },
-
-    {
       name: 'Bleed',
 
       // +1 level relative to Ignition because the check DV is always 10
@@ -630,7 +565,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Greater Bleed',
+      name: 'Mighty Bleed',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -746,13 +681,41 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the target 4 physical damage.
+        This cannot remove conditions caused by \\abilitytag{Compulsion} or \\abilitytag{Emotion} abilities.
       `,
       rank: 4,
-      scaling: {
-        6: `The target can remove two effects.`,
+    },
+
+    {
+      name: 'Cripple',
+
+      attack: {
+        hit: `
+          The target takes 1d6 physical damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+        `,
       },
+      rank: 1,
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Cripple',
+
+      attack: {
+        hit: `
+          The target takes 2d10 + \\glossterm{power} physical damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: 'damage',
     },
 
     {
@@ -760,31 +723,15 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\vulnerable to all damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Greater Flense',
-
-      attack: {
-        hit: `
-          The target takes 2d8 physical damage.
+          The target takes 2d6 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
-      rank: 5,
-      scaling: 'accuracy',
+      rank: 4,
+      scaling: 'damage',
     },
   ],
   rituals: [
@@ -902,21 +849,21 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Enduring Greater Fortify',
+      name: 'Enduring Empowered Fortify',
 
-      // original targets: Greater Fortify
+      // original targets: Empowered Fortify
       castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: 'greater fortify',
+        name: 'Empowered fortify',
       },
       rank: 5,
     },
 
     {
-      name: 'Greater Fortify',
+      name: 'Empowered Fortify',
 
       castingTime: 'one hour',
       functionsLike: {
