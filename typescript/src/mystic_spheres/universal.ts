@@ -36,7 +36,7 @@ export const universal: MysticSphere = {
         Photomancy      & Creatures and objects & Fortitude & Energy      \\\\
         Polymorph       & Creatures and objects & Fortitude & Physical    \\\\
         Prayer          & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
-        Pyromancy       & Creatures and objects & Armor     & Fire        \\\\
+        Pyromancy       & Creatures and objects & Fortitude & Fire        \\\\
         Revelation      & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
         Summoning       & Creatures and objects & Armor     & Physical    \\\\
         Telekinesis     & Creatures and objects & Fortitude & Bludgeoning \\\\
