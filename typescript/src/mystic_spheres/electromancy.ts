@@ -344,7 +344,7 @@ export const electromancy: MysticSphere = {
           Each target takes 1d10 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Reflex against everything in an area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
           If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
           Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
           If this spell has its area increased, only the length of the line increases.
@@ -419,7 +419,7 @@ export const electromancy: MysticSphere = {
           You create a Medium size ball of lightning in one space within \\medrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
           Whenever you sustain this effect, you can move the ball up to 30 feet in any direction, even vertically.
-          When you create the ball, and each subsequent \\glossterm{action phase}, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
+          When you create the ball, and during each of your subsequent actions, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
           Then, if the ball is more than 120 feet from you, it disappears and this effect ends.
         `,
       },

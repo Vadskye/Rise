@@ -200,7 +200,7 @@ export const enchantment: MysticSphere = {
         crit: "The target does not become immune to this effect.",
         // No glance effect since it's already one round
         hit: `
-          During the next \\glossterm{action phase}, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
+          During your next action, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           If it has any weapons in hand, it must use one of them.
 

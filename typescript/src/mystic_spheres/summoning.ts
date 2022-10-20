@@ -218,7 +218,7 @@ export const summoning: MysticSphere = {
 
         You cannot control the summoned weapon's actions.
         Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm{movement phase}, following that creature to the best of its abilities.
-        During the \\glossterm{action phase}, it makes a melee \\glossterm{strike} against a creature adjacent to it.
+        During your action, it makes a melee \\glossterm{strike} against a creature adjacent to it.
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
         If it hits, it deals damage appropriate for your chosen weapon.
@@ -395,7 +395,7 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of dogs appears in a \\medarea radius \\glossterm{zone} from your location.
           The dogs disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 3,
@@ -413,7 +413,7 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
           The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 5,
@@ -431,7 +431,7 @@ export const summoning: MysticSphere = {
         targeting: `
           A swarm of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies in the eyes.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 6,
@@ -449,7 +449,7 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of bears appears in a \\largearea radius \\glossterm{zone} from your location.
           The bears disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to maul your enemies.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 7,
