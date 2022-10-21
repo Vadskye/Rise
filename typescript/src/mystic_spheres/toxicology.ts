@@ -61,7 +61,7 @@ export const toxicology: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it becomes coated in acid as a \\glossterm{condition}.
           It takes 1d10 + half \\glossterm{power} acid damage immediately and during each of your subsequent actions.
 
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the acid.
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the acid.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
@@ -563,7 +563,7 @@ export const toxicology: MysticSphere = {
         hit: `The target becomes covered in devouring fungus as a \\glossterm{condition}.
         It takes 1d6 + half \\glossterm{power} acid damage immediately and during each of your subsequent actions.
 
-        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the fungus.
+        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Reflex against one creature within \\medrange.

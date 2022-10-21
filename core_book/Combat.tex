@@ -229,7 +229,8 @@
     \subsection{Actions}\label{Actions}
 
         You can take actions in combat to defeat your foes.
-        There are four types of actions: \glossterm{standard actions}, \glossterm{minor actions}, \glossterm{move actions}, and \glossterm{free actions}.
+        There are three types of actions: \glossterm{standard actions}, \glossterm{minor actions}, and \glossterm{free actions}.
+        In addition, you can use \glossterm{movement} during the \glossterm{movement phase} (see \pcref{Movement and Positioning}).
         % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
 
         \subsubsection{Standard Actions}\label{Standard Actions}
@@ -247,13 +248,6 @@
             In addition, you can choose to replace your standard action during the action phase with an additional minor action.
             However, you cannot use the same minor action twice in a single round unless an ability specifies otherwise.
 
-        \subsubsection{Move Actions}\label{Move Actions}
-            Abilities that require a move action typically move you around the battlefield, and are usually used in the \glossterm{movement phase}.
-            Using a move action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
-
-            You can take one move action during the \glossterm{movement phase} of each round.
-            In addition, you can choose to replace your standard action during the action phase with an additional move action.
-
         \subsubsection{Free Actions}\label{Free Actions}
             Some activities that take little time or attention require a \glossterm{free action}.
             You can take any number of free actions per round.
@@ -266,13 +260,13 @@
         As a special case, \glossterm{free actions} may be taken during any phase.
 
         \subsubsection{The Movement Phase}\label{The Movement Phase}
-            During the \glossterm{movement phase}, you can take one \glossterm{move action}.
-            The most common move action is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
+            During the \glossterm{movement phase}, you can make one \glossterm{movement}.
+            The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
             For details, see \pcref{Movement and Positioning}.
 
         \subsubsection{The Action Phase}\label{The Action Phase}
             During the \glossterm{action phase}, you can take one \glossterm{minor action} and one \glossterm{standard action}.
-            Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of your standard action.
+            Alternately, you can make a \glossterm{movement} or take an additional \glossterm{minor action} in place of your standard action.
             Most of the time, you will simply take a single standard action.
 
     \subsection{Resolving Actions}\label{Resolving Actions}
@@ -384,6 +378,13 @@
 \section{Movement and Positioning}\label{Movement and Positioning}
     This section describes how creatures move and position themselves on a battlefield.
 
+    \subsection{Movements}\label{Movements}
+        Abilities that require a movement typically move you around the battlefield, and are usually used in the \glossterm{movement phase}.
+        Making a movement generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+
+        You can make one movement during the \glossterm{movement phase} of each round.
+        In addition, you can choose to replace your standard action during the action phase with an additional movement.
+
     \subsection{Movement Modes}\label{Movement Modes}
         A \glossterm{movement mode} is a method of moving from one location to another.
         % TODO: terminology confusion mode vs. speed
@@ -409,7 +410,7 @@
         It must not be carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
         Whenever a creature glides, it takes a \minus2 penalty to Armor and Reflex defenses until it reaches solid ground.
 
-        While in the air, a creature with a glide speed can control its fall as a \glossterm{move action}. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
+        While in the air, a creature with a glide speed can control its fall as a \glossterm{movement}. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
 
         \parhead{Land}
         A creature with a land speed can move across the ground at the indicated speed.
@@ -482,7 +483,7 @@
         Secondarily, reactive movements should be simple to resolve.
         If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
 
-        \parhead{Hustle} As a \glossterm{move action}, you can use the \textit{hustle} ability to move.
+        \parhead{Hustle} As a \glossterm{movement}, you can use the \textit{hustle} ability to move.
         This is the most common movement ability.
 
         \begin{activeability}{Hustle}
@@ -492,7 +493,7 @@
             You travel that path, up to the limit of your relevant movement speed.
         \end{activeability}
 
-        \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
+        \parhead{Block} As a \glossterm{movement}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
 
         \begin{activeability}{Block}
             \label{Block}
@@ -510,7 +511,7 @@
             If multiple creatures are able to block the same creature from moving, it must pay both additional movement costs, which generally keeps it stuck in place.
         \end{activeability}
 
-        \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
+        \parhead{Follow} As a \glossterm{movement}, you can use the \textit{follow} ability to follow a creature as it moves.
 
         \begin{activeability}{Follow}
             \label{Follow}
@@ -532,13 +533,13 @@
             \rankline
             Choose a creature that you can see.
             Make an opposed \glossterm{initiative} check against that creature.
-            If you beat it on the initiative check, you learn whether it is going to take a \glossterm{move action} during the current phase, and if so, what that move action will be.
-            This does not give you any information about actions other than move actions, so using this ability during the action phase is often pointless.
+            If you beat it on the initiative check, you learn whether it is going to take a \glossterm{movement} during the current phase, and if so, what that movement will be.
+            This does not give you any information about actions other than movements, so using this ability during the action phase is often pointless.
             If you fail, you learn nothing about that creature's movement, and that creature automatically beats you on any other opposed initiative checks during the current phase.
             This represents you wasting time trying to watch the creature, giving it extra time to beat you in any sort of opposed contest or race.
         \end{activeability}
 
-        \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
+        \parhead{Withdraw} As a \glossterm{movement}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
         \begin{activeability}{Withdraw}
             \label{Withdraw}
@@ -757,7 +758,7 @@
             In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
         \end{activeability}
 
-        \parhead{Overrun}\label{Overrun} As a \glossterm{move action}, you can use the \textit{overrun} ability to move through creatures in your way.
+        \parhead{Overrun}\label{Overrun} As a \glossterm{movement}, you can use the \textit{overrun} ability to move through creatures in your way.
 
         \begin{activeability}{Overrun}[\abilitytag{Size-Based}]
             \rankline
@@ -796,9 +797,9 @@
             On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each target as you move.
         \end{activeability}
 
-        % It's important that this can only be used with move actions
+        % It's important that this can only be used with movements
         % to prevent it from being abused with abilities like Shove.
-        \parhead{Sprint}\label{Sprint} As a \glossterm{move action}, you can use the \textit{sprint} ability to move more quickly.
+        \parhead{Sprint}\label{Sprint} As a \glossterm{movement}, you can use the \textit{sprint} ability to move more quickly.
 
         \begin{activeability}{Sprint}
             \rankline
@@ -806,13 +807,13 @@
             Sprinting during the \glossterm{action phase} does not increase your fatigue.
             You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
 
-            You can immediately take another \glossterm{move action}.
-            For the duration of that move action, you double your speed with all of your movement modes.
+            You can immediately take another \glossterm{movement}.
+            For the duration of that movement, you double your speed with all of your movement modes.
         \end{activeability}
 
         \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object.
         You can use the ability as a standard action.
-        Alternately, you can use it as a \glossterm{move action}.
+        Alternately, you can use it as a \glossterm{movement}.
         If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
 
         As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
