@@ -183,7 +183,7 @@ impl DamageOverTimeEffect {
             // that's hard.
             the_subject = titlecase(the_subject),
             removal = if self.can_remove_with_dex { "
-                The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action}.
+                The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement}.
                 Dropping \\prone as part of this action gives a +5 bonus to this check.
             " } else { "" },
         ).trim().to_string();

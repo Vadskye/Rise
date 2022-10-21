@@ -42,7 +42,7 @@ export const summoning: MysticSphere = {
 
         Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
         There are only two actions it can take.
-        As a \\glossterm{move action}, it can move as you direct.
+        As a \\glossterm{movement}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
         If it hits, it deals 1d4 physical damage.
         This damage is improved by your Willpower as normal for magical attacks.

@@ -562,7 +562,7 @@ export const aquamancy: MysticSphere = {
           \\item Your land speed is halved.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
-          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
+          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
           \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
