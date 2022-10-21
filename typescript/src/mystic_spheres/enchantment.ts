@@ -81,10 +81,10 @@ export const enchantment: MysticSphere = {
 
       // This is T1; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
-        crit: `The target must dance as a \\glossterm{standard action} to reset the penalties, instead of as a move action.`,
+        crit: `The target must dance as a standard action to reset the penalties, instead of as a movement.`,
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
-          It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
+          It can spend a \\glossterm{movement} to dance, if it is physically capable of dancing.
           At the end of each movement phase, if the target did not dance during that phase, it takes a -2 penalty to its defenses as the compulsion intensifies.
           This penalty stacks each round up to a maximum of -5.
           When the target dances, it resets its penalties to 0.

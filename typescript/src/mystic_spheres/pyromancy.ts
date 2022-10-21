@@ -212,7 +212,7 @@ export const pyromancy: MysticSphere = {
         hit: `The target catches on fire as a \\glossterm{condition}.
         It takes 1d6 + half \\glossterm{power} fire damage immediately and during each of your subsequent actions.
 
-        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
+        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

@@ -586,7 +586,7 @@ export const electromancy: MysticSphere = {
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        The strike \\spheredef<chains> once.
+        The strike \\spheredef{chains} once.
         Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
       `,
       rank: 3,
