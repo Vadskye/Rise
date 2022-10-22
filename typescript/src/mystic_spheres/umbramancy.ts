@@ -524,11 +524,10 @@ export const umbramancy: MysticSphere = {
 
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: "You can choose to create a \\largearealong wall instead.",
-        5: "You can choose to create a \\hugearealong wall instead.",
-        7: "You can choose to create a \\gargarealong wall instead.",
+        4: "You can choose to create a \\largearealong wall instead.",
+        6: "You can choose to create a \\hugearealong wall instead.",
       },
       tags: ["Barrier"],
       type: "Sustain (attuneable, minor)",
