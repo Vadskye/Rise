@@ -336,7 +336,7 @@ export const terramancy: MysticSphere = {
     {
       name: "Swallowed by Earth",
 
-      // Price as r4 condition, -1r for grounded, -1r for range
+      // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
       attack: {
         hit: `
           The target takes 4d6 bludgeoning damage.
@@ -348,6 +348,7 @@ export const terramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex against one \\sphereterm{grounded} creature within \\shortrange.
+          You gain a +2 \\glossterm{accuracy} bonus if the target is grounded on stone.
         `,
       },
       narrative: `
@@ -360,7 +361,7 @@ export const terramancy: MysticSphere = {
       name: "Earthbind",
 
       // treat as r1 condition.
-      // no rank modifier for 120', it's mostly just flavor
+      // -1r for 60' height cap, +1r for stone
       attack: {
         crit: `It is also \\slowed as part of the same condition.`,
         hit: `
@@ -369,7 +370,8 @@ export const terramancy: MysticSphere = {
           All \\glossterm{falling damage} that it takes is doubled.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
+          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
+          You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
         `,
       },
       rank: 1,
