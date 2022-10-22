@@ -156,24 +156,27 @@
     When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
     Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
     Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
-    If you are dealt damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+    If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
 
     Monsters typically do not gain vital wounds like player characters do.
     Instead, they simply die or fall unconscious when they reach 0 hit points.
 
     \subsection{Negative Hit Points}\label{Negative Hit Points}
         You can have negative hit points, but only briefly.
-        At the end of each round, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
+        When your hit points drop below 0, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+        You gain an additional vital wound for each increment of half your maximum hit points that you reach in negative hit points.
+        If you heal past this threshold and then pass it again, you do not gain an extra vital wound.
+
+        At the end of each round, if your hit points are negative, your hit points are reset to 0.
         This is checked after applying all healing and damage that takes place at the end of the round.
-        If your negative hit points equal or exceed half your maximum hit points, you gain an additional vital wound.
-        You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
+        This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative again.
 
 \section{Vital Wounds}\label{Vital Wounds}
     \includegraphics[width=\columnwidth]{core mechanics/vital wounds}
 
     A \glossterm{vital wound} represents serious damage to your body.
     Each \glossterm{vital wound} has a specific detrimental effect on you.
-    You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Negative Hit Points}).
+    You gain vital wounds when your \glossterm{hit points} go negative (see \pcref{Negative Hit Points}).
 
     To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
     The effect of the vital wound lasts until you remove that vital wound.
