@@ -114,7 +114,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Shocking Grasp",
+      name: "Electromagnetic Grasp",
 
       // +1r for situational +2acc
       attack: {
@@ -131,7 +131,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Mighty Shocking Grasp",
+      name: "Mighty Electromagnetic Grasp",
 
       // +3r for situational +4acc, +2r for +1d
       attack: {
@@ -531,7 +531,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Dazing Shock",
+      name: "Shocking Arc",
       attack: {
         hit: `
           The target takes 1d6 + half \\glossterm{power} electricity damage.
@@ -547,7 +547,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Stunning Shock",
+      name: "Intense Shocking Arc",
       attack: {
         hit: `
           Each target takes 2d8 + half \\glossterm{power} electricity damage.
