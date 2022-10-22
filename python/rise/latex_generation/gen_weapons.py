@@ -84,7 +84,7 @@ def generate_weapons():
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                The strike \\spheredef<chains> once (see \\pcref<Electromancy>).
+                The strike \\sphereterm<chains> once (see \\pcref<Electromancy>).
                 Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
             short_description="Deals electricity damage and can chain 15 feet",
@@ -92,7 +92,7 @@ def generate_weapons():
                 Upgrade(
                     rank=6,
                     description="""
-                        The strike \\spheredef<chains> three times (see \\pcref<Electromancy>).
+                        The strike \\sphereterm<chains> three times (see \\pcref<Electromancy>).
                     """,
                     short_description="Deals electricity damage and can chain multiple times",
                 ),
