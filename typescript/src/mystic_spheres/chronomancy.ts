@@ -57,7 +57,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
         You may reroll the accuracy roll and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
@@ -74,7 +74,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
         You may reroll the accuracy roll twice and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
