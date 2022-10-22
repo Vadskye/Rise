@@ -190,9 +190,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
-          you do not treat the space occupied by creatures you move through as difficult terrain.
-          In addition, the damage increases to 4d8 + half \\glossterm{power}.
-          Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
+          the damage increases to 4d8 + half \\glossterm{power}.
         `,
         name: "battering ram",
       },
