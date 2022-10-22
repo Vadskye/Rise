@@ -263,7 +263,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You create a \\spheredef{time lock} for the target's current \\glossterm{conditions}.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{conditions}.
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
@@ -278,7 +278,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You create a \\spheredef{time lock} for the target's current location.
+        You create a \\sphereterm{time lock} for the target's current location.
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
@@ -294,7 +294,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You create a \\spheredef{time lock} for the target's current \\glossterm{hit points}.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{hit points}.
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
@@ -309,7 +309,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You create a \\spheredef{time lock} for the target's current \\glossterm{vital wounds}.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{vital wounds}.
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
