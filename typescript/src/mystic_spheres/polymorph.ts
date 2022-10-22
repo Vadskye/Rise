@@ -494,8 +494,9 @@ export const polymorph: MysticSphere = {
     {
       name: 'Empowered Regeneration',
 
+      // +2r for +1d, +1r for vital wound effect
       effect: `
-        At the end of each round, you regain 2d6 \\glossterm{hit points}.
+        At the end of each round, you regain 2d8 \\glossterm{hit points}.
         If you gained a vital wound this round, you add your \\glossterm{power} to this healing.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
