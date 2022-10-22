@@ -459,7 +459,6 @@ export const photomancy: MysticSphere = {
         hit: `
           The target takes 1d8 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
-          Being frightened or goaded by this effect has the \\abilitytag{Emotion} tag.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
