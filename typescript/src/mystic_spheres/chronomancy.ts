@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const chronomancy: MysticSphere = {
-  name: "Chronomancy",
-  shortDescription: "Manipulate the passage of time to inhibit foes and aid allies.",
-  sources: ["arcane", "pact"],
+  name: 'Chronomancy',
+  shortDescription: 'Manipulate the passage of time to inhibit foes and aid allies.',
+  sources: ['arcane', 'pact'],
   specialRules: `
     Some spells from this mystic sphere can create a time lock on creatures.
     \\spheredef{time lock} A time lock causes an aspect of a creature to be frozen in time.
@@ -21,21 +21,21 @@ export const chronomancy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Accelerated Reading",
+      name: 'Accelerated Reading',
 
       effect: `
         You can read at twice your normal speed.
         However, the mental effort imposes a -4 penalty to Mental defense.
       `,
       scaling: {
-        2: "You can read at four times your normal speed.",
-        4: "You can read at six times your normal speed.",
-        6: "You can read at ten times your normal speed.",
+        2: 'You can read at four times your normal speed.',
+        4: 'You can read at six times your normal speed.',
+        6: 'You can read at ten times your normal speed.',
       },
-      type: "Sustain (free)",
+      type: 'Sustain (free)',
     },
     {
-      name: "Rapid Aging",
+      name: 'Rapid Aging',
 
       effect: `
         Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\medrange.
@@ -44,16 +44,16 @@ export const chronomancy: MysticSphere = {
         When this spell ends, the object returns to its original state.
       `,
       scaling: {
-        2: "You can choose to age the target by up to a week.",
-        4: "You can choose to age the target by up to a month.",
-        6: "You can choose to age the target by up to three months.",
+        2: 'You can choose to age the target by up to a week.',
+        4: 'You can choose to age the target by up to a month.',
+        6: 'You can choose to age the target by up to three months.',
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
   ],
   spells: [
     {
-      name: "Accelerated Twinstrike",
+      name: 'Accelerated Twinstrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -63,14 +63,14 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        3: 'You gain a +1 accuracy bonus with the strike.',
+        5: 'The accuracy bonus increases to +2.',
+        7: 'The accuracy bonus increases to +3.',
       },
       tags: [],
     },
     {
-      name: "Accelerated Triplestrike",
+      name: 'Accelerated Triplestrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -80,13 +80,13 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: "You gain a +1 accuracy bonus with the strike.",
+        7: 'You gain a +1 accuracy bonus with the strike.',
       },
     },
 
     // This is a very unique combination of triggers and effects, so correct rank is hard
     {
-      name: "Temporal Dislocation",
+      name: 'Temporal Dislocation',
 
       attack: {
         crit: `
@@ -104,12 +104,12 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: [],
     },
 
     {
-      name: "Disjointed Deceleration",
+      name: 'Disjointed Deceleration',
 
       attack: {
         hit: `
@@ -121,11 +121,11 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Slow",
+      name: 'Slow',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -135,11 +135,11 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Mass Slow",
+      name: 'Mass Slow',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -149,12 +149,12 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     // -2 levels for 50% chance of activation
     {
-      name: "Stutterstop",
+      name: 'Stutterstop',
 
       attack: {
         crit: `The target is immobilized every round as long as it has no remaining damage resistance.`,
@@ -168,21 +168,21 @@ export const chronomancy: MysticSphere = {
       },
 
       rank: 7,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Haste",
+      name: 'Haste',
 
       effect: `
         You gain a +10 foot \\glossterm{magic bonus} to your land speed.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Accelerated Strike",
+      name: 'Accelerated Strike',
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
@@ -190,13 +190,13 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The accuracy penalty is reduced to -2.` },
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Temporal Duplicate",
+      name: 'Temporal Duplicate',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         When you cast this spell, you increase your \\glossterm{fatigue level} by one.
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -220,9 +220,9 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Time Hop",
+      name: 'Time Hop',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         You send the target into the future, causing it to temporarily cease to exist.
@@ -241,9 +241,9 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Temporal Stasis",
+      name: 'Temporal Stasis',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
         The target is placed into stasis, rendering it unconscious.
@@ -255,11 +255,11 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The maximum size of the target increases to Large.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Time Lock -- Mind",
+      name: 'Time Lock -- Mind',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
@@ -270,11 +270,11 @@ export const chronomancy: MysticSphere = {
         This removes any excess conditions and reapplies any missing conditions.
       `,
       rank: 4,
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Time Lock -- Location",
+      name: 'Time Lock -- Location',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
@@ -286,11 +286,11 @@ export const chronomancy: MysticSphere = {
         If the locked location is occupied, the creature reappears in the closest open space.
       `,
       rank: 2,
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Time Lock -- Health",
+      name: 'Time Lock -- Health',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
@@ -301,11 +301,11 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by two.
       `,
       rank: 4,
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Time Lock -- Vitality",
+      name: 'Time Lock -- Vitality',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
@@ -317,11 +317,11 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by four.
       `,
       rank: 7,
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Time Stop",
+      name: 'Time Stop',
 
       effect: `
         You can take two full rounds of actions immediately.
@@ -338,29 +338,29 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Evasion",
+      name: 'Evasion',
 
       effect: `
         You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 3,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Minor Acceleration",
+      name: 'Minor Acceleration',
 
       effect: `
         You can take two \\glossterm{minor actions} each round instead of one.
         As normal, you cannot take the same minor action twice in the same round.
       `,
       rank: 6,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Instant Analysis",
+      name: 'Instant Analysis',
 
       effect: `
         You accelerate your mind to incredible speed, allowing you to process information quickly.
@@ -377,7 +377,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Timeseal",
+      name: 'Timeseal',
 
       // effect: '',
       // narrative: '',
@@ -395,21 +395,22 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Certain Timeseal",
+      name: 'Certain Timeseal',
 
       functionsLike: {
-        name: "timeseal",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
+        name: 'timeseal',
+        exceptThat:
+          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.',
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Accelerated Draw",
+      name: 'Accelerated Draw',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
@@ -422,14 +423,14 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You gain a +1 accuracy bonus with the strike.",
-        5: "The accuracy bonus increases to +2.",
-        7: "The accuracy bonus increases to +3.",
+        3: 'You gain a +1 accuracy bonus with the strike.',
+        5: 'The accuracy bonus increases to +2.',
+        7: 'The accuracy bonus increases to +3.',
       },
     },
 
     {
-      name: "Quickchange",
+      name: 'Quickchange',
 
       effect: `
         You can change your appearance or equipment with superhuman speed.
@@ -448,34 +449,34 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You can perform any two of the listed actions.",
-        6: "You can perform any combination of the listed actions.",
+        4: 'You can perform any two of the listed actions.',
+        6: 'You can perform any combination of the listed actions.',
       },
     },
 
     {
-      name: "Expeditious Retreat",
+      name: 'Expeditious Retreat',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain a +10 foot \\glossterm{magic bonus} to your land speed for the duration of the movement.
         `,
-        name: "sprint",
+        name: 'sprint',
       },
       narrative: `
         You accelerate your body to flee from combat with incredible alacrity.
       `,
       rank: 1,
       scaling: {
-        3: "The speed bonus increases to +20 feet.",
-        5: "The speed bonus increases to +30 feet.",
-        7: "The speed bonus increases to +40 feet.",
+        3: 'The speed bonus increases to +20 feet.',
+        5: 'The speed bonus increases to +30 feet.',
+        7: 'The speed bonus increases to +40 feet.',
       },
     },
 
     {
-      name: "Sudden Expiration",
+      name: 'Sudden Expiration',
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
@@ -488,7 +489,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: "Accelerated Legerdemain",
+      name: 'Accelerated Legerdemain',
 
       effect: `
         If you are \\glossterm{trained} with the Sleight of Hand skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -503,7 +504,7 @@ export const chronomancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
@@ -515,7 +516,7 @@ export const chronomancy: MysticSphere = {
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 1,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
@@ -524,10 +525,10 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'rewind damage',
-        exceptThat: "The recovery increases to 4d6 + \\glossterm{power}.",
+        exceptThat: 'The recovery increases to 4d6 + \\glossterm{power}.',
       },
       rank: 5,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -544,7 +545,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
@@ -559,7 +560,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // +1r for +2 acc
     {
@@ -574,7 +575,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // +3r for +4 acc
     {
@@ -589,14 +590,14 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
   rituals: [
     {
-      name: "Gentle Repose",
+      name: 'Gentle Repose',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object within \\shortrange.
         Time does not pass for the target, preventing it from decaying or spoiling.
@@ -608,7 +609,7 @@ export const chronomancy: MysticSphere = {
         % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
   ],
 };

@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const prayer: MysticSphere = {
-  name: "Prayer",
-  shortDescription: "Grant divine blessings to aid allies and improve combat prowess.",
-  sources: ["divine"],
+  name: 'Prayer',
+  shortDescription: 'Grant divine blessings to aid allies and improve combat prowess.',
+  sources: ['divine'],
 
   cantrips: [
     {
@@ -11,11 +11,11 @@ export const prayer: MysticSphere = {
         Choose one adjacent \\glossterm{ally}.
         The target gains a +1 bonus to \\glossterm{accuracy} this round.
       `,
-      name: "Boon of Competence",
+      name: 'Boon of Competence',
       scaling: {
-        2: "The range increases to \\shortrange.",
-        4: "The bonus increases to +2.",
-        6: "The range increases to \\medrange.",
+        2: 'The range increases to \\shortrange.',
+        4: 'The bonus increases to +2.',
+        6: 'The range increases to \\medrange.',
       },
     },
     {
@@ -24,29 +24,29 @@ export const prayer: MysticSphere = {
         The target gains a +1 bonus to \\glossterm{defenses} this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
-      name: "Boon of Protection",
+      name: 'Boon of Protection',
       scaling: {
-        2: "The range increases to \\shortrange.",
-        4: "The bonus increases to +2.",
-        6: "The range increases to \\medrange.",
+        2: 'The range increases to \\shortrange.',
+        4: 'The bonus increases to +2.',
+        6: 'The range increases to \\medrange.',
       },
       tags: ['Swift'],
     },
   ],
   spells: [
     {
-      name: "Blessing of Freedom",
+      name: 'Blessing of Freedom',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
         Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
       `,
       rank: 4,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Recovery",
+      name: 'Blessing of Recovery',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -56,11 +56,11 @@ export const prayer: MysticSphere = {
       scaling: {
         6: `Each target removes two additional vital wounds instead of only one.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Regeneration",
+      name: 'Blessing of Regeneration',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -73,22 +73,22 @@ export const prayer: MysticSphere = {
           The healing increases by +1d for each rank beyond 5.
         `,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Proficiency",
+      name: 'Blessing of Proficiency',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target becomes proficient with one additional weapon group, including exotic weapons from that weapon group.
       `,
       rank: 1,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Boon of Precision",
+      name: 'Boon of Precision',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -106,7 +106,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Boon of Deadly Fortune",
+      name: 'Boon of Deadly Fortune',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -122,7 +122,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Boon of Invulnerability",
+      name: 'Boon of Invulnerability',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -130,11 +130,11 @@ export const prayer: MysticSphere = {
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
       `,
       rank: 6,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Boon of Avoidance",
+      name: 'Boon of Avoidance',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -146,11 +146,11 @@ export const prayer: MysticSphere = {
         5: `The bonus increases to +3.`,
         7: `The bonus increases to +4.`,
       },
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Blessing of the Purified Body",
+      name: 'Blessing of the Purified Body',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -158,11 +158,11 @@ export const prayer: MysticSphere = {
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
       `,
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Mental Clarity",
+      name: 'Blessing of Mental Clarity',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -170,11 +170,11 @@ export const prayer: MysticSphere = {
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
       `,
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Potency",
+      name: 'Blessing of Potency',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -185,11 +185,11 @@ export const prayer: MysticSphere = {
         4: `The bonus increases to +4.`,
         6: `The bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Perseverance",
+      name: 'Blessing of Perseverance',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -201,11 +201,11 @@ export const prayer: MysticSphere = {
         4: `The spell can negate two conditions before ending.`,
         6: `The spell can negate three conditions before ending.`,
       },
-      type: "Attune (deep, target)",
+      type: 'Attune (deep, target)',
     },
 
     {
-      name: "Boon of Cleansing",
+      name: 'Boon of Cleansing',
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
@@ -217,7 +217,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Cleansing Benediction",
+      name: 'Cleansing Benediction',
 
       effect: `
         You and each \\glossterm{ally} within a \\smallarea radius from you can each remove a \\glossterm{condition}.
@@ -226,7 +226,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Blessing of Physical Prowess",
+      name: 'Blessing of Physical Prowess',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -239,11 +239,11 @@ export const prayer: MysticSphere = {
         5: `The bonus increases to +3.`,
         7: `The bonus increases to +4.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Endurance",
+      name: 'Blessing of Endurance',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -256,33 +256,33 @@ export const prayer: MysticSphere = {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Divine Warning",
+      name: 'Blessing of Divine Warning',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target is never \\unaware or \\partiallyunaware.
       `,
       rank: 6,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Cleansing Renewal",
+      name: 'Blessing of Cleansing Renewal',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
       `,
       rank: 7,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Mastery",
+      name: 'Blessing of Mastery',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -300,11 +300,11 @@ export const prayer: MysticSphere = {
           In addition, the bonus to power increases to +8.
         `,
       },
-      type: "Attune (deep, target)",
+      type: 'Attune (deep, target)',
     },
 
     {
-      name: "Blessing of Resilience",
+      name: 'Blessing of Resilience',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -315,11 +315,11 @@ export const prayer: MysticSphere = {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Blessing of Vitality",
+      name: 'Blessing of Vitality',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -327,11 +327,11 @@ export const prayer: MysticSphere = {
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
       rank: 6,
-      type: "Attune (deep, target)",
+      type: 'Attune (deep, target)',
     },
 
     {
-      name: "Boon of Shielding",
+      name: 'Boon of Shielding',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
@@ -339,12 +339,12 @@ export const prayer: MysticSphere = {
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 1,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Empowered Boon of Shielding",
+      name: 'Empowered Boon of Shielding',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
@@ -352,7 +352,7 @@ export const prayer: MysticSphere = {
         In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 5,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 4.' },
       tags: ['Swift'],
     },
 
@@ -383,7 +383,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: "Curse of Fugue",
+      name: 'Curse of Fugue',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -395,11 +395,11 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
     {
-      name: "Intense Curse of Fugue",
+      name: 'Intense Curse of Fugue',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -411,11 +411,11 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
     {
-      name: "Curse of Sloth",
+      name: 'Curse of Sloth',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -428,11 +428,11 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
     {
-      name: "Efficient Curse of Sloth",
+      name: 'Efficient Curse of Sloth',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -444,11 +444,11 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
     {
-      name: "Curse of Blindness",
+      name: 'Curse of Blindness',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -461,11 +461,11 @@ export const prayer: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
     {
-      name: "Holy Blades",
+      name: 'Holy Blades',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
@@ -473,10 +473,10 @@ export const prayer: MysticSphere = {
         In addition, all damage they deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
       `,
       rank: 1,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
     {
-      name: "Curse of Flammability",
+      name: 'Curse of Flammability',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -493,15 +493,15 @@ export const prayer: MysticSphere = {
       },
 
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      scaling: 'accuracy',
+      tags: ['Curse'],
     },
   ],
   rituals: [
     {
-      name: "Blessing of Fortification",
+      name: 'Blessing of Fortification',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
         Unlike most abilities, this ritual can affect individual parts of a whole object.
@@ -512,117 +512,117 @@ export const prayer: MysticSphere = {
         Otherwise, it lasts for one year.
         `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Enduring Fortification",
+      name: 'Enduring Fortification',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "blessing of fortification",
+        name: 'blessing of fortification',
       },
       rank: 4,
     },
 
     {
-      name: "Enduring Empowered Fortification",
+      name: 'Enduring Empowered Fortification',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "empowered fortification",
+        name: 'empowered fortification',
       },
       rank: 5,
     },
 
     {
-      name: "Empowered Fortification",
+      name: 'Empowered Fortification',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the bonus to \\glossterm{damage resistance} increases to 10.
         `,
-        name: "blessing of fortification",
+        name: 'blessing of fortification',
       },
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Supreme Fortification",
+      name: 'Supreme Fortification',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the bonus to \\glossterm{damage resistance} increases to 15.
         `,
-        name: "blessing of fortification",
+        name: 'blessing of fortification',
       },
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Bless Water",
+      name: 'Bless Water',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
         Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm{undead} or an evil \\glossterm{planeforged}.
         `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Permanent Bless Water",
+      name: 'Permanent Bless Water',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
         `,
-        name: "bless water",
+        name: 'bless water',
       },
       rank: 3,
     },
 
     {
-      name: "Curse Water",
+      name: 'Curse Water',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
         Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm{planeforged}.
         `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Permanent Curse Water",
+      name: 'Permanent Curse Water',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
         `,
-        name: "curse water",
+        name: 'curse water',
       },
       rank: 3,
     },
 
     {
-      name: "Blessing of Purification",
+      name: 'Blessing of Purification',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         All food and water in a single square within \\shortrange becomes purified.
         Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.

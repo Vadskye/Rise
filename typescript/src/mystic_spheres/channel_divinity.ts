@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const channelDivinity: MysticSphere = {
-  name: "Channel Divinity",
-  shortDescription: "Invoke divine power to smite foes and gain power.",
-  sources: ["divine"],
+  name: 'Channel Divinity',
+  shortDescription: 'Invoke divine power to smite foes and gain power.',
+  sources: ['divine'],
 
   cantrips: [
     {
@@ -16,14 +16,14 @@ export const channelDivinity: MysticSphere = {
 
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
-      name: "Testament",
+      name: 'Testament',
       scaling: {
-        2: "The range increases to \\rngmed.",
+        2: 'The range increases to \\rngmed.',
         4: `
           If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
           If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
         `,
-        6: "The range increases to \\rnglong.",
+        6: 'The range increases to \\rnglong.',
       },
     },
     {
@@ -33,21 +33,21 @@ export const channelDivinity: MysticSphere = {
         Each deity has their own color or color combination.
         Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
       `,
-      name: "Divine Radiance",
+      name: 'Divine Radiance',
       narrative: `
         You call on the majesty of your deity or alignment to radiate into the world.
       `,
       scaling: {
-        2: "The maximum radius of bright illumination increases to 30 feet.",
-        4: "The maximum radius of bright illumination increases to 60 feet.",
-        6: "The maximum radius of bright illumination increases to 120 feet.",
+        2: 'The maximum radius of bright illumination increases to 30 feet.',
+        4: 'The maximum radius of bright illumination increases to 60 feet.',
+        6: 'The maximum radius of bright illumination increases to 120 feet.',
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
   ],
   spells: [
     {
-      name: "Deliverance of the Faithful",
+      name: 'Deliverance of the Faithful',
 
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
@@ -58,12 +58,12 @@ export const channelDivinity: MysticSphere = {
         Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
       tags: [],
     },
 
     {
-      name: "Triumph of the Faithful",
+      name: 'Triumph of the Faithful',
 
       effect: `
         At the end of the next round, you become infused with divine power.
@@ -71,15 +71,15 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The accuracy bonus increases to +4.",
-        5: "The accuracy bonus increases to +5.",
-        7: "The accuracy bonus increases to +6.",
+        3: 'The accuracy bonus increases to +4.',
+        5: 'The accuracy bonus increases to +5.',
+        7: 'The accuracy bonus increases to +6.',
       },
       tags: [],
     },
 
     {
-      name: "Divine Authority",
+      name: 'Divine Authority',
 
       effect: `
         If you are \\glossterm{trained} with the Persuasion skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -91,11 +91,11 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Agent of the Divine",
+      name: 'Agent of the Divine',
 
       effect: `
         You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
@@ -112,11 +112,11 @@ export const channelDivinity: MysticSphere = {
           In addition, the bonus to power increases to +16.
         `,
       },
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Endurance of the Faithful",
+      name: 'Endurance of the Faithful',
 
       effect: `
         You gain a +2 bonus to all defenses and a +2 bonus to \\glossterm{vital rolls} this round.
@@ -128,11 +128,11 @@ export const channelDivinity: MysticSphere = {
         5: `The bonuses increase to +4.`,
         7: `The bonuses increase to +5.`,
       },
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Retributive Judgment",
+      name: 'Retributive Judgment',
 
       // +1 level for situational +2 accuracy
       attack: {
@@ -145,11 +145,11 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Retributive Judgment",
+      name: 'Mighty Retributive Judgment',
 
       // +3 levels for situational +4 accuracy, +2 levels for +1d
       attack: {
@@ -162,11 +162,11 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Word of Faith",
+      name: 'Word of Faith',
 
       attack: {
         hit: `
@@ -177,11 +177,11 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Word of Faith",
+      name: 'Massive Word of Faith',
 
       // +3r for area, +2r for +1d
       attack: {
@@ -193,11 +193,11 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Word of Fear",
+      name: 'Word of Fear',
 
       attack: {
         hit: `
@@ -209,11 +209,11 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mantle of Faith",
+      name: 'Mantle of Faith',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
@@ -224,11 +224,11 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Divine Might",
+      name: 'Divine Might',
 
       effect: `
         Your size increases by one \\glossterm{size category}.
@@ -239,11 +239,11 @@ export const channelDivinity: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Greater Divine Might",
+      name: 'Greater Divine Might',
 
       effect: `
         Your size increases by two \\glossterm{size categories}.
@@ -254,11 +254,11 @@ export const channelDivinity: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Divine Presence",
+      name: 'Divine Presence',
 
       attack: {
         crit: `The target is \\frightened by you instead of shaken.`,
@@ -271,39 +271,39 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-      type: "Attune (deep)",
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Intense Divine Presence",
+      name: 'Intense Divine Presence',
 
       functionsLike: {
-        name: "divine presence",
+        name: 'divine presence',
         exceptThat: `
           each target is \\frightened by you instead of shaken.
           On a critical hit, the target is \\panicked by you instead of frightened.
         `,
       },
       rank: 7,
-      tags: ["Emotion"],
-      type: "Attune (deep)",
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Faithful Endurance",
+      name: 'Faithful Endurance',
 
       effect: `
         You gain a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +2.`, 6: `The bonus increases to +3.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Divine Power",
+      name: 'Divine Power',
 
       effect: `
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
@@ -314,23 +314,23 @@ export const channelDivinity: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Divine Offering",
+      name: 'Divine Offering',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         When you cast this spell, you gain a \\glossterm{vital wound} that has no vital wound effect.
         In exchange, you gain a +4 \\glossterm{magic bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
       `,
       rank: 6,
-      type: "Sustain (free)",
+      type: 'Sustain (free)',
     },
 
     {
-      name: "Divine Seal",
+      name: 'Divine Seal',
 
       effect: `
         Choose a \\medarea radius \\glossterm{zone} within \\longrange.
@@ -338,13 +338,13 @@ export const channelDivinity: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "You can choose to create a \\largearea radius instead.",
+        6: 'You can choose to create a \\largearea radius instead.',
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Banish Anathema",
+      name: 'Banish Anathema',
 
       attack: {
         hit: `
@@ -359,22 +359,22 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Unwavering Faith",
+      name: 'Unwavering Faith',
 
       effect: `
         You are \\glossterm{immune} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} attacks.
       `,
       rank: 5,
-      type: "Attune",
+      type: 'Attune',
     },
 
     // -1r for short range, +1r for retributive
     {
-      name: "Fearful Judgment",
+      name: 'Fearful Judgment',
 
       attack: {
         hit: `
@@ -387,10 +387,10 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Intense Fearful Judgment",
+      name: 'Intense Fearful Judgment',
 
       attack: {
         hit: `
@@ -403,26 +403,26 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
   rituals: [
     {
-      name: "Consecration",
+      name: 'Consecration',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         The area within an \\medarea radius \\glossterm{zone} from your location becomes sacred to your deity.
         % TODO: what cares about consecration?
         This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Permanent Consecration",
+      name: 'Permanent Consecration',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         The area within an \\medarea radius \\glossterm{zone} from your location becomes permanently sacred to your deity.
       `,
@@ -430,9 +430,9 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Divine Transit",
+      name: 'Divine Transit',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose a destination up to 100 miles away from you on your current plane.
         Up to five Medium or smaller ritual participants are teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
@@ -448,9 +448,9 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: "Commune",
+      name: 'Commune',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         You ask your source of divine power a single yes or no question.
         You receive a correct answer to that question to the limit of that source's knowledge, which is usually quite extensive.

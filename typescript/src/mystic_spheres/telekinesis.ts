@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const telekinesis: MysticSphere = {
-  name: "Telekinesis",
-  shortDescription: "Manipulate kinetic energy at a distance.",
-  sources: ["arcane", "pact"],
+  name: 'Telekinesis',
+  shortDescription: 'Manipulate kinetic energy at a distance.',
+  sources: ['arcane', 'pact'],
 
   cantrips: [
     {
-      name: "Distant Hand",
+      name: 'Distant Hand',
 
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
@@ -23,11 +23,11 @@ export const telekinesis: MysticSphere = {
         4: `The distance moved increases to 30 feet.`,
         6: `The distance moved increases to 60 feet.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Gentle Force",
+      name: 'Gentle Force',
 
       effect: `
         You can exert minor force on objects and creatures around you.
@@ -41,11 +41,11 @@ export const telekinesis: MysticSphere = {
         4: `The range increases to \\longrange`,
         6: `The force increases to lift a Small weight object, or to push a Medium weight object.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Personal Ward",
+      name: 'Personal Ward',
 
       effect: `
         You are \\trait{impervious} to \\glossterm{physical damage} this round.
@@ -53,16 +53,16 @@ export const telekinesis: MysticSphere = {
       `,
       // narrative: '',
       scaling: {
-        2: "You also gain a +1 bonus to your Armor and Reflex defenses.",
-        4: "The defense bonuses increase to +2.",
-        6: "The defense bonuses increase to +3.",
+        2: 'You also gain a +1 bonus to your Armor and Reflex defenses.',
+        4: 'The defense bonuses increase to +2.',
+        6: 'The defense bonuses increase to +3.',
       },
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
   ],
   spells: [
     {
-      name: "Interposing Force",
+      name: 'Interposing Force',
 
       // price as one rank cheaper than slowed; it's better against low-Strength targets, but worse in
       // general
@@ -78,22 +78,23 @@ export const telekinesis: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Intense Interposing Force",
+      name: 'Intense Interposing Force',
 
       functionsLike: {
-        name: "interposing force",
-        exceptThat: "the \\glossterm{difficulty value} of the Strength check increases to 10, or to 15 on a critical hit.",
+        name: 'interposing force',
+        exceptThat:
+          'the \\glossterm{difficulty value} of the Strength check increases to 10, or to 15 on a critical hit.',
       },
       rank: 7,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Fling Object",
+      name: 'Fling Object',
 
       attack: {
         hit: `
@@ -110,67 +111,68 @@ export const telekinesis: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Multifling",
+      name: 'Multifling',
 
       functionsLike: {
-        name: "fling object",
-        exceptThat: "you can fling two objects, each at a different target within range. In addition, the damage increases to 2d8.",
+        name: 'fling object',
+        exceptThat:
+          'you can fling two objects, each at a different target within range. In addition, the damage increases to 2d8.',
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Fling Object",
+      name: 'Mighty Fling Object',
 
       functionsLike: {
-        name: "fling object",
-        exceptThat: "the damage increases to 4d8.",
+        name: 'fling object',
+        exceptThat: 'the damage increases to 4d8.',
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Force Extension",
+      name: 'Force Extension',
 
       effect: `
         Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
       `,
 
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Force Extension",
+      name: 'Mass Force Extension',
 
       functionsLike: {
         mass: true,
-        name: "Force Extension",
+        name: 'Force Extension',
       },
       // narrative: '',
       rank: 5,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Rapid Reload",
+      name: 'Rapid Reload',
 
       effect: `
         You can reload weapons from the crossbow weapon group as a \\glossterm{minor action} instead of as a standard action, and without requiring any \\glossterm{free hands}.
         Whenever you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Blastwave",
+      name: 'Blastwave',
 
       attack: {
         hit: `
@@ -182,11 +184,11 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Blastwave",
+      name: 'Intense Blastwave',
 
       // +2r for 30' knockback, +1r for med cone
       attack: {
@@ -199,11 +201,11 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mind Shove",
+      name: 'Mind Shove',
       // +1r for a size-limited r1 debuff that sometimes, but not always, has extra damage attached
       attack: {
         hit: `
@@ -218,7 +220,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Mighty Mind Shove",
+      name: 'Mighty Mind Shove',
       // +1r for long range, +2r for full damage, +1r for size limit
       attack: {
         hit: `
@@ -233,7 +235,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Toss Foe",
+      name: 'Toss Foe',
 
       attack: {
         hit: `
@@ -246,22 +248,23 @@ export const telekinesis: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Intense Toss Foe",
+      name: 'Intense Toss Foe',
 
       functionsLike: {
         name: 'toss foe',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the knockback distance increases to 60 feet. In addition, the damage increases to 2d8.",
+        exceptThat:
+          'the knockback distance increases to 60 feet. In addition, the damage increases to 2d8.',
       },
       // narrative: '',
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Telekinetic Lift",
+      name: 'Telekinetic Lift',
 
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
@@ -274,15 +277,15 @@ export const telekinesis: MysticSphere = {
         5: `The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
         7: `The bonus increases to +10.`,
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Mind Parry",
+      name: 'Mind Parry',
 
       functionsLike: {
-        name: "total defense",
-        abilityType: "ability",
+        name: 'total defense',
+        abilityType: 'ability',
         exceptThat: `
           whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
           It cannot choose to reduce its accuracy or damage against itself.
@@ -294,7 +297,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Levitate",
+      name: 'Levitate',
 
       effect: `
         You gain a 15 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flying}).
@@ -302,11 +305,11 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The maximum height above the surface increases to 30 feet.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Wall of Force",
+      name: 'Wall of Force',
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
@@ -318,16 +321,16 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\medarealong wall instead.",
-        5: "You can choose to create a \\largearealong wall instead.",
-        7: "You can choose to create a \\hugearealong wall instead.",
+        3: 'You can choose to create a \\medarealong wall instead.',
+        5: 'You can choose to create a \\largearealong wall instead.',
+        7: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Forcecage",
+      name: 'Forcecage',
 
       effect: `
         You slowly create a 10 ft.\\ cube of telekinetic force within \\medrange.
@@ -342,11 +345,11 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 7,
       tags: ['Barrier'],
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Animated Weapon",
+      name: 'Animated Weapon',
 
       effect: `
         Make a \\glossterm{strike} using a weapon you hold in a single hand.
@@ -363,7 +366,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Mind Arrow",
+      name: 'Mind Arrow',
 
       effect: `
         You can make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
@@ -381,7 +384,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: "Floating Armament",
+      name: 'Floating Armament',
 
       effect: `
         You can hold a light or medium weapon or shield without using a free hand.
@@ -390,11 +393,11 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 3,
       tags: [],
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Greater Floating Armament",
+      name: 'Greater Floating Armament',
 
       effect: `
         You can hold any weapon or shield other than a tower shield without using a free hand.
@@ -403,11 +406,11 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 7,
       tags: [],
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Kinetic Shield",
+      name: 'Kinetic Shield',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
@@ -418,26 +421,26 @@ export const telekinesis: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Kinetic Shield",
+      name: 'Mass Kinetic Shield',
 
       functionsLike: {
         mass: true,
-        name: "kinetic shield",
+        name: 'kinetic shield',
       },
       rank: 3,
       scaling: {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Retributive Kinetic Shield",
+      name: 'Retributive Kinetic Shield',
 
       effect: `
         You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
@@ -447,11 +450,11 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The bonus increases to +32.` },
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Kinetic Shell",
+      name: 'Kinetic Shell',
 
       effect: `
         You surround yourself with two layers of shielding that reduce the power of physical attacks against you.
@@ -466,17 +469,17 @@ export const telekinesis: MysticSphere = {
         5: `The damage reduction increases to 20.`,
         7: `The damage reduction increases to 40.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Repulsion Field",
+      name: 'Repulsion Field',
 
       // TODO: correct rank
       attack: {
         crit:
-          "You also \\glossterm{knockback} the target 15 feet in the direction that it tried to enter the area from.",
+          'You also \\glossterm{knockback} the target 15 feet in the direction that it tried to enter the area from.',
         hit: `
           Each target is unable to enter the spell's area for the rest of the round.
           The rest of its movement in the current phase is cancelled.
@@ -488,12 +491,12 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Compression",
+      name: 'Compression',
 
       attack: {
         hit: `
@@ -504,11 +507,11 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Implosion",
+      name: 'Implosion',
 
       attack: {
         hit: `
@@ -520,9 +523,8 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
-  rituals: [
-  ],
+  rituals: [],
 };

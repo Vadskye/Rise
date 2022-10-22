@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const revelation: MysticSphere = {
-  name: "Revelation",
-  shortDescription: "Share visions of the present and future, granting insight or combat prowess.",
-  sources: ["arcane", "divine", "nature"],
+  name: 'Revelation',
+  shortDescription: 'Share visions of the present and future, granting insight or combat prowess.',
+  sources: ['arcane', 'divine', 'nature'],
 
   cantrips: [
     {
-      name: "Reveal Sensation",
+      name: 'Reveal Sensation',
 
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to Awareness checks.
@@ -20,7 +20,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Reveal Truth",
+      name: 'Reveal Truth',
 
       effect: `
         You may reroll one Knowledge check you made last round.
@@ -35,7 +35,7 @@ export const revelation: MysticSphere = {
   ],
   spells: [
     {
-      name: "Weapon Proficiency",
+      name: 'Weapon Proficiency',
 
       effect: `
         You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
@@ -46,11 +46,11 @@ export const revelation: MysticSphere = {
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Armor Proficiency",
+      name: 'Armor Proficiency',
 
       effect: `
         You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
@@ -61,25 +61,25 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Purge Invisibility",
+      name: 'Purge Invisibility',
 
       effect: `
         All \\glossterm{invisibility} effects within a \\largearea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to affect a \\hugearea radius instead.",
-        6: "You can choose to affect a \\gargarea radius instead.",
+        4: 'You can choose to affect a \\hugearea radius instead.',
+        6: 'You can choose to affect a \\gargarea radius instead.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "True Strike",
+      name: 'True Strike',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -97,7 +97,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "True Cast",
+      name: 'True Cast',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -114,7 +114,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Precognitive Offense",
+      name: 'Precognitive Offense',
 
       effect: `
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
@@ -128,11 +128,11 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Armorbreak Sight",
+      name: 'Armorbreak Sight',
 
       effect: `
         Whenever you make a \\glossterm{strike} that would attack a creature's Armor defense, you may instead attack that creature's Reflex defense.
@@ -144,17 +144,17 @@ export const revelation: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "Applying this effect to a strike does not prevent you from applying it again.",
+        6: 'Applying this effect to a strike does not prevent you from applying it again.',
       },
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Mass Precognitive Offense",
+      name: 'Mass Precognitive Offense',
 
       functionsLike: {
         mass: true,
-        name: "Precognitive Offense",
+        name: 'Precognitive Offense',
       },
       // narrative: '',
       rank: 3,
@@ -162,11 +162,11 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Precognitive Defense",
+      name: 'Precognitive Defense',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
@@ -177,15 +177,15 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Precognitive Defense",
+      name: 'Mass Precognitive Defense',
 
       functionsLike: {
         mass: true,
-        name: "Precognitive Defense",
+        name: 'Precognitive Defense',
       },
       // narrative: '',
       rank: 3,
@@ -193,11 +193,11 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Discern Lies",
+      name: 'Discern Lies',
 
       attack: {
         hit: `When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
@@ -210,24 +210,24 @@ export const revelation: MysticSphere = {
       },
 
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Subtle"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'accuracy',
+      tags: ['Subtle'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Precognitive Competence",
+      name: 'Precognitive Competence',
 
       effect: `
         You gain a +2 \\glossterm{magic bonus} to all skills.
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +3.`, 7: `The bonus increases to +4.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Gift of Knowledge",
+      name: 'Gift of Knowledge',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to all Knowledge skills (see \\pcref{Knowledge}).
@@ -235,11 +235,11 @@ export const revelation: MysticSphere = {
       `,
       rank: 4,
       scaling: { 6: `The bonus increases to +5.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Blindsense",
+      name: 'Blindsense',
 
       effect: `
         You gain \\trait{blindsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
@@ -250,10 +250,10 @@ export const revelation: MysticSphere = {
         5: `The range increases to 90 feet.`,
         7: `The range increases to 120 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Blindsight",
+      name: 'Blindsight',
 
       effect: `
         You gain \\trait{blindsight} with a 15 foot range, allowing you to see without light (see \\pcref{Blindsight}).
@@ -264,53 +264,53 @@ export const revelation: MysticSphere = {
         5: `The range increases to 30 feet.`,
         7: `The range increases to 60 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Blindsense",
+      name: 'Mass Blindsense',
 
       functionsLike: {
         mass: true,
-        name: "Blindsense",
+        name: 'Blindsense',
       },
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The range increases to 60 feet.",
-        7: "The range increases to 120 feet.",
+        5: 'The range increases to 60 feet.',
+        7: 'The range increases to 120 feet.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Mass Blindsight",
+      name: 'Mass Blindsight',
 
       functionsLike: {
         mass: true,
-        name: "Blindsight",
+        name: 'Blindsight',
       },
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "The range increases to 30 feet.",
+        7: 'The range increases to 30 feet.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Foresight",
+      name: 'Foresight',
 
       effect: `
         You are never \\unaware or \\partiallyunaware.
       `,
 
       rank: 6,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Reveal Weakness",
+      name: 'Reveal Weakness',
 
       // TODO: unclear rank (1.25??)
       attack: {
@@ -324,36 +324,38 @@ export const revelation: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Intense Reveal Weakness",
+      name: 'Intense Reveal Weakness',
 
       functionsLike: {
         name: 'reveal weakness',
         exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
       },
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Twinned True Strike",
+      name: 'Twinned True Strike',
 
       functionsLike: {
-        name: "True Strike",
-        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+        name: 'True Strike',
+        exceptThat:
+          'it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.',
       },
       rank: 6,
     },
 
     {
-      name: "Twinned True Cast",
+      name: 'Twinned True Cast',
 
       functionsLike: {
-        name: "True Cast",
-        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+        name: 'True Cast',
+        exceptThat:
+          'it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.',
       },
       rank: 7,
     },
@@ -362,10 +364,10 @@ export const revelation: MysticSphere = {
     // unlikely, and it's useless if you can *already* take advantage of the
     // vulnerability, so it's closer to a r1 debuff?
     {
-      name: "Reveal Vulnerability",
+      name: 'Reveal Vulnerability',
 
       attack: {
-        crit: "The condition must be removed twice before the effect ends.",
+        crit: 'The condition must be removed twice before the effect ends.',
         hit: `
           As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
           Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
@@ -375,11 +377,11 @@ export const revelation: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Myriad Visions",
+      name: 'Myriad Visions',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -392,11 +394,11 @@ export const revelation: MysticSphere = {
         Your foe sees visions of possible futures that confuse its ability to determine reality.
       `,
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Blinding Visions",
+      name: 'Blinding Visions',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -412,11 +414,11 @@ export const revelation: MysticSphere = {
         Your foe sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
       `,
       rank: 7,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Mystic Eye",
+      name: 'Mystic Eye',
 
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
@@ -439,12 +441,12 @@ export const revelation: MysticSphere = {
           The maximum distance before the sensor is destroyed increases to 480 feet.
         `,
       },
-      tags: ["Scrying"],
-      type: "Sustain (minor)",
+      tags: ['Scrying'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Clairvoyance",
+      name: 'Clairvoyance',
 
       // original targets: one unoccupied square within \medrange (see text)
       effect: `
@@ -460,13 +462,13 @@ export const revelation: MysticSphere = {
         If undisturbed, the sensor floats in the air in its position.
       `,
       rank: 5,
-      tags: ["Scrying"],
+      tags: ['Scrying'],
       // The use of attune instead of Sustain is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off.
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Reverse Scrying",
+      name: 'Reverse Scrying',
 
       effect: `
         Choose one magical sensor within \\medrange.
@@ -482,12 +484,12 @@ export const revelation: MysticSphere = {
         5: `The range increases to \\longrange.`,
         7: `The range increases to \\distrange.`,
       },
-      tags: ["Scrying"],
-      type: "Sustain (minor)",
+      tags: ['Scrying'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Longshot",
+      name: 'Longshot',
 
       effect: `
         You reduce your \\glossterm{longshot penalty} by 1.
@@ -497,26 +499,26 @@ export const revelation: MysticSphere = {
         5: `The penalty reduction increases to 2.`,
         7: `The penalty reduction increases to 3.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Longshot",
+      name: 'Mass Longshot',
 
       functionsLike: {
         mass: true,
-        name: "Longshot",
+        name: 'Longshot',
       },
       // narrative: '',
       rank: 5,
       scaling: {
         7: `The penalty reduction increases to 2.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Enhanced Senses",
+      name: 'Enhanced Senses',
 
       effect: `
         If you are \\glossterm{trained} with the Awareness skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -528,11 +530,11 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Social Intuition",
+      name: 'Social Intuition',
 
       effect: `
         If you are \\glossterm{trained} with the Social Insight skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -544,11 +546,11 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Sensory Chain",
+      name: 'Sensory Chain',
 
       attack: {
         hit: `
@@ -566,8 +568,8 @@ export const revelation: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "accuracy",
-      type: "Sustain (standard)",
+      scaling: 'accuracy',
+      type: 'Sustain (standard)',
     },
 
     {
@@ -585,27 +587,27 @@ export const revelation: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
-      type: "Sustain (standard)",
+      scaling: 'accuracy',
+      type: 'Sustain (standard)',
     },
   ],
   rituals: [
     {
-      name: "Reveal True Form",
+      name: 'Reveal True Form',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose one creature within \\longrange.
         You can see the target's true form, regardless of any shapechanging or illusion effects.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Augury",
+      name: 'Augury',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         You receive a limited glimpse into your immediate future.
         When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
@@ -627,38 +629,38 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Greater Augury",
+      name: 'Greater Augury',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
         the augury considers events up to 4 hours into your future when evaluating the outcomes of your plan.
         `,
-        name: "augury",
+        name: 'augury',
       },
       rank: 4,
     },
 
     {
-      name: "Supreme Augury",
+      name: 'Supreme Augury',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
         the augury considers events up to 12 hours into your future when evaluating the outcomes of your plan.
         `,
-        name: "augury",
+        name: 'augury',
       },
       rank: 6,
     },
 
     {
-      name: "Alarm",
+      name: 'Alarm',
 
       // original targets: one unoccupied square within \medrange
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in the target location.
         The sensor passively observes its surroundings.
@@ -671,14 +673,14 @@ export const revelation: MysticSphere = {
         `,
 
       rank: 1,
-      tags: ["Scrying"],
-      type: "Attune",
+      tags: ['Scrying'],
+      type: 'Attune',
     },
 
     {
-      name: "Locate Creature",
+      name: 'Locate Creature',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         When you perform this ritual, choose a creature.
         You must have seen the chosen creature in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
@@ -692,25 +694,25 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Locate Object",
+      name: 'Locate Object',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
         it locates objects instead of creatures.
         Objects currently being worn or carried by creatures cannot be found by this ritual.
         `,
-        name: "locate creature",
+        name: 'locate creature',
       },
       rank: 3,
     },
 
     {
-      name: "Read Magic",
+      name: 'Read Magic',
 
       // original targets: yourself
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
         This can allow you to read ritual books and similar objects created by other creatures.
@@ -718,13 +720,13 @@ export const revelation: MysticSphere = {
         `,
 
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Discern Location",
+      name: 'Discern Location',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         When you perform this ritual, choose a creature or object.
         You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
@@ -741,40 +743,40 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Distant Discern Location",
+      name: 'Distant Discern Location',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
 
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
         The creature or object must simply be on the same plane as you.
         `,
-        name: "discern location",
+        name: 'discern location',
       },
       rank: 4,
     },
 
     {
-      name: "Interplanar Discern Location",
+      name: 'Interplanar Discern Location',
 
       // original targets: any creature or object on the same plane as you
-      castingTime: "24 hours",
+      castingTime: '24 hours',
 
       functionsLike: {
         exceptThat: `
         the target does not have to be on the same plane as you.
         `,
-        name: "discern location",
+        name: 'discern location',
       },
       rank: 6,
     },
 
     {
-      name: "Sending",
+      name: 'Sending',
 
       // original targets: any creature within 100 miles of you
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
         However,  must specify your target with a precise mental image of its appearance.
@@ -789,47 +791,47 @@ export const revelation: MysticSphere = {
         `,
 
       rank: 3,
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
-      name: "Distant Sending",
+      name: 'Distant Sending',
 
       // original targets: any creature on the same plane as you
-      castingTime: "one hour",
+      castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
         The target must simply be on the same plane as you.
         `,
-        name: "sending",
+        name: 'sending',
       },
       rank: 5,
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
-      name: "Interplanar Sending",
+      name: 'Interplanar Sending',
 
       // original targets: any creature
-      castingTime: "one hour",
+      castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
         the target does not have to be on the same plane as you.
         `,
-        name: "distant sending",
+        name: 'distant sending',
       },
       rank: 7,
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
-      name: "Telepathic Bond",
+      name: 'Telepathic Bond',
 
       // original targets: up to five ritual participants
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Each target can communicate mentally through telepathy with each other target.
         This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
@@ -841,46 +843,46 @@ export const revelation: MysticSphere = {
         If you \\glossterm{dismiss} the ritual, the effect ends for all targets.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Long-Distance Bond",
+      name: 'Long-Distance Bond',
 
       // original targets: up to five ritual participants
-      castingTime: "one minute",
+      castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
         the effect works at any distance.
         The communication still does not function across planes.
         `,
-        name: "telepathic bond",
+        name: 'telepathic bond',
       },
       rank: 5,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Planar Bond",
+      name: 'Planar Bond',
 
       // original targets: up to five ritual participants
-      castingTime: "one minute",
+      castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
         the effect works at any distance and across planes.
         `,
-        name: "telepathic bond",
+        name: 'telepathic bond',
       },
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Seek Legacy",
+      name: 'Seek Legacy',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         One ritual participant learns the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
       `,
@@ -888,9 +890,9 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Scry Creature",
+      name: 'Scry Creature',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       attack: {
         hit: `A scrying sensor appears in the target's space.
         This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
@@ -906,26 +908,26 @@ export const revelation: MysticSphere = {
         `,
       },
       rank: 4,
-      tags: ["Scrying"],
+      tags: ['Scrying'],
     },
 
     {
-      name: "Interplanar Scry Creature",
+      name: 'Interplanar Scry Creature',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
         the target does not have to be on the same plane as you.
         `,
-        name: "scry creature",
+        name: 'scry creature',
       },
       rank: 6,
-      tags: ["Scrying"],
+      tags: ['Scrying'],
     },
     {
-      name: "Prophetic Dream",
+      name: 'Prophetic Dream',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         The next time you fall asleep, you have a dream that foreshadows some important event or decision in your future.
         The dream may be vague or even self-contradictory, since the future is never certain, but its contents always provide some hint about what may lie ahead of you.
@@ -935,12 +937,12 @@ export const revelation: MysticSphere = {
         This can happen as if your actions prevent the event from coming to pass.
       `,
       rank: 4,
-      tags: ["Scrying"],
+      tags: ['Scrying'],
     },
     {
-      name: "Private Sanctum",
+      name: 'Private Sanctum',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{zone} centered on your location.
         This effect is permanent.
@@ -952,9 +954,9 @@ export const revelation: MysticSphere = {
       rank: 5,
     },
     {
-      name: "Scryward",
+      name: 'Scryward',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         This ritual creates a ward against scrying in a \\medarea radius \\glossterm{zone} centered on your location.
         All \\abilitytag{Scrying} effects fail to function in the area.

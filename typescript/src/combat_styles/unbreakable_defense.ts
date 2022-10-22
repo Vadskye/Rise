@@ -1,15 +1,15 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const unbreakableDefense: CombatStyle = {
-  name: "Unbreakable Defense",
-  shortDescription: "Guard yourself and your allies with careful attacks and recovery abilities.",
+  name: 'Unbreakable Defense',
+  shortDescription: 'Guard yourself and your allies with careful attacks and recovery abilities.',
 
   maneuvers: [
     {
-      name: "Parry",
+      name: 'Parry',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose a creature you can see.
@@ -18,34 +18,34 @@ export const unbreakableDefense: CombatStyle = {
           The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
         `,
-        name: "total defense",
+        name: 'total defense',
       },
       rank: 1,
-      tags: ["Swift (see text)"],
+      tags: ['Swift (see text)'],
     },
 
     {
-      name: "Flamboyant Parry",
+      name: 'Flamboyant Parry',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
         `,
-        name: "total defense",
+        name: 'total defense',
       },
       rank: 5,
-      tags: ["Swift (see text)"],
+      tags: ['Swift (see text)'],
     },
 
     {
-      name: "Redirecting Parry",
+      name: 'Redirecting Parry',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose a creature you can see.
@@ -53,42 +53,42 @@ export const unbreakableDefense: CombatStyle = {
           It cannot choose to reduce its accuracy or damage against itself.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
-        name: "total defense",
+        name: 'total defense',
       },
       rank: 3,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Reflective Parry",
+      name: 'Reflective Parry',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose a creature you can see.
           Whenever that creature misses or \\glossterm{glances} you with a \\glossterm{targeted} attack this round, it treats itself as a target of that attack in addition to any other targets.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
-        name: "total defense",
+        name: 'total defense',
       },
       rank: 7,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Brace for Impact",
+      name: 'Brace for Impact',
 
       effect: `
         You are \\trait{impervious} to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 3,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Bracing Strike",
+      name: 'Bracing Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -101,7 +101,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Second Wind",
+      name: 'Second Wind',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by two.
@@ -114,7 +114,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Shield Bash",
+      name: 'Shield Bash',
 
       effect: `
         Make a \\glossterm{strike} using a shield.
@@ -122,11 +122,11 @@ export const unbreakableDefense: CombatStyle = {
         The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
-      tags: ["Swift (see text)"],
+      tags: ['Swift (see text)'],
     },
 
     {
-      name: "Dazing Shield Slam",
+      name: 'Dazing Shield Slam',
 
       // -2 ranks due to shield limitation
       effect: `
@@ -137,7 +137,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Stunning Shield Slam",
+      name: 'Stunning Shield Slam',
 
       // -2 ranks due to shield limitation
       effect: `
@@ -148,7 +148,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Defensive Strike",
+      name: 'Defensive Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -157,11 +157,11 @@ export const unbreakableDefense: CombatStyle = {
         The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
-      tags: ["Swift (see text)"],
+      tags: ['Swift (see text)'],
     },
 
     {
-      name: "Cleanse",
+      name: 'Cleanse',
 
       effect: `
         You remove a \\glossterm{condition} affecting you.
@@ -170,7 +170,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Cleansing Strike",
+      name: 'Cleansing Strike',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -183,7 +183,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Cleansing Strike+",
+      name: 'Cleansing Strike+',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -195,7 +195,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Revitalizing Strike",
+      name: 'Revitalizing Strike',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -206,13 +206,13 @@ export const unbreakableDefense: CombatStyle = {
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       scaling: {
-        special: "The healing increases by +1d for each rank beyond 3.",
+        special: 'The healing increases by +1d for each rank beyond 3.',
       },
       rank: 3,
     },
 
     {
-      name: "Revitalizing Strike+",
+      name: 'Revitalizing Strike+',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -226,7 +226,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Steadfast Strike",
+      name: 'Steadfast Strike',
 
       effect: `
         Make a melee strike.
@@ -234,11 +234,11 @@ export const unbreakableDefense: CombatStyle = {
         The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 3,
-      tags: ["Swift (see text)"],
+      tags: ['Swift (see text)'],
     },
 
     {
-      name: "Prepared Defense",
+      name: 'Prepared Defense',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -251,7 +251,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Prepared Defense+",
+      name: 'Prepared Defense+',
 
       effect: `
         Make a strike.
@@ -263,7 +263,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: "Covering Strike",
+      name: 'Covering Strike',
 
       effect: `
         Make a \\glossterm{strike}.

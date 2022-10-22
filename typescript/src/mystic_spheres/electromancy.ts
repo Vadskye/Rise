@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const electromancy: MysticSphere = {
-  name: "Electromancy",
-  shortDescription: "Create electricity to injure and stun foes.",
-  sources: ["arcane", "nature", "pact"],
+  name: 'Electromancy',
+  shortDescription: 'Create electricity to injure and stun foes.',
+  sources: ['arcane', 'nature', 'pact'],
   // +2r for one chain, +3r for two chains
   // +3r for 5 chains (but half power to chained targets)
   specialRules: `
@@ -23,7 +23,7 @@ export const electromancy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Spark",
+      name: 'Spark',
 
       attack: {
         hit: `The target takes 2 electricity damage.`,
@@ -39,7 +39,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Magnetize",
+      name: 'Magnetize',
 
       effect: `
         Choose one Small or smaller unattended metal object within \\medrange.
@@ -52,7 +52,7 @@ export const electromancy: MysticSphere = {
         4: `The maximum size increases to Large.`,
         6: `The maximum size increases to Huge.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
   ],
   spells: [
@@ -89,7 +89,7 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: "Lightning Bolt",
+      name: 'Lightning Bolt',
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} electricity damage.`,
@@ -98,10 +98,10 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Massive Lightning Bolt",
+      name: 'Massive Lightning Bolt',
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
@@ -110,11 +110,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Electromagnetic Grasp",
+      name: 'Electromagnetic Grasp',
 
       // +1r for situational +2acc
       attack: {
@@ -127,11 +127,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Electromagnetic Grasp",
+      name: 'Mighty Electromagnetic Grasp',
 
       // +3r for situational +4acc, +2r for +1d
       attack: {
@@ -144,11 +144,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Stunning Discharge",
+      name: 'Stunning Discharge',
 
       attack: {
         crit: `Creatures that have remaining damage resistance are also affected.`,
@@ -160,11 +160,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Brain-Scrambling Discharge",
+      name: 'Brain-Scrambling Discharge',
 
       attack: {
         crit: `Creatures that have remaining damage resistance are also affected.`,
@@ -176,7 +176,7 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
@@ -188,7 +188,7 @@ export const electromancy: MysticSphere = {
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 2,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -201,12 +201,12 @@ export const electromancy: MysticSphere = {
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 6.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Arc",
+      name: 'Arc',
 
       // -1r for -1d
       attack: {
@@ -217,11 +217,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Arc",
+      name: 'Mighty Arc',
 
       // +2r for +1d, +1r to offset previous -1d, +1r for medium range
       attack: {
@@ -232,11 +232,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Electromagnetic Arc",
+      name: 'Electromagnetic Arc',
 
       // +3r for chain, +1r for metallic accuracy, -1r for -1d
       attack: {
@@ -249,11 +249,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Certain Electromagnetic Arc",
+      name: 'Certain Electromagnetic Arc',
 
       // +2r for extra +2 accuracy, +1r to offset -1d
       attack: {
@@ -266,21 +266,21 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Magnetic Blade",
+      name: 'Magnetic Blade',
 
       effect: `
         You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Chain Lightning",
+      name: 'Chain Lightning',
 
       attack: {
         hit: `
@@ -295,12 +295,12 @@ export const electromancy: MysticSphere = {
       rank: 4,
       scaling: {
         special:
-          "The damage to both the primary and secondary subjects increases by +1d for each rank beyond 5.",
+          'The damage to both the primary and secondary subjects increases by +1d for each rank beyond 5.',
       },
     },
 
     {
-      name: "Electroshock",
+      name: 'Electroshock',
 
       attack: {
         hit: `
@@ -313,11 +313,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Electroshock",
+      name: 'Intense Electroshock',
 
       attack: {
         hit: `
@@ -330,11 +330,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Call Lightning",
+      name: 'Call Lightning',
 
       attack: {
         // +1d from normal AOE due to weird area that probably just hits one person
@@ -349,36 +349,36 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Sustain (standard)'],
     },
 
     {
-      name: "Mighty Call Lightning",
+      name: 'Mighty Call Lightning',
 
       functionsLike: {
-        name: "call lightning",
-        exceptThat: "the damage increases to 4d8 + half \\glossterm{power}.",
+        name: 'call lightning',
+        exceptThat: 'the damage increases to 4d8 + half \\glossterm{power}.',
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Sustain (standard)'],
     },
 
     {
       // The flavor here is a bit of a stretch, so it's behind Haste and there is no Mass
       // version.
-      name: "Lightning Speed",
+      name: 'Lightning Speed',
 
       effect: `
         You gain a +10 foot \\glossterm{magic bonus} to your land speed.
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Lightning Breath",
+      name: 'Lightning Breath',
 
       attack: {
         // +1d for attune + every other round
@@ -390,12 +390,12 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Mighty Lightning Breath",
+      name: 'Mighty Lightning Breath',
 
       functionsLike: {
         name: 'lightning breath',
@@ -404,12 +404,12 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Ball Lightning",
+      name: 'Ball Lightning',
 
       attack: {
         hit: `Each target takes 2d6 electricity damage.`,
@@ -422,12 +422,12 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Personal Conduction",
+      name: 'Personal Conduction',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
@@ -436,12 +436,12 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Greater Personal Conduction",
+      name: 'Greater Personal Conduction',
 
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} electricity damage.`,
@@ -450,11 +450,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Electrocute",
+      name: 'Electrocute',
 
       attack: {
         // +2d from level, add trivial extra benefit for fun
@@ -468,11 +468,11 @@ export const electromancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Thunderdash",
+      name: 'Thunderdash',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
@@ -483,11 +483,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Distant Thunderdash",
+      name: 'Distant Thunderdash',
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
@@ -499,11 +499,11 @@ export const electromancy: MysticSphere = {
       },
 
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Short-Circuit",
+      name: 'Short-Circuit',
       attack: {
         hit: `
           The target is \\dazed as a \\glossterm{condition}.
@@ -513,11 +513,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Intense Short-Circuit",
+      name: 'Intense Short-Circuit',
       attack: {
         hit: `
           The target is \\stunned as a \\glossterm{condition}.
@@ -527,11 +527,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Shocking Arc",
+      name: 'Shocking Arc',
       attack: {
         hit: `
           The target takes 1d6 + half \\glossterm{power} electricity damage.
@@ -543,11 +543,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Shocking Arc",
+      name: 'Intense Shocking Arc',
       attack: {
         hit: `
           Each target takes 2d8 + half \\glossterm{power} electricity damage.
@@ -559,11 +559,11 @@ export const electromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Magnetic Strike",
+      name: 'Magnetic Strike',
       effect: `
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
@@ -572,14 +572,14 @@ export const electromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The accuracy bonus increases to +2.",
-        5: "The accuracy bonus increases to +3.",
-        7: "The accuracy bonus increases to +4.",
+        3: 'The accuracy bonus increases to +2.',
+        5: 'The accuracy bonus increases to +3.',
+        7: 'The accuracy bonus increases to +4.',
       },
     },
 
     {
-      name: "Arcing Strike",
+      name: 'Arcing Strike',
       effect: `
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
@@ -589,8 +589,8 @@ export const electromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The strike chains twice.",
-        7: "The strike chains three times.",
+        5: 'The strike chains twice.',
+        7: 'The strike chains three times.',
       },
     },
   ],

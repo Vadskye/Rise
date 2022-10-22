@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const vivimancy: MysticSphere = {
-  name: "Vivimancy",
-  shortDescription: "Manipulate life energy to aid allies or harm foes.",
-  sources: ["arcane", "divine", "pact"],
+  name: 'Vivimancy',
+  shortDescription: 'Manipulate life energy to aid allies or harm foes.',
+  sources: ['arcane', 'divine', 'pact'],
 
   cantrips: [
     {
-      name: "Ablate Vital Wound",
+      name: 'Ablate Vital Wound',
 
       effect: `
         Choose an adjacent living \\glossterm{ally}.
@@ -21,7 +21,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Minor Life Infusion",
+      name: 'Minor Life Infusion',
 
       effect: `
         You regain two \\glossterm{hit points}.
@@ -37,7 +37,7 @@ export const vivimancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Lifesteal Grasp",
+      name: 'Lifesteal Grasp',
 
       // +2r for lifesteal option
       attack: {
@@ -54,24 +54,24 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: { special: "The damage and healing increase by +1d for each rank beyond 2." },
+      scaling: { special: 'The damage and healing increase by +1d for each rank beyond 2.' },
       tags: [],
     },
 
     {
-      name: "Mighty Lifesteal Grasp",
+      name: 'Mighty Lifesteal Grasp',
 
       functionsLike: {
         name: 'lifesteal grasp',
-        exceptThat: "the damage and healing both increase to 4d10 + \\glossterm{power}.",
+        exceptThat: 'the damage and healing both increase to 4d10 + \\glossterm{power}.',
       },
       rank: 6,
-      scaling: { special: "The damage and healing increases by +1d for each rank beyond 6." },
+      scaling: { special: 'The damage and healing increases by +1d for each rank beyond 6.' },
       tags: [],
     },
 
     {
-      name: "Lifesteal",
+      name: 'Lifesteal',
 
       // +2r for HP theft
       attack: {
@@ -86,47 +86,47 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: { special: "The damage and healing increase by +1d for each rank beyond 3." },
+      scaling: { special: 'The damage and healing increase by +1d for each rank beyond 3.' },
       tags: [],
     },
 
     {
-      name: "Mighty Lifesteal",
+      name: 'Mighty Lifesteal',
 
       functionsLike: {
         name: 'lifesteal',
-        exceptThat: "the damage and healing both increase to 5d10 + \\glossterm{power}.",
+        exceptThat: 'the damage and healing both increase to 5d10 + \\glossterm{power}.',
       },
       rank: 7,
       tags: [],
     },
 
     {
-      name: "Restoration",
+      name: 'Restoration',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
-      scaling: { special: "The healing increases by +1d for each rank beyond 1." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Empowered Restoration",
+      name: 'Empowered Restoration',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 4d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 5,
-      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Stabilize Life",
+      name: 'Stabilize Life',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
@@ -134,12 +134,12 @@ export const vivimancy: MysticSphere = {
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 2,
-      scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Empowered Stabilize Life",
+      name: 'Empowered Stabilize Life',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
@@ -147,12 +147,12 @@ export const vivimancy: MysticSphere = {
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 6,
-      scaling: { special: "The healing increases by +1d for each rank beyond 6." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 6.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Stabilization Field",
+      name: 'Stabilization Field',
 
       // TODO: unclear rank
       effect: `
@@ -160,12 +160,12 @@ export const vivimancy: MysticSphere = {
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Massive Stabilization Field",
+      name: 'Massive Stabilization Field',
 
       effect: `
         You and each \\glossterm{ally} in a \\largearea radius from you each regain 4d6 + half \\glossterm{power} \\glossterm{hit points}.
@@ -176,7 +176,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Cure Vital Wound",
+      name: 'Cure Vital Wound',
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
@@ -188,7 +188,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Inflict Wound",
+      name: 'Inflict Wound',
 
       // +2d for hp-only would be fair, so 2d6 + power
       attack: {
@@ -201,11 +201,11 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Inflict Wound",
+      name: 'Mighty Inflict Wound',
 
       attack: {
         hit: `
@@ -217,11 +217,11 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Steal Vitality",
+      name: 'Steal Vitality',
 
       // +1r for situational vital wound removal, +4r for +2d
       attack: {
@@ -235,11 +235,11 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Vital Endurance",
+      name: 'Vital Endurance',
 
       effect: `
         Whenever you gain a \\glossterm{vital wound}, you may choose to ignore its vital wound effect (see \\pcref{Vital Wounds}).
@@ -253,23 +253,23 @@ export const vivimancy: MysticSphere = {
       scaling: {
         6: `You can ignore two vital wound effects.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Vital Endurance",
+      name: 'Mass Vital Endurance',
 
       functionsLike: {
         mass: true,
-        name: "Vital Endurance",
+        name: 'Vital Endurance',
       },
       // narrative: '',
       rank: 6,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Circle of Death",
+      name: 'Circle of Death',
 
       attack: {
         hit: `
@@ -281,12 +281,12 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Sustain (minor)'],
     },
 
     {
-      name: "Massive Circle of Death",
+      name: 'Massive Circle of Death',
 
       attack: {
         hit: `
@@ -298,11 +298,11 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Lifegift",
+      name: 'Lifegift',
 
       effect: `
         You gain a +4 \\glossterm{magic bonus} to your maximum \\glossterm{hit points}.
@@ -311,31 +311,31 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The bonus increases to +8.",
-        5: "The bonus increases to +16.",
-        7: "The bonus increases to +32.",
+        3: 'The bonus increases to +8.',
+        5: 'The bonus increases to +16.',
+        7: 'The bonus increases to +32.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Lifegift",
+      name: 'Mass Lifegift',
 
       functionsLike: {
         mass: true,
-        name: "Lifegift",
+        name: 'Lifegift',
       },
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The bonus increases to +8.",
-        7: "The bonus increases to +16.",
+        5: 'The bonus increases to +8.',
+        7: 'The bonus increases to +16.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Wellspring of Life",
+      name: 'Wellspring of Life',
 
       effect: `
         Once per round, when you regain hit points, you may increase that healing by 3 hit points.
@@ -345,11 +345,11 @@ export const vivimancy: MysticSphere = {
         4: `The additional healing increases to 6.`,
         6: `The additional healing increases to 12.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Avasculate",
+      name: 'Avasculate',
 
       // HP loss is treated as t3.5 debuff
       attack: {
@@ -365,7 +365,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Corpse Explosion",
+      name: 'Corpse Explosion',
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
@@ -379,11 +379,11 @@ export const vivimancy: MysticSphere = {
           You violently discharge the latent magical potential within a corpse, causing it to explode.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Corpse Explosion",
+      name: 'Mighty Corpse Explosion',
 
       functionsLike: {
         name: 'corpse explosion',
@@ -393,11 +393,11 @@ export const vivimancy: MysticSphere = {
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Withering",
+      name: 'Withering',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -411,11 +411,11 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Retributive Lifebond",
+      name: 'Retributive Lifebond',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} energy damage.`,
@@ -424,12 +424,12 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Massive Retributive Lifebond",
+      name: 'Massive Retributive Lifebond',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} energy damage.`,
@@ -438,12 +438,12 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Mighty Retributive Lifebond",
+      name: 'Mighty Retributive Lifebond',
 
       // +4r for +2d, +2r for full power
       attack: {
@@ -453,8 +453,8 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
@@ -470,11 +470,11 @@ export const vivimancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Lifesense",
+      name: 'Lifesense',
 
       effect: `
         You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living creatures without light (see \\pcref{Lifesense}).
@@ -485,10 +485,10 @@ export const vivimancy: MysticSphere = {
         5: `The range increases to 120 feet.`,
         7: `The range increases to 180 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Lifesight",
+      name: 'Lifesight',
 
       effect: `
         You gain \\trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \\pcref{Lifesight}).
@@ -498,42 +498,42 @@ export const vivimancy: MysticSphere = {
         5: `The range increases to 60 feet.`,
         7: `The range increases to 90 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Lifesense",
+      name: 'Mass Lifesense',
 
       functionsLike: {
         mass: true,
-        name: "Lifesense",
+        name: 'Lifesense',
       },
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The range increases to 90 feet.",
-        7: "The range increases to 120 feet.",
+        5: 'The range increases to 90 feet.',
+        7: 'The range increases to 120 feet.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Mass Lifesight",
+      name: 'Mass Lifesight',
 
       functionsLike: {
         mass: true,
-        name: "Lifesight",
+        name: 'Lifesight',
       },
       // narrative: '',
       rank: 5,
       scaling: {
-        7: "The range increases to 60 feet.",
+        7: 'The range increases to 60 feet.',
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Wall of Death",
+      name: 'Wall of Death',
 
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} energy damage.`,
@@ -548,13 +548,13 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Massive Wall of Death",
+      name: 'Massive Wall of Death',
 
       functionsLike: {
         name: 'wall of death',
@@ -564,16 +564,16 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Remove Disease",
+      name: 'Remove Disease',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
           All diseases affecting yourself or one \\glossterm{ally} within \\medrange are removed.
       `,
@@ -581,9 +581,9 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Restore Senses",
+      name: 'Restore Senses',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         One of the target's physical senses, such as sight or hearing, is restored to full capacity.
@@ -593,9 +593,9 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Reincarnation",
+      name: 'Reincarnation',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose one Diminuitive or larger piece of a humanoid corpse.
         It must have been part of the original creature's body at the time of death.
@@ -637,27 +637,27 @@ export const vivimancy: MysticSphere = {
             \\end{dtabularx}
         \\end{dtable}
       `,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Fated Reincarnation",
+      name: 'Fated Reincarnation',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           the target is reincarnated as its original species instead of as a random species.
         `,
-        name: "reincarnation",
+        name: 'reincarnation',
       },
       rank: 6,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Purge Curse",
+      name: 'Purge Curse',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         All curses affecting yourself or one \\glossterm{ally} within \\medrange are removed.
         This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
@@ -667,9 +667,9 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "True Regeneration",
+      name: 'True Regeneration',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         All of the target's \\glossterm{vital wounds} are healed.
@@ -679,9 +679,9 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Resurrection",
+      name: 'Resurrection',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose one intact corpse within \\shortrange.
         The corpse returns to life.
@@ -705,27 +705,27 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Complete Resurrection",
+      name: 'Complete Resurrection',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
         it does not have to target a fully intact corpse.
         The target must have been part of the original creature's body at the time of death.
         The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
         `,
-        name: "resurrection",
+        name: 'resurrection',
       },
       materialCost: true,
       rank: 6,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "True Resurrection",
+      name: 'True Resurrection',
 
       // original targets: Special
-      castingTime: "24 hours",
+      castingTime: '24 hours',
 
       functionsLike: {
         exceptThat: `
@@ -733,17 +733,17 @@ export const vivimancy: MysticSphere = {
         Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
         The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
         `,
-        name: "resurrection",
+        name: 'resurrection',
       },
       materialCost: true,
       rank: 7,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Soul Bind",
+      name: 'Soul Bind',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         % Is this clear enough that you can't use the same gem for this ritual twice?
         Choose a nonmagical gem you hold that is worth at least 1,000 gp.
@@ -758,9 +758,9 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Animate Dead",
+      name: 'Animate Dead',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose up to four corpses within \\shortrange.
         The combined levels of all targets cannot exceed your level.
@@ -778,7 +778,7 @@ export const vivimancy: MysticSphere = {
       `,
       materialCost: true,
       rank: 3,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
   ],
 };

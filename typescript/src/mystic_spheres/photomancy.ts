@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const photomancy: MysticSphere = {
-  name: "Photomancy",
-  shortDescription: "Create and manipulate light to hinder foes and conceal allies.",
-  sources: ["arcane", "divine", "nature", "pact"],
+  name: 'Photomancy',
+  shortDescription: 'Create and manipulate light to hinder foes and conceal allies.',
+  sources: ['arcane', 'divine', 'nature', 'pact'],
 
   cantrips: [
     {
-      name: "Beautify",
+      name: 'Beautify',
 
       functionsLike: {
         abilityType: 'ability',
@@ -17,18 +17,18 @@ export const photomancy: MysticSphere = {
 
           This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        name: "disguise creature",
+        name: 'disguise creature',
       },
       scaling: {
         2: `The bonus increases to +6.`,
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +10.`,
       },
-      tags: ["Visual"],
+      tags: ['Visual'],
     },
 
     {
-      name: "Illuminate",
+      name: 'Illuminate',
 
       effect: `
         A glowing light appears in midair in any location within \\medrange.
@@ -41,12 +41,12 @@ export const photomancy: MysticSphere = {
         4: `The maximum radius of bright illumination increases to 60 feet.`,
         6: `The maximum radius of bright illumination increases to 120 feet.`,
       },
-      tags: ["Visual"],
+      tags: ['Visual'],
     },
   ],
   spells: [
     {
-      name: "Color Spray",
+      name: 'Color Spray',
 
       attack: {
         crit: `The target is \\stunned instead of dazed.`,
@@ -58,26 +58,26 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Visual"],
+      scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
-      name: "Massive Color Spray",
+      name: 'Massive Color Spray',
 
       functionsLike: {
         exceptThat: `
           the area increases to a \\hugearea cone from you.
         `,
-        name: "color spray",
+        name: 'color spray',
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Visual"],
+      scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
-      name: "Prismatic Spray",
+      name: 'Prismatic Spray',
 
       attack: {
         crit: `The target is \\confused instead of stunned.`,
@@ -89,12 +89,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
-      tags: ["Visual"],
+      scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
-      name: "Army of Twins",
+      name: 'Army of Twins',
 
       // original targets: Up to five targets within \medrange from among you and your \glossterm{allies}
       effect: `
@@ -104,32 +104,32 @@ export const photomancy: MysticSphere = {
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of each target's clothes and equipment, regardless of their original form.
       `,
       rank: 3,
-      tags: ["Visual"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Visual'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Blurred Motion",
+      name: 'Blurred Motion',
 
       effect: `
         If you move at least 15 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
       rank: 3,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Greater Blurred Motion",
+      name: 'Greater Blurred Motion',
 
       effect: `
         If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +2 bonus to Armor defense until the end of that round.
       `,
       rank: 6,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Wall of Light",
+      name: 'Wall of Light',
 
       effect: `
         You create a \\medarealong \\glossterm{wall} of light within \\longrange.
@@ -141,16 +141,16 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\largearealong wall instead.",
-        5: "You can choose to create a \\hugearealong wall instead.",
-        7: "You can choose to create a \\gargarealong wall instead.",
+        3: 'You can choose to create a \\largearealong wall instead.',
+        5: 'You can choose to create a \\hugearealong wall instead.',
+        7: 'You can choose to create a \\gargarealong wall instead.',
       },
-      tags: ["Barrier"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Flash",
+      name: 'Flash',
 
       // -1d
       attack: {
@@ -164,25 +164,26 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Massive Flash",
+      name: 'Massive Flash',
 
       // offset previous -1d
       functionsLike: {
-        name: "flash",
-        exceptThat: "the area increases to a \\largearea radius, and the damage increases to 2d6 + half \\glossterm{power}.",
+        name: 'flash',
+        exceptThat:
+          'the area increases to a \\largearea radius, and the damage increases to 2d6 + half \\glossterm{power}.',
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Searing Light",
+      name: 'Searing Light',
 
       attack: {
         hit: `
@@ -195,24 +196,25 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Certain Searing Light",
+      name: 'Certain Searing Light',
 
       functionsLike: {
         name: 'searing light',
-        exceptThat: 'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d6 + half \\glossterm{power}.',
+        exceptThat:
+          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d6 + half \\glossterm{power}.',
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Solar Ray",
+      name: 'Solar Ray',
 
       // +1r for true sunlight; that shouldn't be on a low-level effect, but it doesn't
       // add that much power here.
@@ -228,12 +230,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Solar Flare",
+      name: 'Solar Flare',
 
       // +1r for true sunlight, -1r for -1d
       attack: {
@@ -248,12 +250,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Radiant Field",
+      name: 'Radiant Field',
 
       attack: {
         hit: `
@@ -270,18 +272,19 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Massive Radiant Field",
+      name: 'Massive Radiant Field',
 
       functionsLike: {
-        name: "radiant field",
-        exceptThat: "the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to 4d6 + half \\glossterm{power}.",
+        name: 'radiant field',
+        exceptThat:
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to 4d6 + half \\glossterm{power}.',
       },
       rank: 7,
       tags: [],
     },
 
     {
-      name: "Pillars of Light",
+      name: 'Pillars of Light',
 
       attack: {
         hit: `
@@ -295,12 +298,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Visual"],
+      scaling: 'damage',
+      tags: ['Visual'],
     },
 
     {
-      name: "Kaleidoscopic Pattern",
+      name: 'Kaleidoscopic Pattern',
 
       attack: {
         crit: `The target is \\stunned instead of dazed.`,
@@ -312,12 +315,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Compulsion", "Visual"],
+      scaling: 'accuracy',
+      tags: ['Compulsion', 'Visual'],
     },
 
     {
-      name: "Intense Kaleidoscopic Pattern",
+      name: 'Intense Kaleidoscopic Pattern',
 
       attack: {
         crit: `The target is \\confused instead of dazed.`,
@@ -329,12 +332,12 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "accuracy",
-      tags: ["Compulsion", "Visual"],
+      scaling: 'accuracy',
+      tags: ['Compulsion', 'Visual'],
     },
 
     {
-      name: "Blur",
+      name: 'Blur',
 
       effect: `
         All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{miss chance}.
@@ -342,49 +345,49 @@ export const photomancy: MysticSphere = {
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 5,
-      tags: ["Visual"],
-      type: "Attune",
+      tags: ['Visual'],
+      type: 'Attune',
     },
 
     {
-      name: "Disguise Image",
+      name: 'Disguise Image',
 
       effect: `
         You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
       `,
       rank: 1,
-      tags: ["Visual"],
-      type: "Attune",
+      tags: ['Visual'],
+      type: 'Attune',
     },
 
     {
-      name: "Mass Disguise Image",
+      name: 'Mass Disguise Image',
 
       functionsLike: {
         mass: true,
-        name: "Disguise Image",
+        name: 'Disguise Image',
       },
       // narrative: '',
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Malleable Disguise",
+      name: 'Malleable Disguise',
 
       functionsLike: {
         exceptThat: `
           you can change the nature of the disguise as a \\glossterm{standard action}.
         `,
-        name: "disguise image",
+        name: 'disguise image',
       },
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mirror Image",
+      name: 'Mirror Image',
 
       effect: `
         Three illusory duplicates appear around you that mirror your every move.
@@ -402,12 +405,12 @@ export const photomancy: MysticSphere = {
         5: `The miss chance increases to 40\\%.`,
         7: `The miss chance increases to 50\\%.`,
       },
-      tags: ["Visual"],
-      type: "Attune (deep)",
+      tags: ['Visual'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Illusory Twin",
+      name: 'Illusory Twin',
 
       effect: `
         You create an illusory duplicate of yourself overlayed on your body.
@@ -422,11 +425,11 @@ export const photomancy: MysticSphere = {
         4: `The maximum range increases to \\longrange.`,
         6: `The maximum range increases to \\distrange.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Invisibility",
+      name: 'Invisibility',
 
       effect: `
         This spell has no \\glossterm{verbal components}.
@@ -438,7 +441,7 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Enduring Invisibility",
+      name: 'Enduring Invisibility',
 
       effect: `
         This spell has no \\glossterm{verbal components}.
@@ -451,7 +454,7 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: "Chromatic Orb",
+      name: 'Chromatic Orb',
 
       attack: {
         // random effect is bad, but the sphere can't normally do most of those and you
@@ -465,22 +468,23 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Certain Chromatic Orb",
+      name: 'Certain Chromatic Orb',
 
       functionsLike: {
-        exceptThat: "you gain a +3 accuracy bonus, and the damage increases to 2d8 + half \\glossterm{power}.",
-        name: "chromatic orb",
+        exceptThat:
+          'you gain a +3 accuracy bonus, and the damage increases to 2d8 + half \\glossterm{power}.',
+        name: 'chromatic orb',
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Lightbeam Dash",
+      name: 'Lightbeam Dash',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
@@ -491,11 +495,11 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Distant Lightbeam Dash",
+      name: 'Distant Lightbeam Dash',
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} energy damage.`,
@@ -506,11 +510,11 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Faerie Fire",
+      name: 'Faerie Fire',
 
       attack: {
         hit: `
@@ -523,28 +527,28 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: [],
     },
   ],
   rituals: [
     {
-      name: "Continuous Light",
+      name: 'Continuous Light',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
         The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
       `,
       rank: 1,
       tags: [],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "False Decrepify",
+      name: 'False Decrepify',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
         The target appears old and worn down.
@@ -552,20 +556,20 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       tags: [],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Permanent Light",
+      name: 'Permanent Light',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
         exceptThat: `
           Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
           The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
           This effect is permanent.
         `,
-        name: "continuous light",
+        name: 'continuous light',
       },
       rank: 2,
       tags: [],

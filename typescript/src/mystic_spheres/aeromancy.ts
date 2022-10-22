@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const aeromancy: MysticSphere = {
-  name: "Aeromancy",
-  shortDescription: "Command air to protect allies and blast foes.",
-  sources: ["nature", "domain"],
+  name: 'Aeromancy',
+  shortDescription: 'Command air to protect allies and blast foes.',
+  sources: ['nature', 'domain'],
 
   cantrips: [
     {
-      name: "Airborne Leap",
+      name: 'Airborne Leap',
 
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Jump skill.
@@ -16,13 +16,13 @@ export const aeromancy: MysticSphere = {
         The air rises beneath you and pushes you up, propelling you farther when you leap.
       `,
       scaling: {
-        2: "The bonus increases to +4.",
-        4: "The bonus increases to +5.",
-        6: "The bonus increases to +6.",
+        2: 'The bonus increases to +4.',
+        4: 'The bonus increases to +5.',
+        6: 'The bonus increases to +6.',
       },
     },
     {
-      name: "Manipulate Air",
+      name: 'Manipulate Air',
 
       effect: `
         You change the wind speed within a \\medarea radius \\glossterm{emanation} from you by up to 10 miles per hour.
@@ -33,14 +33,14 @@ export const aeromancy: MysticSphere = {
         The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
       `,
       scaling: {
-        3: "You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.",
-        5: "You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.",
-        7: "You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.",
+        3: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.',
+        5: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
+        7: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
     {
-      name: "Feather Fall",
+      name: 'Feather Fall',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
@@ -50,16 +50,16 @@ export const aeromancy: MysticSphere = {
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,
       scaling: {
-        2: "The distance reduction increases to 50 feet.",
-        4: "The distance reduction increases to 100 feet.",
-        6: "The distance reduction increases to 200 feet.",
+        2: 'The distance reduction increases to 50 feet.',
+        4: 'The distance reduction increases to 100 feet.',
+        6: 'The distance reduction increases to 200 feet.',
       },
     },
   ],
   spells: [
     // Treat as r1.5 debuff
     {
-      name: "Arrow Attraction",
+      name: 'Arrow Attraction',
 
       effect: `
         Choose a creature or object within \\medrange.
@@ -69,12 +69,12 @@ export const aeromancy: MysticSphere = {
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
       `,
       rank: 3,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
 
     {
-      name: "Intense Arrow Attraction",
+      name: 'Intense Arrow Attraction',
 
       effect: `
         Choose a creature or object within \\medrange.
@@ -84,11 +84,11 @@ export const aeromancy: MysticSphere = {
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows with extreme precision.
       `,
       rank: 7,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
     {
-      name: "Propulsion",
+      name: 'Propulsion',
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
@@ -98,51 +98,51 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The maximum distance increases to 90 feet.",
-        5: "The maximum distance increases to 120 feet.",
-        7: "The maximum distance increases to 150 feet.",
+        3: 'The maximum distance increases to 90 feet.',
+        5: 'The maximum distance increases to 120 feet.',
+        7: 'The maximum distance increases to 150 feet.',
       },
     },
     {
-      name: "Wind Screen",
+      name: 'Wind Screen',
 
       effect: `
         You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
       `,
       // narrative: "",
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Windslash",
+      name: 'Windslash',
 
       attack: {
         // crit: '',
         hit: `
           The target takes 1d10 \\add \\glossterm{power} slashing damage.
         `,
-        targeting: "Make an attack vs. Armor against anything within \\longrange.",
+        targeting: 'Make an attack vs. Armor against anything within \\longrange.',
       },
       // narrative: '',
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Mighty Windslash",
+      name: 'Mighty Windslash',
 
       attack: {
         // crit: '',
         hit: `
           The target takes 4d8 \\add \\glossterm{power} slashing damage.
         `,
-        targeting: "Make an attack vs. Armor against anything within \\extrange.",
+        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },
       // narrative: '',
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Windsnipe",
+      name: 'Windsnipe',
 
       attack: {
         // crit: '',
@@ -150,14 +150,14 @@ export const aeromancy: MysticSphere = {
           The target takes 1d6 \\add half \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{push} it up to 30 feet horizontally.
         `,
-        targeting: "Make an attack vs. Fortitude against anything within \\distrange.",
+        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
       },
       // narrative: '',
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Efficient Windsnipe",
+      name: 'Efficient Windsnipe',
 
       attack: {
         // crit: '',
@@ -165,14 +165,14 @@ export const aeromancy: MysticSphere = {
           The target takes 2d8 \\add half \\glossterm{power} bludgeoning damage.
           If it takes damage, you \\glossterm{push} it up to 30 feet horizontally.
         `,
-        targeting: "Make an attack vs. Fortitude against anything within \\distrange.",
+        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
       },
       // narrative: '',
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Buffet",
+      name: 'Buffet',
 
       attack: {
         hit: `
@@ -180,46 +180,46 @@ export const aeromancy: MysticSphere = {
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
-        targeting:
-          "Make an attack vs. Fortitude against anything within \\medrange.",
+        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Intense Buffet",
+      name: 'Intense Buffet',
 
       functionsLike: {
         name: 'buffet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.",
+        exceptThat:
+          'the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.',
       },
       // narrative: '',
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
     {
-      name: "Gentle Descent",
+      name: 'Gentle Descent',
 
-      effect: "You gain a 30 foot \\glossterm{glide speed} (see \\pcref{Gliding}).",
+      effect: 'You gain a 30 foot \\glossterm{glide speed} (see \\pcref{Gliding}).',
       // narrative: '',
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Mass Gentle Descent",
+      name: 'Mass Gentle Descent',
 
       functionsLike: {
         mass: true,
-        name: "gentle descent",
+        name: 'gentle descent',
       },
       // narrative: '',
       rank: 4,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
     {
-      name: "Flight",
+      name: 'Flight',
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).
@@ -227,13 +227,13 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
       scaling: {
-        6: "The maximum height increases to 60 feet.",
+        6: 'The maximum height increases to 60 feet.',
       },
     },
     {
-      name: "Agile Flight",
+      name: 'Agile Flight',
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).
@@ -241,10 +241,10 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 6,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Soaring Flight",
+      name: 'Soaring Flight',
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flying}).
@@ -253,14 +253,14 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
     // -1 rank for stacking up creatures (bad against groups)
     {
-      name: "Wind Tunnel",
+      name: 'Wind Tunnel',
 
       attack: {
-        crit: "The target is pushed 30 feet instead.",
+        crit: 'The target is pushed 30 feet instead.',
         hit: `
           Each target is \\glossterm{pushed} 15 feet in the direction the wind blows.
           Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
@@ -274,14 +274,14 @@ export const aeromancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
     {
-      name: "Intense Wind Tunnel",
+      name: 'Intense Wind Tunnel',
 
       attack: {
-        crit: "The target is pushed 60 feet instead.",
+        crit: 'The target is pushed 60 feet instead.',
         hit: `
           Each target is \\glossterm{pushed} 30 feet in the direction the wind blows.
           Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
@@ -294,11 +294,11 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
     {
-      name: "Windblade",
+      name: 'Windblade',
 
       effect: `
         Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
@@ -306,10 +306,10 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Retributive Winds",
+      name: 'Retributive Winds',
 
       attack: {
         // crit: '',
@@ -325,11 +325,11 @@ export const aeromancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       rank: 5,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
     {
-      name: "Control Weather",
+      name: 'Control Weather',
 
       effect: `
         When you cast this spell, you choose a new weather pattern.
@@ -352,10 +352,10 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 4,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
     {
-      name: "Cyclone",
+      name: 'Cyclone',
 
       attack: {
         // crit: '',
@@ -368,10 +368,10 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Massive Cyclone",
+      name: 'Massive Cyclone',
 
       attack: {
         // crit: '',
@@ -388,7 +388,7 @@ export const aeromancy: MysticSphere = {
     // 2 levels for push; normally, 30' push is r1, but clockwise is much worse than
     // towards/away, so it's closer to r0.5
     {
-      name: "Hurricane",
+      name: 'Hurricane',
 
       attack: {
         // crit: '',
@@ -403,10 +403,10 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Windtheft",
+      name: 'Windtheft',
 
       attack: {
         hit: `
@@ -421,10 +421,10 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
     {
-      name: "Dust Cloud",
+      name: 'Dust Cloud',
 
       effect: `
         You create a cloud of dust in a \\medarea radius \\glossterm{zone} within \\medrange from you.
@@ -434,25 +434,25 @@ export const aeromancy: MysticSphere = {
       rank: 2,
       tags: ['Sustain (attuneable, minor)'],
       scaling: {
-        4: "You can choose to create a \\largearea radius instead.",
-        6: "You can choose to create a \\hugearea radius instead.",
+        4: 'You can choose to create a \\largearea radius instead.',
+        6: 'You can choose to create a \\hugearea radius instead.',
       },
     },
     {
-      name: "Dust Storm",
+      name: 'Dust Storm',
 
       functionsLike: {
-        name: "dust cloud",
-        exceptThat: "you can move the cloud up to 15 feet at the end of each round.",
+        name: 'dust cloud',
+        exceptThat: 'you can move the cloud up to 15 feet at the end of each round.',
       },
       // narrative: '',
       rank: 4,
       scaling: {
-        6: "You can choose to create a \\largearea radius instead.",
+        6: 'You can choose to create a \\largearea radius instead.',
       },
     },
     {
-      name: "Dustblind",
+      name: 'Dustblind',
 
       attack: {
         hit: `
@@ -466,10 +466,10 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
     {
-      name: "Misty Step",
+      name: 'Misty Step',
 
       effect: `
         You can move through creatures freely.
@@ -481,10 +481,10 @@ export const aeromancy: MysticSphere = {
         This allows you to drift through enemies and even the air with ease.
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Airborne Jumper",
+      name: 'Airborne Jumper',
 
       effect: `
         If you are \\glossterm{trained} with the Jump skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -496,10 +496,10 @@ export const aeromancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Wall of Wind",
+      name: 'Wall of Wind',
 
       effect: `
         You create a \\medarea \\glossterm{wall} of wind within \\longrange.
@@ -515,10 +515,10 @@ export const aeromancy: MysticSphere = {
         7: `You can increase the area to a \\hugearealong wall.`,
       },
       tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Air Walk",
+      name: 'Air Walk',
 
       effect: `
         You can walk on air up to a foot above the ground.
@@ -526,10 +526,10 @@ export const aeromancy: MysticSphere = {
         The extra height is generally insufficient to change your \\glossterm{space} in battle.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Windburst",
+      name: 'Windburst',
 
       attack: {
         // crit: '',
@@ -542,10 +542,10 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Massive Windburst",
+      name: 'Massive Windburst',
 
       attack: {
         // crit: '',
@@ -558,27 +558,27 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
 
   rituals: [
     {
-      name: "Air Bubble",
+      name: 'Air Bubble',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         One ritual participant gains the ability to breathe clear, clean air regardless of its surroundings.
         This can allow it to breathe underwater and avoid air-based poisons.
       `,
       // narrative: '',
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
     {
-      name: "Detect Air",
+      name: 'Detect Air',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         You learn the approximate distance and direction to any air within \\distrange of you.
         Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
@@ -586,19 +586,19 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 1,
-      tags: ["Detection"],
+      tags: ['Detection'],
     },
     {
-      name: "Distant Detect Air",
+      name: 'Distant Detect Air',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       functionsLike: {
-        exceptThat: "the range increases to 2,000 feet.",
-        name: "detect air",
+        exceptThat: 'the range increases to 2,000 feet.',
+        name: 'detect air',
       },
       // narrative: '',
       rank: 4,
-      tags: ["Detection"],
+      tags: ['Detection'],
     },
   ],
 };

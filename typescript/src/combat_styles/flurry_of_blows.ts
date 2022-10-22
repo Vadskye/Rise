@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const flurryOfBlows: CombatStyle = {
-  name: "Flurry of Blows",
-  shortDescription: "Attack rapidly at any range.",
+  name: 'Flurry of Blows',
+  shortDescription: 'Attack rapidly at any range.',
 
   maneuvers: [
     {
-      name: "Twinstrike",
+      name: 'Twinstrike',
 
       // roll twice is a little over 2.5 accuracy; not adding power makes this normally
       // worse than certain strike, but it's better for crit fishing
@@ -20,7 +20,7 @@ export const flurryOfBlows: CombatStyle = {
 
     // roll three times is about 4.5 accuracy
     {
-      name: "Triplestrike",
+      name: 'Triplestrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -31,7 +31,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Rapid Quaff",
+      name: 'Rapid Quaff',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -43,7 +43,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Desperate Flurry",
+      name: 'Desperate Flurry',
 
       // Two fatigue instead of one fatigue like desperate smash because it also doubles
       // damage from power
@@ -57,7 +57,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Desperate Flurry+",
+      name: 'Desperate Flurry+',
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -70,7 +70,7 @@ export const flurryOfBlows: CombatStyle = {
 
     // TODO: unclear rank
     {
-      name: "Strike Flurry",
+      name: 'Strike Flurry',
 
       effect: `
         Make two \\glossterm{strikes}.
@@ -80,7 +80,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Power Flurry",
+      name: 'Power Flurry',
 
       effect: `
         Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
@@ -90,7 +90,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Whirlwind",
+      name: 'Whirlwind',
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
@@ -101,7 +101,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Tripping Whirlwind",
+      name: 'Tripping Whirlwind',
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
@@ -113,7 +113,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Whirlwind Flurry",
+      name: 'Whirlwind Flurry',
 
       effect: `
         Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} adjacent to you.
@@ -123,7 +123,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Barrage",
+      name: 'Barrage',
 
       effect: `
         Make two ranged \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
@@ -134,7 +134,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Shrapnel Burst",
+      name: 'Shrapnel Burst',
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
@@ -144,7 +144,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Shrapnel Burst+",
+      name: 'Shrapnel Burst+',
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
@@ -154,7 +154,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Volley Fire",
+      name: 'Volley Fire',
 
       effect: `
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea radius within \\medrange.
@@ -164,7 +164,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Quickdraw",
+      name: 'Quickdraw',
 
       effect: `
         You can sheathe any small or medium weapons you wield, then draw one or two small or medium weapons into your \\glossterm{free hands}.
@@ -174,7 +174,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Heavy Quickdraw",
+      name: 'Heavy Quickdraw',
 
       effect: `
         You can sheathe any weapons you wield, then draw one or two weapons into your \\glossterm{free hands}.
@@ -184,7 +184,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Quickfire",
+      name: 'Quickfire',
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon.
@@ -194,7 +194,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Frenzied Strike",
+      name: 'Frenzied Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -205,7 +205,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Frenzied Flurry",
+      name: 'Frenzied Flurry',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -217,7 +217,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Deathseeking Flurry",
+      name: 'Deathseeking Flurry',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -229,7 +229,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Deathseeking Flurry+",
+      name: 'Deathseeking Flurry+',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -240,7 +240,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Static Strike",
+      name: 'Static Strike',
 
       effect: `
         Make a melee strike.
@@ -249,14 +249,14 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Mindbreak Twinstrike",
+      name: 'Mindbreak Twinstrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -268,7 +268,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Mindshatter Twinstrike",
+      name: 'Mindshatter Twinstrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -280,7 +280,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Eye-Watering Swiftstrike",
+      name: 'Eye-Watering Swiftstrike',
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.
@@ -291,7 +291,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: "Blinding Swiftstrike",
+      name: 'Blinding Swiftstrike',
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus.

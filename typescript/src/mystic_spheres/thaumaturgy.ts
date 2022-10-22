@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const thaumaturgy: MysticSphere = {
-  name: "Thaumaturgy",
-  shortDescription: "Suppress and manipulate magical effects.",
-  sources: ["arcane", "domain"],
+  name: 'Thaumaturgy',
+  shortDescription: 'Suppress and manipulate magical effects.',
+  sources: ['arcane', 'domain'],
 
   cantrips: [
     {
-      name: "Detect Magic",
+      name: 'Detect Magic',
 
       effect: `
         Choose a \\arealarge \\glossterm{cone} from you.
@@ -20,14 +20,14 @@ export const thaumaturgy: MysticSphere = {
           You also learn if any passive magical effects existed in the area.
           This is separate from your knowledge of active magical effects.
         `,
-        4: "You can choose to create a \\hugearea cone instead.",
+        4: 'You can choose to create a \\hugearea cone instead.',
         6: `You also learn the number of magical effects in the area.`,
       },
       tags: ['Detection'],
     },
 
     {
-      name: "Sense Magical Potential",
+      name: 'Sense Magical Potential',
 
       effect: `
         You discern whether one creature within \\shortrange has any \\glossterm{magical} abilities.
@@ -42,7 +42,7 @@ export const thaumaturgy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Magic Missile",
+      name: 'Magic Missile',
 
       // -2d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -58,11 +58,11 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting damage unavoidably.
       `,
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Distant Magic Missile",
+      name: 'Distant Magic Missile',
 
       // +4r for range; pay extra for distrange, since it scales well with range
       attack: {
@@ -78,11 +78,11 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Magic Missile",
+      name: 'Mighty Magic Missile',
 
       // +6r for +3d
       attack: {
@@ -98,11 +98,11 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting massive damage unavoidably.
       `,
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Magic Missile Storm",
+      name: 'Magic Missile Storm',
 
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -118,11 +118,11 @@ export const thaumaturgy: MysticSphere = {
         A barrage of unerring projectiles made of pure magical energy streak towards an area, inflicting damage unavoidably.
       `,
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Magic Missile Storm",
+      name: 'Massive Magic Missile Storm',
 
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -138,14 +138,14 @@ export const thaumaturgy: MysticSphere = {
         A massive barrage of unerring projectiles made of pure magical energy streak towards your foes, inflicting damage unavoidably.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Suppress Item",
+      name: 'Suppress Item',
 
       attack: {
-        crit: "You can sustain this spell as a \\glossterm{free action}.",
+        crit: 'You can sustain this spell as a \\glossterm{free action}.',
         hit: `All magical properties the target has are \\glossterm{suppressed}.`,
         targeting: `
           Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\glossterm{magical} object within \\longrange.
@@ -153,12 +153,12 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Dismissal",
+      name: 'Dismissal',
 
       attack: {
         // No relevant crit effect
@@ -173,11 +173,11 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Suppress Magic",
+      name: 'Suppress Magic',
 
       attack: {
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
@@ -198,12 +198,12 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Intense Suppress Magic",
+      name: 'Intense Suppress Magic',
 
       functionsLike: {
         name: 'suppress magic',
@@ -212,26 +212,26 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Dispel Magic",
+      name: 'Dispel Magic',
 
       functionsLike: {
         exceptThat: `
           on a hit, the effect ends completely instead of being suppressed.
           However, the target's defense increases to 5 \\add twice its rank.
         `,
-        name: "suppress magic",
+        name: 'suppress magic',
       },
       rank: 4,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Intense Dispel Magic",
+      name: 'Intense Dispel Magic',
 
       functionsLike: {
         exceptThat: `
@@ -239,13 +239,13 @@ export const thaumaturgy: MysticSphere = {
           In addition, this can also affect \\abilitytag{Curse} effects, and the range increases to \\distrange.
           However, the target's defense increases to 5 \\add twice its rank.
         `,
-        name: "suppress magic",
+        name: 'suppress magic',
       },
       rank: 7,
     },
 
     {
-      name: "Malign Transferance",
+      name: 'Malign Transferance',
 
       // original targets: ['Yourself or an \\glossterm{ally} within \\medrange', 'One other creature within that range']
       attack: {
@@ -261,11 +261,11 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Malign Confluence",
+      name: 'Malign Confluence',
 
       attack: {
         crit: `Each transferred effect becomes a separate \\glossterm{condition} on the struck creature.`,
@@ -285,7 +285,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Spellvoid",
+      name: 'Spellvoid',
 
       effect: `
         Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
@@ -294,11 +294,11 @@ export const thaumaturgy: MysticSphere = {
         After you absorb three spells in this way, this effect ends.
       `,
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Enhance Magic",
+      name: 'Enhance Magic',
 
       effect: `
         You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
@@ -309,15 +309,15 @@ export const thaumaturgy: MysticSphere = {
         5: `The bonus increases to +8.`,
         7: `The bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Enhance Magic",
+      name: 'Mass Enhance Magic',
 
       functionsLike: {
         mass: true,
-        name: "Enhance Magic",
+        name: 'Enhance Magic',
       },
       // narrative: '',
       rank: 3,
@@ -325,11 +325,11 @@ export const thaumaturgy: MysticSphere = {
         5: `The bonus increases to +4.`,
         7: `The bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Antimagic Field",
+      name: 'Antimagic Field',
 
       effect: `
         You radiate an antimagic field within a \\smallarea radius \\glossterm{emanation} from you.
@@ -342,11 +342,11 @@ export const thaumaturgy: MysticSphere = {
         However, this spell does not supress itself.
       `,
       rank: 7,
-      type: "Sustain (standard)",
+      type: 'Sustain (standard)',
     },
 
     {
-      name: "Dimensional Seal",
+      name: 'Dimensional Seal',
 
       attack: {
         hit: `
@@ -359,12 +359,12 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
-      type: "Sustain (attuneable, minor)",
+      scaling: 'accuracy',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Dimensional Lock",
+      name: 'Dimensional Lock',
 
       effect: `
         This spell creates a dimensional lock in a \\largearea radius \\glossterm{zone} from your location.
@@ -373,27 +373,27 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "You can choose to create a \\hugearea radius instead.",
+        6: 'You can choose to create a \\hugearea radius instead.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Teleportation Ward",
+      name: 'Teleportation Ward',
 
       effect: `
         Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to affect a \\hugearea radius instead.",
-        6: "You can choose to affect a \\gargarea radius instead.",
+        4: 'You can choose to affect a \\hugearea radius instead.',
+        6: 'You can choose to affect a \\gargarea radius instead.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Absorb Magic",
+      name: 'Absorb Magic',
 
       effect: `
         You gain a +2 bonus to your defenses against \\glossterm{magical} effects.
@@ -401,11 +401,11 @@ export const thaumaturgy: MysticSphere = {
         After you negate two attacks in this way, this spell's effect ends.
       `,
       rank: 6,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Second Mind",
+      name: 'Second Mind',
 
       effect: `
         Choose a \\glossterm{magical} ability you are currently sustaining that requires either a \\glossterm{free action} or a \\glossterm{minor action} to sustain.
@@ -415,11 +415,11 @@ export const thaumaturgy: MysticSphere = {
         Instead, you always make the same choice you made the last time you manually sustained the effect.
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Spellseal",
+      name: 'Spellseal',
 
       attack: {
         crit: `The effect ends after the target fails to cast three spells instead of only one.`,
@@ -430,11 +430,11 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Delay Teleportation",
+      name: 'Delay Teleportation',
 
       effect: `
         Whenever a creature or object would teleport into a \\largearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
@@ -447,13 +447,13 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "You can choose to affect a \\hugearea radius instead.",
+        6: 'You can choose to affect a \\hugearea radius instead.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Spellward",
+      name: 'Spellward',
 
       effect: `
         Choose a \\glossterm{zone} within \\longrange.
@@ -465,13 +465,13 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 5,
       scaling: {
-        7: "The maximum area increases to a \\hugearea radius.",
+        7: 'The maximum area increases to a \\hugearea radius.',
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Cryptic Spells",
+      name: 'Cryptic Spells',
 
       effect: `
         Whenever you cast a spell, you may choose to mimic the identifying characteristics of a different spell you know.
@@ -484,11 +484,11 @@ export const thaumaturgy: MysticSphere = {
         An observer who gets a \\glossterm{critical success} to identify the spell's effects can identify the true spell that you are casting (see \\pcref{Identify Magical Effect}).
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Reflect Magic",
+      name: 'Reflect Magic',
 
       functionsLike: {
         name: 'total defense',
@@ -503,7 +503,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Reflect Targeted Magic",
+      name: 'Reflect Targeted Magic',
 
       functionsLike: {
         name: 'total defense',
@@ -519,7 +519,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Wall of Magic Impedance",
+      name: 'Wall of Magic Impedance',
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
@@ -531,17 +531,17 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "You can choose to create a \\medarealong wall instead.",
+        6: 'You can choose to create a \\medarealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Dispel Curse",
+      name: 'Dispel Curse',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
         All curses affecting the target are removed.
@@ -551,20 +551,20 @@ export const thaumaturgy: MysticSphere = {
       rank: 3,
     },
     {
-      name: "Suppress Magic Aura",
+      name: 'Suppress Magic Aura',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
         All magical effects on the target, including any magic items a target creature wears or carries, are undetectable with abilities that detect magic.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Permanent Suppress Magic Aura",
+      name: 'Permanent Suppress Magic Aura',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
         All magical effects on the target are undetectable with abilities that detect magic.
@@ -573,27 +573,27 @@ export const thaumaturgy: MysticSphere = {
       rank: 4,
     },
     {
-      name: "Analyze Magic",
+      name: 'Analyze Magic',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Make a Knowledge check to identify a magical effect with a +5 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 2,
     },
     {
-      name: "Greater Analyze Magic",
+      name: 'Greater Analyze Magic',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Make a Knowledge check to identify a magical effect with a +10 bonus (see \\pcref{Identify Magical Effect}).
       `,
       rank: 4,
     },
     {
-      name: "Supreme Analyze Magic",
+      name: 'Supreme Analyze Magic',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Make a Knowledge check to identify a magical effect with a +15 bonus (see \\pcref{Identify Magical Effect}).
       `,

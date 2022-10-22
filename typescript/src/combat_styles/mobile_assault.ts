@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const mobileAssault: CombatStyle = {
-  name: "Mobile Assault",
-  shortDescription: "Move around the battlefield with ease to avoid threats or hunt weak foes.",
+  name: 'Mobile Assault',
+  shortDescription: 'Move around the battlefield with ease to avoid threats or hunt weak foes.',
 
   maneuvers: [
     {
-      name: "Reaping Harvest",
+      name: 'Reaping Harvest',
 
       effect: `
         Move up to half your movement speed in a straight line.
@@ -18,7 +18,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Reaping Harvest+",
+      name: 'Reaping Harvest+',
 
       effect: `
         Move up to your movement speed in a straight line.
@@ -29,7 +29,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Spring Attack",
+      name: 'Spring Attack',
 
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
@@ -59,7 +59,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Push Through",
+      name: 'Push Through',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -69,21 +69,21 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Sprinting Charge",
+      name: 'Sprinting Charge',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
           When you use this ability, you increase your \\glossterm{fatigue level} by one.
         `,
-        name: "charge",
+        name: 'charge',
       },
       rank: 1,
     },
 
     {
-      name: "Prepared Sprint",
+      name: 'Prepared Sprint',
 
       effect: `
         Your movement speed is \\glossterm{briefly} doubled.
@@ -93,7 +93,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Retreating Strike",
+      name: 'Retreating Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -104,7 +104,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Flash Strike",
+      name: 'Flash Strike',
 
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
@@ -115,7 +115,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Flash Flurry",
+      name: 'Flash Flurry',
 
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\medrange.
@@ -126,7 +126,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Flash Charge",
+      name: 'Flash Charge',
 
       effect: `
         You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
@@ -137,7 +137,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Leaping Strike",
+      name: 'Leaping Strike',
 
       effect: `
         You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
@@ -147,7 +147,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Leaping Impact Strike",
+      name: 'Leaping Impact Strike',
 
       effect: `
         You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
@@ -158,7 +158,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Vault Over",
+      name: 'Vault Over',
 
       effect: `
         Make an attack vs. Reflex against one creature adjacent to you that is no more than one size category larger than you.
@@ -172,7 +172,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Passing Splitstrike",
+      name: 'Passing Splitstrike',
 
       effect: `
         Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
@@ -184,7 +184,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Unbalancing Backstep",
+      name: 'Unbalancing Backstep',
 
       effect: `
         Choose a creature you can see.
@@ -200,7 +200,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Fearsome Pounce",
+      name: 'Fearsome Pounce',
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
@@ -208,11 +208,11 @@ export const mobileAssault: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
       rank: 1,
-      tags: ["Emotion"],
+      tags: ['Emotion'],
     },
 
     {
-      name: "Fearsome Pounce+",
+      name: 'Fearsome Pounce+',
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
@@ -220,37 +220,37 @@ export const mobileAssault: CombatStyle = {
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
-      tags: ["Emotion"],
+      tags: ['Emotion'],
     },
 
     {
-      name: "Mighty Charge",
+      name: 'Mighty Charge',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain a +2 damage bonus with the strike if you moved at least 15 feet during the charge.
         `,
-        name: "charge",
+        name: 'charge',
       },
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Frenzied Charge",
+      name: 'Frenzied Charge',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
           However, the penalty to your defenses increases to \\minus4.
         `,
-        name: "charge",
+        name: 'charge',
       },
       rank: 3,
     },
