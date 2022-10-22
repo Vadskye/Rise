@@ -68,7 +68,7 @@ export const telekinesis: MysticSphere = {
       // general
       attack: {
         crit: `The difficulty value of the Strength check increases by 10.`,
-        hit: `\\glossterm{condition}, the target is unable to move closer to you without effort.
+        hit: `As a \\glossterm{condition}, the target is unable to move closer to you without effort.
         This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
         As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
         If it succeeds, it can move towards you at half speed.`,
