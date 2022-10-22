@@ -252,5 +252,27 @@ export const dirtyFighting: CombatStyle = {
       `,
       rank: 3,
     },
+
+    {
+      name: "Eye Jab",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
+      `,
+      rank: 1,
+    },
+
+    {
+      name: "Eye Gouge",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+      `,
+      rank: 7,
+    },
   ],
 };
