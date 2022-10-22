@@ -30,7 +30,7 @@ export const bluntForce: CombatStyle = {
       name: "Ground Stomp",
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
@@ -66,11 +66,10 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
+        If your attack result beats a target's Fortitude defense, you gain a +4 damage bonus with the strike against that target.
       `,
-      rank: 1,
+      rank: 3,
       scaling: {
-        3: "The damage bonus increases to +4.",
         5: "The damage bonus increases to +8.",
         7: "The damage bonus increases to +16.",
       },
@@ -131,6 +130,17 @@ export const bluntForce: CombatStyle = {
       },
       scaling: "damage",
       rank: 3,
+    },
+
+    {
+      name: "Leap Slam+",
+
+      functionsLike: {
+        name: "leap slam",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}",
+      },
+      scaling: "damage",
+      rank: 7,
     },
 
     {
