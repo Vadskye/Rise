@@ -114,6 +114,17 @@ export const telekinesis: MysticSphere = {
     },
 
     {
+      name: "Multifling",
+
+      functionsLike: {
+        name: "fling object",
+        exceptThat: "you can fling two objects, each at a different target within range. In addition, the damage increases to 2d8.",
+      },
+      rank: 4,
+      scaling: "damage",
+    },
+
+    {
       name: "Mighty Fling Object",
 
       functionsLike: {
@@ -156,45 +167,6 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 2,
       type: "Attune",
-    },
-
-    {
-      name: "Kinetic Impedance",
-
-      attack: {
-        crit: `
-          The effect is a condition regardless of the target's size category.
-        `,
-        hit: `
-          If the target is Large or smaller, it is \\slowed as a \\glossterm{condition}.
-          Otherwise, it is \\glossterm{briefly} slowed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-
-      rank: 4,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Mass Kinetic Impedance",
-
-      attack: {
-        crit: `
-          The effect is a condition regardless of the target's size category.
-        `,
-        hit: `
-          For each target, if it is Large or smaller, it is \\slowed as a \\glossterm{condition}.
-          Otherwise, it is \\glossterm{briefly} slowed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\areasmall radius within \\medrange.
-        `,
-      },
-      rank: 6,
-      scaling: "accuracy",
     },
 
     {
@@ -541,7 +513,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           The target takes 4d8 + half \\glossterm{power} bludgeoning damage immediately, and again during your next action.
-          If it takes a \\glossterm{vital wound} from this damage, it is crushed into a small sphere and immediately dies.
+          If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.

@@ -247,8 +247,8 @@ export const revelation: MysticSphere = {
       rank: 1,
       scaling: {
         3: `The range increases to 60 feet.`,
-        5: `The range increases to 120 feet.`,
-        7: `The range increases to 240 feet.`,
+        5: `The range increases to 90 feet.`,
+        7: `The range increases to 120 feet.`,
       },
       type: "Attune",
     },

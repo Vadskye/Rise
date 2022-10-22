@@ -209,7 +209,6 @@ export const prayer: MysticSphere = {
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
       `,
       rank: 4,
       scaling: {
@@ -222,7 +221,6 @@ export const prayer: MysticSphere = {
 
       effect: `
         You and each \\glossterm{ally} within a \\smallarea radius from you can each remove a \\glossterm{condition}.
-        This cannot remove effects applied during the current round.
       `,
       rank: 6,
     },
@@ -278,7 +276,6 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
-        This cannot remove a condition applied during the current round.
       `,
       rank: 7,
       type: "Attune (target)",
