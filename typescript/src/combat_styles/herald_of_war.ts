@@ -101,16 +101,48 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Directed Shout",
+      name: "Thunderous Shout+",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 2d10 + half bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange of you.
+          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
       scaling: "damage",
-      rank: 3,
+      rank: 7,
+    },
+
+    {
+      name: "Directed Shout",
+
+      attack: {
+        hit: `
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange of you.
+        `,
+      },
+      scaling: "damage",
+      rank: 1,
+    },
+
+    {
+      name: "Directed Shout+",
+
+      attack: {
+        hit: `
+          The target takes 4d8 + \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange of you.
+        `,
+      },
+      scaling: "damage",
+      rank: 5,
     },
 
     {
@@ -223,7 +255,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.
       `,
-      rank: 3,
+      rank: 1,
       tags: ['Emotion', 'Swift'],
     },
   ],
