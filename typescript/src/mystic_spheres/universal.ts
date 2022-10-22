@@ -67,7 +67,7 @@ export const universal: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Mystic Bolt",
+      name: "Mighty Mystic Bolt",
 
       attack: {
         hit: `The target takes 2d10 + \\glossterm{power} damage.`,
@@ -92,7 +92,7 @@ export const universal: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Greater Mystic Discharge",
+      name: "Massive Mystic Discharge",
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
@@ -155,7 +155,7 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Greater Mystic Trap",
+      name: "Massive Mystic Trap",
 
       castingTime: "24 hours",
       functionsLike: {
@@ -175,11 +175,11 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Greater Enduring Mystic Trap",
+      name: "Massive Enduring Mystic Trap",
 
       castingTime: "24 hours",
       functionsLike: {
-        name: "greater mystic trap",
+        name: "massive mystic trap",
         exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
