@@ -105,11 +105,11 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Your \\glossterm{power} with the strike is halved.
         The strike targets all \\glossterm{enemies} adjacent to you.
         Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
