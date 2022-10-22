@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize};
+use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize, Size};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
@@ -160,6 +160,12 @@ where
             } else if let Modifier::Vulnerable(def) = modifier {
                 special_defenses.vulnerable.push(def.clone());
             }
+        }
+        if matches!(self.get_size(), Size::Gargantuan) || matches!(self.get_size(), Size::Colossal)
+        {
+            special_defenses
+                .immune
+                .push(SpecialDefenseType::Debuff(Debuff::Prone))
         }
         return special_defenses;
     }
