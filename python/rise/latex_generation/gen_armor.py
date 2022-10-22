@@ -658,15 +658,14 @@ def generate_armor():
     armor += [
         create_armor(
             name="Shield of Mystic Reflection",
-            rank=6,
+            rank=4,
             tags=['Swift'],
             material_type="Shield",
             description="""
                 Whenever you use the \\ability<total defense> ability, you can activate this shield.
-                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round are redirected to target the creature using that ability instead of you.
+                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round also the creature using that ability in addition to you.
                 It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
-                After you activate this shield, you \\glossterm<briefly> cannot activate it again.
             """,
             short_description="React to reflect magical attacks",
         ),

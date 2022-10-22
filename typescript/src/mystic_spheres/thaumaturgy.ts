@@ -490,13 +490,14 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Reflect Magic",
 
-      effect: `
-        You immediately take the \\textit{total defense} action.
-        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
-        It cannot choose to reduce its accuracy or damage against itself.
-
-        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
-      `,
+      functionsLike: {
+        name: 'total defense',
+        abilityType: 'ability',
+        exceptThat: `
+          whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+          It cannot choose to reduce its accuracy or damage against itself.
+        `,
+      },
       rank: 3,
       tags: ['Swift'],
     },
@@ -504,12 +505,15 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Reflect Targeted Magic",
 
-      effect: `
-        You immediately take the \\textit{total defense} action.
-        In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you this round are redirected to target the creature using that ability instead of you.
-        It cannot choose to reduce its accuracy or damage against itself.
-        Any other targets of the ability are affected normally.
-      `,
+      functionsLike: {
+        name: 'total defense',
+        abilityType: 'ability',
+        exceptThat: `
+          any \\glossterm{targeted} \\glossterm{magical} abilities that would target you this round also target the creature using that ability in addition to you.
+          It cannot choose to reduce its accuracy or damage against itself.
+          Any other targets of the ability are affected normally.
+        `,
+      },
       rank: 5,
       tags: ['Swift'],
     },
