@@ -574,7 +574,7 @@ def generate_apparel():
             rank=7,
             material_type="Boots",
             description="""
-                You are immune to all effects that reduce your movement speed or prevent you from moving, including nonmagical effects such as \\glossterm<difficult terrain>.
+                You are immune to all effects that reduce your movement speed or prevent you from moving, including \\glossterm<difficult terrain>.
                 This removes all penalties you would suffer for \\swimming.
                 This does not prevent you from being \\grappled, but you gain a +4 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
             """,
@@ -1153,7 +1153,6 @@ def generate_apparel():
             description="""
                 At the end of each round, if you are not \\glossterm<unconscious> due to \\glossterm<fatigue>, you automatically remove one of your \\glossterm<vital wounds>.
                 You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
-                This cannot remove a vital wound you gained during the current round.
                 When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
             """,
             short_description="Automatically exert to remove vital wounds",
@@ -2104,7 +2103,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
@@ -2118,7 +2116,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
             """,
             short_description="Can remove a condition",
         ),
@@ -2130,7 +2127,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove up to two \\glossterm<conditions> affecting you.
-                This cannot remove an effects applied during the current round.
             """,
             short_description="Can remove two conditions",
         ),
@@ -2145,7 +2141,6 @@ def generate_apparel():
             description="""
                 As a \\glossterm<minor action>, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
 
                 After you use this belt, you increase your \\glossterm<fatigue level> by two.
             """,
