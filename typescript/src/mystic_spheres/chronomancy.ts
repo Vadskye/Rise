@@ -56,8 +56,6 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Twinstrike",
 
       effect: `
-        This spell has no \\glossterm{somatic components}.
-
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         You may reroll the accuracy roll and take the highest result.
@@ -75,8 +73,6 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Triplestrike",
 
       effect: `
-        This spell has no \\glossterm{somatic components}.
-
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         You may reroll the accuracy roll twice and take the highest result.
@@ -416,6 +412,8 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Draw",
 
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         You draw one or two weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
       `,
@@ -481,7 +479,6 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
       `,
       rank: 4,
       narrative: `
