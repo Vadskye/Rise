@@ -118,6 +118,21 @@ export const enchantment: MysticSphere = {
     },
 
     {
+      name: "Taunt",
+
+      attack: {
+        crit: `The condition must be removed twice before the effect ends.`,
+        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Emotion"],
+    },
+
+    {
       name: "Confusion",
 
       attack: {
