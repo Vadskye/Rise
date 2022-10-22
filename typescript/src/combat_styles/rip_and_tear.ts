@@ -160,7 +160,7 @@ export const ripAndTear: CombatStyle = {
     // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
     // delay, so seems fine
     {
-      name: "Greater Bloodletting Strike",
+      name: "Bloodletting Strike+",
 
       functionsLike: {
         name: 'bloodletting strike',
