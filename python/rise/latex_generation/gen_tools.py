@@ -20,7 +20,6 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
             """,
             short_description="Removes a condition",
             upgrades=[
@@ -383,8 +382,7 @@ def generate_tools():
             tags=[],
             description="""
                 You can throw this powder in the air in your location as a standard action.
-                When you do, it emits a burst of \\glossterm<bright illumination> in a 60 foot radius and \\glossterm<shadowy illumination> in a 120 foot radius.
-                The light lasts until the end of the round.
+                When you do, it \\glossterm<briefly> emits a burst of \\glossterm<bright illumination> in a 60 foot radius and \\glossterm<shadowy illumination> in a 120 foot radius.
             """,
             short_description="Emits burst of bright light",
         )
@@ -400,10 +398,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d6+1 sonic damage.
+                On a hit, each target takes 1d6+1 bludgeoning damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d6+1 sonic damage and deafen",
+            short_description="Throw to deal 1d6+1 bludgeoning damage and deafen",
             upgrades=[
                 Upgrade(
                     rank=3,
@@ -411,15 +409,15 @@ def generate_tools():
                         The damage increases to 1d10+2.
                         In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
                     """,
-                    short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
+                    short_description="Throw to deal 1d10+2 bludgeoning damage, deafen, and daze",
                 ),
                 Upgrade(
-                    rank=3,
+                    rank=5,
                     description="""
                         The damage increases to 2d8+5.
                         In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
                     """,
-                    short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
+                    short_description="Throw to deal 2d8+5 bludgeoning damage, deafen, and stun",
                 ),
             ],
         ),
@@ -445,7 +443,7 @@ def generate_tools():
                     description="""
                         The damage increases to 2d8+5, and the condition must be removed twice before the effect ends.
                     """,
-                    short_description="Throw to deal 2d8+5 cold damage and extensively slow",
+                    short_description="Throw to deal 2d8+5 cold damage and persistently slow",
                 ),
             ],
         ),
@@ -510,7 +508,7 @@ def generate_tools():
         MagicItem(
             consumable=True,
             name="Tanglefoot Bag",
-            rank=1,
+            rank=2,
             material_type="Alchemical",
             tags=[],
             description="""
@@ -524,18 +522,11 @@ def generate_tools():
             short_description="Slows a foe, though it is easily removable",
             upgrades=[
                 Upgrade(
-                    rank=3,
+                    rank=5,
                     description="""
                         The condition cannot be removed with a Strength check.
                     """,
                     short_description="Slows a foe",
-                ),
-                Upgrade(
-                    rank=5,
-                    description="""
-                        The condition cannot be removed with a Strength check, and it must be removed twice before the effect ends.
-                    """,
-                    short_description="Resiliently slows a foe",
                 ),
             ],
         ),
@@ -1065,7 +1056,7 @@ def generate_tools():
                 You scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
                 One 2-pound bag of caltrops covers a 5-foot square.
 
-                Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make an attack vs. the creature's Armor defense.
+                Whenever a creature moves into the area, unless the creature moves at one quarter speed to avoid the danger, the caltrops make a \\glossterm<reactive attack> vs. Armor against the creature.
                 Unlike most attacks, this attack can happen during the \\glossterm<movement phase>.
                 The accuracy of the caltrops is \\plus0.
                 On a hit, the caltrops deal 1d6 piercing damage.
@@ -1265,10 +1256,10 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus3.
-                Its stage 1 effect makes the target \\slowed and \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts instead of dazed.
+                Its stage 1 effect makes the target \\slowed while the poison lasts.
+                Its stage 3 effect makes the target \\immobilized while the poison lasts.
             """,
-            short_description="Slows and dazes, eventually stuns",
+            short_description="Slows, eventually immobilizes",
         ),
         # +1 rank for +1 accuracy
         MagicItem(

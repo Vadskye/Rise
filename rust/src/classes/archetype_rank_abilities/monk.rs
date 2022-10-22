@@ -12,7 +12,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
-                This is a \abilitytag{Swift} effect, so it helps you if you make a Jump check in the same phase that you make a strike, such as with the \ability{leaping strike} \glossterm{maneuver}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -259,7 +258,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The defense penalty is removed.
                     \end{activeability}
 
-                    \begin{activeability}{Burst of Blinding Speed}[\abilitytag{Swift}]
+                    \begin{activeability}{Burst of Blinding Speed}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus10 foot bonus to your land speed this phase.
@@ -270,7 +269,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You can also move or stand on liquids as if they were solid this phase.
                     \end{activeability}
 
-                    \begin{activeability}{Calm the Inner Tempest}[\abilitytag{Swift}]
+                    \begin{activeability}{Calm the Inner Tempest}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
@@ -281,7 +280,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus12.
                     \end{activeability}
 
-                    \begin{activeability}{Extend the Flow of Ki}[\abilitytag{Swift}]
+                    \begin{activeability}{Extend the Flow of Ki}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
@@ -309,7 +308,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
                     \end{activeability}
 
-                    \begin{activeability}{Flurry of a Thousand Cuts}[\abilitytag{Swift}]
+                    \begin{activeability}{Flurry of a Thousand Cuts}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
@@ -320,7 +319,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to +2.
                     \end{activeability}
 
-                    \begin{activeability}{Hear the Rustling Wings}[\abilitytag{Swift}]
+                    \begin{activeability}{Hear the Rustling Wings}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
@@ -331,7 +330,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus12.
                     \end{activeability}
 
-                    \begin{activeability}{Kindle the Living Flame}[\abilitytag{Swift}]
+                    \begin{activeability}{Kindle the Living Flame}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
@@ -342,7 +341,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The power bonus increases to +4.
                     \end{activeability}
 
-                    \begin{activeability}{Leap of the Heavens}[\abilitytag{Swift}]
+                    \begin{activeability}{Leap of the Heavens}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
@@ -353,7 +352,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus12.
                     \end{activeability}
 
-                    \begin{activeability}{Rest Atop the Precipice}[\abilitytag{Swift}]
+                    \begin{activeability}{Rest Atop the Precipice}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
@@ -364,7 +363,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus12.
                     \end{activeability}
 
-                    \begin{activeability}{Scale the Highest Tower}[\abilitytag{Swift}]
+                    \begin{activeability}{Scale the Highest Tower}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
@@ -399,7 +398,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The failure chance for attacks against you increases to 30\%.
                     \end{activeability}
 
-                    \begin{activeability}{Thread the Eye of the Storm}[\abilitytag{Swift}]
+                    \begin{activeability}{Thread the Eye of the Storm}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
                         You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
@@ -410,17 +409,17 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The penalty reduction increases to 3.
                     \end{activeability}
 
-                    % TODO: this is confusing since skills no longer directly reference attributes
-                    % \begin{activeability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
-                    %     \rankline
-                    %     You can use this ability as a \glossterm{free action}.
-                    %     You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this phase.
+                    \begin{activeability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
+                        \rankline
+                        You can use this ability as a \glossterm{free action}.
+                        You can add your Willpower to all \glossterm{checks} you make this phase that are based on Strength, Dexterity, or Constitution.
+                        However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
 
-                    %     \rankline
-                    %     \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
-                    %     \rank{5} The effect lasts until the end of the current round.
-                    %     \rank{7} The bonus increases to \plus4.
-                    % \end{activeability}
+                        \rankline
+                        \rank{3} You also gain a \plus2 bonus to those checks while this effect lasts.
+                        \rank{5} The effect lasts until the end of the current round.
+                        \rank{7} The penalty is removed.
+                    \end{activeability}
 
                     % TODO: add more
                 }

@@ -1,7 +1,6 @@
 import { aeromancy } from "./aeromancy";
 import { aquamancy } from "./aquamancy";
 import { astromancy } from "./astromancy";
-import { bless } from "./bless";
 import { channelDivinity } from "./channel_divinity";
 import { chronomancy } from "./chronomancy";
 import { cryomancy } from "./cryomancy";
@@ -10,6 +9,7 @@ import { enchantment } from "./enchantment";
 import { fabrication } from "./fabrication";
 import { photomancy } from "./photomancy";
 import { polymorph } from "./polymorph";
+import { prayer } from "./prayer";
 import { pyromancy } from "./pyromancy";
 import { revelation } from "./revelation";
 import { summoning } from "./summoning";
@@ -26,7 +26,6 @@ export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
   astromancy,
-  bless,
   channelDivinity,
   chronomancy,
   cryomancy,
@@ -35,6 +34,7 @@ export const mysticSpheres: MysticSphere[] = [
   fabrication,
   photomancy,
   polymorph,
+  prayer,
   pyromancy,
   revelation,
   summoning,
@@ -60,7 +60,7 @@ export interface MysticSphere {
   spells: Spell[];
 }
 
-interface BaseSpellLike {
+export interface BaseSpellLike {
   attack?: StandardAttack;
   castingTime?: string;
   effect?: string;
@@ -104,7 +104,6 @@ export interface SpellLike extends BaseSpellLike {
 
 export interface StandardAttack {
   crit?: string;
-  glance?: string;
   hit: string;
   targeting: string;
 }

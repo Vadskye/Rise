@@ -11,7 +11,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
                 You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
-                You can suppress or resume the aura as a \glossterm{minor action}.
+                You can suppress or resume the aura as a \glossterm{free action}.
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
@@ -176,7 +176,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{bless} or \sphere{channel divinity}.
+                You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{channel divinity} or \sphere{prayer}.
                 You do not have to have access to that mystic sphere.
                 As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
             ",
@@ -247,12 +247,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{activeability}{Lay on Hands}[\abilitytag{Magical}, \abilitytag{Swift}]
+                \begin{activeability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or an adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
-                    Because this ability has the \abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
@@ -276,7 +275,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Instead regaining hit points, you can cause the target to remove a \glossterm{condition} or a \glossterm{vital wound}.
-                This cannot remove a condition applied during the current round.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,
@@ -428,14 +426,13 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{detect anathema} ability as a standard action.
                 \begin{activeability}{Detect Anathema}[\abilitytag{Detection}, \abilitytag{Magical}]
                     \rankline
-                    You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.
+                    You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
                     This does not give you any specific information about the location of those creatures.
                     Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
 
                     \rankline
                     \rank{4} You also learn the location of all creatures with that alignment.
-                    \rank{6} You can use this ability as a \glossterm{minor action}.
-                    When you do, you \glossterm{briefly} cannot use this ability as a minor action again.
+                    \rank{6} The area increases to a \gargarea cone.
                 \end{activeability}
             ",
             modifiers: None,

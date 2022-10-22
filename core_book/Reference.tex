@@ -126,10 +126,12 @@
     In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
     This does not stack with the \shaken or \panicked effects.
     If the source of a frightened creature's fear is \glossterm{defeated}, this effect is broken.
+    Being frightened is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
     \debuffdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it it as long as it is within \rngmed range of of that creature.
     If the goading creature is \glossterm{defeated}, this effect is broken.
     If a creature is goaded by multiple different creatures simultaneously, it suffers the accuracy penalty on all of its attacks.
+    Being goaded is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
     \debuffdef{grappled} A grappled creature is wrestling or in some other form of hand-to-hand struggle with at least one other creature.
     While grappled, you suffer certain penalties and restrictions, as described below.
@@ -147,7 +149,7 @@
     It is considered to be \unaware of all attacks against it, even if it knows they are coming.
     Paralyzed, bound, and unconscious creatures are helpless.
 
-    \debuffdef{immobilized} An immobilized creature takes a \minus4 penalty to Reflex defense and can't use any of its movement speeds.
+    \debuffdef{immobilized} An immobilized creature takes a \minus4 penalty to its Armor and Reflex defenses and can't use any of its movement speeds.
     Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
     % TODO: Fix flying interaction; safest way to descend for non-good maneuverability
     All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
@@ -157,6 +159,7 @@
     In addition, it is unable to make any attacks that include the source of its fear as a target.
     The penalty from this effect does not stack with the \frightened or \panicked effects.
     If the source of a panicked creature's fear is \glossterm{defeated}, this effect is broken.
+    Being panicked is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
     \debuffdef{paralyzed} A paralyzed creature is unable to take physical actions. It is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. Any creature can move through a space occupied by a paralyzed creature without slowing down, and creatures can stand in a square with a paralyzed creature without \squeezing.
 
@@ -170,17 +173,19 @@
     \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
     It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
     It moves at half of its normal speed, and is considered one size category smaller than normal when determining whether it is subject to \abilitytag{Size-Based} effects, including critical hits.
-
-    A creature can stand up from being prone as a \glossterm{move action}.
-    This generally requires one \glossterm{free hand}.
     If a creature becomes prone while in a precarious situation, such as on a narrow ledge, it may fall.
+
+    A creature can stand up from being prone as part of a \glossterm{movement} using one of their move speeds.
+    This generally requires one \glossterm{free hand}.
+    Standing up from a prone position costs half of the creature's speed during that movement.
 
     \debuffdef{shaken} A shaken creature takes a \minus1 penalty to its Mental defense.
     In addition, it takes a \minus1 penalty to \glossterm{accuracy} against the source of its fear.
     This does not stack with the \frightened or \panicked effects.
     If the source of a shaken creature's fear is \glossterm{defeated}, this effect is broken.
+    Being shaken is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
-    \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus1 penalty to its Reflex defense.
+    \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
     This does not stack with the \immobilized effect.
 
     \debuffdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
@@ -190,7 +195,7 @@
     \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
     This does not stack with the \dazed or \confused effects.
 
-    \debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+    \debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
     \debuffdef{unaware} An creature that is unaware makes no attempt to defend itself.
     Creatures take a \minus6 penalty to Armor and Reflex defenses against attacks that they are unaware of.
@@ -346,11 +351,11 @@
         Undead creatures are affected in unusual ways by effects that directly manipulate life energy.
         They are always considered living \glossterm{allies} for the purpose of effects that would cause living creatures to regain \glossterm{hit points}.
         Whenever they would regain \glossterm{hit points} from an ability that normally only affects living creatures, they instead take energy damage equal to the hit points that they would have regained, ignoring any hit point maximum the ability would normally have.
-        This damage is never resolved as a \abilitytag{Swift} effect, even if the healing ability has that tag.
 
         Any other effects beyond simple hit point recovery are ignored.
         For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.
 
         Similarly, undead are always considered living creatures for the purpose of effects that would normally deal energy damage to living creatures.
         Whenever they would take energy damage from an ability that normally only affects living creatures, they instead regain hit points equal to the energy damage that they would have taken. 
+        This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
         Any other effects beyond simple energy damage are ignored.

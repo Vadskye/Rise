@@ -216,6 +216,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
                     Whenever a vampire makes a creature lose hit points with its bite attack, it regains that much damage resistance.
+                    This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                 ".to_string(),
                 is_magical: true,
                 name: "Vampiric Recovery".to_string(),
@@ -240,15 +241,15 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
                     This penalty is removed as soon as the vampire drinks blood.
                     A vampire can can enter a torpor to survive indefinitely without blood.
-                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and \\frightened by any creatures bearing garlic as a condition.
-                    This damage is repeated at the end of each subsequent round that the vampire spends exposed to garlic.
-                    \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes briefly \\stunned.
-                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and becomes \\immobilized as a condition.
+                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and \frightened by any creatures bearing garlic as a condition.
+                    This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
+                    \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes briefly \stunned.
+                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and becomes \immobilized as a condition.
                     It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
-                    This damage is repeated at the end of each subsequent round that the vampire spends touching or flying over running water.
-                    \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \\blinded as a condition.
+                    This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
+                    \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \blinded as a condition.
                     If it loses hit points from this damage, it immediately dies and dissolves into a pile of ash.
-                    This damage is repeated at the end of each subsequent round that the vampire spends in true sunlight.
+                    This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
                     \parhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
                     The vampire becomes \paralyzed until the stake is removed.
                     A wooden stake is a light improvised weapon that deals 1d4 piercing damage.
@@ -402,8 +403,8 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
                 They are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.
                 Creating a skeleton is generally regarded as a fundamentally evil act.
             "),
-            (5, "
-                Skeletons retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
+            (5, r"
+                Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
                 They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
                 In addition, skeletons are always more agile and less strong than the original creature.
                 All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
@@ -581,8 +582,8 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
                 They must be created from corpses that still retain most of their organs and internal structure.
                 Creating a zombie is generally regarded as a fundamentally evil act.
             "),
-            (5, "
-                Zombies retain all of the \\glossterm{mundane} abilities of the reanimated creature, but lose all \\glossterm{magical} abilities.
+            (5, r"
+                Zombies retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
                 They lose the ability to wield any weapons, though they can sometimes be found wearing the same armor as the original creature.
                 Instead of using weapons, zombies simply slam into their foes with brute force.
                 In addition, zombies are always stronger and less agile than the original creature.

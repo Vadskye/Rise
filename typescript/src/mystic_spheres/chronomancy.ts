@@ -4,6 +4,20 @@ export const chronomancy: MysticSphere = {
   name: "Chronomancy",
   shortDescription: "Manipulate the passage of time to inhibit foes and aid allies.",
   sources: ["arcane", "pact"],
+  specialRules: `
+    Some spells from this mystic sphere can create a time lock on creatures.
+    \\spheredef{time lock} A time lock causes an aspect of a creature to be frozen in time.
+    It always locks a specific statistic or status, such as a creature's current \\glossterm{hit points} or location.
+
+    Some effects can unseal the time lock.
+    This restores the creature to match the state it was in when the time lock was created.
+    For example, the creature's hit points might be restored to their original value.
+    Only the specific aspect of the creature sealed by the time lock is changed.
+    Everything else about the creature remains the same unless otherwise stated.
+    Unsealing a time lock ends the effect.
+
+    If a time locked creature dies, the time lock ends without being unsealed.
+  `,
 
   cantrips: [
     {
@@ -19,19 +33,6 @@ export const chronomancy: MysticSphere = {
         6: "You can read at ten times your normal speed.",
       },
       type: "Sustain (free)",
-    },
-    {
-      name: "Accelerated Search",
-
-      effect: `
-        Make an Awareness check to search everything in a \\smallarea radius from you (see \\pcref{Search}).
-        
-      `,
-      scaling: {
-        2: "You gain a +2 bonus to this check in addition to the normal +5 bonus for searching carefully.",
-        4: "The bonus increases to +3.",
-        6: "The bonus increases to +4.",
-      },
     },
     {
       name: "Rapid Aging",
@@ -55,9 +56,8 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Twinstrike",
 
       effect: `
-        This spell has no \\glossterm{somatic components}.
-
         Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         You may reroll the accuracy roll and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
@@ -73,9 +73,8 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Triplestrike",
 
       effect: `
-        This spell has no \\glossterm{somatic components}.
-
         Make a \\glossterm{strike}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         You may reroll the accuracy roll twice and take the highest result.
         However, you do not add your \\glossterm{power} to damage with the strike.
       `,
@@ -85,38 +84,44 @@ export const chronomancy: MysticSphere = {
       },
     },
 
+    // This is a very unique combination of triggers and effects, so correct rank is hard
     {
-      name: "Slowing Curse",
+      name: "Temporal Dislocation",
 
       attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is \\slowed until it takes a \\glossterm{short rest}.`,
+        crit: `
+          The chance increases to 50\\% if the target takes damage, or 100\\% if it loses hit points.
+        `,
+        hit: `
+          The target is dislocated in time as a \\glossterm{condition}.
+          At the end of each round, if the target took damage during that round, it has a 20\\% chance to be sent forward in time by one round.
+          This chance increases to 50\\% if it lost hit points during the round.
+          During that time, it ceases to exist.
+          At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 6,
       scaling: "accuracy",
-      tags: ["Curse"],
+      tags: [],
     },
 
-    // This is a very unique combination of triggers and effects, so correct rank is hard
     {
-      name: "Curse of Temporal Dislocation",
+      name: "Disjointed Deceleration",
 
       attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `At the end of each round, if the target lost hit points that round, it has a 50\\% chance to be sent forward in time by one round.
-        During the next round, it ceases to exist.
-        At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
-        This effect lasts until the target takes a \\glossterm{short rest}.`,
+        hit: `
+          The target takes 1d6 energy damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
         targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 5,
-      scaling: "accuracy",
-      tags: ["Curse"],
+      rank: 1,
+      scaling: "damage",
     },
 
     {
@@ -129,26 +134,12 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 5,
       scaling: "accuracy",
     },
 
     {
       name: "Mass Slow",
-
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on each target.`,
-        hit: `Each target is \\glossterm{briefly} \\slowed.`,
-        targeting: `
-          Make an attack vs. Mental with a +1 \\glossterm{accuracy} bonus against all creatures in a \\smallarea radius within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Mass Slow",
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -157,24 +148,8 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 7,
       scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Slow",
-
-      attack: {
-        crit: `The target is \\immobilized instead of slowed.`,
-        hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-          The condition must be removed twice before the effect ends.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
     },
 
     // -2 levels for 50% chance of activation
@@ -182,9 +157,11 @@ export const chronomancy: MysticSphere = {
       name: "Stutterstop",
 
       attack: {
-        crit: `The target is immobilized every round.`,
-        hit: `As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
-        At the start of each round, it has a 50\\% chance to be \\immobilized during that round.`,
+        crit: `The target is immobilized every round as long as it has no remaining damage resistance.`,
+        hit: `
+          As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
+          At the start of each round, if it has no remaining \\glossterm{damage resistance}, it has a 50\\% chance to be \\immobilized during that round.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -198,9 +175,9 @@ export const chronomancy: MysticSphere = {
       name: "Haste",
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your speed with all of your \\glossterm{movement modes}.
+        You gain a +10 foot \\glossterm{magic bonus} to your land speed.
       `,
-      rank: 4,
+      rank: 3,
       type: "Attune",
     },
 
@@ -221,6 +198,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: "minor action",
       effect: `
+        When you cast this spell, you increase your \\glossterm{fatigue level} by one.
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
         The duplicate is identical in all ways to the target when the spell resolves.
@@ -234,7 +212,8 @@ export const chronomancy: MysticSphere = {
         Its \\glossterm{hit points}, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
 
         The duplicate is fragile, and its actions are limited.
-        It cannot use actions that would cause it to increase its \\glossterm{fatigue level}, lose \\glossterm{hit points}, or otherwise suffer negative consequences as a cost of the action.
+        It cannot use abilities that have limitations on their usage, such as only being usable once per short rest.
+        It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 5,
@@ -284,25 +263,13 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the target's mind in time.
-        Note the target's current \\glossterm{conditions}.
-        If the target dies, this effect ends immediately.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{conditions}.
+        You can unseal the time lock as a standard action.
 
-        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
-        If you do, the target's \\glossterm{conditions} become identical to what they were when you cast this spell.
-        This restoration is a \\abilitytag{Swift} effect, so it happens before any incoming attacks.
-        It does not affect any other properties of the target, such as any vital wounds gained or resources expended.
-        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by two, and the spell ends.
+        Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
+        This removes any excess conditions and reapplies any missing conditions.
       `,
-      rank: 2,
-      scaling: {
-        4: `
-          The target's fatigue level only increases by one instead of two.
-        `,
-        6: `
-          The target's fatigue level does not increase.
-        `,
-      },
+      rank: 4,
       type: "Sustain (minor)",
     },
 
@@ -311,24 +278,14 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        You lock the state of the target's body in time.
-        Note the target's current location.
-        If the target dies, this effect ends immediately.
+        You create a \\sphereterm{time lock} for the target's current location.
+        You can unseal the time lock as a standard action.
 
-        As a \\glossterm{standard action}, you can reach through time to restore the target's state.
-        If you do, the target \\glossterm{teleports} back to where it was when you cast this spell.
-        This teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
-        After you restore the target's state in this way, it increases its \\glossterm{fatigue level} by one, and the spell ends.
+        Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
+        This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
+        If the locked location is occupied, the creature reappears in the closest open space.
       `,
       rank: 2,
-      scaling: {
-        4: `
-          The target's fatigue level does not increase.
-        `,
-        6: `
-          You can target an additional \\glossterm{ally} within range.
-        `,
-      },
       type: "Sustain (minor)",
     },
 
@@ -336,14 +293,14 @@ export const chronomancy: MysticSphere = {
       name: "Time Lock -- Health",
 
       effect: `
-        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{hit points} instead of its conditions.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{hit points}.
+        You can unseal the time lock as a standard action.
+
+        Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
+        In addition, the creature increases its \\glossterm{fatigue level} by two.
       `,
       rank: 4,
-      scaling: {
-        6: `
-          The target's fatigue level only increases by one instead of two.
-        `,
-      },
       type: "Sustain (minor)",
     },
 
@@ -351,8 +308,13 @@ export const chronomancy: MysticSphere = {
       name: "Time Lock -- Vitality",
 
       effect: `
-        This spell functions like the \\spell{time lock -- mind} spell, except that you lock and restore the target's \\glossterm{vital wounds} instead of its conditions.
-        In addition, the target's fatigue level increases by four when it is restored instead of only increasing by two.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        You create a \\sphereterm{time lock} for the target's current \\glossterm{vital wounds}.
+        You can unseal the time lock as a standard action.
+
+        Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
+        This removes any excess vital wounds and reapplies any missing vital wounds.
+        In addition, the creature increases its \\glossterm{fatigue level} by four.
       `,
       rank: 7,
       type: "Sustain (minor)",
@@ -382,8 +344,8 @@ export const chronomancy: MysticSphere = {
         You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
-      rank: 4,
-      type: "Attune",
+      rank: 3,
+      type: "Attune (deep)",
     },
 
     {
@@ -391,7 +353,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You can take two \\glossterm{minor actions} each round instead of one.
-        You cannot take the same minor action twice in the same round.
+        As normal, you cannot take the same minor action twice in the same round.
       `,
       rank: 6,
       type: "Attune (deep)",
@@ -420,12 +382,11 @@ export const chronomancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       attack: {
-        // crit: '',
         hit: `
           The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
-          In addition, it is \\unconscious and cannot act in any way.
+          In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
           After it returns to normal, it becomes immune to being frozen in time in this way until it takes a \\glossterm{short rest}.
         `,
@@ -451,6 +412,8 @@ export const chronomancy: MysticSphere = {
       name: "Accelerated Draw",
 
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         You draw one or two weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
       `,
@@ -471,7 +434,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You can change your appearance or equipment with superhuman speed.
         This has no effect on any creatures other than yourself.
-        This can have any one of the following effects, which are completed at the end of the current phase regardless of the time they would normally take:
+        This can have any one of the following effects, which are completed at the end of the current round regardless of the time they would normally take:
         \\begin{itemize}
           \\item You can take off your body armor or clothing, along with any weapons or shields you have equipped.
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
@@ -493,35 +456,35 @@ export const chronomancy: MysticSphere = {
     {
       name: "Expeditious Retreat",
 
-      effect: `
-        You \\glossterm{briefly} gain a +20 \\glossterm{magic bonus} to your speed with all \\glossterm{movement modes}.
-      `,
+      functionsLike: {
+        abilityType: "ability",
+        exceptThat: `
+          you gain a +10 foot \\glossterm{magic bonus} to your land speed for the duration of the movement.
+        `,
+        name: "sprint",
+      },
       narrative: `
         You accelerate your body to flee from combat with incredible alacrity.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The speed bonus increases to +30 feet.",
-        6: "The speed bonus increases to +40 feet.",
+        3: "The speed bonus increases to +20 feet.",
+        5: "The speed bonus increases to +30 feet.",
+        7: "The speed bonus increases to +40 feet.",
       },
     },
 
     {
-      name: "Disjointed Expiration",
+      name: "Sudden Expiration",
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
-        For each effect removed this way, you deal the target 4 energy damage.
       `,
       rank: 4,
       narrative: `
         You twist time to let your ally's nausea run its natural course in mere seconds.
         It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
       `,
-      scaling: {
-        6: `The target can remove two conditions.`,
-      },
     },
 
     {
@@ -557,7 +520,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Rewind Damage',
+      name: 'Empowered Rewind Damage',
 
       functionsLike: {
         name: 'rewind damage',
@@ -565,6 +528,68 @@ export const chronomancy: MysticSphere = {
       },
       rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Wave of Senescence',
+      attack: {
+        hit: `
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against each creature in a \\smallarea cone.
+          In addition, you choose to focus the aging effects of the cone on either sight or hearing.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+
+    {
+      name: 'Intense Wave of Senescence',
+      attack: {
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled and \\deafened.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against each creature in a \\medarea cone.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+    },
+    // +1r for +2 acc
+    {
+      name: 'Unstable Aging',
+      attack: {
+        hit: `
+          The target takes 1d10 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+    // +3r for +4 acc
+    {
+      name: 'Mighty Unstable Aging',
+      attack: {
+        hit: `
+          The target takes 4d8 + \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange.
+          You gain a +4 accuracy bonus against creatures that are too young or too old to be ordinary adults.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
     },
   ],
   rituals: [

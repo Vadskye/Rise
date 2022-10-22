@@ -180,7 +180,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources, including spells and special abilities from enemies.
+                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },
@@ -231,13 +231,12 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-                \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Swift}, \abilitytag{Subtle}}
+                \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
                     \rankline
-                    Choose a creature within \longrange.
+                    Choose a creature within \extrange.
                     The target becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
-                    Because this ability has the \abilitytag{Swift} tag, this affects attacks against the target during the current phase.
                 \end{attuneability}
             ",
             // TODO: this also affects allies
@@ -251,8 +250,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You can use this ability with the \abilitytag{Sustain} (free) tag instead of the \abilitytag{Attune} tag.
-                If you originally used it as a sustained ability, you can attune to the same quarry as a free action, even if your quarry is no longer in sight.
+                This ability now has the \abilitytag{Sustain} (attuneable, free) tag instead of the \abilitytag{Attune} tag (see \pcref{Sustained Abilities}).
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
@@ -279,7 +277,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Anchoring}[\abilitytag{Magical}]
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
-                        This prevents all \abilitytag{Manifestation} and \glossterm{teleportation} effects.
+                        This prevents all \glossterm{teleportation} effects.
 
                         \rankline
                         \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
@@ -355,17 +353,17 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                         \rankline
-                        \rank{4} At the start of each phase, you can declare one creature you see to be your quarry in addition to any existing creatures.
-                        \rank{6} You can add any number of creatures at the start of each phase.
+                        \rank{4} As a \glossterm{free action}, you can declare one creature you see to be your quarry in addition to any existing creatures.
+                        \rank{6} You can add any number of creatures as a free action instead of only one.
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
                         \rankline
-                        At the start of each \glossterm{phase}, if your quarry is adjacent to at least two members of your hunting party, it moves at half speed until the end of that phase.
+                        While your quarry is adjacent to at least three members of your hunting party, those adjacent members gain an additional \plus1 accuracy bonus against it.
 
                         \rankline
-                        \rank{4} This effect instead applies if your quarry is adjacent to any member of your hunting party.
-                        \rank{6} Your quarry is \slowed instead of moving at half speed.
+                        \rank{4} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
+                        \rank{6} This effect instead applies if your quarry is adjacent to any member of your hunting party.
                     \end{activeability}
                 }
             ",
@@ -386,7 +384,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The Survival bonus increases to \plus5.
+                The Survival bonus increases to \plus6.
                 In addition, the bonus to follow tracks from your quarry increases to \plus20.
             ",
             modifiers: None,
@@ -414,7 +412,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                As a \glossterm{minor action}, you can change which \textit{hunting style} you have active.
+                You can change which \textit{hunting style} you have active as a \glossterm{minor action}.
             ",
             modifiers: None,
         },

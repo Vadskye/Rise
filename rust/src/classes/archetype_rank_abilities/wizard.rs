@@ -65,8 +65,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                         % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
                     \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Potent Construction} Whenever you create an alchemical item that deals damage or regains hit points, you double the item's flat modifier to damage or healing.
-                    For example, a firebomb would deal 1d10+2 damage instead of 1d10+1 damage.
-                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical infusion} ability.
+                    For example, a firebomb would deal 1d10+4 damage instead of 1d10+2 damage.
+                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical power} ability.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
@@ -101,6 +101,15 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Alchemical Infusion+",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You gain a \plus1d bonus to the damage or healing caused by alchemical items you use.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Alchemical Tolerance",
             is_magical: true,
             rank: 3,
@@ -126,15 +135,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can drink up to two doses of potions, elixirs, and other drinkable alchemical items as part of the same standard action.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Experienced Quaffing+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You can drink a single dose of a potion, elixir, or other drinkable alchemical item as a \glossterm{minor action}.
             ",
             modifiers: None,
         },
@@ -471,9 +471,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell during the \glossterm{action phase}, you may use this ability to extend the casting time.
-                If you do, the spell does not take effect until the \glossterm{delayed action phase}.
-                In exchange, you gain a \plus1 bonus to \glossterm{accuracy} with the spell if you did not lose \glossterm{hit points} during the action phase.
+                Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
+                If you do, you gain a \plus1 accuracy bonus with the spell.
+                However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
+                This defense penalty is \abilitytag{Swift}.
             ",
             modifiers: None,
         },
@@ -582,7 +583,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
                     In addition, the Armor bonus increases to \plus2.
 
-                    \subcf{Conjuration} The range improvement increases to \plus120 feet.
+                    \subcf{Conjuration} The range improvement increases to \plus90 feet.
 
                     \subcf{Evocation} The power bonus increases to \plus12.
 

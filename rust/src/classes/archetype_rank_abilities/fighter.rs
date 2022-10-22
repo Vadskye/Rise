@@ -26,8 +26,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
                     \rankline
                     Remove one \glossterm{condition} affecting you.
-                    This cannot remove effects applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
+                    Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
 
                     \rankline
                     \rank{4} You \glossterm{briefly} cannot gain any \glossterm{conditions} after using this ability.
@@ -121,10 +120,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     You become proficient with the weapon you trained with.
                     You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
                     This ability's effect lasts until you use this ability again.
-
-                    \rankline
-                    \rank{4} You can use this ability with only five minutes of training.
-                    \rank{6} You can use this ability as a \glossterm{minor action}.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -176,8 +171,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You are immune to any effect which would steal your weapon or force you to drop it, such as the \ability{disarm} ability.
-                This does not protect you from any other effects of that attack, such as damage to yourself or the weapon.
+                You are immune to any effect which would steal your weapon or force you to drop it.
+                This does not protect you from any other effects of that attack, such as damage to yourself.
             ",
             modifiers: None,
         },
@@ -356,7 +351,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
+                Your \glossterm{enemies} move at half speed while adjacent to you.
+                This has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
             ",
             modifiers: None,
         },
@@ -375,7 +371,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                This ability applies \glossterm{difficult terrain} twice, causing enemies to move at one-third speed.
+                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you.
             ",
             modifiers: None,
         },
@@ -384,12 +380,11 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You can use the \textit{protect} ability as a \glossterm{minor action}.
+                You can use the \textit{protect} ability as a \glossterm{free action}.
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
                     \rankline
                     Choose an \glossterm{ally} adjacent to you.
-                    It gains a \plus2 bonus to its Armor defense until the end of the round.
-                    Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
+                    It gains a \plus2 bonus to its Armor defense this round.
 
                     A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                     While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
@@ -524,15 +519,26 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Hold The Line}{\abilitytag{Sustain} (minor)}
                         \rankline
-                        Your \glossterm{enemies} treat all areas adjacent to any two targets as \glossterm{difficult terrain}.
+                        Your \glossterm{enemies} move at half speed while adjacent to any two targets.
 
                         \rankline
-                        \rank{3} Each area adjacent to any target is difficult terrain.
-                        \rank{5} In addition, each area adjacent to any two targets is doubly difficulty terrain, which costs three times the normal movement cost to move out of.
-                        \rank{7} Each area adjacent to any target is doubly difficult terrain.
+                        \rank{3} The effect persists for an additional five feet of the enemy's movement.
+                        \rank{5} The extra length increases to 10 feet.
+                        \rank{7} The extra length increases to 15 feet.
                     \end{sustainability}
 
-                    \begin{sustainability}{Hustle}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}
+                        \rankline
+                        Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
+                            gains a \plus1 bonus to its Armor defense this round.
+
+                        \rankline
+                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
+                        \rank{5} The Reflex defense bonus increases to \plus2.
+                        \rank{7} The Reflex defense bonus increases to \plus3.
+                    \end{sustainability}
+
+                    \begin{sustainability}{Rush}{\abilitytag{Sustain} (minor)}
                         \rankline
                         Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
 
@@ -540,17 +546,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} The speed bonus increases to \plus10 feet.
                         \rank{5} The speed bonus increases to \plus15 feet.
                         \rank{7} The speed bonus increases to \plus20 feet.
-                    \end{sustainability}
-
-                    \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}
-                        \rankline
-                        Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
-                            gains a \plus1 bonus to its Armor defense until the end of the round.
-
-                        \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
-                        \rank{5} The Reflex defense bonus increases to \plus2.
-                        \rank{7} The Reflex defense bonus increases to \plus3.
                     \end{sustainability}
 
                     \begin{sustainability}{Stand Your Ground}{\abilitytag{Sustain} (minor)}

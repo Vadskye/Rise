@@ -720,13 +720,6 @@ def universal_abilities():
                 """,
             ),
             universal_ability_button(
-                "Delay",
-                """
-                    You take no actions during the action phase.
-                    Instead, you can act during the delayed action phase.
-                """,
-            ),
-            universal_ability_button(
                 "Escape Grapple",
                 """
                     Make an attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
@@ -744,17 +737,9 @@ def universal_abilities():
             universal_ability_button(
                 "Dirty Trick",
                 """
-                    Make a melee attack with a free hand against the Fortitude or Reflex defense of an adjacent creature. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental. On a critical hit, the effect becomes a condition.
+                    Make a melee attack with a free hand against the Fortitude or Reflex defense of an adjacent creature. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
                  """,
                 attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
-            ),
-            universal_ability_button(
-                "Disarm",
-                """
-                    Make a melee strike vs. Reflex.
-                    On a hit, one of the target's objects may take damage from your strike. If it is attended and not held in a hand or well secured, you can choose to knock it loose. On a critical hit, you can deal double damage and you can also knock loose objects that are held in a single hand.
-                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
                 "Grapple",
@@ -776,7 +761,7 @@ def universal_abilities():
                 """
                     After you use this ability, you increase your fatigue level by one.
                     Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
-                    On a hit, you move through each creature's space. On a critical hit, you also knock each creature prone. On a miss, you end your movement immediately.
+                    On a hit, you move through each creature's space. On a miss, you end your movement immediately.
                  """,
                 attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
             ),
@@ -784,7 +769,7 @@ def universal_abilities():
                 "Recover",
                 """
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
-                    You regain hit points equal to half your maximum hit points. In addition, you remove all conditions affecting you. This cannot remove effects applied during the current round.
+                    You regain hit points equal to your maximum hit points. In addition, you remove all conditions affecting you.
                 """,
                 tags=["Swift"],
             ),
@@ -792,7 +777,7 @@ def universal_abilities():
                 "Shove",
                 """
                     Choose either one adjacent creature or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
-                    On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move. On a critical hit, you can move up to your full movement speed instead.
+                    On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move.
                  """,
                 attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
             ),
@@ -821,7 +806,7 @@ def universal_abilities():
             universal_ability_button(
                 "Total Defense",
                 """
-                    You gain a +2 bonus to your defenses until the end of the round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
+                    You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
                 """,
             ),
         ],

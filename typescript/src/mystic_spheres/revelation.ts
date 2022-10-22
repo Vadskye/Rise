@@ -68,12 +68,12 @@ export const revelation: MysticSphere = {
       name: "Purge Invisibility",
 
       effect: `
-        All invisibility effects within a \\medarea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
+        All \\glossterm{invisibility} effects within a \\largearea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
       `,
       rank: 2,
       scaling: {
-        4: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
-        6: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
+        4: "You can choose to affect a \\hugearea radius instead.",
+        6: "You can choose to affect a \\gargarea radius instead.",
       },
       type: "Attune",
     },
@@ -84,8 +84,7 @@ export const revelation: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the target makes a \\glossterm{strike} this round,
-          it gains a +1 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
+          it gains a +1 \\glossterm{accuracy} bonus and rolls twice and takes the higher result.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
@@ -94,7 +93,7 @@ export const revelation: MysticSphere = {
         5: `The bonus increases to +3.`,
         7: `The bonus increases to +4.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -103,16 +102,15 @@ export const revelation: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The first time the target casts a spell this round,
-        it gains a +1 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
+          it gains a +1 \\glossterm{accuracy} bonus and rolls twice and takes the higher result.
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
+        4: `The bonus increases to +2.`,
+        6: `The bonus increases to +3.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -214,7 +212,7 @@ export const revelation: MysticSphere = {
       rank: 3,
       scaling: "accuracy",
       tags: ["Subtle"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -249,8 +247,8 @@ export const revelation: MysticSphere = {
       rank: 1,
       scaling: {
         3: `The range increases to 60 feet.`,
-        5: `The range increases to 120 feet.`,
-        7: `The range increases to 240 feet.`,
+        5: `The range increases to 90 feet.`,
+        7: `The range increases to 120 feet.`,
       },
       type: "Attune",
     },
@@ -307,44 +305,55 @@ export const revelation: MysticSphere = {
         You are never \\unaware or \\partiallyunaware.
       `,
 
-      rank: 5,
+      rank: 6,
       type: "Attune",
     },
 
     {
       name: "Reveal Weakness",
 
+      // TODO: unclear rank (1.25??)
       attack: {
         crit: `The penalty increases to -4.`,
         hit: `As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
         It takes a -2 penalty to the chosen defense.`,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against one creature within \\longrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
 
-      rank: 1,
+      rank: 2,
       scaling: "accuracy",
     },
 
     {
-      name: "Greater Reveal Weakness",
+      name: "Intense Reveal Weakness",
 
       functionsLike: {
         name: 'reveal weakness',
         exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
       },
-      rank: 5,
+      rank: 6,
       scaling: "accuracy",
     },
 
     {
-      name: "Mass True Strike",
+      name: "Twinned True Strike",
 
       functionsLike: {
-        mass: true,
         name: "True Strike",
+        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
+      },
+      rank: 6,
+    },
+
+    {
+      name: "Twinned True Cast",
+
+      functionsLike: {
+        name: "True Cast",
+        exceptThat: "it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.",
       },
       rank: 7,
     },
@@ -417,7 +426,7 @@ export const revelation: MysticSphere = {
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
         If undisturbed, the sensor floats in the air in its position.
-        As a \\glossterm{move action}, you can move the sensor up to 30 feet in any direction, even vertically.
+        As a \\glossterm{movement}, you can move the sensor up to 30 feet in any direction, even vertically.
         At the end of each round, if the sensor is not within \\distrange from you, it is destroyed.
       `,
       rank: 2,
@@ -542,14 +551,17 @@ export const revelation: MysticSphere = {
       name: "Sensory Chain",
 
       attack: {
-        hit: `As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
-        If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
-        Whenever the target touches another creature, you can make an attack against the new creature.
-        On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
-        On a miss, the condition remains on the previous creature.`,
+        hit: `
+          As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
+          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
+          Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} against the new creature.
+          You can only make this attack against a given target once per \\glossterm{phase}.
+          On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
+          On a miss, the condition remains on the previous creature.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You cannot make this attack against that same creature again until this spell ends.
         `,
       },
 

@@ -141,9 +141,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
 
                     \rankline
-                    The damage increases by \plus1d for each rank beyond 3.
-                    \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-                    \rank{7} The accuracy bonus increases to \plus2.
+                    You gain a +1 accuracy bonus and a +1d damage bonus for each rank beyond 3.
                 \end{activeability}
             ",
             modifiers: None,
@@ -216,6 +214,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
                     \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
+                    This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
@@ -670,15 +669,20 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
-                You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
+                Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
+                You can use the \textit{exchange soul fragment} ability as a standard action.
                 \begin{activeability}{Exchange Soul Fragment}[\abilitytag{Swift}]
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by two.
+                    When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    Remove a \glossterm{condition} affecting you.
-                    This cannot remove an effect applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the penalties from the removed effect do not affect you during the current phase.
+                    You regain 2d6 \add power \glossterm{damage resistance}.
+                    In addition, you may remove a \glossterm{condition} affecting you.
+
+                    \rankline
+                    \rank{4} The healing increases to 2d8.
+                    \rank{5} The healing increases to 4d6.
+                    \rank{6} The healing increases to 4d8.
+                    \rank{7} The healing increases to 5d10.
                 \end{activeability}
             ",
             modifiers: None,
@@ -697,21 +701,19 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Your connection to your soulkeeper deepens, allowing you to send a fragment of your vitality through the link.
-                You can use the \textit{exchange vitality} ability as a \glossterm{minor action}.
-                \begin{activeability}{Exchange Vitality}[\abilitytag{Swift}]
+                Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
+                You can use the \textit{exchange vitality} ability as a standard action.
+                \begin{activeability}{Exchange Vitality}
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by four.
+                    When you use this ability, you increase your \glossterm{fatigue level} by three.
 
                     Remove one of your \glossterm{vital wounds}.
-                    This cannot remove a vital wound applied during the current round.
-                    Because this ability has the \abilitytag{Swift} tag, the penalties from the removed vital wound do not affect you during the current phase.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
-            name: "Split Soul",
+            name: "Soul Fountain",
             is_magical: true,
             rank: 7,
             description: r"

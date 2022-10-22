@@ -146,27 +146,47 @@ situations.
 
 ## Stock effects
 
+### Naming prefixes
+THIS IS AN ORDERED LIST.
+If a spell improves in multiple ways, use the first name in this list that applies.
+* Efficient: lower requirements (on damage instead of on HP loss)
+* Intense: a stronger (non-damaging) hostile effect, like dazed -> stunned
+* Certain: more accuracy
+* Massive: more AOE
+* Empowered: a strong non-hostile numeric effect, like healing
+* Greater: a stronger non-hostile, non-numeric effect, like phasestep -> greater phasestep
+* Distant: more range
+* Mighty: more damage
+
 ### Debuff ranks
 Note: This is duplicated in the Metacaster feat.
 Each debuff rank is +4 spell ranks over its predecessor
 
-* Rank 0
+* Rank 0.5
   * Generally do relatively little
-  * List: deafened
+  * Conditions: deafened, shaken
+  * Instant effects: push 15'
 * Rank 1
-  * Generally give -2 to a category (accuracy/defenses)
-  * Goaded and shaken have proximity requirements, but also debuffing accuracy is scary, so they are considered the same rank as others in this tier
-  * List: Dazed, dazzled, goaded, shaken, slowed, prone (brief = instant knockover only)
+  * Generally give -1 to a category (accuracy/defenses)
+  * Conditions: Dazed, dazzled, shaken
+  * Instant effects: knockback 15', push 30'
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
+* Rank 1.5
+  * Instant effects: prone, teleport 30'
 * Rank 2
-  * Generally give -4 to a category (accuracy/defenses)
-  * List: frightened, stunned
-  * Special: end of round medium damage, knockback 30', lose two attunements and be unable to attune as a condition
+  * Generally give -2 to a category (accuracy/defenses)
+  * Conditions: goaded, frightened, slowed, stunned
+  * Instant effects: knockback 30', stop existing briefly (immune until short rest)
+  * Special: end of round medium damage
 * Rank 2.5
-  * List: fighting underwater, not existing
+  * Conditions: submerged (swimming penalties)
+  * Instant effects: teleport 60'
 * Rank 3
   * Generally cause partial action denial or debilitating penalties
-  * List: confused, blinded, immobilized, panicked, vulnerable to all damage
+  * Conditions: confused, blinded, panicked, vulnerable to all damage
+  * Instant effects: knockback 60'
+* Rank 3.5
+  * Conditions: immobilized
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
@@ -177,31 +197,30 @@ Note that these are used for determining the levels of new effects, not rank upg
 have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
-  * -2 levels: debuff is brief instead of condition (single-target only, can't be combined with HP loss trigger)
-  * -2 levels: become immune to debuff after first success - only valid for non-HP brief debuffs
-  * -4 levels: debuff only applies when the target loses HP from the attack
-  * +0 levels: trade -1a for +1d or vice versa
-  * +0 levels: trade -1a/-1d for minor benefit
-  * +0 level: add specific crit effect to non-damaging effect; standard crit effects:
+  * -4 ranks: debuff only applies when the target loses HP from the attack
+  * -2 ranks: debuff only applies if you beat an additional defense (strike-based attacks only)
+  * +0 ranks: trade -1a for +1d or vice versa
+  * +0 ranks: trade -1a/-1d for minor benefit
+  * +0 rank: add specific crit effect to non-damaging effect; standard crit effects:
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time
     * condition must be removed twice before it is gone
-  * +1 levels: +1a (any attack other than a high-damage attack)
-  * +1 levels: convert condition to poison (including poison crit and +1r debuff on third stage)
-  * +2 levels: +1a (high-damage attacks)
-  * +2 levels: +1d (above standard rank progression, if any; spells only)
-  * +4 levels: +1 rank to debuff
-  * +4 levels: Add additional debuff of the same rank removed at the same time as existing debuff
+  * +1 ranks: +1a (any attack other than a high-damage attack)
+  * +1 ranks: convert condition to poison (including poison crit and +1r debuff on third stage)
+  * +2 ranks: +1a (high-damage attacks)
+  * +2 ranks: +1d (above standard rank progression, if any; spells only)
+  * +4 ranks: +1 rank to debuff
+  * +4 ranks: Add additional debuff of the same rank removed at the same time as existing debuff
 * Non-strikes only:
   * +0 levels: add glancing blow mechanic (min rank 3)
     * Mathematically, this should be +2 levels to match +1 accuracy. However, at high levels the game
       plays better if this effect is common, so it's free.
     * This should not be found on spells below rank 3 to make sure the game plays differently at
       different levels, and to solve accuracy-related math.
-  * +1 level: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
-  * +1 level: convert ability to attunement, no-focus, no-component standard action
-  * +2 level: +1 range (for effects that intrinsically scale with range, like teleportation)
-  * +2 level: remove Focus tag (dangerous; only for narratively relevant spells)
+  * +1 ranks: +1 range (not applicable to effects that intrinsically scale with range, like teleportation)
+  * +1 ranks: convert ability to attunement, no-focus, no-component standard action
+  * +2 ranks: +1 range (for effects that intrinsically scale with range, like teleportation)
+  * +2 ranks: remove Focus tag (dangerous; only for narratively relevant spells)
 * Strikes only:
 
 ### Standard areas:
@@ -254,6 +273,7 @@ Tier 5 areas:
 
 Tier 6 areas:
 * Enemies in Huge radius from self
+* Large radius in Long range
 * Medium radius in Distant range
 * Small radius in Extreme range
 
@@ -287,44 +307,51 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 * Rank 7
   * Strike with +3d or +3 acc
 
-#### Spells: Single target
+#### Spells
 * Rank 1
-  * Med range, 1d10 + power
+  * Med range, 1d8 + power
   * t1 area, 1d6 + half power
 * Rank 2
-  * Close range, 2d8 + power
+  * Close range, 2d6 + power
+  * Grasp, 2d6 + power
+  * Grasp, 1d8 + half power this round and next round
+  * t1 area zone, 1d6 + half power this round and next round in the same zone
+    * this is +1 rank and -1d for the potential of double damage; can upgrade to +2 ranks and -0d
 * Rank 3
-  * Med range, 2d10 + power
-  * t1 area, 2d8 + half power
+  * Med range, 2d8 + power
+  * Med range, 1d10 + half power this round and next round
+  * Med range, 1d10 + half power, doubled if you beat an extra defense
+  * Med range, 1d10 + power next round
+  * t3 area, 1d10 + half power
+  * t1 area, 2d6 + half power
+  * t1 area zone, 1d10 + half power this round and next round in the same zone
+    * this is +2 ranks and -1d for the potential of double damage; can upgrade to +3 ranks and -0d
+  * t1 area zone, 1d8 + half power every round in the same zone (sustain minor)
 * Rank 4
-  * Close range, 4d8 + power
+  * Close range, 4d6 + power
+  * t1 area zone, 2d6 + half power every round in the same zone (sustain minor)
 * Rank 5
-  * Med range, 4d10 + power
-  * t1 area, 4d8 + half power
+  * Med range, 4d8 + power
+  * t1 area, 4d6 + half power
 * Modifiers
-  * "Med range" can be replaced with "Adjacent, no focus"
-
-#### Spells: AOE
-* Rank 1
-  * t1 area, 1d6 + half power
-* Modifiers
-  * +4 levels gives +5d and full power instead of half power
+  * +4 ranks for AOE gives +1d and full power instead of +2d and half power?
 
 #### Spells: Autoattack
 
 * Rank 1
-  * 1d8 damage as a non-action vs creatures in a Medium radius that made you lose HP (Deep)
+  * 1d6 + half power damage as a non-action vs creatures in a Medium radius that made you lose HP (Deep)
   * 1d8 damage as a non-action vs adjacent creatures if you lose HP (Deep)
 * Rank 3
-  * 2d6 damage as a non-action vs creatures that attacked you in melee (Deep)
-  * r1 debuff condition in Small radius as non-action, crit = remove twice, once per creature (Deep)
+  * 1d10 + half power damage as a non-action vs creatures that attacked you in melee (Deep)
+  * r1 debuff condition in Large radius as non-action, crit = r2, once per creature (Deep)
 * Rank 4
   * 2d8 damage as a minor action vs one creature in short range (Deep)
   * Strike with -3 accuracy and no power as a minor action (Deep)
 * Rank 6
+  * 2d8 + half power damage as a non-action vs creatures that attacked you within medrange (Deep)
   * 2d10 damage as a minor action vs everything in Small radius (Deep)
 * Rank 7
-  * r2 debuff condition in Small radius as non-action, once per creature (Deep)
+  * r2 debuff condition in Large radius as non-action, once per creature (Deep)
 
 ### Pure debuff
 
@@ -336,160 +363,135 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
 * Rank 2
   * Med range, poison: r1 debuff, escalates to r2 on third stage
 * Rank 3
-  * Med range, curse: r1 debuff, lasts forever on crit
   * Med range, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
 * Rank 5
   * Med range, condition: r2 debuff, or r3 on crit
   * Med range, condition: r3 debuff while no DR, must remove twice on crit
-  * Med range, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
 * Rank 6
   * Med range, poison: r2 debuff, escalates to r3 on third stage
 * Rank 7
-  * Med range, curse: r2 debuff, lasts forever on crit
-  * Med range, curse: r3 debuff while no DR, lasts forever on crit
   * Med range, condition: r2 and r1 debuff, must remove twice on crit
   * Med range, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
 * Modifiers
   * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
+  * +1 rank: condition becomes a curse, lasts forever on a crit (most spheres don't get curses)
 
 #### Spells: AOE debuff
-For the purpose of pure debuffs, treat single-target Medium range as being a t0 area, and scale from there.
-For AOE spells, brief r2 = condition r1
+For the purpose of pure debuffs, treat single-target Medium range as being a t1 area, and scale from there.
 * Rank 1
-  * t2 area: if no DR, brief r2 debuff, condition r1 debuff; on crit, works vs DR
-  * t4 area, condition: r0 debuff, or r1 on crit
-  * t4 area: brief r1 debuff, condition on crit
-  * t4 area: brief r2 debuff if no DR, condition on crit
-  * t2 area: brief r1 debuff if DR or r2 if no DR, condition on crit
-* Rank 2
+  * t3 area, condition: r0.5 debuff, or r1 on crit
   * t1 area, condition: r1 debuff, or r2 on crit
-  * t1 area, condition: r2 debuff while no DR, must remove twice on crit
-    * This is worse than a damage + debuff in that it doesn't deal damage, but better in that you can pre-cast it and have the full effect become active later
-  * t1 area: brief r2 debuff, condition on crit
-  * t1 area: brief r3 debuff if no DR, condition on crit
-* Rank 4
-  * t1 area, curse: r1 debuff, lasts forever on crit
+  * t1 area, condition: r2 debuff if/while no DR, also affects DR on crit
+* Rank 3
   * t1 area, condition: r1 debuff while DR, or r2 debuff while no DR, must remove twice on crit
-  * t1 area: if no DR, brief r3 debuff, condition r2 debuff; on crit, works vs DR
-  * t1 area: brief r1 debuff if DR or r2 if no DR, condition on crit
-* Rank 6
+* Rank 5
   * t1 area, condition: r2 debuff, or r3 on crit
-  * t1 area, condition: r3 debuff while no DR, must remove twice on crit
-  * t1 area, curse: r1 debuff while DR, or r2 debuff while no DR, lasts forever on crit
-  * t1 area: brief r3 debuff, condition on crit
+  * t1 area, condition: r3 debuff if/while no DR, also affects DR on crit
+* Rank 7
+  * t1 area, condition: r2 debuff while DR, or r3 debuff while no DR, must remove twice on crit
 * Modifiers
   * "while no DR" can be replaced with "while below max HP", which is worse against minions but better against blood mages and weird stuff
+  * +2 ranks: Zone-type spells with Sustain (minor) where the attack is repeated in each subsequent round with lingering effects
+  * -2 ranks: Zone-type spells with Sustain (attuneable, minor) that only function in the area, with no lingering effects
 
-#### Spells: Attuned AOE debuff
+#### Spells: Deep Attuned AOE debuff
+Example: Fearsome Aura
 The minimum area size here should be a t2 area to make these feel different from single-target
-* Rank 3
-  * t2 area, brief r1 debuff, condition on crit, immune after *attack* (not success)
-* Rank 7
-  * t2 area, brief r2 debuff, condition on crit, immune after *attack* (not success)
+* Rank 1
+  * t2 area, r1 debuff condition, condition on crit, immune after *attack* (not success)
+* Rank 5
+  * t2 area, r2 debuff condition, condition on crit, immune after *attack* (not success)
 
 ### Hybrid damage/debuff
 
-For strikes, going from full power -> half power and half -> none buys +3 effect levels
-
 #### Maneuvers: single-target high damage + debuff
 * Rank 1
-  * Strike, brief r0 debuff
-  * Strike, brief r1 debuff if lose HP
+  * Strike, r0.5 debuff condition if lose HP
 * Rank 3
-  * Strike, brief r1 debuff, immune after first success
   * Strike, r1 debuff condition if lose HP
+  * Strike, r0.5 debuff condition if beat defense
 * Rank 5
-  * Strike, brief r1 debuff
-  * Strike, brief r2 debuff if lose HP
+  * Strike, r1 debuff condition if beat defense
 * Rank 7
-  * Strike, r1 debuff condition
-  * Strike, brief r2 debuff, immune after first success
   * Strike, r2 debuff condition if lose HP
 
 #### Maneuvers: single-target medium damage + debuff
 * Rank 1
-  * Strike with half power, brief r1 debuff
-  * Strike with half power, brief r2 debuff if lose HP
+  * Strike with half power, r1 debuff condition if beat defense
 * Rank 3
-  * Strike with half power, r1 debuff condition
+  * Strike with half power, r1.5 debuff condition if beat defense
   * Strike with half power, r2 debuff condition if lose HP
-  * Strike with half power, brief r2 debuff, immune after first success
 * Rank 5
-  * Strike with half power, brief r2 debuff
-  * Strike with half power, brief r3 debuff if lose HP
+  * Strike with half power, r2 debuff condition if beat defense
 * Rank 7
-  * Strike with half power, r2 debuff condition
+  * Strike with half power, r2.5 debuff condition if beat defense
   * Strike with half power, r3 debuff condition if lose HP
-  * Strike with half power, brief r3 debuff, immune after first success
 
 #### Maneuvers: single-target low damage + debuff
--2 rank penalty; spells should be the best at non-damaging debuffs
-* Rank 1
-  * Strike with no power, brief r1 debuff if take damage
-* Rank 3
-  * Strike with no power, r2 debuff condition if lose HP - ANCHOR
-  * Strike with no power, brief r2 debuff, immune after first success
-  * Strike with no power, r1 debuff condition if take damage
-* Rank 5
-  * Strike with no power, r2 debuff condition if lose HP, otherwise r1 debuff condition
-  * Strike with no power, brief r2 debuff if take damage
-* Rank 7
-  * Strike with no power, r3 debuff condition if lose HP
-  * Strike with no power, brief r3 debuff if take damage, immune after first success
-  * Strike with no power, r2 debuff condition if take damage
+NONE
 
 #### Spells: single-target high damage + debuff
+Basically, adding a r0.5 debuff condition on damage adds +2 ranks.
+Note: debuffs on HP loss are tricky here since they are so trivial, but you don't want to directly supercede simple damage spells.
+* Rank 2
+  * Med range, 1d10 + power damage, r0.5 or r1 debuff condition if lose HP
+  * Grasp, 1d10 + power damage, r0.5 debuff condition if take damage
+    * Grasp spells are adjacent only, Reflex defense, free hand required
+  * Grasp, 1d10 + power damage, r1.5 debuff condition if lose HP
+  * Med range, 1d10 + power damage, r0.5 debuff condition if beat extra defense
 * Rank 3
-  * Med range, 2d8 + power damage, brief r1 debuff, immune after first success
-  * Med range, 2d8 + power damage, r1 debuff condition if lose HP
+  * Med range, 2d6 + power damage, r0.5 debuff condition if take damage
+  * Med range, 2d6 + power damage, r1.5 debuff condition if lose HP
+* Rank 4
+  * Grasp, 2d8 + power damage, r1 debuff condition if take damage
+  * Grasp, 2d8 + power damage, r2 debuff condition if lose HP
 * Rank 5
-  * Med range, 4d6 + power damage, brief r1 debuff
-  * Med range, 4d6 + power damage, brief r2 debuff if lose HP
-* Rank 7
-  * Med range, 4d10 + power damage, brief r2 debuff, immune after first success
-  * Med range, 4d10 + power damage, r2 debuff condition if lose HP
+  * Med range, 2d10 + power damage, r1 debuff condition if take damage
+  * Med range, 2d10 + power damage, r2 debuff condition if lose HP
 
 #### Spells: single-target medium damage + debuff
 * Rank 1
-  * Med range, 2d6 + half power damage, brief r1 debuff
-  * Med range, 2d6 + half power damage, brief r2 debuff if lose HP
-  * Med range, 2d6 + half power damage, r1 debuff condition if lose HP
+  * Med range, 1d6 + half power damage, r1.5 debuff condition if lose HP
+  * Dist range, 1d6 + half power damage, r1 debuff condition if lose HP
+  * Med range, 1d6 + half power damage, r1 debuff condition if beat extra defense
 * Rank 3
-  * Med range, 2d10 + half power damage, brief r2 debuff if lose HP, otherwise brief r1 debuff
-  * Med range, 2d10 + half power damage, brief r2 debuff, immune after first success
-  * Med range, 2d10 + half power damage, r2 debuff condition if lose HP
-* Rank 5
-  * Med range, 2d6 + half power damage, r1 debuff condition
-  * Med range, 4d8 + half power damage, brief r2 debuff
-  * Med range, 4d8 + half power damage, brief r3 debuff if lose HP
+  * Med range, 1d10 + half power damage, r1 debuff condition if take damage
+  * Med range, 1d10 + half power damage, r2 debuff condition if lose HP
 * Rank 7
-  * Med range, 4d8 + half power damage, brief r3 debuff if lose HP, otherwise brief r2 debuff
-  * Med range, 4d8 + half power damage, brief r3 debuff, immune after first success
+  * Med range, 4d8 + half power damage, r2 debuff condition if take damage
   * Med range, 4d8 + half power damage, r3 debuff condition if lose HP
 * Modifiers
-  * "Med range" can be replaced with "Adjacent, no focus"
   * For +4 levels, you get +5d and full power instead of half power
 
 #### Spells: AOE medium damage + debuff
-* Rank 4
-  * t2 area, 2d6 + half power damage, brief r1 debuff if lose HP
-* Rank 6
-  * t2 area, 2d10 + half power damage, brief r1 debuff, immune after first success
+Basically, adding a r0.5 debuff condition on damage adds +2 ranks.
+Note: debuffs on HP loss are tricky here since they are so trivial, but you don't want to directly supercede simple damage spells.
+* Rank 1
+  * t1 area, 1d4 + half power damage, r0.5 or r1 debuff condition if lose HP
+* Rank 2
+  * t1 area, 1d8 + half power damage, r0.5 or r1 debuff condition if lose HP
+* Rank 3
+  * t1 area, 1d10 + half power damage, r0.5 debuff condition if take damage
+  * t1 area, 1d10 + half power damage, r1.5 debuff condition if lose HP
+* Rank 5
+  * t1 area, 2d8 + half power damage, r1 debuff condition if take damage
+  * t1 area, 2d8 + half power damage, r2 debuff condition if lose HP
+TODO
+<!-- * Rank 4 -->
+<!--   * t2 area, 2d6 + half power damage, brief r1 debuff if lose HP -->
+<!-- * Rank 6 -->
+<!--   * t2 area, 2d10 + half power damage, brief r1 debuff, immune after first success -->
 
 #### Spells: single-target low damage + debuff
 * Rank 1
   * Med range, 1d6 damage, r2 debuff condition if lose HP -- ANCHOR
-  * Med range, 1d6 damage, brief r2 debuff, immune after first success
   * Med range, 1d6 damage, r1 debuff condition if take damage
     * This is very close to being better than a pure debuff, but the lack of crit effect and non-accuracy scaling makes this rank acceptable
     * Note that there is no glance damage, which means no hidden +2 accuracy
 * Rank 3
   * Med range, 1d10 damage, r2 debuff condition if lose HP, otherwise r1 debuff condition
-  * Med range, 1d10 damage, brief r2 debuff
 * Rank 5
   * Med range, 2d8 damage, r3 debuff condition if lose HP
-  * Med range, 2d8 damage, brief r3 debuff, immune after first success
   * Med range, 2d8 damage, r2 debuff condition
 * Rank 7
   * Med range, 4d6 damage, r3 debuff condition if lose HP, otherwise r2 debuff condition
-  * Med range, 4d6 damage, brief r3 debuff

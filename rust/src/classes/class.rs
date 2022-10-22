@@ -806,7 +806,7 @@ impl Class {
                 However, the monk weapons are well suited to the fighting styles that monks learn as part of their training.
 
                 The combat training for monks often consists of dueling other monks, and rarely involves fighting non-humanoid monsters.
-                As a result, they often try to trip, disarm, and distract their foes in combat.
+                As a result, they often try to trip, grapple, or distract their foes in combat.
                 These strategies are all most effective against humanoid opponents.
             ".to_string(),
             Self::Oozeborn => r"".to_string(),
@@ -1321,8 +1321,8 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{attuneability}
-                        \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 120 feet (see \pcref{Flying}).
-                        At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
                         \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
@@ -1398,9 +1398,10 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
-                        \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
+                        \parhead{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
                         Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
                         You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
+                        This ability has the \abilitytag{Swift} tag.
                         \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
                         \begin{activeability}{Compel Evil}[\abilitytag{Compulsion}]
@@ -1507,7 +1508,8 @@ impl Class {
                     \subsubsection{Life Domain}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
                         \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
-                        \parhead{Essence} At the end of each phase, if you became \unconscious from a \glossterm{vital wound} during that phase, you can use one \glossterm{magical} ability you have that modifies \glossterm{vital rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
+                        \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \glossterm{magical} ability that removes \glossterm{vital wounds} on yourself without taking an action.
+                        You cannot affect any other creatures with this ability.
                         \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
 
                     \subsubsection{Magic Domain}
@@ -1521,12 +1523,11 @@ impl Class {
 
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                        \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
+                        \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{activeability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
-                            It gains a \plus1 bonus to all defenses until the end of the round.
-                            Because this ability has the \abilitytag{Swift} tag, this bonus applies against attacks made in the current phase.
+                            It gains a \plus1 bonus to all defenses this round.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
@@ -1538,11 +1539,10 @@ impl Class {
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
+                        \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{attuneability}{Divine Strength}{\abilitytag{Attune}}
-                            Usage time: One \glossterm{minor action}.
                             \rankline
-                            You gain a \plus1 bonus to your Strength.
+                            You gain a \plus1 \glossterm{magic bonus} to your Strength.
                         \end{attuneability}
                         \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} tag.

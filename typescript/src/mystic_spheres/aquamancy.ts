@@ -36,9 +36,9 @@ export const aquamancy: MysticSphere = {
         Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
       `,
       scaling: {
-        2: "The area increases to a \\largearea radius, and the maximum speed change increases to 10 miles per hour.",
-        4: "The area increases to a \\hugearea radius, and the maximum speed change increases to 20 miles per hour.",
-        6: "The area increases to a \\gargarea radius, and the maximum speed change increases to 40 miles per hour.",
+        3: "You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 10 miles per hour.",
+        5: "You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 15 miles per hour.",
+        7: "You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 20 miles per hour.",
       },
       type: "Sustain (minor)",
     },
@@ -76,61 +76,39 @@ export const aquamancy: MysticSphere = {
     },
   ],
   spells: [
+    // no rank modifier for extremely situational accuracy bonus
     {
-      name: "Desiccating Curse",
+      name: "Desiccate",
 
       attack: {
-        crit: "The effect lasts until this curse is removed.",
         hit: `
-          The target is \\dazed.
-          If it immerses itself in or drinks a body of water of minimum size equal to two size categories smaller than itself,
-            the target stops being dazed for 10 minutes.
-          This effect lasts until the target takes a \\glossterm{short rest}.
+          The target takes 2d6 + \\glossterm{power} physical damage.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\rngmed range.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+          You gain a +2 accuracy bonus if the target has a swim speed and is not currently touching water.
         `,
       },
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
-    },
-    {
-      name: "Greater Desiccating Curse",
-
-      functionsLike: {
-        name: "desiccating curse",
-        exceptThat: "the target is \\stunned instead of dazed.",
-      },
-      rank: 7,
-      scaling: "accuracy",
-      tags: ["Curse"],
-    },
-    // swimming is +2 ranks better than a normal rank 2 condition
-    {
-      name: "Sphere of Constraint",
-
-      attack: {
-        crit: `
-          The effect becomes a \\glossterm{condition}.
-        `,
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} surrounded by a layer of water.
-          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all creatures completely within a \\smallarea radius within \\medrange.
-          This attack automatically fails against creatures whose space is not entirely within the area.
-        `,
-      },
-      narrative: `
-          A sphere of water appears in midair that adheres to your foes.
-      `,
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
+      scaling: "damage",
     },
-    // swimming is +2 ranks better than a normal rank 2 condition
+    // +2r for situational +4acc
+    {
+      name: "Mighty Desiccate",
+
+      attack: {
+        hit: `
+          The target takes 4d10 + \\glossterm{power} physical damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+          You gain a +4 accuracy bonus if the target has a swim speed and is not currently touching water.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+    },
+    // swimming is r2.5
     {
       name: "Constraining Bubble",
 
@@ -147,13 +125,12 @@ export const aquamancy: MysticSphere = {
           Make an attack vs. Reflex against a Huge or smaller creature within \\medrange.
         `,
       },
-      rank: 6,
-      scaling: "accuracy",
+      rank: 7,
       tags: ["Manifestation"],
     },
 
     {
-      name: "Crushing Wave",
+      name: "Crashing Wave",
 
       attack: {
         // crit: '',
@@ -169,34 +146,33 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Crushing Wave",
+      name: "Mighty Crashing Wave",
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
     },
     {
       name: "Aquajet Propulsion",
 
+      // 1 rank for movement
       attack: {
-        // crit: '',
         hit: `
-          The target takes 1d6 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
-          Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet away from the target as the water propels you backwards.
-          Moving yourself upwards costs twice the normal movement cost.
-          This movement is doubled underwater.
+          Make an attack vs. Armor against anything within \\shortrange.
+          Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet in a straight horizontal line away from the target.
+          If you are underwater, this movement is doubled and you can also move vertically.
         `,
       },
       rank: 1,
@@ -204,24 +180,20 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Aquajet Propulsion",
+      name: "Intense Aquajet Propulsion",
 
-      functionsLike: {
-        name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 1d10 + \\glossterm{power}, and the push distance increases to 30 feet.",
+      // 3 ranks for movement
+      attack: {
+        hit: `
+          The target takes 2d8 + \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          Make an attack vs. Armor against anything within \\medrange.
+          Whether you hit or miss, you may \\glossterm{push} yourself up to 30 feet away in a straight horizontal line away from the target.
+          If you are underwater, this movement is doubled and you can also move vertically.
+        `,
       },
-      rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-    {
-      name: "Supreme Aquajet Propulsion",
-
-      functionsLike: {
-        name: 'aquajet propulsion',
-        exceptThat: "the damage increases to 2d8 + \\glossterm{power}, and the push distance increases to 60 feet.",
-      },
-      rank: 5,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
     },
@@ -242,18 +214,18 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Greater Fountain",
+      name: "Mighty Fountain",
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       tags: ["Manifestation"],
     },
@@ -262,19 +234,21 @@ export const aquamancy: MysticSphere = {
 
       // targeting: None,
       effect: `
-          You create a \\medarealong \\glossterm{wall} of water within \\medrange.
+          You create a \\smallarealong \\glossterm{wall} of water within \\medrange.
           The wall is four inches thick.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
+          In addition, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
           The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The area increases to a \\largearealong wall.`,
-        6: `The area increases to a \\hugearealong wall.`,
+        3: `You can increase the area to a \\medarealong wall.`,
+        5: `You can increase the area to a \\largearealong wall.`,
+        7: `You can increase the area to a \\hugearealong wall.`,
       },
       tags: ["Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -303,79 +277,61 @@ export const aquamancy: MysticSphere = {
     {
       name: "Raging River",
 
-      attack: {
-        // crit: '',
-        hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
-          In addition, each target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the line points away from you.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft. wide line from you.
-        `,
-      },
-      rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-    // +1 level for farther push, +2 levels for area
-    {
-      name: "Greater Raging River",
-
+      // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
         // crit: '',
         hit: `
           Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
-          In addition, each target damaged by the attack is \\glossterm{pushed} 30 feet in the direction the line points away from you.
+          In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearealong, 10 ft. wide line from you.
+          You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
+          The water flows in a direction that you choose when you cast the spell.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },
       rank: 5,
       scaling: "damage",
-      tags: ["Manifestation"],
+      tags: ["Manifestation", "Sustain (minor)"],
     },
     {
       name: "Geyser",
 
       attack: {
-        // crit: '',
-        // +1d from normal AOE due to weird area that probably just hits one person
         // This can't be full power due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 5 ft.\\ wide vertical line within \\longrange.
+          You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
-      tags: ["Manifestation"],
+      tags: ["Manifestation", "Sustain (minor)"],
     },
     {
-      name: "Greater Geyser",
+      name: "Mighty Geyser",
 
       attack: {
-        // crit: '',
-        // +1d from normal AOE due to weird area that probably just hits one person
         // This can't be full power due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft.\\ wide vertical line within \\distrange.
+          You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
-      tags: ["Manifestation"],
+      tags: ["Manifestation", "Sustain (minor)"],
     },
     {
       name: "Rainstorm",
@@ -386,33 +342,43 @@ export const aquamancy: MysticSphere = {
         Everything in the area is \\trait{impervious} to fire damage.
       `,
       rank: 1,
+      scaling: {
+        3: "You can choose to create a \\largearea radius instead.",
+        5: "You can choose to create a \\hugearea radius instead.",
+        7: "You can choose to create a \\gargarea radius instead.",
+      },
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Obscuring Mist",
 
       effect: `
-        Fog fills the air within a \\smallarea radius \\glossterm{zone} from your location.
+        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
         The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: "The area increases to a \\medarea radius \\glossterm{zone}.",
-        6: "The area increases to a \\largearea radius \\glossterm{zone}.",
+        3: "You can choose to create a \\hugearea radius instead.",
+        5: "You can choose to create a \\gargarea radius instead.",
+        7: "You can choose to create a 240 foot radius instead.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Misty Halo",
 
       effect: `
-        Fog fills the air within a \\medarea radius \\glossterm{zone} from your location.
+        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
         The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
         You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
       `,
-      rank: 6,
-      type: "Sustain (minor)",
+      rank: 3,
+      scaling: {
+        5: "You can choose to create a \\hugearea radius instead.",
+        7: "You can choose to create a \\gargarea radius instead.",
+      },
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Misty Shroud",
@@ -422,24 +388,11 @@ export const aquamancy: MysticSphere = {
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: "The area increases to a \\largearea radius.",
+        5: "When you cast this spell, you can choose to create a \\largearea radius instead.",
+        7: "When you cast this spell, you can choose to create a \\hugearea radius instead.",
       },
-      type: "Attune",
-    },
-    {
-      name: "Octopus Tentacles",
-
-      functionsLike: {
-        exceptThat: `
-          you create eight tentacles that extend from your body.
-          Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
-          This functions as if your attacks had the \\glossterm{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target (see \\pcref{Sweeping}).
-        `,
-        name: "aqueous tentacle",
-      },
-      rank: 4,
       type: "Attune",
     },
     {
@@ -448,7 +401,7 @@ export const aquamancy: MysticSphere = {
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Sweeping (1) \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        In addition, it has the \\weapontag{Sweeping} (1) \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
         Strikes using it are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       narrative: `
@@ -456,6 +409,33 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 2,
       tags: ["Manifestation"],
+      type: "Attune",
+    },
+    {
+      name: "Octopus Tentacles",
+
+      functionsLike: {
+        exceptThat: `
+          you create eight tentacles that extend from your body.
+          The tentacles have the \\weapontag{Grappling} weapon tag.
+          Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
+          This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
+        `,
+        name: "aqueous tentacle",
+      },
+      rank: 4,
+      type: "Attune",
+    },
+    {
+      name: "Kraken Tentacles",
+
+      functionsLike: {
+        exceptThat: `
+          the tentacles also have the \\weapontag{Long} weapon tag.
+        `,
+        name: "octopus tentacles",
+      },
+      rank: 7,
       type: "Attune",
     },
     {
@@ -484,34 +464,43 @@ export const aquamancy: MysticSphere = {
       name: "Fog Cloud",
 
       effect: `
-        A cloud of fog appears in a \\medarea radius within \\longrange.
-        All sight through the area is partially obscured, granting \\glossterm{concealment} to anything in the area and anything viewed through the area (see \\pcref{Concealment}).
+        A cloud of fog appears in a \\medarea radius within \\medrange.
+        The fog provides \\glossterm{concealment} for everything in the area.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: "The area increases to a \\largearea radius.",
-        7: "The area increases to a \\hugearea radius.",
+        4: "You can choose to create a \\largearea radius instead.",
+        6: "You can choose to create a \\hugearea radius instead.",
       },
       tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
+    },
+    {
+      name: "Solid Fog Cloud",
+
+      effect: `
+        A cloud of fog appears in a \\medarea radius within \\medrange.
+        The fog provides \\glossterm{concealment} for everything in the area.
+        In addition, the fog's area is \\glossterm{difficult terrain}.
+      `,
+      rank: 6,
+      tags: ["Manifestation"],
+      type: "Sustain (attuneable, minor)",
     },
     {
       name: "Fog Wall",
 
       effect: `
-        You create a \\medarealong \\glossterm{wall} of fog within \\rngmed range.
+        You create a \\medarealong \\glossterm{wall} of fog within \\longrange.
         The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
 
-        The wall has \\glossterm{hit points} equal to twice your \\glossterm{power}.
-        % TODO: also cold damage?
-        It is immune to all damage except for fire damage.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
-        3: "The area increases to a \\largearealong line.",
-        5: "The area increases to a \\hugearealong line.",
-        7: "The area increases to a 240 foot long line.",
+        3: "You can choose to create a \\largearealong wall instead.",
+        5: "You can choose to create a \\hugearealong wall instead.",
+        7: "You can choose to create a \\gargarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -521,7 +510,7 @@ export const aquamancy: MysticSphere = {
 
       effect: `
         When you move using one of your movement speeds, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
-        You can only transform into water in this way once during your movement, and you regain your normal form at the end of the movement.
+        You can only transform into water in this way once during your movement, and you return to your normal form at the end of the movement.
         In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
         You may move through squares occupied by enemies without penalty.
         Being \\grappled or otherwise physically constrained does not prevent you from transforming into water in this way.
@@ -540,41 +529,27 @@ export const aquamancy: MysticSphere = {
       name: "Forceful Aquajet",
 
       attack: {
-        crit: "Double damage, and you can knockback the target 60 feet instead of 30 feet.",
         hit: `
-          The target takes 1d4 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet in any direction (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          The target takes 1d6 bludgeoning damage.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
-        targeting:
-          "Make an attack vs. Armor against anything Large or smaller within \\medrange.",
+        targeting: "Make an attack vs. Fortitude against anything within \\medrange.",
       },
       // narrative: '',
       rank: 1,
       scaling: "accuracy",
     },
     {
-      name: "Greater Forceful Aquajet",
+      name: "Intense Forceful Aquajet",
 
       functionsLike: {
         name: 'forceful aquajet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 1d10. In addition, the knockback distance increases to 60 feet, or 120 feet on a critical hit.",
+        exceptThat: "the damage increases to 2d8. In addition, the knockback distance increases to 60 feet.",
       },
       // narrative: '',
-      rank: 4,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Forceful Aquajet",
-
-      functionsLike: {
-        name: 'forceful aquajet',
-        // This deals an immediate 12d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d10. In addition, the knockback distance increases to 120 feet, or 240 feet on a critical hit.",
-      },
-      // narrative: '',
-      rank: 7,
+      rank: 5,
       scaling: "damage",
     },
     {
@@ -587,7 +562,7 @@ export const aquamancy: MysticSphere = {
           \\item Your land speed is halved.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
-          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
+          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
           \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
@@ -631,6 +606,27 @@ export const aquamancy: MysticSphere = {
       },
       type: "Attune",
     },
+    {
+      name: 'Puddlify',
+
+      attack: {
+        hit: `
+          The target takes 4d6 physical damage.
+          If it loses \\glossterm{hit points} from this damage, it is transformed into a puddle of water as a \\glossterm{condition}.
+          This has the following effects:
+          \\begin{itemize}
+            \\item If it is submerged in water or other liquid, it takes 5d10 damage during each of your subsequent actions as it dissolves.
+            \\item It is \\prone and cannot stand up.
+            \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+            \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
+          \\end{itemize}
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 7,
+    },
   ],
   rituals: [
     {
@@ -657,7 +653,7 @@ export const aquamancy: MysticSphere = {
       name: "Detect Water",
 
       effect: `
-        You learn the approximate distance and direction to any bodies of water within \\rnglong \\glossterm{range} of you.
+        You learn the approximate distance and direction to any bodies of water within \\distrange of you.
         Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
         This spell can detect bodies of water with a minimum size of Fine.
       `,
@@ -666,24 +662,13 @@ export const aquamancy: MysticSphere = {
       castingTime: "one minute",
     },
     {
-      name: "Greater Detect Water",
+      name: "Distant Detect Water",
 
       functionsLike: {
-        exceptThat: "the range increases to \\extrange.",
+        exceptThat: "the range increases to 2,000 feet.",
         name: "detect water",
       },
-      rank: 3,
-      tags: ["Detection"],
-      castingTime: "one minute",
-    },
-    {
-      name: "Supreme Detect Water",
-
-      functionsLike: {
-        exceptThat: "the range increases to 2,000 foot range.",
-        name: "detect air",
-      },
-      rank: 5,
+      rank: 4,
       tags: ["Detection"],
       castingTime: "one minute",
     },

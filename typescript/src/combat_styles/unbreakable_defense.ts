@@ -21,7 +21,7 @@ export const unbreakableDefense: CombatStyle = {
         name: "total defense",
       },
       rank: 1,
-      tags: ["Swift"],
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -31,15 +31,14 @@ export const unbreakableDefense: CombatStyle = {
         abilityType: "ability",
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
-          In addition, choose a creature you can see.
-          Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
+          In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
         `,
         name: "total defense",
       },
-      rank: 3,
-      tags: ["Swift"],
+      rank: 5,
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -56,7 +55,7 @@ export const unbreakableDefense: CombatStyle = {
         `,
         name: "total defense",
       },
-      rank: 5,
+      rank: 3,
       tags: ["Swift"],
     },
 
@@ -107,7 +106,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
-        You regain hit points equal to half your maximum \\glossterm{hit points}.
+        You regain all of your hit points.
         After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
       `,
       rank: 3,
@@ -119,8 +118,8 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a shield.
-        You gain a +1 bonus to Armor defense until the end of the round.
-        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
+        In addition, you gain a +1 bonus to Armor defense this round.
+        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
       tags: ["Swift (see text)"],
@@ -154,8 +153,8 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         You do not add your \\glossterm{power} to damage with the strike.
-        In exchange, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
-        The defense bonus is a \\abilitytag{Swift} effect, so it protects you from attacks in the current phase.
+        In exchange, you gain a +2 bonus to Armor and Reflex defenses this round.
+        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
       tags: ["Swift (see text)"],
@@ -166,7 +165,6 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You remove a \\glossterm{condition} affecting you.
-        This cannot remove an effect applied during the current round.
       `,
       rank: 5,
     },
@@ -177,12 +175,23 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike}.
-        In addition, you may remove a \\glossterm{condition} affecting you.
-        This cannot remove an effect applied during the current round.
-        The penalties from the effect still affect you when you make the strike.
+        Remove a \\glossterm{condition} affecting you.
+        Then, make a \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
+    },
+
+    {
+      name: "Cleansing Strike+",
+
+      effect: `
+        When you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Remove a \\glossterm{condition} affecting you.
+        Then, make a \\glossterm{strike}.
+      `,
+      rank: 7,
     },
 
     {
@@ -194,8 +203,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 1d10 + \\glossterm{power} hit points.
-
-        If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
+        This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       scaling: {
         special: "The healing increases by +1d for each rank beyond 3.",
@@ -212,6 +220,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
         In addition, you regain 4d8 + \\glossterm{power} hit points.
+        This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       rank: 7,
     },
@@ -221,21 +230,11 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        In addition, you gain a +2 bonus to \\glossterm{vital rolls} until the end of the round.
-        This bonus is a \\abilitytag{Swift} effect, so it affects any vital wounds you gain during the current phase.
+        In addition, you gain a +2 bonus to \\glossterm{vital rolls} this round.
+        The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 3,
-      tags: ["\\abilitytag{Swift} (see text)"],
-    },
-
-    {
-      name: "Guard the Pass",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\smallarea radius \\glossterm{zone} from your location as \\glossterm{difficult terrain}.
-      `,
-      rank: 3,
+      tags: ["Swift (see text)"],
     },
 
     {
@@ -268,8 +267,8 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike is \\glossterm{briefly} \\goaded by you.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 5,
     },

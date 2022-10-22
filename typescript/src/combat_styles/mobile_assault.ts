@@ -34,7 +34,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        If you use this ability during the \\glossterm{action phase}, you may use the other half of your movement during the \\glossterm{delayed action phase}.
+        After making the strike, you can use the other half of your movement.
       `,
       rank: 3,
     },
@@ -43,9 +43,8 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike",
 
       effect: `
-        You can either move up to half your speed or make a \\glossterm{strike}.
+        You can move up to half your speed and make a \\glossterm{strike}, in either order.
         Your \\glossterm{power} with the strike is halved.
-        If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
       `,
       rank: 1,
     },
@@ -54,8 +53,7 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike+",
 
       effect: `
-        You can either move up to your speed or make a \\glossterm{strike}.
-        If you use this ability during the \\glossterm{action phase}, you can take the other action during the \\glossterm{delayed action phase}.
+        You can move up your speed and make a \\glossterm{strike}, in either order.
       `,
       rank: 5,
     },
@@ -77,7 +75,7 @@ export const mobileAssault: CombatStyle = {
         abilityType: "ability",
         exceptThat: `
           you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
-          After you use this ability, you increase your \\glossterm{fatigue level} by 1.
+          When you use this ability, you increase your \\glossterm{fatigue level} by one.
         `,
         name: "charge",
       },
@@ -98,21 +96,11 @@ export const mobileAssault: CombatStyle = {
       name: "Retreating Strike",
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you can move up to half your movement speed in a straight line away from one target of the strike.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: "Retreating Strike+",
-
-      effect: `
-        Make a \\glossterm{strike}.
         In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -201,21 +189,21 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        In addition, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
-        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+        In addition, you gain a +2 bonus to your Armor and Reflex defenses this round.
+        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
-        The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
-        However, the movement and the penalty imposed on attackers is not Swift.
+        The defense bonus and reactive penalties are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
+      tags: ['Swift (see text)'],
     },
 
     {
       name: "Fearsome Pounce",
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
+        Move up to half your movement speed and make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
@@ -227,8 +215,8 @@ export const mobileAssault: CombatStyle = {
       name: "Fearsome Pounce+",
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Move up to half your movement speed and make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -241,14 +229,15 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +2 damage bonus with the strike.
+          you gain a +2 damage bonus with the strike if you moved at least 15 feet during the charge.
         `,
         name: "charge",
       },
-      rank: 3,
+      rank: 1,
       scaling: {
-        5: "The damage bonus increases to +4.",
-        7: "The damage bonus increases to +8.",
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
       },
     },
 
@@ -258,7 +247,7 @@ export const mobileAssault: CombatStyle = {
       functionsLike: {
         abilityType: "ability",
         exceptThat: `
-          you gain a +1 accuracy bonus and a +4 damage bonus with the strike.
+          you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
           However, the penalty to your defenses increases to \\minus4.
         `,
         name: "charge",

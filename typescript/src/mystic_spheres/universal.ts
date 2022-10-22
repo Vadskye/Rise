@@ -26,20 +26,20 @@ export const universal: MysticSphere = {
         \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Damage Type} \\tableheaderrule
         Aeromancy       & Creatures and objects & Armor     & Bludgeoning \\\\
         Aquamancy       & Creatures and objects & Armor     & Bludgeoning \\\\
-        Astromancy      & Creatures and objects & Mental    & Energy      \\\\
-        Bless           & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
-        Channel Divinity  & Creatures           & Mental    & Energy      \\\\
+        Astromancy      & Creatures and objects & Mental    & Physical    \\\\
+        Channel Divinity & Creatures            & Mental    & Energy      \\\\
         Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
         Cryomancy       & Creatures and objects & Fortitude & Cold        \\\\
         Electromancy    & Creatures and objects & Fortitude & Electricity \\\\
-        Enchantment     & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
+        Enchantment     & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
         Fabrication     & Creatures and objects & Armor     & Physical    \\\\
         Photomancy      & Creatures and objects & Fortitude & Energy      \\\\
         Polymorph       & Creatures and objects & Fortitude & Physical    \\\\
-        Pyromancy       & Creatures and objects & Armor     & Fire        \\\\
-        Revelation      & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
+        Prayer          & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
+        Pyromancy       & Creatures and objects & Fortitude & Fire        \\\\
+        Revelation      & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
         Summoning       & Creatures and objects & Armor     & Physical    \\\\
-        Telekinesis     & Creatures and objects & Armor     & Physical    \\\\
+        Telekinesis     & Creatures and objects & Fortitude & Bludgeoning \\\\
         Terramancy      & Creatures and objects & Armor     & Bludgeoning \\\\
         Thaumaturgy     & Creatures and objects & Fortitude & Energy      \\\\
         Toxicology      & Creatures and objects & Fortitude & Acid        \\\\
@@ -50,82 +50,35 @@ export const universal: MysticSphere = {
     \\end{dtable!*}
   `,
   spells: [
+    // The rank 1 effects are on-rate, but the higher rank effects have a -1 rank penalty.
+    // This gives each sphere a useful starting point early, but ensures that spheres feel
+    // strongly differentiated at high levels.
     {
       name: "Mystic Bolt",
 
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} damage.`,
         targeting: `
-          Make an attack against anything within \\medrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
+          Make an attack against something within \\medrange.
+          The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
       scaling: "damage",
     },
     {
-      name: "Greater Mystic Bolt",
+      name: "Mighty Mystic Bolt",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} damage.`,
+        hit: `The target takes 2d10 + \\glossterm{power} damage.`,
         targeting: `
           Make an attack against anything within \\medrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Mystic Bolt",
-
-      attack: {
-        hit: `The target takes 4d10 + \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack against anything within \\longrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-    {
-      name: "Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea cone from you.
-        `,
-      },
-      rank: 2,
-      scaling: "damage",
-    },
-    {
-      name: "Greater Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea cone from you.
+          The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 4,
       scaling: "damage",
     },
-    {
-      name: "Supreme Mystic Blast",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearea cone from you.
-        `,
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-
     {
       name: "Mystic Discharge",
 
@@ -133,30 +86,20 @@ export const universal: MysticSphere = {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
       scaling: "damage",
     },
     {
-      name: "Greater Mystic Discharge",
+      name: "Massive Mystic Discharge",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} damage.`,
+        hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-    {
-      name: "Supreme Mystic Discharge",
-
-      attack: {
-        hit: `Each target takes 2d10 + \\glossterm{power} damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
+          Make an attack vs. Reflex against everything in a \\medarea radius from you.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 5,
@@ -179,6 +122,7 @@ export const universal: MysticSphere = {
           The trap's Awareness bonus to notice creatures moving is +10.
           You can choose the minimum size category of creature required to activate the trap.
           When the trap activates, make an attack vs. Reflex against everything within a \\smallarea radius from the trap.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
 
           After the trap activates, this effect is \\glossterm{dismissed}.
         `,
@@ -214,7 +158,7 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Greater Mystic Trap",
+      name: "Massive Mystic Trap",
 
       castingTime: "24 hours",
       functionsLike: {
@@ -234,11 +178,11 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Greater Enduring Mystic Trap",
+      name: "Massive Enduring Mystic Trap",
 
       castingTime: "24 hours",
       functionsLike: {
-        name: "greater mystic trap",
+        name: "massive mystic trap",
         exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
