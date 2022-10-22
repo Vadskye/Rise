@@ -68,18 +68,6 @@ export const flurryOfBlows: CombatStyle = {
       rank: 7,
     },
 
-    {
-      name: "Rebounding Flurry",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Then, make an additional \\glossterm{strike} against each creature that resisted all damage from the first strike with its \\glossterm{damage resistance}.
-        The second strike cannot target any other creatures.
-        You do not add your \\glossterm{power} to damage with either strike.
-      `,
-      rank: 3,
-    },
-
     // TODO: unclear rank
     {
       name: "Strike Flurry",
@@ -233,11 +221,22 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, make an additional strike against each creature that lost hit points from the first strike.
+        Then, make an additional melee strike against each creature that lost hit points from the first strike.
         The second strike cannot target any other creatures.
         You do not add your \\glossterm{power} to damage with either strike.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Deathseeking Flurry+",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Then, make an additional melee strike against each creature that lost hit points from the first strike.
+        The second strike cannot target any other creatures.
+      `,
+      rank: 5,
     },
 
     {

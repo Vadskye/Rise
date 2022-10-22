@@ -222,13 +222,13 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target does not have any remaining \\glossterm{damage resistance}, you gain a +2 damage bonus with the strike.
+        If the target does not have any remaining \\glossterm{damage resistance}, you gain a +4 damage bonus with the strike.
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: "The damage bonus increases to +8.",
+        5: "The damage bonus increases to +16.",
+        7: "The damage bonus increases to +24.",
       },
     },
   ],

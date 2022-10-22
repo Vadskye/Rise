@@ -31,7 +31,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +3 accuracy bonus.
+        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +4 accuracy bonus.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
@@ -52,7 +52,6 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
-        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
     },
@@ -62,7 +61,6 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you.
-        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 5,
     },
@@ -136,17 +134,13 @@ export const penetratingPrecision: CombatStyle = {
       name: "Heartpiercing Strike",
 
       effect: `
-        Make a \\glossterm{strike} with a +4 damage bonus using a piercing weapon.
+        Make a \\glossterm{strike} with a +2 accuracy bonus using a piercing weapon.
         Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
       `,
       narrative: `
         You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.
       `,
-      rank: 3,
-      scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
-      },
+      rank: 1,
     },
 
     {
@@ -219,7 +213,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
-        You \\glossterm{briefly} take a -4 penalty to all defenses against each target of your strike.
+        You \\glossterm{briefly} take a -2 penalty to all defenses against each target of your strike.
       `,
       rank: 3,
     },
