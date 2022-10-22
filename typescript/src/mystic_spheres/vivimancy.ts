@@ -37,28 +37,14 @@ export const vivimancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Draining Grasp",
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} energy damage.`,
-        targeting: `
-        You must have a \\glossterm{free hand} to cast this spell.
-
-        Make a melee attack vs. Reflex against an adjacent living creature.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-
-    {
       name: "Lifesteal Grasp",
 
+      // +2r for lifesteal option
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
+          The target takes 1d10 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
-          If you do, you regain 2d6 + \\glossterm{power} hit points.
+          If you do, you regain 1d10 + \\glossterm{power} hit points.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -66,17 +52,17 @@ export const vivimancy: MysticSphere = {
           Make a melee attack vs. Reflex against an adjacent living creature.
         `,
       },
-      rank: 3,
-      scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
+      rank: 2,
+      scaling: { special: "The damage and healing increase by +1d for each rank beyond 2." },
       tags: [],
     },
 
     {
-      name: "Greater Lifesteal Grasp",
+      name: "Mighty Lifesteal Grasp",
 
       functionsLike: {
         name: 'lifesteal grasp',
-        exceptThat: "the damage and healing both increase to 5d8 + \\glossterm{power}.",
+        exceptThat: "the damage and healing both increase to 4d10 + \\glossterm{power}.",
       },
       rank: 6,
       scaling: { special: "The damage and healing increases by +1d for each rank beyond 6." },
@@ -86,7 +72,7 @@ export const vivimancy: MysticSphere = {
     {
       name: "Lifesteal",
 
-      // +2 levels for HP theft
+      // +2r for HP theft
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
@@ -98,7 +84,18 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: { special: "The damage and healing increases by +1d for each rank beyond 3." },
+      scaling: { special: "The damage and healing increase by +1d for each rank beyond 3." },
+      tags: [],
+    },
+
+    {
+      name: "Mighty Lifesteal",
+
+      functionsLike: {
+        name: 'lifesteal',
+        exceptThat: "the damage and healing both increase to 5d10 + \\glossterm{power}.",
+      },
+      rank: 7,
       tags: [],
     },
 
@@ -115,25 +112,14 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Greater Restoration",
+      name: "Empowered Restoration",
 
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains 2d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        The target regains 4d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
-      rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
-      tags: [],
-    },
-
-    {
-      name: "Supreme Restoration",
-
-      effect: `
-        Choose yourself or a living \\glossterm{ally} within \\longrange.
-        The target regains 5d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
-      `,
-      rank: 7,
+      rank: 5,
+      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
       tags: [],
     },
 
@@ -151,7 +137,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Greater Stabilize Life",
+      name: "Empowered Stabilize Life",
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
@@ -164,25 +150,26 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Cone of Stabilization",
+      name: "Stabilization Field",
 
+      // TODO: unclear rank
       effect: `
-        Each \\glossterm{ally} in a \\medarea cone regains 1d10 + half \\glossterm{power} \\glossterm{hit points}.
+        You and each \\glossterm{ally} in a \\smallarea radius from you each regain 1d10 + half \\glossterm{power} \\glossterm{hit points}.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 3,
-      scaling: { special: "The healing increases by +1d for each rank beyond 2." },
+      scaling: { special: "The healing increases by +1d for each rank beyond 3." },
       tags: [],
     },
 
     {
-      name: "Greater Cone of Stabilization",
+      name: "Massive Stabilization Field",
 
       effect: `
-        Each \\glossterm{ally} in a \\largearea cone regains 4d8 + half \\glossterm{power} \\glossterm{hit points}.
+        You and each \\glossterm{ally} in a \\largearea radius from you each regain 2d10 + half \\glossterm{power} \\glossterm{hit points}.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
-      rank: 7,
+      rank: 6,
       tags: [],
     },
 
@@ -190,7 +177,7 @@ export const vivimancy: MysticSphere = {
       name: "Cure Vital Wound",
 
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\medrange
+        Choose yourself or a living \\glossterm{ally} within \\medrange.
         The target removes one \\glossterm{vital wound}.
         It increases its \\glossterm{fatigue level} by three for each vital wound removed this way.
       `,
@@ -201,44 +188,48 @@ export const vivimancy: MysticSphere = {
     {
       name: "Inflict Wound",
 
-      // +2 levels and half power for double HP loss? rank unclear
+      // +2d for hp-only would be fair, so 2d6 + power
       attack: {
-        hit: `The target takes 1d10 + half \\glossterm{power} energy damage.
-        If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
+        hit: `
+          The target takes 1d6 + half \\glossterm{power} energy damage.
+          If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
     },
 
     {
-      name: "Greater Inflict Wound",
+      name: "Mighty Inflict Wound",
 
       attack: {
-        crit: `Double damage.
-        In addition, if the target did not already gain a \\glossterm{vital wound} from that loss of hit points, it gains a \\glossterm{vital wound}.`,
-        hit: `The target takes 4d10 + half \\glossterm{power} energy damage.
-        If the target would lose \\glossterm{hit points} from this damage, it loses twice that many hit points instead.`,
+        hit: `
+          The target takes 4d6 + half \\glossterm{power} energy damage.
+          If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "damage",
     },
 
     {
       name: "Steal Vitality",
 
-      // +1 level for situational vital wound removal
+      // +1r for situational vital wound removal, +4r for +2d
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} energy damage.
-        If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
-        When you do, you increase your \\glossterm{fatigue level} by three.`,
+        hit: `
+          The target takes 4d8 + \\glossterm{power} energy damage.
+          If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
+          When you do, you increase your \\glossterm{fatigue level} by three.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
       rank: 5,
@@ -256,10 +247,9 @@ export const vivimancy: MysticSphere = {
         If you gain a new vital wound, you can choose to either ignore the new vital wound effect or continue ignoring the old vital wound effect.
         You can make this choice after learning the \\glossterm{vital roll} for the new vital wound.
       `,
-      rank: 3,
+      rank: 4,
       scaling: {
-        5: `You can ignore two vital wound effects.`,
-        7: `You can ignore three vital wound effects.`,
+        6: `You can ignore two vital wound effects.`,
       },
       type: "Attune",
     },
@@ -272,72 +262,40 @@ export const vivimancy: MysticSphere = {
         name: "Vital Endurance",
       },
       // narrative: '',
-      rank: 5,
-      scaling: {
-        7: "Each target can ignore two vital wound effects.",
-      },
+      rank: 6,
       type: "Attune (target)",
-    },
-
-    {
-      name: "Death Knell",
-
-      // treat as r1 debuff? mostly useless against monsters
-      // +1 level for situational +2 accuracy
-      attack: {
-        hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
-          If loses \\glossterm{hit points} from this damage, it becomes marked for death as a \\glossterm{condition}.
-          While it is marked for death, it is unable to regain \\glossterm{hit points}, and it immediately dies from any vital wound that knocks it unconscious.
-          % TODO: add generic rules so this isn't necessary to state explicitly
-          Any ability that removes the condition and heals simultaneously, such as the \\ability{recover} ability, allows the creature to regain hit points from that ability normally.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus against a creature with no remaining \\glossterm{damage resistance}.
-        `,
-      },
-
-      rank: 2,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Death Knell",
-
-      // treat as r1 debuff? mostly useless against monsters
-      // +1 level for situational +2 accuracy
-      functionsLike: {
-        name: "death knell",
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power} energy damage.",
-      },
-      rank: 2,
-      scaling: "damage",
     },
 
     {
       name: "Circle of Death",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} energy damage.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\medarea radius from you.
+          You create a zone of death in a \\smallarea radius \\glossterm{zone} around you.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living \\glossterm{enemies} in the area.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "damage",
+      tags: ['Sustain (minor)'],
     },
 
     {
-      name: "Greater Circle of Death",
+      name: "Massive Circle of Death",
 
       attack: {
-        hit: `Each target takes 4d6 + half \\glossterm{power} energy damage.`,
+        hit: `
+          Each target takes 2d10 + half \\glossterm{power} energy damage.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against all living \\glossterm{enemies} in a \\largearea radius from you.
+          You create a zone of death in a \\largearea radius \\glossterm{zone} around you.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living \\glossterm{enemies} in the area.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: "damage",
     },
 
@@ -423,11 +381,11 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Greater Corpse Explosion",
+      name: "Mighty Corpse Explosion",
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -444,33 +402,14 @@ export const vivimancy: MysticSphere = {
         // No relevant glance effect
         hit: `As a \\glossterm{condition}, the target's body withers.
         It takes a -2 penalty to Fortitude defense.
-        Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
-        This penalty increase stacks, and persists even if the target regains the lost hit points.`,
+        Whenever it loses \\glossterm{hit points}, this penalty increases by 1.
+        This penalty increase stacks up to a maximum of -5, and persists even if the target regains the lost hit points.`,
         targeting: `
           Make an attack vs. Fortitude with a +3 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
         `,
       },
       rank: 1,
       scaling: "accuracy",
-    },
-
-    {
-      name: "Withering Curse",
-
-      attack: {
-        crit: `The effect lasts until this curse is removed. The penalty resets to -2 whenever the target takes a short rest.`,
-        hit: `The target becomes more vulnerable to injury until it takes a short rest.
-        It takes a -2 penalty to Fortitude defense.
-        Whenever it loses one or more \\glossterm{hit points} from a single attack, this penalty increases by 1.
-        This penalty increase stacks, and persists even if the target regains the lost hit points.`,
-        targeting: `
-        Make an attack vs. Mental with a +3 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
-        `,
-      },
-
-      rank: 3,
-      scaling: "accuracy",
-      tags: ["Curse"],
     },
 
     {
@@ -488,12 +427,12 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Greater Retributive Lifebond",
+      name: "Massive Retributive Lifebond",
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} energy damage.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\largearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 4,
@@ -502,12 +441,13 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Supreme Retributive Lifebond",
+      name: "Mighty Retributive Lifebond",
 
+      // +4r for +2d, +2r for full power
       attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes 4d10 + \\glossterm{power} energy damage.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
       rank: 7,
