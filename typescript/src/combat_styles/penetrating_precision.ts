@@ -51,7 +51,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Penetrating Shot",
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you using a piercing weapon.
       `,
       rank: 3,
     },
@@ -60,7 +60,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Penetrating Shot+",
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you using a piercing weapon.
       `,
       rank: 5,
     },
@@ -69,7 +69,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Distant Shot",
 
       effect: `
-        Make a ranged \\glossterm{strike}.
+        Make a ranged \\glossterm{strike} using a piercing weapon.
         You reduce your \\glossterm{longshot penalty} with the strike by 2.
       `,
       rank: 3,
@@ -79,7 +79,7 @@ export const penetratingPrecision: CombatStyle = {
       name: "Distant Shot+",
 
       effect: `
-        Make a ranged \\glossterm{strike}.
+        Make a ranged \\glossterm{strike} using a piercing weapon.
         You reduce your \\glossterm{longshot penalty} with the strike by 4.
       `,
       rank: 7,
