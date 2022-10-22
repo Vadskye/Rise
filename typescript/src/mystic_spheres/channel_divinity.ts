@@ -183,15 +183,32 @@ export const channelDivinity: MysticSphere = {
     {
       name: "Massive Word of Faith",
 
+      // +3r for area, +2r for +1d
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} energy damage.
+          Each target takes 4d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 6,
+      rank: 7,
+      scaling: "damage",
+    },
+
+    {
+      name: "Word of Fear",
+
+      attack: {
+        hit: `
+          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target that takes damage this way is \\shaken by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      rank: 5,
       scaling: "damage",
     },
 
@@ -355,13 +372,13 @@ export const channelDivinity: MysticSphere = {
       type: "Attune",
     },
 
-    // +2r for shaken, +2r for +1d, -1r for short range, +1r for retributive
+    // -1r for short range, +1r for retributive
     {
       name: "Fearful Judgment",
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
           If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -369,7 +386,23 @@ export const channelDivinity: MysticSphere = {
           You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
-      rank: 5,
+      rank: 3,
+      scaling: "damage",
+    },
+    {
+      name: "Intense Fearful Judgment",
+
+      attack: {
+        hit: `
+          The target takes 4d8 + \\glossterm{power} energy damage.
+          If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\shortrange.
+          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
+        `,
+      },
+      rank: 7,
       scaling: "damage",
     },
   ],
