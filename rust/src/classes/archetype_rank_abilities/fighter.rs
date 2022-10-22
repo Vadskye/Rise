@@ -352,6 +352,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Your \glossterm{enemies} move at half speed while adjacent to you.
+                This has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
             ",
             modifiers: None,
         },
