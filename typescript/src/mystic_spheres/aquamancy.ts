@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const aquamancy: MysticSphere = {
-  name: "Aquamancy",
-  shortDescription: "Command water to crush and drown foes.",
-  sources: ["domain", "nature"],
+  name: 'Aquamancy',
+  shortDescription: 'Command water to crush and drown foes.',
+  sources: ['domain', 'nature'],
 
   cantrips: [
     {
-      name: "Create Water",
+      name: 'Create Water',
 
       effect: `
         You create up to two gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
@@ -18,14 +18,14 @@ export const aquamancy: MysticSphere = {
         When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
       `,
       scaling: {
-        2: "The volume created increases to five gallons.",
-        4: "The volume created increases to ten gallons.",
-        6: "The volume created increases to twenty gallons.",
+        2: 'The volume created increases to five gallons.',
+        4: 'The volume created increases to ten gallons.',
+        6: 'The volume created increases to twenty gallons.',
       },
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
     {
-      name: "Manipulate Water",
+      name: 'Manipulate Water',
 
       effect: `
         You change the speed of water within a \\medarea radius \\glossterm{emanation} from you by up to 5 miles per hour.
@@ -36,14 +36,14 @@ export const aquamancy: MysticSphere = {
         Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
       `,
       scaling: {
-        3: "You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 10 miles per hour.",
-        5: "You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 15 miles per hour.",
-        7: "You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 20 miles per hour.",
+        3: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 10 miles per hour.',
+        5: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 15 miles per hour.',
+        7: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 20 miles per hour.',
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
     {
-      name: "Purify Water",
+      name: 'Purify Water',
 
       effect: `
         You can separate out dirt, sand, salt, and similar minor pollutants from up to five gallons of water within \\shortrange.
@@ -53,13 +53,13 @@ export const aquamancy: MysticSphere = {
       `,
       // narrative: '',
       scaling: {
-        2: "The volume affected increases to ten gallons.",
-        4: "The volume affected increases to twenty gallons.",
-        6: "The volume affected increases to fifty gallons.",
+        2: 'The volume affected increases to ten gallons.',
+        4: 'The volume affected increases to twenty gallons.',
+        6: 'The volume affected increases to fifty gallons.',
       },
     },
     {
-      name: "Slippery Escape",
+      name: 'Slippery Escape',
 
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Flexibility skill.
@@ -68,17 +68,17 @@ export const aquamancy: MysticSphere = {
         A thin layer of water covers you, allowing you to slip through the grasp of your foes more easily.
       `,
       scaling: {
-        2: "The bonus increases to +4.",
-        4: "The bonus increases to +5.",
-        6: "The bonus increases to +6.",
+        2: 'The bonus increases to +4.',
+        4: 'The bonus increases to +5.',
+        6: 'The bonus increases to +6.',
       },
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
   ],
   spells: [
     // no rank modifier for extremely situational accuracy bonus
     {
-      name: "Desiccate",
+      name: 'Desiccate',
 
       attack: {
         hit: `
@@ -90,11 +90,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // +2r for situational +4acc
     {
-      name: "Mighty Desiccate",
+      name: 'Mighty Desiccate',
 
       attack: {
         hit: `
@@ -106,11 +106,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // swimming is r2.5
     {
-      name: "Constraining Bubble",
+      name: 'Constraining Bubble',
 
       attack: {
         crit: `
@@ -126,11 +126,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 7,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Crashing Wave",
+      name: 'Crashing Wave',
 
       attack: {
         // crit: '',
@@ -142,11 +142,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Mighty Crashing Wave",
+      name: 'Mighty Crashing Wave',
 
       attack: {
         // crit: '',
@@ -158,11 +158,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Aquajet Propulsion",
+      name: 'Aquajet Propulsion',
 
       // 1 rank for movement
       attack: {
@@ -176,11 +176,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Intense Aquajet Propulsion",
+      name: 'Intense Aquajet Propulsion',
 
       // 3 ranks for movement
       attack: {
@@ -194,11 +194,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Fountain",
+      name: 'Fountain',
 
       attack: {
         // crit: '',
@@ -210,11 +210,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Mighty Fountain",
+      name: 'Mighty Fountain',
 
       attack: {
         // crit: '',
@@ -226,11 +226,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
     {
-      name: "Wall of Water",
+      name: 'Wall of Water',
 
       // targeting: None,
       effect: `
@@ -250,32 +250,32 @@ export const aquamancy: MysticSphere = {
         5: `You can increase the area to a \\largearealong wall.`,
         7: `You can increase the area to a \\hugearealong wall.`,
       },
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Aquatic Freedom",
+      name: 'Aquatic Freedom',
 
       effect: `
         You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Mass Aquatic Freedom",
+      name: 'Mass Aquatic Freedom',
 
       functionsLike: {
         mass: true,
-        name: "aquatic freedom",
+        name: 'aquatic freedom',
       },
       rank: 4,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
     // +2 levels for push
     {
-      name: "Raging River",
+      name: 'Raging River',
 
       // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
@@ -292,11 +292,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (minor)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
-      name: "Geyser",
+      name: 'Geyser',
 
       attack: {
         // This can't be full power due to restrictions on Reflex-based single target
@@ -311,11 +311,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (minor)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
-      name: "Mighty Geyser",
+      name: 'Mighty Geyser',
 
       attack: {
         // This can't be full power due to restrictions on Reflex-based single target
@@ -330,11 +330,11 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (minor)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
-      name: "Rainstorm",
+      name: 'Rainstorm',
 
       effect: `
         Torrential rain begins falling out of thin air within a \\medarea radius \\glossterm{zone} within \\longrange.
@@ -343,15 +343,15 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\largearea radius instead.",
-        5: "You can choose to create a \\hugearea radius instead.",
-        7: "You can choose to create a \\gargarea radius instead.",
+        3: 'You can choose to create a \\largearea radius instead.',
+        5: 'You can choose to create a \\hugearea radius instead.',
+        7: 'You can choose to create a \\gargarea radius instead.',
       },
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Obscuring Mist",
+      name: 'Obscuring Mist',
 
       effect: `
         Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
@@ -359,14 +359,14 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\hugearea radius instead.",
-        5: "You can choose to create a \\gargarea radius instead.",
-        7: "You can choose to create a 240 foot radius instead.",
+        3: 'You can choose to create a \\hugearea radius instead.',
+        5: 'You can choose to create a \\gargarea radius instead.',
+        7: 'You can choose to create a 240 foot radius instead.',
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Misty Halo",
+      name: 'Misty Halo',
 
       effect: `
         Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
@@ -375,13 +375,13 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "You can choose to create a \\hugearea radius instead.",
-        7: "You can choose to create a \\gargarea radius instead.",
+        5: 'You can choose to create a \\hugearea radius instead.',
+        7: 'You can choose to create a \\gargarea radius instead.',
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Misty Shroud",
+      name: 'Misty Shroud',
 
       effect: `
         At the end of each round, fog \\glossterm{briefly} fills a \\medarea radius zone from you.
@@ -390,13 +390,13 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "When you cast this spell, you can choose to create a \\largearea radius instead.",
-        7: "When you cast this spell, you can choose to create a \\hugearea radius instead.",
+        5: 'When you cast this spell, you can choose to create a \\largearea radius instead.',
+        7: 'When you cast this spell, you can choose to create a \\hugearea radius instead.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Aqueous Tentacle",
+      name: 'Aqueous Tentacle',
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
@@ -408,11 +408,11 @@ export const aquamancy: MysticSphere = {
         You grow a massive watery tentacle that extends from your body.
       `,
       rank: 2,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
     {
-      name: "Octopus Tentacles",
+      name: 'Octopus Tentacles',
 
       functionsLike: {
         exceptThat: `
@@ -421,25 +421,25 @@ export const aquamancy: MysticSphere = {
           Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
           This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
         `,
-        name: "aqueous tentacle",
+        name: 'aqueous tentacle',
       },
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Kraken Tentacles",
+      name: 'Kraken Tentacles',
 
       functionsLike: {
         exceptThat: `
           the tentacles also have the \\weapontag{Long} weapon tag.
         `,
-        name: "octopus tentacles",
+        name: 'octopus tentacles',
       },
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Aqueous Form",
+      name: 'Aqueous Form',
 
       effect: `
         You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
@@ -458,10 +458,10 @@ export const aquamancy: MysticSphere = {
         \\hypertarget{itemizespace}{}
       `,
       rank: 3,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
     {
-      name: "Fog Cloud",
+      name: 'Fog Cloud',
 
       effect: `
         A cloud of fog appears in a \\medarea radius within \\medrange.
@@ -469,14 +469,14 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\largearea radius instead.",
-        6: "You can choose to create a \\hugearea radius instead.",
+        4: 'You can choose to create a \\largearea radius instead.',
+        6: 'You can choose to create a \\hugearea radius instead.',
       },
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Solid Fog Cloud",
+      name: 'Solid Fog Cloud',
 
       effect: `
         A cloud of fog appears in a \\medarea radius within \\medrange.
@@ -484,11 +484,11 @@ export const aquamancy: MysticSphere = {
         In addition, the fog's area is \\glossterm{difficult terrain}.
       `,
       rank: 6,
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Fog Wall",
+      name: 'Fog Wall',
 
       effect: `
         You create a \\medarealong \\glossterm{wall} of fog within \\longrange.
@@ -498,15 +498,15 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\largearealong wall instead.",
-        5: "You can choose to create a \\hugearealong wall instead.",
-        7: "You can choose to create a \\gargarealong wall instead.",
+        3: 'You can choose to create a \\largearealong wall instead.',
+        5: 'You can choose to create a \\hugearealong wall instead.',
+        7: 'You can choose to create a \\gargarealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Fluid Motion",
+      name: 'Fluid Motion',
 
       effect: `
         When you move using one of your movement speeds, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
@@ -523,10 +523,10 @@ export const aquamancy: MysticSphere = {
         This usually causes you to die.
       `,
       rank: 5,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Forceful Aquajet",
+      name: 'Forceful Aquajet',
 
       attack: {
         hit: `
@@ -534,26 +534,27 @@ export const aquamancy: MysticSphere = {
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
-        targeting: "Make an attack vs. Fortitude against anything within \\medrange.",
+        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
     {
-      name: "Intense Forceful Aquajet",
+      name: 'Intense Forceful Aquajet',
 
       functionsLike: {
         name: 'forceful aquajet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat: "the damage increases to 2d8. In addition, the knockback distance increases to 60 feet.",
+        exceptThat:
+          'the damage increases to 2d8. In addition, the knockback distance increases to 60 feet.',
       },
       // narrative: '',
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Personal Aquarium",
+      name: 'Personal Aquarium',
 
       effect: `
         You surround yourself in a bubble of water.
@@ -574,7 +575,7 @@ export const aquamancy: MysticSphere = {
         5: 'The damage resistance bonus increases to +8.',
         7: 'The damage resistance bonus increases to +16.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
       name: 'Waterward',
@@ -592,7 +593,7 @@ export const aquamancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: "Slippery Escapist",
+      name: 'Slippery Escapist',
 
       effect: `
         If you are \\glossterm{trained} with the Flexibility skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -604,7 +605,7 @@ export const aquamancy: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
       name: 'Puddlify',
@@ -630,27 +631,27 @@ export const aquamancy: MysticSphere = {
   ],
   rituals: [
     {
-      name: "Dampen",
+      name: 'Dampen',
 
       effect: `
           Up to five ritual participants each become \\trait{impervious} to fire damage.
       `,
       rank: 2,
-      type: "Attune",
-      castingTime: "one minute",
+      type: 'Attune',
+      castingTime: 'one minute',
     },
     {
-      name: "Water Breathing",
+      name: 'Water Breathing',
 
       effect: `
         One ritual participant gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       rank: 3,
-      type: "Attune",
-      castingTime: "one minute",
+      type: 'Attune',
+      castingTime: 'one minute',
     },
     {
-      name: "Detect Water",
+      name: 'Detect Water',
 
       effect: `
         You learn the approximate distance and direction to any bodies of water within \\distrange of you.
@@ -658,19 +659,19 @@ export const aquamancy: MysticSphere = {
         This spell can detect bodies of water with a minimum size of Fine.
       `,
       rank: 1,
-      tags: ["Detection"],
-      castingTime: "one minute",
+      tags: ['Detection'],
+      castingTime: 'one minute',
     },
     {
-      name: "Distant Detect Water",
+      name: 'Distant Detect Water',
 
       functionsLike: {
-        exceptThat: "the range increases to 2,000 feet.",
-        name: "detect water",
+        exceptThat: 'the range increases to 2,000 feet.',
+        name: 'detect water',
       },
       rank: 4,
-      tags: ["Detection"],
-      castingTime: "one minute",
+      tags: ['Detection'],
+      castingTime: 'one minute',
     },
   ],
 };

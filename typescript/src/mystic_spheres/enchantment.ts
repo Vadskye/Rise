@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const enchantment: MysticSphere = {
-  name: "Enchantment",
-  shortDescription: "Enchant the minds of your foes and allies.",
-  sources: ["arcane", "divine", "pact"],
+  name: 'Enchantment',
+  shortDescription: 'Enchant the minds of your foes and allies.',
+  sources: ['arcane', 'divine', 'pact'],
 
   cantrips: [
     {
-      name: "Cheer",
+      name: 'Cheer',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -18,12 +18,12 @@ export const enchantment: MysticSphere = {
         4: `You may target an additional ally within range.`,
         6: `You may target an additional ally within range.`,
       },
-      tags: ["Emotion"],
-      type: "Sustain (free)",
+      tags: ['Emotion'],
+      type: 'Sustain (free)',
     },
 
     {
-      name: "Repeat",
+      name: 'Repeat',
 
       attack: {
         crit: `The target does not become immune to this effect.`,
@@ -39,27 +39,27 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
   ],
   spells: [
     {
-      name: "Mass Repeat",
+      name: 'Mass Repeat',
 
       functionsLike: {
         exceptThat: `
           it affects all creatures in a \\smallarea radius within \\medrange.
         `,
-        name: "repeat",
+        name: 'repeat',
       },
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Monologue",
+      name: 'Monologue',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -72,12 +72,12 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Dance",
+      name: 'Dance',
 
       // This is T1; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
@@ -95,13 +95,13 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     // "fall prone" is a r1.5 effect
     {
-      name: "Collapse",
+      name: 'Collapse',
 
       attack: {
         crit: `Each target is also unable to stand up as a \\glossterm{condition}.
@@ -113,12 +113,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Taunt",
+      name: 'Taunt',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -128,12 +128,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Confusion",
+      name: 'Confusion',
 
       attack: {
         crit: `Creatures that have remaining damage resistance are also affected.`,
@@ -145,11 +145,11 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      tags: ["Compulsion"],
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Dominate Person",
+      name: 'Dominate Person',
 
       // +1 level for super attunement
       attack: {
@@ -165,26 +165,26 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Dominate Monster",
+      name: 'Dominate Monster',
 
       functionsLike: {
         exceptThat: `
           you are also able to dominate non-humanoid creatures with its critical hit effect.
           You cannot be attuned to this effect and \\spell{dominate person} at the same time.
         `,
-        name: "dominate person",
+        name: 'dominate person',
       },
       rank: 7,
-      tags: ["Compulsion"],
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Sleep",
+      name: 'Sleep',
 
       // +1 level over normal med range r2 debuff due to sleep effect
       attack: {
@@ -203,16 +203,16 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 6,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Selfstrike",
+      name: 'Selfstrike',
 
       // original targets: One creature within \medrange
       attack: {
-        crit: "The target does not become immune to this effect.",
+        crit: 'The target does not become immune to this effect.',
         // No glance effect since it's already one round
         hit: `
           During its next action, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
@@ -226,12 +226,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Discordant Song",
+      name: 'Discordant Song',
 
       attack: {
         crit: `Each target is \\stunned instead of dazed.`,
@@ -243,12 +243,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Massive Discordant Song",
+      name: 'Massive Discordant Song',
 
       attack: {
         crit: `Each target is \\stunned instead of dazed.`,
@@ -260,12 +260,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Cause Fear",
+      name: 'Cause Fear',
 
       attack: {
         crit: `The target is \\frightened by the chosen creature instead of shaken.`,
@@ -278,12 +278,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Cause Intense Fear",
+      name: 'Cause Intense Fear',
 
       attack: {
         crit: `The target is \\panicked by the chosen creature instead of shaken.`,
@@ -296,12 +296,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Fearsome Aura",
+      name: 'Fearsome Aura',
 
       attack: {
         crit: `The target is \\frightened by you instead of shaken.`,
@@ -312,13 +312,13 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-      type: "Attune (deep)",
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Intense Fearsome Aura",
+      name: 'Intense Fearsome Aura',
 
       attack: {
         crit: `The target is \\panicked by you instead of shaken.`,
@@ -329,13 +329,13 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-      type: "Attune (deep)",
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Charm",
+      name: 'Charm',
 
       attack: {
         crit: `The effect persists for ten minutes after you stop sustaining it.`,
@@ -346,13 +346,13 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Subtle'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Amnesiac Charm",
+      name: 'Amnesiac Charm',
 
       functionsLike: {
         exceptThat: `
@@ -360,16 +360,16 @@ export const enchantment: MysticSphere = {
         It becomes aware of its surroundings as if waking up from a daydream.
         The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
         `,
-        name: "charm",
+        name: 'charm',
       },
       rank: 6,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
-      type: "Sustain (minor)",
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Subtle'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Calm Emotions",
+      name: 'Calm Emotions',
 
       // TODO: unclear rank
       attack: {
@@ -385,13 +385,13 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      tags: ["Emotion"],
-      type: "Sustain (standard)",
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Sustain (standard)',
     },
 
     {
-      name: "Enrage",
+      name: 'Enrage',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -402,12 +402,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Demotivate",
+      name: 'Demotivate',
 
       attack: {
         crit: `The penalty increases to -5.`,
@@ -417,12 +417,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion", "Subtle"],
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Subtle'],
     },
 
     {
-      name: "Ominous Presence",
+      name: 'Ominous Presence',
 
       effect: `
         If you are \\glossterm{trained} with the Intimidate skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -434,11 +434,11 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Alluring Presence",
+      name: 'Alluring Presence',
 
       effect: `
         If you are \\glossterm{trained} with the Persuasion skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -450,14 +450,14 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Solipsism",
+      name: 'Solipsism',
 
       attack: {
-        crit: "The target does not become immune to this effect.",
+        crit: 'The target does not become immune to this effect.',
         hit: `
           As a \\glossterm{condition}, the target believes that it is the only real creature, and the rest of the world is an illusion.
           It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
@@ -472,11 +472,11 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      tags: ['Emotion', "Subtle"],
+      tags: ['Emotion', 'Subtle'],
     },
 
     {
-      name: "Friend to Animals",
+      name: 'Friend to Animals',
 
       effect: `
         If you are \\glossterm{trained} with the Creature Handling skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -488,11 +488,11 @@ export const enchantment: MysticSphere = {
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Agony",
+      name: 'Agony',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -505,12 +505,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Friend to Foe",
+      name: 'Friend to Foe',
 
       attack: {
         crit: `The target does not become immune to this effect.`,
@@ -523,12 +523,12 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      tags: ["Compulsion"],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
     },
 
     {
-      name: "Mind Crush",
+      name: 'Mind Crush',
 
       // +1 level for conditional +2 accuracy
       attack: {
@@ -541,11 +541,11 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Emotion'],
     },
     {
-      name: "Certain Mind Crush",
+      name: 'Certain Mind Crush',
 
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
@@ -558,7 +558,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Emotion'],
     },
 
@@ -572,7 +572,7 @@ export const enchantment: MysticSphere = {
         This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 2,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 2." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift (see text)'],
     },
 
@@ -581,18 +581,18 @@ export const enchantment: MysticSphere = {
 
       functionsLike: {
         name: 'restore bravado',
-        exceptThat: "the recovery increases to 4d8 + \\glossterm{power}.",
+        exceptThat: 'the recovery increases to 4d8 + \\glossterm{power}.',
       },
       rank: 6,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 6." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 6.' },
       tags: ['Swift (see text)'],
     },
   ],
   rituals: [
     {
-      name: "Animal Messenger",
+      name: 'Animal Messenger',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       attack: {
         hit: `
           The target is compelled to deliver a message for you.
@@ -613,13 +613,13 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Tell the Truth",
+      name: 'Tell the Truth',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       attack: {
         hit: `Each target is unable to say things it knows to be untrue.`,
         targeting: `
@@ -627,14 +627,14 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Antipathy",
+      name: 'Antipathy',
 
       // original targets: ['One Large or smaller object within \\medrange', 'Creatures near the target (see text)']
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       attack: {
         crit: `The creature is \\panicked instead of frightened.`,
         hit: `The creature is \\frightened by the chosen object until it takes a \\glossterm{short rest}.`,
@@ -651,14 +651,14 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 4,
-      tags: ["Emotion"],
-      type: "Attune",
+      tags: ['Emotion'],
+      type: 'Attune',
     },
 
     {
-      name: "Sympathy",
+      name: 'Sympathy',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       attack: {
         crit: `The creature is also compelled to get as close as possible to the chosen object to admire it in greater detail.`,
         hit: `The creature is fascinated by the chosen object until it takes a \\glossterm{short rest}.
@@ -679,8 +679,8 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 4,
-      tags: ["Emotion"],
-      type: "Attune",
+      tags: ['Emotion'],
+      type: 'Attune',
     },
   ],
 };

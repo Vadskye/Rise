@@ -1,13 +1,13 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const heraldOfWar: CombatStyle = {
-  name: "Herald of War",
+  name: 'Herald of War',
   shortDescription:
-    "Demoralize foes and inspire allies with battlecries and a commanding presence.",
+    'Demoralize foes and inspire allies with battlecries and a commanding presence.',
 
   maneuvers: [
     {
-      name: "Boastful Battlecry",
+      name: 'Boastful Battlecry',
 
       effect: `
         This ability targets all \\glossterm{enemies} within a \\largearea radius from you.
@@ -17,7 +17,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Dazing Roar",
+      name: 'Dazing Roar',
 
       attack: {
         crit: `Each target is \\stunned instead of dazed.`,
@@ -26,12 +26,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      tags: ["Compulsion"],
+      tags: ['Compulsion'],
       rank: 3,
     },
 
     {
-      name: "Stunning Roar",
+      name: 'Stunning Roar',
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
@@ -40,12 +40,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      tags: ["Compulsion"],
+      tags: ['Compulsion'],
       rank: 7,
     },
 
     {
-      name: "Goading Roar",
+      name: 'Goading Roar',
 
       // -1r for meleeish range goad
       attack: {
@@ -55,12 +55,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      tags: ["Emotion"],
+      tags: ['Emotion'],
       rank: 5,
     },
 
     {
-      name: "Fearsome Roar",
+      name: 'Fearsome Roar',
 
       attack: {
         crit: `Each target is \\frightened instead of shaken.`,
@@ -69,12 +69,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      tags: ["Emotion"],
+      tags: ['Emotion'],
       rank: 1,
     },
 
     {
-      name: "Fearsome Roar+",
+      name: 'Fearsome Roar+',
 
       attack: {
         crit: `Each target is \\panicked instead of frightened.`,
@@ -83,12 +83,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      tags: ["Emotion"],
+      tags: ['Emotion'],
       rank: 5,
     },
 
     {
-      name: "Thunderous Shout",
+      name: 'Thunderous Shout',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
@@ -96,12 +96,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 3,
     },
 
     {
-      name: "Thunderous Shout+",
+      name: 'Thunderous Shout+',
 
       attack: {
         hit: `Each target takes 4d10 + \\glossterm{power} bludgeoning damage.`,
@@ -109,12 +109,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 7,
     },
 
     {
-      name: "Directed Shout",
+      name: 'Directed Shout',
 
       attack: {
         hit: `
@@ -125,12 +125,12 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 1,
     },
 
     {
-      name: "Directed Shout+",
+      name: 'Directed Shout+',
 
       attack: {
         hit: `
@@ -141,35 +141,35 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 5,
     },
 
     {
-      name: "Rally the Troops",
+      name: 'Rally the Troops',
 
       effect: `
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
       `,
       rank: 1,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     {
-      name: "Rally the Troops+",
+      name: 'Rally the Troops+',
 
       effect: `
         You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 5,
-      tags: ["Swift"],
+      tags: ['Swift'],
     },
 
     // -2 ranks for melee goad
     {
-      name: "Challenging Strike",
+      name: 'Challenging Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -180,7 +180,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Challenging Strike+",
+      name: 'Challenging Strike+',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -190,30 +190,30 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Fearsome Blow",
+      name: 'Fearsome Blow',
 
       effect: `
         Make a \\glossterm{strike}.
         Each creature damaged by the strike is \\shaken by you if your attack result beats its Mental defense.
       `,
       rank: 3,
-      tags: ["Emotion"],
+      tags: ['Emotion'],
     },
 
     {
-      name: "Fearsome Blow+",
+      name: 'Fearsome Blow+',
 
       effect: `
         Make a \\glossterm{strike}.
         Each creature damaged by the strike is \\frightened by you if your attack result beats its Mental defense.
       `,
       rank: 7,
-      tags: ["Emotion"],
+      tags: ['Emotion'],
     },
 
     // The rank here is pretty ambiguous
     {
-      name: "Awe-Inspiring Strike",
+      name: 'Awe-Inspiring Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -225,7 +225,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Encouraging Battlecry",
+      name: 'Encouraging Battlecry',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -233,12 +233,12 @@ export const heraldOfWar: CombatStyle = {
         You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d10 \\glossterm{damage resistance}.
       `,
       rank: 3,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 3." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 3.' },
       tags: ['Emotion', 'Swift'],
     },
 
     {
-      name: "Encouraging Battlecry+",
+      name: 'Encouraging Battlecry+',
 
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -250,7 +250,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: "Steadfast Battlecry",
+      name: 'Steadfast Battlecry',
 
       effect: `
         You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.

@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const terramancy: MysticSphere = {
-  name: "Terramancy",
-  shortDescription: "Manipulate earth to crush foes.",
-  sources: ["arcane", "domain", "nature"],
+  name: 'Terramancy',
+  shortDescription: 'Manipulate earth to crush foes.',
+  sources: ['arcane', 'domain', 'nature'],
   // Almost all creatures are grounded most of the time, so it's not a big deal to just
   // be grounded at all.
   // In general, -1r if it only works against grounded
@@ -18,7 +18,7 @@ export const terramancy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Shape Earth",
+      name: 'Shape Earth',
 
       effect: `
         Choose one unattended, nonmagical body of earth or unworked stone you touch.
@@ -37,7 +37,7 @@ export const terramancy: MysticSphere = {
   ],
   spells: [
     {
-      name: "Rock Throw",
+      name: 'Rock Throw',
 
       // +1r for +1acc
       attack: {
@@ -48,12 +48,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mighty Rock Throw",
+      name: 'Mighty Rock Throw',
 
       // +4r for +2d
       attack: {
@@ -64,12 +64,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Crushing Gravity",
+      name: 'Crushing Gravity',
 
       // +1r for acc and very circumstantial HP effect
       attack: {
@@ -87,27 +87,28 @@ export const terramancy: MysticSphere = {
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Certain Crushing Gravity",
+      name: 'Certain Crushing Gravity',
 
       functionsLike: {
-        name: "crushing gravity",
-        exceptThat: "the accuracy bonus increases to +2 per size category, and the damage increases to 4d6 + \\glossterm{power}.",
+        name: 'crushing gravity',
+        exceptThat:
+          'the accuracy bonus increases to +2 per size category, and the damage increases to 4d6 + \\glossterm{power}.',
       },
       narrative: `
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Shrapnel Blast",
+      name: 'Shrapnel Blast',
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
@@ -117,12 +118,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mighty Shrapnel Blast",
+      name: 'Mighty Shrapnel Blast',
 
       attack: {
         hit: `Each target takes 4d6 + \\glossterm{power} bludgeoning and piercing damage.`,
@@ -132,12 +133,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Earthcraft",
+      name: 'Earthcraft',
 
       effect: `
         This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
@@ -152,11 +153,11 @@ export const terramancy: MysticSphere = {
         An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Earthen Anchor",
+      name: 'Earthen Anchor',
 
       effect: `
         You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
@@ -166,22 +167,22 @@ export const terramancy: MysticSphere = {
         You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Earthen Anchor",
+      name: 'Mass Earthen Anchor',
 
       functionsLike: {
         mass: true,
-        name: "earthen anchor",
+        name: 'earthen anchor',
       },
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Earthspike",
+      name: 'Earthspike',
 
       // -1r for grounded, -1r for short range allows medium damage
       // Reflex defense since it's coming up from the ground - you can't shield it, just
@@ -196,12 +197,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Certain Earthspike",
+      name: 'Certain Earthspike',
 
       // +1r for med range, +2r for +2acc
       // Can't go to full damage because this is single-target vs Reflex
@@ -215,12 +216,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Intense Earthspike",
+      name: 'Intense Earthspike',
 
       attack: {
         hit: `
@@ -232,12 +233,12 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Meld into Stone",
+      name: 'Meld into Stone',
 
       effect: `
         You and up to 100 pounds of nonliving equipment meld into one stone object you touch that is at least as large as your body.
@@ -253,11 +254,11 @@ export const terramancy: MysticSphere = {
         When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Tremor",
+      name: 'Tremor',
 
       // -1r for grounded
       attack: {
@@ -275,25 +276,25 @@ export const terramancy: MysticSphere = {
         You create an highly localized tremor that rips through the ground.
       `,
       rank: 3,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Massive Tremor",
+      name: 'Massive Tremor',
 
       functionsLike: {
-        name: "tremor",
-        exceptThat: "the area increases to a \\medarea radius within \\longrange.",
+        name: 'tremor',
+        exceptThat: 'the area increases to a \\medarea radius within \\longrange.',
       },
       narrative: `
         You create an intense tremor that rips through the ground.
       `,
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Earthquake",
+      name: 'Earthquake',
 
       // +2r for also next round, -1r for grounded
       attack: {
@@ -309,11 +310,11 @@ export const terramancy: MysticSphere = {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Earthquake",
+      name: 'Massive Earthquake',
 
       // this scales very well with area, so it pays the full +2r price for large and huge
       attack: {
@@ -329,11 +330,11 @@ export const terramancy: MysticSphere = {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Swallowed by Earth",
+      name: 'Swallowed by Earth',
 
       // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
       attack: {
@@ -357,7 +358,7 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Earthbind",
+      name: 'Earthbind',
 
       // treat as r1 condition.
       // -1r for 60' height cap, +1r for stone
@@ -374,11 +375,11 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Intense Earthbind",
+      name: 'Intense Earthbind',
 
       functionsLike: {
         name: 'earthbind',
@@ -388,11 +389,11 @@ export const terramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Quagmire",
+      name: 'Quagmire',
 
       effect: `
         % TODO: wording to allow it to affect smaller parts of larger objects
@@ -404,13 +405,13 @@ export const terramancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "You can choose to affect a \\medarea radius instead.",
+        6: 'You can choose to affect a \\medarea radius instead.',
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Earthen Fortification",
+      name: 'Earthen Fortification',
 
       effect: `
         You construct a fortification made of packed earth within \\medrange.
@@ -429,24 +430,26 @@ export const terramancy: MysticSphere = {
         6: `You can also construct fortifications from stone.
             This makes them more resistant to attack and allows the construction of more complex structures.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
-      name: "Earthglide",
+      name: 'Earthglide',
 
       effect: `
         You can move through earth and unworked stone at a rate of 5 feet per round.
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      scaling: { 7: `Your speed increases to be equal to 10 feet less than the \\glossterm{base speed} for your size.` },
-      type: "Attune",
+      scaling: {
+        7: `Your speed increases to be equal to 10 feet less than the \\glossterm{base speed} for your size.`,
+      },
+      type: 'Attune',
     },
 
     {
-      name: "Rocky Shell",
+      name: 'Rocky Shell',
 
       effect: `
         You cover your body with two layers of rock that crumple when they take damage.
@@ -462,12 +465,12 @@ export const terramancy: MysticSphere = {
         5: `The damage reduction increases to 20.`,
         7: `The damage reduction increases to 40.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Volcano",
+      name: 'Volcano',
 
       // treat as short range med radius, which is a t3 area
       attack: {
@@ -483,28 +486,28 @@ export const terramancy: MysticSphere = {
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Mighty Volcano",
+      name: 'Mighty Volcano',
 
       // +4d for +1d and full power
       functionsLike: {
-        name: "volcano",
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
+        name: 'volcano',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
       },
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Personal Gravitation",
+      name: 'Personal Gravitation',
 
       effect: `
         Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can take a \\glossterm{free action} to adjust your personal gravity.
@@ -522,11 +525,11 @@ export const terramancy: MysticSphere = {
         `,
         6: `The maximum distance increases to 30 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Stonefist",
+      name: 'Stonefist',
 
       effect: `
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
@@ -538,12 +541,12 @@ export const terramancy: MysticSphere = {
       narrative: `
         You encase one of your arms in a mighty stone bulkward, empowering it to crush your foes with sheer brute force.
       `,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
-      name: "Wall of Stone",
+      name: 'Wall of Stone',
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
@@ -556,12 +559,12 @@ export const terramancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\medarealong wall instead.",
-        5: "You can choose to create a \\largearealong wall instead.",
-        7: "You can choose to create a \\hugearealong wall instead.",
+        3: 'You can choose to create a \\medarealong wall instead.',
+        5: 'You can choose to create a \\largearealong wall instead.',
+        7: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [],

@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const cryomancy: MysticSphere = {
-  name: "Cryomancy",
-  shortDescription: "Drain heat to injure and freeze foes.",
-  sources: ["arcane", "nature", "pact"],
+  name: 'Cryomancy',
+  shortDescription: 'Drain heat to injure and freeze foes.',
+  sources: ['arcane', 'nature', 'pact'],
   // In general, creating icy terrain adds +2 ranks to a reasonably sized area.
   // Target's space + adjacent spaces is only +1 rank.
   specialRules: `
@@ -23,7 +23,7 @@ export const cryomancy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Chill",
+      name: 'Chill',
 
       attack: {
         hit: `
@@ -34,13 +34,13 @@ export const cryomancy: MysticSphere = {
         `,
       },
       scaling: {
-        2: "The damage increases to 5.",
-        4: "The damage increases to 10.",
-        6: "The damage increases to 20.",
+        2: 'The damage increases to 5.',
+        4: 'The damage increases to 10.',
+        6: 'The damage increases to 20.',
       },
     },
     {
-      name: "Chill Air",
+      name: 'Chill Air',
 
       effect: `
         The temperatuture of the air within a \\areamed radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
@@ -50,15 +50,15 @@ export const cryomancy: MysticSphere = {
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       scaling: {
-        3: "You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.",
-        5: "You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.",
-        7: "You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.",
+        3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
+        5: 'You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.',
+        7: 'You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.',
       },
     },
   ],
   spells: [
     {
-      name: "Freezing Grasp",
+      name: 'Freezing Grasp',
 
       attack: {
         hit: `The target takes 2d6 + \\glossterm{power} cold damage.`,
@@ -69,11 +69,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Freezing Grasp",
+      name: 'Intense Freezing Grasp',
 
       attack: {
         hit: `
@@ -87,11 +87,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Cone of Cold",
+      name: 'Cone of Cold',
 
       // -1d and +1r for icy terrain
       attack: {
@@ -102,11 +102,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Cone of Cold",
+      name: 'Massive Cone of Cold',
 
       // 2 ranks for larger area, 1 rank to remove the previous -1d
       attack: {
@@ -117,11 +117,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Frozen Legs",
+      name: 'Frozen Legs',
 
       attack: {
         hit: `
@@ -134,11 +134,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Icicle",
+      name: 'Icicle',
 
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} piercing and cold damage.`,
@@ -147,12 +147,12 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mighty Icicle",
+      name: 'Mighty Icicle',
 
       attack: {
         hit: `The target takes 4d8 + \\glossterm{power} piercing and cold damage.`,
@@ -161,12 +161,12 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Freeze Poison",
+      name: 'Freeze Poison',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -183,30 +183,30 @@ export const cryomancy: MysticSphere = {
     },
 
     {
-      name: "Skate",
+      name: 'Skate',
 
       effect: `
         You can move on top of water as if it were land.
         This also works on other liquids that can be frozen like water.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Skate",
+      name: 'Mass Skate',
 
       functionsLike: {
         mass: true,
-        name: "Skate",
+        name: 'Skate',
       },
       // narrative: '',
       rank: 4,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Skyskate",
+      name: 'Skyskate',
 
       effect: `
         Whenever you move using your land speed, you can leave a trail of ice behind you.
@@ -219,12 +219,12 @@ export const cryomancy: MysticSphere = {
         However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
       `,
       rank: 4,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
-      name: "Icy Shell",
+      name: 'Icy Shell',
 
       effect: `
         You cover your body with two layers of ice that crumple when they take damage.
@@ -240,12 +240,12 @@ export const cryomancy: MysticSphere = {
         5: `The damage reduction increases to 20.`,
         7: `The damage reduction increases to 40.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Frostbite",
+      name: 'Frostbite',
 
       attack: {
         hit: `
@@ -259,11 +259,11 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Frostbite",
+      name: 'Mighty Frostbite',
 
       attack: {
         hit: `
@@ -277,11 +277,11 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Hailstorm",
+      name: 'Hailstorm',
 
       // +1r for very situational prone
       attack: {
@@ -295,11 +295,11 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Hailstorm",
+      name: 'Massive Hailstorm',
 
       // +1r area, +2r damage
       attack: {
@@ -313,11 +313,11 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Icefield",
+      name: 'Icefield',
 
       // +2r for icy terrain
       attack: {
@@ -330,11 +330,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Icecraft",
+      name: 'Icecraft',
 
       effect: `
         Choose one pool of \\glossterm{unattended}, nonmagical water within \\shortrange.
@@ -353,11 +353,11 @@ export const cryomancy: MysticSphere = {
         They reappear at the end of the next round.
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Frost Breath",
+      name: 'Frost Breath',
 
       attack: {
         // icy terrain for attune + every other round
@@ -372,12 +372,12 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Mighty Frost Breath",
+      name: 'Mighty Frost Breath',
 
       functionsLike: {
         name: 'frost breath',
@@ -387,12 +387,12 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Icicle Carapace",
+      name: 'Icicle Carapace',
 
       // original targets: ['Yourself', 'See text']
       attack: {
@@ -403,13 +403,13 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 3,
-      scaling: "damage",
-      type: "Attune (deep)",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      type: 'Attune (deep)',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mighty Icicle Carapace",
+      name: 'Mighty Icicle Carapace',
 
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing and cold damage.`,
@@ -420,12 +420,12 @@ export const cryomancy: MysticSphere = {
 
       rank: 7,
       // scaling: "damage",
-      type: "Attune (deep)",
-      tags: ["Manifestation"],
+      type: 'Attune (deep)',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Chillwind Dash",
+      name: 'Chillwind Dash',
 
       effect: `
         You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -433,13 +433,13 @@ export const cryomancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The range increases to \\medrange.",
-        7: "The range increases to \\distrange.",
+        5: 'The range increases to \\medrange.',
+        7: 'The range increases to \\distrange.',
       },
     },
 
     {
-      name: "Bonechill",
+      name: 'Bonechill',
 
       attack: {
         hit: `
@@ -451,11 +451,11 @@ export const cryomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Blizzard",
+      name: 'Blizzard',
 
       // treat persistent icy terrain as a r1 debuff
       effect: `
@@ -463,13 +463,13 @@ export const cryomancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\largearea radius instead.",
-        6: "You can choose to create a \\hugearea radius instead.",
+        4: 'You can choose to create a \\largearea radius instead.',
+        6: 'You can choose to create a \\hugearea radius instead.',
       },
-      tags: ["Sustain (attuneable, minor)"],
+      tags: ['Sustain (attuneable, minor)'],
     },
     {
-      name: "Wall of Ice",
+      name: 'Wall of Ice',
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
@@ -483,16 +483,16 @@ export const cryomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\medarealong wall instead.",
-        5: "You can choose to create a \\largearealong wall instead.",
-        7: "You can choose to create a \\hugearealong wall instead.",
+        3: 'You can choose to create a \\medarealong wall instead.',
+        5: 'You can choose to create a \\largearealong wall instead.',
+        7: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     // TODO: unclear rank
     {
-      name: "Ice Globe",
+      name: 'Ice Globe',
 
       effect: `
         You create a sphere of ice in a \\smallarea sphere within \\medrange.
@@ -506,11 +506,11 @@ export const cryomancy: MysticSphere = {
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 4,
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Cryostrike",
+      name: 'Cryostrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -520,15 +520,15 @@ export const cryomancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Blood-Chilling Strike",
+      name: 'Blood-Chilling Strike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -538,18 +538,18 @@ export const cryomancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        5: 'You gain a +1 accuracy bonus with the strike.',
+        7: 'The accuracy bonus increases to +2.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Cold Tolerance",
+      name: 'Cold Tolerance',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
         The target suffers no harm from being in a cold environment.
@@ -558,12 +558,12 @@ export const cryomancy: MysticSphere = {
         This does not protect the target from cold damage.
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Frostfall",
+      name: 'Frostfall',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location decreases rapidly.
         Over the next minute after you finish this ritual, the temperature decreases by 40 degrees Fahrenheit, to a minimum of \\minus30 degrees.
@@ -572,21 +572,21 @@ export const cryomancy: MysticSphere = {
         Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Froststorm",
+      name: 'Froststorm',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
         `,
-        name: "frostfall",
+        name: 'frostfall',
       },
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
   ],
 };

@@ -54,7 +54,7 @@ export const universal: MysticSphere = {
     // This gives each sphere a useful starting point early, but ensures that spheres feel
     // strongly differentiated at high levels.
     {
-      name: "Mystic Bolt",
+      name: 'Mystic Bolt',
 
       attack: {
         hit: `The target takes 1d8 + \\glossterm{power} damage.`,
@@ -64,10 +64,10 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Mighty Mystic Bolt",
+      name: 'Mighty Mystic Bolt',
 
       attack: {
         hit: `The target takes 2d10 + \\glossterm{power} damage.`,
@@ -77,10 +77,10 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Mystic Discharge",
+      name: 'Mystic Discharge',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
@@ -90,10 +90,10 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Massive Mystic Discharge",
+      name: 'Massive Mystic Discharge',
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
@@ -103,14 +103,14 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
   rituals: [
     {
-      name: "Mystic Trap",
+      name: 'Mystic Trap',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
         targeting: `
@@ -129,20 +129,20 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       scaling: {
-        "special": `
+        special: `
           You can perform this ritual at a higher rank.
           The damage increases by +1d per rank beyond 1.
         `,
       },
       tags: ['Trap'],
-      type: "Attune"
+      type: 'Attune',
     },
     {
-      name: "Enduring Mystic Trap",
+      name: 'Enduring Mystic Trap',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
-        name: "mystic trap",
+        name: 'mystic trap',
         exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
@@ -150,7 +150,7 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       scaling: {
-        "special": `
+        special: `
           You can perform this ritual at a higher rank.
           The damage increases by +1d per rank beyond 1.
         `,
@@ -158,11 +158,11 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Massive Mystic Trap",
+      name: 'Massive Mystic Trap',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
-        name: "mystic trap",
+        name: 'mystic trap',
         exceptThat: `
           the damage increases to 2d8 + half \\glossterm{power} damage.
           In addition, the area of both the activation and the attack increases to a \\medarea radius.
@@ -170,7 +170,7 @@ export const universal: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        "special": `
+        special: `
           You can perform this ritual at a higher rank.
           The damage increases by +1d per rank beyond 4.
         `,
@@ -178,11 +178,11 @@ export const universal: MysticSphere = {
       tags: ['Trap'],
     },
     {
-      name: "Massive Enduring Mystic Trap",
+      name: 'Massive Enduring Mystic Trap',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       functionsLike: {
-        name: "massive mystic trap",
+        name: 'massive mystic trap',
         exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
@@ -190,7 +190,7 @@ export const universal: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        "special": `
+        special: `
           You can perform this ritual at a higher rank.
           The damage increases by +1d per rank beyond 4.
         `,

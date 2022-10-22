@@ -232,7 +232,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: "Greater Enlarge",
+      name: 'Greater Enlarge',
 
       effect: `
         Your size increases by two \\glossterm{size categories}.
@@ -243,7 +243,7 @@ export const polymorph: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
@@ -298,8 +298,8 @@ export const polymorph: MysticSphere = {
       name: 'Greater Malleable Body',
 
       functionsLike: {
-        name: "malleable body",
-        exceptThat: "you become \\glossterm{immune} to critical hits from strikes."
+        name: 'malleable body',
+        exceptThat: 'you become \\glossterm{immune} to critical hits from strikes.',
       },
       rank: 7,
       type: 'Attune (deep)',
@@ -424,7 +424,7 @@ export const polymorph: MysticSphere = {
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
@@ -433,10 +433,10 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: "The recovery increases to 4d6 + \\glossterm{power}.",
+        exceptThat: 'The recovery increases to 4d6 + \\glossterm{power}.',
       },
       rank: 5,
-      scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -955,9 +955,9 @@ export const polymorph: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: "Mystic Lock",
+      name: 'Mystic Lock',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
         In addition, choose a Fine object within \\shortrange.
@@ -968,22 +968,22 @@ export const polymorph: MysticSphere = {
         When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Greater Mystic Lock",
+      name: 'Greater Mystic Lock',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
           the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 35.
             In addition, the \\glossterm{difficulty value} to break it open increases by 20 instead of by 10.
         `,
-        name: "mystic lock",
+        name: 'mystic lock',
       },
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
   ],
 };

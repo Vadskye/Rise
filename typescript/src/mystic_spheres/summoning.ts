@@ -1,29 +1,29 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const summoning: MysticSphere = {
-  name: "Summoning",
-  shortDescription: "Summon creatures to fight with you.",
-  sources: ["arcane", "divine", "nature", "pact"],
+  name: 'Summoning',
+  shortDescription: 'Summon creatures to fight with you.',
+  sources: ['arcane', 'divine', 'nature', 'pact'],
 
   cantrips: [
     {
-      name: "Summon Distraction",
+      name: 'Summon Distraction',
 
       functionsLike: {
         exceptThat: `
           it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep) tag.
           In addition, it only has a single \\glossterm{hit point}.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (standard)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (standard)',
     },
   ],
   spells: [
     {
-      name: "Summon Monster",
+      name: 'Summon Monster',
 
       effect: `
         You summon a creature in an unoccupied square on stable ground within \\medrange.
@@ -52,29 +52,29 @@ export const summoning: MysticSphere = {
         Summoned creatures have no mind or independent agency, and will not act on their own even if attacked.
       `,
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Offensive Monster",
+      name: 'Summon Offensive Monster',
 
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
           It gains a +1 \\glossterm{accuracy} bonus and its attacks deal 1d8 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Empowered Summon Offensive Monster",
+      name: 'Empowered Summon Offensive Monster',
 
       // +2 levels for +2acc, +2 levels for +1d
       functionsLike: {
@@ -82,48 +82,48 @@ export const summoning: MysticSphere = {
           the summoned creature is more offensively inclined.
           It gains a +3 \\glossterm{accuracy} bonus and its attacks deal 4d6 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Defensive Monster",
+      name: 'Summon Defensive Monster',
 
       functionsLike: {
         exceptThat: `
           the summoned creature is more defensively inclined.
           It gains a +1 bonus to all defenses.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Empowered Summon Defensive Monster",
+      name: 'Empowered Summon Defensive Monster',
 
       functionsLike: {
         exceptThat: `
           the summoned creature is much more defensively inclined.
           It gains a +2 bonus to all defenses, and its \\glossterm{hit points} are doubled.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Ramming Summon",
+      name: 'Ramming Summon',
 
       // solid ground and -1d for knockback
       attack: {
@@ -139,12 +139,12 @@ export const summoning: MysticSphere = {
           You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
       `,
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Efficient Ramming Summon",
+      name: 'Efficient Ramming Summon',
 
       // +4 ranks for on-damage instead of on-hp
       attack: {
@@ -160,12 +160,12 @@ export const summoning: MysticSphere = {
           You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
       `,
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Trampling Summon",
+      name: 'Trampling Summon',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
@@ -176,12 +176,12 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Massive Trampling Summon",
+      name: 'Massive Trampling Summon',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
@@ -192,12 +192,12 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Summon Weapon",
+      name: 'Summon Weapon',
 
       effect: `
         You summon a weapon in an unoccupied square on stable ground within \\medrange.
@@ -225,13 +225,13 @@ export const summoning: MysticSphere = {
         This damage is improved by your Willpower as normal for magical attacks.
       `,
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Aerial Weapon",
+      name: 'Aerial Weapon',
 
       functionsLike: {
         exceptThat: `
@@ -239,16 +239,16 @@ export const summoning: MysticSphere = {
           This allows the weapon to fly up to fight airborne foes.
           In addition, the weapon gains a +1d damage bonus.
         `,
-        name: "summon weapon",
+        name: 'summon weapon',
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Summon Ballista",
+      name: 'Summon Ballista',
 
       functionsLike: {
         exceptThat: `
@@ -260,16 +260,16 @@ export const summoning: MysticSphere = {
           Its attacks deal piercing damage and have \\glossterm{range limits} of 90/270.
           The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
-        name: "summon weapon",
+        name: 'summon weapon',
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Summon Earth Elemental",
+      name: 'Summon Earth Elemental',
 
       functionsLike: {
         exceptThat: `
@@ -277,16 +277,16 @@ export const summoning: MysticSphere = {
         Its attacks deal 2d6 bludgeoning damage.
         It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Water Elemental",
+      name: 'Summon Water Elemental',
 
       // original targets: One unoccupied square on stable ground within \medrange
 
@@ -297,16 +297,16 @@ export const summoning: MysticSphere = {
         It has a 30 foot \\glossterm{swim speed}.
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Air Elemental",
+      name: 'Summon Air Elemental',
 
       // original targets: One unoccupied square on stable ground within \medrange
 
@@ -316,16 +316,16 @@ export const summoning: MysticSphere = {
         Its attacks deal 1d10 bludgeoning damage.
         It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability}.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Fire Elemental",
+      name: 'Summon Fire Elemental',
 
       // original targets: One unoccupied square on stable ground within \medrange
 
@@ -335,16 +335,16 @@ export const summoning: MysticSphere = {
         Its attacks deal 1d6 fire damage.
         In addition, it is immune to fire damage.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Bear",
+      name: 'Summon Bear',
 
       // original targets: One unoccupied square on stable ground within \medrange
 
@@ -356,16 +356,16 @@ export const summoning: MysticSphere = {
         As a standard action, it can make a \\textit{grapple} attack against a creature adjacent to it.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Summon Mount",
+      name: 'Summon Mount',
 
       functionsLike: {
         exceptThat: `
@@ -374,19 +374,19 @@ export const summoning: MysticSphere = {
         It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
         The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 2,
       scaling: {
         4: `The creature gains a +1 bonus to its defenses.`,
         6: `The defense bonus increases to +2.`,
       },
-      tags: ["Manifestation"],
-      type: "Attune (target)",
+      tags: ['Manifestation'],
+      type: 'Attune (target)',
     },
 
     {
-      name: "Summon Horde -- Dogs",
+      name: 'Summon Horde -- Dogs',
 
       attack: {
         hit: `
@@ -399,11 +399,11 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 3,
-      tags: ["Manifestation", "Sustain (standard)"],
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Summon Horde -- Wolves",
+      name: 'Summon Horde -- Wolves',
 
       attack: {
         hit: `
@@ -417,11 +417,11 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 5,
-      tags: ["Manifestation", "Sustain (standard)"],
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Summon Horde -- Bees",
+      name: 'Summon Horde -- Bees',
 
       attack: {
         hit: `
@@ -435,11 +435,11 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 6,
-      tags: ["Manifestation", "Sustain (standard)"],
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Summon Horde -- Bears",
+      name: 'Summon Horde -- Bears',
 
       // +2r for large, +2r for +1d
       attack: {
@@ -453,11 +453,11 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 7,
-      tags: ["Manifestation", "Sustain (standard)"],
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Summon Pegasus",
+      name: 'Summon Pegasus',
 
       // original targets: One unoccupied location on stable ground within \medrange
 
@@ -467,16 +467,16 @@ export const summoning: MysticSphere = {
         % TODO: wording of "trained as a mount"?
         It has a 30 foot \\glossterm{fly speed} with a height limit of 60 feet, and is trained as a mount (see \\pcref{Flying}).
         `,
-        name: "summon mount",
+        name: 'summon mount',
       },
       rank: 5,
       scaling: { 7: `The creature gains a +1 bonus to its defenses.` },
-      tags: ["Manifestation"],
-      type: "Attune (target)",
+      tags: ['Manifestation'],
+      type: 'Attune (target)',
     },
 
     {
-      name: "Summon Asp",
+      name: 'Summon Asp',
 
       functionsLike: {
         exceptThat: `
@@ -486,15 +486,15 @@ export const summoning: MysticSphere = {
         It is immediately \\dazed while it is poisoned.
         The poison's third stage causes the target to become \\stunned as long as it is poisoned.
         `,
-        name: "summon monster",
+        name: 'summon monster',
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Attune (deep)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
     {
-      name: "Summon Annoying Insects",
+      name: 'Summon Annoying Insects',
 
       attack: {
         crit: `The target is \\stunned instead of dazed.`,
@@ -507,12 +507,12 @@ export const summoning: MysticSphere = {
         It's hard to concentrate on a fight when you keep being distracted by a swarm of mosquitoes that buzz right into your ears.
       `,
       rank: 1,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: "Intense Summon Annoying Insects",
+      name: 'Intense Summon Annoying Insects',
 
       attack: {
         crit: `The target is \\confused instead of dazed.`,
@@ -525,15 +525,15 @@ export const summoning: MysticSphere = {
         It's hard to concentrate on a fight when you keep being distracted by a swarm of sand flies that buzz right into your eyes.
       `,
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
   ],
   rituals: [
     {
-      name: "Ritual Mount",
+      name: 'Ritual Mount',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount.
@@ -542,8 +542,8 @@ export const summoning: MysticSphere = {
         It has the same statistics as a creature from the \\spell{summon monster} spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
       `,
       rank: 2,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
   ],
 };

@@ -189,7 +189,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'vine tentacle',
-        exceptThat: "the tentacle also has the Forceful weapon tag (see \\pcref{Weapon Tags}).",
+        exceptThat: 'the tentacle also has the Forceful weapon tag (see \\pcref{Weapon Tags}).',
       },
       rank: 5,
       narrative: `
@@ -351,7 +351,7 @@ export const verdamancy: MysticSphere = {
       name: 'Flourishing Embedded Growth',
 
       functionsLike: {
-        name: "embedded growth",
+        name: 'embedded growth',
         exceptThat: `
           whenever the target takes damage from the growth, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
         `,
@@ -411,8 +411,7 @@ export const verdamancy: MysticSphere = {
       // too dangerous to give full power for a full party opening salvo
       functionsLike: {
         name: 'fire seeds',
-        exceptThat:
-          'the damage increases to 4d10 + half \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
       },
       rank: 7,
       scaling: 'damage',

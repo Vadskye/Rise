@@ -1,6 +1,6 @@
 [
   {
-    name: "Infallible Blow",
+    name: 'Infallible Blow',
 
     effect: `
         Make a \\glossterm{strike} with a +3 bonus to \\glossterm{accuracy}.
@@ -10,7 +10,7 @@
   },
 
   {
-    name: "Seeking Strike",
+    name: 'Seeking Strike',
 
     effect: `
         Make a \\glossterm{strike}.
@@ -21,7 +21,7 @@
   },
 
   {
-    name: "Unerring Strike",
+    name: 'Unerring Strike',
 
     effect: `
         Make a \\glossterm{strike}.
@@ -32,7 +32,7 @@
   },
 
   {
-    name: "Unstoppable Blow",
+    name: 'Unstoppable Blow',
 
     effect: `
         Make a \\glossterm{strike} with a +3d damage bonus.

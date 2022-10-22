@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const fabrication: MysticSphere = {
-  name: "Fabrication",
-  shortDescription: "Create objects to damage and impair foes.",
-  sources: ["arcane", "divine", "pact"],
+  name: 'Fabrication',
+  shortDescription: 'Create objects to damage and impair foes.',
+  sources: ['arcane', 'divine', 'pact'],
 
   cantrips: [
     {
-      name: "Fabricate Trinket",
+      name: 'Fabricate Trinket',
 
       effect: `
         You make a Craft check to create an object of Tiny size or smaller.
@@ -22,12 +22,12 @@ export const fabrication: MysticSphere = {
         4: `The maximum size of the object increases to Medium.`,
         6: `The maximum size of the object increases to Large.`,
       },
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
   ],
   spells: [
     {
-      name: "Mystic Arrow",
+      name: 'Mystic Arrow',
 
       attack: {
         hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
@@ -36,12 +36,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
-    
+
     {
-      name: "Mystic Blast Arrow",
+      name: 'Mystic Blast Arrow',
 
       attack: {
         hit: `
@@ -53,12 +53,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mystic Artillery",
+      name: 'Mystic Artillery',
 
       // +2r for delay, +1r for range
       attack: {
@@ -71,7 +71,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
@@ -90,7 +90,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
@@ -106,11 +106,11 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 6,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Whirlwind of Blades",
+      name: 'Whirlwind of Blades',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} slashing damage.`,
@@ -119,12 +119,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mighty Whirlwind of Blades",
+      name: 'Mighty Whirlwind of Blades',
 
       attack: {
         hit: `Each target takes 2d10 + \\glossterm{power} slashing damage.`,
@@ -133,12 +133,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Precision Missileburst",
+      name: 'Precision Missileburst',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
@@ -147,12 +147,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Massive Precision Missileburst",
+      name: 'Massive Precision Missileburst',
 
       attack: {
         hit: `
@@ -163,12 +163,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Rain of Arrows",
+      name: 'Rain of Arrows',
 
       // -1r for -1d
       attack: {
@@ -182,12 +182,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Massive Rain of Arrows",
+      name: 'Massive Rain of Arrows',
 
       // offset previous -1d
       attack: {
@@ -201,12 +201,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Blade Barrier",
+      name: 'Blade Barrier',
 
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
@@ -222,13 +222,13 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Mighty Blade Barrier",
+      name: 'Mighty Blade Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -237,13 +237,13 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 6,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Blade Perimeter",
+      name: 'Blade Perimeter',
 
       functionsLike: {
         exceptThat: `
@@ -253,13 +253,13 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Personal Weapon",
+      name: 'Personal Weapon',
 
       effect: `
         Choose a type of weapon that you are proficient with.
@@ -274,11 +274,11 @@ export const fabrication: MysticSphere = {
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       rank: 1,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Forge",
+      name: 'Forge',
 
       effect: `
         This spell creates one or two weapons, suits of body armor, or shields.
@@ -291,11 +291,11 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       tags: ['Manifestation'],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Web",
+      name: 'Web',
 
       effect: `
         You fill a \\smallarea radius \\glossterm{zone} within \\medrange with webs.
@@ -304,13 +304,13 @@ export const fabrication: MysticSphere = {
       `,
 
       rank: 3,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Caltrops",
+      name: 'Caltrops',
 
       attack: {
         hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
@@ -323,28 +323,28 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Mighty Caltrops",
+      name: 'Mighty Caltrops',
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: "the damage increases to 2d10 + \\glossterm{power}.",
+        exceptThat: 'the damage increases to 2d10 + \\glossterm{power}.',
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Instant Arrow",
+      name: 'Instant Arrow',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         This spell has no \\glossterm{somatic components} or \\glossterm{verbal components}.
 
@@ -356,11 +356,11 @@ export const fabrication: MysticSphere = {
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Daggerswarm",
+      name: 'Daggerswarm',
 
       attack: {
         hit: `The target takes 2d8 piercing damage.`,
@@ -372,12 +372,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Grease",
+      name: 'Grease',
 
       attack: {
         crit: `
@@ -391,12 +391,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Oil Slick",
+      name: 'Oil Slick',
 
       attack: {
         crit: `
@@ -412,12 +412,12 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "accuracy",
-      tags: ["Manifestation"],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Protective Cage",
+      name: 'Protective Cage',
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
@@ -437,12 +437,12 @@ export const fabrication: MysticSphere = {
         5: `The field's \\glossterm{hit points} increase to four times your power.`,
         7: `The field's \\glossterm{hit points} increase to five times your power.`,
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Instant Weapon",
+      name: 'Instant Weapon',
 
       effect: `
         You create a nonmagical weapon that you are proficient with your hand.
@@ -457,11 +457,11 @@ export const fabrication: MysticSphere = {
         5: `The accuracy bonus increases to +2.`,
         7: `The accuracy bonus increases to +3.`,
       },
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Instant Magic Weapon",
+      name: 'Instant Magic Weapon',
 
       functionsLike: {
         name: 'instant weapon',
@@ -476,11 +476,11 @@ export const fabrication: MysticSphere = {
       scaling: {
         7: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
       },
-      tags: ["Manifestation"],
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Mirror Barrier",
+      name: 'Mirror Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -488,18 +488,18 @@ export const fabrication: MysticSphere = {
             The barrier's defenses become equal to 6 \\add half your level.
             Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 4,
       scaling: {
         6: `You can choose to create a \\medarealong wall instead.`,
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Greater Mirror Barrier",
+      name: 'Greater Mirror Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -507,15 +507,15 @@ export const fabrication: MysticSphere = {
             The barrier's defenses become equal to 9 \\add half your level, and the hit points of each 5-ft. square increase to three times your \\glossterm{power}.
             Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 7,
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Visual Barrier",
+      name: 'Visual Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -523,19 +523,19 @@ export const fabrication: MysticSphere = {
             There are three possibilities: fully invisible, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
             You can change the opacity of the barrier as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\medarealong wall instead.",
-        6: "You can choose to create a \\largearealong wall instead.",
+        4: 'You can choose to create a \\medarealong wall instead.',
+        6: 'You can choose to create a \\largearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Sonic Barrier",
+      name: 'Sonic Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -545,19 +545,19 @@ export const fabrication: MysticSphere = {
           Both types of barrier still block \\glossterm{line of effect} for effects that deal \\glossterm{bludgeoning damage}, even if they narratively come from a sound or voice.
           If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\medarealong wall instead.",
-        6: "You can choose to create a \\largearealong wall instead.",
+        4: 'You can choose to create a \\medarealong wall instead.',
+        6: 'You can choose to create a \\largearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Forceful Barrier",
+      name: 'Forceful Barrier',
 
       functionsLike: {
         exceptThat: `
@@ -566,16 +566,16 @@ export const fabrication: MysticSphere = {
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      scaling: 'damage',
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Mystic Barrier",
+      name: 'Mystic Barrier',
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
@@ -587,52 +587,52 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "You can choose to create a \\medarealong wall instead.",
-        5: "You can choose to create a \\largearealong wall instead.",
-        7: "You can choose to create a \\hugearealong wall instead.",
+        3: 'You can choose to create a \\medarealong wall instead.',
+        5: 'You can choose to create a \\largearealong wall instead.',
+        7: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Mystic Bridge",
+      name: 'Mystic Bridge',
 
       functionsLike: {
         exceptThat: `
           the wall is aligned horizontally instead of vertically.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\medarealong wall instead.",
-        6: "You can choose to create a \\largearealong wall instead.",
+        4: 'You can choose to create a \\medarealong wall instead.',
+        6: 'You can choose to create a \\largearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Sturdy Barrier",
+      name: 'Sturdy Barrier',
 
       functionsLike: {
         exceptThat: `
           the wall has \\glossterm{hit points} equal to four times your \\glossterm{power} instead of three times your power.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 3,
       scaling: {
-        5: "You can choose to create a \\medarealong wall instead.",
-        7: "You can choose to create a \\largearealong wall instead.",
+        5: 'You can choose to create a \\medarealong wall instead.',
+        7: 'You can choose to create a \\largearealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Personal Sphere",
+      name: 'Personal Sphere',
 
       effect: `
         You create a sphere of magical energy around yourself.
@@ -645,12 +645,12 @@ export const fabrication: MysticSphere = {
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 6,
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Entrapping Sphere",
+      name: 'Entrapping Sphere',
 
       attack: {
         crit: "The sphere's \\glossterm{hit points} are doubled.",
@@ -670,33 +670,33 @@ export const fabrication: MysticSphere = {
       },
       rank: 7,
       // scaling: "accuracy",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Invulnerable Barrier",
+      name: 'Invulnerable Barrier',
 
       functionsLike: {
         exceptThat: `
           the wall's defenses are each equal to 6 + your level, and it is \\trait{impervious} to physical damage.
           In addition, the wall's \\glossterm{hit points} increase to four times your \\glossterm{power}.
         `,
-        name: "mystic barrier",
+        name: 'mystic barrier',
       },
       rank: 5,
       scaling: {
-        7: "You can choose to create a \\medarealong wall instead.",
+        7: 'You can choose to create a \\medarealong wall instead.',
       },
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Manifest Object",
+      name: 'Manifest Object',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         Make a Craft check to create an object of Small size or smaller.
         The object appears out of thin air in your hand or in one unoccupied square on solid ground within \\shortrange.
@@ -704,52 +704,52 @@ export const fabrication: MysticSphere = {
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
       `,
       rank: 3,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
-      name: "Fabricate Water",
+      name: 'Fabricate Water',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         You create up to two gallons of wholesome, drinkable water at any number of locations within \\shortrange, allowing you to fill multiple small water containers.
         You must create a minimum of one ounce of water in each location.
       `,
       rank: 1,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Fabricate Sustenance",
+      name: 'Fabricate Sustenance',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         This ritual creates food and drink in one unoccupied square within \\shortrange that is sufficient to sustain five Medium creatures for 24 hours.
         It also creates basic receptacles to hold the food and drink.
         The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
       `,
       rank: 2,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Fabricate Feast",
+      name: 'Fabricate Feast',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         This ritual creates food and drink in any number of unoccupied squares within \\shortrange that is sufficient to sustain twenty Medium creatures for 24 hours.
         It also creates basic receptacles to hold the food and drink.
         The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
       `,
       rank: 3,
-      tags: ["Creation"],
+      tags: ['Creation'],
     },
 
     {
-      name: "Copy Writing",
+      name: 'Copy Writing',
 
-      castingTime: "special",
+      castingTime: 'special',
       effect: `
         You copy the writing from one Small or smaller written work within \\shortrange to a Small or smaller set of blank pages within \\shortrange.
         The blank pages must have enough room for the original writing.
@@ -760,37 +760,37 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Greater Copy Writing",
+      name: 'Greater Copy Writing',
 
-      castingTime: "special",
+      castingTime: 'special',
       functionsLike: {
         exceptThat: `
           it can target objects of Medium or smaller size.
           In addition, the time required to perform this ritual decreases to one tenth of the time required to copy the writing by hand, to a minimum of one minute.
           It requires one \\glossterm{fatigue level} from its participants.
         `,
-        name: "copy writing",
+        name: 'copy writing',
       },
       rank: 4,
     },
 
     {
-      name: "Ammunition Stockpile",
+      name: 'Ammunition Stockpile',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         You create a Large pile of either nonmagical arrows or crossbow bolts in any unoccupied location on solid ground adjacent to you.
         You can choose to create blunted ammunition, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
         Any creature may take ammunition from the pile to use.
       `,
       rank: 3,
-      tags: ["Manifestation"],
-      type: "Attune",
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
     {
-      name: "Tiny Hut",
+      name: 'Tiny Hut',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         You create a permeable barrier around a \\smallarea radius \\glossterm{zone} from your location.
         The barrier is visible as a shimmering magical membrane that does not block sight.
@@ -802,7 +802,7 @@ export const fabrication: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
   ],
 };

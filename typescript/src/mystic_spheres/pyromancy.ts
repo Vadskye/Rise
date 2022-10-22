@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const pyromancy: MysticSphere = {
-  name: "Pyromancy",
-  shortDescription: "Create fire to incinerate foes.",
-  sources: ["arcane", "domain", "nature", "pact"],
+  name: 'Pyromancy',
+  shortDescription: 'Create fire to incinerate foes.',
+  sources: ['arcane', 'domain', 'nature', 'pact'],
 
   cantrips: [
     {
-      name: "Kindle",
+      name: 'Kindle',
 
       attack: {
         hit: `The target takes 2 fire damage.
@@ -24,7 +24,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Extinguish",
+      name: 'Extinguish',
 
       attack: {
         hit: `The flame is extinguished.`,
@@ -42,7 +42,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Personal Torch",
+      name: 'Personal Torch',
 
       effect: `
         You create a flame in your hand.
@@ -61,7 +61,7 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: "Heat Air",
+      name: 'Heat Air',
 
       effect: `
         The temperatuture of the air within a \\medarea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
@@ -71,15 +71,15 @@ export const pyromancy: MysticSphere = {
         This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       scaling: {
-        3: "You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.",
-        5: "You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.",
-        7: "You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.",
+        3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
+        5: 'You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.',
+        7: 'You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.',
       },
     },
   ],
   spells: [
     {
-      name: "Burning Grasp",
+      name: 'Burning Grasp',
 
       attack: {
         hit: `
@@ -92,11 +92,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Burning Grasp",
+      name: 'Mighty Burning Grasp',
 
       attack: {
         hit: `
@@ -109,11 +109,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Pyroclasm",
+      name: 'Pyroclasm',
 
       attack: {
         hit: `
@@ -126,11 +126,11 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Pyroclasm",
+      name: 'Massive Pyroclasm',
 
       // +3r to get huge
       attack: {
@@ -144,11 +144,11 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Fireball",
+      name: 'Fireball',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
@@ -158,11 +158,11 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Delayed Fireball",
+      name: 'Delayed Fireball',
 
       // +2r for delay, +1r for range
       attack: {
@@ -174,11 +174,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Burning Hands",
+      name: 'Burning Hands',
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
@@ -188,11 +188,11 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Burning Hands",
+      name: 'Massive Burning Hands',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
@@ -201,11 +201,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Ignition",
+      name: 'Ignition',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -219,11 +219,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Ignition",
+      name: 'Intense Ignition',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -236,11 +236,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Heat Metal",
+      name: 'Heat Metal',
 
       attack: {
         hit: `
@@ -255,12 +255,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      type: "Sustain (minor)",
+      scaling: 'damage',
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Flame Breath",
+      name: 'Flame Breath',
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
@@ -271,12 +271,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Massive Flame Breath",
+      name: 'Massive Flame Breath',
 
       functionsLike: {
         name: 'flame breath',
@@ -286,12 +286,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Eyes of Flame",
+      name: 'Eyes of Flame',
 
       // -1r for attune requirement
       attack: {
@@ -304,12 +304,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Flaming Spheres",
+      name: 'Flaming Spheres',
 
       attack: {
         hit: `The target takes 2d8 fire damage.`,
@@ -323,12 +323,12 @@ export const pyromancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Mighty Flaming Spheres",
+      name: 'Mighty Flaming Spheres',
 
       functionsLike: {
         name: 'flaming spheres',
@@ -337,12 +337,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Flame Serpent",
+      name: 'Flame Serpent',
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
@@ -351,11 +351,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Personal Ignition",
+      name: 'Personal Ignition',
 
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
@@ -370,12 +370,12 @@ export const pyromancy: MysticSphere = {
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
       rank: 2,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Mighty Personal Ignition",
+      name: 'Mighty Personal Ignition',
 
       functionsLike: {
         name: 'personal ignition',
@@ -386,12 +386,12 @@ export const pyromancy: MysticSphere = {
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
       rank: 6,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Flame Aura",
+      name: 'Flame Aura',
 
       attack: {
         // TODO: is this damage correct?
@@ -402,12 +402,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Flame Blade",
+      name: 'Flame Blade',
 
       effect: `
         Your weapons shed light like a torch.
@@ -420,15 +420,15 @@ export const pyromancy: MysticSphere = {
         5: `The power bonus increases to +8.`,
         7: `The power bonus increases to +16.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Flame Blade",
+      name: 'Mass Flame Blade',
 
       functionsLike: {
         mass: true,
-        name: "Flame Blade",
+        name: 'Flame Blade',
       },
       // narrative: '',
       rank: 3,
@@ -436,11 +436,11 @@ export const pyromancy: MysticSphere = {
         5: `The power bonus increases to +4.`,
         7: `The power bonus increases to +8.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Wall of Fire",
+      name: 'Wall of Fire',
 
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
@@ -455,13 +455,13 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Massive Wall of Fire",
+      name: 'Massive Wall of Fire',
 
       functionsLike: {
         name: 'wall of fire',
@@ -471,13 +471,13 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: ['Barrier'],
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: "Pyrophobia",
+      name: 'Pyrophobia',
 
       attack: {
         crit: `The target is \\frightened instead of shaken.`,
@@ -490,12 +490,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Primal Pyrophobia",
+      name: 'Primal Pyrophobia',
 
       attack: {
         crit: `The target is \\panicked instead of frightened.`,
@@ -508,12 +508,12 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
-      tags: ["Emotion"],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
     },
 
     {
-      name: "Pyrohemia",
+      name: 'Pyrohemia',
 
       // normal damaging effect would be 1d8 + power; +2d for HP restriction seems fine
       attack: {
@@ -526,11 +526,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Pyrohemia",
+      name: 'Mighty Pyrohemia',
 
       // all four ranks to double power, which is spicy
       attack: {
@@ -543,11 +543,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Kindled Fireburst",
+      name: 'Kindled Fireburst',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
@@ -560,11 +560,11 @@ export const pyromancy: MysticSphere = {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Wings of the Phoenix",
+      name: 'Wings of the Phoenix',
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).
@@ -572,11 +572,11 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: { 7: `The maximum height increases to 60 feet.` },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Soul of the Phoenix",
+      name: 'Soul of the Phoenix',
 
       effect: `
         You embody the soul of the undying phoenix.
@@ -586,11 +586,11 @@ export const pyromancy: MysticSphere = {
         After you are restored to life this way, this spell ends.
       `,
       rank: 7,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Flame Dash",
+      name: 'Flame Dash',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
@@ -600,11 +600,11 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Distant Flame Dash",
+      name: 'Distant Flame Dash',
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} fire damage.`,
@@ -614,14 +614,14 @@ export const pyromancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
   rituals: [
     {
-      name: "Heat Tolerance",
+      name: 'Heat Tolerance',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
         The target suffers no harm from being in a hot environment.
@@ -630,13 +630,13 @@ export const pyromancy: MysticSphere = {
         This does not protect the target from fire damage.
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Heat Wave",
+      name: 'Heat Wave',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location increases rapidly.
         Over the next minute after you finish this ritual, the temperature increases by 40 degrees Fahrenheit, to a maximum of 120 degrees.
@@ -645,56 +645,56 @@ export const pyromancy: MysticSphere = {
         Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Pyrostorm",
+      name: 'Pyrostorm',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
           the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
         `,
-        name: "heat wave",
+        name: 'heat wave',
       },
       rank: 7,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Detect Flame",
+      name: 'Detect Flame',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
           You learn the approximate distance and direction to any active fires within \\longrange \\glossterm{range} of you.
           Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
           This spell can sense fires as small as a candle flame, but no smaller.
       `,
       rank: 1,
-      tags: ["Detection"],
+      tags: ['Detection'],
     },
 
     {
-      name: "Distant Detect Flame",
+      name: 'Distant Detect Flame',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
           the range increases to 2,000 feet.
         `,
-        name: "detect flame",
+        name: 'detect flame',
       },
       rank: 4,
-      tags: ["Detection"],
+      tags: ['Detection'],
     },
 
     {
-      name: "Explosive Runes",
+      name: 'Explosive Runes',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
         Choose one Medium or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
@@ -712,13 +712,13 @@ export const pyromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        "special": `
+        special: `
           You can perform this ritual at a higher rank.
           The damage increases by +1d per rank beyond 4.
         `,
       },
-      tags: ["Trap"],
-      type: "Attune",
+      tags: ['Trap'],
+      type: 'Attune',
     },
   ],
 };
