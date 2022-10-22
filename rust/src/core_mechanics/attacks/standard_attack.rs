@@ -240,7 +240,7 @@ impl StandardAttack {
                 extra_context: None,
                 hit: AttackEffect::Damage(SimpleDamageEffect {
                     damage_dice: DamageDice::single_target_damage(3),
-                    damage_types: vec![DamageType::Sonic],
+                    damage_types: vec![DamageType::Bludgeoning],
                     power_multiplier: 0.0,
                 }.damage_effect()),
                 is_magical: false,

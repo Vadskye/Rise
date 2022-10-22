@@ -147,9 +147,10 @@
         \parhead{Progression} To progress towards this epic fate, you must publicly contribute to saving large numbers of people from death or other major disasters in a way that builds your reputation.
 
         \subsubsection{Hero of Legend Ranks}
-            \parhead{Rank 1 -- Heroic Intervention} At the start of each phase, you may choose an \glossterm{ally} adjacent to you.
+            \parhead{Rank 1 -- Heroic Intervention} As a \glossterm{free action}, you may choose an \glossterm{ally} adjacent to you.
             Whenever that creature would be the target of an attack that phase, you are targeted by that attack instead.
             If the attack would have targeted both you and that ally, the attack only targets you once, not twice.
+            This ability has the \abilitytag{Swift} tag.
 
             \parhead{Rank 2 -- Unstoppable Hero} You gain a \plus4 bonus to all defenses, and you gain a \plus50 bonus to your maximum \glossterm{hit points}.
             In addition, you gain a \plus20 foot bonus to your speed with all of your \glossterm{movement modes}.
@@ -160,7 +161,7 @@
 
             \parhead{Rank 4 -- Inspiring Hero} The area of your \textit{heroic intervention} ability increases to a \areagarg radius \glossterm{emanation}.
             In addition, each creature with a mind affected by that ability is so inspired by your example that it gains a \plus1 bonus to its Willpower permanently.
-            This bonus does not stack.
+            As normal, this bonus does not stack with itself.
 
             \parhead{Rank 5 -- Answer the Call} You gain an intuitive sense for when people need your aid.
             Whenever someone on the same plane as you is in danger, you are aware of the existence of that danger.
@@ -233,8 +234,8 @@
                 \itemhead{Low-light Vision} A hybrid bee has \trait{low-light vision}, allowing it to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 \itemhead{Stinger} A hybrid bee has a stinger natural weapon (see \pcref{Natural Weapons}).
                     Whenever it causes a creature to lose \glossterm{hit points} with that natural weapon, the struck creature is poisoned by giant wasp venom (see \pcref{Poison}).
-                    Its stage 1 effect makes the target \slowed and \dazed while the poison lasts.
-                    Its stage 3 effect makes the target \stunned while the poison lasts instead of dazed.
+                    Its stage 1 effect makes the target \slowed while the poison lasts.
+                    Its stage 3 effect makes the target \immobilized while the poison lasts.
                 \itemhead{Winged Agility} A hybrid bee has wings that are not strong enough to help it fly.
                     However, the wings still help it stabilize its movements.
                     It gains a \plus3 bonus to the Balance and Jump skills.
@@ -360,7 +361,7 @@
 
             \cf{Dgn}[3]{Draconic Flight}[Magical] Your wings grow larger, granting you a limited ability to fly.
             You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
-            At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+            As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
             \cf{Dgn}[4]{Draconic Bulk} Your size category increases to Medium.
             This increases the \glossterm{base speed} for your size.
@@ -574,7 +575,7 @@
 
             \cf{Hrp}[1]{Winged Agility} You gain a \plus4 bonus to the Balance and Jump skills as long as you can use your wings to help you.
 
-            \cf{Hrp}[1]{Winged Combat} At the start of each phase, you can make a short hop off of solid ground to hover in your space using your wings.
+            \cf{Hrp}[1]{Winged Combat} As a \glossterm{free action}, you can make a short hop off of solid ground to hover in your space using your wings.
             This allows you to use both of your feet without standing on them during that phase, so you can attack with both talons at once.
             You must land at the end of the phase, and you can only use this ability once per round.
             This brief hovering does not cause you to suffer penalties for flying.
@@ -599,14 +600,14 @@
             \cf{Hrp}[2]{Raking Talons} You gain a \plus1d damage bonus with all \glossterm{natural weapons}.
 
             \cf{Hrp}[3]{Flight} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
-            At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+            As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
             \cf{Hrp}[4]{Greater Winged Agility} You can use your wings to help you maneuver on the ground more effectively, such as by briefly hovering or gliding over obstacles.
             The Balance and Jump bonuses from your \textit{winged agility} ability increase to \plus8.
-            In addition, you ignore movement penalties from \glossterm{difficult terrain}.
+            In addition, you ignore \glossterm{difficult terrain}.
 
             \cf{Hrp}[4]{Greater Winged Combat} You can use your \textit{winged combat} any number of times in the same round.
-            You must still land between each phase.
+            You must still land at the end of each phase.
 
             \cf{Hrp}[5]{Greater Raking Talons} The damage bonus from your \textit{raking talons} ability improves to \plus2d.
 
@@ -788,7 +789,7 @@
 
             \cf{Ooz}[2]{Ingest Object} You can use the \textit{ingest object} ability as a standard action.
             This functions like the \spell{absorb object} spell, except that you do not gain the ability to absorb objects that are larger than Medium size.
-            Anything you absorb in this way takes a single point of \glossterm{environmental} acid damage at the end of each round while it remains absorbed.
+            Anything you absorb in this way takes a single point of \glossterm{environmental} acid damage during each \glossterm{action phase} while it remains absorbed.
             This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
 
             \cf{Ooz}[3]{Greater Amorphous Form} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
@@ -939,7 +940,7 @@
                         \noindent
 
                         Make an attack vs. Mental against one creature within \medrange.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                         \vspace{0.25em}
                         \hit The target is \charmed by you.
                         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
@@ -956,8 +957,8 @@
                     In addition, you gain a \plus1d bonus to your damage with all weapons.
             \end{itemize}
 
-            \cf{Tif}[3]{Abysswalker} You can use your \ability{abyssal hop} ability to teleport as a move action instead of as a standard action.
-            When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a move action again.
+            \cf{Tif}[3]{Abysswalker} You can use your \ability{abyssal hop} ability to teleport as a \glossterm{movement} instead of as a standard action.
+            When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a movement again.
 
             \cf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
             \begin{itemize}
@@ -979,11 +980,10 @@
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
                         \vspace{0.1em}
                     \end{activeability}
-                \item Unholy Might: You can use the \ability{unholy strength} ability as a \glossterm{minor action}.
+                \item Unholy Might: You can use the \ability{unholy strength} ability as a standard action.
                     \begin{attuneability}{Unholy Surge}{\abilitytag{Attune}, \abilitytag{Magical}}
-                        \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
-                        You gain a \plus1 bonus to your Strength.
+                        You gain a \plus1 \glossterm{magic bonus} to your Strength.
                     \end{attuneability}
             \end{itemize}
 

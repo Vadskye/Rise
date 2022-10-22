@@ -10,243 +10,11 @@ This chapter describes the core mechanics of Rise.
     It's possible to imagine situations where each of those might be important to a game, however, so you'll have to guess what would be reasonable as obscure situations arise.
     The Game Master has the final word when defining ambiguities like this.
 
-\section{Making Attacks}\label{Attacks}
-    \includegraphics[width=\columnwidth]{core mechanics/making attacks}
-
-    \subsection{Attack Rolls}\label{Attack Rolls}
-        To make an attack, roll 1d10 and add your \glossterm{accuracy} with the attack.
-        Each attack specifies a relevant \glossterm{defense} (see \pcref{Defenses}).
-
-        If the result of your attack roll meets or exceeds the defense of the creature or object you are attacking, the attack hits.
-        If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see below).
-        Otherwise, the attack misses.
-
-        \subsubsection{Glancing Blows}\label{Glancing Blows}
-            When you miss on an attack by 2 or less, it is called a \glossterm{glancing blow}.
-            All damaging attacks have a standard glancing blow effect.
-            If you get a glancing blow with a damaging attack, you roll no damage dice.
-            However, if the attack deals damage that is not based on dice, you still deal that damage.
-            For example, many attacks add your \glossterm{power} to damage, and that damage is still dealt on a glancing blow.
-
-            Non-damaging attacks do not have any special effects on a glancing blow.
-            A glancing blow is not considered to be a miss for the purpose of abilities that trigger on missed attacks.
-            However, many abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
-
-        \subsubsection{Exploding Attacks}\label{Exploding Attacks}
-            When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
-            In addition, some effects can cause your roll to \glossterm{explode} without rolling a 10.
-
-            When an attack roll \glossterm{explodes}, you roll it again and add the second result to the original result before applying your \glossterm{accuracy}.
-            If you roll a 10 on the extra roll, you keep rolling until you stop rolling a 10 and add all of the rolls together.
-
-        \subsubsection{Critical Hits}\label{Critical Hits}
-            If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
-            Some attacks have specific effects when you get a critical hit.
-            In addition, all damaging attacks have a standard critical hit effect.
-            For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll.
-            As normal, two doublings become a tripling, so if you beat your opponent's defense by 20, you roll triple the damage dice.
-            This does not increase the damage from your \glossterm{power} or any other non-dice damage modifiers.
-
-            Objects are not normally subject to critical hits.
-            Some creatures are also not subject to critical hits, as noted in their descriptions.
-
-            Critical hits with \glossterm{melee} attacks are a \abilitytag{Size-Based} effect.
-            This means you cannot normally get a critical hit with a melee attack against a creature that is two or more size categories larger than you (see \pcref{Size Categories}).
-
-    \subsection{Dealing Damage}\label{Dealing Damage}
-        Many \glossterm{attacks} deal damage to their targets.
-        When a creature is dealt damage, it gets closer to death (see \pcref{Taking Damage}).
-        In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your \glossterm{power} with that attack.
-        The details are given in each attack's description.
-
-        \subsubsection{Dice Pools}\label{Dice Pools}
-            Almost all attacks deal damage based on a \glossterm{dice pool}.
-            Likewise, healing abilities usually heal hit points based on a dice pool.
-            Dice pools are written with the number of dice, followed by ``d'', followed by the size of dice to roll.
-            For example, 2d6 means you roll two six-sided dice.
-            You always sum the roll of all dice rolled in a dice pool to determine the total result.
-
-            Some modifiers add or subtract flat values from the result of the dice pool.
-            Others add or subtract \glossterm{dice increments}.
-
-            A die increment is a single increase or decrease in the value of a dice pool.
-            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
-            Damage dice change in size according to the following pattern:
-            \begin{itemize}
-                \item 1 damage (minimum)
-                \item 1d2
-                \item 1d3
-                \item 1d4
-                \item 1d6
-                \item 1d8
-                \item 1d10
-                \item 2d6
-                \item 2d8
-                \item 2d10
-                \item 4d6
-                \item 4d8
-                \item 4d10
-                \item 5d10
-                \item 6d10
-                \item 7d10
-                \item 8d10
-            \end{itemize}
-
-            For each die increment that increases the damage, move one space down the list.
-            Likewise, for each die increment that decreases the damage, move one space up the list.
-            After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
-            In practice, you are unlikely to ever roll that many dice.
-
-            \parhead{Dice Bonuses From Attributes}\label{Dice Bonuses From Attributes} Your attributes can add or subtract dice increments from all dice pools you roll.
-            Whenever you use a \glossterm{mundane} ability that has a dice pool, you add half your Strength in dice increments to the dice pool.
-            If your Strength is negative, this can reduce your damage or healing.
-            Likewise, you add half your Willpower in dice increments to your dice pools with \glossterm{magical} abilities.
-            For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2 or 3, you would deal 1d10 damage with that ability instead.
-
-            Items are an exception to this rule.
-            Some items specify their own dice pools, like a \mitem{firebomb} or a \mitem{vampiric} weapon.
-            Your Strength and Willpower do not modify the dice pools specified by items.
-
-    % TODO: different section?
-    \subsection{Damage Types}\label{Damage Types}
-        \includegraphics[width=\columnwidth]{core mechanics/damage types}
-        Almost all damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
-        Physical damage is the most common type of damage.
-        Energy damage is usually caused by \glossterm{magical} effects.
-
-        A rare few effects deal damage that has no type.
-        Poisons are the most common way to deal untyped damage.
-        Untyped damage has no special properties, but effects that help you specifically resist energy damage or physical damage do not help against untyped damage.
-
-        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
-            Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
-            Energy damage has five subtypes: acid damage, cold damage, electricity damage, fire damage, and sonic damage.
-            Damage of a particular subtype is also considered damage of its primary type.
-            For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
-
-            Some damage types have special properties, as described below.
-            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-            \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
-            % TODO: what does this actually mean
-            Abilities without a duration create a brief burst of torchlight.
-            While underwater, they deal half damage and have no nondamaging effects.
-
-        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
-            Some attacks deal damage that has multiple damage types.
-            Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
-
-    \subsubsection{Special Damage Types}\label{Special Damage Types}
-
-        Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
-        It is possible for damage to be both environmental damage and subdual damage.
-
-        \subsubsection{Environmental Damage}\label{Environmental Damage}
-            Some abilities and environmental effects deal environmental damage.
-            Environmental damage is never dealt as the result of a successful attack roll.
-            Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-            Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
-
-        \subsubsection{Subdual Damage}\label{Subdual Damage}
-            Some attacks and environmental effects deal subdual damage.
-            Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-            If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
-            Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-            If you do, you deal half damage with the strike.
-
-\section{Taking Damage}\label{Taking Damage}
-    Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
-    To calculate your damage resistance and hit points, see \pcref{Character Statistics}.
-    This section explains those concepts in more detail.
-
-    When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-    Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
-    Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
-    If you are dealt damage that would reduce your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
-
-    Monsters typically do not gain vital wounds like player characters do.
-    Instead, they simply die or fall unconscious when they reach 0 hit points.
-
-    \subsection{Negative Hit Points}\label{Negative Hit Points}
-        You can have negative hit points, but only briefly.
-        At the end of each \glossterm{phase}, if your hit points are negative, you gain a \glossterm{vital wound} and your hit points are set to 0 (see \pcref{Vital Wounds}).
-        % TODO: does this still need to exist? all "end of round" damage should ideally be removed
-        % Damage you take at the end of the round is considered to be part of the delayed action phase for this purpose.
-        If your negative hit points equal or exceed half your maximum hit points, you gain an additional vital wound.
-        You gain an additional vital wound for each increment of half your maximum hit points that you have in negative hit points.
-
-    \subsection{Resolving Simultaneous Damage}\label{Resolving Simultaneous Damage}
-        Many attacks have special effects when they cause you to lose \glossterm{hit points}.
-        In addition, some attacks have special effects based on other triggers, like whether you resisted all damage from the attack.
-        When you take damage from multiple sources during the same phase, it may not be obvious how to determine whether any individual attack caused you to lose hit points.
-        There is a rule for this situation: each attack's special effects are triggered as if all damage you took in the current phase was dealt by that attack.
-
-        For example, assume that you started a phase with some damage resistance remaining.
-        You are hit by two attacks: the \spell{organ failure} spell and the \maneuver{strip the armor} maneuver.
-        The combined damage from the two attacks exceeds your damage resistance, so you lose some hit points.
-        The \spell{organ failure} spell would cause you to be \stunned, because it would be treated as if it made you lose hit points, even if your damage resistance at the start of the phase exceeded the damage dealt by that spell.
-        Likewise, the \maneuver{strip the armor} maneuver would not have its bonus effect that triggers if you resist all damage from the attack, because you lost hit points from that attack as well.
-
-        Non-damaging attacks are simpler.
-        They always care about your current state at the time the attack is made, regardless of any damage you may take during the phase.
-
-        \parhead{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-        If you regain hit points or damage resistance and take damage simultaneously, apply all healing effects before applying any damaging effects.
-        While you are resolving these effects, you are allowed to heal beyond your maximum hit points and damage resistance.
-        At the end of the phase, if your current hit points or damage resistance exceeds your maximum, your current value is reduced to be no higher than your maximum value.
-        This order allows you to survive incoming damage by receiving simultaneous healing, potentially allowing you to avoid gaining vital wounds.
-
-        Most healing effects are \abilitytag{Swift}, which avoids some of this complexity.
-        Swift healing effects are fully resolved before damage is dealt, so you cannot heal beyond your maximum hit points and damage resistance.
-
-\section{Vital Wounds}\label{Vital Wounds}
-    \includegraphics[width=\columnwidth]{core mechanics/vital wounds}
-
-    A \glossterm{vital wound} represents serious damage to your body.
-    Each \glossterm{vital wound} has a specific detrimental effect on you.
-    You gain vital wounds by taking damage in excess of your remaining \glossterm{hit points} (see \pcref{Negative Hit Points}).
-
-    To determine the effect of a \glossterm{vital wound}, make a \glossterm{vital roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-    The effect of the vital wound lasts until you remove that vital wound.
-    The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
-
-    \subsection{Vital Rolls}\label{Vital Rolls}
-        To make a \glossterm{vital roll}, roll 1d10.
-        You take a penalty to this roll equal to twice the number of \glossterm{vital wounds} you already have, not counting the vital wound you are rolling for.
-        This includes vital wounds that have no specific vital wound effect.
-        The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
-        Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
-        This roll is not a \glossterm{check}, so you can't affect it with abilities like \glossterm{desperate exertion}.
-
-        \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
-        While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
-        This benefit applies even if you are already at full hit points.
-        You cannot delay your death in this way by more than 5 rounds.
-
-        \begin{dtable}
-            \lcaption{Vital Wound Effects}
-            \begin{dtabularx}{\textwidth}{l X}
-                \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
-                \minus6 or less  & You immediately die                                                    \\
-                \minus1--\minus5 & You are unconscious, and you die at the end of the next round          \\
-                0                & You are unconscious, and you die after one minute                      \\
-                1                & You are unconscious while you have less than full hit points           \\
-                2                & You have a \minus10 foot penalty to your speed with all movement modes \\
-                3                & You have a \minus5 foot penalty to your speed with all movement modes  \\
-                4                & You take a \minus2 penalty to all \glossterm{defenses}                 \\
-                5                & You take a \minus1 penalty to all \glossterm{defenses}                 \\
-                6                & Your maximum \glossterm{damage resistance} is 0                        \\
-                7                & Your maximum \glossterm{damage resistance} is halved                   \\
-                8                & You take a \minus2 penalty to \glossterm{accuracy}                     \\
-                9                & You take a \minus1 penalty to \glossterm{accuracy}                     \\
-                10 or more       & No extra vital wound effect                                            \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Removing Vital Wounds}\label{Removing Vital Wounds}
-        Vital wounds take time to heal.
-        Whenever you take a \glossterm{long rest}, you remove one of your vital wounds.
-        If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
+    \subsection{Resolving Ambiguity}\label{Resolving Ambiguity}
+        When the rules are ambiguous about how they apply to you and no other creature, you decide how to resolve that ambiguity.
+        For example, if an ability causes you to remove one of your \glossterm{vital wounds}, and you have more than one vital wound, you choose which vital wound is removed.
+        When the rules are ambiguous in any other situation, the GM decides how to resolve that ambiguity.
+        This includes situations where multiple creatures are relevant and situations where no particular creature is relevant.
 
 \section{Making Checks}\label{Checks}\label{Making Checks}
     Checks are required to perform actions that have a chance of failure where the difficulty is not measured by the defense of another creature or object.
@@ -367,6 +135,10 @@ This chapter describes the core mechanics of Rise.
 
         You can take multiple long rests consecutively to recover from extensive vital wounds.
 
+    \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        You can stay awake beyond those limits with the Endurance skill (see \pcref{Stay Awake}).
+
 \section{Size Categories}\label{Size Categories}
     Your size affects your \glossterm{space} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
     These effects are shown on \trefnp{Size Categories}.
@@ -423,10 +195,12 @@ This chapter describes the core mechanics of Rise.
         \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
 
     \subsection{Very Large Creatures}\label{Very Large Creatures}
+        Creature that are Gargantuan or larger are immune to all effects which would cause them to be \prone.
+        They are still physically capable of becoming prone of their own volition, but their sheer mass makes them hard to topple and slow to drop.
+
         \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
 
         \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
-
 
 \section{Weight Limits}\label{Weight Limits}
 
@@ -642,7 +416,6 @@ This chapter describes the core mechanics of Rise.
 
             Second, secondary targets use the same \glossterm{longshot penalty} as the primary target, even if they are farther away.
             
-
     \subsection{Range}\label{Range}
         Many abilities can only affect targets or areas within a given \glossterm{range} of you.
         For abilities that affect specific targets, all targets must be within the range.
@@ -759,14 +532,13 @@ This chapter describes the core mechanics of Rise.
             Sustained abilities have the \abilitytag{Sustain} tag.
             They last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
-            At the end of each round, the ability is dismissed unless you initiated the ability that round or took the action to sustain the ability that round.
+
+            At the start of your action during each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
+            This happens before ``during your action'' effects resolve, so you can't gain the benefits of a sustained ability during your action without sustaining it.
 
             Some sustained abilities include ``attuneable'' in the tag before the action type.
-            When you use that ability, you can choose to \glossterm{attune} to it instead of sustaining it.
+            When you use or sustain that ability, you can choose to \glossterm{attune} to it.
             If you do, it gains the \abilitytag{Attune} tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
-
-            % TODO: a more robust timing system would make stating this explicitly unnecessary
-            If a sustained ability has effects that trigger at the end of the round, it ends before having its effects if you fail to sustain the ability.
 
             Taking an action to sustain an ability only allows you to sustain a single use of that ability.
             However, you can sustain multiple separate abilities at once if you have available actions.
@@ -1001,111 +773,6 @@ This chapter describes the core mechanics of Rise.
         When an object would take damage from a \glossterm{strike}, if the \glossterm{damage resistance} of the attacking object or creature is lower than the damage resistance of the defender, the attacking object or creature takes the damage instead.
         For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
         % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
-
-\section{Poison}\label{Poison}
-    Poisons can deal damage, weaken creatures, or even kill them.
-    Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
-    Unless otherwise noted, poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
-    Common poisons are listed in \tref{Consumable Tools}.
-
-    \subsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
-
-        There are three ways that poisons can be contracted.
-
-        \parhead{Contact} A contact poison affects any creature that touches it with bare skin.
-        \parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
-        Ingestion poisons have no effect when touched or used to coat weapons.
-        \parhead{Injury} An injury poison affects any creature that loses \glossterm{hit points} from something bearing the poison.
-        Almost all injury poisons take liquid form, and are typically used to coat weapons.
-
-    \subsection{Poison Forms}\label{Poison Forms}
-
-        There are four forms of poison.
-
-        \parhead{Gas} Gaseous poisons are difficult to store, but easy to affect foes with.
-        Unless otherwise noted, a gas poison can be thrown within \shortrange, and affects a \tinyarea radius.
-        \parhead{Liquid} Liquid poisons are the most common type of poison.
-        Liquid poisons can be used to coat weapons, slipped into food, or simply thrown at foes.
-        A dose of a liquid poison is usually about one ounce of the poison.
-        \parhead{Pellet} Some rare poisons come in small, solid pellets or cubes.
-        Typically, these pellets contain a powerful liquid poison that becomes inert quickly after being exposed.
-        Pellet poisons are typically applied by being slipped into food.
-        \parhead{Powder} Poison in powder form cannot be used to coat weapons, but can be slipped into food or thrown at foes.
-        Unless otherwise noted, a powder poison functions as a \glossterm{thrown weapon} with \glossterm{range limits} of 5/15.
-
-    \subsection{Coating Weapons with Poison}\label{Coating Weapons with Poison}
-        As a standard action, you can coat a weapon with a single dose of a liquid contact-based or injury-based poison.
-        The next time a creature takes damage from a \glossterm{strike} using that weapon, the struck creature is affected by the poison.
-        This removes one dose of the poison from the weapon.
-        Coated poisons expire and lose their effectiveness after ten minutes.
-
-        Strikes that do not deal damage do not remove poison doses from a poisoned weapon.
-        An injury-based poison has no effect if the strike does not cause the struck creature to lose \glossterm{hit points}, but the dose is still removed from the weapon.
-        For this reason, injury-based poisons are typically applied to secondary weapons that can be used after the subject is already weakened.
-
-        A weapon can hold up to three poison doses of the same poison.
-        Mixing different poison types on the same weapon is ineffective, as each poison dilutes the others.
-        Only the highest rank poison on the weapon has any effect.
-        Choose randomly between equal rank poisons to determine which poison remains effective.
-
-    \subsection{Poison Effects}\label{Poison Effects}
-
-        Poisons can have a wide variety of effects, as determined by the type of poison used.
-        However, most poison share certain common properties.
-
-        \parhead{Becoming Poisoned}
-        All poisons have an base \glossterm{accuracy}.
-        When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
-        On a hit, the target becomes \glossterm{poisoned} and suffers the effects of the first stage of the poison.
-        On a critical hit, the target becomes \glossterm{poisoned} and suffers the effects of the two stages of the poison.
-        On a miss, the target is not \glossterm{poisoned}.
-
-        Some attacks make the target poisoned if they hit the target.
-        In that case, the ability's accuracy defines the poison's accuracy.
-
-        Many poisons have an additional effect when they hit the target for the third time.
-
-        \parhead{Poison Attacks}
-        At the end of each subsequent round after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
-        If the poison was applied by a spell or other special ability, the accuracy bonus of this attack is equal to the accuracy of the original ability that applied the poison.
-
-        Each hit increases the \glossterm{poison stage} of the poison.
-        For every 10 points by which the attack hits, the poison progresses by an additional stage.
-        On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
-
-        \parhead{Resisting Poisons}
-        If a poison misses a creature three times with its attack at the end of each round, the creature stops being poisoned by that poison.
-        % Some poisons may require more attacks to end the poison, as indicated in their description.
-
-        \parhead{Multiple Doses}
-        A creature can be affected by multiple doses of the same poison.
-        This does not cause the same effect to occur multiple times.
-        However, each extra dose increases the accuracy of the poison by 1, up to a maximum bonus of \plus10 more than the poison's normal accuracy.
-
-        A poison is considered the same if it has the same name and comes from the same source.
-        For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
-        A creature bitten multiple times by different giant spiders considers each spider's poison separately.
-
-        \parhead{Poison Quality} Some poisons are unusually high or low quality.
-
-    \subsection{Creating Poisons}\label{Creating Poisons}
-
-        You can use the Craft (poison) skill to create poisons.
-        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty value} equal to 10 \add the poison's base accuracy.
-        For every 2 points by which you beat this \glossterm{difficulty value}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
-
-        Creating a poison requires special materials.
-        The type of materials required, and how those materials can be acquired, depend on the type of poison.
-
-        \begin{itemize}
-            \itemhead{Plant} Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
-                The \glossterm{difficulty value} of this check is usually equal to 10 \add the base accuracy of the poison.
-            \itemhead{Venom} Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
-            \itemhead{Alchemical} Alchemical poisons require alchemical materials.
-                These cannot normally be found in nature.
-                In unusual circumstances, these components can be synthesized from natural chemicals or magical materials with a Craft (alchemy) check equal to 10 \add the base accuracy of the poison.
-        \end{itemize}
-
 
 \section{General Calculations}
 

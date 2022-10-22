@@ -106,10 +106,11 @@ def generate_implements():
             name="Staff of Shared Healing",
             rank=4,
             material_type="Staff",
-            tags=[],
+            tags=['Swift (see text)'],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, you also regain that many hit points, and you increase your \\glossterm<fatigue level> by one.
+                This ability has the \\abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
             """,
             short_description="Exert to heal you when you heal others",
         ),
@@ -124,6 +125,7 @@ def generate_implements():
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +2 bonus to its Mental defense.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Grants +2 Mental defense with your healing",
         ),
@@ -135,6 +137,7 @@ def generate_implements():
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +3 bonus to its Mental defense.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Grants +3 Mental defense with your healing",
         ),
@@ -189,17 +192,7 @@ def generate_implements():
     implements += [
         create_implement(
             name="Staff of Hindrance",
-            rank=1,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever you cause an enemy to be \\slowed as a \\glossterm<condition>, you can make that condition \\glossterm<briefly> impossible to remove.
-            """,
-            short_description="Your slowing effects last longer",
-        ),
-        create_implement(
-            name="Staff of Hindrance, Greater",
-            rank=5,
+            rank=4,
             material_type="Staff",
             tags=[],
             description="""
@@ -283,7 +276,7 @@ def generate_implements():
             rank=1,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
@@ -293,35 +286,10 @@ def generate_implements():
             rank=5,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +3 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +20 speed, maybe +3 accuracy on kill",
-        ),
-    ]
-
-    implements += [
-        create_implement(
-            name="Staff of Focus",
-            rank=1,
-            material_type="Staff",
-            description="""
-                Whenever you cast a spell during the \\glossterm<action phase>, you can activate this staff to intensify your focus on your spell.
-                If you do, you gain a +1 \\glossterm<accuracy> bonus with the spell.
-                However, you take a -2 penalty to Armor and Reflex defenses until the end of the round.
-
-                These bonuses and penalties have the \\abilitytag<Swift> tag, so they affect you during the current phase.
-            """,
-            short_description="Grants +1 accuracy, but -2 defenses",
-        ),
-        create_implement(
-            name="Staff of Focus, Greater",
-            rank=5,
-            material_type="Staff",
-            description="""
-                This implement functions like a \\mitem<staff of focus>, except that the accuracy bonus increases to +2.
-            """,
-            short_description="Grants +2 accuracy, but -2 defenses",
         ),
     ]
 
@@ -366,11 +334,10 @@ def generate_implements():
             name="Staff of Silence",
             rank=1,
             material_type="Staff",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<verbal components>.
-                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without verbal components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without verbal components",
         ),
@@ -378,11 +345,10 @@ def generate_implements():
             name="Staff of Stillness",
             rank=1,
             material_type="Staff",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one and \\glossterm<briefly> gain the ability to cast spells without using \\glossterm<somatic components>.
-                This ability has the \\abilitytag<Swift> tag, so it allows you to cast a spell without somatic components in the same phase that you activate this staff.
             """,
             short_description="Can exert to cast spells without somatic components",
         ),
@@ -647,7 +613,6 @@ def generate_implements():
             description="""
                 As a standard action, you can activate this staff.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
                 If you remove a condition in this way, you \\glossterm<briefly> gain a +2 bonus to your \\glossterm<power>.
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
@@ -662,7 +627,6 @@ def generate_implements():
             description="""
                 As a standard action, you can activate this staff.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
                 If you remove a condition in this way, you \\glossterm<briefly> gain a +4 bonus to your \\glossterm<power>.
             """,
             short_description="Can remove a condition to gain power",
@@ -675,7 +639,6 @@ def generate_implements():
             description="""
                 As a standard action, you can activate this staff.
                 When you do, you remove one or two \\glossterm<conditions> affecting you.
-                This cannot remove effects applied during the current round.
                 If you remove at least one condition in this way, you \\glossterm<briefly> gain a +8 bonus to your \\glossterm<power>.
             """,
             short_description="Can remove conditions to gain power",

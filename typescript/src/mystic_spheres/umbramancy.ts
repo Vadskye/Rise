@@ -4,6 +4,9 @@ export const umbramancy: MysticSphere = {
   name: "Umbramancy",
   shortDescription: "Manipulate shadows and darkness to conceal allies and inhibit foes.",
   sources: ["arcane", "pact"],
+  specialRules: `
+    \\spheredef{shadowed} A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+  `,
 
   cantrips: [
     {
@@ -97,12 +100,13 @@ export const umbramancy: MysticSphere = {
       name: "Darkvision",
 
       effect: `
-        You gain \\trait{darkvision} with a 60 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
+        You gain \\trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \\pcref{Darkvision}).
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The radius increases to 120 feet.`,
-        6: `The radius increases to 240 feet.`,
+        3: `The range increases to 90 feet.`,
+        5: `The range increases to 120 feet.`,
+        7: `The range increases to 180 feet.`,
       },
       type: "Attune",
     },
@@ -115,9 +119,10 @@ export const umbramancy: MysticSphere = {
         name: "Darkvision",
       },
       // narrative: '',
-      rank: 4,
+      rank: 3,
       scaling: {
-        6: `The radius increases to 120 feet.`,
+        5: `The radius increases to 90 feet.`,
+        7: `The radius increases to 120 feet.`,
       },
       type: "Attune (target)",
     },
@@ -126,83 +131,11 @@ export const umbramancy: MysticSphere = {
       name: "Dark Miasma",
 
       attack: {
-        // -1d to compensate for +2a
-        hit: `Each target takes 1d4 + half \\glossterm{power} cold damage.`,
+        // -1d for +2a
+        hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Dark Miasma",
-
-      attack: {
-        // -1d to compensate for +2a
-        hit: `Each target takes 1d10 + half \\glossterm{power} cold damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 4,
-      scaling: "damage",
-    },
-
-    {
-      name: "Dark Grasp",
-
-      attack: {
-        // -1d to compensate for +2a
-        hit: `The target takes 1d6 + \\glossterm{power} cold damage.`,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 1,
-      scaling: "damage",
-    },
-
-    {
-      name: "Greater Dark Grasp",
-
-      functionsLike: {
-        exceptThat: `
-          the damage increases to 1d10 + \\glossterm{power}.
-          In addition, if the target loses \\glossterm{hit points} from this damage, it is \\dazzled as a \\glossterm{condition}.
-        `,
-        name: 'dark grasp',
-      },
-      rank: 3,
-      scaling: "damage",
-    },
-
-    {
-      name: "Supreme Dark Grasp",
-
-      functionsLike: {
-        name: 'greater dark grasp',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power} damage.',
-      },
-      rank: 6,
-      scaling: "damage",
-    },
-
-    {
-      name: "Chill of Darkness",
-
-      attack: {
-        // -1d to compensate for +2a
-        hit: `The target takes 1d8 + \\glossterm{power} cold damage.`,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
         `,
       },
       rank: 2,
@@ -210,14 +143,136 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Greater Chill of Darkness",
+      name: "Intense Dark Miasma",
 
       attack: {
-        // -1d to compensate for +2a
-        hit: `The target takes 2d10 + \\glossterm{power} cold damage.`,
+        // -1d for +2a
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} cold damage.
+          Each creature that loses \\glossterm{hit points} from this damage is \\frightened of you as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\distrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack if the target is not in \\glossterm{bright illumination}.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+    },
+
+    {
+      name: "Massive Dark Miasma",
+
+      // switch to +1r for shadowed instead of -1d
+      attack: {
+        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
+        `,
+      },
+      rank: 6,
+      scaling: "damage",
+    },
+
+    {
+      name: "Dark Grasp",
+
+      // -1d for shadowed
+      attack: {
+        hit: `
+          The target takes 1d8 + \\glossterm{power} cold damage.
+          If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make a melee attack vs. Reflex against anything adjacent to you.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+        `,
+      },
+      rank: 2,
+      scaling: "damage",
+    },
+
+    {
+      name: "Intense Dark Grasp",
+
+      functionsLike: {
+        name: 'dark grasp',
+        exceptThat: "the target is \\frightened instead of shaken, and the damage increases to 2d10 + \\glossterm{power}.",
+      },
+      rank: 6,
+      scaling: "damage",
+    },
+
+    {
+      name: "Creeping Darkness",
+
+      // treat as short range med radius, which is a t3 area
+      attack: {
+        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        targeting: `
+          You create a field of darkness at a \\sphereterm{shadowed} location within \\shortrange.
+          The area affected by the field increases over time.
+          It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+          Light in the area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Sustain (standard)"],
+    },
+
+    {
+      name: "Massive Creeping Darkness",
+
+      functionsLike: {
+        name: "creeping darkness",
+        exceptThat: `
+          the area affects a \\medarea radius in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          In addition, the range increases to \\medrange, and the damage increases to 4d6 + half \\glossterm{power}.
+        `,
+      },
+      narrative: `
+        You create a small volcano that showers everything nearby in burning shrapnel.
+      `,
+      rank: 7,
+      scaling: "damage",
+      tags: ["Manifestation", "Sustain (standard)"],
+    },
+
+    {
+      name: "Heed the Dark Call",
+
+      attack: {
+        // +1r for shadowed
+        hit: `
+          The target takes 1d6 + half \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\frightened by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+    },
+
+    {
+      name: "Intense Heed the Dark Call",
+
+      attack: {
+        // +1r for shadowed
+        hit: `
+          The target takes 2d8 + half \\glossterm{power} cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\panicked by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 5,
@@ -248,7 +303,7 @@ export const umbramancy: MysticSphere = {
       rank: 2,
       scaling: {
         4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
-        6: `Taking a \\glossterm{minor action} does not end your invisibility or prevent you from becoming invisible.`,
+        6: `Taking \\glossterm{free actions} and \\glossterm{minor actions} does not end your invisibility or prevent you from becoming invisible.`,
       },
       type: "Attune",
     },
@@ -256,48 +311,38 @@ export const umbramancy: MysticSphere = {
     {
       name: "Dark Shroud",
 
-      // +1 level for +2 acc
+      // +1r for shadowed
       attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
-        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Blinding Shroud",
-
-      // +1 level for +2 acc
-      attack: {
-        crit: "The effect becomes a \\glossterm{condition} on each target.",
         hit: `
-          Each target is with no remaining \\glossterm{damage resistance} is \\glossterm{briefly} \\blinded.
+          The target takes 2d8 cold damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\longrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
     },
 
     {
-      name: "Hidden Blade",
+      name: "Shadowstrike",
 
       effect: `
-        Your weapons become become shrouded in darkness, making them virtually impossible to see.
-        Your melee \\glossterm{strikes} are treated as if they came from an invisible creature.
-
-        Most creatures are at least \\partiallyunaware of attacks from invisible creatures, even if they are already actively engaged in combat, causing them to suffer a -2 penalty to Armor and Reflex defenses against the attack.
-        This effect provides no offensive benefit against creatures who can see you without light.
+        Make a \\glossterm{strike}.
+        Damage dealt by the strike is cold damage in addition to its normal damage types.
+        The attack is made against each target's Reflex defense instead of its Armor defense.
+          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
       `,
-      rank: 6,
+      narrative: `
+        You strike your foe's shadow instead of hitting it directly, but it takes damage all the same.
+      `,
+      rank: 3,
+      scaling: {
+        5: "You gain a +1 accuracy bonus with the strike.",
+        7: "The accuracy bonus increases to +2.",
+      },
       tags: ["Visual"],
       type: "Attune (deep)",
     },
@@ -338,12 +383,13 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Shadowstrike",
+      name: "Shadowstep Strike",
 
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
+          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+          In addition, this spell does not have \\glossterm{somatic components}.
         `,
         name: "shadowstep",
       },
@@ -352,14 +398,17 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Shadowstrike Flurry",
+      name: "Shadowstep Flurry",
 
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
           You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
-          In addition, if you cast this spell during the \\glossterm{action phase}, you can repeat the teleportation and strike during the \\glossterm{delayed action phase}.
+          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+          In addition, you can repeat the teleportation and strike.
           The second strike takes a -2 accuracy penalty just like the first strike, and it cannot target any of the same creatures as the first strike.
+
+          This spell does not have \\glossterm{somatic components}.
         `,
         name: "shadowstep",
       },
@@ -385,106 +434,46 @@ export const umbramancy: MysticSphere = {
     {
       name: "Bind Shadow",
 
-      attack: {
-        hit: `
-          The target takes 1d6 cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-          This condition must be removed twice before the effect ends.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.
-          If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
-        `,
-      },
-      narrative: `
-        You bind your foe's shadow to the ground, dramatically slowing its movement.
-      `,
-      rank: 2,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Greater Bind Shadow",
-
+      // TODO: very ambiguous rank. It's currently scaled as r3, since it can provide
+      // immunity to melee attackers.
       attack: {
         hit: `
           The target takes 2d8 cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, you bind its shadow as a \\glossterm{condition}, blocking its access to areas of darkness.
+          The target treats areas of \\glossterm{shadowy illumination} and unlit areas as solid barriers.
+          This means that it cannot move into them voluntarily or with forced movement effects.
+          However, this condition has no effect if it enters those areas by other means, such as by \\glossterm{teleportation} or if the light around it is suddenly extinguished.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange that is standing on the ground.
-          If the target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
+          Make an attack vs. Mental against a creature within \\medrange that is not \\sphereterm{shadowed}.
         `,
       },
-      rank: 6,
       narrative: `
-        You pin your foe's shadow to the ground, preventing it from moving.
+        You bind your foe's shadow to the light, preventing it from entering shadowed areas.
       `,
-      scaling: "accuracy",
+      rank: 5,
+      scaling: "damage",
     },
 
     {
-      name: "Shadow Swap",
-
-      // original targets: One creature within \medrange standing on the ground
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          If this attack succeeds against both subjects, they swap shadows with each other as a \\glossterm{condition}.
-          As long as the condition lasts on both subjects, each target has total control over the other target's movements during each \\glossterm{movement phase}, and is unable to control its own movement.
-          This does not affect their movements during other phases.
-
-          If a target enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends for both subjects.
-        `,
-        targeting: `
-          Make an attack vs. Mental with a +2 accuracy bonus against two creatures within \\medrange that are standing on the ground.
-          If a target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
-        `,
-      },
-      rank: 2,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Steal Shadow",
+      name: "Shadow Puppet",
 
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          The target takes 2d6 cold damage.
-          If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
-          You have full control over its movement during each \\glossterm{movement phase}.
-          This does not affect its movements during other phases.
-
-          If a target enters \\glossterm{bright illumination} while it is not touching its shadow, the condition automatically ends.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
-          If a target is in \\glossterm{bright illumination} and is not touching its shadow, the attack automatically misses.
-        `,
-      },
-      rank: 5,
-      scaling: "accuracy",
-    },
-
-    {
-      name: "Dancing Shadow",
-
-      // original targets: One creature within \medrange standing on the ground
-      attack: {
-        hit: `
           The target takes 4d6 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\confused as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
+          It cannot move on its own.
+          As a \\glossterm{movement}, you can control its movement instead of your own.
+
+          If the target enters \\glossterm{brilliant illumination}, the condition automatically ends.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange that is standing on the ground.
-          If the target is in \\glossterm{bright illumination} and is not touching its shadow, this attack automatically misses.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      narrative: `
-        You compel a foe's shadow to dance, controlling its movement.
-      `,
       rank: 7,
+      scaling: "damage",
     },
 
     {
@@ -498,22 +487,29 @@ export const umbramancy: MysticSphere = {
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size, and you can climb without using any hands.
-          \\item You are always treated as being \\prone.
+          \\item You are always treated as being \\prone, though your movement speed is not reduced.
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 
-        While you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed}, and you return to your normal size and shape.
-        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists for the rest of the round.
+        At the end of each round, if you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
+        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
-        As a \\glossterm{minor action}, you can voluntarily disable this ability and return to your normal form.
-        If you do, you can resume the effect of this ability as a minor action.
+        You can suppress or resume this ability as a \\glossterm{free action}.
       `,
       rank: 3,
-      scaling: {
-        5: `You can maintain the form in bright illumination for a full round before it is suppressed.`,
-        7: `You can maintain the form in bright illumination for up to five minutes before it is suppressed.`,
+      type: "Attune (deep)",
+    },
+
+    {
+      name: "Deep Shadowform",
+
+      functionsLike: {
+        exceptThat: "bright illumination does not suppress the effect. It is still suppressed by \\glossterm{brilliant illumination}.",
+        name: "Shadowform",
       },
+      // narrative: '',
+      rank: 7,
       type: "Attune (deep)",
     },
 
@@ -522,17 +518,16 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
-        The wall is visible as a solid block of darkness that blocks sight.
-        Creatures with \\trait{darkvision} can see through the wall normally.
+        The wall is visible as a solid block of darkness.
+        It blocks ordinary vision and \\trait{low-light vision}, but creatures with \\trait{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
 
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 1,
+      rank: 2,
       scaling: {
-        3: `The area increases to a \\largearealong line.`,
-        5: `The area increases to a 30 ft.\\ high \\hugearealong line.`,
-        7: `The area increases to a 60 ft.\\ high, \\gargarealong line.`,
+        4: "You can choose to create a \\largearealong wall instead.",
+        6: "You can choose to create a \\hugearealong wall instead.",
       },
       tags: ["Barrier"],
       type: "Sustain (attuneable, minor)",

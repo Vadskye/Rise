@@ -30,7 +30,7 @@ export const bluntForce: CombatStyle = {
       name: "Ground Stomp",
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
@@ -44,10 +44,21 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike targets everything supported by that surface in a \\smallarealong, 5 ft. wide line from you.
+        The strike targets everything supported by that surface in a \\smallarea cone from you.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 3,
+    },
+
+    {
+      name: "Ground Slam+",
+
+      effect: `
+        Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
+        The strike targets everything supported by that surface in a \\largearea cone from you.
+        All damage dealt by this attack is bludgeoning damage instead of its normal types.
+      `,
+      rank: 7,
     },
 
     {
@@ -55,27 +66,21 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        Damage dealt by the strike is sonic damage in addition to its normal damage types.
+        If your attack result beats a target's Fortitude defense, you gain a +4 damage bonus with the strike against that target.
       `,
-      rank: 1,
+      rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
 
     {
-      name: "Gutshot",
+      name: "Tenderize",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\dazed.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: "Gutshot+",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
+        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -118,6 +123,17 @@ export const bluntForce: CombatStyle = {
     },
 
     {
+      name: "Leap Slam+",
+
+      functionsLike: {
+        name: "leap slam",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
+      },
+      scaling: "damage",
+      rank: 7,
+    },
+
+    {
       name: "Ricochet",
 
       effect: `
@@ -133,11 +149,10 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -209,25 +224,25 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Tenderizing Smash",
+      name: "Gutshot",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\dazed.
-        After this effect ends, the creature cannot be dazed by this effect again until it takes a \\glossterm{short rest}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
-      name: "Tenderizing Smash+",
+      name: "Gutshot+",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike is \\glossterm{briefly} \\stunned.
-        After this effect ends, the creature cannot be stunned by this effect again until it takes a \\glossterm{short rest}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -237,31 +252,32 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes half the damage from the strike again at the end of each round.
+        Each creature damaged by the strike takes the damage from the strike again during your next action.
       `,
       rank: 5,
     },
 
     {
-      name: "Stomach-Churning Strike",
+      name: "Earsplitting Bonedrum",
 
+      // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to its Fortitude defense.
+        You and each creature damaged by the strike are \\deafened as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
-      name: "Earsplitting Bonedrum",
+      name: "Earsplitting Bonedrum+",
 
-      // -2 ranks for self-deafen? seems generous
+      // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature damaged by the strike are \\glossterm{briefly} \\deafened.
+        You and each creature damaged by the strike are \\deafened as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 7,
     },
 
     {
@@ -273,6 +289,21 @@ export const bluntForce: CombatStyle = {
         If your weapon has the \\weapontag{Impact} weapon tag, you roll quadruple damage dice instead.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Unbalanced Smash",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 damage bonus using a bludgeoning weapon.
+        If you miss with the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
   ],
 };

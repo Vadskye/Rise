@@ -227,7 +227,7 @@ def debuff_explanation(debuff):
         "petrified": "turned to stone",
         "prone": "half speed, -2 Armor and Ref",
         "shaken": "-1 Mental, -1 accuracy vs. source",
-        "slowed": "half speed, -1 Ref",
+        "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
         "stunned": "-2 defenses",
         "swimming": "-2 accuracy, defenses",

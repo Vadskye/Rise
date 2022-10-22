@@ -32,27 +32,14 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
         targeting: `
-        Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\longrange.
         `,
       },
       rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
     },
-
-    {
-      name: "Mystic Artillery",
-
-      attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} piercing damage.`,
-        targeting: `
-          Make an attack vs. Armor with a +1 accuracy bonus against anything within \\extrange.
-        `,
-      },
-      rank: 6,
-      tags: ["Manifestation"],
-    },
-
+    
     {
       name: "Mystic Blast Arrow",
 
@@ -71,12 +58,92 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Bladestorm",
+      name: "Mystic Artillery",
+
+      // +2r for delay, +1r for range
+      attack: {
+        hit: `
+          The target takes 2d10 + \\glossterm{power} piercing damage.
+        `,
+        targeting: `
+          When you cast this spell, you create a ballista bolt in midair within your space.
+          During your next action, make an attack vs. Armor with the bolt against anything within \\distrange.
+        `,
+      },
+      rank: 5,
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Executioner's Axe",
+
+      // +2r for delay
+      // treat "two adjacent targets" as equivalent to close range with the delay;
+      // people can just run from it, so it's hard to actually get the double-hit off.
+      attack: {
+        hit: `
+          Each target takes 1d10 + \\glossterm{power} slashing damage.
+        `,
+        targeting: `
+          When you cast this spell, you create a greataxe in midair within your space.
+          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+        `,
+      },
+      rank: 2,
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Mighty Executioner's Axe",
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} slashing damage.`,
+        hit: `
+          Each target takes 4d10 + \\glossterm{power} slashing damage.
+        `,
+        targeting: `
+          When you cast this spell, you create a greataxe in midair within your space.
+          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+        `,
+      },
+      rank: 6,
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Whirlwind of Blades",
+
+      attack: {
+        hit: `Each target takes 1d6 + half \\glossterm{power} slashing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
+        `,
+      },
+      rank: 1,
+      scaling: "damage",
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Mighty Whirlwind of Blades",
+
+      attack: {
+        hit: `Each target takes 2d10 + \\glossterm{power} slashing damage.`,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
+        `,
+      },
+      rank: 5,
+      scaling: "damage",
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Precision Missileburst",
+
+      attack: {
+        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 3,
@@ -85,36 +152,12 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Greater Bladestorm",
-
-      functionsLike: {
-        name: "bladestorm",
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
-      },
-      rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Missile Storm",
+      name: "Massive Precision Missileburst",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\largearea radius from you.
+        hit: `
+          Each target takes 2d10 + half \\glossterm{power} piercing damage.
         `,
-      },
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Greater Missile Storm",
-
-      attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
@@ -125,25 +168,37 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Hail of Arrows",
+      name: "Rain of Arrows",
 
+      // -1r for -1d
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        hit: `
+          Each target takes 1d10 + half \\glossterm{power} piercing damage.
+        `,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
+          You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
+          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
+          This attack does not damage any \\glossterm{walls} in the area.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "damage",
       tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Hail of Arrows",
+      name: "Massive Rain of Arrows",
 
-      functionsLike: {
-        name: "hail of arrows",
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
+      // offset previous -1d
+      attack: {
+        hit: `
+          Each target takes 4d6 + half \\glossterm{power} piercing damage.
+        `,
+        targeting: `
+          You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
+          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
+          This attack does not damage any \\glossterm{walls} in the area.
+        `,
       },
       rank: 7,
       scaling: "damage",
@@ -156,12 +211,13 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
         targeting: `
-          You create a \\medarealong \\glossterm{wall} of whirling blades wihtin \\medrange.
-          The wall provides \\glossterm{cover} against attacks made through it.
-          Whenever anything passes through the wall, make an attack vs. Armor against it.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You create a \\smallarealong \\glossterm{wall} of whirling blades within \\medrange.
+          The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
+          Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
+          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
+          Generally, this is only possible for Large or larger creatures.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
 
-          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
@@ -172,16 +228,15 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Greater Blade Barrier",
+      name: "Mighty Blade Barrier",
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 2d8 + half \\glossterm{power}.
-          In addition, the area increases to a \\largearealong wall.
+          the damage increases to 4d6 + \\glossterm{power}.
         `,
         name: 'blade barrier',
       },
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -190,38 +245,14 @@ export const fabrication: MysticSphere = {
     {
       name: "Blade Perimeter",
 
-      attack: {
-        hit: `The target takes 1d10 + half \\glossterm{power} slashing damage.`,
-        targeting: `
-        You create a \\smallarea radius \\glossterm{wall} of blades within \\medrange.
-        The wall provides \\glossterm{cover} against attacks made through it.
-        Whenever anything passes through the wall, make an attack vs. Armor against it.
-        You can only make this attack against a given target once per \\glossterm{phase}.
-
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
-        `,
-      },
-      rank: 3,
-      scaling: "damage",
-      tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
-    },
-
-    {
-      name: "Contracting Blade Perimeter",
-
       functionsLike: {
         exceptThat: `
-          the damage is increased to 2d10 plus half your \\glossterm{power}.
-          % TODO: Clarify interaction with solid obstacles that block contraction?
-          In addition, the wall's radius shrinks by 5 feet at the end of each round, dealing damage to everything it moves through.
-          After the wall shrinks to have no radius, it begins expanding again at a rate of 5 feet per round.
-          Once it expands back to its maximum radius, it begins shrinking again.
+          the area changes to a \\medarea radius \\glossterm{wall}.
+          In addition, the damage increases to 2d6 + half \\glossterm{power}.
         `,
-        name: "blade perimeter",
+        name: 'blade barrier',
       },
-      rank: 6,
+      rank: 4,
       scaling: "damage",
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -243,11 +274,6 @@ export const fabrication: MysticSphere = {
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       rank: 1,
-      scaling: {
-        3: `You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield the weapon.`,
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
-      },
       tags: ["Manifestation"],
     },
 
@@ -269,39 +295,15 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Meteor",
-
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
-        targeting: `
-          You create a meteor in midair within \\medrange that falls to the ground, crushing foes in its path.
-          The meteor takes up a \\smallarea radius, and must be created in unoccupied space.
-          After being summoned, it falls up to 100 feet before disappearing.
-          Make an attack vs. Armor against everything in its path.
-        `,
-      },
-      rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
       name: "Web",
 
-      attack: {
-        crit: `Each secondary target is \\immobilized instead of slowed.`,
-        hit: `Each secondary target is \\slowed as long as it has webbing from this ability in its space.`,
-        targeting: `
-          You fill a \\smallarea radius \\glossterm{zone} within \\shortrange with webs.
-          The webs make the area \\glossterm{difficult terrain}.
-          The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
+      effect: `
+        You fill a \\smallarea radius \\glossterm{zone} within \\medrange with webs.
+        The webs make the area \\glossterm{difficult terrain}.
+        The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
+      `,
 
-          In addition, make an attack vs. Reflex against all Large or smaller creatures in the area.
-          Whenever a creature enters the area, you make the same attack against it.
-        `,
-      },
-
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
       tags: ["Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -314,7 +316,7 @@ export const fabrication: MysticSphere = {
         hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make an attack vs. Armor against them.
+          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
           You cannot make this attack against the same creature more than once per \\glossterm{phase}.
           Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
           Caltrops may not be effective against creatures with an unusual anatomy.
@@ -323,11 +325,11 @@ export const fabrication: MysticSphere = {
       rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      type: "Sustain (minor)",
     },
 
     {
-      name: "Greater Caltrops",
+      name: "Mighty Caltrops",
 
       functionsLike: {
         name: 'caltrops',
@@ -336,7 +338,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       scaling: "damage",
       tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      type: "Sustain (minor)",
     },
 
     {
@@ -351,11 +353,10 @@ export const fabrication: MysticSphere = {
         However, the item's rank cannot exceed half your spellcasting rank with this spell.
 
         The object persists until the end of the round, at which point it disappears.
-        Because this spell has the \\abilitytag{Swift} tag, you can fire the created projectile from the weapon in the same phase that you cast this spell.
         Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
-      tags: ["Manifestation", "Swift"],
+      tags: ["Manifestation"],
     },
 
     {
@@ -376,36 +377,6 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Greater Daggerswarm",
-
-      functionsLike: {
-        name: "daggerswarm",
-        exceptThat: `
-          the damage increases to 4d10, and the range increases to \\medrange.
-        `,
-      },
-      rank: 7,
-      scaling: "damage",
-      type: "Attune (deep)",
-    },
-
-    {
-      name: "Daggercloud",
-
-      attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} piercing damage.`,
-        targeting: `
-          A swarm of daggers appears in a \\tinyarea radius \\glossterm{zone} within \\medrange.
-          At the end of each round, make an attack vs. Armor with a +2 accuracy bonus against everything in the area.
-        `,
-      },
-      rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
-      type: "Sustain (attuneable, minor)",
-    },
-
-    {
       name: "Grease",
 
       attack: {
@@ -416,10 +387,10 @@ export const fabrication: MysticSphere = {
         // No relevant glance effect
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: "accuracy",
       tags: ["Manifestation"],
     },
@@ -434,9 +405,10 @@ export const fabrication: MysticSphere = {
         `,
         hit: `
           Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
+          This vulnerability ends for a target if it takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 7,
@@ -466,7 +438,7 @@ export const fabrication: MysticSphere = {
         7: `The field's \\glossterm{hit points} increase to five times your power.`,
       },
       tags: ["Barrier", "Manifestation"],
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -475,7 +447,7 @@ export const fabrication: MysticSphere = {
       effect: `
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
-        This strike is considered a \\glossterm{magical} attack, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
         If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
@@ -489,13 +461,15 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Greater Instant Weapon",
+      name: "Instant Magic Weapon",
 
       functionsLike: {
         name: 'instant weapon',
         exceptThat: `
           the weapon you create is magical.
-          You may give it a single magic weapon ability of your choice with rank no higher than your spellcasting rank with this spell.
+          When you learn this spell, you choose a single magic weapon ability with a rank no higher than your spellcasting rank with this spell.
+          The weapon has that ability.
+          Whenever your spellcasting rank with this spell increases, you can choose a new magic weapon ability.
         `,
       },
       rank: 5,
@@ -518,7 +492,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 4,
       scaling: {
-        6: `The area increases to a \\medarealong wall.`,
+        6: `You can choose to create a \\medarealong wall instead.`,
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -553,8 +527,8 @@ export const fabrication: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        4: `The area increases to a \\medarealong wall.`,
-        6: `The area increases to a \\largearealong wall.`,
+        4: "You can choose to create a \\medarealong wall instead.",
+        6: "You can choose to create a \\largearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -565,19 +539,18 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          you can choose how much the barrier blocks sound.
-            There are three possibilities: fully sound-permeable, fully sound-blocking like a normal \\spell{mystic barrier}, and sound-dampening.
-            You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
+          you can choose whether the barrier blocks sound.
+          You can change whether the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
-            A sound-dampening barrier increases the \\glossterm{difficulty value} of sound-based Awareness checks by 20.
-            Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\trait{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
+          Both types of barrier still block \\glossterm{line of effect} for effects that deal \\glossterm{bludgeoning damage}, even if they narratively come from a sound or voice.
+          If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
         `,
         name: "mystic barrier",
       },
       rank: 2,
       scaling: {
-        4: `The area increases to a \\medarealong wall.`,
-        6: `The area increases to a \\largearealong wall.`,
+        4: "You can choose to create a \\medarealong wall instead.",
+        6: "You can choose to create a \\largearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -589,7 +562,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes energy damage equal to 1d10 plus your \\glossterm{power}.
+            Each object in the path of the wall takes bludgeoning damage equal to 1d10 plus your \\glossterm{power}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
         `,
@@ -614,9 +587,9 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The area increases to a \\medarealong wall.`,
-        5: `The area increases to a \\largearealong wall.`,
-        7: `The area increases to a \\hugearealong wall.`,
+        3: "You can choose to create a \\medarealong wall instead.",
+        5: "You can choose to create a \\largearealong wall instead.",
+        7: "You can choose to create a \\hugearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -633,8 +606,8 @@ export const fabrication: MysticSphere = {
       },
       rank: 2,
       scaling: {
-        3: `The area increases to a \\medarealong wall.`,
-        5: `The area increases to a \\largearealong wall.`,
+        4: "You can choose to create a \\medarealong wall instead.",
+        6: "You can choose to create a \\largearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -651,8 +624,8 @@ export const fabrication: MysticSphere = {
       },
       rank: 3,
       scaling: {
-        5: `The area increases to a \\medarealong wall.`,
-        7: `The area increases to a \\largearealong wall.`,
+        5: "You can choose to create a \\medarealong wall instead.",
+        7: "You can choose to create a \\largearealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",
@@ -668,15 +641,12 @@ export const fabrication: MysticSphere = {
         This prevents you from having \\glossterm{line of effect} to anything outside of the area.
         When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
 
-        The field as a whole has \\glossterm{hit points} equal to twice your \\glossterm{power}.
+        The field as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 5,
-      scaling: {
-        7: `The field's \\glossterm{hit points} increase to three times your power.`,
-      },
+      rank: 6,
       tags: ["Barrier", "Manifestation"],
-      type: "Sustain (attuneable, minor)",
+      type: "Sustain (minor)",
     },
 
     {
@@ -716,7 +686,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 5,
       scaling: {
-        7: `The area increases to a \\medarealong wall.`,
+        7: "You can choose to create a \\medarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

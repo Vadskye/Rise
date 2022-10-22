@@ -151,13 +151,13 @@ impl Targeting {
                 )
             },
             Self::CausedDamage(size) => format!(
-                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that dealt damage to it during that phase.",
+                "Whenever an \\glossterm<enemy> within a {size} radius \\glossterm<emanation> deals damage to the $name, it makes a {accuracy} \\glossterm<reactive attack> vs. {defense} against them.",
                 accuracy = accuracy,
                 size = size,
                 defense = defense,
             ),
             Self::CausedHpLoss(size) => format!(
-                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each \\glossterm<enemy> within a {size} radius \\glossterm<emanation> of it that caused it to lose \\glossterm<hit points> during that phase.",
+                "Whenever an \\glossterm<enemy> within a {size} radius \\glossterm<emanation> causes the $name to lose \\glossterm<hit points>, it makes a {accuracy} \\glossterm<reactive attack> vs. {defense} against them.",
                 accuracy = accuracy,
                 size = size,
                 defense = defense,
@@ -188,7 +188,7 @@ impl Targeting {
                 width = format!("{} ft.", width),
             ),
             Self::MadeMeleeAttack => format!(
-                "At the end of each phase, the $name makes a {accuracy} attack vs. {defense} against each creature that made a \\glossterm{{melee}} attack against it using a free hand or non-Long weapon during that phase.",
+                "Whenever a creature makes a \\glossterm<melee> attack against the $name using a free hand or non-Long weapon, it makes a {accuracy} \\glossterm<reactive attack> vs. {defense} against them.",
                 accuracy = accuracy,
                 defense = defense,
             ),

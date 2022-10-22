@@ -20,7 +20,7 @@ export const thaumaturgy: MysticSphere = {
           You also learn if any passive magical effects existed in the area.
           This is separate from your knowledge of active magical effects.
         `,
-        4: `The area increases to a \\areahuge cone.`,
+        4: "You can choose to create a \\hugearea cone instead.",
         6: `You also learn the number of magical effects in the area.`,
       },
       tags: ['Detection'],
@@ -62,36 +62,36 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Magic Missile",
+      name: "Distant Magic Missile",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // +4r for range; pay extra for distrange, since it scales well with range
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\distrange.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 4,
+      rank: 5,
       scaling: "damage",
     },
 
     {
-      name: "Supreme Magic Missile",
+      name: "Mighty Magic Missile",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // +6r for +3d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\shortrange.
         `,
       },
       narrative: `
@@ -122,7 +122,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Magic Missile Storm",
+      name: "Massive Magic Missile Storm",
 
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -203,7 +203,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Suppress Magic",
+      name: "Intense Suppress Magic",
 
       functionsLike: {
         name: 'suppress magic',
@@ -231,7 +231,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Dispel Magic",
+      name: "Intense Dispel Magic",
 
       functionsLike: {
         exceptThat: `
@@ -346,19 +346,21 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Dimensional Anchor",
+      name: "Dimensional Seal",
 
       attack: {
-        hit: `The target is unable to travel extradimensionally.
-        This prevents all \\abilitytag{Manifestation} effects and effects that teleport the target or move it between planes.`,
+        hit: `
+          The target cannot be \\glossterm{teleported}.
+          An object affected by this spell is left behind if it is carried by a creature that teleports.
+        `,
         targeting: `
-          Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against anything within \\medrange.
         `,
       },
 
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -369,8 +371,10 @@ export const thaumaturgy: MysticSphere = {
         Extraplanar travel into or out of the area is impossible.
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
-      rank: 5,
-      scaling: { 7: `The area increases to a \\hugearea radius \\glossterm{zone}.` },
+      rank: 4,
+      scaling: {
+        6: "You can choose to create a \\hugearea radius instead.",
+      },
       type: "Attune",
     },
 
@@ -378,13 +382,12 @@ export const thaumaturgy: MysticSphere = {
       name: "Teleportation Ward",
 
       effect: `
-        Teleportation into and out of a \\medarea radius \\glossterm{emanation} from you is impossible.
-        Any abilities which would cause creatures to teleport within the area have no effect.
+        Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The area increases to a \\largearea radius \\glossterm{emanation}.`,
-        7: `The area increases to a \\hugearea radius \\glossterm{emanation}.`,
+        4: "You can choose to affect a \\hugearea radius instead.",
+        6: "You can choose to affect a \\gargarea radius instead.",
       },
       type: "Attune",
     },
@@ -443,6 +446,9 @@ export const thaumaturgy: MysticSphere = {
         This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
       `,
       rank: 4,
+      scaling: {
+        6: "You can choose to affect a \\hugearea radius instead.",
+      },
       type: "Attune",
     },
 
@@ -458,7 +464,9 @@ export const thaumaturgy: MysticSphere = {
         You break an area's connection to magic.
       `,
       rank: 5,
-      scaling: { 7: `The maximum area increases to a \\hugearea radius.` },
+      scaling: {
+        7: "The maximum area increases to a \\hugearea radius.",
+      },
       type: "Sustain (minor)",
     },
 
@@ -482,36 +490,31 @@ export const thaumaturgy: MysticSphere = {
     {
       name: "Reflect Magic",
 
-      effect: `
-        You immediately take the \\textit{total defense} action.
-        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
-        It cannot choose to reduce its accuracy or damage against itself.
-
-        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
-      `,
-      rank: 3,
-      scaling: {
-        5: `You gain an additional +1 bonus to all defenses.`,
-        7: `The defense bonus increases to +2.`,
+      functionsLike: {
+        name: 'total defense',
+        abilityType: 'ability',
+        exceptThat: `
+          whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+          It cannot choose to reduce its accuracy or damage against itself.
+        `,
       },
+      rank: 3,
       tags: ['Swift'],
     },
 
     {
       name: "Reflect Targeted Magic",
 
-      effect: `
-        You immediately take the \\textit{total defense} action.
-        In addition, any \\glossterm{targeted} \\glossterm{magical} abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
-        It cannot choose to reduce its accuracy or damage against itself.
-        Any other targets of the ability are affected normally.
-
-        This is a \\abilitytag{Swift} ability, so it affects any abilities targeting you in the phase you cast this spell.
-      `,
-      rank: 5,
-      scaling: {
-        7: `You gain an additional +1 bonus to all defenses.`,
+      functionsLike: {
+        name: 'total defense',
+        abilityType: 'ability',
+        exceptThat: `
+          any \\glossterm{targeted} \\glossterm{magical} abilities that would target you this round also target the creature using that ability in addition to you.
+          It cannot choose to reduce its accuracy or damage against itself.
+          Any other targets of the ability are affected normally.
+        `,
       },
+      rank: 5,
       tags: ['Swift'],
     },
 
@@ -528,7 +531,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The area increases to a \\medarealong wall.`,
+        6: "You can choose to create a \\medarealong wall instead.",
       },
       tags: ["Barrier", "Manifestation"],
       type: "Sustain (attuneable, minor)",

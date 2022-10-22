@@ -120,6 +120,7 @@ impl DamageEffect {
             format!(
                 "
                     If any creature loses \\glossterm<hit points> from this attack, {regain} {effect}
+                    This ability does not have the \\abilitytag<Swift> tag, so it resolves after attacks during the current phase.
                 ",
                 effect = effect.description(attacker),
                 regain = if attacker.is_character() { "you regain" } else { "the $name regains" },
@@ -172,16 +173,18 @@ impl DamageOverTimeEffect {
         return format!(
             "
                 {narrative_text} {duration}.
-                At the end of each round, {the_subject} takes {damage}
+                {the_subject} takes {damage} immediately and during each subsequent \\glossterm<action phase>.
 
                 {removal}
             ",
             narrative_text = self.narrative_text,
             duration = self.duration.description(),
             damage = self.damage.description(attacker, is_magical, false),
-            the_subject = the_subject,
+            // TODO: titlecase is wrong here; we actually want "first letter capitalized", but
+            // that's hard.
+            the_subject = titlecase(the_subject),
             removal = if self.can_remove_with_dex { "
-                The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action}.
+                The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement}.
                 Dropping \\prone as part of this action gives a +5 bonus to this check.
             " } else { "" },
         ).trim().to_string();
@@ -290,7 +293,7 @@ impl PoisonEffect {
                 \\glossterm<poisoned>.
                 As long as it is poisoned, it is {debuffs}.
 
-                At the end of each subsequent round, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
+                During each subsequent \\glossterm<action phase>, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
                 {third_stage}
             ",
             debuffs = debuffs,
