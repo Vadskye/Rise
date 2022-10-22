@@ -265,7 +265,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} energy damage.
+          Each target takes 1d8 + half \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
@@ -278,20 +278,41 @@ export const astromancy: MysticSphere = {
       scaling: "damage",
     },
     {
-      name: "Massive Sudden Rift",
+      name: "Banishing Rift",
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes 2d10 + half \\glossterm{power} energy damage.
+          Each creature that loses \\glossterm{hit points} from this damage \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          It does not return until the end of the next round.
+          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
+        `,
+      },
+      narrative: `
+        Your foes are caught by a sudden rift that shunts them painfully through dimensions, leaving some stranded.
+      `,
+      rank: 6,
+      scaling: "damage",
+    },
+    {
+      name: "Massive Sudden Rift",
+
+      // +3r for area, +2r for +1d
+      attack: {
+        hit: `
+          Each target takes 4d8 + half \\glossterm{power} energy damage.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.
         `,
       },
       narrative: `
         Your foes are caught by a sudden massive rift that shunts them painfully through dimensions.
       `,
-      rank: 5,
+      rank: 7,
       scaling: "damage",
     },
     {
