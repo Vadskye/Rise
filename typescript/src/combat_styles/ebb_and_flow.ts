@@ -110,7 +110,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You gain a +2 damage bonus with the strike.
+        You gain a +1 accuracy bonus and a +2 damage bonus with the strike.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses after making the strike.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
