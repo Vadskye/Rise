@@ -450,26 +450,15 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Greater Healing Salve",
+      name: "Empowered Healing Salve",
 
       functionsLike: {
         name: "healing salve",
-        exceptThat: "The healing increases to 2d10, and the Fortitude bonus increases to +3.",
+        exceptThat: "The healing increases to 4d6, and the Fortitude bonus increases to +4.",
       },
-      rank: 4,
-      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
+      rank: 5,
+      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
       tags: ['Swift'],
-    },
-
-    {
-      name: "Supreme Healing Salve",
-
-      functionsLike: {
-        name: "healing salve",
-        exceptThat: "The healing increases to 5d10, and the Fortitude bonus increases to +3.",
-      },
-      rank: 7,
-      tags: ['Swift (see text)'],
     },
 
     {
