@@ -10,7 +10,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        If that creature tries to attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 1,
@@ -23,6 +24,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This strike must be made using a slashing or bludgeoning weapon.
+        This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
@@ -35,6 +37,7 @@ export const ebbAndFlow: CombatStyle = {
         Choose a creature you can see.
         If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} with a -2 accuracy penalty against them as a \\glossterm{reactive attack} if possible.
         Your \\glossterm{power} with both strikes is halved.
+        These attacks resolve before the creature's attack, so if you incapacitate it with either strike, its attack does not affect you.
         You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 5,
@@ -204,6 +207,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Choose a creature you can see.
         If that creature takes a \\glossterm{standard action} that does not attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        This attack resolves before the creature's action, so if you incapacitate it with the strike, its action fails.
         You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
       rank: 3,
