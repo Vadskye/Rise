@@ -247,7 +247,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{lay on hands} ability as a standard action.
-                \begin{activeability}{Lay on Hands}[\abilitytag{Magical}]
+                \begin{activeability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or an adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.

@@ -234,7 +234,7 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 3,
       scaling: { special: "The recovery increases by +1d for each rank beyond 3." },
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Swift'],
     },
 
     {
@@ -246,7 +246,7 @@ export const heraldOfWar: CombatStyle = {
         You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 + half \\glossterm{power} \\glossterm{damage resistance}.
       `,
       rank: 7,
-      tags: ['Emotion'],
+      tags: ['Emotion', 'Swift'],
     },
 
     {

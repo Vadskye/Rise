@@ -510,7 +510,7 @@ export const aquamancy: MysticSphere = {
 
       effect: `
         When you move using one of your movement speeds, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
-        You can only transform into water in this way once during your movement, and you regain your normal form at the end of the movement.
+        You can only transform into water in this way once during your movement, and you return to your normal form at the end of the movement.
         In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
         You may move through squares occupied by enemies without penalty.
         Being \\grappled or otherwise physically constrained does not prevent you from transforming into water in this way.

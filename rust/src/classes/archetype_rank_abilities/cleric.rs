@@ -282,12 +282,11 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{divine aid} ability as a standard action.
-                \begin{activeability}{Divine Aid}[\abilitytag{Magical}, \abilitytag{Swift} (see text)]
+                \begin{activeability}{Divine Aid}[\abilitytag{Magical}, \abilitytag{Swift}]
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
-                    These defensive benefits are \abilitytag{Swift}, but the healing is not.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
@@ -428,7 +427,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{activeability}{Bless the Worthy}
+                \begin{activeability}{Bless the Worthy}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 

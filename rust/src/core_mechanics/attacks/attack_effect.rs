@@ -120,6 +120,7 @@ impl DamageEffect {
             format!(
                 "
                     If any creature loses \\glossterm<hit points> from this attack, {regain} {effect}
+                    This ability does not have the \\abilitytag<Swift> tag, so it resolves after attacks during the current phase.
                 ",
                 effect = effect.description(attacker),
                 regain = if attacker.is_character() { "you regain" } else { "the $name regains" },
