@@ -539,12 +539,11 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          you can choose how much the barrier blocks sound.
-            There are three possibilities: fully sound-permeable, fully sound-blocking like a normal \\spell{mystic barrier}, and sound-dampening.
-            You can change how much the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
+          you can choose whether the barrier blocks sound.
+          You can change whether the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
-            A sound-dampening barrier increases the \\glossterm{difficulty value} of sound-based Awareness checks by 20.
-            Sound-permeable and sound-dampening barriers do not block \\glossterm{line of effect} for effects that deal \\glossterm{sonic damage}, but a sound-dampening barrier makes everything \\trait{impervious} to \\glossterm{sonic damage} that originates from the other side of the barrier.
+          Both types of barrier still block \\glossterm{line of effect} for effects that deal \\glossterm{bludgeoning damage}, even if they narratively come from a sound or voice.
+          If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
         `,
         name: "mystic barrier",
       },
@@ -563,7 +562,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes energy damage equal to 1d10 plus your \\glossterm{power}.
+            Each object in the path of the wall takes bludgeoning damage equal to 1d10 plus your \\glossterm{power}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
         `,

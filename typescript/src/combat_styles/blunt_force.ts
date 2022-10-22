@@ -66,7 +66,6 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        Damage dealt by the strike is sonic damage in addition to its normal damage types.
         If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
       `,
       rank: 1,

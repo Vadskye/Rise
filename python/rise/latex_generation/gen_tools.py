@@ -398,10 +398,10 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d6+1 sonic damage.
+                On a hit, each target takes 1d6+1 bludgeoning damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d6+1 sonic damage and deafen",
+            short_description="Throw to deal 1d6+1 bludgeoning damage and deafen",
             upgrades=[
                 Upgrade(
                     rank=3,
@@ -409,15 +409,15 @@ def generate_tools():
                         The damage increases to 1d10+2.
                         In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
                     """,
-                    short_description="Throw to deal 1d10+2 sonic damage, deafen, and daze",
+                    short_description="Throw to deal 1d10+2 bludgeoning damage, deafen, and daze",
                 ),
                 Upgrade(
-                    rank=3,
+                    rank=5,
                     description="""
                         The damage increases to 2d8+5.
                         In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
                     """,
-                    short_description="Throw to deal 2d8+5 sonic damage, deafen, and stun",
+                    short_description="Throw to deal 2d8+5 bludgeoning damage, deafen, and stun",
                 ),
             ],
         ),
