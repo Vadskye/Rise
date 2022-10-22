@@ -224,15 +224,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes 1d4 \add half \glossterm{power} bludgeoning damage.
+                        \hit Each target takes 1d6 \add half \glossterm{power} bludgeoning damage.
 
                         \rankline
-                        \rank{2} The damage increases to 1d6, and the area increases to a \smallarea radius.
-                        \rank{3} The damage increases to 1d8, and the area increases to a \medarea radius.
-                        \rank{4} The damage increases to 1d10.
-                        \rank{5} The damage increases to 2d6, and the area increases to a \largearea radius.
-                        \rank{6} The damage increases to 2d8.
-                        \rank{7} The damage increases to 2d10, and the area increases to a \hugearea radius.
+                        \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
+                        \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
+                        \rank{4} The damage increases to 2d6.
+                        \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
+                        \rank{6} The damage increases to 2d10.
+                        \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
                     \end{activeability}
 
                     \begin{sustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -279,26 +279,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \crit The effect becomes a \glossterm{condition}.
 
                         \rankline
-                        \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
-                        \rank{3} The accuracy bonus increases to \plus2.
-                        \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        \rank{2} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                        \rank{3} You gain a \plus4 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
+                        \rank{4} The accuracy bonus increases to \plus6.
+                        \rank{5} The accuracy bonus increases to \plus8, and the area increases to a \hugearea radius.
+                        \rank{6} The accuracy bonus increases to \plus10.
+                        \rank{7} The accuracy bonus increases to \plus12, and the area increases to a \gargarea radius.
                     \end{activeability}
 
-                    \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}]
+                    \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes bludgeoning damage equal to 1d8 plus your \glossterm{power}.
+                        \hit The target takes psychic damage equal to 1d8 plus your \glossterm{power}.
 
                         \rankline
-                        \rank{2} The damage increases to 1d10.
-                        \rank{3} The damage increases to 2d8.
-                        \rank{4} The damage increases to 2d10.
-                        \rank{5} The damage increases to 4d8.
-                        \rank{6} The damage increases to 4d10.
-                        \rank{7} The damage increases to 6d10.
+                        You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
                     \end{activeability}
 
                     \begin{sustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -313,7 +308,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
+                        Make an attack vs. Mental against one creature within \shortrange.
                         \hit The target takes 1d6 + half \glossterm{power} bludgeoning damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
 

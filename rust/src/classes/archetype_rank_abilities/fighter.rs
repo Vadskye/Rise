@@ -379,7 +379,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You can use the \textit{protect} ability as a \glossterm{minor action}.
+                You can use the \textit{protect} ability as a \glossterm{free action}.
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
                     \rankline
                     Choose an \glossterm{ally} adjacent to you.
