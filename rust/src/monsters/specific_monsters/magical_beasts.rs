@@ -332,7 +332,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: 6,
         modifiers: Some(vec![
             Modifier::Attack(
-                StandardAttack::BreathWeaponLine(3, DamageType::Sonic, Defense::Fortitude)
+                StandardAttack::BreathWeaponLine(3, DamageType::Bludgeoning, Defense::Fortitude)
                     .attack()
                     .except(|a| a.name = "Sonic Lance".to_string()),
             ),

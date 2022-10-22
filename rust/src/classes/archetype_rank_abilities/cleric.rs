@@ -123,7 +123,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Turn Undead}
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
-                    \hit Each target is \frightened by you as a \glossterm{condition}.
+                    \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
@@ -286,8 +286,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
-                    In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses until the end of the round.
-                    Because this ability has the \abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
+                    In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
@@ -355,7 +354,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                At the end of each phase, you automatically know the identity and location of each living \glossterm{ally} within \longrange of you that lost \glossterm{hit points} during that phase.
+                At the end of each round, you automatically learn the identity and location of each living \glossterm{ally} within \longrange of you that lost \glossterm{hit points} during that round.
                 In addition, you can choose to \glossterm{teleport} to any one of those allies.
                 You arrive in the unoccupied square on solid ground closest to that ally.
             ",
@@ -434,7 +433,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
 
                     You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance}.
                     In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
-                    This ability cannot remove an effect applied during the current round.
 
                     \rankline
                     \rank{4} The recovery increases to 2d6.
@@ -476,10 +474,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \shaken by you as a \glossterm{condition}.
+                    \hit Each target is afraid of you as a \glossterm{condition}.
+                    If it has \glossterm{damage resistance} remaining, it is \shaken by you.
+                    Otherwise, it is \frightened by you.
 
                     \rankline
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
+                    \rank{7} The area increases to a \hugearea radius.
                 \end{activeability}
             ",
             modifiers: None,

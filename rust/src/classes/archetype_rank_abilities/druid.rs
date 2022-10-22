@@ -154,7 +154,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 Your benefits from each element improve.
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flying}).
-                    At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
                     \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
@@ -415,7 +415,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \rank{5} The skill bonuses increase to \plus5.
                         \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flying}).
-                        At the start of each phase, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{activeability}
 
                     \begin{activeability}{Form of the Hound}
@@ -564,6 +564,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
+                This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                 This cannot increase your hit points above half your maximum hit points.
             ",
             modifiers: None,
@@ -573,7 +574,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                When you heal using this ability, you can also remove one \glossterm{condition} that was not applied during the current round.
+                When you heal using this ability, you can also remove one \glossterm{condition}.
             ",
             modifiers: None,
         },
@@ -618,13 +619,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Instant Shift",
+            name: "Hybrid Aspect",
             is_magical: true,
             rank: 7,
             description: r"
-                You can change your \textit{wild aspect} as a \glossterm{minor action}.
-                When you change in this way, it gains the \abilitytag{Swift} tag, so you can use your new abilities immediately.
-                However, you do not gain the benefit of your \textit{regenerative shift} ability, and you \glossterm{briefly} cannot change wild aspects as a minor action again.
+                When you use your \textit{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
+                When you do, you increase your \glossterm{fatigue level} by two.
+                This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
             ",
             modifiers: None,
         },

@@ -157,8 +157,7 @@ def generate_apparel():
             tags=["Swift"],
             description="""
                 As a \\glossterm<free action>, you activate these bracers.
-                When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to Armor defense until the end of the round.
-                This ability has the \\abilitytag<Swift> tag, so it protects you against attacks against you during the current phase.
+                When you do, you increase your \\glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
             """,
             short_description="Can exert to gain instant +2 Armor defense",
             upgrades=[
@@ -186,8 +185,6 @@ def generate_apparel():
                 As a standard action, you can activate these bracers.
                 When you do, they emit a telekinetic burst of force.
                 Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
-                If you use this item during the \\glossterm<delayed action phase>,
-                    you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
                 On a hit, you \\glossterm<knockback> each target up to 15 feet in a straight line directly away from you.
             """,
             short_description="Can knock nearby creatures back",
@@ -280,19 +277,19 @@ def generate_apparel():
             material_type="Gloves",
             description="""
                 You can throw any item as if it had the Thrown (30/60) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                This does not improve your ability to throw items designed to be thrown, such as darts.
+                The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
             """,
-            short_description="Allows throwing any item 60 feet",
+            short_description="Allows throwing objects up to 60 feet",
         ),
         create_apparel(
             name="Throwing Gloves, Greater",
-            rank=4,
+            rank=6,
             material_type="Gloves",
             description="""
                 You can throw any item as if it had the Thrown (60/120) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                This can improve your ability to throw items designed to be thrown, such as darts.
+                The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
             """,
-            short_description="Allows throwing any item up to 120 feet",
+            short_description="Allows throwing objects up to 120 feet",
         ),
     ]
 
@@ -503,10 +500,10 @@ def generate_apparel():
             name="Phasestep Boots",
             rank=2,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
-                When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds until the end of the round.
+                When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
                 This does not allow you to move through inanimate objects.
                 If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
                 If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
@@ -517,7 +514,7 @@ def generate_apparel():
             name="Phasestep Boots, Greater",
             rank=4,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\mitem<phasestep boots>, except that their effect is always active.
             """,
@@ -527,7 +524,7 @@ def generate_apparel():
             name="Phasestep Boots, Supreme",
             rank=6,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\mitem<phasestep boots>, except that their effect is always active.
                 In addition, you ignore all sources of \\glossterm<difficult terrain>.
@@ -541,7 +538,7 @@ def generate_apparel():
             name="Boots of the Skydancer",
             rank=3,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
                 When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
@@ -554,7 +551,7 @@ def generate_apparel():
             name="Boots of the Skydancer, Greater",
             rank=5,
             material_type="Boots",
-            tags=["Swift"],
+            tags=[],
             description="""
                 These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts \\glossterm<briefly>.
             """,
@@ -577,7 +574,7 @@ def generate_apparel():
             rank=7,
             material_type="Boots",
             description="""
-                You are immune to all effects that reduce your movement speed or prevent you from moving, including nonmagical effects such as \\glossterm<difficult terrain>.
+                You are immune to all effects that reduce your movement speed or prevent you from moving, including \\glossterm<difficult terrain>.
                 This removes all penalties you would suffer for \\swimming.
                 This does not prevent you from being \\grappled, but you gain a +4 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
             """,
@@ -642,7 +639,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your land speed.
             """,
             short_description="Helps you survive when you become afraid",
         ),
@@ -652,7 +649,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your speed with all movement modes.
+                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your land speed.
             """,
             short_description="Drastically helps you survive when you become afraid",
         ),
@@ -678,16 +675,6 @@ def generate_apparel():
                 Being \\prone does not reduce your movement speed or your defenses.
             """,
             short_description="Move at full speed and defend normally while prone",
-        ),
-        create_apparel(
-            name="Belt of Scuttling, Supreme",
-            rank=6,
-            material_type="Belt",
-            tags=[],
-            description="""
-                Being \\prone does not reduce your movement speed, defenses, or accuracy.
-            """,
-            short_description="Act normally while prone",
         ),
     ]
 
@@ -734,7 +721,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> dazed.
             """,
             short_description="Dazes enemies when you are dazed or worse",
@@ -745,7 +732,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make an attack vs. Mental against all \\glossterm<enemies> adjacent to you.
+                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> stunned.
             """,
             short_description="Stuns enemies when you are dazed or worse",
@@ -1109,34 +1096,24 @@ def generate_apparel():
             name="Ring of Blessed Protection",
             rank=2,
             material_type="Ring",
-            tags=[],
+            tags=['Attune (deep)'],
             description="""
-                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, you may activate this item.
-                When you do, you increase your \\glossterm<fatigue level> by two, and the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
+                Whenever you are hit by a \\glossterm<critical hit> from a \\glossterm<strike>, this item automatically activates.
+                When it does, the attacker rerolls the attack against you, which may prevent the attack from getting a critical hit against you.
                 This does not protect any other targets of the attack.
-                You can choose to use this item after you learn the effects that the critical hit would have, but you must do so during the phase that the attack was made.
+                You stop being attuned to this item when it activates in this way, and you must attune to it again to gain its effects.
             """,
-            short_description="Can exert to protect against critical strikes",
+            short_description="Can protect against one critical strike",
         ),
         create_apparel(
             name="Ring of Blessed Protection, Greater",
-            rank=4,
+            rank=5,
             material_type="Ring",
-            tags=[],
-            description="""
-                This item functions like a \\textit<ring of blessed protection>, except that it also protects against any \\glossterm<mundane> attack, not just strikes.
-            """,
-            short_description="Can exert to protect against critical mundane attacks",
-        ),
-        create_apparel(
-            name="Ring of Blessed Protection, Supreme",
-            rank=7,
-            material_type="Ring",
-            tags=[],
+            tags=['Attune (deep)'],
             description="""
                 This item functions like a \\textit<ring of blessed protection>, except that it protects against any attack, not just strikes.
             """,
-            short_description="Can exert to protect against critical attacks",
+            short_description="Can protect against one critical attack",
         ),
     ]
 
@@ -1162,7 +1139,7 @@ def generate_apparel():
                 The ring must be worn for 24 hours before it begins to work.
 
                 In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
-                """,
+            """,
             short_description="Provides food, water, and rest",
         ),
     ]
@@ -1176,7 +1153,6 @@ def generate_apparel():
             description="""
                 At the end of each round, if you are not \\glossterm<unconscious> due to \\glossterm<fatigue>, you automatically remove one of your \\glossterm<vital wounds>.
                 You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
-                This cannot remove a vital wound you gained during the current round.
                 When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
             """,
             short_description="Automatically exert to remove vital wounds",
@@ -1356,8 +1332,8 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase>, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action other than moving during the \\glossterm<movement phase>.
+                At the end of each round, if you took no actions during the \\glossterm<action phase> of that round, you become \\trait<invisible> (see \\pcref<Invisible>).
+                This invisibility ends after you take any action during the action phase.
             """,
             short_description="Grants invisibility while mostly inactive",
         ),
@@ -1367,8 +1343,8 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Sensation"],
             description="""
-                At the end of each round, if you took no actions that round except for moving during the \\glossterm<movement phase> and taking \\glossterm<minor actions>, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action other than moving during the movement phase and taking \\glossterm<minor actions>.
+                At the end of each round, if you took no \\glossterm<standard actions> during that round, you become \\trait<invisible> (see \\pcref<Invisible>).
+                This invisibility ends after you take a standard action.
             """,
             short_description="Grants invisibility while slightly active",
         ),
@@ -1578,6 +1554,44 @@ def generate_apparel():
                 This belt functions like a \\mitem<utility belt>, except that the belt has ten pockets, each of which is a one foot cube on the inside.
             """,
             short_description="Contains ten very large pockets",
+        ),
+    ]
+
+    apparel += [
+        create_apparel(
+            name="Thieving Gloves",
+            rank=2,
+            material_type="Gloves",
+            tags=[],
+            description="""
+                As a \\glossterm<standard action>, you can activate these gloves.
+                When you do, the gloves absorb one Small or smaller object you are touching with them.
+
+                An absorbed object leaves no trace that it ever existed.
+                This weapon can hold no more than three objects at once.
+                If you attempt to absorb an object while gloves are full, the attempt fails.
+
+                As a free action, you can retrieve the last item absorbed by the gloves.
+                The item appears in your hand, or falls to the ground if your hand is occupied.
+                The item similarly reappears if you stop attuning to these gloves or take them off.
+            """,
+            short_description="Can absorb a small item",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The maximum size category that the gloves can absorb increases to Medium.
+                    """,
+                    short_description="Can absorb an item",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The maximum size category that the gloves can absorb increases to Large.
+                    """,
+                    short_description="Can absorb a large item",
+                ),
+            ],
         ),
     ]
 
@@ -2089,7 +2103,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
 
                 After you use this ability, you increase your \\glossterm<fatigue level> by one.
             """,
@@ -2103,7 +2116,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
             """,
             short_description="Can remove a condition",
         ),
@@ -2115,7 +2127,6 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this belt.
                 When you do, you remove up to two \\glossterm<conditions> affecting you.
-                This cannot remove an effects applied during the current round.
             """,
             short_description="Can remove two conditions",
         ),
@@ -2130,7 +2141,6 @@ def generate_apparel():
             description="""
                 As a \\glossterm<minor action>, you can activate this belt.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
 
                 After you use this belt, you increase your \\glossterm<fatigue level> by two.
             """,
@@ -2466,10 +2476,9 @@ def generate_apparel():
             name="Amulet of Shared Discipline",
             rank=4,
             material_type="Amulet",
-            tags=[],
+            tags=['Swift'],
             description="""
                 Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
-                This is not a \\abilitytag<Swift> effect, even if your \\ability<discipline> ability is a \\abilitytag<Swift> effect.
             """,
             short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
         ),
@@ -2477,7 +2486,7 @@ def generate_apparel():
             name="Amulet of Shared Discipline, Greater",
             rank=6,
             material_type="Amulet",
-            tags=[],
+            tags=['Swift'],
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
@@ -2809,6 +2818,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
         ),
@@ -2820,6 +2830,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
         ),
@@ -2831,6 +2842,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
         ),

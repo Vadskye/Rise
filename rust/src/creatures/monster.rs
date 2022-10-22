@@ -70,7 +70,7 @@ impl Monster {
 
         let defense_modifier = if level >= 15 {
             2
-        } else if level >= 6 {
+        } else if level >= 3 {
             1
         } else {
             0
@@ -382,7 +382,6 @@ impl Monster {
             "
                 \\pari \\textbf<HP> {hp}
                     \\monsep \\textbf<DR> {dr}
-                    {immunities}
                 \\pari \\textbf<Defenses>
                     Armor {armor}
                     \\monsep Fort {fort}
@@ -390,7 +389,6 @@ impl Monster {
                     \\monsep Ment {ment}
             ",
             hp = self.creature.calc_hit_points(),
-            immunities = "", // TODO
             dr = self.creature.calc_damage_resistance(),
             armor = self.creature.calc_defense(&Defense::Armor),
             fort = self.creature.calc_defense(&Defense::Fortitude),

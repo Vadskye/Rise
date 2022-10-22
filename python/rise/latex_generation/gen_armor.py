@@ -28,7 +28,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 2d6 energy damage.
             """,
             short_description="Deals 2d6 damage to attackers when you lose HP",
@@ -39,7 +39,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 4d6 energy damage.
             """,
             short_description="Deals 4d6 damage to attackers when you lose HP",
@@ -50,7 +50,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each \\glossterm<enemy> within a \\medarea radius from you that caused you to lose \\glossterm<hit points> during that phase.
+                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 5d10 energy damage.
             """,
             short_description="Deals 5d10 damage to attackers when you lose HP",
@@ -281,7 +281,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
+                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 2d8 energy damage.
             """,
             short_description="Deals 2d8 damage to adjacent attackers",
@@ -292,7 +292,7 @@ def generate_armor():
             material_type="Body armor",
             tags=["Attune (deep)"],
             description="""
-                At the end of each phase, make an attack vs. Fortitude against each creature adjacent to you that attacked you during that phase.
+                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
                 \\hit Each target takes 4d8 energy damage.
             """,
             short_description="Deals 4d8 damage to adjacent attackers",
@@ -658,17 +658,14 @@ def generate_armor():
     armor += [
         create_armor(
             name="Shield of Mystic Reflection",
-            rank=6,
-            tags=[],
+            rank=4,
+            tags=['Swift'],
             material_type="Shield",
             description="""
                 Whenever you use the \\ability<total defense> ability, you can activate this shield.
-                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you until the end of the round are redirected to target the creature using that ability instead of you.
+                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that target you this round also the creature using that ability in addition to you.
                 It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
-                After you activate this shield, you \\glossterm<briefly> cannot activate it again.
-
-                This is a \\abilitytag<Swift> ability, so it affects any abilities targeting you in the phase you take the total defense action.
             """,
             short_description="React to reflect magical attacks",
         ),

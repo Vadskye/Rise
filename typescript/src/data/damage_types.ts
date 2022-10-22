@@ -8,27 +8,28 @@ export const damageTypes: DamageType[] = [
   "cold",
   "electricity",
   "fire",
-  "sonic",
+  "psychic",
 ];
 
 export const physicalDamageTypes: DamageType[] = [
   "physical",
+  "acid",
   "bludgeoning",
   "piercing",
   "slashing",
 ];
 
 export const energyDamageTypes: DamageType[] = [
-  "acid",
   "energy",
   "cold",
   "electricity",
   "fire",
-  "sonic",
+  "psychic",
 ];
 
 export type DamageType =
   | "physical"
+  | "acid"
   | "bludgeoning"
   | "piercing"
   | "slashing"
@@ -37,5 +38,5 @@ export type DamageType =
   | "cold"
   | "electricity"
   | "fire"
-  | "sonic"
+  | "psychic"
   | "universal";

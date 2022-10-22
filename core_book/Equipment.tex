@@ -270,7 +270,6 @@ Items are divided into five broad categories, described below.
         Heavy weapons tend to have higher damage than lighter weapons.
         If you have a Strength of 3 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 penalty to \glossterm{accuracy} and a \minus1d damage penalty with the weapon while doing so.
         You can change your grip on a heavy weapon as a \glossterm{free action}.
-        Since this ability does not have the \abilitytag{Swift} tag, changing to a one-handed grip does not give you a \glossterm{free hand} in the current phase.
 
         \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, light and medium weapons are one size category smaller than the wielder, while heavy weapons are the same size category as the wielder.
         All weapons are \glossterm{lightweight} unless otherwise noted.
@@ -283,7 +282,7 @@ Items are divided into five broad categories, described below.
 
     \subsection{Weapon Range Limits}\label{Weapon Range Limits}
         Ranged weapon attacks become less accurate if the target is far away.
-        Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/360.
+        Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 90/270.
         The first number indicates the maximum range for a weapon's \glossterm{close range}.
         The second number indicates the maximum range for a weapon's \glossterm{long range}.
         You cannot attack a target that is beyond a weapon's long range limit.
@@ -295,7 +294,8 @@ Items are divided into five broad categories, described below.
     \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
         Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
         The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-        As a \glossterm{free action}, you can draw or sheathe up to two \glossterm{light weapons} or a single \glossterm{medium weapon} with the \abilitytag{Thrown} weapon tag.
+        As a \glossterm{free action}, you can draw or sheathe a single \glossterm{medium weapon} or up to two \glossterm{light weapons}, assuming they are easy to access.
+        Like other free actions, you cannot take this action twice in the same round, so you cannot draw and sheathe weapons in the same round.
         As a standard action, you can draw or sheathe any of the following equipment combinations: up to two \glossterm{medium weapons}, a medium weapon and a shield, one \glossterm{heavy weapon}, or one weapon that is concealed or otherwise difficult to access.
 
         A character can only store a limited number of weapons in locations that are easy to access in combat.
@@ -311,7 +311,6 @@ Items are divided into five broad categories, described below.
         This makes it easier to conceal (see \pcref{Sleight of Hand}).
         In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
         For example, you can draw this weapon and attack with it in the same phase.
-        \weapontagdef{Disarming} When you use the \textit{disarm} ability with this weapon, you can knock loose objects that are held in a single hand, but not objects that are held in two hands or well secured (see \pcref{Disarm}).
         \weapontagdef{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
         On a critical hit, this knockback distance is doubled.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
@@ -345,7 +344,6 @@ Items are divided into five broad categories, described below.
         Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
         Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
 
-        Medium thrown weapons can be drawn more quickly than other medium weapons (see \pcref{Drawing and Sheathing Weapons}).
         Heavy thrown weapons require a standard action to throw, rather being thrown as part of any \glossterm{strike} like normal.
         They are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon, so you are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
         \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
@@ -404,13 +402,13 @@ Items are divided into five broad categories, described below.
                 \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp)  & Compact, Thrown (30/60), Stealthy              \\
                 \tind Estoc                        & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp)  & Long, Versatile Grip                           \\
                 \tind Greatsword                   & Heavy  & \plus0  & 1d8   & Slashing                 & 0 (10 gp)  & Sweeping (2)                                   \\
-                \tind Rapier                       & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Disarming                                      \\
+                \tind Rapier                       & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Keen                                      \\
                 \tind Scimitar                     & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp)  & Keen, Mounted                                  \\
                 \tind Smallsword                   & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Keen                                           \\
 
                 Bows                               &        &         &        &                          &              &                                                \\
-                \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d6    & \tdash                   & 1 (40 gp)  & Projectile (120/360)                           \\
-                \tind Shortbow\fn{2}               & Medium & \plus0  & 1d4    & \tdash                   & 1 (40 gp)  & Projectile (90/270), Stealthy                  \\
+                \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d6    & \tdash                   & 1 (40 gp)  & Projectile (90/270)                           \\
+                \tind Shortbow\fn{2}               & Medium & \plus0  & 1d4    & \tdash                   & 1 (40 gp)  & Projectile (60/180), Stealthy                  \\
                 \tind Arrows (20)                  & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)   & Ammunition                                     \\
                 \tind Blunted arrows (20)          & \tdash & \minus1 & \tdash & Bludgeoning              & 0 (2 gp)   & Ammunition, Subdual                            \\
                 \tind Fire arrows (20)\fn{2}       & \tdash & \minus1 & \tdash & Piercing and fire        & 2 (25 gp)  & Ammunition                                     \\
@@ -432,10 +430,10 @@ Items are divided into five broad categories, described below.
                 Flexible weapons                   &        &         &        &                          &              &                                                \\
                 \tind Flail                        & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp)  & Tripping, Versatile Grip                       \\
                 \tind Heavy flail                  & Heavy  & \plus0  & 1d10    & Bludgeoning              & 0 (10 gp)  & Tripping                                       \\
-                \tind Two-section staff            & Heavy  & \plus0  & 1d8   & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
+                \tind Two-section staff            & Heavy  & \plus0  & 1d8   & Bludgeoning              & 0 (10 gp)  & Long, Tripping                            \\
+                \tind Nunchaku                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp)  & Tripping                            \\
                 \tind Slapjack                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp)  & Subdual                                        \\
-                \tind Whip\fn{2}                   & Light  & \plus1  & 1d3    & Bludgeoning              & 0 (10 gp)  & Disarming, Subdual, Tripping                   \\
+                \tind Whip\fn{2}                   & Light  & \plus1  & 1d3    & Bludgeoning              & 0 (10 gp)  & Long, Subdual, Tripping                   \\
 
                 Headed weapons                     &        &         &        &                          &              &                                                \\
                 \tind Light hammer                 & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp)  & Forceful, Thrown (30/60)                       \\
@@ -446,10 +444,10 @@ Items are divided into five broad categories, described below.
                 \tind Warhammer                    & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp)  & Forceful, Versatile Grip                       \\
 
                 Monk weapons                       &        &         &        &                          &              &                                                \\
-                \tind Jitte                        & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Disarming                                      \\
+                \tind Jitte                        & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Parrying                                      \\
                 \tind Kama                         & Light  & \plus2  & 1d4    & Slashing                 & 0 (10 gp)  & Tripping                                       \\
                 \tind Kunai                        & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Thrown (60/120)                                \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp)  & Disarming, Tripping                            \\
+                \tind Nunchaku                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp)  & Tripping                            \\
                 \tind Quarterstaff                 & Heavy  & \plus1  & 1d6    & Bludgeoning              & 0            & Long                                           \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d3    & Piercing and slashing    & 0 (10 gp)  & Ammunition, Compact, Thrown (30/60), Stealthy  \\
 
@@ -474,7 +472,7 @@ Items are divided into five broad categories, described below.
                 \tind Greatspear                   & Heavy  & \plus0  & 1d10    & Piercing                 & 0 (10 gp)  & Long                                           \\
                 \tind Javelin                      & Medium & \plus1  & 1d4    & Piercing                 & 0 (10 gp)  & Thrown (60/120)                                \\
                 \tind Lance                        & Heavy  & \plus0  & 1d8   & Piercing                 & 0 (10 gp)  & Long, Mounted                                  \\
-                \tind Ranseur                      & Heavy  & \plus0  & 1d8   & Piercing                 & 0 (10 gp)  & Disarming, Long                                \\
+                \tind Ranseur                      & Heavy  & \plus1  & 1d8   & Piercing                 & 0 (10 gp)  & Long                                \\
                 \tind Spear\fn{2}                  & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp)  & Thrown (30/60), Versatile Grip                 \\
 
                 Thrown weapons                     &        &         &        &                          &              &                                                \\
@@ -504,13 +502,13 @@ Items are divided into five broad categories, described below.
                 \tind Kukri                    & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)             \\
                 \tind Parrying dagger              & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp)  & Parrying, Stealthy, Thrown (30/60)                                        \\
                 Bows                           &         &        &        &                          &              &                                \\
-                \tind Flatbow\fn{2}            & Heavy   & \plus1 & 1d6    & \tdash                   & 1 (40 gp)  & Projectile (120/360)           \\
+                \tind Flatbow\fn{2}            & Heavy   & \plus1 & 1d6    & \tdash                   & 1 (40 gp)  & Projectile (90/270)           \\
                 \tind Heartseeker arrows (20)  & \tdash  & \plus0 & \tdash & Piercing                 & 2 (40 gp)  & Ammunition, Impact             \\
-                \tind Takedown bow\fn{2}       & Special & \plus0 & 1d6    & \tdash                   & 2 (200 gp) & Projectile (120/360 or 60/180) \\
+                \tind Takedown bow\fn{2}       & Special & \plus0 & 1d6/1d4    & \tdash                   & 2 (200 gp) & Projectile (90/270 or 60/180) \\
                 Club-like weapons              &         &        &        &                          &              &                                \\
                 \tind Culacula                 & Heavy   & \plus0 & 1d10    & Bludgeoning              & 0 (10 gp)  & Forceful, Impact, Parrying     \\
                 \tind Gnomish trick mace       & Light   & \plus2 & 1d4    & Bludgeoning              & 0 (10 gp)  & Impact, Tripping               \\
-                \tind Knobkerrie               & Medium  & \plus1 & 1d6    & Bludgeoning              & 0 (10 gp)  & Impact, Throwing (15/60)       \\
+                \tind Knobkerrie               & Medium  & \plus1 & 1d6    & Bludgeoning              & 0 (10 gp)  & Impact, Throwing (30/60)       \\
                 \tind Totokia                  & Medium  & \plus0 & 1d8   & Bludgeoning and piercing & 0 (10 gp)  & Impact, Versatile Grip         \\
                 Crossbows                      &         &        &        &                          &              &                                \\
                 \tind Arbalest\fn{2}           & Heavy   & \plus2 & 1d10    & \tdash                   & 2 (200 gp) & Impact, Projectile (90/270)    \\
@@ -520,15 +518,15 @@ Items are divided into five broad categories, described below.
                 \tind Bladed whip\fn{2}        & Medium  & \plus1 & 1d4    & Slashing                 & 1 (40 gp)  & Keen, Sweeping (1)             \\
                 \tind Chain whip               & Medium  & \plus1 & 1d6    & Bludgeoning              & 1 (40 gp)  & Long, Tripping                 \\
                 \tind Meteor hammer            & Heavy   & \plus0 & 1d10    & Bludgeoning              & 1 (40 gp)  & Long, Tripping                 \\
-                \tind Three-section staff      & Heavy   & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Disarming, Long, Tripping      \\
+                \tind Three-section staff      & Heavy   & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Long, Parrying, Tripping      \\
                 Headed weapons                 &         &        &        &                          &              &                                \\
                 \tind Dwarven longhammer       & Heavy   & \plus0 & 1d10    & Bludgeoning              & 1 (40 gp)  & Forceful, Long                 \\
                 \tind Dwarven shorthammer      & Light   & \plus2 & 1d4    & Bludgeoning              & 1 (40 gp)  & Forceful, Impact               \\
                 \tind Heavy pick               & Heavy   & \plus1 & 1d8   & Piercing                 & 1 (40 gp)  & Keen, Impact                   \\
                 \tind Obuch                    & Medium  & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Long, Tripping                 \\
                 Monk weapons                   &         &        &        &                          &              &                                \\
-                \tind Sai                      & Light  & \plus2  & 1d4    & Piercing or bludgeoning  & 0 (10 gp)  & Disarming, Parrying                            \\
-                \tind Three-section staff      & Heavy   & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Disarming, Long, Tripping      \\
+                \tind Sai                      & Light  & \plus2  & 1d4    & Piercing or bludgeoning  & 0 (10 gp)  & Grappling, Parrying                            \\
+                \tind Three-section staff      & Heavy   & \plus0 & 1d8   & Bludgeoning              & 1 (40 gp)  & Long, Parrying, Tripping      \\
                 Polearms                       &         &        &        &                          &              &                                \\
                 \tind Fauchard                 & Heavy   & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Long, Sweeping (2)             \\
                 \tind War scythe               & Heavy   & \plus0 & 1d10    & Slashing or piercing     & 1 (40 gp)  & Sweeping (2)                   \\
@@ -541,7 +539,7 @@ Items are divided into five broad categories, described below.
                 \tind Bolas                    & Light   & \plus2 & 1d3    & Bludgeoning              & 0 (10 gp)  & Thrown (30/60), Tripping       \\
                 \tind Dwarven throwing axe     & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Impact, Thrown (60/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Thrown (30/60), Versatile Grip \\
-                \tind Net\fn{2}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Thrown (15/30)                  \\
+                \tind Net\fn{2}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Thrown (5/15)                  \\
             \end{longtable}
             1 See \pcref{Item Ranks}. \\
             2 This weapon has special rules. \\
@@ -586,7 +584,7 @@ Items are divided into five broad categories, described below.
         \parhead{Bladed Whip} A bladed whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
         \parhead{Boot Dagger} A boot dagger is a modified boot or boot sole which contains a hidden dagger.
         The dagger is normally concealed, and requires an Awareness check with a \glossterm{difficulty value} of 15 to find.
-        Attacking with a boot dagger does not require a \glossterm{free hand}, but you must make a Balance check with a \glossterm{difficulty value} of 10 during each phase that you attack with it.
+        Attacking with a boot dagger does not require a \glossterm{free hand}, but you must make a Balance check with a \glossterm{difficulty value} of 10 during whenever you attack with it.
         If you fail this check, you fall \prone after the attack.
 
         After you attack with a boot dagger, the dagger remains plainly visible.
@@ -606,10 +604,10 @@ Items are divided into five broad categories, described below.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
         It takes a \glossterm{move action} to ignite a fire arrow assuming you have access to an active flame the size of a torch or larger.
         \parhead{Longbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the bow in the other hand.
-        \parhead{Net} A net is used to entangle enemies. When you throw a net, you make an attack vs. Reflex against your target. If you hit, the target is \slowed. If you control the trailing rope by succeeding on an opposed Strength check while holding it, the netted creature can move only within the limits that the rope allows.
-        \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has (2/10) and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
-        \par A net is useful only against creatures within one size category of you.
-        \par A net must be folded to be thrown effectively. The first time you throw your net in a fight, you make a normal ranged touch attack roll. After the net is unfolded, you take a \minus4 accuracy penalty with it. It takes 2 standard actions for a proficient user to fold a net and twice that many for a nonproficient one to do so.
+        \parhead{Net} A net is used to entangle enemies. When you throw a net, you make an attack vs. Reflex against your target. If you hit, the target is \slowed.
+        \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has 10 hit points and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
+        \par A net has no effect on creatures that are Tiny or smaller, or Huge or larger. It must be folded to be thrown effectively, which takes a minute of work. You take a \minus4 accuracy penalty with an unfolded net.
+        \par A net cannot be imbued with magic weapon properties.
         \parhead{Pike} A pike can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
         However, you cannot use it to attack targets adjacent to you.
         \parhead{Punch/Kick} All bipedal creatures have access to the punch/kick \glossterm{natural weapon}.
@@ -821,14 +819,6 @@ Items are divided into five broad categories, described below.
         \par You can't bash someone with a buckler.
         \parhead{Chain Shirt} A chain shirt comes with a steel cap.
         \parhead{Full Plate} The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check. The new owner must still be of the same size category as the size category that the suit was designed for.
-        \parhead{Gauntlet, Locked} This armored gauntlet has small chains and braces that allow the wearer to attach a weapon to the gauntlet so that it cannot be dropped easily.
-        As a \glossterm{standard action}, you can lock or unlock the gauntlet with a different free hand.
-        While the gauntlet is locked, any item held in that hand is extraordinarily well secured.
-        This can prevent you from dropping the item if you are affected by the \textit{disarm} ability or similar effects (see \pcref{Disarm}).
-        However, you are unable to use that hand for any purpose other than holding the item until you unlock the gauntlet.
-        \par The price given is for a single locked gauntlet.
-        If you are wearing armor that normally has gauntlets, you can replace one or both of those gauntlets with a locked gauntlet with no significant weight increase.
-        Unless otherwise specified, all medium and heavy body armor comes with gauntlets.
         \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A standard shield is so cumbersome that you can't use your shield hand for anything else.
         \subparhead{Shield Bash Attacks}\label{Shield Bash Attacks} You can bash an opponent with a standard shield, using it as a medium bludgeoning weapon. See \trefnp{Weapons} for the damage dealt by a shield bash.
         Magical abilities on a shield do not affect shield bash attacks made with it, and magic weapon properties cannot be applied to a shield.
@@ -951,12 +941,14 @@ Items are divided into five broad categories, described below.
 
         \parhead{Starmetal} Starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
         In addition, it increases the \glossterm{encumbrance} of the armor by 2.
-        When you use the \textit{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        This effect is \abilitytag{Swift}, like the \ability{recover} ability.
         The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Starmetal, Pure} Pure starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 4.
         In addition, it increases the \glossterm{encumbrance} of the armor by 2.
-        When you use the \textit{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        This effect is \abilitytag{Swift}, like the \ability{recover} ability.
         The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
 \newpage

@@ -66,7 +66,6 @@ For details, see \pcref{Attunement}.
 For details, see \pcref{Base Speed}.
 
 \glossdef{briefly}[brief] An effect that lasts briefly, or a brief effect, lasts until after the end of the next round after the effect was applied.
-As normal, unless the effect has the \abilitytag{Swift} tag, it does not have any effect during the phase that it is applied.
 
 \glossdef{bright illumination} In an area with bright illumination, creatures can see clearly.
 A creature can't hide in an area with bright illumination unless it is invisible or has cover.
@@ -100,6 +99,8 @@ For details, see \pcref{Casting Components}.
 
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
+
+\glossdef{chain} See \pcref{Electromancy}.
 
 \glossdef{check}[checks] A check is a d10 roll required to accomplish an action that has a chance of failure that is not an attack.
 If the result of your roll, including your modifier, is high enough, you succeed.
@@ -183,10 +184,6 @@ If there is ambiguity about whether a surrendering or seemingly incapacitated en
 There are four defenses: Armor, Fortitude, Reflex, and Mental.
 For details, see \pcref{Defenses}.
 
-\glossdef{delayed action phase} The delayed action phase is a \glossterm{phase} that occurs after the \glossterm{action phase}.
-It is not always necessary, because most actions are not delayed.
-For details, see \pcref{The Delayed Action Phase}.
-
 \glossdef{destroyed} A destroyed object has been damaged to the point where it is completely beyond repair.
 For details, see \pcref{Destroyed Objects}.
 
@@ -201,7 +198,7 @@ For details, see \pcref{Dice Pools}.
 \glossdef{dice pool}[dice pools] A dice pool is a collection of dice that are all rolled together and summed to find a result.
 For details, see \pcref{Dice Pools}.
 
-\glossdef{difficult terrain} Difficult terrain costs double the normal movement cost to move out of.
+\glossdef{difficult terrain} Difficult terrain costs an additional 5 feet of movement to move out of.
 For details, see \pcref{Difficult Terrain}.
 
 \glossdef{difficulty value} The difficulty value of a \glossterm{check} is the check result required to succeed.
@@ -210,9 +207,6 @@ In general, attacks are rolled to beat \glossterm{defenses}, and checks are roll
 
 \glossdef{dirty trick} You can use the \textit{dirty trick} ability to impair a foe by using your environment.
 For details, see \pcref{Dirty Trick}.
-
-\glossdef{disarm} You can use the \textit{disarm} ability to strike items held or worn by a creature.
-For details, see \pcref{Disarm}.
 
 \glossdef{disease} An affliction of the body, causing a steady deterioration over time.
 
@@ -236,7 +230,7 @@ For details, see \pcref{Encumbrance}.
 An enemy is any creature you consider to be an enemy.
 For details, see \pcref{Allies and Enemies}.
 
-\glossdef{energy damage}[energy] There are five types of energy damage: acid, cold, electricity, fire, and sonic.
+\glossdef{energy damage}[energy] There are four types of energy damage: cold, electricity, fire, and psychic.
 For details, see \pcref{Damage Types}.
 
 \glossdef{environmental damage}[environmental] Environmental damage is a type of damage.
@@ -247,7 +241,7 @@ For details, see \pcref{Environmental Damage}.
 They are unusually difficult to wield, and even being \glossterm{proficient} with the associated \glossterm{weapon group} does not grant you the ability to use an exotic ewapon.
 Some class abilities grant proficiency with exotic weapons.
 
-\glossdef{explode}[explodes] When you roll a 10 on an \glossterm{attack roll}, the die can explode.
+\glossdef{explode}[explosions] When you roll a 10 on an \glossterm{attack roll}, the die can explode.
 If it does, you roll it again and add the two results together to determine the total.
 For details, see \pcref{Exploding Attacks}.
 
@@ -275,7 +269,7 @@ For details, see \pcref{Fatigue Penalty}.
 For details, see \pcref{Fatigue Tolerance}.
 
 \glossdef{fly speed} A creature with a fly speed has the ability to fly through the air.
-Its speed is the distance it covers in a single \glossterm{move action}.
+Its speed is the distance it covers in a single \glossterm{movement}.
 For details, see \pcref{Flying}.
 
 \glossdef{forced movement} A forced movement ability can cause a creature to move unwillingly.
@@ -311,17 +305,17 @@ For details, see \pcref{Weapon Usage Classes}.
 \glossdef{heavyweight} A heavyweight object has a \glossterm{weight category} that is one category larger than the object's \glossterm{size category}.
 For details, see \pcref{Weight Categories}.
 
-\glossdef{hidden task}[hidden tasks] Any checks for a hidden \glossterm{task} should be rolled secretly by the GM.\@
-You should not know the result of your check, or even that a check was made.
-For details, see \pcref{Hidden Tasks}.
-
 \glossdef{hit point} Your hit points measure how hard you are to seriously injure or kill.
 You lose hit points when you take damage.
 If you run out of hit points, you gain \glossterm{vital wounds} when you take damage instead, which can cause you to die quickly.
 For details, see \pcref{Hit Points}.
 
+\glossdef{icy terrain} See \pcref{Cryomancy}.
+
 \glossdef{immune} A creature that is immune to a particular damage type, debuff, or other ability treats that effect as if it did not exist.
-If the entire effect of a \glossterm{condition} would be to apply a debuff that a creature is immune to, the creature does not gain that condition at all.
+An immune creature cannot gain \glossterm{conditions} or similar effects like \glossterm{poison} if it is immune to them, or if the only effect of that condition would be to apply a specific debuff that it is immune to.
+In addition, a creature that temporarily becomes immune to an effect immediately removes all instances of that effect.
+For example, a creature that suddenly becomes immune to poison would remove all poisons currently affecting it, and those poisons would not return once the immunity ends.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
@@ -345,7 +339,8 @@ Some skills, such as Persuasion, do not have a key attribute.
 
 \glossdef{knockback}[knocked back] Knockback is a type of \glossterm{forced movement}.
 It represents being thrown backwards by a single large impact.
-If a creature or object being knocked back encounters an obstacle, it and the obstacle each take 1d6 bludgeoning \glossterm{environmental damage} per 10 feet of movement remaining, up to a maximum of 20d6 damage.
+If a creature or object being knocked back encounters an obstacle, it and the obstacle each take 1d6 bludgeoning damage per 10 feet of movement remaining, up to a maximum of 20d6 damage.
+A knockback movement is always a single straight line.
 
 \glossdef{land speed} A creature's land speed is a \glossterm{movement mode} that determines how fast it can walk on land.
 For details, see \pcref{Movement Modes}.
@@ -414,9 +409,15 @@ For details, see \pcref{Weapon Usage Classes}.
 \glossdef{melee}[Melee] A melee attack is an attack using your body or a weapon that does not leave your grasp.
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
 
-\glossdef{minor action}[minor actions] Each round, you can take a single minor action in addition to your other actions that round.
-Minor actions can be taken in either the \glossterm{action phase} or the \glossterm{delayed action phase}.
-They are declared and resolved simultaneously with any other actions you take during that phase.
+\glossdef{metallic} A creature is considered metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
+This includes any \glossterm{body armor} with a metal material type.
+It also includes exposed metal objects or parts of objects that are no more than two size categories smaller than the creature.
+This includes most weapons with any metallic components.
+It does not include creatures who have small amounts of metal safely stowed in larger containers, such as a common amount of coins or metallic tools stowed in a coin purse or backpack.
+
+Similarly, an object is generally considered metallic if it has an exposed piece made of metal that is no more than two size categories larger than the object as a whole.
+
+\glossdef{minor action}[minor actions] Each round, you can take a single minor action during the \glossterm{action phase}.
 For details, see \pcref{Minor Actions}.
 
 \glossdef{miss chance}[miss chances] If you have a miss chance with an \glossterm{attack}, you have a random chance to miss with the attack regardless of the result of your attack roll.
@@ -426,10 +427,10 @@ If you have multiple miss chances, only the highest one applies.
 
 \glossdef{move} When you move, you usually travel a distance equal to your speed.
 See \pcref{Movement and Positioning}, for details.
-For specific actions that involve movement, see \glossterm{move action}.
+For specific actions that involve movement, see \glossterm{movement}.
 
-\glossdef{move action}[move actions] A move action is one of the types of actions you can take each \glossterm{round}.
-Abilities that require a move action typically move you around the battlefield, and are usually used in the \glossterm{movement phase}.
+\glossdef{movement} You can make one movement during the \glossterm{movement phase} of each round.
+Abilities that require a movement typically move you around the battlefield.
 For details, see \pcref{Movement and Positioning}.
 
 \glossdef{movement mode}[movement modes] A movement mode is a method of moving from one location to another.
@@ -472,7 +473,7 @@ There are two phases: the \glossterm{movement phase} and the \glossterm{action p
 A phase does not represent a fixed span of time.
 It is an abstract concept designed to represent a variety of actions that all take place nearly simultaneously.
 
-\glossdef{physical damage} There are three types of physical damage: bludgeoning, piercing, and slashing.
+\glossdef{physical damage} There are four types of physical damage: acid, bludgeoning, piercing, and slashing.
 For details, see \pcref{Damage Types}.
 
 \glossdef{planar rift}[planar rifts] A planar rift is a location where the boundaries between planes are unusually thin.
@@ -516,12 +517,14 @@ For details about how to attack with projectile weapons, see \pcref{Projectile S
 \glossdef{push}[pushed] A push is a type of \glossterm{forced movement}.
 It represents being pushed by a constant force.
 If a creature being pushed encounters an obstacle, it stops moving with no negative consequences.
+You cannot be pushed vertically, only horizontally along a solid surface.
+A push movement is always a single straight line.
 
 \glossdef{range} The range of an ability determines how far away it can be used.
 Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
 For details, see \pcref{Range}.
 
-\glossdef{range limits} Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 120/480.
+\glossdef{range limits} Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
 The first number indicates the maximum range for a weapon's \glossterm{close range}.
 The second number indicates the maximum range for a weapon's \glossterm{long range}.
 For details, see \pcref{Weapon Range Limits}.
@@ -531,6 +534,15 @@ The rank defines the minimum \glossterm{archetype rank} you must have to learn a
 
 \glossdef{rare language}[rare languages] Rare languages are languages that are only spoken by rare or distant creatures or cultures.
 They are described in \tref{Rare Languages}.
+
+\glossdef{reactive attack} A reactive attack is an \glossterm{attack} that you make during the resolution of another creature's actions.
+You cannot modify a reactive attack in any way - it happens entirely outside of your control.
+For example, you cannot use the \ability{desperate exertion} ability to reroll a reactive attack.
+If you would make multiple reactive attacks during the same phase with the same ability against different targets, use the same attack roll for each target.
+A reactive attack can never be triggered by a reactive attack or reactive check.
+
+\glossdef{reactive check} A reactive check is a \glossterm{check} that you make during the resolution of another creature's actions.
+Just like a \glossterm{reactive attack}, you cannot modify a reactive check in any way.
 
 \glossdef{resource} A resource is something that a character can lose during play or expend to gain a benefit.
 Most resources are shared between all types of characters, though different characters can use them differently.
@@ -624,7 +636,7 @@ Mundane results of magical abilities that have already occured, such as the wate
 
 \glossdef{sustain}[sustained] Some abilities last as long as you sustain them.
 Each ability specifies a particular action that is required to sustain the ability, such as a \glossterm{minor action}.
-At the end of each round the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
+When \abilitytag{Swift} abilities resolve during each \glossterm{action phase}, the ability is dismissed unless you take the action to sustain the ability that round.
 For details, see \pcref{Sustained Abilities}.
 
 \glossdef{Swift} An ability with this \glossterm{ability tag} resolves its effects before other actions in the same phase.
@@ -643,10 +655,6 @@ A target square is chosen to determine \glossterm{cover} and \glossterm{concealm
 A spell that affects an area is not a targeted ability, because you choose the area affected instead of choosing the targets directly.
 A \glossterm{strike} is a targeted ability, and so is a spell or other special ability that causes you to immediately make a single strike.
 
-\glossdef{task} A task is a particular way to use a \glossterm{skill}.
-For example, balancing on slippery ground is a task that you can use the Balance skill for (see \pcref{Balance}).
-For details, see \pcref{Tasks}.
-
 \glossdef{telepathy} A creature with telepathy can mentally communicate with other creatures within a given range.
 For details, see \pcref{Telepathy}.
 
@@ -655,6 +663,8 @@ For deatils, see \pcref{Teleportation}.
 
 \glossdef{thrown weapon}[thrown weapons] A thrown weapon is a weapon designed to be thrown at a target.
 For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
+
+\glossdef{time lock} See \pcref{Chronomancy}.
 
 \glossdef{trained} If you are trained in a \glossterm{skill}, you have learned how to use it well.
 Your modifier with a trained skill is equal to 3 \add the higher of its associated attribute (if any) and half your level.

@@ -1,7 +1,7 @@
 import { MysticSphere } from ".";
 
-export const bless: MysticSphere = {
-  name: "Bless",
+export const prayer: MysticSphere = {
+  name: "Prayer",
   shortDescription: "Grant divine blessings to aid allies and improve combat prowess.",
   sources: ["divine"],
 
@@ -10,7 +10,6 @@ export const bless: MysticSphere = {
       effect: `
         Choose one adjacent \\glossterm{ally}.
         The target gains a +1 bonus to \\glossterm{accuracy} this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the target's attacks during the current phase.
       `,
       name: "Boon of Competence",
       scaling: {
@@ -93,9 +92,8 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the target makes a \\glossterm{strike} this round,
-        it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        Because this ability has the \\abilitytag{Swift} tag, it can affect an attack the target makes during the current phase.
+        The next time the target makes a \\glossterm{strike} this round,
+          it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
@@ -104,7 +102,7 @@ export const bless: MysticSphere = {
         5: `The accuracy bonus increases to +4.`,
         7: `The accuracy bonus increases to +5.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -113,7 +111,6 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
-        Because this ability has the \\abilitytag{Swift} tag, it affects attacks the target makes during the current phase.
         If you cast this spell on yourself, it affects the first attack you make before the end of the next round.
       `,
       rank: 2,
@@ -121,7 +118,7 @@ export const bless: MysticSphere = {
         4: `The accuracy bonus increases to +5.`,
         6: `The accuracy bonus increases to +6.`,
       },
-      tags: ["Swift"],
+      tags: [],
     },
 
     {
@@ -157,14 +154,10 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 bonus to \\glossterm{defenses} against \\glossterm{poisons} and \\glossterm{diseases}.
+        Each target is \\glossterm{impervious} to \\glossterm{poisons} and \\glossterm{diseases}.
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
       `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +6.`,
-        7: `The bonus increases to +8.`,
-      },
       type: "Attune (target)",
     },
 
@@ -173,14 +166,10 @@ export const bless: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 bonus to \\glossterm{defenses} against \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
+        Each target is \\glossterm{impervious} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} effects.
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
       `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +6.`,
-        7: `The bonus increases to +8.`,
-      },
       type: "Attune (target)",
     },
 
@@ -220,7 +209,6 @@ export const bless: MysticSphere = {
 
       effect: `
         You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-        This cannot remove an effect applied during the current round.
       `,
       rank: 4,
       scaling: {
@@ -233,7 +221,6 @@ export const bless: MysticSphere = {
 
       effect: `
         You and each \\glossterm{ally} within a \\smallarea radius from you can each remove a \\glossterm{condition}.
-        This cannot remove effects applied during the current round.
       `,
       rank: 6,
     },
@@ -289,23 +276,8 @@ export const bless: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
-        This cannot remove a condition applied during the current round.
       `,
       rank: 7,
-      type: "Attune (target)",
-    },
-
-    {
-      name: "Blessing of Wakefulness",
-
-      // This spell intentionally can't be cast as a minor action to avoid making waking creatures too easy
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target cannot fall asleep or be knocked unconscious, even by \\glossterm{vital wounds}.
-        This does not prevent the target from dying due to vital wounds.
-        If a target is already unconscious for any reason, this spell wakes it up before it decides whether to attune to this spell.
-      `,
-      rank: 3,
       type: "Attune (target)",
     },
 
@@ -364,7 +336,7 @@ export const bless: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +1 bonus to all \\glossterm{defenses} until the end of the round.
+        In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
@@ -372,27 +344,15 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Greater Boon of Shielding",
+      name: "Empowered Boon of Shielding",
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to all \\glossterm{defenses} until the end of the round.
+        The target regains 2d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
       `,
-      rank: 4,
+      rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
-      tags: ['Swift'],
-    },
-
-    {
-      name: "Supreme Boon of Shielding",
-
-      effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +3 bonus to all \\glossterm{defenses} until the end of the round.
-      `,
-      rank: 7,
       tags: ['Swift'],
     },
 
@@ -406,9 +366,9 @@ export const bless: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: 'You gain a +2 damage bonus with the strike.',
-        5: 'The damage bonus increases to +4.',
-        7: 'The damage bonus increases to +8.',
+        3: 'The accuracy bonus increases to +3.',
+        5: 'The accuracy bonus increases to +4.',
+        7: 'The accuracy bonus increases to +5.',
       },
     },
 
@@ -417,12 +377,124 @@ export const bless: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
-        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{bless} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
+        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{prayer} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
       `,
       rank: 4,
-      scaling: {
-        6: 'You gain a +1 accuracy bonus with the strike.',
+    },
+
+    {
+      name: "Curse of Fugue",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\dazed until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
       },
+      rank: 2,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Intense Curse of Fugue",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\stunned until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 6,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Curse of Sloth",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          While the target is below its maximum \\glossterm{hit points}, it is \\slowed.
+          This effect lasts until the target takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Efficient Curse of Sloth",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target is \\slowed until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Curse of Blindness",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          While the target is below its maximum \\glossterm{hit points}, it is \\blinded.
+          This effect lasts until the target takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: "accuracy",
+      tags: ["Curse"],
+    },
+    {
+      name: "Holy Blades",
+
+      effect: `
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target's weapons shed light like a torch.
+        In addition, all damage they deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
+      `,
+      rank: 1,
+      type: "Attune (target)",
+    },
+    {
+      name: "Curse of Flammability",
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
+        Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
+        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each of your actions.
+
+        It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
+        Dropping \\prone as part of this action gives a +5 bonus to this check.
+        Putting out the flames in this way does not remove this curse.`,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+
+      rank: 3,
+      scaling: "accuracy",
+      tags: ["Curse"],
     },
   ],
   rituals: [
@@ -457,20 +529,20 @@ export const bless: MysticSphere = {
     },
 
     {
-      name: "Enduring Greater Fortification",
+      name: "Enduring Empowered Fortification",
 
       castingTime: "24 hours",
       functionsLike: {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: "greater fortification",
+        name: "empowered fortification",
       },
       rank: 5,
     },
 
     {
-      name: "Greater Fortification",
+      name: "Empowered Fortification",
 
       castingTime: "one hour",
       functionsLike: {

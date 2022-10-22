@@ -17,17 +17,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Dazing Fist+",
-
-      // -2 ranks due to unarmed limitation
-      effect: `
-        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
-      `,
-      rank: 5,
-    },
-
-    {
       name: "Stunning Fist",
 
       // -2 ranks due to unarmed limitation
@@ -36,7 +25,7 @@ export const dirtyFighting: CombatStyle = {
         Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -140,64 +129,28 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Disarm Weapon",
+      name: "Disarm",
 
-      functionsLike: {
-        abilityType: "ability",
-        exceptThat: `
-          you can also knock loose objects held in a single hand.
-          On a critical hit, you can also knock loose an object held in two hands.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-
-          After you successfully knock an item loose from a creature with this ability, it gains a +5 bonus to its defenses against this ability until it takes a \\glossterm{short rest}.
-        `,
-        name: "disarm",
-      },
-      rank: 3,
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        If your attack result beats a damaged creature's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+      `,
+      rank: 5,
+      tags: ['Size-Based'],
     },
 
     {
       name: "Steal Weapon",
 
       functionsLike: {
-        abilityType: "maneuver",
         exceptThat: `
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-        `,
-        name: "disarm weapon",
-      },
-      rank: 5,
-    },
-
-    {
-      name: "Steal Weapon+",
-
-      functionsLike: {
-        abilityType: "maneuver",
-        exceptThat: `
-          you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
-
-          In addition, if you use this ability during the \\glossterm{action phase}, you can make a \\glossterm{strike} with a weapon you stole this way during the \\glossterm{delayed action phase}.
-        `,
-        name: "disarm weapon",
-      },
-      rank: 7,
-    },
-
-    {
-      name: "Sunder",
-
-      functionsLike: {
-        abilityType: "ability",
-        exceptThat: `
-          if you deal damage to an item and your attack roll also beats an attending creature's Armor defense, you may choose to deal damage to the attending creature in addition to its item.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: "disarm",
       },
-      rank: 3,
+      rank: 7,
     },
 
     {
@@ -223,9 +176,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: "maneuver",
         exceptThat: `
-          you do not treat the space occupied by creatures you move through as difficult terrain.
-          In addition, the damage increases to 4d8 + half \\glossterm{power}.
-          Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
+          the damage increases to 4d8 + half \\glossterm{power}.
         `,
         name: "battering ram",
       },
@@ -249,22 +200,15 @@ export const dirtyFighting: CombatStyle = {
       name: "Slipstrike",
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        Make a melee \\glossterm{strike} with a +2 damage bonus.
         After making the strike, you fall \\prone.
-        If you use this ability during the \\glossterm{delayed action phase}, you are also unable to stand up during the next round's \\glossterm{movement phase}.
       `,
       rank: 1,
-    },
-
-    {
-      name: "Unbalancing Strike",
-
-      effect: `
-        Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike \\glossterm{briefly} takes a -2 penalty to Reflex defense.
-      `,
-      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
 
     {
@@ -273,10 +217,9 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike falls \\prone if it is no larger than one size category larger than you.
-        A creature knocked prone in this way cannot be knocked prone by this effect again until it takes a \\glossterm{short rest}.
+        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -285,9 +228,9 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\slowed.
+        Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 1,
+      rank: 5,
     },
 
     {
@@ -305,9 +248,31 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        Each creature damaged by the strike \\glossterm{briefly} treats you as being \\trait{invisible} (see \\pcref{Invisible}).
+        As a \\glossterm{condition}, each creature that loses \\glossterm{hit points} from the strike treats you as being \\trait{invisible} (see \\pcref{Invisible}).
       `,
-      rank: 5,
+      rank: 3,
+    },
+
+    {
+      name: "Eye Jab",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
+      `,
+      rank: 1,
+    },
+
+    {
+      name: "Eye Gouge",
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Your \\glossterm{power} with the strike is halved.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+      `,
+      rank: 7,
     },
   ],
 };

@@ -8,6 +8,7 @@ export function generateMysticSphereSummaries(): string {
 
 function generateMysticSphereSummary(sphere: MysticSphere): string {
   const spells = sortByRankAndLevel(sphere.spells);
+  // console.log('sphere.name, spells.length', sphere.name, spells.length);
   const ranks = [1, 2, 3, 4, 5, 6, 7];
   const spellsByRank = _.groupBy(spells, (s) => s.rank);
   return `

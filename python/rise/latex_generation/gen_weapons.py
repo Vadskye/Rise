@@ -29,20 +29,19 @@ def generate_weapons():
             # tags=[tag],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-                All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
+                All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
-                Each creature that loses \\glossterm<hit points> from the strike is \\deafened as a \\glossterm<condition>.
+                Each creature damaged by the strike is \\deafened as a \\glossterm<condition> if your attack results also beats its Fortitude defense.
             """,
-            short_description="Deals sonic damage and can deafen",
+            short_description="Deals bludgeoning damage and can deafen",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You do not have to make a special attack to deafen creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature becomes \\deafened as a \\glossterm<condition>.
+                        You gain a +2 accuracy bonus with the concussive strike.
                     """,
-                    short_description="Deals sonic damage and deafens",
+                    short_description="Deals bludgeoning damage and can deafen",
                 ),
             ]
         ),
@@ -58,17 +57,18 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
-                Each creature that loses \\glossterm<hit points> from the strike takes additional fire damage at the end of the next round equal to your damage dice with that strike.
+                Your \\glossterm<power> with the strike is halved.
+                Each creature damaged by the strike burns if your attack result beats its Reflex defense.
+                A burning creature takes fire damage equal to the damage you dealt with the strike during the next \\glossterm<action phase>.
             """,
             short_description="Deals fire damage and can ignite",
             upgrades=[
                 Upgrade(
                     rank=6,
                     description="""
-                        You do not have to make a special attack to ignite creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature takes additional fire damage at the end of the next round equal to your damage dice with that strike.
+                        Your power with the fiery strike is not halved.
                     """,
-                    short_description="Deals fire damage and ignites",
+                    short_description="Deals fire damage and can ignite",
                 ),
             ]
         ),
@@ -76,30 +76,25 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Arcing",
+            name="Chaining",
             rank=2,
             tags=[],
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
-                % TODO: note that it explicitly *does* work if you hit an object like the ground
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                The strike also affects one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
-                This effect triggers even if the primary target was an inanimate object, like the ground.
-                The secondary target does not have to be adjacent to you.
+                The strike \\spheredef<chains> once (see \\pcref<Electromancy>).
+                Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
-            short_description="Deals electicity damage and can arc 15 feet",
+            short_description="Deals electricity damage and can chain 15 feet",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        You do not have to make a special attack to hit extra creatures with the weapon.
-                        Whenever you make a strike, the strike can also affect one \\glossterm<secondary target> within 15 feet of the strike's \\glossterm<primary target>.
-                        This effect triggers even if the primary target was an inanimate object, like the ground.
-                        The secondary target does not have to be adjacent to you.
+                        The strike \\spheredef<chains> three times (see \\pcref<Electromancy>).
                     """,
-                    short_description="Deals electricity damage and arcs 15 feet",
+                    short_description="Deals electricity damage and can chain multiple times",
                 ),
             ]
         ),
@@ -115,17 +110,17 @@ def generate_weapons():
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
-                Each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\slowed.
+                Your \\glossterm<power> with the strike is halved.
+                Each creature that loses \\glossterm<hit points> from the strike is \\slowed as a \\glossterm<condition>.
             """,
-            short_description="Can deal cold damage and briefly slow",
+            short_description="Deals cold damage and can slow",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You do not have to make a special attack to slow creatures with the weapon.
-                        Whenever you cause a creature to lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, that creature becomes \\glossterm<briefly> \\slowed.
+                        Your \\glossterm<power> with the frigid strike is not halved.
                     """,
-                    short_description="Deals cold damage and can briefly slow",
+                    short_description="Deals cold damage and can slow",
                 ),
             ]
         ),
@@ -403,7 +398,7 @@ def generate_weapons():
             name="Onslaught",
             rank=1,
             description="""
-                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +10 foot bonus to your speed with all movement modes during the next round.
+                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, you gain a +10 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
@@ -469,7 +464,7 @@ def generate_weapons():
             description="""
                 As a standard action, you can make a \\glossterm<strike> with using this weapon.
                 You can \\glossterm<briefly> apply a dimensional trace on one creature that was dealt damage by that strike.
-                At the start of each \\glossterm<action phase>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can choose to automatically \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
+                As a \\glossterm<free action>, if any creature within \\distrange of you has a dimensional trace active from this weapon, you can \\glossterm<teleport> into the closest unoccupied square adjacent to that creature.
             """,
             short_description="Can briefly teleport next to struck creature",
             upgrades=[
@@ -490,7 +485,7 @@ def generate_weapons():
             name="Bloodspray",
             rank=2,
             description="""
-                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, make an attack vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
+                Whenever you \\glossterm<defeat> a creature with a \\glossterm<strike> using this weapon, make a \\glossterm<reactive attack> vs. Reflex against all \\glossterm<enemies> adjacent to that creature.
                 On a hit, each target is \\glossterm<briefly> \\dazzled.
                 You gain a +2 \\glossterm<accuracy> bonus with this secondary attack if the defeated creature was at least one size category larger than you.
             """,
@@ -725,45 +720,6 @@ def generate_weapons():
         )
     )
 
-    weapons += [
-        create_weapon(
-            name="Thieving",
-            rank=2,
-            tags=[],
-            description="""
-                As a \\glossterm<standard action>, you can activate this weapon.
-                If you do, make a melee \\glossterm<strike> or use the \\textit<disarm> ability using this weapon.
-                If you successfully knock an object loose with the disarm attempt, or if your strike hit an \\glossterm<unattended> object, this weapon can absorb the struck object.
-                The object's size category must be no larger than the weapon's size category.
-
-                An absorbed object leaves no trace that it ever existed.
-                This weapon can hold no more than three objects at once.
-                If you attempt to absorb an object while the weapon is full, the attempt fails.
-                As a standard action, you can retrieve the last item absorbed by the weapon.
-                The item appears in your hand, or falls to the ground if your hand is occupied.
-            """,
-            short_description="Can absorb small items",
-            upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The maximum size category of object this weapon can absorb is one size category larger than the weapon.
-                        In addition, you gain a +1 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
-                    """,
-                    short_description="Can absorb large items",
-                ),
-                Upgrade(
-                    rank=6,
-                    description="""
-                        The maximum size category of object this weapon can absorb is two size categories larger than the weapon.
-                        In addition, you gain a +2 bonus to \\glossterm<accuracy> with the \\textit<disarm> ability using the weapon.
-                    """,
-                    short_description="Can absorb large items",
-                ),
-            ],
-        ),
-    ]
-
     weapons.append(
         create_weapon(
             name="Vorpal",
@@ -807,7 +763,6 @@ def generate_weapons():
             description="""
                 As a standard action, you can activate this weapon.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
                 The condition is infused into this weapon.
                 You cannot use this ability while there is a condition infused in the weapon.
                 However, you can release the infusion as a separate standard action.
@@ -839,8 +794,7 @@ def generate_weapons():
                 As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
                 If a living creature loses \\glossterm{hit points} from this strike, you can increase your \\glossterm{fatigue level} by one.
                 If you do, you regain 2d10+7 hit points.
-
-                If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Can attack with +4 damage and steal HP",
             upgrades=[

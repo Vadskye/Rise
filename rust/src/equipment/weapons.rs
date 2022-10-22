@@ -17,7 +17,6 @@ pub struct Weapon {
 pub enum WeaponTag {
     Ammunition,
     Compact,
-    Disarming,
     Forceful,
     Grappling,
     Impact,
@@ -39,7 +38,6 @@ impl WeaponTag {
         match self {
             Self::Ammunition => r"\weapontag{Ammunition}".to_string(),
             Self::Compact => r"\weapontag{Compact}".to_string(),
-            Self::Disarming => r"\weapontag{Disarming}".to_string(),
             Self::Forceful => r"\weapontag{Forceful}".to_string(),
             Self::Grappling => r"\weapontag{Grappling}".to_string(),
             Self::Impact => r"\weapontag{Impact}".to_string(),
@@ -176,7 +174,7 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "longbow".to_string(),
-                tags: vec![WeaponTag::Projectile(120, 360)],
+                tags: vec![WeaponTag::Projectile(90, 270)],
             },
             Self::MonsterBite => Weapon {
                 accuracy: 0,

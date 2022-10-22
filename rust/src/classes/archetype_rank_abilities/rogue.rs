@@ -125,7 +125,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{assassination} ability as a \glossterm{minor action}.
-                \begin{activeability}{Assassination}[\abilitytag{Swift}]
+                \begin{activeability}{Assassination}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \glossterm{brief} effect, whenever you make a melee \glossterm{strikes} against the target that it is \unaware, the strike deals maximum damage and automatically \glossterm{explodes} regardless of what you roll.
@@ -195,8 +195,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     % Bardic performance power guidelines:
                     % These generally start from the same rank 1 baseline effect as spells.
                     % Since there are no higher rank bardic performances, they need more aggressive rank scalings to ensure
-                    % that a rank 7 bardic performance is comparable to a rank 7 spell. That is provided by the greater/supreme
-                    % bardic performance class abilities, and doesn't need to be included in each individual performance.
+                    % that a rank 7 bardic performance is comparable to a rank 7 spell.
                     % In general, bardsongs are likely to trade damage or accuracy for increased area.
                     %
                     % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
@@ -225,15 +224,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes 1d4 \add half \glossterm{power} sonic damage.
+                        \hit Each target takes 1d6 \add half \glossterm{power} bludgeoning damage.
 
                         \rankline
-                        \rank{2} The damage increases to 1d6, and the area increases to a \smallarea radius.
-                        \rank{3} The damage increases to 1d8, and the area increases to a \medarea radius.
-                        \rank{4} The damage increases to 1d10.
-                        \rank{5} The damage increases to 2d6, and the area increases to a \largearea radius.
-                        \rank{6} The damage increases to 2d8.
-                        \rank{7} The damage increases to 2d10, and the area increases to a \hugearea radius.
+                        \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
+                        \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
+                        \rank{4} The damage increases to 2d6.
+                        \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
+                        \rank{6} The damage increases to 2d10.
+                        \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
                     \end{activeability}
 
                     \begin{sustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -264,7 +263,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
                         The target chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
-                        It cannot choose an effect applied during the current round.
                         For the duration of your performance, the target ignores that effect.
 
                         \rankline
@@ -281,26 +279,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \crit The effect becomes a \glossterm{condition}.
 
                         \rankline
-                        \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
-                        \rank{3} The accuracy bonus increases to \plus2.
-                        \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        \rank{2} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                        \rank{3} You gain a \plus4 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
+                        \rank{4} The accuracy bonus increases to \plus6.
+                        \rank{5} The accuracy bonus increases to \plus8, and the area increases to a \hugearea radius.
+                        \rank{6} The accuracy bonus increases to \plus10.
+                        \rank{7} The accuracy bonus increases to \plus12, and the area increases to a \gargarea radius.
                     \end{activeability}
 
-                    \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}]
+                    \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes sonic damage equal to 1d8 plus your \glossterm{power}.
+                        \hit The target takes psychic damage equal to 1d8 plus your \glossterm{power}.
 
                         \rankline
-                        \rank{2} The damage increases to 1d10.
-                        \rank{3} The damage increases to 2d8.
-                        \rank{4} The damage increases to 2d10.
-                        \rank{5} The damage increases to 4d8.
-                        \rank{6} The damage increases to 4d10.
-                        \rank{7} The damage increases to 6d10.
+                        You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
                     \end{activeability}
 
                     \begin{sustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -315,8 +308,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
-                        \hit The target takes 1d6 + half \glossterm{power} sonic damage.
+                        Make an attack vs. Mental against one creature within \shortrange.
+                        \hit The target takes 1d6 + half \glossterm{power} bludgeoning damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
 
                         \rankline
@@ -326,7 +319,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Hypnotic Hymn}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round, including during the current phase.
+                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                         \hit For the duration of your performance, the target is \charmed by you.
                         This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced.
 
@@ -384,17 +377,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Stutterstep Staccato}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each target is \glossterm{briefly} \slowed.
-                        \crit Each target is \slowed as a \glossterm{condition}.
+                        Make an attack vs. Fortitude against one creature within a \shortrange of you.
+                        \hit The target is \glossterm{briefly} \slowed.
+                        \crit The target is \slowed as a \glossterm{condition}.
 
                         \rankline
-                        \rank{2} You gain a \plus1 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
-                        \rank{3} The accuracy bonus increases to \plus2.
-                        \rank{4} The accuracy bonus increases to \plus3, and the area increases to a \hugearea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The accuracy bonus increases to \plus5, and the area increases to a \gargarea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
                     \end{activeability}
 
                     \begin{activeability}{Vigorous Verse}[\abilitytag{Auditory}]

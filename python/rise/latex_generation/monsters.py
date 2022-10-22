@@ -612,7 +612,7 @@ def magical_beasts(sample_monsters):
                 active_ability(
                     "Blink",
                     f"""
-                As a \\glossterm<move action>, the blink dog can use this ability.
+                As a \\glossterm<movement>, the blink dog can use this ability.
                 If it does, it teleports to an unoccupied location within Medium range.
             """,
                 ),
