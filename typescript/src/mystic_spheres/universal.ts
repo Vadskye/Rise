@@ -31,13 +31,13 @@ export const universal: MysticSphere = {
         Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
         Cryomancy       & Creatures and objects & Fortitude & Cold        \\\\
         Electromancy    & Creatures and objects & Fortitude & Electricity \\\\
-        Enchantment     & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
+        Enchantment     & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
         Fabrication     & Creatures and objects & Armor     & Physical    \\\\
         Photomancy      & Creatures and objects & Fortitude & Energy      \\\\
         Polymorph       & Creatures and objects & Fortitude & Physical    \\\\
-        Prayer          & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
+        Prayer          & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
         Pyromancy       & Creatures and objects & Fortitude & Fire        \\\\
-        Revelation      & Creatures             & Mental    & Energy and \\glossterm{subdual} \\\\
+        Revelation      & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
         Summoning       & Creatures and objects & Armor     & Physical    \\\\
         Telekinesis     & Creatures and objects & Fortitude & Bludgeoning \\\\
         Terramancy      & Creatures and objects & Armor     & Bludgeoning \\\\

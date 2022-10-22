@@ -224,7 +224,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes 1d4 \add half \glossterm{power} sonic damage.
+                        \hit Each target takes 1d4 \add half \glossterm{power} bludgeoning damage.
 
                         \rankline
                         \rank{2} The damage increases to 1d6, and the area increases to a \smallarea radius.
@@ -290,7 +290,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Dirge of Doom}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes sonic damage equal to 1d8 plus your \glossterm{power}.
+                        \hit The target takes bludgeoning damage equal to 1d8 plus your \glossterm{power}.
 
                         \rankline
                         \rank{2} The damage increases to 1d10.
@@ -314,7 +314,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit The target takes 1d6 + half \glossterm{power} sonic damage.
+                        \hit The target takes 1d6 + half \glossterm{power} bludgeoning damage.
                         If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
 
                         \rankline

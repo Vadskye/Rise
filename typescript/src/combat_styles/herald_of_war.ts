@@ -91,7 +91,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Thunderous Shout",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} sonic damage.`,
+        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -104,7 +104,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Directed Shout",
 
       attack: {
-        hit: `The target takes 2d8 + \\glossterm{power} sonic damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange of you.
         `,
