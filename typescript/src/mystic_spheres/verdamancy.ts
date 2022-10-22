@@ -412,7 +412,7 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'fire seeds',
         exceptThat:
-          'the damage increases to 4d10 + half \\glossterm{power}',
+          'the damage increases to 4d10 + half \\glossterm{power}.',
       },
       rank: 7,
       scaling: 'damage',
