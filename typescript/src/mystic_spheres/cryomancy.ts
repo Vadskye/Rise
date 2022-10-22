@@ -514,7 +514,7 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
         Damage dealt by the strike is cold damage in addition to its normal damage types.
         If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
       `,
@@ -532,7 +532,7 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
         Damage dealt by the strike is cold damage in addition to its normal damage types.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
