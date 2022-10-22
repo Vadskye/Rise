@@ -4,6 +4,17 @@ export const terramancy: MysticSphere = {
   name: "Terramancy",
   shortDescription: "Manipulate earth to crush foes.",
   sources: ["arcane", "domain", "nature"],
+  // Almost all creatures are grounded most of the time, so it's not a big deal to just
+  // be grounded at all.
+  // In general, -1r if it only works against grounded
+  // +1r for +2acc vs grounded on stone or while grounded on stone
+  specialRules: `
+    Some spells from this mystic sphere are more effective if you or the target are grounded.
+
+    \\spheredef{grounded} A grounded creature or object is standing on or otherwise supported by a stable surface that can support its weight.
+    The surface must be at least as large as the creature or object resting on it.
+    Some effects only work if the creature or object is grounded by a particular material, such as stone. 
+  `,
 
   cantrips: [
     {
@@ -28,26 +39,28 @@ export const terramancy: MysticSphere = {
     {
       name: "Rock Throw",
 
+      // +1r for +1acc
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+          You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: "damage",
       tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Rock Throw",
+      name: "Mighty Rock Throw",
 
+      // +4r for +2d
       attack: {
         hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+          Make an attack vs. Armor against anything within \\shortrange.
+          You gain a +2 accuracy bonus if you are on a Medium or larger body of stone.
         `,
       },
       rank: 5,
@@ -58,39 +71,37 @@ export const terramancy: MysticSphere = {
     {
       name: "Crushing Gravity",
 
+      // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          If it loses \\glossterm{hit points} from this damage, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          This attack gains a +1 \\glossterm{accuracy} bonus for each size category by which the target is larger than Medium size.
+          You gain a +1 accuracy bonus for each size category by which the target is larger than Medium.
+          This accuracy bonus is doubled if the target is not \\sphereterm{grounded}.
         `,
       },
       narrative: `
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
-      rank: 1,
+      rank: 2,
       scaling: "damage",
       tags: [],
     },
 
     {
-      name: "Greater Crushing Gravity",
+      name: "Certain Crushing Gravity",
 
-      attack: {
-        hit: `
-          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus for each size category by which the target is larger than Medium size.
-        `,
+      functionsLike: {
+        name: "crushing gravity",
+        exceptThat: "the accuracy bonus increases to +2 per size category, and the damage increases to 4d6 + \\glossterm{power}.",
       },
       narrative: `
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
-      rank: 5,
+      rank: 6,
       scaling: "damage",
       tags: [],
     },
@@ -99,25 +110,25 @@ export const terramancy: MysticSphere = {
       name: "Shrapnel Blast",
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
-          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+          Make an attack vs. Armor against everything in a \\smallarea cone from you.
+          You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: "damage",
       tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Shrapnel Blast",
+      name: "Mighty Shrapnel Blast",
 
       attack: {
         hit: `Each target takes 4d6 + \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea cone from you.
-          This attack gains a +2 \\glossterm{accuracy} bonus if you are on a Medium or larger body of stone.
+          Make an attack vs. Armor against everything in a \\medarea cone from you.
+          You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 6,
@@ -145,38 +156,83 @@ export const terramancy: MysticSphere = {
     },
 
     {
+      name: "Earthen Anchor",
+
+      effect: `
+        You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
+        In addition, you are always considered either \\sphereterm{grounded} or not grounded, whichever is more beneficial for you.
+
+        For example, you would not take damage from the \\spell{earthquake} spell.
+        You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
+      `,
+      rank: 1,
+      type: "Attune",
+    },
+
+    {
+      name: "Mass Earth's Ally",
+
+      functionsLike: {
+        mass: true,
+        name: "earth's ally",
+      },
+      rank: 3,
+      type: "Attune (target)",
+    },
+
+    {
       name: "Earthspike",
 
+      // -1r for grounded, -1r for short range allows medium damage
+      // Reflex defense since it's coming up from the ground - you can't shield it, just
+      // dodge it
       attack: {
         hit: `
-          The target takes 1d6 piercing damage.
+          The target takes 1d6 + half \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+          Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
         `,
       },
       rank: 1,
-      scaling: "accuracy",
+      scaling: "damage",
       tags: ["Manifestation"],
     },
 
     {
-      name: "Greater Earthspike",
+      name: "Certain Earthspike",
+
+      // +1r for med range, +2r for +2acc
+      // Can't go to full damage because this is single-target vs Reflex
+      attack: {
+        hit: `
+          The target takes 2d6 + half \\glossterm{power} piercing damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Reflex with a +2 accuracy bonus against anything within \\medrange that is \\sphereterm{grounded}.
+        `,
+      },
+      rank: 4,
+      scaling: "damage",
+      tags: ["Manifestation"],
+    },
+
+    {
+      name: "Intense Earthspike",
 
       attack: {
         hit: `
-          The target takes 4d6 piercing damage.
+          The target takes 4d6 + half \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange that is on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+          Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
         `,
       },
       rank: 7,
-      scaling: "accuracy",
+      scaling: "damage",
       tags: ["Manifestation"],
     },
 
@@ -203,6 +259,7 @@ export const terramancy: MysticSphere = {
     {
       name: "Tremor",
 
+      // -1r for grounded
       attack: {
         crit: `
           Each target is also unable to stand up as a \\glossterm{condition}.
@@ -211,70 +268,86 @@ export const terramancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea within \\shortrange that are on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
+          Make an attack vs. Reflex against all \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
         `,
       },
       narrative: `
         You create an highly localized tremor that rips through the ground.
       `,
-      rank: 4,
+      rank: 3,
       scaling: "accuracy",
     },
 
     {
-      name: "Fissure",
+      name: "Massive Tremor",
 
-      attack: {
-        hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
-          Each Large or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea within \\shortrange that is on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
-        `,
+      functionsLike: {
+        name: "tremor",
+        exceptThat: "the area increases to a \\medarea radius within \\longrange.",
       },
       narrative: `
-        You create an intense but highly localized tremor that rips through the ground.
+        You create an intense tremor that rips through the ground.
       `,
-      rank: 5,
-      scaling: "damage",
+      rank: 6,
+      scaling: "accuracy",
     },
 
     {
       name: "Earthquake",
 
+      // +2r for also next round, -1r for grounded
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
-          Each Huge or smaller target that loses \\glossterm{hit points} from this damage is also knocked \\prone.
+          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange that is on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus against each target that is on a Medium or larger body of stone.
+          The earth shakes in a \\medarea radius \\glossterm{zone} around you.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
         `,
       },
       narrative: `
-        You create an intense tremor that rips through the ground.
+        You crack the earth around you, shaking everyone violently.
+      `,
+      rank: 3,
+      scaling: "damage",
+    },
+
+    {
+      name: "Massive Earthquake",
+
+      // this scales very well with area, so it pays the full +2r price for large and huge
+      attack: {
+        hit: `
+          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+        `,
+        targeting: `
+          The earth shakes in a \\hugearea radius \\glossterm{zone} around you.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
+        `,
+      },
+      narrative: `
+        You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
+      scaling: "damage",
     },
+
 
     {
       name: "Swallowed by Earth",
 
-      // losing line of effect compensates for recurring extra damage
+      // Price as r4 condition, -1r for grounded, -1r for range
       attack: {
-        hit: `The target takes 4d6 bludgeoning damage.
-        If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
-        While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
-        During each of your subsequent actions, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
-        If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
-        Special movement abilities such as teleportation can also remove the target from the fissure.`,
+        hit: `
+          The target takes 4d6 bludgeoning damage.
+          If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
+          While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+          During each of your subsequent actions, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
+          If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
+          Special movement abilities such as teleportation can also remove the target from the fissure.
+        `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\medrange that is on a stable surface.
-          This attack gains a +2 \\glossterm{accuracy} bonus if the target is on a Medium or larger body of stone.
+          Make an attack vs. Reflex against one \\sphereterm{grounded} creature within \\shortrange.
         `,
       },
       narrative: `
@@ -286,15 +359,17 @@ export const terramancy: MysticSphere = {
     {
       name: "Earthbind",
 
+      // treat as r1 condition.
+      // no rank modifier for 120', it's mostly just flavor
       attack: {
         crit: `It is also \\slowed as part of the same condition.`,
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
-          It is unable to use any fly speed or glide speed.
+          It is unable to use any fly speed or glide speed, and it takes a -4 penalty to Jump checks.
+          All \\glossterm{falling damage} that it takes is doubled.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange that is no more than 120 feet above a stable surface that could support its weight.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
+          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 120 feet above a stable surface that could support its weight.
         `,
       },
       rank: 1,
@@ -302,20 +377,16 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Greater Earthbind",
+      name: "Intense Earthbind",
 
-      attack: {
-        crit: `The target is \\immobilized instead of slowed.`,
-        hit: `
-          As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
-          It is \\slowed and unable to use any fly speed or glide speed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\longrange that is no more than 120 feet above a stable surface that could support its weight.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that surface is a Medium or larger body of stone.
+      functionsLike: {
+        name: 'earthbind',
+        exceptThat: `
+          the target is also \\slowed as part of the same condition.
+          On a critical hit, the condition must be removed twice before the effect ends.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: "accuracy",
     },
 
@@ -325,16 +396,16 @@ export const terramancy: MysticSphere = {
       effect: `
         % TODO: wording to allow it to affect smaller parts of larger objects
         % TODO: define maximum resistance
-        Choose a \\smallarea radius \\glossterm{zone} within \\longrange.
+        Choose a \\smallarea radius \\glossterm{zone} within \\medrange.
         All earth and stone in the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
-        The movement cost required to move out of each affected square within the area is quadrupled.
+        The area becomes \\glossterm{difficult terrain}.
         This does not affect objects under structural stress, such as walls and support columns.
       `,
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: "You can choose to affect a \\medarea radius instead.",
+        6: "You can choose to affect a \\medarea radius instead.",
       },
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -395,80 +466,40 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Earthen Anchor",
-
-      effect: `
-        You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        This does not affect movement effects used by your \\glossterm{allies}.
-      `,
-      rank: 1,
-      type: "Attune",
-    },
-
-    {
-      name: "Mass Earthen Anchor",
-
-      functionsLike: {
-        mass: true,
-        name: "Earthen Anchor",
-      },
-      // narrative: '',
-      rank: 3,
-      type: "Attune (target)",
-    },
-
-    {
       name: "Volcano",
 
+      // treat as short range med radius, which is a t3 area
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning and fire damage.`,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\areasmall radius from a point on a stable surface within \\shortrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
+          You create a volcano at a \\sphereterm{grounded} location within \\shortrange.
+          The area affected by the volcano increases over time.
+          It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
       narrative: `
-        You create a small volcano that bursts forth, showering nearby creatures in burning shrapnel.
+        You create a small volcano that showers everything nearby in burning shrapnel.
       `,
-      rank: 2,
+      rank: 3,
       scaling: "damage",
-      tags: ["Manifestation"],
+      tags: ["Manifestation", "Sustain (standard)"],
     },
 
     {
-      name: "Greater Volcano",
+      name: "Mighty Volcano",
 
-      attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning and fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from a point on a stable surface within \\medrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Medium or larger body of stone.
-        `,
+      // +4d for +1d and full power
+      functionsLike: {
+        name: "volcano",
+        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
       },
       narrative: `
-        You create a large volcano that bursts forth, showering nearby creatures in burning shrapnel.
-      `,
-      rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
-    },
-
-    {
-      name: "Supreme Volcano",
-
-      attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} bludgeoning and fire damage.`,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius from a point on a stable surface within \\longrange.
-          This attack gains a +2 \\glossterm{accuracy} bonus if that point is on a Large or larger body of stone.
-        `,
-      },
-      narrative: `
-        You create an immense volcano that bursts forth, showering nearby creatures in burning shrapnel.
+        You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 7,
       scaling: "damage",
-      tags: ["Manifestation"],
+      tags: ["Manifestation", "Sustain (standard)"],
     },
 
     {
@@ -500,7 +531,7 @@ export const terramancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the Forceful \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        Strikes using it are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        You may use the higher of your Strength and your Willpower to determine your damage with strikes using the weapon (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 2,
       narrative: `
