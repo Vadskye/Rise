@@ -44,19 +44,19 @@ export const heraldOfWar: CombatStyle = {
       rank: 7,
     },
 
-    // -2 ranks for functionally melee-range goad
     {
       name: "Goading Roar",
 
+      // -1r for meleeish range goad
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `Each target is \\goaded as a \\glossterm{condition}.`,
+        hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       tags: ["Emotion"],
-      rank: 3,
+      rank: 5,
     },
 
     {
