@@ -503,7 +503,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & Each target that loses hit points from the spell this round takes additional energy damage equal to your \glossterm{power} with the spell \\
                         8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
                         9 & When you attack with the spell this round, you roll twice and take the higher result \\
-                        10 & During the \glossterm{action phase} of the next round, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
             ",
@@ -540,7 +540,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & The spell's area is tripled this round \\
                         8 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \stunned \\
                         9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
-                        10 & During each \glossterm{action phase} of the next two rounds, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & During each of your next two actions, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
             ",
