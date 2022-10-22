@@ -216,7 +216,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
                     Whenever a vampire makes a creature lose hit points with its bite attack, it regains that much damage resistance.
-                    This ability does not have the \abilitytag{Swift} tag, so it does not protect the vampire from attacks during the current phase.
+                    This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                 ".to_string(),
                 is_magical: true,
                 name: "Vampiric Recovery".to_string(),

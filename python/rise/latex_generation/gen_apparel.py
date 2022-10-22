@@ -1436,7 +1436,7 @@ def generate_apparel():
             name="Belt of Healing",
             rank=2,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 1d10+4 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1447,7 +1447,7 @@ def generate_apparel():
             name="Belt of Healing, Greater",
             rank=4,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 2d10+7 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -1458,7 +1458,7 @@ def generate_apparel():
             name="Belt of Healing, Supreme",
             rank=6,
             material_type="Belt",
-            tags=[],
+            tags=['Swift'],
             description="""
                 As a standard action, you can use this belt to regain 4d10+14 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
@@ -2818,6 +2818,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
         ),
@@ -2829,6 +2830,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
         ),
@@ -2840,6 +2842,7 @@ def generate_apparel():
             description="""
                 Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
                 When you do, you increase your \\glossterm<fatigue level> by one.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
         ),

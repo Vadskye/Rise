@@ -337,11 +337,10 @@ export const prayer: MysticSphere = {
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
-        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      tags: ['Swift (see text)'],
+      tags: ['Swift'],
     },
 
     {
@@ -349,26 +348,12 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 2d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
-        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
-      rank: 4,
+      rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 4." },
-      tags: ['Swift (see text)'],
-    },
-
-    {
-      name: "Supreme Boon of Shielding",
-
-      effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +3 bonus to all \\glossterm{defenses} this round.
-        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
-      `,
-      rank: 7,
-      tags: ['Swift (see text)'],
+      tags: ['Swift'],
     },
 
     {
