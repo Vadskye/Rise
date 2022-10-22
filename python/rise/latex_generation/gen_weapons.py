@@ -763,7 +763,6 @@ def generate_weapons():
             description="""
                 As a standard action, you can activate this weapon.
                 When you do, you remove one \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
                 The condition is infused into this weapon.
                 You cannot use this ability while there is a condition infused in the weapon.
                 However, you can release the infusion as a separate standard action.

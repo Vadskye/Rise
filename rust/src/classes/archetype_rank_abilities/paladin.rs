@@ -275,7 +275,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Instead regaining hit points, you can cause the target to remove a \glossterm{condition} or a \glossterm{vital wound}.
-                This cannot remove a condition applied during the current round.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,

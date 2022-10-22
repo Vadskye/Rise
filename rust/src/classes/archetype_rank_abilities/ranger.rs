@@ -180,7 +180,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from all sources, including spells and special abilities from enemies.
+                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },

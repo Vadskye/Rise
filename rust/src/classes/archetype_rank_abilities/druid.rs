@@ -573,7 +573,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                When you heal using this ability, you can also remove one \glossterm{condition} that was not applied during the current round.
+                When you heal using this ability, you can also remove one \glossterm{condition}.
             ",
             modifiers: None,
         },
