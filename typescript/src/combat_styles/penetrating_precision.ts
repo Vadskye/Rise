@@ -131,7 +131,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Heartpiercing Strike",
+      name: "Heartpiercer",
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus using a piercing weapon.
@@ -144,25 +144,17 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Eye Gouge",
+      name: "Heartpiercer+",
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+        Your attack roll \\glossterm{explodes}, regardless of your roll.
+        Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
+      `,
+      narrative: `
+        You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.
       `,
       rank: 7,
-    },
-
-    {
-      name: "Eye Poke",
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
-      `,
-      rank: 1,
     },
 
     {
