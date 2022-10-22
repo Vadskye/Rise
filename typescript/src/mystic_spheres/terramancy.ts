@@ -332,7 +332,6 @@ export const terramancy: MysticSphere = {
       scaling: "damage",
     },
 
-
     {
       name: "Swallowed by Earth",
 
@@ -548,7 +547,7 @@ export const terramancy: MysticSphere = {
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
-        Every square of the wall must be supported by solid ground.
+        Every square of the wall must be \\sphereterm{grounded}.
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
