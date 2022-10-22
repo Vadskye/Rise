@@ -141,9 +141,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
 
                     \rankline
-                    The damage increases by \plus1d for each rank beyond 3.
-                    \rank{5} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-                    \rank{7} The accuracy bonus increases to \plus2.
+                    You gain a +1 accuracy bonus and a +1d damage bonus for each rank beyond 3.
                 \end{activeability}
             ",
             modifiers: None,
