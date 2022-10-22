@@ -6,7 +6,7 @@ export const astromancy: MysticSphere = {
   sources: ["arcane", "domain", "pact"],
   specialRules: `
     \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
-    If the space occupied by a flickered target is occupied when it returns, it instead reappears in the closest available open space.
+    If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
 
     When a creature or object flickers, it returns at the end of the current turn unless the ability specifies a different duration.
     That means that you can't make any additional attacks against it during your turn.
