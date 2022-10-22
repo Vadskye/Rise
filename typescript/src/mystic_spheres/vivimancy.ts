@@ -156,11 +156,11 @@ export const vivimancy: MysticSphere = {
 
       // TODO: unclear rank
       effect: `
-        You and each \\glossterm{ally} in a \\smallarea radius from you each regain 1d10 + half \\glossterm{power} \\glossterm{hit points}.
+        You and each \\glossterm{ally} in a \\smallarea radius from you each regain 2d6 + half \\glossterm{power} \\glossterm{hit points}.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
-      rank: 3,
-      scaling: { special: "The healing increases by +1d for each rank beyond 3." },
+      rank: 4,
+      scaling: { special: "The healing increases by +1d for each rank beyond 4." },
       tags: ['Swift'],
     },
 
@@ -168,10 +168,10 @@ export const vivimancy: MysticSphere = {
       name: "Massive Stabilization Field",
 
       effect: `
-        You and each \\glossterm{ally} in a \\largearea radius from you each regain 2d10 + half \\glossterm{power} \\glossterm{hit points}.
+        You and each \\glossterm{ally} in a \\largearea radius from you each regain 4d6 + half \\glossterm{power} \\glossterm{hit points}.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
-      rank: 6,
+      rank: 7,
       tags: ['Swift'],
     },
 
