@@ -214,6 +214,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
                     \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
+                    This ability does not have the \abilitytag{Swift} tag, so it does not protect you from attacks during the current phase.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     This healing increases by \plus1d for each rank beyond 1.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
@@ -670,7 +671,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 You can use the \textit{exchange soul fragment} ability as a standard action.
-                \begin{activeability}{Exchange Soul Fragment}
+                \begin{activeability}{Exchange Soul Fragment}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
