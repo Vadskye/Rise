@@ -17,24 +17,17 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Strip the Armor",
-
-      effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature that resists all damage from the strike takes a -2 penalty to Armor defense as a \\glossterm{condition} if your attack result beats its Fortitude defense.
-      `,
-      rank: 3,
-    },
-
-    {
       name: "Rend the Hide",
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        You gain a +2 \\glossterm{accuracy} bonus with the strike against creatures that are not wearing metal armor.
+        You gain a +4 damage bonus with the strike against creatures that are not wearing metal body armor.
       `,
-      rank: 5,
+      rank: 3,
+      scaling: {
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
 
     {
