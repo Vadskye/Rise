@@ -11,6 +11,11 @@ pub fn latexify(text: String) -> String {
         eprintln!("Problem latexifying text: contains a carriage return ({})", short_text)
     }
 
+    let midline_double_backslash = Regex::new(r"\\\\.").unwrap();
+    if midline_double_backslash.is_match(&text) {
+        eprintln!(r"Problem latexifying text: contains a midline \\ ({})", text.trim())
+    }
+
     let text = text
         .replace("<", "{")
         .replace(">", "}")

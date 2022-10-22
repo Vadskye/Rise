@@ -339,7 +339,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{sustainability}
 
-                    \begin{activeability}{Palliative Poem}[\abilitytag{Auditory}]
+                    \begin{activeability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d6 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.

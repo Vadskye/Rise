@@ -426,13 +426,13 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{detect anathema} ability as a standard action.
                 \begin{activeability}{Detect Anathema}[\abilitytag{Detection}, \abilitytag{Magical}]
                     \rankline
-                    You know the number of creatures within a \\largearea cone from you that have the alignment opposed to your devoted alignment.
+                    You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
                     This does not give you any specific information about the location of those creatures.
                     Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
 
                     \rankline
                     \rank{4} You also learn the location of all creatures with that alignment.
-                    \rank{6} The area increases to a \\gargarea cone.
+                    \rank{6} The area increases to a \gargarea cone.
                 \end{activeability}
             ",
             modifiers: None,
