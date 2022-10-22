@@ -325,11 +325,11 @@ Maneuvers that are rank 4 or higher scale their damage as +5 +10 +15 +20.
   * t3 area, 1d10 + half power
   * t1 area, 2d6 + half power
   * t1 area zone, 1d10 + half power this round and next round in the same zone
-  * t1 area zone, 1d8 + half power every round in the same zone (sustainable)
     * this is +2 ranks and -1d for the potential of double damage; can upgrade to +3 ranks and -0d
+  * t1 area zone, 1d8 + half power every round in the same zone (sustain minor)
 * Rank 4
   * Close range, 4d6 + power
-  * t1 area zone, 2d6 + half power every round in the same zone (sustainable)
+  * t1 area zone, 2d6 + half power every round in the same zone (sustain minor)
 * Rank 5
   * Med range, 4d8 + power
   * t1 area, 4d6 + half power
@@ -438,6 +438,7 @@ Note: debuffs on HP loss are tricky here since they are so trivial, but you don'
   * Grasp, 1d10 + power damage, r0.5 debuff condition if take damage
     * Grasp spells are adjacent only, Reflex defense, free hand required
   * Grasp, 1d10 + power damage, r1.5 debuff condition if lose HP
+  * Med range, 1d10 + power damage, r0.5 debuff condition if beat extra defense
 * Rank 3
   * Med range, 2d6 + power damage, r0.5 debuff condition if take damage
   * Med range, 2d6 + power damage, r1.5 debuff condition if lose HP
