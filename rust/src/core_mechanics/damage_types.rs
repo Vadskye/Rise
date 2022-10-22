@@ -8,10 +8,10 @@ pub enum DamageType {
     Electricity,
     Energy,
     Fire,
+    Psychic,
     Physical,
     Piercing,
     Slashing,
-    Sonic,
 }
 
 impl DamageType {
@@ -23,10 +23,10 @@ impl DamageType {
             Self::Electricity => "electricity",
             Self::Energy => "energy",
             Self::Fire => "fire",
+            Self::Psychic => "psychic",
             Self::Physical => "physical",
             Self::Piercing => "piercing",
             Self::Slashing => "slashing",
-            Self::Sonic => "sonic",
         }
     }
 }

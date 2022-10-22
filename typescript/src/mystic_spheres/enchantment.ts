@@ -533,7 +533,7 @@ export const enchantment: MysticSphere = {
       // +1 level for conditional +2 accuracy
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 1d10 + \\glossterm{power} psychic \\glossterm{subdual damage}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -550,7 +550,7 @@ export const enchantment: MysticSphere = {
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy \\glossterm{subdual damage}.
+          The target takes 4d8 + \\glossterm{power} psychic \\glossterm{subdual damage}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

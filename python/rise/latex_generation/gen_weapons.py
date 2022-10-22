@@ -29,19 +29,19 @@ def generate_weapons():
             # tags=[tag],
             description="""
                 This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-                All damage dealt with it is sonic damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
+                All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
                 Each creature damaged by the strike is \\deafened as a \\glossterm<condition> if your attack results also beats its Fortitude defense.
             """,
-            short_description="Deals sonic damage and can deafen",
+            short_description="Deals bludgeoning damage and can deafen",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
                         You gain a +2 accuracy bonus with the concussive strike.
                     """,
-                    short_description="Deals sonic damage and can deafen",
+                    short_description="Deals bludgeoning damage and can deafen",
                 ),
             ]
         ),
