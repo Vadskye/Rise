@@ -104,7 +104,7 @@ export const heraldOfWar: CombatStyle = {
       name: "Thunderous Shout+",
 
       attack: {
-        hit: `Each target takes 2d10 + half bludgeoning damage.`,
+        hit: `Each target takes 4d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
