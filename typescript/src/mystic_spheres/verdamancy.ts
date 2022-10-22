@@ -4,6 +4,8 @@ export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
   shortDescription: 'Animate and manipulate plants.',
   sources: ['domain', 'nature'],
+  // Adding brief light undergrowth adds +2 ranks to a reasonably sized area.
+  // Target's space + adjacent spaces is only +1 rank.
 
   cantrips: [
     {
@@ -40,39 +42,6 @@ export const verdamancy: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Ensnaring Grasp',
-
-      attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} piercing damage.`,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
-        `,
-      },
-      rank: 1,
-      scaling: 'damage',
-    },
-    {
-      name: 'Greater Ensnaring Grasp',
-
-      attack: {
-        hit: `
-          The target takes 2d10 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
-        `,
-      },
-      rank: 5,
-      scaling: 'damage',
-    },
-    {
       name: 'Entangling Plants',
 
       attack: {
@@ -82,7 +51,7 @@ export const verdamancy: MysticSphere = {
           The condition is removed if the target stops being in undergrowth. 
         `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on \\glossterm{undergrowth}.
+          Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is in \\glossterm{undergrowth}.
         `,
       },
       narrative: `
@@ -100,7 +69,7 @@ export const verdamancy: MysticSphere = {
         hit: `The target is \\slowed as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
+          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
         `,
       },
       narrative: `
@@ -115,25 +84,32 @@ export const verdamancy: MysticSphere = {
       name: 'Vine Whip',
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
+        `,
         targeting: `
           Make an attack vs. Armor against one creature within \\shortrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
+          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Greater Vine Whip',
+      name: 'Intense Vine Whip',
 
+      // +2r for longer push, +2r for more damage
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          The target takes 4d6 + \\glossterm{power} bludgeoning damage.
+          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 30 feet.
+        `,
         targeting: `
           Make an attack vs. Armor against one creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack if the target is in standing in \\glossterm{undergrowth}.
+          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
         `,
       },
       rank: 5,
@@ -145,25 +121,45 @@ export const verdamancy: MysticSphere = {
       name: 'Vinestorm',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          Each target takes 1d8 + half \\glossterm{power} piercing damage.
+        `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
+          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Greater Vinestorm',
+      name: 'Flourishing Vinestorm',
 
       attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          Each target takes 2d6 + half \\glossterm{power} piercing damage.
+        `,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
-          You gain a +2 bonus to \\glossterm{accuracy} with this attack against targets standing in \\glossterm{undergrowth}.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
+          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
+          After you attack, \\glossterm{light undergrowth} fills the area \\glossterm{briefly}.
+        `,
+      },
+      rank: 4,
+      scaling: 'damage',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Massive Vinestorm',
+
+      attack: {
+        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.`,
+        targeting: `
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
+          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
         `,
       },
       rank: 5,
@@ -178,9 +174,24 @@ export const verdamancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        Strikes using it are considered \\glossterm{magical} abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        You may use the higher of your Strength and your Willpower to determine your damage with strikes using the weapon (see \\pcref{Attribute Damage Increments}).
       `,
       rank: 2,
+      narrative: `
+        You grow a massive vine tentacle from your body.
+      `,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Forceful Vine Tentacle',
+
+      functionsLike: {
+        name: 'vine tentacle',
+        exceptThat: "the tentacle also has the Forceful weapon tag (see \\pcref{Weapon Tags}).",
+      },
+      rank: 5,
       narrative: `
         You grow a massive vine tentacle from your body.
       `,
@@ -317,14 +328,11 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Embedded Growth',
 
-      // short range and -1d relative to ignition for more difficult removal
       attack: {
-        crit: `The damage from the condition is doubled.`,
+        // -1d relative to normal dot in exchange for antiheal
         hit: `
-          The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
-          It takes 1d4 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
-          If it gains a \\glossterm{vital wound} from this damage, the condition ends.
-
+          The target takes 1d6 + half \\glossterm{power} piercing damage immediately, and again during your next action.
+          If it loses \\glossterm{hit points} from this damage, it is unable to recover those hit points until it takes a \\glossterm{long rest}.
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
         `,
@@ -335,21 +343,17 @@ export const verdamancy: MysticSphere = {
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'damage',
     },
 
     {
-      name: 'Greater Embedded Growth',
+      name: 'Flourishing Embedded Growth',
 
-      attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `
-          The target is afflicted by uncontrolled plant growth within its body as a \\glossterm{condition}.
-          It takes 2d6 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+      functionsLike: {
+        name: "embedded growth",
+        exceptThat: `
+          whenever the target takes damage from the growth, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
         `,
       },
       narrative: `
@@ -360,35 +364,59 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Intense Embedded Growth',
+
+      attack: {
+        // +2r to also antiheal DR, +1r to offset original -1d
+        hit: `
+          The target takes 2d8 + half \\glossterm{power} piercing damage immediately, and again during your next action.
+          It is unable to recover any hit points or damage resistance lost to this damage until it takes a \\glossterm{long rest}.
+          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+          The \\glossterm{difficulty value} of the check is equal to 15.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      narrative: `
+        You throw a seed that embeds itself in a foe and grows painfully.
+      `,
+      rank: 5,
+      scaling: 'damage',
+    },
+
+    {
       name: 'Fire Seeds',
 
+      // +1r for letting several party members throw little fireballs
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
         targeting: `
-        % Does "seed structure" make sense?
-        You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.
-        As a standard action, you or another creature can throw the acorn up to 30 feet.
-        % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
-        % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
-        On impact, the acorn detonates, and you make an attack vs. Reflex against everything within a \\smallarea radius of the struck creature or object.
+          % Does "seed structure" make sense?
+          You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.
+          As a standard action, you or another creature can throw the acorn up to 30 feet.
+          % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
+          % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
+          On impact, the acorn detonates, and you make an attack vs. Reflex against everything within a \\smallarea radius of the struck creature or object.
         `,
       },
       rank: 3,
       scaling: 'damage',
-      type: 'Sustain (free)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: 'Greater Fire Seeds',
+      name: 'Mighty Fire Seeds',
 
+      // too dangerous to give full power for a full party opening salvo
       functionsLike: {
         name: 'fire seeds',
         exceptThat:
-          'the damage increases to 4d6 + half \\glossterm{power}, and the range of each acorn increases to \\medrange.',
+          'the damage increases to 4d10 + half \\glossterm{power}',
       },
-      rank: 6,
+      rank: 7,
       scaling: 'damage',
-      type: 'Sustain (free)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -398,16 +426,18 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-        You create a \\smallarealong \\glossterm{wall} of thorns within \\medrange.
-        The base of at least half of the wall must be in arable earth.
-        The wall is four inches thick, but permeable.
-        It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
-        Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
-        Whenever anything moves through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
-        You can only make this attack against a given target once per \\glossterm{phase}.
+          You create a \\smallarealong \\glossterm{wall} of thorns within \\medrange.
+          The base of at least half of the wall must be in arable earth.
+          The wall is four inches thick, but permeable.
+          It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
+          A field of \\glossterm{light undergrowth} spreads on the ground in all squares adjacent to the wall.
 
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+          Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
+          Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
+          You can only make this attack against a given target once per \\glossterm{phase}.
+
+          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
 
@@ -418,14 +448,16 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Wall of Thorns',
+      name: 'Massive Wall of Thorns',
 
       functionsLike: {
         name: 'wall of thorns',
-        exceptThat:
-          'the damage increases to 2d10 + half \\glossterm{power}, and the area increases to a \\medarealong \\glossterm{wall}.',
+        exceptThat: `
+          the damage increases to 2d10 + half \\glossterm{power}.
+          In addition, the area increases to a \\medarealong \\glossterm{wall}, and the range increases to \\longrange.
+        `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
@@ -450,34 +482,35 @@ export const verdamancy: MysticSphere = {
         6: 'You can choose to affect a \\largearea radius instead.',
       },
       tags: ['Manifestation'],
-      type: 'Sustain (minor)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
       name: 'Blight',
 
+      // -1r for all the weird stuff
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} acid damage.
-        This damage is doubled if the target is a plant, including plant creatures.`,
+        hit: `
+          The target takes 1d10 + half \\glossterm{power} physical damage immediately, and again during your next action.
+          Whenever it takes damage this way, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} lose all \\glossterm{undergrowth}.
+          This damage is doubled if the target is a plant, including plant creatures.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
+          Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: 'damage',
     },
 
     {
-      name: 'Greater Blight',
+      name: 'Mighty Blight',
 
-      attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} acid damage.
-        This damage is doubled if the target is a plant, including plant creatures.`,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature or plant within \\medrange.
-        `,
+      functionsLike: {
+        name: 'blight',
+        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
       },
-      rank: 5,
+      rank: 7,
       scaling: 'damage',
     },
 
@@ -538,7 +571,7 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Flourishing Grass',
+      name: 'Intense Flourishing Grass',
 
       functionsLike: {
         name: 'Flourishing Grass',
@@ -551,39 +584,9 @@ export const verdamancy: MysticSphere = {
         A great mass of long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 5,
-      scaling: {
-        7: 'When you cast this spell, you can choose to affect a \\medarea radius instead.',
-      },
+      rank: 6,
       tags: ['Manifestation'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Thornblade',
-
-      effect: `
-        All damage you deal with \\glossterm{strikes} becomes piercing damage in addition to the attack's normal damage types.
-        Whenever you cause a creature to lose \\glossterm{hit points} with a \\glossterm{strike}, thorns from the striking weapon enter the target's body.
-        As a \\glossterm{condition}, the target is unable to heal the \\glossterm{hit points} lost to the attack.
-
-        This effect can be removed with the \\textit{treat condition} ability (see \\pcref{Treat Condition}).
-        The \\glossterm{difficulty value} of the check is equal to 5 \\add your \\glossterm{power}.
-      `,
-      rank: 3,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Thornblade',
-
-      functionsLike: {
-        mass: true,
-        name: 'Thornblade',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
