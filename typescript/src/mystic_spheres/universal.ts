@@ -73,7 +73,7 @@ export const universal: MysticSphere = {
         hit: `The target takes 2d10 + \\glossterm{power} damage.`,
         targeting: `
           Make an attack against anything within \\medrange.
-          The defense depends on the mystic sphere you learn this spell with, as listed in \\tref{Universal Mystic Spheres}.
+          The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 4,
@@ -86,6 +86,7 @@ export const universal: MysticSphere = {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
@@ -98,6 +99,7 @@ export const universal: MysticSphere = {
         hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 5,
@@ -120,6 +122,7 @@ export const universal: MysticSphere = {
           The trap's Awareness bonus to notice creatures moving is +10.
           You can choose the minimum size category of creature required to activate the trap.
           When the trap activates, make an attack vs. Reflex against everything within a \\smallarea radius from the trap.
+          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
 
           After the trap activates, this effect is \\glossterm{dismissed}.
         `,
