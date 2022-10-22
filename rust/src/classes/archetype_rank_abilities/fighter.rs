@@ -351,7 +351,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
+                Your \glossterm{enemies} move at half speed while adjacent to you.
             ",
             modifiers: None,
         },
@@ -370,7 +370,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                This ability applies \glossterm{difficult terrain} twice, causing enemies to move at one-third speed.
+                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you.
             ",
             modifiers: None,
         },
@@ -518,12 +518,12 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Hold The Line}{\abilitytag{Sustain} (minor)}
                         \rankline
-                        Your \glossterm{enemies} treat all areas adjacent to any two targets as \glossterm{difficult terrain}.
+                        Your \glossterm{enemies} move at half speed while adjacent to any two targets.
 
                         \rankline
-                        \rank{3} Each area adjacent to any target is difficult terrain.
-                        \rank{5} In addition, each area adjacent to any two targets is doubly difficulty terrain, which costs three times the normal movement cost to move out of.
-                        \rank{7} Each area adjacent to any target is doubly difficult terrain.
+                        \rank{3} The effect persists for an additional five feet of the enemy's movement.
+                        \rank{5} The extra length increases to 10 feet.
+                        \rank{7} The extra length increases to 15 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}

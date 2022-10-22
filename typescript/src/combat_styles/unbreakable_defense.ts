@@ -165,7 +165,6 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You remove a \\glossterm{condition} affecting you.
-        This cannot remove an effect applied during the current round.
       `,
       rank: 5,
     },
@@ -234,16 +233,6 @@ export const unbreakableDefense: CombatStyle = {
       `,
       rank: 3,
       tags: ["Swift (see text)"],
-    },
-
-    {
-      name: "Guard the Pass",
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{enemies} \\glossterm{briefly} treat all squares within a \\smallarea radius \\glossterm{zone} from your location as \\glossterm{difficult terrain}.
-      `,
-      rank: 3,
     },
 
     {

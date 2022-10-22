@@ -263,7 +263,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
                         The target chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
-                        It cannot choose an effect applied during the current round.
                         For the duration of your performance, the target ignores that effect.
 
                         \rankline

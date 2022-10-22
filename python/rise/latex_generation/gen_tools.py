@@ -20,7 +20,6 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you.
-                This cannot remove an effect applied during the current round.
             """,
             short_description="Removes a condition",
             upgrades=[
