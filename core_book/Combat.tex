@@ -165,11 +165,12 @@
         You can have negative hit points, but only briefly.
         When your hit points drop below 0, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
         You gain an additional vital wound for each increment of half your maximum hit points that you reach in negative hit points.
-        If you heal past this threshold and then pass it again, you do not gain an extra vital wound.
+        Avoid rounding if possible - for example, if your negative hit points exactly equal your maximum hit points, you gain three vital wounds.
 
-        At the end of each round, if your hit points are negative, your hit points are reset to 0.
+        If you would recover \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
+        In addition, your hit points are reset to 0 at the end of the round if they are still negative.
         This is checked after applying all healing and damage that takes place at the end of the round.
-        This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative again.
+        This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
 
 \section{Vital Wounds}\label{Vital Wounds}
     \includegraphics[width=\columnwidth]{core mechanics/vital wounds}
@@ -189,11 +190,6 @@
         The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
         Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
         This roll is not a \glossterm{check}, so you can't affect it with abilities like \glossterm{desperate exertion}.
-
-        \parhead{Delaying Death} Vital wounds with a vital roll below 1 can kill you.
-        While you are dying in this way, if you receive healing that causes you to regain hit points, you delay your death by one round.
-        This benefit applies even if you are already at full hit points.
-        You cannot delay your death in this way by more than 5 rounds.
 
         \begin{dtable}
             \lcaption{Vital Wound Effects}
@@ -293,7 +289,11 @@
 
         Once all allied groups have locally resolved their actions, the results of all of those actions is announced.
         Then, each allied group updates their own status to reflect the actions that all of the other allied groups took during the same phase.
-        In addition, any effects that automatically trigger during the action phase are resolved now.
+        When resolving these effects, assume that actions outside of your allied group resolve before actions inside of your allied group, as long as they don't alter the effects of your own actions.
+        For example, you cannot avoid an enemy attack simply by moving away from them.
+        However, an enemy's attack does not interrupt your movement - even if it knocks you unconscious.
+        You simply fall unconscious at your new location after the movement.
+
         Once all of the actions have been globally resolved, the phase ends.
         In a typical combat, this just means that the GM will tell you what the monsters did to you after you tell the GM what you did to them.
 
@@ -309,11 +309,11 @@
             You can't split those automatic effects from your other actions in the turn order, just like you can't take your \glossterm{minor action} separately from your \glossterm{standard action}.
 
         \subsubsection{Swift Abilities}\label{Swift Abilities}
-            A small number of abilities with the \abilitytag{Swift} tag resolve differently from most actions.
+            Abilities with the \abilitytag{Swift} tag resolve differently from most actions.
             Swift abilities resolve before all non-Swift abilities, so they can change the results of your enemy's actions.
             However, Swift abilities are always simple, and cannot interrupt actions or make attack rolls.
-            Generally, they simply increase or decrease a creature's defenses during the current round.
-            You declare Swift abilities during your normal turn within your allied group, and you don't have to go first within your group or do anything special to use them.
+            Generally, they change defenses or recover \glossterm{hit points} or \glossterm{damage resistance}.
+            Swift actions must be declared before non-Swift actions are resolved within your allied group.
 
             For example, the \ability{total defense} ability gives you a bonus to your defenses during the current phase.
             That ability has to resolve before your enemies attack you during that phase, or else it would be pointless.
@@ -349,9 +349,10 @@
             That's a natural consequence of not coordinating effectively.
 
         \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-            Most healing abilities are used as a standard action and resolve locally before you take any incoming damage.
-            However, some abilities cause you to automatically recover hit points or damage resistance at specific times, like at the end of the round, when you can also take damage.
+            Most healing abilities are used as a standard action and are \abilitytag{Swift}, so they resolve before you take any incoming damage.
+            However, some healing abilities trigger based on actions you take, such as healing if you hit an enemy, or at specific times.
             If you regain hit points or damage resistance and take damage simultaneously, apply all damaging effects before applying any healing effects.
+            This means you gain and apply the effects of any vital wounds before you are healed.
 
     % This may be too complicated
     \subsection{Conflicting Actions}\label{Conflicting Actions}
@@ -781,7 +782,7 @@
         \end{activeability}
 
         \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{activeability}{Recover}
+        \begin{activeability}{Recover}[\abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 

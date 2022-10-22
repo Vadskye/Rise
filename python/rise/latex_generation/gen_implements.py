@@ -106,10 +106,11 @@ def generate_implements():
             name="Staff of Shared Healing",
             rank=4,
             material_type="Staff",
-            tags=[],
+            tags=['Swift (see text)'],
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, you also regain that many hit points, and you increase your \\glossterm<fatigue level> by one.
+                This ability has the \\abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
             """,
             short_description="Exert to heal you when you heal others",
         ),
@@ -124,6 +125,7 @@ def generate_implements():
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +2 bonus to its Mental defense.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Grants +2 Mental defense with your healing",
         ),
@@ -135,6 +137,7 @@ def generate_implements():
             description="""
                 Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +3 bonus to its Mental defense.
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Grants +3 Mental defense with your healing",
         ),

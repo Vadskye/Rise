@@ -124,7 +124,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Healing",
             rank=1,
-            tags=[],
+            tags=['Swift'],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.

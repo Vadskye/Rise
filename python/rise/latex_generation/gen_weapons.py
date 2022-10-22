@@ -794,8 +794,7 @@ def generate_weapons():
                 As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
                 If a living creature loses \\glossterm{hit points} from this strike, you can increase your \\glossterm{fatigue level} by one.
                 If you do, you regain 2d10+7 hit points.
-
-                If you take damage in the same phase that you use this ability, the healing and damage offset, which can prevent you from gaining vital wounds from dropping below 0 hit points (see \\pcref{Resolving Simultaneous Damage}).
+                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
             short_description="Can attack with +4 damage and steal HP",
             upgrades=[

@@ -564,6 +564,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
+                This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                 This cannot increase your hit points above half your maximum hit points.
             ",
             modifiers: None,

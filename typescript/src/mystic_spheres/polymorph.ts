@@ -425,7 +425,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       scaling: { special: "The recovery increases by +1d for each rank beyond 1." },
-      tags: [],
+      tags: ['Swift'],
     },
 
     {
@@ -437,6 +437,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: { special: "The recovery increases by +1d for each rank beyond 5." },
+      tags: ['Swift'],
     },
 
     {

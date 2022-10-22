@@ -771,7 +771,7 @@ def universal_abilities():
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
                     You regain hit points equal to your maximum hit points. In addition, you remove all conditions affecting you.
                 """,
-                tags=[],
+                tags=["Swift"],
             ),
             universal_ability_button(
                 "Shove",
