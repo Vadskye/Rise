@@ -135,7 +135,7 @@ export const umbramancy: MysticSphere = {
         hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each \\spheredef{shadowed} creature.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
         `,
       },
       rank: 2,
@@ -153,7 +153,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each \\spheredef{shadowed} creature.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
         `,
       },
       rank: 4,
@@ -168,7 +168,7 @@ export const umbramancy: MysticSphere = {
         hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
-          You gain a +2 accuracy bonus against each \\spheredef{shadowed} creature.
+          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
         `,
       },
       rank: 6,
@@ -188,7 +188,7 @@ export const umbramancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make a melee attack vs. Reflex against anything adjacent to you.
-          You gain a +2 accuracy bonus if the target is \\spheredef{shadowed}.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 2,
@@ -254,7 +254,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
-          You gain a +2 accuracy bonus if the target is \\spheredef{shadowed}.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 1,
@@ -272,7 +272,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
-          You gain a +2 accuracy bonus if the target is \\spheredef{shadowed}.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 5,
@@ -445,7 +445,7 @@ export const umbramancy: MysticSphere = {
           However, this condition has no effect if it enters those areas by other means, such as by \\glossterm{teleportation} or if the light around it is suddenly extinguished.
         `,
         targeting: `
-          Make an attack vs. Mental against a creature within \\medrange that is not \\spheredef{shadowed}.
+          Make an attack vs. Mental against a creature within \\medrange that is not \\sphereterm{shadowed}.
         `,
       },
       narrative: `
