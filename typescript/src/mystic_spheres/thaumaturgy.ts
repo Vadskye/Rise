@@ -62,36 +62,36 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Magic Missile",
+      name: "Distant Magic Missile",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // +4r for range; pay extra for distrange, since it scales well with range
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against anything within \\distrange.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 4,
+      rank: 5,
       scaling: "damage",
     },
 
     {
-      name: "Supreme Magic Missile",
+      name: "Mighty Magic Missile",
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // +6r for +3d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against anything within \\shortrange.
         `,
       },
       narrative: `
@@ -122,7 +122,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Magic Missile Storm",
+      name: "Massive Magic Missile Storm",
 
       // -1d, -1 range level in exchange for the strong miss effect
       attack: {
@@ -203,7 +203,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Suppress Magic",
+      name: "Intense Suppress Magic",
 
       functionsLike: {
         name: 'suppress magic',
@@ -231,7 +231,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Greater Dispel Magic",
+      name: "Intense Dispel Magic",
 
       functionsLike: {
         exceptThat: `
@@ -346,19 +346,21 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: "Dimensional Anchor",
+      name: "Dimensional Seal",
 
       attack: {
-        hit: `The target is unable to travel extradimensionally.
-        This prevents all \\abilitytag{Manifestation} effects and effects that teleport the target or move it between planes.`,
+        hit: `
+          The target cannot be \\glossterm{teleported}.
+          An object affected by this spell is left behind if it is carried by a creature that teleports.
+        `,
         targeting: `
-          Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against anything within \\longrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against anything within \\medrange.
         `,
       },
 
-      rank: 3,
+      rank: 2,
       scaling: "accuracy",
-      type: "Sustain (minor)",
+      type: "Sustain (attuneable, minor)",
     },
 
     {
@@ -380,13 +382,12 @@ export const thaumaturgy: MysticSphere = {
       name: "Teleportation Ward",
 
       effect: `
-        Teleportation into and out of a \\medarea radius \\glossterm{emanation} from you is impossible.
-        Any abilities which would cause creatures to teleport within the area have no effect.
+        Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\largearea radius instead.",
-        6: "You can choose to create a \\hugearea radius instead.",
+        4: "You can choose to affect a \\hugearea radius instead.",
+        6: "You can choose to affect a \\gargarea radius instead.",
       },
       type: "Attune",
     },
