@@ -150,7 +150,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
         This strike costs ten projectiles.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
