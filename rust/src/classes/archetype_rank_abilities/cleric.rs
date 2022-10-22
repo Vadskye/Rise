@@ -123,7 +123,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Turn Undead}
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
-                    \hit Each target is \frightened by you as a \glossterm{condition}.
+                    \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
                     Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
@@ -475,10 +475,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \shaken by you as a \glossterm{condition}.
+                    \hit Each target is afraid of you as a \glossterm{condition}.
+                    If it has \glossterm{damage resistance} remaining, it is \shaken by you.
+                    Otherwise, it is \frightened by you.
 
                     \rankline
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \frightened instead of shaken.
+                    \rank{7} The area increases to a \hugearea radius.
                 \end{activeability}
             ",
             modifiers: None,

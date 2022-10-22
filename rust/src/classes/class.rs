@@ -1523,7 +1523,7 @@ impl Class {
 
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                        \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{minor action}.
+                        \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{activeability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             Choose an \glossterm{ally} adjacent to you.
