@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const dirtyFighting: CombatStyle = {
-  name: "Dirty Fighting",
-  shortDescription: "Disable foes using freehanded attacks and tricks.",
+  name: 'Dirty Fighting',
+  shortDescription: 'Disable foes using freehanded attacks and tricks.',
 
   maneuvers: [
     {
-      name: "Dazing Fist",
+      name: 'Dazing Fist',
 
       // -2 ranks due to unarmed limitation
       effect: `
@@ -17,7 +17,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Stunning Fist",
+      name: 'Stunning Fist',
 
       // -2 ranks due to unarmed limitation
       effect: `
@@ -29,7 +29,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Quivering Palm",
+      name: 'Quivering Palm',
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
@@ -40,96 +40,96 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Strangle",
+      name: 'Strangle',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           the target also takes 1d8 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        name: "grapple",
+        name: 'grapple',
       },
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Muzzling Grapple",
+      name: 'Muzzling Grapple',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           the target also has a 20\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        name: "grapple",
+        name: 'grapple',
       },
       rank: 1,
     },
 
     {
-      name: "Muzzling Grapple+",
+      name: 'Muzzling Grapple+',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           the target also has a 50\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        name: "grapple",
+        name: 'grapple',
       },
       rank: 5,
     },
 
     {
-      name: "Pin",
+      name: 'Pin',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           if the target has no remaining \\glossterm{damage resistance}, it is pinned completely instead of simply grappled.
           It is \\helpless, and the only physical ability it can use is the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
-        name: "grapple",
+        name: 'grapple',
       },
       rank: 7,
     },
 
     {
-      name: "Knockback Shove",
+      name: 'Knockback Shove',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           you \\glossterm{knockback} the target up to 15 feet instead of pushing it.
           On a critical hit, you knockback the target 30 feet instead.
           Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
-        name: "shove",
+        name: 'shove',
       },
       rank: 1,
     },
 
     {
-      name: "Knockback Sweep",
+      name: 'Knockback Sweep',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         exceptThat: `
           it affects up to three creatures adjacent to you instead of only one.
           In addition, you \\glossterm{knockback} each target up to 15 feet instead of pushing it.
           On a critical hit, you knockback each target 30 feet instead.
           Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
-        name: "shove",
+        name: 'shove',
       },
       rank: 3,
     },
 
     {
-      name: "Disarm",
+      name: 'Disarm',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -141,51 +141,51 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Steal Weapon",
+      name: 'Steal Weapon',
 
       functionsLike: {
         exceptThat: `
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
           Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
-        name: "disarm",
+        name: 'disarm',
       },
       rank: 7,
     },
 
     {
-      name: "Battering Ram",
+      name: 'Battering Ram',
 
       functionsLike: {
-        abilityType: "ability",
+        abilityType: 'ability',
         // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           In addition, creatures cannot choose to avoid you and each creature that you move through takes 1d8 + half \\glossterm{power} bludgeoning damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
-        name: "overrun",
+        name: 'overrun',
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 3,
     },
 
     {
-      name: "Battering Ram+",
+      name: 'Battering Ram+',
 
       functionsLike: {
-        abilityType: "maneuver",
+        abilityType: 'maneuver',
         exceptThat: `
           the damage increases to 4d8 + half \\glossterm{power}.
         `,
-        name: "battering ram",
+        name: 'battering ram',
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 7,
     },
 
     {
-      name: "Alchemical Strike",
+      name: 'Alchemical Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -197,7 +197,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Slipstrike",
+      name: 'Slipstrike',
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 damage bonus.
@@ -205,14 +205,14 @@ export const dirtyFighting: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Sweep the Leg",
+      name: 'Sweep the Leg',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -223,7 +223,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Anklesprainer",
+      name: 'Anklesprainer',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -234,7 +234,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Switchstrike",
+      name: 'Switchstrike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -244,7 +244,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Eye-Averting Strike",
+      name: 'Eye-Averting Strike',
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
@@ -254,7 +254,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Eye Jab",
+      name: 'Eye Jab',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -265,7 +265,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: "Eye Gouge",
+      name: 'Eye Gouge',
 
       effect: `
         Make a melee \\glossterm{strike}.

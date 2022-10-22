@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const bluntForce: CombatStyle = {
-  name: "Blunt Force",
-  shortDescription: "Smash foes with bludgeoning weapons and raw power.",
+  name: 'Blunt Force',
+  shortDescription: 'Smash foes with bludgeoning weapons and raw power.',
 
   maneuvers: [
     {
-      name: "Armorcrusher",
+      name: 'Armorcrusher',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -17,7 +17,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Armorcrusher+",
+      name: 'Armorcrusher+',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -27,7 +27,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Ground Stomp",
+      name: 'Ground Stomp',
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
@@ -35,12 +35,12 @@ export const bluntForce: CombatStyle = {
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 1,
     },
 
     {
-      name: "Ground Slam",
+      name: 'Ground Slam',
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
@@ -51,7 +51,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Ground Slam+",
+      name: 'Ground Slam+',
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
@@ -62,7 +62,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Resonating Strike",
+      name: 'Resonating Strike',
 
       effect: `
         Make a strike using a bludgeoning weapon.
@@ -70,13 +70,13 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Tenderize",
+      name: 'Tenderize',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -86,7 +86,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Headshot",
+      name: 'Headshot',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -97,7 +97,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Headshot+",
+      name: 'Headshot+',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -108,7 +108,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Leap Slam",
+      name: 'Leap Slam',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
@@ -118,23 +118,23 @@ export const bluntForce: CombatStyle = {
           If you do, make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 3,
     },
 
     {
-      name: "Leap Slam+",
+      name: 'Leap Slam+',
 
       functionsLike: {
-        name: "leap slam",
-        exceptThat: "the damage increases to 4d8 + \\glossterm{power}.",
+        name: 'leap slam',
+        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
       },
-      scaling: "damage",
+      scaling: 'damage',
       rank: 7,
     },
 
     {
-      name: "Ricochet",
+      name: 'Ricochet',
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects within \\shortrange of you.
@@ -145,7 +145,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Knockdown",
+      name: 'Knockdown',
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
@@ -156,7 +156,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Forceful Strike",
+      name: 'Forceful Strike',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -167,7 +167,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Press Forward",
+      name: 'Press Forward',
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
@@ -180,17 +180,17 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Press Forward+",
+      name: 'Press Forward+',
 
       functionsLike: {
-        exceptThat: "you can move up to your full movement speed instead of only 5 feet.",
-        name: "press forward",
+        exceptThat: 'you can move up to your full movement speed instead of only 5 feet.',
+        name: 'press forward',
       },
       rank: 5,
     },
 
     {
-      name: "Desperate Smash",
+      name: 'Desperate Smash',
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -200,14 +200,14 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +8.",
-        5: "The damage bonus increases to +16.",
-        7: "The damage bonus increases to +24.",
+        3: 'The damage bonus increases to +8.',
+        5: 'The damage bonus increases to +16.',
+        7: 'The damage bonus increases to +24.',
       },
     },
 
     {
-      name: "Desperate Crush",
+      name: 'Desperate Crush',
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
@@ -218,13 +218,13 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Gutshot",
+      name: 'Gutshot',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -235,7 +235,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Gutshot+",
+      name: 'Gutshot+',
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -246,7 +246,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Boneshatter",
+      name: 'Boneshatter',
 
       // baseline is +2d at this level, could be +3d due to delay
       effect: `
@@ -258,7 +258,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Earsplitting Bonedrum",
+      name: 'Earsplitting Bonedrum',
 
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
@@ -270,7 +270,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Earsplitting Bonedrum+",
+      name: 'Earsplitting Bonedrum+',
 
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
@@ -281,7 +281,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Impactful Strike",
+      name: 'Impactful Strike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -292,7 +292,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Unbalanced Smash",
+      name: 'Unbalanced Smash',
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 damage bonus using a bludgeoning weapon.
@@ -300,9 +300,9 @@ export const bluntForce: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
   ],

@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const ripAndTear: CombatStyle = {
-  name: "Rip and Tear",
-  shortDescription: "Rip foes apart with slashing weapons.",
+  name: 'Rip and Tear',
+  shortDescription: 'Rip foes apart with slashing weapons.',
 
   maneuvers: [
     {
-      name: "Strip the Flesh",
+      name: 'Strip the Flesh',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -17,7 +17,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Rend the Hide",
+      name: 'Rend the Hide',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -25,13 +25,13 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Brow Gash",
+      name: 'Brow Gash',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -41,7 +41,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Blinding Brow Gash",
+      name: 'Blinding Brow Gash',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -52,7 +52,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Hamstring",
+      name: 'Hamstring',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -63,7 +63,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Two-Weapon Rend",
+      name: 'Two-Weapon Rend',
 
       effect: `
         Make a melee strike using a slashing weapon.
@@ -73,7 +73,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Two-Weapon Rend+",
+      name: 'Two-Weapon Rend+',
 
       effect: `
         Make a melee strike using a slashing weapon.
@@ -83,7 +83,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Flintspark Strike",
+      name: 'Flintspark Strike',
 
       effect: `
         Make a strike using a slashing weapon.
@@ -94,7 +94,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Flintspark Strike+",
+      name: 'Flintspark Strike+',
 
       effect: `
         Make a strike using a slashing weapon.
@@ -105,7 +105,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Sweeping Strike",
+      name: 'Sweeping Strike',
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
@@ -115,7 +115,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Sweeping Throw",
+      name: 'Sweeping Throw',
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing weapon.
@@ -125,7 +125,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Ricochet",
+      name: 'Ricochet',
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects within \\shortrange of you.
@@ -136,7 +136,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Ricochet+",
+      name: 'Ricochet+',
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to four creatures or objects within \\longrange of you.
@@ -147,7 +147,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Bloodletting Strike",
+      name: 'Bloodletting Strike',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -160,27 +160,29 @@ export const ripAndTear: CombatStyle = {
     // is 2x power equal to +5-10 damage? sometimes better, sometimes worse, especially with the
     // delay, so seems fine
     {
-      name: "Bloodletting Strike+",
+      name: 'Bloodletting Strike+',
 
       functionsLike: {
         name: 'bloodletting strike',
-        exceptThat: 'the extra damage increases to be equal to your \\glossterm{power} with the strike.',
+        exceptThat:
+          'the extra damage increases to be equal to your \\glossterm{power} with the strike.',
       },
       rank: 5,
     },
 
     {
-      name: "Bloodletting Sweep",
+      name: 'Bloodletting Sweep',
 
       functionsLike: {
         name: 'bloodletting strike',
-        exceptThat: 'the strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).',
+        exceptThat:
+          'the strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag (see \\pcref{Weapon Tags}).',
       },
       rank: 7,
     },
 
     {
-      name: "Spinning Slash",
+      name: 'Spinning Slash',
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
@@ -191,7 +193,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Spinning Slash+",
+      name: 'Spinning Slash+',
 
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
@@ -201,7 +203,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Twinslash",
+      name: 'Twinslash',
 
       effect: `
         Make two melee \\glossterm{strikes} using a slashing weapon.
@@ -211,7 +213,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: "Tear Exposed Flesh",
+      name: 'Tear Exposed Flesh',
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
@@ -219,9 +221,9 @@ export const ripAndTear: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +8.",
-        5: "The damage bonus increases to +16.",
-        7: "The damage bonus increases to +24.",
+        3: 'The damage bonus increases to +8.',
+        5: 'The damage bonus increases to +16.',
+        7: 'The damage bonus increases to +24.',
       },
     },
   ],

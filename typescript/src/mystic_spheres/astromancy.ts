@@ -1,9 +1,9 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const astromancy: MysticSphere = {
-  name: "Astromancy",
-  shortDescription: "Transport creatures and objects instantly through space.",
-  sources: ["arcane", "domain", "pact"],
+  name: 'Astromancy',
+  shortDescription: 'Transport creatures and objects instantly through space.',
+  sources: ['arcane', 'domain', 'pact'],
   specialRules: `
     \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
     If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
@@ -18,7 +18,7 @@ export const astromancy: MysticSphere = {
 
   cantrips: [
     {
-      name: "Dimension Hop",
+      name: 'Dimension Hop',
 
       effect: `
         You teleport horizontally into an unoccupied location within 5 foot \\glossterm{range} on a stable surface that can support your weight.
@@ -28,13 +28,13 @@ export const astromancy: MysticSphere = {
         You disappear with an audible pop, appearing only a few feet away - but now on the other side of the cell bars.
       `,
       scaling: {
-        2: "The range increases to 15 feet.",
-        4: "The range increases to \\rngshort.",
-        6: "The range increases to \\rngmed.",
+        2: 'The range increases to 15 feet.',
+        4: 'The range increases to \\rngshort.',
+        6: 'The range increases to \\rngmed.',
       },
     },
     {
-      name: "Translocate Object",
+      name: 'Translocate Object',
 
       effect: `
         Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
@@ -46,15 +46,15 @@ export const astromancy: MysticSphere = {
         The barkeep frowns, about to say something, before a gold coin suddenly appears in the tankard's place.
       `,
       scaling: {
-        2: "The range increases to \\rngmed.",
-        4: "The maximum size increases to Medium.",
-        6: "The range increases to \\rnglong.",
+        2: 'The range increases to \\rngmed.',
+        4: 'The maximum size increases to Medium.',
+        6: 'The range increases to \\rnglong.',
       },
     },
   ],
   spells: [
     {
-      name: "Translocating Grasp",
+      name: 'Translocating Grasp',
 
       attack: {
         // crit: '',
@@ -75,11 +75,11 @@ export const astromancy: MysticSphere = {
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Translocating Grasp",
+      name: 'Intense Translocating Grasp',
 
       attack: {
         // crit: '',
@@ -100,11 +100,11 @@ export const astromancy: MysticSphere = {
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Banishment",
+      name: 'Banishment',
 
       attack: {
         hit: `
@@ -122,26 +122,27 @@ export const astromancy: MysticSphere = {
         If they run quickly, they can escape before it returns.
       `,
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Certain Banishment",
+      name: 'Certain Banishment',
 
       functionsLike: {
-        name: "banishment",
-        exceptThat: "you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.",
+        name: 'banishment',
+        exceptThat:
+          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.',
       },
       narrative: `
         The balor about to drag your allies into the Abyss disappears with an audible pop.
         If they act quickly, they can prepare a trap before it returns.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // treat this as r3 level; it's similar to immobilized, but harder to cheese with Long weapons
     {
-      name: "Dimensional Anchor",
+      name: 'Dimensional Anchor',
 
       attack: {
         hit: `
@@ -162,7 +163,7 @@ export const astromancy: MysticSphere = {
     },
     // TODO: target wording is awkward
     {
-      name: "Translocation",
+      name: 'Translocation',
 
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
@@ -176,13 +177,13 @@ export const astromancy: MysticSphere = {
         The orcs tracking you will never be able to follow your trail now.
       `,
       scaling: {
-        3: "The range increases to \\longrange.",
-        5: "The range increases to \\distrange.",
-        7: "The range increases to \\extrange.",
+        3: 'The range increases to \\longrange.',
+        5: 'The range increases to \\distrange.',
+        7: 'The range increases to \\extrange.',
       },
     },
     {
-      name: "Hostile Translocation",
+      name: 'Hostile Translocation',
 
       attack: {
         hit: `
@@ -200,10 +201,10 @@ export const astromancy: MysticSphere = {
         You teleport your foe across the chasm.
         The orc will never be able to reach you now.
       `,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Intense Hostile Translocation",
+      name: 'Intense Hostile Translocation',
 
       attack: {
         hit: `
@@ -221,17 +222,17 @@ export const astromancy: MysticSphere = {
         You teleport your foe across the chasm.
         The ogre will never be able to reach you now.
       `,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Silent Translocation",
+      name: 'Silent Translocation',
 
       functionsLike: {
         exceptThat: `
           this spell does not have \\glossterm{verbal components}.
           In addition, the target's departure and arrival with this spell are silent.
         `,
-        name: "translocation",
+        name: 'translocation',
       },
       narrative: `
         One by one, you teleport your allies into hidden vantage points overlooking your enemies.
@@ -239,12 +240,12 @@ export const astromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The range increases to \\rngmed.",
-        7: "The range increases to \\rnglong.",
+        5: 'The range increases to \\rngmed.',
+        7: 'The range increases to \\rnglong.',
       },
     },
     {
-      name: "Dimension Door",
+      name: 'Dimension Door',
 
       effect: `
         You teleport to an unoccupied destination on a stable surface within 300 feet of you.
@@ -257,11 +258,11 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "The maximum distance increases to 600 feet.",
+        6: 'The maximum distance increases to 600 feet.',
       },
     },
     {
-      name: "Sudden Rift",
+      name: 'Sudden Rift',
 
       attack: {
         hit: `
@@ -275,10 +276,10 @@ export const astromancy: MysticSphere = {
         Your foes are caught by a sudden rift that shunts them painfully through dimensions.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Banishing Rift",
+      name: 'Banishing Rift',
 
       attack: {
         hit: `
@@ -295,10 +296,10 @@ export const astromancy: MysticSphere = {
         Your foes are caught by a sudden rift that shunts them painfully through dimensions, leaving some stranded.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Massive Sudden Rift",
+      name: 'Massive Sudden Rift',
 
       // +3r for area, +2r for +1d
       attack: {
@@ -313,10 +314,10 @@ export const astromancy: MysticSphere = {
         Your foes are caught by a sudden massive rift that shunts them painfully through dimensions.
       `,
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Planar Jaunt -- Astral Plane",
+      name: 'Planar Jaunt -- Astral Plane',
 
       // -1d for long range
       attack: {
@@ -333,10 +334,10 @@ export const astromancy: MysticSphere = {
         Though its destination is peaceful, the rough transit is jarring by itself.
       `,
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Planar Jaunt -- Plane of Air",
+      name: 'Planar Jaunt -- Plane of Air',
 
       attack: {
         hit: `
@@ -353,10 +354,10 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Planar Jaunt -- Plane of Earth",
+      name: 'Planar Jaunt -- Plane of Earth',
 
       attack: {
         hit: `
@@ -372,10 +373,10 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
       `,
       rank: 3,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Planar Jaunt -- Plane of Fire",
+      name: 'Planar Jaunt -- Plane of Fire',
 
       attack: {
         crit: `
@@ -400,7 +401,7 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: "Planar Jaunt -- Plane of Water",
+      name: 'Planar Jaunt -- Plane of Water',
 
       attack: {
         hit: `
@@ -416,11 +417,11 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Water, where it suddenly begins drowning.
       `,
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
     // +1 rank for all damage types
     {
-      name: "Planar Jaunt -- Myriad",
+      name: 'Planar Jaunt -- Myriad',
 
       attack: {
         hit: `
@@ -436,10 +437,10 @@ export const astromancy: MysticSphere = {
         No matter what its weaknesses are, one of those planes probably held the key.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Planar Jaunt -- Far Realm",
+      name: 'Planar Jaunt -- Far Realm',
 
       attack: {
         hit: `
@@ -459,7 +460,7 @@ export const astromancy: MysticSphere = {
       rank: 7,
     },
     {
-      name: "Dimensional Jitter",
+      name: 'Dimensional Jitter',
 
       effect: `
         At the end of each \\glossterm{phase}, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
@@ -470,10 +471,10 @@ export const astromancy: MysticSphere = {
         Will they ever learn?
       `,
       rank: 5,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Dimension Walk",
+      name: 'Dimension Walk',
 
       effect: `
         Once per round, you can teleport horizontally instead of moving normally.
@@ -485,10 +486,10 @@ export const astromancy: MysticSphere = {
         Why would you walk when you can teleport?
       `,
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Astral Instability",
+      name: 'Astral Instability',
 
       effect: `
         At the start of each phase, you may \\sphereterm{flicker} to a random unoccupied location in the Astral Plane.
@@ -500,10 +501,10 @@ export const astromancy: MysticSphere = {
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
         Few people send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
       `,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Hostile Transposition",
+      name: 'Hostile Transposition',
 
       attack: {
         // crit: '',
@@ -521,10 +522,10 @@ export const astromancy: MysticSphere = {
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Distant Hostile Transposition",
+      name: 'Distant Hostile Transposition',
 
       attack: {
         // crit: '',
@@ -542,10 +543,10 @@ export const astromancy: MysticSphere = {
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Transposition",
+      name: 'Transposition',
 
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
@@ -558,13 +559,13 @@ export const astromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: "The range increases to \\longrange.",
-        5: "The range increases to \\distrange.",
-        7: "The range increases to \\extrange.",
+        3: 'The range increases to \\longrange.',
+        5: 'The range increases to \\distrange.',
+        7: 'The range increases to \\extrange.',
       },
     },
     {
-      name: "Phasing Blade",
+      name: 'Phasing Blade',
 
       effect: `
         Whenever you make a \\glossterm{strike}, your weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
@@ -576,13 +577,13 @@ export const astromancy: MysticSphere = {
         You augment your weapons with the ability to travel short distances through the Astral Plane to reach their targets.
       `,
       scaling: {
-        5: "Your strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.",
-        7: "Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.",
+        5: 'Your strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.',
+        7: 'Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Phasing Spells",
+      name: 'Phasing Spells',
 
       effect: `
         When determining whether you have \\glossterm{line of effect} to a particular location with spells, you can ignore a single physical obstacle up to one foot thick.
@@ -593,12 +594,12 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: "Your spells can pass through any number of physical obstacles with a combined thickness of two feet or less.",
+        6: 'Your spells can pass through any number of physical obstacles with a combined thickness of two feet or less.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Phasestep",
+      name: 'Phasestep',
 
       effect: `
         When you move using one of your movement speeds, you can move through a single creature freely.
@@ -611,11 +612,11 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
       rank: 1,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Greater Phasestep",
+      name: 'Greater Phasestep',
 
       effect: `
         When you move using one of your movement speeds, you can move through creatures freely.
@@ -627,26 +628,26 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel through the Astral Plane to reach your destination.
       `,
       rank: 5,
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Mass Phasestep",
+      name: 'Mass Phasestep',
 
       functionsLike: {
         mass: true,
-        name: "phasestep",
+        name: 'phasestep',
       },
       narrative: `
         You augment the bodies of your allies with the ability to travel short distances through the Astral Plane to reach their destinations.
       `,
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Astral Refuge",
+      name: 'Astral Refuge',
 
-      castingTime: "minor action",
+      castingTime: 'minor action',
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         You \\sphereterm{flicker} the target into a random safe location in the Astral Plane.
@@ -660,7 +661,7 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: "Blink",
+      name: 'Blink',
 
       effect: `
         All attacks against you this round have a 20\\% \\glossterm{failure chance}.
@@ -677,7 +678,7 @@ export const astromancy: MysticSphere = {
       tags: ['Swift'],
     },
     {
-      name: "Distant Spells",
+      name: 'Distant Spells',
 
       effect: `
         You gain a +15 foot \\glossterm{magic bonus} to the \\glossterm{range} of all of your ranged spells.
@@ -688,13 +689,13 @@ export const astromancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "The distance increases to 30 feet.",
-        6: "The distance increases to 60 feet.",
+        4: 'The distance increases to 30 feet.',
+        6: 'The distance increases to 60 feet.',
       },
-      type: "Attune",
+      type: 'Attune',
     },
     {
-      name: "Twinned Portals",
+      name: 'Twinned Portals',
 
       effect: `
         Choose two unoccupied squares on stable ground within \\medrange.
@@ -713,28 +714,29 @@ export const astromancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "The range increases to \\longrange.",
-        7: "The range increases to \\distrange.",
+        5: 'The range increases to \\longrange.',
+        7: 'The range increases to \\distrange.',
       },
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: "Greater Twinned Portals",
+      name: 'Greater Twinned Portals',
 
       functionsLike: {
-        name: "twinned portals",
-        exceptThat: "the range increases to \\longrange, and the portals function any number of times per phase intead of only once per phase.",
+        name: 'twinned portals',
+        exceptThat:
+          'the range increases to \\longrange, and the portals function any number of times per phase intead of only once per phase.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 7,
-      type: "Sustain (attuneable, minor)",
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Interplanar Gate",
+      name: 'Interplanar Gate',
       rank: 7,
       effect: `
         Choose a plane that connects to your current plane, and a location within that plane.
@@ -751,11 +753,11 @@ export const astromancy: MysticSphere = {
         The Astral Plane connects to every plane, but transit from other planes is usually more limited.
         From the Material Plane, you can only reach the Astral Plane.
       `,
-      type: "Sustain (standard)",
-      castingTime: "one week",
+      type: 'Sustain (standard)',
+      castingTime: 'one week',
     },
     {
-      name: "Plane Shift",
+      name: 'Plane Shift',
       rank: 4,
       effect: `
         Choose a \\glossterm{planar rift} within \\medrange and up to five Large or smaller ritual participants.
@@ -767,10 +769,10 @@ export const astromancy: MysticSphere = {
         From the Material Plane, you can only reach the Astral Plane.
       `,
       tags: [],
-      castingTime: "1 hour",
+      castingTime: '1 hour',
     },
     {
-      name: "Astral Projection",
+      name: 'Astral Projection',
 
       effect: `
         Choose up to five Large or smaller ritual participants.
@@ -782,10 +784,10 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       tags: [],
-      castingTime: "24 hours",
+      castingTime: '24 hours',
     },
     {
-      name: "Homeward Shift",
+      name: 'Homeward Shift',
 
       effect: `
         This ritual can only be performed on the Astral Plane.
@@ -795,10 +797,10 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       tags: [],
-      castingTime: "24 hours",
+      castingTime: '24 hours',
     },
     {
-      name: "Overland Teleportation",
+      name: 'Overland Teleportation',
       rank: 5,
       effect: `
         Choose a destination up to 100 miles away from you on your current plane.
@@ -812,26 +814,26 @@ export const astromancy: MysticSphere = {
         % TODO: does this need more clarity about what teleportation works?
       `,
       tags: [],
-      castingTime: "24 hours",
+      castingTime: '24 hours',
     },
     {
-      name: "Distant Overland Teleportation",
+      name: 'Distant Overland Teleportation',
 
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
         The destination must simply be on the same plane as you.
         `,
-        name: "overland teleportation",
+        name: 'overland teleportation',
       },
       rank: 7,
       tags: [],
-      castingTime: "24 hours",
+      castingTime: '24 hours',
     },
     {
-      name: "Retrieve Legacy",
+      name: 'Retrieve Legacy',
 
-      castingTime: "24 hours",
+      castingTime: '24 hours',
       effect: `
         Choose one ritual participant.
         If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, it is teleported into the creature's hand.
@@ -840,9 +842,9 @@ export const astromancy: MysticSphere = {
       rank: 2,
     },
     {
-      name: "Astral Chest",
+      name: 'Astral Chest',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
         If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.

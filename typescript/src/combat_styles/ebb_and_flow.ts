@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const ebbAndFlow: CombatStyle = {
-  name: "Ebb and Flow",
-  shortDescription: "Fight reactively, shifting your style with the flow of combat.",
+  name: 'Ebb and Flow',
+  shortDescription: 'Fight reactively, shifting your style with the flow of combat.',
 
   maneuvers: [
     {
-      name: "Counterstrike",
+      name: 'Counterstrike',
 
       effect: `
         Choose a creature you can see.
@@ -19,7 +19,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Counter Sweep",
+      name: 'Counter Sweep',
 
       effect: `
         Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
@@ -31,7 +31,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Counter Flurry",
+      name: 'Counter Flurry',
 
       effect: `
         Choose a creature you can see.
@@ -44,7 +44,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Redeeming Followup",
+      name: 'Redeeming Followup',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -54,7 +54,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Victorious Followup",
+      name: 'Victorious Followup',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -64,7 +64,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Redeeming Flurry",
+      name: 'Redeeming Flurry',
 
       effect: `
         Make two \\glossterm{strikes}.
@@ -75,7 +75,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Dazing Feint",
+      name: 'Dazing Feint',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -86,7 +86,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Stunning Feint",
+      name: 'Stunning Feint',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -97,7 +97,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Mind-Fuzzing Feint",
+      name: 'Mind-Fuzzing Feint',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -109,7 +109,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Reckless Strike",
+      name: 'Reckless Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -119,14 +119,14 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Reckless Flurry",
+      name: 'Reckless Flurry',
 
       // TODO: unclear rank
       effect: `
@@ -139,7 +139,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Momentum Strike",
+      name: 'Momentum Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -147,13 +147,13 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 3,
       scaling: {
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
 
     {
-      name: "Certain Strike",
+      name: 'Certain Strike',
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus.
@@ -163,7 +163,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Mighty Strike",
+      name: 'Mighty Strike',
 
       effect: `
         Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
@@ -171,14 +171,14 @@ export const ebbAndFlow: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +8.",
-        5: "The damage bonus increases to +16.",
-        7: "The damage bonus increases to +24.",
+        3: 'The damage bonus increases to +8.',
+        5: 'The damage bonus increases to +16.',
+        7: 'The damage bonus increases to +24.',
       },
     },
 
     {
-      name: "Hunting Strike",
+      name: 'Hunting Strike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -192,17 +192,18 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Hunting Strike+",
+      name: 'Hunting Strike+',
 
       functionsLike: {
-        exceptThat: "the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.",
-        name: "hunting strike",
+        exceptThat:
+          'the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
+        name: 'hunting strike',
       },
       rank: 7,
     },
 
     {
-      name: "Punish Inattention",
+      name: 'Punish Inattention',
 
       effect: `
         Choose a creature you can see.
@@ -214,7 +215,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Mainhand Feint",
+      name: 'Mainhand Feint',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -226,7 +227,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Reckless Assault",
+      name: 'Reckless Assault',
 
       // -2 ranks for self-daze
       effect: `
@@ -238,7 +239,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Reckless Assault+",
+      name: 'Reckless Assault+',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -249,7 +250,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Back Into the Fray",
+      name: 'Back Into the Fray',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -259,7 +260,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Tag-Team Strike",
+      name: 'Tag-Team Strike',
 
       effect: `
         Make a melee \\glossterm{strike}.

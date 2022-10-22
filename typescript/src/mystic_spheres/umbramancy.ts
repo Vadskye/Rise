@@ -1,16 +1,16 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const umbramancy: MysticSphere = {
-  name: "Umbramancy",
-  shortDescription: "Manipulate shadows and darkness to conceal allies and inhibit foes.",
-  sources: ["arcane", "pact"],
+  name: 'Umbramancy',
+  shortDescription: 'Manipulate shadows and darkness to conceal allies and inhibit foes.',
+  sources: ['arcane', 'pact'],
   specialRules: `
     \\spheredef{shadowed} A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
   `,
 
   cantrips: [
     {
-      name: "Shadowcloak",
+      name: 'Shadowcloak',
 
       effect: `
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
@@ -25,7 +25,7 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Suppress Light",
+      name: 'Suppress Light',
 
       effect: `
         This spell has no \\glossterm{verbal components}.
@@ -39,12 +39,12 @@ export const umbramancy: MysticSphere = {
         4: `The range increases to \\longrange.`,
         6: `The maximum area increases to a \\largearea radius.`,
       },
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
   ],
   spells: [
     {
-      name: "Banish Light",
+      name: 'Banish Light',
 
       effect: `
         All light within one \\glossterm{zone} within \\medrange is suppressed.
@@ -59,11 +59,11 @@ export const umbramancy: MysticSphere = {
         7: `The maximum area increases to a \\hugearea radius.`,
       },
       tags: [],
-      type: "Sustain (minor)",
+      type: 'Sustain (minor)',
     },
 
     {
-      name: "Beacon of Darkness",
+      name: 'Beacon of Darkness',
 
       effect: `
         All light within an \\glossterm{emanation} around you is suppressed.
@@ -74,11 +74,11 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 6,
       tags: [],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Darklantern",
+      name: 'Darklantern',
 
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
@@ -93,11 +93,11 @@ export const umbramancy: MysticSphere = {
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
       tags: [],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Darkvision",
+      name: 'Darkvision',
 
       effect: `
         You gain \\trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \\pcref{Darkvision}).
@@ -108,15 +108,15 @@ export const umbramancy: MysticSphere = {
         5: `The range increases to 120 feet.`,
         7: `The range increases to 180 feet.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Mass Darkvision",
+      name: 'Mass Darkvision',
 
       functionsLike: {
         mass: true,
-        name: "Darkvision",
+        name: 'Darkvision',
       },
       // narrative: '',
       rank: 3,
@@ -124,11 +124,11 @@ export const umbramancy: MysticSphere = {
         5: `The radius increases to 90 feet.`,
         7: `The radius increases to 120 feet.`,
       },
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Dark Miasma",
+      name: 'Dark Miasma',
 
       attack: {
         // -1d for +2a
@@ -139,11 +139,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Dark Miasma",
+      name: 'Intense Dark Miasma',
 
       attack: {
         // -1d for +2a
@@ -157,11 +157,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Massive Dark Miasma",
+      name: 'Massive Dark Miasma',
 
       // switch to +1r for shadowed instead of -1d
       attack: {
@@ -172,11 +172,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Dark Grasp",
+      name: 'Dark Grasp',
 
       // -1d for shadowed
       attack: {
@@ -192,22 +192,23 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Dark Grasp",
+      name: 'Intense Dark Grasp',
 
       functionsLike: {
         name: 'dark grasp',
-        exceptThat: "the target is \\frightened instead of shaken, and the damage increases to 2d10 + \\glossterm{power}.",
+        exceptThat:
+          'the target is \\frightened instead of shaken, and the damage increases to 2d10 + \\glossterm{power}.',
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Creeping Darkness",
+      name: 'Creeping Darkness',
 
       // treat as short range med radius, which is a t3 area
       attack: {
@@ -221,15 +222,15 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Sustain (standard)'],
     },
 
     {
-      name: "Massive Creeping Darkness",
+      name: 'Massive Creeping Darkness',
 
       functionsLike: {
-        name: "creeping darkness",
+        name: 'creeping darkness',
         exceptThat: `
           the area affects a \\medarea radius in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
           In addition, the range increases to \\medrange, and the damage increases to 4d6 + half \\glossterm{power}.
@@ -239,12 +240,12 @@ export const umbramancy: MysticSphere = {
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation", "Sustain (standard)"],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: "Heed the Dark Call",
+      name: 'Heed the Dark Call',
 
       attack: {
         // +1r for shadowed
@@ -258,11 +259,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Intense Heed the Dark Call",
+      name: 'Intense Heed the Dark Call',
 
       attack: {
         // +1r for shadowed
@@ -276,11 +277,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Shadow Mantle",
+      name: 'Shadow Mantle',
 
       effect: `
         All \\glossterm{strikes} against you have a 25\\% \\glossterm{failure chance}.
@@ -290,11 +291,11 @@ export const umbramancy: MysticSphere = {
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
       rank: 6,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Fade Into Darkness",
+      name: 'Fade Into Darkness',
 
       effect: `
         At the end of each round, if you took no actions that round and are not in \\glossterm{brilliant illumination}, you become \\trait{invisible} (see \\pcref{Invisible}).
@@ -305,11 +306,11 @@ export const umbramancy: MysticSphere = {
         4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
         6: `Taking \\glossterm{free actions} and \\glossterm{minor actions} does not end your invisibility or prevent you from becoming invisible.`,
       },
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Dark Shroud",
+      name: 'Dark Shroud',
 
       // +1r for shadowed
       attack: {
@@ -323,11 +324,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Shadowstrike",
+      name: 'Shadowstrike',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -340,15 +341,15 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "You gain a +1 accuracy bonus with the strike.",
-        7: "The accuracy bonus increases to +2.",
+        5: 'You gain a +1 accuracy bonus with the strike.',
+        7: 'The accuracy bonus increases to +2.',
       },
-      tags: ["Visual"],
-      type: "Attune (deep)",
+      tags: ['Visual'],
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Conceal",
+      name: 'Conceal',
 
       effect: `
         If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
@@ -361,11 +362,11 @@ export const umbramancy: MysticSphere = {
         7: `The bonus increases to +6.`,
       },
       tags: [],
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Shadowstep",
+      name: 'Shadowstep',
 
       effect: `
         This spell has no \\glossterm{verbal components}.
@@ -383,7 +384,7 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Shadowstep Strike",
+      name: 'Shadowstep Strike',
 
       functionsLike: {
         exceptThat: `
@@ -391,14 +392,14 @@ export const umbramancy: MysticSphere = {
           You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Attribute Damage Increments}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
-        name: "shadowstep",
+        name: 'shadowstep',
       },
       rank: 4,
       scaling: { 6: `The teleportation range increases to \\medrange.` },
     },
 
     {
-      name: "Shadowstep Flurry",
+      name: 'Shadowstep Flurry',
 
       functionsLike: {
         exceptThat: `
@@ -410,7 +411,7 @@ export const umbramancy: MysticSphere = {
 
           This spell does not have \\glossterm{somatic components}.
         `,
-        name: "shadowstep",
+        name: 'shadowstep',
       },
       rank: 7,
     },
@@ -432,7 +433,7 @@ export const umbramancy: MysticSphere = {
     // },
 
     {
-      name: "Bind Shadow",
+      name: 'Bind Shadow',
 
       // TODO: very ambiguous rank. It's currently scaled as r3, since it can provide
       // immunity to melee attackers.
@@ -452,11 +453,11 @@ export const umbramancy: MysticSphere = {
         You bind your foe's shadow to the light, preventing it from entering shadowed areas.
       `,
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Shadow Puppet",
+      name: 'Shadow Puppet',
 
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
@@ -473,11 +474,11 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Shadowform",
+      name: 'Shadowform',
 
       effect: `
         You collapse to the ground, taking the appearance and shape of a shadow.
@@ -498,23 +499,24 @@ export const umbramancy: MysticSphere = {
         You can suppress or resume this ability as a \\glossterm{free action}.
       `,
       rank: 3,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Deep Shadowform",
+      name: 'Deep Shadowform',
 
       functionsLike: {
-        exceptThat: "bright illumination does not suppress the effect. It is still suppressed by \\glossterm{brilliant illumination}.",
-        name: "Shadowform",
+        exceptThat:
+          'bright illumination does not suppress the effect. It is still suppressed by \\glossterm{brilliant illumination}.',
+        name: 'Shadowform',
       },
       // narrative: '',
       rank: 7,
-      type: "Attune (deep)",
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Wall of Darkness",
+      name: 'Wall of Darkness',
 
       effect: `
         You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
@@ -526,30 +528,30 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: "You can choose to create a \\largearealong wall instead.",
-        6: "You can choose to create a \\hugearealong wall instead.",
+        4: 'You can choose to create a \\largearealong wall instead.',
+        6: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ["Barrier"],
-      type: "Sustain (attuneable, minor)",
+      tags: ['Barrier'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   rituals: [
     {
-      name: "Sunlight Ward",
+      name: 'Sunlight Ward',
 
-      castingTime: "one hour",
+      castingTime: 'one hour',
       effect: `
         One ritual participant is never considered to be in natural sunlight.
         This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
       `,
       rank: 3,
-      type: "Attune (target)",
+      type: 'Attune (target)',
     },
 
     {
-      name: "Conceal Trail",
+      name: 'Conceal Trail',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       effect: `
         Choose up to five creatures within \\medrange from among you and your \\glossterm{allies}.
         At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
@@ -557,35 +559,35 @@ export const umbramancy: MysticSphere = {
         At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
       `,
       rank: 2,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Greater Conceal Trail",
+      name: 'Greater Conceal Trail',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       functionsLike: {
         exceptThat: `
           the difficulty value increase changes to 20.
         `,
-        name: "conceal trail",
+        name: 'conceal trail',
       },
       rank: 4,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Supreme Conceal Trail",
+      name: 'Supreme Conceal Trail',
 
-      castingTime: "one minute",
+      castingTime: 'one minute',
       functionsLike: {
         exceptThat: `
           the difficulty value increase changes to 30.
         `,
-        name: "conceal trail",
+        name: 'conceal trail',
       },
       rank: 6,
-      type: "Attune",
+      type: 'Attune',
     },
   ],
 };

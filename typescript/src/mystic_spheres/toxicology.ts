@@ -1,13 +1,13 @@
-import { MysticSphere } from ".";
+import { MysticSphere } from '.';
 
 export const toxicology: MysticSphere = {
-  name: "Toxicology",
-  shortDescription: "Create and manipulate poisons, acids, and fungi.",
-  sources: ["arcane", "nature", "pact"],
+  name: 'Toxicology',
+  shortDescription: 'Create and manipulate poisons, acids, and fungi.',
+  sources: ['arcane', 'nature', 'pact'],
 
   cantrips: [
     {
-      name: "Intensify Poison",
+      name: 'Intensify Poison',
 
       attack: {
         crit: `As above, except that the poison progresses by two stages instead of one.`,
@@ -18,11 +18,11 @@ export const toxicology: MysticSphere = {
         If the target is not currently poisoned, this ability has no effect.
         `,
       },
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Neutralize Poison",
+      name: 'Neutralize Poison',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\shortrange.
@@ -38,7 +38,7 @@ export const toxicology: MysticSphere = {
   ],
   spells: [
     {
-      name: "Corrosive Grasp",
+      name: 'Corrosive Grasp',
 
       attack: {
         hit: `
@@ -51,11 +51,11 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Mighty Corrosive Grasp",
+      name: 'Mighty Corrosive Grasp',
 
       attack: {
         hit: `
@@ -68,11 +68,11 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
     },
 
     {
-      name: "Poison -- Asp Venom",
+      name: 'Poison -- Asp Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -87,12 +87,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Giant Wasp Venom",
+      name: 'Poison -- Giant Wasp Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -107,12 +107,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Black Adder Venom",
+      name: 'Poison -- Black Adder Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -126,12 +126,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Wyvern Venom",
+      name: 'Poison -- Wyvern Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -145,12 +145,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Blood Leech Venom",
+      name: 'Poison -- Blood Leech Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -164,12 +164,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Cockatrice Venom",
+      name: 'Poison -- Cockatrice Venom',
 
       attack: {
         crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
@@ -184,12 +184,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Jellyfish Extract",
+      name: 'Poison -- Jellyfish Extract',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -204,12 +204,12 @@ export const toxicology: MysticSphere = {
       },
 
       rank: 1,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison -- Dragon Bile",
+      name: 'Poison -- Dragon Bile',
 
       attack: {
         crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
@@ -223,12 +223,12 @@ export const toxicology: MysticSphere = {
       },
 
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Poison Transferance",
+      name: 'Poison Transferance',
 
       attack: {
         crit: `As above, except that the primary target gains two successes to resist its poison.
@@ -242,21 +242,21 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "accuracy",
+      scaling: 'accuracy',
     },
 
     {
-      name: "Poison Immunity",
+      name: 'Poison Immunity',
 
       effect: `
         You become \\glossterm{immune} to \\glossterm{poisons}.
       `,
       rank: 3,
-      type: "Attune",
+      type: 'Attune',
     },
 
     {
-      name: "Acidic Blood",
+      name: 'Acidic Blood',
 
       attack: {
         hit: `Each target takes 1d8 acid damage.`,
@@ -269,12 +269,12 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
       `,
       rank: 1,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Greater Acidic Blood",
+      name: 'Greater Acidic Blood',
 
       attack: {
         hit: `Each target takes 4d6 acid damage.`,
@@ -287,12 +287,12 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to your enemies when you bleed.
       `,
       rank: 5,
-      scaling: "damage",
-      type: "Attune (deep)",
+      scaling: 'damage',
+      type: 'Attune (deep)',
     },
 
     {
-      name: "Sudden Rot",
+      name: 'Sudden Rot',
 
       attack: {
         hit: `
@@ -304,12 +304,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
     {
-      name: "Mighty Sudden Rot",
+      name: 'Mighty Sudden Rot',
 
       attack: {
         hit: `
@@ -321,7 +321,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
+      scaling: 'damage',
       tags: [],
     },
 
@@ -342,7 +342,7 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: "Acid Bath",
+      name: 'Acid Bath',
 
       attack: {
         hit: `
@@ -356,12 +356,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Acid Breath",
+      name: 'Acid Breath',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
@@ -372,12 +372,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Mighty Acid Breath",
+      name: 'Mighty Acid Breath',
 
       functionsLike: {
         name: 'acid breath',
@@ -386,12 +386,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: "damage",
-      type: "Attune",
+      scaling: 'damage',
+      type: 'Attune',
     },
 
     {
-      name: "Acid Rain",
+      name: 'Acid Rain',
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
@@ -401,12 +401,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Distant Acid Rain",
+      name: 'Distant Acid Rain',
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
@@ -416,12 +416,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Massive Acid Rain",
+      name: 'Massive Acid Rain',
 
       // +1r to offset original -1d, +3r for small -> large
       attack: {
@@ -432,12 +432,12 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: "damage",
-      tags: ["Manifestation"],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
-      name: "Healing Salve",
+      name: 'Healing Salve',
 
       effect: `
         Choose yourself or an adjacent living \\glossterm{ally}.
@@ -445,24 +445,24 @@ export const toxicology: MysticSphere = {
         In addition, it gains a +2 bonus to its Fortitude defense this round.
       `,
       rank: 1,
-      scaling: { special: "The healing increases by +1d for each rank beyond 1." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Empowered Healing Salve",
+      name: 'Empowered Healing Salve',
 
       functionsLike: {
-        name: "healing salve",
-        exceptThat: "The healing increases to 4d6, and the Fortitude bonus increases to +4.",
+        name: 'healing salve',
+        exceptThat: 'The healing increases to 4d6, and the Fortitude bonus increases to +4.',
       },
       rank: 5,
-      scaling: { special: "The healing increases by +1d for each rank beyond 5." },
+      scaling: { special: 'The healing increases by +1d for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
     {
-      name: "Cleansing Draught",
+      name: 'Cleansing Draught',
 
       effect: `
         You or an adjacent \\glossterm{ally} can remove a \\glossterm{condition}.
@@ -470,7 +470,7 @@ export const toxicology: MysticSphere = {
       rank: 4,
     },
     {
-      name: "Fungal Growth",
+      name: 'Fungal Growth',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -484,10 +484,10 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: "damage",
+      scaling: 'damage',
     },
     {
-      name: "Greater Fungal Growth",
+      name: 'Greater Fungal Growth',
 
       attack: {
         crit: `The damage from the condition is doubled.`,
@@ -500,7 +500,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: "damage",
+      scaling: 'damage',
     },
   ],
   rituals: [],

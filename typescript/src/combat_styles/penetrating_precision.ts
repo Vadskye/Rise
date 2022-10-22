@@ -1,12 +1,12 @@
-import { CombatStyle } from ".";
+import { CombatStyle } from '.';
 
 export const penetratingPrecision: CombatStyle = {
-  name: "Penetrating Precision",
-  shortDescription: "Stab foes with carefully aimed piercing weapons.",
+  name: 'Penetrating Precision',
+  shortDescription: 'Stab foes with carefully aimed piercing weapons.',
 
   maneuvers: [
     {
-      name: "Armorpiercer",
+      name: 'Armorpiercer',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -17,7 +17,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Armorpiercer+",
+      name: 'Armorpiercer+',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -27,7 +27,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Desperate Pierce",
+      name: 'Desperate Pierce',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -38,7 +38,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Injection",
+      name: 'Injection',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -48,7 +48,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Penetrating Shot",
+      name: 'Penetrating Shot',
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you using a piercing weapon.
@@ -57,7 +57,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Penetrating Shot+",
+      name: 'Penetrating Shot+',
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you using a piercing weapon.
@@ -66,7 +66,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Distant Shot",
+      name: 'Distant Shot',
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
@@ -76,7 +76,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Distant Shot+",
+      name: 'Distant Shot+',
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
@@ -86,7 +86,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Lunge",
+      name: 'Lunge',
 
       effect: `
         Make a melee \\glossterm{strike} using a piercing weapon against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
@@ -97,7 +97,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Deathblow",
+      name: 'Deathblow',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -108,7 +108,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Deathblow+",
+      name: 'Deathblow+',
 
       // TODO: unclear rank
       effect: `
@@ -120,7 +120,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Arrowguide",
+      name: 'Arrowguide',
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
@@ -131,7 +131,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Heartpiercer",
+      name: 'Heartpiercer',
 
       effect: `
         Make a \\glossterm{strike} with a +2 accuracy bonus using a piercing weapon.
@@ -144,7 +144,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Heartpiercer+",
+      name: 'Heartpiercer+',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -158,7 +158,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Groundspike",
+      name: 'Groundspike',
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
@@ -169,7 +169,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Chargebreaker",
+      name: 'Chargebreaker',
 
       effect: `
         Make a melee \\glossterm{strike} using a piercing weapon.
@@ -179,7 +179,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Called Shot",
+      name: 'Called Shot',
 
       effect: `
         Choose a number from 1--10, then make a \\glossterm{strike} using a piercing weapon.
@@ -190,7 +190,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Called Shot+",
+      name: 'Called Shot+',
 
       effect: `
         Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
@@ -201,7 +201,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Sacrificial Thrust",
+      name: 'Sacrificial Thrust',
 
       effect: `
         Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
@@ -211,7 +211,7 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: "Pierce Weakness",
+      name: 'Pierce Weakness',
 
       effect: `
         Make a strike using a piercing weapon.
@@ -219,9 +219,9 @@ export const penetratingPrecision: CombatStyle = {
       `,
       rank: 1,
       scaling: {
-        3: "The damage bonus increases to +4.",
-        5: "The damage bonus increases to +8.",
-        7: "The damage bonus increases to +16.",
+        3: 'The damage bonus increases to +4.',
+        5: 'The damage bonus increases to +8.',
+        7: 'The damage bonus increases to +16.',
       },
     },
   ],
