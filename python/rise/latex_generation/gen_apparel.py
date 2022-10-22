@@ -1094,7 +1094,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ring of Blessed Protection",
-            rank=1,
+            rank=2,
             material_type="Ring",
             tags=['Attune (deep)'],
             description="""
