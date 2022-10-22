@@ -4,6 +4,17 @@ export const astromancy: MysticSphere = {
   name: "Astromancy",
   shortDescription: "Transport creatures and objects instantly through space.",
   sources: ["arcane", "domain", "pact"],
+  specialRules: `
+    \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
+    If the space occupied by a flickered target is occupied when it returns, it instead reappears in the closest available open space.
+
+    When a creature or object flickers, it returns at the end of the current turn unless the ability specifies a different duration.
+    That means that you can't make any additional attacks against it during your turn.
+    If one of your allies takes a turn after you, they will be able to attack the flickered target normally, since it will have returned by then.
+
+    If the target cannot be \\glossterm{teleported}, the flicker fails.
+    This also prevents effects that trigger when it returns, such as the damage from the \\spell{planar jaunt -- astral plane} spell.
+  `,
 
   cantrips: [
     {
@@ -98,8 +109,8 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d10 + half \\glossterm{power} physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
-          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
+          If it loses \\glossterm{hit points} from this damage, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          It does not return until the end of the next round.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -289,7 +300,8 @@ export const astromancy: MysticSphere = {
       // -1d for long range
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} physical damage.
+          The target \\sphereterm{flickers} to the Astral Plane.
+          When it returns, it takes 1d6 + \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -307,7 +319,8 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 bludgeoning damage.
+          The target \\sphereterm{flickers} to the Plane of Air.
+          When it returns, it takes 1d10 bludgeoning damage.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -326,7 +339,8 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} bludgeoning damage.
+          The target \\sphereterm{flickers} to the Plane of Earth.
+          When it returns, it takes 2d6 + half \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -347,7 +361,8 @@ export const astromancy: MysticSphere = {
           Both instances of damage are doubled, not just the initial damage.
         `,
         hit: `
-          The target takes 2d6 + half \\glossterm{power} fire damage immediately, and again during your next action.
+          The target \\sphereterm{flickers} to the Plane of Fire.
+          It takes 2d6 + half \\glossterm{power} fire damage when it returns, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -368,8 +383,9 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + half \\glossterm{power} bludgeoning damage.
-          If the target is unable to breathe water and your attack result beats its Reflex defense, this damage is doubled.
+          The target \\sphereterm{flickers} to the Plane of Water.
+          When it returns, it takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          If it is unable to breathe water and your attack result beats its Reflex defense, this damage is doubled.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -387,7 +403,8 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} damage of all types.
+          The target \\sphereterm{flickers} to a random assortment of planes.
+          When it returns, it takes 4d10 + \\glossterm{power} damage of all types.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -405,7 +422,8 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 physical damage.
+          The target \\sphereterm{flickers} to the Far Realm.
+          When it returns, it takes 4d6 physical damage.
           If it lost \\glossterm{hit points} from this damage, it is \\confused as a condition.
           Otherwise, it is \\stunned instead of confused.
         `,
@@ -449,52 +467,11 @@ export const astromancy: MysticSphere = {
       type: "Attune",
     },
     {
-      name: "Flicker",
-
-      effect: `
-        You randomly flicker between your current plane and the Astral Plane.
-        All \\glossterm{strikes} against you have a 20\\% failure chance as you happen to be in the Astral Plane when the attack would hit.
-        However, all of your abilities that affect creatures or objects other than yourself also have the same failure chance.
-        This does not affect abilities you use that only affect yourself.
-      `,
-      narrative: `
-        It's sometimes annoying to be caught in the Astral Plane while you're trying to banish your foes there.
-        However, watching swords pass through your body as you blink out of existence is worth the risk.
-      `,
-      rank: 2,
-      scaling: {
-        4: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
-        6: "When you cast this spell, you can choose to increase the failure chance to 40\\%.",
-      },
-      type: "Attune",
-    },
-    {
-      name: "Controlled Flicker",
-
-      functionsLike: {
-        exceptThat: `
-          you can choose at the start of each round to stop flickering for that round.
-          If you do, your abilities do not have a failure chance, and attacks against you also do not have a failure chance.
-        `,
-        name: "flicker",
-      },
-      narrative: `
-        Some astromancers have researched the mystic arts for decades to avoid accidentally travelling to other planes in combat.
-        Of course, most people take that ability for granted.
-      `,
-      rank: 4,
-      scaling: {
-        6: "When you cast this spell, you can choose to increase the failure chance to 30\\%.",
-      },
-      type: "Attune",
-    },
-    {
       name: "Astral Instability",
 
       effect: `
-        At the start of each phase, you may \\glossterm{teleport} into a random unoccupied location in the Astral Plane.
-        At the end of the round, you reappear in the location where you disappeared.
-        If that space is occupied, you reappear in the closest available space.
+        At the start of each phase, you may \\sphereterm{flicker} to a random unoccupied location in the Astral Plane.
+        You do not return until the end of the round.
         After you teleport in this way, you \\glossterm{briefly} cannot teleport with this ability again.
       `,
       rank: 3,
@@ -651,9 +628,9 @@ export const astromancy: MysticSphere = {
       castingTime: "minor action",
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        You send that creature into a random safe location in the Astral Plane, causing it to temporarily disappear.
+        You \\sphereterm{flicker} the target into a random safe location in the Astral Plane.
         When you cast this spell, you choose how many rounds the target spends in the Astral Plane, up to a maximum of five rounds.
-        At the end of the last round, it reappears in the same location where it disappeared, or in the closest unoccupied space if that location is occupied.
+        It returns at the end of the last round.
       `,
       rank: 2,
       scaling: {
