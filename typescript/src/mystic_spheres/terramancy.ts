@@ -170,11 +170,11 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: "Mass Earth's Ally",
+      name: "Mass Earthen Anchor",
 
       functionsLike: {
         mass: true,
-        name: "earth's ally",
+        name: "earthen anchor",
       },
       rank: 3,
       type: "Attune (target)",
