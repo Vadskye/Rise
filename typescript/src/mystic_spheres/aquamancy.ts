@@ -146,7 +146,7 @@ export const aquamancy: MysticSphere = {
       tags: ["Manifestation"],
     },
     {
-      name: "Massive Crashing Wave",
+      name: "Mighty Crashing Wave",
 
       attack: {
         // crit: '',
