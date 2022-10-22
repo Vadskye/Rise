@@ -539,9 +539,9 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The range increases to 120 feet.`,
-        5: `The range increases to 240 feet.`,
-        7: `The range increases to 480 feet.`,
+        3: `The range increases to 90 feet.`,
+        5: `The range increases to 120 feet.`,
+        7: `The range increases to 180 feet.`,
       },
       type: "Attune",
     },
@@ -554,7 +554,7 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       scaling: {
         5: `The range increases to 60 feet.`,
-        7: `The range increases to 120 feet.`,
+        7: `The range increases to 90 feet.`,
       },
       type: "Attune",
     },
@@ -569,8 +569,8 @@ export const vivimancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: "The range increases to 120 feet.",
-        7: "The range increases to 240 feet.",
+        5: "The range increases to 90 feet.",
+        7: "The range increases to 120 feet.",
       },
       type: "Attune (target)",
     },
