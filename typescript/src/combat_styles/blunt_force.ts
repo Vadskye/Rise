@@ -76,23 +76,13 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Gutshot",
+      name: "Tenderize",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
-      rank: 3,
-    },
-
-    {
-      name: "Gutshot+",
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -234,7 +224,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Tenderize",
+      name: "Gutshot",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -245,7 +235,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: "Tenderize+",
+      name: "Gutshot+",
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
@@ -273,9 +263,21 @@ export const bluntForce: CombatStyle = {
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature that lost \\glossterm{hit points} from the strike are \\deafened as a \\glossterm{condition}.
+        Your \\glossterm{power} with the strike is halved.
+        You and each creature damaged by the strike are \\deafened as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
+    },
+
+    {
+      name: "Earsplitting Bonedrum+",
+
+      // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
+      effect: `
+        Make a melee \\glossterm{strike}.
+        You and each creature damaged by the strike are \\deafened as a \\glossterm{condition}.
+      `,
+      rank: 7,
     },
 
     {
@@ -287,6 +289,21 @@ export const bluntForce: CombatStyle = {
         If your weapon has the \\weapontag{Impact} weapon tag, you roll quadruple damage dice instead.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Unbalanced Smash",
+
+      effect: `
+        Make a melee \\glossterm{strike} with a +2 damage bonus using a bludgeoning weapon.
+        If you miss with the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
+      `,
+      rank: 1,
+      scaling: {
+        3: "The damage bonus increases to +4.",
+        5: "The damage bonus increases to +8.",
+        7: "The damage bonus increases to +16.",
+      },
     },
   ],
 };
