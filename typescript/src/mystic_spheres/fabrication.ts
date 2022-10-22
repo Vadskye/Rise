@@ -405,7 +405,7 @@ export const fabrication: MysticSphere = {
         `,
         hit: `
           Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
-          This vulnerability ends for a target if takes fire damage.
+          This vulnerability ends for a target if it takes fire damage.
         `,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
