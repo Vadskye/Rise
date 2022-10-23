@@ -182,10 +182,11 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Accelerated Strike',
+      name: 'Weapon Haste',
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
+        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
         You do not add your \\glossterm{power} to damage with the strike.
       `,
       rank: 4,
