@@ -518,7 +518,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
-        You transform the target into a club, greatclub, or quarterstaff, as you choose (see \\pcref{Weapons}).
+        You transform the target into a club, quarterstaff, or sap, as you choose (see \\pcref{Weapons}).
         You cannot change the target's size by more than one size category.
         You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield it.
       `,
