@@ -1,8 +1,14 @@
 import { Rank, SpellLike } from "@src/mystic_spheres";
 
 export function assertEndsWithPeriod(text: string | null | undefined): void {
-  if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemize}"))) {
+  if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemizespace}{}"))) {
     throw new Error(`Text should end with period: ${text}`);
+  }
+}
+
+export function assertStartsWithLowercase(text: string | null | undefined): void {
+  if (text && !(text.trim().match(/^[a-z]/))) {
+    console.error(`Text should start with lowercase: ${text}`);
   }
 }
 
@@ -50,6 +56,7 @@ export function spellEffect(
         ? "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange."
         : spell.functionsLike.exceptThat;
       assertEndsWithPeriod(exceptThat);
+      assertStartsWithLowercase(exceptThat);
       if (!exceptThat) {
         throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
       }
