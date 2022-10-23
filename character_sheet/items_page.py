@@ -57,7 +57,6 @@ def create_page(destination):
                         {"class": "repeating_attunedmodifiers"},
                         custom_modifier(show_toggle="deep", show_text=True),
                     ),
-                    div({"class": "section-header"}, "DEPRECATED Attunements"),
                     fieldset(
                         {"class": "repeating_attunements"},
                         attunement(),
