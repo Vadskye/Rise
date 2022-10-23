@@ -568,6 +568,9 @@ export const aquamancy: MysticSphere = {
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
+
+        % There must be text between an itemize block and the end of a mdframed env
+        \\hypertarget{itemizespace}{}
       `,
       // narrative: '',
       rank: 3,
@@ -621,6 +624,9 @@ export const aquamancy: MysticSphere = {
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
           \\end{itemize}
+
+          % There must be text between an itemize block and the end of a mdframed env
+          \\hypertarget{itemizespace}{}
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.

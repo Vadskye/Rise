@@ -443,6 +443,9 @@ export const chronomancy: MysticSphere = {
             All of the items you equip this way must be unattended and in your square, but they can be in a hidden location, such as in a backpack.
           \\item You can use the \\ability{disguise creature} ability to affect yourself with a \\minus2 penalty (see \\pcref{Disguise Creature}.
         \\end{itemize}
+
+        % There must be text between an itemize block and the end of a mdframed env
+        \\hypertarget{itemizespace}{}
       `,
       narrative: `
         You become a blur of motion as you quickly don your armor, readying yourself against an unexpected attack.
@@ -525,7 +528,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'rewind damage',
-        exceptThat: 'The recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },

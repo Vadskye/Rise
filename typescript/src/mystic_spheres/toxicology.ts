@@ -454,7 +454,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'healing salve',
-        exceptThat: 'The healing increases to 4d6, and the Fortitude bonus increases to +4.',
+        exceptThat: 'the healing increases to 4d6, and the Fortitude bonus increases to +4.',
       },
       rank: 5,
       scaling: { special: 'The healing increases by +1d for each rank beyond 5.' },
