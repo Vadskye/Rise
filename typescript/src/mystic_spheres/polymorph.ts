@@ -407,6 +407,9 @@ export const polymorph: MysticSphere = {
           \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
           \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
         \\end{itemize}
+
+        % There must be text between an itemize block and the end of a mdframed env
+        \\hypertarget{itemizespace}{}
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -433,7 +436,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'The recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
