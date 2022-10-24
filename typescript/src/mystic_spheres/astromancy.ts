@@ -814,7 +814,7 @@ export const astromancy: MysticSphere = {
         % TODO: does this need more clarity about what teleportation works?
       `,
       tags: [],
-      castingTime: '24 hours',
+      castingTime: '1 hour',
     },
     {
       name: 'Distant Overland Teleportation',
