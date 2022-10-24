@@ -364,7 +364,7 @@ def custom_statistic(i):
                     option({"value": "maneuvers_known"}, "Maneuvers"),
                     option({"value": "medicine"}, "Medicine"),
                     option({"value": "mental"}, "Mental defense"),
-                    option({"value": "mystic_insights_known"}, "Metamagic"),
+                    option({"value": "metamagic_known"}, "Metamagic"),
                     option({"value": "mystic_spheres_known"}, "Mystic spheres"),
                     option({"value": "perception"}, "Perception"),
                     option({"value": "perform"}, "Perform"),
