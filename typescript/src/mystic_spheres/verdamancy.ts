@@ -425,7 +425,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
         targeting: `
-          You create a \\smallarealong \\glossterm{wall} of thorns within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of thorns within \\medrange.
           The base of at least half of the wall must be in arable earth.
           The wall is four inches thick, but permeable.
           It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
@@ -453,7 +453,7 @@ export const verdamancy: MysticSphere = {
         name: 'wall of thorns',
         exceptThat: `
           the damage increases to 2d10 + half \\glossterm{power}.
-          In addition, the area increases to a \\medarealong \\glossterm{wall}, and the range increases to \\longrange.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
       rank: 6,

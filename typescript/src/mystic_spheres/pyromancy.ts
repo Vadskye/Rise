@@ -445,7 +445,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} fire damage.`,
         targeting: `
-          You create a \\smallarealong \\glossterm{wall} of fire within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
@@ -467,7 +467,7 @@ export const pyromancy: MysticSphere = {
         name: 'wall of fire',
         exceptThat: `
           the damage increases to 4d6 + half \\glossterm{power}.
-          In addition, the area increases to a \\medarealong \\glossterm{wall}, and the range increases to \\longrange.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
       rank: 6,

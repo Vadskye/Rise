@@ -530,9 +530,9 @@ export const thaumaturgy: MysticSphere = {
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: 'You can choose to create a \\medarealong wall instead.',
+        7: 'You can choose to create a \\medarealong wall instead.',
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
