@@ -459,7 +459,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain the ability to customize your weaker primal maneuvers.
-                For each rank 1 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                For each rank 1 and rank 3 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
                 However, you must still apply them to rank 1 primal maneuvers.
@@ -479,8 +479,8 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     % +2 acc: 33*0.8 = 26.4
                     % +8 dmg: 41*0.6 = 24.6
                     % +16 dmg: 49*0.6 = 29.4
-                    \parhead{Powerful Maneuver} You gain a \plus2 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus3 at rank 4, and to \plus4 at rank 6.
+                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
+                    This bonus increases to \plus5 at rank 6.
 
                     \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
 
@@ -499,7 +499,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You can also choose an enhancement for each of your rank 3 and rank 5 primal maneuvers.
+                You can also choose an enhancement for each of your rank 5 primal maneuvers.
                 In addition, you double the effect of enhancements you apply to your rank 1 primal maneuvers.
             ",
             modifiers: None,
