@@ -204,12 +204,12 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
     },
     {
-      name: 'Intense Hostile Translocation',
+      name: 'Efficient Hostile Translocation',
 
       attack: {
         hit: `
           The target takes 2d8 + half \\glossterm{power} energy damage.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
+          If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 30 feet.
           The destination must be within range and on a stable surface that can support its weight.
           If the destination is invalid, the teleportation fails with no effect.
         `,
