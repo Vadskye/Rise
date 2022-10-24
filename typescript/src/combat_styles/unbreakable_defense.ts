@@ -230,10 +230,10 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        In addition, you gain a +2 bonus to \\glossterm{vital rolls} this round.
+        In addition, you gain a +4 bonus to \\glossterm{vital rolls} this round.
         The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
-      rank: 3,
+      rank: 1,
       tags: ['Swift (see text)'],
     },
 
