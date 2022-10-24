@@ -389,7 +389,7 @@ const KNOWABLE_CONCEPTS = [
   "hunting_styles",
   "ki_manifestations",
   "maneuvers",
-  "mystic_insights",
+  "metamagic",
   "mystic_spheres",
   "spells",
   "wild_aspects",
