@@ -167,26 +167,15 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Swift'],
     },
 
-    // -2 ranks for melee goad
     {
       name: 'Challenging Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 3,
-    },
-
-    {
-      name: 'Challenging Strike+',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {

@@ -265,12 +265,23 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Covering Strike',
 
+      // -2 ranks for melee goad
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 5,
+      rank: 3,
+    },
+
+    {
+      name: 'Covering Strike+',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+      `,
+      rank: 7,
     },
   ],
 };
