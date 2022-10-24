@@ -168,7 +168,7 @@ export const thaumaturgy: MysticSphere = {
         This usually causes the target to disappear.`,
         targeting: `
         Make an attack against anything within \\medrange.
-        If the target is an effect of an ongoing \\glossterm{magical} ability, such as a summoned monster or created object, its defense against this attack is equal to the \\glossterm{power} of the ability.
+        If the target is an effect of an ongoing \\glossterm{magical} ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + the \\glossterm{rank} of the effect.
         Otherwise, this spell has no effect.
         `,
       },
