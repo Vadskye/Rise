@@ -211,7 +211,7 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
         targeting: `
-          You create a \\smallarealong \\glossterm{wall} of whirling blades within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
@@ -248,11 +248,11 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
-          In addition, the damage increases to 2d6 + half \\glossterm{power}.
+          In addition, the damage increases to 1d10 + half \\glossterm{power}.
         `,
         name: 'blade barrier',
       },
-      rank: 4,
+      rank: 3,
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',

@@ -538,7 +538,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `The target takes 1d8 + half \\glossterm{power} energy damage.`,
         targeting: `
-          You create a \\smallarealong \\glossterm{wall} of death within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of death within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Fortitude against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
@@ -560,7 +560,7 @@ export const vivimancy: MysticSphere = {
         name: 'wall of death',
         exceptThat: `
           the damage increases to 4d6 + half \\glossterm{power}.
-          In addition, the area increases to a \\medarealong \\glossterm{wall}, and the range increases to \\longrange.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
       rank: 6,
