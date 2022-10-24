@@ -520,7 +520,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can choose the visibility of the barrier.
-            There are three possibilities: fully invisible, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
+            There are three possibilities: fully \\glossterm{invisible}, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
             You can change the opacity of the barrier as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
         `,
         name: 'mystic barrier',
