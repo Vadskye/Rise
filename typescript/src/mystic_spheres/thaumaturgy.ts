@@ -64,30 +64,31 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Distant Magic Missile',
 
-      // +4r for range; pay extra for distrange, since it scales well with range
+      // +2r for range, +1r to offset previous -1d
       attack: {
         hit: `
           The target takes 2d6 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\distrange.
+          Make an attack vs. Armor against anything within \\longrange.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 5,
+      rank: 4,
       scaling: 'damage',
     },
 
     {
       name: 'Mighty Magic Missile',
 
-      // +6r for +3d
+      // +2r to offset previous -2d, +2r for +2d
+      // total of +10d
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} energy damage.
+          The target takes 5d10 + \\glossterm{power} energy damage.
           \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
         targeting: `
