@@ -284,7 +284,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain the ability to customize your weaker martial maneuvers.
-                For each rank 1 martial maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                For each rank 1 and rank 3 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
                 However, you must still apply them to rank 1 martial maneuvers.
@@ -300,8 +300,8 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Powerful Maneuver} You gain a \plus2 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus3 at rank 4, and to \plus4 at rank 6.
+                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
+                    This bonus increases to \plus5 at rank 6.
 
                     \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
                 }
@@ -313,7 +313,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You can also choose an enhancement for each of your rank 3 and rank 5 martial maneuvers.
+                You can also choose an enhancement for each of your rank 5 martial maneuvers.
                 In addition, you double the effect of enhancements you apply to your rank 1 martial maneuvers.
             ",
             modifiers: None,
