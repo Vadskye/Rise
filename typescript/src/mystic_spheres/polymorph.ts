@@ -509,6 +509,20 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Efficient Regeneration',
+
+      // +2r for +1d, +5r for HP effect
+      effect: `
+        At the end of each round, you regain 4d8 \\glossterm{hit points}.
+        If you lost \\glossterm{hit points} this round, you add your \\glossterm{power} to this healing.
+        This healing cannot increase your hit points above half your maximum hit points.
+      `,
+      rank: 7,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
+      type: 'Attune',
+    },
+
+    {
       name: 'Physical Enhancement',
 
       effect: `
