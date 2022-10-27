@@ -473,11 +473,13 @@ export const polymorph: MysticSphere = {
       effect: `
         At the end of each round, if the target is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
-        When it removes a vital wound in this way, it increases its \\glossterm{fatigue level} by three.
+        For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
       scaling: {
-        7: `The target can remove two \\glossterm{vital wounds} instead of one.`,
+        7: `
+          The target can remove two \\glossterm{vital wounds} instead of one.
+        `,
       },
       type: 'Attune (target)',
     },
