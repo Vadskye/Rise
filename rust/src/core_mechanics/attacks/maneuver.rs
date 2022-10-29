@@ -6,7 +6,6 @@ use crate::core_mechanics::attacks::attack_effect::{
 };
 use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory};
 use crate::equipment::Weapon;
-use std::cmp::max;
 use titlecase::titlecase;
 
 use super::Attack;
@@ -24,7 +23,6 @@ pub enum Maneuver {
     Hamstring(i32),
     Headshot(i32),
     MightyStrike(i32),
-    MonstrousStrike(i32),
     PenetratingStrike(i32),
     PowerFlurry(i32),
     PouncingStrike(i32),
@@ -149,9 +147,6 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy -= 2)
                 .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 4)),
-            Self::MonstrousStrike(rank) => weapon
-                .attack()
-                .except(|a| a.accuracy += max(0, (rank - 3) / 2)),
             Self::PenetratingStrike(rank) => weapon
                 .attack()
                 .except(|a| a.accuracy += (rank - 1) / 2)
@@ -259,7 +254,6 @@ impl Maneuver {
             Self::GraspingStrike(_) => format!("Grasping {}", weapon_name),
             Self::GreaterGraspingStrike(_) => format!("Greater Grasping {}", weapon_name),
             Self::MightyStrike(_) => format!("Mighty {}", weapon_name),
-            Self::MonstrousStrike(_) => weapon_name,
             Self::PenetratingStrike(_) => format!("Penetrating {}", weapon_name),
             Self::PouncingStrike(_) => format!("Pouncing {}", weapon_name),
             Self::RecklessStrike(_) => format!("Reckless {}", weapon_name),
@@ -282,7 +276,6 @@ impl Maneuver {
             Self::Hamstring(_) => "Hamstring",
             Self::Headshot(_) => "Headshot",
             Self::MightyStrike(_) => "Mighty Strike",
-            Self::MonstrousStrike(_) => "Monstrous Strike",
             Self::PenetratingStrike(_) => "Penetrating Strike",
             Self::PouncingStrike(_) => "Pouncing Strike",
             Self::PowerFlurry(_) => "Power Flurry",
@@ -295,7 +288,6 @@ impl Maneuver {
 
     fn should_replace_weapon(&self) -> bool {
         match self {
-            Self::MonstrousStrike(_) => true,
             _ => false,
         }
     }
