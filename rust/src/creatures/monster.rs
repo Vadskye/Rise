@@ -1,7 +1,7 @@
 use std::cmp::max;
 
 use crate::core_mechanics::abilities::PowerProgression;
-use crate::core_mechanics::attacks::{HasAttacks, Maneuver, PureDamage};
+use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
     SpecialDefenseType, StandardPassiveAbility,
@@ -97,13 +97,6 @@ impl Monster {
                 None,
             );
         }
-
-        let rank = calculate_standard_rank(level, challenge_rating);
-        creature.add_modifier(
-            Modifier::Maneuver(Maneuver::MonstrousStrike(rank)),
-            Some("Basic Maneuver"),
-            None,
-        );
 
         return Monster {
             alignment: None,
