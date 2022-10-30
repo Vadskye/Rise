@@ -1,5 +1,3 @@
-use std::cmp::max;
-
 use crate::core_mechanics::abilities::PowerProgression;
 use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
 use crate::core_mechanics::{
@@ -58,11 +56,7 @@ impl Monster {
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::TwoActions.ability());
-            let maximum_conditions = if level >= 12 {
-                3
-            } else {
-                4
-            };
+            let maximum_conditions = if level >= 12 { 3 } else { 4 };
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());
@@ -151,7 +145,7 @@ impl Monster {
                     is_maneuver: false,
                     name: "Generic Monster Damage".to_string(),
                     range: None,
-                    rank: calculate_standard_rank(self.creature.level, self.challenge_rating),
+                    rank: self.creature.rank() + self.challenge_rating.rank_modifier(),
                 }
                 .attack(),
             ),
@@ -159,10 +153,6 @@ impl Monster {
             None,
         );
     }
-}
-
-pub fn calculate_standard_rank(level: i32, challenge_rating: ChallengeRating) -> i32 {
-    return max(0, (level + 2) / 3 + challenge_rating.rank_modifier());
 }
 
 // LaTeX conversion

@@ -93,7 +93,7 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
             rank: 1,
             description: "",
             modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::CertainStrike(1)),
+                Modifier::Maneuver(Maneuver::CertainStrike),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
                 Modifier::Maneuver(Maneuver::MightyStrike(1)),
             ]),

@@ -172,12 +172,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: 7,
         modifiers: Some(vec![
             Modifier::Attack(
-                Maneuver::PenetratingStrike(3)
+                Maneuver::ArmorpiercerPlus
                     .attack(StandardWeapon::Slam.weapon())
                     .except(|a| a.name = "Impaling Tentacles".to_string())
                     .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
             ),
-            Modifier::Maneuver(Maneuver::GraspingStrike(3)),
+            Modifier::Maneuver(Maneuver::GraspingStrike),
         ]),
         movement_modes: None,
         name: "Hydra Maggot".to_string(),
@@ -261,7 +261,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ])),
         level: 2,
         modifiers: Some(vec![
-            Modifier::Maneuver(Maneuver::GraspingStrike(1)),
+            Modifier::Maneuver(Maneuver::GraspingStrike),
         ]),
         movement_modes: Some(vec![
             MovementMode::Climb(SpeedCategory::Slow),
@@ -298,7 +298,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: 5,
         modifiers: Some(vec![
             Modifier::Attack(
-                Maneuver::PouncingStrike(3).attack(StandardWeapon::MonsterClaws.weapon()),
+                Maneuver::PouncingStrike.attack(StandardWeapon::MonsterClaws.weapon()),
             ),
         ]),
         movement_modes: Some(vec![
@@ -339,7 +339,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Modifier::Attack(
                 StandardAttack::YrthakThunderingHide.attack(),
             ),
-            Modifier::Maneuver(Maneuver::PouncingStrike(3)),
+            Modifier::Maneuver(Maneuver::PouncingStrike),
         ]),
         movement_modes: Some(vec![
             MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Poor),
