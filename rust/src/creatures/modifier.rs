@@ -203,6 +203,9 @@ pub trait HasModifiers {
 
 impl HasModifiers for Creature {
     fn add_modifier(&mut self, modifier: Modifier, source: Option<&str>, priority: Option<i32>) {
+        // Make sure the modifier is valid for the creature
+        assert_modifier_is_valid(self, &modifier);
+
         if let Some(source) = source {
             let priority = priority.unwrap_or(0);
             let identified_modifier = IdentifiedModifier {
@@ -266,5 +269,11 @@ impl HasModifiers for Creature {
             .iter()
             .map(|m| m.value())
             .sum();
+    }
+}
+
+fn assert_modifier_is_valid(creature: &Creature, modifier: &Modifier) {
+    if let Modifier::Maneuver(maneuver) = modifier {
+        maneuver.assert_meets_rank_requirement(creature.rank())
     }
 }

@@ -1,10 +1,10 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::core_mechanics::attacks::{LowDamageAndDebuff, StandardAttack};
 use crate::core_mechanics::{
     Attribute, DamageType, Debuff, Defense, FlightManeuverability, HasAttributes, MovementMode,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
-use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Undead;
@@ -121,14 +121,17 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
         fn monster(self) -> Monster {
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::Attack(
-                StandardAttack::GhoulBite(calculate_standard_rank(
-                    self.level,
-                    self.challenge_rating,
-                ))
+                StandardAttack::GhoulBite(
+                    calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier(),
+                )
                 .attack(),
             ));
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)));
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                AbilityTag::Compulsion,
+            )));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                AbilityTag::Emotion,
+            )));
             return FullUndeadDefinition {
                 // From def
                 attributes: self.attributes,
@@ -266,16 +269,16 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     is_magical: true,
                     is_maneuver: true,
                     name: "Drink Blood".to_string(),
-                    rank: calculate_standard_rank(self.level, self.challenge_rating),
+                    rank: calculate_standard_rank(self.level)
+                        + self.challenge_rating.rank_modifier(),
                     tags: None,
                 }
                 .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
             ));
             modifiers.push(Modifier::Attack(
-                StandardAttack::VampireAlluringGaze(calculate_standard_rank(
-                    self.level,
-                    self.challenge_rating,
-                ))
+                StandardAttack::VampireAlluringGaze(
+                    calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier(),
+                )
                 .attack(),
             ));
 
