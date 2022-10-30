@@ -12,7 +12,7 @@ mod maneuver_tests {
         let mut creature = Creature::new(1, CreatureCategory::Character);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
         creature.add_special_attack(
-            Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()),
+            Maneuver::CertainStrike.attack(StandardWeapon::Broadsword.weapon()),
         );
         assert_eq!(
             2,
@@ -20,7 +20,7 @@ mod maneuver_tests {
             "Should have 2 attack, since maneuvers do not override existing weapons"
         );
         creature.add_special_attack(
-            Maneuver::CertainStrike(1).attack(StandardWeapon::Greatsword.weapon()),
+            Maneuver::CertainStrike.attack(StandardWeapon::Greatsword.weapon()),
         );
         assert_eq!(
             3,
@@ -42,7 +42,7 @@ mod maneuver_tests {
         creature.set_base_attribute(Attribute::Strength, 3);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
         creature.add_special_attack(
-            Maneuver::CertainStrike(1).attack(StandardWeapon::Broadsword.weapon()),
+            Maneuver::CertainStrike.attack(StandardWeapon::Broadsword.weapon()),
         );
         assert_eq!(
             vec![

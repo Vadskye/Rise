@@ -524,8 +524,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         knowledge: None,
         level: 3,
         modifiers: Some(vec![
-            Modifier::Maneuver(Maneuver::GraspingStrike(1)),
-            Modifier::Maneuver(Maneuver::PouncingStrike(1)),
+            Modifier::Maneuver(Maneuver::GraspingStrike),
             Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()),
         ]),
         movement_modes: Some(vec![

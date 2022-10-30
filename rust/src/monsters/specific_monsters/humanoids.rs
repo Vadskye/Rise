@@ -356,7 +356,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: None,
                 level: 2,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::CrushingStrike(1)),
+                    Modifier::Maneuver(Maneuver::Armorcrusher),
                 ]),
                 name: "Orc Butcher".to_string(),
                 size: Size::Medium,
@@ -424,7 +424,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     Modifier::MovementSpeed(10),
                     Modifier::Maneuver(Maneuver::MightyStrike(3)),
                     Modifier::Attack(
-                        Maneuver::Hamstring(3)
+                        Maneuver::Hamstring
                             .attack(StandardWeapon::Greataxe.weapon())
                     ),
                 ]),

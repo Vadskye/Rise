@@ -1,3 +1,5 @@
+use std::cmp::max;
+
 use crate::core_mechanics::attacks::Attack;
 use crate::core_mechanics::{
     Attribute, MovementMode, PassiveAbility, Sense, Size, VitalWound,
@@ -111,4 +113,15 @@ impl Creature {
             CreatureCategory::Monster(_) => false,
         }
     }
+
+    pub fn rank(&self) -> i32 {
+        match self.category {
+            CreatureCategory::Character => calculate_standard_rank(self.level),
+            CreatureCategory::Monster(cr) => calculate_standard_rank(self.level) + cr.rank_modifier(),
+        }
+    }
+}
+
+pub fn calculate_standard_rank(level: i32) -> i32 {
+    return max(0, (level + 2) / 3);
 }

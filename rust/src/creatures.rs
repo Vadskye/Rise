@@ -7,8 +7,8 @@ mod modifier_bundle;
 mod monster;
 
 pub use character::Character;
-pub use creature::{Creature, CreatureCategory};
+pub use creature::{calculate_standard_rank, Creature, CreatureCategory};
 pub use damage_tracking::HasDamageTracking;
 pub use modifier::{HasModifiers, IdentifiedModifier, Modifier, ModifierType};
 pub use modifier_bundle::ModifierBundle;
-pub use monster::{calculate_standard_rank, Monster};
+pub use monster::Monster;

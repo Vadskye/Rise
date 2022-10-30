@@ -95,7 +95,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         ])),
         level: 4,
         modifiers: Some(vec![
-            Modifier::Maneuver(Maneuver::GraspingStrike(2)),
+            Modifier::Maneuver(Maneuver::GraspingStrike),
         ]),
         movement_modes: None,
         name: "Choker".to_string(),

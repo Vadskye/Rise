@@ -136,7 +136,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
     impl Angel {
         fn monster(self) -> Monster {
-            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let rank = calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier();
             let teleport_range = if rank >= 7 {
                 "\\extrange"
             } else if rank >= 5 {
@@ -250,7 +250,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Combustion(7).attack()),
                     Modifier::Attack(
-                        Maneuver::TenderizingSmash(7)
+                        Maneuver::Tenderize
                             .attack(StandardWeapon::MonsterRam.weapon())
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
@@ -297,7 +297,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 level: 14,
                 modifiers: Some(vec![
                     Modifier::Attack(
-                        Maneuver::StripTheFlesh(6)
+                        Maneuver::StripTheFlesh
                             .attack(StandardWeapon::Greatsword.weapon())
                     ),
                 ]),
@@ -331,7 +331,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Inferno(5).attack()),
                     Modifier::Attack(
-                        Maneuver::Whirlwind(5, Size::Large.reach(false))
+                        Maneuver::Whirlwind
                             .attack(StandardWeapon::Slam.weapon())
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
@@ -369,8 +369,6 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
 
     impl Demon {
         fn monster(self) -> Monster {
-            // let rank = calculate_standard_rank(self.level, self.challenge_rating);
-
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
                 DamageType::Fire,
@@ -434,7 +432,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Enrage(2).attack()),
-                    Modifier::Maneuver(Maneuver::PowerFlurry(2)),
+                    Modifier::Maneuver(Maneuver::PowerFlurry),
                     Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                         AbilityTag::Emotion,
                     )),
@@ -470,7 +468,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(
-                        Maneuver::GraspingStrike(2).attack(StandardWeapon::MonsterClaws.weapon())
+                        Maneuver::GraspingStrike.attack(StandardWeapon::MonsterClaws.weapon())
                         .except(|a| a.name = "Impale".to_string())
                     ),
                     Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
@@ -502,7 +500,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     impl AirElemental {
         fn monster(self) -> Monster {
-            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let rank = calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier();
             let mut modifiers = vec![];
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
@@ -602,7 +600,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     impl FireElemental {
         fn monster(self) -> Monster {
-            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let rank = calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier();
             let mut modifiers = vec![];
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Cold,
@@ -852,7 +850,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
 
     impl Formian {
         fn monster(self) -> Monster {
-            let rank = calculate_standard_rank(self.level, self.challenge_rating);
+            let rank = calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier();
             let tremorsense_radius = if rank >= 7 {
                 480
             } else if rank >= 5 {
