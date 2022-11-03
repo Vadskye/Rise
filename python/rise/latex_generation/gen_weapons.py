@@ -174,7 +174,7 @@ def generate_weapons():
                     description="""
                         The bonus increases to four times your Intelligence.
                     """,
-                    short_description="Grants power equal to twice Intelligence",
+                    short_description="Grants power equal to 4x Intelligence",
                 ),
             ],
         ),
@@ -201,7 +201,7 @@ def generate_weapons():
                     description="""
                         The bonus increases to four times your Dexterity.
                     """,
-                    short_description="Grants power equal to twice Dexterity",
+                    short_description="Grants power equal to 4x Dexterity",
                 ),
             ],
         ),
