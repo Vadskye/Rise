@@ -507,7 +507,7 @@ export const prayer: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The target gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        The target gains a +10 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
         `,
@@ -516,7 +516,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Enduring Fortification',
+      name: 'Enduring Blessing of Fortification',
 
       castingTime: '24 hours',
       functionsLike: {
@@ -525,11 +525,11 @@ export const prayer: MysticSphere = {
         `,
         name: 'blessing of fortification',
       },
-      rank: 4,
+      rank: 3,
     },
 
     {
-      name: 'Enduring Empowered Fortification',
+      name: 'Enduring Empowered Blessing of Fortification',
 
       castingTime: '24 hours',
       functionsLike: {
@@ -538,34 +538,20 @@ export const prayer: MysticSphere = {
         `,
         name: 'empowered fortification',
       },
-      rank: 5,
+      rank: 6,
     },
 
     {
-      name: 'Empowered Fortification',
+      name: 'Empowered Blessing of Fortification',
 
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{damage resistance} increases to 10.
+          the bonus to \\glossterm{damage resistance} increases to +20.
         `,
         name: 'blessing of fortification',
       },
       rank: 4,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Supreme Fortification',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        exceptThat: `
-          the bonus to \\glossterm{damage resistance} increases to 15.
-        `,
-        name: 'blessing of fortification',
-      },
-      rank: 7,
       type: 'Attune',
     },
 
