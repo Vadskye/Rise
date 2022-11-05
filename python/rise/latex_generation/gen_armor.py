@@ -2,12 +2,12 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem
+from rise.latex.magic_item import MagicItem, Upgrade
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
 def create_armor(
-    name, rank, material_type, description, short_description, tags=None
+    name, rank, material_type, description, short_description, tags=None, upgrades=None
 ):
     return MagicItem(
         name=name,
@@ -16,6 +16,7 @@ def create_armor(
         description=description,
         short_description=short_description,
         tags=add_attune_tag(tags),
+        upgrades=upgrades,
     )
 
 def generate_armor():
@@ -187,27 +188,25 @@ def generate_armor():
             rank=2,
             material_type="Shield",
             description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+                As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this shield.
             """,
-            short_description="Grants +3 power with strikes",
-        ),
-        create_armor(
-            name="Shield of Bashing, Greater",
-            rank=4,
-            material_type="Shield",
-            description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
-            """,
-            short_description="Grants +6 power with strikes",
-        ),
-        create_armor(
-            name="Shield of Bashing, Supreme",
-            rank=6,
-            material_type="Shield",
-            description="""
-                You gain a +12 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
-            """,
-            short_description="Grants +12 power with strikes",
+            short_description="Can attack with +4 damage",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage bonus increases to +8.
+                    """,
+                    short_description="Can attack with +8 damage",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage bonus increases to +16.
+                    """,
+                    short_description="Can attack with +16 damage",
+                ),
+            ],
         ),
     ]
 
@@ -220,27 +219,23 @@ def generate_armor():
                 When you take the \\textit<total defense> action, you gain a +1 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
                 This property cannot be applied to tower shields.
             """,
-            short_description="Grants +1 Armor defense during total defense",
-        ),
-        create_armor(
-            name="Covering Shield, Greater",
-            rank=4,
-            material_type="Shield",
-            description="""
-                When you take the \\textit<total defense> action, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
-                This property cannot be applied to tower shields.
-            """,
-            short_description="Grants +2 Armor defense during total defense",
-        ),
-        create_armor(
-            name="Covering Shield, Supreme",
-            rank=6,
-            material_type="Shield",
-            description="""
-                When you take the \\textit<total defense> action, you gain a +3 bonus to Armor defense in addition to the normal bonuses from taking that action (see \\pcref<Total Defense>).
-                This property cannot be applied to tower shields.
-            """,
-            short_description="Grants +3 Armor defense during total defense",
+            short_description="Grants +1 AD during total defense",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The defense bonus increases to +2.
+                    """,
+                    short_description="Grants +2 AD during total defense",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The defense bonus increases to +3.
+                    """,
+                    short_description="Grants +3 AD during total defense",
+                ),
+            ],
         ),
     ]
 
@@ -253,24 +248,22 @@ def generate_armor():
                 This armor's \\glossterm<encumbrance> is reduced by 1.
             """,
             short_description="Reduces encumbrance by 1",
-        ),
-        create_armor(
-            name="Featherlight Armor, Greater",
-            rank=4,
-            material_type="Body armor",
-            description="""
-                This armor's \\glossterm<encumbrance> is reduced by 2.
-            """,
-            short_description="Reduces encumbrance by 2",
-        ),
-        create_armor(
-            name="Featherlight Armor, Supreme",
-            rank=6,
-            material_type="Body armor",
-            description="""
-                This armor's \\glossterm<encumbrance> is reduced by 3.
-            """,
-            short_description="Reduces encumbrance by 3",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The encumbrance reduction improves to 2.
+                    """,
+                    short_description="Reduces encumbrance by 2",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The encumbrance reduction improves to 3.
+                    """,
+                    short_description="Reduces encumbrance by 3",
+                ),
+            ],
         ),
     ]
 
