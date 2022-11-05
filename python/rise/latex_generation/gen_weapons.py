@@ -530,7 +530,7 @@ def generate_weapons():
             rank=3,
             description="""
                 This weapon feels heavy in the hand.
-                It gains the \\glossterm<Forceful> weapon tag (see \\pcref<Weapon Tags>).
+                It gains the \\weapontag<Forceful> weapon tag (see \\pcref<Weapon Tags>).
                 If it already has that weapon tag, the distance that you can \\glossterm<knockback> the target increases by 10 feet.
             """,
             short_description="Can knockback struck foes",
