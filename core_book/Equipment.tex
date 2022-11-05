@@ -304,6 +304,9 @@ Items are divided into five broad categories, described below.
 
     \subsection{Weapon Tags}\label{Weapon Tags}
         Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
+        \weapontagdef{Supplemental} This weapon has some unusual purpose, rather than exclusively functioning as a weapon.
+        Supplemental weapons cannot be imbued with magic weapon properties.
+        Most Supplemental weapons are part of armor.
         \weapontagdef{Ammunition} This weapon is designed to be fired by a projectile weapon or thrown in large quantities.
         It is cheaper to buy and craft, but it is usually \glossterm{broken} after being fired or thrown.
         \weapontagdef{Compact} This weapon is unusually small.
@@ -384,9 +387,9 @@ Items are divided into five broad categories, described below.
                 \lcaption{Weapons}                     \\
                 \tb{Name}                          & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type}   & \tb{Item Rank (Cost)}\fn{1} & \tb{Weapon Tags}                          \tableheaderrule
                 Armor weapons                      &        &         &        &                          &              &                                                \\
-                \tind Armor spikes\fn{2}           & Medium & \tdash  & 1d4    & Piercing                 & \tdash       & \tdash                                      \\
-                \tind Standard shield\fn{2}        & Medium & \plus0  & 1d3    & Bludgeoning              & 0 (10 gp)  & Forceful                                       \\
-                \tind Spiked shield\fn{2}          & Medium & \plus0  & 1d4    & Piercing                 & 1 (50 gp)  & Forceful                                       \\
+                \tind Armor spikes\fn{2}           & Medium & \tdash  & 1d4    & Piercing                 & \tdash       & Supplemental                                      \\
+                \tind Standard shield\fn{3}        & Medium & \plus0  & 1d4    & Bludgeoning              & 0 (10 gp)  & Supplemental                                       \\
+                \tind Spiked standard shield\fn{3} & Medium & \plus1  & 1d4    & Bludgeoning and piercing & 1 (40 gp)  & Supplemental                                       \\
 
                 Axes                               &        &         &        &                          &              &                                                \\
                 \tind Battleaxe                    & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp)  & Sweeping (1), Versatile Grip                   \\
@@ -490,14 +493,16 @@ Items are divided into five broad categories, described below.
                 % Exotic weapons should be +3 over normal
                 \tb{Exotic Weapons}\label{Exotic Weapons} & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type} & \tb{Item Rank (Cost)}\fn{1} & \tb{Weapon Tags} \tableheaderrule
                 Armor                          &         &        &        &                          &              &                                \\
-                \tind Armblade\fn{2}           & Light   & \plus2 & 1d4    & Slashing                 & 1 (40 gp)  & Grappling, Keen                \\
-                \tind Spiked knee\fn{2}        & Light   & \plus1 & 1d4    & Piercing                 & 1 (40 gp)  & Grappling, Impact              \\
+                \tind Armblade\fn{2}           & Light   & \plus2 & 1d4    & Slashing                 & 1 (40 gp)  & Grappling, Keen, Supplemental                \\
+                \tind Spiked knee\fn{2}        & Light   & \plus1 & 1d4    & Piercing                 & 1 (40 gp)  & Grappling, Impact, Supplemental              \\
+                \tind Tower shield\fn{3}        & Heavy  & \plus0  & 1d10    & Bludgeoning              & 1 (40 gp)  & Supplemental                                       \\
+                \tind Spiked tower shield\fn{3} & Heavy  & \plus1  & 1d10    & Bludgeoning and piercing & 1 (40 gp)  & Supplemental                                       \\
                 Axes                           &         &        &        &                          &              &                                \\
                 \tind Dwarven throwing axe     & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Impact, Thrown (60/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Thrown (30/60), Versatile Grip \\
                 \tind Orcish greataxe          & Heavy   & \plus0 & 1d10    & Slashing                 & 1 (40 gp)  & Impact, Sweeping (1)           \\
                 Blades                         &         &        &        &                          &              &                                \\
-                \tind Boot dagger\fn{2}        & Light   & \plus2 & 1d4    & Piercing                 & 0 (10 gp)  & Compact, Stealthy              \\
+                \tind Boot dagger\fn{2}        & Light   & \plus2 & 1d4    & Piercing                 & 0 (10 gp)  & Compact, Stealthy, Supplemental              \\
                 \tind Falchion                 & Medium  & \plus0 & 1d6    & Slashing                 & 1 (40 gp)  & Sweeping (2), Versatile Grip   \\
                 \tind Katana                   & Heavy   & \plus1 & 1d8   & Slashing                 & 1 (40 gp)  & Keen, Sweeping (1)             \\
                 \tind Kukri                    & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)             \\
@@ -540,10 +545,11 @@ Items are divided into five broad categories, described below.
                 \tind Bolas                    & Light   & \plus2 & 1d3    & Bludgeoning              & 0 (10 gp)  & Thrown (30/60), Tripping       \\
                 \tind Dwarven throwing axe     & Light   & \plus2 & 1d4    & Slashing                 & 0 (10 gp)  & Impact, Thrown (60/120)        \\
                 \tind Dwarven waraxe           & Medium  & \plus0 & 1d8   & Slashing                 & 1 (40 gp)  & Thrown (30/60), Versatile Grip \\
-                \tind Net\fn{2}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Thrown (5/15)                  \\
+                \tind Net\fn{2}                & Medium  & \plus0 & \tdash & \tdash                   & 0 (10 gp)  & Supplemental, Thrown (5/15)                  \\
             \end{longtable}
             1 See \pcref{Item Ranks}. \\
             2 This weapon has special rules. \\
+            3 You cannot use the \ability{offhand strike} ability with a shield. \\
         \end{longtablewrapper}
 
         \begin{dtable!*}
@@ -575,13 +581,11 @@ Items are divided into five broad categories, described below.
         When you attack with an armblade, you cannot use the arm it is attached to for any other combat purpose in the same phase.
         You can still hold items in that hand, but they have no combat effect.
         If you are not proficient with this weapon, you increase your \glossterm{encumbrance} by 2 when wearing armor with an armblade.
-        Armblades cannot be imbued with magic weapon properties.
         \parhead{Armor Spikes} Any \glossterm{body armor} can be spiked.
         You cannot normally attack with armor spikes.
         However, if your armor is spiked and you are proficient with it, you deal damage with it when you make a successful \textit{grapple} or \textit{shove} attack.
         Your \glossterm{power} is halved for the purpose of this damage, and this damage is not doubled if you get a critical hit with the grapple or shove attack.
         If you would already deal damage with that ability from another source, such as with the \textit{wall slam} ability from the Savage feat, you instead gain a \plus1d bonus to that damage, and that damage becomes piercing damage in addition to its other types.
-        Armor spikes cannot be imbued with magic weapon properties.
         \parhead{Bladed Whip} A bladed whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
         \parhead{Boot Dagger} A boot dagger is a modified boot or boot sole which contains a hidden dagger.
         The dagger is normally concealed, and requires an Awareness check with a \glossterm{difficulty value} of 15 to find.
@@ -590,7 +594,6 @@ Items are divided into five broad categories, described below.
 
         After you attack with a boot dagger, the dagger remains plainly visible.
         Concealing the dagger again requires a standard action.
-        A boot dagger cannot be imbued with magic weapon properties.
         \parhead{Claw} This weapon has the Versatile Grip tag, which may seem odd for an obviously one-handed weapon.
         The damage bonus from that tag represents attacking with claws on both hands at once, rather than grabbing one claw with both hands.
         If a creature only has a claw on a single hand, which is unusual, it cannot gain the benefit of the Versatile Grip tag.
@@ -612,14 +615,12 @@ Items are divided into five broad categories, described below.
         \parhead{Net} A net is used to entangle enemies. When you throw a net, you make an attack vs. Reflex against your target. If you hit, the target is \slowed.
         \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has 10 hit points and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
         \par A net has no effect on creatures that are Tiny or smaller, or Huge or larger. It must be folded to be thrown effectively, which takes a minute of work. You take a \minus4 accuracy penalty with an unfolded net.
-        \par A net cannot be imbued with magic weapon properties.
         \parhead{Pike} A pike can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
         However, you cannot use it to attack targets adjacent to you.
         \parhead{Punch/Kick} All bipedal creatures have access to the punch/kick \glossterm{natural weapon}.
         Normally, this represents a punch, which requires a \glossterm{free hand}.
         If you are trained in the Balance skill or have a Dexterity of at least 2, you can make it a kick, which does not require a free hand.
         However, you cannot use the \ability{offhand strike} ability to attack with a kick (see \pcref{Offhand Strike}).
-        \parhead{Shield, Standard} You cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the shortbow in another hand.
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
         \par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1d damage penalty with ordinary stones.
@@ -627,8 +628,6 @@ Items are divided into five broad categories, described below.
         \parhead{Spiked Knee} This weapon is not held in a hand.
         Instead, it is affixed to the leg of body armor with a medium or heavy \glossterm{usage class} (see \pcref{Armor Usage Classes}).
         If you are not proficient with this weapon, you increase your \glossterm{encumbrance} by 2 when wearing armor with a spiked knee.
-        A spiked knee cannot be imbued with magic weapon properties.
-        \parhead{Spiked Shield, Standard} You cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Takedown Bow} A takedown bow is a bow assembled from multiple independent components that can be reconfigured into two different combinations.
         In its longbow configuration, it functions like a longbow, and in its shortbow configuration, it functions like a shortbow.
         In addition, when it is fully disassembled, it takes up space equivalent to a light usage class weapon, making it easier to transport and conceal.
@@ -798,7 +797,6 @@ Items are divided into five broad categories, described below.
                 \tind Scale mail      & \plus3       & \plus5                 & \plus5           & \tdash  & \mult1/2       & Metal         & 1 (40 gp)    \\
                 \tind Breastplate     & \plus3       & \plus6                 & \plus4           & \tdash  & \mult1/2       & Metal         & 2 (200 gp)   \\
                 \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 0 (10 gp)    \\
-                \tind Spiked shield   & \plus2       & \tdash                 & \plus1\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 1 (50 gp)    \\
                 Heavy armor           &              &                        &                  &              &                &               &              \\
                 \tind Layered hide    & \plus4       & \plus8                 & \plus5           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
                 \tind Plated mail     & \plus4       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
@@ -807,7 +805,7 @@ Items are divided into five broad categories, described below.
                 Extras                &              &                        &                  &              &                &               &              \\
                 \tind Armor spikes    & \tdash       & \minus1                & \plus1           & \tdash       & \tdash         & Metal         & 0 (10 gp)    \\
                 \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal         & 0 (10 gp)    \\
-                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal         & 0 (10 gp)    \\
+                \tind Shield spikes   & \tdash       & \tdash                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
             \end{dtabularx}
             1 The hand holding the shield is not free, which may limit your actions. \\
             2 Tower shields improve your ability to take the \textit{total defense} action. See the description.
@@ -824,16 +822,20 @@ Items are divided into five broad categories, described below.
         \par You can't bash someone with a buckler.
         \parhead{Chain Shirt} A chain shirt comes with a steel cap.
         \parhead{Full Plate} The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check. The new owner must still be of the same size category as the size category that the suit was designed for.
-        \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A standard shield is so cumbersome that you can't use your shield hand for anything else.
-        \subparhead{Shield Bash Attacks}\label{Shield Bash Attacks} You can bash an opponent with a standard shield, using it as a medium bludgeoning weapon. See \trefnp{Weapons} for the damage dealt by a shield bash.
-        Magical abilities on a shield do not affect shield bash attacks made with it, and magic weapon properties cannot be applied to a shield.
-        In addition, you cannot use the \ability{offhand strike} ability to attack with a shield.
+        \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand.
+        A standard shield is so cumbersome that you can't use your shield hand for anything else.
+        You can use a standard shield as a weapon (see \tref{Weapons}).
+        However, you cannot use the \ability{offhand strike} ability to attack with a shield.
         \parhead{Shield, Tower} This massive shield is nearly as tall as an average human.
         When you take the \textit{total defense} action while wielding a tower shield, you gain a \plus2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref{Total Defense}).
-        You cannot attack with a tower shield, and you cannot use your shield hand for anything else.
+        A tower shield is so cumbersome that you can't use your shield hand for anything else.
+        You can use a tower shield as an \glossterm{exotic weapon} (see \tref{Exotic Weapons}).
+        However, you cannot use the \ability{offhand strike} ability to attack with a shield.
 
         While wielding a tower shield, you take a \minus1 penalty to \glossterm{accuracy} because of the shield's unwieldy nature.
-        \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash by \plus1d. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
+        \parhead{Shield Spikes} These spikes improve the effectiveness of a standard shield or tower shield when used as a weapon.
+        You gain a \plus1 accuracy bonus with attacks using a spiked shield, and damage dealt by the strike is piercing damage in addition to any other damage types.
+        You can't put spikes on a buckler.
         \parhead{Studded Leather} The studs on studded leather are made of metal, but this amount of metal is not generally enough to make the item count as being made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
 
