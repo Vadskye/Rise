@@ -182,6 +182,18 @@ export const chronomancy: MysticSphere = {
     },
 
     {
+      name: 'Greater Haste',
+
+      effect: `
+        You gain a +10 foot \\glossterm{magic bonus} to speed with all movement modes.
+        In addition, you can take two \\glossterm{minor actions} each round instead of one.
+        As normal, you cannot use the same ability twice in the same round.
+      `,
+      rank: 7,
+      type: 'Attune (deep)',
+    },
+
+    {
       name: 'Weapon Haste',
 
       effect: `
@@ -346,17 +358,6 @@ export const chronomancy: MysticSphere = {
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 3,
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Minor Acceleration',
-
-      effect: `
-        You can take two \\glossterm{minor actions} each round instead of one.
-        As normal, you cannot take the same minor action twice in the same round.
-      `,
-      rank: 6,
       type: 'Attune (deep)',
     },
 
