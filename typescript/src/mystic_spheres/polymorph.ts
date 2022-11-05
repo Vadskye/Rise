@@ -845,7 +845,7 @@ export const polymorph: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The target gains a +5 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        The target gains a +10 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
       `,
@@ -864,7 +864,7 @@ export const polymorph: MysticSphere = {
         `,
         name: 'fortify',
       },
-      rank: 4,
+      rank: 3,
     },
 
     {
@@ -878,7 +878,7 @@ export const polymorph: MysticSphere = {
         `,
         name: 'Empowered fortify',
       },
-      rank: 5,
+      rank: 6,
     },
 
     {
@@ -887,25 +887,11 @@ export const polymorph: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          the bonus to \\glossterm{damage resistance} increases to 10.
+          the bonus to \\glossterm{damage resistance} increases to +20.
         `,
         name: 'fortify',
       },
       rank: 4,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Supreme Fortify',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        exceptThat: `
-          the bonus to \\glossterm{damage resistance} increases to 15.
-        `,
-        name: 'fortify',
-      },
-      rank: 7,
       type: 'Attune',
     },
 
