@@ -567,7 +567,7 @@ export const pyromancy: MysticSphere = {
       name: 'Wings of the Phoenix',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flying}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
         If you are above that height, you gain a 30 foot \\glossterm{glide speed} instead.
       `,
       rank: 5,
