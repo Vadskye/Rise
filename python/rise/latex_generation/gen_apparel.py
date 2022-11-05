@@ -574,9 +574,8 @@ def generate_apparel():
             rank=7,
             material_type="Boots",
             description="""
-                You are immune to all effects that reduce your movement speed or prevent you from moving, including \\glossterm<difficult terrain>.
-                This removes all penalties you would suffer for \\swimming.
-                This does not prevent you from being \\grappled, but you gain a +4 bonus to your defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
+                You are immune to being \\slowed, \\immobilized, and \\paralyzed.
+                In addition, you are unaffected by \\glossterm<difficult terrain> and immune to being \\grappled or knocked \\prone.
             """,
             short_description="Grants immunity to almost all mobility restrictions",
         ),
