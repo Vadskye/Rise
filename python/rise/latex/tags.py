@@ -28,7 +28,8 @@ valid_tags = set(
 
 def glosstermify(tag):
     if tag == "(see text)":
-        return tag
+        # this fixes dumb type issues because python's type system is weird
+        return f"{tag}"
     elif " " in tag:
         split_tag = tag.split()
         return f"\\abilitytag<{split_tag[0]}> {' '.join(split_tag[1:])}"
@@ -41,9 +42,9 @@ def is_valid_tag(tag):
 
 
 def to_latex_tags(tags):
-    tags = filter(bool, tags)
-    tags = filter(lambda t: t != "AP", tags)
-    return "[" + ", ".join([glosstermify(tag) for tag in sorted(tags)]) + "]"
+    filtered_tags = filter(bool, tags)
+    filtered_tags = filter(lambda t: t != "AP", tags)
+    return "[" + ", ".join([glosstermify(tag) for tag in sorted(filtered_tags)]) + "]"
 
 def add_attune_tag(tags):
     tags = tags or []
