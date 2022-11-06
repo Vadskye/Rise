@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem
+from rise.latex.magic_item import MagicItem, generate_table
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
@@ -795,27 +795,9 @@ def generate_implement_latex():
     return latexify(text)
 
 
-def generate_implement_table():
-    implements = sorted(
-        sorted(generate_implements(), key=lambda item: item.name),
-        key=lambda item: item.rank,
-    )
-    rows = []
-    for item in implements:
-        rows += item.latex_table_rows(include_type=True)
-    row_text = "\n".join(rows)
-    return longtablify(
-        f"""
-        \\lcaption<Magic Implements> \\\\
-        \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        {row_text}
-    """
-    )
-
-
 def write_to_file():
     implement_latex = generate_implement_latex()
-    implement_table = generate_implement_table()
+    implement_table = generate_table(generate_implements(), "Magic Implements", include_type=True)
     with open(book_path("implements.tex"), "w") as implement_description_file:
         implement_description_file.write(implement_latex)
     with open(book_path("implements_table.tex"), "w") as implement_table_file:

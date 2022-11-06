@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, Upgrade
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
@@ -673,31 +673,13 @@ def generate_armor_latex(check=False):
     return latexify(text)
 
 
-def generate_armor_table():
-    armor = sorted(
-        sorted(generate_armor(), key=lambda item: item.name),
-        key=lambda item: item.rank,
-    )
-    rows = []
-    for item in armor:
-        rows += item.latex_table_rows(include_type=True)
-    row_text = "\n".join(rows)
-    return longtablify(
-        f"""
-        \\lcaption<Magic Armor> \\\\
-        \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-        {row_text}
-    """
-    )
-
-
 def sanity_check(armor, worn):
     pass
 
 
 def write_to_file():
     armor_latex = generate_armor_latex()
-    armor_table = generate_armor_table()
+    armor_table = generate_table(generate_armor(), "Magic Armor", include_type=True)
     with open(book_path("armor.tex"), "w") as armor_description_file:
         armor_description_file.write(armor_latex)
     with open(book_path("armor_table.tex"), "w") as armor_table_file:

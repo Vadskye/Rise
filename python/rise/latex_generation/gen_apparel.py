@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, Upgrade, sorted_table_rows
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
@@ -2992,31 +2992,13 @@ def generate_apparel_latex(check=False):
     return latexify(text)
 
 
-def generate_apparel_table():
-    apparel = sorted(
-        sorted(generate_apparel(), key=lambda item: item.name),
-        key=lambda item: item.rank,
-    )
-    rows = []
-    for item in apparel:
-        rows += item.latex_table_rows(include_type=True)
-    row_text = "\n".join(sorted_table_rows(rows))
-    return longtablify(
-        f"""
-            \\lcaption<Magic Apparel> \\\\
-            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {row_text}
-        """
-    )
-
-
 def sanity_check(armor):
     pass
 
 
 def write_to_file():
     apparel_latex = generate_apparel_latex()
-    apparel_table = generate_apparel_table()
+    apparel_table = generate_table(generate_apparel(), "Magic Apparel", include_type=True)
     with open(book_path("apparel.tex"), "w") as apparel_description_file:
         apparel_description_file.write(apparel_latex)
     with open(book_path("apparel_table.tex"), "w") as apparel_table_file:
