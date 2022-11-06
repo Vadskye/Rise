@@ -30,31 +30,25 @@ def generate_armor():
             tags=["Attune (deep)"],
             description="""
                 Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 2d6 energy damage.
+                \\hit Each target takes 1d10+2 energy damage.
             """,
-            short_description="Deals 2d6 damage to attackers when you lose HP",
-        ),
-        create_armor(
-            name="Lifebond Retribution Armor, Greater",
-            rank=4,
-            material_type="Body armor",
-            tags=["Attune (deep)"],
-            description="""
-                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 4d6 energy damage.
-            """,
-            short_description="Deals 4d6 damage to attackers when you lose HP",
-        ),
-        create_armor(
-            name="Lifebond Retribution Armor, Supreme",
-            rank=6,
-            material_type="Body armor",
-            tags=["Attune (deep)"],
-            description="""
-                Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 5d10 energy damage.
-            """,
-            short_description="Deals 5d10 damage to attackers when you lose HP",
+            short_description="Deals 1d10+2 damage to attackers when you lose HP",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage increases to 2d10+4.
+                    """,
+                    short_description="Deals 2d10+4 damage to attackers when you lose HP",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage increases to 4d10+7.
+                    """,
+                    short_description="Deals 4d10+7 damage to attackers when you lose HP",
+                ),
+            ],
         ),
     ]
 
@@ -67,24 +61,22 @@ def generate_armor():
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +4 hit points",
-        ),
-        create_armor(
-            name="Armor of Health, Greater",
-            rank=4,
-            material_type="Body armor",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +8 hit points",
-        ),
-        create_armor(
-            name="Armor of Health, Supreme",
-            rank=6,
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +16 hit points",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The bonus increases to +8.
+                    """,
+                    short_description="Grants +8 hit points",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The bonus increases to +16.
+                    """,
+                    short_description="Grants +16 hit points",
+                ),
+            ],
         ),
     ]
 
@@ -98,25 +90,23 @@ def generate_armor():
                 Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
             """,
             short_description="Redirects nearby projectiles to hit you",
-        ),
-        create_armor(
-            name="Shield of Arrow Catching, Greater",
-            rank=4,
-            material_type="Shield",
-            description="""
-                This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
-            """,
-            short_description="Redirects projectiles to hit you",
-        ),
-        create_armor(
-            name="Shield of Arrow Catching, Supreme",
-            rank=6,
-            material_type="Shield",
-            description="""
-                This item functions like a \\mitem<shield of arrow catching>, except that it affects a \\arealarge radius from you.
-                In addition, you gain a +2 bonus to all defenses against strikes redirected in this way.
-            """,
-            short_description="Redirects projectiles to possibly hit you",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The area increases to a \\largearea radius.
+                    """,
+                    short_description="Redirects projectiles to hit you",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        You also gain a +2 bonus to all defenses against projectiles redirected in this way.
+                        This does not affect projectiles that were originally aimed at you.
+                    """,
+                    short_description="Redirects projectiles to possibly hit you",
+                ),
+            ],
         ),
     ]
 
@@ -129,24 +119,22 @@ def generate_armor():
                 You gain a +2 bonus to your defenses against ranged \\glossterm<strikes>.
             """,
             short_description="Grants +2 defenses vs ranged strikes",
-        ),
-        create_armor(
-            name="Shield of Arrow Deflection, Greater",
-            rank=5,
-            material_type="Shield",
-            description="""
-                You gain a +3 bonus to your defenses against ranged \\glossterm<strikes>.
-            """,
-            short_description="Grants +3 defenses vs ranged strikes",
-        ),
-        create_armor(
-            name="Shield of Arrow Deflection, Supreme",
-            rank=7,
-            material_type="Shield",
-            description="""
-                You gain a +4 bonus to your defenses against ranged \\glossterm<strikes>.
-            """,
-            short_description="Grants +4 defenses vs ranged strikes",
+            upgrades=[
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The defense bonus increases to +3.
+                    """,
+                    short_description="Grants +3 defenses vs ranged strikes",
+                ),
+                Upgrade(
+                    rank=5,
+                    description="""
+                        The defense bonus increases to +4.
+                    """,
+                    short_description="Grants +4 defenses vs ranged strikes",
+                ),
+            ],
         ),
     ]
 
@@ -158,27 +146,23 @@ def generate_armor():
             description="""
                 Whenever a creature within \\longrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
             """,
-            short_description="Reflects missed ranged attacks",
-        ),
-        create_armor(
-            name="Shield of Arrow Reflection, Greater",
-            rank=4,
-            material_type="Shield",
-            description="""
-                Whenever a creature within \\distrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
-                It takes a -2 penalty to defenses against attacks reflected in this way.
-            """,
-            short_description="Precisely reflects missed ranged attacks",
-        ),
-        create_armor(
-            name="Shield of Arrow Reflection, Supreme",
-            rank=6,
-            material_type="Shield",
-            description="""
-                Whenever a creature within \\extrange of you misses or \\glossterm<glances> you with a ranged \\glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
-                It takes a -4 penalty to defenses against attacks reflected in this way.
-            """,
-            short_description="Reflects missed ranged attacks with incredible precision",
+            short_description="Reflects missed ranged strikes",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The attacker takes a -2 penalty to all defenses against attacks reflected in this way.
+                    """,
+                    short_description="Precisely reflects missed ranged strikes",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The defense penalty improves to -4.
+                    """,
+                    short_description="Precisely reflects missed long-range strikes",
+                ),
+            ],
         ),
     ]
 
@@ -278,17 +262,15 @@ def generate_armor():
                 \\hit Each target takes 2d8 energy damage.
             """,
             short_description="Deals 2d8 damage to adjacent attackers",
-        ),
-        create_armor(
-            name="Armor of Retribution, Greater",
-            rank=6,
-            material_type="Body armor",
-            tags=["Attune (deep)"],
-            description="""
-                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 4d8 energy damage.
-            """,
-            short_description="Deals 4d8 damage to adjacent attackers",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage increases to 4d8.
+                    """,
+                    short_description="Deals 4d8 damage to adjacent attackers",
+                ),
+            ],
         ),
     ]
 
@@ -301,24 +283,15 @@ def generate_armor():
                 You gain a +4 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
             """,
             short_description="Reduces critical hits from strikes",
-        ),
-        create_armor(
-            name="Armor of Fortification, Greater",
-            rank=6,
-            material_type="Body armor",
-            description="""
-                You gain a +8 bonus to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
-            """,
-            short_description="Drastically reduces critical hits from strikes",
-        ),
-        create_armor(
-            name="Armor of Mystic Fortification",
-            rank=5,
-            material_type="Body armor",
-            description="""
-                You gain a +4 bonus to your defenses when determining whether any attack gets a \\glossterm<critical hit> against you instead of a normal hit.
-            """,
-            short_description="Reduces critical hits from magical attacks",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The bonus applies against all attacks, not just strikes.
+                    """,
+                    short_description="Reduces critical hits",
+                ),
+            ],
         ),
     ]
 
@@ -329,7 +302,7 @@ def generate_armor():
             tags=["Sensation"],
             material_type="Body armor",
             description="""
-                 As a standard action, you can use this item.
+                 As a standard action, you can use this armor.
                  If you do, it appears to change shape and form to assume the shape of a normal set of clothing.
                  You may choose the design of the clothing.
                  The item retains all of its properties, including weight and sound, while disguised in this way.
@@ -338,16 +311,15 @@ def generate_armor():
                  Alternately, you may return the armor to its original appearance.
             """,
             short_description="Can look like normal clothing",
-        ),
-        create_armor(
-            name="Hidden Armor, Greater",
-            rank=3,
-            material_type="Body armor",
-            tags=["Sensation"],
-            description="""
-                This item functions like \\mitem<hidden armor>, except that the item also makes sound appropriate to its disguised form while disguised.
-            """,
-            short_description="Can look and sound like normal clothing",
+            upgrades=[
+                Upgrade(
+                    rank=3,
+                    description="""
+                        The armor also makes sound appropriate to its disguised form while disguised.
+                    """,
+                    short_description="Can look and sound like normal clothing",
+                ),
+            ],
         ),
     ]
 
@@ -361,26 +333,22 @@ def generate_armor():
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
             """,
             short_description="Grants +4 damage resistance",
-        ),
-        create_armor(
-            name="Resistant Armor, Greater",
-            rank=4,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-            """,
-            short_description="Grants +8 damage resistance",
-        ),
-        create_armor(
-            name="Resistant Armor, Supreme",
-            rank=6,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-            """,
-            short_description="Grants +16 damage resistance",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The bonus increases to +8.
+                    """,
+                    short_description="Grants +8 damage resistance",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The bonus increases to +16.
+                    """,
+                    short_description="Grants +16 damage resistance",
+                ),
+            ],
         ),
     ]
 
@@ -391,32 +359,19 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+                You gain a +1 \\glossterm<magic bonus> to your Armor defense.
                 However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
             """,
-            short_description="Grants +8 hit points and damage resistance, but -10 speed",
-        ),
-        create_armor(
-            name="Stonebody Armor, Greater",
-            rank=5,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
-            """,
-            short_description="Grants +16 hit points and damage resistance, but -10 speed",
-        ),
-        create_armor(
-            name="Stonebody Armor, Supreme",
-            rank=7,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
-            """,
-            short_description="Grants +32 hit points and damage resistance, but -10 speed",
+            short_description="Grants +1 AD, but -10 speed",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The defense bonus increases to +2.
+                    """,
+                    short_description="Grants +2 AD, but -10 speed",
+                ),
+            ],
         ),
     ]
 
@@ -427,19 +382,18 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your Dexterity is at least 3, you gain a +1 bonus to your Armor defense.
+                If your Dexterity is at least 3, you gain a +1 \\glossterm<magic bonus> to your Armor defense.
             """,
-            short_description="Grants +1 Armor if you have 3 Dex",
-        ),
-        create_armor(
-            name="Lithe Armor, Greater",
-            rank=7,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                If your Dexterity is at least 3, you gain a +2 bonus to your Armor defense.
-            """,
-            short_description="Grants +2 Armor if you have 3 Dex",
+            short_description="Grants +1 AD if you have 3 Dex",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The defense bonus increases to +2.
+                    """,
+                    short_description="Grants +2 AD if you have 3 Dex",
+                ),
+            ],
         ),
     ]
 
@@ -450,32 +404,19 @@ def generate_armor():
             tags=["Swift"],
             material_type="Body armor",
             description="""
-                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to your Reflex defense until the end of the round.
+                Whenever you use the \\textit<sprint> ability, you gain a +2 bonus to your Reflex defense until the end of the round.
                 This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
             """,
-            short_description="Grants +1 Reflex whenever you sprint",
-        ),
-        create_armor(
-            name="Agile Burst Armor, Greater",
-            rank=4,
-            tags=["Swift"],
-            material_type="Body armor",
-            description="""
-                Whenever you use the \\textit<sprint> ability, you gain a +1 bonus to your Armor and Reflex defenses until the end of the round.
-                This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
-            """,
-            short_description="Grants +1 Armor and Reflex whenever you sprint",
-        ),
-        create_armor(
-            name="Agile Burst Armor, Supreme",
-            rank=7,
-            tags=["Swift"],
-            material_type="Body armor",
-            description="""
-                Whenever you use the \\textit<sprint> ability, you gain a +2 bonus to your Armor and Reflex defenses until the end of the round.
-                This effect has the \\abilitytag<Swift> tag, so it affects attacks against you during the current phase.
-            """,
-            short_description="Grants +2 Armor and Reflex whenever you sprint",
+            short_description="Grants +2 Reflex whenever you sprint",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The defense bonus increases to +4.
+                    """,
+                    short_description="Grants +4 Reflex whenever you sprint",
+                ),
+            ],
         ),
     ]
 
@@ -490,28 +431,22 @@ def generate_armor():
                 However, you take a -4 penalty to your \\glossterm<hit points>.
             """,
             short_description="Grants +8 damage resistance, but -4 hit points",
-        ),
-        create_armor(
-            name="Lifeweave Armor, Greater",
-            rank=4,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                However, you take a -8 penalty to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +16 damage resistance, but -8 hit points",
-        ),
-        create_armor(
-            name="Lifeweave Armor, Supreme",
-            rank=6,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +32 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                However, you take a -16 penalty to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +32 damage resistance, but -16 hit points",
+            upgrades = [
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage resistance bonus increases to +16, but the hit point penalty increases to -8.
+                    """,
+                    short_description="Grants +16 damage resistance, but -8 hit points",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage resistance bonus increases to +32, but the hit point penalty increases to -16.
+                    """,
+                    short_description="Grants +32 damage resistance, but -16 hit points",
+                ),
+            ]
         ),
     ]
 
@@ -526,28 +461,22 @@ def generate_armor():
                 However, you take a -2 penalty to your \\glossterm<power>.
             """,
             short_description="Grants +6 damage resistance, but -2 power",
-        ),
-        create_armor(
-            name="Soulweave Armor, Greater",
-            rank=4,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +12 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                However, you take a -4 penalty to your \\glossterm<power>.
-            """,
-            short_description="Grants +12 damage resistance, but -4 power",
-        ),
-        create_armor(
-            name="Soulweave Armor, Supreme",
-            rank=6,
-            tags=[],
-            material_type="Body armor",
-            description="""
-                You gain a +24 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                However, you take a -8 penalty to your \\glossterm<power>.
-            """,
-            short_description="Grants +24 damage resistance, but -8 power",
+            upgrades = [
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage resistance bonus increases to +12, but the power penalty increases to -4.
+                    """,
+                    short_description="Grants +12 damage resistance, but -4 power",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage resistance bonus increases to +24, but the power penalty increases to -8.
+                    """,
+                    short_description="Grants +24 damage resistance, but -8 power",
+                ),
+            ]
         ),
     ]
 
@@ -576,26 +505,22 @@ def generate_armor():
                 After damage is reduced twice in this way, this has no effect until you take a \\glossterm<short rest>.
             """,
             short_description="Reduces physical damage from two attacks by 5",
-        ),
-        create_armor(
-            name="Crumpling Armor, Greater",
-            rank=4,
-            tags=["Attune (deep)"],
-            material_type="Body armor",
-            description="""
-                This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 10.
-            """,
-            short_description="Reduces physical damage from two attacks by 10",
-        ),
-        create_armor(
-            name="Crumpling Armor, Supreme",
-            rank=6,
-            tags=["Attune (deep)"],
-            material_type="Body armor",
-            description="""
-                This armor functions like \\mitem<crumpling armor>, except that the damage reduction increases to 20.
-            """,
-            short_description="Reduces physical damage from two attacks by 20",
+            upgrades = [
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The damage reduction improves to 10.
+                    """,
+                    short_description="Reduces physical damage from two attacks by 10",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage reduction improves to 20.
+                    """,
+                    short_description="Reduces physical damage from two attacks by 20",
+                ),
+            ],
         ),
     ]
 
@@ -610,16 +535,37 @@ def generate_armor():
                 As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
             """,
             short_description="Imposes -1 Armor penalty when creatures miss you",
+            upgrades = [
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The penalty increases to -2.
+                    """,
+                    short_description="Imposes -2 Armor penalty when creatures miss you",
+                ),
+            ],
         ),
+    ]
+
+    armor += [
         create_armor(
-            name="Hardblock Shield, Greater",
-            rank=7,
+            name="Defender's Shield",
+            rank=4,
             tags=[],
             material_type="Shield",
             description="""
-                This shield functions like a \\mitem<hardblock shield>, except that the penalty increases to -2.
+                You gain a +1 \\glossterm<magic bonus> to your Armor defense.
             """,
-            short_description="Imposes -2 Armor penalty when creatures miss you",
+            short_description="Grants +1 Armor defense",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The defense bonus increases to +2.
+                    """,
+                    short_description="Grants +2 Armor defense",
+                ),
+            ],
         ),
     ]
 
@@ -634,17 +580,15 @@ def generate_armor():
                 This does not prevent any other effects of the attack.
             """,
             short_description="Grants 25\\% chance to avoid conditions",
-        ),
-        create_armor(
-            name="Soulguard Shield, Greater",
-            rank=6,
-            tags=[],
-            material_type="Shield",
-            description="""
-                Whenever you would be affected by a \\glossterm<condition>, you have a 50\\% chance to avoid gaining that condition.
-                This does not prevent any other effects of the attack.
-            """,
-            short_description="Grants 50\\% chance to avoid conditions",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The chance increases to 50\\%.
+                    """,
+                    short_description="Grants 50\\% chance to avoid conditions",
+                ),
+            ],
         ),
     ]
 
@@ -679,7 +623,7 @@ def generate_armor():
     ]
 
     armor += [
-        # Paralyzed is t4, but this has an immunity, so call this rank 4
+        # -1r for immunity
         create_armor(
             name="Shield of Medusa",
             rank=4,
@@ -689,22 +633,22 @@ def generate_armor():
                 This shield normally has a cloth covering its face.
                 As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
                 When you do, make an attack vs. Fortitude against all creatures within a \\areasmall cone.
-                On a hit, each target with no remaining \\glossterm<damage resistance> is \\glossterm<briefly> \\paralyzed.
-                Each target is immune to this ability until it takes a \\glossterm<short rest>.
+                On a hit, each target takes 2d8+4 physical damage as its body turns to stone.
+                Each creature that loses \\glossterm<hit points> from this damage is \\slowed as a \\glossterm<condition>.
+                Whether you hit or miss, each creature who can see the face is immune to this ability until it takes a \\glossterm<short rest>.
 
                 If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
             """,
-            short_description="Can briefly paralyze nearby foes",
-        ),
-        create_armor(
-            name="Shield of Medusa, Greater",
-            rank=7,
-            material_type="Shield",
-            tags=["Visual"],
-            description="""
-                This shield functions like a \\mitem<shield of medusa>, except that the attack affects all creatures within a \\largearea cone.
-            """,
-            short_description="Can briefly paralyze foes",
+            short_description="Can deal 2d8+4 damage and possibly slow nearby foes",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The area increases to a \\largearea cone, and the damage increases to 4d8+10.
+                    """,
+                    short_description="Can deal 4d8+10 damage and possibly slow nearby foes",
+                ),
+            ],
         ),
     ]
 
