@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, Upgrade
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify, longtablify
 from rise.latex.tags import add_attune_tag
 
@@ -888,28 +888,9 @@ def generate_weapon_latex(check=False):
     return latexify(text)
 
 
-def generate_weapon_table():
-    weapons = sorted(
-        sorted(generate_weapons(), key=lambda item: item.name),
-        key=lambda item: item.rank,
-    )
-    rows = []
-    for item in weapons:
-        rows += item.latex_table_rows(include_type=False)
-    row_text = "\n".join(rows)
-    return longtablify(
-        f"""
-            \\lcaption<Magic Weapons> \\\\
-            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {row_text}
-        """,
-        include_type=False,
-    )
-
-
 def write_to_file():
     weapon_latex = generate_weapon_latex()
-    weapon_table = generate_weapon_table()
+    weapon_table = generate_table(generate_weapons(), "Magic Weapons", include_type=False)
     with open(book_path("weapons.tex"), "w") as weapon_description_file:
         weapon_description_file.write(weapon_latex)
     with open(book_path("weapons_table.tex"), "w") as weapon_table_file:

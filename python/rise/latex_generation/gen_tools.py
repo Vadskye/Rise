@@ -1,6 +1,6 @@
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, Upgrade
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify, longtablify
 
 # In general, a rank X potion or alchemical item should be one rank behind an
@@ -124,7 +124,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Healing",
             rank=1,
-            tags=['Swift'],
+            tags=["Swift"],
             material_type="Potion",
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.
@@ -192,7 +192,7 @@ def generate_tools():
                     """,
                     short_description="Grants +32 damage resistance",
                 ),
-            ]
+            ],
         ),
     ]
 
@@ -230,7 +230,7 @@ def generate_tools():
                     """,
                     short_description="Grants +16 power",
                 ),
-            ]
+            ],
         ),
     ]
 
@@ -271,7 +271,7 @@ def generate_tools():
                     """,
                     short_description="Throw to deal 7d10+20 fire damage",
                 ),
-            ]
+            ],
         ),
     ]
 
@@ -583,7 +583,7 @@ def generate_tools():
                 A belt lantern can burn for one hour before its fuel is expended, and more oil must be added.
             """,
             short_description="Emits light without being held",
-        )
+        ),
     ]
 
     tools += [
@@ -1380,37 +1380,20 @@ def generate_tool_latex(check=False):
 
 
 def generate_tool_table():
-    tools = sorted(
-        sorted(generate_tools(), key=lambda item: item.name),
-        key=lambda item: item.rank,
-    )
+    tools = generate_tools()
     consumable_tools = list(filter(lambda t: t.consumable, tools))
     permanent_tools = list(filter(lambda t: not t.consumable, tools))
 
-    consumable_rows = []
-    for item in consumable_tools:
-        consumable_rows += item.latex_table_rows(include_type=True)
-    consumable_rows_text = "\n".join(consumable_rows)
-
-    permanent_rows = []
-    for item in permanent_tools:
-        permanent_rows += item.latex_table_rows(include_type=False)
-    permanent_rows_text = "\n".join(permanent_rows)
-    return longtablify(
-        f"""
-            \\lcaption<Consumable Tools> \\\\
-            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {consumable_rows_text}
-        """,
-        wrapper_text="\\tablebookmark<Consumable Tools><consumabletools>"
-    ) + longtablify(
-        f"""
-            \\lcaption<Permanent Tools, Goods, and Mounts> \\\\
-            \\tb<Name> & \\tb<Rank (Cost)> & \\tb<Description> & \\tb<Page> \\tableheaderrule
-            {permanent_rows_text}
-        """,
-        False,
-        wrapper_text="\\tablebookmark<Permanent Tools, Goods, and Mounts><permanenttools>"
+    return generate_table(
+        consumable_tools,
+        "Consumable Tools",
+        include_type=True,
+        wrapper_text=r"\tablebookmark<Consumable Tools><consumabletools>",
+    ) + generate_table(
+        permanent_tools,
+        "Permanent Tools, Goods, and Mounts",
+        include_type=False,
+        wrapper_text=r"\tablebookmark<Permanent Tools, Goods, and Mounts><permanenttools>",
     )
 
 

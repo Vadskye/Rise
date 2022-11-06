@@ -1,7 +1,8 @@
 from logging import getLogger, WARNING
-from rise.latex.util import join
+from rise.latex.util import join, longtablify
 from rise.statistics.rise_data import consumable_item_prices, item_prices
 from rise.latex.tags import glosstermify, is_valid_tag
+from copy import deepcopy
 import re
 
 logger = getLogger(__name__)
@@ -115,20 +116,40 @@ class MagicItem(object):
             else ""
         )
 
-    def latex_table_rows(self, include_type=True):
-        rows = [self.latex_table_row(self.rank, self.short_description, include_type)]
-        if self.upgrades is not None:
-            for i, u in enumerate(self.upgrades):
-                rows.append(self.latex_table_row(u.rank, u.short_description or self.short_description, include_type, i+1))
-        return rows
+    def unpack_upgrades(self):
+        # We want repeatedly unpacking upgrades to be safe
+        without_upgrades = deepcopy(self)
+        without_upgrades.upgrades = None
+        items = [without_upgrades]
+        for upgrade_tier, upgrade in enumerate(self.upgrades or []):
+            items.append(MagicItem(
+                description="This description should never appear!",
+                rank=upgrade.rank,
+                name=self.name + '+' * (upgrade_tier+1),
+                short_description=upgrade.short_description or self.short_description,
+                consumable=self.consumable,
+                material_type=self.material_type,
+                materials=self.materials,
+            ))
+        return items
 
-    def latex_table_row(self, rank, short_description, include_type, upgrade_tier=0):
+
+    def latex_table_rows(self, include_type=True):
+        return [self.latex_table_row(self.rank, self.short_description, include_type)]
+
+    def latex_table_row(self, rank, short_description, include_type):
         material_type = self.material_type or ''
         if material_type == "Body armor":
             material_type = 'Body'
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
-        return f"\\itemref<{self.name}>{'+' * upgrade_tier} & {rank_price_text(self, rank)} {type_text} & {short_description} & \\itempref<{self.name}> \\\\"
+        # name can include '+' suffixes, so strip those when generating the pref
+        return f"""
+            \\itemref<{self.name}>
+            & {rank_price_text(self, rank)} {type_text}
+            & {short_description}
+            & \\itempref<{self.name.replace('+', '')}> \\\\
+        """
 
     def tag_text(self):
         return f"{self.latex_tags()}" if self.tags else ""
@@ -179,3 +200,26 @@ def sorted_table_rows(rows):
         key=lambda r: (first_cell_pattern.search(r) or [])[0]
     )
 
+def generate_table(items, caption, include_type, wrapper_text=None):
+    including_upgrades = []
+    for item in items:
+        for possibly_upgrade in item.unpack_upgrades():
+            including_upgrades.append(possibly_upgrade)
+    sorted_items = sorted(
+        sorted(including_upgrades, key=lambda item: item.name),
+        key=lambda item: item.rank,
+    )
+    rows = []
+    for item in sorted_items:
+        rows += item.latex_table_rows(include_type)
+    row_text = "\n".join(rows)
+    type_text = r"& \tb<Type>" if include_type else ""
+    return longtablify(
+        f"""
+            \\lcaption<{caption}> \\\\
+            \\tb<Name> & \\tb<Rank (Cost)> {type_text} & \\tb<Description> & \\tb<Page> \\tableheaderrule
+            {row_text}
+        """,
+        include_type=include_type,
+        wrapper_text=wrapper_text,
+    )
