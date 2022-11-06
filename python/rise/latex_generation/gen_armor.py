@@ -550,22 +550,13 @@ def generate_armor():
     armor += [
         create_armor(
             name="Defender's Shield",
-            rank=4,
+            rank=5,
             tags=[],
             material_type="Shield",
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Armor defense.
             """,
             short_description="Grants +1 Armor defense",
-            upgrades=[
-                Upgrade(
-                    rank=7,
-                    description="""
-                        The defense bonus increases to +2.
-                    """,
-                    short_description="Grants +2 Armor defense",
-                ),
-            ],
         ),
     ]
 
