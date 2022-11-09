@@ -378,7 +378,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
                         \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes damage as if you had hit it with your gore natural weapon.
-                        This damage cannot be combined with other effects that deal damage with a shove, such as the \textit{wall slam} ability.
+                        This damage cannot be combined with other effects that deal damage with a shove.
                     \end{activeability}
 
                     \begin{activeability}{Form of the Constrictor}
