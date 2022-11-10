@@ -1463,7 +1463,7 @@ function handleEncumbrance() {
         0,
         v.body_armor_encumbrance +
           v.shield_encumbrance -
-          strengthModifier -
+          strengthModifier +
           v.misc
       );
       setAttrs({
@@ -1580,7 +1580,7 @@ function calcBaseHitPoints(levelish) {
     var multiplier = 1;
     while (levelish > 21) {
       levelish -= 6;
-      multiplier += 1;
+      multiplier *= 2;
     }
     baseHp =
       multiplier *
