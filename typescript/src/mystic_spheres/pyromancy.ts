@@ -582,7 +582,9 @@ export const pyromancy: MysticSphere = {
         You embody the soul of the undying phoenix.
         If you die, your body and equipment catch fire and are instantly burned to ash.
         At the end of the next round after you died, you return to life with all of your equipment intact.
-        Your return in the same state in which you died, except that all of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
+        Your return in the same state in which you died, with three exceptions.
+        You return at full \\glossterm{hit points} and with all of your conditions removed.
+        In addition, all of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
         After you are restored to life this way, this spell ends.
       `,
       rank: 7,
