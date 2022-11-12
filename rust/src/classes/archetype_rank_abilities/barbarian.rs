@@ -462,7 +462,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 For each rank 1 and rank 3 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 primal maneuvers.
+                However, you must still apply them to rank 1 or rank 3 primal maneuvers.
                 {
                     \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
                     You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
