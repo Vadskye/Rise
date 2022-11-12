@@ -188,6 +188,7 @@ export const cryomancy: MysticSphere = {
       effect: `
         You can move on top of water as if it were land.
         This also works on other liquids that can be frozen like water.
+        In addition, you move at double speed on \\sphereterm{icy terrain}.
       `,
       rank: 2,
       type: 'Attune',
