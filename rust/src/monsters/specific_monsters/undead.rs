@@ -226,7 +226,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             }));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
-                    As a standard action, a vampire can \trait{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
+                    As a standard action, a vampire can \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
                     While in its bat form, it gains \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
                     While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit and perfect maneuverability.
 
