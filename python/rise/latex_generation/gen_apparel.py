@@ -888,7 +888,6 @@ def generate_apparel():
             material_type="Boots",
             description="""
                 You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flying>).
-                If you are above that height, you gain a \\glossterm<glide speed> equal to the base speed for your size instead.
             """,
             short_description="Grants flight up to 15 feet high",
         ),
