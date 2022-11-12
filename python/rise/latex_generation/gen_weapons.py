@@ -366,26 +366,19 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Ricocheting",
-            rank=3,
+            rank=4,
             description="""
                 When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
-                Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
+                Each secondary target must be within 15 feet of a primary target, and must not already be a target of the strike.
                 The strike affects each secondary target in the same way as the primary target.
+                If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
             """,
             short_description="Hits an extra foe with ranged strikes",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
                         You can choose two secondary targets instead of only one.
-                    """,
-                    short_description="Hits two extra foes with ranged strikes",
-                ),
-                Upgrade(
-                    rank=7,
-                    description="""
-                        You can choose three secondary targets instead of only one.
-                        In addition, each secondary target may be up to 15 feet away from a primary target.
                     """,
                     short_description="Hits two extra foes with ranged strikes",
                 ),
@@ -612,11 +605,36 @@ def generate_weapons():
             rank=1,
             tags=[],
             description="""
-                After being thrown, this weapon teleports back into your hand at the end of the current phase.
+                After being thrown, this weapon flies back into your hand at the end of the current phase as long as it is still \\glossterm<unattended>.
                 Catching a returning weapon when it comes back is a free action.
                 If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
             """,
-            short_description="Teleports back to you after being thrown",
+            short_description="Flies back to you after being thrown",
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Jaunting",
+            rank=4,
+            tags=[],
+            description="""
+                When you throw this weapon, it teleports directly from your hand to your intended target.
+                This allows you to ignore any intervening \\glossterm<cover> with the attack.
+                It teleports back into your hand immediately after striking or missing its target.
+                Catching a returning weapon when it comes back is a free action.
+                If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
+            """,
+            short_description="Teleports when thrown",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                         You also reduce your \\glossterm<longshot penalties> with the weapon by 2.
+                    """,
+                    short_description="Teleports long distances when thrown",
+                ),
+            ],
         ),
     ]
 
