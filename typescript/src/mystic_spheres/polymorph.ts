@@ -136,9 +136,11 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
-        hit: `The target takes 2d8 physical damage.
-        If it loses \\glossterm{hit points} from this damage, it is balefully polymorphed as a \\glossterm{condition}.
-        It shrinks by two \\glossterm{size categories} and is \\confused.`,
+        hit: `
+          The target takes 2d8 physical damage.
+          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
+          Squirrels cannot speak and have no \\glossterm{free hands}.
+        `,
         targeting: `
         Make an attack vs. Fortitude against one creature within \\medrange.
         `,
