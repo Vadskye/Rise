@@ -139,7 +139,8 @@ export const polymorph: MysticSphere = {
         hit: `
           The target takes 2d8 physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
-          Squirrels cannot speak and have no \\glossterm{free hands}.
+          Squirrels have a 30 foot land speed, a 20 foot climb speed, and a bite natural weapon.
+          They cannot speak and have no \\glossterm{free hands}.
         `,
         targeting: `
         Make an attack vs. Fortitude against one creature within \\medrange.
@@ -756,6 +757,51 @@ export const polymorph: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Mountform',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target must be no more than one size category larger or smaller than Large.
+        It \\glossterm{shapeshifts} into a Large horse.
+        Horses have a 50 foot land speed and a bite natural weapon.
+        They cannot speak and have no \\glossterm{free hands}.
+      `,
+      rank: 2,
+      tags: [],
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Snakeform',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target must be no more than one size category larger or smaller than Small.
+        It \\glossterm{shapeshifts} into a Small snake.
+        Snakes have a 20 foot land speed, a 20 foot climb speed, and a bite natural weapon.
+        They cannot speak and have no \\glossterm{free hands}, but they do not need hands to climb.
+      `,
+      rank: 2,
+      tags: [],
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Ravenform',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target must be no more than one size category larger or smaller than Small.
+        It \\glossterm{shapeshifts} into a Small raven.
+        Ravens have a 30 foot \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
+        They cannot speak and have no \\glossterm{free hands}.
+      `,
+      rank: 5,
+      tags: [],
+      type: 'Attune (target)',
+    },
     {
       name: 'Create Handholds',
 
