@@ -263,7 +263,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The healing increases to 2d10.
                     \rank{5} The healing increases to 4d8.
                     \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases to 6d10.
+                    \rank{7} The healing increases by an amount equal to your \glossterm{power}.
                 \end{activeability}
 
             ",
