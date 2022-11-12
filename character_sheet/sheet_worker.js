@@ -28,7 +28,7 @@ const BASE_CLASS_MODIFIERS = {
     attunement_points: 3,
     fatigue_tolerance: 5,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 5,
     proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
