@@ -578,7 +578,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                 For each rank 1 and rank 3 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 wild maneuvers.
+                However, you must still apply them to rank 1 or rank 3 wild maneuvers.
                 {
                     \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
                     You can only apply this enhancement to maneuvers that have a listed range limit.
