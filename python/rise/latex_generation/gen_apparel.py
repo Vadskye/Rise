@@ -37,11 +37,11 @@ def generate_apparel():
             short_description="Increases range of blindsense and blindsight",
             upgrades=[
                 Upgrade(
-                    description="Blindsense increases by 60 feet, and blindsight increases to 30 feet.",
+                    description="Your blindsense increases by 60 feet, and your blindsight increases to 30 feet.",
                     rank=5,
                 ),
                 Upgrade(
-                    description="Blindsense increases by 120 feet, and blindsight increases to 60 feet.",
+                    description="Your blindsense increases by 120 feet, and your blindsight increases to 60 feet.",
                     rank=7,
                 ),
             ],
@@ -2726,6 +2726,26 @@ def generate_apparel():
                 When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\distrange instead of \\shortrange.
             """,
             short_description="Drastically increases range with \\ability<sneak attack>",
+        ),
+    ]
+
+    apparel += [
+        create_apparel(
+            name="Amulet of Mighty Stealth",
+            rank=4,
+            material_type="Amulet",
+            tags=[],
+            description="""
+                You can use the \\ability<sneak attack> rogue ability with medium weapons.
+            """,
+            short_description="Can \\ability<sneak attack> with medium weapons",
+            upgrades=[
+                Upgrade(
+                    description="You can also \\ability<sneak attack> with heavy weapons.",
+                    rank=6,
+                    short_description="Can \\ability<sneak attack> with heavy weapons",
+                ),
+            ],
         ),
     ]
 
