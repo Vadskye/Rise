@@ -1,5 +1,5 @@
 use super::*;
-use crate::core_mechanics::attacks::{HasAttacks, StandardAttack};
+use crate::core_mechanics::attacks::{Maneuver, HasAttacks, StandardAttack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use std::cmp::max;
 
@@ -100,14 +100,14 @@ mod to_section {
             .push(StandardWeapon::Greatsword.weapon());
         monster.creature.add_modifier(
             Modifier::Attack(
-                Maneuver::StripTheFlesh(4).attack(StandardWeapon::Greatsword.weapon()),
+                Maneuver::StripTheFlesh.attack(StandardWeapon::Greatsword.weapon()),
             ),
             None,
             None,
         );
         monster
             .creature
-            .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike(4)), None, None);
+            .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_multiline_eq(
             r"
                 \begin{monsubsection}{Standard Monster}{10}[2]
