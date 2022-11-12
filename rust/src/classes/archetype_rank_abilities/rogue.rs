@@ -558,7 +558,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 For each rank 1 and rank 3 trick maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 trick maneuvers.
+                However, you must still apply them to rank 1 or rank 3 trick maneuvers.
                 {
                     \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
                     However, your \glossterm{power} with the maneuver is treated as 0.
