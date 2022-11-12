@@ -1,13 +1,15 @@
-use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting};
+use crate::core_mechanics::abilities::{
+    AbilityExtraContext, AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting,
+};
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, DebuffEffect, SimpleDamageEffect,
 };
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility,
-    Size, SpecialDefenseType, SpeedCategory, Tag,
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    PassiveAbility, Size, SpecialDefenseType, SpeedCategory, Tag,
 };
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Dragon;
@@ -517,9 +519,10 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         special_attacks.push(f);
     }
 
-    let mut modifiers: Vec<Modifier> = vec![Modifier::Immune(SpecialDefenseType::Damage(
-        dragon_type.damage_type(),
-    ))];
+    let mut modifiers: Vec<Modifier> =
+        ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Immune(
+            SpecialDefenseType::Damage(dragon_type.damage_type()),
+        )]);
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
         for p in passive_abilities {
             modifiers.push(Modifier::PassiveAbility(p));
@@ -541,7 +544,10 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         modifiers: Some(modifiers),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
-            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::VeryFast),
+            MovementSpeed::new(
+                MovementMode::Fly(FlightManeuverability::Poor),
+                SpeedCategory::VeryFast,
+            ),
         ]),
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
         senses: None,
