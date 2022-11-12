@@ -785,7 +785,7 @@ def universal_abilities():
                 "Sprint",
                 """
                     After you use this ability, you increase your fatigue level by one.
-                    You move up to double your normal movement speed.
+                    You move up to double your normal land speed.
                 """,
             ),
             universal_ability_button(
