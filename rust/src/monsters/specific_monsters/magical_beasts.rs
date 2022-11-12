@@ -4,7 +4,7 @@ use crate::core_mechanics::{
     DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
@@ -82,13 +82,13 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 4,
-        modifiers: Some(vec![
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
             Modifier::Attack(
                 StandardAttack::BreathWeaponLine(2, DamageType::Acid, Defense::Reflex)
                     .attack()
                     .except(|a| a.name = "Spit Acid".to_string()),
             ),
-        ]),
+        ])),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Burrow, SpeedCategory::Slow),
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
@@ -296,11 +296,11 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 5,
-        modifiers: Some(vec![
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
             Modifier::Attack(
                 Maneuver::PouncingStrike.attack(StandardWeapon::MonsterClaws.weapon()),
             ),
-        ]),
+        ])),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
@@ -430,7 +430,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![4, 0, 4, -9, 0, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 7,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Black Bear".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
@@ -444,7 +444,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![5, 0, 6, -9, 2, 0],
                 challenge_rating: ChallengeRating::Four,
                 level: 9,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Brown Bear".to_string(),
                 size: Size::Large,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
@@ -458,7 +458,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![-1, 4, -1, -9, 2, -3],
                 challenge_rating: ChallengeRating::One,
                 level: 1,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Rat".to_string(),
                 size: Size::Tiny,
                 trained_skills: Some(vec![Skill::Awareness]),
@@ -483,7 +483,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![3, 4, 3, -9, 3, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 5,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Wolf".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),

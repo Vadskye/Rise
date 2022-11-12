@@ -4,7 +4,7 @@ use crate::core_mechanics::{
     SpeedCategory, StandardPassiveAbility,
 };
 
-use crate::creatures::{Modifier, Monster};
+use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
@@ -129,7 +129,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ),
         ])),
         level: 1,
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         name: "Badger".to_string(),
         senses: Some(vec![Sense::Scent]),
@@ -154,7 +154,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         "),
                     ])),
                     level: 3,
-                    modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                     movement_speeds: None,
                     name: "Black bear".to_string(),
                     senses: Some(vec![Sense::Scent]),
@@ -175,7 +175,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                             Brown bears tend to be bad-tempered and territorial.
                         "),
                     ])),
-                    modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                     movement_speeds: None,
                     level: 5,
                     name: "Brown bear".to_string(),
@@ -198,7 +198,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         name: "Cat".to_string(),
         senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
@@ -222,7 +222,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 description: None,
                 knowledge: None,
                 level: 1,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 movement_speeds: None,
                 name: "Wild dog".to_string(),
                 senses: Some(vec![Sense::Scent]),
@@ -242,7 +242,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ",
                 )])),
                 level: 2,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 movement_speeds: None,
                 name: "Riding dog".to_string(),
                 senses: Some(vec![Sense::Scent]),
@@ -259,14 +259,14 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 12,
-        modifiers: Some(vec![
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
             Modifier::Attack(StandardAttack::FrostwebSpiderBite.attack()),
             Modifier::Attack(
                 StandardAttack::BreathWeaponCone(5, DamageType::Cold, Defense::Fortitude)
                     .attack()
                     .except(|a| a.name = "Frost Breath".to_string()),
             ),
-        ]),
+        ])),
         movement_speeds: None,
         name: "Frostweb Spider".to_string(),
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
@@ -328,7 +328,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 "),
             ])),
             level: 1,
-            modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
             movement_speeds: None,
             name: "Dire Rat".to_string(),
             senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
@@ -347,7 +347,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 2,
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         name: "Wolf".to_string(),
         senses: Some(vec![Sense::Scent]),
@@ -362,7 +362,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         name: "Warg".to_string(),
         senses: Some(vec![Sense::Scent]),
@@ -381,7 +381,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: None,
-        modifiers: Some(vec![Modifier::Attack(half_power_bite.clone())]),
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
         movement_speeds: None,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
@@ -394,7 +394,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Pony".to_string(),
         size: Size::Medium,
-        modifiers: Some(vec![Modifier::Attack(half_power_bite.clone())]),
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
         weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: None,
@@ -472,7 +472,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Dire wolves are efficient pack hunters that will kill anything they can catch.
             ",
         )])),
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         senses: Some(vec![Sense::Scent]),
         trained_skills: None,
@@ -515,7 +515,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
             "),
         ])),
-        modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
         movement_speeds: None,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
@@ -528,10 +528,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 3,
-        modifiers: Some(vec![
+        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
             Modifier::Maneuver(Maneuver::GraspingStrike),
             Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()),
-        ]),
+        ])),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
             MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),

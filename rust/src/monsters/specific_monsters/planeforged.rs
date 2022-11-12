@@ -948,7 +948,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 1,
-                modifiers: None,
+        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 movement_speeds: None,
                 name: "Worker".to_string(),
                 size: Size::Medium,
@@ -973,7 +973,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(vec![
+                modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
                     Modifier::Attack(
                         StandardWeapon::MonsterStinger.weapon().attack()
                         .except_hit_damage(
@@ -989,7 +989,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                             |d| d.power_multiplier = 0.5
                         )
                     ),
-                ]),
+                ])),
                 movement_speeds: Some(vec![
                     MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast)
                 ]),
