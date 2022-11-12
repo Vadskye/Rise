@@ -125,25 +125,25 @@ def generate_apparel():
             tags=[],
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
-                This functions like body armor that provides a +2 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                It also provides a +4 bonus to \\glossterm{damage resistance}.
+                This functions like body armor that provides a +3 bonus to Armor defense and has no \\glossterm<encumbrance>.
+                It also provides a +6 bonus to your \\glossterm{damage resistance}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
                 This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
 
                 The armor and shield provided from this ability are dismissed if you have other body armor of any kind.
             """,
-            short_description="Grants encumbrance-free +2 armor",
+            short_description="Grants encumbrance-free medium armor",
             upgrades=[
                 Upgrade(
-                    description="The defense bonus from the body armor increases to +3, and the damage resistance bonus increases to +8.",
+                    description="The damage resistance bonus increases to +12.",
                     rank=4,
-                    short_description="Grants encumbrance-free +3 armor",
+                    short_description="Grants encumbrance-free medium armor",
                 ),
                 Upgrade(
-                    description="The defense bonus from the body armor increases to +4, and the damage resistance bonus increases to +16.",
+                    description="The damage resistance bonus increases to +24.",
                     rank=6,
-                    short_description="Grants encumbrance-free +4 armor",
+                    short_description="Grants encumbrance-free medium armor",
                 ),
             ],
         ),
