@@ -558,6 +558,19 @@ export const aeromancy: MysticSphere = {
       rank: 7,
       scaling: 'damage',
     },
+
+    {
+      name: 'Mistform',
+
+      effect: `
+        You \\glossterm{shapeshift} into a cloud of mist.
+        You become \\trait{incorporeal}, but you cannot speak and have no \\glossterm{free hands}.
+        You have a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} and perfect \\glossterm{maneuverability} (see \\pcref{Flight}).
+      `,
+      rank: 5,
+      tags: [],
+      type: 'Sustain (standard)',
+    },
   ],
 
   rituals: [
