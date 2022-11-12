@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver};
-use crate::core_mechanics::{Attribute, Defense, PassiveAbility, Resource, SpecialDefenseType};
+use crate::core_mechanics::{Attribute, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType};
 use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
@@ -12,6 +12,7 @@ pub enum Modifier {
     ActiveAbility(ActiveAbility),
     Attack(Attack),
     BaseAttribute(Attribute, i32),
+    BaseSpeed(i32),
     DamageResistance(i32),
     Defense(Defense, i32),
     Encumbrance(i32),
@@ -19,7 +20,7 @@ pub enum Modifier {
     // TODO: add this to creature calculations
     Maneuver(Maneuver),
     // TODO: add this to creature calculations
-    MovementSpeed(i32),
+    MovementSpeed(MovementMode, i32),
     PassiveAbility(PassiveAbility),
     Power(i32),
     Resource(Resource, i32),
@@ -42,12 +43,12 @@ pub enum ModifierType {
     Encumbrance,
     HitPoints,
     Maneuver,
-    MovementSpeed,
     PassiveAbility,
     Power,
     Resource(Resource),
     Skill(Skill),
     SpecialDefense,
+    Speed,
     StrikeDamageDice,
     VitalRoll,
 }
@@ -59,6 +60,7 @@ impl Modifier {
             Self::ActiveAbility(_) => self.name(),
             Self::Attack(_) => self.name(),
             Self::BaseAttribute(_, v) => format!("{} by {}", self.name(), v),
+            Self::BaseSpeed(v) => format!("{} {}", self.name(), v),
             Self::DamageResistance(v) => format!("{} {}", self.name(), v),
             Self::Defense(_, v) => format!("{} by {}", self.name(), v),
             Self::Encumbrance(v) => format!("{} {}", self.name(), v),
@@ -66,7 +68,7 @@ impl Modifier {
             Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
             Self::Impervious(t) => format!("{} to {}", self.name(), t.description()),
             Self::Maneuver(_) => self.name(),
-            Self::MovementSpeed(v) => format!("{} {}", self.name(), v),
+            Self::MovementSpeed(m, v) => format!("{} {} {}", m.name(), self.name(), v),
             Self::PassiveAbility(_) => self.name(),
             Self::Power(v) => format!("{} {}", self.name(), v),
             Self::Resource(_, v) => format!("{} by {}", self.name(), v),
@@ -83,6 +85,7 @@ impl Modifier {
             Self::ActiveAbility(a) => format!("active ability {}", a.name),
             Self::Attack(a) => format!("attack {}", a.name),
             Self::BaseAttribute(a, _) => format!("base attribute {}", a.name()),
+            Self::BaseSpeed(_) => format!("base speed"),
             Self::DamageResistance(_) => format!("DR"),
             Self::Defense(d, _) => format!("defense {}", d.name()),
             Self::Encumbrance(_) => format!("encumbrance"),
@@ -90,7 +93,7 @@ impl Modifier {
             Self::Immune(t) => format!("immune to {}", t.description()),
             Self::Impervious(t) => format!("impervious to {}", t.description()),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
-            Self::MovementSpeed(_) => format!("movement"),
+            Self::MovementSpeed(m, _) => format!("{} speed", m.name()),
             Self::PassiveAbility(a) => format!("passive ability {}", a.name),
             Self::Power(_) => format!("power"),
             Self::Resource(r, _) => format!("resource {}", r.name()),
@@ -107,6 +110,7 @@ impl Modifier {
             Self::ActiveAbility(_) => ModifierType::ActiveAbility,
             Self::Attack(_) => ModifierType::Attack,
             Self::BaseAttribute(a, _) => ModifierType::BaseAttribute(*a),
+            Self::BaseSpeed(_) => ModifierType::Speed,
             Self::DamageResistance(_) => ModifierType::DamageResistance,
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
@@ -114,7 +118,7 @@ impl Modifier {
             Self::Immune(_) => ModifierType::SpecialDefense,
             Self::Impervious(_) => ModifierType::SpecialDefense,
             Self::Maneuver(_) => ModifierType::Maneuver,
-            Self::MovementSpeed(_) => ModifierType::MovementSpeed,
+            Self::MovementSpeed(_, _) => ModifierType::Speed,
             Self::PassiveAbility(_) => ModifierType::PassiveAbility,
             Self::Power(_) => ModifierType::Power,
             Self::Resource(r, _) => ModifierType::Resource(*r),
@@ -155,6 +159,7 @@ impl Modifier {
             Self::ActiveAbility(_) => &0,
             Self::Attack(_) => &0,
             Self::BaseAttribute(_, v) => v,
+            Self::BaseSpeed(v) => v,
             Self::DamageResistance(v) => v,
             Self::Defense(_, v) => v,
             Self::Encumbrance(v) => v,
@@ -162,7 +167,7 @@ impl Modifier {
             Self::Immune(_) => &0,
             Self::Impervious(_) => &0,
             Self::Maneuver(_) => &0,
-            Self::MovementSpeed(v) => v,
+            Self::MovementSpeed(_, v) => v,
             Self::PassiveAbility(_) => &0,
             Self::Power(v) => v,
             Self::Resource(_, v) => v,

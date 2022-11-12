@@ -1,8 +1,8 @@
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense,
-    Size, SpecialDefenseType, SpeedCategory,
+    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -21,7 +21,7 @@ struct FullMagicalBeastDefinition {
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     senses: Option<Vec<Sense>>,
     size: Size,
@@ -40,7 +40,7 @@ impl FullMagicalBeastDefinition {
             knowledge: self.knowledge,
             level: self.level,
             modifiers: self.modifiers,
-            movement_modes: self.movement_modes,
+            movement_speeds: self.movement_speeds,
             name: self.name,
             senses: self.senses,
             size: self.size,
@@ -89,9 +89,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     .except(|a| a.name = "Spit Acid".to_string()),
             ),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Burrow(SpeedCategory::Slow),
-            MovementMode::Land(SpeedCategory::Normal),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Burrow, SpeedCategory::Slow),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Ankheg".to_string(),
         senses: Some(vec![Sense::Darkvision(60), Sense::Tremorsense(60)]),
@@ -140,9 +140,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     .except(|a| a.name = "Dark Embrace".to_string())
             ),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Climb(SpeedCategory::Slow),
-            MovementMode::Land(SpeedCategory::Slow),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Nightcrawler".to_string(),
         senses: Some(vec![Sense::Darkvision(60), Sense::Blindsense(120)]),
@@ -179,7 +179,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ),
             Modifier::Maneuver(Maneuver::GraspingStrike),
         ]),
-        movement_modes: None,
+        movement_speeds: None,
         name: "Hydra Maggot".to_string(),
         senses: Some(vec![Sense::Darkvision(60)]),
         size: Size::Large,
@@ -225,9 +225,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     ))
             ),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Climb(SpeedCategory::Normal),
-            MovementMode::Land(SpeedCategory::Normal),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Climb, SpeedCategory::Normal),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Stygian Leech".to_string(),
         senses: Some(vec![Sense::Darkvision(120), Sense::Lifesense(120)]),
@@ -263,9 +263,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         modifiers: Some(vec![
             Modifier::Maneuver(Maneuver::GraspingStrike),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Climb(SpeedCategory::Slow),
-            MovementMode::Land(SpeedCategory::Slow),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Darkmantle".to_string(),
         senses: Some(vec![Sense::Darkvision(120)]),
@@ -301,9 +301,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 Maneuver::PouncingStrike.attack(StandardWeapon::MonsterClaws.weapon()),
             ),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Poor),
-            MovementMode::Land(SpeedCategory::Normal),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Griffon".to_string(),
         senses: Some(vec![Sense::LowLightVision]),
@@ -341,9 +341,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ),
             Modifier::Maneuver(Maneuver::PouncingStrike),
         ]),
-        movement_modes: Some(vec![
-            MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Poor),
-            MovementMode::Land(SpeedCategory::Normal),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Yrthak".to_string(),
         senses: Some(vec![Sense::Blindsight(120)]),
@@ -392,7 +392,10 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 // Should be (base animal + 4)
                 level: self.level,
                 modifiers: Some(modifiers),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Normal)]),
+                movement_speeds: Some(vec![MovementSpeed::new(
+                    MovementMode::Land,
+                    SpeedCategory::Normal,
+                )]),
                 name: self.name,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: self.size,

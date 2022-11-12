@@ -1873,7 +1873,7 @@ function handleRust() {
                     knowledge: None,
                     level: ${v.level},
                     modifiers: None,
-                    movement_modes: None,
+                    movement_speeds: None,
                     name: "${v.character_name}",
                     senses: None,
                     size: Size::${v.size || "Medium"},

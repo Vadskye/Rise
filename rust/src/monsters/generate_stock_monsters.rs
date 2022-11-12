@@ -19,7 +19,7 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                         knowledge: None,
                         level,
                         modifiers: None,
-                        movement_modes: None,
+                        movement_speeds: None,
                         name: format!(
                             "Stock {} {}{}",
                             creature_type.name(),

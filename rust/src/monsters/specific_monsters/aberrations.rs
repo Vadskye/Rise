@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
 use crate::core_mechanics::attacks::StandardAttack;
-use crate::core_mechanics::{Debuff, MovementMode, Sense, Size, SpecialDefenseType};
+use crate::core_mechanics::{Debuff, MovementSpeed, Sense, Size, SpecialDefenseType};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -18,7 +18,7 @@ struct FullAberrationDefinition {
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     senses: Option<Vec<Sense>>,
     size: Size,
@@ -36,7 +36,7 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         knowledge: def.knowledge,
         level: def.level,
         modifiers: def.modifiers,
-        movement_modes: def.movement_modes,
+        movement_speeds: def.movement_speeds,
         name: def.name,
         senses: def.senses,
         size: def.size,
@@ -96,7 +96,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Modifier::Attack(StandardAttack::AbolethPsionicBlast.attack()),
             Modifier::Attack(StandardAttack::MindCrush(5).attack()),
         ]),
-        movement_modes: None,
+        movement_speeds: None,
         name: "Aboleth".to_string(),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
@@ -129,7 +129,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Modifier::Attack(StandardAttack::GibberingMoutherGibber.attack()),
             Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
-        movement_modes: None,
+        movement_speeds: None,
         name: "Gibbering Mouther".to_string(),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,

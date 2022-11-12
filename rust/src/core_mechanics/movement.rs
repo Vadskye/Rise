@@ -1,13 +1,19 @@
 use crate::core_mechanics::Size;
 
 #[derive(Clone)]
+pub struct MovementSpeed {
+    pub mode: MovementMode,
+    pub speed: SpeedCategory,
+}
+
+#[derive(Clone)]
 pub enum MovementMode {
-    Burrow(SpeedCategory),
-    Climb(SpeedCategory),
-    Fly(SpeedCategory, FlightManeuverability),
-    Glide(SpeedCategory),
-    Land(SpeedCategory),
-    Swim(SpeedCategory),
+    Burrow,
+    Climb,
+    Fly(FlightManeuverability),
+    Glide,
+    Land,
+    Swim,
 }
 
 #[derive(Clone)]
@@ -86,50 +92,52 @@ impl SpeedCategory {
 }
 
 impl MovementMode {
+    pub fn name(&self) -> &str {
+        match self {
+            Self::Burrow => "Burrow",
+            Self::Climb => "Climb",
+            Self::Fly(_) => "Fly",
+            Self::Glide => "Glide",
+            Self::Land => "Land",
+            Self::Swim => "Swim",
+        }
+    }
+}
+
+impl MovementSpeed {
     pub fn calc_speed(&self, size: &Size) -> i32 {
         // TODO: figure out syntax to make this less repetitive
-        match self {
-            MovementMode::Burrow(speed) => calc_speed(speed, size),
-            MovementMode::Climb(speed) => calc_speed(speed, size),
-            MovementMode::Fly(speed, _) => calc_speed(speed, size),
-            MovementMode::Glide(speed) => calc_speed(speed, size),
-            MovementMode::Land(speed) => calc_speed(speed, size),
-            MovementMode::Swim(speed) => calc_speed(speed, size),
+        match self.mode {
+            MovementMode::Burrow => calc_speed(&self.speed, size),
+            MovementMode::Climb => calc_speed(&self.speed, size),
+            MovementMode::Fly(_) => calc_speed(&self.speed, size),
+            MovementMode::Glide => calc_speed(&self.speed, size),
+            MovementMode::Land => calc_speed(&self.speed, size),
+            MovementMode::Swim => calc_speed(&self.speed, size),
         }
     }
 
+    pub fn new(mode: MovementMode, speed: SpeedCategory) -> Self {
+        return Self { mode, speed };
+    }
+
     pub fn slower(&self) -> Self {
-        match self {
-            Self::Burrow(speed) => Self::Burrow(speed.slower()),
-            Self::Climb(speed) => Self::Climb(speed.slower()),
-            Self::Fly(speed, m) => Self::Fly(speed.slower(), m.clone()),
-            Self::Glide(speed) => Self::Glide(speed.slower()),
-            Self::Land(speed) => Self::Land(speed.slower()),
-            Self::Swim(speed) => Self::Swim(speed.slower()),
-        }
+        return Self {
+            speed: self.speed.slower(),
+            mode: self.mode.clone(),
+        };
     }
 
     pub fn description(&self, size: &Size) -> String {
         let speed = self.calc_speed(size);
-        match self {
-            Self::Fly(_, maneuverability) => format!(
+        match self.mode {
+            MovementMode::Fly(ref maneuverability) => format!(
                 "{}~{}~ft.{}",
-                self.name(),
+                self.mode.name(),
                 self.calc_speed(size),
                 maneuverability.speed_suffix()
             ),
-            _ => format!("{}~{}~ft.", self.name(), speed),
-        }
-    }
-
-    pub fn name(&self) -> &str {
-        match self {
-            MovementMode::Burrow(_) => "Burrow",
-            MovementMode::Climb(_) => "Climb",
-            MovementMode::Fly(_, _) => "Fly",
-            MovementMode::Glide(_) => "Glide",
-            MovementMode::Land(_) => "Land",
-            MovementMode::Swim(_) => "Swim",
+            _ => format!("{}~{}~ft.", self.mode.name(), speed),
         }
     }
 }
@@ -146,69 +154,88 @@ mod tests {
     #[test]
     fn calculate_large_speeds() {
         let size = &Size::Large;
-        assert_eq!(20, MovementMode::Swim(SpeedCategory::Slow).calc_speed(size));
+        let mode = MovementMode::Swim;
+        assert_eq!(
+            20,
+            MovementSpeed::new(mode, SpeedCategory::Slow).calc_speed(size)
+        );
         assert_eq!(
             40,
-            MovementMode::Swim(SpeedCategory::Normal).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Normal).calc_speed(size)
         );
-        assert_eq!(60, MovementMode::Swim(SpeedCategory::Fast).calc_speed(size));
+        assert_eq!(
+            60,
+            MovementSpeed::new(mode, SpeedCategory::Fast).calc_speed(size)
+        );
         assert_eq!(
             80,
-            MovementMode::Swim(SpeedCategory::VeryFast).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::VeryFast).calc_speed(size)
         );
     }
 
     #[test]
     fn calculate_medium_speeds() {
         let size = &Size::Medium;
-        assert_eq!(15, MovementMode::Land(SpeedCategory::Slow).calc_speed(size));
+        let mode = MovementMode::Land;
+        assert_eq!(
+            15,
+            MovementSpeed::new(mode, SpeedCategory::Slow).calc_speed(size)
+        );
         assert_eq!(
             30,
-            MovementMode::Land(SpeedCategory::Normal).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Normal).calc_speed(size)
         );
-        assert_eq!(45, MovementMode::Land(SpeedCategory::Fast).calc_speed(size));
+        assert_eq!(
+            45,
+            MovementSpeed::new(mode, SpeedCategory::Fast).calc_speed(size)
+        );
         assert_eq!(
             60,
-            MovementMode::Land(SpeedCategory::VeryFast).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::VeryFast).calc_speed(size)
         );
     }
 
     #[test]
     fn calculate_small_speeds() {
         let size = &Size::Small;
+        let mode = MovementMode::Land;
         assert_eq!(
             10,
-            MovementMode::Climb(SpeedCategory::Slow).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Slow).calc_speed(size)
         );
         assert_eq!(
             20,
-            MovementMode::Climb(SpeedCategory::Normal).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Normal).calc_speed(size)
         );
         assert_eq!(
             30,
-            MovementMode::Climb(SpeedCategory::Fast).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Fast).calc_speed(size)
         );
         assert_eq!(
             40,
-            MovementMode::Climb(SpeedCategory::VeryFast).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::VeryFast).calc_speed(size)
         );
     }
 
     #[test]
-    fn calculate_tiny_speeds() {
-        let size = &Size::Tiny;
-        assert_eq!(5, MovementMode::Climb(SpeedCategory::Slow).calc_speed(size));
+    fn calculate_diminuitive_speeds() {
+        let size = &Size::Diminuitive;
+        let mode = MovementMode::Climb;
+        assert_eq!(
+            5,
+            MovementSpeed::new(mode, SpeedCategory::Slow).calc_speed(size)
+        );
+        assert_eq!(
+            10,
+            MovementSpeed::new(mode, SpeedCategory::Normal).calc_speed(size)
+        );
         assert_eq!(
             15,
-            MovementMode::Climb(SpeedCategory::Normal).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::Fast).calc_speed(size)
         );
         assert_eq!(
             20,
-            MovementMode::Climb(SpeedCategory::Fast).calc_speed(size)
-        );
-        assert_eq!(
-            30,
-            MovementMode::Climb(SpeedCategory::VeryFast).calc_speed(size)
+            MovementSpeed::new(mode, SpeedCategory::VeryFast).calc_speed(size)
         );
     }
 }
