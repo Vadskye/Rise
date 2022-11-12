@@ -223,7 +223,6 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
-        If you are above that height, you gain a 30 foot \\glossterm{glide speed} instead.
       `,
       // narrative: '',
       rank: 4,
@@ -248,7 +247,6 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flight}).
-        If you are above that height, you gain a 30 foot \\glossterm{glide speed} instead.
         Your \\glossterm{maneuverability} with this fly speed is poor (see \\pcref{Flying Maneuverability}).
       `,
       // narrative: '',

@@ -568,7 +568,6 @@ export const pyromancy: MysticSphere = {
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
-        If you are above that height, you gain a 30 foot \\glossterm{glide speed} instead.
       `,
       rank: 5,
       scaling: { 7: `The maximum height increases to 60 feet.` },
