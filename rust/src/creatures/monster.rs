@@ -294,7 +294,7 @@ impl Monster {
     fn latex_movement(&self) -> String {
         let mut movement_components = self
             .creature
-            .movement_modes
+            .movement_speeds
             .iter()
             .map(|m| m.description(&self.creature.size))
             .collect::<Vec<String>>();

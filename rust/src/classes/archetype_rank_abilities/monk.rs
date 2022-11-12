@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense};
+use crate::core_mechanics::{Attribute, Defense, MovementMode};
 use crate::creatures::Modifier;
 
 use super::standard_modifiers::add_standard_maneuver_modifiers;
@@ -549,7 +549,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your land speed while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             name: "Unhindered Movement+",
@@ -558,7 +558,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The speed bonus increases to \plus20 feet.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             name: "Unhindered Agility",

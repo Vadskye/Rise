@@ -2,7 +2,7 @@ use std::cmp::max;
 
 use crate::core_mechanics::attacks::Attack;
 use crate::core_mechanics::{
-    Attribute, MovementMode, PassiveAbility, Sense, Size, VitalWound,
+    Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
 };
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
@@ -22,7 +22,7 @@ pub struct Creature {
     pub hit_points_lost: i32,
     pub identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
-    pub movement_modes: Vec<MovementMode>,
+    pub movement_speeds: Vec<MovementSpeed>,
     pub name: Option<String>,
     pub passive_abilities: Vec<PassiveAbility>,
     pub senses: Option<Vec<Sense>>,
@@ -50,7 +50,7 @@ impl Creature {
             hit_points_lost: 0,
             identified_modifiers: vec![],
             level,
-            movement_modes: vec![],
+            movement_speeds: vec![],
             name: None,
             passive_abilities: vec![],
             senses: None,
@@ -88,8 +88,8 @@ impl Creature {
         }
     }
 
-    pub fn set_movement_modes(&mut self, movement_modes: Vec<MovementMode>) {
-        self.movement_modes = movement_modes;
+    pub fn set_movement_speeds(&mut self, movement_speeds: Vec<MovementSpeed>) {
+        self.movement_speeds = movement_speeds;
     }
 
     pub fn set_size(&mut self, size: Size) {

@@ -2,7 +2,8 @@ use crate::core_mechanics::abilities::AbilityTag;
 use crate::core_mechanics::attacks::{LowDamageAndDebuff, StandardAttack};
 use crate::core_mechanics::{
     Attribute, DamageType, Debuff, Defense, FlightManeuverability, HasAttributes, MovementMode,
-    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory, StandardPassiveAbility,
+    MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    StandardPassiveAbility,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -25,7 +26,7 @@ struct FullUndeadDefinition {
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     senses: Option<Vec<Sense>>,
     size: Size,
@@ -48,7 +49,7 @@ impl FullUndeadDefinition {
             knowledge: self.knowledge,
             level: self.level,
             modifiers: Some(modifiers),
-            movement_modes: self.movement_modes,
+            movement_speeds: self.movement_speeds,
             name: self.name,
             senses: self.senses,
             size: self.size,
@@ -89,7 +90,9 @@ pub fn undeads() -> Vec<MonsterEntry> {
         modifiers: Some(ModifierBundle::Incorporeal.plus_modifiers(vec![
             Modifier::Attack(StandardAttack::DrainingGrasp(1).attack()),
         ])),
-        movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+        ]),
         name: "Allip".to_string(),
         senses: Some(vec![
             Sense::Darkvision(60),
@@ -144,7 +147,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
 
                 alignment: "Always neutral evil".to_string(),
                 description: None,
-                movement_modes: None,
+                movement_speeds: None,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: Size::Medium,
                 weapons: vec![
@@ -294,7 +297,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
 
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
-                movement_modes: None,
+                movement_speeds: None,
                 senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![
@@ -495,7 +498,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         knowledge: None,
         level: creature.level,
         modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
-        movement_modes: Some(creature.movement_modes.clone()),
+        movement_speeds: Some(creature.movement_speeds.clone()),
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
         senses: Some(senses),
         size: creature.size.clone(),
@@ -544,13 +547,13 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         senses.push(Sense::Darkvision(60));
     }
 
-    let mut movement_modes = vec![];
-    if creature.movement_modes.len() > 0 {
-        for ref original_mode in &creature.movement_modes {
-            movement_modes.push(original_mode.slower())
+    let mut movement_speeds = vec![];
+    if creature.movement_speeds.len() > 0 {
+        for ref original_mode in &creature.movement_speeds {
+            movement_speeds.push(original_mode.slower())
         }
     } else {
-        movement_modes.push(MovementMode::Land(SpeedCategory::Slow));
+        movement_speeds.push(MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow));
     }
 
     return FullUndeadDefinition {
@@ -561,7 +564,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         knowledge: None,
         level: creature.level,
         modifiers: Some(modifiers),
-        movement_modes: Some(movement_modes),
+        movement_speeds: Some(movement_speeds),
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
         senses: Some(senses),
         size: creature.size.clone(),
