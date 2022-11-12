@@ -1,9 +1,9 @@
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    DamageType, Debuff, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory,
+    DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
+    Size, SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{Modifier, Monster, ModifierBundle};
+use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
@@ -19,7 +19,7 @@ struct FullAnimateDefinition {
     description: Option<String>,
     knowledge: Option<Knowledge>,
     level: i32,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     modifiers: Option<Vec<Modifier>>,
     senses: Option<Vec<Sense>>,
@@ -38,7 +38,7 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         knowledge: def.knowledge,
         level: def.level,
         modifiers: def.modifiers,
-        movement_modes: def.movement_modes,
+        movement_speeds: def.movement_speeds,
         name: def.name,
         senses: def.senses,
         size: def.size,
@@ -80,7 +80,9 @@ pub fn animates() -> Vec<MonsterEntry> {
             Modifier::Impervious(SpecialDefenseType::Damage(DamageType::Cold)),
             Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
-        movement_modes: Some(vec![MovementMode::Fly(SpeedCategory::Normal, FlightManeuverability::Perfect)]),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+        ]),
         name: "Darkwraith".to_string(),
         senses: None,
         size: Size::Medium,
@@ -135,7 +137,9 @@ pub fn animates() -> Vec<MonsterEntry> {
                 name: "Transparent".to_string(),
             }),
         ])),
-        movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow)
+        ]),
         name: "Gelatinous Cube".to_string(),
         senses: None,
         size: Size::Large,
@@ -167,7 +171,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             knowledge: None,
             level,
             modifiers: None,
-            movement_modes: None,
+            movement_speeds: None,
             name: name.to_string(),
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
@@ -270,7 +274,10 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: Some(self.knowledge),
                 level: self.level,
                 modifiers: Some(modifiers),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Slow)]),
+                movement_speeds: Some(vec![MovementSpeed::new(
+                    MovementMode::Land,
+                    SpeedCategory::Slow,
+                )]),
                 name: self.name,
                 senses: None,
                 size: self.size,

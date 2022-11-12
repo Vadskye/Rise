@@ -278,7 +278,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
             ",
             // TODO: fully represent an increased size category
-            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+            modifiers: Some(vec![Modifier::BaseSpeed(10)]),
         },
     ];
 }

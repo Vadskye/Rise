@@ -1,4 +1,7 @@
-use crate::{core_mechanics::{PassiveAbility, SpecialDefenseType, DamageType, abilities::AbilityTag, Debuff}, skills::Skill};
+use crate::core_mechanics::{
+    abilities::AbilityTag, DamageType, Debuff, MovementMode, PassiveAbility, SpecialDefenseType
+};
+use crate::skills::Skill;
 
 use super::Modifier;
 
@@ -6,6 +9,7 @@ pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
     Mindless,
+    Quadrupedal,
 }
 
 impl ModifierBundle {
@@ -55,6 +59,9 @@ impl ModifierBundle {
                     is_magical: false,
                     name: "Mindless".to_string(),
                 }),
+            ],
+            Self::Quadrupedal => vec![
+                Modifier::MovementSpeed(MovementMode::Land, 10),
             ],
         }
     }

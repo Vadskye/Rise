@@ -1,5 +1,7 @@
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
-use crate::core_mechanics::{MovementMode, Sense, Size, SpeedCategory, StandardPassiveAbility};
+use crate::core_mechanics::{
+    MovementMode, MovementSpeed, Sense, Size, SpeedCategory, StandardPassiveAbility,
+};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -17,7 +19,7 @@ struct FullHumanoidDefinition {
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     senses: Option<Vec<Sense>>,
     size: Size,
@@ -35,7 +37,7 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
         knowledge: def.knowledge,
         level: def.level,
         modifiers: def.modifiers,
-        movement_modes: def.movement_modes,
+        movement_speeds: def.movement_speeds,
         name: def.name,
         senses: def.senses,
         size: def.size,
@@ -69,7 +71,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: Some(vec![
                     Modifier::Maneuver(Maneuver::RecklessStrike(1)),
                 ]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Orc Deserter".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -93,7 +95,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: Some(vec![Modifier::Attack(
                     StandardAttack::DrainLife(1).attack(),
                 )]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Death Cultist".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -111,7 +113,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     Modifier::Attack(StandardAttack::Combustion(2).attack()),
                     Modifier::Attack(StandardAttack::Firebolt(2).attack()),
                 ]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Pyromaniac".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -133,7 +135,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 1,
                 modifiers: None,
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Goblin Peon".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -148,7 +150,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 1,
                 modifiers: None,
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Goblin Guard".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -163,7 +165,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 1,
                 modifiers: None,
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Goblin Warg Rider".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -180,7 +182,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: Some(vec![Modifier::Attack(
                     StandardAttack::DivineJudgment(1).attack(),
                 )]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Goblin Shaman".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -220,9 +222,9 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 3,
                 modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_modes: Some(vec![
-                    MovementMode::Land(SpeedCategory::Normal),
-                    MovementMode::Swim(SpeedCategory::Normal),
+                movement_speeds: Some(vec![
+                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
+                    MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
                 ]),
                 name: "Lizardfolk Grunt".to_string(),
                 senses: None,
@@ -238,9 +240,9 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 6,
                 modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_modes: Some(vec![
-                    MovementMode::Land(SpeedCategory::Normal),
-                    MovementMode::Swim(SpeedCategory::Normal),
+                movement_speeds: Some(vec![
+                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
+                    MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
                 ]),
                 name: "Lizardfolk Elite".to_string(),
                 senses: None,
@@ -267,7 +269,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: None,
                 level: 1,
                 modifiers: None,
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Town Guard".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -284,7 +286,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(vec![Modifier::Attack(
                     StandardAttack::DivineJudgment(1).attack(),
                 )]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Cleric of the Peace".to_string(),
                 senses: None,
                 size: Size::Medium,
@@ -324,7 +326,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
 
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
-                movement_modes: None,
+                movement_speeds: None,
                 senses: Some(vec![Sense::Darkvision(60)]),
             });
         }
@@ -421,7 +423,6 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 6,
                 modifiers: Some(vec![
-                    Modifier::MovementSpeed(10),
                     Modifier::Maneuver(Maneuver::MightyStrike(3)),
                     Modifier::Attack(
                         Maneuver::Hamstring

@@ -2,8 +2,8 @@ use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::attacks::{Maneuver, PureDamage, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
@@ -22,7 +22,7 @@ struct FullPlaneforgedDefinition {
     knowledge: Option<Knowledge>,
     level: i32,
     modifiers: Option<Vec<Modifier>>,
-    movement_modes: Option<Vec<MovementMode>>,
+    movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     senses: Option<Vec<Sense>>,
     size: Size,
@@ -41,7 +41,7 @@ impl FullPlaneforgedDefinition {
             knowledge: self.knowledge,
             level: self.level,
             modifiers: self.modifiers,
-            movement_modes: self.movement_modes,
+            movement_speeds: self.movement_speeds,
             name: self.name,
             senses: self.senses,
             size: self.size,
@@ -77,7 +77,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
             knowledge: None,
             level: 10,
             modifiers: None,
-            movement_modes: None,
+            movement_speeds: None,
             name: "Flamefist Imp".to_string(),
             senses: None,
             size: Size::Small,
@@ -105,7 +105,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
                 Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(WeaponMaterial::ColdIron)),
             ]),
-            movement_modes: None,
+            movement_speeds: None,
             name: "Soulfire Demon".to_string(),
             senses: None,
             size: Size::Large,
@@ -202,9 +202,12 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
                 // Default values
                 description: None,
-                movement_modes: Some(vec![
-                    MovementMode::Fly(SpeedCategory::Fast, FlightManeuverability::Perfect),
-                    MovementMode::Land(SpeedCategory::Normal),
+                movement_speeds: Some(vec![
+                    MovementSpeed::new(
+                        MovementMode::Fly(FlightManeuverability::Perfect),
+                        SpeedCategory::Fast,
+                    ),
+                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
                 ]),
                 senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
                 weapons: self.weapons,
@@ -360,7 +363,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
         knowledge: Option<Knowledge>,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
-        movement_modes: Option<Vec<MovementMode>>,
+        movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
@@ -382,7 +385,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: self.knowledge,
                 level: self.level,
                 modifiers: Some(modifiers),
-                movement_modes: self.movement_modes,
+                movement_speeds: self.movement_speeds,
                 name: self.name,
                 size: self.size,
                 trained_skills: self.trained_skills,
@@ -437,7 +440,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         AbilityTag::Emotion,
                     )),
                 ]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Rageborn Demon".to_string(),
                 size: Size::Large,
                 trained_skills: Some(vec![
@@ -476,7 +479,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         AbilityTag::Compulsion,
                     )),
                 ]),
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Painborn Demon".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![
@@ -526,7 +529,10 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 description: None,
                 knowledge: None,
                 modifiers: Some(modifiers),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
+                movement_speeds: Some(vec![MovementSpeed::new(
+                    MovementMode::Land,
+                    SpeedCategory::Fast,
+                )]),
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam.weapon()],
@@ -624,7 +630,10 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 description: None,
                 knowledge: None,
                 modifiers: Some(modifiers),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
+                movement_speeds: Some(vec![MovementSpeed::new(
+                    MovementMode::Land,
+                    SpeedCategory::Fast,
+                )]),
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam
@@ -723,7 +732,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Usually true neutral".to_string(),
                 description: None,
                 knowledge: None,
-                movement_modes: None,
+                movement_speeds: None,
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam
@@ -821,7 +830,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 }
                 .attack(),
             )]),
-            movement_modes: None,
+            movement_speeds: None,
             name: "Spark Elemental".to_string(),
             senses: None,
             size: Size::Small,
@@ -841,7 +850,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         knowledge: Option<Knowledge>,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
-        movement_modes: Option<Vec<MovementMode>>,
+        movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
@@ -883,7 +892,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: self.knowledge,
                 level: self.level,
                 modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
-                movement_modes: self.movement_modes,
+                movement_speeds: self.movement_speeds,
                 name: self.name,
                 size: self.size,
                 trained_skills: self.trained_skills,
@@ -940,7 +949,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 1,
                 modifiers: None,
-                movement_modes: None,
+                movement_speeds: None,
                 name: "Worker".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![
@@ -981,7 +990,9 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                         )
                     ),
                 ]),
-                movement_modes: Some(vec![MovementMode::Land(SpeedCategory::Fast)]),
+                movement_speeds: Some(vec![
+                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast)
+                ]),
                 name: "Warrior".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![

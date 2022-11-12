@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Defense, MovementMode, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 use super::standard_modifiers::add_standard_maneuver_modifiers;
@@ -492,7 +492,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus10 foot bonus to your land speed.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(10)]),
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
     ];
 }

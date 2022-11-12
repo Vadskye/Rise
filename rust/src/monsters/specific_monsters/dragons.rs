@@ -4,7 +4,7 @@ use crate::core_mechanics::attacks::attack_effect::{
 };
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, PassiveAbility,
+    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility,
     Size, SpecialDefenseType, SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, Monster};
@@ -539,9 +539,9 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
         knowledge: None,
         level,
         modifiers: Some(modifiers),
-        movement_modes: Some(vec![
-            MovementMode::Land(SpeedCategory::Normal),
-            MovementMode::Fly(SpeedCategory::VeryFast, FlightManeuverability::Poor),
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
+            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::VeryFast),
         ]),
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
         senses: None,

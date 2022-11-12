@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, Sense, Size, SpeedCategory};
+use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, MovementSpeed, Sense, Size, SpeedCategory};
 use crate::creatures::Monster;
 use crate::creatures::{HasModifiers, Modifier};
 use crate::equipment::Weapon;
@@ -14,7 +14,7 @@ pub struct FullMonsterDefinition {
     pub knowledge: Option<Knowledge>,
     pub level: i32,
     pub modifiers: Option<Vec<Modifier>>,
-    pub movement_modes: Option<Vec<MovementMode>>,
+    pub movement_speeds: Option<Vec<MovementSpeed>>,
     pub name: String,
     pub senses: Option<Vec<Sense>>,
     pub size: Size,
@@ -45,9 +45,9 @@ impl FullMonsterDefinition {
                 creature.add_modifier(modifier, Some("FullMonsterDefinition"), None);
             }
         }
-        creature.movement_modes = self
-            .movement_modes
-            .unwrap_or(vec![MovementMode::Land(SpeedCategory::Normal)]);
+        creature.movement_speeds = self
+            .movement_speeds
+            .unwrap_or(vec![MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal)]);
         if let Some(senses) = self.senses {
             for sense in senses {
                 creature.add_sense(sense);
