@@ -604,7 +604,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you activate a \ability{wild aspect} that represents a specific animal, you can fully \glossterm{shapeshift} to match that animal's shape.
                 This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
                 You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
-                The armor regains its normal shape if you take it off,.
+                The armor regains its normal shape if you take it off.
                 For details about shapeshifting, see \pcref{Shapeshift}.
             ",
             modifiers: None,
