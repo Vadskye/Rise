@@ -2376,7 +2376,7 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Amulet of Rage",
+            name="Amulet of Agile Rage",
             rank=4,
             material_type="Amulet",
             tags=[],
@@ -2384,16 +2384,13 @@ def generate_apparel():
                 When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are reduced by 1.
             """,
             short_description="Reduces defense penalties from \\textit<rage>",
-        ),
-        create_apparel(
-            name="Amulet of Rage, Greater",
-            rank=7,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are removed.
-            """,
-            short_description="Removes defense penalties from \\textit<rage>",
+            upgrades=[
+                Upgrade(
+                    description="The defense penalties are entirely removed.",
+                    rank=7,
+                    short_description="Removes defense penalties from \\textit<rage>",
+                ),
+            ],
         ),
     ]
 
