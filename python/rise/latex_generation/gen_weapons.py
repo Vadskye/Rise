@@ -508,12 +508,24 @@ def generate_weapons():
             name="Boomerang",
             rank=3,
             description="""
-                You can throw this weapon as if it was designed to be thrown.
+                After being thrown, this weapon flies back into your hand immediately after attacking all targets.
+                Catching a boomerang weapon when it comes back is a free action.
+                If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
+
                 In addition, as a standard action, you can throw this weapon in a spinning arc.
-                When you do, make a thrown \\glossterm<strike> against up to two targets within \\glossterm<close range>.
-                After attacking the last target, the weapon flies back to your hand.
+                When you do, make a thrown \\glossterm<strike> against up to two targets within \\shortrange.
+                The targets must still be within your \\glossterm<range limits>, and you take any \\glossterm<longshot penalties> as normal.
             """,
-            short_description="Can be thrown to strike multiple foes",
+            short_description="Can be thrown to strike two nearby foes",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The range increases to \\medrange, and the maximum number of targets increases to three.
+                    """,
+                    short_description="Can be thrown to strike multiple foes",
+                ),
+            ],
         )
     )
 
