@@ -197,9 +197,9 @@ It includes some context for the narrative universe of Rise, mechanics for monst
         \begin{dtable}
             \lcaption{Object Statistics By Size}
             \begin{dtabularx}{\textwidth}{l X X}
-                \tb{Size}  & \tb{Hit Points} & \tb{Sunder Difficulty Value} \tableheaderrule
-                Fine       & 1               & 1\fn{1} \\
-                Diminutive & 2               & 2       \\
+                \tb{Size}  & \tb{Hit Points} & \tb{Sunder DV Modifier} \tableheaderrule
+                Fine       & 1               & 0\fn{1} \\
+                Diminutive & 2               & 0       \\
                 Tiny       & 5               & 5       \\
                 Small      & 10              & 10      \\
                 Medium     & 20              & 15      \\
@@ -214,19 +214,19 @@ It includes some context for the narrative universe of Rise, mechanics for monst
         \begin{dtable}
             \lcaption{Object Statistics By Material}
             \begin{dtabularx}{\textwidth}{l X X X}
-                \tb{Material}   & \tb{DR}\fn{1} & \tb{Hit Points Multiplier}\fn{2} & \tb{Sunder Difficulty Value Modifier}  \tableheaderrule
-                Adamantine      & 30                    & \mult3                & \plus20              \\
-                Glass           & 5                     & \mult1/2              & \tdash               \\
-                Ice             & 1                     & \mult1/2              & \minus5              \\
-                Iron or steel   & 12                    & \mult2                & \plus10              \\
-                Leather or hide & 3                     & \tdash                & \tdash               \\
-                Mithral         & 15                    & \mult2                & \plus10              \\
-                Paper or cloth  & 1                     & \mult1/2              & \minus5              \\
-                Rope            & 2                     & \tdash                & \tdash               \\
-                Stone           & 8                     & \mult2                & \plus5               \\
-                Wood            & 5                     & \tdash                & \tdash               \\
+                \tb{Material}   & \tb{DR}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
+                Adamantine      & 30            & \mult3   \\
+                Glass           & 5             & \mult1/2 \\
+                Ice             & 0             & \mult1/2 \\
+                Iron or steel   & 15            & \mult2   \\
+                Leather or hide & 5             & \tdash   \\
+                Mithral         & 20            & \mult2   \\
+                Paper or cloth  & 0             & \mult1/2 \\
+                Rope            & 5             & \tdash   \\
+                Stone           & 10            & \mult2   \\
+                Wood            & 5             & \tdash   \\
             \end{dtabularx}
-            1. See \pcref{Damage Resistance}. \\
+            1. An object's \glossterm{damage resistance} also increases the difficulty value of checks to sunder it with raw Strength. \\
             2. Any value here modifies the number of hit points the object would normally have based on its size.
         \end{dtable}
 
