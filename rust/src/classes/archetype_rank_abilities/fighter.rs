@@ -80,9 +80,9 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The Mental defense bonus increases to \plus3.
+                The Mental defense bonus increases to \plus4.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
         },
         RankAbility {
             name: "Disciplined Reaction",

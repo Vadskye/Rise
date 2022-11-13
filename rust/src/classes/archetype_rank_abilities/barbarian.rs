@@ -622,10 +622,10 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The defense bonus increases to \plus3.
+                The defense bonus increases to \plus4.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Defense(Defense::Reflex, 2),
             ]),
         },
         RankAbility {
