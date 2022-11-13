@@ -119,6 +119,55 @@ You can either skim past terms you don't yet understand or look them up as you g
             \end{raggeditemize}
         }
 
+
+    \subsection{Determining Attributes}\label{Determining Attributes}
+        There are two common ways for you to determine your attribute scores: using a predefined set of scores, or using a point buy system.
+        Once you have chosen your attributes and applied your species modifer to attributes (if any), you should record in your character sheets the various effects that your attributes have on your statistics.
+
+        \subsubsection{Predefined Attribute Scores}
+            This is the simplest method.
+            Simply take the following set of attribute scores and distribute them as you choose among your attributes:
+
+            % 5 + 3 + 3 + 3 + 1 = 15
+            3, 2, 2, 2, 1, 0
+
+            This set of attribute scores is called the ``elite array''.
+            For more extreme characters, you may use the ``savant array'':
+
+            % 8 + 3 + 3 + 1 = 15
+            4, 2, 2, 1, 0, 0.
+
+            Finally, for more well-rounded characters, you may use the ``balanced array'':
+
+            % 3 + 3 + 3 + 3 + 3 = 15
+            2, 2, 2, 2, 2, 0
+
+        \subsubsection{Point Buy}
+            With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
+            All your attribute scores start at 0.
+            You get 15 points to distribute among your attributes.
+            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+            The listed cost is the total cost required to gain the listed attribute.
+
+            \begin{dtable}
+                \tablebookmark{Attribute Point Costs}{attributepoints}
+                \lcaption{Attribute Point Costs}
+                \begin{dtabularx}{\columnwidth}{X X}
+                    \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
+                    0              & 0                          \\
+                    1              & 1                          \\
+                    2              & 3                          \\
+                    3              & 5                          \\
+                    4              & 8                          \\
+                \end{dtabularx}
+            \end{dtable}
+
+        \subsubsection{Attribute Penalties}\label{Attribute Penalties}
+            You can voluntarily take penalties to your attributes.
+            If you reduce an attribute by a total of \minus1, you become \glossterm{trained} in an additional skill (see \pcref{Trained Skills}).
+            If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
+            You cannot gain these benefits from reducing more than two attributes below 0 in this way.
+
 \section{Skills Overview}
     Skills represent the myriad of talents that people can have, such as cooking or swimming.
     Each character is trained in a certain number of skills.
@@ -519,53 +568,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your attributes are a good option for your second mechanically relevant choice.
         They have a large impact on your character's strengths and weaknesses, so it's useful to know them as soon as possible.
         They're also much easier to understand and finalize than your class archetypes.
-
-        There are two common ways for you to determine your attribute scores: using a predefined set of scores, or using a point buy system.
-        Once you have chosen your attributes and applied your species modifer to attributes (if any), you should record in your character sheets the various effects that your attributes have on your statistics.
-
-        \subsubsection{Predefined Attribute Scores}
-            This is the simplest method.
-            Simply take the following set of attribute scores and distribute them as you choose among your attributes:
-
-            % 5 + 3 + 3 + 3 + 1 = 15
-            3, 2, 2, 2, 1, 0
-
-            This set of attribute scores is called the ``elite array''.
-            For more extreme characters, you may use the ``savant array'':
-
-            % 8 + 3 + 3 + 1 = 15
-            4, 2, 2, 1, 0, 0.
-
-            Finally, for more well-rounded characters, you may use the ``balanced array'':
-
-            % 3 + 3 + 3 + 3 + 3 = 15
-            2, 2, 2, 2, 2, 0
-
-        \subsubsection{Point Buy}
-            With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
-            All your attribute scores start at 0.
-            You get 15 points to distribute among your attributes.
-            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
-            The listed cost is the total cost required to gain the listed attribute.
-
-            \begin{dtable}
-                \tablebookmark{Attribute Point Costs}{attributepoints}
-                \lcaption{Attribute Point Costs}
-                \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
-                    0              & 0                          \\
-                    1              & 1                          \\
-                    2              & 3                          \\
-                    3              & 5                          \\
-                    4              & 8                          \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Attribute Penalties}\label{Attribute Penalties}
-            You can voluntarily take penalties to your attributes.
-            If you reduce an attribute by a total of \minus1, you become \glossterm{trained} in an additional skill (see \pcref{Trained Skills}).
-            If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
-            You cannot gain these benefits from reducing more than two attributes below 0 in this way.
+        For details, see \pcref{Determining Attributes}.
 
     \subsection{Step 6: Class and Class Archetypes}
         This is the most complicated choice you have to make for your character.
