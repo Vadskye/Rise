@@ -2002,7 +2002,7 @@ def generate_apparel():
             description="""
                 Whenever you make a Jump check, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                In addition, you double your maximum vertical height from the jump, and you can land in midair at any point during your jump.
+                In addition, you double your maximum vertical height from the jump, and you can land in midair at any point during your jump this round.
                 You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
                 These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
             """,
