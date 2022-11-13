@@ -345,7 +345,6 @@ export const umbramancy: MysticSphere = {
         7: 'The accuracy bonus increases to +2.',
       },
       tags: ['Visual'],
-      type: 'Attune (deep)',
     },
 
     {
