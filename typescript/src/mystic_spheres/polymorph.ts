@@ -1008,34 +1008,34 @@ export const polymorph: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Mystic Lock',
+      name: 'Meld Shut',
 
       castingTime: 'one minute',
       effect: `
         Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
-        In addition, choose a Fine object within \\shortrange.
-        The primary target becomes magically locked.
-        It can be unlocked with a Devices check with a \\glossterm{difficulty value} of 25.
-        The \\glossterm{difficulty value} to break it open forcibly increases by 10.
+        The target changes its form so it cannot be opened.
+        A box becomes fully sealed instead of hinged, a door expands slightly to merge with its frame, and so on.
+        To a casual observer, it may not be obvious that there was ever an opening, though a DV 15 Awareness check would reveal the alteration.
+        It can be opened with a DV 25 Devices check.
 
-        When the Fine object touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
+        When you perform this ritual, you may choose a Fine object within \\shortrange to function as a key.
+        When the chosen key touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
       `,
       rank: 2,
       type: 'Attune',
     },
 
     {
-      name: 'Greater Mystic Lock',
+      name: 'Empowered Meld Shut',
 
-      castingTime: 'one hour',
+      castingTime: 'one minute',
       functionsLike: {
         exceptThat: `
-          the \\glossterm{difficulty value} to unlock the object with a Devices check is instead equal to 35.
-            In addition, the \\glossterm{difficulty value} to break it open increases by 20 instead of by 10.
+          the maximum size increases to Huge, and the Devices DV to unlock it increases to 35.
         `,
-        name: 'mystic lock',
+        name: 'meld shut',
       },
-      rank: 4,
+      rank: 5,
       type: 'Attune',
     },
   ],
