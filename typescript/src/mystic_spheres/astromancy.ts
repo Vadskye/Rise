@@ -836,7 +836,7 @@ export const astromancy: MysticSphere = {
       castingTime: '24 hours',
       effect: `
         Choose one ritual participant.
-        If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, it is teleported into the creature's hand.
+        If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, the item is teleported into the creature's hand.
       `,
       // narrative: '',
       rank: 2,
