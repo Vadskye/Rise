@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const electromancy: MysticSphere = {
   name: 'Electromancy',
+  hasImage: true,
   shortDescription: 'Create electricity to injure and stun foes.',
   sources: ['arcane', 'nature', 'pact'],
   // +2r for one chain, +3r for two chains
