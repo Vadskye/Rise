@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const aeromancy: MysticSphere = {
   name: 'Aeromancy',
+  hasImage: true,
   shortDescription: 'Command air to protect allies and blast foes.',
   sources: ['nature', 'domain'],
 

@@ -5,12 +5,17 @@ import _ from 'lodash';
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   assertEndsWithPeriod(sphere.shortDescription);
+
+  const imageText = sphere.hasImage
+    ? `\\includegraphics[width=\\columnwidth]{mystic spheres/${sphere.name.toLowerCase()}}`
+    : '';
   return format.latexify(`
     \\section{{${sphere.name}}}
       \\hypertargetraised{sphere:${sphere.name}}{}%
       \\hypertargetraised{sphere:${sphere.name.toLowerCase()}}{}%
       \\label{${sphere.name}}%
-      \\textit{${sphere.shortDescription}}
+      ${imageText}
+      \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
       ${
