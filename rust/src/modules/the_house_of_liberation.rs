@@ -37,7 +37,7 @@ pub fn generate_module() -> Module {
     They will attempt to fix any obvious explanation for the party's escape, but won't care enough to do a detailed sweep to address the general issues that make their cell escapable.
 
     \\begin<figure*>[htb!]
-    \\includegraphics[width=\\textwidth]<the_holding_cells>
+    \\includegraphics[width=\\textwidth]<modules/the holding cells>
     \\end<figure*>
 
         \\subsection<The Large Cell>

@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
+  hasImage: true,
   shortDescription: 'Transport creatures and objects instantly through space.',
   sources: ['arcane', 'domain', 'pact'],
   specialRules: `

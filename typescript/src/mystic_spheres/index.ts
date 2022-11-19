@@ -52,6 +52,7 @@ export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pa
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
+  hasImage?: boolean;
   name: string;
   rituals?: Ritual[];
   sources: MysticSphereSource[];

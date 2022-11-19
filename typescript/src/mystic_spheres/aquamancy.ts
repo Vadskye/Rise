@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const aquamancy: MysticSphere = {
   name: 'Aquamancy',
+  hasImage: true,
   shortDescription: 'Command water to crush and drown foes.',
   sources: ['domain', 'nature'],
 

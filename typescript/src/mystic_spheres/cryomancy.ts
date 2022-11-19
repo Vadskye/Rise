@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const cryomancy: MysticSphere = {
   name: 'Cryomancy',
+  hasImage: true,
   shortDescription: 'Drain heat to injure and freeze foes.',
   sources: ['arcane', 'nature', 'pact'],
   // In general, creating icy terrain adds +2 ranks to a reasonably sized area.
