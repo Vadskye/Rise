@@ -469,8 +469,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                Whenever you hit a creature with a \glossterm{strike}, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest} or until you hit a different creature with a strike.
-                If you hit multiple creatures with the same strike, you may freely choose which creature to fixate on with this ability.
+                Whenever you deal damage to a creature, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest}.
             ",
             modifiers: None,
         },
