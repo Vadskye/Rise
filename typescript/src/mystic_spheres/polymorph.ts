@@ -985,28 +985,17 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Air Breathing',
+      name: 'Lungs',
 
       castingTime: 'one minute',
       effect: `
-        Choose one Large or smaller ritual participant.
-        The target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
+        Choose any number of ritual participants.
+        Each target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
       `,
-      rank: 3,
-      type: 'Attune',
+      rank: 4,
+      type: 'Attune (target)',
     },
 
-    {
-      name: 'Gills',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose one Large or smaller ritual participant.
-        The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-      `,
-      rank: 3,
-      type: 'Attune',
-    },
     {
       name: 'Meld Shut',
 
@@ -1037,6 +1026,19 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       type: 'Attune',
+    },
+
+    {
+      name: 'Gills',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+      `,
+      // narrative: '',
+      rank: 4,
+      type: 'Attune (target)',
     },
   ],
 };

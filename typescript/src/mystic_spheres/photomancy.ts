@@ -34,6 +34,7 @@ export const photomancy: MysticSphere = {
         A glowing light appears in midair in any location within \\medrange.
         It creates \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
         You can freely choose the color of the light, but it is unchanging once created.
+
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       scaling: {
