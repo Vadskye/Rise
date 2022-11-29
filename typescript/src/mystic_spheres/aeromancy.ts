@@ -5,22 +5,25 @@ export const aeromancy: MysticSphere = {
   hasImage: true,
   shortDescription: 'Command air to protect allies and blast foes.',
   sources: ['nature', 'domain'],
-
   cantrips: [
     {
       name: 'Airborne Leap',
 
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Jump skill.
+        You gain a +3 \\glossterm{magic bonus} to the Jump skill.
       `,
       narrative: `
         The air rises beneath you and pushes you up, propelling you farther when you leap.
       `,
       scaling: {
-        2: 'The bonus increases to +4.',
-        4: 'The bonus increases to +5.',
-        6: 'The bonus increases to +6.',
+        2: `
+          You also gain a 30 foot \\glossterm{glide speed}.
+          If you already have a glide speed, you gain a +10 foot \\glossterm{magic bonus} to your glide speed.
+        `,
+        4: 'You also become immune to \\glossterm{falling damage}.',
+        6: 'The Jump bonus increases to +6.',
       },
+      type: 'Attune',
     },
     {
       name: 'Manipulate Air',
@@ -199,25 +202,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: 'accuracy',
-    },
-    {
-      name: 'Gentle Descent',
-
-      effect: 'You gain a 30 foot \\glossterm{glide speed} (see \\pcref{Gliding}).',
-      // narrative: '',
-      rank: 2,
-      type: 'Attune',
-    },
-    {
-      name: 'Mass Gentle Descent',
-
-      functionsLike: {
-        mass: true,
-        name: 'gentle descent',
-      },
-      // narrative: '',
-      rank: 4,
-      type: 'Attune (target)',
     },
     {
       name: 'Flight',
@@ -580,11 +564,50 @@ export const aeromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        One ritual participant gains the ability to breathe clear, clean air regardless of its surroundings.
-        This can allow it to breathe underwater and avoid air-based poisons.
+        Choose any number of ritual participants.
+        Each target gains the ability to breathe clear, clean air regardless of its surroundings.
+        This can allow it to breathe underwater and avoid inhalation-based poisons.
+      `,
+      // narrative: '',
+      rank: 4,
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Gentle Descent',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains a 30 foot \\glossterm{glide speed}.
       `,
       // narrative: '',
       rank: 3,
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Overland Flight',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        If it takes any action other than movement or is dealt damage, this effect ends.
+      `,
+      // narrative: '',
+      rank: 4,
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Rapid Overland Flight',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} and poor \\glossterm{maneuverability} (see \\pcref{Flight}).
+        If it takes any action other than movement or is dealt damage, this effect ends.
+      `,
+      // narrative: '',
+      rank: 6,
       type: 'Attune (target)',
     },
     {

@@ -6,8 +6,13 @@ export const astromancy: MysticSphere = {
   shortDescription: 'Transport creatures and objects instantly through space.',
   sources: ['arcane', 'domain', 'pact'],
   specialRules: `
+    Many abilities from this mystic sphere cause creature to \\glossterm{teleport}.
+    Unless otherwise specified, teleporation requires \\glossterm{line of sight}, \\glossterm{line of effect}, and an unoccupied destination on stable ground.
+    For details, see \\pcref{Teleportation}.
+
     \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
     If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
+    Flickering works even if the target is not stable ground that can support its weight.
 
     When a creature or object flickers, it returns at the end of the current turn unless the ability specifies a different duration.
     That means that you can't make any additional attacks against it during your turn.
@@ -22,8 +27,7 @@ export const astromancy: MysticSphere = {
       name: 'Dimension Hop',
 
       effect: `
-        You teleport horizontally into an unoccupied location within 5 foot \\glossterm{range} on a stable surface that can support your weight.
-        If the destination is invalid, this spell fails with no effect.
+        You \\glossterm{teleport} horizontally to a location within 5 foot \\glossterm{range}.
       `,
       narrative: `
         You disappear with an audible pop, appearing only a few feet away - but now on the other side of the cell bars.
@@ -39,8 +43,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
-        It teleports into your hand or into an unccupied location within \\shortrange.
-        If the destination is invalid, this spell fails with no effect.
+        It teleports into your hand or into an unccupied location within the same range.
       `,
       narrative: `
         A tankard of ale disappears from the counter, appearing directly in your hand.
@@ -52,6 +55,25 @@ export const astromancy: MysticSphere = {
         6: 'The range increases to \\rnglong.',
       },
     },
+    {
+      name: 'Astral Ease',
+
+      effect: `
+        You gain a +3 \\glossterm{magic bonus} to the Knowledge (planes) skill.
+      `,
+      scaling: {
+        2: `
+          The bonus also applies to any checks that you would make as a result of plane-specific effects or actions.
+          For example, this would help you manipulate subjective gravity on the Astral Plane (see \\pcref{Planes}).
+        `,
+        4: `
+          You also take half damage from any plane-specific damaging effects.
+          This does not protect you from abilities that are simply thematically related to planes, such as the \\textit<planar jaunt> spells from this mystic sphere.
+        `,
+        6: 'The bonus increases to +6.',
+      },
+      type: 'Attune',
+    },
   ],
   spells: [
     {
@@ -62,8 +84,6 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 1d10 + \\glossterm{power} energy damage.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
-          The destination must be within range and on a stable surface that can support its weight.
-          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -87,8 +107,6 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 4d8 + \\glossterm{power} energy damage.
           If it is Huge or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
-          The destination must be within range and on a stable surface that can support its weight.
-          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -112,7 +130,7 @@ export const astromancy: MysticSphere = {
           The target takes 1d10 + half \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
-          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to flickering in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -149,7 +167,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 2d8 energy damage.
           If it loses hit points from this damage, it becomes anchored to its location as a \\glossterm{condition}.
-          At the end of each round, the target teleports back to the location it was in when this spell was cast.
+          At the end of each round, the target \\glossterm{teleports} back to the location it was in when this spell was cast.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -169,8 +187,7 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium size or smaller.
-        The target \\glossterm{teleports} into an unoccupied location within range on a stable surface that can support its weight.
-        If the destination is invalid, this spell fails with no effect.
+        The target \\glossterm{teleports} into a location within the same range.
       `,
       rank: 1,
       narrative: `
@@ -190,8 +207,6 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 1d6 + half \\glossterm{power} energy damage.
           If it is Medium or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
-          The destination must be within range and on a stable surface that can support its weight.
-          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -211,8 +226,6 @@ export const astromancy: MysticSphere = {
         hit: `
           The target takes 2d8 + half \\glossterm{power} energy damage.
           If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 30 feet.
-          The destination must be within range and on a stable surface that can support its weight.
-          If the destination is invalid, the teleportation fails with no effect.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -287,7 +300,7 @@ export const astromancy: MysticSphere = {
           Each target takes 2d10 + half \\glossterm{power} energy damage.
           Each creature that loses \\glossterm{hit points} from this damage \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
-          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to flickering in this way until it takes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
@@ -465,7 +478,6 @@ export const astromancy: MysticSphere = {
 
       effect: `
         At the end of each \\glossterm{phase}, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
-        If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
       `,
       narrative: `
         The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
@@ -478,10 +490,9 @@ export const astromancy: MysticSphere = {
       name: 'Dimension Walk',
 
       effect: `
-        Once per round, you can teleport horizontally instead of moving normally.
+        Once per round, you can teleport horizontally instead of moving using your \\glossterm{land speed}.
         Teleporting a given distance costs movement equal to that distance.
-        If your \\glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
-        You must be able to use your movement speeds to teleport in this way, so effects like being \\immobilized or \\grappled prevent this movement.
+        If this teleportation fails for any reason, you still expend that movement.
       `,
       narrative: `
         Why would you walk when you can teleport?
@@ -495,7 +506,7 @@ export const astromancy: MysticSphere = {
       effect: `
         At the start of each phase, you may \\sphereterm{flicker} to a random unoccupied location in the Astral Plane.
         You do not return until the end of the round.
-        After you teleport in this way, you \\glossterm{briefly} cannot teleport with this ability again.
+        After you flicker in this way, you \\glossterm{briefly} cannot flicker with this ability again.
       `,
       rank: 3,
       narrative: `
@@ -511,8 +522,8 @@ export const astromancy: MysticSphere = {
         // crit: '',
         hit: `
           Each target takes 1d8 + half \\glossterm{power} energy damage.
-          If you hit both subjects, they each teleport into each other's location.
-          If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
+          If you hit both subjects, they each \\glossterm{teleport} into each other's location.
+          If the teleportation is invalid for either target, it fails for both targets.
         `,
         targeting: `
           Make an attack vs. Mental against two Large or smaller creatures within \\medrange.
@@ -532,8 +543,8 @@ export const astromancy: MysticSphere = {
         // crit: '',
         hit: `
           Each target takes 4d6 + half \\glossterm{power} energy damage.
-          If you hit both subjects, they each teleport into each other's location.
-          If either target is not standing on solid ground with sufficient space to support the other target, the teleportation fails.
+          If you hit both subjects, they each \\glossterm{teleport} into each other's location.
+          If the teleportation is invalid for either target, it fails for both targets.
         `,
         targeting: `
           Make an attack vs. Mental against two Huge or smaller creatures within \\longrange.
@@ -551,8 +562,8 @@ export const astromancy: MysticSphere = {
 
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target teleports into the other's location.
-        If either target is not standing on solid ground with sufficient space to support the other target, this spell fails.
+        Each target \\glossterm{teleports} into the other's location.
+        If the teleportation is invalid for either target, it fails for both targets.
       `,
       narrative: `
         As your enemies drew close to you, they expected you to panic and run.
@@ -631,19 +642,6 @@ export const astromancy: MysticSphere = {
       rank: 5,
       type: 'Attune',
     },
-    {
-      name: 'Mass Phasestep',
-
-      functionsLike: {
-        mass: true,
-        name: 'phasestep',
-      },
-      narrative: `
-        You augment the bodies of your allies with the ability to travel short distances through the Astral Plane to reach their destinations.
-      `,
-      rank: 3,
-      type: 'Attune (target)',
-    },
 
     {
       name: 'Astral Refuge',
@@ -704,7 +702,7 @@ export const astromancy: MysticSphere = {
         Each portal appears as an opaque colored disc five feet in diameter.
 
         Once per phase, when a creature moves into one of the squares, it can choose to pass through the portal in that square.
-        If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portal.
+        If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
         Objects can pass through the portals freely and maintain their speed, but moving objects have an unpredictable trajectory, so firing projectiles through a portal is ineffective.
 
         If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first person into the portal.
@@ -761,8 +759,9 @@ export const astromancy: MysticSphere = {
       name: 'Plane Shift',
       rank: 4,
       effect: `
-        Choose a \\glossterm{planar rift} within \\medrange and up to five Large or smaller ritual participants.
-        Each creature teleports to the unoccupied spaces closest to the other side of the planar rift.
+        Choose a \\glossterm{planar rift} within \\medrange and up to five Medium or smaller ritual participants.
+        Each creature \\glossterm{teleports} to the unoccupied spaces closest to the other side of the planar rift.
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
         For details about \\glossterm{planar rifts}, see \\pcref{Planar Rifts}.
 
         % TODO: Is this planar cosmology correct?
@@ -776,11 +775,13 @@ export const astromancy: MysticSphere = {
       name: 'Astral Projection',
 
       effect: `
-        Choose up to five Large or smaller ritual participants.
-        Each creature teleports to a single random location within the Inner Astral Plane (see \\pcref{The Astral Plane}).
+        Choose up to five Medium or smaller ritual participants.
+        The group of creatures \\glossterm{teleports} to a random location within the Inner Astral Plane (see \\pcref{The Astral Plane}).
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
-        In addition, a localized \\glossterm{planar rift} appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
-        The rift can only be passed through by the targets of this effect.
+        In addition, a localized \\glossterm{planar rift} appears at the destination area on the Astral Plane.
+        The rift leads back to the location where this ritual was performed.
+        The targets of this ritual can traverse the rift simply by walking through it, while other creatures can only navigate it with the help of effects like the \\ritual{plane shift} ritual.
         It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
       `,
       rank: 5,
@@ -793,43 +794,90 @@ export const astromancy: MysticSphere = {
       effect: `
         This ritual can only be performed on the Astral Plane.
 
-        Choose up to five Large or smaller ritual participants.
-        Each creature teleports to the last spaces they occupied on their home planes.
+        Choose up to five Medium or smaller ritual participants.
+        Each target \\glossterm{teleports} to the last spaces they occupied on their home planes.
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
       `,
       rank: 4,
       tags: [],
-      castingTime: '24 hours',
+      castingTime: '1 hour',
     },
     {
       name: 'Overland Teleportation',
-      rank: 5,
+      rank: 3,
       effect: `
-        Choose a destination up to 100 miles away from you on your current plane.
-        Up to five Medium or smaller ritual participants are teleported to the chosen destination.
-
-        You must specify the destination with a precise mental image of its appearance.
-        The image does not have to be perfect, but it must unambiguously identify the destination.
-        If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
-        The new destination will be one that more closely resembles your mental image.
-        If no such area exists, the ritual simply fails.
-        % TODO: does this need more clarity about what teleportation works?
+        Choose any number of Medium or smaller ritual participants.
+        Each target can \\glossterm{teleport} up to 60 feet as a movement.
+        If it takes any action other than movement or is dealt damage, this effect ends.
       `,
       tags: [],
-      castingTime: '1 hour',
+      castingTime: 'one minute',
+      type: 'Attune (target)',
     },
     {
       name: 'Distant Overland Teleportation',
 
       functionsLike: {
         exceptThat: `
-        there is no distance limitation.
-        The destination must simply be on the same plane as you.
+          the range increases to 120 feet.
         `,
         name: 'overland teleportation',
       },
-      rank: 7,
+      rank: 5,
+      tags: [],
+      castingTime: 'one minute',
+    },
+    {
+      name: 'Teleportation Anchor',
+      rank: 3,
+      effect: `
+        You draw a magic circle in a \\smallarea radius during this ritual.
+        The circle functions as an anchor for teleportation, making it easy for creatures to teleport into the circle.
+        When you create the anchor, you must give it a unique name that matches its construction and the patterns you chose.
+        A creature who knows the name of an anchor can use rituals like \\ritual{intraplanar teleportation} to teleport to it more easily.
+
+        The anchor persists for one year.
+      `,
       tags: [],
       castingTime: '24 hours',
+    },
+    {
+      name: 'Intraplanar Teleportation',
+      rank: 4,
+      effect: `
+        Choose a destination on your current plane, and up to five Medium or smaller ritual participants.
+        Each target is teleported to the chosen destination.
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
+
+        You can specify the destination with a precise mental image of its appearance.
+        The image does not have to be perfect, but it must unambiguously identify the destination.
+        If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
+        The new destination will be one that more closely resembles your mental image.
+        If no such area exists, the ritual simply fails.
+        % TODO: does this need more clarity about what teleportation works?
+
+        Alternately, you can specify the name of a \\ritual{teleportation anchor} on your current plane.
+        The group arrives within the area of the anchor.
+        If the anchor does not have enough open space to contain your group, the ritual has no immediate effect.
+        You can continue the ritual for any length of time.
+        At the end of each round during this continuation, if the anchor has room for your group, the teleportation succeeds and the ritual ends.
+      `,
+      tags: [],
+      castingTime: '24 hours',
+    },
+
+    {
+      name: 'Efficient Intraplanar Teleportation',
+
+      functionsLike: {
+        exceptThat: `
+          the casting time is shorter, and the ritual is much less exhausting.
+        `,
+        name: 'intraplanar teleportation',
+      },
+      rank: 6,
+      tags: [],
+      castingTime: '1 hour',
     },
     {
       name: 'Retrieve Legacy',
@@ -845,7 +893,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Astral Chest',
 
-      castingTime: 'one hour',
+      castingTime: '1 hour',
       effect: `
         When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
         If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
