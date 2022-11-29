@@ -730,6 +730,114 @@ This chapter describes the core mechanics of Rise.
             However, each character uses the system in their own way.
             Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
 
+\section{Common Magical Effects}
+    \subsection{Resurrection}\label{Resurrection}
+        Some abilities can return dead creatures to life.
+        This is called resurrection.
+
+        A creature has no hit points or damage resistance when it returns to life.
+        It is cured of all \glossterm{vital wounds}, \glossterm{conditions}, and other negative effects, but the body's shape is unchanged.
+        Any missing or irreparably damaged limbs or organs remain missing or damaged.
+        The creature may therefore die shortly after being resurrected if its body is excessively damaged.
+
+        Coming back from the dead is an ordeal.
+        The creature's maximum \glossterm{fatigue tolerance} is reduced by 1.
+        This penalty lasts for thirty days, or until the creature gains a level.
+        If this would reduce a creature's maximum fatigue tolerance below 0, the creature cannot be resurrected.
+
+        Resurrection is always voluntary.
+        If a dead creature's soul refuses to return to life, no effect can compel it to be resurrected.
+
+    \subsection{Shapeshifting}\label{Shapeshifting}
+        When a creature shapeshifts, its physical body completely transforms into a different shape.
+        It generally retains all of its original statistics and abilities, with the following exceptions.
+        Some specific abilities that cause a creature to shapeshift have additional effects.
+        % TODO: are more exceptions necessary?
+        \begin{itemize}
+            \item The creature's size changes to match the new form.
+                This can change the creature's \glossterm{base speed}, Reflex defense, and other statistics as normal (see \pcref{Size Categories}).
+            \item The creature's \glossterm{mundane} movement modes and natural weapons are replaced with the movement modes and natural weapons of its new shape.
+            \item If the new shape is not normally capable of speech, the creature cannot speak.
+                This may prevent it from casting spells with \glossterm{verbal components} and using similar abilities.
+            \item The creature is limited by the number of \glossterm{free hands} present in the new form.
+                In addition, it cannot gain more free hands by shapeshifting than it originally had in its base form.
+                Even if you shapeshift to a form with many hands, you do not have the mental coordination necessary to use them all effectively.
+            \item Any special properties that a creature had that were originally a result of its pure physical composition may be lost.
+                For example, a ghost would stop being \trait{incorporeal} if it shapeshifted.
+        \end{itemize}
+
+        All of a shapeshifted creature's equipment that is physically incompatible with the creature's new shape meld into its body.
+        This does not break \glossterm{attunement}, and the creature still gains the benefit of any magical properties of melded items.
+        However, it does not gain the benefit of nonmagical properties from melded items.
+        For example, a creature that shapeshifts into an amorphous gas would still benefit from all attuned effects from its equipped items, such as \mitem{boots of speed}.
+        However, it would gain no benefit to its Armor defense or damage resistance from any melded body armor, and it would not be able to attack with any of its melded weapons.
+        Items exceeding a creature's \glossterm{carrying capacity} are not melded, and simply fall to the ground in place.
+
+        When a shapeshifted creature dies, it returns to its original form.
+
+    \subsection{Teleportation}\label{Teleportation}
+        Some abilities can \glossterm{teleport} creatures or objects.
+        When you are teleported, you move through the Astral Plane and arrive at a new location.
+        You can be teleported between two different locations on the same \glossterm{plane}, or between two different locations on different planes.
+        If for some reason you cannot access the Astral Plane, you cannot be teleported.
+
+        Anything being teleported must have both \glossterm{line of sight} and \glossterm{line of effect} to its destination.
+        In addition, the destination of the teleportation must be an unoccupied location on a stable surface that can support the weight of the teleporting creature or object.
+        If either of these conditions is not met, the teleportation fails without effect.
+        Some teleportation abilities are less restricted, as indicated in their description.
+
+        In general, you can teleport up slopes that are no more than 45 degrees.
+        Steeper slopes prevent you from seeing stable ground to teleport to it.
+        The GM can provide guidance for individual slopes, which may be easier or harder to navigate with teleportation.
+
+        \subsubsection{Teleportation Noise}\label{Teleportation Noise}
+            Creatures and objects that are teleported make a sound when they depart and arrive.
+            This noise is caused by the displacement of air (or other substances) created by the teleportation.
+            The base \glossterm{difficulty value} of an Awareness check to hear this sound for a Medium creature or object is 10.
+            This difficulty value changes based on the size of the teleported creature or object:
+
+            \begin{itemize}
+                \item Fine: 30
+                \item Diminutive: 25
+                \item Tiny: 20
+                \item Small: 15
+                \item Medium: 10
+                \item Large: 5
+                \item Huge: 0
+                \item Gargantuan: \minus5
+                \item Colossal: \minus10
+            \end{itemize}
+
+        \subsubsection{Carrying Objects}
+            When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
+            First, the combined weight of the objects cannot exceed the creature's maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
+            If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
+
+            Second, no object can extend more than two feet away from the creature's body.
+            Any objects that extend beyond that distance are left behind.
+            For example, a creature wearing handcuffs will arrive at its teleportation destination still wearing the handcuffs.
+            However, a creature that is tied to a post by a long rope will arrive at its teleportation destination without the rope.
+
+        \subsubsection{Astral Beacon}\label{Astral Beacon}
+            Some abilities allow long-distance teleportation, such as the \ritual{overland teleportation} ritual.
+            This sort of teleportation is much easier if you are travelling to an \glossterm{astral beacon}.
+            The specific effects of an astral beacon are defined in the teleportation ability being used.
+            An astral beacon covers an area, rather than a single point in space.
+
+            Each astral beacon has a unique name.
+            The name represents the beacon's precise location in the Astral Plane, so no two beacons can have identical names.
+            For example, astral beacons created by rituals have their name defined by the precise color of ritual inks, details of drawn patterns, timing and inflection of ritual incantations, and similar subtleties.
+
+            It is possible, though unlikely, to find astral beacons simply by wandering in the Astral Plane.
+            They are similar in size and shape to \glossterm{scrying sensors}, but their appearance is visually distinct (for creatures who can see \trait{invisible} objects).
+            Inspecting a beacon can reveal the location it points to, and destroying the beacon in the Astral Plane removes the astral beacon entirely.
+            This is generally considered a hostile act, and may have consequences.
+
+        \subsubsection{Horizontal Teleportation}
+            Some planes have a curved primary surface.
+            On those planes, ``horizontal'' teleportation isn't objectively horizontal.
+            Instead, it is horizontal relative to the surface of the plane.
+
 \section{Breaking Objects}
     There are two main ways of breaking objects.
     You can deal damage to objects with attacks, similarly to how you can deal damage to creatures.
@@ -758,13 +866,14 @@ This chapter describes the core mechanics of Rise.
         Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
         For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with far less effort than would be required to create a wall from scratch.
         Magic items that are broken retain their magical properties once fixed.
-        Broken (but not destroyed) objects can be repaired with the Craft skill for a cost equal to 10\% of their value (see \pcref{Craft}).
+        Broken (but not destroyed) objects can be repaired with the Craft skill (see \pcref{Craft}).
 
         \parhead{Destroyed Objects}\label{Destroyed Objects}
         Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
         For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
         Magic items that are destroyed irrevocably lose their magical properties.
         The remains of a destroyed object generally occupy a space one size category smaller than the original object.
+        Destroyed objects can be rebuilt with the Craft skill, but it requires significant time and investment.
 
     \subsection{Relative Damage Resistance}\label{Relative Damage Resistance}
         When an object would take damage from a \glossterm{strike}, if the \glossterm{damage resistance} of the attacking object or creature is lower than the damage resistance of the defender, the attacking object or creature takes the damage instead.
