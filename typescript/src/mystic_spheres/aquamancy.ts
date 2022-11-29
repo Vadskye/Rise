@@ -44,36 +44,22 @@ export const aquamancy: MysticSphere = {
       type: 'Sustain (minor)',
     },
     {
-      name: 'Purify Water',
+      name: 'Aquatic Freedom',
 
       effect: `
-        You can separate out dirt, sand, salt, and similar minor pollutants from up to five gallons of water within \\shortrange.
-        The waste material moves to the edge of the water so it falls out or can be easily removed.
-        This does not remove poisons, magical effects, or contaminants heavier than half a pound.
-        Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
-      `,
-      // narrative: '',
-      scaling: {
-        2: 'The volume affected increases to ten gallons.',
-        4: 'The volume affected increases to twenty gallons.',
-        6: 'The volume affected increases to fifty gallons.',
-      },
-    },
-    {
-      name: 'Slippery Escape',
-
-      effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Flexibility skill.
-      `,
-      narrative: `
-        A thin layer of water covers you, allowing you to slip through the grasp of your foes more easily.
+        You gain a +3 \\glossterm{magic bonus} to the Swim skill.
       `,
       scaling: {
-        2: 'The bonus increases to +4.',
-        4: 'The bonus increases to +5.',
-        6: 'The bonus increases to +6.',
+        2: `
+          You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
+          If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
+        `,
+        4: `
+          You also gain the ability to breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+        `,
+        6: `The Swim bonus increases to +6.`,
       },
-      tags: ['Manifestation'],
+      type: 'Attune',
     },
   ],
   spells: [
@@ -253,26 +239,6 @@ export const aquamancy: MysticSphere = {
       },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
-    },
-    {
-      name: 'Aquatic Freedom',
-
-      effect: `
-        You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
-      `,
-      rank: 2,
-      type: 'Attune',
-    },
-    {
-      name: 'Mass Aquatic Freedom',
-
-      functionsLike: {
-        mass: true,
-        name: 'aquatic freedom',
-      },
-      rank: 4,
-      type: 'Attune (target)',
     },
     // +2 levels for push
     {
@@ -638,24 +604,51 @@ export const aquamancy: MysticSphere = {
   ],
   rituals: [
     {
+      name: 'Purify Water',
+
+      castingTime: 'one minute',
+      effect: `
+        You can separate out dirt, sand, salt, and similar minor pollutants from up to ten gallons of water within \\shortrange.
+        The waste material moves to the edge of the water so it falls out or can be easily removed.
+        This does not remove poisons, magical effects, or contaminants heavier than half a pound.
+        Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
+      `,
+      // narrative: '',
+      rank: 1,
+    },
+    {
+      name: 'Massive Purify Water',
+
+      functionsLike: {
+        exceptThat: 'the affected volume increases to a 5-foot cube, or a little over 900 gallons.',
+        name: 'purify water',
+      },
+      rank: 4,
+      tags: [],
+      castingTime: 'one minute',
+    },
+    {
       name: 'Dampen',
 
       effect: `
-          Up to five ritual participants each become \\trait{impervious} to fire damage.
+          Choose any number of ritual participants.
+          Each target becomes \\glossterm{impervious} to fire damage.
       `,
       rank: 2,
-      type: 'Attune',
+      type: 'Attune (target)',
       castingTime: 'one minute',
     },
     {
       name: 'Water Breathing',
 
-      effect: `
-        One ritual participant gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-      `,
-      rank: 3,
-      type: 'Attune',
       castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+      `,
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
     },
     {
       name: 'Detect Water',
@@ -679,6 +672,18 @@ export const aquamancy: MysticSphere = {
       rank: 4,
       tags: ['Detection'],
       castingTime: 'one minute',
+    },
+    {
+      name: 'Swimmers',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for its size.
+      `,
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
     },
   ],
 };
