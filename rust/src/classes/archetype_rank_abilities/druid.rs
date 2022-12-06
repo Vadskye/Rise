@@ -539,7 +539,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
                 \begin{attuneability}{Shift Body}{\abilitytag{Attune}}
                     \rankline
-                    When you use this ability, choose a physica \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
+                    When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 bonus to the base value of that attribute.
                 \end{attuneability}
             ",
