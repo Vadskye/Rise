@@ -380,7 +380,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
                     Choose one adjacent intact corpse.
-                    If it belongs to a creature that has been dead for no more than 1 minute, that creature is restored to life, as the \ritual{resurrection} ritual.
+                    If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
                 \end{activeability}
             ",
