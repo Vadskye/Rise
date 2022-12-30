@@ -105,8 +105,8 @@ class MagicItem(object):
         if self.upgrades is None:
             return None
         return "\n".join([
-            f"\\rank<{rank_price_text(self, u.rank)}> {u.description}"
-            for u in self.upgrades
+            f"\\rank<\\hypertargetraised<item:{self.name + '+' * (upgrade_tier+1)}><{rank_price_text(self, u.rank)}>> {u.description}"
+            for upgrade_tier, u in enumerate(self.upgrades)
         ])
 
     def latex_tags(self):
@@ -143,12 +143,11 @@ class MagicItem(object):
             material_type = 'Body'
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
-        # name can include '+' suffixes, so strip those when generating the pref
         return f"""
             \\itemref<{self.name}>
             & {rank_price_text(self, rank)} {type_text}
             & {short_description}
-            & \\itempref<{self.name.replace('+', '')}> \\\\
+            & \\itempref<{self.name}> \\\\
         """
 
     def tag_text(self):
