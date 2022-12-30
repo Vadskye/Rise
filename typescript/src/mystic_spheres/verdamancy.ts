@@ -646,14 +646,14 @@ export const verdamancy: MysticSphere = {
         In addition, choose a destination up to 100 miles away from you on your current plane.
         By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest chosen ritual participant.
 
-        You must specify the destination with a precise mental image of its appearance.
+        You can specify the destination by naming an \\glossterm{astral anchor}.
+        Alternately, you must specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
         The new destination will be one that more closely resembles your mental image.
         If no such area exists, the ritual simply fails.
-        % TODO: does this need more clarity about what teleportation works?
       `,
-      rank: 5,
+      rank: 4,
     },
   ],
 };

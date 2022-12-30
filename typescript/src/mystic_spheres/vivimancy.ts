@@ -599,24 +599,14 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose one Diminuitive or larger piece of a humanoid corpse.
         It must have been part of the original creature's body at the time of death.
-        The creature the corpse belongs to returns to life in a new body.
-        It must not have died due to old age.
-
-        This ritual creates an entirely new body for the creature's soul to inhabit from the natural elements at hand.
-        During the ritual, the body ages to match the age of the original creature at the time it died.
-        The creature has 0 hit points when it returns to life.
+        The creature the corpse belongs to is \\glossterm{resurrected}.
+        A new healthy body is created for it, so the corpse does not need to be fully intact.
 
         A reincarnated creature is identical to the original creature in all respects, except for its species.
         The creature's species is replaced with a random species from \\tref{Humanoid Reincarnations}.
         Its appearance changes as necessary to match its new species, though it retains the general shape and distinguishing features of its original appearance.
         The creature loses all attribute modifiers and abilities from its old species, and gains those of its new species.
         However, its languages are unchanged.
-
-        Coming back from the dead is an ordeal.
-        All of the creature's \\glossterm{attunement points} and daily abilities are expended when it returns to life.
-        In addition, its maximum attunement points are reduced by 1.
-        This penalty lasts for thirty days, or until the creature gains a level.
-        If this would reduce a creature's maximum attunement points below 0, the creature cannot be resurrected.
 
         This ritual can only be learned through the nature \\glossterm{magic source}.
       `,
@@ -683,60 +673,27 @@ export const vivimancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose one intact corpse within \\shortrange.
-        The corpse returns to life.
-        It must not have died due to old age.
-
-        The creature has no hit points or damage resistance when it returns to life.
-        It is cured of all \\glossterm{vital wounds} and other negative effects, but the body's shape is unchanged.
-        Any missing or irreparably damaged limbs or organs remain missing or damaged.
-        The creature may therefore die shortly after being resurrected if its body is excessively damaged.
-
-        Coming back from the dead is an ordeal.
-        All of the creature's \\glossterm{attunement points} and daily abilities are expended when it returns to life.
-        In addition, its maximum \\glossterm{fatigue tolerance} is reduced by 1.
-        This penalty lasts for thirty days, or until the creature gains a level.
-        If this would reduce a creature's maximum fatigue tolerance below 0, the creature cannot be resurrected.
-
-        This ritual can only be learned through the divine \\glossterm{magic source}.
+        Choose one corpse within \\shortrange.
+        The corpse is \\glossterm{resurrected} (see \\pcref{Resurrection}).
       `,
       materialCost: true,
       rank: 4,
     },
 
     {
-      name: 'Complete Resurrection',
-
-      castingTime: '24 hours',
-      functionsLike: {
-        exceptThat: `
-        it does not have to target a fully intact corpse.
-        The target must have been part of the original creature's body at the time of death.
-        The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
-        `,
-        name: 'resurrection',
-      },
-      materialCost: true,
-      rank: 6,
-      tags: ['Creation'],
-    },
-
-    {
-      name: 'True Resurrection',
+      name: 'Greater Resurrection',
 
       // original targets: Special
       castingTime: '24 hours',
 
-      functionsLike: {
-        exceptThat: `
-        it does not require any piece of the corpse.
-        Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
-        The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
-        `,
-        name: 'resurrection',
-      },
+      effect: `
+        Choose a dead creature.
+        You must explicitly and unambiguously specify the identity of the creature being resurrected.
+        That creature is \\glossterm{resurrected} (see \\pcref{Resurrection}).
+        A new healthy body is created for it, so you do not need an intact corpse.
+      `,
       materialCost: true,
-      rank: 7,
+      rank: 6,
       tags: ['Creation'],
     },
 
@@ -746,11 +703,11 @@ export const vivimancy: MysticSphere = {
       castingTime: 'one hour',
       effect: `
         % Is this clear enough that you can't use the same gem for this ritual twice?
-        Choose a nonmagical gem you hold that is worth at least 1,000 gp.
+        Choose a nonmagical gem you hold that is at least rank 5 (25,000 gp).
         In addition, choose one intact corpse within \\shortrange.
         A fragment of the soul of the creature that the target corpse belongs to is magically imprisoned in the chosen gem.
         This does not remove the creature from its intended afterlife.
-        However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
+        However, it prevents the creature from being \\glossterm{resurrected}, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
         A creature holding the gem may still resurrect or reanimate the creature.
         If the gem is shattered, the fragment of the creature's soul returns to its body.
       `,
