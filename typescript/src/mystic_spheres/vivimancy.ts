@@ -593,6 +593,33 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: 'Corpse Communion',
+
+      castingTime: '1 hour',
+      effect: `
+        You ask a corpse a single yes or no question.
+        In its afterlife, the soul that inhabited the corpse becomes aware of your question and can answer yes or no as it chooses.
+        It receives no magical insight into your identity, but it hears your question in your words.
+        The corpse answers yes or no if the soul wishes to, but no other communication is possible.
+        This requires a corpse with an intact mouth or other speaking apparatus.
+      `,
+      rank: 3,
+    },
+
+    {
+      name: 'Greater Corpse Communion',
+
+      castingTime: '1 hour',
+      functionsLike: {
+        name: 'corpse communion',
+        exceptThat: `
+          The corpse can answer with a single full sentence, rather than only with "yes" or "no".
+        `,
+      },
+      rank: 6,
+    },
+
+    {
       name: 'Reincarnation',
 
       castingTime: '24 hours',
