@@ -266,12 +266,15 @@ export const polymorph: MysticSphere = {
       name: 'Disintegrate',
 
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} physical damage.
-        In addition, if the target is unconscious from vital wounds at the end of the current \\glossterm{phase}, it dies.
-        Its body is completely disintegrated, leaving behind only a pinch of fine dust.
-        Its equipment is unaffected.`,
+        hit: `
+          The target takes 4d8 + \\glossterm{power} physical damage.
+          This damage is doubled if the target is an object.
+          If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
+          Only a fine dust remains.
+          A disintegrated creature's equipment is unaffected.
+        `,
         targeting: `
-        Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\medrange.
         `,
       },
 
