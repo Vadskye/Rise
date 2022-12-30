@@ -2093,12 +2093,14 @@ function handleDicePoolAttributes() {
       string: ["feat_name_0", "feat_name_1", "feat_name_2", "feat_name_3"],
     },
     (v) => {
-      const feats = [
-        v.feat_name_0,
-        v.feat_name_1,
-        v.feat_name_2,
-        v.feat_name_3,
-      ];
+      // TODO: fix precognition after repeating change
+      // const feats = [
+      //   v.feat_name_0,
+      //   v.feat_name_1,
+      //   v.feat_name_2,
+      //   v.feat_name_3,
+      // ];
+      const feats = [];
       const magicalAttribute = feats.includes("Precognition")
         ? Math.max(v.willpower, v.intelligence)
         : v.willpower;
