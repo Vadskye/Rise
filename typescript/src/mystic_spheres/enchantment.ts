@@ -214,7 +214,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: 'The target does not become immune to this effect.',
         hit: `
-          During its next action, the target is compelled to spend a \\glossterm{standard action} doing nothing at all.
+          The target is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it takes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -234,7 +234,7 @@ export const enchantment: MysticSphere = {
         crit: 'The target does not become immune to this effect.',
         // No glance effect since it's already one round
         hit: `
-          During its next action, the target is compelled to make a \\glossterm{strike} against itself as a \\glossterm{standard action}.
+          The target is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
