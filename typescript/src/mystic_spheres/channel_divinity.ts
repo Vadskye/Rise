@@ -409,25 +409,28 @@ export const channelDivinity: MysticSphere = {
   ],
   rituals: [
     {
-      name: 'Consecration',
+      name: 'Consecrated Ground',
 
-      castingTime: '24 hours',
+      castingTime: 'one hour',
       effect: `
-        The area within an \\medarea radius \\glossterm{zone} from your location becomes sacred to your deity.
+        The area within an \\largearea radius \\glossterm{zone} from your location becomes sacred to your deity.
         % TODO: what cares about consecration?
         This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
       `,
-      rank: 3,
+      rank: 2,
       type: 'Attune',
     },
     {
-      name: 'Permanent Consecration',
+      name: 'Permanent Consecrated Ground',
 
       castingTime: '24 hours',
-      effect: `
-        The area within an \\medarea radius \\glossterm{zone} from your location becomes permanently sacred to your deity.
-      `,
-      rank: 5,
+      functionsLike: {
+        exceptThat: `
+          the effect is permanent.
+        `,
+        name: 'consecrated ground',
+      },
+      rank: 4,
     },
 
     {
@@ -435,17 +438,32 @@ export const channelDivinity: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose a destination up to 100 miles away from you on your current plane.
-        Up to five Medium or smaller ritual participants are teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
+        Choose a destination on your current plane, and up to five Medium or smaller ritual participants.
+        Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
-        You must specify the destination with a precise mental image of its appearance.
+        You can specify the destination by naming an \\glossterm{astral anchor}.
+        Alternately, you can specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
         The new destination will be one that more closely resembles your mental image.
         If no such area exists, the ritual simply fails.
-        % TODO: does this need more clarity about what teleportation works?
+
         `,
-      rank: 5,
+      rank: 4,
+    },
+    {
+      name: 'Efficient Divine Transit',
+
+      functionsLike: {
+        exceptThat: `
+          the casting time is shorter, and the ritual is much less exhausting.
+        `,
+        name: 'divine transit',
+      },
+      rank: 6,
+      tags: [],
+      castingTime: 'one hour',
     },
 
     {
@@ -462,7 +480,20 @@ export const channelDivinity: MysticSphere = {
         If you perform the ritual again in a situation that has not meaningfully changed, you receive no answer regardless of your question.
         For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
       `,
+      rank: 3,
+    },
+    {
+      name: 'Efficient Commune',
+
+      functionsLike: {
+        exceptThat: `
+          the casting time is shorter, and the ritual is much less exhausting.
+        `,
+        name: 'commune',
+      },
       rank: 5,
+      tags: [],
+      castingTime: 'one hour',
     },
   ],
 };

@@ -769,7 +769,7 @@ export const astromancy: MysticSphere = {
         From the Material Plane, you can only reach the Astral Plane.
       `,
       tags: [],
-      castingTime: '1 hour',
+      castingTime: 'one hour',
     },
     {
       name: 'Astral Projection',
@@ -800,7 +800,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 4,
       tags: [],
-      castingTime: '1 hour',
+      castingTime: 'one hour',
     },
     {
       name: 'Overland Teleportation',
@@ -828,18 +828,35 @@ export const astromancy: MysticSphere = {
       castingTime: 'one minute',
     },
     {
-      name: 'Teleportation Anchor',
-      rank: 3,
+      name: 'Forge Astral Beacon',
+      rank: 4,
       effect: `
         You draw a magic circle in a \\smallarea radius during this ritual.
-        The circle functions as an anchor for teleportation, making it easy for creatures to teleport into the circle.
-        When you create the anchor, you must give it a unique name that matches its construction and the patterns you chose.
-        A creature who knows the name of an anchor can use rituals like \\ritual{intraplanar teleportation} to teleport to it more easily.
+        The circle creates an \\glossterm{astral beacon}, making it easy for creatures to teleport into the circle.
+        When you create the beacon, you must give it a unique name that matches its construction and the patterns you chose for the circle.
+        A creature who knows the name of an beacon can use rituals like \\ritual{guided teleportation} to teleport to it.
 
-        The anchor persists for one year.
+        The beacon persists for one year.
+        You can use this ritual to renew the duration of an existing beacon instead of creating a new beacon.
       `,
       tags: [],
       castingTime: '24 hours',
+    },
+    {
+      name: 'Guided Teleportation',
+      rank: 3,
+      effect: `
+        When you perform this ritual, you must name an \\glossterm{astral beacon} connected to a location on your current plane.
+        Choose up to five Medium or smaller ritual participants.
+        Each target is teleported to the area defined by the beacon.
+        This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
+
+        If the anchor does not have enough open space to contain your group, the ritual has no immediate effect.
+        You can continue the ritual for any length of time.
+        At the end of each round during this continuation, if the anchor has room for your group, the teleportation succeeds and the ritual ends.
+      `,
+      tags: [],
+      castingTime: '1 hour',
     },
     {
       name: 'Intraplanar Teleportation',
@@ -849,18 +866,11 @@ export const astromancy: MysticSphere = {
         Each target is teleported to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
-        You can specify the destination with a precise mental image of its appearance.
+        You must specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
         The new destination will be one that more closely resembles your mental image.
         If no such area exists, the ritual simply fails.
-        % TODO: does this need more clarity about what teleportation works?
-
-        Alternately, you can specify the name of a \\ritual{teleportation anchor} on your current plane.
-        The group arrives within the area of the anchor.
-        If the anchor does not have enough open space to contain your group, the ritual has no immediate effect.
-        You can continue the ritual for any length of time.
-        At the end of each round during this continuation, if the anchor has room for your group, the teleportation succeeds and the ritual ends.
       `,
       tags: [],
       castingTime: '24 hours',
@@ -877,7 +887,7 @@ export const astromancy: MysticSphere = {
       },
       rank: 6,
       tags: [],
-      castingTime: '1 hour',
+      castingTime: 'one hour',
     },
     {
       name: 'Retrieve Legacy',
@@ -893,7 +903,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Astral Chest',
 
-      castingTime: '1 hour',
+      castingTime: 'one hour',
       effect: `
         When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
         If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.

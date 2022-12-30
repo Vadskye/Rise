@@ -26,11 +26,11 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You can read at twice your normal speed.
-        However, the mental effort imposes a -4 penalty to Mental defense.
+        However, the mental effort imposes a -4 penalty to your Mental defense.
       `,
       scaling: {
-        2: 'You can read at four times your normal speed.',
-        4: 'You can read at six times your normal speed.',
+        2: 'You can read at three times your normal speed.',
+        4: 'You can read at five times your normal speed.',
         6: 'You can read at ten times your normal speed.',
       },
       type: 'Sustain (free)',
@@ -50,6 +50,24 @@ export const chronomancy: MysticSphere = {
         6: 'You can choose to age the target by up to three months.',
       },
       type: 'Sustain (minor)',
+    },
+    {
+      name: 'Rewind',
+
+      effect: `
+        Whenever you make an \\glossterm{attack} or \\glossterm{check}, you can \\glossterm{reroll} it.
+        If you do, this effect ends.
+
+        You can decide to activate this effect after you learn whether the original roll succeeded or failed.
+        You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+        However, you must use it before using any other abilities or ending your turn.
+      `,
+      scaling: {
+        2: 'You gain a +2 bonus to the reroll.',
+        4: 'The bonus increases to +3.',
+        6: 'The bonus increases to +4.',
+      },
+      type: 'Attune (deep)',
     },
   ],
   spells: [
@@ -608,14 +626,114 @@ export const chronomancy: MysticSphere = {
         Choose one \\glossterm{unattended}, nonmagical object within \\shortrange.
         Time does not pass for the target, preventing it from decaying or spoiling.
         This can extend the time a poison or similar item lasts before becoming inert.
+        The target can still be attacked and damaged normally.
+
         % What effects have an explicit time limit?
         If used on a corpse, this effectively extends the time limit for effects that require a fresh or intact body.
         Additionally, this can make transporting a fallen comrade more pleasant.
 
         % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
       `,
+      rank: 2,
+      type: 'Attune',
+    },
+    {
+      name: 'Ripen',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose up to one cubic feet of fruit or other food within \\shortrange that is capable of ripening or spoiling.
+        The target becomes ripe and ready to eat.
+        This accelerates time for food that is not yet ripe, and rewinds time for food that has already spoiled.
+      `,
+      rank: 1,
+    },
+    {
+      name: 'Stasis Chamber',
+
+      castingTime: 'one hour',
+      effect: `
+        Choose one Medium or smaller container.
+        Anything placed into the container enters a state of temporal stasis at the end of the round.
+        While in stasis, it cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
+        Creatures in stasis are \\glossterm{unconscious} and cannot take any actions.
+        If the container is destroyed, the stasis effect ends.
+      `,
       rank: 3,
       type: 'Attune',
+    },
+    {
+      name: 'Overland Haste',
+      rank: 3,
+      // Worse than Overland Teleportation in rough terrain, but can be comparable on
+      // smooth ground depending on party composition and size.
+      effect: `
+        Choose any number of ritual participants.
+        Each target gains a +30 foot \\glossterm{magic bonus} to its land speed.
+        If it takes any action other than movement or is dealt damage, this effect ends.
+      `,
+      tags: [],
+      castingTime: 'one minute',
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Greater Overland Haste',
+      rank: 5,
+      functionsLike: {
+        exceptThat: `
+          the bonus increases to +60 feet.
+        `,
+        name: 'overland haste',
+      },
+      tags: [],
+      castingTime: 'one minute',
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Reverse Breakage',
+
+      castingTime: '24 hours',
+      effect: `
+        Choose one Large or smaller \\glossterm{broken} object within \\shortrange.
+        The object is repaired as if it had never been broken.
+      `,
+      rank: 1,
+    },
+    {
+      name: 'Reverse Destruction',
+
+      castingTime: '24 hours',
+      effect: `
+        Choose one Large or smaller \\glossterm{destroyed} object within \\shortrange.
+        The object is repaired as if it had never been destroyed.
+      `,
+      rank: 4,
+    },
+    {
+      name: 'Reverse Death',
+
+      castingTime: '24 hours',
+      effect: `
+        Choose one corpse within \\shortrange.
+        The corpse is \\glossterm{resurrected}.
+        It must have died no more than 48 hours before this ritual is completed.
+      `,
+      materialCost: true,
+      rank: 4,
+    },
+    {
+      name: 'Greater Reverse Death',
+
+      castingTime: '24 hours',
+      effect: `
+        Choose one Diminuitive or larger piece of a corpse.
+        It must have been part of the original creature's body at the time of death.
+        The creature the corpse belongs to is \\glossterm{resurrected}.
+        The corpse is completely restored to a healthy state, so it does not need to be fully intact.
+        It must have died no more than 48 hours before this ritual is completed.
+      `,
+      materialCost: true,
+      rank: 6,
     },
   ],
 };
