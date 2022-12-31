@@ -1,5 +1,10 @@
 \newcommand{\lcaption}[1]{\caption[]{#1}\label{cap:#1}}
 
+% Create a \fsize length which represents the current font size. Used for \sparkle
+\makeatletter
+\newcommand*\fsize{\dimexpr\f@size pt\relax}
+\makeatother
+
 \newcommand{\minus}{\texttt{-{}}}
 \newcommand{\plus}{\texttt{+}}    %Use a smaller positive marker for use directly adjacent to numbers
 \newcommand{\add}{\texttt{+}\xspace}    %Use a smaller plus sign
@@ -331,15 +336,18 @@
 
 % #1: class shorthand name
 % #2: archetype name
-\DeclareDocumentCommand{\archetypedef}{m m}
+\DeclareDocumentCommand{\archetypedef}{s m m}
 {
     \newpage
     \subsection{
         \protect
-        \hypertargetraised{archetype:#1:#2}{
+        \hypertargetraised{archetype:#2:#3}{
             \protect
-            \hyperlink{archetypetable:#1:#2}{#2}
+            \hyperlink{archetypetable:#2:#3}{
+                #3
+            }
         }
+        ~\IfValueT{#1}{\sparkle}
     }
     \label{#2}
 }
@@ -535,6 +543,8 @@
     }
     \label{item:#1}
 }
+
+\DeclareDocumentCommand{\sparkle}{}{\xspace\includegraphics[width=0.75\fsize]{emoji/sparkles}}
 
 \ExplSyntaxOff
 
