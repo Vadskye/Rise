@@ -14,7 +14,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{attuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}, \glossterm{Magical}}
+                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
                     \rankline
                     Choose an adjacent non-\glossterm{elite} Medium or smaller animal \glossterm{ally}.
                     Its level must not exceed your level.
@@ -42,7 +42,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     % There must be text between an itemize block and the end of a mdframed env
                     \hypertarget{itemizespace}{}
-                \end{attuneability}
+                \end{magicalattuneability}
 
             ",
             // TODO: represent extra creature?
@@ -274,7 +274,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
-                    \begin{activeability}{Anchoring}[\abilitytag{Magical}]
+                    \begin{magicalactiveability}{Anchoring}[\abilitytag{Magical}]
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \glossterm{teleportation} effects.
@@ -282,7 +282,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{4} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
                         \rank{6} This effect instead applies if your quarry is within \distrange of any member of your hunting party.
-                    \end{activeability}
+                    \end{magicalactiveability}
 
                     \begin{activeability}{Coordinated Stealth}
                         \rankline
@@ -311,14 +311,14 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{6} The penalty increases to \minus4.
                     \end{activeability}
 
-                    \begin{activeability}{Lifeseal}[\abilitytag{Magical}]
+                    \begin{magicalactiveability}{Lifeseal}
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
 
                         \rankline
                         \rank{4} This effect instead applies if the target is within \rngmed range of any member of your hunting party.
                         \rank{6} This effect instead applies if your quarry is within \rngdist range of any member of your hunting party.
-                    \end{activeability}
+                    \end{magicalactiveability}
 
                     \begin{activeability}{Martial Suppression}
                         \rankline
@@ -331,7 +331,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Mystic Suppression}
                         \rankline
-                        As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \glossterm{magical} attacks.
+                        As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \magical attacks.
 
                         \rankline
                         \rank{4} The penalty increases to \minus2. 

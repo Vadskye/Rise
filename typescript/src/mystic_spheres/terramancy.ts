@@ -150,7 +150,7 @@ export const terramancy: MysticSphere = {
         If you create body armor or a weapon, it can be created from any special material other than cold iron.
         The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
-        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
       type: 'Attune',

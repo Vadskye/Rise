@@ -85,7 +85,7 @@
     }
     \spelltwocol{
         {\normalsize \textbf{#3}}
-        \IfValueTF{#2}{~--~#2}{}
+        \IfValueT{#2}{#2}
     }{
         \IfValueT{#4}{#4}
     }
@@ -168,6 +168,43 @@
 }
 {
     \end{attuneabilitymdframed}
+}
+
+\DeclareDocumentEnvironment{magicalactiveability}{s m o}
+{
+    \IfValueTF{#1}{
+        \begin{activeability}*[\sparkle]{#2}[#3]
+    }{
+        \begin{activeability}[\sparkle]{#2}[#3]
+    }
+}
+{
+    \end{activeability}
+}
+
+\DeclareDocumentEnvironment{magicalsustainability}{s m o}
+{
+    \IfValueTF{#1}{
+        \begin{sustainability}*[\sparkle]{#2}[#3]
+    }{
+        \begin{sustainability}[\sparkle]{#2}[#3]
+    }
+}
+{
+    \end{sustainability}
+}
+
+
+\DeclareDocumentEnvironment{magicalattuneability}{s m o}
+{
+    \IfValueTF{#1}{
+        \begin{attuneability}*[\sparkle]{#2}[#3]
+    }{
+        \begin{attuneability}[\sparkle]{#2}[#3]
+    }
+}
+{
+    \end{attuneability}
 }
 
 \DeclareDocumentEnvironment{dtabularx}{m m}

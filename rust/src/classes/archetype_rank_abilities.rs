@@ -35,7 +35,7 @@ impl RankAbility<'_> {
             ability_name = titlecase(self.name),
             class_shorthand = class_shorthand,
             magical = if self.is_magical && include_magical_tag {
-                "[\\abilitytag{Magical}]"
+                "[\\sparkle]"
             } else {
                 ""
             },

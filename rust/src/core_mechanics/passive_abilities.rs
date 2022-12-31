@@ -13,7 +13,7 @@ impl PassiveAbility {
             ",
             description = self.description,
             magical = if self.is_magical {
-                "[\\glossterm<Magical>]"
+                "[\\sparkle]"
             } else {
                 ""
             },

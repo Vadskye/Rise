@@ -67,7 +67,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{mage armor} ability as a standard action.
-                \begin{activeability}{Mage Armor}
+                \begin{magicalactiveability}{Mage Armor}
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
@@ -79,7 +79,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
 
                     This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
                     In addition, it is automatically dismissed if you wear other body armor of any kind.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             // Assuming no other armor
             modifiers: Some(vec![
@@ -445,7 +445,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can absorb and retain any \glossterm{magical} attack with this ability, not just spells.
+                You can absorb and retain any \magical attack with this ability, not just spells.
                 In addition, the accuracy bonus increases to +4.
             ",
             modifiers: None,
