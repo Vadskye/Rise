@@ -68,7 +68,7 @@ export const astromancy: MysticSphere = {
         `,
         4: `
           You also take half damage from any plane-specific damaging effects.
-          This does not protect you from abilities that are simply thematically related to planes, such as the \\textit<planar jaunt> spells from this mystic sphere.
+          This does not protect you from abilities that are simply thematically related to planes, such as the \\textit{planar jaunt} spells from this mystic sphere.
         `,
         6: 'The bonus increases to +6.',
       },
