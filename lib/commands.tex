@@ -247,14 +247,13 @@
 %   class name
 %   level, if any
 %   ability name
-\DeclareDocumentCommand{\cf}{m o m}
+%   ability name suffix, like a magic sparkle
+\DeclareDocumentCommand{\cf}{m o m o}
 {
-    \IfValueTF{#2}
-    {
-        { \subsubsection{Rank~#2~--~#3} }
-    }
-    {
-        { \subsubsection{#3} }
+    \subsubsection{
+        \IfValueT{#2}{Rank~#2~--~}
+        #3
+        \IfValueT{#4}{#4}
     }
     \label{#1:#3}
 }

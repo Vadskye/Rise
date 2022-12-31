@@ -268,7 +268,7 @@ export const fabrication: MysticSphere = {
 
         If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
-        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
 
         % Strange duration for a spell
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
@@ -353,7 +353,7 @@ export const fabrication: MysticSphere = {
         However, the item's rank cannot exceed half your spellcasting rank with this spell.
 
         The object persists until the end of the round, at which point it disappears.
-        Any attack with this ammunition is considered a \\glossterm{magical} attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        Any attack with this ammunition is considered a \\magical attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
       `,
       rank: 1,
       tags: ['Manifestation'],

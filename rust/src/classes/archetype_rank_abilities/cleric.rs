@@ -120,7 +120,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
-                \begin{activeability}{Turn Undead}
+                \begin{magicalactiveability}{Turn Undead}
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
                     \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
@@ -129,7 +129,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -282,7 +282,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{divine aid} ability as a standard action.
-                \begin{activeability}{Divine Aid}[\abilitytag{Magical}, \abilitytag{Swift}]
+                \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
@@ -298,7 +298,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The healing increases to 4d8.
                     \rank{6} The healing increases to 4d10.
                     \rank{7} The healing increases by an amount equal to your \glossterm{power}.
-                \end{activeability}
+                \end{magicalactiveability}
 
                 \advancement This ability improves at each rank as described above.
             ",
@@ -334,7 +334,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{vital restoration} ability as a standard action.
-                \begin{activeability}{Vital Restoration}[\abilitytag{Magical}]
+                \begin{magicalactiveability}{Vital Restoration}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
@@ -345,7 +345,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} If the target's level is at least two levels lower than your level,
                         you do not increase your fatigue level when you use this ability.
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -375,14 +375,14 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{revivify} ability as a standard action.
-                \begin{activeability}{Revivify}
+                \begin{magicalactiveability}{Revivify}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
                     Choose one adjacent intact corpse.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
                     After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },

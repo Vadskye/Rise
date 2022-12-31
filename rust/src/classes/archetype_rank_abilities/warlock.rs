@@ -14,7 +14,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{abyssal rebuke} ability as a standard action.
-                \begin{activeability}{Abyssal Rebuke}
+                \begin{magicalactiveability}{Abyssal Rebuke}
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
                     You gain a \plus2 accuracy bonus to this attack against any creature that damaged you during the previous round.
@@ -27,7 +27,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The damage increases to 4d8.
                     \rank{6} The damage increases to 4d10.
                     \rank{7} The damage increases by an amount equal to your \glossterm{power}.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(
                 StandardAttack::AbyssalRebuke(1).attack(),
@@ -132,7 +132,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{banish to the abyss} ability as a standard action.
-                \begin{activeability}{Banish to the Abyss}
+                \begin{magicalactiveability}{Banish to the Abyss}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     \hit The target takes 1d10 \add half \glossterm{power} fire damage.
@@ -142,7 +142,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     You gain a +1 accuracy bonus and a +1d damage bonus for each rank beyond 3.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -174,7 +174,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{abyssal curse} ability as a standard action.
-                \begin{activeability}{Abyssal Curse}[\abilitytag{Curse}]
+                \begin{magicalactiveability}{Abyssal Curse}[\abilitytag{Curse}]
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
                     \hit The target is \stunned until it takes a \glossterm{short rest}.
@@ -182,7 +182,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -553,7 +553,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \glossterm{magical} attack, you double your \glossterm{power} with that attack.
+                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you double your \glossterm{power} with that attack.
             ",
             modifiers: None,
         },
@@ -595,7 +595,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{sustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -604,8 +604,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
                         \item You take a \minus2 penalty to Fortitude and Mental defenses.
-                        \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{magical} attacks.
-                        \item At the end of each round, if you did not make a \glossterm{magical} attack during that round, this ability ends.
+                        \item You are unable to take \glossterm{standard actions} that do not cause you to make \magical attacks.
+                        \item At the end of each round, if you did not make a \magical attack during that round, this ability ends.
                         \item When this ability ends for any reason, you \glossterm{briefly} cannot use it again.
                     \end{itemize}
 
@@ -613,7 +613,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} The power bonus increases to \plus4.
                     \rank{5} The power bonus increases to \plus8.
                     \rank{7} The power bonus increases to \plus16.
-                \end{sustainability}
+                \end{magicalsustainability}
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -671,7 +671,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 You can use the \textit{exchange soul fragment} ability as a standard action.
-                \begin{activeability}{Exchange Soul Fragment}[\abilitytag{Swift}]
+                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -683,7 +683,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rank{5} The healing increases to 4d6.
                     \rank{6} The healing increases to 4d8.
                     \rank{7} The healing increases to 5d10.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -703,12 +703,12 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 You can use the \textit{exchange vitality} ability as a standard action.
-                \begin{activeability}{Exchange Vitality}
+                \begin{magicalactiveability}{Exchange Vitality}
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
 
                     Remove one of your \glossterm{vital wounds}.
-                \end{activeability}
+                \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },

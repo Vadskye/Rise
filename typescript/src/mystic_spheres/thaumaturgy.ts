@@ -11,7 +11,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Choose a \\arealarge \\glossterm{cone} from you.
-        You know whether any \\glossterm{magical} abilities were activated in that area since the start of the last round.
+        You know whether any \\magical abilities were activated in that area since the start of the last round.
         This does not provide any information about passive magical effects, such as attuned spells.
         It also does not provide any information about the number or location of those magical effects.
       `,
@@ -30,7 +30,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Sense Magical Potential',
 
       effect: `
-        You discern whether one creature within \\shortrange has any \\glossterm{magical} abilities.
+        You discern whether one creature within \\shortrange has any \\magical abilities.
         This does not give you any information about the nature of those magical abilities.
       `,
       scaling: {
@@ -149,7 +149,7 @@ export const thaumaturgy: MysticSphere = {
         crit: 'You can sustain this spell as a \\glossterm{free action}.',
         hit: `All magical properties the target has are \\glossterm{suppressed}.`,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\glossterm{magical} object within \\longrange.
+          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\magical object within \\longrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Mental defense.
         `,
       },
@@ -168,7 +168,7 @@ export const thaumaturgy: MysticSphere = {
         This usually causes the target to disappear.`,
         targeting: `
         Make an attack against anything within \\medrange.
-        If the target is an effect of an ongoing \\glossterm{magical} ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + the \\glossterm{rank} of the effect.
+        If the target is an effect of an ongoing \\magical ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + the \\glossterm{rank} of the effect.
         Otherwise, this spell has no effect.
         `,
       },
@@ -184,7 +184,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `The effect is \\glossterm{suppressed} as long as you \\glossterm{sustain} this ability.`,
         targeting: `
           Choose a single 5-ft. square within \\medrange.
-          Make an attack against a random \\glossterm{magical} effect active in that square, if any exist.
+          Make an attack against a random \\magical effect active in that square, if any exist.
           This can only target magical effects that are sustained or which have a specific duration.
           This includes brief effects, conditions, and \\abilitytag{Sustain} abilities, but it does not include attuned effects or permanent magical abilities on creatures.
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
@@ -257,7 +257,7 @@ export const thaumaturgy: MysticSphere = {
           In addition, the struck creature \\glossterm{briefly} suffers the effect of the removed condition.
         `,
         targeting: `
-          Choose yourself or one \\glossterm{ally} within \\medrange that is currently affected by a \\glossterm{magical} \\glossterm{condition}.
+          Choose yourself or one \\glossterm{ally} within \\medrange that is currently affected by a \\magical \\glossterm{condition}.
           In addition, make an attack vs. Mental against one other creature within \\medrange.
         `,
       },
@@ -334,7 +334,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You radiate an antimagic field within a \\smallarea radius \\glossterm{emanation} from you.
-        All \\glossterm{magical} effects within the area that are dismissable or have a duration are \\glossterm{suppressed}.
+        All \\magical effects within the area that are dismissable or have a duration are \\glossterm{suppressed}.
         This includes attuned spells and magic items, magical conditions, and sustained magical effects.
         However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
         It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
@@ -397,8 +397,8 @@ export const thaumaturgy: MysticSphere = {
       name: 'Absorb Magic',
 
       effect: `
-        You gain a +2 bonus to your defenses against \\glossterm{magical} effects.
-        In addition, the next time a \\glossterm{magical} attack beats your defenses, it has no effect on you.
+        You gain a +2 bonus to your defenses against \\magical effects.
+        In addition, the next time a \\magical attack beats your defenses, it has no effect on you.
         After you negate two attacks in this way, this spell's effect ends.
       `,
       rank: 6,
@@ -409,7 +409,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Second Mind',
 
       effect: `
-        Choose a \\glossterm{magical} ability you are currently sustaining that requires either a \\glossterm{free action} or a \\glossterm{minor action} to sustain.
+        Choose a \\magical ability you are currently sustaining that requires either a \\glossterm{free action} or a \\glossterm{minor action} to sustain.
         That ability is automatically sustained as long as this effect lasts.
         This can allow you to sustain that ability for longer than 5 minutes.
         This does not allow you to make any choices as part of sustaining the chosen ability, such as telling summoned creatures how to act.
@@ -495,7 +495,7 @@ export const thaumaturgy: MysticSphere = {
         name: 'total defense',
         abilityType: 'ability',
         exceptThat: `
-          whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\glossterm{magical} attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+          whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
           It cannot choose to reduce its accuracy or damage against itself.
         `,
       },
@@ -510,7 +510,7 @@ export const thaumaturgy: MysticSphere = {
         name: 'total defense',
         abilityType: 'ability',
         exceptThat: `
-          any \\glossterm{targeted} \\glossterm{magical} abilities that would target you this round also target the creature using that ability in addition to you.
+          any \\glossterm{targeted} \\magical abilities that would target you this round also target the creature using that ability in addition to you.
           It cannot choose to reduce its accuracy or damage against itself.
           Any other targets of the ability are affected normally.
         `,
@@ -525,7 +525,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         You create a \\medarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
-        Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\glossterm{magical} ability treats the wall as an impassable barrier.
+        Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\magical ability treats the wall as an impassable barrier.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.

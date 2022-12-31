@@ -349,7 +349,7 @@ export const cryomancy: MysticSphere = {
         The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
-        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\glossterm{magical} abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
         Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
         Third, whenever you lose \\glossterm{hit points} from fire damage, all items you made with this ability disappear.
         They reappear at the end of the next round.
