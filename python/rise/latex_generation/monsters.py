@@ -786,8 +786,8 @@ def magical_beasts(sample_monsters):
                 passive_ability(
                     "Consume Magic",
                     f"""
-                The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\glossterm<magical> abilities.
-                Whenever it resists a \\glossterm<magical> attack, it regains a \\glossterm<hit point>.
+                The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\magical abilities.
+                Whenever it resists a \\magical attack, it regains a \\glossterm<hit point>.
             """,
                 ),
                 passive_ability(
