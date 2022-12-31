@@ -325,7 +325,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Share Boon} When you cast a spell with the \abilitytag{Attune} tag, you can use the \textit{share boon} ability.
-        \begin{activeability}{Share Boon}
+        \begin{magicalactiveability}{Share Boon}
             \rankline
             The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
             Choose one \glossterm{ally} within \rngmed range.
@@ -333,7 +333,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             You can only use this ability to affect one spell at a time.
             If you use it again, the original ally's attunement to the old spell is released, as the \textit{release attunement} ability (see \pcref{Attuned Abilities}).
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[3]{Sustain Attunement} Whenever you cast an \abilitytag{Attune} (target) spell that is not a \glossterm{deep attunement}, you can choose to replace its \abilitytag{Attune} tag with the \abilitytag{Sustain (minor)} tag.
 
@@ -373,7 +373,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \parhead{Special} You can only have one Bloodline feat.
 
         \ff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
-        \begin{activeability}{Rebuke Evil}
+        \begin{magicalactiveability}{Rebuke Evil}
             \rankline
             Make an attack vs. Mental against one creature or object within \rngmed range.
             You gain a \plus2 accuracy bonus to this attack against any creature that damaged any of your \glossterm{allies} during the previous round.
@@ -382,7 +382,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus1 accuracy bonus and a \plus1d damage bonus at 3rd level and every 3 levels thereafter.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[3]{Healing Light}[Magical] When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \medarea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
         At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
@@ -556,7 +556,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[21]{Deceive Reality}[\glossterm{Magical}] Once per \glossterm{long rest}, you can use the \ability{deceive reality} ability as a standard action.
-        \begin{activeability}{Deceive Reality}
+        \begin{magicalactiveability}{Deceive Reality}
             \rankline
             You tell a lie that becomes true.
             The lie must not directly affect sentient creatures.
@@ -566,7 +566,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             However, within those limits, you can generally alter reality around you.
 
             Some examples of lies that would be valid to use with this ability are ``I have a bathtub full of diamonds in the other room'', ``Suddenly, all of the torches in the room were extinguished simultaneously'', and ``Don't worry, my basement cellar has always had an escape tunnel for emergencies''.
-        \end{activeability}
+        \end{magicalactiveability}
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -733,7 +733,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 20\% chance that the attack is treated as a regular hit against you instead of a critical hit.
 
         \ff[3]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
-        \begin{activeability}{Sudden Entropy}
+        \begin{magicalactiveability}{Sudden Entropy}
             \rankline
             Make an attack vs. Mental against one creature or object within \medrange.
             \hit The target takes 1d10 \add \glossterm{power} damage.
@@ -741,7 +741,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus1 accuracy bonus and a \plus1d damage bonus at 6th level and every 3 levels thereafter.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Friend of Chaos} Whenever you roll for a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
         This does not affect your own \textit{entropic defense} ability, since the attacker rolls that chance instead of you.
@@ -806,7 +806,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[21]{Escape Magic}[Magical] You can use the \textit{escape magic} ability as a standard action.
-        \begin{activeability}{Escape Magic}
+        \begin{magicalactiveability}{Escape Magic}
             \rankline
             You make an Flexibility attack against all \glossterm{magical} effects on you.
             You may exclude any number of effects you are aware of from this attack, allowing you to maintain beneficial magical effects.
@@ -816,7 +816,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
             If an ability targets multiple creatures, you can only remove its effects on you.
-        \end{activeability}
+        \end{magicalactiveability}
     \end{feat}
 
     \begin{feat}{Ghostblade}{Combat, Magical}
@@ -832,7 +832,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % as rank 3 maneuver, but scales to rank ?? maneuver
         \ff[3]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
-        \begin{activeability}{Spectral Strike}[\abilitytag{Magical}]
+        \begin{magicalactiveability}{Spectral Strike}
             \rankline
             Make a melee \glossterm{strike}.
             The attack is made against each target's Reflex defense instead of its Armor defense.
@@ -844,7 +844,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} Each target is no longer immune to being slowed after the first successful slow effect.
             \featlevel{15} The slowing effect becomes a \glossterm{condition} instead of a brief effect.
             \featlevel{21} The slowing effect works against each creature that took damage from the strike, not just against creatures that lost hit points.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
         This grants you the defensive benefits of being incorporeal during the current phase.
@@ -897,7 +897,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[3]{Potent Poisons} You gain a \plus1 bonus to \glossterm{accuracy} with any poisons you create, including poisonous spells you cast.
 
         \ff[3]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
-        \begin{attuneability}{Tempting Concoction}{\abilitytag{Attune}, \abilitytag{Emotion}, \glossterm{Magical}, \abilitytag{Subtle}}
+        \begin{magicalattuneability}{Tempting Concoction}{\abilitytag{Attune}, \abilitytag{Emotion}, \abilitytag{Subtle}}
             \rankline
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make a \glossterm{reactive attack} vs. Mental against it.
@@ -910,7 +910,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus2 accuracy bonus with the attack for every 3 levels beyond 3.
-        \end{attuneability}
+        \end{magicalattuneability}
 
         \ff[9]{Esoteric Concoction+} The time required to find ingredients with your \textit{esoteric concoction} ability is halved.
         In addition, the \glossterm{difficulty value} of the Knowledge check is reduced by 5.
@@ -1197,7 +1197,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This does not allow you to exceed the normal maximum of two metamagic abilities on a single spell.
 
         \ff[9]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
-        \begin{activeability}{Spell Fusion}
+        \begin{magicalactiveability}{Spell Fusion}
             \rankline
             Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
             You cast both spells simultaneously.
@@ -1207,7 +1207,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Roll the attack roll and damage for each spell separately.
 
             After you use this ability, you are unable to take any actions during the \glossterm{action phase} of the following round.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[15]{Adaptive Metamagic+} You can choose an additional spell you know with your \textit{adaptive metamagic} ability.
         In addition, you can apply two metamagic abilities to your chosen spells, rather than only one.
@@ -1219,7 +1219,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
-        \begin{activeability}{Imbued Shot}[\glossterm{Magical}]
+        \begin{magicalactiveability}{Imbued Shot}
             \rankline
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
             Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -1228,14 +1228,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus2.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a projectile \glossterm{strike}, you can choose to treat that as a \glossterm{magical} ability.
         When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
 
         \ff[3]{Imbue Projectile}[Magical] When you cast a spell as a \glossterm{standard action}, if that spell does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
-        \begin{attuneability}{Imbue Projectile}{\abilitytag{Attune}}
+        \begin{magicalattuneability}{Imbue Projectile}{\abilitytag{Attune}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
@@ -1244,7 +1244,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             When you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect on the target of your \textit{imbued shot} ability.
             You must make any attack rolls required for the spell separately from your attack roll with the strike.
             After the spell takes effect this way, your attunement to this ability ends.
-        \end{attuneability}
+        \end{magicalattuneability}
 
         \ff[9]{Phasing Projectiles}[\glossterm{Magical}] Your projectile \glossterm{strikes} ignore \glossterm{cover}.
         In addition, you can ignore ignore all physical obstacles in single one-foot span.
@@ -1535,12 +1535,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The container's size cannot exceed your own size.
 
         \ff[9]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
-        \begin{attuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
+        \begin{magicalattuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
             If you have no free hands, it drops to the ground.
-        \end{attuneability}
+        \end{magicalattuneability}
 
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -1603,7 +1603,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Access to a \glossterm{mystic sphere}.
 
         \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
-        \begin{activeability}{Imbued Blow}[\abilitytag{Magical}]
+        \begin{magicalactiveability}{Imbued Blow}
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
             Because this is a \glossterm{magical} ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -1612,7 +1612,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{6} The accuracy bonus increases to \plus2.
             \featlevel{12} The accuracy bonus increases to \plus3.
             \featlevel{18} The accuracy bonus increases to \plus4.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[1]{Magical Strikes}[\abilitytag{Magical}] Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \glossterm{magical} ability.
         When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
@@ -1622,7 +1622,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[9]{Imbue Weapon}[Magical] When you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
-        \begin{attuneability}{Imbue Weapon}{\abilitytag{Attune}}
+        \begin{magicalattuneability}{Imbue Weapon}{\abilitytag{Attune}}
             \rankline
             The spell does not have its effect immediately.
             Instead, its power is imbued in a non-projectile weapon you hold.
@@ -1632,7 +1632,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If you do, the spell takes effect on the target of your \textit{imbued blow} ability as if you had just cast it.
             You must make any attack rolls required for the spell separately from your attack roll with the strike.
             After the spell takes effect this way, your attunement to this ability ends.
-        \end{attuneability}
+        \end{magicalattuneability}
 
         \ff[15]{Spellsword Conduit+} Whenever you cast a spell as a standard action using a non-projectile weapon as an implement, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes}.
 
@@ -1911,10 +1911,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
         \ff[3]{Augmented Body} You can use the \textit{augmented body} ability whenever you finish a \glossterm{short rest}.
-        \begin{attuneability}{Augmented Body}{\abilitytag{Attune} (deep)}
+        \begin{magicalattuneability}{Augmented Body}{\abilitytag{Attune} (deep)}
             Choose a physical attribute: Strength, Dexterity, or Constitution.
             You gain a \plus1 \glossterm{magic bonus} to that attribute, up to a maximum of 4.
-        \end{attuneability}
+        \end{magicalattuneability}
 
         \ff[9]{Intrinsic Polymorph} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Polymorph} mystic sphere.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
@@ -1997,7 +1997,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Empowered Summons} Once per round, when a creature you create with the \sphere{Summoning} \glossterm{mystic sphere} hits with a \glossterm{strike}, you can add half your \glossterm{power} to the damage dealt.
 
         \ff[3]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
-        \begin{activeability}{Resummon}
+        \begin{magicalactiveability}{Resummon}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you take a short rest.
 
@@ -2010,7 +2010,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} You can use this ability any number of times without taking a short rest.
             \featlevel{15} You can use this ability as a \glossterm{minor action}.
             \featlevel{21} Using this ability only increases your fatigue level by one.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Intrinsic Summoning} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Summoning} mystic sphere.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
@@ -2032,7 +2032,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, the distance you can move the object increases to 30 feet, as if you had that spell's rank 4 upgrade.
 
         \ff[3]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
-        \begin{activeability}{Telekinetic Strike}[Magical]
+        \begin{magicalactiveability}{Telekinetic Strike}
             \rankline
             Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
             Make a melee \glossterm{strike} with a \plus1 accuracy bonus using that weapon.
@@ -2042,7 +2042,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} The accuracy bonus increases to \plus2.
             \featlevel{15} The accuracy bonus increases to \plus3.
             \featlevel{21} The accuracy bonus increases to \plus4.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Intrinsic Telekinesis} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Telekinesis} mystic sphere.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
@@ -2082,7 +2082,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Mystic Power} You gain a bonus to your \glossterm{power} equal to your maximum spell rank with the \sphere{Thaumaturgy} mystic sphere.
 
         \ff[3]{Countermagic} You can use the \textit{countermagic} ability as a standard action.
-        \begin{activeability}{Countermagic}[\abilitytag{Swift}]
+        \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
             \rankline
             Choose a creature within \rngmed range of you.
             If the target uses a \glossterm{magical} ability as a standard action this round, you can make a \glossterm{reactive attack} vs. Mental against that creature.
@@ -2095,7 +2095,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{9} You gain a \plus2 bonus to accuracy with the attack.
             \featlevel{15} The accuracy bonus increases to \plus4.
             \featlevel{21} The accuracy bonus increases to \plus6.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Intrinsic Thaumaturgy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Thaumaturgy} mystic sphere.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
@@ -2122,10 +2122,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can store up to 3 doses in your body with this ability at a time.
 
         \ff[3]{Cleanse Toxins} You can use the \textit{cleanse toxins} ability as a standard action.
-        \begin{activeability}{Cleanse Toxins}
+        \begin{magicalactiveability}{Cleanse Toxins}
             \label{Cleanse Toxins}
             You remove all \glossterm{poisons} and \glossterm{diseases} affecting yourself or one \glossterm{ally} within \medrange.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Intrinsic Toxicology} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Toxicology} mystic sphere.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
@@ -2231,7 +2231,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[15]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[21]{Find the Path}[Magical] You can use the \textit{find the path} ability with ten minutes of concentration.
-        \begin{attuneability}{Find the Path}{\abilitytag{Attune}}
+        \begin{magicalattuneability}{Find the Path}{\abilitytag{Attune}}
             \rankline
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
@@ -2241,7 +2241,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             It does not consider teleportation spells or any other activated abilities you may have which could allow you to bypass physical obstacles.
             It does not see into the future, and changing circumstances may cause the most direct path to change over time.
             It also does not consider hostile creatures, traps, and other passable dangers which may endanger or slow progress.
-        \end{attuneability}
+        \end{magicalattuneability}
     \end{feat}
 
     \begin{feat}{Swiftrunner}{General}
@@ -2288,7 +2288,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % This is very loosely a rank 2 spell effect??
         \ff[3]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
-        \begin{activeability}{Mental Assault}[\abilitytag{Compulsion}]
+        \begin{magicalactiveability}{Mental Assault}[\abilitytag{Compulsion}]
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
             You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
@@ -2298,10 +2298,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus1 accuracy bonus and a \plus1d damage bonus at 6th level and every 3 levels thereafter.
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[9]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{sustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
+        \begin{magicalsustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
             You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
@@ -2318,7 +2318,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             You gain a \plus2 bonus to \glossterm{accuracy} with the attack at 9th level and every 3 levels thereafter.
-        \end{sustainability}
+        \end{magicalsustainability}
 
         \ff[9]{Telepathy+} You can maintain mental channels with up to 5 creatures at once with your telepathy.
         You can send separate thoughts to each creature.
@@ -2362,7 +2362,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In addition, if your legacy item is an apparel item, you may choose both apparel and implement magic item effects for it.
 
         \ff[9]{Twinspell} You can use the \textit{twinspell} ability as a \glossterm{standard action}.
-        \begin{activeability}{Twinspell}
+        \begin{magicalactiveability}{Twinspell}
             \rankline
             You can only use this ability if you have two \glossterm{free hands}.
             After you use this ability, you increase your \glossterm{fatigue level} by two.
@@ -2371,7 +2371,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             You cast both spells simultaneously, one with each hand.
             This gives the spells \glossterm{somatic components}, regardless of any other effects which would would normally prevent you from requiring somatic components.
             Both spells must affect completely different targets, with no overlap between their targets or areas (if any).
-        \end{activeability}
+        \end{magicalactiveability}
 
         \ff[15]{Twinhand Precision+} The bonus from your \textit{twinhand precision} ability increases to \plus2.
 

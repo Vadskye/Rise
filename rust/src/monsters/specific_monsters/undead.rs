@@ -410,7 +410,7 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
                 Creating a skeleton is generally regarded as a fundamentally evil act.
             "),
             (5, r"
-                Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
+                Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \magical abilities.
                 They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
                 In addition, skeletons are always more agile and less strong than the original creature.
                 All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
@@ -589,7 +589,7 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
                 Creating a zombie is generally regarded as a fundamentally evil act.
             "),
             (5, r"
-                Zombies retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \glossterm{magical} abilities.
+                Zombies retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \magical abilities.
                 They lose the ability to wield any weapons, though they can sometimes be found wearing the same armor as the original creature.
                 Instead of using weapons, zombies simply slam into their foes with brute force.
                 In addition, zombies are always stronger and less agile than the original creature.

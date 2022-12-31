@@ -147,7 +147,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You gain a \plus2 bonus to \glossterm{vital rolls}.
                         \item You take a \minus2 penalty to Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
-                        \item You are unable to use any \glossterm{magical} abilities that require a standard action.
+                        \item You are unable to use any \magical abilities that require a standard action.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
                         \item When this ability ends for any reason, you \glossterm{briefly} cannot use it again.
                     \end{itemize}
