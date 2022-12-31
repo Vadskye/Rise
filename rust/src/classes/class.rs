@@ -1144,7 +1144,8 @@ impl Class {
             archetype_headers = archetypes
                 .iter()
                 .map(|a| format!(
-                    "\\tb<\\archetyperef<{}><{}>>",
+                    "\\tb<\\archetyperef{}<{}><{}>>",
+                    if a.is_magical() { "*" } else { "" },
                     self.shorthand_name(),
                     a.name()
                 ))

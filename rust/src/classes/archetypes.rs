@@ -426,7 +426,7 @@ impl ClassArchetype {
             "{} {}",
             description,
             if self.is_magical() {
-                "All abilities from this archetype are \\glossterm{magical}."
+                "All abilities from this archetype are \\magical."
             } else {
                 ""
             }
@@ -450,14 +450,14 @@ impl ClassArchetype {
         rank_ability_descriptions.sort();
         return format!(
             "
-                \\archetypedef{magical_star}<{class_shorthand}><{archetype_name}>
+                \\archetypedef{magical_sparkle}<{class_shorthand}><{archetype_name}>
                 {short_description}
 
                 {rank_abilities}
             ",
             archetype_name = titlecase(self.name()),
             class_shorthand = class_shorthand,
-            magical_star = if self.is_magical() { "*" } else { "" },
+            magical_sparkle = if self.is_magical() { "*" } else { "" },
             rank_abilities = rank_ability_descriptions.join("\n\n"),
             short_description = self.short_description(),
         );
