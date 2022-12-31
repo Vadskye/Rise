@@ -213,6 +213,14 @@ impl ClassArchetype {
         }
     }
 
+    pub fn magical_name(&self) -> String {
+        if self.is_magical() {
+            return format!("{}✨", self.name());
+        } else {
+            return self.name().to_string();
+        }
+    }
+
     pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
         return archetype_rank_abilities(self)
             .into_iter()
@@ -442,13 +450,14 @@ impl ClassArchetype {
         rank_ability_descriptions.sort();
         return format!(
             "
-                \\archetypedef<{class_shorthand}><{archetype_name}>
+                \\archetypedef{magical_star}<{class_shorthand}><{archetype_name}>
                 {short_description}
 
                 {rank_abilities}
             ",
             archetype_name = titlecase(self.name()),
             class_shorthand = class_shorthand,
+            magical_star = if self.is_magical() { "*" } else { "" },
             rank_abilities = rank_ability_descriptions.join("\n\n"),
             short_description = self.short_description(),
         );
@@ -543,10 +552,7 @@ mod tests {
         );
 
         assert_eq!(
-            vec![
-                "Combat Style Rank (2)",
-                "Martial Force"
-            ],
+            vec!["Combat Style Rank (2)", "Martial Force"],
             ClassArchetype::MartialMastery
                 .abilities_at_rank(2)
                 .iter()
