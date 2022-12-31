@@ -591,7 +591,7 @@ def generate_armor():
             material_type="Shield",
             description="""
                 Whenever you use the \\ability<total defense> ability, you can activate this shield.
-                When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that target you this round also the creature using that ability in addition to you.
+                When you do, any \\glossterm<targeted> \\magical abilities that target you this round also the creature using that ability in addition to you.
                 It cannot choose to reduce its accuracy or damage against itself.
                 Any other targets of the ability are affected normally.
             """,

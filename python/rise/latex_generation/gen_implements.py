@@ -108,7 +108,7 @@ def generate_implements():
             material_type="Staff",
             tags=['Swift (see text)'],
             description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\magical ability, you can activate this item.
                 When you do, you also regain that many hit points, and you increase your \\glossterm<fatigue level> by one.
                 This ability has the \\abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
             """,
@@ -123,7 +123,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\magical ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +2 bonus to its Mental defense.
                 This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
@@ -135,7 +135,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\glossterm<magical> ability, you can activate this item.
+                Once per round, when you cause a creature other yourself to regain \\glossterm<hit points> using a \\magical ability, you can activate this item.
                 When you do, the target \\glossterm<briefly> gains a +3 bonus to its Mental defense.
                 This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
             """,
@@ -208,7 +208,7 @@ def generate_implements():
             rank=2,
             material_type="Staff",
             description="""
-                You gain a +15 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                You gain a +15 foot bonus to the \\glossterm<range> of all of your ranged \\magical abilities.
                 This does not affect abilities that do not have a range listed in feet.
             """,
             short_description="Grants +15 foot range",
@@ -218,7 +218,7 @@ def generate_implements():
             rank=4,
             material_type="Staff",
             description="""
-                You gain a +30 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                You gain a +30 foot bonus to the \\glossterm<range> of all of your ranged \\magical abilities.
                 This does not affect abilities that do not have a range listed in feet.
             """,
             short_description="Grants +30 foot range",
@@ -228,7 +228,7 @@ def generate_implements():
             rank=6,
             material_type="Staff",
             description="""
-                You gain a +60 foot bonus to the \\glossterm<range> of all of your ranged \\glossterm<magical> abilities.
+                You gain a +60 foot bonus to the \\glossterm<range> of all of your ranged \\magical abilities.
                 This does not affect abilities that do not have a range listed in feet.
             """,
             short_description="Grants +60 foot range",
@@ -241,7 +241,7 @@ def generate_implements():
             rank=3,
             material_type="Staff",
             description="""
-                Whenever you use a \\glossterm<magical> ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
+                Whenever you use a \\magical ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category, to a maximum of Colossal.
                 This does not affect abilities that create creatures of a particular size.
             """,
             short_description="Increases maximum size category of abilities",
@@ -263,7 +263,7 @@ def generate_implements():
             rank=1,
             material_type="Staff",
             description="""
-                Whenever you use a \\glossterm<magical> ability that deals damage, you may activate this staff.
+                Whenever you use a \\magical ability that deals damage, you may activate this staff.
                 If you do, that ability deals \\glossterm<subdual damage>.
             """,
             short_description="Allows dealing subdual damage",
@@ -276,7 +276,7 @@ def generate_implements():
             rank=1,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +10 foot bonus to your land speed during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\magical ability, you gain a +10 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +1 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +10 speed, maybe +1 accuracy on kill",
@@ -286,7 +286,7 @@ def generate_implements():
             rank=5,
             material_type="Staff",
             description="""
-                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\glossterm<magical> ability, you gain a +20 foot bonus to your land speed during the next round.
+                Whenever you \\glossterm<defeat> a creature with within \\medrange of you with a \\magical ability, you gain a +20 foot bonus to your land speed during the next round.
                 In addition, if the creature was at least one \\glossterm<size category> larger than you, you \\glossterm<briefly> gain a +3 \\glossterm<accuracy> bonus.
             """,
             short_description="Grants +20 speed, maybe +3 accuracy on kill",
@@ -300,7 +300,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can freely exclude a single 5-ft. square from the spell's effect.
+                Whenever you use a \\magical ability that affects an area and does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can freely exclude a single 5-ft. square from the spell's effect.
                 All squares in the final area of the spell must be contiguous.
                 You cannot create split a spell's area into multiple completely separate areas.
             """,
@@ -390,7 +390,7 @@ def generate_implements():
             rank=3,
             material_type="Staff",
             description="""
-                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
                 When you do, choose a location within \\rngshort range.
                 The ability takes effect as if you were in the chosen location.
                 In addition, you increase your \\glossterm<fatigue level> by one.
@@ -419,7 +419,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability with a \\glossterm<range>, you may activate this staff.
+                Whenever you use a \\magical ability with a \\glossterm<range>, you may activate this staff.
                 When you do, you double the spell's range.
                 In addition, you increase your \\glossterm<fatigue level> by two.
             """,
@@ -444,7 +444,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
+                Whenever you use a \\magical ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
                 When you do, you double the spell's area.
                 In addition, you increase your \\glossterm<fatigue level> by two.
             """,
@@ -501,7 +501,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +2 accuracy bonus to the reroll.
+                When you use the \\textit<desperate exertion> ability to affect a \\magical ability, you gain a +2 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +2 bonus with \\textit<desperate exertion>",
@@ -512,7 +512,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +3 accuracy bonus to the reroll.
+                When you use the \\textit<desperate exertion> ability to affect a \\magical ability, you gain a +3 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +3 bonus with \\textit<desperate exertion>",
@@ -523,7 +523,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                When you use the \\textit<desperate exertion> ability to affect a \\glossterm<magical> ability, you gain a +4 accuracy bonus to the reroll.
+                When you use the \\textit<desperate exertion> ability to affect a \\magical ability, you gain a +4 accuracy bonus to the reroll.
                 This stacks with the normal +2 bonus from the \\textit<desperate exertion> ability.
             """,
             short_description="Grants +4 bonus with \\textit<desperate exertion>",
@@ -652,7 +652,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a non-\\glossterm<strike> \\glossterm<magical> ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
+                Whenever you use a non-\\glossterm<strike> \\magical ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
                 When you do, increase the number of targets that the ability affects by one.
                 In addition, you increase your \\glossterm<fatigue level> by one.
                 If the spell does not have a defined range, this staff has no effect on it.
@@ -678,7 +678,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one.
                 During the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
@@ -770,7 +770,7 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\glossterm<magical> ability that deals a subtype of \\glossterm<energy damage>, you may choose to convert that damage to a different subtype of energy damage.
+                Whenever you use a \\magical ability that deals a subtype of \\glossterm<energy damage>, you may choose to convert that damage to a different subtype of energy damage.
                 If the damage also other specific types, those damage types are unchanged.
                 In addition, any non-damaging effects of the attack are unchanged.
             """,

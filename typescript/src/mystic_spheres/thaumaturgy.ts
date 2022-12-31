@@ -277,7 +277,7 @@ export const thaumaturgy: MysticSphere = {
         `,
         targeting: `
           Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-          Each chosen creature must be currently affected by a \\glossterm{magical} condition.
+          Each chosen creature must be currently affected by a \\magical condition.
           In addition, make an attack vs. Mental against one other creature within \\medrange.
         `,
       },

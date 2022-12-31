@@ -1761,7 +1761,7 @@ def generate_apparel():
                 As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
 
                 While viewing through the sensor, your visual acuity is the same as your normal body,
-                    except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
+                    except that it does not share the benefits of any \\magical effects that improve your vision.
                 You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
             """,
             short_description="Can allow you to see at a distance",
