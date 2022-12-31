@@ -278,6 +278,11 @@
     }
 }
 
+\DeclareDocumentCommand{\magicalff}{o m}
+{
+    \ff[#1][#2]{\sparkle}
+}
+
 \DeclareDocumentCommand{\itemhead}{s m o}
 {
     \item
@@ -301,6 +306,15 @@
     \IfBooleanF{#1}
     {
         \hypertargetraised{ft:#2}{}
+    }
+}
+
+\DeclareDocumentCommand{\magicalfeatref}{s m}
+{
+    \IfBooleanTF{#1}{
+        \featref*{#2}\sparkle
+    }{
+        \featref{#2}\sparkle
     }
 }
 
