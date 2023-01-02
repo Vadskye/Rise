@@ -213,14 +213,6 @@ impl ClassArchetype {
         }
     }
 
-    pub fn magical_name(&self) -> String {
-        if self.is_magical() {
-            return format!("{}✨", self.name());
-        } else {
-            return self.name().to_string();
-        }
-    }
-
     pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
         return archetype_rank_abilities(self)
             .into_iter()
