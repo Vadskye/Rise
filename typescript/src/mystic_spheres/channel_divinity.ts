@@ -43,7 +43,7 @@ export const channelDivinity: MysticSphere = {
         4: 'The maximum radius of bright illumination increases to 60 feet.',
         6: 'The maximum radius of bright illumination increases to 120 feet.',
       },
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [
