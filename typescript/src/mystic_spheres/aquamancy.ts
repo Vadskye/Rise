@@ -301,23 +301,6 @@ export const aquamancy: MysticSphere = {
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
-      name: 'Rainstorm',
-
-      effect: `
-        Torrential rain begins falling out of thin air within a \\medarea radius \\glossterm{zone} within \\longrange.
-        The rain extinguishes minor fires such as campfires and torches on contact.
-        Everything in the area is \\trait{impervious} to fire damage.
-      `,
-      rank: 1,
-      scaling: {
-        3: 'You can choose to create a \\largearea radius instead.',
-        5: 'You can choose to create a \\hugearea radius instead.',
-        7: 'You can choose to create a \\gargarea radius instead.',
-      },
-      tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
-    },
-    {
       name: 'Obscuring Mist',
 
       effect: `
@@ -603,6 +586,20 @@ export const aquamancy: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Rainstorm',
+
+      castingTime: 'one minute',
+      effect: `
+        Torrential rain begins falling out of thin air within a \\glossterm{zone} within \\longrange.
+        You choose the radius of the zone, up to a maximum of a \\largearea radius.
+        The rain extinguishes minor fires such as campfires and torches on contact.
+        Everything in the area is \\trait{impervious} to fire damage.
+      `,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
+    },
     {
       name: 'Purify Water',
 
