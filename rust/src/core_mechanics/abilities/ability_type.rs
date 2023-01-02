@@ -14,11 +14,16 @@ impl AbilityType {
         }
     }
 
-    pub fn environment(&self) -> &str {
-        match self {
+    pub fn environment(&self, is_magical: bool) -> String {
+        let base_tag = match self {
             Self::Normal => "activeability",
             Self::Sustain(_) => "sustainability",
             Self::Attune(_) => "attuneability",
+        };
+        return if is_magical {
+            format!("magical{}", base_tag)
+        } else {
+            base_tag.to_string()
         }
     }
 
@@ -30,17 +35,17 @@ impl AbilityType {
         }
     }
 
-    pub fn begin(&self, name: &str) -> String {
+    pub fn begin(&self, name: &str, is_magical: bool) -> String {
         return format!(
             "\\begin<{environment}>*<{name}>{tag}",
-            environment = self.environment(),
+            environment = self.environment(is_magical),
             name = name,
             tag = self.environment_tag()
         );
     }
 
-    pub fn end(&self) -> String {
-        return format!("\\end<{environment}>", environment = self.environment());
+    pub fn end(&self, is_magical: bool) -> String {
+        return format!("\\end<{environment}>", environment = self.environment(is_magical));
     }
 }
 

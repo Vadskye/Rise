@@ -6,6 +6,7 @@ pub fn latex_ability_block(
     ability_type: AbilityType,
     effect: String,
     formatted_tags: Vec<String>,
+    is_magical: bool,
     name: String,
     usage_time: Option<UsageTime>,
 ) -> String {
@@ -17,10 +18,10 @@ pub fn latex_ability_block(
                 {effect}
             {end}
         ",
-        begin = ability_type.begin(&latex_formatting::uppercase_first_letter(&name)),
+        begin = ability_type.begin(&latex_formatting::uppercase_first_letter(&name), is_magical),
         header = latex_ability_header(formatted_tags, usage_time),
         effect = effect,
-        end = ability_type.end(),
+        end = ability_type.end(is_magical),
     );
 }
 
