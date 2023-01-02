@@ -33,7 +33,7 @@ export const chronomancy: MysticSphere = {
         4: 'You can read at five times your normal speed.',
         6: 'You can read at ten times your normal speed.',
       },
-      type: 'Sustain (free)',
+      type: 'Sustain (minor)',
     },
     {
       name: 'Rapid Aging',
