@@ -1310,7 +1310,7 @@ impl Class {
                         In addition, you take half damage from \glossterm{falling damage}.
                         \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
-                        \begin{attuneability}{Speak with Air}{\abilitytag{Attune} (deep)}
+                        \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune} (deep)}
                             \rankline
                             You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the air simple questions and understand its responses.
@@ -1321,7 +1321,7 @@ impl Class {
 
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
@@ -1344,7 +1344,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
                         \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
                         \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
-                        \begin{attuneability}{Speak with Dead}{\abilitytag{Attune}}
+                        \begin{magicalattuneability}{Speak with Dead}{\abilitytag{Attune}}
                             \rankline
                             Choose a corpse within \rngshort range.
                             The corpse must have died no more than 24 hours ago.
@@ -1352,7 +1352,7 @@ impl Class {
                             The creature is able to refuse to speak with you, though you can attempt to persuade it to speak normally, and some creatures may be more willing to talk if they know they are already dead.
                             The corpse must have an intact mouth to be able to speak.
                             This ability ends if 24 hours have passed since the creature died.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
@@ -1386,7 +1386,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
-                        \begin{attuneability}{Speak with Earth}{\abilitytag{Attune}}
+                        \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \rankline
                             You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the earth simple questions and understand its responses.
@@ -1395,7 +1395,7 @@ impl Class {
 
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
@@ -1426,7 +1426,7 @@ impl Class {
                         \parhead{Gift} You are \trait{impervious} to fire damage.
                         \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
                         \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
-                        \begin{attuneability}{Speak with Fire}{\abilitytag{Attune}}
+                        \begin{magicalattuneability}{Speak with Fire}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the fire simple questions and understand its responses.
@@ -1439,7 +1439,7 @@ impl Class {
 
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
                         This can help you deal damage to enemies that are highly resistant to fire damage.
                         In addition, you become immune to fire damage.
@@ -1541,10 +1541,10 @@ impl Class {
 
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
-                        \begin{attuneability}{Divine Strength}{\abilitytag{Attune}}
+                        \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
                             You gain a \plus1 \glossterm{magic bonus} to your Strength.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} tag.
                         Instead, it lasts until you use it again.
@@ -1577,7 +1577,7 @@ impl Class {
                         \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-                        \begin{sustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
+                        \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
                             You must also choose a belief that the target has.
@@ -1590,7 +1590,7 @@ impl Class {
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
-                        \end{sustainability}
+                        \end{magicalsustainability}
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \parhead{Mastery} You are undetectable to all \magical abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
@@ -1611,7 +1611,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
                         \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
-                        \begin{attuneability}{Speak with Water}{\abilitytag{Attune}}
+                        \begin{magicalattuneability}{Speak with Water}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command water within a \areahuge \glossterm{zone} from your location.
                             You can ask the water simple questions and understand its responses.
@@ -1622,7 +1622,7 @@ impl Class {
 
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
-                        \end{attuneability}
+                        \end{magicalattuneability}
                         \parhead{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
                         The bonuses from this domain's gift increase to \plus10.
                         In addition, you gain a \plus1 bonus to Armor and Reflex defenses.
