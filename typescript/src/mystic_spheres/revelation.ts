@@ -830,7 +830,6 @@ export const revelation: MysticSphere = {
     {
       name: 'Telepathic Bond',
 
-      // original targets: up to five ritual participants
       castingTime: 'one minute',
       effect: `
         Each target can communicate mentally through telepathy with each other target.
@@ -849,7 +848,6 @@ export const revelation: MysticSphere = {
     {
       name: 'Long-Distance Bond',
 
-      // original targets: up to five ritual participants
       castingTime: 'one minute',
 
       functionsLike: {
@@ -866,7 +864,6 @@ export const revelation: MysticSphere = {
     {
       name: 'Planar Bond',
 
-      // original targets: up to five ritual participants
       castingTime: 'one minute',
 
       functionsLike: {

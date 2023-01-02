@@ -668,7 +668,7 @@ export const chronomancy: MysticSphere = {
       // Worse than Overland Teleportation in rough terrain, but can be comparable on
       // smooth ground depending on party composition and size.
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains a +30 foot \\glossterm{magic bonus} to its land speed.
         If it takes any action other than movement or is dealt damage, this effect ends.
       `,

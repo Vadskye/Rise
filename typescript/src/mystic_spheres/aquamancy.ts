@@ -628,7 +628,7 @@ export const aquamancy: MysticSphere = {
       name: 'Dampen',
 
       effect: `
-          Choose any number of ritual participants.
+          Choose up to six ritual participants.
           Each target becomes \\glossterm{impervious} to fire damage.
       `,
       rank: 2,
@@ -640,7 +640,7 @@ export const aquamancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       // narrative: '',
@@ -675,7 +675,7 @@ export const aquamancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for its size.
       `,
       // narrative: '',

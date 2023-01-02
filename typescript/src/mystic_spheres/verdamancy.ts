@@ -640,7 +640,7 @@ export const verdamancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose up to five Medium or smaller ritual participants.
+        Choose up to six Medium or smaller ritual participants.
         In addition, choose a living plant that all ritual participants touch during the ritual.
         The plant must be at least one size category larger than the largest chosen ritual participant.
         In addition, choose a destination up to 100 miles away from you on your current plane.
