@@ -17,7 +17,7 @@ def generate_tools():
             consumable=True,
             name="Cleansing Potion",
             rank=4,
-            material_type="Potion",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you.
@@ -41,7 +41,7 @@ def generate_tools():
             consumable=True,
             name="Telepath's Bane",
             rank=2,
-            material_type="Potion",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, you take a -2 penalty to your Intelligence as a \\glossterm<condition>.
@@ -65,7 +65,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Wound Closure",
             rank=1,
-            material_type="Potion",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
@@ -103,7 +103,7 @@ def generate_tools():
             consumable=True,
             name="Potion of Regeneration",
             rank=3,
-            material_type="Potion",
+            material_type="Alchemical",
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, your body's natural healing process is accelerated.
@@ -130,7 +130,7 @@ def generate_tools():
             name="Potion of Healing",
             rank=1,
             tags=["Swift"],
-            material_type="Potion",
+            material_type="Alchemical",
             description="""
                 When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.
                 % This should make it unreasonably time-inefficient to chug potions instead of just resting
@@ -170,7 +170,7 @@ def generate_tools():
             name="Elixir of Resilience",
             rank=1,
             tags=["Attune"],
-            material_type="Potion",
+            material_type="Alchemical",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
@@ -209,7 +209,7 @@ def generate_tools():
             name="Elixir of Potency",
             rank=1,
             tags=["Attune"],
-            material_type="Potion",
+            material_type="Alchemical",
             description="""
                 When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
                 The effects expire after 10 minutes.
