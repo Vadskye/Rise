@@ -697,7 +697,7 @@ export const astromancy: MysticSphere = {
       name: 'Twinned Portals',
 
       effect: `
-        Choose two unoccupied squares on stable ground within \\medrange.
+        Choose two unoccupied squares on stable ground within \\longrange.
         A shimmering portal appears in each of the two squares.
         Each portal appears as an opaque colored disc five feet in diameter.
 
@@ -712,10 +712,6 @@ export const astromancy: MysticSphere = {
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 3,
-      scaling: {
-        5: 'The range increases to \\longrange.',
-        7: 'The range increases to \\distrange.',
-      },
       type: 'Sustain (attuneable, minor)',
     },
     {
@@ -724,7 +720,7 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         name: 'twinned portals',
         exceptThat:
-          'the range increases to \\longrange, and the portals function any number of times per phase intead of only once per phase.',
+          'the portals function any number of times per phase intead of only once per phase.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
