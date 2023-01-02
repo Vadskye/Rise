@@ -53,6 +53,7 @@ class MagicItem(object):
         rank,
         name,
         short_description,
+        is_magical,
         consumable=False,
         effects=None,
         material_type=None,
@@ -63,11 +64,12 @@ class MagicItem(object):
     ):
         self.consumable = consumable
         self.description = description
-        self.rank = rank
-        self.name = name
-        self.tags = tags
-        self.short_description = short_description
+        self.is_magical = is_magical
         self.material_type = material_type
+        self.name = name
+        self.rank = rank
+        self.short_description = short_description
+        self.tags = tags
         self.upgrades = upgrades
 
         self.effects = effects
@@ -127,6 +129,7 @@ class MagicItem(object):
                 rank=upgrade.rank,
                 name=self.name + '+' * (upgrade_tier+1),
                 short_description=upgrade.short_description or self.short_description,
+                is_magical=self.is_magical,
                 consumable=self.consumable,
                 material_type=self.material_type,
                 materials=self.materials,
@@ -143,8 +146,9 @@ class MagicItem(object):
             material_type = 'Body'
         # \\tb<Name> & \\tb<Item Rank (Cost)> & \\tb<Type> & \\tb<Description> & \\tb<Page> \\tableheaderrule
         type_text = f" & {material_type}" if include_type else ""
+        magical_text = "\\sparkle" if self.is_magical else ""
         return f"""
-            \\itemref<{self.name}>
+            \\itemref<{self.name}>{magical_text}
             & {rank_price_text(self, rank)} {type_text}
             & {short_description}
             & \\itempref<{self.name}> \\\\
@@ -166,9 +170,10 @@ class MagicItem(object):
         )
         rank_text = f"Rank~{rank_price_text(self, self.rank)}"
         tag_argument = '[' + self.tag_text() + ']' if self.tag_text() else ''
+        magical_text = "[\\sparkle]" if self.is_magical else ""
         return join(
             f"""
-                \\itemsection<{self.name}>{tag_argument}
+                \\itemsection{magical_text}<{self.name}>{tag_argument}
                 \\vspace<-0.5em>
                 \\spelltwocol<{type_text}><{rank_text}>
                 {self.description}
