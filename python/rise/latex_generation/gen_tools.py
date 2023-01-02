@@ -1,7 +1,7 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem, Upgrade, generate_table
-from rise.latex.util import latexify, longtablify
+from rise.latex.util import latexify
 
 # In general, a rank X potion or alchemical item should be one rank behind an
 # equivalent spell. They require no attunement and can be used by anyone, so
@@ -13,6 +13,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Cleansing Potion",
             rank=4,
@@ -36,6 +37,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Telepath's Bane",
             rank=2,
@@ -59,6 +61,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Potion of Wound Closure",
             rank=1,
@@ -96,6 +99,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Potion of Regeneration",
             rank=3,
@@ -121,6 +125,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Potion of Healing",
             rank=1,
@@ -160,6 +165,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Elixir of Resilience",
             rank=1,
@@ -198,6 +204,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Elixir of Potency",
             rank=1,
@@ -238,6 +245,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Alchemist's Fire",
             rank=1,
@@ -277,6 +285,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Acid Flask",
             rank=2,
@@ -309,6 +318,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Firebomb",
             rank=2,
@@ -343,6 +353,7 @@ def generate_tools():
 
     tools.append(
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Smokestick",
             rank=1,
@@ -360,6 +371,7 @@ def generate_tools():
 
     tools.append(
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Tindertwig",
             rank=0,
@@ -375,6 +387,7 @@ def generate_tools():
 
     tools.append(
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Flash Powder",
             rank=0,
@@ -390,6 +403,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Thunderstone",
             rank=1,
@@ -425,6 +439,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Snowball",
             rank=2,
@@ -451,6 +466,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Antitoxin Elixir",
             rank=1,
@@ -482,6 +498,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Sunrod",
             rank=1,
@@ -506,6 +523,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Tanglefoot Bag",
             rank=2,
@@ -534,6 +552,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Torch",
             rank=0,
@@ -548,6 +567,7 @@ def generate_tools():
             short_description="Emits light",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Everburning Torch",
             rank=1,
@@ -559,6 +579,7 @@ def generate_tools():
             short_description="Emits light for a week",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Brilliant Torch",
             rank=2,
@@ -572,6 +593,7 @@ def generate_tools():
             short_description="Emits brilliant light",
         ),
         MagicItem(
+            is_magical=False,
             consumable=False,
             name="Belt Lantern",
             rank=1,
@@ -588,6 +610,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Potion of Strength",
             rank=1,
@@ -619,6 +642,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             name="Bag of Shrinking",
             rank=1,
             materials=["textiles"],
@@ -652,6 +676,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             name="Bag of Holding",
             rank=4,
             materials=["textiles"],
@@ -685,6 +710,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Bear Trap",
             rank=1,
             materials=["metal"],
@@ -714,6 +740,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=True,
             name="Fireburst Trap",
             rank=2,
             materials=["metal"],
@@ -749,6 +776,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Artisan's Tools",
             rank=0,
             materials=["metal"],
@@ -760,6 +788,7 @@ def generate_tools():
             short_description="Required for some Craft checks",
         ),
         MagicItem(
+            is_magical=False,
             name="Alchemist's Lab",
             rank=2,
             materials=["Alchemy"],
@@ -771,6 +800,7 @@ def generate_tools():
             short_description="Required for some Craft (alchemy) checks",
         ),
         MagicItem(
+            is_magical=False,
             name="Disguise Kit",
             rank=1,
             materials=["Alchemy", "Textiles"],
@@ -782,6 +812,7 @@ def generate_tools():
             short_description="Required for some Disguise checks",
         ),
         MagicItem(
+            is_magical=False,
             name="Medical Kit",
             rank=1,
             materials=["Textiles"],
@@ -793,6 +824,7 @@ def generate_tools():
             short_description="Required for some Medicine checks",
         ),
         MagicItem(
+            is_magical=False,
             name="Thieves' Tools",
             rank=1,
             materials=["Metal", "Textiles"],
@@ -807,6 +839,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Chain, 5 ft.",
             rank=0,
             materials=["Metal"],
@@ -821,6 +854,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Carriage",
             rank=1,
             materials=["Textiles", "Wood"],
@@ -833,6 +867,7 @@ def generate_tools():
             short_description="Fancy carriage that carries up to four people",
         ),
         MagicItem(
+            is_magical=False,
             name="Rowboat",
             rank=1,
             materials=["Wood"],
@@ -844,6 +879,7 @@ def generate_tools():
             short_description="Simple boat for short journeys",
         ),
         MagicItem(
+            is_magical=False,
             name="Ship, Galley",
             rank=5,
             materials=["Metal", "Textiles", "Wood"],
@@ -857,6 +893,7 @@ def generate_tools():
             short_description="Massive, fast-moving boat with 200 crew",
         ),
         MagicItem(
+            is_magical=False,
             name="Ship, Keelboat",
             rank=3,
             materials=["Metal", "Textiles", "Wood"],
@@ -867,6 +904,7 @@ def generate_tools():
             short_description="Slow-moving, seaworthy ship with 15 crew",
         ),
         MagicItem(
+            is_magical=False,
             name="Ship, Longship",
             rank=4,
             materials=["Metal", "Textiles", "Wood"],
@@ -877,6 +915,7 @@ def generate_tools():
             short_description="Long, seaworthy ship with 50 crew",
         ),
         MagicItem(
+            is_magical=False,
             name="Wagon",
             rank=1,
             materials=["Wood"],
@@ -890,6 +929,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Dog, Guard",
             rank=1,
             materials=["none"],
@@ -902,6 +942,7 @@ def generate_tools():
             short_description="Small dog trained to guard areas",
         ),
         MagicItem(
+            is_magical=False,
             name="Dog, Riding",
             rank=1,
             materials=["none"],
@@ -913,6 +954,7 @@ def generate_tools():
             short_description="Medium dog trained for battle",
         ),
         MagicItem(
+            is_magical=False,
             name="Horse",
             rank=1,
             materials=["none"],
@@ -924,6 +966,7 @@ def generate_tools():
             short_description="Large horse not trained for battle",
         ),
         MagicItem(
+            is_magical=False,
             name="Warhorse",
             rank=2,
             materials=["none"],
@@ -935,6 +978,7 @@ def generate_tools():
             short_description="Large horse trained for battle",
         ),
         MagicItem(
+            is_magical=False,
             name="Pony",
             rank=1,
             materials=["none"],
@@ -947,6 +991,7 @@ def generate_tools():
             short_description="Medium pony not trained for battle",
         ),
         MagicItem(
+            is_magical=False,
             name="Warpony",
             rank=1,
             materials=["none"],
@@ -961,6 +1006,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Lock, simple",
             rank=0,
             materials=["Metal"],
@@ -972,6 +1018,7 @@ def generate_tools():
             short_description="Devices difficulty value of 15 to unlock",
         ),
         MagicItem(
+            is_magical=False,
             name="Lock, quality",
             rank=1,
             materials=["Metal"],
@@ -983,6 +1030,7 @@ def generate_tools():
             short_description="Devices difficulty value of 20 to unlock",
         ),
         MagicItem(
+            is_magical=False,
             name="Lock, masterwork",
             rank=2,
             materials=["Metal"],
@@ -997,6 +1045,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Manacles, simple",
             rank=0,
             materials=["Metal"],
@@ -1008,6 +1057,7 @@ def generate_tools():
             short_description="Flexibility difficulty value of 15 to escape",
         ),
         MagicItem(
+            is_magical=False,
             name="Manacles, quality",
             rank=1,
             materials=["Metal"],
@@ -1019,6 +1069,7 @@ def generate_tools():
             short_description="Flexibility difficulty value of 20 to escape",
         ),
         MagicItem(
+            is_magical=False,
             name="Manacles, masterwork",
             rank=2,
             materials=["Metal"],
@@ -1033,6 +1084,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Battering Ram, Portable",
             rank=0,
             materials=["Wood"],
@@ -1047,6 +1099,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Caltrops",
             rank=0,
             materials=["Wood"],
@@ -1070,6 +1123,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Outfit, Courtier's",
             rank=1,
             materials=["Jewelry", "Textiles"],
@@ -1081,6 +1135,7 @@ def generate_tools():
             short_description="Typical attire for courtiers in noble society",
         ),
         MagicItem(
+            is_magical=False,
             name="Outfit, Noble's",
             rank=2,
             materials=["Jewelry", "Textiles"],
@@ -1092,6 +1147,7 @@ def generate_tools():
             short_description="Typical attire for nobility",
         ),
         MagicItem(
+            is_magical=False,
             name="Outfit, Royal",
             rank=3,
             materials=["Jewelry", "Textiles"],
@@ -1111,6 +1167,7 @@ def generate_tools():
     # Stage 3 effects get to be rank+4, since they are slow and rare
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Nitharit",
             rank=1,
@@ -1126,6 +1183,7 @@ def generate_tools():
         ),
         # -2 ranks for -1d
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Sassone Leaf",
             rank=1,
@@ -1141,6 +1199,7 @@ def generate_tools():
         ),
         # -2 ranks for -1d
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Jellyfish Extract",
             rank=1,
@@ -1156,6 +1215,7 @@ def generate_tools():
         ),
         # +1 rank for +1 accuracy
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Bloodroot",
             rank=2,
@@ -1170,6 +1230,7 @@ def generate_tools():
             short_description="Dazes and eventually stuns",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Arsenic",
             rank=3,
@@ -1184,6 +1245,7 @@ def generate_tools():
             short_description="Deals 2d6+2 damage",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Dragon Bile",
             rank=5,
@@ -1197,6 +1259,7 @@ def generate_tools():
             short_description="Deals 2d10+5 damage endlessly",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Insanity Mist",
             rank=5,
@@ -1212,6 +1275,7 @@ def generate_tools():
         ),
         # +1 rank for +1 accuracy
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Black Lotus",
             rank=6,
@@ -1233,6 +1297,7 @@ def generate_tools():
     # works as if it was 2 ranks higher
     tools += [
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Asp Venom",
             rank=1,
@@ -1248,6 +1313,7 @@ def generate_tools():
         ),
         # +1 rank for +1 accuracy
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Giant Wasp Venom",
             rank=1,
@@ -1263,6 +1329,7 @@ def generate_tools():
         ),
         # +1 rank for +1 accuracy
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Black Adder Venom",
             rank=2,
@@ -1277,6 +1344,7 @@ def generate_tools():
         ),
         # +2 ranks for full power
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Wyvern Venom",
             rank=3,
@@ -1291,6 +1359,7 @@ def generate_tools():
         ),
         # +1 rank for +1 accuracy, +2 ranks for full power
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Purple Worm Venom",
             rank=4,
@@ -1304,6 +1373,7 @@ def generate_tools():
             short_description="Deals 4d6+7 damage endlessly",
         ),
         MagicItem(
+            is_magical=True,
             consumable=True,
             name="Poison, Cockatrice Venom",
             rank=5,
@@ -1318,6 +1388,7 @@ def generate_tools():
             short_description="Slows and stuns, eventually petrifies",
         ),
         MagicItem(
+            is_magical=False,
             consumable=True,
             name="Poison, Blood Leech Venom",
             rank=5,
@@ -1334,6 +1405,7 @@ def generate_tools():
 
     tools += [
         MagicItem(
+            is_magical=False,
             name="Universal Artisan's Tools",
             rank=1,
             materials=["metal"],
