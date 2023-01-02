@@ -260,13 +260,13 @@
     \prevdepth=\tpd
 }
 
-\DeclareDocumentEnvironment{feat}{m m o}
+\DeclareDocumentEnvironment{feat}{m o m}
 {
-    \subsection[#1~#2]{
+    \subsection[#1~#3]{
         \protect
         \hypertargetraised{feat:#1}{
             \protect
-            \hyperlink{ft:#1}{#1~[#2]\IfValueT{#3}{#3}}
+            \hyperlink{ft:#1}{#1\IfValueT{#2}{#2}~[#3]}
         }
     }
     \label{feat:#1}
@@ -275,7 +275,7 @@
 
 \DeclareDocumentEnvironment{magicalfeat}{m m}
 {
-    \begin{feat}{#1}{#2}[\sparkle]
+    \begin{feat}{#1}[\sparkle]{#2}
 }
 {
     \end{feat}

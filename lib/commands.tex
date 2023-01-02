@@ -262,25 +262,21 @@
 % args:
 %   level
 %   name
-%   ability type, if any
+%   suffix
 \DeclareDocumentCommand{\ff}{o m o}
 {
     \IfValueTF{#1}
     {
-        \IfValueTF{#3}
-        { \nth{#1}~--~\textbf{#2}~(#3): }
-        { \nth{#1}~--~\textbf{#2}: }
+        { \nth{#1}~--~\textbf{#2}\IfValueT{#3}{#3}: }
     }
     {
-        \IfValueTF{#3}
-        { \parhead{#2~(#3)} }
-        { \parhead{#2} }
+        { \parhead{#2\IfValueT{#3}{#3}}}
     }
 }
 
 \DeclareDocumentCommand{\magicalff}{o m}
 {
-    \ff[#1][#2]{\sparkle}
+    \ff[#1]{#2}[\sparkle]
 }
 
 \DeclareDocumentCommand{\itemhead}{s m o}
@@ -552,7 +548,7 @@
 % \, is a small non-breaking space
 \DeclareDocumentCommand{\sparkle}{}{\,\includegraphics[width=0.75\fsize]{emoji/sparkles}}
 
-\DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle}
+\DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
 
 \ExplSyntaxOff
 
