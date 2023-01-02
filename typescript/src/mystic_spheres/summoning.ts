@@ -365,27 +365,6 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Summon Mount',
-
-      functionsLike: {
-        exceptThat: `
-        you must also choose yourself or an \\glossterm{ally} within \\medrange to ride the summoned creature.
-        The summoned creature appears to be either a Large horse or a Medium pony.
-        It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
-        The creature follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
-        `,
-        name: 'summon monster',
-      },
-      rank: 2,
-      scaling: {
-        4: `The creature gains a +1 bonus to its defenses.`,
-        6: `The defense bonus increases to +2.`,
-      },
-      tags: ['Manifestation'],
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Summon Horde -- Dogs',
 
       attack: {
@@ -531,7 +510,7 @@ export const summoning: MysticSphere = {
   ],
   rituals: [
     {
-      name: 'Ritual Mount',
+      name: 'Summon Mount',
 
       castingTime: 'one minute',
       effect: `
