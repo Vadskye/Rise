@@ -992,7 +992,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
       `,
       rank: 4,
@@ -1036,7 +1036,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
       `,
       // narrative: '',
