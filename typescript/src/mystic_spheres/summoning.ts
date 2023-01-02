@@ -518,7 +518,7 @@ export const summoning: MysticSphere = {
         This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount for the chosen creature.
         The creature appears in an unoccupied location on stable grond within \\medrange.
         It comes with a bit and bridle and a riding saddle, and will only accept the chosen creature as a rider.
-        It has the same statistics as a creature from the \\spell{summon monster} spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
+        It has the same statistics as a creature from the \\spell{summon defensive monster} spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
       `,
       rank: 2,
       tags: ['Manifestation'],
