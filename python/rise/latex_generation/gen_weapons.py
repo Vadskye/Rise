@@ -3,7 +3,7 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem, Upgrade, generate_table
-from rise.latex.util import latexify, longtablify
+from rise.latex.util import latexify
 from rise.latex.tags import add_attune_tag
 
 
@@ -13,6 +13,7 @@ def create_weapon(name, rank, description, short_description, tags=None, upgrade
         rank=rank,
         description=description,
         short_description=short_description,
+        is_magical=True,
         materials=["as base weapon"],
         tags=add_attune_tag(tags),
         upgrades=upgrades,

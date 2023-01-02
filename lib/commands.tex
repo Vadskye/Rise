@@ -527,17 +527,17 @@
     \parhead{Advancement}
 }
 
-\DeclareDocumentCommand{\itemsection}{m o}
+\DeclareDocumentCommand{\itemsection}{o m o}
 {
-    \subsubsection[#1]{
+    \subsubsection[#2]{
         \protect
-        \hypertargetraised{item:#1}{
+        \hypertargetraised{item:#2}{
             \protect
-            \hyperlink{itemtable:#1}{
-                \IfValueTF{#2}{
-                    \sectiontwocol{#1}{\normalsize #2}
+            \hyperlink{itemtable:#2}{
+                \IfValueTF{#3}{
+                    \sectiontwocol{#2\IfValueT{#1}{#1}}{\normalsize #3}
                 }{
-                    #1
+                    #2\IfValueT{#1}{#1}
                 }
             }
         }
