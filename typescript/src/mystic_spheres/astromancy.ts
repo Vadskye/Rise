@@ -755,7 +755,7 @@ export const astromancy: MysticSphere = {
       name: 'Plane Shift',
       rank: 4,
       effect: `
-        Choose a \\glossterm{planar rift} within \\medrange and up to five Medium or smaller ritual participants.
+        Choose a \\glossterm{planar rift} within \\medrange and up to six Medium or smaller ritual participants.
         Each creature \\glossterm{teleports} to the unoccupied spaces closest to the other side of the planar rift.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
         For details about \\glossterm{planar rifts}, see \\pcref{Planar Rifts}.
@@ -771,7 +771,7 @@ export const astromancy: MysticSphere = {
       name: 'Astral Projection',
 
       effect: `
-        Choose up to five Medium or smaller ritual participants.
+        Choose up to six Medium or smaller ritual participants.
         The group of creatures \\glossterm{teleports} to a random location within the Inner Astral Plane (see \\pcref{The Astral Plane}).
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -790,7 +790,7 @@ export const astromancy: MysticSphere = {
       effect: `
         This ritual can only be performed on the Astral Plane.
 
-        Choose up to five Medium or smaller ritual participants.
+        Choose up to six Medium or smaller ritual participants.
         Each target \\glossterm{teleports} to the last spaces they occupied on their home planes.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
       `,
@@ -843,7 +843,7 @@ export const astromancy: MysticSphere = {
       rank: 3,
       effect: `
         When you perform this ritual, you must name an \\glossterm{astral beacon} connected to a location on your current plane.
-        Choose up to five Medium or smaller ritual participants.
+        Choose up to six Medium or smaller ritual participants.
         Each target is teleported to the area defined by the beacon.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -858,7 +858,7 @@ export const astromancy: MysticSphere = {
       name: 'Intraplanar Teleportation',
       rank: 4,
       effect: `
-        Choose a destination on your current plane, and up to five Medium or smaller ritual participants.
+        Choose a destination on your current plane, and up to six Medium or smaller ritual participants.
         Each target is teleported to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 

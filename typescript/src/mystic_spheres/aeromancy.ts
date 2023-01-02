@@ -580,7 +580,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains the ability to breathe clear, clean air regardless of its surroundings.
         This can allow it to breathe underwater and avoid inhalation-based poisons.
       `,
@@ -593,7 +593,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains a 30 foot \\glossterm{glide speed}.
       `,
       // narrative: '',
@@ -605,7 +605,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         If it takes any action other than movement or is dealt damage, this effect ends.
       `,
@@ -618,7 +618,7 @@ export const aeromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose any number of ritual participants.
+        Choose up to six ritual participants.
         Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} and poor \\glossterm{maneuverability} (see \\pcref{Flight}).
         If it takes any action other than movement or is dealt damage, this effect ends.
       `,

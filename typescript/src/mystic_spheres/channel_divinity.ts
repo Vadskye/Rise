@@ -438,7 +438,7 @@ export const channelDivinity: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose a destination on your current plane, and up to five Medium or smaller ritual participants.
+        Choose a destination on your current plane, and up to six Medium or smaller ritual participants.
         Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
