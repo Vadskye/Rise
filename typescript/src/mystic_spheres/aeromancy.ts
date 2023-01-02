@@ -483,21 +483,6 @@ export const aeromancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Airborne Jumper',
-
-      effect: `
-        If you are \\glossterm{trained} with the Jump skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
-      type: 'Attune',
-    },
-    {
       name: 'Wall of Wind',
 
       effect: `
