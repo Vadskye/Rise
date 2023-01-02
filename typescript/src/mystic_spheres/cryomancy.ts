@@ -251,7 +251,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 \\glossterm{power} cold damage.
+          The target takes 1d6 + \\glossterm{power} cold damage.
           In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
           If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
