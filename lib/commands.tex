@@ -546,7 +546,8 @@
 }
 
 % \, is a small non-breaking space
-\DeclareDocumentCommand{\sparkle}{}{\,\includegraphics[width=0.75\fsize]{emoji/sparkles}}
+% \sparklespaceless is defined in the html/pdf files
+\DeclareDocumentCommand{\sparkle}{}{\,\sparklespaceless}
 
 \DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
 
