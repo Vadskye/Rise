@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
-use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, Targeting};
+use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
@@ -135,9 +135,6 @@ impl Attack {
                 tags_text.push(tag.latex());
             }
         }
-        if self.is_magical {
-            tags_text.push(AbilityTag::Magical.latex());
-        }
         let usage_time = if let Targeting::CausedHpLoss(_) = self.targeting {
             Some(UsageTime::Triggered)
         } else {
@@ -147,6 +144,7 @@ impl Attack {
             self.hit.ability_type(),
             self.latex_effect(creature),
             tags_text,
+            self.is_magical,
             self.name.clone(),
             usage_time,
         );

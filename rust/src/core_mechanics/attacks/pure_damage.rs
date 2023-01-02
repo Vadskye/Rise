@@ -146,12 +146,11 @@ mod tests {
 
         assert_eq!(
             "
-\\begin<ability>*<Mystic Bolt>
-\\abilitytag{Magical}
+\\begin<magicalactiveability>*<Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 \\hit The target takes 1d8+2 energy damage.
-\\end<ability>",
+\\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );
     }
@@ -170,12 +169,11 @@ The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 
         assert_eq!(
             "
-\\begin<ability>*<Greater Mystic Bolt>
-\\abilitytag{Magical}
+\\begin<magicalactiveability>*<Greater Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 \\hit The target takes 2d8+2 energy damage.
-\\end<ability>",
+\\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );
     }
@@ -194,12 +192,11 @@ The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 
         assert_eq!(
             "
-\\begin<ability>*<Supreme Mystic Bolt>
-\\abilitytag{Magical}
+\\begin<magicalactiveability>*<Supreme Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\longrange.
 \\hit The target takes 4d10+2 energy damage.
-\\end<ability>",
+\\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );
     }

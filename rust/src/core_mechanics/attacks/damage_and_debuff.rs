@@ -187,13 +187,12 @@ mod tests {
 
         assert_eq!(
             "
-\\begin<ability>*<Organ Failure>
-\\abilitytag{Magical}
+\\begin<magicalactiveability>*<Organ Failure>
 \\rankline
 The $name makes a +0 attack vs. Fortitude against one creature within \\medrange.
 \\hit The target takes 1d4 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
-\\end<ability>",
+\\end<magicalactiveability>",
             get_standard_ability_block(organ_failure)
         );
     }
@@ -214,13 +213,12 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 
         assert_eq!(
             "
-\\begin<ability>*<Super Organ Failure>
-\\abilitytag{Magical}
+\\begin<magicalactiveability>*<Super Organ Failure>
 \\rankline
 The $name makes a +5 attack vs. Fortitude against one creature within \\longrange.
 \\hit The target takes 2d10 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
-\\end<ability>",
+\\end<magicalactiveability>",
             get_standard_ability_block(organ_failure)
         );
     }
