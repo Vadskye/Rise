@@ -612,13 +612,13 @@
         \begin{itemize}
             \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
             \itemhead{Deep Darkness}[Magical] A drow can use the \textit{deep darkness} ability as a \glossterm{standard action}.
-                \begin{sustainability}{Deep Darkness}{\abilitytag{Sustain} (minor)}
+                \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (minor)}
                     \rankline
                     \target{One \glossterm{zone} within \rngmed range}
                     You can choose this ability's radius, up to a maximum of a \areamed radius.
                     Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
                     Any object or effect which blocks light also blocks this spell's effect.
-                \end{sustainability}
+                \end{magicalsustainability}
             \itemhead{Drow Prejudice} Almost all surface-dwellers have negative associations with drow.
                 Drow have an Opposition relationship with most people that they meet, which influences people's behavior and makes Persuasion checks harder (see \pcref{Persuasion}).
                 People in some locations, such as deep underground, do not have this attitude.
@@ -730,7 +730,7 @@
             This brief hovering does not cause you to suffer penalties for flying.
 
             \cf{Hrp}[2]{Luring Song} You can use the \textit{luring song} ability as a standard action.
-            \begin{activeability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
+            \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
                     \rankline
                     Make an attack vs. Mental against a creature within \longrange.
                     \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
@@ -744,7 +744,7 @@
                     \rankline
                     \rank{4} You can target an additional creature within range.
                     \rank{6} The maximum number of targets increases to 5.
-                \end{activeability}
+                \end{magicalactiveability}
 
             \cf{Hrp}[2]{Raking Talons} You gain a \plus1d damage bonus with all \glossterm{natural weapons}.
 
@@ -762,7 +762,7 @@
 
             % dazed enemies in medarea radius is a rank 5 spell. charm + not a condition make this better.
             \cf{Hrp}[5]{Siren Song} You can use the \textit{siren song} ability as a standard action.
-            \begin{sustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
+            \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                 \rankline
                 Make an attack vs. Mental against any number of creatures within a \medarea radius from you.
                 \hit Each target is both \charmed by you and \dazed as long as it can still hear you sing.
@@ -770,7 +770,7 @@
                 This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice that it is being influenced.
                 \rankline
                 \rank{7} The area increases to a \largearea radius.
-            \end{sustainability}
+            \end{magicalsustainability}
 
             \cf{Hrp}[6]{Agile Flight} Your flight improves to have good maneuverability (see \pcref{Flying Maneuverability}).
             In addition, your maximum height increases to 30 feet.

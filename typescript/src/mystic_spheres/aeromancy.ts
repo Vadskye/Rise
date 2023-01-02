@@ -435,6 +435,22 @@ export const aeromancy: MysticSphere = {
       },
     },
     {
+      name: 'Dust In The Eyes',
+
+      attack: {
+        hit: `
+          The target is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against one creature within \\longrange.
+          If there is dirt, dust, or a collection of loose objects of similar size within 15 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
+        `,
+      },
+      // narrative: '',
+      rank: 2,
+      scaling: 'accuracy',
+    },
+    {
       name: 'Dustblind',
 
       attack: {
