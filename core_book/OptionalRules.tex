@@ -664,7 +664,7 @@
         \parhead{Special Abilities}
         \begin{raggeditemize}
             \itemhead{Fae Step} As a standard action, you can use the \ability{fae step} ability.
-            \begin{activeability}{Fae Step}[\abilitytag{Magical}]
+            \begin{magicalactiveability}{Fae Step}
                 \rankline
                 You \glossterm{teleport} into an unoccupied location within \shortrange on a stable surface that can support your weight.
                 If the destination is invalid, this ability fails with no effect.
@@ -674,7 +674,7 @@
                 \rank{3} The range increases to \medrange.
                 \rank{5} The range increases to \longrange.
                 \rank{7} The range increases to \distrange.
-            \end{activeability}
+            \end{magicalactiveability}
             \itemhead{Fae Season} Eladrin respond strongly to their emotions, and change their abilities based on the season they currently represent.
                 An eladrin must choose one of the following seasons when it finishes a \glossterm{short rest}.
                 The chosen season lasts until it changes to a different season.
@@ -1054,7 +1054,7 @@
 
         \subsubsection{Tiefling Archetype}
             \cf{Tif}[1]{Abyssal Hop} You can use the \ability{abyssal hop} ability as a standard action.
-            \begin{activeability}{Abyssal Hop}[\abilitytag{Magical}]
+            \begin{magicalactiveability}{Abyssal Hop}
                 \rankline
                 You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
                 If the destination is invalid, this spell fails with no effect.
@@ -1067,7 +1067,7 @@
                 \rank{5} The damage increases to 2d10.
                 \rank{6} The damage increases to 4d6.
                 \rank{7} The damage increases to 4d10.
-            \end{activeability}
+            \end{magicalactiveability}
 
             \cf{Tif}[1]{Infernal Resilience} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance}.
 
@@ -1076,7 +1076,7 @@
             You gain a benefit based on your chosen ancestry.
             \begin{itemize}
                 \item Hellfire Conduit: You can use the \textit{infernal rebuke} ability as a standard action.
-                    \begin{activeability}{Infernal Rebuke}[\abilitytag{Magical}]
+                    \begin{magicalactiveability}{Infernal Rebuke}
                         \rankline
                         Make an attack vs. Fortitude against one creature within \shortrange.
                         You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
@@ -1088,10 +1088,10 @@
                         \rank{5} The damage increases to 4d6.
                         \rank{6} The damage increases to 4d10.
                         \rank{7} The damage increases to 5d10.
-                    \end{activeability}
+                    \end{magicalactiveability}
                 \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
                     In addition, you can use the \ability{charming temptation} ability as a standard action.
-                    \begin{sustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Magical}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+                    \begin{magicalsustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
                         \rankline
                         \noindent
 
@@ -1108,7 +1108,7 @@
 
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 2.
                         \vspace{0.1em}
-                    \end{sustainability}
+                    \end{magicalsustainability}
                 \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
                     In addition, you gain a \plus1d bonus to your damage with all weapons.
             \end{itemize}
@@ -1122,7 +1122,7 @@
                     In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                     In addition, you can use the \ability{dominating temptation} ability as a standard action.
-                    \begin{activeability}{Dominating Temptation}[\abilitytag{Magical}]
+                    \begin{magicalactiveability}{Dominating Temptation}
                         \rankline
                         \noindent
                         Make an attack vs. Mental against one creature within \shortrange.%
@@ -1135,12 +1135,12 @@
                         \rankline
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
                         \vspace{0.1em}
-                    \end{activeability}
+                    \end{magicalactiveability}
                 \item Unholy Might: You can use the \ability{unholy strength} ability as a standard action.
-                    \begin{attuneability}{Unholy Surge}{\abilitytag{Attune}, \abilitytag{Magical}}
+                    \begin{magicalattuneability}{Unholy Surge}{\abilitytag{Attune}}
                         \rankline
                         You gain a \plus1 \glossterm{magic bonus} to your Strength.
-                    \end{attuneability}
+                    \end{magicalattuneability}
             \end{itemize}
 
             \cf{Tif}[5]{Greater Hellfire Tolerance} You become \trait{immune} to fire damage.
