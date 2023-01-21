@@ -174,7 +174,7 @@ export const verdamancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        You may use the higher of your Strength and your Willpower to determine your damage with strikes using the weapon (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
       narrative: `

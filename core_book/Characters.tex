@@ -48,7 +48,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             \begin{raggeditemize}
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
-                \item You add half your Strength in \glossterm{dice increments} to your damage and healing with \glossterm{mundane} abilities (see \pcref{Dice Bonuses From Attributes}).
+                \item You add your Strength to your level to determine your \glossterm{mundane power} (see \pcref{Power}).
                 \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
                 \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
             \end{raggeditemize}
@@ -73,7 +73,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Constitution tend to have strong defensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Constitution to your level for the purpose of determining your \glossterm{hit points} and \glossterm{damage resistance} (see \pcref{Hit Points}, and \pcref{Damage Resistance}).
+                \item You add your Constitution to your level to determine your \glossterm{hit points} (see \pcref{Hit Points}).
                 \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
                 \item You add your Constitution to your Fortitude defense.
                 \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
@@ -102,7 +102,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Perception tend to have strong offensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your Perception to your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item You add your Perception to your level to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
                 \item You add your Perception to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
             \end{raggeditemize}
         }
@@ -113,8 +113,8 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Willpower tend to be better at attacking with and defending against magical abilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your Willpower in \glossterm{dice increments} to your damage and healing with \magical abilities (see \pcref{Dice Bonuses From Attributes}).
-                \item You add half your Willpower to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
+                \item You add your Willpower to your level to determine your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                \item You add your Willpower to your level to determine your \glossterm{magical power} (see \pcref{Power}).
                 \item You add your Willpower to your Mental defense.
             \end{raggeditemize}
         }
@@ -135,7 +135,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             For more extreme characters, you may use the ``savant array'':
 
             % 8 + 3 + 3 + 1 = 15
-            4, 2, 2, 1, 0, 0.
+            4, 2, 2, 1, 0, 0
 
             Finally, for more well-rounded characters, you may use the ``balanced array'':
 
@@ -401,18 +401,16 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Good vs. Evil}
         The ancient battle between good and evil takes many forms, and distinguishing good from evil is a deeply complex task.
-        For the purposes of Rise, good and evil are strictly defined according to selfishness vs. altruism.
-        The actions of good characters may at times be morally reprehensible, and the actions of evil characters may seem to be virtuous.
-        However, this narrow definition of good and evil avoids the complexities of defining a more robust moral system while preserving the fundamental conflict between good and evil.
+        For the purposes of Rise, good and evil are strictly defined according to selfishness and altruism.
+        A good character may take actions that seem morally reprehensible to other people, but they would be motivated by their selfless and genuine belief that they are doing the right thing.
+        Likewise, the action of an evil character may have broadly positive outcomes, but they would take that action because of the benefit that they personally gain.
+        This narrow definition of good and evil avoids the complexities of defining a more robust moral system while preserving the fundamental conflict between good and evil.
 
         \parhead{Good} Good characters are altruistic.
         They take other creatures into account when making decisions, and actively try to help or improve others around them.
         Good characters may have significant disagreements about what actions are best, but they consistently prioritize the good of others or the ``greater good'' over their own desires.
         Different good characters may also have different perspectives on who they should take into account when making decisions.
         For example, some good characters actively work to protect animals and plants, while others only care about sapient creatures.
-
-        Sometimes, altruistic characters can commit reprehensible actions out of necessity or because they believe that a greater good is being served.
-        As long as their motivation is selfless, those characters are still considered to be ``good'' from the perspective of Rise's alignment system, which does not attempt to model all of the complexities of real-world morality.
 
         \parhead{Evil} Evil characters are selfish.
         They consistently prioritize their own desires and needs over the desires of others, even their allies or friends.
@@ -669,44 +667,69 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item Your \glossterm{hit points} increase (see \pcref{Hit Points}).
         \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
         \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
+        \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy})
         \item At even levels, your bonus with \glossterm{trained} skills increases (see \pcref{Trained Skills})
-        \item At even levels, your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
         \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
         \item At 3rd level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
         \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
+        \item At 6th level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
     \end{raggeditemize}
 
     At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
     For example, you could change one of your trained skills for a different skill, change which weapon groups you are proficient with, or change the \glossterm{mystic spheres} you have access to (and corresponding spells).
     The GM may ask for a specific narrative justification for the change, require spending in-game time to retrain, or disallow changing some fundamental aspects of your character.
 
+    % power scaling logic:
+    % in the old system, +2 str was +1d, which was:
+    % * +1 damage while you have 1 damage die, which is usually levels 1-6 (assuming a 1d8 weapon or a high damage spell)
+    % * +2 damage while you have 2 damage dice, which is usually levels 7-12
+    % * +4 damage while you have 4 damage dice, which is usually levels 13+
+    % So in the new system:
+    % * At level 1, +1 str is +0.5 damage
+    % * At level 7, +1 str is +1 damage
+    % * At level 13, +1 str is +2 damage
+    % * At level 19, +1 str is +3 damage?
+    % * At level 25, +1 str is +4 damage??
+
     \begin{dtable!*}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{Accuracy, Defenses, Skills} & \tb{Special}                        & \tb{XP} \tableheaderrule
-            1st        & 1                   & \tdash                          & \tdash                              & 0      \\
-            2nd        & \tdash              & \plus1                          & \tdash                              & 10     \\ % +10 xp
-            3rd        & \tdash              & \plus1                          & Legacy item: rank 2                 & 25     \\ % +15 xp
-            4th        & 2                   & \plus2                          & \tdash                              & 45     \\ % +20 xp
-            5th        & \tdash              & \plus2                          & \plus1 \glossterm{attunement point} & 70     \\ % +25 xp
-            6th        & \tdash              & \plus3                          & \tdash                              & 100    \\ % +30 xp
-            7th        & 3                   & \plus3                          & \tdash                              & 140    \\ % +40 xp
-            8th        & \tdash              & \plus4                          & \tdash                              & 200    \\ % +60 xp
-            9th        & \tdash              & \plus4                          & Legacy item: ranks 4 and 2          & 300    \\ % +100 xp
-            10th       & 4                   & \plus5                          & \tdash                              & 450    \\ % +150 xp
-            11th       & \tdash              & \plus5                          & \plus1 \glossterm{attunement point} & 700    \\ % +250 xp
-            12th       & \tdash              & \plus6                          & \tdash                              & 1,000  \\ % +300 xp
-            13th       & 5                   & \plus6                          & \tdash                              & 1,400  \\ % +400 xp
-            14th       & \tdash              & \plus7                          & \tdash                              & 2,000  \\ % +600 xp
-            15th       & \tdash              & \plus7                          & Legacy item: ranks 6 and 4          & 3,000  \\ % +1000 xp
-            16th       & 6                   & \plus8                          & \tdash                              & 4,500  \\ % +1,500 xp
-            17th       & \tdash              & \plus8                          & \tdash                              & 7,000  \\ % +2,500 xp
-            18th       & \tdash              & \plus9                          & \tdash                              & 10,000 \\ % +3,000 xp
-            19th       & 7                   & \plus9                          & \tdash                              & 14,000 \\
-            20th       & \tdash              & \plus10                         & \tdash                              & 20,000 \\
-            21st       & \tdash              & \plus10                         & Legacy item: ranks 7 and 6          & 30,000 \\
+        \begin{dtabularx}{\textwidth}{l l l l l l l >{\lcol}X}
+            \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Power} & \tb{Accuracy, Defenses, Skills} & \tb{XP} & \tb{Special}                \tableheaderrule
+            1st                    & 1                   & 10      & 1       & 1          & \tdash                          & 0       & \tdash                     \\
+            2nd                    & \tdash              & 11      & 2       & 2          & \plus1                          & 10      & \tdash                     \\ % +10 xp
+            3rd                    & \tdash              & 12      & 3       & 2          & \plus1                          & 25      & Legacy item: rank 2        \\ % +15 xp
+            4th                    & 2                   & 13      & 4       & 3          & \plus2                          & 45      & \tdash                     \\ % +20 xp
+            5th                    & \tdash              & 14      & 5       & 3          & \plus2                          & 70      & \tdash                     \\ % +25 xp
+            6th                    & \tdash              & 16      & 6       & 4          & \plus3                          & 100     & \plus1 to two attributes   \\ % +30 xp
+            7th                    & 3                   & 18      & 7       & 4          & \plus3                          & 140     & \tdash                     \\ % +40 xp
+            8th                    & \tdash              & 20      & 9       & 5          & \plus4                          & 200     & \tdash                     \\ % +60 xp
+            9th                    & \tdash              & 22      & 10      & 6          & \plus4                          & 300     & Legacy item: ranks 4 and 2 \\ % +100 xp
+            10th                   & 4                   & 25      & 12      & 7          & \plus5                          & 450     & \tdash                     \\ % +150 xp
+            11th                   & \tdash              & 28      & 13      & 8          & \plus5                          & 700     & \tdash                     \\ % +250 xp
+            12th                   & \tdash              & 32      & 15      & 9          & \plus6                          & 1,000   & \plus1 to two attributes   \\ % +300 xp
+            13th                   & 5                   & 36      & 16      & 10         & \plus6                          & 1,400   & \tdash                     \\ % +400 xp
+            14th                   & \tdash              & 40      & 18      & 12         & \plus7                          & 2,000   & \tdash                     \\ % +600 xp
+            15th                   & \tdash              & 44      & 20      & 14         & \plus7                          & 3,000   & Legacy item: ranks 6 and 4 \\ % +1000 xp
+            16th                   & 6                   & 50      & 22      & 16         & \plus8                          & 4,500   & \tdash                     \\ % +1,500 xp
+            17th                   & \tdash              & 56      & 25      & 18         & \plus8                          & 7,000   & \tdash                     \\ % +2,500 xp
+            18th                   & \tdash              & 64      & 28      & 20         & \plus9                          & 10,000  & \plus1 to two attributes   \\ % +3,000 xp
+            19th                   & 7                   & 72      & 32      & 22         & \plus9                          & 14,000  & \tdash                     \\
+            20th                   & \tdash              & 80      & 36      & 25         & \plus10                         & 20,000  & \tdash                     \\
+            21st                   & \tdash              & 90      & 40      & 28         & \plus10                         & 30,000  & Legacy item: ranks 7 and 6 \\
+            \tb{Epic Values}\fn{3} & \tdash              & \tdash  & \tdash  & \tdash     & \tdash                          & \tdash  & \tdash                     \\
+            22nd                   & \tdash              & 100     & 44      & 31         & \plus11                         & \tdash  & \tdash                     \\
+            23rd                   & \tdash              & 112     & 50      & 34         & \plus11                         & \tdash  & \tdash                     \\
+            24th                   & \tdash              & 128     & 56      & 37         & \plus12                         & \tdash  & \tdash                     \\
+            25th                   & \tdash              & 144     & 64      & 40         & \plus12                         & \tdash  & \tdash                     \\
+            26th                   & \tdash              & 160     & 72      & 44         & \plus13                         & \tdash  & \tdash                     \\
+            27th                   & \tdash              & 180     & 80      & 48         & \plus13                         & \tdash  & \tdash                     \\
+            28th                   & \tdash              & 200     & 88      & 52         & \plus14                         & \tdash  & \tdash                     \\
+            29th                   & \tdash              & 224     & 100     & 56         & \plus14                         & \tdash  & \tdash                     \\
+            30th                   & \tdash              & 256     & 112     & 60         & \plus15                         & \tdash  & \tdash                     \\
         \end{dtabularx}
-        1. See \pcref{Archetype Ranks}. \\
+        1. For some statistics, like your \glossterm{hit points} and \glossterm{power}, you add your attributes to your level when calculating the total. \\
+        2. See \pcref{Archetype Ranks}. \\
+        3. Characters cannot become higher than 21st level. However, it is possible to have an effective level higher than 21 when calculating some statistics, so those values are listed here. \\
     \end{dtable!*}
 
     \subsection{Legacy Items}\label{Legacy Items}
@@ -752,49 +775,18 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        Your accuracy with an attack is normally equal to half your level \add half your Perception.
-        In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+        Your accuracy is equal to half the sum of your level and Perception.
+        Many abilities can also modify your accuracy.
 
     \subsection{Damage Resistance}\label{Damage Resistance}
         Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
         For details about how damage resistance is used, see \pcref{Taking Damage}.
 
-        The amount of damage resistance you have is defined in \tref{Hit Points and Damage Resistance}.
-        You add your level and your Constitution to find the corresponding base value.
+        The amount of damage resistance you have is defined in \tref{Character Advancement}.
+        You add your level and your Willpower to find the corresponding base value.
         Body armor also provides a significant bonus to damage resistance, and many special abilities can increase your damage resistance.
 
-        \begin{dtable}
-            \lcaption{Hit Points and Damage Resistance}
-            \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Level \add Con} & \tb{Hit Points} & \tb{Damage Resistance} \tableheaderrule
-                0\fn{1}             & 9               & 0  \\
-                1                   & 10              & 1  \\
-                2                   & 11              & 2  \\
-                3                   & 12              & 3  \\
-                4                   & 13              & 4  \\
-                5                   & 14              & 5  \\
-                6                   & 16              & 6  \\
-                7                   & 18              & 7  \\
-                8                   & 20              & 9  \\
-                9                   & 22              & 10 \\
-                10                  & 25              & 12 \\
-                11                  & 28              & 13 \\
-                12                  & 32              & 15 \\
-                13                  & 36              & 16 \\
-                14                  & 40              & 18 \\
-                15                  & 44              & 20 \\
-                16                  & 50              & 22 \\
-                17                  & 56              & 25 \\
-                18                  & 64              & 28 \\
-                19                  & 72              & 32 \\
-                20                  & 80              & 36 \\
-                21                  & 88              & 40 \\
-                22\fn{2}            & 100             & 44 \\
-            \end{dtabularx}
-            1. For negative values, reduce maximum hit points by an amount equal to the negative value. \\
-            2. For values beyond 22, double the hit points and damage resistance of a creature with a value that is 6 lower.
-            For example, a level 21 creature with a 4 Constitution would have 144 hit points and 64 damage resistance. \\
-        \end{dtable}
+        If the sum of your level and Willpower is negative, you subtract that value from any other bonuses you would have to damage resistance, to a minimum of 0.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
@@ -827,9 +819,13 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
         For details about how hit points are used, see \pcref{Taking Damage}.
 
-        The amount of hit points you have is defined in \tref{Hit Points and Damage Resistance}.
-        You add your level and your Constitution to find the corresponding base value.
+        The amount of hit points you have is defined in \tref{Character Advancement}.
+        You add your level and your Constitution to find the corresponding value.
+        For example, a level 3 character with 2 Constitution would have 14 hit points.
         Some special abilities can give you additional \glossterm{hit points}.
+
+        If the sum of your level and Constitution is negative, your hit points are equal to 10 \add that negative value.
+        If the sum exceeds 30, use a value 6 lower than your sum and double the result.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -837,8 +833,16 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Power}\label{Power}
         Your \glossterm{power} is a general representation of how strong your abilities are.
+        You have two types of power: your \glossterm{mundane power} affects your \glossterm{mundane} abilities, and your \glossterm{magical power} affects your \glossterm{magical} abilities.
+
+        Your power is defined in \tref{Character Advancement}.
+        You add your level and your Strength to find the corresponding value for your \glossterm{mundane power}, and you add your level and your Willpower to find the corresponding value for your \glossterm{magical power}.
+        For example, a level 3 character with 3 Strength and 0 Willpower would have a mundane power of 4 and a magical power of 2.
+
+        If this sum is 0, you gain no bonuses or penalties to that type of power.
+        If it is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0.
+
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
-        Your base class provides a bonus to your power (see \pcref{Class-Based Power Bonuses}).
         In addition, some abilities can increase it.
 
 \section{Resources}\label{Resources}
@@ -850,7 +854,6 @@ You can either skim past terms you don't yet understand or look them up as you g
         For details, see \pcref{Attunement}.
 
         Your \glossterm{class} gives you a certain number of attunement points.
-        At 5th level and 11th level, you gain an additional attunement point.
         A small number of abilities can also grant additional \glossterm{attunement points}.
 
     \subsection{Fatigue}\label{Fatigue}

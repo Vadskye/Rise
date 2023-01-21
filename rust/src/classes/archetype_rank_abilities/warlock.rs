@@ -26,7 +26,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The damage increases to 2d10.
                     \rank{5} The damage increases to 4d8.
                     \rank{6} The damage increases to 4d10.
-                    \rank{7} The damage increases by an amount equal to your \glossterm{power}.
+                    \rank{7} The damage increases to 6d10.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(

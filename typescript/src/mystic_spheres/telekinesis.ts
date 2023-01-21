@@ -354,7 +354,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Make a \\glossterm{strike} using a weapon you hold in a single hand.
         The weapon gains the \\abilitytag{Long} tag for this strike, allowing you to attack more distant targets.
-        You use your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
         The weapon flies back into your hand after making the strike.
       `,
       rank: 1,
@@ -373,7 +373,7 @@ export const telekinesis: MysticSphere = {
         You not have to be proficient with bows, and you do not have to manually draw the arrow.
         It must be easily accessible on your person, such as in a quiver.
         As normal for a longbow, the strike deals 1d6 damage, and your \\glossterm{range limits} with this strike are 90/270.
-        You use your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 1,
       scaling: {
