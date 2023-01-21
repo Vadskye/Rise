@@ -360,7 +360,7 @@ export const prayer: MysticSphere = {
       name: 'Consecrated Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +2 accuracy bonus to the reroll.
         This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
       `,
@@ -376,7 +376,7 @@ export const prayer: MysticSphere = {
       name: 'Exalted Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{prayer} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
       `,
       rank: 4,

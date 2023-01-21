@@ -836,7 +836,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             Make a melee \glossterm{strike}.
             The attack is made against each target's Reflex defense instead of its Armor defense.
-            You may use the higher of your Strength and your Willpower to determine your damage with this ability (see \pcref{Dice Bonuses From Attributes}).
+            You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
             Each creature that loses \glossterm{hit points} from this strike is \glossterm{briefly} \slowed.
             After it stops being slowed, it becomes immune to being slowed in this way until it takes a short rest.
 
@@ -1153,7 +1153,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{12} The healing increases to 4d6.
             \featlevel{15} The healing increases to 4d10.
             \featlevel{18} The healing increases to 5d10.
-            \featlevel{21} The healing increases by an amount equal to your \glossterm{power}.
+            \featlevel{21} The healing increases to 7d10.
         \end{activeability}
 
         \ff[9]{Vital Touch} When you use your \textit{healing touch} ability, the target can also remove one \glossterm{vital wound}.
@@ -1222,7 +1222,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{magicalactiveability}{Imbued Shot}
             \rankline
             Make a ranged \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} using a \glossterm{projectile weapon} you wield.
-            Because this is a \magical ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+            Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -1231,7 +1231,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{magicalactiveability}
 
         \ff[1]{Magical Strikes} Whenever you make a projectile \glossterm{strike}, you can choose to treat that as a \magical ability.
-        When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+        When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
         \ff[3]{Imbue Projectile} When you cast a spell as a \glossterm{standard action}, if that spell does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
@@ -1376,7 +1376,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Precognition}{General}
         \featpre Intelligence 3.
 
-        \ff[1]{Precognitive Offense} You can use your Intelligence in place of your Strength or Willpower to determine your dice pools (see \pcref{Dice Bonuses From Attributes}).
+        \ff[1]{Precognitive Offense} You can use your Intelligence in place of your Strength to determine your \glossterm{mundane power} (see \pcref{Power}).
 
         \ff[3]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
         \begin{sustainability}{Combat Prediction}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
@@ -1461,18 +1461,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-            You regain 1d10 \add \glossterm{power} \glossterm{hit points}.
-            Unlike normal, your Strength does not modify this dice pool (see \pcref{Dice Bonuses From Attributes}).
-            Instead, you gain a \plus1d bonus to the healing for every 2 Constitution you have.
+            You regain 1d8 \add \glossterm{power} \glossterm{hit points}.
+            You gain a \plus1d bonus to this healing for every 2 Constitution you have.
             If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
 
             \rankline
-            \featlevel{6} The healing increases to 2d6.
-            \featlevel{9} The healing increases to 2d10.
-            \featlevel{12} The healing increases to 4d6.
-            \featlevel{15} The healing increases to 4d10.
-            \featlevel{18} The healing increases to 5d10.
-            \featlevel{21} The healing increases by an amount equal to your \glossterm{power}.
+            \featlevel{6} The healing increases to 1d10.
+            \featlevel{9} The healing increases to 2d8.
+            \featlevel{12} The healing increases to 2d10.
+            \featlevel{15} The healing increases to 4d8.
+            \featlevel{18} The healing increases to 4d10.
+            \featlevel{21} The healing increases to 6d10.
         \end{activeability}
 
         \ff[9]{Regenerative Rest} When you take a \glossterm{short rest}, you can remove any number of \glossterm{vital wounds} affecting you.
@@ -1606,7 +1605,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{magicalactiveability}{Imbued Blow}
             \rankline
             Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
-            Because this is a \magical ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+            Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
             \rankline
             \featlevel{6} The accuracy bonus increases to \plus2.
@@ -1615,7 +1614,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{magicalactiveability}
 
         \ff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
-        When you do, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+        When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
         \ff[3]{Spellsword Conduit} You can cast spells using a non-projectile weapon as if it were an implement (see \pcref{Implements}).
         In addition, if your legacy item is a weapon, you may choose both weapon and implement magic item effects for it.
@@ -2037,7 +2036,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
             Make a melee \glossterm{strike} with a \plus1 accuracy bonus using that weapon.
-            Because this is a \magical ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+            Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
             \rankline
             \featlevel{9} The accuracy bonus increases to \plus2.

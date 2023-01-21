@@ -334,7 +334,7 @@ export const umbramancy: MysticSphere = {
         Make a \\glossterm{strike}.
         Damage dealt by the strike is cold damage in addition to its normal damage types.
         The attack is made against each target's Reflex defense instead of its Armor defense.
-          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       narrative: `
         You strike your foe's shadow instead of hitting it directly, but it takes damage all the same.
@@ -388,7 +388,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+          You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
         name: 'shadowstep',
@@ -404,7 +404,7 @@ export const umbramancy: MysticSphere = {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
           You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
-          You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+          You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
           The second strike takes a -2 accuracy penalty just like the first strike, and it cannot target any of the same creatures as the first strike.
 

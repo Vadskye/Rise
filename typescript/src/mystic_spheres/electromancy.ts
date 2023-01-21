@@ -567,7 +567,7 @@ export const electromancy: MysticSphere = {
       name: 'Magnetic Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
         You gain a +1 accuracy bonus against \\glossterm{metallic} targets.
       `,
@@ -583,7 +583,7 @@ export const electromancy: MysticSphere = {
       name: 'Arcing Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
         The strike \\sphereterm{chains} once.
         Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
