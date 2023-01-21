@@ -613,7 +613,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'corpse communion',
         exceptThat: `
-          The corpse can answer with a single full sentence, rather than only with "yes" or "no".
+          the corpse can answer with a single full sentence, rather than only with "yes" or "no".
         `,
       },
       rank: 6,
