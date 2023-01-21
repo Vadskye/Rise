@@ -255,7 +255,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
             name: "Draconic Bloodline",
-            is_magical: true,
+            is_magical: false,
             rank: 1,
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
@@ -293,7 +293,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Hide",
-            is_magical: true,
+            is_magical: false,
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
@@ -302,7 +302,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Hide+",
-            is_magical: true,
+            is_magical: false,
             rank: 6,
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype.
@@ -346,7 +346,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Draconic Scales",
-            is_magical: true,
+            is_magical: false,
             rank: 3,
             description: r"
                 You gain a \plus1 bonus to your Armor defense.
@@ -373,7 +373,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Energy Immunity",
-            is_magical: true,
+            is_magical: false,
             rank: 5,
             description: r"
                 You become immune to your dragon's damage type.
