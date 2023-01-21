@@ -91,16 +91,6 @@
             After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
             In practice, you are unlikely to ever roll that many dice.
 
-            \parhead{Dice Bonuses From Attributes}\label{Dice Bonuses From Attributes} Your attributes can add or subtract dice increments from all dice pools you roll.
-            Whenever you use a \glossterm{mundane} ability that has a dice pool, you add half your Strength in dice increments to the dice pool.
-            If your Strength is negative, this can reduce your damage or healing.
-            Likewise, you add half your Willpower in dice increments to your dice pools with \magical abilities.
-            For example, if you are using a spell that normally deals 1d8 damage, and your Willpower is 2 or 3, you would deal 1d10 damage with that ability instead.
-
-            Items are an exception to this rule.
-            Some items specify their own dice pools, like a \mitem{firebomb} or a \mitem{vampiric} weapon.
-            Your Strength and Willpower do not modify the dice pools specified by items.
-
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
@@ -625,7 +615,7 @@
 
         All strikes are \glossterm{mundane} abilities.
         Your \glossterm{accuracy} with a strike is the same as your accuracy with most other abilities (see \pcref{Accuracy}).
-        Your \glossterm{damage} with a strike is determined by your Strength, your \glossterm{power}, and the damage dice for the weapon you hit with (see \pcref{Strike Damage}).
+        Your \glossterm{damage} with a strike is normally determined by your \glossterm{mundane power} and the damage dice for the weapon you hit with (see \pcref{Strike Damage}).
 
         Whenever you make a strike, you must choose one weapon to make the strike with.
         Wielding two weapons does not change anything about each strike you make.
@@ -669,7 +659,7 @@
 
         \subsubsection{Strike Damage}\label{Strike Damage}
             When you deal damage with a strike, you roll your weapon's damage dice and add your \glossterm{power} with the strike to get the total damage.
-            Almost all strikes are considered \glossterm{mundane} abilities, so you would normally use your Strength to determine their damage (see \pcref{Dice Bonuses From Attributes}).
+            Almost all strikes are considered \glossterm{mundane} abilities, so you would normally use your \glossterm{mundane power} to determine their damage (see \pcref{Power}).
 
             Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
             Some abilities modify your weapon damage dice with \glossterm{dice increments}, such as by granting you a \plus1d bonus to your weapon's damage dice.

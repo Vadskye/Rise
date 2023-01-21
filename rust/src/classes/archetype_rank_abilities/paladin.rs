@@ -263,7 +263,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The healing increases to 2d10.
                     \rank{5} The healing increases to 4d8.
                     \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases by an amount equal to your \glossterm{power}.
+                    \rank{7} The healing increases to 6d10.
                 \end{magicalactiveability}
 
             ",
@@ -406,7 +406,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Smite}
                     \rankline
                     Make a \glossterm{strike} with a \plus2 damage bonus.
-                    Because this is a \magical ability, you use your Willpower to determine your damage dice instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+                    Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage (see \pcref{Power}).
                     If the target has the alignment opposed to your devoted alignment, you double all of your damage bonuses along with your damage dice when you get a \glossterm{critical hit}.
 
                     \rankline

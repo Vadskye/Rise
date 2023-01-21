@@ -75,7 +75,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 40;
+        let expected_points = 45;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {

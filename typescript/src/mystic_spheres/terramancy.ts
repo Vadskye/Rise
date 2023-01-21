@@ -150,7 +150,7 @@ export const terramancy: MysticSphere = {
         If you create body armor or a weapon, it can be created from any special material other than cold iron.
         The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
-        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
       `,
       rank: 1,
       type: 'Attune',
@@ -535,7 +535,7 @@ export const terramancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the Forceful \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        You may use the higher of your Strength and your Willpower to determine your damage with strikes using the weapon (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
       narrative: `
