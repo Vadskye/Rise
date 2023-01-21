@@ -132,20 +132,20 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 3,
-            Self::Cleric => 4,
-            Self::Dragon => 3,
-            Self::Druid => 4,
-            Self::Fighter => 3,
-            Self::Harpy => 3,
-            Self::Monk => 4,
-            Self::Oozeborn => 3,
-            Self::Paladin => 3,
-            Self::Ranger => 3,
-            Self::Rogue => 4,
-            Self::Sorcerer => 5,
-            Self::Warlock => 4,
-            Self::Wizard => 5,
+            Self::Barbarian => 4,
+            Self::Cleric => 5,
+            Self::Dragon => 4,
+            Self::Druid => 5,
+            Self::Fighter => 4,
+            Self::Harpy => 4,
+            Self::Monk => 5,
+            Self::Oozeborn => 4,
+            Self::Paladin => 4,
+            Self::Ranger => 4,
+            Self::Rogue => 5,
+            Self::Sorcerer => 6,
+            Self::Warlock => 5,
+            Self::Wizard => 6,
         }
     }
 
