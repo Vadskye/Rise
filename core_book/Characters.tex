@@ -662,23 +662,6 @@ You can either skim past terms you don't yet understand or look them up as you g
     If you have enough experience, you gain a level.
     You gain some abilities at specific levels, as described in \trefnp{Character Advancement}.
 
-    When you gain a level, the following things happen:
-    \begin{raggeditemize}
-        \item Your \glossterm{hit points} increase (see \pcref{Hit Points}).
-        \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
-        \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
-        \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy})
-        \item At even levels, your bonus with \glossterm{trained} skills increases (see \pcref{Trained Skills})
-        \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
-        \item At 3rd level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
-        \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
-        \item At 6th level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
-    \end{raggeditemize}
-
-    At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
-    For example, you could change one of your trained skills for a different skill, change which weapon groups you are proficient with, or change the \glossterm{mystic spheres} you have access to (and corresponding spells).
-    The GM may ask for a specific narrative justification for the change, require spending in-game time to retrain, or disallow changing some fundamental aspects of your character.
-
     % power scaling logic:
     % in the old system, +2 str was +1d, which was:
     % * +1 damage while you have 1 damage die, which is usually levels 1-6 (assuming a 1d8 weapon or a high damage spell)
@@ -688,49 +671,55 @@ You can either skim past terms you don't yet understand or look them up as you g
     % * At level 1, +1 str is +0.5 damage
     % * At level 7, +1 str is +1 damage
     % * At level 13, +1 str is +2 damage
-    % * At level 19, +1 str is +3 damage?
-    % * At level 25, +1 str is +4 damage??
+    % Cap at +2 damage per str, just like damage dice cap at +4.5 damage per +1d
 
     \begin{dtable!*}
         \lcaption{Character Advancement}
         \begin{dtabularx}{\textwidth}{l l l l l l l >{\lcol}X}
             \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Power} & \tb{Accuracy, Defenses, Skills} & \tb{XP} & \tb{Special}                \tableheaderrule
-            1st                    & 1                   & 10      & 1       & 1          & \tdash                          & 0       & \tdash                     \\
-            2nd                    & \tdash              & 11      & 2       & 2          & \plus1                          & 10      & \tdash                     \\ % +10 xp
-            3rd                    & \tdash              & 12      & 3       & 2          & \plus1                          & 25      & Legacy item: rank 2        \\ % +15 xp
-            4th                    & 2                   & 13      & 4       & 3          & \plus2                          & 45      & \tdash                     \\ % +20 xp
-            5th                    & \tdash              & 14      & 5       & 3          & \plus2                          & 70      & \tdash                     \\ % +25 xp
-            6th                    & \tdash              & 16      & 6       & 4          & \plus3                          & 100     & \plus1 to two attributes   \\ % +30 xp
-            7th                    & 3                   & 18      & 7       & 4          & \plus3                          & 140     & \tdash                     \\ % +40 xp
-            8th                    & \tdash              & 20      & 9       & 5          & \plus4                          & 200     & \tdash                     \\ % +60 xp
-            9th                    & \tdash              & 22      & 10      & 6          & \plus4                          & 300     & Legacy item: ranks 4 and 2 \\ % +100 xp
-            10th                   & 4                   & 25      & 12      & 7          & \plus5                          & 450     & \tdash                     \\ % +150 xp
-            11th                   & \tdash              & 28      & 13      & 8          & \plus5                          & 700     & \tdash                     \\ % +250 xp
-            12th                   & \tdash              & 32      & 15      & 9          & \plus6                          & 1,000   & \plus1 to two attributes   \\ % +300 xp
-            13th                   & 5                   & 36      & 16      & 10         & \plus6                          & 1,400   & \tdash                     \\ % +400 xp
-            14th                   & \tdash              & 40      & 18      & 12         & \plus7                          & 2,000   & \tdash                     \\ % +600 xp
-            15th                   & \tdash              & 44      & 20      & 14         & \plus7                          & 3,000   & Legacy item: ranks 6 and 4 \\ % +1000 xp
-            16th                   & 6                   & 50      & 22      & 16         & \plus8                          & 4,500   & \tdash                     \\ % +1,500 xp
-            17th                   & \tdash              & 56      & 25      & 18         & \plus8                          & 7,000   & \tdash                     \\ % +2,500 xp
-            18th                   & \tdash              & 64      & 28      & 20         & \plus9                          & 10,000  & \plus1 to two attributes   \\ % +3,000 xp
-            19th                   & 7                   & 72      & 32      & 22         & \plus9                          & 14,000  & \tdash                     \\
-            20th                   & \tdash              & 80      & 36      & 25         & \plus10                         & 20,000  & \tdash                     \\
-            21st                   & \tdash              & 90      & 40      & 28         & \plus10                         & 30,000  & Legacy item: ranks 7 and 6 \\
-            \tb{Epic Values}\fn{3} & \tdash              & \tdash  & \tdash  & \tdash     & \tdash                          & \tdash  & \tdash                     \\
-            22nd                   & \tdash              & 100     & 44      & 31         & \plus11                         & \tdash  & \tdash                     \\
-            23rd                   & \tdash              & 112     & 50      & 34         & \plus11                         & \tdash  & \tdash                     \\
-            24th                   & \tdash              & 128     & 56      & 37         & \plus12                         & \tdash  & \tdash                     \\
-            25th                   & \tdash              & 144     & 64      & 40         & \plus12                         & \tdash  & \tdash                     \\
-            26th                   & \tdash              & 160     & 72      & 44         & \plus13                         & \tdash  & \tdash                     \\
-            27th                   & \tdash              & 180     & 80      & 48         & \plus13                         & \tdash  & \tdash                     \\
-            28th                   & \tdash              & 200     & 88      & 52         & \plus14                         & \tdash  & \tdash                     \\
-            29th                   & \tdash              & 224     & 100     & 56         & \plus14                         & \tdash  & \tdash                     \\
-            30th                   & \tdash              & 256     & 112     & 60         & \plus15                         & \tdash  & \tdash                     \\
+            1st                    & 1                   & 10      & 2       & 1          & \tdash                          & 0       & \tdash                     \\
+            2nd                    & \tdash              & 11      & 3       & 2          & \plus1                          & 10      & \tdash                     \\ % +10 xp
+            3rd                    & \tdash              & 12      & 4       & 2          & \plus1                          & 25      & Legacy item: rank 2        \\ % +15 xp
+            4th                    & 2                   & 13      & 5       & 3          & \plus2                          & 45      & \tdash                     \\ % +20 xp
+            5th                    & \tdash              & 14      & 6       & 3          & \plus2                          & 70      & \tdash                     \\ % +25 xp
+            6th                    & \tdash              & 16      & 7       & 4          & \plus3                          & 100     & \plus1 to two attributes   \\ % +30 xp
+            7th                    & 3                   & 18      & 8       & 4          & \plus3                          & 140     & \tdash                     \\ % +40 xp
+            8th                    & \tdash              & 20      & 10      & 5          & \plus4                          & 200     & \tdash                     \\ % +60 xp
+            9th                    & \tdash              & 22      & 12      & 6          & \plus4                          & 300     & Legacy item: ranks 4 and 2 \\ % +100 xp
+            10th                   & 4                   & 25      & 14      & 7          & \plus5                          & 450     & \tdash                     \\ % +150 xp
+            11th                   & \tdash              & 28      & 16      & 8          & \plus5                          & 700     & \tdash                     \\ % +250 xp
+            12th                   & \tdash              & 32      & 18      & 9          & \plus6                          & 1,000   & \plus1 to two attributes   \\ % +300 xp
+            13th                   & 5                   & 36      & 20      & 10         & \plus6                          & 1,400   & \tdash                     \\ % +400 xp
+            14th                   & \tdash              & 40      & 23      & 12         & \plus7                          & 2,000   & \tdash                     \\ % +600 xp
+            15th                   & \tdash              & 44      & 26      & 14         & \plus7                          & 3,000   & Legacy item: ranks 6 and 4 \\ % +1000 xp
+            16th                   & 6                   & 50      & 29      & 16         & \plus8                          & 4,500   & \tdash                     \\ % +1,500 xp
+            17th                   & \tdash              & 56      & 32      & 18         & \plus8                          & 7,000   & \tdash                     \\ % +2,500 xp
+            18th                   & \tdash              & 64      & 35      & 20         & \plus9                          & 10,000  & \plus1 to two attributes   \\ % +3,000 xp
+            19th                   & 7                   & 72      & 38      & 22         & \plus9                          & 14,000  & \tdash                     \\
+            20th                   & \tdash              & 80      & 42      & 24         & \plus10                         & 20,000  & \tdash                     \\
+            21st                   & \tdash              & 90      & 46      & 26         & \plus10                         & 30,000  & Legacy item: ranks 7 and 6 \\
         \end{dtabularx}
         1. For some statistics, like your \glossterm{hit points} and \glossterm{power}, you add your attributes to your level when calculating the total. \\
         2. See \pcref{Archetype Ranks}. \\
         3. Characters cannot become higher than 21st level. However, it is possible to have an effective level higher than 21 when calculating some statistics, so those values are listed here. \\
     \end{dtable!*}
+
+    When you gain a level, the following things happen:
+    \begin{raggeditemize}
+        \item Your \glossterm{hit points} increase (see \pcref{Hit Points}).
+        \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
+        \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes}).
+        \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy}).
+        \item At even levels, your bonus with \glossterm{trained} skills increases (see \pcref{Trained Skills}).
+        \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses}).
+        \item At 3rd level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
+        \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
+        \item At 6th level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
+    \end{raggeditemize}
+
+    At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
+    For example, you could change one of your trained skills for a different skill, change which weapon groups you are proficient with, or change the \glossterm{mystic spheres} you have access to (and corresponding spells).
+    The GM may ask for a specific narrative justification for the change, require spending in-game time to retrain, or disallow changing some fundamental aspects of your character.
 
     \subsection{Legacy Items}\label{Legacy Items}
 
@@ -787,6 +776,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         Body armor also provides a significant bonus to damage resistance, and many special abilities can increase your damage resistance.
 
         If the sum of your level and Willpower is negative, you subtract that value from any other bonuses you would have to damage resistance, to a minimum of 0.
+        If the sum exceeds 21, add 4 damage resistance for each point beyond 21.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
@@ -825,7 +815,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         Some special abilities can give you additional \glossterm{hit points}.
 
         If the sum of your level and Constitution is negative, your hit points are equal to 10 \add that negative value.
-        If the sum exceeds 30, use a value 6 lower than your sum and double the result.
+        If the sum exceeds 21, add 10 hit points for each point beyond 21.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -841,6 +831,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         If this sum is 0, you gain no bonuses or penalties to that type of power.
         If it is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0.
+        If it exceeds 21, add 2 power for each point beyond 21.
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
         In addition, some abilities can increase it.

@@ -30,9 +30,11 @@ pub trait HasAttacks {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
     fn calc_accuracy(&self) -> i32;
-    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32;
+    fn calc_damage_increments(&self, is_strike: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
-    fn calc_power(&self) -> i32;
+    fn calc_magical_power(&self) -> i32;
+    fn calc_mundane_power(&self) -> i32;
+    fn calc_power(&self, is_magical: bool) -> i32;
 }
 
 impl Attack {
@@ -86,7 +88,7 @@ impl Attack {
             return Some(
                 damage_effect
                     .damage_dice
-                    .add(creature.calc_damage_increments(self.is_strike, self.is_magical)),
+                    .add(creature.calc_damage_increments(self.is_strike)),
             );
         }
         return None;
@@ -96,7 +98,7 @@ impl Attack {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power() as f64) as i32,
+                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64) as i32,
             );
         }
         return None;
@@ -283,17 +285,12 @@ where
         let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
         // note implicit floor due to integer storage
         return accuracy_from_armor
-            + self.level / 2
-            + self.get_base_attribute(&Attribute::Perception) / 2
+            + (self.level + self.get_base_attribute(&Attribute::Perception)) / 2
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
-    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32 {
-        let attribute = match is_magical {
-            true => &Attribute::Willpower,
-            false => &Attribute::Strength,
-        };
-        let mut increments: i32 = self.get_base_attribute(attribute) / 2;
+    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
+        let mut increments: i32 = 0;
         if is_strike {
             increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
         }
@@ -304,8 +301,57 @@ where
         return increments;
     }
 
-    fn calc_power(&self) -> i32 {
-        return self.calc_total_modifier(ModifierType::Power);
+    fn calc_magical_power(&self) -> i32 {
+        return self.calc_power(true)
+    }
+
+    fn calc_mundane_power(&self) -> i32 {
+        return self.calc_power(false)
+    }
+
+    fn calc_power(&self, is_magical: bool) -> i32 {
+        let attribute = match is_magical {
+            true => &Attribute::Willpower,
+            false => &Attribute::Strength,
+        };
+        let mut levelish = self.level + self.get_base_attribute(attribute);
+        let mut power = 0;
+        if levelish > 21 {
+            // +2 power for each point beyond 21
+            power = (levelish - 21) * 2;
+            levelish = 21
+        }
+
+        if levelish < 1 {
+            power += levelish
+        } else {
+            power += match levelish {
+                1 => 1,
+                2 => 2,
+                3 => 2,
+                4 => 3,
+                5 => 3,
+                6 => 4,
+                7 => 4,   // start +1 per
+                8 => 5,
+                9 => 6,
+                10 => 7,
+                11 => 8,
+                12 => 9,
+                13 => 10,  // start +2 per
+                14 => 12,
+                15 => 14,
+                16 => 16,
+                17 => 18,
+                18 => 20,
+                19 => 22,
+                20 => 24,
+                21 => 26,
+                _ => panic!("Invalid levelish {}", levelish),
+            }
+        }
+
+        return power + self.calc_total_modifier(ModifierType::Power);
     }
 }
 

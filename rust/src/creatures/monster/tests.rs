@@ -32,7 +32,7 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::One, 1, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{1}[1]
+                \begin{monsubsection}{Standard Monster}{1}
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
@@ -64,7 +64,7 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::Four, 10, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10}[2]
+                \begin{monsubsection}{Standard Monster}{10}[Elite]
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
@@ -110,7 +110,7 @@ mod to_section {
             .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10}[2]
+                \begin{monsubsection}{Standard Monster}{10}[Elite]
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
@@ -176,7 +176,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-        assert_eq!(2, creature.calc_power(), "Power: 2 scaling",);
+        assert_eq!(2, creature.calc_magical_power(), "Magical power: 2 scaling",);
+        assert_eq!(2, creature.calc_mundane_power(), "Mundane power: 2 scaling",);
 
         // HasAttributes
         assert_eq!(
@@ -225,7 +226,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
-        assert_eq!(4, creature.calc_power(), "Power: 2 scaling * 2 cr mult",);
+        assert_eq!(4, creature.calc_magical_power(), "Magical power: 2 scaling * 2 cr mult",);
+        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 2 scaling * 2 cr mult",);
 
         // HasAttributes
         assert_eq!(
