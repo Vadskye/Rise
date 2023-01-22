@@ -77,7 +77,7 @@ impl DamageDice {
     }
 
     pub fn single_target_damage(rank: i32) -> Self {
-        return Self::d8().add(rank - 1);
+        return Self::d10().add(rank - 1);
     }
 }
 

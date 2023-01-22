@@ -174,21 +174,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Potency',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +4.`,
-        6: `The bonus increases to +8.`,
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Blessing of Perseverance',
 
       effect: `
@@ -282,22 +267,22 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Mastery',
+      name: 'Indomitable Blessing',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
       scaling: {
         4: `
           The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to power increases to +4.
+          In addition, the bonus to vital rolls increases to +3.
         `,
         6: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to power increases to +8.
+          In addition, the bonus to vital rolls increases to +4.
         `,
       },
       type: 'Attune (deep, target)',

@@ -129,26 +129,19 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Potency",
-            rank=2,
+            name="Mighty",
+            rank=3,
             description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
+                If your Strength is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
-            short_description="Grants +2 power",
+            short_description="Grants +1d damage if you have 3 Str",
             upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The power bonus increases to +4.
-                    """,
-                    short_description="Grants +4 power",
-                ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The power bonus increases to +8.
+                        If your Strength is at least 5, you gain a +2d damage bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +8 power",
+                    short_description="Grants +2d damage if you have 5 Str.",
                 ),
             ],
         ),
@@ -159,23 +152,16 @@ def generate_weapons():
             name="Studied",
             rank=3,
             description="""
-                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Intelligence.
+                If your Intelligence is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants power equal to Intelligence",
+            short_description="Grants +1 accuracy if you have 3 Int",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        The bonus increases to twice your Intelligence.
+                        If your Intelligence is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants power equal to twice Intelligence",
-                ),
-                Upgrade(
-                    rank=7,
-                    description="""
-                        The bonus increases to four times your Intelligence.
-                    """,
-                    short_description="Grants power equal to 4x Intelligence",
+                    short_description="Grants +2 accuracy if you have 5 Int",
                 ),
             ],
         ),
@@ -186,23 +172,16 @@ def generate_weapons():
             name="Finesse",
             rank=3,
             description="""
-                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Dexterity.
+                If your Dexterity is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
-            short_description="Grants power equal to Dexterity",
+            short_description="Grants +1d damage if you have 3 Dex",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        The bonus increases to twice your Dexterity.
+                        If your Dexterity is at least 5, you gain a +2d damage bonus with strikes using this weapon.
                     """,
-                    short_description="Grants power equal to twice Dexterity",
-                ),
-                Upgrade(
-                    rank=7,
-                    description="""
-                        The bonus increases to four times your Dexterity.
-                    """,
-                    short_description="Grants power equal to 4x Dexterity",
+                    short_description="Grants +2d damage if you have 5 Dex",
                 ),
             ],
         ),
