@@ -30,7 +30,7 @@ export const fabrication: MysticSphere = {
       name: 'Mystic Arrow',
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes 2d6 + \\glossterm{power} piercing damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
@@ -45,7 +45,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} piercing damage.
+          The target takes 2d10 + \\glossterm{power} piercing damage.
           If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -63,7 +63,7 @@ export const fabrication: MysticSphere = {
       // +2r for delay, +1r for range
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} piercing damage.
+          The target takes 4d6 + \\glossterm{power} piercing damage.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
@@ -82,7 +82,7 @@ export const fabrication: MysticSphere = {
       // people can just run from it, so it's hard to actually get the double-hit off.
       attack: {
         hit: `
-          Each target takes 1d10 + \\glossterm{power} slashing damage.
+          Each target takes 2d6 + \\glossterm{power} slashing damage.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -98,7 +98,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 4d10 + \\glossterm{power} slashing damage.
+          Each target takes 5d10 + \\glossterm{power} slashing damage.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -127,7 +127,7 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes 2d10 + \\glossterm{power} slashing damage.`,
+        hit: `Each target takes 4d6 + \\glossterm{power} slashing damage.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -232,7 +232,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 4d6 + \\glossterm{power}.
+          the damage increases to 4d8 + \\glossterm{power}.
         `,
         name: 'blade barrier',
       },
@@ -333,7 +333,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to 2d10 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
       },
       rank: 5,
       scaling: 'damage',

@@ -536,7 +536,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 1,
@@ -549,7 +549,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'rewind damage',
-        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 4d8 + \\glossterm{power}.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
@@ -591,7 +591,7 @@ export const chronomancy: MysticSphere = {
       name: 'Unstable Aging',
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -606,7 +606,7 @@ export const chronomancy: MysticSphere = {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

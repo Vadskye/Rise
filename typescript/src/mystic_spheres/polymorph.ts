@@ -267,7 +267,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} physical damage.
+          The target takes 4d10 + \\glossterm{power} physical damage.
           This damage is doubled if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
@@ -429,7 +429,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} if it is a creature, or that many hit points if it is an object.
+        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} if it is a creature, or that many hit points if it is an object.
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
@@ -442,7 +442,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 4d8 + \\glossterm{power}.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
@@ -732,7 +732,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} physical damage.
+          The target takes 4d6 + \\glossterm{power} physical damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `

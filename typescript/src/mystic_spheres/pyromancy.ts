@@ -525,7 +525,7 @@ export const pyromancy: MysticSphere = {
       // all four ranks to double power, which is spicy
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} fire damage.
+          The target takes 2d10 + \\glossterm{power} fire damage.
           If it loses \\glossterm{hit points} from this damage, it takes 2d8 + half \\glossterm{power} fire damage during your next action.
         `,
         targeting: `

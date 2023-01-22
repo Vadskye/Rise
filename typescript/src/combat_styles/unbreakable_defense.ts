@@ -202,7 +202,7 @@ export const unbreakableDefense: CombatStyle = {
 
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 1d10 + \\glossterm{power} hit points.
+        In addition, you regain 2d6 + \\glossterm{power} hit points.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       scaling: {
@@ -219,7 +219,7 @@ export const unbreakableDefense: CombatStyle = {
 
         Make a strike.
         Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 4d8 + \\glossterm{power} hit points.
+        In addition, you regain 4d10 + \\glossterm{power} hit points.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       rank: 7,

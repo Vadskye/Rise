@@ -138,7 +138,7 @@ export const channelDivinity: MysticSphere = {
       // +1 level for situational +2 accuracy
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -155,7 +155,7 @@ export const channelDivinity: MysticSphere = {
       // +3 levels for situational +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -381,7 +381,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
           If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -397,7 +397,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
           If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `

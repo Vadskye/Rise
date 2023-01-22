@@ -104,7 +104,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `Each target takes 4d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
@@ -118,7 +118,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -134,7 +134,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 4d10 + \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `

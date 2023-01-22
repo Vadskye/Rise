@@ -42,9 +42,9 @@ export const vivimancy: MysticSphere = {
       // +2r for lifesteal option
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
-          If you do, you regain 1d10 + \\glossterm{power} hit points.
+          If you do, you regain 2d6 + \\glossterm{power} hit points.
           This ability does not have the \\abilitytag{Swift} tag, so it does not protect you from attacks during the current phase.
         `,
         targeting: `
@@ -63,7 +63,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal grasp',
-        exceptThat: 'the damage and healing both increase to 4d10 + \\glossterm{power}.',
+        exceptThat: 'the damage and healing both increase to 5d10 + \\glossterm{power}.',
       },
       rank: 6,
       scaling: { special: 'The damage and healing increases by +1d for each rank beyond 6.' },
@@ -76,9 +76,9 @@ export const vivimancy: MysticSphere = {
       // +2r for HP theft
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
+          The target takes 2d8 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
-          If you do, you regain 2d6 + \\glossterm{power} hit points.
+          If you do, you regain 2d8 + \\glossterm{power} hit points.
           This ability does not have the \\abilitytag{Swift} tag, so it does not protect you from attacks during the current phase.
         `,
         targeting: `
@@ -95,7 +95,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal',
-        exceptThat: 'the damage and healing both increase to 5d10 + \\glossterm{power}.',
+        exceptThat: 'the damage and healing both increase to 6d10 + \\glossterm{power}.',
       },
       rank: 7,
       tags: [],
@@ -106,7 +106,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
       scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
@@ -118,7 +118,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 4d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        The target regains 4d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 5,
       scaling: { special: 'The healing increases by +1d for each rank beyond 5.' },
@@ -130,7 +130,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 2d6 + \\glossterm{power} \\glossterm{hit points}.
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 2,
@@ -143,7 +143,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains 4d10 + \\glossterm{power} \\glossterm{hit points}.
+        The target regains 5d10 + \\glossterm{power} \\glossterm{hit points}.
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 6,
@@ -226,7 +226,7 @@ export const vivimancy: MysticSphere = {
       // +1r for situational vital wound removal, +4r for +2d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
           If it loses \\glossterm{hit points} from this damage, you can remove one of your vital wounds.
           When you do, you increase your \\glossterm{fatigue level} by three.
         `,
@@ -387,7 +387,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -447,7 +447,7 @@ export const vivimancy: MysticSphere = {
 
       // +4r for +2d, +2r for full power
       attack: {
-        hit: `Each target takes 4d10 + \\glossterm{power} energy damage.`,
+        hit: `Each target takes 5d10 + \\glossterm{power} energy damage.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
