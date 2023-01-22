@@ -69,7 +69,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} physical damage.
+          The target takes 2d8 + \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -85,7 +85,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} physical damage.
+          The target takes 5d10 + \\glossterm{power} physical damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -154,7 +154,7 @@ export const aquamancy: MysticSphere = {
       // 1 rank for movement
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -172,7 +172,7 @@ export const aquamancy: MysticSphere = {
       // 3 ranks for movement
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.

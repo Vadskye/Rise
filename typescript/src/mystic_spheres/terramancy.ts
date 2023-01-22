@@ -41,7 +41,7 @@ export const terramancy: MysticSphere = {
 
       // +1r for +1acc
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
@@ -57,7 +57,7 @@ export const terramancy: MysticSphere = {
 
       // +4r for +2d
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes 4d10 + \\glossterm{power} bludgeoning damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 accuracy bonus if you are on a Medium or larger body of stone.
@@ -74,7 +74,7 @@ export const terramancy: MysticSphere = {
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          The target takes 2d6 + \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
@@ -97,7 +97,7 @@ export const terramancy: MysticSphere = {
       functionsLike: {
         name: 'crushing gravity',
         exceptThat:
-          'the accuracy bonus increases to +2 per size category, and the damage increases to 4d6 + \\glossterm{power}.',
+          'the accuracy bonus increases to +2 per size category, and the damage increases to 4d8 + \\glossterm{power}.',
       },
       narrative: `
         The bigger they are, the more heavily gravity pulls them to the ground.
@@ -126,7 +126,7 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Shrapnel Blast',
 
       attack: {
-        hit: `Each target takes 4d6 + \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes 4d8 + \\glossterm{power} bludgeoning and piercing damage.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -496,7 +496,7 @@ export const terramancy: MysticSphere = {
       // +4d for +1d and full power
       functionsLike: {
         name: 'volcano',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power}.',
       },
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.

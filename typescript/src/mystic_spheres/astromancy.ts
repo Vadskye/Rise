@@ -82,7 +82,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes 2d6 + \\glossterm{power} energy damage.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
@@ -105,7 +105,7 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes 4d10 + \\glossterm{power} energy damage.
           If it is Huge or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 60 feet.
         `,
         targeting: `
@@ -337,7 +337,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Astral Plane.
-          When it returns, it takes 1d6 + \\glossterm{power} energy damage.
+          When it returns, it takes 1d8 + \\glossterm{power} energy damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -440,7 +440,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a random assortment of planes.
-          When it returns, it takes 4d10 + \\glossterm{power} damage of all types.
+          When it returns, it takes 5d10 + \\glossterm{power} damage of all types.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.

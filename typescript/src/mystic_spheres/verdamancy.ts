@@ -85,7 +85,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
           If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
         `,
         targeting: `
@@ -104,7 +104,7 @@ export const verdamancy: MysticSphere = {
       // +2r for longer push, +2r for more damage
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} bludgeoning damage.
+          The target takes 4d8 + \\glossterm{power} bludgeoning damage.
           If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `

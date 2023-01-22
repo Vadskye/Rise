@@ -138,7 +138,7 @@ export const toxicology: MysticSphere = {
         hit: `
           The target takes 1d10 acid damage.
           If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d8 + \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 1 effect inflicts 2d10 + \\glossterm{power} damage each time the poison's attack succeeds.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -441,7 +441,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or an adjacent living \\glossterm{ally}.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Fortitude defense this round.
       `,
       rank: 1,

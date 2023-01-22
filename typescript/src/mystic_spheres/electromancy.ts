@@ -78,7 +78,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} electricity damage.
+          The target takes 4d10 + \\glossterm{power} electricity damage.
           If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
         targeting: `
@@ -119,7 +119,7 @@ export const electromancy: MysticSphere = {
 
       // +1r for situational +2acc
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -136,7 +136,7 @@ export const electromancy: MysticSphere = {
 
       // +3r for situational +4acc, +2r for +1d
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} electricity damage.`,
+        hit: `The target takes 4d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -185,7 +185,7 @@ export const electromancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 2,
@@ -198,7 +198,7 @@ export const electromancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 4d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 4d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,
@@ -211,7 +211,7 @@ export const electromancy: MysticSphere = {
 
       // -1r for -1d
       attack: {
-        hit: `Each target takes 1d6 + \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 1d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
           This attack \\sphereterm{chains} once.
@@ -226,7 +226,7 @@ export const electromancy: MysticSphere = {
 
       // +2r for +1d, +1r to offset previous -1d, +1r for medium range
       attack: {
-        hit: `Each target takes 4d6 + \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 4d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\sphereterm{chains} once.
@@ -241,7 +241,7 @@ export const electromancy: MysticSphere = {
 
       // +3r for chain, +1r for metallic accuracy, -1r for -1d
       attack: {
-        hit: `Each target takes 2d6 + \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 2d8 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\sphereterm{chains} twice.
@@ -258,7 +258,7 @@ export const electromancy: MysticSphere = {
 
       // +2r for extra +2 accuracy, +1r to offset -1d
       attack: {
-        hit: `Each target takes 4d8 + \\glossterm{power} electricity damage.`,
+        hit: `Each target takes 4d10 + \\glossterm{power} electricity damage.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\sphereterm{chains} twice.
@@ -285,7 +285,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The primary target takes 2d8 + \\glossterm{power} electricity damage.
+          The primary target takes 2d10 + \\glossterm{power} electricity damage.
           Each secondary target takes 2d6 + half \\glossterm{power} electricity damage.
         `,
         targeting: `
@@ -401,7 +401,7 @@ export const electromancy: MysticSphere = {
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to 4d10 + \\glossterm{power}.
+          the damage increases to 5d10 + \\glossterm{power}.
         `,
       },
       rank: 7,
@@ -460,7 +460,7 @@ export const electromancy: MysticSphere = {
       attack: {
         // +2d from level, add trivial extra benefit for fun
         hit: `
-          The target takes 4d6 + \\glossterm{power} electricity damage.
+          The target takes 4d8 + \\glossterm{power} electricity damage.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `

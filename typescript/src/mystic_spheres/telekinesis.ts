@@ -225,7 +225,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 4d6 + \\glossterm{power} bludgeoning damage.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 4d8 + \\glossterm{power} bludgeoning damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Huge or smaller within \\longrange of you.

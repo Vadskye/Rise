@@ -181,7 +181,7 @@ export const umbramancy: MysticSphere = {
       // -1d for shadowed
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} cold damage.
+          The target takes 1d10 + \\glossterm{power} cold damage.
           If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -201,7 +201,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         name: 'dark grasp',
         exceptThat:
-          'the target is \\frightened instead of shaken, and the damage increases to 2d10 + \\glossterm{power}.',
+          'the target is \\frightened instead of shaken, and the damage increases to 4d6 + \\glossterm{power}.',
       },
       rank: 6,
       scaling: 'damage',

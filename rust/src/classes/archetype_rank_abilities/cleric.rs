@@ -285,19 +285,19 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
-                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
+                    The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The healing increases to 1d10.
-                    \rank{3} The healing increases to 2d8.
-                    \rank{4} The healing increases to 2d10.
-                    \rank{5} The healing increases to 4d8.
-                    \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases to 6d10.
+                    \rank{2} The healing increases to 2d6.
+                    \rank{3} The healing increases to 2d10.
+                    \rank{4} The healing increases to 4d6.
+                    \rank{5} The healing increases to 4d10.
+                    \rank{6} The healing increases to 5d10.
+                    \rank{7} The healing increases to 7d10.
                 \end{magicalactiveability}
 
                 \advancement This ability improves at each rank as described above.

@@ -552,7 +552,7 @@ export const enchantment: MysticSphere = {
       // +1 level for conditional +2 accuracy
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} psychic \\glossterm{subdual damage}.
+          The target takes 2d6 + \\glossterm{power} psychic \\glossterm{subdual damage}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -569,7 +569,7 @@ export const enchantment: MysticSphere = {
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} psychic \\glossterm{subdual damage}.
+          The target takes 4d10 + \\glossterm{power} psychic \\glossterm{subdual damage}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -586,7 +586,7 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
         This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
@@ -600,7 +600,7 @@ export const enchantment: MysticSphere = {
 
       functionsLike: {
         name: 'restore bravado',
-        exceptThat: 'the recovery increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 4d10 + \\glossterm{power}.',
       },
       rank: 6,
       scaling: { special: 'The recovery increases by +1d for each rank beyond 6.' },

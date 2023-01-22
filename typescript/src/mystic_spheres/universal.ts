@@ -57,7 +57,7 @@ export const universal: MysticSphere = {
       name: 'Mystic Bolt',
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} damage.`,
         targeting: `
           Make an attack against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
@@ -70,7 +70,7 @@ export const universal: MysticSphere = {
       name: 'Mighty Mystic Bolt',
 
       attack: {
-        hit: `The target takes 2d10 + \\glossterm{power} damage.`,
+        hit: `The target takes 4d6 + \\glossterm{power} damage.`,
         targeting: `
           Make an attack against anything within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).

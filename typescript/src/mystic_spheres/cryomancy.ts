@@ -62,7 +62,7 @@ export const cryomancy: MysticSphere = {
       name: 'Freezing Grasp',
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} cold damage.`,
+        hit: `The target takes 2d8 + \\glossterm{power} cold damage.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -78,7 +78,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} cold damage.
+          The target takes 4d10 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -142,7 +142,7 @@ export const cryomancy: MysticSphere = {
       name: 'Icicle',
 
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 1d10 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -156,7 +156,7 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle',
 
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} piercing and cold damage.`,
+        hit: `The target takes 4d10 + \\glossterm{power} piercing and cold damage.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -251,7 +251,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} cold damage.
+          The target takes 1d8 + \\glossterm{power} cold damage.
           In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
           If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
@@ -445,7 +445,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} cold damage.
+          The target takes 2d10 + \\glossterm{power} cold damage.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
