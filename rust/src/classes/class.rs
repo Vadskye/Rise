@@ -1,6 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::abilities::PowerProgression;
 use crate::core_mechanics::{Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
@@ -114,12 +113,10 @@ impl Class {
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 6 points to get a higher power progression
-            + if self.power_progression().calc_power(1) == 3 { 6 } else { 0 }
+            // 3 points to get more HP
+            + self.hit_points() * 3
             // 1 point per trained skill
             + self.trained_skills()
-            // 3 points per vital roll bonus
-            + self.vital_rolls() * 3
             // 1 point per armor proficiency
             + (self.armor_proficiencies().usage_classes.len() as i32)
             // 1 point for each weapon proficiency
@@ -144,7 +141,7 @@ impl Class {
             Self::Ranger => 4,
             Self::Rogue => 5,
             Self::Sorcerer => 6,
-            Self::Warlock => 5,
+            Self::Warlock => 6,
             Self::Wizard => 6,
         }
     }
@@ -483,7 +480,7 @@ impl Class {
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 6,
             Self::Cleric => 4,
             Self::Dragon => 5,
             Self::Druid => 4,
@@ -500,9 +497,28 @@ impl Class {
         }
     }
 
+    pub fn hit_points(&self) -> i32 {
+        match self {
+            Self::Barbarian => 2,
+            Self::Cleric => 0,
+            Self::Dragon => 1,
+            Self::Druid => 0,
+            Self::Fighter => 1,
+            Self::Harpy => 1,
+            Self::Monk => 0,
+            Self::Oozeborn => 2,
+            Self::Paladin => 1,
+            Self::Ranger => 1,
+            Self::Rogue => 0,
+            Self::Sorcerer => 0,
+            Self::Warlock => 0,
+            Self::Wizard => 0,
+        }
+    }
+
     pub fn insight_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 0,
+            Self::Barbarian => 1,
             Self::Cleric => 3,
             Self::Dragon => 2,
             Self::Druid => 3,
@@ -538,14 +554,6 @@ impl Class {
         }
     }
 
-    pub fn power_progression(&self) -> PowerProgression {
-        match self {
-            Self::Barbarian => PowerProgression::Fast,
-            Self::Warlock => PowerProgression::Fast,
-            _ => PowerProgression::Medium,
-        }
-    }
-
     pub fn resource_bonus(&self, resource: &Resource) -> i32 {
         match resource {
             Resource::AttunementPoint => self.attunement_points(),
@@ -576,7 +584,7 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 4,
             Self::Dragon => 3,
             Self::Druid => 5,
@@ -588,27 +596,8 @@ impl Class {
             Self::Ranger => 5,
             Self::Rogue => 7,
             Self::Sorcerer => 3,
-            Self::Warlock => 3,
+            Self::Warlock => 4,
             Self::Wizard => 5,
-        }
-    }
-
-    pub fn vital_rolls(&self) -> i32 {
-        match self {
-            Self::Barbarian => 1,
-            Self::Cleric => 0,
-            Self::Dragon => 1,
-            Self::Druid => 0,
-            Self::Fighter => 1,
-            Self::Harpy => 1,
-            Self::Monk => 0,
-            Self::Oozeborn => 2,
-            Self::Paladin => 1,
-            Self::Ranger => 1,
-            Self::Rogue => 0,
-            Self::Sorcerer => 0,
-            Self::Warlock => 0,
-            Self::Wizard => 0,
         }
     }
 
@@ -1134,8 +1123,8 @@ impl Class {
             "
                 \\begin<dtable!*>
                     \\lcaption<{class_name} Progression>
-                    \\begin<dtabularx><\\textwidth><p<3em> l {archetype_columns}>
-                        \\tb<Rank (Level)> & \\tb<Power> & {archetype_headers} \\tableheaderrule
+                    \\begin<dtabularx><\\textwidth><l {archetype_columns}>
+                        \\tb<Rank (Level)> & {archetype_headers} \\tableheaderrule
                         {rank_rows}
                     \\end<dtabularx>
                 \\end<dtable!*>
@@ -1162,7 +1151,7 @@ impl Class {
         for rank in 1..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
-                    {rank} ({minimum_level}) & \\plus{power} & {archetype_abilities} \\\\
+                    {rank} ({minimum_level}) & {archetype_abilities} \\\\
                 ",
                 rank = rank,
                 minimum_level = if rank == 0 {
@@ -1171,7 +1160,6 @@ impl Class {
                     format!("{}", rank * 3 - 2)
                 },
                 archetype_abilities = abilities_by_archetype_rank[rank],
-                power = self.power_progression().calc_power(rank as i32),
             ))
         }
         return rank_rows

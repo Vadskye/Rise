@@ -41,11 +41,6 @@ impl Character {
                 None,
             );
         }
-        creature.add_modifier(
-            Modifier::Power(class.power_progression().calc_power((level + 2) / 3)),
-            Some(class.name()),
-            None,
-        );
 
         return Character {
             // archetypes,
