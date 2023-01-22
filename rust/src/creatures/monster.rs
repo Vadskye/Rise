@@ -81,15 +81,14 @@ impl Monster {
             Some("challenge rating"),
             None,
         );
-        let power_scaling = PowerProgression::Fast.calc_power((level + 2) / 3);
-        let power_scaling =
-            ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
-        if power_scaling > 0 {
+
+        // TODO: correctly implement CR-based power/dice scaling
+        if challenge_rating.power_scaling_multiplier() > 1.0 {
             creature.add_modifier(
-                Modifier::Power(power_scaling),
+                Modifier::Power(creature.calc_magical_power()),
                 Some("challenge rating"),
                 None,
-            );
+            )
         }
 
         return Monster {
