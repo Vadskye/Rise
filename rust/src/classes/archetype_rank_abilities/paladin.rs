@@ -250,7 +250,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or an adjacent living \glossterm{ally}.
-                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
+                    The target regains 1d10 + \glossterm{power} \glossterm{hit points}.
                     In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
@@ -258,12 +258,12 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     % TODO: define when you can make this decision - after learning all damage and healing? don't want to waste fatigue
 
                     \rankline
-                    \rank{2} The healing increases to 1d10.
-                    \rank{3} The healing increases to 2d8.
-                    \rank{4} The healing increases to 2d10.
-                    \rank{5} The healing increases to 4d8.
-                    \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases to 6d10.
+                    \rank{2} The healing increases to 2d6.
+                    \rank{3} The healing increases to 2d10.
+                    \rank{4} The healing increases to 4d6.
+                    \rank{5} The healing increases to 4d10.
+                    \rank{6} The healing increases to 5d10.
+                    \rank{7} The healing increases to 7d10.
                 \end{magicalactiveability}
 
             ",

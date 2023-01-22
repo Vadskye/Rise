@@ -123,7 +123,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d10 \\add \\glossterm{power} slashing damage.
+          The target takes 2d6 + \\glossterm{power} slashing damage.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\longrange.',
       },
@@ -137,7 +137,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 4d8 \\add \\glossterm{power} slashing damage.
+          The target takes 4d10 + \\glossterm{power} slashing damage.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },

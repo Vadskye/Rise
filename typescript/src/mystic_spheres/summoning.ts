@@ -128,7 +128,7 @@ export const summoning: MysticSphere = {
       // solid ground and -1d for knockback
       attack: {
         hit: `
-          The target takes 1d6 + \\glossterm{power} bludgeoning damage.
+          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
           If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -149,7 +149,7 @@ export const summoning: MysticSphere = {
       // +4 ranks for on-damage instead of on-hp
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
+          The target takes 4d6 + \\glossterm{power} bludgeoning damage.
           If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `

@@ -127,7 +127,7 @@ export const bluntForce: CombatStyle = {
 
       functionsLike: {
         name: 'leap slam',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to 4d10 + \\glossterm{power}.',
       },
       scaling: 'damage',
       rank: 7,
