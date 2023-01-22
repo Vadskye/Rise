@@ -130,7 +130,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Mighty",
-            rank=3,
+            rank=4,
             description="""
                 If your Strength is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
@@ -141,7 +141,7 @@ def generate_weapons():
                     description="""
                         If your Strength is at least 5, you gain a +2d damage bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +2d damage if you have 5 Str.",
+                    short_description="Grants +2d damage if you have 5 Str",
                 ),
             ],
         ),
@@ -150,7 +150,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Studied",
-            rank=3,
+            rank=4,
             description="""
                 If your Intelligence is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
@@ -170,7 +170,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Finesse",
-            rank=3,
+            rank=4,
             description="""
                 If your Dexterity is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
