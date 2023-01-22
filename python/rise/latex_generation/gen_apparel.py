@@ -53,30 +53,6 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Gloves of Potency",
-            rank=2,
-            material_type="Glove",
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +2 power",
-            upgrades=[
-                Upgrade(
-                    description="The power bonus increases to +4.",
-                    rank=4,
-                    short_description="Grants +4 power",
-                ),
-                Upgrade(
-                    description="The power bonus increases to +8.",
-                    rank=6,
-                    short_description="Grants +8 power",
-                ),
-            ],
-        ),
-    ]
-
-    apparel += [
-        create_apparel(
             name="Ambidextrous Gloves",
             rank=2,
             material_type="Glove",
@@ -216,24 +192,12 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Gauntlets of Improvisation",
-            rank=1,
+            rank=2,
             material_type="Gauntlet",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<improvised weapons>.
+                You are \\glossterm<proficient> with \\glossterm<improvised weapons> (see \\pcref<Weapon Proficiency>).
             """,
-            short_description="Grants +2 power with improvised weapons",
-            upgrades=[
-                Upgrade(
-                    description="The power bonus increases to +4.",
-                    rank=3,
-                    short_description="Grants +4 power with improvised weapons",
-                ),
-                Upgrade(
-                    description="The power bonus increases to +8.",
-                    rank=5,
-                    short_description="Grants +8 power with improvised weapons",
-                ),
-            ],
+            short_description="Grants proficiency with improvised weapons",
         ),
     ]
 
@@ -2196,23 +2160,23 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Ring of Mastery",
+            name="Indomitable Ring",
             rank=3,
             material_type="Ring",
             tags=["Attune (deep)"],
             description="""
                 You gain a +6 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus3 \\glossterm<magic bonus> to \\glossterm<power>.
+                In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants many small bonuses",
             upgrades=[
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +12, and the power bonus increases to +6.",
+                    description="The hit point and damage resistance bonuses increase to +12, and the vital roll bonus increases to +3.",
                     rank=5,
                     short_description="Grants many bonuses",
                 ),
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +24, and the power bonus increases to +12.",
+                    description="The hit point and damage resistance bonuses increase to +24, and the vital roll bonus increases to +4.",
                     rank=7,
                     short_description="Grants many large bonuses",
                 ),
@@ -2402,29 +2366,21 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +2 bonus to your \\glossterm<power>.
             """,
-            short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
-        ),
-        create_apparel(
-            name="Amulet of Divine Healing, Greater",
-            rank=4,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
-        ),
-        create_apparel(
-            name="Amulet of Divine Healing, Supreme",
-            rank=6,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +16 power with \\ability<divine aid> and \\ability<lay on hands>",
+            short_description="Grants +2 power with \\ability<divine aid> and \\ability<lay on hands>",
+            upgrades=[
+                Upgrade(
+                    description="The bonus increases to +4.",
+                    rank=4,
+                    short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
+                ),
+                Upgrade(
+                    description="The bonus increases to +8.",
+                    rank=6,
+                    short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
+                ),
+            ],
         ),
     ]
 
@@ -2585,7 +2541,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Belt of Epic Constitution",
-            rank=7,
+            rank=6,
             material_type="Belt",
             tags=["Attune (deep)"],
             description="""
@@ -2598,7 +2554,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Cloak of Epic Dexterity",
-            rank=7,
+            rank=6,
             material_type="Cloak",
             tags=["Attune (deep)"],
             description="""
@@ -2611,7 +2567,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Bracers of Epic Strength",
-            rank=7,
+            rank=6,
             material_type="Bracers",
             tags=["Attune (deep)"],
             description="""
@@ -2624,7 +2580,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Glasses of Epic Perception",
-            rank=7,
+            rank=6,
             material_type="Glasses",
             tags=["Attune (deep)"],
             description="""
@@ -2637,7 +2593,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Circlet of Epic Willpower",
-            rank=7,
+            rank=6,
             material_type="Circlet",
             tags=["Attune (deep)"],
             description="""

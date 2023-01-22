@@ -100,17 +100,17 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, you gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.
+        In addition, you gain a +3 \\glossterm{magic bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 3,
       scaling: {
         5: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to power increases to +8.
+          In addition, the bonus to vital rolls increases to +4.
         `,
         7: `
           The bonuses to hit points and damage resistance increase to +32.
-          In addition, the bonus to power increases to +16.
+          In addition, the bonus to vital rolls increases to +5.
         `,
       },
       type: 'Attune (deep)',
@@ -307,7 +307,9 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Power',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Whenever you hit a creature with an attack, you can infuse that attack with divine power.
+        If you do, you gain a +2 bonus to your \\glossterm{power} with that attack.
+        After you infuse an attack in this way, this effect ends.
       `,
       rank: 1,
       scaling: {

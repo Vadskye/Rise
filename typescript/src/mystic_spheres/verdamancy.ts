@@ -520,14 +520,9 @@ export const verdamancy: MysticSphere = {
         Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
         You transform the target into a club, quarterstaff, or sap, as you choose (see \\pcref{Weapons}).
         You cannot change the target's size by more than one size category.
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield it.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the weapon (see \\pcref{Power}).
       `,
       rank: 1,
-      scaling: {
-        3: `The power bonus increases to +4.`,
-        5: `The power bonus increases to +8.`,
-        7: `The power bonus increases to +16.`,
-      },
       type: 'Attune',
     },
 

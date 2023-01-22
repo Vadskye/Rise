@@ -411,15 +411,9 @@ export const pyromancy: MysticSphere = {
 
       effect: `
         Your weapons shed light like a torch.
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon you are proficient with.
-        In addition, all damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
+        All damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
       `,
       rank: 1,
-      scaling: {
-        3: `The power bonus increases to +4.`,
-        5: `The power bonus increases to +8.`,
-        7: `The power bonus increases to +16.`,
-      },
       type: 'Attune',
     },
 
@@ -432,10 +426,6 @@ export const pyromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
-      },
       type: 'Attune (target)',
     },
 

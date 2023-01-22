@@ -2,12 +2,12 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, generate_table
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify
 from rise.latex.tags import add_attune_tag
 
 def create_implement(
-    name, rank, material_type, description, short_description, tags=None
+    name, rank, material_type, description, short_description, tags=None, upgrades=None,
 ):
     return MagicItem(
         name=name,
@@ -17,6 +17,7 @@ def create_implement(
         short_description=short_description,
         is_magical=True,
         tags=add_attune_tag(tags),
+        upgrades=upgrades,
     )
 
 
@@ -462,38 +463,6 @@ def generate_implements():
             short_description="Can exert to double area size",
         ),
     ]
-    implements += [
-        create_implement(
-            name="Staff of Potency",
-            rank=2,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +2 power",
-        ),
-        create_implement(
-            name="Staff of Potency, Greater",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +4 power",
-        ),
-        create_implement(
-            name="Staff of Potency, Supreme",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +8 power",
-        ),
-    ]
 
     implements += [
         create_implement(
@@ -672,6 +641,7 @@ def generate_implements():
         ),
     ]
 
+    # TODO: nerf after Soulspire
     implements += [
         create_implement(
             name="Echoing Staff",
@@ -679,9 +649,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                During the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
+                During your next action, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
             short_description="Can exert to repeat effect",
         ),

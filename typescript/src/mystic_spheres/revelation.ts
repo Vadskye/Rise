@@ -41,11 +41,6 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
       `,
       rank: 1,
-      scaling: {
-        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon from the chosen weapon group.`,
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
-      },
       type: 'Attune',
     },
 
@@ -56,11 +51,16 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
       `,
       rank: 1,
-      scaling: {
-        3: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance} while wearing armor.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Proficiency',
+
+      effect: `
+        You gain \\glossterm{proficiency} with all weapons and armor, including exotic weapons.
+      `,
+      rank: 4,
       type: 'Attune',
     },
 
@@ -117,16 +117,18 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Offense',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Whenever you make an attack roll, you can see into the future to change your fate.
+        If you do, you roll the attack roll twice and take the higher result.
+        After you change your fate in this way, this effect ends.
       `,
       narrative: `
         You intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `You also gain a +1 accuracy bonus to the attack roll.`,
+        5: `The bonus increases to +2.`,
+        7: `The bonus increases to +3.`,
       },
       type: 'Attune',
     },
