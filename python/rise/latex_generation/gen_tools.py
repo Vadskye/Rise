@@ -206,36 +206,36 @@ def generate_tools():
         MagicItem(
             is_magical=True,
             consumable=True,
-            name="Elixir of Potency",
+            name="Elixir of Hardiness",
             rank=1,
             tags=["Attune"],
             material_type="Alchemical",
             description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<vital rolls>.
                 The effects expire after 10 minutes.
             """,
-            short_description="Grants +2 power",
+            short_description="Grants +2 to vital rolls",
             upgrades=[
                 Upgrade(
                     rank=3,
                     description="""
-                        The power bonus increases to +4.
+                        The bonus increases to +3.
                     """,
-                    short_description="Grants +4 power",
+                    short_description="Grants +3 to vital rolls",
                 ),
                 Upgrade(
                     rank=5,
                     description="""
-                        The power bonus increases to +8.
+                        The bonus increases to +4.
                     """,
-                    short_description="Grants +8 power",
+                    short_description="Grants +4 to vital rolls",
                 ),
                 Upgrade(
                     rank=7,
                     description="""
-                        The power bonus increases to +16.
+                        The bonus increases to +5.
                     """,
-                    short_description="Grants +16 power",
+                    short_description="Grants +5 to vital rolls",
                 ),
             ],
         ),
