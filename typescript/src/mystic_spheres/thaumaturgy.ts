@@ -299,10 +299,12 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Enhance Magic',
+      name: 'Enhance Magic -- Power',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
+        Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can choose to enhance it.
+        If you do, you gain a +2 bonus to your \\glossterm{magical power} with that spell.
+        After you enhance a spell in this way, this effect ends.
       `,
       rank: 1,
       scaling: {
@@ -314,19 +316,27 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Mass Enhance Magic',
+      name: 'Enhance Magic -- Distance',
 
-      functionsLike: {
-        mass: true,
-        name: 'Enhance Magic',
-      },
-      // narrative: '',
+      effect: `
+        Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can choose to double its range.
+        After you enhance a spell in this way, this effect ends.
+      `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +8.`,
-      },
-      type: 'Attune (target)',
+      type: 'Attune',
+    },
+
+    {
+      name: 'Enhance Magic -- Echo',
+
+      effect: `
+        Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you can choose to echo it.
+        If you do, the spell takes effect again during your next action.
+        It has the same choices for all decisions, such as targets.
+        After you echo a spell in this way, this effect ends.
+      `,
+      rank: 5,
+      type: 'Attune',
     },
 
     {
