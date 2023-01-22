@@ -52,7 +52,7 @@ fn generate_latex_resources(class: &Class) -> String {
                 "\\glossterm<attunement points>",
             )
         ),
-        fatigue_tolerance = format!("{} + your Constitution + half your Willpower", class.fatigue_tolerance()),
+        fatigue_tolerance = format!("{} + your Constitution", class.fatigue_tolerance()),
         insight_points = if class.insight_points() > 0 {
             format!("{} + your Intelligence", class.insight_points())
         } else {
@@ -76,26 +76,27 @@ fn generate_latex_defenses(class: &Class) -> String {
     } else {
         "".to_string()
     };
-    let vital_text = if class.vital_rolls() > 0 {
+    let hp_text = if class.hit_points() > 0 {
         format!(
-            "In addition, you gain a \\plus{} bonus to your \\glossterm<vital rolls>.",
-            class.vital_rolls()
+            "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
+            class.hit_points()
         )
     } else {
         "".to_string()
     };
+
     return latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
             You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            {vital_text}
+            {hp_text}
         ",
         armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        vital_text=vital_text,
+        hp_text=hp_text,
     ));
 }
 
