@@ -251,15 +251,46 @@ Items are divided into five broad categories, described below.
 
         % All weapons should have two improvements over a ``baseline'' +0/+0d weapon with no properties.
         % In addition, light and heavy weapons have additional properties that are not considered improvements.
-        % Being Light grants an automatic +1a/-2d and better dual wielding/grappling, and light weapons cannot be higher than -1d base.
+        % Being Light grants an automatic +1a/-1d and better dual wielding/grappling, and light weapons cannot be higher than 1d6 base.
         % Being Medium has no special properties, but many Medium weapons have the Versatile Grip property.
-        % Being Heavy grants an automatic +2d, but all heavy weapons require two hands.
-        % Extreme weapons are discouraged; although this permits a Heavy weapon with +3d, no such weapon should exist.
-        % Trading -2d/+1a or +2d/-1a in either direction is not considered an improvement.
-        % +1a costs two improvements, since it's about twice as good as +1d
+        % Being Heavy grants an automatic +1d, but all heavy weapons require two hands.
+        % Extreme weapons are discouraged; although this permits a 2d8 Heavy weapon, no such weapon should exist.
+        % Trading -1d/+1a or +1d/-1a is not considered an improvement.
+
+        % Accuracy/damage math:
+        % Assume 60% hit chance and 1d10+4 damage as a typical value. That's 9.5dph, or 5.7dpr.
+        % +1d (2d6) is about 25% more damage from dice. That's 11 dph (16% more) and 6.6 dpr (16% more)
+        % +2d (2d8) is about 60% more damage from dice. That's 13 dph (37% more) and 7.8 dpr (37% more)
+        % +1a is 6.6 dpr (16% more), and +2a is 7.6 dpr (33% more)
+
+        % Crit math:
+        % 10% chance to explode, 60% chance to hit on explosion, so 6% chance to crit.
+        % Base damage per crit (dpc) is 5.5, so 0.33 dpr from crits, or 6.03 damage per round with crits (dprc).
+        % On sneak attack / smite / similar abilities, 9.5dpc, so 0.57 dpr from crits, or 6.27 dprc
+        % Keen (+2): +2% chance to crit, +0.11 dpr, 6.14 dprc (1% more)
+        % Keen sneak attack: +2% chance to crit, +0.19 dpr, 6.22 dprc (3% more)
+        % Impact: +5.5 dpc, +0.33 dpr, 6.36 dprc (5% more)
+        % Impact sneak attack: +9.5 dpc, +0.57 dpr, 6.6 dprc (9% more)
+        % Summary: Crit abilities are *catastrophically terrible*.
+        % But that doesn't tell the whole story, because you're often crit-fishing.
+
+        % Desperate exertion crit math:
+        % output [highest of [explode 1d10] and [explode 1d10]] >= 15
+        % 11.6% crit chance, 0.64 dpr from crits, 6.34 dprc
+        % Sneak attack: 9.5 dpc, 1.1 dpr from crits, 7.13 dprc
+        % Keen: 15.4% crit chance, 0.85 dpr from crits, 6.55 dprc (3% more)
+        % Impact: +5.5 dpc, +0.64 dpr from crits, 6.67 dprc (10% more)
+        % Impact sneak attack: +9.5 dpc, +1.1 dpr from crits, 8.23 dprc (15% more)
+        % Summary: Keen is still terrible.
+        % Impact is more compelling, and scales well if you can get crit chance higher (totem barbarian)
+
+        % Heavy weapon math:
+        % Assume a duel between a 2d6+4 greataxe (40% hit chance) and a 1d8+4 shield user (60% hit chance)
+        % Greataxe is 4.4 dpr, shield is 5.7 dpr
+        % Using a shield is still clearly superior in a duel context, even with +2d on heavy weapons.
 
         % This means the template, unimproved weapons are:
-        % Light: +1a, 1d3 damage
+        % Light: +1a, 1d4 damage
         % Medium: +0a, 1d6 damage
         % Heavy: +0a, 1d10 damage
 
@@ -323,11 +354,8 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
         On a critical hit, this knockback distance is doubled.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
-        % 5% of the time, you increase your damage by 50% (2x -> 3x). This only becomes better than Keen if you crit 50% of the time, which seems unlikely.
         \weapontagdef{Impact} When you get a \glossterm{critical hit} with this weapon, you roll triple damage dice instead of double damage dice.
-        % Note: this is pretty simply 20% more damage. +1d is a little over 20% more *weapon* damage,
-        % ignoring power, so 20% more damage is still better than +1d.
-        \weapontagdef{Keen} You gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
+        \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
         If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
         In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
@@ -349,6 +377,7 @@ Items are divided into five broad categories, described below.
         The strike affects each secondary target in the same way as the primary targets.
         Sweeping weapons have a number that indicates the number of secondary targets you can affect.
         \weapontagdef{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
+        % (30/60) is one improvement, (60/120) is two.
         \weapontagdef{Thrown} This weapon is designed to be thrown to deal damage at range.
         Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
         Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
@@ -358,7 +387,7 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
         This allows you to deal damage with the weapon if you successfully trip the target.
         \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
-        While holding this weapon in two hands, you gain a \plus2d damage bonus with the weapon.
+        While holding this weapon in two hands, you gain a \plus1d damage bonus with it.
 
     \subsection{Weapon Table}
         Here is the format for weapon entries in the Weapons table, below.
@@ -401,19 +430,19 @@ Items are divided into five broad categories, described below.
                 \tind Battleaxe                    & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp) & Versatile Grip                   \\
                 \tind Broadaxe                     & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp) & Sweeping (1), Versatile Grip                   \\
                 \tind Greataxe                     & Heavy  & \plus0  & 2d6    & Slashing                 & 0 (10 gp) & Sweeping (1)                                   \\
-                \tind Handaxe                      & Light  & \plus1  & 1d4    & Slashing                 & 0 (10 gp) & Thrown (30/60)                                 \\
+                \tind Handaxe                      & Light  & \plus1  & 1d6    & Slashing                 & 0 (10 gp) & Thrown (30/60)                                 \\
                 \tind Poleaxe                      & Heavy  & \plus0  & 1d10    & Piercing or slashing     & 0 (10 gp) & Impact, Tripping                               \\
-                \tind Shepherd's axe               & Light  & \plus1  & 1d4    & Bludgeoning or slashing  & 0 (10 gp) & Long                                           \\
+                \tind Shepherd's axe               & Light  & \plus1  & 1d6    & Bludgeoning or slashing  & 0 (10 gp) & Long                                           \\
                 \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp) & Thrown (30/60)                         \\
 
                 Blades                             &        &         &        &                          &           &                                                \\
                 \tind Broadsword                   & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp) & Sweeping (1), Versatile Grip                   \\
-                \tind Dagger                       & Light  & \plus1  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Thrown (30/60), Stealthy              \\
+                \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Thrown (30/60), Stealthy              \\
                 \tind Estoc                        & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp) & Long, Versatile Grip                           \\
                 \tind Greatsword                   & Heavy  & \plus0  & 1d10    & Slashing                 & 0 (10 gp) & Sweeping (2)                                   \\
-                \tind Rapier                       & Light  & \plus2  & 1d3    & Piercing                 & 0 (10 gp) & \tdash                                           \\
+                \tind Rapier                       & Light  & \plus2  & 1d6    & Piercing                 & 0 (10 gp) & \tdash                                           \\
                 \tind Scimitar                     & Medium & \plus0  & 1d6    & Slashing                 & 0 (10 gp) & Keen, Mounted                                  \\
-                \tind Smallsword                   & Light  & \plus1  & 1d4    & Piercing                 & 0 (10 gp) & Keen                                           \\
+                \tind Smallsword                   & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp) & Keen                                           \\
 
                 Bows                               &        &         &        &                          &           &                                                \\
                 \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d8    & \tdash                   & 1 (40 gp) & Projectile (90/270)                            \\
@@ -431,7 +460,7 @@ Items are divided into five broad categories, described below.
                 % only 1 improvement
                 \tind Mace                         & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp) & Impact                         \\
                 \tind Morning star                 & Medium & \plus0  & 1d8    & Bludgeoning and piercing & 0 (10 gp) & Versatile Grip                                 \\
-                \tind Sap                          & Light  & \plus1  & 1d3    & Bludgeoning              & 0 (10 gp) & Stealthy, Subdual                              \\
+                \tind Sap                          & Light  & \plus2  & 1d3    & Bludgeoning              & 0 (10 gp) & Stealthy, Subdual                              \\
 
                 Crossbows                          &        &         &        &                          &           &                                                \\
                 \tind Hand crossbow\fn{2}          & Light  & \plus1  & 1d3    & \tdash                   & 1 (40 gp) & Projectile (30/90), Stealthy                   \\
@@ -443,26 +472,26 @@ Items are divided into five broad categories, described below.
                 \tind Flail                        & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp) & Tripping, Versatile Grip                       \\
                 \tind Heavy flail                  & Heavy  & \plus0  & 2d6   & Bludgeoning              & 0 (10 gp) & Tripping                                       \\
                 \tind Two-section staff            & Heavy  & \plus0  & 1d10    & Bludgeoning              & 0 (10 gp) & Long, Tripping                                 \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp) & Tripping                                       \\
-                \tind Slapjack                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp) & Subdual                                        \\
-                \tind Whip\fn{2}                   & Light  & \plus1  & 1d3    & Bludgeoning              & 0 (10 gp) & Long, Subdual, Tripping                        \\
+                \tind Nunchaku                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp) & Tripping                                       \\
+                \tind Slapjack                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp) & Subdual                                        \\
+                \tind Whip\fn{2}                   & Medium & \plus0  & 1d4    & Bludgeoning              & 0 (10 gp) & Long, Subdual, Tripping                        \\
 
                 Headed weapons                     &        &         &        &                          &           &                                                \\
-                \tind Light hammer                 & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp) & Thrown (30/60)                       \\
+                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp) & Thrown (30/60)                       \\
                 \tind Longhammer                   & Heavy  & \plus0  & 1d10    & Bludgeoning              & 0 (10 gp) & Forceful, Long                                 \\
                 \tind Pick                         & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp) & Impact, Versatile Grip                         \\
-                \tind Sickle                       & Light  & \plus1  & 1d4    & Slashing                 & 0 (10 gp) & Tripping                                       \\
+                \tind Sickle                       & Light  & \plus1  & 1d4    & Slashing                 & 0 (10 gp) & Sweeping (1), Tripping                                       \\
                 \tind Sledgehammer                 & Heavy  & \plus0  & 2d6   & Bludgeoning              & 0 (10 gp) & Forceful                                       \\
                 \tind Warhammer                    & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp) & Forceful, Versatile Grip                       \\
 
                 Monk weapons                       &        &         &        &                          &           &                                                \\
-                \tind Jitte                        & Light  & \plus1  & 1d4    & Piercing                 & 0 (10 gp) & Parrying                                       \\
-                \tind Kama                         & Light  & \plus1  & 1d4    & Slashing                 & 0 (10 gp) & Tripping                                       \\
+                \tind Jitte                        & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp) & Parrying                                       \\
+                \tind Kama                         & Light  & \plus2  & 1d4    & Slashing                 & 0 (10 gp) & Tripping                                       \\
                 \tind Kunai                        & Light  & \plus1  & 1d4    & Piercing                 & 0 (10 gp) & Thrown (60/120)                                \\
-                \tind Nunchaku                     & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp) & Tripping                                       \\
+                \tind Nunchaku                     & Light  & \plus2  & 1d4    & Bludgeoning              & 0 (10 gp) & Tripping                                       \\
                 % Only one improvement
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d6   & Bludgeoning              & 0         & Long                                           \\
-                \tind Shuriken (5)                 & Light  & \plus1  & 1d3    & Piercing and slashing    & 0 (10 gp) & Ammunition, Compact, Thrown (30/60), Stealthy  \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8   & Bludgeoning              & 0         & Long                                           \\
+                \tind Shuriken (5)                 & Light  & \plus2  & 1d3    & Piercing and slashing    & 0 (10 gp) & Ammunition, Compact, Thrown (30/60), Stealthy  \\
 
                 Polearms                           &        &         &        &                          &           &                                                \\
                 \tind Bardiche                     & Heavy  & \plus0  & 2d6   & Slashing                 & 0 (10 gp) & Sweeping (1)                                   \\
@@ -471,7 +500,7 @@ Items are divided into five broad categories, described below.
                 \tind Longhammer                   & Heavy  & \plus0  & 1d10    & Bludgeoning              & 0 (10 gp) & Forceful, Long                                 \\
                 \tind Poleaxe                      & Heavy  & \plus0  & 1d10    & Piercing or slashing     & 0 (10 gp) & Impact, Tripping                               \\
                 % Only one improvement
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d6   & Bludgeoning              & 0         & Long                                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8   & Bludgeoning              & 0         & Long                                           \\
                 \tind Scythe                       & Heavy  & \plus0  & 1d10    & Slashing                 & 0 (10 gp) & Sweeping (2)                                   \\
                 \tind Swordstaff                   & Heavy  & \plus0  & 1d10    & Slashing                 & 0 (10 gp) & Keen, Long                                     \\
 
@@ -479,25 +508,25 @@ Items are divided into five broad categories, described below.
                 \tind Claw sheathe\fn{2}           & \tdash & \tdash  & \tdash & \tdash                   & 1 (40 gp) & \tdash                                         \\
                 % only 1 improvement
                 \tind Club                         & Medium & \plus0  & 1d8   & Bludgeoning              & 0         & \tdash                                         \\
-                \tind Dagger                       & Light  & \plus1  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Stealthy, Thrown (30/60)              \\
+                \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Stealthy, Thrown (30/60)              \\
                 % only 1 improvement
                 \tind Mace                         & Medium & \plus0  & 1d6    & Bludgeoning              & 0 (10 gp) & Impact                         \\
                 % only 1 improvement
-                \tind Quarterstaff                 & Heavy  & \plus1  & 1d6    & Bludgeoning              & 0         & Long                                           \\
+                \tind Quarterstaff                 & Heavy  & \plus1  & 1d8    & Bludgeoning              & 0         & Long                                           \\
 
                 Spears                             &        &         &        &                          &           &                                                \\
                 \tind Greatspear                   & Heavy  & \plus0  & 2d6   & Piercing                 & 0 (10 gp) & Long                                           \\
-                \tind Javelin                      & Medium & \plus1  & 1d4    & Piercing                 & 0 (10 gp) & Thrown (60/120)                                \\
+                \tind Javelin                      & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp) & Thrown (60/120)                                \\
                 \tind Lance                        & Heavy  & \plus0  & 1d10    & Piercing                 & 0 (10 gp) & Long, Mounted                                  \\
-                \tind Ranseur                      & Heavy  & \plus1  & 1d8    & Piercing                 & 0 (10 gp) & Long                                           \\
+                \tind Ranseur                      & Heavy  & \plus2  & 1d8    & Piercing                 & 0 (10 gp) & Long                                           \\
                 \tind Spear\fn{2}                  & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp) & Thrown (30/60), Versatile Grip                 \\
 
                 Thrown weapons                     &        &         &        &                          &           &                                                \\
-                \tind Dagger                       & Light  & \plus1  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Stealthy, Thrown (30/60)              \\
+                \tind Dagger                       & Light  & \plus2  & 1d3    & Piercing or slashing     & 0 (10 gp) & Compact, Stealthy, Thrown (30/60)              \\
                 \tind Dart (5)                     & Light  & \plus1  & 1d3    & Piercing                 & 0 (2 gp)  & Ammunition, Compact, Thrown (60/120), Stealthy \\
-                \tind Handaxe                      & Light  & \plus1  & 1d4    & Slashing                 & 0 (10 gp) & Thrown (30/60)                                 \\
-                \tind Light hammer                 & Light  & \plus1  & 1d4    & Bludgeoning              & 0 (10 gp) & Thrown (30/60)                       \\
-                \tind Javelin                      & Medium & \plus1  & 1d4    & Piercing                 & 0 (10 gp) & Thrown (60/120)                                \\
+                \tind Handaxe                      & Light  & \plus1  & 1d6    & Slashing                 & 0 (10 gp) & Thrown (30/60)                                 \\
+                \tind Light hammer                 & Light  & \plus1  & 1d6    & Bludgeoning              & 0 (10 gp) & Thrown (30/60)                       \\
+                \tind Javelin                      & Medium & \plus0  & 1d6    & Piercing                 & 0 (10 gp) & Thrown (60/120)                                \\
                 \tind Shuriken (5)                 & Light  & \plus2  & 1d3    & Piercing and slashing    & 0 (2 gp)  & Ammunition, Compact, Thrown (30/60), Stealthy  \\
                 \tind Sling\fn{2}                  & Light  & \plus0  & 1d4    & Bludgeoning              & 0 (10 gp) & Projectile (90/270)                            \\
                 \tind Throwing axe                 & Medium & \plus0  & 1d8    & Slashing                 & 0 (10 gp) & Thrown (30/60)                         \\
@@ -506,8 +535,8 @@ Items are divided into five broad categories, described below.
                 % Exotic weapons should be +3 over normal
                 \tb{Exotic Weapons}\label{Exotic Weapons} & \tb{Usage Class} & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type} & \tb{Item Rank (Cost)}\fn{1} & \tb{Weapon Tags} \tableheaderrule
                 Armor                           &         &        &         &                          &            &                                    \\
-                \tind Armblade\fn{2}            & Light   & \plus1 & 1d4     & Slashing                 & 1 (40 gp)  & Grappling, Keen, Supplemental      \\
-                \tind Spiked knee\fn{2}         & Light   & \plus1 & 1d3     & Piercing                 & 1 (40 gp)  & Grappling, Impact, Supplemental    \\
+                \tind Armblade\fn{2}            & Light   & \plus2 & 1d4     & Slashing                 & 1 (40 gp)  & Grappling, Keen, Supplemental      \\
+                \tind Spiked knee\fn{2}         & Light   & \plus1 & 1d4     & Piercing                 & 1 (40 gp)  & Grappling, Impact, Supplemental    \\
                 \tind Tower shield\fn{3}        & Heavy   & \plus0 & 1d10    & Bludgeoning              & 1 (40 gp)  & Supplemental                       \\
                 \tind Spiked tower shield\fn{3} & Heavy   & \plus0 & 2d6    & Bludgeoning and piercing & 1 (40 gp)  & Supplemental                       \\
                 Axes                            &         &        &         &                          &            &                                    \\
@@ -515,19 +544,19 @@ Items are divided into five broad categories, described below.
                 \tind Dwarven waraxe            & Medium  & \plus0 & 1d8     & Slashing                 & 1 (40 gp)  & Thrown (30/60), Versatile Grip     \\
                 \tind Orcish greataxe           & Heavy   & \plus0 & 2d6    & Slashing                 & 1 (40 gp)  & Impact, Sweeping (1)               \\
                 Blades                          &         &        &         &                          &            &                                    \\
-                \tind Boot dagger\fn{2}         & Light   & \plus1 & 1d4     & Piercing                 & 0 (10 gp)  & Compact, Stealthy, Supplemental    \\
+                \tind Boot dagger\fn{2}         & Light   & \plus2 & 1d4     & Piercing                 & 0 (10 gp)  & Compact, Stealthy, Supplemental    \\
                 \tind Falchion                  & Medium  & \plus0 & 1d6     & Slashing                 & 1 (40 gp)  & Sweeping (2), Versatile Grip       \\
-                \tind Katana                    & Heavy   & \plus1 & 1d8     & Slashing                 & 1 (40 gp)  & Keen, Sweeping (1)                 \\
-                \tind Kukri                     & Light   & \plus2 & 1d3     & Slashing                 & 0 (10 gp)  & Sweeping (1)                 \\
-                \tind Parrying dagger           & Light   & \plus1 & 1d4     & Piercing                 & 0 (10 gp)  & Parrying, Stealthy, Thrown (30/60) \\
+                \tind Katana                    & Heavy   & \plus2 & 1d8     & Slashing                 & 1 (40 gp)  & Keen, Sweeping (1)                 \\
+                \tind Kukri                     & Light   & \plus2 & 1d4     & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)                 \\
+                \tind Parrying dagger           & Light   & \plus2 & 1d4     & Piercing                 & 0 (10 gp)  & Parrying, Stealthy, Thrown (30/60) \\
                 Bows                            &         &        &         &                          &            &                                    \\
-                \tind Flatbow\fn{2}             & Heavy   & \plus1 & 1d6     & \tdash                   & 1 (40 gp)  & Projectile (90/270)                \\
+                \tind Flatbow\fn{2}             & Heavy   & \plus1 & 1d8     & \tdash                   & 1 (40 gp)  & Projectile (90/270)                \\
                 \tind Heartseeker arrows (20)   & \tdash  & \plus0 & \tdash  & Piercing                 & 2 (40 gp)  & Ammunition, Impact                 \\
                 \tind Takedown bow\fn{2}        & Special & \plus0 & 1d8/1d4 & \tdash                   & 2 (200 gp) & Projectile (90/270 or 60/180)      \\
                 Club-like weapons               &         &        &         &                          &            &                                    \\
                 \tind Culacula                  & Heavy   & \plus0 & 1d10    & Bludgeoning              & 0 (10 gp)  & Forceful, Impact, Parrying         \\
-                \tind Gnomish trick mace        & Light   & \plus1 & 1d4     & Bludgeoning              & 0 (10 gp)  & Impact, Tripping                   \\
-                \tind Knobkerrie                & Medium  & \plus1 & 1d6     & Bludgeoning              & 0 (10 gp)  & Throwing (30/60)           \\
+                \tind Gnomish trick mace        & Light   & \plus2 & 1d4     & Bludgeoning              & 0 (10 gp)  & Impact, Tripping                   \\
+                \tind Knobkerrie                & Medium  & \plus1 & 1d6     & Bludgeoning              & 0 (10 gp)  & Impact, Throwing (30/60)           \\
                 \tind Totokia                   & Medium  & \plus0 & 1d8     & Bludgeoning and piercing & 0 (10 gp)  & Impact, Versatile Grip             \\
                 Crossbows                       &         &        &         &                          &            &                                    \\
                 \tind Arbalest\fn{2}            & Heavy   & \plus2 & 2d6    & \tdash                   & 2 (200 gp) & Impact, Projectile (90/270)        \\
@@ -535,23 +564,23 @@ Items are divided into five broad categories, described below.
                 \tind Repeating bolts (5)       & \tdash  & \plus0 & \tdash  & Piercing                 & 1 (10 gp)  & Ammunition                         \\
                 Flexible weapons                &         &        &         &                          &            &                                    \\
                 \tind Bladed whip\fn{2}         & Medium  & \plus0 & 1d6     & Slashing                 & 1 (40 gp)  & Keen, Long, Sweeping (1)                 \\
-                \tind Chain whip                & Medium  & \plus1 & 1d4     & Bludgeoning              & 1 (40 gp)  & Long, Tripping                     \\
+                \tind Chain whip                & Medium  & \plus0 & 1d8     & Bludgeoning              & 1 (40 gp)  & Long, Tripping                     \\
                 \tind Meteor hammer             & Heavy   & \plus0 & 2d6    & Bludgeoning              & 1 (40 gp)  & Long, Tripping                     \\
                 \tind Three-section staff       & Heavy   & \plus0 & 1d10     & Bludgeoning              & 1 (40 gp)  & Long, Parrying, Tripping           \\
                 Headed weapons                  &         &        &         &                          &            &                                    \\
                 \tind Dwarven longhammer        & Heavy   & \plus0 & 2d6    & Bludgeoning              & 1 (40 gp)  & Forceful, Long                     \\
-                \tind Dwarven shorthammer       & Light   & \plus2 & 1d3     & Bludgeoning              & 1 (40 gp)  & Impact                   \\
+                \tind Dwarven shorthammer       & Light   & \plus2 & 1d6     & Bludgeoning              & 1 (40 gp)  & Impact                   \\
                 \tind Heavy pick                & Heavy   & \plus0 & 2d6     & Piercing                 & 1 (40 gp)  & Keen, Impact                       \\
                 \tind Obuch                     & Medium  & \plus0 & 1d8     & Bludgeoning              & 1 (40 gp)  & Long, Tripping                     \\
                 Monk weapons                    &         &        &         &                          &            &                                    \\
-                \tind Sai                       & Light   & \plus1 & 1d4     & Piercing or bludgeoning  & 0 (10 gp)  & Grappling, Parrying                \\
+                \tind Sai                       & Light   & \plus2 & 1d4     & Piercing or bludgeoning  & 0 (10 gp)  & Grappling, Parrying                \\
                 \tind Three-section staff       & Heavy   & \plus0 & 1d10     & Bludgeoning              & 1 (40 gp)  & Long, Parrying, Tripping           \\
                 Polearms                        &         &        &         &                          &            &                                    \\
                 \tind Fauchard                  & Heavy   & \plus0 & 1d10     & Slashing                 & 1 (40 gp)  & Long, Sweeping (2)                 \\
                 \tind War scythe                & Heavy   & \plus0 & 2d6    & Slashing or piercing     & 1 (40 gp)  & Sweeping (2)                       \\
                 Simple weapons                  &         &        &         &                          &            &                                    \\
                 Spear                           &         &        &         &                          &            &                                    \\
-                \tind Gnomish smallspear        & Light   & \plus2 & 1d3     & Piercing                 & 0 (10 gp)  & Long                       \\
+                \tind Gnomish smallspear        & Light   & \plus2 & 1d6     & Piercing                 & 0 (10 gp)  & Long                       \\
                 \tind Partisan                  & Heavy   & \plus0 & 2d6    & Piercing                 & 1 (40 gp)  & Parrying, Long                     \\
                 \tind Pike\fn{2}                & Heavy   & \plus0 & 2d6    & Piercing                 & 0 (10 gp)  & Long                               \\
                 Thrown weapons                  &         &        &         &                          &            &                                    \\
