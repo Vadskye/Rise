@@ -113,8 +113,8 @@ impl Class {
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 3 points to get more HP
-            + self.hit_points() * 3
+            // 1 point to get more HP
+            + self.hit_points()
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per armor proficiency
@@ -141,7 +141,7 @@ impl Class {
             Self::Ranger => 4,
             Self::Rogue => 5,
             Self::Sorcerer => 6,
-            Self::Warlock => 6,
+            Self::Warlock => 5,
             Self::Wizard => 6,
         }
     }
@@ -482,7 +482,7 @@ impl Class {
         match self {
             Self::Barbarian => 6,
             Self::Cleric => 4,
-            Self::Dragon => 5,
+            Self::Dragon => 4,
             Self::Druid => 4,
             Self::Fighter => 5,
             Self::Harpy => 4,
@@ -497,21 +497,24 @@ impl Class {
         }
     }
 
+    // Each +1 level to hit points is about 10% more HP
+    // +3 is about 40% more HP
+    // +4 is about 60% more HP
     pub fn hit_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 2,
-            Self::Cleric => 0,
-            Self::Dragon => 1,
-            Self::Druid => 0,
-            Self::Fighter => 1,
-            Self::Harpy => 1,
-            Self::Monk => 0,
-            Self::Oozeborn => 2,
-            Self::Paladin => 1,
-            Self::Ranger => 1,
-            Self::Rogue => 0,
+            Self::Barbarian => 5,
+            Self::Cleric => 2,
+            Self::Dragon => 4,
+            Self::Druid => 2,
+            Self::Fighter => 3,
+            Self::Harpy => 2,
+            Self::Monk => 2,
+            Self::Oozeborn => 5,
+            Self::Paladin => 3,
+            Self::Ranger => 3,
+            Self::Rogue => 1,
             Self::Sorcerer => 0,
-            Self::Warlock => 0,
+            Self::Warlock => 2,
             Self::Wizard => 0,
         }
     }
@@ -530,7 +533,7 @@ impl Class {
             Self::Ranger => 2,
             Self::Rogue => 3,
             Self::Sorcerer => 2,
-            Self::Warlock => 1,
+            Self::Warlock => 2,
             Self::Wizard => 3,
         }
     }
