@@ -130,7 +130,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Mighty",
-            rank=4,
+            rank=3,
             description="""
                 If your Strength is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
@@ -150,7 +150,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Studied",
-            rank=4,
+            rank=3,
             description="""
                 If your Intelligence is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
@@ -170,18 +170,38 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Finesse",
-            rank=4,
+            rank=3,
             description="""
-                If your Dexterity is at least 3, you gain a +1d damage bonus with strikes using this weapon.
+                If your Dexterity is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
             short_description="Grants +1d damage if you have 3 Dex",
             upgrades=[
                 Upgrade(
                     rank=6,
                     description="""
-                        If your Dexterity is at least 5, you gain a +2d damage bonus with strikes using this weapon.
+                        If your Dexterity is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +2d damage if you have 5 Dex",
+                    short_description="Grants +2 accuracy if you have 5 Dex",
+                ),
+            ],
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Infused",
+            rank=3,
+            description="""
+                If your Willpower is at least 3, you gain a +1d damage bonus with strikes using this weapon.
+            """,
+            short_description="Grants +1d damage if you have 3 Wil",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        If your Willpower is at least 5, you gain a +2d damage bonus with strikes using this weapon.
+                    """,
+                    short_description="Grants +2d damage if you have 5 Wil",
                 ),
             ],
         ),

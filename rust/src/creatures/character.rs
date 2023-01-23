@@ -235,25 +235,20 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];
     // In general, characters acquire one item of their appropriate rank per level, to a max of 5
     // relevant items.
-    // For most characters, damage resistance is most important, followed by hit points, and finally
-    // vital rolls.
-    // The level breakpoints for standard items are 4/10/16.
+    // For most characters, damage is most important, followed by DR and then hit points.
+    // The level breakpoints for HP/DR items are 4/10/16.
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
 
-    let vital_rolls = if level >= 24 {
-        4
-    } else if level >= 18 {
-        3
-    } else if level >= 12 {
+    let strike_damage = if level >= 17 {
         2
-    } else if level >= 6 {
+    } else if level >= 8 {
         1
     } else {
         0
     };
-    if vital_rolls > 0 {
-        modifiers.push(Modifier::VitalRoll(vital_rolls));
+    if strike_damage > 0 {
+        modifiers.push(Modifier::StrikeDamageDice(strike_damage));
     }
 
     let dr = if level >= 22 {
