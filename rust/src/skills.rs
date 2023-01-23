@@ -6,7 +6,7 @@ use std::collections::HashMap;
 use std::fmt;
 use titlecase::titlecase;
 
-#[derive(Clone, Eq, Hash)]
+#[derive(Clone, Debug, Eq, Hash)]
 pub enum Skill {
     Awareness,
     Balance,
@@ -227,7 +227,7 @@ impl fmt::Display for Skill {
     }
 }
 
-#[derive(Clone, Copy, Eq, Hash)]
+#[derive(Clone, Copy, Debug, Eq, Hash)]
 pub enum KnowledgeSubskill {
     Arcana,
     Dungeoneering,

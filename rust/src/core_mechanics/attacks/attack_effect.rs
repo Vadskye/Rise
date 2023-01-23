@@ -6,7 +6,7 @@ use crate::equipment::Weapon;
 use crate::latex_formatting;
 use titlecase::titlecase;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttackEffect {
     BriefDurationInstead,
     Custom(AbilityType, String),
@@ -23,7 +23,7 @@ pub enum AttackEffect {
     VitalWound(VitalWoundEffect),
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct SimpleDamageEffect {
     pub damage_dice: DamageDice,
     pub damage_types: Vec<DamageType>,
@@ -54,7 +54,7 @@ impl SimpleDamageEffect {
     // }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageEffect {
     pub extra_defense_effect: Option<(Defense, AttackTriggeredEffect)>,
     pub damage_dice: DamageDice,
@@ -159,7 +159,7 @@ impl DamageEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageOverTimeEffect {
     pub can_remove_with_dex: bool,
     pub damage: DamageEffect,
@@ -191,7 +191,7 @@ impl DamageOverTimeEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DebuffEffect {
     pub debuffs: Vec<Debuff>,
     pub duration: AttackEffectDuration,
@@ -220,7 +220,7 @@ impl DebuffEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DebuffInsteadEffect {
     pub debuffs: Vec<Debuff>,
     pub instead_of: Debuff,
@@ -238,7 +238,7 @@ impl DebuffInsteadEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct HealingEffect {
     pub healing_dice: DamageDice,
     pub is_magical: bool,
@@ -260,7 +260,7 @@ impl HealingEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct PoisonEffect {
     pub stage1: Vec<Debuff>,
     pub stage3_debuff: Option<Vec<Debuff>>,
@@ -302,7 +302,7 @@ impl PoisonEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct VitalWoundEffect {
     pub special_effect: Option<String>,
 }
@@ -316,7 +316,7 @@ impl VitalWoundEffect {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum AttackEffectDuration {
     Brief,
     Condition,
@@ -485,7 +485,7 @@ impl AttackEffectDuration {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttackTriggeredEffect {
     Custom(AbilityType, String),
     Debuff(DebuffEffect),

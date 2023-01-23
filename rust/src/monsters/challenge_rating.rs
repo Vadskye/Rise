@@ -2,7 +2,7 @@ use crate::creatures::{Creature, Monster};
 use serde::Serialize;
 use std::cmp::max;
 
-#[derive(Copy, Clone, PartialEq, Serialize)]
+#[derive(Copy, Clone, Debug, PartialEq, Serialize)]
 pub enum ChallengeRating {
     Half,
     One,

@@ -1,7 +1,7 @@
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use std::cmp::PartialEq;
 
-#[derive(Clone, Copy, Eq, Hash)]
+#[derive(Clone, Copy, Debug, Eq, Hash)]
 pub enum Attribute {
     Strength,
     Dexterity,

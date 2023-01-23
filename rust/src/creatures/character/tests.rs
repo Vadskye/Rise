@@ -1,6 +1,7 @@
 use super::*;
-use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use crate::core_mechanics::attacks::HasAttacks;
+use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
+use crate::creatures::HasModifiers;
 use creature::Creature;
 
 #[test]
@@ -18,10 +19,7 @@ fn it_calculates_rank_abilities() {
     .collect::<Vec<&str>>();
     fighter_1_abilities.sort();
     assert_eq!(
-        vec![
-            "Combat Styles",
-            "Maneuvers",
-        ],
+        vec!["Combat Styles", "Maneuvers",],
         fighter_1_abilities,
         "Should have correct abilities for a level 1 fighter",
     );
@@ -143,14 +141,14 @@ fn it_calculates_level_21_fighter_attacks() {
         fighter.calc_all_attacks().len(),
         "Should have no attacks without a weapon"
     );
-    fighter.weapons.push(StandardWeapon::Broadsword.weapon());
+    fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Broadsword +16 (The target takes 4d6+8 slashing damage.)",
-            "Generic Scaling Broadsword +11 (The target takes 4d6+24 slashing damage.)",
-            "Mighty Broadsword +9 (The target takes 4d6+40 slashing damage.)",
+            "Certain Battleaxe +16 (The target takes 4d6+8 slashing damage.)",
+            "Generic Scaling Battleaxe +11 (The target takes 4d6+24 slashing damage.)",
+            "Mighty Battleaxe +9 (The target takes 4d6+40 slashing damage.)",
             // +2d from discipline, +2d from equip train, +2d from martial mastery
-            "Broadsword +11 (The target takes 4d6+16 slashing damage.)",
+            "Battleaxe +11 (The target takes 4d6+16 slashing damage.)",
         ],
         fighter
             .calc_all_attacks()
@@ -225,14 +223,14 @@ fn standard_character_statistics_level_1() {
 
     // HasAttacks
     assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(2, creature.calc_magical_power(), "Magical power: 2");
-    assert_eq!(2, creature.calc_mundane_power(), "Mundane power: 2");
+    assert_eq!(1, creature.calc_magical_power(), "Magical power: 1");
+    assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 3");
     assert_eq!(
         vec![
-            "Certain Broadsword +3 (The target takes 1d10+1 slashing damage.)",
-            "Generic Scaling Broadsword +1 (The target takes 1d10+2 slashing damage.)",
-            "Mighty Broadsword -1 (The target takes 1d10+6 slashing damage.)",
-            "Broadsword +1 (The target takes 1d10+2 slashing damage.)"
+            "Certain Battleaxe +3 (The target takes 1d8+1 slashing damage.)",
+            "Generic Scaling Battleaxe +1 (The target takes 1d8+5 slashing damage.)",
+            "Mighty Battleaxe -1 (The target takes 1d8+7 slashing damage.)",
+            "Battleaxe +1 (The target takes 1d8+3 slashing damage.)"
         ],
         creature
             .calc_all_attacks()
@@ -271,18 +269,18 @@ fn standard_character_statistics_level_1() {
     );
 
     // HasDamageAbsorption
-    assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 2 con)",);
+    assert_eq!(13, creature.calc_hit_points(), "HP: (1 level + 2 con + 1 fighter)");
     assert_eq!(
-        8,
+        5,
         creature.calc_damage_resistance(),
-        "DR: 5 scale + (1 level + 2 con)",
+        "DR: 5 scale",
     );
 
     // HasResources
     assert_eq!(
-        3,
+        4,
         creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 3 class",
+        "AP: 4 class",
     );
     assert_eq!(
         7,
@@ -305,6 +303,33 @@ fn standard_character_statistics_level_1() {
 fn standard_character_statistics_level_10() {
     let creature = Character::standard_character(10, true).creature;
 
+    let expected: Vec<&str> = vec![
+        "Maneuvers: maneuver Certain Strike",
+        "Maneuvers: maneuver Generic Scaling Strike",
+        "Maneuvers: maneuver Mighty Strike",
+        "Weapon Training: accuracy 1",
+        "Enduring Discipline: vital roll 1",
+        "Enduring Discipline: resource fatigue tolerance by 1",
+        "Martial Force: strike damage dice 1",
+        "Equipment Efficiency: resource attunement point by 1",
+        "Armor Expertise: encumbrance -1",
+        "Disciplined Force: strike damage dice 1",
+        "Mental Discipline: defense mental by 2",
+        "Maneuvers: accuracy 1",
+        "fighter: defense armor by 1",
+        "fighter: defense fortitude by 7",
+        "fighter: defense mental by 5",
+        "fighter: defense reflex by 3",
+        "fighter: resource attunement point by 4",
+        "fighter: resource fatigue tolerance by 5",
+        "fighter: resource insight point by 2",
+        "fighter: resource trained skill by 3",
+        "magic: power 4",
+        "magic: DR 4",
+        "magic: HP 4",
+    ];
+    assert_eq!(expected, creature.explain_modifiers(), "List of modifiers");
+
     // HasArmor
     assert_eq!(
         1,
@@ -314,18 +339,26 @@ fn standard_character_statistics_level_10() {
 
     // HasAttacks
     assert_eq!(
-        7,
+        8,
         creature.calc_accuracy(),
         "Accuracy: 5 level + 1 per + 1 equip train",
     );
-    assert_eq!(10, creature.calc_magical_power(), "Magical power: 6 scaling + 4 magic item");
-    assert_eq!(10, creature.calc_mundane_power(), "Mundane power: 6 scaling + 4 magic item");
+    assert_eq!(
+        10,
+        creature.calc_magical_power(),
+        "Magical power: 6 scaling + 4 magic item"
+    );
+    assert_eq!(
+        10,
+        creature.calc_mundane_power(),
+        "Mundane power: 6 scaling + 4 magic item"
+    );
     assert_eq!(
         vec![
-            "Certain Broadsword +10 (The target takes 2d8+5 slashing damage.)",
-            "Generic Scaling Broadsword +7 (The target takes 2d8+12 slashing damage.)",
-            "Mighty Broadsword +5 (The target takes 2d8+18 slashing damage.)",
-            "Broadsword +7 (The target takes 2d8+10 slashing damage.)",
+            "Certain Battleaxe +10 (The target takes 2d8+5 slashing damage.)",
+            "Generic Scaling Battleaxe +7 (The target takes 2d8+12 slashing damage.)",
+            "Mighty Battleaxe +5 (The target takes 2d8+18 slashing damage.)",
+            "Battleaxe +7 (The target takes 2d8+10 slashing damage.)",
         ],
         creature
             .calc_all_attacks()
@@ -431,10 +464,10 @@ fn standard_character_statistics_level_20() {
     );
     assert_eq!(
         vec![
-            "Certain Broadsword +17 (The target takes 4d10+12 slashing damage.)",
-            "Generic Scaling Broadsword +12 (The target takes 4d10+32 slashing damage.)",
-            "Mighty Broadsword +10 (The target takes 4d10+48 slashing damage.)",
-            "Broadsword +12 (The target takes 4d10+24 slashing damage.)"
+            "Certain Battleaxe +17 (The target takes 4d10+12 slashing damage.)",
+            "Generic Scaling Battleaxe +12 (The target takes 4d10+32 slashing damage.)",
+            "Mighty Battleaxe +10 (The target takes 4d10+48 slashing damage.)",
+            "Battleaxe +12 (The target takes 4d10+24 slashing damage.)"
         ],
         creature
             .calc_all_attacks()

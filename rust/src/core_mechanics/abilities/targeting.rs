@@ -3,7 +3,7 @@ use crate::core_mechanics::Defense;
 use crate::latex_formatting;
 use std::fmt;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Targeting {
     Anything(Range),
     CausedDamage(AreaSize),
@@ -252,7 +252,7 @@ impl Targeting {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Range {
     Adjacent,
     Short,
@@ -296,7 +296,7 @@ impl fmt::Display for Range {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AreaSize {
     Tiny,
     Small,
@@ -327,7 +327,7 @@ impl fmt::Display for AreaSize {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AreaTargets {
     Allies,
     Creatures,

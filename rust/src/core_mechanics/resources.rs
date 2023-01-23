@@ -1,7 +1,7 @@
 use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Resource {
     AttunementPoint,
     FatigueTolerance,

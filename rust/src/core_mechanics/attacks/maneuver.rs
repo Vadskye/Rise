@@ -10,7 +10,7 @@ use titlecase::titlecase;
 
 use super::Attack;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Maneuver {
     Armorcrusher,
     ArmorcrusherPlus,

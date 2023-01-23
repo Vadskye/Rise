@@ -1,4 +1,4 @@
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageDice {
     count: i32,
     increments: i32,
@@ -7,6 +7,9 @@ pub struct DamageDice {
 
 impl DamageDice {
     // Commonly used damage dice for weapon and spell definitions
+    pub fn d3() -> Self {
+        return Self::new(2);
+    }
     pub fn d4() -> Self {
         return Self::new(3);
     }
