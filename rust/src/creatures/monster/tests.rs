@@ -87,8 +87,8 @@ mod to_section {
             \par
             \begin{activeability}*{Slam}
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus16 bludgeoning damage.
+                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus16 bludgeoning damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -180,8 +180,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-        assert_eq!(2, creature.calc_magical_power(), "Magical power: 2 scaling",);
-        assert_eq!(2, creature.calc_mundane_power(), "Mundane power: 2 scaling",);
+        assert_eq!(3, creature.calc_magical_power(), "Magical power: 1lvl+4wil = as level 5",);
+        assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 1lvl+4wil = as level 5",);
 
         // HasAttributes
         assert_eq!(
@@ -216,9 +216,9 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(11, creature.calc_hit_points(), "HP: (1 level + 1 con)",);
+        assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 1 con)",);
         assert_eq!(
-            4,
+            8,
             creature.calc_damage_resistance(),
             "DR: (1 level + 1 con) * 2",
         );
@@ -230,8 +230,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
-        assert_eq!(4, creature.calc_magical_power(), "Magical power: 2 scaling * 2 cr mult",);
-        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 2 scaling * 2 cr mult",);
+        assert_eq!(4, creature.calc_magical_power(), "Magical power: 1+6 = as level 7",);
+        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 1+6 = as level 7",);
 
         // HasAttributes
         assert_eq!(
@@ -266,11 +266,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(44, creature.calc_hit_points(), "HP: (1 level + 1 con) * 4",);
+        assert_eq!(48, creature.calc_hit_points(), "HP: (1 level + 2 con) * 4",);
         assert_eq!(
-            16,
+            48,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 1 con) * 8",
+            "DR: (1 level + 6 wil) * 8",
         );
     }
 
