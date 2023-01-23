@@ -306,8 +306,22 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Firebolt +1 (The target takes 2d6+2 fire damage.)", // CR 1
-                "Firebolt +3 (The target takes 2d8+4 fire damage.)", // CR 4
+                "Firebolt +1 (The target takes 1d10+3 fire damage.)", // CR 1
+                "Firebolt +3 (The target takes 2d6+4 fire damage.)", // CR 4
+            ];
+            assert_eq!(expected, actual, "CR 1/4");
+        }
+
+        #[test]
+        fn level_8() {
+            let level = 8;
+            let actual = [
+                firebolt_description(generate_creature(ChallengeRating::One, level)),
+                firebolt_description(generate_creature(ChallengeRating::Four, level)),
+            ];
+            let expected = [
+                "Firebolt +5 (The target takes 2d8+9 fire damage.)", // CR 1
+                "Greater Firebolt +7 (The target takes 4d6+12 fire damage.)", // CR 4
             ];
             assert_eq!(expected, actual, "CR 1/4");
         }
@@ -320,8 +334,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Greater Firebolt +9 (The target takes 5d10+12 fire damage.)",
-                "Greater Firebolt +11 (The target takes 6d10+24 fire damage.)",
+                "Greater Firebolt +9 (The target takes 4d10+24 fire damage.)",
+                "Supreme Firebolt +11 (The target takes 6d10+28 fire damage.)",
             ];
             assert_eq!(expected, actual, "CR 1/4",);
         }
@@ -334,8 +348,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Supreme Firebolt +11 (The target takes 7d10+16 fire damage.)",
-                "Supreme Firebolt +13 (The target takes 8d10+32 fire damage.)",
+                "Supreme Firebolt +11 (The target takes 6d10+34 fire damage.)",
+                "Supreme Firebolt +13 (The target takes 7d10+38 fire damage.)",
             ];
             assert_eq!(expected, actual, "CR 1/4",);
         }
