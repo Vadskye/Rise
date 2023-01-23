@@ -36,8 +36,8 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 11
-                    \monsep \textbf{DR} 4
+                \pari \textbf{HP} 12
+                    \monsep \textbf{DR} 8
                 \pari \textbf{Defenses}
                     Armor 7
                     \monsep Fort 7
@@ -52,7 +52,7 @@ mod to_section {
                 \begin{activeability}*{Slam}
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d8\plus2 bludgeoning damage.
+                \hit The target takes 1d10\plus3 bludgeoning damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -68,23 +68,27 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 84
-                    \monsep \textbf{DR} 52
+                \pari \textbf{HP} 128
+                    \monsep \textbf{DR} 216
                 \pari \textbf{Defenses}
-                    Armor 13
-                    \monsep Fort 13
-                    \monsep Ref 13
-                    \monsep Ment 16
+                    Armor 14
+                    \monsep Fort 14
+                    \monsep Ref 14
+                    \monsep Ment 18
                     \rankline
-                    \pari \textbf{Attributes} Str 5, Dex 2, Con 2, Int 2, Per 2, Wil 5
+                    \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{activeability}*{Slam}
+                \parhead{Condition Removal} At the end of each round, if the standard monster has four or more \glossterm{conditions}, it removes its oldest condition.
+            \par
+                \parhead{Multiple Actions} The standard monster can take two standard actions each round. It cannot use the same ability or weapon twice in the same round.
+            \par
+            \begin{activeability}*{Slam}
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d8\plus12 bludgeoning damage.
+                \hit The target takes 4d6\plus16 bludgeoning damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -110,19 +114,19 @@ mod to_section {
             .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10}[Elite]
+                \begin{monsubsection}{Standard Monster}{10}
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 84
-                    \monsep \textbf{DR} 52
+                \pari \textbf{HP} 32
+                    \monsep \textbf{DR} 42
                 \pari \textbf{Defenses}
                     Armor 13
                     \monsep Fort 13
                     \monsep Ref 13
-                    \monsep Ment 16
+                    \monsep Ment 15
                     \rankline
-                    \pari \textbf{Attributes} Str 5, Dex 2, Con 2, Int 2, Per 2, Wil 5
+                    \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
@@ -130,34 +134,34 @@ mod to_section {
                 \begin{activeability}*{Certain Greatsword}
                 \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus6 slashing damage.
+                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Slam}
                 \rankline
-                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d8\plus6 bludgeoning damage.
+                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus6 bludgeoning damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6\plus12 slashing damage.
+                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus12 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Slam}
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d8\plus12 bludgeoning damage.
+                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus12 bludgeoning damage.
             \end{activeability}
         \par
             \begin{activeability}*{Strip the Flesh -- Greatsword}
                 \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6 slashing damage.
+                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit The target takes 2d10\plus6 slashing damage.
                  Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
             \end{activeability}
 ",

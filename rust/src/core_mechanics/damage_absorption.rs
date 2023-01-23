@@ -22,27 +22,27 @@ where
                 levelish = 21;
             }
             dr_from_level += match levelish {
-                1 => 2,
-                2 => 3,
-                3 => 4,
-                4 => 5,
-                5 => 6,
-                6 => 7,
-                7 => 8,
-                8 => 10,
-                9 => 12,
-                10 => 14,
-                11 => 16,
-                12 => 18,
-                13 => 20,
-                14 => 23,
-                15 => 26,
-                16 => 29,
-                17 => 32,
-                18 => 35,
-                19 => 38,
-                20 => 42,
-                21 => 46,
+                1 => 0,
+                2 => 1,
+                3 => 2,
+                4 => 3,
+                5 => 4,
+                6 => 5,
+                7 => 6,
+                8 => 8,
+                9 => 10,
+                10 => 12,
+                11 => 14,
+                12 => 16,
+                13 => 18,
+                14 => 21,
+                15 => 24,
+                16 => 27,
+                17 => 30,
+                18 => 33,
+                19 => 36,
+                20 => 40,
+                21 => 44,
                 _ => panic!("Invalid levelish {}", levelish),
             };
         }
@@ -116,7 +116,7 @@ where
 fn calc_levelish(creature: &Creature, attribute: &Attribute) -> i32 {
     let attribute_multiplier = match creature.category {
         CreatureCategory::Character => 1.0,
-        CreatureCategory::Monster(_) => 0.5,
+        CreatureCategory::Monster(_) => 1.0,
     };
     return creature.level
         + (creature.get_base_attribute(attribute) as f64 * attribute_multiplier).floor() as i32;

@@ -82,14 +82,14 @@ impl Monster {
             None,
         );
 
-        // TODO: correctly implement CR-based power/dice scaling
-        if challenge_rating.power_scaling_multiplier() > 1.0 {
-            creature.add_modifier(
-                Modifier::Power(creature.calc_magical_power()),
-                Some("challenge rating"),
-                None,
-            )
-        }
+        // // TODO: correctly implement CR-based power/dice scaling
+        // if challenge_rating.power_scaling_multiplier() > 1.0 {
+        //     creature.add_modifier(
+        //         Modifier::Power(creature.calc_magical_power()),
+        //         Some("challenge rating"),
+        //         None,
+        //     )
+        // }
 
         return Monster {
             alignment: None,
