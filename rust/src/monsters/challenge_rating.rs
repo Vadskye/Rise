@@ -26,7 +26,7 @@ impl ChallengeRating {
         match self {
             Self::Half => 0,
             Self::One => 0,
-            Self::Four => 0,
+            Self::Four => 1,
         }
     }
 
@@ -62,7 +62,7 @@ impl ChallengeRating {
         match self {
             Self::Half => 0.5,
             Self::One => 1.0,
-            Self::Four => 2.0,
+            Self::Four => 1.0,
         }
     }
 
