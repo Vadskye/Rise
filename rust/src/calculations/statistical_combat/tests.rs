@@ -2,7 +2,7 @@ use super::*;
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::Defense;
 use crate::creatures::{Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster};
-use crate::equipment::StandardWeapon;
+use crate::equipment::{Armor, HasArmor, StandardWeapon};
 use crate::monsters::ChallengeRating;
 
 #[cfg(test)]
@@ -805,6 +805,45 @@ mod run_combat {
         use super::*;
 
         #[test]
+        fn sword_and_board_vs_greataxe() {
+            let expected_combat_results = vec![
+                "Rounds  7.00/B 2.75/R 3.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+                "Rounds  7.50/B 2.75/R 3.00 Blue 0 ( 0.00%) Red 1 ( 0.00%)",
+                "Rounds  9.50/B 3.75/R 3.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
+                "Rounds 11.00/B 4.00/R 4.25 Blue 0 ( 0.00%) Red 1 ( 0.00%)",
+                "Rounds 11.75/B 4.75/R 5.00 Blue 0 ( 0.00%) Red 1 ( 0.05%)",
+            ];
+            let actual_combat_results: Vec<String> = vec![1, 5, 10, 15, 20]
+                .into_iter()
+                .map(|level| {
+                    let attackers = vec![
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                    ];
+
+                    let mut defenders = vec![
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                        Character::standard_character(level, true).creature,
+                    ];
+
+                    for defender in &mut defenders {
+                        defender.remove_armor(Armor::StandardShield);
+                        // Replace existing weapons with a greataxe
+                        defender.weapons.retain(|_| false);
+                        defender.weapons.push(StandardWeapon::Greataxe.weapon());
+                    }
+
+                    run_combat(attackers.clone(), defenders.clone()).to_string()
+                })
+                .collect();
+            assert_eq!(expected_combat_results, actual_combat_results);
+        }
+
+        #[test]
         fn party_vs_difficult_encounter_level_1() {
             let level = 1;
             let attackers = vec![
@@ -823,7 +862,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::difficult_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::difficult_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
@@ -847,7 +892,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::difficult_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::difficult_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
@@ -871,7 +922,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::difficult_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::difficult_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
@@ -899,7 +956,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::standard_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::standard_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
@@ -923,7 +986,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::standard_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::standard_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
@@ -947,7 +1016,13 @@ mod run_combat {
             ];
             let actual_combat_results: Vec<String> = vec![1, 2, 4, 8]
                 .iter()
-                .map(|count| run_combat(attackers.clone(), ChallengeRating::standard_encounter(level, *count)).to_string())
+                .map(|count| {
+                    run_combat(
+                        attackers.clone(),
+                        ChallengeRating::standard_encounter(level, *count),
+                    )
+                    .to_string()
+                })
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
