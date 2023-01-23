@@ -124,6 +124,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} piercing damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
@@ -141,6 +142,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           Each target takes 2d6 + half \\glossterm{power} piercing damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
@@ -157,6 +159,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
@@ -391,6 +394,7 @@ export const verdamancy: MysticSphere = {
       // +1r for letting several party members throw little fireballs
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
           You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.

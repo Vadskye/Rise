@@ -48,8 +48,8 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           The target takes 1d6 + \\glossterm{power} energy damage.
-          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
         `,
@@ -109,8 +109,8 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} energy damage.
-          \\miss Each target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,

@@ -94,6 +94,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} electricity damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -106,6 +107,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} electricity damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
         `,
@@ -342,6 +344,7 @@ export const electromancy: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} electricity damage.
         `,
+        missGlance: true,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
           If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
@@ -384,6 +387,7 @@ export const electromancy: MysticSphere = {
       attack: {
         // +1d for attune + every other round
         hit: `Each target takes 2d6 + half \\glossterm{power} electricity damage.`,
+        missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\hugearealong, 10 ft. wide line from you.
@@ -477,6 +481,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} electricity damage.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
@@ -492,6 +497,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} electricity damage.`,
+        missGlance: true,
         targeting: `
         You teleport into an unoccupied destination on a stable surface within \\distrange.
         Both your departure and arrival with this spell sound like a clap of thunder.

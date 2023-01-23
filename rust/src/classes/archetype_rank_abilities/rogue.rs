@@ -225,6 +225,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit Each target takes 1d6 \add half \glossterm{power} bludgeoning damage.
+                        \\miss \\glossterm{Glancing blow}.
 
                         \rankline
                         \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.

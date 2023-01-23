@@ -124,6 +124,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
         `,
@@ -140,6 +141,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
         `,
@@ -192,6 +194,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
@@ -208,6 +211,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
@@ -252,6 +256,7 @@ export const aquamancy: MysticSphere = {
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
+        missGlance: true,
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
@@ -271,6 +276,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
@@ -290,6 +296,7 @@ export const aquamancy: MysticSphere = {
         hit: `
           Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.

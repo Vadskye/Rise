@@ -92,6 +92,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
