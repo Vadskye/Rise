@@ -355,6 +355,11 @@ impl Armor {
         }
     }
 
+    fn is_body_armor(&self) -> bool {
+        // This is a bit of a hack; we could identify this with a name match instead.
+        return self.definition().damage_resistance > 0;
+    }
+
     fn material(&self) -> &Option<ArmorMaterial> {
         match self {
             // Light armor
@@ -472,6 +477,8 @@ impl fmt::Display for ArmorUsageClass {
 pub trait HasArmor {
     fn add_armor(&mut self, armor: Armor);
     fn get_armor(&self) -> Vec<&Armor>;
+    fn replace_armor(&mut self, armor: Armor);
+    fn remove_armor(&mut self, armor: Armor);
     fn calc_encumbrance(&self) -> i32;
     fn minimum_dex_modifier(&self) -> Option<f64> {
         if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
@@ -490,6 +497,15 @@ where
 {
     fn add_armor(&mut self, armor: Armor) {
         self.armor.push(armor);
+    }
+
+    fn replace_armor(&mut self, armor: Armor) {
+        self.armor.retain(|a| a.is_body_armor() != armor.is_body_armor());
+        self.add_armor(armor)
+    }
+
+    fn remove_armor(&mut self, armor: Armor) {
+        self.armor.retain(|a| a.name() != armor.name());
     }
 
     fn get_armor(&self) -> Vec<&Armor> {
