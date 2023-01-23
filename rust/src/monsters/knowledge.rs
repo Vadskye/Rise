@@ -1,7 +1,7 @@
 use crate::monsters::creature_type::CreatureType;
 use std::collections::HashMap;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Knowledge {
     knowledge: HashMap<i32, String>,
 }

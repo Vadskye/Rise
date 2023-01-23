@@ -1,6 +1,6 @@
 use super::SpecialDefenseType;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Debuff {
     Blinded,
     Charmed(String),

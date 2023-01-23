@@ -4,7 +4,7 @@ use crate::core_mechanics::{DamageDice, DamageType, Defense, Tag};
 use std::fmt;
 use titlecase::titlecase;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Weapon {
     pub accuracy: i32,
     pub damage_dice: DamageDice,
@@ -13,7 +13,7 @@ pub struct Weapon {
     pub tags: Vec<WeaponTag>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum WeaponTag {
     Ammunition,
     Compact,
@@ -100,7 +100,7 @@ impl StandardWeapon {
             },
             Self::Battleaxe => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DamageDice::d8(),
                 damage_types: vec![DamageType::Slashing],
                 name: "battleaxe".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
@@ -124,7 +124,7 @@ impl StandardWeapon {
                 damage_dice: DamageDice::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "claw".to_string(),
-                tags: vec![WeaponTag::Grappling],
+                tags: vec![WeaponTag::VersatileGrip],
             },
             Self::Club => Weapon {
                 accuracy: 0,
@@ -213,7 +213,7 @@ impl StandardWeapon {
             },
             Self::Sap => Weapon {
                 accuracy: 2,
-                damage_dice: DamageDice::d4(),
+                damage_dice: DamageDice::d3(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "sap".to_string(),
                 tags: vec![WeaponTag::Stealthy, WeaponTag::Subdual],
@@ -340,7 +340,7 @@ impl WeaponGroup {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum WeaponMaterial {
     Adamantine,
     PureAdamantine,

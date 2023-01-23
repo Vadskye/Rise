@@ -1,7 +1,7 @@
 use super::latex::latex_ability_block;
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, Cooldown, UsageTime};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct ActiveAbility {
     pub ability_type: AbilityType,
     pub cooldown: Option<Cooldown>,

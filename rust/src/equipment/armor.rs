@@ -2,7 +2,7 @@ use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use std::{cmp::max, fmt};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Armor {
     // Light armor
     Leather(Option<ArmorMaterial>),
@@ -23,7 +23,7 @@ pub enum Armor {
     TowerShield,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum ArmorMaterial {
     Adamantine,
     PureAdamantine,

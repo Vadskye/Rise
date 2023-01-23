@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::WeaponTag;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Tag {
     Ability(AbilityTag),
     Weapon(WeaponTag),

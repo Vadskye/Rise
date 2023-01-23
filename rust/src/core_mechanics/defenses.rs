@@ -6,7 +6,7 @@ use std::fmt;
 use super::abilities::AbilityTag;
 use super::HasAttributes;
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Defense {
     Armor,
     Fortitude,
@@ -61,7 +61,7 @@ impl fmt::Display for Defense {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum SpecialDefenseType {
     AllDamage,
     AbilityTag(AbilityTag),

@@ -8,7 +8,7 @@ use crate::latex_formatting;
 
 use super::{AttackEffect, Maneuver};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Attack {
     pub accuracy: i32,
     pub crit: Option<AttackEffect>,

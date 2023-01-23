@@ -1,7 +1,7 @@
 use crate::core_mechanics::SpeedCategory;
 use crate::latex_formatting;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct AbilityExtraContext {
     pub cooldown: Option<Cooldown>,
     pub movement: Option<AbilityMovement>,
@@ -18,7 +18,7 @@ impl AbilityExtraContext {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Cooldown {
     Brief(Option<String>),
     ShortRest(Option<String>),
@@ -73,7 +73,7 @@ impl Cooldown {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct AbilityMovement {
     pub move_before_attack: bool,
     pub requires_straight_line: bool,
