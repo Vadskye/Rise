@@ -97,6 +97,7 @@ export const cryomancy: MysticSphere = {
       // -1d and +1r for icy terrain
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
           In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
@@ -112,6 +113,7 @@ export const cryomancy: MysticSphere = {
       // 2 ranks for larger area, 1 rank to remove the previous -1d
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} cold damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
           In addition, all water and ground in the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
@@ -291,6 +293,7 @@ export const cryomancy: MysticSphere = {
           Each target takes 2d6 + half \\glossterm{power} bludgeoning and cold damage (see \\pcref{Multiple Damage Types}).
           If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius within \\medrange.
         `,
@@ -309,6 +312,7 @@ export const cryomancy: MysticSphere = {
           Each target takes 4d8 + half \\glossterm{power} bludgeoning and cold damage.
           If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea radius within \\medrange.
         `,
@@ -326,6 +330,7 @@ export const cryomancy: MysticSphere = {
         hit: `
           Each target takes 2d8 + half \\glossterm{power} cold damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea radius within \\medrange.
           In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
@@ -366,6 +371,7 @@ export const cryomancy: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} cold damage.
         `,
+        missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.

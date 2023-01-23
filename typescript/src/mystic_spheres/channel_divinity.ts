@@ -173,6 +173,7 @@ export const channelDivinity: MysticSphere = {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -189,6 +190,7 @@ export const channelDivinity: MysticSphere = {
         hit: `
           Each target takes 4d8 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -205,6 +207,7 @@ export const channelDivinity: MysticSphere = {
           Each target takes 2d8 + half \\glossterm{power} energy damage.
           Each target that takes damage this way is \\shaken by you as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,

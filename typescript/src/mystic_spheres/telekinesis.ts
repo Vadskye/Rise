@@ -179,6 +179,7 @@ export const telekinesis: MysticSphere = {
           Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 15 feet horizontally away from you.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,

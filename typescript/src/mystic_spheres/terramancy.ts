@@ -112,6 +112,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea cone from you.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
@@ -301,6 +302,7 @@ export const terramancy: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
@@ -321,6 +323,7 @@ export const terramancy: MysticSphere = {
         hit: `
           Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
         `,
+        missGlance: true,
         targeting: `
           The earth shakes in a \\hugearea radius \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
@@ -475,6 +478,7 @@ export const terramancy: MysticSphere = {
       // treat as short range med radius, which is a t3 area
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        missGlance: true,
         targeting: `
           You create a volcano at a \\sphereterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.

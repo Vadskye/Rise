@@ -168,7 +168,11 @@ export const summoning: MysticSphere = {
       name: 'Trampling Summon',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `
+          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
+          \\miss \\glossterm{Glancing blow}.
+        `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
           You summon a Medium creature that tramples through the area before disappearing.
@@ -185,6 +189,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
@@ -371,6 +376,7 @@ export const summoning: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} physical damage.
         `,
+        missGlance: true,
         targeting: `
           A horde of dogs appears in a \\medarea radius \\glossterm{zone} from your location.
           The dogs disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
@@ -389,6 +395,7 @@ export const summoning: MysticSphere = {
           Each target takes 2d8 + half \\glossterm{power} physical damage.
           Each creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
+        missGlance: true,
         targeting: `
           A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
           The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
@@ -407,6 +414,7 @@ export const summoning: MysticSphere = {
           Each target takes 2d10 + half \\glossterm{power} piercing damage.
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
           A swarm of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies in the eyes.
@@ -425,6 +433,7 @@ export const summoning: MysticSphere = {
         hit: `
           Each target takes 4d8 + half \\glossterm{power} physical damage.
         `,
+        missGlance: true,
         targeting: `
           A horde of bears appears in a \\largearea radius \\glossterm{zone} from your location.
           The bears disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to maul your enemies.

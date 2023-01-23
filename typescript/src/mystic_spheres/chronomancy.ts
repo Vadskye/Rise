@@ -563,6 +563,7 @@ export const chronomancy: MysticSphere = {
           Each target takes 1d8 + half \\glossterm{power} energy damage.
           As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\smallarea cone.
           In addition, you choose to focus the aging effects of the cone on either sight or hearing.
@@ -579,6 +580,7 @@ export const chronomancy: MysticSphere = {
           Each target takes 2d8 + half \\glossterm{power} energy damage.
           As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled and \\deafened.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\medarea cone.
         `,

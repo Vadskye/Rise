@@ -119,6 +119,7 @@ export const pyromancy: MysticSphere = {
         hit: `
           Each target takes 1d6 + half \\glossterm{power} fire damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
           In addition, you take fire damage equal to half your \\glossterm{power}.
@@ -137,6 +138,7 @@ export const pyromancy: MysticSphere = {
         hit: `
           Each target takes 2d6 + half \\glossterm{power} fire damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearea radius from you.
           In addition, you take fire damage equal to half your \\glossterm{power}.
@@ -152,6 +154,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
         `,
@@ -167,6 +170,7 @@ export const pyromancy: MysticSphere = {
       // +2r for delay, +1r for range
       attack: {
         hit: `Each target takes 4d6 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           When you cast this spell, you create a small bead of fire in midair within your space.
           During your next action, the bead flies out and explodes as you direct.
@@ -182,6 +186,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
@@ -196,6 +201,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea cone from you.
         `,
@@ -264,6 +270,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
@@ -346,6 +353,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
         `,
@@ -541,6 +549,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           Choose one Tiny or larger active fire within \\medrange.
           Make an attack vs. Reflex against everything within an \\medarea radius from it.
@@ -585,6 +594,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -599,6 +609,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} fire damage.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -697,6 +708,7 @@ export const pyromancy: MysticSphere = {
         Your accuracy with this attack is equal to half your level \\add half your Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         Each struck target takes 2d6 + half \\glossterm{power} fire damage.
+        A miss is still considered a \\glossterm{glancing blow}.
 
         After the object explodes in this way, the ritual is \\glossterm{dismissed}.
         If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.

@@ -31,6 +31,7 @@ export const bluntForce: CombatStyle = {
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
@@ -112,6 +113,7 @@ export const bluntForce: CombatStyle = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.

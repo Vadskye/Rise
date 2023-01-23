@@ -316,6 +316,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -333,6 +334,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
+        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -689,6 +691,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} damage of your chosen type.`,
+        missGlance: true,
         targeting: `
           Choose one of the following damage types: acid, cold, electricity, or fire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
