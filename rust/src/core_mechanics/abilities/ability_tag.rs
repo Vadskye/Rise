@@ -1,4 +1,4 @@
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AbilityTag {
     Attune(AttuneType),
     Auditory,
@@ -58,7 +58,7 @@ impl AbilityTag {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttuneType {
     Ritual,
     Personal,
@@ -75,7 +75,7 @@ impl AttuneType {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum SustainAction {
     Standard,
     Minor,

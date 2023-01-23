@@ -1,13 +1,13 @@
 use crate::core_mechanics::Size;
 use std::cmp::max;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct MovementSpeed {
     pub mode: MovementMode,
     pub speed: SpeedCategory,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum MovementMode {
     Burrow,
     Climb,
@@ -17,14 +17,14 @@ pub enum MovementMode {
     Swim,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum FlightManeuverability {
     Poor,
     Normal,
     Perfect,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum SpeedCategory {
     Slow,
     Normal,

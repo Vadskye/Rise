@@ -1,6 +1,6 @@
 use crate::creatures::Creature;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Size {
     Fine,
     Diminuitive,

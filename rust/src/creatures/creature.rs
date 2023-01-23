@@ -12,7 +12,7 @@ use std::collections::HashMap;
 
 use super::{HasModifiers, ModifierType};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Creature {
     pub anonymous_modifiers: Vec<Modifier>,
     pub armor: Vec<Armor>,
@@ -33,7 +33,7 @@ pub struct Creature {
     pub weapons: Vec<Weapon>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum CreatureCategory {
     Character,
     Monster(ChallengeRating),

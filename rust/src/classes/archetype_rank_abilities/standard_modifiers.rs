@@ -101,15 +101,16 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
         RankAbility {
             name: "Maneuvers",
             is_magical: false,
-            rank: 2,
+            rank: 4,
             description: "",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Maneuvers",
             is_magical: false,
-            rank: 4,
+            rank: 6,
             description: "",
+            // TODO: use more useful / realistic upgrades
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]);

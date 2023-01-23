@@ -41,6 +41,13 @@ impl Character {
                 None,
             );
         }
+        if class.hit_points() > 0 {
+            creature.add_modifier(
+                Modifier::HitPointsFromLevel(class.hit_points()),
+                Some(class.name()),
+                None,
+            );
+        }
 
         return Character {
             // archetypes,

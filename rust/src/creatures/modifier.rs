@@ -6,7 +6,7 @@ use crate::skills::Skill;
 
 use super::Creature;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Modifier {
     Accuracy(i32),
     ActiveAbility(ActiveAbility),
@@ -14,9 +14,13 @@ pub enum Modifier {
     BaseAttribute(Attribute, i32),
     BaseSpeed(i32),
     DamageResistance(i32),
+    // Increase effective level by this much when calculating DR
+    DamageResistanceFromLevel(i32),
     Defense(Defense, i32),
     Encumbrance(i32),
     HitPoints(i32),
+    // Increase effective level by this much when calculating HP
+    HitPointsFromLevel(i32),
     // TODO: add this to creature calculations
     Maneuver(Maneuver),
     // TODO: add this to creature calculations
@@ -32,16 +36,18 @@ pub enum Modifier {
     Vulnerable(SpecialDefenseType),
 }
 
-#[derive(PartialEq)]
+#[derive(Debug, PartialEq)]
 pub enum ModifierType {
     Accuracy,
     ActiveAbility,
     Attack,
     BaseAttribute(Attribute),
     DamageResistance,
+    DamageResistanceFromLevel,
     Defense(Defense),
     Encumbrance,
     HitPoints,
+    HitPointsFromLevel,
     Maneuver,
     PassiveAbility,
     Power,
@@ -62,9 +68,11 @@ impl Modifier {
             Self::BaseAttribute(_, v) => format!("{} by {}", self.name(), v),
             Self::BaseSpeed(v) => format!("{} {}", self.name(), v),
             Self::DamageResistance(v) => format!("{} {}", self.name(), v),
+            Self::DamageResistanceFromLevel(v) => format!("{} {}", self.name(), v),
             Self::Defense(_, v) => format!("{} by {}", self.name(), v),
             Self::Encumbrance(v) => format!("{} {}", self.name(), v),
             Self::HitPoints(v) => format!("{} {}", self.name(), v),
+            Self::HitPointsFromLevel(v) => format!("{} {}", self.name(), v),
             Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
             Self::Impervious(t) => format!("{} to {}", self.name(), t.description()),
             Self::Maneuver(_) => self.name(),
@@ -87,9 +95,11 @@ impl Modifier {
             Self::BaseAttribute(a, _) => format!("base attribute {}", a.name()),
             Self::BaseSpeed(_) => format!("base speed"),
             Self::DamageResistance(_) => format!("DR"),
+            Self::DamageResistanceFromLevel(_) => format!("DR from level"),
             Self::Defense(d, _) => format!("defense {}", d.name()),
             Self::Encumbrance(_) => format!("encumbrance"),
             Self::HitPoints(_) => format!("HP"),
+            Self::HitPointsFromLevel(_) => format!("HP from level"),
             Self::Immune(t) => format!("immune to {}", t.description()),
             Self::Impervious(t) => format!("impervious to {}", t.description()),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
@@ -112,9 +122,11 @@ impl Modifier {
             Self::BaseAttribute(a, _) => ModifierType::BaseAttribute(*a),
             Self::BaseSpeed(_) => ModifierType::Speed,
             Self::DamageResistance(_) => ModifierType::DamageResistance,
+            Self::DamageResistanceFromLevel(_) => ModifierType::DamageResistanceFromLevel,
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
             Self::HitPoints(_) => ModifierType::HitPoints,
+            Self::HitPointsFromLevel(_) => ModifierType::HitPointsFromLevel,
             Self::Immune(_) => ModifierType::SpecialDefense,
             Self::Impervious(_) => ModifierType::SpecialDefense,
             Self::Maneuver(_) => ModifierType::Maneuver,
@@ -161,9 +173,11 @@ impl Modifier {
             Self::BaseAttribute(_, v) => v,
             Self::BaseSpeed(v) => v,
             Self::DamageResistance(v) => v,
+            Self::DamageResistanceFromLevel(v) => v,
             Self::Defense(_, v) => v,
             Self::Encumbrance(v) => v,
             Self::HitPoints(v) => v,
+            Self::HitPointsFromLevel(v) => v,
             Self::Immune(_) => &0,
             Self::Impervious(_) => &0,
             Self::Maneuver(_) => &0,
@@ -180,7 +194,7 @@ impl Modifier {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct IdentifiedModifier {
     pub modifier: Modifier,
     pub source: String,
@@ -188,8 +202,12 @@ pub struct IdentifiedModifier {
 }
 
 impl IdentifiedModifier {
-    fn key(&self) -> String {
+    pub fn key(&self) -> String {
         return format!("{} {}", self.source, self.modifier.name());
+    }
+
+    pub fn description(&self) -> String {
+        return format!("{}: {}", self.source, self.modifier.description());
     }
 
     fn replaces(&self, other: &Self) -> bool {
@@ -204,6 +222,7 @@ pub trait HasModifiers {
     fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier>;
     fn get_modifiers_by_type(&self, modifier_type: ModifierType) -> Vec<&Modifier>;
     fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
+    fn explain_modifiers(&self) -> Vec<String>;
 }
 
 impl HasModifiers for Creature {
@@ -274,6 +293,13 @@ impl HasModifiers for Creature {
             .iter()
             .map(|m| m.value())
             .sum();
+    }
+
+    fn explain_modifiers(&self) -> Vec<String> {
+        let mut explanations: Vec<String> = vec![];
+        explanations.append(&mut self.identified_modifiers.iter().map(|m| m.description()).collect::<Vec<String>>());
+        explanations.append(&mut self.anonymous_modifiers.iter().map(|m| m.description()).collect::<Vec<String>>());
+        return explanations;
     }
 }
 
