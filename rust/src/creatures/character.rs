@@ -107,50 +107,11 @@ impl Character {
     }
 
     pub fn standard_greataxe(level: i32, use_point_buy: bool) -> Self {
-        let mut character = Self::new(
-            Class::Fighter,
-            level,
-            [
-                ClassArchetype::MartialMastery,
-                ClassArchetype::EquipmentTraining,
-                ClassArchetype::CombatDiscipline,
-            ],
-        );
-
-        character
-            .creature
-            .weapons
-            .push(StandardWeapon::Greataxe.weapon());
-        character
-            .creature
-            .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
-        character.creature.name = Some("Standard Greataxe".to_string());
-
-        if use_point_buy {
-            character
-                .creature
-                .set_base_attribute(Attribute::Strength, 4);
-            character
-                .creature
-                .set_base_attribute(Attribute::Dexterity, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Constitution, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Intelligence, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Perception, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Willpower, 0);
-        }
-
-        for modifier in calc_standard_magic_modifiers(level) {
-            character.creature.add_magic_modifier(modifier);
-        }
-
+        let mut character = Self::standard_character(level, use_point_buy);
+        character.creature.remove_armor(Armor::StandardShield);
+        // Replace existing weapons with a greataxe
+        character.creature.weapons.retain(|_| false);
+        character.creature.weapons.push(StandardWeapon::Greataxe.weapon());
         return character;
     }
 
@@ -274,34 +235,34 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];
     // In general, characters acquire one item of their appropriate rank per level, to a max of 5
     // relevant items.
-    // For most characters, power is most important, followed by damage resistance, and finally
-    // hit points.
-    // The level breakpoints for standard power and DR items are 4/10/16.
+    // For most characters, damage resistance is most important, followed by hit points, and finally
+    // vital rolls.
+    // The level breakpoints for standard items are 4/10/16.
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
 
-    let power = if level >= 22 {
-        16
-    } else if level >= 16 {
-        8
-    } else if level >= 10 {
+    let vital_rolls = if level >= 24 {
         4
-    } else if level >= 4 {
+    } else if level >= 18 {
+        3
+    } else if level >= 12 {
         2
+    } else if level >= 6 {
+        1
     } else {
         0
     };
-    if power > 0 {
-        modifiers.push(Modifier::Power(power));
+    if vital_rolls > 0 {
+        modifiers.push(Modifier::VitalRoll(vital_rolls));
     }
 
-    let dr = if level >= 23 {
+    let dr = if level >= 22 {
         32
-    } else if level >= 17 {
+    } else if level >= 16 {
         16
-    } else if level >= 11 {
+    } else if level >= 10 {
         8
-    } else if level >= 5 {
+    } else if level >= 4 {
         4
     } else {
         0
@@ -310,13 +271,13 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
         modifiers.push(Modifier::DamageResistance(dr));
     }
 
-    let hp = if level >= 24 {
+    let hp = if level >= 23 {
         32
-    } else if level >= 18 {
+    } else if level >= 17 {
         16
-    } else if level >= 12 {
+    } else if level >= 11 {
         8
-    } else if level >= 6 {
+    } else if level >= 5 {
         4
     } else {
         0

@@ -823,19 +823,12 @@ mod run_combat {
                         Character::standard_character(level, true).creature,
                     ];
 
-                    let mut defenders = vec![
-                        Character::standard_character(level, true).creature,
-                        Character::standard_character(level, true).creature,
-                        Character::standard_character(level, true).creature,
-                        Character::standard_character(level, true).creature,
+                    let defenders = vec![
+                        Character::standard_greataxe(level, true).creature,
+                        Character::standard_greataxe(level, true).creature,
+                        Character::standard_greataxe(level, true).creature,
+                        Character::standard_greataxe(level, true).creature,
                     ];
-
-                    for defender in &mut defenders {
-                        defender.remove_armor(Armor::StandardShield);
-                        // Replace existing weapons with a greataxe
-                        defender.weapons.retain(|_| false);
-                        defender.weapons.push(StandardWeapon::Greataxe.weapon());
-                    }
 
                     run_combat(attackers.clone(), defenders.clone()).to_string()
                 })
