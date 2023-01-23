@@ -64,7 +64,7 @@ impl Character {
         character
             .creature
             .weapons
-            .push(StandardWeapon::Broadsword.weapon());
+            .push(StandardWeapon::Battleaxe.weapon());
         character
             .creature
             .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
