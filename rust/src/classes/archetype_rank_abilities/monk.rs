@@ -39,7 +39,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+                You take no damage from \glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                 If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
             ",
@@ -50,7 +50,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                This ability also protects you from area attacks against your Fortitude and Mental defenses.
+                You also take half damage from abilities that affect an area and attack your Armor and Reflex defense.
             ",
             modifiers: None,
         },
