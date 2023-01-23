@@ -275,6 +275,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           You create a zone of death in a \\smallarea radius \\glossterm{zone} around you.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living \\glossterm{enemies} in the area.
@@ -292,6 +293,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           Each target takes 2d10 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           You create a zone of death in a \\largearea radius \\glossterm{zone} around you.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living \\glossterm{enemies} in the area.
@@ -369,6 +371,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.`,
+        missGlance: true,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
           Make an attack vs. Reflex against each creature within a \\smallarea radius from the corpse.
@@ -419,6 +422,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} energy damage.`,
+        missGlance: true,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
@@ -433,6 +437,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} energy damage.`,
+        missGlance: true,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against them.
         `,

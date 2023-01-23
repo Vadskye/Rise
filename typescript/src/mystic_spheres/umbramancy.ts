@@ -133,6 +133,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // -1d for +2a
         hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
@@ -151,6 +152,7 @@ export const umbramancy: MysticSphere = {
           Each target takes 1d10 + half \\glossterm{power} cold damage.
           Each creature that loses \\glossterm{hit points} from this damage is \\frightened of you as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
@@ -166,6 +168,7 @@ export const umbramancy: MysticSphere = {
       // switch to +1r for shadowed instead of -1d
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
           You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
@@ -213,6 +216,7 @@ export const umbramancy: MysticSphere = {
       // treat as short range med radius, which is a t3 area
       attack: {
         hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        missGlance: true,
         targeting: `
           You create a field of darkness at a \\sphereterm{shadowed} location within \\shortrange.
           The area affected by the field increases over time.

@@ -282,6 +282,7 @@ export const astromancy: MysticSphere = {
         hit: `
           Each target takes 1d8 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
@@ -302,6 +303,7 @@ export const astromancy: MysticSphere = {
           It does not return until the end of the next round.
           After it returns, it becomes immune to flickering in this way until it takes a \\glossterm{short rest}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
@@ -320,6 +322,7 @@ export const astromancy: MysticSphere = {
         hit: `
           Each target takes 4d8 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.
         `,

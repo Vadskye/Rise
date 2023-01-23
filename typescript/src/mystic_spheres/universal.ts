@@ -84,6 +84,7 @@ export const universal: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
           The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
@@ -97,6 +98,7 @@ export const universal: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
           The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
@@ -113,6 +115,7 @@ export const universal: MysticSphere = {
       castingTime: 'one hour',
       attack: {
         hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        missGlance: true,
         targeting: `
           When you perform this ritual, choose a point in space within \\shortrange.
           You can choose a point within an \\glossterm{unattended} container as long as the container is currently open.

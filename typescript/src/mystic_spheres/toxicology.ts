@@ -365,6 +365,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
+        missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything in a \\medarea cone from you.
@@ -395,6 +396,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
+        missGlance: true,
         targeting: `
           You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.
@@ -410,6 +412,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
+        missGlance: true,
         targeting: `
           You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} within \\medrange.
           When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.
@@ -426,6 +429,7 @@ export const toxicology: MysticSphere = {
       // +1r to offset original -1d, +3r for small -> large
       attack: {
         hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        missGlance: true,
         targeting: `
           You create an acidic rain in a \\largearea radius cylinder-shaped \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.

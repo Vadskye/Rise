@@ -159,6 +159,7 @@ export const photomancy: MysticSphere = {
           Each target takes 1d4 + half \\glossterm{power} energy damage.
           Each creature that loses \\glossterm{hit points} from this damage is \\dazzled as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
@@ -245,6 +246,7 @@ export const photomancy: MysticSphere = {
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
@@ -262,6 +264,7 @@ export const photomancy: MysticSphere = {
         hit: `
           Each target takes 1d10 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
           When you cast this spell, and during your next action, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
@@ -291,6 +294,7 @@ export const photomancy: MysticSphere = {
         hit: `
           Each target takes 2d8 + half \\glossterm{power} energy damage.
         `,
+        missGlance: true,
         targeting: `
           Choose up to five \\tinyarea radius areas within \\longrange of you.
           Make an attack vs. Fortitude against all creatures in any of those areas.
@@ -489,6 +493,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
@@ -504,6 +509,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `Each target takes 2d10 + half \\glossterm{power} energy damage.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
