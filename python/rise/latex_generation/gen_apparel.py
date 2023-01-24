@@ -63,13 +63,8 @@ def generate_apparel():
             upgrades=[
                 Upgrade(
                     description="The accuracy bonus increases to +2.",
-                    rank=4,
+                    rank=5,
                     short_description="Grants +2 accuracy with offhand strikes",
-                ),
-                Upgrade(
-                    description="The accuracy bonus increases to +3.",
-                    rank=6,
-                    short_description="Grants +3 accuracy with offhand strikes",
                 ),
             ],
         ),

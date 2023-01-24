@@ -95,7 +95,16 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike),
                 Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
-                Modifier::Maneuver(Maneuver::MightyStrike(1)),
+                Modifier::Maneuver(Maneuver::MightyStrike),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 3,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
             ]),
         },
         RankAbility {
@@ -108,10 +117,28 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
         RankAbility {
             name: "Maneuvers",
             is_magical: false,
+            rank: 5,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+            ]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
             rank: 6,
             description: "",
             // TODO: use more useful / realistic upgrades
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(2)]),
+        },
+        RankAbility {
+            name: "Maneuvers",
+            is_magical: false,
+            rank: 7,
+            description: "",
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
+            ]),
         },
     ]);
 }
