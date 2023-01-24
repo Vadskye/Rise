@@ -97,6 +97,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 0);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -111,7 +114,48 @@ impl Character {
         character.creature.remove_armor(Armor::StandardShield);
         // Replace existing weapons with a greataxe
         character.creature.weapons.retain(|_| false);
-        character.creature.weapons.push(StandardWeapon::Greataxe.weapon());
+        character
+            .creature
+            .weapons
+            .push(StandardWeapon::Greataxe.weapon());
+        return character;
+    }
+
+    pub fn standard_perception_character(level: i32) -> Self {
+        let mut character = Self::standard_character(level, false);
+        character
+            .creature
+            .set_base_attribute(Attribute::Strength, 2);
+        character
+            .creature
+            .set_base_attribute(Attribute::Dexterity, 0);
+        character
+            .creature
+            .set_base_attribute(Attribute::Constitution, 2);
+        character
+            .creature
+            .set_base_attribute(Attribute::Intelligence, 0);
+        character
+            .creature
+            .set_base_attribute(Attribute::Perception, 4);
+        character
+            .creature
+            .set_base_attribute(Attribute::Willpower, 0);
+        character
+            .creature
+            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Constitution]);
+        return character;
+    }
+
+    pub fn perception_greataxe(level: i32) -> Self {
+        let mut character = Self::standard_perception_character(level);
+        character.creature.remove_armor(Armor::StandardShield);
+        // Replace existing weapons with a greataxe
+        character.creature.weapons.retain(|_| false);
+        character
+            .creature
+            .weapons
+            .push(StandardWeapon::Greataxe.weapon());
         return character;
     }
 
@@ -154,6 +198,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 0);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -195,6 +242,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 4);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Willpower]);
         }
 
         // This is a hacky way to represent the fact that casters can attune to more powerful
@@ -240,9 +290,10 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
 
-    let strike_damage = if level >= 17 {
+    // Some people get +1d earlier with the rank 3 weapons; ignore that for this purpose.
+    let strike_damage = if level >= 19 {
         2
-    } else if level >= 8 {
+    } else if level >= 10 {
         1
     } else {
         0

@@ -26,6 +26,9 @@ pub struct Attack {
 pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
+    fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
+        return self.calc_all_attacks().into_iter().find(|a| a.name.contains(name));
+    }
     fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
@@ -35,6 +38,7 @@ pub trait HasAttacks {
     fn calc_magical_power(&self) -> i32;
     fn calc_mundane_power(&self) -> i32;
     fn calc_power(&self, is_magical: bool) -> i32;
+    fn explain_attacks(&self) -> Vec<String>;
 }
 
 impl Attack {
@@ -98,7 +102,8 @@ impl Attack {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
                 damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64) as i32,
+                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
+                        as i32,
             );
         }
         return None;
@@ -302,11 +307,11 @@ where
     }
 
     fn calc_magical_power(&self) -> i32 {
-        return self.calc_power(true)
+        return self.calc_power(true);
     }
 
     fn calc_mundane_power(&self) -> i32 {
-        return self.calc_power(false)
+        return self.calc_power(false);
     }
 
     fn calc_power(&self, is_magical: bool) -> i32 {
@@ -317,8 +322,8 @@ where
         let mut levelish = self.level + self.get_base_attribute(attribute);
         let mut power = 0;
         if levelish > 21 {
-            // +2 power for each point beyond 21
-            power = (levelish - 21) * 2;
+            // +3 power for each point beyond 21
+            power = (levelish - 21) * 3;
             levelish = 21
         }
 
@@ -332,13 +337,13 @@ where
                 4 => 3,
                 5 => 3,
                 6 => 4,
-                7 => 4,   // start +1 per
+                7 => 4, // start +1 per
                 8 => 5,
                 9 => 6,
                 10 => 7,
                 11 => 8,
                 12 => 9,
-                13 => 10,  // start +2 per
+                13 => 10, // start +2 per
                 14 => 12,
                 15 => 14,
                 16 => 16,
@@ -352,6 +357,14 @@ where
         }
 
         return power + self.calc_total_modifier(ModifierType::Power);
+    }
+
+    fn explain_attacks(&self) -> Vec<String> {
+        return self
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(self))
+            .collect::<Vec<String>>();
     }
 }
 

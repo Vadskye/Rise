@@ -166,7 +166,7 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     // println!("Best attack: {}", best_attack.unwrap().name);
 
     if let Some(attack) = best_attack {
-        return calc_attack_damage_per_round(&attack, attacker, defender)
+        return calc_attack_damage_per_round(&attack, attacker, defender).total()
             * attacker.calc_damage_per_round_multiplier();
     } else {
         return 0.0;
@@ -176,7 +176,12 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
 fn calc_best_attack_accuracy(attacker: &Creature, defender: &Creature) -> f64 {
     let best_attack: Option<Attack> = find_best_attack(attacker, defender);
     if let Some(ref a) = best_attack {
-        return calculate_hit_probability(a, attacker.calc_accuracy(), defender.calc_defense(&a.defense)).single_hit_probability;
+        return calculate_attack_outcome(
+            a,
+            attacker.calc_accuracy(),
+            defender.calc_defense(&a.defense),
+        )
+        .hit_probability;
     } else {
         return 0.0;
     }
@@ -187,7 +192,7 @@ fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> 
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
     for attack in attacks {
-        let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender);
+        let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender).total();
         if average_damage_per_round > best_damage_per_round {
             best_damage_per_round = average_damage_per_round;
             best_attack = Some(attack);
@@ -197,47 +202,97 @@ fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> 
     return best_attack;
 }
 
-fn calc_attack_damage_per_round(attack: &Attack, attacker: &Creature, defender: &Creature) -> f64 {
-    let hit_probability = calculate_hit_probability(
+// This only makes sense in the context of a specific defender.
+pub struct AttackDamagePerRound {
+    hit_probability: f64,
+    glance_probability: f64,
+    crit_probability: f64,
+    damage_per_glance: f64,
+    damage_per_hit: f64,
+    damage_per_crit: f64,
+}
+
+impl AttackDamagePerRound {
+    fn total(&self) -> f64 {
+        return self.hit_probability * self.damage_per_hit
+            + self.glance_probability * self.damage_per_glance
+            + self.crit_probability * self.damage_per_crit;
+    }
+
+    pub fn explain(&self) -> String {
+        return format!(
+            "{total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
+            total=dec2(self.total()),
+            damage_per_hit=dec1(self.damage_per_hit),
+            hit_probability=dec2(self.hit_probability),
+            damage_per_crit=dec1(self.damage_per_crit),
+            crit_probability=dec2(self.crit_probability),
+            damage_per_glance=dec1(self.damage_per_glance),
+            glance_probability=dec2(self.glance_probability),
+            hdpr=dec2(self.damage_per_hit * self.hit_probability),
+            cdpr=dec2(self.damage_per_crit * self.crit_probability),
+            gdpr=dec2(self.damage_per_glance * self.glance_probability),
+        );
+    }
+}
+
+pub fn calc_attack_damage_per_round(
+    attack: &Attack,
+    attacker: &Creature,
+    defender: &Creature,
+) -> AttackDamagePerRound {
+    let attack_outcome_probability = calculate_attack_outcome(
         &attack,
         attacker.calc_accuracy(),
         defender.calc_defense(&attack.defense),
     );
+
+    let mut damage_per_crit = 0.0;
+    let mut damage_per_glance = 0.0;
+    let mut damage_per_hit = 0.0;
     if attack.damage_effect().is_some() {
         let damage_dice = attack.calc_damage_dice(attacker).unwrap();
-        let damage_modifier = attack.calc_damage_modifier(attacker).unwrap();
-        let mut average_damage_per_round = hit_probability.single_hit_probability
-            * damage_modifier as f64
-            + (hit_probability.single_hit_probability + hit_probability.crit_probability)
-                * damage_dice.average_damage() as f64;
-        let glance_probability = calculate_glance_probability(
-            &attack,
+        let damage_modifier = attack.calc_damage_modifier(attacker).unwrap() as f64;
+
+        damage_per_crit = damage_dice.average_damage();
+        damage_per_glance = damage_modifier;
+        damage_per_hit = damage_dice.average_damage() + damage_modifier;
+    }
+
+    return AttackDamagePerRound {
+        crit_probability: attack_outcome_probability.crit_probability,
+        glance_probability: calculate_glance_probability(
+            attack,
             attacker.calc_accuracy(),
             defender.calc_defense(&attack.defense),
-        );
-        average_damage_per_round += glance_probability * (damage_modifier as f64);
-        return average_damage_per_round;
-    } else {
-        return 0.0;
-    }
+        ),
+        hit_probability: attack_outcome_probability.hit_probability,
+        damage_per_crit,
+        damage_per_glance,
+        damage_per_hit,
+    };
 }
 
-struct HitProbability {
-    single_hit_probability: f64,
+struct AttackOutcomeProbability {
+    hit_probability: f64,
     crit_probability: f64,
 }
 
 #[cfg(test)]
-impl HitProbability {
+impl AttackOutcomeProbability {
     fn short_description(&self) -> String {
         return format!(
             "{:.3} single, {:.3} crit",
-            self.single_hit_probability, self.crit_probability
+            self.hit_probability, self.crit_probability
         );
     }
 }
 
-fn calculate_hit_probability(attack: &Attack, accuracy: i32, defense: i32) -> HitProbability {
+fn calculate_attack_outcome(
+    attack: &Attack,
+    accuracy: i32,
+    defense: i32,
+) -> AttackOutcomeProbability {
     // hardcoded
     let max_explosion_depth = 2.0;
 
@@ -271,18 +326,31 @@ fn calculate_hit_probability(attack: &Attack, accuracy: i32, defense: i32) -> Hi
         } else if explosion_count < max_explosion_depth {
             explosion_count += 1.0;
         } else {
-            return HitProbability {
+            return AttackOutcomeProbability {
                 crit_probability,
-                single_hit_probability,
+                hit_probability: single_hit_probability,
             };
         }
     }
 }
 
 fn calculate_glance_probability(attack: &Attack, accuracy: i32, defense: i32) -> f64 {
-    return calculate_hit_probability(attack, accuracy + 2, defense).single_hit_probability
-        - calculate_hit_probability(attack, accuracy, defense).single_hit_probability;
+    return calculate_attack_outcome(attack, accuracy + 2, defense).hit_probability
+        - calculate_attack_outcome(attack, accuracy, defense).hit_probability;
+}
+
+// Format to one decimal place
+fn dec1(val: f64) -> String {
+    return format!("{:.1}", val);
+}
+
+// Format to two decimal places
+fn dec2(val: f64) -> String {
+    return format!("{:.2}", val);
 }
 
 #[cfg(test)]
 mod tests;
+
+#[cfg(test)]
+mod calc_attack_damage_per_round_tests;

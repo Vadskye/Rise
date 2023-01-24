@@ -17,8 +17,8 @@ where
         let mut dr_from_level = 0;
         if levelish > 0 {
             if levelish > 21 {
-                // +4 DR for each point beyond 21
-                dr_from_level = (levelish - 21) * 4;
+                // +5 DR for each point beyond 21
+                dr_from_level = (levelish - 21) * 5;
                 levelish = 21;
             }
             dr_from_level += match levelish {

@@ -156,7 +156,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Certain Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus.
+        Make a \\glossterm{strike} with a +3 accuracy bonus.
         Your \\glossterm{power} with the strike is halved.
       `,
       rank: 1,
@@ -166,15 +166,10 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Mighty Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a -2 penalty to \\glossterm{accuracy}.
-        You gain a +4 damage bonus with the strike.
+        Make a \\glossterm{strike} with a -1 penalty to \\glossterm{accuracy}.
+        The strike deals maximum damage with all damage dice.
       `,
       rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +8.',
-        5: 'The damage bonus increases to +16.',
-        7: 'The damage bonus increases to +24.',
-      },
     },
 
     {

@@ -19,7 +19,7 @@ fn it_calculates_rank_abilities() {
     .collect::<Vec<&str>>();
     fighter_1_abilities.sort();
     assert_eq!(
-        vec!["Combat Styles", "Maneuvers",],
+        vec!["Maneuvers", "Martial Maneuvers",],
         fighter_1_abilities,
         "Should have correct abilities for a level 1 fighter",
     );
@@ -40,22 +40,17 @@ fn it_calculates_rank_abilities() {
         vec![
             "Armor Expertise",
             "Cleansing Discipline",
-            "Combat Style Rank (2)",
-            "Combat Style Rank (3)",
-            "Combat Style Rank (4)",
-            "Combat Styles",
             "Disciplined Force",
             "Enduring Discipline",
+            "Enhanced Maneuvers",
             "Equipment Efficiency",
-            // 2 of these since they are used for maneuver scaling at ranks 1 and 3
+            "Maneuvers",
+            // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
             "Maneuvers",
             "Martial Force",
-            "Martial Maneuver",
-            // 2 of these for the invisible rank 3 + 4 scaling, plus the actual rank 3
-            "Martial Resilience",
-            "Martial Resilience",
-            "Martial Resilience",
+            "Martial Maneuvers",
+            "Martial Maneuvers+",
             "Mental Discipline",
             "Weapon Training"
         ],
@@ -104,13 +99,13 @@ fn it_calculates_level_21_fighter_defenses() {
         "10 level scaling + 3 class",
     );
     assert_eq!(
-        "Ment b10 f18",
+        "Ment b10 f19",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 4 class + 2 CD0 + 1 CD3 + 1 CD6",
+        "10 level scaling + 5 class + 2 CD0 + 1 CD3 + 1 CD6",
     );
 }
 
@@ -128,13 +123,13 @@ fn it_calculates_level_21_fighter_attacks() {
     )
     .creature;
     assert_eq!(
-        "Accuracy b10 f11",
+        "Accuracy b10 f13",
         format!(
             "Accuracy b{} f{}",
             baseline.calc_accuracy(),
             fighter.calc_accuracy(),
         ),
-        "10 level scaling + 1 equipment training",
+        "10 level scaling + 1 equipment training + 2 martial mastery",
     );
     assert_eq!(
         0,
@@ -144,11 +139,11 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Battleaxe +16 (The target takes 4d6+8 slashing damage.)",
-            "Generic Scaling Battleaxe +11 (The target takes 4d6+24 slashing damage.)",
-            "Mighty Battleaxe +9 (The target takes 4d6+40 slashing damage.)",
+            "Certain Battleaxe +15 (The target takes 4d8+13 slashing damage.)",
+            "Generic Scaling Battleaxe +13 (The target takes 4d8+42 slashing damage.)",
+            "Mighty Battleaxe +11 (The target takes 4d8+50 slashing damage.)",
             // +2d from discipline, +2d from equip train, +2d from martial mastery
-            "Battleaxe +11 (The target takes 4d6+16 slashing damage.)",
+            "Battleaxe +13 (The target takes 4d8+26 slashing damage.)",
         ],
         fighter
             .calc_all_attacks()
@@ -173,13 +168,13 @@ fn it_calculates_level_21_fighter_resources() {
     )
     .creature;
     assert_eq!(
-        "AP b0 f4",
+        "AP b0 f5",
         format!(
             "AP b{} f{}",
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "3 class + 1 equipment training"
+        "4 class + 1 equipment training"
     );
     assert_eq!(
         "FT b0 f7",
@@ -210,336 +205,818 @@ fn it_calculates_level_21_fighter_resources() {
     );
 }
 
-#[test]
-fn standard_character_statistics_level_1() {
-    let creature = Character::standard_character(1, true).creature;
+#[cfg(test)]
+mod standard_character_statistics {
+    use super::*;
 
-    // HasArmor
-    assert_eq!(
-        1,
-        creature.calc_encumbrance(),
-        "Encumbrance: 5 scale mail - 4 str",
-    );
+    #[test]
+    fn level_1() {
+        let creature = Character::standard_character(1, true).creature;
 
-    // HasAttacks
-    assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-    assert_eq!(1, creature.calc_magical_power(), "Magical power: 1");
-    assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 3");
-    assert_eq!(
-        vec![
-            "Certain Battleaxe +3 (The target takes 1d8+1 slashing damage.)",
-            "Generic Scaling Battleaxe +1 (The target takes 1d8+5 slashing damage.)",
-            "Mighty Battleaxe -1 (The target takes 1d8+7 slashing damage.)",
-            "Battleaxe +1 (The target takes 1d8+3 slashing damage.)"
-        ],
-        creature
-            .calc_all_attacks()
-            .iter()
-            .map(|a| a.shorthand_description(&creature))
-            .collect::<Vec<String>>(),
-        "Attack descriptions",
-    );
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
 
-    // HasAttributes
-    assert_eq!(
-        vec![4, 0, 2, 0, 2, 0],
-        Attribute::all()
-            .iter()
-            .map(|a| creature.get_base_attribute(&a))
-            .collect::<Vec<i32>>(),
-        "Attributes",
-    );
+        // HasAttributes
+        assert_eq!(
+            vec![4, 0, 2, 0, 2, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
 
-    // HasDefenses
-    assert_eq!(
-        6,
-        creature.calc_defense(&Defense::Armor),
-        "Armor: 3 breastplate + 2 shield + 1 fighter",
-    );
-    assert_eq!(
-        9,
-        creature.calc_defense(&Defense::Fortitude),
-        "Fort: 7 fighter + 2 con",
-    );
-    assert_eq!(3, creature.calc_defense(&Defense::Reflex), "Ref: 3 fighter",);
-    assert_eq!(
-        5,
-        creature.calc_defense(&Defense::Mental),
-        "Ment: 5 fighter",
-    );
+        // HasArmor
+        assert_eq!(
+            1,
+            creature.calc_encumbrance(),
+            "Encumbrance: 5 scale mail - 4 str",
+        );
 
-    // HasDamageAbsorption
-    assert_eq!(13, creature.calc_hit_points(), "HP: (1 level + 2 con + 1 fighter)");
-    assert_eq!(
-        5,
-        creature.calc_damage_resistance(),
-        "DR: 5 scale",
-    );
+        // HasAttacks
+        assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
+        assert_eq!(1, creature.calc_magical_power(), "Magical power: 1");
+        assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 3");
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +3 (The target takes 1d8+1 slashing damage.)",
+                "Generic Scaling Battleaxe +1 (The target takes 1d8+5 slashing damage.)",
+                "Mighty Battleaxe -1 (The target takes 1d8+7 slashing damage.)",
+                "Battleaxe +1 (The target takes 1d8+3 slashing damage.)"
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
 
-    // HasResources
-    assert_eq!(
-        4,
-        creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 4 class",
-    );
-    assert_eq!(
-        7,
-        creature.calc_resource(&Resource::FatigueTolerance),
-        "FT: 5 fighter + 2 con",
-    );
-    assert_eq!(
-        2,
-        creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter",
-    );
-    assert_eq!(
-        3,
-        creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 3 fighter",
-    );
+        // HasDefenses
+        assert_eq!(
+            6,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 3 breastplate + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            9,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 7 fighter + 2 con",
+        );
+        assert_eq!(3, creature.calc_defense(&Defense::Reflex), "Ref: 3 fighter",);
+        assert_eq!(
+            5,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 5 fighter",
+        );
+
+        // HasDamageAbsorption
+        assert_eq!(
+            16,
+            creature.calc_hit_points(),
+            "HP: (1 level + 2 con + 3 fighter)"
+        );
+        assert_eq!(5, creature.calc_damage_resistance(), "DR: 5 scale",);
+
+        // HasResources
+        assert_eq!(
+            4,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class",
+        );
+        assert_eq!(
+            7,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 2 con",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
+
+    #[test]
+    fn level_10() {
+        let creature = Character::standard_character(10, true).creature;
+
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Weapon Training: accuracy 1",
+            "Enduring Discipline: vital roll 1",
+            "Enduring Discipline: resource fatigue tolerance by 1",
+            "Martial Force: strike damage dice 1",
+            "Equipment Efficiency: resource attunement point by 1",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "Armor Expertise: encumbrance -1",
+            "Disciplined Force: strike damage dice 1",
+            "Mental Discipline: defense mental by 2",
+            "Maneuvers: accuracy 1",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+            "attribute scaling with level: base attribute strength by 1",
+            "attribute scaling with level: base attribute constitution by 1",
+            "magic: strike damage dice 1",
+            "magic: DR 8",
+            "magic: HP 4",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
+
+        // HasAttributes
+        assert_eq!(
+            vec![5, 0, 3, 0, 2, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
+
+        // HasArmor
+        assert_eq!(
+            0,
+            creature.calc_encumbrance(),
+            "Encumbrance: 5 layered hide - 5 str",
+        );
+
+        // HasAttacks
+        assert_eq!(
+            8,
+            creature.calc_accuracy(),
+            "Accuracy: 5 level + 1 per + 1 equip train + 1 maneuvers",
+        );
+        assert_eq!(
+            7,
+            creature.calc_magical_power(),
+            "Magical power: as level 10"
+        );
+        assert_eq!(
+            14,
+            creature.calc_mundane_power(),
+            "Mundane power: 10 level + 5 str = as level 15"
+        );
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +10 (The target takes 2d8+7 slashing damage.)",
+                "Generic Scaling Battleaxe +8 (The target takes 2d8+18 slashing damage.)",
+                "Mighty Battleaxe +6 (The target takes 2d8+22 slashing damage.)",
+                "Battleaxe +8 (The target takes 2d8+14 slashing damage.)",
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
+
+        // HasDefenses
+        assert_eq!(
+            12,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            15,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 5 level + 7 fighter + 3 con",
+        );
+        assert_eq!(
+            8,
+            creature.calc_defense(&Defense::Reflex),
+            "Ref: 5 level + 3 fighter",
+        );
+        assert_eq!(
+            12,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 5 level + 4 fighter + 3 combat discipline",
+        );
+
+        // HasDamageAbsorption
+        assert_eq!(
+            54,
+            creature.calc_hit_points(),
+            "HP: (10 level + 3 con + 3 fighter = as level 16) + 4 magic item",
+        );
+        assert_eq!(
+            44,
+            creature.calc_damage_resistance(),
+            "DR: (as level 10) + 24 magic full plate + 8 magic item",
+        );
+
+        // HasResources
+        assert_eq!(
+            5,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class + 1 equipment training",
+        );
+        assert_eq!(
+            9,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 3 con + 1 combat discipline",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
+
+    #[test]
+    fn level_20() {
+        let creature = Character::standard_character(20, true).creature;
+
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Weapon Training: accuracy 1",
+            "Enduring Discipline: vital roll 1",
+            "Enduring Discipline: resource fatigue tolerance by 1",
+            "Martial Force: strike damage dice 1",
+            "Equipment Efficiency: resource attunement point by 1",
+            "Armor Expertise: encumbrance -1",
+            "Disciplined Force: strike damage dice 1",
+            "Mental Discipline: defense mental by 2",
+            "Weapon Expertise: strike damage dice 1",
+            "Martial Force+: strike damage dice 1",
+            "Enduring Discipline+: vital roll 1",
+            "Enduring Discipline+: resource fatigue tolerance by 1",
+            "Maneuvers: accuracy 2",
+            "Armor Expertise+: encumbrance -1",
+            "Disciplined Force+: strike damage dice 1",
+            "Mental Discipline+: defense mental by 2",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "Weapon Expertise+: strike damage dice 1",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+            "attribute scaling with level: base attribute strength by 3",
+            "attribute scaling with level: base attribute constitution by 3",
+            "magic: strike damage dice 2",
+            "magic: DR 16",
+            "magic: HP 16",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
+
+        // HasAttributes
+        assert_eq!(
+            vec![7, 0, 5, 0, 2, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
+
+        // HasArmor
+        assert_eq!(
+            0,
+            creature.calc_encumbrance(),
+            "Encumbrance: 6 full plate - 4 str - 2 equip train",
+        );
+
+        // HasAttacks
+        assert_eq!(
+            14,
+            creature.calc_accuracy(),
+            "Accuracy: 10 level + 1 per + 1 equip train + 2 martial mastery",
+        );
+        assert_eq!(
+            24,
+            creature.calc_magical_power(),
+            "Magical power: as level 20"
+        );
+        assert_eq!(
+            38,
+            creature.calc_mundane_power(),
+            "Mundane power: 20 lvl + 7 str = as level 21 + 12"
+        );
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +16 (The target takes 5d10+19 slashing damage.)",
+                "Generic Scaling Battleaxe +14 (The target takes 5d10+54 slashing damage.)",
+                "Mighty Battleaxe +12 (The target takes 5d10+62 slashing damage.)",
+                "Battleaxe +14 (The target takes 5d10+38 slashing damage.)"
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
+
+        // HasDefenses
+        assert_eq!(
+            17,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 10 level + 4 full plate + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            22,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 10 level + 7 fighter + 5 con",
+        );
+        assert_eq!(
+            13,
+            creature.calc_defense(&Defense::Reflex),
+            "Ref: 10 level + 3 fighter",
+        );
+        assert_eq!(
+            19,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 10 level + 5 fighter + 4 combat discipline",
+        );
+
+        // HasDamageAbsorption
+        assert_eq!(
+            176,
+            creature.calc_hit_points(),
+            "HP: (20 level + 5 con + 3 fighter = as level 21 + 70) + 16 magic item",
+        );
+        assert_eq!(
+            128,
+            creature.calc_damage_resistance(),
+            "DR: (as level 20) + 72 magic full plate + 16 magic item",
+        );
+
+        // HasResources
+        assert_eq!(
+            5,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class + 1 equipment training",
+        );
+        assert_eq!(
+            12,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 5 con + 2 combat discipline",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
 }
 
-#[test]
-fn standard_character_statistics_level_10() {
-    let creature = Character::standard_character(10, true).creature;
+#[cfg(test)]
+mod standard_perception_character_statistics {
+    use super::*;
 
-    let expected: Vec<&str> = vec![
-        "Maneuvers: maneuver Certain Strike",
-        "Maneuvers: maneuver Generic Scaling Strike",
-        "Maneuvers: maneuver Mighty Strike",
-        "Weapon Training: accuracy 1",
-        "Enduring Discipline: vital roll 1",
-        "Enduring Discipline: resource fatigue tolerance by 1",
-        "Martial Force: strike damage dice 1",
-        "Equipment Efficiency: resource attunement point by 1",
-        "Armor Expertise: encumbrance -1",
-        "Disciplined Force: strike damage dice 1",
-        "Mental Discipline: defense mental by 2",
-        "Maneuvers: accuracy 1",
-        "fighter: defense armor by 1",
-        "fighter: defense fortitude by 7",
-        "fighter: defense mental by 5",
-        "fighter: defense reflex by 3",
-        "fighter: resource attunement point by 4",
-        "fighter: resource fatigue tolerance by 5",
-        "fighter: resource insight point by 2",
-        "fighter: resource trained skill by 3",
-        "magic: power 4",
-        "magic: DR 4",
-        "magic: HP 4",
-    ];
-    assert_eq!(expected, creature.explain_modifiers(), "List of modifiers");
+    #[test]
+    fn level_1() {
+        let creature = Character::standard_perception_character(1).creature;
 
-    // HasArmor
-    assert_eq!(
-        1,
-        creature.calc_encumbrance(),
-        "Encumbrance: 5 layered hide - 4 str",
-    );
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
 
-    // HasAttacks
-    assert_eq!(
-        8,
-        creature.calc_accuracy(),
-        "Accuracy: 5 level + 1 per + 1 equip train",
-    );
-    assert_eq!(
-        10,
-        creature.calc_magical_power(),
-        "Magical power: 6 scaling + 4 magic item"
-    );
-    assert_eq!(
-        10,
-        creature.calc_mundane_power(),
-        "Mundane power: 6 scaling + 4 magic item"
-    );
-    assert_eq!(
-        vec![
-            "Certain Battleaxe +10 (The target takes 2d8+5 slashing damage.)",
-            "Generic Scaling Battleaxe +7 (The target takes 2d8+12 slashing damage.)",
-            "Mighty Battleaxe +5 (The target takes 2d8+18 slashing damage.)",
-            "Battleaxe +7 (The target takes 2d8+10 slashing damage.)",
-        ],
-        creature
-            .calc_all_attacks()
-            .iter()
-            .map(|a| a.shorthand_description(&creature))
-            .collect::<Vec<String>>(),
-        "Attack descriptions",
-    );
+        // HasAttributes
+        assert_eq!(
+            vec![2, 0, 2, 0, 4, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
 
-    // HasAttributes
-    assert_eq!(
-        vec![4, 0, 2, 0, 2, 0],
-        Attribute::all()
-            .iter()
-            .map(|a| creature.get_base_attribute(&a))
-            .collect::<Vec<i32>>(),
-        "Attributes",
-    );
+        // HasArmor
+        assert_eq!(
+            3,
+            creature.calc_encumbrance(),
+            "Encumbrance: 5 scale mail - 2 str",
+        );
 
-    // HasDefenses
-    assert_eq!(
-        12,
-        creature.calc_defense(&Defense::Armor),
-        "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter",
-    );
-    assert_eq!(
-        14,
-        creature.calc_defense(&Defense::Fortitude),
-        "Fort: 5 level + 7 fighter + 2 con",
-    );
-    assert_eq!(
-        8,
-        creature.calc_defense(&Defense::Reflex),
-        "Ref: 5 level + 3 fighter",
-    );
-    assert_eq!(
-        12,
-        creature.calc_defense(&Defense::Mental),
-        "Ment: 5 level + 4 fighter + 3 combat discipline",
-    );
+        // HasAttacks
+        assert_eq!(2, creature.calc_accuracy(), "Accuracy: 2 per");
+        assert_eq!(1, creature.calc_magical_power(), "Magical power: 1");
+        assert_eq!(2, creature.calc_mundane_power(), "Mundane power: 2");
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +4 (The target takes 1d8+1 slashing damage.)",
+                "Generic Scaling Battleaxe +2 (The target takes 1d8+4 slashing damage.)",
+                "Mighty Battleaxe +0 (The target takes 1d8+6 slashing damage.)",
+                "Battleaxe +2 (The target takes 1d8+2 slashing damage.)"
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
 
-    // HasDamageAbsorption
-    assert_eq!(
-        48,
-        creature.calc_hit_points(),
-        "HP: (10 level + 2 con) + 12 martial resilience + 4 magic item",
-    );
-    assert_eq!(
-        39,
-        creature.calc_damage_resistance(),
-        "DR: (10 level + 2 con) + 20 magic full plate + 4 magic item",
-    );
+        // HasDefenses
+        assert_eq!(
+            6,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 3 breastplate + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            9,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 7 fighter + 2 con",
+        );
+        assert_eq!(3, creature.calc_defense(&Defense::Reflex), "Ref: 3 fighter",);
+        assert_eq!(
+            5,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 5 fighter",
+        );
 
-    // HasResources
-    assert_eq!(
-        4,
-        creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 3 class + 1 equipment training",
-    );
-    assert_eq!(
-        8,
-        creature.calc_resource(&Resource::FatigueTolerance),
-        "FT: 3 fighter + 4 str + 1 combat discipline",
-    );
-    assert_eq!(
-        2,
-        creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter",
-    );
-    assert_eq!(
-        3,
-        creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 3 fighter",
-    );
-}
+        // HasDamageAbsorption
+        assert_eq!(
+            16,
+            creature.calc_hit_points(),
+            "HP: (1 level + 2 con + 3 fighter)"
+        );
+        assert_eq!(5, creature.calc_damage_resistance(), "DR: 5 scale",);
 
-#[test]
-fn standard_character_statistics_level_20() {
-    let creature = Character::standard_character(20, true).creature;
+        // HasResources
+        assert_eq!(
+            4,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class",
+        );
+        assert_eq!(
+            7,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 2 con",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
 
-    // HasArmor
-    assert_eq!(
-        0,
-        creature.calc_encumbrance(),
-        "Encumbrance: 6 full plate - 4 str - 2 equip train",
-    );
+    #[test]
+    fn level_10() {
+        let creature = Character::standard_perception_character(10).creature;
 
-    // HasAttacks
-    assert_eq!(
-        12,
-        creature.calc_accuracy(),
-        "Accuracy: 10 level + 1 per + 1 equip train",
-    );
-    assert_eq!(
-        24,
-        creature.calc_magical_power(),
-        "Magical power: 16 scaling + 8 magic item"
-    );
-    assert_eq!(
-        24,
-        creature.calc_mundane_power(),
-        "Mundane power: 16 scaling + 8 magic item"
-    );
-    assert_eq!(
-        vec![
-            "Certain Battleaxe +17 (The target takes 4d10+12 slashing damage.)",
-            "Generic Scaling Battleaxe +12 (The target takes 4d10+32 slashing damage.)",
-            "Mighty Battleaxe +10 (The target takes 4d10+48 slashing damage.)",
-            "Battleaxe +12 (The target takes 4d10+24 slashing damage.)"
-        ],
-        creature
-            .calc_all_attacks()
-            .iter()
-            .map(|a| a.shorthand_description(&creature))
-            .collect::<Vec<String>>(),
-        "Attack descriptions",
-    );
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Weapon Training: accuracy 1",
+            "Enduring Discipline: vital roll 1",
+            "Enduring Discipline: resource fatigue tolerance by 1",
+            "Martial Force: strike damage dice 1",
+            "Equipment Efficiency: resource attunement point by 1",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "Armor Expertise: encumbrance -1",
+            "Disciplined Force: strike damage dice 1",
+            "Mental Discipline: defense mental by 2",
+            "Maneuvers: accuracy 1",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+            "magic: strike damage dice 1",
+            "magic: DR 8",
+            "magic: HP 4",
+            "attribute scaling with level: base attribute perception by 1",
+            "attribute scaling with level: base attribute constitution by 1",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
 
-    // HasAttributes
-    assert_eq!(
-        vec![4, 0, 2, 0, 2, 0],
-        Attribute::all()
-            .iter()
-            .map(|a| creature.get_base_attribute(&a))
-            .collect::<Vec<i32>>(),
-        "Attributes",
-    );
+        // HasAttributes
+        assert_eq!(
+            vec![2, 0, 3, 0, 5, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
 
-    // HasDefenses
-    assert_eq!(
-        17,
-        creature.calc_defense(&Defense::Armor),
-        "Armor: 10 level + 4 full plate + 2 shield + 1 fighter",
-    );
-    assert_eq!(
-        19,
-        creature.calc_defense(&Defense::Fortitude),
-        "Fort: 10 level + 7 fighter + 2 con",
-    );
-    assert_eq!(
-        13,
-        creature.calc_defense(&Defense::Reflex),
-        "Ref: 10 level + 3 fighter",
-    );
-    assert_eq!(
-        18,
-        creature.calc_defense(&Defense::Mental),
-        "Ment: 10 level + 4 fighter + 4 combat discipline",
-    );
+        // HasArmor
+        assert_eq!(
+            3,
+            creature.calc_encumbrance(),
+            "Encumbrance: 6 full plate - 2 str - 1 armor expertise",
+        );
 
-    // HasDamageAbsorption
-    assert_eq!(
-        144,
-        creature.calc_hit_points(),
-        "HP: (20 level + 2 con) + 28 martial resilience + 16 magic item",
-    );
-    assert_eq!(
-        120,
-        creature.calc_damage_resistance(),
-        "DR: (20 level + 2 con) + 60 magic full plate + 16 magic item",
-    );
+        // HasAttacks
+        assert_eq!(
+            9,
+            creature.calc_accuracy(),
+            "Accuracy: 5 level + 2 per + 1 equip train + 1 maneuvers",
+        );
+        assert_eq!(
+            7,
+            creature.calc_magical_power(),
+            "Magical power: as level 10"
+        );
+        assert_eq!(
+            9,
+            creature.calc_mundane_power(),
+            "Mundane power: 10 level + 2 str = as level 12"
+        );
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +11 (The target takes 2d8+4 slashing damage.)",
+                "Generic Scaling Battleaxe +9 (The target takes 2d8+13 slashing damage.)",
+                "Mighty Battleaxe +7 (The target takes 2d8+17 slashing damage.)",
+                "Battleaxe +9 (The target takes 2d8+9 slashing damage.)",
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
 
-    // HasResources
-    assert_eq!(
-        4,
-        creature.calc_resource(&Resource::AttunementPoint),
-        "AP: 3 class + 1 equipment training",
-    );
-    assert_eq!(
-        9,
-        creature.calc_resource(&Resource::FatigueTolerance),
-        "FT: 3 fighter + 4 str + 2 combat discipline",
-    );
-    assert_eq!(
-        2,
-        creature.calc_resource(&Resource::InsightPoint),
-        "Insight: 2 fighter",
-    );
-    assert_eq!(
-        3,
-        creature.calc_resource(&Resource::TrainedSkill),
-        "Trained skills: 3 fighter",
-    );
+        // HasDefenses
+        assert_eq!(
+            12,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            15,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 5 level + 7 fighter + 3 con",
+        );
+        assert_eq!(
+            8,
+            creature.calc_defense(&Defense::Reflex),
+            "Ref: 5 level + 3 fighter",
+        );
+        assert_eq!(
+            12,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 5 level + 4 fighter + 3 combat discipline",
+        );
+
+        // HasDamageAbsorption
+        assert_eq!(
+            54,
+            creature.calc_hit_points(),
+            "HP: (10 level + 3 con + 3 fighter = as level 16) + 4 magic item",
+        );
+        assert_eq!(
+            44,
+            creature.calc_damage_resistance(),
+            "DR: (as level 10) + 24 magic full plate + 8 magic item",
+        );
+
+        // HasResources
+        assert_eq!(
+            5,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class + 1 equipment training",
+        );
+        assert_eq!(
+            9,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 3 con + 1 combat discipline",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
+
+    #[test]
+    fn level_20() {
+        let creature = Character::standard_perception_character(20).creature;
+
+        let expected_modifiers: Vec<&str> = vec![
+            "Maneuvers: maneuver Certain Strike",
+            "Weapon Training: accuracy 1",
+            "Enduring Discipline: vital roll 1",
+            "Enduring Discipline: resource fatigue tolerance by 1",
+            "Martial Force: strike damage dice 1",
+            "Equipment Efficiency: resource attunement point by 1",
+            "Armor Expertise: encumbrance -1",
+            "Disciplined Force: strike damage dice 1",
+            "Mental Discipline: defense mental by 2",
+            "Weapon Expertise: strike damage dice 1",
+            "Martial Force+: strike damage dice 1",
+            "Enduring Discipline+: vital roll 1",
+            "Enduring Discipline+: resource fatigue tolerance by 1",
+            "Maneuvers: accuracy 2",
+            "Armor Expertise+: encumbrance -1",
+            "Disciplined Force+: strike damage dice 1",
+            "Mental Discipline+: defense mental by 2",
+            "Maneuvers: maneuver Generic Scaling Strike",
+            "Maneuvers: maneuver Mighty Strike",
+            "Weapon Expertise+: strike damage dice 1",
+            "fighter: defense armor by 1",
+            "fighter: defense fortitude by 7",
+            "fighter: defense mental by 5",
+            "fighter: defense reflex by 3",
+            "fighter: resource attunement point by 4",
+            "fighter: resource fatigue tolerance by 5",
+            "fighter: resource insight point by 2",
+            "fighter: resource trained skill by 3",
+            "fighter: HP from level 3",
+            "magic: strike damage dice 2",
+            "magic: DR 16",
+            "magic: HP 16",
+            "attribute scaling with level: base attribute perception by 3",
+            "attribute scaling with level: base attribute constitution by 3",
+        ];
+        assert_eq!(
+            expected_modifiers,
+            creature.explain_modifiers(),
+            "List of modifiers"
+        );
+
+        // HasAttributes
+        assert_eq!(
+            vec![2, 0, 5, 0, 7, 0],
+            Attribute::all()
+                .iter()
+                .map(|a| creature.get_base_attribute(&a))
+                .collect::<Vec<i32>>(),
+            "Attributes",
+        );
+
+        // HasArmor
+        assert_eq!(
+            2,
+            creature.calc_encumbrance(),
+            "Encumbrance: 6 full plate - 2 str - 2 equip train",
+        );
+
+        // HasAttacks
+        assert_eq!(
+            16,
+            creature.calc_accuracy(),
+            "Accuracy: 10 level + 3 per + 1 equip train + 2 martial mastery",
+        );
+        assert_eq!(
+            24,
+            creature.calc_magical_power(),
+            "Magical power: as level 20"
+        );
+        assert_eq!(
+            28,
+            creature.calc_mundane_power(),
+            "Mundane power: 20 lvl + 2 str = as level 21 + 2"
+        );
+        assert_eq!(
+            vec![
+                "Certain Battleaxe +18 (The target takes 5d10+14 slashing damage.)",
+                "Generic Scaling Battleaxe +16 (The target takes 5d10+44 slashing damage.)",
+                "Mighty Battleaxe +14 (The target takes 5d10+52 slashing damage.)",
+                "Battleaxe +16 (The target takes 5d10+28 slashing damage.)"
+            ],
+            creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&creature))
+                .collect::<Vec<String>>(),
+            "Attack descriptions",
+        );
+
+        // HasDefenses
+        assert_eq!(
+            17,
+            creature.calc_defense(&Defense::Armor),
+            "Armor: 10 level + 4 full plate + 2 shield + 1 fighter",
+        );
+        assert_eq!(
+            22,
+            creature.calc_defense(&Defense::Fortitude),
+            "Fort: 10 level + 7 fighter + 5 con",
+        );
+        assert_eq!(
+            13,
+            creature.calc_defense(&Defense::Reflex),
+            "Ref: 10 level + 3 fighter",
+        );
+        assert_eq!(
+            19,
+            creature.calc_defense(&Defense::Mental),
+            "Ment: 10 level + 5 fighter + 4 combat discipline",
+        );
+
+        // HasDamageAbsorption
+        assert_eq!(
+            176,
+            creature.calc_hit_points(),
+            "HP: (20 level + 5 con + 3 fighter = as level 21 + 70) + 16 magic item",
+        );
+        assert_eq!(
+            128,
+            creature.calc_damage_resistance(),
+            "DR: (as level 20) + 72 magic full plate + 16 magic item",
+        );
+
+        // HasResources
+        assert_eq!(
+            5,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 4 class + 1 equipment training",
+        );
+        assert_eq!(
+            12,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 5 fighter + 5 con + 2 combat discipline",
+        );
+        assert_eq!(
+            2,
+            creature.calc_resource(&Resource::InsightPoint),
+            "Insight: 2 fighter",
+        );
+        assert_eq!(
+            3,
+            creature.calc_resource(&Resource::TrainedSkill),
+            "Trained skills: 3 fighter",
+        );
+    }
 }
