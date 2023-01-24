@@ -24,7 +24,7 @@ pub enum Maneuver {
     Hamstring,
     Headshot,
     HeadshotPlus,
-    MightyStrike(i32),
+    MightyStrike,
     PowerFlurry,
     PouncingStrike,
     RecklessStrike(i32),
@@ -77,7 +77,7 @@ impl Maneuver {
                 .except(|a| a.defense = Defense::Reflex),
             Self::CertainStrike => weapon
                 .attack()
-                .except(|a| a.accuracy += 2)
+                .except(|a| a.accuracy += 3)
                 .except_hit_damage(|d| d.power_multiplier = 0.5),
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
@@ -137,10 +137,10 @@ impl Maneuver {
                         immune_after_effect_ends: false,
                     }));
                 }),
-            Self::MightyStrike(rank) => weapon
+            Self::MightyStrike => weapon
                 .attack()
-                .except(|a| a.accuracy -= 2)
-                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(rank + 2)),
+                .except(|a| a.accuracy -= 1)
+                .except_hit_damage(|d| d.damage_dice.maximize()),
             Self::PouncingStrike => weapon
                 .attack()
                 .except(|a| {
@@ -231,7 +231,7 @@ impl Maneuver {
             Self::GenericScalingStrike(_) => with_prefix("Generic Scaling", weapon_name),
             Self::GraspingStrike => with_prefix("Grasping", weapon_name),
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
-            Self::MightyStrike(_) => with_prefix("Mighty", weapon_name),
+            Self::MightyStrike => with_prefix("Mighty", weapon_name),
             Self::PouncingStrike => with_prefix("Pouncing", weapon_name),
             Self::RecklessStrike(_) => with_prefix("Reckless", weapon_name),
             _ => format!("{} -- {}", self.name(), weapon_name),
@@ -252,7 +252,7 @@ impl Maneuver {
             Self::Hamstring => "Hamstring",
             Self::Headshot => "Headshot",
             Self::HeadshotPlus => "Headshot+",
-            Self::MightyStrike(_) => "Mighty Strike",
+            Self::MightyStrike => "Mighty Strike",
             Self::PowerFlurry => "Power Flurry",
             Self::PouncingStrike => "Pouncing Strike",
             Self::RecklessStrike(_) => "Reckless Strike",
@@ -276,7 +276,7 @@ impl Maneuver {
             Self::Hamstring => 3,
             Self::Headshot => 3,
             Self::HeadshotPlus => 7,
-            Self::MightyStrike(_) => 1,
+            Self::MightyStrike => 1,
             Self::PowerFlurry => 3,
             Self::PouncingStrike => 3,
             Self::RecklessStrike(_) => 1,

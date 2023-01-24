@@ -113,6 +113,7 @@ impl Monster {
             CreatureType::Planeforged
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
+        monster.creature.weapons.push(StandardWeapon::MonsterClaws.weapon());
         monster.creature.weapons.push(StandardWeapon::Slam.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
         let starting_attribute = if let Some(a) = starting_attribute {
@@ -130,6 +131,8 @@ impl Monster {
         monster
             .creature
             .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
+
+        monster.creature.set_attribute_scaling(level, [Attribute::Strength, Attribute::Willpower]);
 
         return monster;
     }

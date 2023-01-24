@@ -209,6 +209,26 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
+            name="Potent",
+            rank=4,
+            description="""
+                You gain a +1d damage bonus with strikes using this weapon.
+            """,
+            short_description="Grants +1d damage",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        You gain a +2d damage bonus with strikes using this weapon.
+                    """,
+                    short_description="Grants +2d damage",
+                ),
+            ],
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
             name="Tireless",
             rank=1,
             description="""

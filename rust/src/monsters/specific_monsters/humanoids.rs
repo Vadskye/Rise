@@ -406,7 +406,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::MightyStrike(2))]),
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::MightyStrike)]),
                 name: "Orc Veteran".to_string(),
                 size: Size::Medium,
                 trained_skills: None,
@@ -423,7 +423,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 6,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::MightyStrike(3)),
+                    Modifier::Maneuver(Maneuver::MightyStrike),
                     Modifier::Attack(
                         Maneuver::Hamstring
                             .attack(StandardWeapon::Greataxe.weapon())
