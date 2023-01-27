@@ -65,6 +65,12 @@ Assume these numbers represent simple pure damage Medium range spells. This is t
   * At R7, 4d8+2d10 (27) damage
 * R7: 8d6 (28) damage
 
+## Damage Per Rank Tradeoffs
+
+In the old system, +2r for damage gave +1d. +1d is about a 25% damage increase from damage dice alone. For those spells, damage dice would generally contribute more than half of your total damage, so call that a 15% damage increase for +2r, or maybe a 20% increase if your power was unreasonably low.
+
+Put another way, +2r for damage gave a 50% increase in the damage *difference* between rank X and rank X+2, or a 25% increase after taking into account the effect of power.
+
 # Nonlinear Power Scaling
 
 Your power is on a (level + str/wil)-based track. Power doubles every 6 levels on that track. Spells deal damage based on your power. You should gain other flat damage modifiers over time from other sources, like class features and feats, so 6 Wil doesn't fully double your damage.
@@ -178,3 +184,117 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 <!--   * 3d8 (13.5) base, 6d8 (27) max, +100% investment -->
 <!-- * R4: 1d10 damage per 4 power -->
 <!--   * 1d10 (5.5, 6.8 partial) base, 2d10 (11, 13.8 partial) max, +100% investment counting partial -->
+
+## Autocalculated Single-Target Damage Scaling
+
+* R1
+  * 1d6 + 1d per 2 power
+* R2
+  * Low scaling
+    * 1d8 + 1d per 2 power
+  * High scaling
+    * 1d4 + d4 per 3 power
+    * 1d6 + d6 per 4 power (strong)
+* R3
+  * 1d6 + d6 per 4 power (weak)
+  * 1d8 + d6 per 4 power (strong)
+  * High scaling
+    * 1d4 + d8 per 4 power
+* R4
+  * 1d8 + d8 per 4 power
+  * Low scaling
+    * 1d10 + d6 per 4 power
+  * High scaling
+    * 1d6 + d6 per 3 power
+    * d8 per 3 power
+    * 1d8 + d6 per 3 power (strong)
+* R5
+  * 2d6 + d6 per 3 power
+  * 2d6 + d8 per 4 power
+  * 1d6 + d8 per 3 power
+  * 1d10 + d8 per 1 power (strong)
+  * Low scaling
+    * 2d8 + d6 per 4 power
+  * High scaling
+    * d6 per 2 power
+    * d10 per 3 power
+* R6
+  * 1d10 + d6 per 2 power
+  * 1d10 + d10 per 3 power
+  * 2d6 + d8 per 3 power (weak)
+  * 2d6 + d6 per 2 power (strong)
+  * d6 + d10 per 3 power
+  * 2d8 + d8 per 3 power
+  * 1d8 + d10 per 3 power
+  * Low scaling
+    * 4d6 + d6 per 4 power
+    * 3d6 + d6 per 3 power
+    * 3d6 + d10 per 4 power
+    * 3d8 + d6 per 4 power
+    * 2d8 + d10 per 4 power
+    * 2d10 + d6 per 3 power
+    * 2d10 + d10 per 4 power (strong)
+  * High scaling
+    * d6 and d8 per 4 power (weak)
+    * d6 and d10 per 4 power
+    * d8 per 2 power
+* R7
+  * 4d6 + d6 per 2 power (strong)
+  * 3d6 + d10 per 3 power
+  * 2d6 + d8 per 2 power
+  * 2d8 + d8 per 2 power (strong)
+  * 2d10 + d10 per 3 power
+  * Low scaling
+    * 6d6 + d6 per 4 power
+    * 5d6 + d6 per 3 power
+    * 5d6 + d8 per 4 power
+    * 4d6 + d8 per 3 power
+    * 4d8 + d8 per 4 power
+    * 3d8 + d6 per 2 power
+    * 3d8 + d8 per 3 power
+    * 4d10 + d6 per 4 power
+    * 3d10 + d8 per 3 power
+    * 3d10 + d10 per 4 power
+  * High scaling
+    * 1d8 + d8 per 3 power (weak)
+    * 1d10 + d8 per 2 power (weak)
+    * d10 per 2 power
+
+## Scaling By Rank Equations
+
+* R1: x + 0.5y = 3.5, x + 4.5y = 5.6
+  * 3.2 base damage, 0.53 damage per power
+* R2: x + 2y = 5, x + 7y = 8
+  * 3.8 base damage, 0.6 damage per power
+* R3: x + 3.5y = 7, x + 8.5y = 11.2
+  * 4.1 base damage, 0.84 damage per power
+* R4: x + 5y = 10, x + 11y = 16
+  * 5 base damage, 1 damage per power
+* R5: x + 6.5y = 14, x + 12.5y = 22.4
+  * 5 base damage, 1.4 damage per power
+* R6: x + 8.0y = 20, x + 15y = 32
+  * 6.3 base damage, 1.7 damage per power
+* R7: x + 9.5y = 28, x + 17.5y = 44.8
+  * 8 base damage, 2.1 damage per power
+
+## Lower Rank Spell Scaling
+
+Expected damage at rank 3 (3.5/8.3 power)
+* R1: 5/7.35 (71% / 65%)
+* R2: 5.9/8.78 (84% / 78%)
+* R3: 7/11.2
+
+Expected damage at rank 4 (5/11 power):
+* R2: 6.8/10.4 (68% damage / 65% damage)
+* R3: 8.3/13.3 (83% damage / 83% damage)
+* R4: 10/16
+
+Expected damage at rank 6 (8/15 power):
+* R3: 10.8/16.7 (54% / 52%)
+* R4: 13/20 (65% damage / 63%)
+* R5: 16.2/26 (81% damage / 81%)
+* R6: 20/32
+
+So area spells should use a damage progression from about two ranks lower. Very large areas might go three ranks lower, and very small areas might go one rank lower.
+
+In general, if you spend 2 ranks on non-damage upgrades (like range), you should use a strongish scaling 1 rank lower.
