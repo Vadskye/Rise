@@ -62,12 +62,12 @@
             For example, 2d6 means you roll two six-sided dice.
             You always sum the roll of all dice rolled in a dice pool to determine the total result.
 
-            Some modifiers add or subtract flat values from the result of the dice pool.
-            Others add or subtract \glossterm{dice increments}.
-
-            A die increment is a single increase or decrease in the value of a dice pool.
-            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
-            Damage dice change in size according to the following pattern:
+            Some modifiers add \glossterm{die increments} to increase the value of a dice pool.
+            Increasing by one die increment is written as adding \plus1d to the dice pool.
+            Each die increment increases the size of the largest die in the dice pool by one increment.
+            If that die is a d10, it splits into 2d6.
+            The dice sizes are listed below in order of size.
+            Dice smaller than 1d6 are rarely used in dice pools.
             \begin{itemize}
                 \item 1 damage (minimum)
                 \item 1d2
@@ -76,24 +76,12 @@
                 \item 1d6
                 \item 1d8
                 \item 1d10
-                \item 2d6
-                \item 2d8
-                \item 2d10
-                \item 4d6
-                \item 4d8
-                \item 4d10
-                \item 5d10
-                \item 6d10
-                \item 7d10
-                \item 8d10
             \end{itemize}
 
-            For each die increment that increases the damage, move one space down the list.
-            Likewise, for each die increment that decreases the damage, move one space up the list.
-            After the dice pool reaches 8d10, each additional die increment adds an additional 1d10.
-            In practice, you are unlikely to ever roll that many dice.
+            For example, assume you have an ability that deals 2d8 damage normally.
+            If you gained a \plus1d damage bonus, you would deal 1d10 \add 1d8 damage.
+            An additional \plus1d damage bonus, for a total of \plus2d, would mean you deal 1d8 \add 2d6 damage.
 
-    % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
         Almost all damage falls into one of two categories: \glossterm{energy damage} or \glossterm{physical damage}.
@@ -758,7 +746,7 @@
             Make a \glossterm{strike}.
             The weapon must be held in a single \glossterm{free hand} or must not require a free hand to attack with, such as a bite natural weapon.
             You cannot use this ability unless you already made a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the current phase.
-            You take a \minus2 penalty to \glossterm{accuracy} with this strike, and you do not add your \glossterm{power} to damage with the strike.
+            You take a \minus2 penalty to \glossterm{accuracy} with this strike, and you do not add any \glossterm{extra damage} to the strike.
             In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
         \end{activeability}
 

@@ -69,7 +69,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} physical damage.
+          The target takes \\damageranktwohigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -77,7 +77,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
     },
     // +2r for situational +4acc
     {
@@ -85,7 +84,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 5d10 + \\glossterm{power} physical damage.
+          The target takes \\damageranksixhigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -93,7 +92,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
     },
     // swimming is r2.5
     {
@@ -122,7 +120,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankonelow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -130,7 +128,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -139,7 +136,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damageranktwo{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -147,7 +144,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -156,7 +152,7 @@ export const aquamancy: MysticSphere = {
       // 1 rank for movement
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankone{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -165,7 +161,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -174,7 +169,7 @@ export const aquamancy: MysticSphere = {
       // 3 ranks for movement
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankthree{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -183,7 +178,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -192,7 +186,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -200,7 +194,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -209,7 +202,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -217,7 +210,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -252,7 +244,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankthreelow{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -264,17 +256,16 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
       name: 'Geyser',
 
       attack: {
-        // This can't be full power due to restrictions on Reflex-based single target
+        // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankonelow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -284,17 +275,16 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
       name: 'Mighty Geyser',
 
       attack: {
-        // This can't be full power due to restrictions on Reflex-based single target
+        // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfourlow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -304,7 +294,6 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -487,7 +476,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 bludgeoning damage.
+          The target takes \\damagerankzero{bludgeoning}.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
@@ -504,11 +493,10 @@ export const aquamancy: MysticSphere = {
         name: 'forceful aquajet',
         // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to 2d8. In addition, the knockback distance increases to 60 feet.',
+          'the damage increases to \\damageranktwo{bludgeoning}. In addition, the knockback distance increases to 60 feet.',
       },
       // narrative: '',
       rank: 5,
-      scaling: 'damage',
     },
     {
       name: 'Personal Aquarium',
@@ -572,7 +560,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 physical damage.
+          The target takes \\damagerankfour{physical}.
           If it loses \\glossterm{hit points} from this damage, it is transformed into a puddle of water as a \\glossterm{condition}.
           This has the following effects:
           \\begin{itemize}
