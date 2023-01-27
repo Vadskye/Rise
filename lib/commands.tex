@@ -550,6 +550,59 @@
 
 \DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
 
+% "high" scaling means it scales a lot with power, but may be weak at low power
+% "low" scaling means it scales less with power, but is stronger at low power
+
+\DeclareDocumentCommand{\damagerankzero}{m}
+{1d4 #1 damage \plus1d per 3 power}
+
+\DeclareDocumentCommand{\damagerankone}{m}
+{1d6 #1 damage \plus1d per 2 power}
+\DeclareDocumentCommand{\damagerankonelow}{m}
+{1d6 #1 damage \plus1d per 3 power}
+
+\DeclareDocumentCommand{\damageranktwo}{m}
+{1d8 #1 damage \plus1d per 2 power}
+\DeclareDocumentCommand{\damageranktwohigh}{m}
+{1d6 #1 damage plus 1d6 per 4 power}
+\DeclareDocumentCommand{\damageranktwolow}{m}
+{1d8 #1 damage \plus1d per 3 power}
+
+\DeclareDocumentCommand{\damagerankthree}{m}
+{1d8 #1 damage plus 1d6 per 4 power}
+\DeclareDocumentCommand{\damagerankthreehigh}{m}
+{1d4 #1 damage plus 1d8 per 4 power}
+\DeclareDocumentCommand{\damagerankthreelow}{m}
+{1d6 #1 damage plus 1d6 per 4 power}
+
+\DeclareDocumentCommand{\damagerankfour}{m}
+{1d8 #1 damage plus 1d8 per 4 power}
+\DeclareDocumentCommand{\damagerankfourhigh}{m}
+{1d8 per 3 power #1 damage} % Or could use 1d6 + d6 per 3 power
+\DeclareDocumentCommand{\damagerankfourlow}{m}
+{1d10 #1 damage plus 1d6 per 4 power}
+
+\DeclareDocumentCommand{\damagerankfive}{m}
+{2d6 #1 damage plus 1d6 per 3 power}
+\DeclareDocumentCommand{\damagerankfivehigh}{m}
+{1d10 per 3 power #1 damage} % Or could use d6 per 2 power, but that's weaker
+\DeclareDocumentCommand{\damagerankfivelow}{m}
+{2d8 #1 damage plus 1d6 per 4 power}
+
+\DeclareDocumentCommand{\damageranksix}{m}
+{1d10 #1 damage plus 1d10 per 3 power}
+\DeclareDocumentCommand{\damageranksixhigh}{m}
+{1d8 per 2 power #1 damage}
+\DeclareDocumentCommand{\damageranksixlow}{m}
+{4d6 #1 damage plus 1d6 per 4 power} % many options
+
+\DeclareDocumentCommand{\damagerankseven}{m}
+{2d10 #1 damage plus d10 per 3 power}
+\DeclareDocumentCommand{\damageranksevenhigh}{m}
+{1d10 per 2 power #1 damage}
+\DeclareDocumentCommand{\damageranksevenlow}{m}
+{4d6 #1 damage plus 1d6 per 2 power} % many options
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}

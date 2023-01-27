@@ -48,7 +48,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             \begin{raggeditemize}
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
-                \item You add your Strength to your level to determine your \glossterm{mundane power} (see \pcref{Power}).
+                \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
                 \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
                 \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
             \end{raggeditemize}
@@ -114,7 +114,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             It has the following effects:
             \begin{raggeditemize}
                 \item You add your Willpower to your level to determine your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                \item You add your Willpower to your level to determine your \glossterm{magical power} (see \pcref{Power}).
+                \item You add your Willpower to your \glossterm{magical power} (see \pcref{Power}).
                 \item You add your Willpower to your Mental defense.
             \end{raggeditemize}
         }
@@ -662,44 +662,33 @@ You can either skim past terms you don't yet understand or look them up as you g
     If you have enough experience, you gain a level.
     You gain some abilities at specific levels, as described in \trefnp{Character Advancement}.
 
-    % power scaling logic:
-    % in the old system, +2 str was +1d, which was:
-    % * +1 damage while you have 1 damage die, which is usually levels 1-6 (assuming a 1d8 weapon or a high damage spell)
-    % * +2 damage while you have 2 damage dice, which is usually levels 7-12
-    % * +4 damage while you have 4 damage dice, which is usually levels 13+
-    % So in the new system:
-    % * At level 1, +1 str is +0.5 damage
-    % * At level 7, +1 str is +1 damage
-    % * At level 13, +1 str is +2 damage
-    % Cap at +2 damage per str, just like damage dice cap at +4.5 damage per +1d
-
     \begin{dtable!*}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\textwidth}{l l l l l l l >{\lcol}X}
-            \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Power} & \tb{Accuracy, Defenses, Skills} & \tb{XP} & \tb{Special}                \tableheaderrule
-            1st                    & 1                   & 10      & 0       & 1          & \tdash                          & 0       & \tdash                     \\
-            2nd                    & \tdash              & 11      & 1       & 2          & \plus1                          & 10      & \tdash                     \\ % +10 xp
-            3rd                    & \tdash              & 12      & 2       & 2          & \plus1                          & 25      & Legacy item: rank 2        \\ % +15 xp
-            4th                    & 2                   & 13      & 3       & 3          & \plus2                          & 45      & \tdash                     \\ % +20 xp
-            5th                    & \tdash              & 14      & 4       & 3          & \plus2                          & 70      & \tdash                     \\ % +25 xp
-            6th                    & \tdash              & 16      & 5       & 4          & \plus3                          & 100     & \plus1 to two attributes   \\ % +30 xp
-            7th                    & 3                   & 18      & 6       & 4          & \plus3                          & 140     & \tdash                     \\ % +40 xp
-            8th                    & \tdash              & 20      & 8      & 5          & \plus4                          & 200     & \tdash                     \\ % +60 xp
-            9th                    & \tdash              & 22      & 10      & 6          & \plus4                          & 300     & Legacy item: ranks 4 and 2 \\ % +100 xp
-            10th                   & 4                   & 25      & 12      & 7          & \plus5                          & 450     & \tdash                     \\ % +150 xp
-            11th                   & \tdash              & 28      & 14      & 8          & \plus5                          & 700     & \tdash                     \\ % +250 xp
-            12th                   & \tdash              & 32      & 16      & 9          & \plus6                          & 1,000   & \plus1 to two attributes   \\ % +300 xp
-            13th                   & 5                   & 36      & 18      & 10         & \plus6                          & 1,400   & \tdash                     \\ % +400 xp
-            14th                   & \tdash              & 40      & 21      & 12         & \plus7                          & 2,000   & \tdash                     \\ % +600 xp
-            15th                   & \tdash              & 44      & 24      & 14         & \plus7                          & 3,000   & Legacy item: ranks 6 and 4 \\ % +1000 xp
-            16th                   & 6                   & 50      & 27      & 16         & \plus8                          & 4,500   & \tdash                     \\ % +1,500 xp
-            17th                   & \tdash              & 56      & 30      & 18         & \plus8                          & 7,000   & \tdash                     \\ % +2,500 xp
-            18th                   & \tdash              & 64      & 33      & 20         & \plus9                          & 10,000  & \plus1 to two attributes   \\ % +3,000 xp
-            19th                   & 7                   & 72      & 36      & 22         & \plus9                          & 14,000  & \tdash                     \\
-            20th                   & \tdash              & 80      & 40      & 24         & \plus10                         & 20,000  & \tdash                     \\
-            21st                   & \tdash              & 90      & 45      & 26         & \plus10                         & 30,000  & Legacy item: ranks 7 and 6 \\
+        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
+            \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses, Skills} & \tb{XP} & \tb{Special}                \tableheaderrule
+            1st                    & 1                   & 10      & 0       & \tdash                          & 0       & \tdash                     \\
+            2nd                    & \tdash              & 11      & 1       & \plus1                          & 10      & \tdash                     \\ % +10 xp
+            3rd                    & \tdash              & 12      & 2       & \plus1                          & 25      & \plus1 to two attributes   \\ % +15 xp
+            4th                    & 2                   & 13      & 3       & \plus2                          & 45      & \tdash                     \\ % +20 xp
+            5th                    & \tdash              & 14      & 4       & \plus2                          & 70      & \tdash                     \\ % +25 xp
+            6th                    & \tdash              & 16      & 5       & \plus3                          & 100     & Legacy item: rank 3        \\ % +30 xp
+            7th                    & 3                   & 18      & 6       & \plus3                          & 140     & \tdash                     \\ % +40 xp
+            8th                    & \tdash              & 20      & 8       & \plus4                          & 200     & \tdash                     \\ % +60 xp
+            9th                    & \tdash              & 22      & 10      & \plus4                          & 300     & \plus1 to two attributes   \\ % +100 xp
+            10th                   & 4                   & 25      & 12      & \plus5                          & 450     & \tdash                     \\ % +150 xp
+            11th                   & \tdash              & 28      & 14      & \plus5                          & 700     & \tdash                     \\ % +250 xp
+            12th                   & \tdash              & 32      & 16      & \plus6                          & 1,000   & Legacy item: ranks 5 and 3 \\ % +300 xp
+            13th                   & 5                   & 36      & 18      & \plus6                          & 1,400   & \tdash                     \\ % +400 xp
+            14th                   & \tdash              & 40      & 21      & \plus7                          & 2,000   & \tdash                     \\ % +600 xp
+            15th                   & \tdash              & 44      & 24      & \plus7                          & 3,000   & \plus1 to two attributes   \\ % +1000 xp
+            16th                   & 6                   & 50      & 27      & \plus8                          & 4,500   & \tdash                     \\ % +1,500 xp
+            17th                   & \tdash              & 56      & 30      & \plus8                          & 7,000   & \tdash                     \\ % +2,500 xp
+            18th                   & \tdash              & 64      & 33      & \plus9                          & 10,000  & Legacy item: ranks 7 and 5 \\ % +3,000 xp
+            19th                   & 7                   & 72      & 36      & \plus9                          & 14,000  & \tdash                     \\
+            20th                   & \tdash              & 80      & 40      & \plus10                         & 20,000  & \tdash                     \\
+            21st                   & \tdash              & 90      & 45      & \plus10                         & 30,000  & \plus1 to two attributes   \\
         \end{dtabularx}
-        1. For some statistics, like your \glossterm{hit points} and \glossterm{power}, you add your attributes to your level when calculating the total. \\
+        1. For some statistics, like your \glossterm{hit points}, you add your attributes to your level when calculating the total. \\
         2. See \pcref{Archetype Ranks}. \\
         3. Characters cannot become higher than 21st level. However, it is possible to have an effective level higher than 21 when calculating some statistics, so those values are listed here. \\
     \end{dtable!*}
@@ -710,11 +699,12 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
         \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes}).
         \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy}).
+        \item At even levels, \glossterm{magical power} and \glossterm{mundane power} each increase by 1 (see \pcref{Power}).
         \item At even levels, your bonus with \glossterm{trained} skills increases (see \pcref{Trained Skills}).
         \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses}).
-        \item At 3rd level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
+        \item At 3rd level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
         \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
-        \item At 6th level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
+        \item At 6th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{raggeditemize}
 
     At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
@@ -823,18 +813,17 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Power}\label{Power}
         Your \glossterm{power} is a general representation of how strong your abilities are.
-        You have two types of power: your \glossterm{mundane power} affects your \glossterm{mundane} abilities, and your \glossterm{magical power} affects your \glossterm{magical} abilities.
+        You have two types of power: your \glossterm{magical power} affects your \glossterm{magical} abilities, and your \glossterm{mundane power} affects your \glossterm{mundane} abilities.
+        If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
 
-        Your power is defined in \tref{Character Advancement}.
-        You add your level and your Strength to find the corresponding value for your \glossterm{mundane power}, and you add your level and your Willpower to find the corresponding value for your \glossterm{magical power}.
-        For example, a level 3 character with 3 Strength and 0 Willpower would have a mundane power of 4 and a magical power of 2.
-
-        If this sum is 0, you gain no bonuses or penalties to that type of power.
-        If it is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0.
-        If it exceeds 21, add 3 power for each point beyond 21.
+        Your mundane power is equal to half your level \add your Strength.
+        Similarly, your magical power is equal to half your level \add your Willpower.
+        If this is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0 total power.
+        Some abilities can increase your power further.
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
-        In addition, some abilities can increase it.
+        % TODO: weapon damage wording
+        For example, you gain a \plus1d bonus to damage with a basic \glossterm{strike} for every 2 power you have (see \pcref{Strikes}).
 
 \section{Resources}\label{Resources}
 
