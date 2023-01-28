@@ -138,18 +138,18 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Wellspring of Power+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The power bonus increases to \plus3.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -285,22 +285,20 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
-                    The target regains 1d10 \add \glossterm{power} \glossterm{hit points}.
+                    The target regains 1d6 \glossterm{hit points} +1d per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The healing increases to 2d6.
-                    \rank{3} The healing increases to 2d10.
-                    \rank{4} The healing increases to 4d6.
-                    \rank{5} The healing increases to 4d10.
-                    \rank{6} The healing increases to 5d10.
-                    \rank{7} The healing increases to 7d10.
+                    \rank{2} The bonus healing increases to 1d6 per 4 power.
+                    \rank{3} The base healing increases to 1d8.
+                    \rank{4} The bonus healing increases to 1d6 per 3 power.
+                    \rank{5} The base healing increases to 2d6.
+                    \rank{6} The bonus healing increases to 1d10 per 3 power.
+                    \rank{7} The base healing increases to 2d10.
                 \end{magicalactiveability}
-
-                \advancement This ability improves at each rank as described above.
             ",
             modifiers: None,
         },
@@ -413,13 +411,17 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         // TODO: this is a little weak
         RankAbility {
-            name: "Practiced Persuasion",
+            name: "Persuasive Certainty",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus3 bonus to the Persuasion skill.
+                In addition, you gain a \plus1 bonus to your Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Persuasion, 3),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             name: "Bless the Worthy",
