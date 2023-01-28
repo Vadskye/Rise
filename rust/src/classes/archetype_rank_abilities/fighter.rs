@@ -10,9 +10,23 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus1 bonus to \glossterm{vital rolls} and your \glossterm{fatigue tolerance} (see \pcref{Vital Rolls}, and \pcref{Fatigue Tolerance}).
+                You gain a \plus1 bonus to your Mental defense, \glossterm{vital rolls}, and \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
+                Modifier::Defense(Defense::Mental, 1),
+                Modifier::VitalRoll(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
+        },
+        RankAbility {
+            name: "Enduring Discipline+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                The bonuses increase to \plus2.
+            ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Mental, 1),
                 Modifier::VitalRoll(1),
                 Modifier::Resource(Resource::FatigueTolerance, 1),
             ]),
@@ -27,62 +41,40 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Remove one \glossterm{condition} affecting you.
                     Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
-
-                    \rankline
-                    \rank{4} You \glossterm{briefly} cannot gain any \glossterm{conditions} after using this ability.
-                    \rank{6} You can use this ability as a \glossterm{minor action}.
-                    When you do, you increase your \glossterm{fatigue level} by one.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Enduring Discipline+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The vital roll and fatigue tolerance bonuses increase to \plus2.
-            ",
-            modifiers: Some(vec![
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
-            ]),
-        },
-        RankAbility {
-            name: "Disciplined Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Disciplined Force+",
+            name: "Cleansing Discipline+",
             is_magical: false,
             rank: 6,
             description: r"
-                The damage bonus increases to \plus2d.
+                You can use your \ability{cleansing discipline} ability as a \glossterm{minor action}.
+                When you do, you increase your \glossterm{fatigue level} by one.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Mental Discipline",
+            name: "Disciplined Strike",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your Mental defense.
+                As a standard action, you can use the \textit{disciplined strike} ability.
+                \begin{activeability}{Disciplined Strike}
+                    \rankline
+                    Make a \glossterm{strike} with \plus1d4 \glossterm{extra damage}.
+                    You cannot get a \glossterm{critical hit} with this strike.
+                    \miss \glossterm{Glancing blow}.
+
+                    \rankline
+                    \rank{4} The extra damage increases to 1d8.
+                    \rank{5} The extra damage increases to 2d6.
+                    \rank{6} The extra damage increases to 3d6.
+                    \rank{7} The extra damage increases to 4d8.
+                \end{activeability}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
-        },
-        RankAbility {
-            name: "Mental Discipline+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The Mental defense bonus increases to \plus4.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Mental, 2)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Disciplined Reaction",
@@ -123,6 +115,15 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Weapon Training+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                The effect of your \ability{weapon training} ability is permanent.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Equipment Efficiency",
@@ -167,39 +168,13 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },
         RankAbility {
-            name: "Weapon Bond",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You are immune to any effect which would steal your weapon or force you to drop it.
-                This does not protect you from any other effects of that attack, such as damage to yourself.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Weapon Expertise",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Weapon Expertise+",
+            name: "Equipment Mastery",
             is_magical: false,
             rank: 7,
             description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Weapon Mastery",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You are proficient with all weapons, including all exotic weapons.
+                % TODO: disallow natural weapons? Not really worth the effort.
+                While you are wielding a weapon, you gain a \plus1 bonus to your \glossterm{accuracy}.
+                While you are wearing body armor, you gain a \plus1 bonus to your Armor defense.
             ",
             modifiers: None,
         },
@@ -261,22 +236,13 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Martial Force",
+            name: "Martial Precision",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                You gain a \plus1 \glossterm{accuracy} bonus.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Martial Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Enhanced Maneuvers",
@@ -293,15 +259,16 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your \glossterm{power} with the maneuver is treated as 0.
-                    You can only apply this enhancement to manuevers which can inflict a \glossterm{condition}.
+                    However, your damage with the maneuver is halved.
+                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
 
                     \parhead{Guarding Maneuver} You gain a +1 bonus to your Armor defense when you use the maneuver.
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
+                    % Unclear power level
+                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
+                    This extra damage increases by +1d for each rank in this archetype beyond 4.
 
                     \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
                 }
@@ -327,58 +294,9 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Guarding Strike",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You can use the \textit{guarding strike} ability as a standard action.
-                \begin{activeability}{Guarding Strike}
-                    \rankline
-                    Make a melee \glossterm{strike}.
-                    Your \glossterm{power} with the strike is halved.
-                    Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
-                    This condition is removed if you move farther away from the creature.
-                    \rankline
-                    \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the strike.
-                    \rank{5} The accuracy bonus increases to \plus2.
-                    \rank{7} The accuracy bonus increases to \plus3.
-                \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Threatening Influence",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                Your \glossterm{enemies} move at half speed while adjacent to you.
-                This has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Threatening Influence+",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                The area affected by this ability increases to a \smallarea radius \glossterm{emanation} from you.
-                However, it does not affect creatures who are moving in a straight line directly towards you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Threatening Influence+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Protect",
             is_magical: false,
-            rank: 2,
+            rank: 1,
             description: r"
                 You can use the \textit{protect} ability as a \glossterm{free action}.
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
@@ -402,49 +320,52 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Sentinel's Challenge",
+            name: "Threatening Influence",
             is_magical: false,
-            rank: 4,
+            rank: 2,
             description: r"
-                You can use the \textit{sentinel's challenge} ability as a standard action.
-                \begin{activeability}{Sentinel's Challenge}
+                Your \glossterm{enemies} move at half speed while within a \smallarea radius \glossterm{emanation} from you.
+                This it does not affect creatures who are moving in a straight line directly towards you.
+                It also has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Threatening Influence+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Guarding Strike",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                You can use the \textit{guarding strike} ability as a standard action.
+                \begin{activeability}{Guarding Strike}
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} in a \medarea radius from you.
-                    \hit Each target is \goaded by you as a \glossterm{condition}.
+                    Make a melee \glossterm{strike}.
+                    Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
                     \rankline
-                    You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                    You gain a +1 \glossterm{accuracy} bonus with this strike for each rank beyond 3.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Sentinel's Force",
+            name: "Stalwart Sentinel",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-
-                \advancement At rank 7, this bonus increases to \plus2d.
+                You gain a \plus1 bonus to your Armor and Fortitude defenses.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Sentinel's Force+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Sentinel's Guard",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You gain a \plus1 bonus to your Armor defense.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Fortitude, 1),
+            ]),
         },
         RankAbility {
             name: "Demanding Challenger",
@@ -584,7 +505,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
+                You gain a \plus1 bonus to one of the following statistics: \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
                 As a \glossterm{minor action}, you can change which of these bonuses you gain.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -599,41 +520,26 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Reactive Tactics",
+            name: "Coordinated Assault",
             is_magical: false,
             rank: 3,
             description: r"
-                You and each \glossterm{ally} who can see or hear you gain a \plus1 bonus to Reflex defense.
+                As a standard action, you can use the \textit{tactical assault} ability.
+                \begin{activeability}{Coordinated Assault}
+                    \rankline
+                    You can move up to half your land speed.
+                    You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
+                    Then, you can make a \glossterm{strike}.
+                    You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
+
+                    \rankline
+                    \rank{4} You gain an additional +1 accuracy bonus with the strike.
+                    \rank{5} The additional accuracy bonus increases to +2.
+                    \rank{6} The additional accuracy bonus increases to +3.
+                    \rank{7} You double your \glossterm{weapon damage} with the strike.
+                \end{activeability}
             ",
-            // TODO: represent ally bonus?
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
-        },
-        RankAbility {
-            name: "Reactive Tactics+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The defense bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 1)]),
-        },
-        RankAbility {
-            name: "Tactical Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Tactical Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Hybrid Battle Tactics",

@@ -483,18 +483,18 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{power}.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Wellspring of Power+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +6.
+                The power bonus increases to +3.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Attunement Point",

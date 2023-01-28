@@ -562,17 +562,18 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 or rank 3 trick maneuvers.
                 {
                     \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your \glossterm{power} with the maneuver is treated as 0.
-                    You can only apply this enhancement to manuevers which can inflict a \glossterm{condition}.
+                    However, your damage with the maneuver is halved.
+                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
 
                     \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
                     You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
 
+                    % Unclear power level
+                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
+                    This extra damage increases by +1d for each rank in this archetype beyond 4.
+
                     \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
                     You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
 
                     \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
                 }

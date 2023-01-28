@@ -14,7 +14,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
+                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune} (deep), \abilitytag{Emotion}}
                     \rankline
                     Choose an adjacent non-\glossterm{elite} Medium or smaller animal \glossterm{ally}.
                     Its level must not exceed your level.
@@ -28,20 +28,26 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
                     \begin{itemize}
-                        % TODO: figure out why this is a 2
-                        \item Its \glossterm{fatigue tolerance} is 2.
-                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your Constitution \add your level (see \tref{Hit Points and Damage Resistance}).
+                        \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
+                        \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
+                        \item Its \glossterm{hit points} are equal to the standard value for your level \add your Constitution (see \tref{Character Advancement}).
+                        \item Its \glossterm{damage resistance} is equal to the standard value for your level \add your Willpower.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
-                        \item Its \glossterm{power} with its attacks is 0.
-                        \item It has no \glossterm{attunement points}.
-                        \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                        \item Its \glossterm{accuracy} is equal to half your level.
+                        \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points and damage resistance.
                     \end{itemize}
-
                     % There must be text between an itemize block and the end of a mdframed env
-                    \hypertarget{itemizespace}{}
+
+                    \rankline
+                    \rank{2} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    % TODO: figure out correct scaling
+                    \rank{4} The accuracy bonus increases to +2.
+                    \rank{5} The animal gains 1d6 \glossterm{extra damage} with strikes.
+                    \rank{6} The accuracy bonus increases to +3.
+                    \rank{7} The extra damage increases to 2d6.
                 \end{magicalattuneability}
 
             ",
@@ -583,11 +589,12 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
                     You can only apply this enhancement to maneuvers that have a listed range limit.
 
+                    % Unclear power level
+                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
+                    This extra damage increases by +1d for each rank in this archetype beyond 4.
+
                     \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
                     You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
 
                     \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
 
