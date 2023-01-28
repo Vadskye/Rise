@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver};
-use crate::core_mechanics::{Attribute, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType};
 use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
@@ -18,6 +18,7 @@ pub enum Modifier {
     DamageResistanceFromLevel(i32),
     Defense(Defense, i32),
     Encumbrance(i32),
+    ExtraDamage(DamageDice),
     HitPoints(i32),
     // Increase effective level by this much when calculating HP
     HitPointsFromLevel(i32),
@@ -46,6 +47,7 @@ pub enum ModifierType {
     DamageResistanceFromLevel,
     Defense(Defense),
     Encumbrance,
+    ExtraDamage,
     HitPoints,
     HitPointsFromLevel,
     Maneuver,
@@ -71,6 +73,7 @@ impl Modifier {
             Self::DamageResistanceFromLevel(v) => format!("{} {}", self.name(), v),
             Self::Defense(_, v) => format!("{} by {}", self.name(), v),
             Self::Encumbrance(v) => format!("{} {}", self.name(), v),
+            Self::ExtraDamage(v) => format!("{} {}", self.name(), v.to_string()),
             Self::HitPoints(v) => format!("{} {}", self.name(), v),
             Self::HitPointsFromLevel(v) => format!("{} {}", self.name(), v),
             Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
@@ -98,6 +101,7 @@ impl Modifier {
             Self::DamageResistanceFromLevel(_) => format!("DR from level"),
             Self::Defense(d, _) => format!("defense {}", d.name()),
             Self::Encumbrance(_) => format!("encumbrance"),
+            Self::ExtraDamage(_) => format!("extra damage"),
             Self::HitPoints(_) => format!("HP"),
             Self::HitPointsFromLevel(_) => format!("HP from level"),
             Self::Immune(t) => format!("immune to {}", t.description()),
@@ -125,6 +129,7 @@ impl Modifier {
             Self::DamageResistanceFromLevel(_) => ModifierType::DamageResistanceFromLevel,
             Self::Defense(d, _) => ModifierType::Defense(*d),
             Self::Encumbrance(_) => ModifierType::Encumbrance,
+            Self::ExtraDamage(_) => ModifierType::ExtraDamage,
             Self::HitPoints(_) => ModifierType::HitPoints,
             Self::HitPointsFromLevel(_) => ModifierType::HitPointsFromLevel,
             Self::Immune(_) => ModifierType::SpecialDefense,
@@ -166,31 +171,31 @@ impl Modifier {
     }
 
     pub fn value(&self) -> i32 {
-        let value = match self {
-            Self::Accuracy(v) => v,
-            Self::ActiveAbility(_) => &0,
-            Self::Attack(_) => &0,
-            Self::BaseAttribute(_, v) => v,
-            Self::BaseSpeed(v) => v,
-            Self::DamageResistance(v) => v,
-            Self::DamageResistanceFromLevel(v) => v,
-            Self::Defense(_, v) => v,
-            Self::Encumbrance(v) => v,
-            Self::HitPoints(v) => v,
-            Self::HitPointsFromLevel(v) => v,
-            Self::Immune(_) => &0,
-            Self::Impervious(_) => &0,
-            Self::Maneuver(_) => &0,
-            Self::MovementSpeed(_, v) => v,
-            Self::PassiveAbility(_) => &0,
-            Self::Power(v) => v,
-            Self::Resource(_, v) => v,
-            Self::Skill(_, v) => v,
-            Self::StrikeDamageDice(v) => v,
-            Self::VitalRoll(v) => v,
-            Self::Vulnerable(_) => &0,
+        return match self {
+            Self::Accuracy(v) => *v,
+            Self::ActiveAbility(_) => 0,
+            Self::Attack(_) => 0,
+            Self::BaseAttribute(_, v) => *v,
+            Self::BaseSpeed(v) => *v,
+            Self::DamageResistance(v) => *v,
+            Self::DamageResistanceFromLevel(v) => *v,
+            Self::Defense(_, v) => *v,
+            Self::Encumbrance(v) => *v,
+            Self::ExtraDamage(v) => v.average_damage() as i32,
+            Self::HitPoints(v) => *v,
+            Self::HitPointsFromLevel(v) => *v,
+            Self::Immune(_) => 0,
+            Self::Impervious(_) => 0,
+            Self::Maneuver(_) => 0,
+            Self::MovementSpeed(_, v) => *v,
+            Self::PassiveAbility(_) => 0,
+            Self::Power(v) => *v,
+            Self::Resource(_, v) => *v,
+            Self::Skill(_, v) => *v,
+            Self::StrikeDamageDice(v) => *v,
+            Self::VitalRoll(v) => *v,
+            Self::Vulnerable(_) => 0,
         };
-        return *value;
     }
 }
 
