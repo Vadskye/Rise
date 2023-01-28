@@ -665,7 +665,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     \begin{dtable!*}
         \lcaption{Character Advancement}
         \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
-            \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses, Skills} & \tb{XP} & \tb{Special}                \tableheaderrule
+            \tb{Level}\fn{1}       & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                \tableheaderrule
             1st                    & 1                   & 10      & 0       & \tdash                          & 0       & \tdash                     \\
             2nd                    & \tdash              & 11      & 1       & \plus1                          & 10      & \tdash                     \\ % +10 xp
             3rd                    & \tdash              & 12      & 2       & \plus1                          & 25      & \plus1 to two attributes   \\ % +15 xp
@@ -802,7 +802,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         The amount of hit points you have is defined in \tref{Character Advancement}.
         You add your level and your Constitution to find the corresponding value.
         For example, a level 3 character with 2 Constitution would have 14 hit points.
-        Some special abilities can give you additional \glossterm{hit points}.
+        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed number of additional hit points.
 
         If the sum of your level and Constitution is negative, your hit points are equal to 10 \add that negative value.
         If the sum exceeds 21, add 10 hit points for each point beyond 21.
@@ -823,7 +823,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
         % TODO: weapon damage wording
-        For example, you gain a \plus1d bonus to damage with a basic \glossterm{strike} for every 2 power you have (see \pcref{Strikes}).
+        For example, you gain a \plus1d bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
 
 \section{Resources}\label{Resources}
 
