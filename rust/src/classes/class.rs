@@ -1083,9 +1083,9 @@ impl Class {
 
                 \\includegraphics[width=\\columnwidth]<classes/{class_name_lower}>
 
-                {description}
-
                 {archetype_table}
+
+                {description}
 
                 \\classbasics<Alignment> {class_alignment}.
 
