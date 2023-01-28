@@ -553,58 +553,59 @@
 % "high" scaling means it scales a lot with power, but may be weak at low power
 % "low" scaling means it scales less with power, but is stronger at low power
 
-\DeclareDocumentCommand{\damagerankzero}{m}
-{1d4 #1 damage \plus1d per 3 power}
-
-\DeclareDocumentCommand{\damagerankone}{m}
-{1d6 #1 damage \plus1d per 2 power}
-\DeclareDocumentCommand{\damagerankonelow}{m}
-{1d6 #1 damage \plus1d per 3 power}
-
-\DeclareDocumentCommand{\damageranktwo}{m}
-{1d8 #1 damage \plus1d per 2 power}
-\DeclareDocumentCommand{\damageranktwohigh}{m}
-{1d6 #1 damage plus 1d6 per 4 power}
-\DeclareDocumentCommand{\damageranktwolow}{m}
-{1d8 #1 damage \plus1d per 3 power}
-
-\DeclareDocumentCommand{\damagerankthree}{m}
-{1d8 #1 damage plus 1d6 per 4 power}
-\DeclareDocumentCommand{\damagerankthreehigh}{m}
-{1d4 #1 damage plus 1d8 per 4 power}
-\DeclareDocumentCommand{\damagerankthreelow}{m}
-{1d6 #1 damage plus 1d6 per 4 power}
-
-\DeclareDocumentCommand{\damagerankfour}{m}
-{1d8 #1 damage plus 1d8 per 4 power}
-\DeclareDocumentCommand{\damagerankfourhigh}{m}
-{1d8 per 3 power #1 damage} % Or could use 1d6 + d6 per 3 power
-\DeclareDocumentCommand{\damagerankfourlow}{m}
-{1d10 #1 damage plus 1d6 per 4 power}
-
-\DeclareDocumentCommand{\damagerankfive}{m}
-{2d6 #1 damage plus 1d6 per 3 power}
-\DeclareDocumentCommand{\damagerankfivehigh}{m}
-{1d10 per 3 power #1 damage} % Or could use d6 per 2 power, but that's weaker
-\DeclareDocumentCommand{\damagerankfivelow}{m}
-{2d8 #1 damage plus 1d6 per 4 power}
-
-\DeclareDocumentCommand{\damageranksix}{m}
-{1d10 #1 damage plus 1d10 per 3 power}
-\DeclareDocumentCommand{\damageranksixhigh}{m}
-{1d8 per 2 power #1 damage}
-\DeclareDocumentCommand{\damageranksixlow}{m}
-{4d6 #1 damage plus 1d6 per 4 power} % many options
-
-\DeclareDocumentCommand{\damagerankseven}{m}
-{2d10 #1 damage plus d10 per 3 power}
-\DeclareDocumentCommand{\damageranksevenhigh}{m}
-{1d10 per 2 power #1 damage}
-\DeclareDocumentCommand{\damageranksevenlow}{m}
-{4d6 #1 damage plus 1d6 per 2 power} % many options
-
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
 
 \newcommand{\pari}{\par\noindent}
+
+
+\newcommand{\damagerankzero}[1]
+{1d4 #1 damage \plus1d per 3 power}
+
+\newcommand{\damagerankone}[1]
+{1d6 #1 damage \plus1d per 2 power}
+\newcommand{\damagerankonelow}[1]
+{1d6 #1 damage \plus1d per 3 power}
+
+\newcommand{\damageranktwo}[1]
+{1d8 #1 damage \plus1d per 2 power}
+\newcommand{\damageranktwohigh}[1]
+{1d6 #1 damage plus 1d6 per 4 power}
+\newcommand{\damageranktwolow}[1]
+{1d8 #1 damage \plus1d per 3 power}
+
+\newcommand{\damagerankthree}[1]
+{1d8 #1 damage plus 1d6 per 4 power}
+\newcommand{\damagerankthreehigh}[1]
+{1d4 #1 damage plus 1d8 per 4 power}
+\newcommand{\damagerankthreelow}[1]
+{1d6 #1 damage plus 1d6 per 4 power}
+
+\newcommand{\damagerankfour}[1]
+{1d8 #1 damage plus 1d8 per 4 power}
+\newcommand{\damagerankfourhigh}[1]
+{1d8 per 3 power #1 damage} % Or could use 1d6 + d6 per 3 power
+\newcommand{\damagerankfourlow}[1]
+{1d10 #1 damage plus 1d6 per 4 power}
+
+\newcommand{\damagerankfive}[1]
+{2d6 #1 damage plus 1d6 per 3 power}
+\newcommand{\damagerankfivehigh}[1]
+{1d10 per 3 power #1 damage} % Or could use d6 per 2 power, but that's weaker
+\newcommand{\damagerankfivelow}[1]
+{2d8 #1 damage plus 1d6 per 4 power}
+
+\newcommand{\damageranksix}[1]
+{1d10 #1 damage plus 1d10 per 3 power}
+\newcommand{\damageranksixhigh}[1]
+{1d8 per 2 power #1 damage}
+\newcommand{\damageranksixlow}[1]
+{4d6 #1 damage plus 1d6 per 4 power} % many options
+
+\newcommand{\damagerankseven}[1]
+{2d10 #1 damage plus d10 per 3 power}
+\newcommand{\damageranksevenhigh}[1]
+{1d10 per 2 power #1 damage}
+\newcommand{\damageranksevenlow}[1]
+{4d6 #1 damage plus 1d6 per 2 power} % many options
