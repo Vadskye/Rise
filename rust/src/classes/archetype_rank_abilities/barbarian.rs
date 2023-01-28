@@ -556,9 +556,33 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            name: "Feral Strike",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                As a standard action, you can use the \textit{feral strike} ability.
+                \begin{activeability}{Feral Strike}
+                    \rankline
+                    Make a melee \glossterm{strike}.
+                    % 50% chance of +5.5 accuracy, so almost +3 accuracy
+                    This attack roll \glossterm{explodes} on a 5 or higher on the first roll.
+
+                    \rankline
+                    \rank{4} The first roll explodes on a 3 or higher.
+                    \rank{5} The first roll explodes regardless of your roll.
+                    \rank{6} Subsequent rolls also explode on an 8 or higher.
+                    \rank{7} Your \glossterm{weapon damage} with the attack is doubled.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Feral Explosion",
             is_magical: false,
-            rank: 2,
+            rank: 5,
+            // Math: By default, 10% chance of +2 accuracy and 1% chance of +4 accuracy, so +0.24
+            // accuracy. But +0.5 accuracy if you can explode on a 9 from something else like
+            // Executioner, and of course +2 accuracy with Feral Strike specifically.
             description: r"
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                 This bonus stacks with itself if you explode multiple times with the same attack roll.
@@ -567,19 +591,9 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Feral Explosion+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                Your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
-                This does not affect additional rolls with exploding dice.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Animal Instincts",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a \plus2 bonus to your Reflex defense.
             ",
@@ -597,24 +611,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Reflex, 2),
             ]),
-        },
-        RankAbility {
-            name: "Totemic Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Totemic Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
     ];
 }
