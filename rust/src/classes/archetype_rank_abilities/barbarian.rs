@@ -430,7 +430,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a +1 \glossterm{accuracy} bonus.
+                You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
