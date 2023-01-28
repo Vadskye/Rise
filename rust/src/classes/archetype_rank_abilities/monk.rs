@@ -7,32 +7,54 @@ use super::standard_modifiers::add_standard_maneuver_modifiers;
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Acrobatic Accuracy",
+            name: "Float Like Air",
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
+                When you move with a Jump check, your maximum height is equal to your Jump check result, rather than half your Jump check result (see \pcref{Jump}).
+                This does not affect the forward distance you can reach with your jumps.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Acrobatic Accuracy+",
+            name: "Float Like Air+",
             is_magical: false,
+            rank: 6,
+            description: r"
+                Your maximum height increases to twice your Jump check result.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Move Like Wind",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Move Like Wind+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus increases to +20 feet.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Heart of Air+",
+            is_magical: true,
             rank: 4,
             description: r"
-                The accuracy bonus increases to +2.
+                When you move with a Jump check, you can land in midair as if it was solid ground.
+                Your landing location has a \glossterm{height limit} of 30 feet, like a fly speed (see \pcref{Flight}).
+                You cannot walk in the air, but you can continue jumping or remain in place.
+                The air holds you until the end of the current round, at which point you fall normally.
+                After you land on air in this way, you \glossterm{briefly} cannot do so again.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Acrobatic Accuracy+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The accuracy bonus increases to +3.
-                In addition, the effect lasts \glossterm{briefly} instead of only for the current round.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Evasion",
@@ -41,7 +63,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You take no damage from \glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-                If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
+                If you have the \textit{evasion} rogue ability with the same effect as this ability, you also gain a \plus2 bonus to your Armor and Reflex defenses against area attacks.
             ",
             modifiers: None,
         },
@@ -50,30 +72,42 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You also take half damage from abilities that affect an area and attack your Armor and Reflex defense.
+                You also take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Aerial Strike",
+            is_magical: false,
+            rank: 3,
+            // Expected jump skill at rank 3: 6 plus attribute, so about 8
+            // Expected jump height: 8 from skill + 5.5 from roll, so can reliably jump completely
+            // over Medium creatures.
+            description: r"
+                As a standard action, you can use the \textit{aerial strike} ability.
+                \begin{activeability}{Aerial Strike}
+                    \rankline
+                    Make a Jump check and move that far, up to a maximum distance equal to your \glossterm{base speed}.
+                    In addition, you can make a \glossterm{strike} with +1d4 \glossterm{extra damage} at any point during that jump.
+                    % TODO: is Jump clear enough about how to be directly above a creature?
+                    This extra damage is doubled against each creature that you are directly above when you make the strike.
+
+                    \rankline
+                    \rank{4} The extra damage increases to 1d8.
+                    \rank{5} The extra damage increases to 2d6.
+                    \rank{6} The extra damage increases to 3d6.
+                    \rank{7} The extra damage increases to 4d8.
+                \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Airdance",
             is_magical: true,
-            rank: 3,
+            rank: 7,
             description: r"
-                When you move with a Jump check, you can land in midair as if it was solid ground.
-                Your landing location must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-                You cannot walk in the air, but you can continue jumping or remain in place.
-                The air holds you until the end of the current round, at which point you fall normally.
-                After you land on air in this way, you \glossterm{briefly} cannot do so again.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Airdance+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you use this ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
-                In addition, the maxium height above the ground increases to 60 feet.
+                You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a \glossterm{height limit} of 30 feet (see \pcref{Flight}).
+                While flying, you can jump as if you were on solid ground, allowing you to rapidly gain height and change directions unexpectedly.
             ",
             modifiers: None,
         },
@@ -135,22 +169,13 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Esoteric Force",
+            name: "Esoteric Precision",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                You gain a \plus1 accuracy bonus with \glossterm{strikes}.
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Esoteric Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Enhanced Maneuvers",
@@ -337,9 +362,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
 
                         \rankline
-                        \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The power bonus increases to +4.
+                        \rank{3} You also gain +1d4 extra damage with strikes.
+                        \rank{5} The extra damage increases to +1d6.
+                        \rank{7} The extra damage increases to +1d10.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Leap of the Heavens}
@@ -544,32 +569,40 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Unhindered Movement",
+            name: "Unhindered Agility",
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus10 foot bonus to your land speed while you have no \glossterm{encumbrance}.
+                You gain a +1 bonus to your Armor and Reflex defenses while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
         },
         RankAbility {
-            name: "Unhindered Movement+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The speed bonus increases to \plus20 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
-        },
-        RankAbility {
-            name: "Unhindered Agility",
+            name: "Unhindered Agility+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your Reflex defense while you have no \glossterm{encumbrance}.
+                The bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 3)]),
-                
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
+        },
+        RankAbility {
+            name: "Unhindered Agility+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus increases to +3.
+            ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::Defense(Defense::Reflex, 2),
+            ]),
         },
         RankAbility {
             name: "Perfect Precision",
@@ -664,24 +697,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You are immune to being \slowed and \immobilized.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Transcendent Might",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Transcendent Might+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to +2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Transcend Emotion",
