@@ -218,6 +218,10 @@ Unless otherwise noted, all \magical abilities with a duration can be dismissed,
 This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
 You can dismiss abilities as a \glossterm{free action} (see \pcref{Dismissal}).
 
+\glossdef{double damage} If an attack deals double damage, you double the result of all damage dice you roll for the attack, including any \glossterm{extra damage}.
+The same applies to any other multipliers, like triple damage.
+This is different from \glossterm{critical hits}, which double the number of dice you roll for the attack, and which do not affect extra damage.
+
 \glossdef{elite} Elite monsters are much more dangerous than standard monsters.
 For details, see \pcref{Elite Monsters}.
 
@@ -249,7 +253,15 @@ If it does, you roll it again and add the two results together to determine the 
 For details, see \pcref{Exploding Attacks}.
 
 \glossdef{extra damage} Some abilities add extra damage to your damaging attacks, or cause creatures to suffer extra damage from any incoming damaging attacks.
-Extra damage applies when damaging attacks hit.
+Extra damage applies when damaging attacks hit or get a \glossterm{glancing blow}.
+On a glancing blow, extra damage is halved just like the attack's base damage.
+
+Most sources of extra damage do not have a specific damage type.
+The extra damage normally has the same damage type as the attack's base damage.
+If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
+
+Some damaging abilities affect extra damage differently.
+For example, the \ability{enraged strike} ability doubles the \glossterm{weapon damage} of the attack, but does not double any extra damage applied to the attack.
 
 \glossdef{failure chance}[failure chance] If you have a failure chance with an \glossterm{attack}, you have a random chance to miss with the attack regardless of the result of your attack roll.
 If you have multiple failure chances, only the highest one applies.
@@ -737,6 +749,10 @@ A wall-shaped area has a length and height, but its width is not measured in squ
 \glossdef{weapon}[weapons] A weapon is an object used to inflict damage.
 Some creatures can treat parts of their body as weapons.
 For details, see \pcref{Weapons}.
+
+\glossdef{weapon damage} Your weapon damage is the damage you deal with weapons.
+Typically, weapon damage is dealt by \glossterm{strikes} (see \pcref{Strikes}).
+You gain a \plus1d bonus to your weapon damage per 2 \glossterm{power} (see \pcref{Power}).
 
 \glossdef{weapon group} A weapon group is a category of \glossterm{weapons} with a similar design and fighting style.
 You have proficiency with some number of weapon groups based on your \glossterm{class}.
