@@ -240,7 +240,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 \glossterm{accuracy} bonus.
+                You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
