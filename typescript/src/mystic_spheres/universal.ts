@@ -57,33 +57,31 @@ export const universal: MysticSphere = {
       name: 'Mystic Bolt',
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} damage.`,
+        hit: `The target takes \\damagerankone{}.`,
         targeting: `
           Make an attack against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
-      scaling: 'damage',
     },
     {
       name: 'Mighty Mystic Bolt',
 
       attack: {
-        hit: `The target takes 4d6 + \\glossterm{power} damage.`,
+        hit: `The target takes \\damagerankfourlow{}.`,
         targeting: `
           Make an attack against anything within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 4,
-      scaling: 'damage',
     },
     {
       name: 'Mystic Discharge',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        hit: `Each target takes \\damagerankonelow{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
@@ -91,13 +89,12 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
     },
     {
       name: 'Massive Mystic Discharge',
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} damage.`,
+        hit: `Each target takes \\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
@@ -105,7 +102,6 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
     },
   ],
   rituals: [
@@ -114,7 +110,7 @@ export const universal: MysticSphere = {
 
       castingTime: 'one hour',
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} damage.`,
+        hit: `Each target takes \\damagerankonelow{}.`,
         missGlance: true,
         targeting: `
           When you perform this ritual, choose a point in space within \\shortrange.
@@ -131,12 +127,6 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: {
-        special: `
-          You can perform this ritual at a higher rank.
-          The damage increases by +1d per rank beyond 1.
-        `,
-      },
       tags: ['Trap'],
       type: 'Attune',
     },
@@ -152,12 +142,6 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: {
-        special: `
-          You can perform this ritual at a higher rank.
-          The damage increases by +1d per rank beyond 1.
-        `,
-      },
       tags: ['Trap'],
     },
     {
@@ -167,17 +151,11 @@ export const universal: MysticSphere = {
       functionsLike: {
         name: 'mystic trap',
         exceptThat: `
-          the damage increases to 2d8 + half \\glossterm{power} damage.
+          the damage increases to \\damageranktwo{}.
           In addition, the area of both the activation and the attack increases to a \\medarea radius.
         `,
       },
       rank: 4,
-      scaling: {
-        special: `
-          You can perform this ritual at a higher rank.
-          The damage increases by +1d per rank beyond 4.
-        `,
-      },
       tags: ['Trap'],
     },
     {
@@ -192,12 +170,6 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: {
-        special: `
-          You can perform this ritual at a higher rank.
-          The damage increases by +1d per rank beyond 4.
-        `,
-      },
       tags: ['Trap'],
     },
   ],
