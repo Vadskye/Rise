@@ -16,17 +16,15 @@
         Otherwise, the attack misses.
 
         \subsubsection{Glancing Blows}\label{Glancing Blows}
-            When you miss on an attack by 2 or less, it is called a \glossterm{glancing blow}.
+            When you would miss on a damaging attack by 2 or less, you instead get a \glossterm{glancing blow}.
             Some attacks inflict a glancing blow even if they miss by more than 2.
+            Non-damaging attacks cannot cause glancing blows.
 
             All damaging attacks have a standard glancing blow effect.
-            If you get a glancing blow with a damaging attack, you roll no damage dice.
-            However, if the attack deals damage that is not based on dice, you still deal that damage.
-            For example, many attacks add your \glossterm{power} to damage, and that damage is still dealt on a glancing blow.
+            If you get a glancing blow with a damaging attack, you deal half damage.
 
-            Non-damaging attacks do not have any special effects on a glancing blow.
-            A glancing blow is not considered to be a miss for the purpose of abilities that trigger on missed attacks.
-            However, many abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
+            A glancing blow is neither a hit nor a miss.
+            However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
             When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
@@ -38,25 +36,25 @@
         \subsubsection{Critical Hits}\label{Critical Hits}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
             Some attacks have specific effects when you get a critical hit.
-            In addition, all damaging attacks have a standard critical hit effect.
-            For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll.
+
+            All damaging attacks have a standard critical hit effect.
+            For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll, including any \glossterm{extra damage}.
             As normal, two doublings become a tripling, so if you beat your opponent's defense by 20, you roll triple the damage dice.
-            This does not increase the damage from your \glossterm{power} or any other non-dice damage modifiers.
 
             Objects are not normally subject to critical hits.
             Some creatures are also not subject to critical hits, as noted in their descriptions.
 
             Critical hits with \glossterm{melee} attacks are a \abilitytag{Size-Based} effect.
-            This means you cannot normally get a critical hit with a melee attack against a creature that is two or more size categories larger than you (see \pcref{Size Categories}).
+            You cannot normally get a critical hit with a melee attack against a creature that is two or more size categories larger than you (see \pcref{Size Categories}).
 
     \subsection{Dealing Damage}\label{Dealing Damage}
         Many \glossterm{attacks} deal damage to their targets.
         When a creature is dealt damage, it gets closer to death (see \pcref{Taking Damage}).
-        In general, most damaging attacks deal an amount of damage determined by rolling some number of dice and adding some multiplier of your \glossterm{power} with that attack.
+        Damaging attacks roll some number of dice and sum up the result to determine their damage.
         The details are given in each attack's description.
 
         \subsubsection{Dice Pools}\label{Dice Pools}
-            Almost all attacks deal damage based on a \glossterm{dice pool}.
+            All attacks deal damage based on a \glossterm{dice pool}.
             Likewise, healing abilities usually heal hit points based on a dice pool.
             Dice pools are written with the number of dice, followed by ``d'', followed by the size of dice to roll.
             For example, 2d6 means you roll two six-sided dice.
@@ -67,7 +65,7 @@
             Each die increment increases the size of the largest die in the dice pool by one increment.
             If that die is a d10, it splits into 2d6.
             The dice sizes are listed below in order of size.
-            Dice smaller than 1d6 are rarely used in dice pools.
+            Dice smaller than 1d4 are rarely used in dice pools.
             \begin{itemize}
                 \item 1 damage (minimum)
                 \item 1d2
@@ -81,6 +79,18 @@
             For example, assume you have an ability that deals 2d8 damage normally.
             If you gained a \plus1d damage bonus, you would deal 1d10 \add 1d8 damage.
             An additional \plus1d damage bonus, for a total of \plus2d, would mean you deal 1d8 \add 2d6 damage.
+
+            If you have a large number of +1d modifiers, this process can be cumbersome.
+            Instead, for every +3d, you can simply add 1d6 to the dice pool without changing any of the original dice.
+
+    \subsection{Weapon Damage}\label{Weapon Damage}
+        Some abilities deal damage based on the weapon you use the ability with.
+        Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
+
+        Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
+        You gain a \plus1d bonus to your weapon damage for every 2 \glossterm{power} you have (see \pcref{Power}).
+        Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
+        However, you might use your \glossterm{magical power} instead for \glossterm{magical} strikes.
 
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
@@ -103,7 +113,7 @@
             \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
             \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
             % TODO: what does this actually mean
-            Abilities without a duration create a brief burst of torchlight.
+            Abilities without a duration create a \glossterm{brief} burst of torchlight.
             While underwater, they deal half damage and have no nondamaging effects.
 
         \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
@@ -605,14 +615,13 @@
 
         All strikes are \glossterm{mundane} abilities.
         Your \glossterm{accuracy} with a strike is the same as your accuracy with most other abilities (see \pcref{Accuracy}).
-        Your \glossterm{damage} with a strike is normally determined by your \glossterm{mundane power} and the damage dice for the weapon you hit with (see \pcref{Strike Damage}).
+        Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
 
         Whenever you make a strike, you must choose one weapon to make the strike with.
         Wielding two weapons does not change anything about each strike you make.
-        However, wielding two weapons can allow you to make an additional strike each round.
-        For details, see \pcref{Offhand Strike}.
+        However, wielding two weapons can allow you to use the \ability{offhand strike} ability (see \pcref{Offhand Strike}).
 
-        \begin{activeability}{Melee Strike}
+        \begin{activeability}{Basic Strike -- Melee}
             \label{Melee Strike}
             \rankline
             Choose one weapon you are wielding and are able to attack with.
@@ -620,22 +629,22 @@
             If you are using a \weapontag{Long} weapon, you can instead attack anything within 10 feet of you.
             You must have \glossterm{line of effect} to the target.
 
-            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \hit The target takes damage from the weapon (see \pcref{Weapon Damage}).
             \crit You double your damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
         \end{activeability}
 
-        \begin{activeability}{Projectile Strike}
+        \begin{activeability}{Basic Strike -- Projectile}
             \label{Projectile Strike}
             \rankline
             Choose one weapon with the Projectile \glossterm{weapon tag} that you are wielding and are able to attack with (see \pcref{Weapon Tags}).
             Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
             You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
 
-            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \hit The target takes damage from the weapon (see \pcref{Weapon Damage}).
             \crit You double your damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
         \end{activeability}
 
-        \begin{activeability}{Thrown Strike}
+        \begin{activeability}{Basic Strike -- Thrown}
             \label{Thrown Strike}
             \rankline
             Choose one non-projectile weapon that you are wielding and are able to attack with.
@@ -643,17 +652,9 @@
             Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
             You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
 
-            \hit The target takes damage from the weapon (see \pcref{Strike Damage}).
+            \hit The target takes damage from the weapon (see \pcref{Weapon Damage}).
             \crit You double your damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
         \end{activeability}
-
-        \subsubsection{Strike Damage}\label{Strike Damage}
-            When you deal damage with a strike, you roll your weapon's damage dice and add your \glossterm{power} with the strike to get the total damage.
-            Almost all strikes are considered \glossterm{mundane} abilities, so you would normally use your \glossterm{mundane power} to determine their damage (see \pcref{Power}).
-
-            Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-            Some abilities modify your weapon damage dice with \glossterm{dice increments}, such as by granting you a \plus1d bonus to your weapon's damage dice.
-            For details about dice increments, see \pcref{Dice Pools}.
 
         \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
             Some abilities allow you to make strikes that affect secondary targets in addition to the primary target or targets.
@@ -843,9 +844,9 @@
             However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
 
             On a hit, the target becomes \prone.
-            In addition, if you made the attack with a Tripping weapon and the attack also beat the target's Armor defense, it takes damage as if you had hit it with a \glossterm{strike} using the weapon.
-            You do not add your \glossterm{power} to this damage.
-            This damage is doubled as normal for damaging attacks if you get a \glossterm{critical hit} against the target's Armor defense.
+            In addition, if you made the attack with a Tripping weapon and the attack also beat the target's Armor defense, the target takes \glossterm{weapon damage} based on your weapon.
+            You cannot get a \glossterm{glancing blow} with this attack, and this damage is not doubled if you get a \glossterm{critical hit}.
+            This is not a \glossterm{strike}, so abilities that improve your strikes do not affect this ability.
         \end{activeability}
 
     \subsection{Grappling}\label{Grappling}
