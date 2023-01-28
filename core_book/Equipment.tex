@@ -196,7 +196,8 @@ Items are divided into five broad categories, described below.
 
     Each weapon has a \glossterm{weapon group}, a \glossterm{usage class}, and any number of \glossterm{weapon tags}.
     In addition, each weapon has a particular \glossterm{accuracy} modifier and defines a base \glossterm{dice pool} for attacks using that weapon.
-    This section explains each of those concepts and defines the statistics for weapons in Ries.
+    This section explains each of those concepts and defines the statistics for weapons in Rise.
+    You gain a \plus1d bonus to your \glossterm{weapon damage} per 2 power (see \pcref{Weapon Damage}).
 
     \subsection{Weapon Groups}\label{Weapon Groups}
 
@@ -445,7 +446,7 @@ Items are divided into five broad categories, described below.
                 \tind Smallsword                   & Light  & \plus2  & 1d4    & Piercing                 & 0 (10 gp) & Keen                                           \\
 
                 Bows                               &        &         &        &                          &           &                                                \\
-                \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d8    & \tdash                   & 1 (40 gp) & Projectile (90/270)                            \\
+                \tind Longbow\fn{2}                & Heavy  & \plus0  & 1d6    & \tdash                   & 1 (40 gp) & Projectile (90/270)                            \\
                 \tind Shortbow\fn{2}               & Medium & \plus0  & 1d4    & \tdash                   & 1 (40 gp) & Projectile (60/180), Stealthy                  \\
                 \tind Arrows (20)                  & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)  & Ammunition                                     \\
                 \tind Blunted arrows (20)          & \tdash & \minus1 & \tdash & Bludgeoning              & 0 (2 gp)  & Ammunition, Subdual                            \\
@@ -464,7 +465,7 @@ Items are divided into five broad categories, described below.
 
                 Crossbows                          &        &         &        &                          &           &                                                \\
                 \tind Hand crossbow\fn{2}          & Light  & \plus1  & 1d3    & \tdash                   & 1 (40 gp) & Projectile (30/90), Stealthy                   \\
-                \tind Heavy crossbow\fn{2}         & Heavy  & \plus0  & 2d6   & \tdash                   & 1 (40 gp) & Projectile (90/270)                            \\
+                \tind Heavy crossbow\fn{2}         & Heavy  & \plus0  & 1d10   & \tdash                   & 1 (40 gp) & Projectile (90/270)                            \\
                 \tind Crossbow bolts (20)          & \tdash & \plus0  & \tdash & Piercing                 & 0 (2 gp)  & Ammunition                                     \\
                 \tind Blunted crossbow bolts (20)  & \tdash & \minus1 & \tdash & Piercing                 & 0 (2 gp)  & Ammunition, Subdual                            \\
 
@@ -550,16 +551,16 @@ Items are divided into five broad categories, described below.
                 \tind Kukri                     & Light   & \plus2 & 1d4     & Slashing                 & 0 (10 gp)  & Keen, Sweeping (1)                 \\
                 \tind Parrying dagger           & Light   & \plus2 & 1d4     & Piercing                 & 0 (10 gp)  & Parrying, Stealthy, Thrown (30/60) \\
                 Bows                            &         &        &         &                          &            &                                    \\
-                \tind Flatbow\fn{2}             & Heavy   & \plus1 & 1d8     & \tdash                   & 1 (40 gp)  & Projectile (90/270)                \\
+                \tind Flatbow\fn{2}             & Heavy   & \plus1 & 1d6     & \tdash                   & 1 (40 gp)  & Projectile (90/270)                \\
                 \tind Heartseeker arrows (20)   & \tdash  & \plus0 & \tdash  & Piercing                 & 2 (40 gp)  & Ammunition, Impact                 \\
-                \tind Takedown bow\fn{2}        & Special & \plus0 & 1d8/1d4 & \tdash                   & 2 (200 gp) & Projectile (90/270 or 60/180)      \\
+                \tind Takedown bow\fn{2}        & Special & \plus0 & 1d6/1d4 & \tdash                   & 2 (200 gp) & Projectile (90/270 or 60/180)      \\
                 Club-like weapons               &         &        &         &                          &            &                                    \\
                 \tind Culacula                  & Heavy   & \plus0 & 1d10    & Bludgeoning              & 0 (10 gp)  & Forceful, Impact, Parrying         \\
                 \tind Gnomish trick mace        & Light   & \plus2 & 1d4     & Bludgeoning              & 0 (10 gp)  & Impact, Tripping                   \\
                 \tind Knobkerrie                & Medium  & \plus1 & 1d6     & Bludgeoning              & 0 (10 gp)  & Impact, Throwing (30/60)           \\
                 \tind Totokia                   & Medium  & \plus0 & 1d8     & Bludgeoning and piercing & 0 (10 gp)  & Impact, Versatile Grip             \\
                 Crossbows                       &         &        &         &                          &            &                                    \\
-                \tind Arbalest\fn{2}            & Heavy   & \plus2 & 2d6    & \tdash                   & 2 (200 gp) & Impact, Projectile (90/270)        \\
+                \tind Arbalest\fn{2}            & Heavy   & \plus2 & 1d10    & \tdash                   & 2 (200 gp) & Impact, Projectile (90/270)        \\
                 \tind Repeating crossbow\fn{2}  & Medium  & \plus0 & 1d6     & \tdash                   & 2 (200 gp) & Impact, Projectile (90/270)        \\
                 \tind Repeating bolts (5)       & \tdash  & \plus0 & \tdash  & Piercing                 & 1 (10 gp)  & Ammunition                         \\
                 Flexible weapons                &         &        &         &                          &            &                                    \\
@@ -697,21 +698,21 @@ Items are divided into five broad categories, described below.
         \begin{dtable!*}
             \lcaption{Weapon Special Materials}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
-                \tb{Material}              & \tb{Special Effect}                & \tb{Item Rank}              \tableheaderrule
+                \tb{Material}             & \tb{Special Effect}                       & \tb{Item Rank}              \tableheaderrule
                 % object damage
-                \tind Adamantine          & \plus1d, double damage to objects                  & \plus4 \\
-                \tind Adamantine, pure    & \plus2d, triple damage to objects                  & \plus6 \\
+                \tind Adamantine          & \plus2d, double damage to objects         & \plus4 \\
+                \tind Adamantine, pure    & \plus4d, triple damage to objects         & \plus6 \\
                 % just vulnerabilities
                 \tind Cold iron           & Common vulnerabilities                    & \plus2 \\
-                % crit damage
-                \tind Diamondsteel        & \plus3 accuracy with critical hits        & \plus3 \\
-                \tind Diamondsteel, pure  & \plus6 accuracy with critical hits        & \plus5 \\
+                % crit accuracy
+                \tind Diamondsteel        & \plus2 accuracy with critical hits        & \plus2 \\
+                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits        & \plus4 \\
                 % energy damage
-                \tind Dragonfang          & Deals energy damage                       & \plus4 \\
-                \tind Dragonfang, ancient & Deals energy damage, grants breath attack & \plus6 \\
+                \tind Dragonfang          & Deals energy damage                       & \plus3 \\
+                \tind Dragonfang, ancient & Deals energy damage, grants breath attack & \plus5 \\
                 % trade damage for accuracy
-                \tind Mithral             & \plus1 accuracy, \minus1d damage          & \plus3 \\
-                \tind Mithral, pure       & \plus2 accuracy, \minus2d damage          & \plus5 \\
+                \tind Mithral             & \plus1 accuracy                           & \plus3 \\
+                \tind Mithral, pure       & \plus2 accuracy                           & \plus5 \\
                 % just vulnerabilities  
                 \tind Silvered            & Common vulnerabilities                    & \plus2 \\
             \end{dtabularx}
@@ -725,9 +726,9 @@ Items are divided into five broad categories, described below.
 
         \parhead{Cold Iron} Many fey creatures and some demons are \glossterm{vulnerable} to cold iron weapons.
 
-        \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus3 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+        \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
-        \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus6 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+        \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
         \parhead{Dragonfang} Damage dealt by a dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
 
@@ -737,9 +738,9 @@ Items are divided into five broad categories, described below.
         Otherwise, the strike targets everything in a \areamed cone from you.
         After you use this ability, you \glossterm{briefly} cannot use it again.
 
-        \parhead{Mithral} A mithral weapon grants you a \plus1 accuracy bonus and a \minus1d damage penalty with strikes using the weapon.
+        \parhead{Mithral} A mithral weapon grants you a \plus1 accuracy bonus with \glossterm{strikes} using the weapon.
 
-        \parhead{Mithral, Pure} A pure mithral weapon grants you a \plus2 accuracy bonus and a \minus2d damage penalty with strikes using the weapon.
+        \parhead{Mithral, Pure} A pure mithral weapon grants you a \plus2 accuracy bonus with \glossterm{strikes} using the weapon.
 
         \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
 
