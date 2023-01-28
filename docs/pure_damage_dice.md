@@ -131,13 +131,13 @@ Level: Power
 Your power is equal to half your level + full Str/Wil. At low levels, power for high investment characters is a large multiple of power for low investment characters. However, this can be solved by providing abilities with weak power scaling at low levels, and strong power scaling at high levels.
 
 ## Power per Rank
-* R1: base 0, max 4
-* R2: base 2, max 6
-* R3: base 3, max 8
-* R4: base 5, max 10
-* R5: base 6, max 12
-* R6: base 8, max 14
-* R7: base 9, max 16
+* R1: base 0.5, max 4.5
+* R2: base 2, max 7
+* R3: base 3.5, max 8.5
+* R4: base 5, max 11
+* R5: base 6.5, max 12.5
+* R6: base 8, max 15
+* R7: base 9.5, max 17.5
 
 ## Single-Target Spell Scaling
 
@@ -298,3 +298,28 @@ Expected damage at rank 6 (8/15 power):
 So area spells should use a damage progression from about two ranks lower. Very large areas might go three ranks lower, and very small areas might go one rank lower.
 
 In general, if you spend 2 ranks on non-damage upgrades (like range), you should use a strongish scaling 1 rank lower.
+
+## Weapon Damage Scaling
+
+Base melee weapon damage at each rank:
+
+* R1: 1d6/1d10 (3.5/5.5)
+* R2: 1d8/2d6 (4.5/7)
+* R3: 1d8/1d8+1d6 (5.5/8)
+* R4: 1d10/1d10+1d6 (5.5/9)
+* R5: 2d6/3d6 (7/10.5)
+* R6: 1d8+1d6/1d8+2d6 (8/11.5)
+* R7: 1d8+1d6/1d10+2d6 (9/12.5)
+
+Weapon damage is just a R1 single-target damage spell: 3.2 + 0.53dpp.
+
+actual damage at each rank (missing damage) (percent of correct damage):
+* R1: 3.5/5.6 (0/0) (100%/100%)
+* R2: 4.3/6.9 (0.7/1.1) (86%/86%)
+* R3: 5/7.7 (2/3.5) (71%/69%)
+* R4: 5.9/9 (4.1/7) (59%/56%)
+* R5: 6.6/9.8 (7.4/12.6) (47%/44%)
+* R6: 7.4/11.2 (12.6/20.8) (37%/35%)
+* R7: 8.2/12.5 (19.8/32.3) (29%/28%)
+
+Observation: In general, you can offset the damage difference with +1 accuracy per rank above rank 1, at least at first.
