@@ -11,8 +11,9 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to half your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
-        Your \\glossterm{power} with the strike is halved.
-        The strike targets any number of creatures and objects adjacent to you at any point during your movement.
+        The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
+        Your damage with the strike is halved.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 3,
     },
@@ -23,7 +24,8 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
-        The strike targets any number of creatures and objects adjacent to you at any point during your movement.
+        The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 7,
     },
@@ -32,8 +34,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Spring Attack',
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Move up to half your movement speed and make a \\glossterm{strike} with a -2 accuracy penalty.
         After making the strike, you can use the other half of your movement.
       `,
       rank: 3,
@@ -44,7 +45,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         You can move up to half your speed and make a \\glossterm{strike}, in either order.
-        Your \\glossterm{power} with the strike is halved.
+        Your damage with the strike is halved.
       `,
       rank: 1,
     },
@@ -96,19 +97,18 @@ export const mobileAssault: CombatStyle = {
       name: 'Retreating Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty.
         In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
       rank: 3,
     },
 
     {
-      name: 'Flash Strike',
+      name: 'Flash Sweep',
 
       effect: `
-        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
-        In addition, you can make a melee \\glossterm{strike} against any single creature within a 5 ft.\\ wide line between your starting location and your ending location.
+        You \\glossterm{teleport} horizontally to a location within \\shortrange.
+        In addition, you can make a melee \\glossterm{strike} that targets all \\glossterm{enemies} within a 5 ft.\\ wide line between your starting location and your ending location.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
@@ -118,8 +118,10 @@ export const mobileAssault: CombatStyle = {
       name: 'Flash Flurry',
 
       effect: `
-        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\medrange.
-        In addition, you can make a melee \\glossterm{strike} that targets up to three creatures within a 5 ft.\\ wide line between your starting location and your ending location.
+        You \\glossterm{teleport} horizontally to a location within \\shortrange.
+        In addition, you can two melee \\glossterm{strikes}.
+        Each strike targets one creature within a 5 ft.\\ wide line between your starting location and your ending location.
+        You can target the same creature with both strikes.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 7,
@@ -129,7 +131,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Flash Charge',
 
       effect: `
-        You \\glossterm{teleport} into an unoccupied destination on a stable surface within \\shortrange.
+        You \\glossterm{teleport} horizontally to a location within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} at your destination.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
@@ -152,6 +154,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
+        Your \\glossterm{weapon damage} with the strike is doubled.
         If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 7,
@@ -176,7 +179,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
-        Your \\glossterm{power} with both strikes is halved.
+        Your damage with both strikes is halved.
         You cannot include the same creature or object as a target of both strikes.
         If your weapon has the Sweeping weapon tag, you ignore that tag on the first strike (see \\pcref{Sweeping}).
       `,
@@ -204,10 +207,9 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
       tags: ['Emotion'],
     },
 
@@ -216,29 +218,10 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
       tags: ['Emotion'],
-    },
-
-    {
-      name: 'Mighty Charge',
-
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you gain a +2 damage bonus with the strike if you moved at least 15 feet during the charge.
-        `,
-        name: 'charge',
-      },
-      rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +4.',
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
     },
 
     {

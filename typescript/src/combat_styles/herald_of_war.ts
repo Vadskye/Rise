@@ -91,13 +91,12 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout',
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes \\damagerankthreelow{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
-      scaling: 'damage',
       rank: 3,
     },
 
@@ -105,12 +104,11 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `Each target takes 5d10 + \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes \\damageranksevenlow{bludgeoning}.`,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
-      scaling: 'damage',
       rank: 7,
     },
 
@@ -119,14 +117,13 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankone{bludgeoning}.
           If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
-      scaling: 'damage',
       rank: 1,
     },
 
@@ -135,14 +132,13 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankfive{bludgeoning}.
           If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
-      scaling: 'damage',
       rank: 5,
     },
 
@@ -150,21 +146,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Rally the Troops',
 
       effect: `
-        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from one \\glossterm{condition} they are already affected by.
-        Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from that condition during the current phase.
-      `,
-      rank: 1,
-      tags: ['Swift'],
-    },
-
-    {
-      name: 'Rally the Troops+',
-
-      effect: `
-        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
+        Your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
-      rank: 5,
+      rank: 3,
       tags: ['Swift'],
     },
 
@@ -173,10 +158,10 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Your damage with the strike is halved.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -186,7 +171,7 @@ export const heraldOfWar: CombatStyle = {
         Make a \\glossterm{strike}.
         Each creature damaged by the strike is \\shaken by you if your attack result beats its Mental defense.
       `,
-      rank: 3,
+      rank: 1,
       tags: ['Emotion'],
     },
 
@@ -197,7 +182,7 @@ export const heraldOfWar: CombatStyle = {
         Make a \\glossterm{strike}.
         Each creature damaged by the strike is \\frightened by you if your attack result beats its Mental defense.
       `,
-      rank: 7,
+      rank: 5,
       tags: ['Emotion'],
     },
 
@@ -207,45 +192,36 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        In addition, make an attack vs. Mental against each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        Your damage with the strike is halved.
+        If you deal damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
         On a hit, each target is \\shaken by you as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Encouraging Battlecry',
 
+      // TODO: not sure what the right healing amount is. Using d1.
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d10 \\glossterm{damage resistance}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d6 \\glossterm{damage resistance} +1d per 2 power.
       `,
       rank: 3,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 3.' },
       tags: ['Emotion', 'Swift'],
     },
 
     {
       name: 'Encouraging Battlecry+',
 
+      // Using d5.
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 4d6 + half \\glossterm{power} \\glossterm{damage resistance}.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 2d6 \\glossterm{damage resistance} plus 1d6 per 3 power.
       `,
       rank: 7,
-      tags: ['Emotion', 'Swift'],
-    },
-
-    {
-      name: 'Steadfast Battlecry',
-
-      effect: `
-        You and each living \\glossterm{ally} in a \\largearea radius from you \\glossterm{briefly} gain a +2 bonus to \\glossterm{vital rolls}.
-      `,
-      rank: 1,
       tags: ['Emotion', 'Swift'],
     },
   ],
