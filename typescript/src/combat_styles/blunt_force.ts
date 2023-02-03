@@ -10,7 +10,8 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        \\miss If the attack beats the target's Fortitude defense, you get a \\glossterm{glancing blow}.
+        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        Your damage with the strike is halved.
       `,
       rank: 1,
     },
@@ -57,7 +58,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
         The strike targets everything supported by that surface in a \\smallarea cone from you.
-        On a miss, you still get a \\glossterm{glancing blow}.
+        On a miss, you get a \\glossterm{glancing blow}.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 3,
@@ -72,7 +73,7 @@ export const bluntForce: CombatStyle = {
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
         You gain 2d6 \\glossterm{extra damage} with the strike.
         The strike targets everything supported by that surface in a \\largearea cone from you.
-        On a miss, you still get a \\glossterm{glancing blow}.
+        On a miss, you get a \\glossterm{glancing blow}.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 7,
@@ -334,11 +335,25 @@ export const bluntForce: CombatStyle = {
       name: 'Overhand Smash',
 
       effect: `
-        Make a melee \\glossterm{strike} with a +1 accuracy bonus using a bludgeoning weapon.
-        You \\glossterm{briefly} take a -2 penalty to all defenses against each target of your strike.
+        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} using a bludgeoning weapon.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 1,
+      rank: 3,
+      scaling: {
+        "special": "The extra damage increases by +1d for each rank beyond 3.",
+      },
+    },
+
+    {
+      name: 'Overhand Smash+',
+
+      effect: `
+        Make a melee \\glossterm{strike} with \\damagerankfive{} extra damage using a bludgeoning weapon.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+      `,
+      rank: 7,
     },
 
     {
@@ -348,8 +363,8 @@ export const bluntForce: CombatStyle = {
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
         You cannot get a \\glossterm{critical hit} with this strike.
         If you deal damage with the strike to a creature that is Small or larger, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\smallarea radius of the target of your strike.
-        Each secondary target takes damage equal to the damage you dealt with the strike.
-        On a miss against a secondary target, you still get a \\glossterm{glancing blow}.
+        Each struck secondary target takes damage equal to the damage you dealt with the strike.
+        On a miss against a secondary target, you get a \\glossterm{glancing blow}.
       `,
       rank: 3,
     },

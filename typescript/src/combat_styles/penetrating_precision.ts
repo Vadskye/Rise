@@ -10,8 +10,8 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
         The attack is made against each target's Reflex defense instead of its Armor defense.
+        Your damage with the strike is halved.
       `,
       rank: 1,
     },
@@ -70,19 +70,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
-        You reduce your \\glossterm{longshot penalty} with the strike by 2.
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Distant Shot+',
-
-      effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon.
         You reduce your \\glossterm{longshot penalty} with the strike by 4.
       `,
-      rank: 7,
+      rank: 3,
     },
 
     {
@@ -101,7 +91,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If you get a \\glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
+        If the target has no remaining \\glossterm{damage resistance}, your \\glossterm{weapon damage} with the strike is doubled.
       `,
       // narrative: '',
       rank: 1,
@@ -110,12 +100,11 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: 'Deathblow+',
 
-      // TODO: unclear rank
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You gain a +4 accuracy bonus with the strike for the purpose of determining whether you get a critical hit.
-        If you get a \\glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
+        If the target has no remaining \\glossterm{damage resistance}, your \\glossterm{weapon damage} with the strike is tripled.
       `,
+      // narrative: '',
       rank: 5,
     },
 
@@ -134,11 +123,12 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Heartpiercer',
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus using a piercing weapon.
-        Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
+        Make a \\glossterm{strike} using a piercing weapon.
+        You gain a +3 accuracy bonus to the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
-        You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.
+        You strike directly for your foe's heart.
       `,
       rank: 1,
     },
@@ -148,13 +138,13 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your attack roll \\glossterm{explodes}, regardless of your roll.
-        Each target that has any remaining \\glossterm{damage resistance} takes no damage from the strike.
+        You gain a +10 accuracy bonus to the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
-        You strike directly for your foe's heart, hoping its armor is too damaged to effectively deflect the blow.
+        You strike directly for your foe's heart.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -162,10 +152,10 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
+        Your damage with the strike is halved.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -194,35 +184,33 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
-        If you roll either number on your attack roll, you gain a +4 accuracy bonus.
+        If you roll either number on your attack roll, you gain a +4 accuracy bonus and your \\glossterm{weapon damage} is doubled.
         Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 5,
     },
 
     {
-      name: 'Sacrificial Thrust',
+      name: 'Full-Body Thrust',
 
       effect: `
-        Make a \\glossterm{strike} with a +2 \\glossterm{accuracy} bonus using a piercing weapon.
-        You \\glossterm{briefly} take a -2 penalty to all defenses against each target of your strike.
+        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} using a piercing weapon.
+        However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 3,
+      scaling: {
+        "special": "The extra damage increases by +1d for each rank beyond 3.",
+      },
     },
 
     {
-      name: 'Pierce Weakness',
+      name: 'Full-Body Thrust+',
 
       effect: `
-        Make a strike using a piercing weapon.
-        If your attack result beats a target's Reflex defense, you gain a +2 damage bonus with the strike against that target.
+        Make a melee \\glossterm{strike} with \\damagerankfive{} extra damage using a piercing weapon.
+        However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
-      rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +4.',
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
+      rank: 7,
     },
   ],
 };
