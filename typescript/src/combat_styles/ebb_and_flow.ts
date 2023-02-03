@@ -35,10 +35,9 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} with a -2 accuracy penalty against them as a \\glossterm{reactive attack} if possible.
-        Your \\glossterm{power} with both strikes is halved.
+        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         These attacks resolve before the creature's attack, so if you incapacitate it with either strike, its attack does not affect you.
-        You can only attack that creature once in this way, even if it attacks you multiple times.
+        You can only attack that creature twice in this way, even if it attacks you multiple times.
       `,
       rank: 5,
     },
@@ -58,7 +57,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike against each creature that you dealt damage to with a \\glossterm{strike} last round.
+        Your \\glossterm{weapon damage} with the strike is doubled against each creature that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
     },
@@ -68,8 +67,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make two \\glossterm{strikes}.
-        Your \\glossterm{power} with both strikes is halved.
-        You take a -4 accuracy penalty with the strikes against anything other than creatures that you missed with a \\glossterm{strike} last round.
+        You gain a +2 accuracy bonus with the strikes against each creature that you missed with a \\glossterm{strike} last round.
       `,
       rank: 5,
     },
@@ -79,8 +77,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack results beats its Reflex defense.
+        Your damage with the strike is halved.
+        Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -90,52 +88,43 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack results beats its Reflex defense.
+        Your damage with the strike is halved.
+        Each creature damaged by the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 5,
     },
 
     {
-      name: 'Mind-Fuzzing Feint',
+      name: 'Mind-Scrambling Feint',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
-        Each creature damaged by the strike is \\glossterm{briefly} \\confused if your attack results beats its Reflex defense.
-        After this effect ends, the creature cannot be confused by this effect again until it takes a \\glossterm{short rest}.
+        Your damage with the strike is halved.
+        Each creature damaged by the strike is \\confused as a \\glossterm{condition} if your attack results beats its Reflex defense.
       `,
       rank: 7,
     },
 
     {
-      name: 'Reckless Strike',
+      name: 'Sacrificial Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You gain a +1 accuracy bonus and a +2 damage bonus with the strike.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses after making the strike.
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +4.',
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
     },
 
     {
-      name: 'Reckless Flurry',
+      name: 'Sacrificial Flurry',
 
-      // TODO: unclear rank
       effect: `
-        Make two melee \\glossterm{strikes}.
-        Your \\glossterm{power} with each strike is halved.
-        In addition, you \\glossterm{briefly} take a -2 penalty to all defenses after making the strikes.
+        Make two melee \\glossterm{strikes} with a +1 accuracy bonus.
+        However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -143,31 +132,27 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, you gain a +4 damage bonus with the strike.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, your \\glossterm{weapon damage} with the strike is doubled.
       `,
       rank: 3,
-      scaling: {
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
     },
 
     {
       name: 'Certain Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a +3 accuracy bonus.
-        Your \\glossterm{power} with the strike is halved.
+        Make a \\glossterm{strike} with a +4 accuracy bonus.
+        Your damage with the strike is halved.
       `,
       rank: 1,
     },
 
     {
-      name: 'Mighty Strike',
+      name: 'Power Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a -1 penalty to \\glossterm{accuracy}.
-        The strike deals maximum damage with all damage dice.
+        Make a \\glossterm{strike} with a -3 accuracy penalty.
+        Your \\glossterm{weapon damage} with the strike is doubled.
       `,
       rank: 1,
     },
@@ -177,7 +162,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Your damage with the strike is halved.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -210,45 +195,44 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Mainhand Feint',
+      name: 'Mainhand Opener',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        However, you \\glossterm{briefly} add your \\glossterm{power} to damage with the \\ability{offhand strike} ability.
+        You \\glossterm{briefly} gain a +2 accuracy bonus with the \\ability{offhand strike} ability against each creature you damaged with the strike.
       `,
       rank: 5,
       tags: [],
     },
 
     {
-      name: 'Reckless Assault',
+      name: 'Dizzying Assault',
 
       // -2 ranks for self-daze
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature that lost \\glossterm{hit points} from the strike are \\dazed as a \\glossterm{condition}.
+        You and each creature damaged by the strike are \\dazed as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
-      name: 'Reckless Assault+',
+      name: 'Dizzying Assault+',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature that lost \\glossterm{hit points} from the strike are \\stunned as a \\glossterm{condition}.
+        You and each creature damaged by the strike are \\stunned as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
       name: 'Back Into the Fray',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         You gain a +2 accuracy bonus with the strike if you regained \\glossterm{hit points} or \\glossterm{damage resistance} and did not make any attacks last round.
       `,
       rank: 3,
@@ -258,10 +242,10 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Tag-Team Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You gain a +1 accuracy bonus with the strike if the target is adjacent to one of your \\glossterm{allies}.
+        Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
+        Each target damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
       `,
-      rank: 1,
+      rank: 3,
     },
   ],
 };
