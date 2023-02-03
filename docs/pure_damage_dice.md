@@ -289,11 +289,18 @@ Expected damage at rank 4 (5/11 power):
 * R3: 8.3/13.3 (83% damage / 83% damage)
 * R4: 10/16
 
+Expected damage at rank 5 (6.5/12.5 power):
+* R4: 11.5/17.5 (82% / 78%)
+
 Expected damage at rank 6 (8/15 power):
 * R3: 10.8/16.7 (54% / 52%)
 * R4: 13/20 (65% damage / 63%)
 * R5: 16.2/26 (81% damage / 81%)
 * R6: 20/32
+
+Expected damage at rank 7 (9.5/17.5 power):
+* R5: 18.3/29.5 (65% / 66%)
+* R6: 22.5/36 (80% / 80%)
 
 So area spells should use a damage progression from about two ranks lower. Very large areas might go three ranks lower, and very small areas might go one rank lower.
 
@@ -316,10 +323,76 @@ Weapon damage is just a R1 single-target damage spell: 3.2 + 0.53dpp.
 actual damage at each rank (missing damage) (percent of correct damage):
 * R1: 3.5/5.6 (0/0) (100%/100%)
 * R2: 4.3/6.9 (0.7/1.1) (86%/86%)
-* R3: 5/7.7 (2/3.5) (71%/69%)
-* R4: 5.9/9 (4.1/7) (59%/56%)
+* R3: 5.0/7.7 (2/3.5) (71%/69%)
+* R4: 5.9/9.0 (4.1/7) (59%/56%)
 * R5: 6.6/9.8 (7.4/12.6) (47%/44%)
 * R6: 7.4/11.2 (12.6/20.8) (37%/35%)
 * R7: 8.2/12.5 (19.8/32.3) (29%/28%)
 
 Observation: In general, you can offset the damage difference with +1 accuracy per rank above rank 1, at least at first.
+
+## Standard Maneuvers
+
+* R1
+  * Damage
+    * Glancing blow on miss if beat extra defense
+    * Strike with 1d4 +1d/r extra damage, 1 fatigue
+    * Strike, double weapon damage on crit, minor downside?
+  * Debuffs
+    * Strike, push 5' if damaged
+    * Strike, T0.5 condition if damaged and beat extra defense
+    * Strike, T1 condition if lose HP
+    * Strike, T1.5 condition if lose HP and beat extra defense
+    * Strike, half damage, T1 condition if damaged
+    * Strike, half damage, T1.5 condition if damaged and beat extra defense
+    * Strike, half damage, T2 condition if lose HP
+* R3
+  * Damage
+    * Strike against Fort/Ref
+    * dr3 vs all adjacent
+    * Strike in small cone
+    * Thrown strike vs 3 in Small radius in Short range
+    * Strike, 1d4 +1d/r extra damage if beat extra defense
+      * At R4, 1d6 extra damage and +1 accuracy from scaling: (6.6/8.75) vs (6/9.6) post-accuracy
+      * At R7, 2d6 extra damage and +4 accuracy from scaling: (15.2/19.5) vs (16.8/26.9) post-accuracy
+    * Move with a check, dr2h vs all adjacent if check was high enough
+    * Strike with extra weapon tag
+    * Strike, -2 accuracy, double weapon damage
+  * Debuffs
+    * Strike, half damage, T2 condition if damaged and beat extra defense
+    * Strike, T1 condition if damaged and beat extra defense
+    * Strike, T0.5 condition if damaged
+* R5
+  * Damage
+    * Strike, deal same damage next round
+    * Strike, double weapon damage, minor upside
+    * Two strikes
+  * Debuffs
+    * Strike, half damage, T1.5 condition if damaged and beat extra defense
+    * Strike, push with full move if damaged
+    * Strike, T2 condition if lose HP
+    * Strike, half damage, T3 condition if lose HP
+* R7
+  * Damage
+    * dr7 vs adjacent enemies
+    * Strike in large cone with +2d6??
+    * Strike, triple weapon damage, minor downside?
+    * Strike, dr5 extra damage if beat extra defense
+  * Debuffs
+    * Strike, half damage, T3 condition if damaged and beat extra defense
+
+## Heavy Weapons vs Dual Wielding
+
+Compare greataxe (+0a, 2d6) vs dual handaxes (+1a, 1d6).
+Handaxe is one attack at +1a and one offhand strike at -1a, so it's also functionally a single 2d6 strike at level 1.
+Offhand strike has better level scaling, since you double-scale with power, but it's worse with maneuvers.
+At level 1 with 4 Str, greataxe is 1d10+1d6, and handaxes are 2d10. Scary!
+
+Offhand strike damage per rank is simply 80% of the base weapon damage per rank:
+* R1: 2.8/4.5 
+* R2: 3.4/5.6
+* R3: 4.0/6.2
+* R4: 4.7/7.2
+* R5: 5.3/7.8
+* R6: 5.9/9.0
+* R7: 6.6/10.0
