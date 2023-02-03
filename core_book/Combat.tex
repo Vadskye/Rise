@@ -21,7 +21,10 @@
             Non-damaging attacks cannot cause glancing blows.
 
             All damaging attacks have a standard glancing blow effect.
-            If you get a glancing blow with a damaging attack, you deal half damage.
+            If you get a glancing blow with a damaging attack, you roll half as many damage dice, including any \glossterm{extra damage}.
+            % If you removed largest dice, going from 2d10 to 2d10+1d4 would actually reduce glancing blow damage
+            You can choose which of your dice to keep.
+            If you would normally only roll one die, the glancing blow has no effect and is treated as a miss.
 
             A glancing blow is neither a hit nor a miss.
             However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
@@ -740,15 +743,16 @@
         \end{activeability}
 
         \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
-        Your Dexterity must be at least 1 to use this ability.
-        You cannot use this ability to attack with a shield.
         \begin{activeability}{Offhand Strike}
             \rankline
-            Make a \glossterm{strike}.
+            Make a \glossterm{strike} with a \minus2 accuracy penalty.
             The weapon must be held in a single \glossterm{free hand} or must not require a free hand to attack with, such as a bite natural weapon.
             You cannot use this ability unless you already made a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the current phase.
-            You take a \minus2 penalty to \glossterm{accuracy} with this strike, and you do not add any \glossterm{extra damage} to the strike.
+            \glossterm{Extra damage} from any source does not apply to this strike.
             In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
+
+            Your Dexterity must be at least 2 to use this ability.
+            You cannot use this ability to attack with a shield.
         \end{activeability}
 
         \parhead{Overrun}\label{Overrun} As a \glossterm{movement}, you can use the \textit{overrun} ability to move through creatures in your way.
@@ -1173,6 +1177,11 @@
         You can choose how you consider each creature at the start of each \glossterm{phase}.
         You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
         While you are \unconscious, you treat all creatures as \glossterm{allies}.
+
+        Some abilities exclusively target allies or enemies, but it might seem appropriate for them to include objects as well in a particular situation.
+        The GM can decide whether that makes sense.
+        For example, a fighter can normally use the \ability{whirlwind} maneuver to hit all adjacent enemies, and they might want to use that maneuver to destroy a number of objects surrounding them.
+        A GM might decide that it's fine to use that maneuver to damage several large objects at once, but the fighter couldn't individually attack fifty specific gold pieces out of a large pile.
 
         \parhead{Allies} An ally is any creature you consider an ally who also considers you an ally.
         If you consider someone an ally, but they do not consider you an ally, you treat them as a neutral party for the purpose of your abilities.
