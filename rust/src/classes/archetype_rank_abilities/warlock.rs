@@ -151,22 +151,22 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus3 bonus to your \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{magical power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::Power(3)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Hellfire+",
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +9.
+                The power bonus increases to +4.
                 In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
                 Any other aspects of the ability remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::Power(6)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "Abyssal Curse",
@@ -385,11 +385,11 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus3 bonus to \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
                 However, you take a \minus2 penalty to Mental defense.
             ",
             modifiers: Some(vec![
-                Modifier::Power(3),
+                Modifier::Power(2),
                 Modifier::Defense(Defense::Mental, 2),
             ]),
         },
@@ -398,9 +398,9 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +9.
+                The power bonus increases to +4.
             ",
-            modifiers: Some(vec![Modifier::Power(6)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
     ];
 }
@@ -514,8 +514,8 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{power} with that spell.
-                        This bonus increases to +4 at rank 3, +8 at rank 5, and +16 at rank 7.
+                        You gain a +2 bonus to your \glossterm{magical power} with that spell.
+                        This bonus increases to +3 at rank 4, and to +4 at rank 7.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Rituals}).
@@ -599,20 +599,23 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a \plus2 bonus to your \glossterm{power}.
+                        \item You gain 1d4 \glossterm{extra damage} with all damaging \glossterm{magical} abilities.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
-                        \item You take a \minus2 penalty to Fortitude and Mental defenses.
+                        \item You take a \minus2 penalty to your Fortitude and Mental defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \magical attacks.
                         \item At the end of each round, if you did not make a \magical attack during that round, this ability ends.
-                        \item When this ability ends for any reason, you \glossterm{briefly} cannot use it again.
+                        \item When this ability ends for any reason, you increase your \glossterm{fatigue level} by one.
                     \end{itemize}
 
                     \rankline
-                    \rank{3} The power bonus increases to \plus4.
-                    \rank{5} The power bonus increases to \plus8.
-                    \rank{7} The power bonus increases to \plus16.
+                    \rank{2} The extra damage increases to 1d6.
+                    \rank{3} The extra damage increases to 1d8.
+                    \rank{4} The extra damage increases to 1d10.
+                    \rank{5} The extra damage increases to 2d6.
+                    \rank{6} The extra damage increases to 2d8.
+                    \rank{7} The extra damage increases to 2d10.
                 \end{magicalsustainability}
             ",
             modifiers: Some(vec![

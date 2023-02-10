@@ -336,7 +336,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
 
                     \parhead{Sphere Specialization}\label{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-                    You gain a \glossterm{power} bonus equal to your rank in this archetype and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+                    You gain a +2 \glossterm{power} bonus and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
                     \par You cannot choose this insight multiple times.
@@ -559,7 +559,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus5.
+                    \subcf{Evocation} The power bonus increases to \plus3.
 
                     \subcf{Illusion} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                     In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
@@ -585,7 +585,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus12.
+                    \subcf{Evocation} The power bonus increases to \plus4.
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
