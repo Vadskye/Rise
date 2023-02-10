@@ -543,7 +543,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus2 bonus to accuracy and a \plus1d bonus to damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
+                You gain a \plus2 accuracy bonus and a \plus1d damage bonus with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons

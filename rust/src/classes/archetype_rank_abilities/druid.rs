@@ -300,7 +300,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
