@@ -483,7 +483,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
@@ -529,7 +529,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
-                    If you specialize in this school, you gain a \plus2 bonus to your \glossterm{power}.
+                    If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
 
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.

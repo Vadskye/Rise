@@ -227,7 +227,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
@@ -484,7 +484,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-                When you do, you gain a +2 bonus to \glossterm{power} with the spell.
+                When you do, you gain a +2 bonus to \glossterm{magical power} with the spell.
                 In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
