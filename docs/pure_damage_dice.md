@@ -277,6 +277,16 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 * R7: x + 9.5y = 28, x + 17.5y = 44.8
   * 8 base damage, 2.1 damage per power
 
+## Accuracy-Modified Damage Targets
+
+* R1: 3.5/5.6 base, 2.1/3.4 modified
+* R2: 5/8 base,     3/4.8 modified
+* R3: 7/11.2 base,  4.2/6.7 modified
+* R4: 10/16 base,   6/9.6 modified
+* R5: 14/22.4 base, 8.4/13.4 modified
+* R6: 20/32 base,   12/19.2 modified
+* R7: 28/44.8 base, 16.8/26.9 modified
+
 ## Lower Rank Spell Scaling
 
 Expected damage at rank 3 (3.5/8.3 power)
@@ -343,9 +353,9 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, T0.5 condition if damaged and beat extra defense
     * Strike, T1 condition if lose HP
     * Strike, T1.5 condition if lose HP and beat extra defense
-    * Strike, half damage, T1 condition if damaged
-    * Strike, half damage, T1.5 condition if damaged and beat extra defense
-    * Strike, half damage, T2 condition if lose HP
+    * Weak strike, T1 condition if damaged
+    * Weak strike, T1.5 condition if damaged and beat extra defense
+    * Weak strike, T2 condition if lose HP
 * R3
   * Damage
     * Strike against Fort/Ref
@@ -359,7 +369,7 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike with extra weapon tag
     * Strike, -2 accuracy, double weapon damage
   * Debuffs
-    * Strike, half damage, T2 condition if damaged and beat extra defense
+    * Weak strike, T2 condition if damaged and beat extra defense
     * Strike, T1 condition if damaged and beat extra defense
     * Strike, T0.5 condition if damaged
 * R5
@@ -368,10 +378,10 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, double weapon damage, minor upside
     * Two strikes
   * Debuffs
-    * Strike, half damage, T1.5 condition if damaged and beat extra defense
+    * Strike, T1.5 condition if damaged and beat extra defense
     * Strike, push with full move if damaged
-    * Strike, T2 condition if lose HP
-    * Strike, half damage, T3 condition if lose HP
+    * Strike with +2 accuracy, T2 condition if damaged and beat extra defense
+    * Strike, T3 condition if lose HP
 * R7
   * Damage
     * dr7 vs adjacent enemies
@@ -379,7 +389,7 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, triple weapon damage, minor downside?
     * Strike, dr5 extra damage if beat extra defense
   * Debuffs
-    * Strike, half damage, T3 condition if damaged and beat extra defense
+    * Strike, T3 condition if damaged and beat extra defense
 
 ## Heavy Weapons vs Dual Wielding
 
@@ -396,3 +406,72 @@ Offhand strike damage per rank is simply 80% of the base weapon damage per rank:
 * R5: 5.3/7.8
 * R6: 5.9/9.0
 * R7: 6.6/10.0
+
+## Strike Extra Damage
+
+Some maneuvers want to say things like "if your attack result beats X defense, you gain extra damage". How balanced is that?
+
+## Class Strike Ability Scaling
+
+Ordinary strike maneuver example, accuracy-modified:
+* R3, +1 acc: 3.5/5.4
+* R4, +2 acc: 4.7/7.2
+* R5, +3 acc: 5.3/8.1
+* R6, +4 acc: 7.4/11.2
+This falls way behind at high ranks. Accuracy scaling only helps if the base ability has enough damage.
+
+Savage rush:
+* R3: +0/+0
+* R4: +3.1/+6.9
+* R5: +5.7/+11
+* R6: +9.3/+17.5
+* R7: +17.4/+32
+
+Double weapon damage, +1 accuracy per rank after, accuracy-modified:
+* R5, 2xw: 7.9/11.8 (94%/88%)
+* R6, 2xw, +1a: 10.4/15.7 (87%/81%)
+* R7, 2xw, +2a: 13/20 (77%/74%)
+
+Disciplined strike, accuracy-modified (30% miss -> glance, so 0.5+0.25 = 0.75x damage modifier)
+* R3: 5.6/7.7
+* R4: 7.8/10.1
+* R5: 11.7/14.1
+* R6: 15.7/18.5
+* R7: 19.7/26.3
+
+Enraged strike, accuracy-modified:
+* R3, 2xw: 6/9.2 (142%/137%)
+* R4, 2xw, +1a: 8.3/12.6 (138%/131%)
+* R5, 2xw, +2a: 10.6/15.7 (126%/117%)
+* R6, 2xw, +3a: 13.3/20.2 (110%/
+* R7, 3xw, +3a: 22.1/33.8 (131%/
+
+* Enraged strike, non-accuracy scaling:
+* R3, 2xw: 6/9.2 (142%/137%)
+* R5, 3xw: 11.9/17.6 (141%/131%)
+* R7, 4xw: 19.7/30 (117%/111%)
+
+* Enraged strike, hybrid scaling:
+* R3, 2xw: 6/9.2 (142%/137%)
+* R4, 2xw, +1a: 8.3/12.6 (138%/131%)
+* R5, 3xw, +1a: 13.9/20.6 (165%/153%)
+* R6, 3xw, +2a: 17.8/26.9 (148%/140%)
+* R7, 3xw, +4a: 24.6/37.5 (146%/139%)
+
+## Power Scaling
+
+How much value does +2 power add?
+
+* R1: +1.1 (+34%/+20%)
+* R2: +1.2 (+24%/+15%)
+* R3: +1.7 (+24%/+15%)
+* R4: +2 (+20%/+13%)
+* R5: +2.8 (+20%/+13%)
+* R6: +3.4 (+17%/+10%)
+* R7: +4.2 (+15%/+9.3%)
+
+How much value does +4 power add?
+
+* R7: +4 (+30%/+19%)
+
+For context, in the old system, +2 power at rank 3 was about +13% damage at best, and no more than 10% for a dedicated high damage character.
