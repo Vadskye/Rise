@@ -21,10 +21,7 @@
             Non-damaging attacks cannot cause glancing blows.
 
             All damaging attacks have a standard glancing blow effect.
-            If you get a glancing blow with a damaging attack, you roll half as many damage dice, including any \glossterm{extra damage}.
-            % If you removed largest dice, going from 2d10 to 2d10+1d4 would actually reduce glancing blow damage
-            You can choose which of your dice to keep.
-            If you would normally only roll one die, the glancing blow has no effect and is treated as a miss.
+            When you get a glancing blow, you roll damage normally, but you halve the result to determine your total damage dealt.
 
             A glancing blow is neither a hit nor a miss.
             However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
@@ -41,7 +38,8 @@
             Some attacks have specific effects when you get a critical hit.
 
             All damaging attacks have a standard critical hit effect.
-            For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll, including any \glossterm{extra damage}.
+            For every increment of 10 by which you beat the target's defense, you double the number of damage dice you roll and sum the results to determine your total damage.
+            This includes any damage dice from \glossterm{extra damage}.
             As normal, two doublings become a tripling, so if you beat your opponent's defense by 20, you roll triple the damage dice.
 
             Objects are not normally subject to critical hits.
@@ -94,6 +92,11 @@
         You gain a \plus1d bonus to your weapon damage for every 2 \glossterm{power} you have (see \pcref{Power}).
         Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
         However, you might use your \glossterm{magical power} instead for \glossterm{magical} strikes.
+
+        \subsubsection{Weak Strikes}
+            Some abilities make weak strikes, which deal less damage than normal strikes.
+            When you make a weak strike, you roll your \glossterm{weapon damage} twice and take the lower result.
+            You do not reroll any \glossterm{extra damage} that the strike deals.
 
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
