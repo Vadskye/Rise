@@ -157,8 +157,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenging Strike',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike}.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 3,
@@ -191,8 +190,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Awe-Inspiring Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         If you deal damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
         On a hit, each target is \\shaken by you as a \\glossterm{condition}.
       `,
