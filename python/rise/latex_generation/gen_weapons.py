@@ -25,6 +25,36 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
+            name="Blade Flurry",
+            rank=3,
+            # tags=[tag],
+            description="""
+                As a standard action, you can make a melee \\glossterm<strike> using this weapon that spawns a swarm of blades.
+                The strike targets all \\glossterm<enemies> in a \\smallarea cone from you.
+                For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+            """,
+            short_description="Can deal escalating damage in a cone",
+            upgrades=[
+                Upgrade(
+                    rank=5,
+                    description="""
+                        If you used this ability during the previous round, the strike deals double \\glossterm<weapon damage>.
+                    """,
+                    short_description="Can deal escalating damage in a cone",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The strike always deals double \\glossterm<weapon damage>.
+                    """,
+                    short_description="Can deal escalating damage in a cone",
+                ),
+            ]
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
             name="Concussive",
             rank=2,
             # tags=[tag],
