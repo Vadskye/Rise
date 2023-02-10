@@ -474,4 +474,4 @@ How much value does +4 power add?
 
 * R7: +4 (+30%/+19%)
 
-For context, in the old system, +2 power at rank 3 was about +13% damage at best, and no more than 10% for a dedicated high damage character.
+For context, in the old system, +2 power at rank 3 was about +13% damage at best, and no more than 10% for a dedicated high damage character. At rank 7, a default damage spell would deal 6d10+24 damage, or 57 damage. That's 10% more damage assuming 0 Willpower, or 9% more damage with 4 Willpower.
