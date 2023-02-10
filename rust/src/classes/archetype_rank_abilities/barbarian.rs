@@ -84,15 +84,15 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \textit{resilient strike} ability.
                 \begin{activeability}{Resilient Strike}
                     \rankline
-                    Make a melee \glossterm{strike} with \plus1d4 \glossterm{extra damage}.
-                    You can choose to regain \glossterm{damage resistance} equal to your damage with the strike.
+                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                    Regardless of whether you hit or miss, you can choose to regain \glossterm{damage resistance} equal to your normal damage with the strike.
                     If you do, you increase your \glossterm{fatigue level} by one.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d8.
-                    \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 3d6.
-                    \rank{7} The extra damage increases to 4d8.
+                    \rank{5} The extra damage increases to 2d8.
+                    \rank{6} The extra damage increases to 3d8.
+                    \rank{7} The extra damage increases to 5d8.
                 \end{activeability}
             ",
             modifiers: None,
@@ -143,70 +143,22 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain \plus1d4 \glossterm{extra damage} with \glossterm{strikes}.
-                        \item You take a \minus2 penalty to Armor and Reflex defenses.
+                        \item You gain a +2 accuracy bonus.
+                        \item If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+                            This does not affect bonus dice rolled for exploding attacks.
+                        \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
                         \item You are unable to use any \magical abilities that require a standard action.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
                         \item When this ability ends for any reason, you increase your \glossterm{fatigue level} by one.
                     \end{itemize}
-
-                    \rankline
-                    \rank{2} The extra damage increases to \plus1d6.
-                    \rank{3} The extra damage increases to \plus1d8.
-                    \rank{4} The extra damage increases to \plus1d10.
-                    \rank{5} The extra damage increases to \plus2d8.
-                    \rank{6} The extra damage increases to \plus4d6.
-                    \rank{7} The extra damage increases to \plus4d10.
                 \end{sustainability}
             ",
             modifiers: Some(vec![
-                Modifier::ExtraDamage(DamageDice::d4()),
+                Modifier::Accuracy(2),
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
             ]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d6())]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d10())]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d10().add(1))]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d10().add(3))]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d10().add(4))]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::d10().add(6))]),
         },
         RankAbility {
             name: "Fearless Rage",
@@ -226,13 +178,14 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Enraged Strike}
                     \rankline
                     Make a melee \glossterm{strike}.
-                    You deal double \glossterm{weapon damage} with the strike against each creature that dealt damage to you during the previous round.
+                    The strike deals double \glossterm{weapon damage} against each creature that dealt damage to you during the previous round.
 
                     \rankline
-                    \rank{4} You gain a +1 \glossterm{accuracy} bonus with the strike.
-                    \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The accuracy bonus increases to +3.
-                    \rank{7} You triple your weapon damage instead of doubling it.
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
+                    \rank{5} The strike deals triple weapon damage instead of double weapon damage.
+                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
@@ -329,13 +282,13 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Move up to your movement speed.
                     During this movement, you can move through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
-                    At the end of this movement, you may make a melee \glossterm{strike} with a +1 \glossterm{accuracy} bonus.
+                    At the end of this movement, you may make a melee \glossterm{strike}.
 
                     \rankline
-                    \rank{4} The accuracy bonus increases to +2.
-                    \rank{5} The accuracy bonus increases to +3.
-                    \rank{6} The accuracy bonus increases to +4.
-                    \rank{7} You double your \glossterm{weapon damage} with the strike.
+                    \rank{4} You gain 1d4 \glossterm{extra damage} with the strike per 4 power.
+                    \rank{5} The extra damage increases to 1d6 per 4 power.
+                    \rank{6} The extra damage increases to 1d6 per 3 power.
+                    \rank{7} The extra damage increases to 1d10 per 3 power.
                 \end{activeability}
             ",
             modifiers: None,
@@ -350,7 +303,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            name: "Endless Savage Rush",
+            name: "Unstoppable",
             is_magical: false,
             rank: 6,
             description: r"
@@ -440,7 +393,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who are at less than their maximum \glossterm{hit points}.
                     You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to your enhancement level - 4, but your \glossterm{weapon damage} is doubled.
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
                     If your enhancement level is at least 5, this becomes an accuracy bonus.
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 

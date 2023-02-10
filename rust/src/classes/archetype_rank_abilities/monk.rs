@@ -93,10 +93,11 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                     This extra damage is doubled against each creature that you are directly above when you make the strike.
 
                     \rankline
+                    % Weaker scaling than normal because the double damage is easy at high levels
                     \rank{4} The extra damage increases to 1d8.
                     \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 3d6.
-                    \rank{7} The extra damage increases to 4d8.
+                    \rank{6} The extra damage increases to 2d10.
+                    \rank{7} The extra damage increases to 4d6.
                 \end{activeability}
             ",
             modifiers: None,
@@ -169,42 +170,42 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Esoteric Precision",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 accuracy bonus with \glossterm{strikes}.
+                You gain the ability to customize your weaker esoteric maneuvers.
+                For each rank 1 esoteric maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 esoteric maneuvers.
+                {
+                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    However, you cannot get a \glossterm{critical hit}.
+                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+                }
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain the ability to customize your weaker esoteric maneuvers.
-                For each rank 1 and rank 3 esoteric maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-
-                Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 esoteric maneuvers.
-                {
-                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your damage with the maneuver is halved.
-                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
-
-                    \parhead{Guarding Maneuver} You gain a +1 bonus to your Armor defense when you use the maneuver.
-                    This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
-
-                    % Unclear power level
-                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
-                    This extra damage increases by +1d for each rank in this archetype beyond 4.
-
-                    \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
-                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
-                }
+                You can also choose an enhancement for each of your rank 3 esoteric maneuvers.
             ",
             modifiers: None,
         },
@@ -214,7 +215,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 esoteric maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 esoteric maneuvers.
             ",
             modifiers: None,
         },
@@ -501,18 +501,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Ki Power+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The power bonus increases to \plus3.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Hardened Ki",

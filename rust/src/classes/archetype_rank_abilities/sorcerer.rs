@@ -174,10 +174,11 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Powerful Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{power} with that spell.
-                        This bonus increases to +4 at rank 3, +8 at rank 5, and +16 at rank 7.
+                    \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
+                        You gain a +2 bonus to your \glossterm{magical power} with that spell.
+                        This bonus increases to +3 at rank 4, and to +4 at rank 7.
                         You can choose this ability multiple times, choosing a different spell each time.
+                        Whenever you learn a new spell, you may change which of your spells this ability affects.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
@@ -514,18 +515,18 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The power bonus increases to +5.
+                The power bonus increases to +3.
                 In addition, if you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
-            modifiers: Some(vec![Modifier::Power(3)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Wildspell+",
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +10.
+                The power bonus increases to +4.
                 In addition, you replace your normal wild magic effects with the effects from the \trefnp{Epic Wild Magic Effects} table.
                 \begin{dtable}
                     \lcaption{Epic Wild Magic Effects}
@@ -545,7 +546,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{dtable}
             ",
             // 5 higher than the previous wildspell+ ability; this is awkward
-            modifiers: Some(vec![Modifier::Power(8)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Chaotic Insight",

@@ -767,18 +767,18 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Versatile Power+",
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The power bonus increases to \plus3.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
     ];
 }

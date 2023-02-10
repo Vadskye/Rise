@@ -63,15 +63,15 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \textit{disciplined strike} ability.
                 \begin{activeability}{Disciplined Strike}
                     \rankline
-                    Make a \glossterm{strike} with \plus1d4 \glossterm{extra damage}.
+                    Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
                     You cannot get a \glossterm{critical hit} with this strike.
                     \miss \glossterm{Glancing blow}.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d8.
-                    \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 3d6.
-                    \rank{7} The extra damage increases to 4d8.
+                    \rank{5} The extra damage increases to 2d8.
+                    \rank{6} The extra damage increases to 3d8.
+                    \rank{7} The extra damage increases to 5d8.
                 \end{activeability}
             ",
             modifiers: None,
@@ -236,42 +236,43 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Martial Precision",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Enhanced Maneuvers",
-            is_magical: false,
-            rank: 4,
-            description: r"
                 You gain the ability to customize your weaker martial maneuvers.
-                For each rank 1 and rank 3 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                For each rank 1 martial maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 martial maneuvers.
+                However, you must still apply them to rank 1 martial maneuvers.
                 {
-                    \parhead{Counter Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who attacked you during the previous round.
+                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your damage with the maneuver is halved.
+                    \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    However, you cannot get a \glossterm{critical hit}.
                     You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Guarding Maneuver} You gain a +1 bonus to your Armor defense when you use the maneuver.
+                    \parhead{Guarding Maneuver} You gain a bonus to your Armor defense equal to half your enhancement level (minimum 1) when you use the maneuver.
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
                     You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    % Unclear power level
-                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
-                    This extra damage increases by +1d for each rank in this archetype beyond 4.
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
                 }
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Enhanced Maneuvers+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You can also choose an enhancement for each of your rank 3 martial maneuvers.
             ",
             modifiers: None,
         },
@@ -281,7 +282,6 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 martial maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 martial maneuvers.
             ",
             modifiers: None,
         },
@@ -349,8 +349,12 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a melee \glossterm{strike}.
                     Each creature damaged by the strike is \goaded by you as a \glossterm{condition}.
+                    On a \glossterm{critical hit}, the penalty from the condition increases to -4.
                     \rankline
-                    You gain a +1 \glossterm{accuracy} bonus with this strike for each rank beyond 3.
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The strike deals double \glossterm{weapon damage}.
+                    \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
             modifiers: None,
@@ -533,10 +537,10 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
 
                     \rankline
-                    \rank{4} You gain an additional +1 accuracy bonus with the strike.
-                    \rank{5} The additional accuracy bonus increases to +2.
-                    \rank{6} The additional accuracy bonus increases to +3.
-                    \rank{7} You double your \glossterm{weapon damage} with the strike.
+                    \rank{4} If you have at least two \glossterm{allies} adjacent to you, the strike deals double \glossterm{weapon damage}.
+                    \rank{5} The strike always deals double weapon damage.
+                    \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple \glossterm{weapon damage}.
+                    \rank{7} The strike always deals triple \glossterm{weapon damage}.
                 \end{activeability}
             ",
             modifiers: None,

@@ -39,9 +39,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
 
                     \rankline
-                    \rank{3} The strike deals 1d4 \glossterm{extra damage} per 4 \glossterm{power}.
-                    \rank{5} The extra damage increases to 1d8 per 4 \glossterm{power}.
-                    \rank{7} The extra damage increases to 1d10 per 3 \glossterm{power}.
+                    \rank{3} You gain 1d4 \glossterm{extra damage} with the strike.
+                    \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
+                    \rank{5} The extra damage increases to 1d6 per 4 power.
+                    \rank{6} The extra damage increases to 1d6 per 3 power.
+                    \rank{7} The extra damage increases to 1d10 per 3 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
@@ -117,7 +119,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
+                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -561,10 +563,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     Make a \glossterm{strike} against that defense with a \glossterm{natural weapon}.
 
                     \rankline
-                    \rank{4} The strike deals 1d4 \glossterm{extra damage}.
-                    \rank{5} The extra damage increases to 1d8.
-                    \rank{6} The extra damage increases to 2d6.
-                    \rank{7} The extra damage increases to 2d10.
+                    \rank{4} You can choose to deal double \glossterm{weapon damage} with the strike.
+                    If you do, you take a -4 accuracy penalty.
+                    \rank{5} You gain a +1 accuracy bonus with the strike.
+                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{7} The accuracy bonus increases to +3.
                 \end{magicalactiveability}
             ",
             modifiers: None,
