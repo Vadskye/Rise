@@ -493,6 +493,23 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: 'Charged Dash',
+
+      attack: {
+        hit: `Each target takes \\damagerankthreelow{electricity}.`,
+        missGlance: true,
+        targeting: `
+          You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
+          Move the duplicate up to your \\glossterm{land speed}.
+          It can move freely through spaces occupied by creatures, but it cannot pass through solid objects.
+          When it stops moving, make an attack vs. Reflex against everything in the path it took, and you \\glossterm{teleport} to its final location.
+        `,
+      },
+      rank: 4,
+      scaling: 'damage',
+    },
+
+    {
       name: 'Distant Thunderdash',
 
       attack: {
