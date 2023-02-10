@@ -94,7 +94,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -103,7 +103,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonus increases to +6.
+                The power bonus increases to +3.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
