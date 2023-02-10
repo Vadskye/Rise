@@ -9,9 +9,8 @@ export const bluntForce: CombatStyle = {
       name: 'Armorcrusher',
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Make a \\glossterm{weak strike} using a bludgeoning weapon.
         The attack is made against each target's Fortitude defense instead of its Armor defense.
-        Your damage with the strike is halved.
       `,
       rank: 1,
     },
@@ -71,8 +70,8 @@ export const bluntForce: CombatStyle = {
       // about 17/27 damage.
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        You gain 2d6 \\glossterm{extra damage} with the strike.
-        The strike targets everything supported by that surface in a \\largearea cone from you.
+        The strike deals 1d6 \\glossterm{extra damage} per 4 power.
+        It targets everything supported by that surface in a \\largearea cone from you.
         On a miss, you get a \\glossterm{glancing blow}.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
@@ -84,12 +83,9 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Fortitude defense, you gain 1d4 \\glossterm{extra damage} against that target.
+        If your attack result beats a target's Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
       `,
       rank: 3,
-      scaling: {
-        "special": "The extra damage increases by +1d for each rank beyond 3.",
-      },
     },
 
     {
@@ -97,7 +93,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Fortitude defense, you gain \\damagerankfive{} \\glossterm{extra damage} against that target.
+        If your attack result beats a target's Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
       `,
       rank: 7,
     },
@@ -107,7 +103,6 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your damage with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\vulnerable to bludgeoning damage as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -117,8 +112,7 @@ export const bluntForce: CombatStyle = {
       name: 'Headshot',
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike} using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -129,7 +123,6 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your damage with the strike is halved.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -157,7 +150,6 @@ export const bluntForce: CombatStyle = {
         name: 'leap slam',
         exceptThat: 'the damage increases to \\damageranksix{bludgeoning}.',
       },
-      scaling: 'damage',
       rank: 7,
     },
 
@@ -243,13 +235,11 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with 1d4 \\glossterm{extra damage} using a bludgeoning weapon.
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6).
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
-      scaling: {
-        "special": "The extra damage increases by +1d for each rank beyond 1.",
-      },
     },
 
     {
@@ -258,7 +248,8 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} with \\damagerankfour{} \\glossterm{extra damage} using a bludgeoning weapon.
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        The strike deals 1d10 \\glossterm{extra damage} per 3 power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 5,
@@ -268,8 +259,7 @@ export const bluntForce: CombatStyle = {
       name: 'Gutshot',
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike} using a bludgeoning weapon.
         Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -280,7 +270,6 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Your damage with the strike is halved.
         Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -308,12 +297,12 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: 'Unbalanced Smash',
+      name: 'Overhand Smash',
 
       // 10% of the time, double damage. 20% of the time, -2 defenses.
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        If you hit by 5 or more, you double your \\glossterm{weapon damage} with the strike.
+        If you hit by 5 or more, the strike deals double \\glossterm{weapon damage}.
         If you miss with the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
@@ -321,39 +310,38 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: 'Unbalanced Smash+',
+      name: 'Overhand Smash+',
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        You triple your \\glossterm{weapon damage} with the strike.
+        The strike deals triple \\glossterm{weapon damage}.
         If you miss with the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
       `,
       rank: 7,
     },
 
     {
-      name: 'Overhand Smash',
+      name: 'All-In Smash',
 
       effect: `
-        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} using a bludgeoning weapon.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        The strike deals double \\glossterm{weapon damage}.
+        However, you \\glossterm{briefly} take a -2 penalty to accuracy and all defenses.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 3,
-      scaling: {
-        "special": "The extra damage increases by +1d for each rank beyond 3.",
-      },
     },
 
     {
-      name: 'Overhand Smash+',
+      name: 'All-In Smash+',
 
       effect: `
-        Make a melee \\glossterm{strike} with \\damagerankfive{} extra damage using a bludgeoning weapon.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        The strike deals triple \\glossterm{weapon damage}.
+        However, you \\glossterm{briefly} take a -2 penalty to accuracy and all defenses.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {

@@ -10,9 +10,8 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed in a straight line.
-        You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
+        You can make a melee \\glossterm{weak strike} using a slashing or bludgeoning weapon.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
-        Your damage with the strike is halved.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 3,
@@ -44,8 +43,7 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike",
 
       effect: `
-        You can move up to half your speed and make a \\glossterm{strike}, in either order.
-        Your damage with the strike is halved.
+        You can move up to half your speed and make a \\glossterm{weak strike}, in either order.
       `,
       rank: 1,
     },
@@ -54,7 +52,7 @@ export const mobileAssault: CombatStyle = {
       name: "Wanderer's Strike+",
 
       effect: `
-        You can move up your speed and make a \\glossterm{strike}, in either order.
+        You can move up your speed and make a \\glossterm{strike} with a +1 accuracy bonus, in either order.
       `,
       rank: 5,
     },
@@ -178,10 +176,8 @@ export const mobileAssault: CombatStyle = {
       name: 'Passing Splitstrike',
 
       effect: `
-        Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
-        Your damage with both strikes is halved.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty, then move up to 10 feet and make another melee \\glossterm{strike} with a -1 accuracy penalty.
         You cannot include the same creature or object as a target of both strikes.
-        If your weapon has the Sweeping weapon tag, you ignore that tag on the first strike (see \\pcref{Sweeping}).
       `,
       rank: 3,
     },

@@ -9,9 +9,8 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Armorpiercer',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{weak strike} using a piercing weapon.
         The attack is made against each target's Reflex defense instead of its Armor defense.
-        Your damage with the strike is halved.
       `,
       rank: 1,
     },
@@ -91,10 +90,10 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, your \\glossterm{weapon damage} with the strike is doubled.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals double \\glossterm{weapon damage}.
       `,
       // narrative: '',
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -102,10 +101,10 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, your \\glossterm{weapon damage} with the strike is tripled.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals quadruple \\glossterm{weapon damage}.
       `,
       // narrative: '',
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -151,8 +150,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike} using a piercing weapon.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 3,
