@@ -92,10 +92,9 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
 
         You are \\trait{impervious} to all damage this round.
-        Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects damage you take during the current phase.
+        Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects attacks against you during the current phase.
       `,
       rank: 5,
     },
@@ -131,7 +130,7 @@ export const unbreakableDefense: CombatStyle = {
       // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\dazed if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -142,7 +141,7 @@ export const unbreakableDefense: CombatStyle = {
       // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Each creature damaged by the strike is \\stunned if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -177,21 +176,8 @@ export const unbreakableDefense: CombatStyle = {
 
         Remove a \\glossterm{condition} affecting you.
         Then, make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
       `,
       rank: 3,
-    },
-
-    {
-      name: 'Cleansing Strike+',
-
-      effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
-        Remove a \\glossterm{condition} affecting you.
-        Then, make a \\glossterm{strike}.
-      `,
-      rank: 7,
     },
 
     {
@@ -200,14 +186,10 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a strike.
-        Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 2d6 + \\glossterm{power} hit points.
+        Make a \\glossterm{weak strike}.
+        In addition, you regain 1d6 hit points plus 1d6 per 4 \\glossterm{power}.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
-      scaling: {
-        special: 'The healing increases by +1d for each rank beyond 3.',
-      },
       rank: 3,
     },
 
@@ -217,9 +199,8 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a strike.
-        Your \\glossterm{power} with the strike is halved.
-        In addition, you regain 4d10 + \\glossterm{power} hit points.
+        Make a \\glossterm{strike}.
+        In addition, you regain 3d6 hit points plus 1d10 per 3 power.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       rank: 7,
@@ -229,7 +210,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Steadfast Strike',
 
       effect: `
-        Make a melee strike.
+        Make a strike.
         In addition, you gain a +4 bonus to \\glossterm{vital rolls} this round.
         The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
@@ -241,8 +222,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Prepared Defense',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Make a \\glossterm{weak strike}.
         In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
         You \\glossterm{briefly} gain a +2 bonus to that defense.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
@@ -254,9 +234,9 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Prepared Defense+',
 
       effect: `
-        Make a strike.
-        Your \\glossterm{power} with the strike is halved.
-        After you make the strike, you \\glossterm{briefly} gain a +2 bonus to all defenses.
+        Make a \\glossterm{strike}.
+        In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
+        You \\glossterm{briefly} gain a +4 bonus to that defense.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 5,
@@ -267,21 +247,20 @@ export const unbreakableDefense: CombatStyle = {
 
       // -2 ranks for melee goad
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Covering Strike+',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 7,
+      rank: 5,
     },
   ],
 };

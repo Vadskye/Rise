@@ -21,8 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       // -2 ranks due to unarmed limitation
       effect: `
-        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike} using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 1,
@@ -50,7 +49,6 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 3,
-      scaling: 'damage',
     },
 
     {
@@ -132,7 +130,6 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
         If your attack result beats a damaged creature's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
       `,
       rank: 5,
@@ -166,7 +163,6 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: 'overrun',
       },
-      scaling: 'damage',
       rank: 3,
     },
 
@@ -180,7 +176,6 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: 'battering ram',
       },
-      scaling: 'damage',
       rank: 7,
     },
 
@@ -188,8 +183,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Alchemical Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
@@ -210,8 +204,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Sweep the Leg',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 1,
@@ -221,8 +214,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Anklesprainer',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 3,
@@ -243,7 +235,6 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your damage with the strike is halved.
         As a \\glossterm{condition}, each creature that loses \\glossterm{hit points} from the strike treats you as being \\trait{invisible} (see \\pcref{Invisible}).
       `,
       rank: 5,
@@ -264,7 +255,6 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{power} with the strike is halved.
         Each creature damaged by the strike is \\blinded as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 7,
@@ -275,21 +265,18 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your attack result beats a target's Reflex defense, you gain 1d4 \\glossterm{extra damage} against that target.
+        If your attack result beats a target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
         After you attack a creature with this ability, it \\glossterm{briefly} becomes immune to the extra damage from this ability.
       `,
       rank: 3,
-      scaling: {
-        "special": "The extra damage increases by +1d for each rank beyond 3.",
-      },
     },
 
     {
       name: 'Fake-Out Assault+',
 
       effect: `
-        Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Reflex defense, you gain \\damagerankfive{} \\glossterm{extra damage} against that target.
+        Make a melee \\glossterm{strike}.
+        If your attack result beats a target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
         After you attack a creature with this ability, it \\glossterm{briefly} becomes immune to the extra damage from this ability.
       `,
       rank: 7,

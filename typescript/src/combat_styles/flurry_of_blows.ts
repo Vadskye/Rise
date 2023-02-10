@@ -2,15 +2,14 @@ import { CombatStyle } from '.';
 
 export const flurryOfBlows: CombatStyle = {
   name: 'Flurry of Blows',
-  shortDescription: 'Attack rapidly at any range.',
+  shortDescription: 'Attack too rapidly for your foes to react.',
 
   maneuvers: [
     {
       name: 'Twinstrike',
 
       effect: `
-        Make two \\glossterm{strikes}.
-        Your damage with each strike is halved.
+        Make two \\glossterm{weak strikes}.
       `,
       rank: 1,
     },
@@ -36,8 +35,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Rapid Quaff',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike}.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
@@ -50,8 +48,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by two.
 
-        Make three \\glossterm{strikes}.
-        Your damage with each strike is halved.
+        Make three \\glossterm{weak strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 1,
@@ -73,20 +70,19 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Whirlwind',
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Tripping Whirlwind',
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
+        Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        Your damage with the strike is halved.
         On a miss, you get a \\glossterm{glancing blow}.
         Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
@@ -97,7 +93,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Whirlwind Twinstrike',
 
       effect: `
-        Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon.
+        Make two melee \\glossterm{strikes}.
         The strikes target all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
@@ -180,7 +176,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
-        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
       `,
       rank: 1,
     },
@@ -191,7 +186,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of three extra strikes.
-        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
       `,
       rank: 5,
     },
@@ -213,12 +207,9 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        If your attack result beats a target's Fortitude defense, you gain 1d4 \\glossterm{extra damage} against that target.
+        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 3,
-      scaling: {
-        "special": "The extra damage increases by +1d for each rank beyond 3.",
-      },
     },
 
     {
@@ -227,7 +218,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        If your attack result beats a target's Fortitude defense, you gain \\damagerankfive{} \\glossterm{extra damage} against that target.
+        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 7,
     },
@@ -237,8 +228,8 @@ export const flurryOfBlows: CombatStyle = {
 
       // reroll is about +3 ranks, half damage is about +4 ranks, call it a wash
       effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result, but your damage with the strike is halved.
+        Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 3,
@@ -250,7 +241,7 @@ export const flurryOfBlows: CombatStyle = {
       // reroll is about +3 ranks, half damage is about +4 ranks, call it a wash
       effect: `
         Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result, but your damage with the strike is halved.
+        You may reroll the accuracy roll and take the highest result.
         Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 7,
@@ -260,8 +251,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Dazzling Flurry',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result, but your damage with the strike is halved.
+        Make a \\glossterm{weak strike}.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,

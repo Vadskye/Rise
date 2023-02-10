@@ -57,7 +57,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Your \\glossterm{weapon damage} with the strike is doubled against each creature that you dealt damage to with a \\glossterm{strike} last round.
+        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against each creature that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
     },
@@ -76,8 +76,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dazing Feint',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a melee \\glossterm{weak strike}.
         Each creature damaged by the strike is \\dazed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -88,7 +87,6 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
         Each creature damaged by the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -99,7 +97,6 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Your damage with the strike is halved.
         Each creature damaged by the strike is \\confused as a \\glossterm{condition} if your attack results beats its Reflex defense.
       `,
       rank: 7,
@@ -132,7 +129,8 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, your \\glossterm{weapon damage} with the strike is doubled.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6).
+        After using this maneuver, you \\glossterm{briefly} cannot use it again.
       `,
       rank: 3,
     },
@@ -141,10 +139,18 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Certain Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a +4 accuracy bonus.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike} with a +4 accuracy bonus.
       `,
       rank: 1,
+    },
+
+    {
+      name: 'Certain Strike+',
+
+      effect: `
+        Make a \\glossterm{strike} with a +5 accuracy bonus.
+      `,
+      rank: 5,
     },
 
     {
@@ -152,17 +158,26 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -3 accuracy penalty.
-        Your \\glossterm{weapon damage} with the strike is doubled.
+        The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 1,
+    },
+
+    {
+      name: 'Power Strike+',
+
+      effect: `
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
+        The strike deals triple \\glossterm{weapon damage}.
+      `,
+      rank: 5,
     },
 
     {
       name: 'Hunting Strike',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Your damage with the strike is halved.
+        Make a \\glossterm{weak strike}.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -176,7 +191,7 @@ export const ebbAndFlow: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the accuracy bonus from each strike increases to +2. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
+          'the accuracy bonus from each strike increases to +2, and the strike is not weak. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
         name: 'hunting strike',
       },
       rank: 7,
