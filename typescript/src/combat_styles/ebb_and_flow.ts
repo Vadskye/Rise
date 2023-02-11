@@ -254,7 +254,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Tag-Team Strike',
+      name: 'Guardbreaker',
 
       effect: `
         Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
