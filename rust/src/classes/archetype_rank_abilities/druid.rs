@@ -639,9 +639,11 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your level (see \tref{Character Advancement}).
+                        \item Its \glossterm{hit points} are equal to the standard value for your level (see \tref{Character Advancement}).
+                        \item Its \glossterm{damage resistance} is equal to the standard value for your level.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half your level.
+                        \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points and damage resistance.
@@ -649,13 +651,13 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     % There must be text between an itemize block and the end of a mdframed env
 
                     \rankline
-                    \rank{2} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-                    \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
-                    % TODO: figure out correct scaling
-                    \rank{4} The accuracy bonus increases to +2.
-                    \rank{5} The animal gains 1d6 \glossterm{extra damage} with strikes.
-                    \rank{6} The accuracy bonus increases to +3.
-                    \rank{7} The extra damage increases to 2d6.
+                    \rank{2} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    \rank{3} The animal's strikes are no longer \glossterm{weak strikes}.
+                    \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} The animal's \glossterm{weapon damage} is doubled.
+                    However, the accuracy bonus is reduced to +2.
                 \end{magicalattuneability}
 
                 The special ability of the animal that appears depends on your environment, as described below.
