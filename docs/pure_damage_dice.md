@@ -446,17 +446,33 @@ Enraged strike, accuracy-modified:
 * R6, 2xw, +3a: 13.3/20.2 (110%/
 * R7, 3xw, +3a: 22.1/33.8 (131%/
 
-* Enraged strike, non-accuracy scaling:
+Enraged strike, non-accuracy scaling:
 * R3, 2xw: 6/9.2 (142%/137%)
 * R5, 3xw: 11.9/17.6 (141%/131%)
 * R7, 4xw: 19.7/30 (117%/111%)
 
-* Enraged strike, hybrid scaling:
+Enraged strike, hybrid scaling:
 * R3, 2xw: 6/9.2 (142%/137%)
 * R4, 2xw, +1a: 8.3/12.6 (138%/131%)
 * R5, 3xw, +1a: 13.9/20.6 (165%/153%)
 * R6, 3xw, +2a: 17.8/26.9 (148%/140%)
 * R7, 3xw, +4a: 24.6/37.5 (146%/139%)
+
+Ambush, accuracy-modified:
+* R3, +2a: 4/6.2 (95%/93%)
+* R4, +4a: 5.9/9 (98%/94%)
+* R4, +2a, +1d4: 6.7/9.2 (112%/96%)
+* R5, +2a, +1d8: 8.9/11.4 (106%/85%)
+* R6, +4a, +1d8: 11.9/15.7 (99%/82%)
+* R7, +4a, +2d10: 19.2/23.5 (114%/87%)
+
+Sneak attack:
+* R2, +1d4: 6.8/9.4 (136%/118%)
+* R3, +1d8: 8.5/12.2 (136%/109%)
+* R4, +2d8: 14.9/18 (149%/113%)
+* R5, +4d6: 20.6/23.8 (147%/106%)
+* R6, +4d10: 29.4/ (147%/)
+* R7, +6d10: 41.2/ (147%/)
 
 ## Power Scaling
 
@@ -475,3 +491,56 @@ How much value does +4 power add?
 * R7: +4 (+30%/+19%)
 
 For context, in the old system, +2 power at rank 3 was about +13% damage at best, and no more than 10% for a dedicated high damage character. At rank 7, a default damage spell would deal 6d10+24 damage, or 57 damage. That's 10% more damage assuming 0 Willpower, or 9% more damage with 4 Willpower.
+
+## Animal Companions
+
+Use accuracy-adjusted, starting from 0.5x due to no Perception. Assume bite, so 1d10 base.
+* R3: 3.7/4.9 (88%/73%)
+  * normal attack
+* R4: 4.7/6.4 (78%/66%)
+  * +1a
+* R5: 6.1/8.2 (73%/61%)
+  * +2a
+* R6: 8.6/11.7 (71%/60%)
+  * +4a
+* R7: 14.4/20 (85%/74%)
+  * +2a, 2xw
+
+Tag-Team Takedown:
+* R3: +1.8
+* R4: +3.3
+* R5: +6.3
+* R6: +14.9
+
+## Smite
+
+add both mundane and magical power, accuracy-adjusted. Base 1dpp.
+* R2: 3.3/6.3 (110%/131%)
+* R3: 4.9/8.4 (116%/125%)
+  * +1a
+* R4: 6.8/11.6 (113%/120%)
+  * +2a
+* R5: 10/16.8 (119%/125%)
+  * +2a, replace +1d/2p with 1d6/5p (1.4dpp)
+* R6: 14/23.8 (/123%)
+  * +2a, 1d6/3p (1.75dpp)
+* R7: 20.5/35.5 (122%/131%)
+  * +2a, +1d10/3 power
+
+add Str to magical power, accuracy-adjusted. To test extremes, double "max power" difference.
+* R2: 2.1/5.7 (70%/119%)
+* R3: 4.2/10.2 (100%/152%)
+  * +1d4/5 power (total 1dpp)
+* R4: 5.7/13.6 (95%/142%)
+  * +1d6/5 power (total 1.2dpp)
+* R5: 8.6/20.6 (102%/154%)
+  * +1d6/3 power (total 1.67dpp)
+* R6: /28.5 (/148%)
+  * +1d8/3 power (total 2dpp)
+* R7: /44.2 (/164%)
+  * +1d8/2 power (total 2.75dpp)
+
+* R6: /27.5 (/143%)
+  * +1d6/3 power, +2a
+* R7: /43.6 (162%)
+  * +1d8/3 power, +2a
