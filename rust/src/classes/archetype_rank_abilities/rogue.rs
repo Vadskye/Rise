@@ -16,15 +16,16 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
 
-                    If the target is \unaware or \partiallyunaware of your attack, or if the target is adjacent to one of your \glossterm{allies}, you gain two benefits.
-                    First, you gain a \plus2 damage bonus with the strike.
-                    Second, if you get a \glossterm{critical hit}, you double all of your damage bonuses along with your damage dice.
-                    You do not gain these benefits against creatures that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
+                    If the target is \unaware or \partiallyunaware of your attack, the strike deals 1d4 \glossterm{extra damage} against that target.
+                    You do not gain this damage against creatures that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
                     \rankline
-                    \rank{3} The damage bonus increases to \plus4.
-                    \rank{5} The damage bonus increases to \plus8.
-                    \rank{7} The damage bonus increases to \plus16.
+                    \rank{2} The extra damage also applies if the target is adjacent to one of your \glossterm{allies}.
+                    \rank{3} The extra damage increases to 1d8.
+                    \rank{4} The extra damage increases to 2d8.
+                    \rank{5} The extra damage increases to 4d6.
+                    \rank{6} The extra damage increases to 4d10.
+                    \rank{7} The extra damage increases to 6d10.
                 \end{activeability}
             ",
             modifiers: None,
@@ -87,24 +88,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 When you use this ability, you become undetectable by any number of the possible sense groups rather than only one.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Assassin's Finesse",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with \glossterm{light weapons} and any weapon with the Stealthy \glossterm{weapon tag}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Assassin's Finesse+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
             ",
             modifiers: None,
         },
@@ -207,13 +190,13 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                        The attack gains a \plus2 accuracy bonus for each rank beyond 1.
                     \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Boastful Bravura}[\abilitytag{Auditory}]
                         \rankline
-                        This ability affects all \glossterm{enemies} within a \arealarge radius from you.
-                        You \glossterm{briefly} gain a \plus4 bonus to \glossterm{accuracy} with \textit{bardic performance} abilities against each target.
+                        This ability affects all \glossterm{enemies} within a \largearea radius from you.
+                        You \glossterm{briefly} gain a \plus4 accuracy bonus against each target.
 
                         \rankline
                         \rank{3} The bonus increases to \plus5.

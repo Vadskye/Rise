@@ -410,7 +410,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Keen Vision+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 The longshot penalty reduction increases to 2.
                 In addition, the range of your darkvision increases by 120 feet.
@@ -419,27 +419,9 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Perceive Weakness",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Perceive Weakness+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The accuracy bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
             name: "Blindsight",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 Your perceptions are so finely honed that you can sense your enemies without seeing them.
                 You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
@@ -460,6 +442,26 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Ambush",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                As a standard action, you can use the \ability{ambush} ability.
+                \begin{activeability}{Ambush}
+                    \rankline
+                    Move up to your speed and make a \glossterm{strike} with a +2 accuracy bonus.
+                    The strike deals double damage to \unaware targets.
+
+                    \rankline
+                    \rank{4} The strike deals 1d4 \glossterm{extra damage}.
+                    \rank{5} The extra damage increases to 1d8.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} The extra damage increases to 2d10.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Skirmisher",
             is_magical: false,
             rank: 4,
@@ -467,6 +469,15 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus10 foot bonus to your land speed.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Perceive Weakness",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{accuracy}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
