@@ -292,12 +292,12 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The bonus healing increases to 1d6 per 4 power.
-                    \rank{3} The base healing increases to 1d8.
-                    \rank{4} The bonus healing increases to 1d6 per 3 power.
-                    \rank{5} The base healing increases to 2d6.
-                    \rank{6} The bonus healing increases to 1d10 per 3 power.
-                    \rank{7} The base healing increases to 2d10.
+                    \rank{2} The base healing increases to 1d8.
+                    \rank{3} The bonus healing increases to 1d6 per 4 power.
+                    \rank{4} The base healing increases to 2d6.
+                    \rank{5} The bonus healing increases to 1d6 per 3 power.
+                    \rank{6} The base healing increases to 2d10.
+                    \rank{7} The bonus healing increases to 1d10 per 3 power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
