@@ -251,6 +251,7 @@ export const unbreakableDefense: CombatStyle = {
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 1,
+      tags: ['Emotion'],
     },
 
     {
@@ -261,6 +262,7 @@ export const unbreakableDefense: CombatStyle = {
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 5,
+      tags: ['Emotion'],
     },
   ],
 };

@@ -10,7 +10,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Boastful Battlecry',
 
       effect: `
-        This ability targets all \\glossterm{enemies} within a \\largearea radius from you.
+        This ability affects all \\glossterm{enemies} within a \\largearea radius from you.
         You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
       `,
       rank: 1,
