@@ -182,7 +182,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
-        If you roll either number on your attack roll, you gain a +4 accuracy bonus and your \\glossterm{weapon damage} is doubled.
+        If you roll either number on your attack roll, you gain a +4 accuracy bonus and the strike deals double \\glossterm{weapon damage}.
         Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 5,
