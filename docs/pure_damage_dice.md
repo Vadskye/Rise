@@ -261,6 +261,7 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
     * d10 per 2 power
 
 ## Scaling By Rank Equations
+`x` is base damage, `y` is damage per power (dpp), and the right number is equal to the ideal damage target.
 
 * R1: x + 0.5y = 3.5, x + 4.5y = 5.6
   * 3.2 base damage, 0.53 damage per power
@@ -474,6 +475,48 @@ Sneak attack:
 * R6, +4d10: 29.4/ (147%/)
 * R7, +6d10: 41.2/ (147%/)
 
+Exploit distraction, accuracy-scaled:
+* R4, 2xw: 7.1/10.8 (118%/113%)
+* R5, 2xw, +1a: 9.2/13.7 (124%/109%)
+* R6, 3xw, +1a: 15.5/23.5 (129%/123%)
+* R7, 3xw, +3a: 22.1/33.8 (132%/125%)
+
+## Class Non-Strike Ability Scaling
+
+Lay on Hands (standard power scaling):
+* R1: 3.5+0.5dpp: 3.75/5.75
+* R2: 4.5+0.5dpp: 5.5/8
+* R3: 4.5+0.875dpp: 7.6/11.9
+* R4: 7+0.875dpp: 11.4/16.6
+* R5: 7+1.375dpp: 15.9/24.2
+* R6: 11+1.375dpp: 22/31.6
+* R7: 11+1.83dpp: 28.4/43
+
+Dirge of Doom (low power scaling):
+* R1: 3.5+0.5dpp: 3.75/5.75
+* R2: 4.5+0.5dpp: 5.5/8
+* R3: 7+0.5dpp: 8.8/11.2
+* R4: 11+0.5dpp: 13.5/16.5
+* R5: 11+0.875dpp: 16.7/21.9
+* R6: 18+0.875dpp: 25/31
+* R7: 27.5+0.875dpp: 35.8/42.8
+
+Abyssal Rebuke (high power scaling), accuracy-modified:
+* R1: 3.5+0.5dpp: 2.3/3.5
+* R2: 3.5+0.5dpp, +1a: 2.7/4.9
+* R3: 3.5+0.83dpp, +1a: 4.5/7.4
+* R4: 3.5+0.83dpp, +2a: 6.1/10.1
+* R5: 3.5+1.17dpp, +2a: /14.5
+* R6: 7+1.17dpp, +2a: /19.6
+* R7: 7+1.75dpp, +2a: /30.1
+
+Exchange Soul Fragment (high power scaling, d6-biased):
+* R3: 3.5+0.875dpp: 6.6/10.9
+* R4: 3.5+1.17dpp: 9.3/16.3
+* R5: 7+1.17dpp: 14.6/21.6
+* R6: 7+1.75dpp: 21/33.3
+* R7: 14+1.75dpp: 30.6/44.6
+
 ## Power Scaling
 
 How much value does +2 power add?
@@ -544,3 +587,27 @@ add Str to magical power, accuracy-adjusted. To test extremes, double "max power
   * +1d6/3 power, +2a
 * R7: /43.6 (162%)
   * +1d8/3 power, +2a
+
+## Item Power
+Halfway between "base power" and "max power":
+* R1: 2
+* R2: 4
+* R3: 6
+* R4: 8
+* R5: 10
+* R6: 12
+* R7: 14
+well that was easy.
+
+Standard item pure damage:
+* R0: ? (1d6)
+* R1: 4.6 (1d8)
+* R2: 6.2 (1d10/2d6)
+* R3: 9 (2d8)
+* R4: 13 (3d8/4d6)
+* R5: 19 (4d8)
+* R6: 26.7 (6d8/5d10)
+* R7: 37.4 (8d8/7d10)
+
+Each stage of a poison at rank X deals half the damage of a rank X+1 instant damage item.
+This means that you only need to wait until stage 2 to deal more damage than an instant damage attack.

@@ -132,32 +132,32 @@ def generate_tools():
             tags=["Swift"],
             material_type="Alchemical",
             description="""
-                When you drink this \\glossterm<potion>, you regain 1d6+1 \\glossterm<hit points>.
+                When you drink this \\glossterm<potion>, you regain 1d8 \\glossterm<hit points>.
                 % This should make it unreasonably time-inefficient to chug potions instead of just resting
                 After you drink this item, you \\glossterm<briefly> gain no benefit from any \\mitem<potion of healing> items.
             """,
             short_description="Restores 1d6+1 hit points",
             upgrades=[
                 Upgrade(
-                    rank=2,
+                    rank=3,
                     description="""
-                        The healing increases to 2d6+4.
+                        The healing increases to 2d8.
                     """,
-                    short_description="Restores 2d6+4 hit points",
+                    short_description="Restores 2d8 hit points",
                 ),
                 Upgrade(
-                    rank=4,
+                    rank=5,
                     description="""
-                        The healing increases to 4d6+7.
+                        The healing increases to 4d8.
                     """,
-                    short_description="Restores 4d6+7 hit points",
+                    short_description="Restores 4d8 hit points",
                 ),
                 Upgrade(
-                    rank=6,
+                    rank=7,
                     description="""
-                        The healing increases to 5d10+14.
+                        The healing increases to 8d8.
                     """,
-                    short_description="Restores 5d10+14 hit points",
+                    short_description="Restores 8d8 hit points",
                 ),
             ],
         ),
@@ -254,30 +254,30 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 1d10+3 fire damage.
+                On a hit, the target takes 1d8 fire damage.
             """,
-            short_description="Throw to deal 1d10+3 fire damage",
+            short_description="Throw to deal 1d8 fire damage",
             upgrades=[
                 Upgrade(
                     rank=3,
                     description="""
-                        The damage increases to 2d10+5.
+                        The damage increases to 2d8.
                     """,
-                    short_description="Throw to deal 2d10+5 fire damage",
+                    short_description="Throw to deal 2d8 fire damage",
                 ),
                 Upgrade(
                     rank=5,
                     description="""
-                        The damage increases to 4d10+10.
+                        The damage increases to 4d8.
                     """,
-                    short_description="Throw to deal 4d10+10 fire damage",
+                    short_description="Throw to deal 4d8 fire damage",
                 ),
                 Upgrade(
                     rank=7,
                     description="""
-                        The damage increases to 7d10+20.
+                        The damage increases to 8d8.
                     """,
-                    short_description="Throw to deal 7d10+20 fire damage",
+                    short_description="Throw to deal 8d8 fire damage",
                 ),
             ],
         ),
@@ -294,23 +294,23 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 2d6+4 acid damage.
+                On a hit, the target takes 1d10 acid damage.
             """,
-            short_description="Throw to deal 2d6+4 acid damage",
+            short_description="Throw to deal 1d10 acid damage",
             upgrades=[
                 Upgrade(
                     rank=4,
                     description="""
-                        The damage increases to 4d6+7.
+                        The damage increases to 2d10.
                     """,
-                    short_description="Throw to deal 4d6+7 acid damage",
+                    short_description="Throw to deal 2d10 acid damage",
                 ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The damage increases to 5d10+14.
+                        The damage increases to 5d10.
                     """,
-                    short_description="Throw to deal 5d10+14 acid damage",
+                    short_description="Throw to deal 5d10 acid damage",
                 ),
             ],
         ),
@@ -327,25 +327,23 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each target takes 1d10+2 fire damage.
+                On a hit, each target takes 1d8 fire damage.
             """,
-            short_description="Throw to deal 1d10+2 fire damage in an area",
+            short_description="Throw to deal 1d8 fire damage in an area",
             upgrades=[
                 Upgrade(
                     rank=4,
-                    # this should be +3 by the standard progression, but that makes it
-                    # weirdly bad compared to Supreme, so round to +4
                     description="""
-                        The damage increases to 2d10+4.
+                        The damage increases to 2d8.
                     """,
-                    short_description="Throw to deal 2d10+4 fire damage in an area",
+                    short_description="Throw to deal 2d8 fire damage in an area",
                 ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The damage increases to 4d8+14.
+                        The damage increases to 4d8.
                     """,
-                    short_description="Throw to deal 4d8+14 fire damage in an area",
+                    short_description="Throw to deal 4d8 fire damage in an area",
                 ),
             ],
         ),
@@ -412,26 +410,25 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d6+1 bludgeoning damage.
+                On a hit, each target takes 1d6 bludgeoning damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d6+1 bludgeoning damage and deafen",
+            short_description="Throw to deal 1d6 bludgeoning damage and deafen",
             upgrades=[
                 Upgrade(
                     rank=3,
                     description="""
-                        The damage increases to 1d10+2.
+                        The damage increases to 2d6.
                         In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
                     """,
-                    short_description="Throw to deal 1d10+2 bludgeoning damage, deafen, and daze",
+                    short_description="Throw to deal 2d6 bludgeoning damage, deafen, and daze",
                 ),
                 Upgrade(
                     rank=5,
                     description="""
-                        The damage increases to 2d8+5.
-                        In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
+                        The damage increases to 4d6.
                     """,
-                    short_description="Throw to deal 2d8+5 bludgeoning damage, deafen, and stun",
+                    short_description="Throw to deal 4d6 bludgeoning damage, deafen, and daze",
                 ),
             ],
         ),
@@ -448,17 +445,24 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d8+2 cold damage.
+                On a hit, the target takes 1d8 cold damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
             """,
-            short_description="Throw to deal 1d8+2 cold damage and slow",
+            short_description="Throw to deal 1d8 cold damage and slow",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=4,
                     description="""
-                        The damage increases to 2d8+5, and the condition must be removed twice before the effect ends.
+                        The damage increases to 3d8.
                     """,
-                    short_description="Throw to deal 2d8+5 cold damage and persistently slow",
+                    short_description="Throw to deal 3d8 cold damage and slow",
+                ),
+                Upgrade(
+                    rank=6,
+                    description="""
+                        The damage increases to 3d8, and the creature is slowed if it takes damage from the attack instead of it loses hit points.
+                    """,
+                    short_description="Throw to deal 3d8 cold damage and reliably slow",
                 ),
             ],
         ),
@@ -722,17 +726,18 @@ def generate_tools():
                 The first time a creature walks through that space, the trap makes a +3 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
                 On a hit, the creature takes 1d8 damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\immobilized.
+                If it loses \\glossterm<hit points> from this damage, it is \\immobilized until it breaks free of the trap.
+                Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
             """,
-            short_description="Damages and briefly immobilizes",
+            short_description="Deals 1d8 damage and immobilizes",
             upgrades=[
                 Upgrade(
                     rank=4,
                     description="""
-                        The accuracy increases to +8 and the damage increases to 2d8.
-                        In addition, the effect becomes a \\glossterm<condition>.
+                        The accuracy increases to +8 and the damage increases to 3d8.
+                        In addition, the DV to escape the trap increases to 13.
                     """,
-                    short_description="Damages and immobilizes",
+                    short_description="Deals 3d8 damage and immobilizes",
                 ),
             ],
         ),
@@ -751,24 +756,24 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +5 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 1d10+2 damage.
+                On a hit, each target takes 1d8 damage.
             """,
-            short_description="Deals 1d10+2 fire damage in a small area",
+            short_description="Deals 1d8 fire damage in a small area",
             upgrades=[
                 Upgrade(
                     rank=4,
                     description="""
-                        The accuracy increases to +8 and the damage increases to 2d10+4.
+                        The accuracy increases to +8 and the damage increases to 2d8.
                     """,
-                    short_description="Deals 2d10+4 fire damage in a small area",
+                    short_description="Deals 2d8 fire damage in a small area",
                 ),
                 Upgrade(
                     rank=7,
                     description="""
-                        The accuracy increases to +12 and the damage increases to 4d10+7.
+                        The accuracy increases to +12 and the damage increases to 4d8.
                         In addition, the area increases to a \\largearea radius.
                     """,
-                    short_description="Deals 4d10+7 fire damage in a large area",
+                    short_description="Deals 4d8 fire damage in a large area",
                 ),
             ],
         ),
@@ -1192,10 +1197,10 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect inflicts 1d6+1 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
                 Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 1d6+1 damage per stage",
+            short_description="Deals 1d6 damage per stage",
         ),
         # -2 ranks for -1d
         MagicItem(
@@ -1208,10 +1213,10 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect inflicts 1d6+1 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
                 Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 1d6+1 damage per stage",
+            short_description="Deals 1d6 damage per stage",
         ),
         # +1 rank for +1 accuracy
         MagicItem(
@@ -1239,10 +1244,10 @@ def generate_tools():
             description="""
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect inflicts 2d6+2 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 2d6 damage each time the poison's attack succeeds.
                 Its stage 3 effect also ends the poison.
             """,
-            short_description="Deals 2d6+2 damage",
+            short_description="Deals 2d6 damage",
         ),
         MagicItem(
             is_magical=False,
@@ -1254,9 +1259,9 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                Its stage 1 effect inflicts 2d10+5 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d10+5 damage endlessly",
+            short_description="Deals 3d8 damage endlessly",
         ),
         MagicItem(
             is_magical=False,
@@ -1284,9 +1289,9 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus11.
-                The target takes 4d6+7 damage each time the poison's attack succeeds.
+                The target takes 4d8 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 4d6+7 damage endlessly",
+            short_description="Deals 4d8 damage endlessly",
         ),
     ]
 
@@ -1338,9 +1343,9 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus4.
-                Its stage 1 effect inflicts 2d8+3 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 2d8 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d8+3 damage endlessly",
+            short_description="Deals 2d8 damage endlessly",
         ),
         # +2 ranks for full power
         MagicItem(
@@ -1353,9 +1358,9 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect inflicts 2d10+5 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 2d10+5 damage endlessly",
+            short_description="Deals 3d8 damage endlessly",
         ),
         # +1 rank for +1 accuracy, +2 ranks for full power
         MagicItem(
@@ -1368,9 +1373,9 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                Its stage 1 effect inflicts 4d6+7 damage each time the poison's attack succeeds.
+                Its stage 1 effect inflicts 4d8 damage each time the poison's attack succeeds.
             """,
-            short_description="Deals 4d6+7 damage endlessly",
+            short_description="Deals 4d8 damage endlessly",
         ),
         MagicItem(
             is_magical=True,
