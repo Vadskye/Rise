@@ -17,16 +17,16 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Abyssal Rebuke}
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
-                    You gain a \plus2 accuracy bonus to this attack against any creature that damaged you during the previous round.
-                    \hit The target takes 1d10 + \glossterm{power} fire damage.
+                    You gain a \plus2 accuracy bonus with this attack against any creature that damaged you during the previous round.
+                    \hit The target takes \damagerankone{fire}.
 
                     \rankline
-                    \rank{2} The damage increases to 2d6.
-                    \rank{3} The damage increases to 2d10.
-                    \rank{4} The damage increases to 4d6.
-                    \rank{5} The damage increases to 4d10.
-                    \rank{6} The damage increases to 5d10.
-                    \rank{7} The damage increases to 7d10.
+                    \rank{2} You gain a +1 accuracy bonus with the attack.
+                    \rank{3} The damage bonus from your \glossterm{power} increases to 1d6 per 4 power (minimum 1d6).
+                    \rank{4} The accuracy bonus increases to +2.
+                    \rank{5} The damage bonus from your power increases to 1d6 per 3 power.
+                    \rank{6} The base damage increases to 2d6.
+                    \rank{7} The damage bonus from your power increases to 1d6 per 2 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(
@@ -111,7 +111,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                If you do not have access to pact magic, you gain a +2 bonus to your Mental defense and a +1 bonus to your \glossterm{fatigue tolerance}.
+                If you do not have access to pact magic, you gain a +2 bonus to your Mental defense.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -121,7 +121,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                If you do not have access to pact magic, the Mental defense bonus increases to +3, and the fatigue tolerance bonus increases to +2.
+                If you do not have access to pact magic, you gain a +1 bonus to your Willpower.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -135,13 +135,16 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Banish to the Abyss}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The target takes 1d10 \add half \glossterm{power} fire damage.
+                    \hit The target takes \damagerankthreelow{fire}.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
 
                     \rankline
-                    You gain a +1 accuracy bonus and a +1d damage bonus for each rank beyond 3.
+                    \rank{4} You gain a +1 accuracy bonus with the attack.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The damage bonus from your power increases to 1d6 per 3 power.
+                    \rank{7} The accuracy bonus increases to +4.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -151,22 +154,22 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{magical power}.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
                 In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Hellfire+",
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +4.
+                The power bonus increases to +3.
                 In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
                 Any other aspects of the ability remain unchanged.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
             name: "Abyssal Curse",
@@ -181,7 +184,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \crit The effect lasts until this curse is removed.
 
                     \rankline
-                    You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 6.
+                    \rank{7} gain a \plus2 \glossterm{accuracy} bonus with the attack.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -213,11 +216,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d3 \add half your \glossterm{power}.
+                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1d per three \glossterm{power}.
                     This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                     You cannot regain more hit points in this way than the target lost from your attack.
-                    This healing increases by \plus1d for each rank beyond 1.
-                    However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your resistances.
+                    However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
                     \subcf{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature takes a \glossterm{short rest}.
@@ -241,7 +243,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
 
-                    \subcf{Secret of Bloodsharing} You may add your full power to the amount you heal instead of half your power.
+                    \subcf{Secret of Bloodsharing} The healing increases to 1d6 plus 1d6 per four \glossterm{power}.
 
                     \subcf{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -258,8 +260,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
                     In addition, the defense bonus increases to \plus5.
 
-                    \parhead{Secret of Bloodsharing} You can trigger the healing effect twice per round.
-                    Each individual creature can only provide you with once instance of healing per round, even if you hit it twice.
+                    \parhead{Secret of Bloodsharing} The healing increases to 2d6 plus 1d6 per 3 power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
@@ -503,7 +504,10 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -619,7 +623,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalsustainability}
             ",
             modifiers: Some(vec![
-                Modifier::Power(2),
+                // TODO: add extra damage
+                // Modifier::Power(2),
                 Modifier::Defense(Defense::Fortitude, -2),
                 Modifier::Defense(Defense::Mental, -2),
                 Modifier::Resource(Resource::FatigueTolerance, 4),
@@ -678,14 +683,14 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You regain 2d8 + power \glossterm{damage resistance}.
+                    You regain 1d6 \glossterm{damage resistance} plus 1d6 per 4 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
-                    \rank{4} The healing increases to 2d10.
-                    \rank{5} The healing increases to 4d8.
-                    \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases to 6d10.
+                    \rank{4} The bonus recovery increases to 1d6 per 3 power.
+                    \rank{5} The base recovery increases to 2d6.
+                    \rank{6} The bonus recovery increases to 1d6 per 2 power.
+                    \rank{7} The base recovery increases to 4d6.
                 \end{magicalactiveability}
             ",
             modifiers: None,

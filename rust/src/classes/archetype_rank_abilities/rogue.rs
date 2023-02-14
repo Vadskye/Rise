@@ -16,7 +16,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
 
-                    If the target is \unaware or \partiallyunaware of your attack, the strike deals 1d4 \glossterm{extra damage} against that target.
+                    The strike deals 1d4 \glossterm{extra damage} against each creature that is \unaware or \partiallyunaware of your attack.
                     You do not gain this damage against creatures that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.
 
                     \rankline
@@ -207,23 +207,23 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes 1d6 \add half \glossterm{power} bludgeoning damage.
+                        \hit Each target takes \damagerankone{bludgeoning}.
                         \\miss \\glossterm{Glancing blow}.
 
                         \rankline
-                        \rank{2} The damage increases to 1d8, and the area increases to a \smallarea radius.
-                        \rank{3} The damage increases to 1d10, and the area increases to a \medarea radius.
-                        \rank{4} The damage increases to 2d6.
-                        \rank{5} The damage increases to 2d8, and the area increases to a \largearea radius.
-                        \rank{6} The damage increases to 2d10.
-                        \rank{7} The damage increases to 4d6, and the area increases to a \hugearea radius.
+                        \rank{2} The area increases to a \smallarea radius.
+                        \rank{3} The damage increases to \damagerankthree{bludgeoning}.
+                        \rank{4} The area increases to a \medarea radius.
+                        \rank{5} The damage increases to \damagerankfour{bludgeoning}.
+                        \rank{6} The area increases to a \largearea radius.
+                        \rank{7} The damage increases to \damagerankfive{bludgeoning}.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the target gains a \plus1 bonus to \glossterm{accuracy}.
+                        For the duration of your performance, the target gains a \plus1 \glossterm{accuracy} bonus.
 
                         \rankline
                         \rank{3} The target also gains a \plus2 bonus to its Mental defense.
@@ -258,26 +258,30 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Dazzling Discordance}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \areamed radius from you.
-                        \hit Each target is \glossterm{briefly} \dazzled.
-                        \crit The effect becomes a \glossterm{condition}.
+                        Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
+                        \hit For the duration of your performance, each target is \dazzled.
 
                         \rankline
-                        \rank{2} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
-                        \rank{3} You gain a \plus4 \glossterm{accuracy} bonus with the attack, and the area increases to a \largearea radius.
-                        \rank{4} The accuracy bonus increases to \plus6.
-                        \rank{5} The accuracy bonus increases to \plus8, and the area increases to a \hugearea radius.
-                        \rank{6} The accuracy bonus increases to \plus10.
-                        \rank{7} The accuracy bonus increases to \plus12, and the area increases to a \gargarea radius.
+                        \rank{2} The area increases to a \smallarea radius.
+                        \rank{3} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                        \rank{4} The area increases to a \medarea radius.
+                        \rank{5} The accuracy bonus increases to \plus4.
+                        \rank{6} The area increases to a \largearea radius.
+                        \rank{7} The accuracy bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes psychic damage equal to 1d8 plus your \glossterm{power}.
+                        \hit The target takes \damagerankone{psychic}.
 
                         \rankline
-                        You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
+                        \rank{2} The base damage increases to 1d8.
+                        \rank{3} The base damage increases to 2d6.
+                        \rank{4} The base damage increases to 2d10.
+                        \rank{5} The damage bonus from your power increases to 1d6 per 4 power.
+                        \rank{6} The base damage increases to 4d8.
+                        \rank{7} The base damage increases to 5d10.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -293,11 +297,10 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalsustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \shortrange.
-                        \hit The target takes 1d6 + half \glossterm{power} bludgeoning damage.
-                        If it loses \glossterm{hit points} from this damage, it is \frightened by you for the duration of your performance.
+                        \hit The target is \shaken by you for the duration of your performance. While it has no remaining \glossterm{damage resistance}, it is \frightened by you instead.
 
                         \rankline
-                        You gain a \plus1 \glossterm{accuracy} bonus and a \plus1d damage bonus with the attack for each rank beyond 1.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Hypnotic Hymn}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -326,23 +329,22 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d8 \add \glossterm{power} \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d6 \glossterm{damage resistance} +1d per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
-                        \rank{2} The recovery increases to 1d10.
-                        \rank{3} The recovery increases to 2d8.
-                        \rank{4} The recovery increases to 2d10.
-                        \rank{5} The recovery increases to 4d8.
-                        \rank{6} The recovery increases to 4d10.
-                        \rank{7} The recovery increases to 6d10.
+                        \rank{2} The base recovery increases to 1d8.
+                        \rank{3} The base recovery increases to 2d6.
+                        \rank{4} The base recovery increases to 2d10.
+                        \rank{5} The bonus recovery increases to 1d6 per 4 power.
+                        \rank{6} The base recovery increases to 4d8.
+                        \rank{7} The base recovery increases to 5d10.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Partita of Provocation}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \smallarea radius from you.
-                        \hit Each target is \glossterm{briefly} \goaded by you.
-                        \crit The effect becomes a \glossterm{condition}.
+                        Make an attack vs. Mental against one \glossterm{enemy} adjacent to you.
+                        \hit The target is \goaded by you for the duration of your performance.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -361,12 +363,17 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Stutterstep Staccato}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Fortitude against one creature within a \shortrange of you.
-                        \hit The target is \glossterm{briefly} \slowed.
-                        \crit The target is \slowed as a \glossterm{condition}.
+                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \tinyarea radius from you.
+                        \hit Each target is \glossterm{briefly} \slowed.
+                        \crit Each target is \slowed as a \glossterm{condition}.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                        \rank{2} The area increases to a \smallarea radius.
+                        \rank{3} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                        \rank{4} The area increases to a \medarea radius.
+                        \rank{5} The accuracy bonus increases to \plus4.
+                        \rank{6} The area increases to a \largearea radius.
+                        \rank{7} The accuracy bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Vigorous Verse}[\abilitytag{Auditory}]
@@ -421,24 +428,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
-        },
-        RankAbility {
-            name: "Martial Performance",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Martial Performance+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Virtuoso",
@@ -516,50 +505,42 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Tricky Force",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                You gain the ability to customize your trick maneuvers.
+                For each rank 1 trick maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 trick maneuvers.
+                {
+                    \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    However, you cannot get a \glossterm{critical hit}.
+                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who are at less than their maximum \glossterm{hit points}.
+                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+                }
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Tricky Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain the ability to customize your weaker trick maneuvers.
-                For each rank 1 and rank 3 trick maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-
-                Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 trick maneuvers.
-                {
-                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your damage with the maneuver is halved.
-                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
-
-                    \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
-                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
-
-                    % Unclear power level
-                    \parhead{Mighty Maneuver} You gain +1d4 \glossterm{extra damage} with your chosen maneuver.
-                    This extra damage increases by +1d for each rank in this archetype beyond 4.
-
-                    \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
-                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
-                }
+                You can also choose an enhancement for each of your rank 3 trick maneuvers.
             ",
             modifiers: None,
         },
@@ -569,7 +550,6 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 trick maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 trick maneuvers.
             ",
             modifiers: None,
         },
@@ -746,22 +726,22 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Versatile Power",
+            name: "Versatile Attacker",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 \glossterm{accuracy} bonus.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Versatile Power+",
+            name: "Versatile Attacker+",
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonus increases to \plus3.
+                The accuracy bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -817,36 +797,21 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 \glossterm{accuracy} bonus against creatures affected by any \glossterm{condition}.
+                You can use the \textit{exploit distraction} ability as a standard action.
+                \begin{activeability}{Exploit Distraction}
+                    \rankline
+                    Make a \glossterm{strike}.
+                    The strike deals double \glossterm{weapon damage} against each creature that gained a new \glossterm{condition} this round.
+                    This does not apply if the creature was already suffering an identical condition when it gained the new condition.
+
+                    \rankline
+                    \rank{4} The increased damage also applies against each creature that gained a new condition during the previous round, as long as it is still affected by that condition.
+                    \rank{5} You gain a +1 accuracy bonus with the strike.
+                    \rank{6} The strike deals triple weapon damage instead of double weapon damage.
+                    \rank{7} The accuracy bonus increases to +3.
+                \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Exploit Distraction+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Deceptive Force",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Deceptive Force+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "What's That Over There",
@@ -866,6 +831,15 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{6} You can target an additional creature within range.
                 \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Master of Deceit",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                Whenever you make a Deception attack or check, you can roll twice and keep the higher result.
             ",
             modifiers: None,
         },

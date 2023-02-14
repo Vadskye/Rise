@@ -72,7 +72,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -295,7 +298,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{2} The base healing increases to 1d8.
                     \rank{3} The bonus healing increases to 1d6 per 4 power.
                     \rank{4} The base healing increases to 2d6.
-                    \rank{5} The bonus healing increases to 1d6 per 3 power.
+                    \rank{5} The bonus healing increases to 1d10 per 4 power.
                     \rank{6} The base healing increases to 2d10.
                     \rank{7} The bonus healing increases to 1d10 per 3 power.
                 \end{magicalactiveability}
