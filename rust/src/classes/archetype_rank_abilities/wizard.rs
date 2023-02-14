@@ -7,16 +7,6 @@ use super::standard_modifiers::add_standard_spell_modifiers;
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Alchemical Power",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                You can add half your \glossterm{power} to the damage or healing caused by any alchemical items you use.
-            ",
-            // TODO: add alchemical items as unique attacks
-            modifiers: None,
-        },
-        RankAbility {
             name: "Portable Workshop",
             is_magical: true,
             rank: 1,
@@ -56,17 +46,18 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You gain your choice of one of the following benefits.
                 Each benefit can only be chosen once.
                 {
+                    \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank up to one higher than your rank in this archetype.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
-                    \parhead{Complex Construction} You can use your portable workshop ability to create items with a rank up to one higher than your rank in this archetype.
                     \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements.
                     % TODO: wording
-                    % \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
-                        % In addition, alchemical items that last for a fixed number of uses have their number of uses doubled.
-                    \parhead{Explosive Construction} The area affected by any alchemical item you create is doubled.
-                    \parhead{Potent Construction} Whenever you create an alchemical item that deals damage or regains hit points, you double the item's flat modifier to damage or healing.
-                    For example, a firebomb would deal 1d10+4 damage instead of 1d10+2 damage.
-                    This modifier applies before you calculate any other damage modifiers, such as the power bonus from your \textit{alchemical power} ability.
+                    \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
+                    In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
+                    \parhead{Expansive Construction} The area affected by any alchemical item you create is doubled.
+                    \parhead{Overcharged Construction} Whenever you create an alchemical item that deals damage, you can double the number of damage dice.
+                    However, an item created this way is unwieldy and dangerous to handle.
+                    Attacks with it take a -2 accuracy penalty.
+                    In addition, if the attacker rolls a 1 on the attack roll, ignoring \glossterm{explosions}, they suffer a \glossterm{glancing blow} from the attack.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
@@ -92,20 +83,20 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Alchemical Infusion",
+            name: "Alchemical Precision",
             is_magical: true,
             rank: 3,
             description: r"
-                Whenever you use an alchemical item, you gain a \plus1d bonus to any damage or healing caused by the item for each rank by which your rank in this archetype exceeds the item's rank.
+                You gain a +1 \glossterm{accuracy} bonus with alchemical items.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Alchemical Infusion+",
+            name: "Alchemical Precision+",
             is_magical: true,
             rank: 7,
             description: r"
-                You gain a \plus1d bonus to the damage or healing caused by alchemical items you use.
+                The accuracy bonus increases to +3.
             ",
             modifiers: None,
         },
@@ -336,7 +327,8 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
 
                     \parhead{Sphere Specialization}\label{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-                    You gain a +2 \glossterm{power} bonus and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+                    You gain a +2 \glossterm{magical power} bonus and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+                    This power bonus increases to +3 at rank 4, and to +4 at rank 7.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
                     \par You cannot choose this insight multiple times.
@@ -424,7 +416,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
