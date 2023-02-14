@@ -164,7 +164,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -484,7 +487,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-                When you do, you gain a +2 bonus to \glossterm{magical power} with the spell.
+                When you do, you gain a +2 bonus to your \glossterm{magical power} with the spell.
                 In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
@@ -500,10 +503,10 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
                         4 & The spell's area is halved this round \\
                         5 & The spell's area is doubled this round \\
-                        6 & Each target that resists damage from the spell this round takes additional energy damage equal to your \glossterm{power} with the spell \\
-                        7 & Each target that loses hit points from the spell this round takes additional energy damage equal to your \glossterm{power} with the spell \\
-                        8 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
-                        9 & When you attack with the spell this round, you roll twice and take the higher result \\
+                        6 & Each target that resists damage from the spell this round takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
+                        7 & Each target that loses hit points from the spell this round takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
+                        8 & When you deal damage with the spell this round, you roll twice for the damage and take the higher result \\
+                        9 & When you attack with the spell this round, you roll twice for the attack roll and take the higher result \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
@@ -545,7 +548,6 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            // 5 higher than the previous wildspell+ ability; this is awkward
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {

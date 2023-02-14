@@ -240,7 +240,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain the ability to customize your weaker martial maneuvers.
+                You gain the ability to customize your martial maneuvers.
                 For each rank 1 martial maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
                 Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
 
