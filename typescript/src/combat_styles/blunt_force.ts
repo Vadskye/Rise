@@ -169,6 +169,9 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to four creatures or objects within \\medrange of you.
+        You can choose the same target multiple times, but not twice in a row.
+        If you choose the same target twice, it takes double damage from the attack.
+
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
@@ -314,10 +317,11 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        The strike deals triple \\glossterm{weapon damage}.
+        If you hit by 5 or more, the strike deals quadruple \\glossterm{weapon damage}.
+        Otherwise, it deals double weapon damage.
         If you miss with the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {

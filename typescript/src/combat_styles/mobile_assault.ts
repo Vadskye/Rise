@@ -10,7 +10,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed in a straight line.
-        You can make a melee \\glossterm{weak strike} using a slashing or bludgeoning weapon.
+        You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
@@ -23,7 +23,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         Move up to your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
-        The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
+        The strike deals double \\glossterm{weapon damage}, and it targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 7,
