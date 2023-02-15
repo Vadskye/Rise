@@ -382,6 +382,7 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, T1.5 condition if damaged and beat extra defense
     * Strike, push with full move if damaged
     * Strike with +2 accuracy, T2 condition if damaged and beat extra defense
+    * Strike, T2 condition if damaged
     * Strike, T3 condition if lose HP
 * R7
   * Damage
@@ -392,21 +393,50 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
   * Debuffs
     * Strike, T3 condition if damaged and beat extra defense
 
+## Heavy Weapons
+
+Heavy weapons need to have bonus power scaling to stay consistently ahead of 1h weapons and on par with dual-wielding.
+At level 1, a person without a shield takes 60% weapon damage per round. If they have a shield, they take 40% weapon damage per round, so they are 50% more survivable. Heavy weapons should lose to sword and board in a direct duel, so heavy weapons should deal less than 50% more damage than regular weapons - say about 30% more damage. That's on par with a +1d damage increase at R1, and then it needs to stay at about 30% as levels increase.
+Or does it? At higher levels, having a shield allows using a variety of powerful shield-specific feats/maneuvers/magic items that can significantly expand the gap in a duel scenario. It might be appropriate for heavy weapons to deal closer to 50% more damage than a shield at high levels.
+Theory: Heavy weapons work best at +1d base, +1d per 3 power. That's +0.39dpp.
+Equations: 3.2 + 0.53dpp medium, 4.2 + 0.92dpp heavy
+* R1: med 3.5/5.6, heavy 4.7/8.3 (134%/148%)
+* R2: med 4.3/6.9, heavy 6/10.6 (139%/153%)
+* R4: med 5.9/9.0, heavy 8.8/14.3 (149%/159%)
+* R7: med 8.2/12.5, heavy 12.9/20.3 (157%/162%)
+
 ## Heavy Weapons vs Dual Wielding
 
-Compare greataxe (+0a, 2d6) vs dual handaxes (+1a, 1d6).
-Handaxe is one attack at +1a and one offhand strike at -1a, so it's also functionally a single 2d6 strike at level 1.
-Offhand strike has better level scaling, since you double-scale with power, but it's worse with maneuvers.
-At level 1 with 4 Str, greataxe is 1d10+1d6, and handaxes are 2d10. Scary!
+Compare greataxe (+1a, 1d10) vs dual light hammers (+1a, 1d6).
 
-Offhand strike damage per rank is simply 80% of the base weapon damage per rank:
-* R1: 2.8/4.5 
-* R2: 3.4/5.6
-* R3: 4.0/6.2
-* R4: 4.7/7.2
-* R5: 5.3/7.8
-* R6: 5.9/9.0
-* R7: 6.6/10.0
+Dual strike mechanics: roll once for each weapon. If you hit with both, use the higher of the two damage rolls. Ignore glancing blows.
+"use higher of two damage rolls" starts at 30% more at low levels, but drops to 10% more at high levels. Needs individual calibration at each level with `output [highest 1 of 2d(6d8)]`.
+
+For simplicity, use "average investment damage", like items. Format is greataxe/hammers.
+
+Damage on hit (roll twice % modifier):
+* R1: 2d6/1d8 (129%)
+* R2: 1d8+1d6/1d10 (130%)
+* R3: 1d10+1d6/2d6 (120%)
+* R4: 3d6/1d8+1d6 (120%)
+* R5: 1d8+2d6/1d10+1d6 (121%)
+* R6: 1d10+2d6/3d6 (116%)
+* R7: 4d6/1d8+2d6 (116%)
+
+Assume 50% baseline accuracy (ignoring weapon-local accuracy for the moment). Same as greataxe, but greataxe gets glancing blows.
+Probability of missing with both weapons: 0.5 * 0.5 = 0.25
+Probability of hitting with both weapons: 0.5 * 0.5 = 0.25
+Probability of hitting with either weapon: 0.5
+Total damage = 0.5 * (weapon damage) + 0.25 * (weapon damage) * (roll twice multiplier)
+If you simplify "roll twice modifier" as 120%, this reduces to 80% of weapon damage, as opposed to the standard greataxe 60% of weapon damage from glancing blows. That implies that two-handed weapons should only deal 33% more damage than light weapons, which is wildly different from the current 2x damage.
+
+What if dual-wielding let you add your damage with both weapons if you hit with both? 50% of 1x damage and 25% chance of 2x damage means you deal 100% of weapon damage on average each round. That would allow two-handed weapons to deal 67% more damage than light weapons.
+
+Accuracy-adjusted damage per round is simple - just the normal 3.2 + 0.53dpp. Heavy weapon damage is 0.6 * (4.2 + 0.92dpp) = 2.52 + 0.56dpp.
+* R1: dual 3.5/5.6, heavy 2.8/5.0
+* R7: dual 8.2/12.5, heavy 7.7/12.2
+
+This makes dual wielding better at low power and comparable at high power, which seems right. Dual wielding is also better for normal crit-fishing, but worse for desperate exertion crit-fishing.
 
 ## Strike Extra Damage
 
@@ -611,3 +641,14 @@ Standard item pure damage:
 
 Each stage of a poison at rank X deals half the damage of a rank X+1 instant damage item.
 This means that you only need to wait until stage 2 to deal more damage than an instant damage attack.
+
+## HP Calculations
+
+Goal: HP should be 3x/4x accuracy-modified damage target (assuming DR should be about 2x)
+* R1: 6/10 (2.9x/2.9x)
+* R2: 9/19 (3x/
+* R3: 13/27
+* R4: 18/38
+* R5: 25/53
+* R6: 36/77
+* R7: 50/
