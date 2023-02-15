@@ -97,7 +97,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Each creature damaged by the strike is \\confused as a \\glossterm{condition} if your attack results beats its Reflex defense.
+        Each creature damaged by the strike is \\confused as a \\glossterm{condition} if your attack results beats its Mental defense.
       `,
       rank: 7,
     },
@@ -237,6 +237,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
+        The strike deals double \\glossterm{weapon damage}.
         You and each creature damaged by the strike are \\stunned as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
