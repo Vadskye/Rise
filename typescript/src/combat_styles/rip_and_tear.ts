@@ -79,8 +79,9 @@ export const ripAndTear: CombatStyle = {
       name: 'Two-Weapon Rend',
 
       effect: `
-        Make a melee strike using a slashing weapon.
-        Each damaged creature takes a -4 penalty to its Armor defense against your \\ability{offhand strike} ability this round.
+        Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
+        Each target that takes damage from both weapons bleeds.
+        A bleeding creature takes 1d4 slashing damage +1d per two \\glossterm{power} during your next action.
       `,
       rank: 1,
     },
@@ -90,7 +91,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee strike using a slashing weapon.
-        Each damaged creature takes a -4 penalty to its Armor defense against your \\ability{offhand strike} ability this round, and takes double damage from that ability.
+        Each target that takes damage from both weapons bleeds.
+        A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
       `,
       rank: 5,
     },

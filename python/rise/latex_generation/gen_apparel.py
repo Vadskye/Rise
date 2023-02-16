@@ -57,16 +57,9 @@ def generate_apparel():
             rank=2,
             material_type="Glove",
             description="""
-                You gain a +1 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
+                You can \\glossterm<dual wield> regardless of your Dexterity (see \\pcref{Dual Wielding}).
             """,
-            short_description="Grants +1 accuracy with offhand strikes",
-            upgrades=[
-                Upgrade(
-                    description="The accuracy bonus increases to +2.",
-                    rank=5,
-                    short_description="Grants +2 accuracy with offhand strikes",
-                ),
-            ],
+            short_description="Allows dual wielding without Dexterity",
         ),
     ]
 
