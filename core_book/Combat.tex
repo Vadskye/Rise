@@ -623,20 +623,25 @@
         Your \glossterm{accuracy} with a strike is the same as your accuracy with most other abilities (see \pcref{Accuracy}).
         Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
 
-        Whenever you make a strike, you must choose one weapon to make the strike with.
-        Wielding two weapons does not change anything about each strike you make.
-        However, wielding two weapons can allow you to use the \ability{offhand strike} ability (see \pcref{Offhand Strike}).
+        Whenever you make a strike, you must choose one or two weapons to make the strike with.
+        Attacking with two weapons at once has specific restrictions and additional effects (see \pcref{Dual Wielding}).
 
         \begin{activeability}{Basic Strike -- Melee}
             \label{Melee Strike}
             \rankline
-            Choose one weapon you are wielding and are able to attack with.
-            Make an attack vs. Armor with that weapon against anything adjacent to you.
-            If you are using a \weapontag{Long} weapon, you can instead attack anything within 10 feet of you.
+            Choose one or two weapons you are wielding and are able to attack with.
+            For each chosen weapon, make an attack vs. Armor with that weapon against anything adjacent to you.
             You must have \glossterm{line of effect} to the target.
+            If you are using a \weapontag{Long} weapon, you can instead attack anything within 10 feet of you.
 
-            \hit The target takes damage from the weapon (see \pcref{Weapon Damage}).
+            You must have a Dexterity of at least 2 to attack with two weapons at once.
+            If you do, you take a \minus1 accuracy penalty to both attacks for each non-\weapontag{Light} weapon you attack with in this way.
+
+            \hit The target takes \glossterm{weapon damage} from each weapon you hit with (see \pcref{Weapon Damage}).
+            If you hit with two weapons, \glossterm{extra damage} only applies once.
             \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
+            \par \textbf{Glance}: If you attack with one weapon and miss by 2 or less, you get a \glossterm{glancing blow} that deals half damage as normal (see \pcref{Glancing Blows}).
+            However, if you attack with two weapons at once, you cannot get a glancing blow with either weapon.
         \end{activeability}
 
         \begin{activeability}{Basic Strike -- Projectile}
@@ -653,14 +658,40 @@
         \begin{activeability}{Basic Strike -- Thrown}
             \label{Thrown Strike}
             \rankline
-            Choose one non-projectile weapon that you are wielding and are able to attack with.
-            If the weapon does not have the Thrown \glossterm{weapon tag}, your \glossterm{range limits} with the attack are 10/30, and you are not treated as being \glossterm{proficient} with the weapon (see \pcref{Weapon Proficiency}, and \pcref{Weapon Proficiency}).
-            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
+            Choose one or two non-projectile weapons that you are wielding and are able to attack with.
+            For each chosen weapon, make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
             You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
 
-            \hit The target takes damage from the weapon (see \pcref{Weapon Damage}).
+            You must have a Dexterity of at least 2 to attack with two weapons at once.
+            If you do, you take a \minus1 accuracy penalty to both attacks for each non-\weapontag{Light} weapon you attack with in this way.
+
+            You can throw a weapon that does not have the \weapontag{Thrown} weapon tag.
+            If you do, your \glossterm{range limits} are 10/30, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
+
+            \hit The target takes \glossterm{weapon damage} from each weapon you hit with (see \pcref{Weapon Damage}).
+            If you hit with two weapons, \glossterm{extra damage} only applies once.
             \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
+            \par \textbf{Glance}: If you attack with one weapon and miss by 2 or less, you get a \glossterm{glancing blow} that deals half damage as normal (see \pcref{Glancing Blows}).
+            However, if you attack with two weapons at once, you cannot get a glancing blow with either weapon.
         \end{activeability}
+
+        \subsubsection{Dual Wielding}\label{Dual Wielding}
+            If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
+            This is called dual wielding.
+            You need a Dexterity of at least 2 to dual wield.
+            In addition, you cannot use a shield to dual wield, even if you are proficient with using it as a weapon.
+
+            When you make a strike with two weapons with once, you make a separate attack with each weapon.
+            Both attacks must have the same primary target, and each attack deals its full \glossterm{weapon damage} if it hits.
+
+            Dual-wielding has three downsides.
+            First, you cannot get a \glossterm{glancing blow} with either weapon while attacking with two weapons at once (see \pcref{Glancing Blows}).
+            If you would miss by 1 or 2, it is considered a full miss instead of a glancing blow.
+            Second, it works best with \weapontag{Light} weapons.
+            For each non-Light weapon you dual-wield with, you take a \minus1 accuracy penalty with both attacks.
+            Third, \glossterm{extra damage} never applies more than once to a single strike.
+            Extra damage applies if you hit with either weapon, but you don't double extra damage if you hit with both weapons.
+            You can choose which weapon is considered to deal the extra damage after determining which weapons hit.
 
         \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
             Some abilities allow you to make strikes that affect secondary targets in addition to the primary target or targets.
@@ -680,7 +711,6 @@
                 Desperate Exertion\fn{1} & \tdash             & Gain a bonus on a single roll        \\
                 Dirty Trick              & Fort or Ref\fn{2}  & Impose penalty on a foe              \\
                 Grapple                  & Fort and Ref\fn{2} & Wrestle with a foe                   \\
-                Offhand Strike           & Armor              & Make a strike with an offhand weapon \\
                 Overrun\fn{1}            & Fort\fn{2}         & Move through foe's space             \\
                 Recover\fn{1}            & \tdash             & Regain hit points, remove conditions \\
                 Shove                    & Fort\fn{2}         & Move a foe                           \\
@@ -743,19 +773,6 @@
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
-        \end{activeability}
-
-        \parhead{Offhand Strike}\label{Offhand Strike} As a \glossterm{minor action}, you can use the \textit{offhand strike} ability to quickly attack with an offhand weapon while you attack with a primary weapon.
-        \begin{activeability}{Offhand Strike}
-            \rankline
-            Make a \glossterm{strike} with a \minus2 accuracy penalty.
-            The weapon must be held in a single \glossterm{free hand} or must not require a free hand to attack with, such as a bite natural weapon.
-            You cannot use this ability unless you already made a \glossterm{strike} with a different weapon as part of a \glossterm{standard action} during the current phase.
-            \glossterm{Extra damage} from any source does not apply to this strike.
-            In addition, you take a \minus1 penalty to \glossterm{accuracy} with the strike for each non-light weapon you attack with this phase, including the weapon used to make this strike.
-
-            Your Dexterity must be at least 2 to use this ability.
-            You cannot use this ability to attack with a shield.
         \end{activeability}
 
         \parhead{Overrun}\label{Overrun} As a \glossterm{movement}, you can use the \textit{overrun} ability to move through creatures in your way.

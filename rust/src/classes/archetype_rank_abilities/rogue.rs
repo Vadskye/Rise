@@ -14,7 +14,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{sneak attack} ability as a standard action.
                 \begin{activeability}{Sneak Attack}
                     \rankline
-                    Make a \glossterm{strike} with a \glossterm{light weapon} or any weapon with the Stealthy \glossterm{weapon tag} against a creature within \rngshort range.
+                    Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \rngshort range (see \pcref{Weapon Tags}).
 
                     The strike deals 1d4 \glossterm{extra damage} against each creature that is \unaware or \partiallyunaware of your attack.
                     You do not gain this damage against creatures that you are unable to score a \glossterm{critical hit} against, such as excessively large creatures or oozes.

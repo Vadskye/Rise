@@ -337,12 +337,13 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
+                        When you make a \glossterm{strike} this round, you roll the attack roll twice and take the higher result.
+                        However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
 
                         \rankline
-                        \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The accuracy bonus increases to +2.
+                        \rank{3} You also gain a +1 \glossterm{accuracy} bonus with strikes.
+                        \rank{5} The accuracy bonus increases to +2.
+                        \rank{7} The accuracy bonus increases to +3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}

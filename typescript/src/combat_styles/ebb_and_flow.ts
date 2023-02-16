@@ -210,17 +210,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Mainhand Opener',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You \\glossterm{briefly} gain a +2 accuracy bonus with the \\ability{offhand strike} ability against each creature you damaged with the strike.
-      `,
-      rank: 5,
-      tags: [],
-    },
-
-    {
       name: 'Dizzying Assault',
 
       // -2 ranks for self-daze
