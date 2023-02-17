@@ -1323,7 +1323,7 @@ impl Class {
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{magicalactiveability}{Twist of Fate}
                             \rankline
-                            An improbable event occurs within \rnglong range.
+                            An improbable event occurs within \distrange.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you take a \glossterm{long rest}.
@@ -1347,18 +1347,19 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
-                        \begin{magicalactiveability}{Destructive Attack}
+                        \parhead{Gift} Your abilities deal double damage to objects.
+                        \parhead{Aspect} You can use the \textit{destructive strike} ability as a standard action.
+                        \begin{magicalactiveability}{Destructive Strike}
                             \rankline
-                            Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                            You gain a \plus4 damage bonus with the strike.
+                            Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                            You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
 
                             \rankline
-                            \rank{3} The damage bonus increases to \plus8.
-                            \rank{5} The damage bonus increases to \plus16.
-                            \rank{7} The damage bonus increases to \plus24.
+                            \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
+                            \rank{5} The extra damage increases to 1d6 per 4 power.
+                            \rank{6} The extra damage increases to 1d6 per 3 power.
+                            \rank{7} The extra damage increases to 1d10 per 3 power.
                         \end{magicalactiveability}
-                        \parhead{Aspect} Your abilities deal double damage to objects.
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
                         \begin{magicalactiveability}{Lay Waste}
                             \rankline
@@ -1374,7 +1375,7 @@ impl Class {
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
+                        \parhead{Gift} You gain a \plus2 bonus to your Fortitude defense.
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
@@ -1406,7 +1407,7 @@ impl Class {
                             After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
@@ -1433,6 +1434,7 @@ impl Class {
                         \end{magicalattuneability}
                         \parhead{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
                         This can help you deal damage to enemies that are highly resistant to fire damage.
+                        Your \glossterm{allies} are still immune to fire damage that you convert in this way.
                         In addition, you become immune to fire damage.
 
                     \subsubsection{Good Domain}
@@ -1451,7 +1453,7 @@ impl Class {
                             After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
@@ -1480,6 +1482,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to Mental defense.
                         % Clarify - does this apply to exploding dice?
                         \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                         \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \rankline
@@ -1499,7 +1502,7 @@ impl Class {
 
                     \subsubsection{Life Domain}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
-                        \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+                        \parhead{Aspect} You gain a bonus to your \glossterm{hit points} equal to three times your rank in the Domain Influence archetype.
                         \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
                         \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
@@ -1510,8 +1513,8 @@ impl Class {
 
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{power}.
-                        \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
+                        \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power}.
+                        \parhead{Mastery} The power bonus from this domain's essence increases to \plus2.
 
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
@@ -1591,9 +1594,9 @@ impl Class {
                         \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
                         In addition, you gain proficiency with an additional \glossterm{usage class} of armor.
                         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-                        \parhead{Aspect} You gain a \plus1d bonus to your damage with all weapons.
+                        \parhead{Aspect} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                         \parhead{Essence} You gain a \plus1 bonus to your Armor defense.
-                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus2d.
+                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus2.
 
                     \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1626,7 +1629,9 @@ impl Class {
                         % TODO: clarify whether you can have this and the druid ability
                         \parhead{Aspect} This ability functions like the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.
-                        \parhead{Mastery} You can maintain both of your wild aspects simultaneously.
+                        \parhead{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
+                        When you do, you increase your \glossterm{fatigue level} by two.
+                        This hybrid wild aspect only lasts for ten minutes, at which point you choose which single wild aspect remains active.
 
                 \subsection{Ex-Clerics}
                     If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
