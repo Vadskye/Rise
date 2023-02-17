@@ -652,3 +652,58 @@ Goal: HP should be 3x/4x accuracy-modified damage target (assuming DR should be 
 * R5: 25/53
 * R6: 36/77
 * R7: 50/
+
+## Standard Damage Spells
+Notation: dX means "standard damage for rank X". A suffix of "h" means "high power scaling", and "l" means "low power scaling". High power scaling is generally stronger, while low power scaling is generally weaker.
+
+Standard for all ranks:
+* RX
+  * Single-target pure damage
+    * dX at Med range
+    * dXh at Med range
+    * dX+1 at Short range
+    * dX-1 at Long range
+    * dX-2h at Dist range
+    * dX-2l at Ext range
+  * AOE
+    * dX-2 at tX area
+    * dX at t1 area
+    * dX-1 at t(0.5X) area?9
+
+* R1
+  * Single-target debuff
+    * d1l at Close range:
+      * r1 debuff condition if beat extra defense
+      * r1.5 debuff condition if lose HP
+    * d1l at Med range: r1 debuff condition if lose HP
+* R2
+  * Single-target debuff
+    * d1 at Med range:
+      * r1 debuff condition if lose HP
+      * r0.5 debuff condition if beat extra defense
+    * d1 at Grasp range:
+      * r0.5 debuff condition if take damage
+      * r1.5 debuff condition if lose HP
+* R3
+  * Single-target debuff
+    * d1 at Med range:
+      * r1 debuff condition if take damage
+      * r2 debuff condition if lose HP
+    * d2 at Med range:
+      * r0.5 debuff condition if take damage
+      * r1.5 debuff condition if lose HP
+* R4
+  * Single-target debuff
+    * d3 at Grasp range:
+      * r1 debuff condition if take damage
+      * r2 debuff condition if lose HP
+* R5
+  * Single-target debuff
+    * d4 at Med range:
+      * r1 debuff condition if take damage
+      * r2 debuff condition if lose HP
+* R7
+  * Single-target debuff
+    * d5 at Med range:
+      * r2 debuff condition if take damage
+      * r3 debuff condition if lose HP
