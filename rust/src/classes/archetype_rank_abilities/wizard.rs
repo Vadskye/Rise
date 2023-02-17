@@ -487,7 +487,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +3.
+                The power bonus increases to +2.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
@@ -524,7 +524,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
-                    If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
+                    If you specialize in this school, you gain a \plus1 bonus to your \glossterm{magical power}.
 
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
@@ -539,7 +539,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             ",
             // Assume evocation
             modifiers: Some(vec![
-                Modifier::Power(2),
+                Modifier::Power(1),
                 Modifier::Resource(Resource::InsightPoint, 1),
             ]),
         },
@@ -554,7 +554,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus3.
+                    \subcf{Evocation} The power bonus increases to \plus2.
 
                     \subcf{Illusion} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                     In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
@@ -580,7 +580,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus4.
+                    \subcf{Evocation} The power bonus increases to \plus3.
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 

@@ -150,7 +150,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus3.
+                The power bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },

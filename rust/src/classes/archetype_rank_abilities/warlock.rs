@@ -165,7 +165,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +3.
+                The power bonus increases to +2.
                 In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
                 Any other aspects of the ability remain unchanged.
             ",
@@ -386,11 +386,13 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
-                However, you take a \minus2 penalty to Mental defense.
+                You can choose to gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                If you do, you take a \minus2 penalty to your Fortitude and Mental defenses.
+                Otherwise, you gain a +2 bonus to your Mental defense.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
+                Modifier::Defense(Defense::Fortitude, 2),
                 Modifier::Defense(Defense::Mental, 2),
             ]),
         },
@@ -399,9 +401,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +4.
+                If you chose the power bonus, it increases to +4.
+                Otherwise, the defense bonus increases to +4.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
     ];
 }
@@ -575,7 +578,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +3.
+                The power bonus increases to +2.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },

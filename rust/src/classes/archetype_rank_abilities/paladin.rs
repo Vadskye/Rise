@@ -101,7 +101,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonus increases to +3.
+                The power bonus increases to +2.
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
@@ -221,7 +221,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus3.
+                The power bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
