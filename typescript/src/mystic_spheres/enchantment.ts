@@ -552,7 +552,8 @@ export const enchantment: MysticSphere = {
       // +1 level for conditional +2 accuracy
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} psychic \\glossterm{subdual damage}.
+          % damageranktwolow
+          The target takes 1d6 psychic \\glossterm{subdual damage} \\plus1d per 2 power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -560,7 +561,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Emotion'],
     },
     {
@@ -569,7 +570,8 @@ export const enchantment: MysticSphere = {
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} psychic \\glossterm{subdual damage}.
+          % damageranksixlow
+          The target takes 4d6 psychic \\glossterm{subdual damage} plus 1d6 per 4 power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -577,7 +579,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Emotion'],
     },
 
@@ -586,25 +588,25 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 4 power, and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
-        This defense bonus is \\abilitytag{Swift}, but the recovery is not.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
-      tags: ['Swift (see text)'],
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 3.' },
+      tags: ['Swift'],
     },
 
     {
       name: 'Empowered Restore Bravado',
 
-      functionsLike: {
-        name: 'restore bravado',
-        exceptThat: 'the recovery increases to 4d10 + \\glossterm{power}.',
-      },
-      rank: 6,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 6.' },
-      tags: ['Swift (see text)'],
+      effect: `
+        Chose yourself or one \\glossterm{ally} within \\medrange.
+        The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 3 power, and increases its \\glossterm{fatigue level} by one.
+        In addition, it gains a +2 bonus to its Mental defense this round.
+      `,
+      rank: 2,
+      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
+      tags: ['Swift'],
     },
   ],
   rituals: [

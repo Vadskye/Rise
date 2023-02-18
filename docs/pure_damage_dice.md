@@ -363,9 +363,9 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * dr3 vs all adjacent
     * Strike in small cone
     * Thrown strike vs 3 in Small radius in Short range
-    * Strike, 1d4 +1d/r extra damage if beat extra defense
-      * At R4, 1d6 extra damage and +1 accuracy from scaling: (6.6/8.75) vs (6/9.6) post-accuracy
-      * At R7, 2d6 extra damage and +4 accuracy from scaling: (15.2/19.5) vs (16.8/26.9) post-accuracy
+    * Strike, 1d6 extra damage per 4 power (minimum 1d6) if beat extra defense
+      * At R4, 1d6/2d6 extra damage and +1 accuracy from scaling: (6.6/11.2) vs (6/9.6) post-accuracy
+      * At R7, 2d6/4d6 extra damage and +4 accuracy from scaling: (15.2/26.5) vs (16.8/26.9) post-accuracy
     * Move with a check, dr2h vs all adjacent if check was high enough
     * Strike with extra weapon tag
     * Strike, -2 accuracy, double weapon damage
@@ -389,7 +389,8 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * dr7 vs adjacent enemies
     * Strike in large cone with +2d6??
     * Strike, triple weapon damage, minor downside?
-    * Strike, dr5 extra damage if beat extra defense
+    * Strike, 1d8 per 2 power extra damage if beat extra defense
+      * +5d8/9d8
   * Debuffs
     * Strike, T3 condition if damaged and beat extra defense
 
@@ -665,6 +666,10 @@ Standard for all ranks:
     * dX-1 at Long range
     * dX-2h at Dist range
     * dX-2l at Ext range
+    * dX-1 melee retributive with Deep attune
+    * dX-2 Med range retributive with Deep attune
+    * dX-2 at Med range twice (immediately and during next action)
+    * dX-1l at Med range, doubled if you beat an extra defense
   * AOE
     * dX-2 at tX area
     * dX at t1 area
@@ -672,38 +677,61 @@ Standard for all ranks:
 
 * R1
   * Single-target debuff
-    * d1l at Close range:
-      * r1 debuff condition if beat extra defense
-      * r1.5 debuff condition if lose HP
-    * d1l at Med range: r1 debuff condition if lose HP
+    * d1l at Short range:
+      * t1 debuff condition if lose HP
+      * t0.5 debuff condition if beat extra defense
+    * d1l at Med range: t1 debuff condition if lose HP
 * R2
   * Single-target debuff
+    * d1 at Short range:
+      * t0.5 debuff condition if take damage
+      * t1.5 debuff condition if lose HP
     * d1 at Med range:
-      * r1 debuff condition if lose HP
-      * r0.5 debuff condition if beat extra defense
+      * t1 debuff condition if lose HP
+      * t0.5 debuff condition if beat extra defense
     * d1 at Grasp range:
-      * r0.5 debuff condition if take damage
-      * r1.5 debuff condition if lose HP
+      * t0.5 debuff condition if take damage
+      * t1.5 debuff condition if lose HP
 * R3
   * Single-target debuff
     * d1 at Med range:
-      * r1 debuff condition if take damage
-      * r2 debuff condition if lose HP
+      * t1 debuff condition if take damage
+      * t2 debuff condition if lose HP
     * d2 at Med range:
-      * r0.5 debuff condition if take damage
-      * r1.5 debuff condition if lose HP
+      * t0.5 debuff condition if take damage
+      * t1.5 debuff condition if lose HP
 * R4
   * Single-target debuff
     * d3 at Grasp range:
-      * r1 debuff condition if take damage
-      * r2 debuff condition if lose HP
+      * t1 debuff condition if take damage
+      * t2 debuff condition if lose HP
 * R5
   * Single-target debuff
     * d4 at Med range:
-      * r1 debuff condition if take damage
-      * r2 debuff condition if lose HP
+      * t1 debuff condition if take damage
+      * t2 debuff condition if lose HP
+* R6
+  * Single-target debuff
+    * d5 at Grasp range:
+      * t1.5 debuff condition if take damage
 * R7
   * Single-target debuff
     * d5 at Med range:
-      * r2 debuff condition if take damage
-      * r3 debuff condition if lose HP
+      * t2 debuff condition if take damage
+      * t3 debuff condition if lose HP
+
+## Accuracy-Modified Spell Damage Scaling
+
+R1 spell with +1 accuracy per rank
+* R1: 2.1/3.4 (100%/100%)
+* R2: 3.0/4.8 (100%/100%)
+* R3: 4.0/6.2 (95%/92%)
+* R4: 5.3/8.1 (88%/84%)
+* R5: 6.5/9.8 (77%/73%)
+
+R3 spell with +1 accuracy per rank
+* R3: 4.2/6.7 (100%/100%)
+* R4: 5.8/13.3
+* R5: 7.6/11.7
+* R6: 9.7/15 (80%/78%)
+* R7: 12/18.8 (71%/70%)

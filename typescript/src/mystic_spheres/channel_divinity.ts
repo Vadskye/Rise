@@ -135,35 +135,35 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Retributive Judgment',
 
-      // +1 level for situational +2 accuracy
+      // close range for accuracy
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
           You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Retributive Judgment',
 
-      // +3 levels for situational +4 accuracy, +2 levels for +1d
+      // close range and d6l for accuracy
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} energy damage.
+          The target takes \\damageranksixlow{energy}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
           You gain a +4 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -171,7 +171,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -179,24 +179,39 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Massive Word of Faith',
 
-      // +3r for area, +2r for +1d
       attack: {
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Word of Faith',
+
+      attack: {
+        hit: `
+          Each target takes \\damageranksix{energy}.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -204,7 +219,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
           Each target that takes damage this way is \\shaken by you as a \\glossterm{condition}.
         `,
         missGlance: true,
@@ -213,7 +228,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -354,7 +369,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
@@ -365,7 +380,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -384,7 +399,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
           If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -393,14 +408,14 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Intense Fearful Judgment',
 
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} energy damage.
+          The target takes \\damageranksix{energy}.
           If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -409,7 +424,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [
