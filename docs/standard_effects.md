@@ -179,7 +179,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Instant effects: knockback 30', stop existing briefly (immune until short rest)
   * Special: end of round medium damage
 * Rank 2.5
-  * Conditions: submerged (swimming penalties)
+  * Conditions: submerged (swimming penalties), vulnerable to one damage type
   * Instant effects: teleport 60'
 * Rank 3
   * Generally cause partial action denial or debilitating penalties

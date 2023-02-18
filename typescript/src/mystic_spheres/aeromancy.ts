@@ -123,12 +123,15 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damageranktwolow{slashing}.
+          The target takes \\damagerankone{slashing}.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\longrange.',
+        targeting: `
+          Make an attack vs. Armor against any two targets within \\medrange that are adjacent to each other.
+        `,
       },
       // narrative: '',
       rank: 2,
+      scaling: 'accuracy',
     },
     {
       name: 'Mighty Windslash',
@@ -136,12 +139,13 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankfivelow{slashing}.
+          The target takes \\damagerankfive{slashing}.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\longrange.',
       },
       // narrative: '',
       rank: 6,
+      scaling: 'accuracy',
     },
     {
       name: 'Windsnipe',
@@ -149,53 +153,54 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankzero{bludgeoning}.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{push} it up to 30 feet horizontally.
+          The target takes \\damageranktwolow{bludgeoning}.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\distrange.',
       },
       // narrative: '',
-      rank: 1,
+      rank: 3,
+      scaling: 'accuracy',
     },
     {
-      name: 'Efficient Windsnipe',
+      name: 'Distant Windsnipe',
 
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankthreelow{bludgeoning}.
-          If it takes damage, you \\glossterm{push} it up to 30 feet horizontally.
+          The target takes \\damagerankfourlow{bludgeoning}.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },
       // narrative: '',
-      rank: 5,
+      rank: 6,
+      scaling: 'accuracy',
     },
     {
       name: 'Buffet',
 
       attack: {
         hit: `
-          The target takes \\damagerankzero{bludgeoning}.
+          The target takes \\damageranktwo{bludgeoning}.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 1,
+      rank: 3,
+      scaling: 'accuracy',
     },
     {
       name: 'Intense Buffet',
 
       functionsLike: {
         name: 'buffet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to \\damagerankthreelow{bludgeoning}. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.',
+          'the damage increases to \\damagerankfive{bludgeoning}. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.',
       },
       // narrative: '',
-      rank: 5,
+      rank: 7,
       scaling: 'accuracy',
     },
     {
@@ -303,6 +308,7 @@ export const aeromancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       rank: 5,
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
     {
@@ -337,7 +343,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damageranktwohigh{bludgeoning}.
+          Each target takes \\damageranktwo{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -346,6 +352,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
+      scaling: 'accuracy',
     },
     {
       name: 'Massive Cyclone',
@@ -362,6 +369,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 7,
+      scaling: 'accuracy',
     },
     // 2 levels for push; normally, 30' push is r1, but clockwise is much worse than
     // towards/away, so it's closer to r0.5
@@ -381,6 +389,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
+      scaling: 'accuracy',
     },
     {
       name: 'Windtheft',
@@ -449,8 +458,8 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthree{bludgeoning} damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
+          The target is surrounded by swirling dust as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\blinded.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\longrange.
@@ -520,6 +529,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      scaling: 'accuracy',
     },
     {
       name: 'Massive Windburst',

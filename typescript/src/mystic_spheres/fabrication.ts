@@ -30,7 +30,7 @@ export const fabrication: MysticSphere = {
       name: 'Mystic Arrow',
 
       attack: {
-        hit: `The target takes 2d6 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,

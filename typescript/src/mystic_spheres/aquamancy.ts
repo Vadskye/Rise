@@ -63,13 +63,13 @@ export const aquamancy: MysticSphere = {
     },
   ],
   spells: [
-    // no rank modifier for extremely situational accuracy bonus
     {
       name: 'Desiccate',
 
+      // The accuracy bonus drops damage from d3 to d3l
       attack: {
         hit: `
-          The target takes \\damageranktwohigh{physical}.
+          The target takes \\damagerankthreelow{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -77,11 +77,12 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: 'accuracy',
     },
-    // +2r for situational +4acc
     {
       name: 'Mighty Desiccate',
 
+      // This accuracy bonus is high enough to drop from d7 to d6h
       attack: {
         hit: `
           The target takes \\damageranksixhigh{physical}.
@@ -92,6 +93,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
+      scaling: 'accuracy',
     },
     // swimming is r2.5
     {
@@ -120,7 +122,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankonelow{bludgeoning}.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -128,6 +130,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -136,7 +139,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damageranktwo{bludgeoning}.
+          Each target takes \\damagerankthree{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -144,6 +147,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -161,6 +165,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -178,6 +183,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -194,6 +200,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -202,7 +209,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          Each target takes \\damagerankfivehigh{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -210,6 +217,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -244,7 +252,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankthreelow{bludgeoning}.
+          Each target takes \\damagerankthree{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -256,6 +264,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -275,6 +284,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -294,6 +304,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -476,14 +487,14 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankzero{bludgeoning}.
+          The target takes \\damagerankone{bludgeoning}.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
+        targeting: 'Make an attack vs. Fortitude against anything within \\shortrange.',
       },
       // narrative: '',
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
     {
@@ -491,12 +502,13 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'forceful aquajet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to \\damageranktwo{bludgeoning}. In addition, the knockback distance increases to 60 feet.',
+          'the damage increases to \\damagerankfour{bludgeoning}. In addition, the knockback distance increases to 60 feet.',
       },
       // narrative: '',
-      rank: 5,
+      rank: 6,
+      scaling: 'accuracy',
     },
     {
       name: 'Personal Aquarium',
@@ -560,11 +572,11 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{physical}.
-          If it loses \\glossterm{hit points} from this damage, it is transformed into a puddle of water as a \\glossterm{condition}.
+          The target's body becomes partially liquified as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes 5d10 damage during each of your subsequent actions as it dissolves.
+            \\item If it is submerged in water or other liquid, it takes 4d10 damage during each of your subsequent actions as it dissolves.
             \\item It is \\prone and cannot stand up.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
@@ -574,7 +586,7 @@ export const aquamancy: MysticSphere = {
           \\hypertarget{itemizespace}{}
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 7,
