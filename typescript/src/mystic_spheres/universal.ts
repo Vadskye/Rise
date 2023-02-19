@@ -81,7 +81,7 @@ export const universal: MysticSphere = {
       name: 'Mystic Discharge',
 
       attack: {
-        hit: `Each target takes \\damagerankonelow{}.`,
+        hit: `Each target takes \\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius from you.
@@ -94,7 +94,7 @@ export const universal: MysticSphere = {
       name: 'Massive Mystic Discharge',
 
       attack: {
-        hit: `Each target takes \\damagerankthree{}.`,
+        hit: `Each target takes \\damagerankfourlow{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
