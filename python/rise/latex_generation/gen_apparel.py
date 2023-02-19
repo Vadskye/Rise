@@ -2359,14 +2359,14 @@ def generate_apparel():
             short_description="Grants +2 power with \\ability<divine aid> and \\ability<lay on hands>",
             upgrades=[
                 Upgrade(
-                    description="The bonus increases to +4.",
+                    description="The bonus increases to +3.",
                     rank=4,
-                    short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
+                    short_description="Grants +3 power with \\ability<divine aid> and \\ability<lay on hands>",
                 ),
                 Upgrade(
-                    description="The bonus increases to +8.",
+                    description="The bonus increases to +4.",
                     rank=6,
-                    short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
+                    short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
                 ),
             ],
         ),
