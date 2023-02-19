@@ -74,7 +74,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 45;
+        let expected_points = 43;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -480,19 +480,19 @@ impl Class {
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
-            Self::Barbarian => 6,
-            Self::Cleric => 4,
-            Self::Dragon => 4,
-            Self::Druid => 4,
-            Self::Fighter => 5,
-            Self::Harpy => 4,
-            Self::Monk => 4,
-            Self::Oozeborn => 6,
-            Self::Paladin => 5,
-            Self::Ranger => 5,
-            Self::Rogue => 4,
-            Self::Sorcerer => 4,
-            Self::Warlock => 4,
+            Self::Barbarian => 5,
+            Self::Cleric => 3,
+            Self::Dragon => 3,
+            Self::Druid => 3,
+            Self::Fighter => 4,
+            Self::Harpy => 3,
+            Self::Monk => 3,
+            Self::Oozeborn => 5,
+            Self::Paladin => 4,
+            Self::Ranger => 4,
+            Self::Rogue => 3,
+            Self::Sorcerer => 3,
+            Self::Warlock => 3,
             Self::Wizard => 2,
         }
     }
@@ -534,7 +534,7 @@ impl Class {
             Self::Rogue => 3,
             Self::Sorcerer => 2,
             Self::Warlock => 2,
-            Self::Wizard => 3,
+            Self::Wizard => 4,
         }
     }
 
