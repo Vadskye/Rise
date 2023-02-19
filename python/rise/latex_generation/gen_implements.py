@@ -641,7 +641,6 @@ def generate_implements():
         ),
     ]
 
-    # TODO: nerf after Soulspire
     implements += [
         create_implement(
             name="Echoing Staff",
@@ -650,7 +649,7 @@ def generate_implements():
             tags=[],
             description="""
                 Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
-                When you do, you increase your \\glossterm<fatigue level> by one.
+                When you do, you increase your \\glossterm<fatigue level> by two, and you \\glossterm<briefly> cannot use this effect again.
                 During your next action, the spell takes effect again with the same choices for all decisions, such as targets.
             """,
             short_description="Can exert to repeat effect",
