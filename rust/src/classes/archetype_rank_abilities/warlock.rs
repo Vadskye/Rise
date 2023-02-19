@@ -606,7 +606,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain 1d4 \glossterm{extra damage} with all damaging \glossterm{magical} abilities.
+                        \item You gain 1d4 \glossterm{extra damage} with all damaging \magical abilities.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
