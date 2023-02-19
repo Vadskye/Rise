@@ -793,7 +793,7 @@ def generate_weapons():
             rank=7,
             tags=["Attune (deep)"],
             description="""
-                When you miss with a \\glossterm<strike> with this weapon, you can reroll the attack and take the higher result.
+                When you miss with an attack using this weapon, you can reroll the attack and take the higher result.
                 After you reroll an attack in this way, you \\glossterm<briefly> cannot do so again.
             """,
             short_description="Rolls attacks twice",
@@ -805,8 +805,8 @@ def generate_weapons():
             name="Vorpal",
             rank=7,
             description="""
-                You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon for the purpose of determining whether you get a \\glossterm<critical hit> (see \\pcref<Weapon Tags>).
-                In addition, critical hits with \\glossterm<strikes> using this weapon deal maximum damage.
+                Critical hits with melee \\glossterm<strikes> using this weapon deal double damage.
+                If you make a creature lose at least half its maximum \\glossterm<hit points> with a melee critical hit using this weapon, it immediately dies.
             """,
             short_description="Inflicts lethal critical hits",
         )
