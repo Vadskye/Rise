@@ -735,3 +735,27 @@ R3 spell with +1 accuracy per rank
 * R5: 7.6/11.7
 * R6: 9.7/15 (80%/78%)
 * R7: 12/18.8 (71%/70%)
+
+## Impact/Keen
+The simple baseline for a weapon improvement is about 17% more damage (0.6 accuracy -> 0.7 accuracy).
+
+Assume a 10% crit chance from aggressive accuracy-maximizing/crit-fishing.
+That means you hit on a 1, and are +5 accuracy over normal, so glancing blows are impossible.
+Example: +0 accuracy vs AD 1. You would crit on any explosion, but wouldn't crit a non-exploding 10.
+Total damage per round starts at 1.11x weapon damage.
+
+### Keen
+
+Keen is +4 accuracy to crits, so +4 vs AD 1. Crit on 7-10, and 4% chance to double-crit (10 -> 7/8/9/10).
+Total damage per round is 1.44x weapon damage, or 30% more. That seems appropriate for how extreme this scenario is.
+If Keen wasn't a significant damage improvement in an ultra crit-optimized scenario, it would be pointless.
+
+In a baseline scenario of 0.65x weapon damage per round, Keen upgrades the 5% crit chance to a 9% crit chance, so about 0.7 total wdpr.
+
+### Impact
+
+Impact is 70-80% more damage depending on whether the damage is primarily d6 or d10.
+If it's 70% more damage, total damage per round is (0.9 * 1) + (0.1 * 2 * 1.7) = 1.24x weapon damage.
+
+In a baseline scenario of 0.65x weapon damage per round, Impact increases the 5% crit chance to 3.4x normal damage instead of 2x normal damage, so about 0.72 wdpr.
+
