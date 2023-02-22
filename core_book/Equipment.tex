@@ -269,9 +269,10 @@ Items are divided into five broad categories, described below.
     \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
         Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
         The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-        As a \glossterm{free action}, you can draw or sheathe a single \glossterm{medium weapon} or up to two \glossterm{light weapons}, assuming they are easy to access.
-        Like other free actions, you cannot take this action twice in the same round, so you cannot draw and sheathe weapons in the same round.
-        As a standard action, you can draw or sheathe any of the following equipment combinations: up to two \glossterm{medium weapons}, a medium weapon and a shield, one \glossterm{heavy weapon}, or one weapon that is concealed or otherwise difficult to access.
+        As a \glossterm{free action}, you can draw or sheathe a single non-\weapontag{Heavy} weapon, assuming it is easy to access.
+        You can also draw or sheathe a single \weapontag{Light} weapon as a separate free action.
+        As a standard action, you can draw or sheathe any weapon, even if it is \weapontag{Heavy}, concealed, or otherwise difficult to access.
+        Since you can only take any individual free action once per round, you can't draw or sheathe two weapons in the same round unless one of them is Light, or you spend a standard action.
 
         A character can only store a limited number of weapons in locations that are easy to access in combat.
         Generally, a humanoid creature can carry no more than five ordinary weapons or shields.
@@ -289,22 +290,21 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Compact} This weapon is unusually small.
         It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
         This makes it easier to conceal (see \pcref{Sleight of Hand}).
-        In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
+        In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
         \weapontagdef{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
         On a critical hit, this knockback distance is doubled.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
         \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
-        You normally need two hands to use a heavy weapon.
-        If you have a Strength of 3 or higher, you can wield a heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
-        While holding a heavy weapon in two hands, you gain a \plus1d bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
+        You normally need two hands to use a Heavy weapon.
+        If you have a Strength of 3 or higher, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
+        While holding a Heavy weapon in two hands, you gain a \plus1d bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
         This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
         \weapontagdef{Impact} When you get a \glossterm{critical hit} with this weapon, you deal maximum damage with the attack.
         This includes any \glossterm{extra damage} that applies to the attack.
         \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         \weapontagdef{Light} Light weapons are smaller and easier to handle than other weapons.
-        Attacking with two weapons at once is more accurate with light weapons (see \pcref{Dual Wielding}).
-        In addition, you can draw or sheathe this weapon so quickly that you can also take another action in the same phase with that hand.
-        For example, you can draw this weapon and attack with it in the same phase.
+        Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Wielding}).
+        In addition, Light weapons are easier to draw or sheathe (see \pcref{Drawing and Sheathing Weapons}).
         \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
         If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
         In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
@@ -338,8 +338,6 @@ Items are divided into five broad categories, described below.
 
     \subsection{Weapon Table}
         Here is the format for weapon entries in the Weapons table, below.
-
-        \parhead{Usage Class} Describes whether the weapon's \glossterm{usage class} is light, medium, or heavy (see \pcref{Weapon Usage Classes}).
 
         \parhead{Accuracy} This number modifies your \glossterm{accuracy} with \glossterm{strikes} using the weapon.
 
@@ -631,7 +629,7 @@ Items are divided into five broad categories, described below.
         \parhead{Takedown Bow} A takedown bow is a bow assembled from multiple independent components that can be reconfigured into two different combinations.
         In its longbow configuration, it functions like a longbow, and in its shortbow configuration, it functions like a shortbow.
         In addition, when it is fully disassembled, it takes up space equivalent to a light usage class weapon, making it easier to transport and conceal.
-        \parhead{Tower Shield} Although you can hold a tower shield in one hand, it is considered a heavy weapon because of its weight.
+        \parhead{Tower Shield} Although you can hold a tower shield in one hand, it is considered a \weapontag{Heavy} weapon because of its weight.
         You would typically have to support it with your other hand to effectively smash it into an enemy.
         \parhead{Whip} A whip can be used to attack targets within 15 feet instead of the normal 10 feet for a Long weapon.
 
