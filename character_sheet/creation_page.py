@@ -125,31 +125,58 @@ def creation_guidance():
                     Choose your character's attributes, not counting any species modifiers.
                     If you have special abilities that modify your attributes, you can add those on the <b>Modifiers</b> tab.
                 """,
-                flex_row(
-                    {"class": "attributes"},
-                    [
-                        labeled_number_input(
-                            "Str", input_attributes={"name": f"strength_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Dex", input_attributes={"name": f"dexterity_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Con",
-                            input_attributes={"name": f"constitution_at_creation"},
-                        ),
-                        labeled_number_input(
-                            "Int",
-                            input_attributes={"name": f"intelligence_at_creation"},
-                        ),
-                        labeled_number_input(
-                            "Per", input_attributes={"name": f"perception_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Wil", input_attributes={"name": f"willpower_at_creation"}
-                        ),
-                    ],
-                ),
+                [
+                    flex_row(
+                        {"class": "attributes"},
+                        [
+                            labeled_number_input(
+                                "Str", input_attributes={"name": f"strength_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Dex", input_attributes={"name": f"dexterity_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Con",
+                                input_attributes={"name": f"constitution_at_creation"},
+                            ),
+                            labeled_number_input(
+                                "Int",
+                                input_attributes={"name": f"intelligence_at_creation"},
+                            ),
+                            labeled_number_input(
+                                "Per", input_attributes={"name": f"perception_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Wil", input_attributes={"name": f"willpower_at_creation"}
+                            ),
+                        ],
+                    ),
+                    flex_row(
+                        {"class": "attribute-scaling"},
+                        [
+                            labeled_number_input(
+                                "+Str", input_attributes={"name": f"strength_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Dex", input_attributes={"name": f"dexterity_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Con",
+                                input_attributes={"name": f"constitution_level_scaling"},
+                            ),
+                            labeled_number_input(
+                                "+Int",
+                                input_attributes={"name": f"intelligence_level_scaling"},
+                            ),
+                            labeled_number_input(
+                                "+Per", input_attributes={"name": f"perception_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Wil", input_attributes={"name": f"willpower_level_scaling"}
+                            ),
+                        ],
+                    ),
+                ],
             ),
             creation_step(
                 "Base class",

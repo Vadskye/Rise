@@ -890,11 +890,11 @@ function handleAttributes() {
     onGet(
       {
         miscName: attributeName,
-        numeric: [`${attributeName}_at_creation`],
+        numeric: [`${attributeName}_at_creation`, `${attributeName}_level_scaling`],
       },
       (v) => {
         setAttrs({
-          [attributeName]: v[`${attributeName}_at_creation`] + v.misc,
+          [attributeName]: v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc,
         });
       }
     );
