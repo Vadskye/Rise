@@ -144,7 +144,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Quickdraw',
 
       effect: `
-        You can sheathe any small or medium weapons you wield, then draw one or two small or medium weapons into your \\glossterm{free hands}.
+        You can sheathe any non-\\weapontag{Heavy} weapons you wield, then draw one or two non-\\weapontag{Heavy} weapons into your \\glossterm{free hands}.
         Then, you can make a \\glossterm{strike} with a -2 accuracy penalty.
       `,
       rank: 1,

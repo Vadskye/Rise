@@ -2677,14 +2677,14 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You can use the \\ability<sneak attack> rogue ability with medium weapons.
+                You can use the \\ability<sneak attack> rogue ability with any non-\\weapontag<Heavy> weapon.
             """,
-            short_description="Can \\ability<sneak attack> with medium weapons",
+            short_description="Can \\ability<sneak attack> with non-Light weapons",
             upgrades=[
                 Upgrade(
-                    description="You can also \\ability<sneak attack> with heavy weapons.",
+                    description="You can also \\ability<sneak attack> with Heavy weapons.",
                     rank=6,
-                    short_description="Can \\ability<sneak attack> with heavy weapons",
+                    short_description="Can \\ability<sneak attack> with Heavy weapons",
                 ),
             ],
         ),
