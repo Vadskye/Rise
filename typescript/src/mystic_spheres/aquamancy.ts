@@ -488,8 +488,8 @@ export const aquamancy: MysticSphere = {
       attack: {
         hit: `
           The target takes \\damagerankone{bludgeoning}.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
-          If the target is underwater, this distance is doubled and you can also move it vertically.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target is touching water, this distance is doubled and you can also move it vertically.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\shortrange.',
       },

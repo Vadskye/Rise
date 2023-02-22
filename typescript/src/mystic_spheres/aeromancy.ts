@@ -181,7 +181,8 @@ export const aeromancy: MysticSphere = {
       attack: {
         hit: `
           The target takes \\damageranktwo{bludgeoning}.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If it is Medium or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is outside in open air, this distance is doubled.
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
@@ -197,7 +198,7 @@ export const aeromancy: MysticSphere = {
         name: 'buffet',
         // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to \\damagerankfive{bludgeoning}. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.',
+          'the damage increases to \\damagerankfive{bludgeoning}. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Large.',
       },
       // narrative: '',
       rank: 7,
