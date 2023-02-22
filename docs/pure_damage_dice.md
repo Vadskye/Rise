@@ -658,6 +658,13 @@ Goal: HP should be 3x/4x accuracy-modified damage target (assuming DR should be 
 Notation: dX means "standard damage for rank X". A suffix of "h" means "high power scaling", and "l" means "low power scaling". High power scaling is generally stronger, while low power scaling is generally weaker.
 
 Standard for all ranks:
+* ctX 
+  * "condition that you could get as a pure debuff at Med range at rank X"
+  * ct1 = t1 condition
+  * ct3 = t1.5 condition
+  * ct5 = t2 condition
+  * ct7 = t2.5 condition
+  * ct9 = t3 condition
 * RX
   * Single-target pure damage
     * dX at Med range
@@ -670,21 +677,35 @@ Standard for all ranks:
     * dX-2 Med range retributive with Deep attune
     * dX-2 at Med range twice (immediately and during next action)
     * dX-1l at Med range, doubled if you beat an extra defense
+    * dX-3 as a minor action (deep attune)
   * AOE
     * dX-2 at tX area
     * dX at t1 area
     * dX-1 at t(0.5X) area?9
+  * Damage + debuff
+    * dX at Short range:
+      * ctX debuff condition if lose HP
+      * ct(X-2) debuff condition if beat extra defense
+      * ct(X-4) debuff condition if take damage
+    * dX-1 at Med range / in t1 area:
+      * ctX debuff condition if lose HP
+      * ct(X-2) debuff condition if beat extra defense
+      * ct(X-4) debuff condition if take damage
+    * dX-2 at Med range / in t1 area:
+      * ctX+2 debuff condition if lose HP
+      * ctX debuff condition if beat extra defense
+      * ct(X-2) debuff condition if take damage
 
 * R1
   * Single-target debuff
-    * d1l at Short range:
+    * d1 at Short range:
       * t1 debuff condition if lose HP
       * t0.5 debuff condition if beat extra defense
-    * d1l at Med range: t1 debuff condition if lose HP
 * R2
   * Single-target debuff
     * d1 at Short range:
       * t0.5 debuff condition if take damage
+      * t1 debuff condition if beat extra defense
       * t1.5 debuff condition if lose HP
     * d1 at Med range:
       * t1 debuff condition if lose HP
@@ -699,6 +720,7 @@ Standard for all ranks:
       * t2 debuff condition if lose HP
     * d2 at Med range:
       * t0.5 debuff condition if take damage
+      * t1 debuff condition if take beat extra defense
       * t1.5 debuff condition if lose HP
 * R4
   * Single-target debuff
