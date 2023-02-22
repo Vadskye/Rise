@@ -4,6 +4,12 @@ export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
   shortDescription: 'Manipulate kinetic energy at a distance.',
   sources: ['arcane', 'pact'],
+  specialRules: `
+    All \\abilitytag{Barrier} effects from this mystic sphere are made of telekinetic force, not physical objects.
+    They can still be destroyed normally, but this makes them especially effective against \\glossterm{incorporeal} creatures.
+    Incorporeal creatures cannot enter or pass through the barriers, and must move around them in the same way that any other creature does.
+    This allows a telekinetic barrier to completely block passage in a hallway for an incorporeal creature as long as the surrounding walls are too thick for it to pass through.
+  `,
 
   cantrips: [
     {
@@ -388,7 +394,7 @@ export const telekinesis: MysticSphere = {
       name: 'Floating Armament',
 
       effect: `
-        You can hold a light or medium weapon or shield without using a free hand.
+        You can hold a non-\\weapontag{Heavy} weapon or shield without using a free hand.
         It functions as if you were holding it in a single hand.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,

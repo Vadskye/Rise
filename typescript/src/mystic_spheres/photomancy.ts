@@ -156,17 +156,15 @@ export const photomancy: MysticSphere = {
       // -1d
       attack: {
         hit: `
-          Each target takes 1d4 + half \\glossterm{power} energy damage.
-          Each creature that loses \\glossterm{hit points} from this damage is \\dazzled as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
-        missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -177,10 +175,10 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'flash',
         exceptThat:
-          'the area increases to a \\largearea radius, and the damage increases to 2d6 + half \\glossterm{power}.',
+          'the area increases to a \\largearea radius from you.',
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -189,11 +187,11 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankonelow{energy}.
           If the target takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\medrange.
+          Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
