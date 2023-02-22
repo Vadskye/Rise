@@ -45,7 +45,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} piercing damage.
+          The target takes \\damageranktwo{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -60,10 +60,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Artillery',
 
-      // +2r for delay, +1r for range
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} piercing damage.
+          The target takes \\damagerankthree{piercing}.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
@@ -71,6 +70,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -82,7 +82,7 @@ export const fabrication: MysticSphere = {
       // people can just run from it, so it's hard to actually get the double-hit off.
       attack: {
         hit: `
-          Each target takes 2d6 + \\glossterm{power} slashing damage.
+          Each target takes \\damagerankone{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -98,7 +98,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 5d10 + \\glossterm{power} slashing damage.
+          Each target takes \\damagerankfive{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -113,7 +113,7 @@ export const fabrication: MysticSphere = {
       name: 'Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} slashing damage.`,
+        hit: `Each target takes \\damagerankone{slashing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -127,7 +127,7 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes 4d6 + \\glossterm{power} slashing damage.`,
+        hit: `Each target takes \\damagerankfive{slashing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -141,7 +141,7 @@ export const fabrication: MysticSphere = {
       name: 'Precision Missileburst',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes \\damagerankone{piercing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -156,7 +156,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfour{piercing}.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -170,10 +170,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Rain of Arrows',
 
-      // -1r for -1d
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankone{piercing}.
         `,
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
@@ -189,10 +188,9 @@ export const fabrication: MysticSphere = {
     {
       name: 'Massive Rain of Arrows',
 
-      // offset previous -1d
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfour{piercing}.
         `,
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
@@ -209,7 +207,7 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       attack: {
-        hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes \\damagerankone{slashing}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
@@ -232,7 +230,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 4d8 + \\glossterm{power}.
+          the damage increases to \\damagerankfive{slashing}.
         `,
         name: 'blade barrier',
       },
@@ -248,7 +246,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
-          In addition, the damage increases to 1d10 + half \\glossterm{power}.
+          In addition, the damage increases to \\damageranktwo{slashing}.
         `,
         name: 'blade barrier',
       },
@@ -313,7 +311,7 @@ export const fabrication: MysticSphere = {
       name: 'Caltrops',
 
       attack: {
-        hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
@@ -322,7 +320,7 @@ export const fabrication: MysticSphere = {
           Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -333,7 +331,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to \\damagerankfour{}.',
       },
       rank: 5,
       scaling: 'damage',
@@ -363,7 +361,7 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `The target takes 2d8 piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -373,6 +371,17 @@ export const fabrication: MysticSphere = {
       },
       rank: 4,
       scaling: 'damage',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Daggerswarm',
+
+      functionsLike: {
+        name: 'daggerswarm',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+      },
+      rank: 7,
       type: 'Attune (deep)',
     },
 
@@ -452,11 +461,7 @@ export const fabrication: MysticSphere = {
         After you make the strike, the weapon disappears.
       `,
       rank: 1,
-      scaling: {
-        3: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
-      },
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -562,14 +567,17 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes bludgeoning damage equal to 1d10 plus your \\glossterm{power}.
+            Each object in the path of the wall takes \\damagerankthree{bludgeoning}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
         `,
         name: 'mystic barrier',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: {
+        5: 'You can choose to create a \\medarealong wall instead.',
+        7: 'You can choose to create a \\largearealong wall instead.',
+      },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
