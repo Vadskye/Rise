@@ -7,11 +7,11 @@ const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
 const BASE_CLASS_MODIFIERS = {
   monster: {
     power: "monster",
-    armor_defense: 5,
+    armor_defense: 3,
     fortitude: 5,
     reflex: 5,
     mental: 5,
-    vital_rolls: 0,
+    hit_points: 0,
     attunement_points: 0,
     fatigue_tolerance: 0,
     insight_points: 0,
@@ -24,11 +24,11 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 7,
     reflex: 5,
     mental: 3,
-    vital_rolls: 1,
-    attunement_points: 3,
+    hit_points: 5,
+    attunement_points: 4,
     fatigue_tolerance: 5,
-    insight_points: 0,
-    class_skill_count: 5,
+    insight_points: 1,
+    class_skill_count: 4,
     proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
@@ -37,9 +37,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
+    hit_points: 2,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
     insight_points: 3,
     class_skill_count: 4,
     proficiencies: "Light and medium armor",
@@ -50,9 +50,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 5,
     reflex: 4,
     mental: 6,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
+    hit_points: 2,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
     insight_points: 3,
     class_skill_count: 5,
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
@@ -63,9 +63,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
+    hit_points: 3,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
@@ -76,9 +76,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
+    hit_points: 2,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
     insight_points: 2,
     class_skill_count: 6,
     proficiencies: "Light armor, monk weapons",
@@ -89,9 +89,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 6,
     reflex: 3,
     mental: 6,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
+    hit_points: 3,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
@@ -102,9 +102,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 5,
     reflex: 6,
     mental: 4,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
+    hit_points: 3,
+    attunement_points: 4,
+    fatigue_tolerance: 4,
     insight_points: 2,
     class_skill_count: 5,
     proficiencies:
@@ -116,9 +116,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
+    hit_points: 1,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
     insight_points: 3,
     class_skill_count: 7,
     proficiencies: "Light armor, one weapon group, and saps",
@@ -129,9 +129,9 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 5,
-    fatigue_tolerance: 4,
+    hit_points: 0,
+    attunement_points: 6,
+    fatigue_tolerance: 3,
     insight_points: 2,
     class_skill_count: 3,
     proficiencies: "None",
@@ -142,11 +142,11 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
-    insight_points: 1,
-    class_skill_count: 3,
+    hit_points: 2,
+    attunement_points: 5,
+    fatigue_tolerance: 3,
+    insight_points: 2,
+    class_skill_count: 4,
     proficiencies: "Light armor",
   },
   wizard: {
@@ -155,10 +155,10 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 5,
+    hit_points: 0,
+    attunement_points: 6,
     fatigue_tolerance: 2,
-    insight_points: 3,
+    insight_points: 4,
     class_skill_count: 5,
     proficiencies: "None",
   },
@@ -168,8 +168,8 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 1,
-    attunement_points: 3,
+    hit_points: 4,
+    attunement_points: 4,
     fatigue_tolerance: 5,
     insight_points: 2,
     class_skill_count: 3,
@@ -181,8 +181,8 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 2,
-    attunement_points: 3,
+    hit_points: 5,
+    attunement_points: 4,
     fatigue_tolerance: 6,
     insight_points: 1,
     class_skill_count: 4,
@@ -427,11 +427,10 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
 );
 
 // Class and species, mostly
-// Note: although class influences power, that is explicitly skipped here to resolve
-// timing issues
 const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
   "attunement_points",
+  "base_hit_points",
   "class_skill_count",
   "dexterity",
   "fatigue_tolerance",
@@ -443,7 +442,6 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "reflex",
   "speed",
   "strength",
-  "vital_rolls",
   "willpower",
 ]);
 
@@ -1185,12 +1183,13 @@ function handleDamageResistance() {
     {
       miscName: "damage_resistance_bonus",
       numeric: [
-        "constitution",
+        "willpower",
         "level",
         "challenge_rating",
         "body_armor_damage_resistance",
         "damage_resistance_bonus_vital_wound_multiplier",
       ],
+      string: ["base_class"],
     },
     {
       variablesWithoutListen: {
@@ -1198,51 +1197,48 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const fromLevel = calcBaseDamageResistance(v.level);
-      const conModifier =
-        v.challenge_rating > 0
-          ? Math.floor(v.constitution / 2)
-          : v.constitution;
-      const fromLevelAndCon = calcBaseDamageResistance(v.level + conModifier);
+      const effectiveLevel = v.level + v.willpower;
+      const baseDr = calcBaseDamageResistance(effectiveLevel);
+
       var crMultiplier = {
-        0: 1,
-        0.5: 0,
         1: 2,
         4: 8,
-      }[v.challenge_rating || 0];
-      const playerTotalValue =
-        fromLevelAndCon + v.body_armor_damage_resistance + v.misc;
-      const crMultipliedValue = Math.floor(playerTotalValue * crMultiplier);
+      }[v.challenge_rating] || 1;
+      const playerTotalDr =
+        baseDr + v.body_armor_damage_resistance + v.misc;
+      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
-      const totalValue = Math.floor(
+      const monsterTotalDr = Math.floor(
         crMultipliedValue *
           Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1)
       );
 
       let attrs = {
+        base_damage_resistance_level: effectiveLevel,
+        base_damage_resistance_level_explanation: formatCombinedExplanation(null, [
+          { name: "level", value: v.level },
+          { name: "Wil", value: v.willpower },
+        ]),
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
-            { name: "level", value: fromLevel },
-            { name: "Con", value: fromLevelAndCon - fromLevel },
+            { name: "base", value: baseDr },
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "CR", value: crMultipliedValue - playerTotalValue },
-            { name: "vital", value: totalValue - crMultipliedValue },
+            { name: "CR", value: crMultipliedValue - playerTotalDr },
+            { name: "vital", value: monsterTotalDr - crMultipliedValue },
           ]
         ),
-        damage_resistance_from_level: Math.floor(
-          fromLevelAndCon * crMultiplier
-        ),
-        damage_resistance_max: totalValue,
-        damage_resistance_maximum: totalValue,
+        damage_resistance: undefined,
+        damage_resistance_max: monsterTotalDr,
+        damage_resistance_maximum: monsterTotalDr,
       };
       let should_set_current_dr =
-        totalValue < v.damage_resistance ||
+        monsterTotalDr < v.damage_resistance ||
         v.damage_resistance === v.damage_resistance_maximum ||
         !v.damage_resistance_maximum;
       if (should_set_current_dr) {
-        attrs.damage_resistance = totalValue;
+        attrs.damage_resistance = monsterTotalDr;
       }
       setAttrs(attrs);
     }
@@ -1259,28 +1255,30 @@ function calcBaseDamageResistance(levelish) {
     }
     baseDr =
       {
-        1: 1,
-        2: 2,
-        3: 3,
-        4: 4,
-        5: 5,
-        6: 6,
-        7: 7,
-        8: 9,
-        9: 10,
-        10: 12,
-        11: 13,
-        12: 15,
-        13: 16,
-        14: 18,
-        15: 20,
-        16: 22,
-        17: 25,
-        18: 28,
-        19: 32,
-        20: 36,
-        21: 40,
+        1: 0, 
+        2: 1,
+        3: 2,
+        4: 3,
+        5: 4,
+        6: 5,
+        7: 6,
+        8: 7,
+        9: 8,
+        10:9,
+        11:10,
+        12:12,
+        13:14,
+        14:16,
+        15:18,
+        16:20,
+        17:22,
+        18:24,
+        19:27,
+        20:31,
+        21:35,
       }[levelish] * multiplier;
+  } else {
+    baseDr = levelish;
   }
   return baseDr;
 }
@@ -1528,7 +1526,9 @@ function handleHitPoints() {
         "level",
         "constitution",
         "challenge_rating",
+        "hit_points_from_level",
       ],
+      string: ["base_class"],
     },
     {
       variablesWithoutListen: {
@@ -1536,38 +1536,39 @@ function handleHitPoints() {
       },
     },
     (v) => {
-      const hpFromLevel = calcBaseHitPoints(v.level);
-      const conModifier =
-        v.challenge_rating > 0
-          ? Math.floor(v.constitution / 2)
-          : v.constitution;
-      const hpFromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
+      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
+      const effectiveLevel = v.level + v.constitution + classModifier;
+      const baseHp = calcBaseHitPoints(effectiveLevel);
 
       let crMultiplier = {
-        0: 1,
-        0.5: 1,
         1: 1,
         4: 4,
-      }[v.challenge_rating || 0];
+      }[v.challenge_rating] || 1;
 
-      const playerTotalValue = hpFromLevelAndCon + v.misc;
-      const totalValue = Math.floor(playerTotalValue * crMultiplier);
+      const playerTotalHp = baseHp + v.misc;
+      const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       let attrs = {
-        hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "level", value: hpFromLevel },
-          { name: "Con", value: hpFromLevelAndCon - hpFromLevel },
-          { name: "CR", value: totalValue - playerTotalValue },
+        base_hit_points_level: effectiveLevel,
+        base_hit_points_level_explanation: formatCombinedExplanation(null, [
+          { name: "level", value: v.level },
+          { name: "Con", value: v.constitution },
+          { name: "class", value: classModifier  },
         ]),
-        hit_points_max: totalValue,
-        hit_points_maximum: totalValue,
+        hit_points: undefined,
+        hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "base", value: baseHp },
+          { name: "CR", value: monsterTotalHp - playerTotalHp },
+        ]),
+        hit_points_max: monsterTotalHp,
+        hit_points_maximum: monsterTotalHp,
       };
       let shouldSetCurrentHp =
-        totalValue < v.hit_points ||
+        monsterTotalHp < v.hit_points ||
         v.hit_points === v.hit_points_maximum ||
         !v.hit_points_maximum;
       if (shouldSetCurrentHp) {
-        attrs.hit_points = totalValue;
+        attrs.hit_points = monsterTotalHp;
       }
       setAttrs(attrs);
     }
@@ -1575,7 +1576,7 @@ function handleHitPoints() {
 }
 
 function calcBaseHitPoints(levelish) {
-  let baseHp = 9 + levelish;
+  let baseHp = 0;
   if (levelish > 0) {
     var multiplier = 1;
     while (levelish > 21) {
@@ -1585,29 +1586,30 @@ function calcBaseHitPoints(levelish) {
     baseHp =
       multiplier *
         {
-          1: 10,
-          2: 11,
-          3: 12,
-          4: 13,
-          5: 14,
-          6: 16,
-          7: 18,
-          8: 20,
-          9: 22,
-          10: 25,
-          11: 28,
-          12: 32,
-          13: 36,
-          14: 40,
-          15: 44,
-          16: 50,
-          17: 56,
-          18: 64,
-          19: 72,
-          20: 80,
-          21: 88,
-          22: 100,
-        }[levelish] || 1;
+          1: 6,
+          2: 7,
+          3: 8,
+          4: 9,
+          5: 10,
+          6: 12,
+          7: 14,
+          8: 16,
+          9: 18,
+          10:20,
+          11:22,
+          12:25,
+          13:28,
+          14:32,
+          15:36,
+          16:40,
+          17:44,
+          18:50,
+          19:56,
+          20:63,
+          21:70,
+        }[levelish];
+  } else {
+    baseHp = 6 + Math.floor(levelish / 2);
   }
   return baseHp;
 }
