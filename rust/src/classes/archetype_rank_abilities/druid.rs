@@ -499,12 +499,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Photosynthesis}
                         \rankline
+                        % Weird to use non-rolled hp value, but the scaling is fine?
                         As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
                         This cannot heal you above half your maximum \glossterm{hit points}.
                         \rankline
                         \rank{3} You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        \rank{5} Using the \ability{recover} ability while in natural sunlight only increases your \glossterm{fatigue level} by one.
+                        \rank{5} The healing from this wild aspect increases to be equal to your \glossterm{power}.
                         \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{magicalactiveability}
@@ -642,10 +643,9 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                        \item Its \glossterm{hit points} are equal to the standard value for your level (see \tref{Character Advancement}).
-                        \item Its \glossterm{damage resistance} is equal to the standard value for your level.
+                        \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level.
+                        \item Its \glossterm{accuracy} is equal to half your level \\add half your Perception.
                         \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.

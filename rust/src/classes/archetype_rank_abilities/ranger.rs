@@ -34,7 +34,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item Its \glossterm{hit points} are equal to the standard value for your level \add Constitution (see \tref{Character Advancement}).
                         \item Its \glossterm{damage resistance} is equal to the standard value for your level \add Willpower.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level.
+                        \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
                         \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
