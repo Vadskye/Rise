@@ -320,24 +320,23 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} +1d per two \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
-      rank: 1,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
     {
       name: 'Empowered Boon of Shielding',
 
-      effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 4d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
-      `,
+      functionsLike: {
+        name: 'boon of shielding',
+        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
+      },
       rank: 5,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 4.' },
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -346,15 +345,21 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +2 accuracy bonus to the reroll.
+        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +3 accuracy bonus to the reroll.
         This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
       `,
       rank: 1,
-      scaling: {
-        3: 'The accuracy bonus increases to +3.',
-        5: 'The accuracy bonus increases to +4.',
-        7: 'The accuracy bonus increases to +5.',
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Consecrated Strike',
+      functionsLike: {
+        name: 'consecrated strike',
+        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
+      rank: 5,
+      scaling: 'accuracy',
     },
 
     {
@@ -362,9 +367,11 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{prayer} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
+        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{channel divinity} and \\sphere{prayer} \\glossterm{mystic spheres} that you are attuned to.
+        If this accuracy bonus would be +4 or higher, you may reduce it by 4 to make the strike deal double \\glossterm{weapon damage}.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
@@ -467,7 +474,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each of your actions.
+        While ignited in this way, it takes \\damageranktwo{fire} during each of your actions.
 
         It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.

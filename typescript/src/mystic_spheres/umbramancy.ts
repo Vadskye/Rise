@@ -131,61 +131,69 @@ export const umbramancy: MysticSphere = {
       name: 'Dark Miasma',
 
       attack: {
-        // -1d for +2a
-        hit: `Each target takes 1d6 + half \\glossterm{power} cold damage.`,
+        // Shadowed requirement allows t3 area
+        hit: `Each target takes \\damagerankone{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
+          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      rank: 2,
-      scaling: 'damage',
+      rank: 1,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Intense Dark Miasma',
 
       attack: {
-        // -1d for +2a
-        hit: `
-          Each target takes 1d10 + half \\glossterm{power} cold damage.
-          Each creature that loses \\glossterm{hit points} from this damage is \\frightened of you as a \\glossterm{condition}.
-        `,
+        // +2r for shadowed accuracy
+        hit: `Each target takes \\damagerankthree{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          You gain a +4 accuracy bonus against each \\glossterm{shadowed} target.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Dark Miasma',
+
+      attack: {
+        hit: `Each target takes \\damagerankfour{cold}.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Massive Dark Miasma',
 
-      // switch to +1r for shadowed instead of -1d
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes \\damageranksix{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
-          You gain a +2 accuracy bonus against each \\sphereterm{shadowed} creature.
+          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
-      rank: 6,
-      scaling: 'damage',
+      rank: 7,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Dark Grasp',
 
-      // -1d for shadowed
       attack: {
+        // +1r for shadowed
         hit: `
-          The target takes 1d10 + \\glossterm{power} cold damage.
-          If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
+          The target takes \\damageranktwo{cold}.
+          If it takes damage and your attack result beats its Mental defense, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -195,7 +203,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -204,10 +212,10 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         name: 'dark grasp',
         exceptThat:
-          'the target is \\frightened instead of shaken, and the damage increases to 4d6 + \\glossterm{power}.',
+          'the target is \\frightened instead of shaken, and the damage increases to \\damageranksix{cold}.',
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -215,7 +223,7 @@ export const umbramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} cold damage.`,
+        hit: `Each target takes \\damagerankthree{cold}.`,
         missGlance: true,
         targeting: `
           You create a field of darkness at a \\sphereterm{shadowed} location within \\shortrange.
@@ -226,44 +234,45 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Sustain (standard)'],
     },
 
     {
       name: 'Massive Creeping Darkness',
 
-      functionsLike: {
-        name: 'creeping darkness',
-        exceptThat: `
-          the area affects a \\medarea radius in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
-          In addition, the range increases to \\medrange, and the damage increases to 4d6 + half \\glossterm{power}.
+      attack: {
+        hit: `Each target takes \\damagerankfive{cold}.`,
+        missGlance: true,
+        targeting: `
+          You create a field of darkness at a \\sphereterm{shadowed} location within \\medrange.
+          The area affected by the field increases over time.
+          It affects a \\medarea radius in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          Light in the area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
         `,
       },
-      narrative: `
-        You create a small volcano that showers everything nearby in burning shrapnel.
-      `,
       rank: 7,
-      scaling: 'damage',
-      tags: ['Manifestation', 'Sustain (standard)'],
+      scaling: 'accuracy',
+      tags: ['Sustain (standard)'],
     },
 
     {
       name: 'Heed the Dark Call',
 
       attack: {
-        // +1r for shadowed
+        // -1 range for shadowed
         hit: `
-          The target takes 1d6 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\frightened by you as a \\glossterm{condition}.
+          The target feels the call of darkness as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\frightened by you.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\longrange.
           You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -272,23 +281,23 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          The target takes 2d8 + half \\glossterm{power} cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\panicked by you as a \\glossterm{condition}.
+          The target feels the call of darkness as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\panicked by you.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\longrange.
           You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Shadow Mantle',
 
       effect: `
-        All \\glossterm{strikes} against you have a 25\\% \\glossterm{failure chance}.
+        All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
       narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
@@ -319,15 +328,15 @@ export const umbramancy: MysticSphere = {
       // +1r for shadowed
       attack: {
         hit: `
-          The target takes 2d8 cold damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
+          The target's eyesight is darkened as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\blinded as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
           You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
     },
 
@@ -344,10 +353,7 @@ export const umbramancy: MysticSphere = {
         You strike your foe's shadow instead of hitting it directly, but it takes damage all the same.
       `,
       rank: 3,
-      scaling: {
-        5: 'You gain a +1 accuracy bonus with the strike.',
-        7: 'The accuracy bonus increases to +2.',
-      },
+      scaling: 'accuracy',
       tags: ['Visual'],
     },
 
@@ -397,8 +403,8 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'shadowstep',
       },
-      rank: 4,
-      scaling: { 6: `The teleportation range increases to \\medrange.` },
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
@@ -407,10 +413,8 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          You take a -2 penalty to \\glossterm{accuracy} with the strike due to its rushed nature.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
-          The second strike takes a -2 accuracy penalty just like the first strike, and it cannot target any of the same creatures as the first strike.
 
           This spell does not have \\glossterm{somatic components}.
         `,
@@ -438,25 +442,24 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Bind Shadow',
 
-      // TODO: very ambiguous rank. It's currently scaled as r3, since it can provide
+      // TODO: very ambiguous rank. It's currently scaled as r3.5, since it can provide
       // immunity to melee attackers.
       attack: {
         hit: `
-          The target takes 2d8 cold damage.
-          If it loses \\glossterm{hit points} from this damage, you bind its shadow as a \\glossterm{condition}, blocking its access to areas of darkness.
-          The target treats areas of \\glossterm{shadowy illumination} and unlit areas as solid barriers.
+          The target's shadow is bound to the light as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it treats areas of \\glossterm{shadowy illumination} and unlit areas as solid barriers.
           This means that it cannot move into them voluntarily or with forced movement effects.
           However, this condition has no effect if it enters those areas by other means, such as by \\glossterm{teleportation} or if the light around it is suddenly extinguished.
         `,
         targeting: `
-          Make an attack vs. Mental against a creature within \\medrange that is not \\sphereterm{shadowed}.
+          Make an attack vs. Mental against a creature within \\shortrange that is not \\sphereterm{shadowed}.
         `,
       },
       narrative: `
         You bind your foe's shadow to the light, preventing it from entering shadowed areas.
       `,
-      rank: 5,
-      scaling: 'damage',
+      rank: 6,
+      scaling: 'accuracy',
     },
 
     {
@@ -465,7 +468,7 @@ export const umbramancy: MysticSphere = {
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          The target takes 4d6 + half \\glossterm{power} cold damage.
+          The target takes \\damagerankfive{cold}.
           If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           It cannot move on its own.
           As a \\glossterm{movement}, you can control its movement instead of your own.
@@ -477,7 +480,6 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
     },
 
     {

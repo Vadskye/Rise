@@ -306,6 +306,7 @@ export const electromancy: MysticSphere = {
     {
       name: 'Chain Lightning',
 
+      // not obvious what correct damage scaling would be
       attack: {
         hit: `
           The primary target takes \\damagerankthree{electricity}.
@@ -422,10 +423,10 @@ export const electromancy: MysticSphere = {
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to \\damageranksix{electricity}.
+          the damage increases to \\damagerankfive{electricity}.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -442,7 +443,7 @@ export const electromancy: MysticSphere = {
           When you create the ball, and during each of your subsequent actions, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
           Then, if the ball is more than 120 feet from you, it disappears and this effect ends.
         `,
-        missGlance: true,
+        // missGlance: true,
       },
       rank: 4,
       scaling: 'accuracy',

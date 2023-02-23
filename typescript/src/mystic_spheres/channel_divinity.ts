@@ -52,7 +52,8 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
-        First, you heal 2d6 + half \\glossterm{power} \\glossterm{hit points}.
+        % d3
+        First, you heal 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power}.
         This healing cannot increase your hit points above half your maximum hit points.
         Second, you remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
@@ -152,10 +153,10 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Mighty Retributive Judgment',
 
-      // close range and d6l for accuracy
+      // close range and d5h for accuracy
       attack: {
         hit: `
-          The target takes \\damageranksixlow{energy}.
+          The target takes \\damagerankfivehigh{energy}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -325,15 +326,15 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Power',
 
       effect: `
-        Whenever you hit a creature with an attack, you can infuse that attack with divine power.
-        If you do, you gain a +2 bonus to your \\glossterm{power} with that attack.
-        After you infuse an attack in this way, this effect ends.
+        Whenever you make a damaging attack, you can infuse that attack with divine power.
+        If you do, the attack deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
+        After you enhance an attack in this way, this effect ends.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `The extra damage increases to 1d8.`,
+        5: `The extra damage increases to 2d6.`,
+        7: `The extra damage increases to 2d10.`,
       },
       type: 'Attune',
     },
