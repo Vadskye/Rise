@@ -42,7 +42,8 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} acid damage immediately, and again during your next action.
+          The target takes \\damageranktwo{acid} damage immediately, and again during your next action.
+          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -50,8 +51,8 @@ export const toxicology: MysticSphere = {
           Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 2,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
@@ -59,7 +60,8 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} acid damage immediately, and again during your next action.
+          The target takes \\damagerankfive{acid} immediately, and again during your next action.
+          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -68,17 +70,16 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Poison -- Asp Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d6 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+          If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\stunned while the poison lasts.
           The stage 3 effect makes the target \\blinded while the poison lasts.
         `,
@@ -87,7 +88,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -95,10 +96,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Giant Wasp Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d6 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
+          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\slowed while the poison lasts.
           The stage 3 effect makes the target \\immobilized while the poison lasts.
         `,
@@ -107,7 +107,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -115,18 +115,17 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Black Adder Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d8 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d6 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
+          The stage 1 effect inflicts 2d8 damage each time the poison's attack succeeds.
         `,
         targeting: `
           Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -134,18 +133,17 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Wyvern Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 1d10 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d10 + \\glossterm{power} damage each time the poison's attack succeeds.
+          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+          The stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -153,10 +151,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Blood Leech Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 2d8 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
+          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
           The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
         `,
         targeting: `
@@ -164,7 +161,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -172,10 +169,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Cockatrice Venom',
 
       attack: {
-        crit: `Double damage, and if the target becomes poisoned, it immediately reaches the second \\glossterm{poison stage}.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target takes 2d8 acid damage.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
+          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
           The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
           The stage 3 effect makes the target \\petrified while the poison lasts.
         `,
@@ -184,7 +180,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -192,10 +188,10 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Jellyfish Extract',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
-          The target becomes \\glossterm{poisoned} with dragon bile (see \\pcref{Poison}).
-          The stage 1 effect inflicts 1d4 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The target becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
+          The stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
           The stage 3 effect also ends the poison.
         `,
         targeting: `
@@ -204,7 +200,7 @@ export const toxicology: MysticSphere = {
       },
 
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -212,10 +208,10 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Dragon Bile',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
           The target becomes \\glossterm{poisoned} with dragon bile (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d8 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -223,7 +219,7 @@ export const toxicology: MysticSphere = {
       },
 
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -233,7 +229,6 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `As above, except that the primary target gains two successes to resist its poison.
         In addition, the secondary target immediately reaches the poison's second poison stage.`,
-        // No glance effect; weird shenanigans if you autoremove the poison.
         hit: `The chosen creature gains an additional success to resist a poison currently affecting it.
         In addition, the struck creature becomes \\glossterm{poisoned} by that same poison, and immediately suffers the effect of the poison's first \\glossterm{poison stage}.`,
         targeting: `
@@ -259,7 +254,7 @@ export const toxicology: MysticSphere = {
       name: 'Acidic Blood',
 
       attack: {
-        hit: `Each target takes 1d8 acid damage.`,
+        hit: `Each target takes \\damagerankone{acid}.`,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against everything adjacent to you.
         `,
@@ -269,15 +264,15 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
       `,
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
     {
-      name: 'Greater Acidic Blood',
+      name: 'Mighty Acidic Blood',
 
       attack: {
-        hit: `Each target takes 4d6 acid damage.`,
+        hit: `Each target takes \\damagerankfour{acid}.`,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -287,7 +282,7 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to your enemies when you bleed.
       `,
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -296,7 +291,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} acid damage immediately, and again during your next action.
+          The target takes \\damagerankone{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -304,7 +299,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -313,7 +308,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} acid damage immediately, and again during your next action.
+          The target takes \\damagerankfive{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -321,7 +316,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -346,7 +341,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} acid damage immediately, and again during your next action.
+          The target takes \\damagerankthreehigh{acid} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
           The target's body is completely dissolved by acid, leaving behind only a splash of black sludge.
           Its equipment is unaffected.
@@ -356,7 +351,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -364,7 +359,7 @@ export const toxicology: MysticSphere = {
       name: 'Acid Breath',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes \\damageranktwo{acid}.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
@@ -373,7 +368,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune',
     },
 
@@ -383,11 +378,11 @@ export const toxicology: MysticSphere = {
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to 4d10 + half \\glossterm{power}.
+          the damage increases to \\damagerankfive{acid}.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune',
     },
 
@@ -395,7 +390,7 @@ export const toxicology: MysticSphere = {
       name: 'Acid Rain',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes \\damagerankone{acid}.`,
         missGlance: true,
         targeting: `
           You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} around you.
@@ -403,7 +398,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -411,7 +406,7 @@ export const toxicology: MysticSphere = {
       name: 'Distant Acid Rain',
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} acid damage.`,
+        hit: `Each target takes \\damagerankthree{acid}.`,
         missGlance: true,
         targeting: `
           You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} within \\medrange.
@@ -419,16 +414,16 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Massive Acid Rain',
 
-      // +1r to offset original -1d, +3r for small -> large
       attack: {
-        hit: `Each target takes 4d8 + half \\glossterm{power} acid damage.`,
+        // Unclear damage
+        hit: `Each target takes \\damagerankfourhigh{acid}.`,
         missGlance: true,
         targeting: `
           You create an acidic rain in a \\largearea radius cylinder-shaped \\glossterm{zone} around you.
@@ -436,7 +431,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -445,7 +440,8 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose yourself or an adjacent living \\glossterm{ally}.
-        The target regains 1d10 + \\glossterm{power} \\glossterm{hit points} and increases its \\glossterm{fatigue level} by one.
+        % d1
+        The target regains 1d6 \\glossterm{hit points} +1d per 2 power and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Fortitude defense this round.
       `,
       rank: 1,
@@ -458,10 +454,10 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'healing salve',
-        exceptThat: 'the healing increases to 4d6, and the Fortitude bonus increases to +4.',
+        exceptThat: 'the healing increases to 2d6 plus 1d6 per 3 power, and the Fortitude bonus increases to +4.',
       },
       rank: 5,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 5.' },
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -479,32 +475,26 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: `The damage from the condition is doubled.`,
         hit: `The target becomes covered in devouring fungus as a \\glossterm{condition}.
-        It takes 1d6 + half \\glossterm{power} acid damage immediately and during each of your subsequent actions.
+        It takes \\damagerankone{acid} immediately and during each of your subsequent actions.
 
         The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
         Dropping \\prone as part of this action gives a +5 bonus to this check.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Greater Fungal Growth',
 
-      attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `
-          The target becomes covered in devouring fungus as a \\glossterm{condition}.
-          It takes 2d8 + half \\glossterm{power} acid damage immediately and during each of your subsequent actions.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
+      functionsLike: {
+        name: "fungal growth",
+        exceptThat: "the damage increases to \\damagerankfourlow{acid}, and the condition cannot be removed with a Dexterity check.",
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [],

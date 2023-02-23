@@ -104,20 +104,20 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target and the thrown object each take 1d8 bludgeoning damage.
+          The target and the thrown object each take 1d6 bludgeoning damage.
+          If you fling a Small object, the damage increases by +1d per 2 \\glossterm{power}.
           Specific objects may add additional damage types appropriately.
           For example, flinging a sharp spear would also deal piercing damage.
-          You add your \\glossterm{power} to the damage if you fling a Medium object, or half your power if you fling a Small object.
         `,
         targeting: `
-          Choose a Tiny, Small, or Medium unattended nonmagical object within \\medrange of you.
+          Choose a Tiny or Small unattended object within \\medrange of you.
           You fling that object at another creature or object within \\medrange of you.
-          You gain a +4 accuracy bonus if you fling a Tiny object, or a +2 accuracy bonus if you fling a Small object.
+          You gain a +2 accuracy bonus if you fling a Tiny object.
         `,
       },
 
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -126,21 +126,30 @@ export const telekinesis: MysticSphere = {
       functionsLike: {
         name: 'fling object',
         exceptThat:
-          'you can fling two objects, each at a different target within range. In addition, the damage increases to 2d8.',
+          'you can fling two objects, each at a different target within range. In addition, the base damage increases to 1d8.',
       },
-      rank: 4,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Fling Object',
 
-      functionsLike: {
-        name: 'fling object',
-        exceptThat: 'the damage increases to 4d8.',
+      attack: {
+        hit: `
+          The target and the thrown object each take 2d8 bludgeoning damage.
+          If you fling a Medium object, the damage increases by 1d6 per 4 \\glossterm{power}.
+          Specific objects may add additional damage types appropriately.
+          For example, flinging a sharp spear would also deal piercing damage.
+        `,
+        targeting: `
+          Choose a Small or Medium unattended object within \\medrange of you.
+          You fling that object at another creature or object within \\medrange of you.
+          You gain a +2 accuracy bonus if you fling a Small object.
+        `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -182,7 +191,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 15 feet horizontally away from you.
         `,
         missGlance: true,
@@ -191,7 +200,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -200,7 +209,7 @@ export const telekinesis: MysticSphere = {
       // +2r for 30' knockback, +1r for med cone
       attack: {
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfour{bludgeoning}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         targeting: `
@@ -208,7 +217,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -217,7 +226,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 1d8 + half \\glossterm{power} bludgeoning damage.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take \\damagerankonelow{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\medrange of you.
@@ -232,10 +241,10 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take 4d8 + \\glossterm{power} bludgeoning damage.
+          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take \\damagerankfive{bludgeoning}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Huge or smaller within \\longrange of you.
+          Make an attack vs. Fortitude against anything Huge or smaller within \\medrange of you.
         `,
       },
       rank: 6,
@@ -246,29 +255,30 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
+          You \\glossterm{knockback} the target up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anything Medium or smaller within \\medrange.
+        `,
+      },
+
+      rank: 1,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Intense Toss Foe',
+
+      attack: {
+        hit: `
+          You \\glossterm{knockback} the target up to 30 feet horizontally (see \\pcref{Knockback Effects}).
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
         `,
       },
-
-      rank: 1,
-      scaling: 'damage',
-    },
-    {
-      name: 'Intense Toss Foe',
-
-      functionsLike: {
-        name: 'toss foe',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat:
-          'the knockback distance increases to 60 feet. In addition, the damage increases to 2d8.',
-      },
       // narrative: '',
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Telekinetic Lift',
@@ -365,11 +375,7 @@ export const telekinesis: MysticSphere = {
         The weapon flies back into your hand after making the strike.
       `,
       rank: 1,
-      scaling: {
-        3: `You gain a +1 accuracy bonus with the strike.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
-      },
+      scaling: 'accuracy',
     },
 
     {
@@ -379,15 +385,11 @@ export const telekinesis: MysticSphere = {
         You can make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
         You not have to be proficient with bows, and you do not have to manually draw the arrow.
         It must be easily accessible on your person, such as in a quiver.
-        As normal for a longbow, the strike deals 1d6 damage, and your \\glossterm{range limits} with this strike are 90/270.
+        As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 1,
-      scaling: {
-        3: `You gain a +1 accuracy bonus with the strike.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
-      },
+      scaling: 'accuracy',
     },
 
     {
@@ -507,14 +509,14 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d8 + half \\glossterm{power} bludgeoning damage immediately, and again during your next action.
+          The target takes \\damagerankone{bludgeoning} immediately, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -522,7 +524,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + half \\glossterm{power} bludgeoning damage immediately, and again during your next action.
+          The target takes \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
         `,
         targeting: `
@@ -530,7 +532,7 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [

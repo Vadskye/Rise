@@ -677,13 +677,14 @@ Standard for all ranks:
     * dX-2 Med range retributive with Deep attune
     * dX-2 at Med range twice (immediately and during next action)
     * dX-1l at Med range, doubled if you beat an extra defense
-    * dX-3 as a minor action (deep attune)
+    * dX-2 with -2 accuracy as a minor action (deep attune)
+    * dX-2 with -2 accuracy as a minor action (sustain)
   * AOE
     * dX-2 at tX area
     * dX at t1 area
-    * dX-1 at t(0.5X) area?9
+    * dX-1 at t(0.5X) area?
   * Damage + debuff
-    * dX at Short range:
+    * dX at Short/Grasp range:
       * ctX debuff condition if lose HP
       * ct(X-2) debuff condition if beat extra defense
       * ct(X-4) debuff condition if take damage
@@ -695,6 +696,13 @@ Standard for all ranks:
       * ctX+2 debuff condition if lose HP
       * ctX debuff condition if beat extra defense
       * ct(X-2) debuff condition if take damage
+* Damage over time
+  * Instead of dealing dX damage:
+    * dX-2 immediately and during next action
+    * dX-1 immediately, again during next action if it lost HP the first time
+    * dX-2l as a condition
+    * dX-2l as a sustained single-target effect (heat metal)
+    * dX-1 as a removable condition (fire Dex check)
 
 * R1
   * Single-target debuff

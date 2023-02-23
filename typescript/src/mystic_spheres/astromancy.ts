@@ -83,7 +83,7 @@ export const astromancy: MysticSphere = {
         // crit: '',
         hit: `
           The target takes \\damagerankone{energy}.
-          If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 30 feet.
+          If it is Medium or smaller and loses \\glossterm{hit points}, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -95,18 +95,18 @@ export const astromancy: MysticSphere = {
         Your touch makes your foe disappear.
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
     {
-      name: 'Intense Translocating Grasp',
+      name: 'Efficient Translocating Grasp',
 
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankfour{energy}.
-          If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 60 feet.
+          The target takes \\damagerankfive{energy}.
+          If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -118,7 +118,7 @@ export const astromancy: MysticSphere = {
         Your touch makes your foe disappear.
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
     },
 
@@ -144,14 +144,14 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    // treat this as r3 level; it's similar to immobilized, but harder to cheese with Long weapons
+    // treat this as t3 debuff; it's similar to immobilized, but harder to cheese with Long weapons
     {
       name: 'Dimensional Anchor',
 
       attack: {
         hit: `
           The target takes \\damagerankthree{energy}.
-          If it loses hit points from this damage, it becomes anchored to its location as long as you sustain this spell.
+          If it loses hit points, it becomes anchored to its location as long as you sustain this spell.
           At the end of each round, the target \\glossterm{teleports} back to the location it was in when this spell was cast.
           This teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}, but it does not function across planes.
 
@@ -195,11 +195,10 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankonelow{energy}.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{teleport} it up to 30 feet.
+          If the target is Large or smaller, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -210,12 +209,11 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Efficient Hostile Translocation',
+      name: 'Intense Hostile Translocation',
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{energy}.
-          If it is Large or smaller and takes damage, you \\glossterm{teleport} it up to 30 feet.
+          If the target is Large or smaller, you \\glossterm{teleport} it up to 45 feet.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -344,21 +342,22 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Planar Jaunt -- Plane of Air',
+      name: 'Planar Jaunt -- Plane of Fire',
 
       attack: {
+        crit: `
+          Both instances of damage are doubled, not just the initial damage.
+        `,
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Air.
-          When it returns, it takes \\damagerankone{bludgeoning}.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 20 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          The target \\sphereterm{flickers} to the Plane of Fire.
+          It takes \\damageranktwo{fire} when it returns, and again during your next action.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
+          Make an attack vs. Mental against anything within \\medrange.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
+        Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
       `,
       rank: 2,
       scaling: 'accuracy',
@@ -383,22 +382,21 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Planar Jaunt -- Plane of Fire',
+      name: 'Planar Jaunt -- Plane of Air',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Fire.
-          It takes \\damageranktwo{fire} when it returns, and again during your next action.
+          The target \\sphereterm{flickers} to the Plane of Air.
+          When it returns, it takes \\damageranktwo{bludgeoning}.
+          If it is Large or smaller and loses \\glossterm{hit points}, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\longrange.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
+        Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
       `,
       rank: 4,
       scaling: 'accuracy',
@@ -509,7 +507,6 @@ export const astromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankonelow{energy}.
           If you hit both subjects, they each \\glossterm{teleport} into each other's location.
           If the teleportation is invalid for either target, it fails for both targets.
         `,
@@ -524,18 +521,18 @@ export const astromancy: MysticSphere = {
       rank: 2,
       scaling: 'accuracy',
     },
+    // Strong scaling with range
     {
       name: 'Distant Hostile Transposition',
 
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankfour{energy}.
           If you hit both subjects, they each \\glossterm{teleport} into each other's location.
           If the teleportation is invalid for either target, it fails for both targets.
         `,
         targeting: `
-          Make an attack vs. Mental against two Huge or smaller creatures within \\longrange.
+          Make an attack vs. Mental against two Huge or smaller creatures within \\distrange.
         `,
       },
       narrative: `
