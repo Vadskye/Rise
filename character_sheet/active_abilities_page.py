@@ -30,15 +30,27 @@ from old_attacks import old_attacks
 
 
 def create_page(destination):
+    magical_power = text_input(
+        {"class": "inline-number", "readonly": True, "name": "magical_power"}
+    )
+    mundane_power = text_input(
+        {"class": "inline-number", "readonly": True, "name": "mundane_power"}
+    )
+
     return flex_col(
         {"class": "page active-abilities-page"},
         [
             div(
                 {"class": "tab-explanation"},
-                """
-                This tab is used to track the abilities that you can use.
-                Each ability you add here will appear as a button on the Core page.
-            """,
+                [
+                    """
+                        This tab is used to track the abilities that you can use.
+                        Each ability you add here will appear as a button on the Core page.
+                    """,
+                    div({"class": "power-reminder"}, f"""
+                        As a reminder, your magical✨ power is {magical_power} and your mundane power is {mundane_power}.
+                    """),
+                ],
             ),
             # New attacks
             div({"class": "section-header"}, "Strike-Based Attacks"),
@@ -96,24 +108,8 @@ def ability():
                         [
                             labeled_text_input(
                                 "Base dice",
-                                {"class": "attack-damage-dice"},
+                                {"class": "attack-dice"},
                                 {"name": "dice_pool"},
-                            ),
-                            underlabel(
-                                "Power",
-                                select(
-                                    {
-                                        "class": "attack-power",
-                                        "name": "power_multiplier",
-                                    },
-                                    [
-                                        option({"value": "1"}, "Full"),
-                                        option({"value": "0.5"}, "Half"),
-                                        option(
-                                            {"value": "0", "selected": True}, "None"
-                                        ),
-                                    ],
-                                ),
                             ),
                             underlabeled_checkbox(
                                 "Magical?",
@@ -183,7 +179,7 @@ def ability():
                         {
                             "class": "readonly-disabled",
                             "readonly": True,
-                            "name": "calculated_dice_and_modifier",
+                            "name": "calculated_dice_pool",
                         },
                     ),
                 ],
@@ -315,26 +311,10 @@ def shared_attack_framework(calcs=[], buttons=[]):
 def strike_based_attack():
     return shared_attack_framework(
         [
-            underlabel_spaced(
-                "+Dmg",
-                number_input(
-                    {
-                        "class": "fake-text",
-                        "name": "attack_damage_modifier",
-                        "value": "0",
-                    }
-                ),
-            ),
-            underlabel(
-                "Power",
-                select(
-                    {"class": "attack-power", "name": "attack_power"},
-                    [
-                        option({"value": "1", "selected": True}, "Full"),
-                        option({"value": "0.5"}, "Half"),
-                        option({"value": "0"}, "None"),
-                    ],
-                ),
+            labeled_text_input(
+                "+Damage",
+                {"class": "attack-dice"},
+                {"name": "attack_extra_damage"},
             ),
             underlabeled_checkbox(
                 "Magical?",
@@ -396,33 +376,14 @@ def weapon_buttons(i):
             ),
         ),
         crit_damage_button(
-            "@{weapon_" + i + "_total_damage_dice}",
+            "@{weapon_" + i + "_total_damage}",
             "crit_" + i,
-            " - @{weapon_" + i + "_name}",
-        ),
-        glance_damage_button(
-            "@{weapon_" + i + "_total_damage_modifier}",
-            "glance_" + i,
             " - @{weapon_" + i + "_name}",
         ),
         text_input(
             {
                 "class": "readonly-disabled strike-total-damage",
                 "name": f"weapon_{i}_total_damage",
-                "readonly": True,
-            }
-        ),
-        text_input(
-            {
-                "class": "hidden",
-                "name": f"weapon_{i}_total_damage_dice",
-                "readonly": True,
-            }
-        ),
-        text_input(
-            {
-                "class": "hidden",
-                "name": f"weapon_{i}_total_damage_modifier",
                 "readonly": True,
             }
         ),
@@ -461,11 +422,9 @@ def weapon_template(i):
         + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
-        + " {{Damage=[[[[@{weapon_"
+        + " {{Damage=[[@{weapon_"
         + i
-        + "_total_damage_dice}]] + [[@{weapon_"
-        + i
-        + "_total_damage_modifier}]]]] = $[[1]] + $[[2]] &amp;#125;&amp;#125;"
+        + "_total_damage}]]&amp;#125;&amp;#125;"
         + " {{Tags=@{weapon_"
         + i
         + "_tags_sanitized} &amp;#125;&amp;#125;"
@@ -476,20 +435,9 @@ def other_damaging_attack():
     return shared_attack_framework(
         [
             labeled_text_input(
-                "Base dice",
-                {"class": "attack-damage-dice"},
+                "Damage",
+                {"class": "attack-dice"},
                 {"name": "attack_damage_dice"},
-            ),
-            underlabel(
-                "Power",
-                select(
-                    {"class": "attack-power", "name": "attack_power"},
-                    [
-                        option({"value": "1", "selected": True}, "Full"),
-                        option({"value": "0.5"}, "Half"),
-                        option({"value": "0"}, "None"),
-                    ],
-                ),
             ),
             underlabeled_checkbox(
                 "Magical?",
@@ -527,11 +475,10 @@ def other_damaging_attack():
                 {
                     "class": "readonly-disabled",
                     "readonly": True,
-                    "name": "calculated_dice_and_modifier",
+                    "name": "calculated_dice_pool",
                 },
             ),
             crit_damage_button("@{calculated_dice_pool}", "crit"),
-            glance_damage_button("[[@{calculated_modifier}]]", "glance"),
         ],
     )
 
@@ -539,15 +486,10 @@ def other_damaging_attack():
 def other_damaging_attack_button_text():
     return attack_button_text(
         construct_damage_text(
-            "@{calculated_dice_and_modifier}",
+            "@{calculated_dice_pool}",
             "repeating_otherdamagingattacks_crit",
-            "repeating_otherdamagingattacks_glance",
         )
     )
-
-
-def calc_attack_power():
-    return "[[floor(@{power}*@{attack_power})]]"
 
 
 def nondamaging_attack():
@@ -604,38 +546,13 @@ def crit_damage_button(crit_damage_calculation, name, subtitle_suffix=""):
     )
 
 
-def glance_damage_button(glance_damage_calculation, name, subtitle_suffix=""):
-    return button(
-        {
-            "class": "hidden",
-            "name": name,
-            "type": "roll",
-            "value": (
-                "&{template:custom}"
-                + " {{title=@{attack_name}}}"
-                + " {{subtitle=@{character_name}"
-                + subtitle_suffix
-                + "}}"
-                + " {{Glance Damage=[["
-                + glance_damage_calculation
-                + "]]}}"
-                + " {{color=@{chat_color}}}"
-            ),
-        },
-        "",
-    )
-
-
-def construct_damage_text(normal_damage, crit_damage_button, glance_damage_button):
+def construct_damage_text(normal_damage, crit_damage_button):
     return (
         " [["
         + normal_damage
         + "]]"
-        + " [C](~"
+        + " [Crit](~"
         + crit_damage_button
-        + ")"
-        + " [G](~"
-        + glance_damage_button
         + ")"
     )
 
@@ -656,7 +573,6 @@ def weapon_attack_button(i):
         + construct_damage_text(
             "@{weapon_" + i + "_total_damage}",
             "repeating_strikeattacks_crit_" + i,
-            "repeating_strikeattacks_glance_" + i,
         )
         + "}}"
         + " {{Tags=@{weapon_"
