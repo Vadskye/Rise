@@ -187,29 +187,16 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankonelow{energy}.
-          If the target takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
+          The target takes \\damagerankone{energy}.
+          If it takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
-      rank: 1,
-      scaling: 'damage',
-      tags: [],
-    },
-
-    {
-      name: 'Certain Searing Light',
-
-      functionsLike: {
-        name: 'searing light',
-        exceptThat:
-          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d6 + half \\glossterm{power}.',
-      },
-      rank: 4,
-      scaling: 'damage',
+      rank: 2,
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -220,27 +207,27 @@ export const photomancy: MysticSphere = {
       // add that much power here.
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankfour{energy}.
           If it takes damage, it is \\dazzled as a \\glossterm{condition}.
           If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\longrange.
+          Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
     {
       name: 'Solar Flare',
 
-      // +1r for true sunlight, -1r for -1d
+      // +1r for true sunlight, +1r for enemies only - end up with d5l instead of d5?
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankfivelow{energy}.
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
@@ -251,7 +238,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -260,7 +247,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -279,7 +266,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to 4d6 + half \\glossterm{power}.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour{energy}.',
       },
       rank: 7,
       tags: [],
@@ -290,7 +277,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -301,7 +288,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Visual'],
     },
 
@@ -463,34 +450,33 @@ export const photomancy: MysticSphere = {
         // random effect is bad, but the sphere can't normally do most of those and you
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange.
+          Make an attack vs. Reflex against anything within \\medrange.
         `,
       },
-      rank: 2,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
-      name: 'Certain Chromatic Orb',
+      name: 'Mighty Chromatic Orb',
 
       functionsLike: {
-        exceptThat:
-          'you gain a +3 accuracy bonus, and the damage increases to 2d8 + half \\glossterm{power}.',
         name: 'chromatic orb',
+        exceptThat: 'the damage increases to \\damageranksix{energy}.',
       },
-      rank: 5,
-      scaling: 'damage',
+      rank: 7,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes \\damagerankone{energy}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -499,14 +485,14 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Distant Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes \\damagerankfour{energy}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -515,7 +501,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {

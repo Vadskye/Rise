@@ -423,7 +423,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -562,7 +562,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -578,7 +578,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     // d2l instead of d2 for accuracy
     {
@@ -593,7 +593,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     // d5h instead of d6 for accuracy
     {
@@ -608,7 +608,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [

@@ -252,7 +252,7 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes \\damagerankthree{bludgeoning}.
+          Each target takes \\damageranktwo{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -487,14 +487,14 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{bludgeoning}.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
-          If the target is touching water, this distance is doubled and you can also move it vertically.
+          The target takes \\damageranktwo{bludgeoning}.
+          If it is Medium or smaller and your attack result also beats its Fortitude defense, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\shortrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 2,
+      rank: 3,
       scaling: 'accuracy',
     },
     {
@@ -504,10 +504,10 @@ export const aquamancy: MysticSphere = {
         name: 'forceful aquajet',
         // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to \\damagerankfour{bludgeoning}. In addition, the knockback distance increases to 60 feet.',
+          'the damage increases to \\damagerankfive{bludgeoning}, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
-      rank: 6,
+      rank: 7,
       scaling: 'accuracy',
     },
     {

@@ -139,7 +139,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankfive{slashing}.
+          The target takes \\damagerankfivehigh{slashing}.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\longrange.',
       },
@@ -178,11 +178,11 @@ export const aeromancy: MysticSphere = {
     {
       name: 'Buffet',
 
+      // treat as r2, halfway between 15' and 30'
       attack: {
         hit: `
-          The target takes \\damageranktwo{bludgeoning}.
-          If it is Medium or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          If the target is outside in open air, this distance is doubled.
+          If the target is Medium or smaller, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
@@ -194,11 +194,13 @@ export const aeromancy: MysticSphere = {
     {
       name: 'Intense Buffet',
 
-      functionsLike: {
-        name: 'buffet',
-        // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat:
-          'the damage increases to \\damagerankfive{bludgeoning}. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Large.',
+      attack: {
+        hit: `
+          If the target is Large or smaller, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          This distance is doubled if if the target is outside in open air.
+          Moving the target upwards costs twice the normal movement cost.
+        `,
+        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
       rank: 7,

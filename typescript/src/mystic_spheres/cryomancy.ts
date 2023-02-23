@@ -62,7 +62,7 @@ export const cryomancy: MysticSphere = {
       name: 'Freezing Grasp',
 
       attack: {
-        hit: `The target takes \\damagerankone{cold}.`,
+        hit: `The target takes \\damagerankthree{cold}.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -87,16 +87,16 @@ export const cryomancy: MysticSphere = {
           Make a melee attack vs. Reflex against anything adjacent to you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
     },
 
     {
       name: 'Cone of Cold',
 
-      // -1d and +1r for icy terrain
+      // d1l instead of d1 for icy terrain
       attack: {
-        hit: `Each target takes \\damagerankone{cold}.`,
+        hit: `Each target takes \\damagerankonelow{cold}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
@@ -110,7 +110,7 @@ export const cryomancy: MysticSphere = {
     {
       name: 'Massive Cone of Cold',
 
-      // 2 ranks for larger area, 1 rank to remove the previous -1d
+      // 2 ranks for larger area, 1 rank to remove the previous low scaling
       attack: {
         hit: `Each target takes \\damagerankthree{cold}.`,
         missGlance: true,
@@ -158,7 +158,7 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle',
 
       attack: {
-        hit: `The target takes \\damagerankfive{piercing and cold}.`,
+        hit: `The target takes \\damagerankfivehigh{piercing and cold}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
@@ -272,7 +272,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfourhigh{cold}.
+          The target takes \\damagerankfive{cold}.
           In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
           If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
@@ -301,7 +301,7 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -320,7 +320,7 @@ export const cryomancy: MysticSphere = {
       },
 
       rank: 7,
-      scaling: 'damage',
+      // scaling: 'accuracy',
     },
 
     {
@@ -409,11 +409,10 @@ export const cryomancy: MysticSphere = {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankfivehigh{cold}.
-          In addition, the area increases to a \\hugearea cone.
+          the damage increases to \\damagerankfive{cold}.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       type: 'Attune',
     },

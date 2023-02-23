@@ -85,7 +85,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankone{bludgeoning}.
           If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
         `,
         targeting: `
@@ -94,7 +94,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -104,8 +104,8 @@ export const verdamancy: MysticSphere = {
       // +2r for longer push, +2r for more damage
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} bludgeoning damage.
-          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 30 feet.
+          The target takes \\damagerankfour{bludgeoning}.
+          If the target takes damage, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
           Make an attack vs. Armor against one creature within \\medrange.
@@ -113,7 +113,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -121,36 +121,38 @@ export const verdamancy: MysticSphere = {
       name: 'Vinestorm',
 
       attack: {
+        // d1l for undergrowth?
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankonelow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
+          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Flourishing Vinestorm',
+      name: 'Mighty Vinestorm',
 
       attack: {
         hit: `
-          Each target takes 2d6 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} fills the area \\glossterm{briefly}.
+          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
         `,
       },
-      rank: 4,
-      scaling: 'damage',
+      rank: 6,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -158,15 +160,16 @@ export const verdamancy: MysticSphere = {
       name: 'Massive Vinestorm',
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes \\damagerankthreelow{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
+          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -206,7 +209,7 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Nitharit',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
           The target becomes \\glossterm{poisoned} with nitharit (see \\pcref{Poison}).
           The stage 1 effect makes the target \\dazed while the poison lasts.
@@ -226,10 +229,10 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Sassone Leaf',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
           The target becomes \\glossterm{poisoned} with sassone leaf (see \\pcref{Poison}).
-          The stage 1 effect inflicts 1d4 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
           The stage 3 effect also ends the poison.
         `,
         targeting: `
@@ -238,7 +241,7 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -246,10 +249,10 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Arsenic',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
           The target becomes \\glossterm{poisoned} with arsenic (see \\pcref{Poison}).
-          The stage 1 effect inflicts 1d10 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 1 effect inflicts 2d6 damage each time the poison's attack succeeds.
           The stage 3 effect also ends the poison.
         `,
         targeting: `
@@ -258,7 +261,7 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -266,10 +269,10 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Black Lotus',
 
       attack: {
-        crit: `The target immediately reaches the second \\glossterm{poison stage}, as normal for poisons.`,
+        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
         hit: `
           The target becomes \\glossterm{poisoned} with black lotus extract (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d10 + half \\glossterm{power} damage each time the poison's attack succeeds.
+          The stage 1 effect inflicts 4d8 damage each time the poison's attack succeeds.
         `,
         targeting: `
           Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
@@ -277,7 +280,7 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -332,12 +335,14 @@ export const verdamancy: MysticSphere = {
       name: 'Embedded Growth',
 
       attack: {
-        // -1d relative to normal dot in exchange for antiheal
+        // Medicine removal is harder than fire, but light undergrowth is a buff - use d1?
         hit: `
-          The target takes 1d6 + half \\glossterm{power} piercing damage immediately, and again during your next action.
-          If it loses \\glossterm{hit points} from this damage, it is unable to recover those hit points until it takes a \\glossterm{long rest}.
-          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-          The \\glossterm{difficulty value} of the check is equal to 10.
+          The target begins growing painful plants inside its body as a \\glossterm{condition}.
+          It takes \\damagerankonelow{piercing} immediately and during each of your subsequent actions.
+          Whenever it takes damage from the growth, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
+
+          The condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
+          The \\glossterm{difficulty value} of the check is equal to 5.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -346,54 +351,30 @@ export const verdamancy: MysticSphere = {
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 2,
-      scaling: 'damage',
-    },
-
-    {
-      name: 'Flourishing Embedded Growth',
-
-      functionsLike: {
-        name: 'embedded growth',
-        exceptThat: `
-          whenever the target takes damage from the growth, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
-        `,
-      },
-      narrative: `
-        You throw a seed that embeds itself in a foe and grows painfully.
-      `,
-      rank: 4,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Intense Embedded Growth',
 
-      attack: {
-        // +2r to also antiheal DR, +1r to offset original -1d
-        hit: `
-          The target takes 2d8 + half \\glossterm{power} piercing damage immediately, and again during your next action.
-          It is unable to recover any hit points or damage resistance lost to this damage until it takes a \\glossterm{long rest}.
-          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-          The \\glossterm{difficulty value} of the check is equal to 15.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-        `,
+      functionsLike: {
+        name: 'embedded growth',
+        exceptThat: 'the DV of the Medicine check increases to 15, and the damage increases to \\damagerankfourlow{piercing}.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 5,
-      scaling: 'damage',
+      rank: 6,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Fire Seeds',
 
-      // +1r for letting several party members throw little fireballs
+      // d2l instead of d2 because this lets party members throw fireballs?
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} fire damage.`,
+        hit: `Each target takes \\damageranktwolow{fire}.`,
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
@@ -405,29 +386,27 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
     },
 
     {
       name: 'Mighty Fire Seeds',
 
-      // too dangerous to give full power for a full party opening salvo
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
+        exceptThat: 'the damage increases to \\damagerankfivelow{fire}.',
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
     },
 
     {
       name: 'Wall of Thorns',
 
-      // original targets: Each creature that moves through the area (see text)
       attack: {
-        hit: `The target takes 1d8 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of thorns within \\medrange.
           The base of at least half of the wall must be in arable earth.
@@ -445,7 +424,7 @@ export const verdamancy: MysticSphere = {
       },
 
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -456,12 +435,12 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
-          the damage increases to 2d10 + half \\glossterm{power}.
+          the damage increases to \\damagerankfour{piercing}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -491,10 +470,10 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Blight',
 
-      // -1r for all the weird stuff
+      // d2l instead of d2 for all the weird stuff
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} physical damage immediately, and again during your next action.
+          The target takes \\damageranktwolow{physical} immediately, and again during your next action.
           Whenever it takes damage this way, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} lose all \\glossterm{undergrowth}.
           This damage is doubled if the target is a plant, including plant creatures.
         `,
@@ -503,7 +482,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -511,10 +490,10 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to 4d10 + half \\glossterm{power}.',
+        exceptThat: 'the damage increases to \\damagerankfivelow{physical}.',
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {

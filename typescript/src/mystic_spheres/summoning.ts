@@ -16,7 +16,7 @@ export const summoning: MysticSphere = {
         `,
         name: 'summon monster',
       },
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (standard)',
     },
@@ -32,8 +32,8 @@ export const summoning: MysticSphere = {
         Regardless of the appearance and size chosen, the creature's statistics use the values below.
 
         \\begin{itemize}
-          \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
-          \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
+          \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
+          \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement}).
           \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception.
           \\item Its \\glossterm{land speed} is 30 feet.
@@ -44,15 +44,14 @@ export const summoning: MysticSphere = {
         There are only two actions it can take.
         As a \\glossterm{movement}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
-        If it hits, it deals 1d4 physical damage.
-        This damage is improved by your Willpower as normal for magical attacks.
+        If it hits, it deals \\damagerankzero{physical}.
         The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
 
         If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
         Summoned creatures have no mind or independent agency, and will not act on their own even if attacked.
       `,
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -63,12 +62,13 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +1 \\glossterm{accuracy} bonus and its attacks deal 1d8 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
+          Its strikes deal \\damageranktwolow{physical}.
+          However, its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
         name: 'summon monster',
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -80,12 +80,13 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          It gains a +3 \\glossterm{accuracy} bonus and its attacks deal 4d6 damage, but its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
+          Its strikes deal \\damageranksixlow{physical}.
+          However, its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
         `,
         name: 'summon monster',
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -101,7 +102,7 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -117,7 +118,7 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -125,31 +126,29 @@ export const summoning: MysticSphere = {
     {
       name: 'Ramming Summon',
 
-      // solid ground and -1d for knockback
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
+          The target takes \\damagerankone{bludgeoning}.
+          If it loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against anything on solid ground within \\medrange.
+          Make an attack vs. Armor against anything on solid ground within \\shortrange.
         `,
       },
       narrative: `
           You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
       `,
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Efficient Ramming Summon',
 
-      // +4 ranks for on-damage instead of on-hp
       attack: {
         hit: `
-          The target takes 4d6 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankfour{bludgeoning}.
           If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -160,7 +159,7 @@ export const summoning: MysticSphere = {
           You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
       `,
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -169,8 +168,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
-          \\miss \\glossterm{Glancing blow}.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -180,7 +178,7 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -188,7 +186,7 @@ export const summoning: MysticSphere = {
       name: 'Massive Trampling Summon',
 
       attack: {
-        hit: `Each target takes 2d6 + half \\glossterm{power} bludgeoning damage.`,
+        hit: `Each target takes \\damageranktwo{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 10 ft. wide line from you.
@@ -197,7 +195,7 @@ export const summoning: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -212,12 +210,12 @@ export const summoning: MysticSphere = {
         The summoned weapon's statistics use the values below.
 
         \\begin{itemize}
-          \\item Its \\glossterm{fatigue tolerance} is 0, and it cannot choose to take actions that would give it \\glossterm{fatigue levels}.
-          \\item Its \\glossterm{hit points} are equal to half the standard value for your your level (see \\tref{Hit Points and Damage Resistance}).
+          \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
+          \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Character Advancement}).
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception \\sub 2, plus any accuracy modifier for the chosen weapon.
-          \\item It has a 30 foot \\glossterm{fly speed} instead of a \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 5 feet.
+          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception, plus any accuracy modifier for the chosen weapon.
+          \\item It has a 30 foot \\glossterm{fly speed} and no \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 5 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
@@ -226,11 +224,12 @@ export const summoning: MysticSphere = {
         During your action, it makes a melee \\glossterm{strike} against a creature adjacent to it.
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
-        If it hits, it deals damage appropriate for your chosen weapon.
-        This damage is improved by your Willpower as normal for magical attacks.
+
+        When the weapon hits hits, it deals damage appropriate for your chosen weapon.
+        This damage is improved by your \\glossterm{magical power} as normal for \\magical attacks.
       `,
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -240,14 +239,13 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the weapon's maximum height above the ground is increased to 240 feet.
+          the weapon's maximum height above the ground is increased to 120 feet, and you can initially summon it in midair.
           This allows the weapon to fly up to fight airborne foes.
-          In addition, the weapon gains a +1d damage bonus.
         `,
         name: 'summon weapon',
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -260,15 +258,14 @@ export const summoning: MysticSphere = {
           it creates a fully functional Large ballista instead of a weapon.
           The ballista functions like any other weapon, with the following exceptions.
 
-          The ballista deals 1d10 damage with its attacks.
-          It cannot move, and makes projectile \\glossterm{strikes} instead of melee strikes.
-          Its attacks deal piercing damage and have \\glossterm{range limits} of 90/270.
+          The ballista cannot move, and it makes projectile \\glossterm{strikes} instead of melee strikes.
+          Its attacks deal \\damageranktwo{piercing} and have \\glossterm{range limits} of 90/270.
           The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
         name: 'summon weapon',
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -279,13 +276,13 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an earth elemental.
-        Its attacks deal 2d6 bludgeoning damage.
+        Its attacks deal \\damagerankfourlow{bludgeoning}.
         It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
         `,
         name: 'summon monster',
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -298,14 +295,14 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an water elemental.
-        Its attacks deal 1d6 bludgeoning damage.
+        Its attacks deal \\damagerankonelow{bludgeoning}.
         It has a 30 foot \\glossterm{swim speed}.
         However, it is \\glossterm{vulnerable} to electricity damage.
         `,
         name: 'summon monster',
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -318,13 +315,13 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an air elemental.
-        Its attacks deal 1d10 bludgeoning damage.
-        It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability}.
+        Its attacks deal \\damagerankthreelow{bludgeoning}.
+        It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability} and a 30 foot \\glossterm{height limit}.
         `,
         name: 'summon monster',
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -337,13 +334,13 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal 1d6 fire damage.
+        Its attacks deal \\damageranktwolow{fire}.
         In addition, it is immune to fire damage.
         `,
         name: 'summon monster',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -356,7 +353,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the creature appears to be a Medium bear.
-        Its attacks deal 1d8 bludgeoning and slashing damage.
+        Its attacks deal \\damageranktwolow{bludgeoning and slashing}.
         In addition, it suffers no penalty for attacking in a grapple.
         As a standard action, it can make a \\textit{grapple} attack against a creature adjacent to it.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
@@ -364,9 +361,27 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Summon Horde -- Bees',
+
+      attack: {
+        hit: `
+          Each target takes \\damagerankone{piercing}.
+        `,
+        missGlance: true,
+        targeting: `
+          A horde of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from your location.
+          The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 1,
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
@@ -374,7 +389,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} physical damage.
+          Each target takes \\damagerankone{physical}.
         `,
         missGlance: true,
         targeting: `
@@ -392,7 +407,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} physical damage.
+          Each target takes \\damagerankthree{physical}.
           Each creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
         missGlance: true,
@@ -407,11 +422,11 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Summon Horde -- Bees',
+      name: 'Summon Horde -- Ravens',
 
       attack: {
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfour{piercing}
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
         `,
         missGlance: true,
@@ -431,7 +446,7 @@ export const summoning: MysticSphere = {
       // +2r for large, +2r for +1d
       attack: {
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} physical damage.
+          Each target takes \\damageranksix{physical}.
         `,
         missGlance: true,
         targeting: `
@@ -469,7 +484,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a snake.
-        Its attacks deal 1d10 bludgeoning and piercing damage.
+        Its attacks deal \\damagerankthreelow{physical}.
         Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
         It is immediately \\dazed while it is poisoned.
         The poison's third stage causes the target to become \\stunned as long as it is poisoned.
@@ -477,7 +492,7 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },

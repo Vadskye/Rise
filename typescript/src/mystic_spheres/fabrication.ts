@@ -36,7 +36,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -53,23 +53,36 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Mystic Artillery',
 
+      // Long range would be d2, drop to d1 for delay
       attack: {
         hit: `
-          The target takes \\damagerankthree{piercing}.
+          The target takes \\damagerankone{piercing}.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
-          During your next action, make an attack vs. Armor with the bolt against anything within \\distrange.
+          During your next action, make an attack vs. Armor with the bolt against anything within \\longrange.
         `,
       },
-      rank: 5,
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Mystic Artillery',
+
+      functionsLike: {
+        name: 'mystic artillery',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+      },
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -77,12 +90,11 @@ export const fabrication: MysticSphere = {
     {
       name: "Executioner's Axe",
 
-      // +2r for delay
-      // treat "two adjacent targets" as equivalent to close range with the delay;
-      // people can just run from it, so it's hard to actually get the double-hit off.
+      // two adjacent targets would normally be about d2h.
+      // Drop to d2l for the delay; delay is less powerful in melee than at range.
       attack: {
         hit: `
-          Each target takes \\damagerankone{slashing}.
+          Each target takes \\damageranktwolow{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -98,7 +110,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{slashing}.
+          Each target takes \\damageranksixlow{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -119,7 +131,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -133,7 +145,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -147,7 +159,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -163,7 +175,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -181,7 +193,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -199,7 +211,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -220,7 +232,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -235,7 +247,7 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -251,7 +263,7 @@ export const fabrication: MysticSphere = {
         name: 'blade barrier',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -321,7 +333,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -331,10 +343,10 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to \\damagerankfour{}.',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -361,16 +373,16 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `The target takes \\damagerankone{piercing}.`,
+        hit: `The target takes \\damageranktwo{piercing}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
-          When you do, make an attack vs. Armor against that target.
+          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
           After the dagger deals damage, it disappears and another dagger appears in the swarm.
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -379,7 +391,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'daggerswarm',
-        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfive{piercing}.',
       },
       rank: 7,
       type: 'Attune (deep)',
