@@ -57,10 +57,6 @@ def create_page(destination):
                         {"class": "repeating_attunedmodifiers"},
                         custom_modifier(show_toggle="deep", show_text=True),
                     ),
-                    fieldset(
-                        {"class": "repeating_attunements"},
-                        attunement(),
-                    ),
                 ]
                 if destination == "roll20"
                 else [attunement() for _ in range(8)],
@@ -264,27 +260,14 @@ def weapon(i):
                 {"name": f"weapon_{i}_accuracy"},
             ),
             labeled_text_input(
-                "Base Die",
+                "Magical Damage",
                 {"class": "weapon-damage-dice"},
-                {"name": f"weapon_{i}_damage_dice"},
+                {"name": f"weapon_{i}_magical_damage_dice"},
             ),
             labeled_text_input(
-                "Magical",
-                {"class": "calculated-weapon-damage-dice"},
-                {
-                    "class": "readonly-disabled",
-                    "name": f"weapon_{i}_magical_dice",
-                    "readonly": True,
-                },
-            ),
-            labeled_text_input(
-                "Mundane",
-                {"class": "calculated-weapon-damage-dice"},
-                {
-                    "class": "readonly-disabled",
-                    "name": f"weapon_{i}_mundane_dice",
-                    "readonly": True,
-                },
+                "Mundane Damage",
+                {"class": "weapon-damage-dice"},
+                {"name": f"weapon_{i}_mundane_damage_dice"},
             ),
             labeled_text_input(
                 "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}

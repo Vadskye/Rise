@@ -57,7 +57,9 @@ def html_tag(tag_name, attributes=None, contents=None):
     if "name" in attributes and not attributes["name"].startswith("nostore_"):
         attributes["name"] = "attr_" + attributes["name"]
 
-    if contents is None:
+    is_self_closing_tag = tag_name in ["input"]
+
+    if contents is None or is_self_closing_tag:
         return "<{0}{1} />".format(
             tag_name,
             convert_html_attributes(attributes),
