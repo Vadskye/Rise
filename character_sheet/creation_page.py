@@ -123,6 +123,8 @@ def creation_guidance():
                 "Attributes",
                 """
                     Choose your character's attributes, not counting any species modifiers.
+                    As you level up, your attributes increase.
+                    You can add those improvements in the second row.
                     If you have special abilities that modify your attributes, you can add those on the <b>Modifiers</b> tab.
                 """,
                 [

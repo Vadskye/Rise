@@ -327,7 +327,7 @@ def custom_statistic(i):
                     option({"value": "craft_wood"}, "Craft (wood)"),
                     option({"value": "craft_untrained"}, "Craft (untrained)"),
                     option({"value": "creature_handling"}, "Creature Handling"),
-                    option({"value": "damage_resistance_bonus"}, "Damage resistance"),
+                    option({"value": "damage_resistance"}, "Damage resistance"),
                     option({"value": "deception"}, "Deception"),
                     option({"value": "deduction"}, "Deduction"),
                     option({"value": "devices"}, "Devices"),
