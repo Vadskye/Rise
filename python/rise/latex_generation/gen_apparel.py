@@ -91,7 +91,7 @@ def generate_apparel():
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
                 This functions like body armor that provides a +3 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                It also provides a +6 bonus to your \\glossterm{damage resistance}.
+                It also provides a +5 bonus to your \\glossterm{damage resistance}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
                 This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
@@ -101,12 +101,12 @@ def generate_apparel():
             short_description="Grants encumbrance-free medium armor",
             upgrades=[
                 Upgrade(
-                    description="The damage resistance bonus increases to +12.",
+                    description="The damage resistance bonus increases to +10.",
                     rank=4,
                     short_description="Grants encumbrance-free medium armor",
                 ),
                 Upgrade(
-                    description="The damage resistance bonus increases to +24.",
+                    description="The damage resistance bonus increases to +20.",
                     rank=6,
                     short_description="Grants encumbrance-free medium armor",
                 ),
@@ -269,7 +269,7 @@ def generate_apparel():
     # Head
 
     apparel += [
-        # close range, +1d = rank 2 spell
+        # short range rank 2 spell
         create_apparel(
             name="Circlet of Blasting",
             rank=2,
@@ -278,11 +278,11 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 2d8+4 fire damage.
+                \\hit The target takes 1d8+1d6 fire damage.
             """,
-            short_description="Can blast foe with fire",
+            short_description="Can deal 1d8+1d6 damage",
         ),
-        # close range, +2d = rank 4 spell
+        # short range rank 4 damage spell
         create_apparel(
             name="Circlet of Blasting, Greater",
             rank=4,
@@ -291,11 +291,11 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 4d8+7 fire damage.
+                \\hit The target takes 5d6 fire damage.
             """,
-            short_description="Can blast foe with intense fire",
+            short_description="Can deal 5d6 damage",
         ),
-        # close range, +3d = rank 6 spell, so this is priced as rank 7
+        # short range rank 6 damage spell
         create_apparel(
             name="Circlet of Blasting, Supreme",
             rank=6,
@@ -304,9 +304,9 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 6d10+14 fire damage.
+                \\hit The target takes 6d10 fire damage.
             """,
-            short_description="Can blast foe with supremely intense fire",
+            short_description="Can deal 6d10 damage",
         ),
     ]
 
@@ -382,35 +382,34 @@ def generate_apparel():
     )
 
     apparel += [
+        # t2 area, d1 damage
         create_apparel(
-            name="Crown of Lightning",
+            name="Crown of Flame",
             rank=2,
             material_type="Crown",
             tags=[],
             description="""
-                This crown continuously crackles with electricity.
-                The constant sparks shed light as a torch.
+                This crown continuously burns, shedding light as a torch.
 
-                As a standard action, you can intensify the crown's energy to shock nearby enemies.
-                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
-                On a hit, each target takes 1d10+2 electricity damage.
+                As a standard action, you can intensify the crown's flame to incinerate nearby enemies.
+                When you do, make an attack vs. Reflex against your \\glossterm<enemies> within a \\areasmall radius from you.
+                On a hit, each target takes 1d10 fire damage.
             """,
-            short_description="Can deal 1d10+2 damage to nearby foes",
-        ),
-        create_apparel(
-            name="Crown of Lightning, Greater",
-            rank=5,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown continuously crackles with electricity.
-                The constant sparks shed light as a torch.
-
-                As a standard action, you can intensify the crown's energy to shock nearby enemies.
-                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areamed radius from you.
-                On a hit, each target takes 4d6+5 electricity damage.
-            """,
-            short_description="Can deal 4d6+5 damage to nearby foes",
+            short_description="Can deal 1d10 damage to nearby foes",
+            upgrades=[
+                Upgrade(
+                    # d3
+                    description="The damage increases to 1d8+2d6.",
+                    rank=4,
+                    short_description="Can deal 1d8+2d6 damage to nearby foes",
+                ),
+                Upgrade(
+                    # d5
+                    description="The damage increases to 6d6, and the area increases to a \\medarea radius.",
+                    rank=6,
+                    short_description="Can deal 6d6 damage to nearby foes",
+                ),
+            ],
         ),
     ]
 
@@ -637,10 +636,10 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d4 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 1d6 hit points while below half hit points",
+            short_description="Regains 1d4 hit points while below half hit points",
         ),
         create_apparel(
             name="Lifesaver Ring, Greater",
@@ -648,10 +647,10 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d8 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 2d6 hit points while below half hit points",
+            short_description="Regains 1d8 hit points while below half hit points",
         ),
         create_apparel(
             name="Lifesaver Ring, Supreme",
@@ -659,10 +658,10 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d8 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 4d6 hit points while below half hit points",
+            short_description="Regains 2d8 hit points while below half hit points",
         ),
     ]
 
@@ -783,7 +782,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Ghost Shroud, Supreme",
-            rank=6,
+            rank=7,
             material_type="Cloak",
             description="""
                 Creatures that are \\glossterm<incorporeal> are \\glossterm<vulnerable> to physical damage you inflict instead of being immune.
@@ -1117,7 +1116,7 @@ def generate_apparel():
             material_type="Bracers",
             description="""
                 Your \\glossterm<natural weapons> gain the \\weapontag<Impact> \\glossterm<weapon tag>.
-                When you get a \\glossterm{critical hit} with natural weapons, you roll triple damage dice instead of double damage dice.
+                When you get a \\glossterm{critical hit} with natural weapons, you deal maximum damage.
                 If the natural weapon already has the Impact weapon tag, this has no effect.
             """,
             short_description="Grants Impact weapon tag with natural weapons",
@@ -1222,33 +1221,27 @@ def generate_apparel():
             rank=2,
             material_type="Cloak",
             tags=[],
+            # Very specific trigger; call it d3 damage,
+            # which is good for a non-action
             description="""
-                Whenever a creature grapples you, you immediately deal it 2d6+4 piercing damage.
+                Whenever a creature grapples you, you immediately deal it 1d8+1d6 piercing damage.
                 This does not affect creatures that you initiate a grapple with.
             """,
-            short_description="Deals damage to creatures that grapple you",
-        ),
-        create_apparel(
-            name="Quilled Cloak, Greater",
-            rank=4,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                Whenever a creature grapples you, you immediately deal it 4d6+7 piercing damage.
-                This does not affect creatures that you initiate a grapple with.
-            """,
-            short_description="Deals more damage to creatures that grapple you",
-        ),
-        create_apparel(
-            name="Quilled Cloak, Supreme",
-            rank=6,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                Whenever a creature grapples you, you immediately deal it 5d10+14 piercing damage.
-                This does not affect creatures that you initiate a grapple with.
-            """,
-            short_description="Deals even more damage to creatures that grapple you",
+            short_description="Deals 1d8+2d6 damage when grappled",
+            upgrades=[
+                Upgrade(
+                    # d5
+                    description="The damage increases to 4d6.",
+                    rank=4,
+                    short_description="Deals 4d6 damage when grappled",
+                ),
+                Upgrade(
+                    # d7
+                    description="The damage increases to 6d10.",
+                    rank=6,
+                    short_description="Deals 6d10 damage when grappled",
+                ),
+            ],
         ),
     ]
 
@@ -1389,10 +1382,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Swift'],
             description="""
-                As a standard action, you can use this belt to regain 1d10+4 hit points.
+                As a standard action, you can use this belt to regain 2d6 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Exert to heal 1d10+4 hit points",
+            short_description="Exert to heal 2d6 hit points",
         ),
         create_apparel(
             name="Belt of Healing, Greater",
@@ -1400,10 +1393,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Swift'],
             description="""
-                As a standard action, you can use this belt to regain 2d10+7 hit points.
+                As a standard action, you can use this belt to regain 4d6 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Exert to heal 2d10+7 hit points",
+            short_description="Exert to heal 4d6 hit points",
         ),
         create_apparel(
             name="Belt of Healing, Supreme",
@@ -1411,10 +1404,10 @@ def generate_apparel():
             material_type="Belt",
             tags=['Swift'],
             description="""
-                As a standard action, you can use this belt to regain 4d10+14 hit points.
+                As a standard action, you can use this belt to regain 8d6 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Exert to heal 4d10+14 hit points",
+            short_description="Exert to heal 8d6 hit points",
         ),
     ]
 
@@ -1595,42 +1588,32 @@ def generate_apparel():
     ]
 
     apparel += [
-        # standard tiny cone
+        # standard small cone
         create_apparel(
             name="Pyromancer's Glove",
             rank=1,
             material_type="Glove",
             tags=[],
             description="""
-                As a standard action, you can activate this glove.
+                As a standard action, you can activate this glove using a \\glossterm<free hand>.
                 When you do, make an attack vs. Reflex against everything within a \\smallarea cone.
-                \\hit Each target takes 1d8+1 fire damage.
+                \\hit Each target takes 1d8 fire damage.
             """,
-            short_description="Deals 1d8+1 damage in a cone",
-        ),
-        create_apparel(
-            name="Pyromancer's Glove, Greater",
-            rank=4,
-            material_type="Glove",
-            tags=[],
-            description="""
-                As a standard action, you can activate this glove.
-                When you do, make an attack vs. Reflex against everything within a \\medarea cone.
-                \\hit Each target takes 2d10+3 fire damage.
-            """,
-            short_description="Deals 2d10+3 damage in a cone",
-        ),
-        create_apparel(
-            name="Pyromancer's Glove, Supreme",
-            rank=7,
-            material_type="Glove",
-            tags=[],
-            description="""
-                As a standard action, you can activate this glove.
-                When you do, make an attack vs. Reflex against everything within a \\largearea cone.
-                \\hit Each target takes 5d10+10 fire damage.
-            """,
-            short_description="Deals 5d10+10 damage in a cone",
+            short_description="Deals 1d8 damage in a cone",
+            upgrades=[
+                Upgrade(
+                    # d3
+                    description="The damage increases to 1d8+2d6, and the area increases to a \\medarea cone.",
+                    rank=4,
+                    short_description="Deals 1d8+2d6 damage in a cone",
+                ),
+                Upgrade(
+                    # d6
+                    description="The damage increases to 5d10, and the area increases to a \\largearea cone.",
+                    rank=7,
+                    short_description="Deals 5d10 damage in a cone",
+                ),
+            ],
         ),
     ]
 
@@ -2279,13 +2262,14 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ghoultouch Gauntlet",
-            rank=5,
+            rank=7,
             material_type="Gauntlet",
             tags=[],
+            # "paralyzed" is r4; double defense and no DR makes that work.
             description="""
-                As a standard action, you can make an attack vs. Fortitude against an adjacent living creature.
-                On a hit, the target takes 2d8 physical damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\paralyzed.
+                As a standard action, you can activate this gauntlet using a \\glossterm<free hand>.
+                When you do, make an attack vs. Reflex and Fortitude against a living creature you \\glossterm<touch>.
+                On a hit, if the target has no remaining \\glossterm<damage resistance>, it becomes \\paralyzed as a \\glossterm<condition>.
                 Whether the attack hits or misses, the target is immune to this ability until it takes a \\glossterm<short rest>.
             """,
             short_description="Grants a paralyzing touch",
@@ -2334,12 +2318,12 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are reduced by 1.
+                When you use the \\ability<rage> barbarian ability, if you have at least 3 Dexterity, its penalties to Armor and Reflex defense are reduced by 1.
             """,
             short_description="Reduces defense penalties from \\textit<rage>",
             upgrades=[
                 Upgrade(
-                    description="The defense penalties are entirely removed.",
+                    description="If you have at least 5 Dexterity, the defense penalties are entirely removed.",
                     rank=7,
                     short_description="Removes defense penalties from \\textit<rage>",
                 ),
@@ -2771,40 +2755,23 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Spellfeeding Amulet",
+            name="Spellbounce Amulet",
             rank=2,
             material_type="Amulet",
             tags=[],
+            # same healing as a healing belt; reward is not having to spend an
+            # action.
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
+                Whenever you absorb a spell with the \\ability<spell absorption> sorcerer ability, you \\glossterm<briefly> gain a +2 accuracy bonus with that spell.
             """,
-            short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
-        ),
-        create_apparel(
-            name="Spellfeeding Amulet, Greater",
-            rank=4,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
-            """,
-            short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
-        ),
-        create_apparel(
-            name="Spellfeeding Amulet, Supreme",
-            rank=6,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
-            """,
-            short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
+            short_description="Grants brief +2 accuracy with absorbed spells",
+            upgrades=[
+                Upgrade(
+                    description="The accuracy bonus increases to +4.",
+                    rank=5,
+                    short_description="Grants brief +4 accuracy with absorbed spells",
+                ),
+            ],
         ),
     ]
 

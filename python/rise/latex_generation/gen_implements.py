@@ -506,30 +506,21 @@ def generate_implements():
             rank=2,
             material_type="Staff",
             tags=[],
+            # d2
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d6+4 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d6 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d6+4 damage when foes remove conditions",
-        ),
-        create_implement(
-            name="Hexbite Staff, Greater",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d6+7 \\glossterm<energy damage>.
-            """,
-            short_description="Deals 4d6+7 damage when foes remove conditions",
-        ),
-        create_implement(
-            name="Hexbite Staff, Supreme",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 5d10+14 \\glossterm<energy damage>.
-            """,
-            short_description="Deals 5d10+14 damage when foes remove conditions",
+            short_description="Deals 2d6 damage when foes remove conditions",
+            upgrades=[
+                Upgrade(
+                    description="The damage increases to 4d6.",
+                    rank=4,
+                ),
+                Upgrade(
+                    description="The damage increases to 8d6.",
+                    rank=6,
+                ),
+            ],
         ),
     ]
 
@@ -745,6 +736,69 @@ def generate_implements():
                 In addition, any non-damaging effects of the attack are unchanged.
             """,
             short_description="Changes energy damage types",
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Brutish",
+            rank=4,
+            material_type="Staff",
+            description="""
+                If your Strength is at least 3, you gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage if you have 3 Str",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        If your Strength is at least 5, the damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage if you have 5 Str",
+                ),
+            ],
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Educated",
+            rank=4,
+            material_type="Staff",
+            description="""
+                If your Intelligence is at least 3, you gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage if you have 3 Int",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        If your Intelligence is at least 5, the damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage if you have 5 Int",
+                ),
+            ],
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Potent",
+            rank=5,
+            material_type="Staff",
+            description="""
+                You gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage",
+                ),
+            ],
         ),
     ]
 
