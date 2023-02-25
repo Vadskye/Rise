@@ -29,25 +29,28 @@ def generate_armor():
             rank=2,
             material_type="Body armor",
             tags=["Attune (deep)"],
+            # d2l
             description="""
                 Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 1d10+2 energy damage.
+                \\hit Each target takes 2d8 energy damage.
             """,
-            short_description="Deals 1d10+2 damage to attackers when you lose HP",
+            short_description="Deals 2d8 damage to attackers when you lose HP",
             upgrades=[
                 Upgrade(
                     rank=4,
+                    # d4l
                     description="""
-                        The damage increases to 2d10+4.
+                        The damage increases to 1d10+2d6.
                     """,
-                    short_description="Deals 2d10+4 damage to attackers when you lose HP",
+                    short_description="Deals 1d10+2d6 damage to attackers when you lose HP",
                 ),
                 Upgrade(
                     rank=6,
+                    # d6l
                     description="""
-                        The damage increases to 4d10+7.
+                        The damage increases to 7d6.
                     """,
-                    short_description="Deals 4d10+7 damage to attackers when you lose HP",
+                    short_description="Deals 7d6 damage to attackers when you lose HP",
                 ),
             ],
         ),
@@ -169,34 +172,6 @@ def generate_armor():
 
     armor += [
         create_armor(
-            name="Shield of Bashing",
-            rank=2,
-            material_type="Shield",
-            description="""
-                As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this shield.
-            """,
-            short_description="Can attack with +4 damage",
-            upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The damage bonus increases to +8.
-                    """,
-                    short_description="Can attack with +8 damage",
-                ),
-                Upgrade(
-                    rank=6,
-                    description="""
-                        The damage bonus increases to +16.
-                    """,
-                    short_description="Can attack with +16 damage",
-                ),
-            ],
-        ),
-    ]
-
-    armor += [
-        create_armor(
             name="Covering Shield",
             rank=2,
             material_type="Shield",
@@ -258,14 +233,16 @@ def generate_armor():
             rank=4,
             material_type="Body armor",
             tags=["Attune (deep)"],
+            # d2
             description="""
-                Whenever an adjacent creature attacks you, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 2d8 energy damage.
+                Whenever an adjacent creature deals damage to you, make a \\glossterm<reactive attack> vs. Fortitude against them.
+                \\hit Each target takes 1d10+1d6 energy damage.
             """,
-            short_description="Deals 2d8 damage to adjacent attackers",
+            short_description="Deals 1d10+1d6 damage to adjacent attackers",
             upgrades=[
                 Upgrade(
                     rank=6,
+                    # d4
                     description="""
                         The damage increases to 4d8.
                     """,
@@ -459,21 +436,21 @@ def generate_armor():
             material_type="Body armor",
             description="""
                 You gain a +6 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-                However, you take a -2 penalty to your \\glossterm<power>.
+                However, you take a -2 penalty to your \\glossterm<power> with all abilities.
             """,
             short_description="Grants +6 damage resistance, but -2 power",
             upgrades = [
                 Upgrade(
                     rank=4,
                     description="""
-                        The damage resistance bonus increases to +12, but the power penalty increases to -4.
+                        The damage resistance bonus increases to +12, but the power penalty increases to -3.
                     """,
                     short_description="Grants +12 damage resistance, but -4 power",
                 ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The damage resistance bonus increases to +24, but the power penalty increases to -8.
+                        The damage resistance bonus increases to +24, but the power penalty increases to -4.
                     """,
                     short_description="Grants +24 damage resistance, but -8 power",
                 ),
@@ -618,27 +595,38 @@ def generate_armor():
         # -1r for immunity
         create_armor(
             name="Shield of Medusa",
-            rank=4,
+            rank=3,
             material_type="Shield",
             tags=["Visual"],
+            # d1 in t1 area with t2 debuff if lose HP is base rank 3
+            # Increase to t2 area to compensate for one-shot effect
             description="""
                 This shield normally has a cloth covering its face.
                 As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
-                When you do, make an attack vs. Fortitude against all creatures within a \\areasmall cone.
-                On a hit, each target takes 2d8+4 physical damage as its body turns to stone.
+                When you do, make an attack vs. Fortitude against all creatures within a \\medarea cone.
+                On a hit, each target takes 2d6 physical damage as its body turns to stone.
                 Each creature that loses \\glossterm<hit points> from this damage is \\slowed as a \\glossterm<condition>.
                 Whether you hit or miss, each creature who can see the face is immune to this ability until it takes a \\glossterm<short rest>.
 
                 If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
             """,
-            short_description="Can deal 2d8+4 damage and possibly slow nearby foes",
+            short_description="Can deal 2d6 damage and possibly slow nearby foes",
             upgrades=[
                 Upgrade(
-                    rank=7,
+                    rank=5,
+                    # d4
                     description="""
-                        The area increases to a \\largearea cone, and the damage increases to 4d8+10.
+                        The damage increases to 3d8.
                     """,
-                    short_description="Can deal 4d8+10 damage and possibly slow nearby foes",
+                    short_description="Can deal 3d8 damage and possibly slow nearby foes",
+                ),
+                Upgrade(
+                    rank=7,
+                    # d5
+                    description="""
+                        The damage increases to 6d6, and each damaged target is slowed regardless of whether it loses hit points.
+                    """,
+                    short_description="Can deal 6d6 damage and slow nearby foes",
                 ),
             ],
         ),
