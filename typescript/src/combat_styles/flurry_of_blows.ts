@@ -17,7 +17,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Twinstrike+',
 
       effect: `
-        Make two \\glossterm{strikes}.
+        Make two \\glossterm{strikes} with a -1 accuracy penalty.
       `,
       rank: 5,
     },
@@ -26,7 +26,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Triplestrike',
 
       effect: `
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} with a -1 accuracy penalty.
       `,
       rank: 7,
     },
