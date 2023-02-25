@@ -23,9 +23,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 3,
     hit_points: 5,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 5,
-    insight_points: 1,
+    insight_points: 0,
     class_skill_count: 4,
     proficiencies: "Light and medium armor, two weapon groups",
   },
@@ -35,9 +35,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 7,
     hit_points: 2,
-    attunement_points: 5,
+    attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 3,
+    insight_points: 2,
     class_skill_count: 4,
     proficiencies: "Light and medium armor",
   },
@@ -47,9 +47,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 4,
     mental: 6,
     hit_points: 2,
-    attunement_points: 5,
+    attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 3,
+    insight_points: 2,
     class_skill_count: 5,
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
   },
@@ -59,9 +59,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 3,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 4,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
   },
@@ -71,9 +71,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 7,
     mental: 5,
     hit_points: 2,
-    attunement_points: 5,
+    attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 6,
     proficiencies: "Light armor, monk weapons",
   },
@@ -83,9 +83,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 6,
     hit_points: 3,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 4,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
   },
@@ -95,9 +95,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 6,
     mental: 4,
     hit_points: 3,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 4,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 5,
     proficiencies:
       "Light armor, hide armor, one weapon group, and one ranged weapon group",
@@ -108,9 +108,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 7,
     mental: 5,
     hit_points: 1,
-    attunement_points: 5,
+    attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 3,
+    insight_points: 2,
     class_skill_count: 7,
     proficiencies: "Light armor, one weapon group, and saps",
   },
@@ -120,9 +120,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 7,
     hit_points: 0,
-    attunement_points: 6,
+    attunement_points: 4,
     fatigue_tolerance: 3,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "None",
   },
@@ -132,9 +132,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 7,
     hit_points: 2,
-    attunement_points: 5,
+    attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 4,
     proficiencies: "Light armor",
   },
@@ -144,9 +144,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 7,
     hit_points: 0,
-    attunement_points: 6,
+    attunement_points: 4,
     fatigue_tolerance: 2,
-    insight_points: 4,
+    insight_points: 3,
     class_skill_count: 5,
     proficiencies: "None",
   },
@@ -156,9 +156,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 4,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 5,
-    insight_points: 2,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "Light and medium armor",
   },
@@ -168,9 +168,9 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 5,
-    attunement_points: 4,
+    attunement_points: 2,
     fatigue_tolerance: 6,
-    insight_points: 1,
+    insight_points: 0,
     class_skill_count: 4,
     proficiencies: "Light armor",
   },
@@ -918,7 +918,7 @@ function handleAttunementPoints() {
     },
     (v) => {
       let fromLevel = 0;
-      if (v.level >= 11) {
+      if (v.level >= 8) {
         fromLevel = 2;
       } else if (v.level >= 5) {
         fromLevel = 1;
@@ -1593,12 +1593,19 @@ function handleInsightPoints() {
       numeric: ["intelligence"],
     },
     (v) => {
-      const totalValue = Math.max(0, v.intelligence + v.misc);
+      let fromLevel = 0;
+      if (v.level >= 7) {
+        fromLevel = 2;
+      } else if (v.level >= 4) {
+        fromLevel = 1;
+      }
+      const totalValue = Math.max(0, v.intelligence + v.misc + fromLevel);
       setAttrs({
         insight_points: totalValue,
         insight_points_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [{ name: "Int", value: v.intelligence }]
+          [{ name: "level", value: fromLevel }]
         ),
       });
     }
@@ -1726,7 +1733,7 @@ function handleMagicalPower() {
         magical_power: totalValue,
         magical_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
-            name: `half lvl`,
+            name: `half level`,
             value: Math.floor(v.level / 2),
           },
           {
@@ -1756,7 +1763,7 @@ function handleMundanePower() {
         mundane_power: totalValue,
         mundane_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
-            name: `half lvl`,
+            name: `half level`,
             value: Math.floor(v.level / 2),
           },
           {
