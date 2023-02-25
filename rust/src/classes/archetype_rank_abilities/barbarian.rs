@@ -85,7 +85,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Strike}
                     \rankline
                     Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
-                    Regardless of whether you hit or miss, you can choose to regain \glossterm{damage resistance} equal to your normal damage with the strike.
+                    Regardless of whether you hit or miss, you can choose to regain \glossterm{damage resistance} equal to the damage you would deal with a normal hit from the strike.
+                    This recovery is rolled separately from the strike's actual damage.
                     If you do, you increase your \glossterm{fatigue level} by one.
 
                     \rankline
