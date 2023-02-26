@@ -150,10 +150,20 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike',
 
       effect: `
-        Make a \\glossterm{weak strike} using a piercing weapon.
-        Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Make a melee \\glossterm{weak strike} using a piercing weapon.
+        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
+    },
+
+    {
+      name: 'Groundspike+',
+
+      effect: `
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a piercing weapon.
+        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
+      `,
+      rank: 7,
     },
 
     {

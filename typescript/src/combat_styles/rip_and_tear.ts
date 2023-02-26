@@ -9,10 +9,10 @@ export const ripAndTear: CombatStyle = {
       name: 'Strip the Flesh',
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -49,30 +49,30 @@ export const ripAndTear: CombatStyle = {
       name: 'Blinding Brow Gash',
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
       name: 'Hamstring',
 
       effect: `
-        Make a \\glossterm{weak strike} using a slashing weapon.
+        Make a melee \\glossterm{weak strike} using a slashing weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
       name: 'Hamstring+',
 
       effect: `
-        Make a \\glossterm{strike} with a +2 accuracy bonus using a slashing weapon.
-        Each creature damaged by the strike is \\slowed as a conditiion if your attack result beats its Reflex defense.
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
+        Each creature damaged by the strike is \\slowed as a condition.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {

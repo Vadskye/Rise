@@ -157,10 +157,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenging Strike',
 
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a \\glossterm{strike}.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 3,
+      rank: 5,
     },
 
     {
