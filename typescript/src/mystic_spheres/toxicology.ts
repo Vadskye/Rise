@@ -48,7 +48,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything adjacent to you.
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
         `,
       },
       rank: 3,
@@ -66,7 +66,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything adjacent to you.
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
         `,
       },
       rank: 6,
@@ -439,7 +439,7 @@ export const toxicology: MysticSphere = {
       name: 'Healing Salve',
 
       effect: `
-        Choose yourself or an adjacent living \\glossterm{ally}.
+        Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
         % d1
         The target regains 1d6 \\glossterm{hit points} +1d per 2 power and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Fortitude defense this round.
@@ -465,7 +465,7 @@ export const toxicology: MysticSphere = {
       name: 'Cleansing Draught',
 
       effect: `
-        You or an adjacent \\glossterm{ally} can remove a \\glossterm{condition}.
+        You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
       `,
       rank: 4,
     },

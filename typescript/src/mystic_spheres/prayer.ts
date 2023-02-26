@@ -8,25 +8,23 @@ export const prayer: MysticSphere = {
   cantrips: [
     {
       effect: `
-        Choose one adjacent \\glossterm{ally}.
-        The target gains a +1 bonus to \\glossterm{accuracy} this round.
+        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{accuracy} this round.
       `,
       name: 'Boon of Competence',
       scaling: {
-        2: 'The range increases to \\shortrange.',
+        2: 'The target can be any ally within \\shortrange.',
         4: 'The bonus increases to +2.',
         6: 'The range increases to \\medrange.',
       },
     },
     {
       effect: `
-        Choose one adjacent \\glossterm{ally}.
-        The target gains a +1 bonus to \\glossterm{defenses} this round.
+        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{defenses} this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       name: 'Boon of Protection',
       scaling: {
-        2: 'The range increases to \\shortrange.',
+        2: 'The target can be any ally within \\shortrange.',
         4: 'The bonus increases to +2.',
         6: 'The range increases to \\medrange.',
       },

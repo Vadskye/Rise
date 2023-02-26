@@ -247,7 +247,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{lay on hands} ability as a standard action.
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
-                    Choose yourself or an adjacent living \glossterm{ally}.
+                    Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
                     The target regains 1d6 \glossterm{hit points} +1d per 2 power.
                     In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
 

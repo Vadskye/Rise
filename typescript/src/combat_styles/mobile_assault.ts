@@ -162,7 +162,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Vault Over',
 
       effect: `
-        Make an attack vs. Reflex against one creature adjacent to you that is no more than one size category larger than you.
+        Make an attack vs. Reflex against one creature you \\glossterm{touch} that is no more than one size category larger than you.
         Your \\glossterm{accuracy} with this attack is equal to your Jump skill.
         If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
