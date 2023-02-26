@@ -181,7 +181,7 @@ export const aeromancy: MysticSphere = {
       // treat as r2, halfway between 15' and 30'
       attack: {
         hit: `
-          If the target is Medium or smaller, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is Medium or smaller, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
           This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -196,7 +196,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is Large or smaller, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is Large or smaller, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
           This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
