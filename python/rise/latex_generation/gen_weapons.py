@@ -27,7 +27,7 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Blade Flurry",
+            name="Blade Barrage",
             rank=3,
             # tags=[tag],
             description="""
