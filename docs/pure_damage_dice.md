@@ -354,15 +354,15 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, T0.5 condition if damaged and beat extra defense
     * Strike, T1 condition if lose HP
     * Strike, T1.5 condition if lose HP and beat extra defense
-    * Weak strike, T1 condition if damaged
-    * Weak strike, T1.5 condition if damaged and beat extra defense
-    * Weak strike, T2 condition if lose HP
+    * Weak strike, T1 condition if damaged and beat extra defense
+    * Weak strike, T1.5 condition if lose HP
 * R3
   * Damage
     * Strike against Fort/Ref
     * dr3 vs all adjacent
     * Strike in small cone
     * Thrown strike vs 3 in Small radius in Short range
+    * Strike, deal same damage next round if beat extra defense (143%/138%)
     * Strike, 1d6 extra damage per 4 power (minimum 1d6) if beat extra defense
       * At R4, 1d6/2d6 extra damage and +1 accuracy from scaling: (6.6/11.2) vs (6/9.6) post-accuracy
       * At R7, 2d6/4d6 extra damage and +4 accuracy from scaling: (15.2/26.5) vs (16.8/26.9) post-accuracy
@@ -370,29 +370,31 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike with extra weapon tag
     * Strike, -2 accuracy, double weapon damage
   * Debuffs
-    * Weak strike, T2 condition if damaged and beat extra defense
+    * Weak strike, T1.5 condition if damaged and beat extra defense
+    * Weak strike, T2 condition if lose HP
+    * Strike, T1.5 condition if lose HP
     * Strike, T1 condition if damaged and beat extra defense
     * Strike, T0.5 condition if damaged
 * R5
   * Damage
     * Strike, deal same damage next round
     * Strike, double weapon damage, minor upside
-    * Two strikes
+    * Two strikes, -1 accuracy
   * Debuffs
-    * Strike, T1.5 condition if damaged and beat extra defense
     * Strike, push with full move if damaged
-    * Strike with +2 accuracy, T2 condition if damaged and beat extra defense
-    * Strike, T2 condition if damaged
-    * Strike, T3 condition if lose HP
+    * Strike, T2 condition if damaged and beat extra defense
+    * Strike, T3 condition if lose HP and beat extra defense
 * R7
   * Damage
+    * Three strikes, -1 accuracy
     * dr7 vs adjacent enemies
     * Strike in large cone with +2d6??
     * Strike, triple weapon damage, minor downside?
     * Strike, 1d8 per 2 power extra damage if beat extra defense
       * +5d8/9d8
   * Debuffs
-    * Strike, T3 condition if damaged and beat extra defense
+    * Strike, double weapon damage, T2 condition if damaged
+    * Strike, double weapon damage, T3 condition if lose HP
 
 ## Heavy Weapons
 
@@ -766,6 +768,14 @@ R3 spell with +1 accuracy per rank
 * R6: 9.7/15 (80%/78%)
 * R7: 12/18.8 (71%/70%)
 
+## Magic item bonuses
+
+At rank 3, a +1d weapon provides (120%/113%) damage.
+At rank 6, a +2d weapon provides (127%/118%) damage.
+
+At rank 4, a +1d4 staff provides (125%/116%) damage.
+At rank 6, a +1d8 staff provides (123%/114%) damage.
+
 ## Impact/Keen
 The simple baseline for a weapon improvement is about 17% more damage (0.6 accuracy -> 0.7 accuracy).
 
@@ -788,4 +798,3 @@ Impact is 70-80% more damage depending on whether the damage is primarily d6 or 
 If it's 70% more damage, total damage per round is (0.9 * 1) + (0.1 * 2 * 1.7) = 1.24x weapon damage.
 
 In a baseline scenario of 0.65x weapon damage per round, Impact increases the 5% crit chance to 3.4x normal damage instead of 2x normal damage, so about 0.72 wdpr.
-
