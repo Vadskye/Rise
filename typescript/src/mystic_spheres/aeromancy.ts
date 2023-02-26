@@ -96,7 +96,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You \\glossterm{knockback} the target up to 60 feet in any direction.
+        You \\glossterm{knockback} the target up to 60 feet in any direction, to a maximum of a 60 foot \\glossterm{height limit}.
         You cannot change the direction of the movement partway through.
         Moving the target upwards costs twice the normal movement cost.
       `,
