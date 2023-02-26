@@ -198,7 +198,7 @@ export const umbramancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make a melee attack vs. Reflex against anything adjacent to you.
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
           You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
