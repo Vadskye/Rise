@@ -329,6 +329,21 @@ export const chronomancy: MysticSphere = {
     },
 
     {
+      name: 'Efficient Time Lock -- Location',
+
+      functionsLike: {
+        name: 'time lock -- location',
+        exceptThat: `
+          the target attunes to the effect, so you don't have to sustain it.
+          When you cast this spell, you can choose whether the lock unseals automatically when the target ends its attunement.
+          If you do, you can still \\glossterm{dismiss} the effect to end it without unsealing the lock.
+        `,
+      },
+      rank: 5,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Time Lock -- Health',
 
       effect: `
