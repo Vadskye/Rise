@@ -213,7 +213,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Fearsome Pounce+',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike}.
+        Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
         Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,

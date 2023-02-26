@@ -216,9 +216,9 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Static Strike+',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each creature damaged by the strike is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -226,7 +226,8 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Disorienting Flurry',
 
-      // reroll is about +3 ranks, half damage is about +4 ranks, call it a wash
+      // reroll is about +2 ranks, weak strike dazed would normally be r1, this is
+      // probably strong but maybe okay?
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
@@ -238,9 +239,10 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Disorienting Flurry+',
 
-      // reroll is about +3 ranks, half damage is about +4 ranks, call it a wash
+      // reroll is about +2 ranks, strike stunned would normally be r5, this is
+      // probably strong but maybe okay?
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         You may reroll the accuracy roll and take the highest result.
         Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
@@ -252,6 +254,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,

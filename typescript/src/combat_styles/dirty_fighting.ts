@@ -8,7 +8,7 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Dazing Fist',
 
-      // -2 ranks due to unarmed limitation
+      // -2 ranks / non-weak due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
@@ -24,7 +24,7 @@ export const dirtyFighting: CombatStyle = {
         Make a \\glossterm{weak strike} using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
@@ -214,10 +214,10 @@ export const dirtyFighting: CombatStyle = {
       name: 'Anklesprainer',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
+        Make a melee \\glossterm{strike}.
         Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 3,
+      rank: 5,
     },
 
     {
@@ -255,9 +255,9 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\blinded as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
