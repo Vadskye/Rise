@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
+  hasImage: true,
   shortDescription: 'Create objects to damage and impair foes.',
   sources: ['arcane', 'divine', 'pact'],
 

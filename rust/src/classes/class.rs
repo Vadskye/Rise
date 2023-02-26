@@ -1391,6 +1391,7 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
+                        % intentionally adjacent rather than touch
                         \parhead{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
                         Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
                         You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
@@ -1438,6 +1439,7 @@ impl Class {
                         In addition, you become immune to fire damage.
 
                     \subsubsection{Good Domain}
+                        % intentionally adjacent rather than touch
                         \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
@@ -1521,6 +1523,7 @@ impl Class {
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
+                            % Intentionally adjacent rather than touch
                             Choose an \glossterm{ally} adjacent to you.
                             It gains a \plus1 bonus to all defenses this round.
 
