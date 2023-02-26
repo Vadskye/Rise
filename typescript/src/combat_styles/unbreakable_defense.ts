@@ -250,7 +250,7 @@ export const unbreakableDefense: CombatStyle = {
         Make a melee \\glossterm{weak strike}.
         Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
-      rank: 1,
+      rank: 3,
       tags: ['Emotion'],
     },
 
@@ -258,10 +258,10 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Covering Strike+',
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
       tags: ['Emotion'],
     },
   ],

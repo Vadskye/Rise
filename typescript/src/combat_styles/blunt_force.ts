@@ -103,7 +103,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\vulnerable to bludgeoning damage as a \\glossterm{condition}.
+        Each creature that loses \\glossterm{hit points} from the strike is \\vulnerable to all damage as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -115,17 +115,17 @@ export const bluntForce: CombatStyle = {
         Make a \\glossterm{weak strike} using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
       name: 'Headshot+',
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a bludgeoning weapon.
         Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -263,7 +263,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{weak strike} using a bludgeoning weapon.
-        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition}.
+        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -273,7 +273,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition}.
+        Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
