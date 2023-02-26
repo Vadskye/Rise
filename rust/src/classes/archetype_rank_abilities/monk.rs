@@ -263,7 +263,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You can channel your ki to temporarily enhance your abilities.
                 Choose two \textit{ki manifestations} from the list below.
@@ -279,9 +279,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
 
                         \rankline
-                        \rank{3} You can negate any number of conditions instead of only one condition.
-                        \rank{5} The defense penalty is reduced to \minus1.
-                        \rank{7} The defense penalty is removed.
+                        \rank{4} The defense penalty is reduced to \minus1.
+                        \rank{6} The defense penalty is removed.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Burst of Blinding Speed}
@@ -290,9 +289,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus10 foot bonus to your land speed this phase.
 
                         \rankline
-                        \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
-                        \rank{5} The speed bonus increases to \plus20 feet.
-                        \rank{7} You can also move or stand on liquids as if they were solid this phase.
+                        \rank{4} You can also ignore \glossterm{difficult terrain} this phase.
+                        \rank{6} The speed bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Calm the Inner Tempest}
@@ -301,9 +299,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}
@@ -312,9 +309,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
-                        \rank{3} You can attack enemies up to 15 feet away from you.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} You can attack enemies up to 20 feet away from you.
+                        \rank{4} You can attack enemies up to 15 feet away from you.
+                        \rank{6} You can attack enemies up to 20 feet away from you.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flash Step}
@@ -328,10 +324,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
 
                         \rankline
-                        \rank{3} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                        \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
-                        \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
-                        If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
+                        \rank{4} The movement cost to teleport is reduced to be equal to the distance you teleport.
+                        \rank{6} You can use this ability to move even if you are \immobilized or \grappled.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}
@@ -341,9 +335,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
 
                         \rankline
-                        \rank{3} You also gain a +1 \glossterm{accuracy} bonus with strikes.
-                        \rank{5} The accuracy bonus increases to +2.
-                        \rank{7} The accuracy bonus increases to +3.
+                        \rank{4} You also gain a +1 \glossterm{accuracy} bonus with strikes.
+                        \rank{6} The accuracy bonus increases to +2.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}
@@ -352,9 +345,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}
@@ -363,9 +355,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
 
                         \rankline
-                        \rank{3} You also gain +1d4 extra damage with strikes.
-                        \rank{5} The extra damage increases to +1d6.
-                        \rank{7} The extra damage increases to +1d10.
+                        \rank{4} You also gain +1d4 extra damage with strikes.
+                        \rank{6} The extra damage increases to +1d6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Leap of the Heavens}
@@ -374,9 +365,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}
@@ -385,9 +375,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Scale the Highest Tower}
@@ -397,20 +386,19 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         % TODO: is this wording correct?
 
                         \rankline
-                        \rank{3} The Climb bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The Climb bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a +2 bonus to your defenses against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
+                        You gain a +2 bonus to your defenses against ranged \glossterm{strikes}.
+                        However, you take a -2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
-                        \rank{3} The bonus increases to +3.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to +4.
+                        \rank{4} The bonus increases to +3.
+                        \rank{6} The bonus increases to +4.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
@@ -420,9 +408,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, your attacks also have a 20\% failure chance this round.
 
                         \rankline
-                        \rank{3} The failure chance for attacks against you increases to 25\%.
-                        \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
-                        \rank{7} The failure chance for attacks against you increases to 30\%.
+                        \rank{4} The failure chance for attacks against you increases to 25\%.
+                        \rank{6} The failure chance for attacks against you increases to 30\%.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Thread the Eye of the Storm}
@@ -431,9 +418,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
 
                         \rankline
-                        \rank{3} The penalty reduction increases to 2.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The penalty reduction increases to 3.
+                        \rank{4} The penalty reduction increases to 2.
+                        \rank{6} The penalty reduction increases to 3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
@@ -443,9 +429,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
 
                         \rankline
-                        \rank{3} You also gain a \plus2 bonus to those checks while this effect lasts.
-                        \rank{5} The effect lasts until the end of the current round.
-                        \rank{7} The penalty is removed.
+                        \rank{4} You also gain a \plus2 bonus to those checks while this effect lasts.
+                        \rank{6} The penalty during the next round is removed.
                     \end{magicalactiveability}
 
                     % TODO: add more
@@ -463,6 +448,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
                 If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
                 Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
+                You can still use \glossterm{maneuvers} that require specific damage types, as long as you meet the requirements before this damage type conversion.
             ",
             // TODO: use higher of Str/Wil for strikes
             modifiers: None,
@@ -470,7 +456,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
                 This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
