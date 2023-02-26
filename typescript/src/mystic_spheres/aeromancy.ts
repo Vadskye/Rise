@@ -417,7 +417,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You create a cloud of dust in a \\medarea radius \\glossterm{zone} within \\medrange from you.
-        The cloud provides has \\glossterm{concealment} for everything in the area.
+        The cloud provides \\glossterm{concealment} for everything in the area.
       `,
       // narrative: '',
       rank: 2,
