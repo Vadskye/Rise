@@ -171,7 +171,7 @@ export const ebbAndFlow: CombatStyle = {
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
-        It lasts until you take a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
+        It lasts until you finish a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
       `,
       rank: 3,
     },

@@ -40,7 +40,7 @@ passives = {
     "ichor healing": lambda creature: passive_ability(
         "Ichor Healing",
         f"""
-        The {creature.name.lower()} removes all \\glossterm<vital wounds> when it takes a \\glossterm<short rest>.
+        The {creature.name.lower()} removes all \\glossterm<vital wounds> when it finishes a \\glossterm<short rest>.
     """,
     ),
     "soft flesh": lambda creature: passive_ability(
@@ -69,7 +69,7 @@ passives = {
 
         A hydra cannot sustain too many excess heads for a prolonged period of time.
         At the end of each round, if the hydra has more heads than twice its normal head count, it loses a \\glossterm<hit point>.
-        If the hydra takes a \\glossterm<long rest>, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+        If the hydra finishes a \\glossterm<long rest>, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
     """,
     ),
 }
@@ -476,7 +476,7 @@ def humanoids(sample_monsters):
                     "Hurt Less",
                     f"""
                 One \\glossterm<ally> in \\rngmed range regains 2 \\glossterm<hit points>.
-                That creature is unaffected by any additional uses of this ability until the shaman takes a \\glossterm<short rest>.
+                That creature is unaffected by any additional uses of this ability until the shaman finishes a \\glossterm<short rest>.
             """,
                 ),
             ],
@@ -975,7 +975,7 @@ def outsiders(sample_monsters):
                     "Angel's Grace",
                     f"""
                 One \\glossterm<ally> within reach regains two \\glossterm<hit points>.
-                That creature is unaffected by any additional uses of this ability until the angel takes a \\glossterm<short rest>.
+                That creature is unaffected by any additional uses of this ability until the angel finishes a \\glossterm<short rest>.
             """,
                 ),
             ],

@@ -287,7 +287,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
@@ -373,7 +373,7 @@ export const channelDivinity: MysticSphere = {
           The target takes \\damageranktwo{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to being teleported in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

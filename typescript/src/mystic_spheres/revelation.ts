@@ -963,5 +963,35 @@ export const revelation: MysticSphere = {
         `,
       rank: 3,
     },
+    {
+      name: 'Find the Path',
+
+      castingTime: '1 hour',
+      effect: `
+        When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
+        You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
+        You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
+
+        The guidance provided by this ability adjusts to match the current physical capabilities of each ritual participant, including flight and other unusual movement modes.
+        It does not consider teleportation spells or any other active abilities which could allow the creatures to bypass physical obstacles.
+        It does not see into the future, and changing circumstances may cause the most direct path to change over time.
+        It also does not consider hostile creatures, traps, and other passable dangers which may endanger or slow progress.
+      `,
+      rank: 4,
+      tags: ['Attune'],
+    },
+    {
+      name: 'Efficient Find the Path',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        exceptThat: `
+          the casting time is shorter, and the ritual is much less exhausting.
+        `,
+        name: 'find the path',
+      },
+      rank: 6,
+      tags: ['Attune'],
+    },
   ],
 };

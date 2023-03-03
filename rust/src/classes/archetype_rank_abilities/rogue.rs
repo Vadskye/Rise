@@ -208,7 +208,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit Each target takes \damagerankone{bludgeoning}.
-                        \\miss \\glossterm{Glancing blow}.
+                        \miss \glossterm{Glancing blow}.
 
                         \rankline
                         \rank{2} The area increases to a \smallarea radius.
@@ -826,7 +826,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     In addition, choose a location on stable ground within range.
                     \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
                     This effect automatically ends if the target takes any damage.
-                    After this effect ends, the target becomes immune to it until it takes a \glossterm{short rest}.
+                    After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
                     \rank{6} You can target an additional creature within range.
@@ -855,7 +855,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     Your \glossterm{accuracy} is equal to your Deception skill.
                     \hit The target is \glossterm{briefly} convinced that nothing is real.
                     It is unable to take any actions and is \unaware of all attacks against it.
-                    After this effect ends, the target becomes immune to it until it takes a \glossterm{short rest}.
+                    After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
                 \end{activeability}
             ",
             modifiers: None,

@@ -1938,32 +1938,23 @@ def generate_apparel():
             description="""
                 Whenever you make a Jump check, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                In addition, you double your maximum vertical height from the jump, and you can land in midair at any point during your jump this round.
+                In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
                 You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
-                These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
+                These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
             """,
             short_description="Can exert to briefly levitate in midair",
-        ),
-        create_apparel(
-            name="Boots of Levitation, Greater",
-            rank=4,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
-            """,
-            short_description="Can briefly levitate in midair",
-        ),
-        create_apparel(
-            name="Boots of Levitation, Supreme",
-            rank=6,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
-                In addition, you can activate them twice before you land on a solid surface capable of supporting your weight.
-            """,
-            short_description="Can briefly levitate twice in midair",
+            upgrades=[
+                Upgrade(
+                    description="You can activate the boots twice before landing.",
+                    rank=4,
+                    short_description="Can exert to briefly levitate in midair twice",
+                ),
+                Upgrade(
+                    description="You also do not increase your fatigue level when you activate the boots.",
+                    rank=7,
+                    short_description="Can briefly levitate in midair twice",
+                ),
+            ],
         ),
     ]
 
@@ -2270,7 +2261,7 @@ def generate_apparel():
                 As a standard action, you can activate this gauntlet using a \\glossterm<free hand>.
                 When you do, make an attack vs. Reflex and Fortitude against a living creature you \\glossterm<touch>.
                 On a hit, if the target has no remaining \\glossterm<damage resistance>, it becomes \\paralyzed as a \\glossterm<condition>.
-                Whether the attack hits or misses, the target is immune to this ability until it takes a \\glossterm<short rest>.
+                Whether the attack hits or misses, the target is immune to this ability until it finishes a \\glossterm<short rest>.
             """,
             short_description="Grants a paralyzing touch",
         ),

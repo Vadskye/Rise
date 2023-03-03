@@ -34,7 +34,7 @@ export const enchantment: MysticSphere = {
           If it is unable to take the same action, it unable to take any action of that action type.
           For example, if a creature moved during the round that you cast this spell and was \\immobilized or knocked \\prone, it cannot move at all during the following round.
 
-          After the target stops repeating its actions, it becomes immune to this effect until it takes a \\glossterm{short rest}.
+          After the target stops repeating its actions, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -215,7 +215,7 @@ export const enchantment: MysticSphere = {
         crit: 'The target does not become immune to this effect.',
         hit: `
           The target is compelled to spend its next \\glossterm{standard action} doing nothing at all.
-          After it takes this standard action, it becomes \\trait{immune} to this effect until it takes a \\glossterm{short rest}.
+          After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -238,7 +238,7 @@ export const enchantment: MysticSphere = {
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
-          After it makes this attack against itself, it becomes \\trait{immune} to this effect until it takes a \\glossterm{short rest}.
+          After it makes this attack against itself, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -327,7 +327,7 @@ export const enchantment: MysticSphere = {
         hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
@@ -344,7 +344,7 @@ export const enchantment: MysticSphere = {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 7,
@@ -483,7 +483,7 @@ export const enchantment: MysticSphere = {
           It still avoids obvious environmental hazards, such as cliff edges or fires.
           If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
 
-          After this effect ends, the target becomes immune to it until it takes a \\glossterm{short rest}.
+          After this effect ends, the target becomes immune to it until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
         Make an attack vs. Mental against one creature within \\shortrange.
@@ -536,7 +536,7 @@ export const enchantment: MysticSphere = {
         // No relevant glance effect
         hit: `The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
         It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
-        After this effect ends, the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -658,7 +658,7 @@ export const enchantment: MysticSphere = {
       castingTime: '24 hours',
       attack: {
         crit: `The creature is \\panicked instead of frightened.`,
-        hit: `The creature is \\frightened by the chosen object until it takes a \\glossterm{short rest}.`,
+        hit: `The creature is \\frightened by the chosen object until it finishes a \\glossterm{short rest}.`,
         targeting: `
         Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
         In addition, choose one Large or smaller object within \\medrange.
@@ -667,7 +667,7 @@ export const enchantment: MysticSphere = {
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make a \\glossterm{reactive attack} vs. Mental against it.
         Your accuracy with this attack is equal to half your level \\add half your Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
+        After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
         `,
       },
 
@@ -682,7 +682,7 @@ export const enchantment: MysticSphere = {
       castingTime: '24 hours',
       attack: {
         crit: `The creature is also compelled to get as close as possible to the chosen object to admire it in greater detail.`,
-        hit: `The creature is fascinated by the chosen object until it takes a \\glossterm{short rest}.
+        hit: `The creature is fascinated by the chosen object until it finishes a \\glossterm{short rest}.
         It can take no actions other than staring at the object.
         It is \\unaware of any attacks against it, and anything else going on its environment.
         Any act by you or by creatures that appear to be your allies that threatens or harms the creature breaks the effect.
@@ -696,7 +696,7 @@ export const enchantment: MysticSphere = {
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make a \\glossterm{reactive attack} vs. Mental against it.
         Your accuracy with this attack is equal to half your level \\add half your Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        After you make this attack against a particular creature, you do not make this attack against it again until it takes a \\glossterm{short rest}.
+        After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 4,

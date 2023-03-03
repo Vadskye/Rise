@@ -429,7 +429,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
                 When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
 
                 Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose whether to absorb the new spell or retain your currently absorbed spell.
-                When you take a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
+                When you finish a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
 
             ",
             modifiers: None,
@@ -539,7 +539,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         2 & All damage dealt by the spell is considered to be all damage types \\
                         3 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
                         4 & When you attack with the spell this round, you roll twice and take the higher result \\
-                        5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target takes a \glossterm{short rest} \\
+                        5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target finishes a \glossterm{short rest} \\
                         6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
                         7 & The spell's area is tripled this round \\
                         8 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \stunned \\

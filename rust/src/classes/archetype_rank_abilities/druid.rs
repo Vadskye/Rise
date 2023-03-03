@@ -506,7 +506,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
                         \rank{5} The healing from this wild aspect increases to be equal to your \glossterm{power}.
-                        \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
+                        \rank{7} When you finish a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{magicalactiveability}
 
@@ -643,9 +643,9 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                        \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement}).
+                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your your level (see \tref{Character Advancement}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level \\add half your Perception.
+                        \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
                         \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
@@ -733,7 +733,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 You and your \glossterm{allies} within a \hugearea radius \glossterm{emanation} from you are under nature's protection.
                 Animals will not willingly attack protected creatures, and will automatically attempt to help if the protected creatures are in mortal danger.
                 For example, if you are attacked while in a forest, nearby birds might start harassing your foes, at the GM's discretion.
-                If any protected target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{long rest}.
+                If any protected target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you finish a \glossterm{long rest}.
             ",
             modifiers: None,
         },

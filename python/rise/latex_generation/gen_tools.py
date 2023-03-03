@@ -107,7 +107,7 @@ def generate_tools():
             tags=[],
             description="""
                 When you drink this \\glossterm<potion>, your body's natural healing process is accelerated.
-                The next time you take a \\glossterm<long rest>, you can remove an additional \\glossterm<vital wound>.
+                The next time you finish a \\glossterm<long rest>, you can remove an additional \\glossterm<vital wound>.
                 If you drink multiple potions of regeneration, their effects do not stack.
             """,
             short_description="Remove vital wound after long rest",
