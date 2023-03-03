@@ -112,13 +112,14 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
     Generally, creatures only have to roll Balance checks if the surface is unsteady for some reason.
 
     \subsection{Common Balance Tasks}
-        \parhead{Agile Charge}\label{Agile Charge} You can make a \glossterm{difficulty value} 15 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
+        \parhead{Agile Charge}\label{Agile Charge} You can make a \glossterm{difficulty value} 10 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
         Success means you can make a single turn of up to 90 degrees during the movement.
         \parhead{Maintain Balance} If you take physical damage while on an unsteady surface, you must make a Balance \glossterm{reactive check} based on the surface.
         Failure means that you fall \prone.
         You only need to make this check once per round, even if you take damage from more than one source.
-        \parhead{Rapid Stand}\label{Rapid Stand} You make a \glossterm{difficulty value} 15 Balance check as a \glossterm{free action} to stand up from a prone position.
-        Success means you stand up.
+        \parhead{Rapid Stand}\label{Rapid Stand} You make a \glossterm{difficulty value} 15 Balance check as a \glossterm{movement} to stand up from a prone position.
+        Success means that you stand up so quickly that you can immediately make another movement.
+        Failure simply means that you stand up.
         \parhead{Walk While Balancing} When you move using your \glossterm{land speed} on an unsteady surface, you must make an Balance check based on the surface.
         If you choose to move at half speed, you gain a \plus5 bonus to the check.
         Success means you move along the surface.
@@ -452,8 +453,14 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
     \subsection{Common Jump Tasks}
         \parhead{Leap} As part of movement, you can make a Jump check to leap into the air.
-        Your maximum height is equal to half of your Jump check result, and your maximum forward distance is equal to your Jump check result.
+        Choose a destination square where your jump ends.
+        The jump's maximum height is equal to half of your Jump check result, and its maximum forward distance is equal to your Jump check result.
         If you have a running start of at least ten feet before jumping, you can add a quarter of your land sped to your maximum horizontal jump distance.
+
+        If your destination square is in midair, you begin falling at the end of the round.
+        This allows you to jump during the movement phase and act in midair during the action phase.
+        Narratively, this represents you timing your jump so you can take a useful action while jumping.
+        You don't just hover in midair.
         \parhead{Mitigate Fall} As you hit the ground after a fall, you can make an Jump check to reduce falling damage.
         A \glossterm{difficulty value} 5 check allows you to treat a fall as if it were 10 feet shorter.
         For every 5 points by which you beat that \glossterm{difficulty value}, you can reduce the falling damage by 10 additional feet.
@@ -596,7 +603,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
         \parhead{Performance Time}
         In general, you can maintain a performance for up to an hour.
-        After that time, you must take a \glossterm{short rest} before performing again.
+        After that time, you must finish a \glossterm{short rest} before performing again.
 
     \subsection{Common Perform Tasks}
         \parhead{Distract} If you succeed at an opposed Perform vs. Social Insight check, you can distract a creature observing your performance.
