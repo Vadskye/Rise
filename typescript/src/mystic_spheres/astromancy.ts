@@ -130,7 +130,7 @@ export const astromancy: MysticSphere = {
           The target takes \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
-          After it returns, it becomes immune to flickering in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -289,7 +289,7 @@ export const astromancy: MysticSphere = {
           Each target takes \\damagerankfour{energy}.
           Each creature that loses \\glossterm{hit points} from this damage \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
-          After it returns, it becomes immune to flickering in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
         missGlance: true,
         targeting: `

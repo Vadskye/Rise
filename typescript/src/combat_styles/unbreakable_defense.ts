@@ -106,7 +106,7 @@ export const unbreakableDefense: CombatStyle = {
         When you use this ability, you increase your \\glossterm{fatigue level} by two.
 
         You regain all of your hit points.
-        After you use this ability, you cannot use it again until you take a \\glossterm{short rest}.
+        After you use this ability, you cannot use it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
       tags: ['Swift'],

@@ -386,7 +386,7 @@ export const chronomancy: MysticSphere = {
         You are still vulnerable to danger, such as from heat or dangerous gases.
         However, you cannot be detected by any means while you travel.
 
-        After you cast this spell, you cannot cast it again until you take a \\glossterm{short rest}.
+        After you cast this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 7,
     },
@@ -414,7 +414,7 @@ export const chronomancy: MysticSphere = {
         In addition, you can release the time freeze as a \\glossterm{free action}.
         When this spell ends, time resumes in the same phase that it was originally frozen.
 
-        After casting this spell, you cannot cast it again until you take a \\glossterm{short rest}.
+        After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
     },
@@ -431,7 +431,7 @@ export const chronomancy: MysticSphere = {
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After it returns to normal, it becomes immune to being frozen in time in this way until it takes a \\glossterm{short rest}.
+          After it returns to normal, it becomes immune to being frozen in time in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

@@ -127,7 +127,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
                     \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
-                    Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
+                    Once this effect ends, the creature becomes immune to this effect until it finishes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
                     \rankline
@@ -382,7 +382,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
                     Choose one intact corpse you \glossterm{touch}.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
-                    After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+                    After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                 \end{magicalactiveability}
             ",
             modifiers: None,

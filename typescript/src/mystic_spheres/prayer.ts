@@ -378,7 +378,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\dazed until it takes a \\glossterm{short rest}.
+          The target is \\dazed until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -394,7 +394,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\stunned until it takes a \\glossterm{short rest}.
+          The target is \\stunned until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -411,7 +411,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           While the target is below its maximum \\glossterm{hit points}, it is \\slowed.
-          This effect lasts until the target takes a \\glossterm{short rest}.
+          This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -427,7 +427,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\slowed until it takes a \\glossterm{short rest}.
+          The target is \\slowed until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -444,7 +444,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           While the target is below its maximum \\glossterm{hit points}, it is \\blinded.
-          This effect lasts until the target takes a \\glossterm{short rest}.
+          This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -470,7 +470,7 @@ export const prayer: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
+        hit: `The target is highly flammable until it finishes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
         While ignited in this way, it takes \\damageranktwo{fire} during each of your actions.
 
