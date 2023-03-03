@@ -594,7 +594,7 @@ function calcDefenseCrScaling(level, challengeRating) {
     levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
   }
   if (challengeRating === 4) {
-    levelScaling += 1;
+    levelScaling += 2;
   }
   return levelScaling;
 }
@@ -660,14 +660,14 @@ function handleAccuracy() {
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
-      const levelModifier = Math.floor(v.level / 2);
-      const perceptionModifier = Math.floor(v.perception / 2);
-      const crModifier = v.challenge_rating == 4 ? 1 : 0;
+      const levelModifier = v.level / 2;
+      const perceptionModifier = v.perception / 2;
+      const levelishModifier = Math.floor(levelModifier + perceptionModifier);
+      const crModifier = v.challenge_rating == 4 ? 2 : 0;
       const accuracy =
         v.misc +
-        levelModifier +
-        crModifier +
-        perceptionModifier -
+        levelishModifier +
+        crModifier -
         v.fatigue_penalty;
       setAttrs({
         accuracy,
@@ -2149,6 +2149,9 @@ function handleStrikeAttacks() {
         extra_damage_key,
         is_magical_key,
         ...weapon_keys,
+        // These aren't used as variables, but we need to listen to them
+        "magical_power",
+        "mundane_power",
       ],
       function (v) {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
