@@ -96,7 +96,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Barrage',
 
       effect: `
-        Make two ranged \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
+        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon with a -4 penalty to \\glossterm{accuracy}.
         For each previous consecutive round that you used this ability in the same location, you reduce the accuracy penalty by 1.
       `,
       rank: 1,
@@ -106,7 +106,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Shrapnel Burst',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea cone from you.
         This strike costs five projectiles.
       `,
       rank: 3,
@@ -116,7 +116,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Shrapnel Burst+',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\largearea cone from you.
         This strike costs ten projectiles.
       `,
       rank: 5,
@@ -126,7 +126,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Volley Fire',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea radius within \\medrange.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
       `,
       rank: 5,
@@ -156,8 +156,8 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Quickfire',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon.
-        You do not suffer the normal -4 accuracy penalty for using a \\abilitytag{Projectile} weapon against a creature adjacent to you on this attack.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
+        You do not suffer the normal -4 accuracy penalty for using a Projectile weapon against a creature adjacent to you on this attack.
       `,
       rank: 3,
     },
