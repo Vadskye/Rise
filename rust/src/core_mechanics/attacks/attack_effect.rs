@@ -208,7 +208,7 @@ impl DebuffEffect {
         let debuff_text =
             latex_formatting::join_string_list(&debuff_texts).unwrap_or("".to_string());
         let immune_text = if self.immune_after_effect_ends {
-            " After this effect ends, the target becomes immune to this effect until it takes a \\glossterm{short rest}."
+            " After this effect ends, the target becomes immune to this effect until it finishes a \\glossterm{short rest}."
         } else {
             ""
         };

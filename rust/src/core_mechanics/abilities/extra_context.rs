@@ -41,11 +41,11 @@ impl Cooldown {
             let until = match self {
                 Self::Brief(_) => format!("\\glossterm<briefly> cannot use {} again", it),
                 Self::ShortRest(_) => format!(
-                    "cannot use {} again until you take a \\glossterm<short rest>",
+                    "cannot use {} again until you finish a \\glossterm<short rest>",
                     it
                 ),
                 Self::LongRest(_) => format!(
-                    "cannot use {} again until you take a \\glossterm<long rest>",
+                    "cannot use {} again until you finish a \\glossterm<long rest>",
                     it
                 ),
             };
@@ -57,11 +57,11 @@ impl Cooldown {
             let until = match self {
                 Self::Brief(_) => format!("\\glossterm<briefly> cannot use {} again", it),
                 Self::ShortRest(_) => format!(
-                    "cannot use {} again until it takes a \\glossterm<short rest>",
+                    "cannot use {} again until it finishes a \\glossterm<short rest>",
                     it
                 ),
                 Self::LongRest(_) => format!(
-                    "cannot use {} again until it takes a \\glossterm<long rest>",
+                    "cannot use {} again until it finish a \\glossterm<long rest>",
                     it
                 ),
             };
