@@ -6,15 +6,6 @@ export const flurryOfBlows: CombatStyle = {
 
   maneuvers: [
     {
-      name: 'Rushed Flurry',
-
-      effect: `
-        Make a \\glossterm{weak strike}.
-        You may reroll the accuracy roll and take the highest result.
-      `,
-      rank: 1,
-    },
-    {
       name: 'Double Strike',
 
       effect: `
@@ -44,19 +35,19 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Desperate Triplestrike',
+      name: 'Desperate Double Strike',
 
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by two.
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make three \\glossterm{weak strikes}.
+        Make two \\glossterm{weak strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 1,
     },
 
     {
-      name: 'Desperate Triplestrike+',
+      name: 'Desperate Triple Strike',
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by two.
