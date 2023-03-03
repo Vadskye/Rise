@@ -6,15 +6,16 @@ export const flurryOfBlows: CombatStyle = {
 
   maneuvers: [
     {
-      name: 'Twinstrike',
+      name: 'Rushed Flurry',
 
       effect: `
-        Make two \\glossterm{weak strikes}.
+        Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
       `,
       rank: 1,
     },
     {
-      name: 'Twinstrike+',
+      name: 'Double Strike',
 
       effect: `
         Make two \\glossterm{strikes} with a -1 accuracy penalty.
@@ -23,7 +24,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Triplestrike',
+      name: 'Triple Strike',
 
       effect: `
         Make three \\glossterm{strikes} with a -1 accuracy penalty.
@@ -90,7 +91,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Whirlwind Twinstrike',
+      name: 'Double Whirlwind',
 
       effect: `
         Make two melee \\glossterm{strikes}.
@@ -191,7 +192,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Deathseeking Twinstrike',
+      name: 'Deathseeking Double Strike',
 
       effect: `
         Make a \\glossterm{strike}.
