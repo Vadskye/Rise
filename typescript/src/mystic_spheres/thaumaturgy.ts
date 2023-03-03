@@ -437,7 +437,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         crit: `The effect ends after the target fails to cast three spells instead of only one.`,
         hit: `As a \\glossterm{condition}, the next time the target tries to cast a spell, the spell automatically fails with no effect instead.
-        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.`,
         targeting: `
         Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,

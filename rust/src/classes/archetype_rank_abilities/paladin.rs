@@ -427,7 +427,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                Whenever you deal damage to a creature, you ignore all \glossterm{miss chances} against that creature with your attacks until you take a \glossterm{short rest}.
+                Whenever you deal damage to a creature, you ignore all \glossterm{miss chances} against that creature with your attacks until you finish a \glossterm{short rest}.
             ",
             modifiers: None,
         },

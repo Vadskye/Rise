@@ -480,7 +480,7 @@ def generate_armor():
             material_type="Body armor",
             description="""
                 Whenever you would take \\glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 5.
-                After damage is reduced twice in this way, this has no effect until you take a \\glossterm<short rest>.
+                After damage is reduced twice in this way, this has no effect until you finish a \\glossterm<short rest>.
             """,
             short_description="Reduces physical damage from two attacks by 5",
             upgrades = [
@@ -606,7 +606,7 @@ def generate_armor():
                 When you do, make an attack vs. Fortitude against all creatures within a \\medarea cone.
                 On a hit, each target takes 2d6 physical damage as its body turns to stone.
                 Each creature that loses \\glossterm<hit points> from this damage is \\slowed as a \\glossterm<condition>.
-                Whether you hit or miss, each creature who can see the face is immune to this ability until it takes a \\glossterm<short rest>.
+                Whether you hit or miss, each creature who can see the face is immune to this ability until it finishes a \\glossterm<short rest>.
 
                 If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
             """,

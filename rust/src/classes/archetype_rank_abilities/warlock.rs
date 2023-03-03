@@ -138,7 +138,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \hit The target takes \damagerankthreelow{fire}.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-                    After it returns, it becomes immune to being teleported in this way until it takes a \glossterm{short rest}.
+                    After it returns, it becomes immune to being teleported in this way until it finishes a \glossterm{short rest}.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the attack.
@@ -180,7 +180,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Abyssal Curse}[\abilitytag{Curse}]
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
-                    \hit The target is \stunned until it takes a \glossterm{short rest}.
+                    \hit The target is \stunned until it finishes a \glossterm{short rest}.
                     \crit The effect lasts until this curse is removed.
 
                     \rankline
@@ -222,10 +222,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
                     \subcf{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
-                    It is removed when the creature takes a \glossterm{short rest}.
+                    It is removed when the creature finishes a \glossterm{short rest}.
                     However, whenever you would gain a \glossterm{condition} that you are not \trait{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
-                    Whenever you take a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
+                    Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }
             ",
             // Assume secret of bloodforging
