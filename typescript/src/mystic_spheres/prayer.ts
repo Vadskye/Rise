@@ -563,7 +563,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
         `,
         name: 'bless water',
       },
@@ -588,7 +588,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
         `,
         name: 'curse water',
       },
