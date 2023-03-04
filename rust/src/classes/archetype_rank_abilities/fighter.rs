@@ -70,8 +70,8 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} The extra damage increases to 1d8.
                     \rank{5} The extra damage increases to 2d8.
-                    \rank{6} The extra damage increases to 3d8.
-                    \rank{7} The extra damage increases to 5d8.
+                    \rank{6} The extra damage increases to 3d10.
+                    \rank{7} The extra damage increases to 5d10.
                 \end{activeability}
             ",
             modifiers: None,
