@@ -7,18 +7,8 @@ export const electromancy: MysticSphere = {
   sources: ['arcane', 'nature', 'pact'],
   // +1r for one chain, +2r for two chains?
   specialRules: `
-    Some spells from this mystic sphere chain between multiple targets.
+    Some spells from this mystic sphere \\glossterm{chain} between multiple targets.
     In addition, some spells from this mystic sphere gain benefits against \\glossterm{metallic} targets.
-
-    \\spheredef{chain} A spell can specify that it chains a certain number of times.
-    For each time that the spell chains, the caster may choose an additional secondary target for the spell.
-    Each additional target must be within 15 feet of the previous target in the chain, starting with the spell's primary target.
-    These additional targets must have \\glossterm{line of sight} to the spell's caster and \\glossterm{line of effect} to the previous target in the chain.
-    However, they do not need \\glossterm{line of effect} to the spell's caster, and they can be beyond than the spell's original range.
-
-    Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the spell in the exact same way as the primary target.
-    Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
-    You can't chain off of the ground.
   `,
 
   cantrips: [
