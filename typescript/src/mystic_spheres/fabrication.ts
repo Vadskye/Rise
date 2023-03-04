@@ -25,6 +25,25 @@ export const fabrication: MysticSphere = {
       },
       tags: ['Manifestation'],
     },
+
+    {
+      name: 'Forge',
+
+      effect: `
+        You can create any one weapon, shield, or body armor that you are proficient with.
+        It is sized appropriately for you, up to a maximum of a Medium size item.
+        The item appears in your hand or on the ground at your feet.
+
+        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+
+        Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
+        A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
+        If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, it automatically disappears.
+      `,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
   ],
   spells: [
     {
@@ -277,7 +296,7 @@ export const fabrication: MysticSphere = {
         You create a normal item of that type in your hand.
         If the item stops touching you, it disappears, and this effect ends.
 
-        If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+        If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
         Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
 
@@ -286,23 +305,6 @@ export const fabrication: MysticSphere = {
       `,
       rank: 1,
       tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Forge',
-
-      effect: `
-        This spell creates one or two weapons, suits of body armor, or shields.
-        You can create any weapon, shield, or body armor that you are proficient with.
-        It is sized appropriately for you, up to a maximum of a Medium size item.
-        The items appear in your hand or on the ground at your feet.
-
-        If you create body armor or a weapon, it can be created from any special material other than cold iron.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-      `,
-      rank: 1,
-      tags: ['Manifestation'],
-      type: 'Attune',
     },
 
     {
@@ -470,7 +472,7 @@ export const fabrication: MysticSphere = {
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
+        If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
       rank: 1,
@@ -714,6 +716,22 @@ export const fabrication: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Ritual Forge',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        abilityType: "cantrip",
+        name: "forge",
+        exceptThat: `
+          any ritual participant can attune to the effect.
+          That participant must maintain proximity to the item to prevent it from disappearing.
+        `,
+      },
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
     {
       name: 'Manifest Object',
 
