@@ -111,7 +111,7 @@ export interface StandardAttack {
 }
 
 export interface FunctionsLike {
-  abilityType?: "spell" | "maneuver" | "ability" | "ritual";
+  abilityType?: "cantrip" | "spell" | "maneuver" | "ability" | "ritual";
   exceptThat?: string;
   mass?: boolean;
   name: string;
