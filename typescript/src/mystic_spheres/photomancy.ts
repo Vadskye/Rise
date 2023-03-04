@@ -210,7 +210,8 @@ export const photomancy: MysticSphere = {
         hit: `
           The target takes \\damagerankfour{energy}.
           If it takes damage, it is \\dazzled as a \\glossterm{condition}.
-          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
+          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be deadly for some creatures.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
