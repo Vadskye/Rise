@@ -103,7 +103,15 @@ For details, see \pcref{Casting Components}.
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
 
-\glossdef{chain} See \pcref{Electromancy}.
+\glossdef{chain} An ability can specify that it chains a certain number of times.
+For each time that the spell chains, you may choose an additional secondary target for the spell.
+Each additional target must be within 15 feet of the previous target in the chain, starting with the spell's primary target.
+These additional targets must have \glossterm{line of sight} to you and \glossterm{line of effect} to the previous target in the chain.
+However, they do not need \glossterm{line of effect} to you, and they can be beyond the ability's original range.
+
+Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the ability in the exact same way as the primary target.
+Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
+You can't chain off of the ground.
 
 \glossdef{check}[checks] A check is a d10 roll required to accomplish an action that has a chance of failure that is not an attack.
 If the result of your roll, including your modifier, is high enough, you succeed.
@@ -417,6 +425,10 @@ There are three types of maneuverability: good, average, and poor.
 Unless otherwise stated, a creature with a fly speed has aveage maneuverability.
 For details, see \pcref{Flying Maneuverability}.
 
+\glossdef{manufactured weapon} A manufactured weapon is a \glossterm{weapon} created by someone.
+A \glossterm{natural weapon} is not a manufactured weapon. 
+Some abilities affect or require manufactured weapons instead of natural weapons.
+
 \glossdef{melee}[Melee] A melee attack is an attack using your body or a weapon that does not leave your grasp.
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
 
@@ -521,9 +533,6 @@ If you try to use armor you are not proficient with, it is less effective and yo
 
 \glossdef{projectile} A projectile is an object fired from a weapon at a target.
 Arrows and bolts are projectiles.
-
-\glossdef{projectile weapon} A projectile weapon is a weapon designed to fire \glossterm{projectiles}.
-For details about how to attack with projectile weapons, see \pcref{Projectile Strike}.
 
 \glossdef{push}[pushed] A push is a type of \glossterm{forced movement}.
 It represents being pushed by a constant force.
