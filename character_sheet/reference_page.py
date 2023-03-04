@@ -167,7 +167,7 @@ def common_concepts():
                 + " --hit_points|@{hit_points_maximum}"
                 + " --damage_resistance|@{damage_resistance_maximum}"
                 + "!!!"
-                + " {{desc=@{character_name} takes a short rest}}"
+                + " {{desc=@{character_name} finishes a short rest}}"
             ),
         },
         "Short Rest",
@@ -182,7 +182,7 @@ def common_concepts():
                 + " --damage_resistance|@{damage_resistance_maximum}"
                 + " --fatigue_points|0"
                 + "!!!"
-                + " {{desc=@{character_name} takes a long rest}}"
+                + " {{desc=@{character_name} finishes a long rest}}"
             ),
         },
         "Long Rest",
@@ -202,7 +202,7 @@ def common_concepts():
             ),
             p(
                 f"""
-            {short_rest}: Resting for ten minutes is considered a short rest. When you take a short rest, you gain the following benefits.
+            {short_rest}: Resting for ten minutes is considered a short rest. When you finish a short rest, you gain the following benefits.
             <ul>
                 <li>You regain any missing hit points and damage resistance.</li>
                 <li>You regain any attunement points you released from attuned items and abilities.</li>
@@ -212,7 +212,7 @@ def common_concepts():
             ),
             p(
                 f"""
-            {long_rest}: Resting for eight hours is considered a long rest. When you take a long rest, you gain the following benefits.
+            {long_rest}: Resting for eight hours is considered a long rest. When you finish a long rest, you gain the following benefits.
             <ul>
                 <li>You remove one of your vital wounds.</li>
                 <li>Your fatigue level becomes 0.</li>

@@ -122,6 +122,7 @@ def offensive_statistics():
         [
             div({"class": "section-header"}, "Offensive Statistics"),
             stat_row("Accuracy"),
+            stat_row("accuracy_with_strikes", "Bonus accuracy with strikes"),
             stat_row("Magical power"),
             stat_row("Mundane power"),
         ]

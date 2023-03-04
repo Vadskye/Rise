@@ -299,6 +299,7 @@ def custom_statistic(i):
                 [
                     option({"value": "none"}, ""),
                     option({"value": "accuracy"}, "Accuracy"),
+                    option({"value": "accuracy_with_strikes"}, "Accuracy with strikes"),
                     option({"value": "all_defenses"}, "All defenses"),
                     option({"value": "all_skills"}, "All skills"),
                     option({"value": "armor_defense"}, "Armor defense"),

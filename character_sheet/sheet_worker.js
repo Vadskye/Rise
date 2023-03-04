@@ -384,6 +384,7 @@ const KNOWABLE_CONCEPTS = [
 const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
   [
     "accuracy",
+    "accuracy_with_strikes",
     "all_defenses",
     "all_skills",
     "armor_defense",
@@ -505,6 +506,7 @@ function handleEverything() {
 
 function handleCoreStatistics() {
   handleAccuracy();
+  handleAccuracyWithStrikes();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
@@ -677,6 +679,20 @@ function handleAccuracy() {
           { name: "fatigue", value: -v.fatigue_penalty },
           { name: "CR", value: crModifier },
         ]),
+      });
+    }
+  );
+}
+
+function handleAccuracyWithStrikes() {
+  onGet(
+    {
+      miscName: "accuracy_with_strikes",
+    },
+    (v) => {
+      setAttrs({
+        accuracy_with_strikes: v.misc,
+        accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
       });
     }
   );
