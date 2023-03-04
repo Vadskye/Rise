@@ -419,7 +419,7 @@ def weapon_template(i):
         + i
         + "_name_sanitized}&amp;#125;&amp;#125;"
         + " @{targeting_text_first_page}"
-        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
+        + " {{Attack=[[d10!+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
         + " {{Damage=[[@{weapon_"
@@ -566,7 +566,7 @@ def weapon_attack_button(i):
         + i
         + "_name}}}"
         + " @{targeting_text}"
-        + " {{Attack=[[d10!+@{accuracy}+@{weapon_"
+        + " {{Attack=[[d10!+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
         + i
         + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + " {{Damage="
@@ -684,7 +684,7 @@ def universal_abilities():
             universal_ability_button(
                 "Recover",
                 """
-                    After you use this ability, you increase your fatigue level by two, and you cannot use it again until you take a short rest.
+                    After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain hit points equal to your maximum hit points. In addition, you remove all conditions affecting you.
                 """,
                 tags=["Swift"],
