@@ -372,6 +372,7 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
   * Debuffs
     * Weak strike, T1.5 condition if damaged and beat extra defense
     * Weak strike, T2 condition if lose HP
+    * Strike, T2 condition if lose HP and beat extra defense
     * Strike, T1.5 condition if lose HP
     * Strike, T1 condition if damaged and beat extra defense
     * Strike, T0.5 condition if damaged
@@ -448,11 +449,23 @@ Some maneuvers want to say things like "if your attack result beats X defense, y
 ## Class Strike Ability Scaling
 
 Ordinary strike maneuver example, accuracy-modified:
-* R3, +1 acc: 3.5/5.4
-* R4, +2 acc: 4.7/7.2
-* R5, +3 acc: 5.3/8.1
-* R6, +4 acc: 7.4/11.2
-This falls way behind at high ranks. Accuracy scaling only helps if the base ability has enough damage.
+* R2, +1 acc: 3/4.8 (100%/100%)
+* R3, +2 acc: 4/6.2 (95%/93%)
+* R4, +4 acc: 5.9/9.0 (98%/94%)
+* R5, +6 acc: 7.9/11.8 (94%/87%)
+  * Note: using 1.2x modifier instead of smart math, crits get fuzzy
+* R6, +10 acc: 13.2/20 (79%/74%)
+Pure accuracy falls off at high levels no matter how much you give.
+Attacks need some amount of damage scaling.
+* R6, +2 acc, 2xw: 11.8/17.9 (99%/93%)
+* R7, +4 acc, 2xw: 16.4/25 (98%/93%)
+* L21, +6 acc, 2xw: 19.7/30 (117%/112%)
+
+Spellstrike, accuracy-modified:
+* L6: 3/4.6 (71%/69%)
+* L9, +1acc: 4.1/6.3 (69%/65%)
+* L12, +3acc: 5.9/8.8 (71%/66%)
+* L15, +3acc, 2xw: 
 
 Savage rush:
 * R3: +0/+0
@@ -508,11 +521,42 @@ Sneak attack:
 * R6, +4d10: 29.4/ (147%/)
 * R7, +6d10: 41.2/ (147%/)
 
-Exploit distraction, accuracy-scaled:
+Exploit distraction, accuracy-modified:
 * R4, 2xw: 7.1/10.8 (118%/113%)
 * R5, 2xw, +1a: 9.2/13.7 (124%/109%)
 * R6, 3xw, +1a: 15.5/23.5 (129%/123%)
 * R7, 3xw, +3a: 22.1/33.8 (132%/125%)
+
+Duelist Strike, accuracy-modified:
+* R3: as Ambush
+* R4: as Ambush
+* R6, +2d8: 13.1/16.2 (109%/78%)
+* R7, 2xw: 20.3/27.2 (103%/84%)
+* R7, 2xw: 20.3/27.2 (103%/84%)
+
+Execution, accuracy-modified:
+* L6, 2xw: 6/9.2 (143%/138%)
+* L9, 2xw, +1a: 8.3/12.6 (138%/131%)
+* L12, 2xw, +2a: 10.6/15.7 (126%/117%)
+* L15, 3xw, +2a: 17.8/26.7 (148%/140%)
+* L18, 3xw, +3a: 22.1/ (132%/
+* L21, 4xw, +3a: 
+
+Spectral Strike:
+* L6: 5/7.7 (71%/69%)
+* L9, +1d6: 9.4/12.5 (94%/78%)
+* L12, +2d6: 13.6/16.8 (97%/75%)
+* L15, +2d6, +0.88dpp: 21.4/31.4 (107%/98%)
+* L18, +2d8, +1.13dpp: 28/41.3 (100%/92%)
+* L21, +2d10, +1.375dpp: 32.2/47.6 (115%/)
+
+Power Attack (previously -1a for +25%ish damage):
+* L6: 6.7 normal, 7.3 with -2a and +2d6
+* L12: 13.4 normal, 14.8 with -2a and +4d6
+* L18: 32.3 normal, 30.2 with -2a and +8d6
+
+Trained Strike
+* L6, 
 
 ## Class Non-Strike Ability Scaling
 
@@ -549,6 +593,24 @@ Exchange Soul Fragment (high power scaling, d6-biased):
 * R5: 7+1.17dpp: 14.6/21.6
 * R6: 7+1.75dpp: 21/33.3
 * R7: 14+1.75dpp: 30.6/44.6
+
+Sudden Entropy (d10-biased, short range, use R power for convenience):
+* L1: 4.5/6.6 (129%/118%)
+  * 4.5 + 0.5dpp
+* L3: 5.5/7.6 (110%/95%)
+  * 5.5 + 0.5dpp
+* L6: 9.4/14.9 (133%/133%)
+  * 5.5 + 1.1dpp
+* L9: 12.4/20.7 (124%/129%)
+  * 5.5+1.38dpp
+* L12: 20/28.3 (143%/126%)
+  * 11+1.38dpp
+* L15: 25.7/38.5 (129%/120%)
+  * 11+1.83dpp
+* L18: 33.9/54 (140%/120%)
+  * 22+1.83dpp
+* L21:
+  * 22+
 
 ## Power Scaling
 
