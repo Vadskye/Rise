@@ -228,7 +228,7 @@ export const electromancy: MysticSphere = {
         hit: `Each target takes \\damagerankone{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 1,
@@ -243,7 +243,7 @@ export const electromancy: MysticSphere = {
         hit: `Each target takes \\damagerankfive{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 5,
@@ -258,7 +258,7 @@ export const electromancy: MysticSphere = {
         hit: `Each target takes \\damagerankthreelow{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          This attack \\sphereterm{chains} twice.
+          This attack \\glossterm{chains} twice.
           You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target instead of only 15 feet.
         `,
@@ -274,7 +274,7 @@ export const electromancy: MysticSphere = {
         hit: `Each target takes \\damageranksixlow{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          This attack \\sphereterm{chains} twice.
+          This attack \\glossterm{chains} twice.
           You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target.
         `,
@@ -321,7 +321,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 3,
@@ -338,7 +338,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 7,
@@ -549,7 +549,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 1,
@@ -567,7 +567,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
-          This attack \\sphereterm{chains} once.
+          This attack \\glossterm{chains} once.
         `,
       },
       rank: 5,
@@ -595,7 +595,7 @@ export const electromancy: MysticSphere = {
         Make a \\glossterm{weak strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        The strike \\sphereterm{chains} once.
+        The strike \\glossterm{chains} once.
         Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
       `,
       rank: 1,
