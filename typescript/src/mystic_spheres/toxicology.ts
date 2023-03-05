@@ -76,150 +76,109 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Asp Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\stunned while the poison lasts.
-          The stage 3 effect makes the target \\blinded while the poison lasts.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+        The stage 1 effect makes the target \\stunned while the poison lasts.
+        The stage 3 effect makes the target \\blinded while the poison lasts.
+      `,
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Giant Wasp Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\slowed while the poison lasts.
-          The stage 3 effect makes the target \\immobilized while the poison lasts.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
+        You gain a +1 accuracy bonus with the poison.
+        The stage 1 effect makes the target \\slowed while the poison lasts.
+        The stage 3 effect makes the target \\immobilized while the poison lasts.
+      `,
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Black Adder Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d8 damage each time the poison's attack succeeds.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
+        The poison inflicts 2d8 damage per \\glossterm{poison stage}.
+      `,
       rank: 2,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Wyvern Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-          The stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+        The poison inflicts 3d8 damage per \\glossterm{poison stage}.
+      `,
       rank: 3,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Blood Leech Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
+        The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+      `,
       rank: 5,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Cockatrice Venom',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
-          The stage 3 effect makes the target \\petrified while the poison lasts.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
+      effect: `
+        Choose one living creature within \\medrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
+        The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
+        The stage 3 effect makes the target \\petrified while the poison lasts.
+      `,
       rank: 5,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Jellyfish Extract',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
-          The stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
-          The stage 3 effect also ends the poison.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
+        The poison inflicts 1d6 damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
+      `,
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Dragon Bile',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} with dragon bile (see \\pcref{Poison}).
-          The stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by dragon bile (see \\pcref{Poison}).
+        The poison inflicts 3d8 damage per \\glossterm{poison stage}.
+      `,
       rank: 5,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
