@@ -74,7 +74,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 43;
+        let expected_points = 30;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -493,7 +493,7 @@ impl Class {
             Self::Rogue => 3,
             Self::Sorcerer => 3,
             Self::Warlock => 3,
-            Self::Wizard => 2,
+            Self::Wizard => 1,
         }
     }
 
@@ -600,7 +600,7 @@ impl Class {
             Self::Rogue => 7,
             Self::Sorcerer => 3,
             Self::Warlock => 4,
-            Self::Wizard => 5,
+            Self::Wizard => 3,
         }
     }
 
@@ -1326,7 +1326,7 @@ impl Class {
                             An improbable event occurs within \distrange.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
-                            After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+                            After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
                         \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                         As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
@@ -1405,7 +1405,7 @@ impl Class {
                             \hit The target takes an evil action as soon as it can.
                             Once it takes the evil action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1452,7 +1452,7 @@ impl Class {
                             \hit The target takes a good action as soon as it can.
                             Once it takes the good action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1583,7 +1583,7 @@ impl Class {
                             \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
                             It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                             At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
