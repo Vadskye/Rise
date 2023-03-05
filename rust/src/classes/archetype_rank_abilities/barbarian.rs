@@ -184,8 +184,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The strike deals triple weapon damage instead of double weapon damage.
-                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The strike deals triple weapon damage instead of double weapon damage.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
