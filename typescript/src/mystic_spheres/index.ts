@@ -68,7 +68,7 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
-  scaling?: "accuracy" | Record<string, string>;
+  scaling?: "accuracy" | "poison" | Record<string, string>;
   tableText?: string;
   tags?: string[];
   type?:
