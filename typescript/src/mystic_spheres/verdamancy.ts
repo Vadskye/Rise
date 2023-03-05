@@ -208,79 +208,55 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Poison -- Nitharit',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} with nitharit (see \\pcref{Poison}).
-          The stage 1 effect makes the target \\dazed while the poison lasts.
-          The stage 3 effect makes the target \\stunned while the poison lasts.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
+        The stage 1 effect makes the target \\dazed while the poison lasts.
+        The stage 3 effect makes the target \\stunned while the poison lasts.
+      `,
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Sassone Leaf',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} with sassone leaf (see \\pcref{Poison}).
-          The stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
-          The stage 3 effect also ends the poison.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
+        The poison inflicts 1d6 damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
+      `,
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Arsenic',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} with arsenic (see \\pcref{Poison}).
-          The stage 1 effect inflicts 2d6 damage each time the poison's attack succeeds.
-          The stage 3 effect also ends the poison.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
+        The poison inflicts 2d6 damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
+      `,
       rank: 3,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Poison -- Black Lotus',
 
-      attack: {
-        crit: `The poison immediately reaches an extra \\glossterm{poison stage}.`,
-        hit: `
-          The target becomes \\glossterm{poisoned} with black lotus extract (see \\pcref{Poison}).
-          The stage 1 effect inflicts 4d8 damage each time the poison's attack succeeds.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a +1 accuracy bonus against one living creature within \\medrange.
-        `,
-      },
-
+      effect: `
+        Choose one living creature within \\medrange.
+        It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
+        The poison inflicts 4d8 damage per \\glossterm{poison stage}.
+      `,
       rank: 6,
-      scaling: 'accuracy',
+      scaling: 'poison',
       tags: ['Manifestation'],
     },
 
