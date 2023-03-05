@@ -333,7 +333,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each creature that is not in \\glossterm{bright illumination}.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each \\sphereterm{shadowed} creature.
         `,
       },
       rank: 6,
@@ -382,7 +382,7 @@ export const umbramancy: MysticSphere = {
 
         You teleport into an unoccupied location within \\shortrange on a stable surface that can support your weight.
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
-        If you are in \\glossterm{bright illumination} and are not touching your shadow, this spell fails without effect.
+        If you are in \\glossterm{bright illumination} or \\glossterm{brilliant illumination} and are not touching your shadow, this spell fails without effect.
       `,
       rank: 1,
       scaling: {
@@ -497,7 +497,7 @@ export const umbramancy: MysticSphere = {
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 
-        At the end of each round, if you are in \\glossterm{bright illumination}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
+        At the end of each round, if you are not \\sphereterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
         If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
