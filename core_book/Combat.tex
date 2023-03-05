@@ -1069,6 +1069,36 @@
     Unless otherwise noted, poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
     Common poisons are listed in \tref{Consumable Tools}.
 
+    \subsection{Poison Effects}\label{Poison Effects}
+        When you come in contact with a poison, you become \glossterm{poisoned}.
+        As soon as you become poisoned, and at the end of each subsequent round, the poison makes an attack against your Fortitude defense.
+        On a hit, the poison progresses to its next stage.
+        On a critical hit, the poison progresses by two stages at once, to a maximum of the third stage.
+        On a miss, you make progress towards removing the poison entirely.
+        Once the poison misses you three times, you stop being poisoned.
+
+        If you become poisoned again by the same poison, it does not intensify the effects of the poison.
+        However, it cancels any progress you had made towards removing the poison.
+        A poison is considered the same if it has the same name.
+        If you are affected by multiple different poisons with the same name, but different accuracy bonuses, use the highest accuracy bonus.
+
+        \subsubsection{Poison Stages}
+            Poison effects are divided into stages.
+            Becoming poisoned does not have any ill effects until the poison progresses to its first stage.
+
+            Many poisons have a Stage 1 effect.
+            This effect happens as soon as the poison's attack first succeeds against you.
+            Some poisons also have a Stage 3 effect.
+
+        \subsubsection{Poison Accuracy}
+            A poison's accuracy depends on the way it was applied.
+            Item-based poisons have a specific accuracy listed in their description.
+            This accuracy does not depend on the skill of the creature inflicting the poison.
+
+            Poisons inflicted by creature abilities use the creature's \glossterm{accuracy}.
+            They may also have additional modifiers listed in the ability's description.
+            For monsters, the poison's accuracy will be listed in the monster description.
+
     \subsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
 
         There are three ways that poisons can be contracted.
@@ -1096,58 +1126,16 @@
 
     \subsection{Coating Weapons with Poison}\label{Coating Weapons with Poison}
         As a standard action, you can coat a weapon with a single dose of a liquid contact-based or injury-based poison.
-        The next time a creature takes damage from a \glossterm{strike} using that weapon, the struck creature is affected by the poison.
+        The next time a creature takes damage from a \glossterm{strike} using that weapon, the struck creature comes in contact with the poison.
         This removes one dose of the poison from the weapon.
         Coated poisons expire and lose their effectiveness after ten minutes.
 
-        Strikes that do not deal damage do not remove poison doses from a poisoned weapon.
         An injury-based poison has no effect if the strike does not cause the struck creature to lose \glossterm{hit points}, but the dose is still removed from the weapon.
         For this reason, injury-based poisons are typically applied to secondary weapons that can be used after the subject is already weakened.
 
         A weapon can hold up to three poison doses of the same poison.
         Mixing different poison types on the same weapon is ineffective, as each poison dilutes the others.
         Only the highest rank poison on the weapon has any effect.
-        Choose randomly between equal rank poisons to determine which poison remains effective.
-
-    \subsection{Poison Effects}\label{Poison Effects}
-
-        Poisons can have a wide variety of effects, as determined by the type of poison used.
-        However, most poison share certain common properties.
-
-        \parhead{Becoming Poisoned}
-        All poisons have an base \glossterm{accuracy}.
-        When a creature first comes into contact with a poison, the poison makes an attack roll using its accuracy against the Fortitude defense of the poisoned creature.
-        On a hit, the target becomes \glossterm{poisoned} and suffers the effects of the first stage of the poison.
-        On a critical hit, the target becomes \glossterm{poisoned} and suffers the effects of the two stages of the poison.
-        On a miss, the target is not \glossterm{poisoned}.
-
-        Some attacks make the target poisoned if they hit the target.
-        In that case, the ability's accuracy defines the poison's accuracy.
-
-        Many poisons have an additional effect when they hit the target for the third time.
-
-        \parhead{Poison Attacks}
-        During each subsequent \glossterm{action phase} after the target becomes poisoned, the poison makes an attack roll against the Fortitude defense of the poisoned creature.
-        If the poison was applied by a spell or other special ability, the accuracy bonus of this attack is equal to the accuracy of the original ability that applied the poison.
-
-        Each hit increases the \glossterm{poison stage} of the poison.
-        For every 10 points by which the attack hits, the poison progresses by an additional stage.
-        On a miss, the creature gets closer to resisting the poison (see Resisting Poisons, below).
-
-        \parhead{Resisting Poisons}
-        If a poison misses a creature three times with its attack during each action phase, the creature stops being poisoned by that poison.
-        % Some poisons may require more attacks to end the poison, as indicated in their description.
-
-        \parhead{Multiple Doses}
-        A creature can be affected by multiple doses of the same poison.
-        This does not cause the same effect to occur multiple times.
-        However, each extra dose increases the accuracy of the poison by 1, up to a maximum bonus of \plus10 more than the poison's normal accuracy.
-
-        A poison is considered the same if it has the same name and comes from the same source.
-        For example, a creature bitten multiple times by the same giant spider suffers multiple doses of the same poison.
-        A creature bitten multiple times by different giant spiders considers each spider's poison separately.
-
-        \parhead{Poison Quality} Some poisons are unusually high or low quality.
 
     \subsection{Creating Poisons}\label{Creating Poisons}
 
@@ -1160,7 +1148,7 @@
 
         \begin{itemize}
             \itemhead{Plant} Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
-                The \glossterm{difficulty value} of this check is usually equal to 10 \add the base accuracy of the poison.
+                The \glossterm{difficulty value} of this check is usually equal to 10 \add twice the poison's \glossterm{rank}.
             \itemhead{Venom} Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
             \itemhead{Alchemical} Alchemical poisons require alchemical materials.
                 These normally can't be found in nature.
