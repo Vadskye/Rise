@@ -1197,7 +1197,7 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
+                It inflicts 1d6 damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 1d6 damage per stage",
@@ -1213,7 +1213,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect inflicts 1d6 damage each time the poison's attack succeeds.
+                Its inflicts 1d6 damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 1d6 damage per stage",
@@ -1244,7 +1244,7 @@ def generate_tools():
             description="""
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect inflicts 2d6 damage each time the poison's attack succeeds.
+                It inflicts 2d6 damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 2d6 damage",
@@ -1259,7 +1259,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                Its stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
+                It inflicts 3d8 damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 3d8 damage endlessly",
         ),
@@ -1289,7 +1289,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus11.
-                The target takes 4d8 damage each time the poison's attack succeeds.
+                It inflicts 4d8 damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 4d8 damage endlessly",
         ),
@@ -1343,7 +1343,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus4.
-                Its stage 1 effect inflicts 2d8 damage each time the poison's attack succeeds.
+                It inflicts 2d8 damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 2d8 damage endlessly",
         ),
@@ -1358,7 +1358,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect inflicts 3d8 damage each time the poison's attack succeeds.
+                It inflicts 3d8 damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 3d8 damage endlessly",
         ),
@@ -1373,7 +1373,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                Its stage 1 effect inflicts 4d8 damage each time the poison's attack succeeds.
+                It inflicts 4d8 damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 4d8 damage endlessly",
         ),
