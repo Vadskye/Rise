@@ -111,8 +111,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Arrowguide',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon.
-        Your \\glossterm{power} with the strike is halved.
+        Make a ranged \\glossterm{weak strike} using a piercing weapon.
         You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against each target of that strike.
       `,
       rank: 1,
