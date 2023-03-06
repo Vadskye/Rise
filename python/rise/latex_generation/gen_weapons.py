@@ -34,6 +34,7 @@ def generate_weapons():
                 As a standard action, you can make a melee \\glossterm<strike> using this weapon that spawns a swarm of blades.
                 The strike targets all \\glossterm<enemies> in a \\smallarea cone from you.
                 For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+                On a miss, you get a \\glossterm<glancing blow>.
             """,
             short_description="Can deal escalating damage in a cone",
             upgrades=[
