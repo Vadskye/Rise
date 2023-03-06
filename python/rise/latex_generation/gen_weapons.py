@@ -130,7 +130,7 @@ def generate_weapons():
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                The strike \\sphereterm<chains> once (see \\pcref<Electromancy>).
+                The strike \\glossterm<chains> once.
                 Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
             short_description="Deals electricity damage and can chain",
@@ -232,7 +232,7 @@ def generate_weapons():
             description="""
                 If your Dexterity is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants +1d damage if you have 3 Dex",
+            short_description="Grants +1 accuracy if you have 3 Dex",
             upgrades=[
                 Upgrade(
                     rank=6,
