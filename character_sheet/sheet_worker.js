@@ -145,9 +145,9 @@ const BASE_CLASS_MODIFIERS = {
     mental: 7,
     hit_points: 0,
     attunement_points: 4,
-    fatigue_tolerance: 2,
+    fatigue_tolerance: 1,
     insight_points: 3,
-    class_skill_count: 5,
+    class_skill_count: 3,
     proficiencies: "None",
   },
   dragon: {
@@ -1606,7 +1606,7 @@ function handleInsightPoints() {
   onGet(
     {
       miscName: "insight_points",
-      numeric: ["intelligence"],
+      numeric: ["intelligence", "level"],
     },
     (v) => {
       let fromLevel = 0;
@@ -1615,13 +1615,12 @@ function handleInsightPoints() {
       } else if (v.level >= 4) {
         fromLevel = 1;
       }
-      const totalValue = Math.max(0, v.intelligence + v.misc + fromLevel);
+      const totalValue = v.intelligence + v.misc + fromLevel;
       setAttrs({
         insight_points: totalValue,
         insight_points_explanation: formatCombinedExplanation(
           v.miscExplanation,
-          [{ name: "Int", value: v.intelligence }]
-          [{ name: "level", value: fromLevel }]
+          [{ name: "Int", value: v.intelligence }, { name: "level", value: fromLevel }]
         ),
       });
     }
@@ -2255,7 +2254,7 @@ function handleStrikeAttacks() {
 
   // Local strike attack change
   on(
-    "change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage",
+    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage",
     function () {
       getStrikeAttrs("", (parsed) => {
         setStrikeTotalDamage("", parsed);
