@@ -33,7 +33,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Spring Attack',
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike} with a -2 accuracy penalty.
+        Move up to half your movement speed and make a \\glossterm{strike} with a -1 accuracy penalty.
         After making the strike, you can use the other half of your movement.
       `,
       rank: 3,
@@ -95,7 +95,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Retreating Strike',
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2 accuracy penalty.
+        Make a melee \\glossterm{strike}.
         In addition, you can move up to your movement speed in a straight line away from one target of the strike.
       `,
       rank: 3,

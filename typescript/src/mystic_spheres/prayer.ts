@@ -270,17 +270,17 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{vital rolls}.
+        In addition, each target gains a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
       scaling: {
         4: `
           The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to vital rolls increases to +3.
+          In addition, the bonus to vital rolls increases to +2.
         `,
         6: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to vital rolls increases to +4.
+          In addition, the bonus to vital rolls increases to +3.
         `,
       },
       type: 'Attune (deep, target)',
