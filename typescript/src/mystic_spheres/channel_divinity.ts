@@ -101,17 +101,17 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, you gain a +3 \\glossterm{magic bonus} to your \\glossterm{vital rolls}.
+        In addition, you gain a +2 \\glossterm{magic bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 3,
       scaling: {
         5: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to vital rolls increases to +4.
+          In addition, the bonus to vital rolls increases to +3.
         `,
         7: `
           The bonuses to hit points and damage resistance increase to +32.
-          In addition, the bonus to vital rolls increases to +5.
+          In addition, the bonus to vital rolls increases to +4.
         `,
       },
       type: 'Attune (deep)',
@@ -315,10 +315,10 @@ export const channelDivinity: MysticSphere = {
       name: 'Faithful Endurance',
 
       effect: `
-        You gain a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
-      scaling: { 4: `The bonus increases to +2.`, 6: `The bonus increases to +3.` },
+      scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
       type: 'Attune',
     },
 
