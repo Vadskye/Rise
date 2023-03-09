@@ -141,12 +141,14 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes \\damagerankfivehigh{slashing}.
+          The target takes \\damagerankfourlow{slashing}.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\longrange.',
+        targeting: `
+          Make an attack vs. Armor against any two targets within \\longrange that are adjacent to each other.
+        `,
       },
       // narrative: '',
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
     },
     {

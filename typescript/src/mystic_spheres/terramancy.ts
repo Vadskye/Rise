@@ -56,13 +56,13 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Rock Throw',
 
       attack: {
-        hit: `The target takes \\damagerankfivehigh{bludgeoning}.`,
+        hit: `The target takes \\damagerankfourhigh{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 accuracy bonus if you are on a Medium or larger body of stone.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -110,7 +110,7 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Shrapnel Blast',
 
       attack: {
-        hit: `Each target takes \\damagerankfive{bludgeoning and piercing}.`,
+        hit: `Each target takes \\damagerankfivehigh{bludgeoning and piercing}.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -190,7 +190,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{piercing}.
+          The target takes \\damagerankfivehigh{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -285,7 +285,7 @@ export const terramancy: MysticSphere = {
       // this scales very well with area, so it pays the full +2r price for large and huge
       attack: {
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          Each target takes \\damagerankfivehigh{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -463,7 +463,7 @@ export const terramancy: MysticSphere = {
       // +4d for +1d and full power
       functionsLike: {
         name: 'volcano',
-        exceptThat: 'the damage increases to \\damageranksix{bludgeoning and fire}.',
+        exceptThat: 'the damage increases to \\damageranksixhigh{bludgeoning and fire}.',
       },
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.

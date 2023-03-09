@@ -78,7 +78,7 @@ export const vivimancy: MysticSphere = {
       // +1r for HP theft
       attack: {
         hit: `
-          The target takes \\damagerankthree{energy}.
+          The target takes \\damagerankthreehigh{energy}.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           If you do, you regain 1d8 hit points plus 1d6 per 4 power.
           This ability does not have the \\abilitytag{Swift} tag, so it does not protect you from attacks during the current phase.
@@ -225,7 +225,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{energy}.
+          The target takes \\damagerankfourhigh{energy}.
           If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
         `,
         targeting: `
@@ -307,7 +307,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfour{energy}.
+          Each target takes \\damagerankfourhigh{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -406,7 +406,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to \\damagerankfive{bludgeoning}.',
+        exceptThat: 'the damage increases to \\damagerankfivehigh{bludgeoning}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -579,7 +579,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'wall of death',
         exceptThat: `
-          the damage increases to \\damagerankfour{energy}.
+          the damage increases to \\damagerankfourhigh{energy}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },

@@ -66,10 +66,10 @@ export const aquamancy: MysticSphere = {
     {
       name: 'Desiccate',
 
-      // The accuracy bonus drops damage from d3 to d3l
+      // The accuracy bonus drops damage from d3 to d2h
       attack: {
         hit: `
-          The target takes \\damagerankthreelow{physical}.
+          The target takes \\damageranktwohigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -171,10 +171,10 @@ export const aquamancy: MysticSphere = {
     {
       name: 'Intense Aquajet Propulsion',
 
-      // 3 ranks for movement
+      // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          The target takes \\damagerankthree{bludgeoning}.
+          The target takes \\damagerankfourhigh{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -182,7 +182,7 @@ export const aquamancy: MysticSphere = {
           If you are underwater, this movement is doubled and you can also move vertically.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -487,7 +487,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranktwo{bludgeoning}.
+          The target takes \\damageranktwohigh{bludgeoning}.
           If it is Medium or smaller and your attack result also beats its Fortitude defense, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
@@ -504,7 +504,7 @@ export const aquamancy: MysticSphere = {
         name: 'forceful aquajet',
         // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to \\damagerankfive{bludgeoning}, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankfivehigh{bludgeoning}, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 7,

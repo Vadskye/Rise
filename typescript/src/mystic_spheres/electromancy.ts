@@ -120,7 +120,7 @@ export const electromancy: MysticSphere = {
       name: 'Massive Lightning Bolt',
 
       attack: {
-        hit: `Each target takes \\damagerankthree{electricity}.`,
+        hit: `Each target takes \\damagerankthreehigh{electricity}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
@@ -150,7 +150,7 @@ export const electromancy: MysticSphere = {
       name: 'Mighty Arcing Grasp',
 
       attack: {
-        hit: `The target takes \\damagerankfour{electricity}.`,
+        hit: `The target takes \\damagerankfourhigh{electricity}.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -240,7 +240,7 @@ export const electromancy: MysticSphere = {
 
       // short range for one chain
       attack: {
-        hit: `Each target takes \\damagerankfive{electricity}.`,
+        hit: `Each target takes \\damagerankfivehigh{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
           This attack \\glossterm{chains} once.
@@ -255,7 +255,7 @@ export const electromancy: MysticSphere = {
 
       // Bunch of nonsense almost makes it as low as full AOE scaling?
       attack: {
-        hit: `Each target takes \\damagerankthreelow{electricity}.`,
+        hit: `Each target takes \\damagerankthree{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\glossterm{chains} twice.
@@ -271,7 +271,7 @@ export const electromancy: MysticSphere = {
       name: 'Mighty Electromagnetic Arc',
 
       attack: {
-        hit: `Each target takes \\damageranksixlow{electricity}.`,
+        hit: `Each target takes \\damageranksix{electricity}.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\glossterm{chains} twice.
@@ -370,7 +370,7 @@ export const electromancy: MysticSphere = {
 
       functionsLike: {
         name: 'call lightning',
-        exceptThat: 'the damage increases to \\damagerankfive{electricity}.',
+        exceptThat: 'the damage increases to \\damagerankfivehigh{electricity}.',
       },
       rank: 6,
       scaling: 'accuracy',
