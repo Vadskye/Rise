@@ -444,26 +444,26 @@ export const electromancy: MysticSphere = {
       name: 'Personal Conduction',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{electricity}.`,
+        hit: `Each target takes \\damagerankone{electricity}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
-      rank: 3,
+      rank: 2,
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
     {
-      name: 'Greater Personal Conduction',
+      name: 'Mighty Personal Conduction',
 
       attack: {
-        hit: `Each target takes \\damageranksix{electricity}.`,
+        hit: `Each target takes \\damagerankfour{electricity}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
       },
-      rank: 7,
+      rank: 5,
       type: 'Attune (deep)',
     },
 
