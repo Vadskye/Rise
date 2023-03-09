@@ -842,7 +842,7 @@ function setAttackTargeting(sectionPrefix, v) {
 }
 
 function calcAttackTargeting(isTargeted, rawDefense) {
-  rawDefense = (rawDefense || "").toLowerCase();
+  rawDefense = (rawDefense || "").toLowerCase().trim();
   const targetText = isTargeted
     ? "{{Target=@{target|Defender|token_name}}}"
     : "";
