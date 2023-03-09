@@ -100,7 +100,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{fire} immediately, and again during your next action.
+          The target takes \\damagerankfourhigh{fire} immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -135,7 +135,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{fire}.
+          Each target takes \\damagerankthreehigh{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -168,7 +168,7 @@ export const pyromancy: MysticSphere = {
 
       // +2r for delay, +1r for range
       attack: {
-        hit: `Each target takes \\damagerankfive{fire}.`,
+        hit: `Each target takes \\damagerankfivehigh{fire}.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you create a small bead of fire in midair within your space.
@@ -199,7 +199,7 @@ export const pyromancy: MysticSphere = {
       name: 'Massive Burning Hands',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{fire}.`,
+        hit: `Each target takes \\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea cone from you.
@@ -232,7 +232,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: "ignition",
-        exceptThat: "the damage increases to \\damagerankfour{fire}.",
+        exceptThat: "the damage increases to \\damagerankfourhigh{fire}.",
       },
       rank: 4,
       scaling: 'accuracy',
@@ -324,6 +324,18 @@ export const pyromancy: MysticSphere = {
     },
 
     {
+      name: 'Mighty Eyes of Flame',
+
+      functionsLike: {
+        name: "eyes of flame",
+        exceptThat: "the damage increases to \\damagerankfivehigh{fire}.",
+      },
+      rank: 6,
+      scaling: 'accuracy',
+      type: 'Attune',
+    },
+
+    {
       name: 'Flaming Spheres',
 
       attack: {
@@ -346,7 +358,7 @@ export const pyromancy: MysticSphere = {
       name: 'Flame Serpent',
 
       attack: {
-        hit: `Each target takes \\damagerankthree{fire}.`,
+        hit: `Each target takes \\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -459,7 +471,7 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'wall of fire',
         exceptThat: `
-          the damage increases to \\damagerankfour{fire}.
+          the damage increases to \\damagerankfourhigh{fire}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
@@ -527,8 +539,8 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{fire}.
-          If it loses \\glossterm{hit points} from this damage, it takes \\damagerankfour{fire} again during your next action.
+          The target takes \\damagerankfourhigh{fire}.
+          If it loses \\glossterm{hit points} from this damage, it takes \\damagerankfourhigh{fire} again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -553,6 +565,20 @@ export const pyromancy: MysticSphere = {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Kindled Fireburst',
+
+      functionsLike: {
+        name: 'kindled fireburst',
+        exceptThat: 'the damage increases to \\damagerankfourhigh{fire}.',
+      },
+      narrative: `
+        A small source of fire, such as a torch, erupts into a much larger burst of flame.
+      `,
+      rank: 6,
       scaling: 'accuracy',
     },
 
