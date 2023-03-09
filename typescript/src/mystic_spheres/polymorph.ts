@@ -315,7 +315,7 @@ export const polymorph: MysticSphere = {
       name: 'Spikeform',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{piercing}.`,
+        hit: `Each target takes \\damagerankone{piercing}.`,
         missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -324,7 +324,7 @@ export const polymorph: MysticSphere = {
       narrative: `
         Your body grows large spikes that impale creatures who attack you.
       `,
-      rank: 3,
+      rank: 2,
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -333,7 +333,7 @@ export const polymorph: MysticSphere = {
       name: 'Mighty Spikeform',
 
       attack: {
-        hit: `Each target takes \\damageranksix{piercing}.`,
+        hit: `Each target takes \\damagerankfour{piercing}.`,
         missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -342,7 +342,7 @@ export const polymorph: MysticSphere = {
       narrative: `
         Your body grows large spikes that impale creatures who attack you.
       `,
-      rank: 7,
+      rank: 5,
       type: 'Attune (deep)',
     },
 

@@ -381,13 +381,13 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'personal ignition',
-        exceptThat: 'the damage increases to \\damagerankfive{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
       },
       narrative: `
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
