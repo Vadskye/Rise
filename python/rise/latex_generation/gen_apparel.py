@@ -2128,17 +2128,17 @@ def generate_apparel():
             tags=["Attune (deep)"],
             description="""
                 You gain a +6 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+                In addition, you gain a \\plus1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants many small bonuses",
             upgrades=[
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +12, and the vital roll bonus increases to +3.",
+                    description="The hit point and damage resistance bonuses increase to +12, and the vital roll bonus increases to +2.",
                     rank=5,
                     short_description="Grants many bonuses",
                 ),
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +24, and the vital roll bonus increases to +4.",
+                    description="The hit point and damage resistance bonuses increase to +24, and the vital roll bonus increases to +3.",
                     rank=7,
                     short_description="Grants many large bonuses",
                 ),
