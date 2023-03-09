@@ -438,13 +438,13 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle Carapace',
 
       attack: {
-        hit: `Each target takes \\damageranksix{piercing and cold}.`,
+        hit: `Each target takes \\damagerankfive{piercing and cold}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
 
-      rank: 7,
+      rank: 6,
       // scaling: "accuracy",
       type: 'Attune (deep)',
       tags: ['Manifestation'],
