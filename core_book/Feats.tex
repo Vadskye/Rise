@@ -203,7 +203,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash  & \featpref{Martial Training}         \\
         \featref{Shieldbearer}             & Str 2               & Defend better with shields                 & \tdash  & \featpref{Shieldbearer}             \\
         \featref{Sniper}                   & Per 2               & Aim precisely at distant foes              & \tdash  & \featpref{Sniper}                   \\
-        \featref{Two-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash  & \featpref{Two-Weapon Fighting}      \\
+        \featref{Twin-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash  & \featpref{Twin-Weapon Fighting}      \\
         \featref{Weapon Focus}             & \tdash              & Fight better with a single type of weapon  & \tdash  & \featpref{Weapon Focus}             \\
         \featref{Whirlwind Warrior}        & Dex 2               & Fight hordes with agile ease               & \tdash  & \featpref{Whirlwind Warrior}        \\
     \end{longtable}
@@ -1124,7 +1124,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If one spell affects a strictly larger area or a strictly larger number of targets than the other, you must use the smaller of the two areas or target counts.
             You must choose the same targets and area for both spells, if applicable.
             Roll the attack roll and damage for each spell separately.
-            You cannot use the \ability{desperate exertion} ability to affect the strike or the spell.
+            You cannot use the \ability{desperate exertion} ability to affect either spell.
 
             After you use this ability, you are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
         \end{magicalactiveability}
@@ -1136,7 +1136,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Mystic Archer}{Casting, Magical}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Magical Strikes} Whenever you make a ranged \glossterm{strike} with a \weapontag{Projectile} weapon, you can choose to treat that as a \magical ability.
+        \ff[1]{Magical Projectiles} Whenever you make a ranged \glossterm{strike} with a \weapontag{Projectile} weapon, you can choose to treat that as a \magical ability.
         When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
         \ff[1]{Imbue Projectile} You can use the \textit{imbue projectile} ability as a standard action.
@@ -1144,23 +1144,30 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             Choose a spell you know that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
             The spell's power is imbued in a \glossterm{projectile} you hold.
+            Unlike most \abilitytag{Attune} abilities, you can attune to this ability any number of times, choosing a different spell and projectile each time.
             An individual projectile can only be imbued with this ability once, even if multiple creatures use this ability on the same projectile.
 
             When you make a \glossterm{strike} with that projectile, the spell takes effect on one primary target of the strike.
-            You must make any attack rolls required for the spell separately from your attack roll with the strike, and the spell takes effect even if the strike misses the target's defenses.
+            Area spells use the corner of the target's square that is closest to you as their \glossterm{point of origin}.
+            If the spell has a direction, such as a cone or line, it faces directly away from you.
+
+            You must make any attack rolls required for the spell separately from your attack roll with the strike.
+            The spell takes effect even if the strike misses the target's defenses.
             However, the spell does not take effect if the strike misses or fails for some other reason, such as \glossterm{cover} or \glossterm{concealment}.
-            After the spell takes effect, your attunement to this ability ends.
+
+            After the spell takes effect, your attunement to this ability ends, and you \glossterm{briefly} cannot trigger any more spells you imbued this ability.
+            If you fire multiple projectiles imbued with this ability at once, one of the spells takes effect and the others do not.
         \end{magicalattuneability}
 
-        \ff[6]{Guided Projectiles} Your \glossterm{strikes} with \weapontag{Projectile} weapons ignore all \glossterm{miss chances}, such as from \glossterm{concealment}.
+        \ff[6]{Guided Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore all \glossterm{miss chances}, such as from \glossterm{concealment}.
         This does not prevent your attacks from failing for other reasons.
 
-        \ff[12]{Phasing Projectiles} Your \glossterm{strikes} with \weapontag{Projectile} weapons ignore \glossterm{cover}.
+        \ff[12]{Imbue Projectile+} Each time you attune to your \textit{imbue projectile} ability, you can imbue two different projectiles with two different spells.
+        Your attunement to the ability ends when either spell takes effect.
+
+        \ff[18]{Phasing Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore \glossterm{cover}.
         In addition, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through creatures or solid walls, though it does not grant you the ability to see through a wall.
-
-        \ff[18]{Imbue Projectile+} Your \textit{imbue projectile} ability loses the \abilitytag{Attune} tag.
-        Instead, it lasts until you use it again.
     \end{magicalfeat}
 
     \begin{feat}{Null}{General}
@@ -1185,11 +1192,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
             In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
 
             \rankline
-            You gain a \plus2 accuracy bonus with the strike at for every 3 levels beyond 6.
+            You gain a \plus2 accuracy bonus with the strike for every 3 levels beyond 6.
         \end{activeability}
 
-        \ff[6]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-        Instead, each time you would gain a legacy item upgrade, you instead gain a \plus1 bonus to your \glossterm{accuracy}, your \glossterm{fatigue tolerance}, and all \glossterm{defenses}.
+        \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
+        Instead, you gain a \plus1 bonus to your \glossterm{accuracy}, your \glossterm{fatigue tolerance}, and all \glossterm{defenses}.
+        These bonuses increase to \plus2 at level 12 and to \plus3 at level 18.
 
         \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \medarea radius from you uses a \magical ability as a standard action, the ability has a 50\% chance to fail with no effect.
         This cannot cause passive or triggered abilities to fail.
@@ -1344,7 +1352,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             % \featlevel{21} The healing increases to 7d10.
         \end{activeability}
 
-        \ff[6]{Diehard} You gain a \plus4 bonus to \glossterm{vital rolls}.
+        \ff[6]{Diehard} You gain a \plus3 bonus to \glossterm{vital rolls}.
 
         \ff[12]{Regenerative Rest} When you take a \glossterm{short rest}, you can remove any number of \glossterm{vital wounds} affecting you.
         If you do, you increase your \glossterm{fatigue level} by three per vital wound removed this way.
