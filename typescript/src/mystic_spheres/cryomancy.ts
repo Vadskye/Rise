@@ -158,12 +158,12 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle',
 
       attack: {
-        hit: `The target takes \\damagerankfivehigh{piercing and cold}.`,
+        hit: `The target takes \\damagerankfourhigh{piercing and cold}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -272,7 +272,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{cold}.
+          The target takes \\damagerankfivehigh{cold}.
           In addition, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
           If the target loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
@@ -307,10 +307,10 @@ export const cryomancy: MysticSphere = {
     {
       name: 'Mighty Hailstorm',
 
-      // d6l instead of d5 since it's only a t4 area
+      // d5h instead of d5 since it's only a t4 area??
       attack: {
         hit: `
-          Each target takes \\damageranksixlow{bludgeoning and cold}.
+          Each target takes \\damagerankfivehigh{bludgeoning and cold}.
           If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         missGlance: true,
