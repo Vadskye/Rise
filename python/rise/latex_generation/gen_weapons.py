@@ -174,12 +174,14 @@ def generate_weapons():
                     rank=5,
                     description="""
                         Each creature that loses \\glossterm<hit points> from the strike is \\immobilized instead of slowed if your attack result beats its Fortitude defense.
+                        The strike also deals 1d6 \\glossterm<extra damage>.
                     """,
                 ),
                 Upgrade(
                     rank=7,
                     description="""
                         Creatures damaged by the strike do not have to lose hit points to be immobilized instead of slowed.
+                        In addition, the extra damage increases to 2d10.
                     """,
                 ),
             ]
@@ -296,7 +298,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Unbalanced",
-            rank=3,
+            rank=2,
             description="""
                 You take a -1 \\glossterm<accuracy> penalty to strikes using this weapon.
                 However, your attack rolls with strikes using this weapon \\glossterm<explode> on a 9.
@@ -305,7 +307,7 @@ def generate_weapons():
             short_description="-1 accuracy, but explode on a 9",
             upgrades=[
                 Upgrade(
-                    rank=7,
+                    rank=6,
                     description="""
                         The accuracy penalty increases to -2.
                         However, you also explode on an 8.
