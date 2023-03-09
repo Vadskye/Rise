@@ -393,9 +393,9 @@ def generate_implements():
             material_type="Staff",
             description="""
                 Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
-                When you do, choose a location within \\rngshort range.
+                When you do, choose a location within \\shortrange.
                 The ability takes effect as if you were in the chosen location.
-                In addition, you increase your \\glossterm<fatigue level> by one.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?
                 Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
@@ -405,10 +405,10 @@ def generate_implements():
         ),
         create_implement(
             name="Reaching Staff, Greater",
-            rank=5,
+            rank=7,
             material_type="Staff",
             description="""
-                This implement functions like a \\textit<reaching staff>, except that activating it does not increase your \\glossterm<fatigue level>.
+                This implement functions like a \\textit<reaching staff>, except that activating it does not increase your fatigue level.
             """,
             short_description="Can use abilities from a short distance away",
         ),
@@ -417,15 +417,15 @@ def generate_implements():
     implements += [
         create_implement(
             name="Distant Staff",
-            rank=3,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\magical ability with a \\glossterm<range>, you may activate this staff.
-                When you do, you double the spell's range.
-                In addition, you increase your \\glossterm<fatigue level> by two.
+                When you do, you double the spell's range, to a maximum of 180 feet.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
             """,
-            short_description="Can exert to double area size",
+            short_description="Can exert to double range",
         ),
         create_implement(
             name="Distant Staff, Greater",
@@ -433,22 +433,23 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<distant staff>, except that activating it only increases your fatigue level by one.
+                This implement functions like a \\textit<distant staff>, except that activating it does not increase your fatigue level.
             """,
-            short_description="Can exert to double range",
+            short_description="Can double range",
         ),
     ]
 
     implements += [
         create_implement(
             name="Widening Staff",
-            rank=4,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\magical ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
+                % TODO: maximum area?
                 When you do, you double the spell's area.
-                In addition, you increase your \\glossterm<fatigue level> by two.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
             """,
             short_description="Can exert to double area size",
         ),
@@ -458,9 +459,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<widening staff>, except that activating it only increases your fatigue level by one.
+                This implement functions like a \\textit<widening staff>, except that activating it does not increase your fatigue level.
             """,
-            short_description="Can exert to double area size",
+            short_description="Can double area size",
         ),
     ]
 
@@ -609,20 +610,20 @@ def generate_implements():
     implements += [
         create_implement(
             name="Splitting Staff",
-            rank=2,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a non-\\glossterm<strike> \\magical ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
                 When you do, increase the number of targets that the ability affects by one.
-                In addition, you increase your \\glossterm<fatigue level> by one.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
                 If the spell does not have a defined range, this staff has no effect on it.
             """,
             short_description="Can exert to add an extra target",
         ),
         create_implement(
             name="Splitting Staff, Greater",
-            rank=6,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -640,8 +641,9 @@ def generate_implements():
             tags=[],
             description="""
                 Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
-                When you do, you increase your \\glossterm<fatigue level> by two, and you \\glossterm<briefly> cannot use this effect again.
+                When you do, you increase your \\glossterm<fatigue level> by two, and you \\glossterm<briefly> cannot activate this effect again.
                 During your next action, the spell takes effect again with the same choices for all decisions, such as targets.
+                You cannot use the \\ability<desperate exertion> ability to affect the spell or its echo.
             """,
             short_description="Can exert to repeat effect",
         ),
