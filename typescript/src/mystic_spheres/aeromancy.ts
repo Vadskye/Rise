@@ -95,7 +95,9 @@ export const aeromancy: MysticSphere = {
       name: 'Propulsion',
 
       effect: `
-        Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
+        Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
+        The target must have a \\glossterm{weight category} of Medium or less.
+
         You \\glossterm{knockback} the target up to 60 feet in any direction, to a maximum of a 60 foot \\glossterm{height limit}.
         You cannot change the direction of the movement partway through.
         Moving the target upwards costs twice the normal movement cost.
@@ -181,7 +183,7 @@ export const aeromancy: MysticSphere = {
       // treat as r2, halfway between 15' and 30'
       attack: {
         hit: `
-          If the target is Medium or smaller, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
+          If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
           This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -196,7 +198,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is Large or smaller, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
+          If the target has a \\glossterm{weight category} of Large or less, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
           This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -403,7 +405,8 @@ export const aeromancy: MysticSphere = {
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Small or smaller object within \\medrange.
+          Make an attack vs. Reflex against one object within \\medrange.
+          The object must have a \\glossterm{weight category} of Small or less.
           If the object is attended by a creature, the attack must also beat the attending creature's Fortitude and Reflex defenses.
           If it is held in two hands or well secured, this attack automatically fails.
         `,
