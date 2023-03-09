@@ -413,8 +413,8 @@ export const pyromancy: MysticSphere = {
       name: 'Flame Blade',
 
       effect: `
-        Your weapons shed light like a torch.
-        All damage you deal with \\glossterm{strikes} becomes fire damage in addition to the attack's normal damage types.
+        Your \\glossterm{manufactured weapons} shed light like a torch.
+        All damage you deal with \\glossterm{strikes} using those weapons becomes fire damage in addition to the attack's normal damage types.
       `,
       rank: 1,
       type: 'Attune',
