@@ -124,7 +124,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Arcing",
-            rank=2,
+            rank=3,
             tags=[],
             description="""
                 This weapon continuously crackles with electricity.
@@ -137,18 +137,16 @@ def generate_weapons():
             short_description="Deals electricity damage and can chain",
             upgrades=[
                 Upgrade(
-                    rank=4,
-                    # (94%/78%)
+                    rank=5,
                     description="""
-                        The strike also deals 1d6 \\glossterm<extra damage>.
+                        The strike also deals 2d6 \\glossterm<extra damage>.
                     """,
                     short_description="Deals electricity damage and can chain",
                 ),
                 Upgrade(
-                    rank=6,
-                    # (92%/69%)
+                    rank=7,
                     description="""
-                        The extra damage increases to 2d10.
+                        The extra damage increases to 4d10.
                     """,
                     short_description="Deals electricity damage and can chain",
                 ),
@@ -763,7 +761,8 @@ def generate_weapons():
             name="Vorpal",
             rank=7,
             description="""
-                Critical hits with melee \\glossterm<strikes> using this weapon deal double damage.
+                Critical hits with melee \\glossterm<strikes> using this weapon roll triple damage dice instead of double damage dice.
+                A double critical hit would deal quadruple damage dice, and so on.
                 If you make a creature lose at least half its maximum \\glossterm<hit points> with a melee critical hit using this weapon, it immediately dies.
             """,
             short_description="Inflicts lethal critical hits",
