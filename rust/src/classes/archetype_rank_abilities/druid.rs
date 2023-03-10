@@ -491,6 +491,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         Otherwise, you are treated as being trained in that skill.
 
                         \rankline
+                        % No maximum because the ability is magical
                         \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
                             If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
                         \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
