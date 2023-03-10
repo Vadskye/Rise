@@ -473,38 +473,52 @@
         \end{itemize}
         \parhead{Automatic Languages} Common, Draconic, any one \glossterm{common language}.
 
+        \begin{dtable}
+            % Don't use lcaption because there is already a Dragon Types table with a label
+            \caption[]{Dragon Types}
+            \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
+                \tb{Dragon} & \tb{Damage Type} & \tb{Breath Weapon} \tableheaderrule
+                Black       & Acid             & \areamed, 5 ft. wide line \\
+                Blue        & Electricity      & \areamed, 5 ft. wide line \\
+                Brass       & Fire             & \areamed, 5 ft. wide line \\
+                Bronze      & Electricity      & \areamed, 5 ft. wide line \\
+                Copper      & Acid             & \areamed, 5 ft. wide line \\
+                Gold        & Fire             & \areasmall cone           \\
+                Green       & Acid             & \areasmall cone           \\
+                Red         & Fire             & \areasmall cone           \\
+                Silver      & Cold             & \areasmall cone           \\
+                White       & Cold             & \areasmall cone           \\
+            \end{dtabularx}
+        \end{dtable}
+
         \subsubsection{Dragon Archetype}
 
             \cf{Dgn}[1]{Draconic Breath} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
             % +1d to compensate for cooldown
             \begin{activeability}{Breath Weapon}
                 \rankline
-                Make an attack vs. Reflex against everything in the area defined by your dragon type (see \trefnp{Dragon Types}).
+                Make an attack vs. Reflex against everything in the area defined by your dragon type (see Dragon Types, above).
                 After you use this ability, you \glossterm{briefly} cannot use it again.
-                \hit Each target takes damage equal to 1d8 plus half your \glossterm{power}.
+                \hit Each target takes \damageranktwo{}.
                 The damage type is defined by your dragon type.
                 \miss \glossterm{Glancing blow}.
 
                 \rankline
-                \rank{2} The damage increases to 1d10.
-                    In addition, the area affected by your breath weapon increases.
+                % T2 area
+                \rank{2} The area increases.
                     A line breath weapon becomes a \arealarge, 5 ft.\ wide line.
                     A cone breath weapon becomes a \areamed cone.
-                \rank{3} The damage increases to 2d6.
-                \rank{4} The damage increases to 2d8.
-                    In addition, the area affected by your breath weapon increases.
+                \rank{3} The damage increases to \damagerankthree{}.
+                \rank{4} The damage increases to \damagerankfive{}.
+                % T4 area
+                \rank{5} The area increases.
                     A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
                     A cone breath weapon becomes a \arealarge cone.
-                \rank{5} The damage increases to 2d10.
-                \rank{6} The damage increases to 4d6.
-                    In addition, the area affected by your breath weapon increases.
-                    A line breath weapon becomes a \areagarg, 15 ft.\ wide line.
-                    A cone breath weapon becomes a \areahuge cone.
-                \rank{7} The damage increases to 4d8.
+                \rank{6} The damage increases to \damageranksix{}.
+                \rank{7} The damage increases to \damagerankseven{}.
             \end{activeability}
 
-            \cf{Dgn}[2]{Draconic Body} You gain a \plus1 bonus to Armor defense.
-            In addition, you gain a \plus1d damage bonus with all \glossterm{natural weapons}.
+            \cf{Dgn}[2]{Draconic Body} You gain a \plus1 bonus to your Armor defense.
 
             \cf{Dgn}[3]{Draconic Flight}[\sparkle] Your wings grow larger, granting you a limited ability to fly.
             You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
@@ -513,19 +527,18 @@
             \cf{Dgn}[4]{Draconic Bulk} Your size category increases to Medium.
             This increases the \glossterm{base speed} for your size.
             You reduce your Dexterity by 1 and increase your Strength by 2.
-            In addition, you gain a \plus2 bonus to your \glossterm{power} with all abilities.
+            In addition, you gain a \plus1 bonus to your \glossterm{power} with all abilities.
 
-            \cf{Dgn}[5]{Greater Draconic Body} The defense bonus from your \textit{draconic body} ability increases to \plus2.
-            In addition, the damage bonus increases to \plus2d.
+            \cf{Dgn}[5]{Draconic Body+} The Armor bonus from your \textit{draconic body} ability increases to \plus2.
 
-            \cf{Dgn}[6]{Greater Draconic Flight} The maximum height from your \textit{draconic flight} ability increases to 60 feet.
+            \cf{Dgn}[6]{Draconic Flight+} The maximum height from your \textit{draconic flight} ability increases to 60 feet.
             In addition, you gain a \plus10 foot bonus to your fly speed with that ability.
 
-            \cf{Dgn}[7]{Greater Draconic Bulk} Your size category increases to Large.
-            The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus6.
+            \cf{Dgn}[7]{Draconic Bulk+} Your size category increases to Large.
+            The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
             You gain a slam natural weapon, except that it also has the Sweeping (1) \glossterm{weapon tag} (see \pcref{Natural Weapons}).
             % TODO: too fast?
-            In addition, you gain a \plus30 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
+            In addition, you gain a \plus20 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
 
         \subsubsection{Basic Class Abilities}
             If you choose dragon as your base class, you gain the following abilities.
