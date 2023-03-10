@@ -1655,7 +1655,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Lifekeeping Belt",
-            rank=3,
+            rank=1,
             material_type="Belt",
             tags=[],
             description="""
@@ -1665,7 +1665,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Lifekeeping Belt, Greater",
-            rank=5,
+            rank=3,
             material_type="Belt",
             tags=[],
             description="""
@@ -1675,7 +1675,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Lifekeeping Belt, Supreme",
-            rank=7,
+            rank=5,
             material_type="Belt",
             tags=[],
             description="""
