@@ -243,15 +243,16 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Once per week, you can request a miracle as a standard action.
+                You can request a miracle as a standard action.
                 You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
                 At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
+                After you use this ability, you increase your \glossterm{fatigue level} by three, and you cannot request another miracle for a week.
 
                 Miracles are most effective when your request is directly related to your deity's domains and general purview.
                 They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
                 If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
-                If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
+                If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
             ",
             modifiers: None,
         },
@@ -260,7 +261,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can use this ability once per 24 hours instead of once per week.
+                Using your \textit{miracle} ability does not increase your fatigue level, and you can perform two miracles per week instead of only one.
             ",
             modifiers: None,
         },
