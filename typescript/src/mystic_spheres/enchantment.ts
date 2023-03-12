@@ -604,7 +604,7 @@ export const enchantment: MysticSphere = {
         The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 3 power, and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
-      rank: 2,
+      rank: 6,
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
       tags: ['Swift'],
     },
