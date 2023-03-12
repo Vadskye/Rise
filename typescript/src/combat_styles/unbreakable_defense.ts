@@ -150,9 +150,8 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Defensive Strike',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
-        In exchange, you gain a +2 bonus to Armor and Reflex defenses this round.
+        Make a melee \\glossterm{weak strike}.
+        You gain a +1 bonus to Armor and Reflex defenses this round.
         The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,

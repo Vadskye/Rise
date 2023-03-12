@@ -2878,7 +2878,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<denounce the heathens> or \\ability<bless the worthy> cleric abilities, their area is tripled.
             """,
-            short_description="Triples area of \\ability<denounce the heathens> and \\ability<bless the worthy>",
+            short_description="Triples area of Preacher abilities",
         ),
         create_apparel(
             name="Amulet of Blessed Oration, Supreme",
@@ -2886,9 +2886,9 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<denounce the heathens>, \\ability<condemn the fearful>, or \\ability<condemn the fearful> cleric abilities, their area is quadrupled.
+                When you use the \\ability<denounce the heathens> or \\ability<condemn the fearful> cleric abilities, their area is quadrupled.
             """,
-            short_description="Quadruples area of preacher abilities",
+            short_description="Quadruples area of Preacher abilities",
         ),
     ]
 
