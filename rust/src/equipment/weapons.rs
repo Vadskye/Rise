@@ -60,7 +60,6 @@ impl WeaponTag {
 
 #[derive(Copy, Clone)]
 pub enum StandardWeapon {
-    ArmorSpikes,
     Battleaxe,
     Bite,
     Broadsword,
@@ -91,16 +90,9 @@ pub enum StandardWeapon {
 impl StandardWeapon {
     pub fn weapon(&self) -> Weapon {
         match self {
-            Self::ArmorSpikes => Weapon {
-                accuracy: 0,
-                damage_dice: DamageDice::d4(),
-                damage_types: vec![DamageType::Piercing],
-                name: "Armor spike".to_string(),
-                tags: vec![],
-            },
             Self::Battleaxe => Weapon {
-                accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                accuracy: 1,
+                damage_dice: DamageDice::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Battleaxe".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
