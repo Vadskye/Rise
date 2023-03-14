@@ -234,7 +234,7 @@ export const terramancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
+          Make an attack vs. Reflex against all Large or smaller \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
         `,
       },
       narrative: `
