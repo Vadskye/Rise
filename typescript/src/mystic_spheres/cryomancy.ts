@@ -16,7 +16,7 @@ export const cryomancy: MysticSphere = {
     The ice is similar to natural ice, but since it was created recently by a spell, the effects of icy terrain do not have as much variance as natural terrain.
 
     Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
-    When a creature takes physical damage while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
+    When a Large or smaller creature takes physical damage while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
     At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
 
     If an area of icy terrain takes any fire damage, it is destroyed and becomes normal ground or water again.
@@ -292,7 +292,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           Each target takes \\damageranktwo{bludgeoning and cold}.
-          If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
+          If your attack result beats a Large or smaller damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         missGlance: true,
         targeting: `
@@ -311,7 +311,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           Each target takes \\damagerankfivehigh{bludgeoning and cold}.
-          If your attack result beats a damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
+          If your attack result beats a Large or smaller damaged creature's Fortitude defense, and that creature is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         missGlance: true,
         targeting: `

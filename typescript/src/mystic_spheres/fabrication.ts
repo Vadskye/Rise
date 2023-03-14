@@ -66,7 +66,7 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `
           The target takes \\damageranktwo{piercing}.
-          If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
@@ -432,7 +432,7 @@ export const fabrication: MysticSphere = {
           This vulnerability ends for a target if it takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything that is Large or smaller in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 7,
