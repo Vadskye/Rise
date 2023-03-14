@@ -76,7 +76,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
-        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
