@@ -205,7 +205,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },

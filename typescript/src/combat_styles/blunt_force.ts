@@ -183,7 +183,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller creature that loses \\glossterm{hit points} from the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -193,7 +193,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
