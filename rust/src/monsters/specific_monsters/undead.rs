@@ -151,8 +151,8 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: Size::Medium,
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster();
@@ -276,7 +276,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                         + self.challenge_rating.rank_modifier(),
                     tags: None,
                 }
-                .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
+                .weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
             ));
             modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(
@@ -301,7 +301,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                     StandardWeapon::Slam.weapon(),
                 ],
             }

@@ -116,7 +116,7 @@ impl StandardAttack {
                 targeting: Targeting::Creature(Range::Adjacent),
             },
             Self::FrostwebSpiderBite => {
-                let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
+                let mut frostweb_spider_bite = StandardWeapon::MultipedalBite.weapon().attack();
                 if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(PoisonEffect {
                         stage1: vec![Debuff::Slowed],
@@ -138,7 +138,7 @@ impl StandardAttack {
                 name: "Flesh-Rending Bite".to_string(),
                 rank: *rank,
                 tags: None,
-            }.weapon_attack(&StandardWeapon::MonsterBite.weapon()),
+            }.weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
