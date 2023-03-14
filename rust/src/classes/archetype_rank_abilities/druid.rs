@@ -415,16 +415,18 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Hound}
                         \rankline
-                        You gain the ability to move on all four limbs.
-                        When doing so, you gain a \plus10 foot bonus to your land speed, but you have no \glossterm{free hands}.
+                        You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
+                        In addition, you have the ability to move on all four limbs.
+                        When doing so, you become \trait{multipedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
+                        This gives you a \plus10 foot bonus to your \glossterm{land speed}, and gives your bite the \weapontag{Heavy} weapon tag.
+
                         When not using your hands to move, your ability to use your hands is unchanged.
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
-                        In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
                         \rank{3} You gain the \trait{scent} ability.
-                        \rank{5} You can run on three limbs instead of four, allowing you to retain one free hand while keeping the speed bonus.
-                        \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                        \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                        \rank{7} You can run on three limbs instead of four, allowing you to retain one free hand while multipedal.
                     \end{magicalactiveability}
 
                     % Seems boring? What abilities would make sense?
