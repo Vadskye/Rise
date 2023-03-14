@@ -101,7 +101,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Climb,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
+            StandardWeapon::MultipedalBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
         ],
     }.monster()));
 
@@ -189,7 +189,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         weapons: vec![StandardWeapon::Slam.weapon()],
     }.monster()));
 
-    let stygian_leech_bite = StandardWeapon::MonsterBite
+    let stygian_leech_bite = StandardWeapon::MultipedalBite
         .weapon()
         .except(|w| w.damage_types.push(DamageType::Energy));
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
@@ -298,7 +298,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: 5,
         modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
             Modifier::Attack(
-                Maneuver::PouncingStrike.attack(StandardWeapon::MonsterClaws.weapon()),
+                Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon()),
             ),
         ])),
         movement_speeds: Some(vec![
@@ -312,8 +312,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon(),
-            StandardWeapon::MonsterClaws.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
+            StandardWeapon::Claws.weapon(),
         ],
     }.monster()));
 
@@ -352,7 +352,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
         ],
     }.monster()));
 
@@ -435,8 +435,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -449,8 +449,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Large,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -462,7 +462,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 name: "Ichor Rat".to_string(),
                 size: Size::Tiny,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }
             .monster(),
             IchorDefinition {
@@ -474,7 +474,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Gargantuan,
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                     StandardWeapon::Talon.weapon(),
                 ],
             }
@@ -487,7 +487,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 name: "Ichor Wolf".to_string(),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }
             .monster(),
         ],

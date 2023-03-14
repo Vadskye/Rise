@@ -254,7 +254,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     Modifier::Attack(StandardAttack::Combustion(7).attack()),
                     Modifier::Attack(
                         Maneuver::Tenderize
-                            .attack(StandardWeapon::MonsterRam.weapon())
+                            .attack(StandardWeapon::MultipedalRam.weapon())
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -265,9 +265,9 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Endurance,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon()
+                    StandardWeapon::MultipedalBite.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
-                    StandardWeapon::MonsterRam.weapon()
+                    StandardWeapon::MultipedalRam.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
                 ],
             }
@@ -447,8 +447,8 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Endurance,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -471,7 +471,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(
-                        Maneuver::GraspingStrike.attack(StandardWeapon::MonsterClaws.weapon())
+                        Maneuver::GraspingStrike.attack(StandardWeapon::Claws.weapon())
                         .except(|a| a.name = "Impale".to_string())
                     ),
                     Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
@@ -956,7 +956,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Craft,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                 ],
             }
             .monster(),
@@ -975,7 +975,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
                     Modifier::Attack(
-                        StandardWeapon::MonsterStinger.weapon().attack()
+                        StandardWeapon::MultipedalStinger.weapon().attack()
                         .except_hit_damage(
                             |d| d.lose_hp_effect = Some(
                                 AttackTriggeredEffect::Poison(PoisonEffect {
@@ -1001,7 +1001,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Endurance,
                     Skill::Jump,
                 ]),
-                weapons: vec![StandardWeapon::MonsterStinger.weapon()],
+                weapons: vec![StandardWeapon::MultipedalStinger.weapon()],
             }
             .monster(),
         ],

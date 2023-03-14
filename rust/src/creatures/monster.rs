@@ -113,7 +113,7 @@ impl Monster {
             CreatureType::Planeforged
         };
         let mut monster = Monster::new(challenge_rating, creature_type, level);
-        monster.creature.weapons.push(StandardWeapon::MonsterClaws.weapon());
+        monster.creature.weapons.push(StandardWeapon::Claws.weapon());
         monster.creature.weapons.push(StandardWeapon::Slam.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
         let starting_attribute = if let Some(a) = starting_attribute {
