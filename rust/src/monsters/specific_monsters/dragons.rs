@@ -147,8 +147,8 @@ impl AgeCategory {
 
     fn weapons(&self) -> Vec<Weapon> {
         let mut weapons = vec![
-            StandardWeapon::MonsterBite.weapon(),
-            StandardWeapon::MonsterClaws.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
+            StandardWeapon::Claws.weapon(),
         ];
         match self {
             Self::Adult => weapons.push(StandardWeapon::Slam.weapon()),

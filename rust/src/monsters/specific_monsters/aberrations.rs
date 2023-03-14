@@ -138,7 +138,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Skill::Swim,
         ]),
         // TODO: make attacks sweeping
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     return monsters;
