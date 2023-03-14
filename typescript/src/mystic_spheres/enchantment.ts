@@ -110,7 +110,7 @@ export const enchantment: MysticSphere = {
         // No relevant glance effect
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all Large or smaller \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 4,

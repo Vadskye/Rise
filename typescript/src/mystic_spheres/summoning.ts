@@ -408,7 +408,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           Each target takes \\damagerankthree{physical}.
-          Each creature that loses \\glossterm{hit points} from this damage falls \\prone.
+          Each Large or smaller creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
         missGlance: true,
         targeting: `
