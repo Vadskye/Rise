@@ -7,7 +7,7 @@ use crate::monsters::creature_type::CreatureType::MonstrousHumanoid;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullMonstrousHumanoidDefinition {
@@ -20,6 +20,7 @@ struct FullMonstrousHumanoidDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -213,6 +214,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         senses: Option<Vec<Sense>>,
         trained_skills: Option<Vec<Skill>>,
     }

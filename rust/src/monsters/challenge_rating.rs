@@ -1,4 +1,5 @@
-use crate::creatures::{Creature, Monster};
+use crate::creatures::{Creature, HasModifiers, Modifier, Monster};
+use crate::core_mechanics::StandardPassiveAbility;
 use serde::Serialize;
 use std::cmp::max;
 
@@ -12,6 +13,28 @@ pub enum ChallengeRating {
 impl ChallengeRating {
     pub fn all() -> Vec<Self> {
         return vec![Self::One, Self::Four];
+    }
+
+    pub fn add_modifiers(&self, creature: &mut Creature) {
+        creature.add_modifier(
+            Modifier::Accuracy(self.accuracy_bonus()),
+            Some("challenge rating"),
+            None,
+        );
+        creature.add_modifier(
+            Modifier::AllDefenses(self.defense_bonus()),
+            Some("challenge rating"),
+            None,
+        );
+        if self == &ChallengeRating::Four {
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::TwoActions.ability());
+            let maximum_conditions = if creature.level >= 12 { 3 } else { 4 };
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());
+        }
     }
 
     pub fn accuracy_bonus(&self) -> i32 {

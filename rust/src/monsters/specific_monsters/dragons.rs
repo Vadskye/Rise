@@ -16,7 +16,7 @@ use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 
 enum AgeCategory {
     Wyrmling,

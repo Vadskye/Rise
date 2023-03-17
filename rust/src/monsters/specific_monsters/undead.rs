@@ -12,7 +12,7 @@ use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 use std::cmp::{max, min};
 
@@ -28,6 +28,7 @@ struct FullUndeadDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,

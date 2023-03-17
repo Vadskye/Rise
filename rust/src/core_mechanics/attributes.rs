@@ -1,4 +1,4 @@
-use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
+// use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
 use std::cmp::PartialEq;
 
 #[derive(Clone, Copy, Debug, Eq, Hash)]
@@ -68,7 +68,7 @@ where
         } else {
             0
         };
-        return value + self.calc_total_modifier(ModifierType::BaseAttribute(*attribute));
+        return value + self.calc_total_modifier(ModifierType::Attribute(*attribute));
     }
 
     fn set_attribute_scaling(
@@ -80,7 +80,7 @@ where
         if value > 0 {
             for attribute in attributes.iter() {
                 self.add_modifier(
-                    Modifier::BaseAttribute(*attribute, value),
+                    Modifier::Attribute(*attribute, value),
                     Some("attribute scaling with level"),
                     None,
                 );
