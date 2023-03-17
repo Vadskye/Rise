@@ -112,6 +112,30 @@ def creation_guidance():
                 ),
             ),
             creation_step(
+                "Size",
+                """
+                    Set your character's size.
+                    Normally, your size is Medium.
+                    Some special abilities can increase your size.
+                    Changing your size here automatically updates your base speed, Reflex defense, and Stealth skill.
+                """,
+                select(
+                    {"class": "size", "name": "size"},
+                    [
+                        option({"value": ""}, ""),
+                        option({"value": "fine"}, "Fine"),
+                        option({"value": "diminuitive"}, "Diminuitive"),
+                        option({"value": "tiny"}, "Tiny"),
+                        option({"value": "small"}, "Small"),
+                        option({"value": "medium"}, "Medium"),
+                        option({"value": "large"}, "Large"),
+                        option({"value": "huge"}, "Huge"),
+                        option({"value": "gargantuan"}, "Gargantuan"),
+                        option({"value": "colossal"}, "Colossal"),
+                    ],
+                ),
+            ),
+            creation_step(
                 "Languages",
                 """
                     Choose the languages your character can speak.
@@ -202,8 +226,12 @@ def creation_guidance():
                         option({"value": "wizard"}, "Wizard"),
                         option({"value": "dragon"}, "(Dragon)"),
                         option({"value": "harpy"}, "(Harpy)"),
-                        option({"value": "monster"}, "(Monster)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
+                        option({"value": "brute"}, "(Monster - Brute)"),
+                        option({"value": "leader"}, "(Monster - Leader)"),
+                        option({"value": "skirmisher"}, "(Monster - Skirmisher)"),
+                        option({"value": "sniper"}, "(Monster - Sniper)"),
+                        option({"value": "warrior"}, "(Monster - Warrior)"),
                     ],
                 ),
             ),
