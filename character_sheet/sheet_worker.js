@@ -1292,12 +1292,12 @@ function handleDamageResistance() {
 function calcBaseDamageResistance(levelish) {
   let baseDr = 0;
   if (levelish > 0) {
-    var multiplier = 1;
-    while (levelish > 21) {
-      levelish -= 6;
-      multiplier += 1;
+    if (levelish > 21) {
+      // +5 DR per levelish over 21
+      baseDr = 5 * (levelish - 21);
+      levelish = 21;
     }
-    baseDr =
+    baseDr +=
       {
         1: 0, 
         2: 1,
@@ -1316,11 +1316,11 @@ function calcBaseDamageResistance(levelish) {
         15:18,
         16:20,
         17:22,
-        18:24,
-        19:27,
+        18:25,
+        19:28,
         20:31,
         21:35,
-      }[levelish] * multiplier;
+      }[levelish];
   } else {
     baseDr = levelish;
   }
@@ -1619,36 +1619,34 @@ function handleHitPoints() {
 function calcBaseHitPoints(levelish) {
   let baseHp = 0;
   if (levelish > 0) {
-    var multiplier = 1;
-    while (levelish > 21) {
-      levelish -= 6;
-      multiplier *= 2;
+    if (levelish > 21) {
+      // +10 HP per levelish over 21
+      baseHp = 10 * (levelish - 21);
+      levelish = 21;
     }
-    baseHp =
-      multiplier *
-        {
-          1: 6,
-          2: 7,
-          3: 8,
-          4: 9,
-          5: 10,
-          6: 12,
-          7: 14,
-          8: 16,
-          9: 18,
-          10:20,
-          11:22,
-          12:25,
-          13:28,
-          14:32,
-          15:36,
-          16:40,
-          17:44,
-          18:50,
-          19:56,
-          20:63,
-          21:70,
-        }[levelish];
+    baseHp += {
+      1: 6,
+      2: 7,
+      3: 8,
+      4: 9,
+      5: 10,
+      6: 12,
+      7: 14,
+      8: 16,
+      9: 18,
+      10:20,
+      11:22,
+      12:25,
+      13:28,
+      14:32,
+      15:36,
+      16:40,
+      17:45,
+      18:50,
+      19:56,
+      20:63,
+      21:70,
+    }[levelish];
   } else {
     baseHp = 6 + Math.floor(levelish / 2);
   }
