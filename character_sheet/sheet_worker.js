@@ -1794,7 +1794,7 @@ function formatWeaponDamagePlusd(power) {
   const plusd6Text = plusd6 > 0 ? `+${plusd6}d6` : '';
   const plusdOnly = plusd % 3;
   const plusdOnlyText = plusdOnly > 0 ? `+${plusdOnly}d` : '';
-  return [plusd6Text, plusdOnlyText].filter(Boolean).join(" ");
+  return [plusdOnlyText, plusd6Text].filter(Boolean).join(" and ");
 }
 
 function handleMagicalPower() {
