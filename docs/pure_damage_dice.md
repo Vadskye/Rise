@@ -552,8 +552,8 @@ Spectral Strike:
 
 Power Attack (previously -1a for +25%ish damage):
 * L6: 6.7 normal, 7.3 with -2a and +2d6
-* L12: 13.4 normal, 14.8 with -2a and +4d6
-* L18: 32.3 normal, 30.2 with -2a and +8d6
+* L12: 13.4 normal, 13.2 with -2a and +3d6
+* L18: 26.9 normal, 26.3 with -2a and +6d6
 
 Trained Strike
 * L6, 
