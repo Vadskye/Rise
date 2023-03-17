@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, DamageDice, Defense};
+use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::Modifier;
 
 use super::standard_modifiers::add_standard_maneuver_modifiers;
@@ -105,7 +105,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Resilient Recovery+",
@@ -199,7 +199,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Strength.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Strength, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Strength, 1)]),
         },
         RankAbility {
             name: "Insensible Anger",
@@ -301,7 +301,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             name: "Unstoppable",
