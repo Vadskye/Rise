@@ -487,6 +487,7 @@ def calc_land_speed():
             div({"class": "calc-header"}, "Land Speed"),
             equation(
                 [
+                    # These are never actually used in sheet_worker
                     underlabel("Size", number_input({"name": "speed_size"})),
                     minus(),
                     underlabel("Armor", number_input({"name": "speed_armor"})),
