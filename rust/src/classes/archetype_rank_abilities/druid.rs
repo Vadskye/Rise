@@ -543,7 +543,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalattuneability}
             ",
             modifiers: Some(vec![
-                Modifier::BaseAttribute(Attribute::Constitution, 1),
+                Modifier::Attribute(Attribute::Constitution, 1),
                 Modifier::Resource(Resource::AttunementPoint, -1),
             ]),
         },
