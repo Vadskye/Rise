@@ -52,6 +52,7 @@ impl FullUndeadDefinition {
             modifiers: Some(modifiers),
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -95,6 +96,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
         ]),
         name: "Allip".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![
             Sense::Darkvision(60),
             Sense::Lifesense(120),
@@ -149,6 +151,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Always neutral evil".to_string(),
                 description: None,
                 movement_speeds: None,
+                role: Role::Brute,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: Size::Medium,
                 weapons: vec![
@@ -299,6 +302,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
                 movement_speeds: None,
+                role: Role::Leader,
                 senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![
@@ -501,6 +505,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
         movement_speeds: Some(creature.movement_speeds.clone()),
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
+        role: Role::Warrior,
         senses: Some(senses),
         size: creature.size.clone(),
         trained_skills: None,
@@ -567,6 +572,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         modifiers: Some(modifiers),
         movement_speeds: Some(movement_speeds),
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
+        role: Role::Brute,
         senses: Some(senses),
         size: creature.size.clone(),
         trained_skills: None,

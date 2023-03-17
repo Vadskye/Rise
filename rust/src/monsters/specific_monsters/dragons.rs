@@ -550,6 +550,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
             ),
         ]),
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
+        role: Role::Warrior,
         senses: None,
         size: age_category.size(),
         trained_skills: None,

@@ -43,6 +43,7 @@ impl FullMagicalBeastDefinition {
             modifiers: self.modifiers,
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -95,6 +96,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Ankheg".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Darkvision(60), Sense::Tremorsense(60)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -146,6 +148,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Nightcrawler".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(60), Sense::Blindsense(120)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -182,6 +185,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Hydra Maggot".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(60)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -231,6 +235,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Stygian Leech".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(120), Sense::Lifesense(120)]),
         size: Size::Medium,
         trained_skills: Some(vec![
@@ -269,6 +274,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Darkmantle".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Darkvision(120)]),
         size: Size::Small,
         trained_skills: Some(vec![
@@ -307,6 +313,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Griffon".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::LowLightVision]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -347,6 +354,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Yrthak".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Blindsight(120)]),
         size: Size::Huge,
         trained_skills: Some(vec![
@@ -399,6 +407,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     SpeedCategory::Normal,
                 )]),
                 name: self.name,
+                role: self.role,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: self.size,
                 trained_skills: self.trained_skills,
@@ -434,6 +443,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 7,
         modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Black Bear".to_string(),
+                role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
@@ -448,6 +458,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 9,
         modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Brown Bear".to_string(),
+                role: Role::Brute,
                 size: Size::Large,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
@@ -462,6 +473,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 1,
         modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Rat".to_string(),
+                role: Role::Skirmisher,
                 size: Size::Tiny,
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![StandardWeapon::MultipedalBite.weapon()],
@@ -473,6 +485,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 13,
                 modifiers: None,
                 name: "Ichor Roc".to_string(),
+                role: Role::Brute,
                 size: Size::Gargantuan,
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![
@@ -487,6 +500,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 5,
         modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
                 name: "Ichor Wolf".to_string(),
+                role: Role::Skirmisher,
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![StandardWeapon::MultipedalBite.weapon()],
