@@ -1,4 +1,4 @@
-// use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
+use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
 use std::cmp::PartialEq;
 
 #[derive(Clone, Copy, Debug, Eq, Hash)]
