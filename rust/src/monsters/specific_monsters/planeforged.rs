@@ -11,7 +11,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullPlaneforgedDefinition {
@@ -24,6 +24,7 @@ struct FullPlaneforgedDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -129,6 +130,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -365,6 +367,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -852,6 +855,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,

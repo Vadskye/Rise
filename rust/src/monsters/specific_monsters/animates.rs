@@ -9,7 +9,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animate;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullAnimateDefinition {
@@ -22,6 +22,7 @@ struct FullAnimateDefinition {
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
     modifiers: Option<Vec<Modifier>>,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -40,6 +41,7 @@ fn animate(def: FullAnimateDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -84,6 +86,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
         ]),
         name: "Darkwraith".to_string(),
+        role: Role::Skirmisher,
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![
@@ -141,6 +144,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow)
         ]),
         name: "Gelatinous Cube".to_string(),
+        role: Role::Brute,
         senses: None,
         size: Size::Large,
         trained_skills: Some(vec![
@@ -173,6 +177,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             modifiers: None,
             movement_speeds: None,
             name: name.to_string(),
+            role: Role::Brute,
             senses: Some(vec![Sense::Darkvision(60)]),
             size,
             trained_skills: None,
@@ -279,6 +284,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     SpeedCategory::Slow,
                 )]),
                 name: self.name,
+                role: Role::Warrior,
                 senses: None,
                 size: self.size,
                 trained_skills: Some(vec![Skill::Awareness]),

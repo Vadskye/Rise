@@ -2,7 +2,7 @@ use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, MovementSpee
 use crate::creatures::Monster;
 use crate::creatures::{HasModifiers, Modifier};
 use crate::equipment::Weapon;
-use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
+use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill};
 
 pub struct FullMonsterDefinition {
@@ -16,6 +16,7 @@ pub struct FullMonsterDefinition {
     pub modifiers: Option<Vec<Modifier>>,
     pub movement_speeds: Option<Vec<MovementSpeed>>,
     pub name: String,
+    pub role: Role,
     pub senses: Option<Vec<Sense>>,
     pub size: Size,
     pub trained_skills: Option<Vec<Skill>>,
@@ -24,7 +25,7 @@ pub struct FullMonsterDefinition {
 
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
-        let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.level);
+        let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.role, self.level);
         monster.alignment = Some(self.alignment);
         if let Some(d) = self.description {
             monster.description = Some(d);

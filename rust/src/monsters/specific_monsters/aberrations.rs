@@ -7,7 +7,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
@@ -20,6 +20,7 @@ struct FullAberrationDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -38,6 +39,7 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -98,6 +100,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Aboleth".to_string(),
+        role: Role::Leader,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
         trained_skills: Some(vec![
@@ -130,6 +133,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
         movement_speeds: None,
+        role: Role::Brute,
         name: "Gibbering Mouther".to_string(),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,

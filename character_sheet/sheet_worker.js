@@ -4,19 +4,56 @@ const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
   "debuff",
   "vital_wound",
 ]);
+// Treat roles as classes too
 const BASE_CLASS_MODIFIERS = {
-  monster: {
+  // ROLES
+  brute: {
     armor_defense: 3,
     fortitude: 5,
-    reflex: 5,
-    mental: 5,
-    hit_points: 0,
-    attunement_points: 0,
-    fatigue_tolerance: 0,
-    insight_points: 0,
-    class_skill_count: 0,
-    proficiencies: "",
+    reflex: 3,
+    mental: 3,
+    hit_points: 4,
+    mundane_power: 2,
+    magical_power: 2,
   },
+  leader: {
+    armor_defense: 4,
+    fortitude: 4,
+    reflex: 4,
+    mental: 6,
+    hit_points: 2,
+    mundane_power: 0,
+    magical_power: 0,
+  },
+  skirmisher: {
+    armor_defense: 4,
+    fortitude: 4,
+    reflex: 6,
+    mental: 4,
+    hit_points: 0,
+    mundane_power: 1,
+    magical_power: 1,
+  },
+  sniper: {
+    armor_defense: 3,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    hit_points: 0,
+    mundane_power: 1,
+    magical_power: 1,
+  },
+  warrior: {
+    armor_defense: 6,
+    fortitude: 5,
+    reflex: 4,
+    mental: 5,
+    hit_points: 1,
+    mundane_power: 0,
+    magical_power: 0,
+  },
+
+  // CLASSES
   barbarian: {
     armor_defense: 0,
     fortitude: 7,
@@ -150,6 +187,8 @@ const BASE_CLASS_MODIFIERS = {
     class_skill_count: 3,
     proficiencies: "None",
   },
+
+  // OPTIONAL CLASSES
   dragon: {
     armor_defense: 1,
     fortitude: 7,
@@ -304,6 +343,7 @@ function onGet(variables, options, callback = null) {
         .map((e) => attrs[e])
         .filter(Boolean)
         .join(",");
+      // console.log("changeString, getVariables, v", changeString, getVariables, v);
       callback(v);
     });
   });
@@ -442,6 +482,9 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "speed",
   "strength",
   "willpower",
+  // Monster classes only
+  "magical_power",
+  "mundane_power",
 ]);
 
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
@@ -508,10 +551,10 @@ function handleEverything() {
   handleCustomModifiers();
   handleDebuffs();
   // handleModifierExplanations();
-  handleMonsterBaseClass();
   handleMonsterChatColor();
   handleResources();
   handleRust();
+  handleSize();
   handleSkills();
   handleVitalWounds();
 }
@@ -977,12 +1020,8 @@ function handleCreationModifiers() {
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs = {
-        base_class_proficiencies: classModifiers
-          ? classModifiers.proficiencies
-          : "",
-        class_skill_count: classModifiers
-          ? classModifiers.class_skill_count
-          : "",
+        base_class_proficiencies: (classModifiers && classModifiers.proficiencies) || "",
+        class_skill_count: (classModifiers && classModifiers.class_skill_count) || 0,
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
@@ -993,8 +1032,10 @@ function handleCreationModifiers() {
         "attunement_points",
         "fatigue_tolerance",
         "insight_points",
+        "magical_power",
+        "mundane_power",
       ]) {
-        const modifierValue = classModifiers ? classModifiers[modifierKey] : 0;
+        const modifierValue = (classModifiers && classModifiers[modifierKey]) || 0;
         attrs[`${modifierKey}_creation_explanation`] =
           formatNamedModifierExplanation({
             name: v.base_class,
@@ -1643,15 +1684,16 @@ function handleLandSpeed() {
   onGet(
     {
       miscName: "speed",
-      numeric: ["speed_size", "body_armor_speed"],
+      numeric: ["base_speed", "body_armor_speed"],
     },
     (v) => {
-      // TODO: handle size more correctly
-      const totalValue = 30 + v.body_armor_speed + v.misc;
+      // In case people don't bother to set their size to Medium explicitly
+      const base_speed = v.base_speed || 30;
+      const totalValue = base_speed + v.body_armor_speed + v.misc;
       setAttrs({
         land_speed: totalValue,
         land_speed_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "size", value: 30 },
+          { name: "base speed", value: v.base_speed },
           { name: "body armor", value: v.body_armor_speed },
         ]),
       });
@@ -1715,17 +1757,22 @@ function handleNonArmorDefense(defense, attribute) {
         attribute,
         "challenge_rating",
         "all_defenses_vital_wound_modifier",
+        "size_reflex_modifier",
       ],
     },
     (v) => {
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
-      const totalValue =
+      let totalValue =
         levelModifier +
         crModifier +
         v[attribute] +
         v.misc +
         v.all_defenses_vital_wound_modifier;
+
+      if (defense === "reflex") {
+        totalValue += v.size_reflex_modifier;
+      }
 
       setAttrs({
         [defense]: totalValue,
@@ -1743,6 +1790,15 @@ function handleNonArmorDefense(defense, attribute) {
   );
 }
 
+function formatWeaponDamagePlusd(power) {
+  const plusd = Math.floor(power / 2);
+  const plusd6 = Math.floor(plusd / 3);
+  const plusd6Text = plusd6 > 0 ? `+${plusd6}d6` : '';
+  const plusdOnly = plusd % 3;
+  const plusdOnlyText = plusdOnly > 0 ? `+${plusdOnly}d` : '';
+  return [plusd6Text, plusdOnlyText].filter(Boolean).join(" ");
+}
+
 function handleMagicalPower() {
   onGet(
     {
@@ -1758,6 +1814,7 @@ function handleMagicalPower() {
 
       setAttrs({
         magical_power: totalValue,
+        magical_weapon_plusd: formatWeaponDamagePlusd(totalValue),
         magical_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
             name: `half level`,
@@ -1788,6 +1845,7 @@ function handleMundanePower() {
 
       setAttrs({
         mundane_power: totalValue,
+        mundane_weapon_plusd: formatWeaponDamagePlusd(totalValue),
         mundane_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
             name: `half level`,
@@ -1872,6 +1930,49 @@ function handleRust() {
         is_monster: v.challenge_rating > 0 ? "1" : "0",
       });
     }
+  );
+}
+
+function handleSize() {
+  onGet(
+    {
+      string: ["size"],
+    },
+    (v) => {
+      // Size modifiers are repetitive, so multiplying this value is easier.
+      const stepsFromMedium = {
+        fine: -4,
+        diminuitive: -3,
+        tiny: -2,
+        small: -1,
+        medium: 0,
+        large: 1,
+        huge: 2,
+        gargantuan: 3,
+        colossal: 4,
+      }[v.size] || 0;
+
+      let baseSpeed = 0;
+      if (stepsFromMedium === 4) {
+        // Colossal is a special case
+        baseSpeed = 80;
+      } else if (stepsFromMedium >= 0) {
+        baseSpeed = 30 + stepsFromMedium * 10;
+      } else if (stepsFromMedium >= -2) {
+        baseSpeed = 20;
+      } else {
+        baseSpeed = 10;
+      }
+
+      const reflexDefense = -stepsFromMedium;
+      const stealth = -stepsFromMedium * 5;
+
+      setAttrs({
+        base_speed: baseSpeed,
+        size_reflex_modifier: reflexDefense,
+        size_stealth_modifier: stealth,
+      });
+    },
   );
 }
 
@@ -2013,6 +2114,7 @@ function handleSkills() {
       const numeric = [
         "fatigue_penalty",
         "level",
+        "size_stealth_modifier",
         ...customModifierNames("all_skills"),
       ];
       const shouldAddAttribute = attribute !== "other";
@@ -2036,13 +2138,17 @@ function handleSkills() {
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
           const encumbranceModifier = v.encumbrance || 0;
           const attributeModifier = v[attribute] || 0;
-          const skillValue =
+          let skillValue =
             fromTraining +
             attributeModifier +
             v.misc +
             sumCustomModifiers(v, "all_skills") -
             v.fatigue_penalty -
             encumbranceModifier;
+
+          if (skill === 'stealth') {
+            skillValue += v.size_stealth_modifier;
+          }
 
           const attrs = {
             [`${skill}_attribute`]: attributeModifier,
@@ -2491,19 +2597,6 @@ function handleWeaponSanitization() {
           .replaceAll("/", "&#47;");
       }
       setAttrs(attrs);
-    }
-  );
-}
-
-function handleMonsterBaseClass() {
-  onGet(
-    {
-      numeric: ["challenge_rating"],
-    },
-    (v) => {
-      if (v.challenge_rating > 0) {
-        setAttrs({ base_class: "monster" });
-      }
     }
   );
 }

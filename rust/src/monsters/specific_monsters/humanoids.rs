@@ -8,7 +8,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Humanoid;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullHumanoidDefinition {
@@ -21,6 +21,7 @@ struct FullHumanoidDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -39,6 +40,7 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -305,6 +307,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
