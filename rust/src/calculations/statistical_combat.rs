@@ -192,7 +192,8 @@ fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> 
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
     for attack in attacks {
-        let average_damage_per_round = calc_attack_damage_per_round(&attack, attacker, defender).total();
+        let average_damage_per_round =
+            calc_attack_damage_per_round(&attack, attacker, defender).total();
         if average_damage_per_round > best_damage_per_round {
             best_damage_per_round = average_damage_per_round;
             best_attack = Some(attack);

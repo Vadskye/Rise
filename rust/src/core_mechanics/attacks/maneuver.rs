@@ -54,7 +54,9 @@ impl Maneuver {
         if creature_rank < self.rank() {
             panic!(
                 "Maneuver {} requires minimum rank {} but creature is rank {}",
-                self.name(), self.rank(), creature_rank
+                self.name(),
+                self.rank(),
+                creature_rank
             );
         }
     }
@@ -223,7 +225,7 @@ impl Maneuver {
     pub fn attack_name(&self, weapon: &Weapon) -> String {
         let weapon_name = titlecase(weapon.name.as_str());
         fn with_prefix(prefix: &str, n: String) -> String {
-            return format!("{} {}", prefix, n)
+            return format!("{} {}", prefix, n);
         }
         match self {
             Self::CertainStrike => with_prefix("Certain", weapon_name),

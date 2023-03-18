@@ -71,11 +71,7 @@ where
         return value + self.calc_total_modifier(ModifierType::Attribute(*attribute));
     }
 
-    fn set_attribute_scaling(
-        &mut self,
-        level: i32,
-        attributes: [Attribute; 2],
-    ) {
+    fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]) {
         let value = level / 6;
         if value > 0 {
             for attribute in attributes.iter() {

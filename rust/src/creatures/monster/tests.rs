@@ -1,5 +1,5 @@
 use super::*;
-use crate::core_mechanics::attacks::{Maneuver, HasAttacks, StandardAttack};
+use crate::core_mechanics::attacks::{HasAttacks, Maneuver, StandardAttack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
 use std::cmp::max;
 
@@ -103,9 +103,7 @@ mod to_section {
             .weapons
             .push(StandardWeapon::Greatsword.weapon());
         monster.creature.add_modifier(
-            Modifier::Attack(
-                Maneuver::StripTheFlesh.attack(StandardWeapon::Greatsword.weapon()),
-            ),
+            Modifier::Attack(Maneuver::StripTheFlesh.attack(StandardWeapon::Greatsword.weapon())),
             None,
             None,
         );
@@ -180,8 +178,16 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-        assert_eq!(3, creature.calc_magical_power(), "Magical power: 1lvl+4wil = as level 5",);
-        assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 1lvl+4wil = as level 5",);
+        assert_eq!(
+            3,
+            creature.calc_magical_power(),
+            "Magical power: 1lvl+4wil = as level 5",
+        );
+        assert_eq!(
+            3,
+            creature.calc_mundane_power(),
+            "Mundane power: 1lvl+4wil = as level 5",
+        );
 
         // HasAttributes
         assert_eq!(
@@ -230,8 +236,16 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
-        assert_eq!(4, creature.calc_magical_power(), "Magical power: 1+6 = as level 7",);
-        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 1+6 = as level 7",);
+        assert_eq!(
+            4,
+            creature.calc_magical_power(),
+            "Magical power: 1+6 = as level 7",
+        );
+        assert_eq!(
+            4,
+            creature.calc_mundane_power(),
+            "Mundane power: 1+6 = as level 7",
+        );
 
         // HasAttributes
         assert_eq!(
@@ -307,7 +321,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +1 (The target takes 1d10+3 fire damage.)", // CR 1
-                "Firebolt +3 (The target takes 2d6+4 fire damage.)", // CR 4
+                "Firebolt +3 (The target takes 2d6+4 fire damage.)",  // CR 4
             ];
             assert_eq!(expected, actual, "CR 1/4");
         }

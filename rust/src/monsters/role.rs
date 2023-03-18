@@ -3,36 +3,26 @@ use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Hash)]
 pub enum Role {
-    Brute, // melee HP-heavy damage sponge, like barbarian or any heavy weapon user
-    Leader, // average mobility, versatile range, average durability, like cleric/druid
+    Brute,      // melee HP-heavy damage sponge, like barbarian or any heavy weapon user
+    Leader,     // average mobility, versatile range, average durability, like cleric/druid
     Skirmisher, // high mobility mixed range, like rogue/monk/ranger
-    Sniper, // low mobility long range, like sorc/wiz
-    Warrior, // melee or short range defense tank, like a typical sword and board fighter/paladin
+    Sniper,     // low mobility long range, like sorc/wiz
+    Warrior,    // melee or short range defense tank, like a typical sword and board fighter/paladin
 }
 
 // No clear balancing. Hoping that the role differentiation makes them hard to directly compare.
 impl Role {
     // Shorthand to avoid specifying the name and priority every time
     fn add_modifier(&self, creature: &mut Creature, modifier: Modifier) {
-        creature.add_modifier(
-            modifier,
-            Some(self.name()),
-            None,
-        );
+        creature.add_modifier(modifier, Some(self.name()), None);
     }
 
     pub fn set_core_statistics(&self, creature: &mut Creature) {
         for defense in Defense::all() {
             self.add_modifier(creature, Modifier::Defense(defense, self.defense(&defense)))
         }
-        self.add_modifier(
-            creature,
-            Modifier::HitPoints(self.hit_points()),
-        );
-        self.add_modifier(
-            creature,
-            Modifier::Power(self.power()),
-        )
+        self.add_modifier(creature, Modifier::HitPoints(self.hit_points()));
+        self.add_modifier(creature, Modifier::Power(self.power()))
     }
 
     pub fn defense(&self, defense: &Defense) -> i32 {
@@ -112,8 +102,14 @@ impl Role {
 
         let level_scaling = (creature.level + 3) / 6;
         if level_scaling > 0 {
-            self.add_modifier(creature, Modifier::Attribute(scaling_attributes[0], level_scaling));
-            self.add_modifier(creature, Modifier::Attribute(scaling_attributes[1], level_scaling));
+            self.add_modifier(
+                creature,
+                Modifier::Attribute(scaling_attributes[0], level_scaling),
+            );
+            self.add_modifier(
+                creature,
+                Modifier::Attribute(scaling_attributes[1], level_scaling),
+            );
         }
     }
 }

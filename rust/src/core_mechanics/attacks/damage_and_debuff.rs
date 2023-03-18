@@ -59,7 +59,9 @@ impl LowDamageAndDebuff {
         // Maneuvers have half accuracy scaling since their base damage is higher
         let accuracy = if self.is_maneuver {
             spendable_ranks / 2
-        } else { spendable_ranks };
+        } else {
+            spendable_ranks
+        };
 
         let triggered_effect = AttackTriggeredEffect::Debuff(DebuffEffect {
             debuffs: vec![self.debuff.clone()],

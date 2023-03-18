@@ -103,9 +103,7 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(3)),
-            ]),
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericScalingStrike(3))]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -119,9 +117,7 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
-            ]),
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericScalingStrike(5))]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -136,9 +132,7 @@ pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(7)),
-            ]),
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericScalingStrike(7))]),
         },
     ]);
 }

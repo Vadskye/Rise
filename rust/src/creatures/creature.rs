@@ -1,9 +1,7 @@
 use std::cmp::max;
 
 use crate::core_mechanics::attacks::Attack;
-use crate::core_mechanics::{
-    Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
-};
+use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
 use crate::monsters::ChallengeRating;
@@ -117,7 +115,9 @@ impl Creature {
     pub fn rank(&self) -> i32 {
         match self.category {
             CreatureCategory::Character => calculate_standard_rank(self.level),
-            CreatureCategory::Monster(cr) => calculate_standard_rank(self.level) + cr.rank_modifier(),
+            CreatureCategory::Monster(cr) => {
+                calculate_standard_rank(self.level) + cr.rank_modifier()
+            }
         }
     }
 }

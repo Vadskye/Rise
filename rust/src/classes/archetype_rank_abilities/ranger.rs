@@ -1,8 +1,8 @@
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, MovementMode, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
-use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![

@@ -54,11 +54,7 @@ impl Monster {
         } else {
             0
         };
-        creature.add_modifier(
-            Modifier::Power(power_modifier),
-            Some("level scaling"),
-            None,
-        );
+        creature.add_modifier(Modifier::Power(power_modifier), Some("level scaling"), None);
 
         return Monster {
             alignment: None,
@@ -77,25 +73,31 @@ impl Monster {
         role: Option<Role>,
         starting_attribute: Option<i32>,
     ) -> Monster {
-        let role = if let Some(r) = role {
-            r
-        } else {
-            Role::Leader
-        };
+        let role = if let Some(r) = role { r } else { Role::Leader };
         let mut monster = Monster::new(challenge_rating, CreatureType::Planeforged, role, level);
-        monster.creature.weapons.push(StandardWeapon::Claws.weapon());
-        monster.creature.weapons.push(StandardWeapon::MultipedalBite.weapon());
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::Claws.weapon());
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::MultipedalBite.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
 
         if let Some(attribute_value) = starting_attribute {
             for attribute_name in Attribute::all() {
-                monster.creature.set_base_attribute(attribute_name, attribute_value);
+                monster
+                    .creature
+                    .set_base_attribute(attribute_name, attribute_value);
             }
         } else {
             Role::Leader.set_standard_attributes(&mut monster.creature);
         }
 
-        monster.creature.set_attribute_scaling(level, [Attribute::Strength, Attribute::Willpower]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Willpower]);
 
         return monster;
     }

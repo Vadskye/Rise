@@ -1,4 +1,6 @@
-use rise::calculations::spell_damage_scaling::{calc_valid_scaling_options, explain_solutions, DamageType};
+use rise::calculations::spell_damage_scaling::{
+    calc_valid_scaling_options, explain_solutions, DamageType,
+};
 
 fn main() {
     // Could try area damage, but it doesn't seem useful
@@ -6,7 +8,11 @@ fn main() {
         println!("DT {}", damage_type.name());
         for rank in 1..8 {
             let solutions = calc_valid_scaling_options(rank, &damage_type);
-            println!("Rank {}: {}", rank, explain_solutions(rank, &damage_type, solutions));
+            println!(
+                "Rank {}: {}",
+                rank,
+                explain_solutions(rank, &damage_type, solutions)
+            );
         }
         println!("\n");
     }

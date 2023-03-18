@@ -200,5 +200,4 @@ The $name makes a +0 attack vs. Armor against one creature within \\longrange.
             get_standard_ability_block(mystic_bolt)
         );
     }
-
 }

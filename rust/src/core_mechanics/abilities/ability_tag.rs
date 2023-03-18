@@ -40,7 +40,9 @@ impl AbilityTag {
 
     pub fn latex(&self) -> String {
         match self {
-            Self::Attune(attune_type) => format!("\\abilitytag{{Attune}} ({})", attune_type.description()),
+            Self::Attune(attune_type) => {
+                format!("\\abilitytag{{Attune}} ({})", attune_type.description())
+            }
             Self::Auditory => r"\abilitytag{Auditory}".to_string(),
             Self::Compulsion => r"\abilitytag{Compulsion}".to_string(),
             Self::Creation => r"\abilitytag{Creation}".to_string(),
