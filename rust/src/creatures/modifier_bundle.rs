@@ -9,7 +9,7 @@ pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
     Mindless,
-    Quadrupedal,
+    Multipedal,
 }
 
 impl ModifierBundle {
@@ -60,7 +60,7 @@ impl ModifierBundle {
                     name: "Mindless".to_string(),
                 }),
             ],
-            Self::Quadrupedal => vec![
+            Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
             ],
         }
