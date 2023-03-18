@@ -54,7 +54,7 @@ impl DicePool {
         return Self {
             dice: vec![die],
             maximized: false,
-        }
+        };
     }
 
     pub fn d4() -> Self {
@@ -108,13 +108,19 @@ impl DicePool {
     pub fn to_string(&self) -> String {
         let mut counts = HashMap::new();
         for die in self.dice.iter() {
-            counts.entry(die.size).and_modify(|count| *count += 1).or_insert(1);
+            counts
+                .entry(die.size)
+                .and_modify(|count| *count += 1)
+                .or_insert(1);
         }
 
         let mut contained_sizes: Vec<&i32> = counts.keys().collect();
         contained_sizes.sort();
 
-        let dice_texts: Vec<String> = contained_sizes.iter().map(|s| format!("{}d{}", counts[s], s)).collect();
+        let dice_texts: Vec<String> = contained_sizes
+            .iter()
+            .map(|s| format!("{}d{}", counts[s], s))
+            .collect();
         let joined = dice_texts.join("+");
         if self.maximized {
             return format!("{} (m)", joined);
@@ -184,11 +190,10 @@ mod tests {
         assert_eq!(5.5, DicePool::d10().average_damage());
         assert_eq!(7.0, DicePool::d10().add_increments(1).average_damage());
 
-        assert_eq!(13.5, DicePool::new(vec![
-                Die::d8(),
-                Die::d8(),
-                Die::d8(),
-        ], false).average_damage());
+        assert_eq!(
+            13.5,
+            DicePool::new(vec![Die::d8(), Die::d8(), Die::d8(),], false).average_damage()
+        );
     }
 
     #[test]
@@ -196,12 +201,19 @@ mod tests {
         assert_eq!(6.0, DicePool::d6().maximize().average_damage());
         assert_eq!(8.0, DicePool::d8().maximize().average_damage());
         assert_eq!(10.0, DicePool::d10().maximize().average_damage());
-        assert_eq!(12.0, DicePool::d10().maximize().add_increments(1).average_damage());
+        assert_eq!(
+            12.0,
+            DicePool::d10()
+                .maximize()
+                .add_increments(1)
+                .average_damage()
+        );
 
-        assert_eq!(24.0, DicePool::new(vec![
-                Die::d8(),
-                Die::d8(),
-                Die::d8(),
-        ], false).maximize().average_damage());
+        assert_eq!(
+            24.0,
+            DicePool::new(vec![Die::d8(), Die::d8(), Die::d8(),], false)
+                .maximize()
+                .average_damage()
+        );
     }
 }

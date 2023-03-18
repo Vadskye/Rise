@@ -84,7 +84,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 4,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(
                 StandardAttack::BreathWeaponLine(2, DamageType::Acid, Defense::Reflex)
                     .attack()
@@ -303,7 +303,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 5,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(
                 Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon()),
             ),
@@ -441,7 +441,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![4, 0, 4, -9, 0, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 7,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Black Bear".to_string(),
                 role: Role::Brute,
                 size: Size::Medium,
@@ -456,7 +456,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![5, 0, 6, -9, 2, 0],
                 challenge_rating: ChallengeRating::Four,
                 level: 9,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Brown Bear".to_string(),
                 role: Role::Brute,
                 size: Size::Large,
@@ -471,7 +471,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![-1, 4, -1, -9, 2, -3],
                 challenge_rating: ChallengeRating::One,
                 level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Rat".to_string(),
                 role: Role::Skirmisher,
                 size: Size::Tiny,
@@ -498,7 +498,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![3, 4, 3, -9, 3, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 5,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Wolf".to_string(),
                 role: Role::Skirmisher,
                 size: Size::Medium,
