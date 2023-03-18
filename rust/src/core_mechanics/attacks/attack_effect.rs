@@ -81,7 +81,7 @@ impl DamageEffect {
         return AbilityType::Normal;
     }
 
-    fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
+    fn description(&self, attacker: &Creature, is_magical: bool, _is_strike: bool) -> String {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
                 "
