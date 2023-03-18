@@ -520,7 +520,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     }
 
     let mut modifiers: Vec<Modifier> =
-        ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Immune(
+        ModifierBundle::Multipedal.plus_modifiers(vec![Modifier::Immune(
             SpecialDefenseType::Damage(dragon_type.damage_type()),
         )]);
     if let Some(passive_abilities) = dragon_type.passive_abilities() {

@@ -56,10 +56,6 @@ fn animal(def: FullAnimalDefinition) -> Monster {
 pub fn animals() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    let mut half_power_bite = StandardWeapon::MultipedalBite.weapon().attack();
-    if let Some(e) = half_power_bite.damage_effect_mut() {
-        e.power_multiplier = 0.5;
-    }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![3, 0, 3, -8, 1, 0],
         challenge_rating: ChallengeRating::One,
@@ -69,17 +65,16 @@ pub fn animals() -> Vec<MonsterEntry> {
             "Camels are known for their ability to travel long distances without food or water.",
         )])),
         level: 1,
-        modifiers: Some(vec![
-            // Camels have a high strength, but they shouldn't deal massive damage
-            Modifier::Attack(half_power_bite.clone()),
-        ]),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Camel".to_string(),
         role: Role::Brute,
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![Skill::Endurance]),
-        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+        // Camels use a weaker bite because they shouldn't do as much damage as their
+        // Strength would indicate.
+        weapons: vec![StandardWeapon::Bite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -133,7 +128,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ),
         ])),
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Badger".to_string(),
         role: Role::Brute,
@@ -159,7 +154,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         "),
                     ])),
                     level: 3,
-                    modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                    modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                     movement_speeds: None,
                     name: "Black bear".to_string(),
                     role: Role::Brute,
@@ -181,7 +176,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                             Brown bears tend to be bad-tempered and territorial.
                         "),
                     ])),
-                    modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                    modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                     movement_speeds: None,
                     level: 5,
                     name: "Brown bear".to_string(),
@@ -205,7 +200,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Cat".to_string(),
         role: Role::Skirmisher,
@@ -230,7 +225,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 description: None,
                 knowledge: None,
                 level: 1,
-                modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Wild dog".to_string(),
                 role: Role::Skirmisher,
@@ -251,7 +246,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ",
                 )])),
                 level: 2,
-                modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Riding dog".to_string(),
                 role: Role::Skirmisher,
@@ -269,7 +264,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 12,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(StandardAttack::FrostwebSpiderBite.attack()),
             Modifier::Attack(
                 StandardAttack::BreathWeaponCone(5, DamageType::Cold, Defense::Fortitude)
@@ -341,7 +336,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 "),
             ])),
             level: 1,
-            modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+            modifiers: Some(ModifierBundle::Multipedal.modifiers()),
             movement_speeds: None,
             name: "Dire Rat".to_string(),
             role: Role::Skirmisher,
@@ -361,7 +356,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 2,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Wolf".to_string(),
         role: Role::Skirmisher,
@@ -377,7 +372,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Warg".to_string(),
         role: Role::Skirmisher,
@@ -394,14 +389,16 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Horse".to_string(),
         size: Size::Large,
-        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: None,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
+        modifiers: None,
         movement_speeds: None,
         role: Role::Skirmisher,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
+        // Horses use a weaker bite because they shouldn't do as much damage as their
+        // Strength would indicate.
+        weapons: vec![StandardWeapon::Bite.weapon()],
     });
     monsters.push(MonsterEntry::Monster(horse));
 
@@ -411,7 +408,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Pony".to_string(),
         size: Size::Medium,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: None,
@@ -492,7 +489,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Dire wolves are efficient pack hunters that will kill anything they can catch.
             ",
         )])),
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         role: Role::Skirmisher,
         senses: Some(vec![Sense::Scent]),
@@ -537,7 +534,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
             "),
         ])),
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         role: Role::Brute,
         senses: None,
@@ -551,7 +548,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 3,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Maneuver(Maneuver::GraspingStrike),
             Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()),
         ])),

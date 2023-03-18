@@ -963,7 +963,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 1,
-                modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Worker".to_string(),
                 role: Role::Skirmisher,
@@ -989,7 +989,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+                modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
                     Modifier::Attack(
                         StandardWeapon::MultipedalStinger.weapon().attack()
                         .except_hit_damage(

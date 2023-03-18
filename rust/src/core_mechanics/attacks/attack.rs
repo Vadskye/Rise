@@ -1,12 +1,17 @@
 use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
 use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
-use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
 use super::{AttackEffect, Maneuver};
+
+pub struct PowerScaling {
+    dice: DicePool,
+    per_power: i32,
+}
 
 #[derive(Clone, Debug)]
 pub struct Attack {
@@ -33,7 +38,6 @@ pub trait HasAttacks {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
     fn calc_accuracy(&self) -> i32;
-    fn calc_damage_increments(&self, is_strike: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
     fn calc_magical_power(&self) -> i32;
     fn calc_mundane_power(&self) -> i32;
@@ -89,10 +93,11 @@ impl Attack {
 
     pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
+            let power = if self.is_magical { creature.calc_magical_power() } else { creature.calc_mundane_power()};
             return Some(
                 damage_effect
-                    .damage_dice
-                    .add(creature.calc_damage_increments(self.is_strike)),
+                    .damage_dice.clone()
+                    // .add(creature.calc_damage_increments(self.is_strike)),
             );
         }
         return None;
@@ -292,18 +297,6 @@ where
         return accuracy_from_armor
             + (self.level + self.get_base_attribute(&Attribute::Perception)) / 2
             + self.calc_total_modifier(ModifierType::Accuracy);
-    }
-
-    fn calc_damage_increments(&self, is_strike: bool) -> i32 {
-        let mut increments: i32 = 0;
-        if is_strike {
-            increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
-        }
-        increments += match self.category {
-            CreatureCategory::Character => 0,
-            CreatureCategory::Monster(cr) => cr.damage_increments(),
-        };
-        return increments;
     }
 
     fn calc_magical_power(&self) -> i32 {

@@ -235,7 +235,7 @@ mod standard_character {
     #[test]
     fn level_1_vs_weak_monster() {
         let attacker = Character::standard_character(1, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, 1, Some(0), None).creature;
+        let defender = Monster::standard_monster(ChallengeRating::One, 1, None, Some(0)).creature;
         assert_eq!(4, defender.calc_defense(&Defense::Armor));
 
         let expected_strike_results = vec![
@@ -354,7 +354,7 @@ mod standard_character {
     fn level_20_vs_weak_monster() {
         let attacker = Character::standard_character(20, true).creature;
         let mut defender =
-            Monster::standard_monster(ChallengeRating::One, 20, Some(0), None).creature;
+            Monster::standard_monster(ChallengeRating::One, 20, None, Some(0)).creature;
         defender.set_base_attribute(Attribute::Dexterity, -1);
         assert_eq!(15, defender.calc_defense(&Defense::Armor));
 
