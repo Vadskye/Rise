@@ -36,10 +36,10 @@ impl Role {
         };
 
         let i = match defense {
-            Defense::Armor => 1,
-            Defense::Fortitude => 2,
-            Defense::Reflex => 3,
-            Defense::Mental => 4,
+            Defense::Armor => 0,
+            Defense::Fortitude => 1,
+            Defense::Reflex => 2,
+            Defense::Mental => 3,
         };
         return defenses[i];
     }
