@@ -13,7 +13,11 @@ where
     Creature: HasAttributes + HasModifiers + HasArmor,
 {
     fn calc_damage_resistance(&self) -> i32 {
-        let mut levelish = calc_levelish(self, &Attribute::Willpower, ModifierType::DamageResistanceFromLevel);
+        let mut levelish = calc_levelish(
+            self,
+            &Attribute::Willpower,
+            ModifierType::DamageResistanceFromLevel,
+        );
         let mut dr_from_level = 0;
         if levelish > 0 {
             if levelish > 21 {
@@ -60,7 +64,11 @@ where
     }
 
     fn calc_hit_points(&self) -> i32 {
-        let mut levelish = calc_levelish(self, &Attribute::Constitution, ModifierType::HitPointsFromLevel);
+        let mut levelish = calc_levelish(
+            self,
+            &Attribute::Constitution,
+            ModifierType::HitPointsFromLevel,
+        );
         let mut hp_from_level = 0;
         if levelish > 0 {
             if levelish > 21 {

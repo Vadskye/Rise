@@ -1,8 +1,8 @@
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::Resource;
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
-use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     return vec![

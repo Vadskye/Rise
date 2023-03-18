@@ -12,11 +12,7 @@ impl PassiveAbility {
                 \\parhead<{name}>{magical} {description}
             ",
             description = self.description,
-            magical = if self.is_magical {
-                "[\\sparkle]"
-            } else {
-                ""
-            },
+            magical = if self.is_magical { "[\\sparkle]" } else { "" },
             name = self.name,
         );
     }

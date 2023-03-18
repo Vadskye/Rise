@@ -37,9 +37,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 The damage resistance bonus increases to four times your rank in this archetype.
                 In addition, the Fortitude defense bonus increases to +2.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
             name: "Battle-Scarred",
@@ -552,9 +550,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Reflex defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
         RankAbility {
             name: "Animal Instincts+",
@@ -563,9 +559,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus4.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
     ];
 }

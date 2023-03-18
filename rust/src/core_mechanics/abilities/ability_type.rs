@@ -24,7 +24,7 @@ impl AbilityType {
             format!("magical{}", base_tag)
         } else {
             base_tag.to_string()
-        }
+        };
     }
 
     fn environment_tag(&self) -> String {
@@ -45,7 +45,10 @@ impl AbilityType {
     }
 
     pub fn end(&self, is_magical: bool) -> String {
-        return format!("\\end<{environment}>", environment = self.environment(is_magical));
+        return format!(
+            "\\end<{environment}>",
+            environment = self.environment(is_magical)
+        );
     }
 }
 

@@ -500,7 +500,8 @@ where
     }
 
     fn replace_armor(&mut self, armor: Armor) {
-        self.armor.retain(|a| a.is_body_armor() != armor.is_body_armor());
+        self.armor
+            .retain(|a| a.is_body_armor() != armor.is_body_armor());
         self.add_armor(armor)
     }
 
