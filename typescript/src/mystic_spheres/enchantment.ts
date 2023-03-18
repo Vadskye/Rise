@@ -565,7 +565,7 @@ export const enchantment: MysticSphere = {
       tags: ['Emotion'],
     },
     {
-      name: 'Certain Mind Crush',
+      name: 'Mighty Mind Crush',
 
       // +3 levels for conditional +4 accuracy, +2 levels for +1d
       attack: {
