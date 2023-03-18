@@ -129,8 +129,8 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let damage_modifier =
-            self.damage_modifier + (attacker.calc_power(is_magical) as f64 * self.power_multiplier) as i32;
+        let damage_modifier = self.damage_modifier
+            + (attacker.calc_power(is_magical) as f64 * self.power_multiplier) as i32;
         let mut damage_types = self.damage_types.clone();
         damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         return format!(
@@ -213,9 +213,19 @@ impl DebuffEffect {
             ""
         };
         if self.duration == AttackEffectDuration::Brief {
-            return format!("{} {}.{}", self.duration.description(), debuff_text, immune_text);
+            return format!(
+                "{} {}.{}",
+                self.duration.description(),
+                debuff_text,
+                immune_text
+            );
         } else {
-            return format!("{} {}.{}", debuff_text, self.duration.description(), immune_text);
+            return format!(
+                "{} {}.{}",
+                debuff_text,
+                self.duration.description(),
+                immune_text
+            );
         }
     }
 }

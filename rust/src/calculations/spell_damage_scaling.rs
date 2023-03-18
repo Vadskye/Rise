@@ -228,7 +228,7 @@ fn is_close(expected: f64, actual: f64) -> bool {
     return is_approximately_equal(expected, actual, 0.1);
 }
 
-fn is_kinda_close (expected: f64, actual: f64) -> bool {
+fn is_kinda_close(expected: f64, actual: f64) -> bool {
     return is_approximately_equal(expected, actual, 0.3);
 }
 

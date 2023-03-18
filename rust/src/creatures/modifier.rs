@@ -1,6 +1,8 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver};
-use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType};
+use crate::core_mechanics::{
+    Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
+};
 use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
@@ -318,8 +320,20 @@ impl HasModifiers for Creature {
 
     fn explain_modifiers(&self) -> Vec<String> {
         let mut explanations: Vec<String> = vec![];
-        explanations.append(&mut self.identified_modifiers.iter().map(|m| m.description()).collect::<Vec<String>>());
-        explanations.append(&mut self.anonymous_modifiers.iter().map(|m| m.description()).collect::<Vec<String>>());
+        explanations.append(
+            &mut self
+                .identified_modifiers
+                .iter()
+                .map(|m| m.description())
+                .collect::<Vec<String>>(),
+        );
+        explanations.append(
+            &mut self
+                .anonymous_modifiers
+                .iter()
+                .map(|m| m.description())
+                .collect::<Vec<String>>(),
+        );
         return explanations;
     }
 }

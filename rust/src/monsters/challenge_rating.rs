@@ -1,5 +1,5 @@
-use crate::creatures::{Creature, HasModifiers, Modifier, Monster};
 use crate::core_mechanics::StandardPassiveAbility;
+use crate::creatures::{Creature, HasModifiers, Modifier, Monster};
 use serde::Serialize;
 use std::cmp::max;
 
@@ -138,9 +138,7 @@ impl ChallengeRating {
         }
 
         match count {
-            1 => vec![
-                sm(ChallengeRating::Four, level + 3),
-            ],
+            1 => vec![sm(ChallengeRating::Four, level + 3)],
             2 => vec![
                 sm(ChallengeRating::Four, level),
                 sm(ChallengeRating::One, level + 3),

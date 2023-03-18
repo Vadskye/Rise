@@ -32,7 +32,10 @@ pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
     fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
-        return self.calc_all_attacks().into_iter().find(|a| a.name.contains(name));
+        return self
+            .calc_all_attacks()
+            .into_iter()
+            .find(|a| a.name.contains(name));
     }
     fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
@@ -93,11 +96,13 @@ impl Attack {
 
     pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
-            let power = if self.is_magical { creature.calc_magical_power() } else { creature.calc_mundane_power()};
+            let power = if self.is_magical {
+                creature.calc_magical_power()
+            } else {
+                creature.calc_mundane_power()
+            };
             return Some(
-                damage_effect
-                    .damage_dice.clone()
-                    // .add(creature.calc_damage_increments(self.is_strike)),
+                damage_effect.damage_dice.clone(), // .add(creature.calc_damage_increments(self.is_strike)),
             );
         }
         return None;

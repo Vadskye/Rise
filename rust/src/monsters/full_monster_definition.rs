@@ -1,4 +1,6 @@
-use crate::core_mechanics::{Attribute, HasAttributes, MovementMode, MovementSpeed, Sense, Size, SpeedCategory};
+use crate::core_mechanics::{
+    Attribute, HasAttributes, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
+};
 use crate::creatures::Monster;
 use crate::creatures::{HasModifiers, Modifier};
 use crate::equipment::Weapon;
@@ -25,7 +27,12 @@ pub struct FullMonsterDefinition {
 
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
-        let mut monster = Monster::new(self.challenge_rating, self.creature_type, self.role, self.level);
+        let mut monster = Monster::new(
+            self.challenge_rating,
+            self.creature_type,
+            self.role,
+            self.level,
+        );
         monster.alignment = Some(self.alignment);
         if let Some(d) = self.description {
             monster.description = Some(d);
@@ -46,9 +53,10 @@ impl FullMonsterDefinition {
                 creature.add_modifier(modifier, Some("FullMonsterDefinition"), None);
             }
         }
-        creature.movement_speeds = self
-            .movement_speeds
-            .unwrap_or(vec![MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal)]);
+        creature.movement_speeds = self.movement_speeds.unwrap_or(vec![MovementSpeed::new(
+            MovementMode::Land,
+            SpeedCategory::Normal,
+        )]);
         if let Some(senses) = self.senses {
             for sense in senses {
                 creature.add_sense(sense);

@@ -78,11 +78,7 @@ impl DamageDice {
         } else if self.maximized {
             return format!("{}", self.count * self.size);
         } else {
-            return format!(
-                "{}d{}",
-                self.count,
-                self.size,
-            );
+            return format!("{}d{}", self.count, self.size,);
         }
     }
 

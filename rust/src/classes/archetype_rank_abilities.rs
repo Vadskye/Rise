@@ -11,9 +11,9 @@ mod paladin;
 mod ranger;
 mod rogue;
 mod sorcerer;
+mod standard_modifiers;
 mod warlock;
 mod wizard;
-mod standard_modifiers;
 
 pub struct RankAbility<'a> {
     pub description: &'a str,
