@@ -90,7 +90,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
         ])),
         level: 3,
         modifiers: Some(ModifierBundle::Incorporeal.plus_modifiers(vec![
-            Modifier::Attack(StandardAttack::DrainingGrasp(1).attack()),
+            Modifier::Attack(StandardAttack::InflictWound(1).attack()),
         ])),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)

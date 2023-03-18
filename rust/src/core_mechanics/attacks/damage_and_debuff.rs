@@ -1,9 +1,9 @@
 use crate::core_mechanics::abilities::{Range, Targeting};
 use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DebuffEffect,
+    AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
-use crate::core_mechanics::attacks::{Attack, AttackEffect};
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, Tag};
+use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
+use crate::core_mechanics::{DamageType, Debuff, Defense, Tag};
 use crate::equipment::Weapon;
 
 pub struct LowDamageAndDebuff {
@@ -113,16 +113,10 @@ impl LowDamageAndDebuff {
             crit: None,
             defense: self.defense,
             extra_context: None,
-            hit: AttackEffect::Damage(DamageEffect {
-                damage_dice: DamageDice::single_target_damage(self.rank - 2),
-                damage_modifier: 0,
-                damage_types: self.damage_types.clone(),
-                extra_defense_effect: None,
-                lose_hp_effect: spent_rank_results.lose_hp_effect,
-                power_multiplier: 0.0,
-                take_damage_effect: spent_rank_results.take_damage_effect,
-                vampiric_healing: None,
-            }),
+            hit: AttackEffect::Damage(SimpleDamageEffect::dr(self.rank - 2, self.damage_types.clone()).except(|d| {
+                d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone();
+                d.take_damage_effect = spent_rank_results.take_damage_effect.clone();
+            })),
             is_magical: self.is_magical,
             is_strike: false,
             name: self.name.clone(),
@@ -137,13 +131,17 @@ impl LowDamageAndDebuff {
 
         return weapon
             .attack()
-            .except(|a| a.accuracy += spent_rank_results.accuracy)
-            .except(|a| a.name = self.name.clone())
-            .except(|a| a.defense = self.defense)
-            .except_hit_damage(|d| d.damage_types.append(&mut self.damage_types.clone()))
-            .except_hit_damage(|d| d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone())
-            .except_hit_damage(|d| d.power_multiplier = 0.0)
-            .except_hit_damage(|d| d.take_damage_effect = spent_rank_results.take_damage_effect);
+            .except(|a| {
+                a.accuracy += spent_rank_results.accuracy;
+                a.name = self.name.clone();
+                a.defense = self.defense;
+            })
+            .except_hit_damage(|d| {
+                // TODO: apply weak strike or double damage strike as appropriate
+                d.damage_types.append(&mut self.damage_types.clone());
+                d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone();
+                d.take_damage_effect = spent_rank_results.take_damage_effect;
+            });
     }
 }
 

@@ -1,19 +1,30 @@
 use crate::core_mechanics::abilities::Targeting;
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
-use crate::core_mechanics::{DamageDice, DamageType, Defense, Tag};
+use crate::core_mechanics::{DicePool, DamageType, Defense, PowerScaling, Tag};
 use std::fmt;
 use titlecase::titlecase;
 
 #[derive(Clone, Debug)]
 pub struct Weapon {
     pub accuracy: i32,
-    pub damage_dice: DamageDice,
+    pub damage_dice: DicePool,
     pub damage_types: Vec<DamageType>,
     pub name: String,
     pub tags: Vec<WeaponTag>,
 }
 
-#[derive(Clone, Debug)]
+impl Weapon {
+    pub fn power_scalings(&self) -> Vec<PowerScaling> {
+        // TODO: handle versatile grip
+        if self.tags.contains(&WeaponTag::Heavy) {
+            return PowerScaling::heavy_weapon_scalings();
+        } else {
+            return vec![PowerScaling::standard_weapon_scaling()];
+        }
+    }
+}
+
+#[derive(Clone, Debug, PartialEq)]
 pub enum WeaponTag {
     Ammunition,
     Compact,
@@ -94,28 +105,28 @@ impl StandardWeapon {
         match self {
             Self::Battleaxe => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Battleaxe".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
             },
             Self::Bite => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Physical],
                 name: "Bite".to_string(),
                 tags: vec![WeaponTag::Grappling],
             },
             Self::Broadsword => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Broadsword".to_string(),
                 tags: vec![WeaponTag::Sweeping(1), WeaponTag::VersatileGrip],
             },
             Self::Claw => Weapon {
                 accuracy: 2,
-                damage_dice: DamageDice::d4(),
+                damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Claw".to_string(),
                 tags: vec![WeaponTag::Light, WeaponTag::VersatileGrip],
@@ -123,14 +134,14 @@ impl StandardWeapon {
             // TODO: define dual-wielding
             Self::Claws => Weapon {
                 accuracy: 2,
-                damage_dice: DamageDice::d4(),
+                damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Claws".to_string(),
                 tags: vec![WeaponTag::Light, WeaponTag::VersatileGrip],
             },
             Self::Club => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Club".to_string(),
                 tags: vec![],
@@ -138,133 +149,133 @@ impl StandardWeapon {
             Self::GiantBoulder => Weapon {
                 // Individual giants can customize these range limits
                 accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Boulder".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::Thrown(120, 360)],
             },
             Self::Greataxe => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Greataxe".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Sweeping(1)],
             },
             Self::Greatsword => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Greatsword".to_string(),
                 tags: vec![WeaponTag::Sweeping(2)],
             },
             Self::HeavyFlail => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d10(),
+                damage_dice: DicePool::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Heavy flail".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Tripping],
             },
             Self::Javelin => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Javelin".to_string(),
                 tags: vec![WeaponTag::Thrown(60, 120)],
             },
             Self::Longbow => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Longbow".to_string(),
                 tags: vec![WeaponTag::Projectile(90, 270)],
             },
             Self::MultipedalBite => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Physical],
                 name: "Bite".to_string(),
                 tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
             },
             Self::MultipedalGore => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Gore".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::MultipedalRam => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
             },
             Self::MultipedalStinger => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Stinger".to_string().to_string(),
                 tags: vec![WeaponTag::Heavy],
             },
             Self::Sap => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d3(),
+                damage_dice: DicePool::d3(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Sap".to_string(),
                 tags: vec![WeaponTag::Compact, WeaponTag::Light, WeaponTag::Subdual],
             },
             Self::Scimitar => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Scimitar".to_string(),
                 tags: vec![WeaponTag::Mounted],
             },
             Self::Sickle => Weapon {
                 accuracy: 1,
-                damage_dice: DamageDice::d4(),
+                damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Sickle".to_string(),
                 tags: vec![WeaponTag::Light, WeaponTag::Sweeping(1)],
             },
             Self::Slam => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d10(),
+                damage_dice: DicePool::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Slam".to_string(),
                 tags: vec![],
             },
             Self::Sledgehammer => Weapon {
                 accuracy: -1,
-                damage_dice: DamageDice::d10().add(1),
+                damage_dice: DicePool::xdy(2, 6),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Sledgehammer".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
             },
             Self::Spear => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Spear".to_string(),
                 tags: vec![WeaponTag::Thrown(30, 60), WeaponTag::VersatileGrip],
             },
             Self::Talon => Weapon {
                 accuracy: 2,
-                damage_dice: DamageDice::d4(),
+                damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Talon".to_string(),
                 tags: vec![WeaponTag::Light, WeaponTag::VersatileGrip],
             },
             Self::Totokia => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d8(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Totokia".to_string(),
                 tags: vec![WeaponTag::Impact, WeaponTag::VersatileGrip],
             },
             Self::Warhammer => Weapon {
                 accuracy: 0,
-                damage_dice: DamageDice::d6(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Warhammer".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::VersatileGrip],
