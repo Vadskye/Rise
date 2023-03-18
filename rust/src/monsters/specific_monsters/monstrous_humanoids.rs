@@ -320,7 +320,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     // TODO: is pyromancy the right school?
                     Modifier::Attack(StandardAttack::Firebolt(2).attack()),
                     Modifier::Attack(StandardAttack::Ignition(2).attack()),
-                    Modifier::Attack(StandardAttack::Inferno(2).attack()),
+                    Modifier::Attack(StandardAttack::Pyroclasm(2).attack()),
                 ]),
                 movement_speeds: None,
                 name: "Ogre Mage".to_string(),

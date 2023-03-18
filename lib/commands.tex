@@ -98,7 +98,7 @@
 % Too complicated to try to summarize :/
 \newcommand{\grappled}{\debuff{grappled}\xspace}
 \newcommand{\helpless}{\debuff{helpless} \reminder{\minus6 Armor and Ref}\xspace}
-\newcommand{\immobilized}{\debuff{immobilized} \reminder{\minus4 Ref, cannot use movement speeds}\xspace}
+\newcommand{\immobilized}{\debuff{immobilized} \reminder{\minus4 Armor and Ref, cannot use movement speeds}\xspace}
 \newcommand{\panicked}{\debuff{panicked} \reminder{\minus4 Mental, cannot attack source}\xspace}
 \newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
 \newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
@@ -566,25 +566,24 @@
 
 \newcommand{\damagerankone}[1]
 {1d6 #1 damage \plus1d per 2 power}
-% same as d1
 \newcommand{\damagerankonehigh}[1]
-{1d6 #1 damage \plus1d per 2 power}
+{1d6 #1 damage \plus1d per 2 power} % Same as d1, unfortunately
 \newcommand{\damagerankonelow}[1]
-{1d6 #1 damage \plus1d per 3 power}
+{1d8 #1 damage \plus1d per 3 power}
 
 \newcommand{\damageranktwo}[1]
 {1d8 #1 damage \plus1d per 2 power}
 \newcommand{\damageranktwohigh}[1]
 {1d6 #1 damage plus 1d6 per 4 power}
 \newcommand{\damageranktwolow}[1]
-{1d8 #1 damage \plus1d per 3 power}
+{1d10 #1 damage \plus1d per 3 power}
 
 \newcommand{\damagerankthree}[1]
 {1d8 #1 damage plus 1d6 per 4 power}
 \newcommand{\damagerankthreehigh}[1]
 {1d4 #1 damage plus 1d8 per 4 power}
 \newcommand{\damagerankthreelow}[1]
-{1d6 #1 damage plus 1d6 per 4 power}
+{1d8 #1 damage plus 1d6 per 4 power} % Same as d3, unfortunately
 
 \newcommand{\damagerankfour}[1]
 {1d8 #1 damage plus 1d8 per 4 power}

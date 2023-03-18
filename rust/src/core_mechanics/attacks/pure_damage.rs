@@ -1,7 +1,6 @@
 use crate::core_mechanics::abilities::{Range, Targeting};
-use crate::core_mechanics::attacks::attack_effect::DamageEffect;
-use crate::core_mechanics::attacks::{Attack, AttackEffect};
-use crate::core_mechanics::{DamageDice, DamageType, Defense};
+use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
+use crate::core_mechanics::{DamageType, Defense, Die, PowerScaling};
 use crate::equipment::Weapon;
 
 pub struct PureDamage {
@@ -15,8 +14,7 @@ pub struct PureDamage {
 }
 
 struct SpentRankResults {
-    damage_dice_modifier: i32,
-    flat_damage_modifier: i32,
+    accuracy_modifier: i32,
     maybe_range: Option<Range>,
 }
 
@@ -29,17 +27,7 @@ impl PureDamage {
             crit: None,
             defense: self.defense,
             extra_context: None,
-            hit: AttackEffect::Damage(DamageEffect {
-                damage_dice: DamageDice::single_target_damage(self.rank)
-                    .add(spent_rank_results.damage_dice_modifier),
-                damage_modifier: spent_rank_results.flat_damage_modifier,
-                damage_types: self.damage_types.clone(),
-                extra_defense_effect: None,
-                lose_hp_effect: None,
-                power_multiplier: 1.0,
-                take_damage_effect: None,
-                vampiric_healing: None,
-            }),
+            hit: AttackEffect::Damage(SimpleDamageEffect::dr(self.rank, self.damage_types.clone())),
             is_magical: self.is_magical,
             is_strike: false,
             name: self.name.clone(),
@@ -54,17 +42,21 @@ impl PureDamage {
 
         return weapon
             .attack()
-            .except(|a| a.name = self.name.clone())
-            .except(|a| a.defense = self.defense)
-            .except_hit_damage(|d| d.damage_types.append(&mut self.damage_types.clone()))
-            .except_hit_damage(|d| d.damage_modifier = spent_rank_results.flat_damage_modifier);
+            .except(|a| {
+                a.accuracy += spent_rank_results.accuracy_modifier;
+                a.name = self.name.clone();
+                a.defense = self.defense;
+            })
+            .except_hit_damage(|d| {
+                d.damage_types.append(&mut self.damage_types.clone());
+            });
     }
 
     // If we have ranks to spend, spend them in the following order:
     // 1. Increase to Medium range if this isn't a maneuver and doesn't have a set range
     // 2. Increase to Long range if this isn't a maneuver, doesn't have a set range, and will
     //    gain at least +1d already.
-    // 3. Damage
+    // 3. Accuracy
     fn spend_ranks(&self) -> SpentRankResults {
         let mut spendable_ranks = self.rank - self.calculate_minimum_rank();
         let mut maybe_range = self.range.clone();
@@ -92,8 +84,7 @@ impl PureDamage {
         }
 
         return SpentRankResults {
-            damage_dice_modifier,
-            flat_damage_modifier,
+            accuracy_modifier: spendable_ranks,
             maybe_range,
         };
     }

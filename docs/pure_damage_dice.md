@@ -555,8 +555,13 @@ Power Attack (previously -1a for +25%ish damage):
 * L12: 13.4 normal, 13.2 with -2a and +3d6
 * L18: 26.9 normal, 26.3 with -2a and +6d6
 
-Trained Strike
-* L6, 
+Generic Scaling Strike, accuracy-modified:
+* R2, +1a: 3/4.8 (100%/100%)
+* R3, +2a: 4/6.2 (95%/89%)
+* R4, +2a, +1d4: 6.7/9.2 (112%/96%)
+* R5, +2a, +0.63dpp: 8.5/14.1 (102%/105%)
+* R6, +2a, +0.88dpp: 11.5/19.5 (96%/101%)
+* R7, +2a, +1.17dpp: 15.4/26.3 (92%/98%)
 
 ## Class Non-Strike Ability Scaling
 

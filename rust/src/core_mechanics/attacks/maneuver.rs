@@ -4,9 +4,10 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
-use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory};
+use crate::core_mechanics::{DamageType, Debuff, DicePool, Defense, Die, PowerScaling, SpecialDefenseType, SpeedCategory};
 use crate::equipment::Weapon;
 use titlecase::titlecase;
+use std::cmp::min;
 
 use super::Attack;
 
@@ -24,8 +25,8 @@ pub enum Maneuver {
     Hamstring,
     Headshot,
     HeadshotPlus,
-    MightyStrike,
-    PowerFlurry,
+    PowerStrike,
+    DoubleStrike,
     PouncingStrike,
     RecklessStrike(i32),
     StripTheFlesh,
@@ -66,21 +67,21 @@ impl Maneuver {
             Self::Armorcrusher => weapon
                 .attack()
                 .except(|a| a.defense = Defense::Fortitude)
-                .except_hit_damage(|d| d.power_multiplier = 0.5),
+                .except_hit_damage(|d| d.base_dice = d.base_dice.weak()),
             Self::ArmorcrusherPlus => weapon
                 .attack()
                 .except(|a| a.defense = Defense::Fortitude),
             Self::Armorpiercer => weapon
                 .attack()
                 .except(|a| a.defense = Defense::Reflex)
-                .except_hit_damage(|d| d.power_multiplier = 0.5),
+                .except_hit_damage(|d| d.base_dice = d.base_dice.weak()),
             Self::ArmorpiercerPlus => weapon
                 .attack()
                 .except(|a| a.defense = Defense::Reflex),
             Self::CertainStrike => weapon
                 .attack()
                 .except(|a| a.accuracy += 3)
-                .except_hit_damage(|d| d.power_multiplier = 0.5),
+                .except_hit_damage(|d| d.base_dice = d.base_dice.weak()),
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
                 .attack()
@@ -88,16 +89,58 @@ impl Maneuver {
                     d.damage_types
                         .append(&mut vec![DamageType::Bludgeoning, DamageType::Fire])
                 })
-                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
+                .except_hit_damage(|d| match rank {
+                    3 => d.base_dice = d.base_dice.add_die(Die::d4()),
+                    4 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d4()),
+                        power_per_dice: 4,
+                        power_per_increment: 0,
+                    }),
+                    5 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d6()),
+                        power_per_dice: 4,
+                        power_per_increment: 0,
+                    }),
+                    6 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d6()),
+                        power_per_dice: 3,
+                        power_per_increment: 0,
+                    }),
+                    7 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d10()),
+                        power_per_dice: 3,
+                        power_per_increment: 0,
+                    }),
+                    _ => {},
+                }),
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
-                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
+                // +1a at rank 2 and rank 3
+                .except(|a| a.accuracy += min(rank - 2, 0))
+                .except_hit_damage(|d| match rank {
+                    4 => d.base_dice = d.base_dice.add_die(Die::d4()),
+                    5 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d4()),
+                        power_per_dice: 4,
+                        power_per_increment: 0,
+                    }),
+                    6 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d6()),
+                        power_per_dice: 4,
+                        power_per_increment: 0,
+                    }),
+                    7 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d6()),
+                        power_per_dice: 3,
+                        power_per_increment: 0,
+                    }),
+                    _ => {},
+                }),
             Self::GraspingStrike => weapon
                 .attack()
                 .except_hit_damage(|d| {
                     d.extra_defense_effect =
                         Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
-                    d.power_multiplier = 0.5;
                 }),
             Self::GraspingStrikePlus => {
                 weapon
@@ -105,13 +148,14 @@ impl Maneuver {
                     .except_hit_damage(|d| {
                         d.extra_defense_effect =
                             Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                        d.base_dice = d.base_dice.multiply(2)
                     })
             },
             Self::Hamstring => {
                 weapon
                     .attack()
                     .except_hit_damage(|d| {
-                        d.power_multiplier = 0.5;
+                        d.base_dice = d.base_dice.weak();
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Slowed],
                             duration: AttackEffectDuration::Condition,
@@ -122,7 +166,7 @@ impl Maneuver {
             Self::Headshot => weapon
                 .attack()
                 .except_hit_damage(|d| {
-                    d.power_multiplier = 0.5;
+                    d.base_dice = d.base_dice.weak();
                     d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![Debuff::Stunned],
                         duration: AttackEffectDuration::Condition,
@@ -132,17 +176,17 @@ impl Maneuver {
             Self::HeadshotPlus => weapon
                 .attack()
                 .except_hit_damage(|d| {
-                    d.power_multiplier = 0.5;
+                    d.base_dice = d.base_dice.multiply(2);
                     d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                         debuffs: vec![Debuff::Confused],
                         duration: AttackEffectDuration::Condition,
                         immune_after_effect_ends: false,
                     }));
                 }),
-            Self::MightyStrike => weapon
+            Self::PowerStrike => weapon
                 .attack()
-                .except(|a| a.accuracy -= 1)
-                .except_hit_damage(|d| d.damage_dice.maximize()),
+                .except(|a| a.accuracy -= 3)
+                .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(2)),
             Self::PouncingStrike => weapon
                 .attack()
                 .except(|a| {
@@ -155,11 +199,11 @@ impl Maneuver {
                         }),
                         suffix: None,
                     });
-                })
-                .except_hit_damage(|d| d.power_multiplier = 0.5),
+                }),
+            // TODO: add rank scaling?
             Self::RecklessStrike(rank) => weapon
                 .attack()
-                .except(|a| a.accuracy += 1)
+                .except(|a| a.accuracy += 2)
                 .except(|a| {
                     a.extra_context = Some(AbilityExtraContext {
                         cooldown: None,
@@ -171,13 +215,12 @@ impl Maneuver {
                             .to_string(),
                         ),
                     });
-                })
-                .except_hit_damage(|d| d.damage_modifier += standard_damage_scaling(*rank)),
+                }),
             Self::StripTheFlesh => {
                 weapon
                     .attack()
                     .except_hit_damage(|d| {
-                        d.power_multiplier = 0.5;
+                        d.base_dice = d.base_dice.multiply(2);
                         d.lose_hp_effect = Some(AttackTriggeredEffect::Debuff(DebuffEffect {
                             debuffs: vec![Debuff::Vulnerable(Box::new(
                                 SpecialDefenseType::AllDamage,
@@ -190,28 +233,28 @@ impl Maneuver {
             Self::Tenderize => {
                 weapon
                     .attack()
+                    // TODO: define "lose HP and beat extra defense" effect
                     .except_hit_damage(|d| {
                         d.extra_defense_effect = Some((Defense::Fortitude, AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Dazed],
+                            debuffs: vec![Debuff::Vulnerable(Box::new(
+                                SpecialDefenseType::AllDamage,
+                            ))],
                             duration: AttackEffectDuration::Condition,
                             immune_after_effect_ends: false,
                         })));
                     })
             }
-            Self::PowerFlurry => weapon
+            Self::DoubleStrike => weapon
                 .attack()
-                .except(|a| a.accuracy -= 2)
-                .except(|a| a.targeting = Targeting::Strikes(2))
-                .except_hit_damage(|d| d.power_multiplier = 0.5),
+                .except(|a| a.accuracy -= 1)
+                .except(|a| a.targeting = Targeting::Strikes(2)),
+            // TODO: handle glancing blow on miss
             Self::Whirlwind => weapon
                 .attack()
                 .except(|a| {
                     a.targeting =
-                        Targeting::Radius(None, AreaSize::Tiny, AreaTargets::Enemies)
+                        Targeting::Radius(None, AreaSize::Tiny, AreaTargets::Enemies);
                 })
-                .except_hit_damage(|d| {
-                    d.power_multiplier = 0.5;
-                }),
         };
         attack.name = self.attack_name(&weapon);
         attack.replaces_weapon = if self.should_replace_weapon() {
@@ -229,11 +272,12 @@ impl Maneuver {
         }
         match self {
             Self::CertainStrike => with_prefix("Certain", weapon_name),
+            Self::DoubleStrike => with_prefix("Double", weapon_name),
             Self::ElementalStrike(_) => with_prefix("Elemental", weapon_name),
             Self::GenericScalingStrike(_) => with_prefix("Generic Scaling", weapon_name),
             Self::GraspingStrike => with_prefix("Grasping", weapon_name),
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
-            Self::MightyStrike => with_prefix("Mighty", weapon_name),
+            Self::PowerStrike => with_prefix("Powerful", weapon_name),
             Self::PouncingStrike => with_prefix("Pouncing", weapon_name),
             Self::RecklessStrike(_) => with_prefix("Reckless", weapon_name),
             _ => format!("{} -- {}", self.name(), weapon_name),
@@ -254,8 +298,8 @@ impl Maneuver {
             Self::Hamstring => "Hamstring",
             Self::Headshot => "Headshot",
             Self::HeadshotPlus => "Headshot+",
-            Self::MightyStrike => "Mighty Strike",
-            Self::PowerFlurry => "Power Flurry",
+            Self::PowerStrike => "Power Strike",
+            Self::DoubleStrike => "Double Strike",
             Self::PouncingStrike => "Pouncing Strike",
             Self::RecklessStrike(_) => "Reckless Strike",
             Self::StripTheFlesh => "Strip the Flesh",
@@ -278,8 +322,8 @@ impl Maneuver {
             Self::Hamstring => 3,
             Self::Headshot => 3,
             Self::HeadshotPlus => 7,
-            Self::MightyStrike => 1,
-            Self::PowerFlurry => 3,
+            Self::PowerStrike => 1,
+            Self::DoubleStrike => 5,
             Self::PouncingStrike => 3,
             Self::RecklessStrike(_) => 1,
             Self::StripTheFlesh => 7,

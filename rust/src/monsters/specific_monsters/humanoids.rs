@@ -96,7 +96,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 1,
                 modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DrainLife(1).attack(),
+                    StandardAttack::InflictWound(1).attack(),
                 )]),
                 movement_speeds: None,
                 name: "Death Cultist".to_string(),
@@ -424,7 +424,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::MightyStrike)]),
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::PowerStrike)]),
                 name: "Orc Veteran".to_string(),
                 role: Role::Warrior,
                 size: Size::Medium,
@@ -442,7 +442,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 6,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::MightyStrike),
+                    Modifier::Maneuver(Maneuver::PowerStrike),
                     Modifier::Attack(
                         Maneuver::Hamstring
                             .attack(StandardWeapon::Greataxe.weapon())

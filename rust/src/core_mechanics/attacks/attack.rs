@@ -1,18 +1,15 @@
 use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
 use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
-use crate::core_mechanics::{Attribute, DamageDice, Defense, DicePool, HasAttributes, Tag};
+use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
 use super::{AttackEffect, Maneuver};
 
-pub struct PowerScaling {
-    dice: DicePool,
-    per_power: i32,
-}
-
+// This represents an attack that a creature can make. It does not save information about the
+// creature *using* the attack.
 #[derive(Clone, Debug)]
 pub struct Attack {
     pub accuracy: i32,
@@ -28,6 +25,9 @@ pub struct Attack {
     pub targeting: Targeting,
 }
 
+// This is implemented by creatures, and includes a lot of the calculations necessary to figure out
+// how attacks work. It's possible that "power" should be calculated separately, since it's also
+// useful for healing and some passive abilities.
 pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
@@ -94,26 +94,10 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
-        if let Some(damage_effect) = self.damage_effect() {
-            let _power = if self.is_magical {
-                creature.calc_magical_power()
-            } else {
-                creature.calc_mundane_power()
-            };
-            return Some(
-                damage_effect.damage_dice.clone(), // .add(creature.calc_damage_increments(self.is_strike)),
-            );
-        }
-        return None;
-    }
-
-    pub fn calc_damage_modifier(&self, creature: &Creature) -> Option<i32> {
+    pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(
-                damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power(self.is_magical) as f64)
-                        as i32,
+                damage_effect.base_dice.calc_scaled_pool(&damage_effect.power_scalings, creature.calc_power(self.is_magical))
             );
         }
         return None;
