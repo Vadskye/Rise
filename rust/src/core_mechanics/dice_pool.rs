@@ -18,9 +18,9 @@ impl Die {
     }
 
     pub fn add_increment(&self) -> Vec<Die> {
-        if (self.size < 4) {
+        if self.size < 4 {
             return vec![Die::new(self.size + 1)];
-        } else if (self.size < 10) {
+        } else if self.size < 10 {
             return vec![Die::new(self.size + 2)];
         } else {
             return vec![Die::new(6), Die::new(6)];
@@ -93,7 +93,7 @@ impl DicePool {
     pub fn add_increments(&self, increments: i32) -> DicePool {
         let mut dice = self.dice.clone();
         let mut increments = increments;
-        while (increments > 0) {
+        while increments > 0 {
             // Technically, this can fail if you try to add +1d to a dice pool that starts
             // with 2d8 or more. In practice, this should never happen because the system never
             // creates dice pools larger than 2d8 that can be incremented in this way.

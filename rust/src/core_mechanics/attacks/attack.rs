@@ -96,7 +96,7 @@ impl Attack {
 
     pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
         if let Some(damage_effect) = self.damage_effect() {
-            let power = if self.is_magical {
+            let _power = if self.is_magical {
                 creature.calc_magical_power()
             } else {
                 creature.calc_mundane_power()
