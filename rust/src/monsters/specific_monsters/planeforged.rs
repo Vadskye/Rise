@@ -102,7 +102,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
             level: 13,
             modifiers: Some(vec![
                 Modifier::Attack(StandardAttack::Combustion(6).attack()),
-                Modifier::Attack(StandardAttack::Inferno(6).attack()),
+                Modifier::Attack(StandardAttack::Pyroclasm(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
                 Modifier::Attack(StandardAttack::Ignition(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
@@ -163,9 +163,6 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             )));
             modifiers.push(Modifier::Attack(
                 StandardAttack::DivineJudgment(rank).attack(),
-            ));
-            modifiers.push(Modifier::Attack(
-                StandardAttack::GlimpseOfDivinity(rank).attack(),
             ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
@@ -337,7 +334,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 12,
                 modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Inferno(5).attack()),
+                    Modifier::Attack(StandardAttack::Pyroclasm(5).attack()),
                     Modifier::Attack(
                         Maneuver::Whirlwind
                             .attack(StandardWeapon::Slam.weapon())
@@ -442,7 +439,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Enrage(2).attack()),
-                    Modifier::Maneuver(Maneuver::PowerFlurry),
+                    Modifier::Maneuver(Maneuver::PowerStrike),
                     Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                         AbilityTag::Emotion,
                     )),
@@ -517,12 +514,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
             )));
-            modifiers.push(Modifier::Attack(StandardAttack::GustOfWind(rank).attack()));
-            modifiers.push(Modifier::Attack(StandardAttack::Windblast(rank).attack()));
+            modifiers.push(Modifier::Attack(StandardAttack::Windslash(rank).attack()));
             if rank >= 3 {
-                modifiers.push(Modifier::Attack(
-                    StandardAttack::PiercingWindblast(rank).attack(),
-                ));
                 modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
             }
             return FullPlaneforgedDefinition {
@@ -1000,9 +993,6 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                                     stage3_vital: None,
                                 })
                             )
-                        )
-                        .except_hit_damage(
-                            |d| d.power_multiplier = 0.5
                         )
                     ),
                 ])),

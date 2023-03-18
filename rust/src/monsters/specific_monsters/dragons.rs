@@ -2,11 +2,11 @@ use crate::core_mechanics::abilities::{
     AbilityExtraContext, AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting,
 };
 use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, DebuffEffect, SimpleDamageEffect,
+    AttackEffectDuration, DebuffEffect,
 };
-use crate::core_mechanics::attacks::{Attack, AttackEffect};
+use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Size, SpecialDefenseType, SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
@@ -480,6 +480,10 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     } else {
         age_category.breath_weapon_cone()
     };
+    let damage_rank = damage_rank(
+                    age_category.level() + dragon_type.level_modifier(),
+                    age_category.challenge_rating(),
+                );
     return Attack {
         accuracy: 0,
         crit: None,
@@ -489,17 +493,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             movement: None,
             suffix: None,
         }),
-        hit: AttackEffect::Damage(
-            SimpleDamageEffect {
-                damage_dice: DamageDice::aoe_damage(damage_rank(
-                    age_category.level() + dragon_type.level_modifier(),
-                    age_category.challenge_rating(),
-                )),
-                damage_types: vec![dragon_type.damage_type()],
-                power_multiplier: 0.5,
-            }
-            .damage_effect(),
-        ),
+        hit: AttackEffect::Damage(SimpleDamageEffect::dr(damage_rank, vec![dragon_type.damage_type()])),
         is_magical: false,
         is_strike: false,
         name: "Breath Weapon".to_string(),

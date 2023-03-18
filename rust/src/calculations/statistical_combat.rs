@@ -252,12 +252,11 @@ pub fn calc_attack_damage_per_round(
     let mut damage_per_glance = 0.0;
     let mut damage_per_hit = 0.0;
     if attack.damage_effect().is_some() {
-        let damage_dice = attack.calc_damage_dice(attacker).unwrap();
-        let damage_modifier = attack.calc_damage_modifier(attacker).unwrap() as f64;
+        let damage_dice = attack.calc_dice_pool(attacker).unwrap();
 
         damage_per_crit = damage_dice.average_damage();
-        damage_per_glance = damage_modifier;
-        damage_per_hit = damage_dice.average_damage() + damage_modifier;
+        damage_per_glance = damage_dice.average_damage() / 2.0;
+        damage_per_hit = damage_dice.average_damage();
     }
 
     return AttackDamagePerRound {
