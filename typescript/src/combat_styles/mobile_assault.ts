@@ -117,7 +117,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         You \\glossterm{teleport} horizontally to a location within \\shortrange.
-        In addition, you can two melee \\glossterm{strikes}.
+        In addition, you can make two melee \\glossterm{strikes}.
         Each strike targets one creature within a 5 ft.\\ wide line between your starting location and your ending location.
         You can target the same creature with both strikes.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
