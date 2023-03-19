@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::Targeting;
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
-use crate::core_mechanics::{DicePool, DamageType, Defense, PowerScaling, Tag};
+use crate::core_mechanics::{DamageType, Defense, DicePool, PowerScaling, Tag};
 use std::fmt;
 use titlecase::titlecase;
 
@@ -129,7 +129,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Claw".to_string(),
-                tags: vec![WeaponTag::Light, WeaponTag::VersatileGrip],
+                tags: vec![WeaponTag::Light],
             },
             // TODO: define dual-wielding
             Self::Claws => Weapon {
@@ -137,7 +137,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Claws".to_string(),
-                tags: vec![WeaponTag::Light, WeaponTag::VersatileGrip],
+                tags: vec![WeaponTag::Light],
             },
             Self::Club => Weapon {
                 accuracy: 0,
@@ -166,7 +166,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Greatsword".to_string(),
-                tags: vec![WeaponTag::Sweeping(2)],
+                tags: vec![WeaponTag::Heavy, WeaponTag::Sweeping(2)],
             },
             Self::HeavyFlail => Weapon {
                 accuracy: 0,

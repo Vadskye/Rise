@@ -113,10 +113,12 @@ impl LowDamageAndDebuff {
             crit: None,
             defense: self.defense,
             extra_context: None,
-            hit: AttackEffect::Damage(SimpleDamageEffect::dr(self.rank - 2, self.damage_types.clone()).except(|d| {
-                d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone();
-                d.take_damage_effect = spent_rank_results.take_damage_effect.clone();
-            })),
+            hit: AttackEffect::Damage(
+                SimpleDamageEffect::dr(self.rank - 2, self.damage_types.clone()).except(|d| {
+                    d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone();
+                    d.take_damage_effect = spent_rank_results.take_damage_effect.clone();
+                }),
+            ),
             is_magical: self.is_magical,
             is_strike: false,
             name: self.name.clone(),

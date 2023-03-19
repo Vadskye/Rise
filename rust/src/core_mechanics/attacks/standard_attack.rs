@@ -6,10 +6,10 @@ use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
     DebuffInsteadEffect, PoisonEffect, VitalWoundEffect,
 };
-use crate::core_mechanics::attacks::{Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect};
-use crate::core_mechanics::{
-    DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory, Tag,
+use crate::core_mechanics::attacks::{
+    Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect,
 };
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 

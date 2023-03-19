@@ -4,10 +4,12 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
-use crate::core_mechanics::{DamageType, Debuff, DicePool, Defense, Die, PowerScaling, SpecialDefenseType, SpeedCategory};
+use crate::core_mechanics::{
+    DamageType, Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
+};
 use crate::equipment::Weapon;
-use titlecase::titlecase;
 use std::cmp::min;
+use titlecase::titlecase;
 
 use super::Attack;
 

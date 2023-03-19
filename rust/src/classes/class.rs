@@ -502,14 +502,14 @@ impl Class {
     // +4 is about 60% more HP
     pub fn hit_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 2,
             Self::Dragon => 4,
             Self::Druid => 2,
             Self::Fighter => 3,
             Self::Harpy => 2,
             Self::Monk => 2,
-            Self::Oozeborn => 5,
+            Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 3,
             Self::Rogue => 1,

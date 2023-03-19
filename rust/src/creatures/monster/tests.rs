@@ -32,27 +32,36 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::One, 1, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{1}
+                \begin{monsubsection}{Standard Monster}{1 Leader}
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 12
+                \pari \textbf{HP} 10
                     \monsep \textbf{DR} 8
                 \pari \textbf{Defenses}
-                    Armor 7
-                    \monsep Fort 7
-                    \monsep Ref 7
-                    \monsep Ment 9
+                    Armor 6
+                    \monsep Fort 6
+                    \monsep Ref 6
+                    \monsep Ment 10
                     \rankline
                     \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
+                    \pari \textbf{Power} 4\sparkle \monsep 4
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{activeability}*{Slam}
+                \begin{activeability}*{Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d10\plus3 bludgeoning damage.
+                \hit The target takes 2d6 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Claws}
+                \weapontag{Light}
+                \rankline
+                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit The target takes 1d8 slashing damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -64,19 +73,20 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::Four, 10, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10}[Elite]
+                \begin{monsubsection}{Standard Monster}{10 Leader}[Elite]
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 128
-                    \monsep \textbf{DR} 216
+                \pari \textbf{HP} 108
+                    \monsep \textbf{DR} 200
                 \pari \textbf{Defenses}
-                    Armor 14
-                    \monsep Fort 14
-                    \monsep Ref 14
-                    \monsep Ment 18
+                    Armor 11
+                    \monsep Fort 11
+                    \monsep Ref 11
+                    \monsep Ment 19
                     \rankline
-                    \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
+                    \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
+                    \pari \textbf{Power} 14\sparkle \monsep 14
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
@@ -85,10 +95,18 @@ mod to_section {
             \par
                 \parhead{Multiple Actions} The standard monster can take two standard actions each round. It cannot use the same ability or weapon twice in the same round.
             \par
-            \begin{activeability}*{Slam}
+            \begin{activeability}*{Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus16 bludgeoning damage.
+                \hit The target takes 3d6\plus1d10 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Claws}
+                \weapontag{Light}
+                \rankline
+                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit The target takes 3d6 slashing damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -112,54 +130,71 @@ mod to_section {
             .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10}
+                \begin{monsubsection}{Standard Monster}{10 Leader}
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 32
-                    \monsep \textbf{DR} 42
+                \pari \textbf{HP} 27
+                    \monsep \textbf{DR} 40
                 \pari \textbf{Defenses}
-                    Armor 13
-                    \monsep Fort 13
-                    \monsep Ref 13
-                    \monsep Ment 15
+                    Armor 11
+                    \monsep Fort 11
+                    \monsep Ref 11
+                    \monsep Ment 17
                     \rankline
-                    \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
+                    \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
+                    \pari \textbf{Power} 12\sparkle \monsep 12
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \begin{activeability}*{Certain Greatsword}
-                \weapontag{Sweeping} (2)
+                \begin{activeability}*{Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus6 slashing damage.
+                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit The target takes 3d6\plus1d8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Slam}
+            \begin{activeability}*{Certain Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
+                \hit The target takes 3d6\plus1d8 (w) physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Certain Claws}
+                \weapontag{Light}
+                \rankline
+                The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
+                \hit The target takes 1d6\plus1d10 (w) slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Certain Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
+                \hit The target takes 3d6\plus1d10 (w) slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Claws}
+                \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus6 bludgeoning damage.
+                \hit The target takes 1d6\plus1d10 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
-                \weapontag{Sweeping} (2)
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus12 slashing damage.
-            \end{activeability}
-        \par
-            \begin{activeability}*{Slam}
-                \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus12 bludgeoning damage.
+                \hit The target takes 3d6\plus1d10 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Strip the Flesh -- Greatsword}
-                \weapontag{Sweeping} (2)
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d10\plus6 slashing damage.
+                \hit The target takes 6d6\plus2d10 slashing damage.
                  Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
             \end{activeability}
 ",
