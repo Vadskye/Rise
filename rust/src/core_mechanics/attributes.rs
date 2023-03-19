@@ -72,7 +72,7 @@ where
     }
 
     fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]) {
-        let value = level / 6;
+        let value = (level + 3) / 6;
         if value > 0 {
             for attribute in attributes.iter() {
                 self.add_modifier(

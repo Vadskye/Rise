@@ -7,6 +7,8 @@ fn ideal_damage(rank: i32, damage_type: &DamageType, high_attribute: bool) -> f6
         5 => 14.0,
         6 => 20.0,
         7 => 28.0,
+        8 => 40.0,
+        9 => 56.0,
         _ => panic!("Invalid rank {}", rank),
     };
     let with_attribute = if high_attribute { base * 1.6 } else { base };
@@ -28,6 +30,8 @@ fn power_at_rank(rank: i32, high_attribute: bool) -> f64 {
         5 => [6.5, 12.5],
         6 => [8.0, 15.0],
         7 => [9.5, 17.5],
+        8 => [12.0, 20.0],
+        9 => [13.5, 21.5],
         _ => panic!("Invalid rank {}", rank),
     };
 
@@ -196,7 +200,7 @@ fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> S
     let high_ideal_damage = ideal_damage(rank, damage_type, true);
     let high_actual_damage = calc_damage(high_power, ps);
 
-    let matches_low = is_close(low_ideal_damage, low_actual_damage);
+    let matches_low = is_kinda_close(low_ideal_damage, low_actual_damage);
     let matches_high = is_close(high_ideal_damage, high_actual_damage);
     let matches_sum = is_close(
         low_ideal_damage + high_ideal_damage,
@@ -207,9 +211,10 @@ fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> S
     let is_slow_scaling = is_close(low_ideal_damage, low_actual_damage)
         && is_kinda_close(high_ideal_damage, high_actual_damage)
         && high_ideal_damage > high_actual_damage;
-    let is_fast_scaling = is_close(high_ideal_damage, high_actual_damage)
+    let is_fast_scaling = is_kinda_close(high_ideal_damage, high_actual_damage)
         && is_kinda_close(low_ideal_damage, low_actual_damage)
-        && low_ideal_damage > low_actual_damage;
+        && low_ideal_damage > low_actual_damage
+        && high_ideal_damage < high_actual_damage;
 
     return SolutionAnalysis {
         damage_type: *damage_type,

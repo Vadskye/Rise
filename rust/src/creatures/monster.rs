@@ -85,15 +85,24 @@ impl Monster {
             .push(StandardWeapon::MultipedalBite.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
 
-        if let Some(attribute_value) = starting_attribute {
-            for attribute_name in Attribute::all() {
-                monster
-                    .creature
-                    .set_base_attribute(attribute_name, attribute_value);
-            }
+        let starting_attribute = if let Some(a) = starting_attribute {
+            a
         } else {
-            Role::Leader.set_standard_attributes(&mut monster.creature);
+            2
+        };
+
+        // 2 for most attributes, 4 str, 4 wil
+        for attribute_name in Attribute::all() {
+            monster
+                .creature
+                .set_base_attribute(attribute_name, starting_attribute);
         }
+        monster
+            .creature
+            .set_base_attribute(Attribute::Strength, challenge_rating.max_base_attribute());
+        monster
+            .creature
+            .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
 
         monster
             .creature
@@ -112,7 +121,7 @@ impl Monster {
                     is_maneuver: false,
                     name: "Generic Monster Damage".to_string(),
                     range: None,
-                    rank: self.creature.rank() + self.challenge_rating.rank_modifier(),
+                    rank: self.creature.rank(),
                 }
                 .attack(),
             ),
@@ -133,7 +142,7 @@ impl Monster {
         };
         let latex = latex_formatting::latexify(format!(
             "
-                \\begin<{section_name}><{name}><{level}>{elite}
+                \\begin<{section_name}><{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
 
                     {description}
@@ -149,6 +158,7 @@ impl Monster {
             size_star = if section_name == "monsubsubsection" { "*" } else { "" },
             name = name,
             level = self.creature.level,
+            role = self.role.name(),
             elite = if matches!(self.challenge_rating, ChallengeRating::Four) { "[Elite]" } else {""},
             size = self.creature.size.name(),
             type = self.creature_type.name(),
@@ -187,6 +197,7 @@ impl Monster {
                     {other_skills}
                     \\rankline
                     \\pari \\textbf<Attributes> {attributes}
+                    \\pari \\textbf<Power> {magical_power}\\sparkle \\monsep {mundane_power}
                     \\pari \\textbf<Alignment> {alignment}
                 \\end<monsterstatistics>
             ",
@@ -197,6 +208,8 @@ impl Monster {
             attributes = self.latex_attributes(),
             social = self.latex_social(),
             other_skills = self.latex_other_skills(),
+            magical_power = self.creature.calc_magical_power(),
+            mundane_power = self.creature.calc_mundane_power(),
             alignment =
                 latex_formatting::uppercase_first_letter(self.alignment.as_deref().unwrap_or("")),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach

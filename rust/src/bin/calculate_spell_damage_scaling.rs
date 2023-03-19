@@ -6,7 +6,7 @@ fn main() {
     // Could try area damage, but it doesn't seem useful
     for damage_type in vec![DamageType::SingleTarget] {
         println!("DT {}", damage_type.name());
-        for rank in 1..8 {
+        for rank in 1..10 {
             let solutions = calc_valid_scaling_options(rank, &damage_type);
             println!(
                 "Rank {}: {}",

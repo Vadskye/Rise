@@ -48,6 +48,9 @@ pub struct DicePool {
     // A maximized dice pool deals more `.average_damage()` and is noted in
     // `.to_string()`.
     pub maximized: bool,
+    // Useful for things like "double weapon damage". This is used in two places:
+    // `.average_damage()` and `.to_string()`.
+    pub multiplier: i32,
     // A weak dice pool is rolled twice, keeping the lower result.
     pub weak: bool,
 }
@@ -57,6 +60,7 @@ impl DicePool {
         return Self {
             dice: vec![die],
             maximized: false,
+            multiplier: 1,
             weak: false,
         };
     }
@@ -84,7 +88,8 @@ impl DicePool {
         return Self {
             dice,
             maximized: false,
-            weak: false
+            multiplier: 1,
+            weak: false,
         };
     }
 
@@ -96,6 +101,7 @@ impl DicePool {
         return Self {
             dice: vec![],
             maximized: false,
+            multiplier: 1,
             weak: false,
         };
     }
@@ -117,6 +123,7 @@ impl DicePool {
         return DicePool {
             dice: new_dice,
             maximized: self.maximized,
+            multiplier: 1,
             weak: self.weak,
         };
     }
@@ -147,6 +154,7 @@ impl DicePool {
         return DicePool {
             dice,
             maximized: self.maximized,
+            multiplier: self.multiplier,
             weak: self.weak,
         };
     }
@@ -168,11 +176,13 @@ impl DicePool {
 
         let dice_texts: Vec<String> = contained_sizes
             .iter()
-            .map(|s| format!("{}d{}", counts[s], s))
+            .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
             .collect();
         let joined = dice_texts.join("+");
         if self.maximized {
             return format!("{} (m)", joined);
+        } else if self.weak {
+            return format!("{} (w)", joined);
         } else {
             return joined;
         }
@@ -192,18 +202,16 @@ impl DicePool {
         if self.weak && !self.maximized {
             sum *= 0.75;
         }
+        sum *= self.multiplier as f64;
         return sum;
     }
 
-    // Useful for "double weapon damage" or "triple weapon damage" effects 
+    // Useful for "double weapon damage" or "triple weapon damage" effects
     pub fn multiply(&self, multiplier: i32) -> DicePool {
-        let mut new_dice = self.dice.clone();
-        for _ in 1..multiplier {
-            new_dice.append(&mut self.dice.clone());
-        }
         return DicePool {
-            dice: new_dice,
+            dice: self.dice.clone(),
             maximized: self.maximized,
+            multiplier,
             weak: self.weak,
         };
     }
@@ -319,10 +327,7 @@ mod tests {
         assert_eq!(5.5, DicePool::d10().average_damage());
         assert_eq!(7.0, DicePool::d10().add_increments(1).average_damage());
 
-        assert_eq!(
-            13.5,
-            DicePool::xdy(3, 8).average_damage()
-        );
+        assert_eq!(13.5, DicePool::xdy(3, 8).average_damage());
     }
 
     #[test]
@@ -338,11 +343,6 @@ mod tests {
                 .average_damage()
         );
 
-        assert_eq!(
-            24.0,
-            DicePool::xdy(3, 8)
-                .maximize()
-                .average_damage()
-        );
+        assert_eq!(24.0, DicePool::xdy(3, 8).maximize().average_damage());
     }
 }

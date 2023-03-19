@@ -96,9 +96,10 @@ impl Attack {
 
     pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
-            return Some(
-                damage_effect.base_dice.calc_scaled_pool(&damage_effect.power_scalings, creature.calc_power(self.is_magical))
-            );
+            return Some(damage_effect.base_dice.calc_scaled_pool(
+                &damage_effect.power_scalings,
+                creature.calc_power(self.is_magical),
+            ));
         }
         return None;
     }
@@ -301,44 +302,14 @@ where
             true => &Attribute::Willpower,
             false => &Attribute::Strength,
         };
-        let mut levelish = self.level + self.get_base_attribute(attribute);
-        let mut power = 0;
-        if levelish > 21 {
-            // +3 power for each point beyond 21
-            power = (levelish - 21) * 3;
-            levelish = 21
-        }
-
-        if levelish < 1 {
-            power += levelish
-        } else {
-            power += match levelish {
-                1 => 1,
-                2 => 2,
-                3 => 2,
-                4 => 3,
-                5 => 3,
-                6 => 4,
-                7 => 4, // start +1 per
-                8 => 5,
-                9 => 6,
-                10 => 7,
-                11 => 8,
-                12 => 9,
-                13 => 10, // start +2 per
-                14 => 12,
-                15 => 14,
-                16 => 16,
-                17 => 18,
-                18 => 20,
-                19 => 22,
-                20 => 24,
-                21 => 26,
-                _ => panic!("Invalid levelish {}", levelish),
-            }
-        }
-
-        return power + self.calc_total_modifier(ModifierType::Power);
+        let specific_modifier = match is_magical {
+            true => self.calc_total_modifier(ModifierType::MagicalPower),
+            false => self.calc_total_modifier(ModifierType::MundanePower),
+        };
+        return (self.level / 2)
+            + self.get_base_attribute(attribute)
+            + specific_modifier
+            + self.calc_total_modifier(ModifierType::Power);
     }
 
     fn explain_attacks(&self) -> Vec<String> {
