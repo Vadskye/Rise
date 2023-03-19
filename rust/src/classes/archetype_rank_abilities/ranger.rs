@@ -86,7 +86,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Tag-Team Takedown}
                     \rankline
                     Make a \glossterm{strike}.
-                    Your \ability{animal companion} gains 1d6 \glossterm{extra damage} this round against each creature damaged by the strike.
+                    Your \ability{animal companion} gains 1d6 \glossterm{extra damage} this round against each damaged creature.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.

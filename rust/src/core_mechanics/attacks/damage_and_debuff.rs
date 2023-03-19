@@ -271,7 +271,7 @@ Each creature that loses \\glossterm<hit points> from this attack is \\vulnerabl
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
-Each creature damaged by this attack is \\glossterm{briefly} \\dazzled.
+Each damaged creature is \\glossterm{briefly} \\dazzled.
 \\end<ability>",
             get_standard_ability_block(eye_poke)
         );
@@ -297,7 +297,7 @@ Each creature damaged by this attack is \\glossterm{briefly} \\dazzled.
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
-Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
+Each damaged creature is \\dazzled as a \\glossterm{condition}.
 \\end<ability>",
             get_standard_ability_block(eye_poke)
         );
@@ -323,7 +323,7 @@ Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
 \\rankline
 The $name makes a +2 \\glossterm{strike} vs. Armor.
 \\hit The target takes 1d10 bludgeoning damage.
-Each creature damaged by this attack is \\dazzled as a \\glossterm{condition}.
+Each damaged creature is \\dazzled as a \\glossterm{condition}.
 \\end<ability>",
             get_standard_ability_block(eye_poke)
         );

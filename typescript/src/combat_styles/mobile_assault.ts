@@ -62,7 +62,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You can \\glossterm{briefly} move through the space of each creature damaged by the strike.
+        You can \\glossterm{briefly} move through the space of each damaged creature.
       `,
       rank: 1,
     },

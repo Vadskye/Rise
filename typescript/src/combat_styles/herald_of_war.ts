@@ -158,7 +158,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Each damaged creature is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 5,
     },
@@ -168,7 +168,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\shaken by you if your attack result beats its Mental defense.
+        Each damaged creature is \\shaken by you if your attack result beats its Mental defense.
       `,
       rank: 1,
       tags: ['Emotion'],
@@ -179,7 +179,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\frightened by you if your attack result beats its Mental defense.
+        Each damaged creature is \\frightened by you if your attack result beats its Mental defense.
       `,
       rank: 5,
       tags: ['Emotion'],

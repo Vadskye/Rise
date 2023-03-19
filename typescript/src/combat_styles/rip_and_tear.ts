@@ -70,7 +70,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        Each creature damaged by the strike is \\slowed as a condition.
+        Each damaged creature is \\slowed as a condition.
       `,
       rank: 7,
     },
@@ -170,7 +170,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike bleeds if your attack result beats its Fortitude defense.
+        Each damaged creature bleeds if your attack result beats its Fortitude defense.
         A bleeding creature takes 1d4 slashing damage +1d per two \\glossterm{power} during your next action.
       `,
       rank: 1,
@@ -181,7 +181,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature damaged by the strike bleeds if your attack result beats its Fortitude defense.
+        Each damaged creature bleeds if your attack result beats its Fortitude defense.
         A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
       `,
       rank: 5,
