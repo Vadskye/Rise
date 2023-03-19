@@ -334,6 +334,7 @@ fn calculate_attack_outcome(
     }
 }
 
+// TODO: handle dual-wielding, which should set this to 0.
 fn calculate_glance_probability(attack: &Attack, accuracy: i32, defense: i32) -> f64 {
     return calculate_attack_outcome(attack, accuracy + 2, defense).hit_probability
         - calculate_attack_outcome(attack, accuracy, defense).hit_probability;
