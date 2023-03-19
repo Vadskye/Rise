@@ -97,7 +97,9 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let dice_pool = self.base_dice.calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
+        let dice_pool = self
+            .base_dice
+            .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
         let mut damage_types = self.damage_types.clone();
         damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         return format!(

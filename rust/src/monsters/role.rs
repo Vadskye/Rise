@@ -73,43 +73,4 @@ impl Role {
             Role::Warrior => 0,
         }
     }
-
-    pub fn set_standard_attributes(&self, creature: &mut Creature) {
-        let attributes = match self {
-            Role::Brute => [5, 0, 2, 0, 0, 0],
-            Role::Leader => [2, 2, 2, 2, 2, 2],
-            Role::Skirmisher => [2, 4, 0, 0, 4, 0],
-            Role::Sniper => [2, 2, 0, 0, 4, 2],
-            Role::Warrior => [2, 4, 4, 0, 2, 2],
-        };
-        let scaling_attributes = match self {
-            Role::Brute => [Attribute::Strength, Attribute::Constitution],
-            // "Leader" takes the role of the generic monster for calculations; unclear what its
-            // default scaling should actually be.
-            Role::Leader => [Attribute::Strength, Attribute::Willpower],
-            Role::Skirmisher => [Attribute::Dexterity, Attribute::Perception],
-            // Should really be Str or Wil depending on magical or mundane
-            Role::Sniper => [Attribute::Strength, Attribute::Perception],
-            Role::Warrior => [Attribute::Dexterity, Attribute::Willpower],
-        };
-
-        creature.set_base_attribute(Attribute::Strength, attributes[0]);
-        creature.set_base_attribute(Attribute::Dexterity, attributes[1]);
-        creature.set_base_attribute(Attribute::Constitution, attributes[2]);
-        creature.set_base_attribute(Attribute::Intelligence, attributes[3]);
-        creature.set_base_attribute(Attribute::Perception, attributes[4]);
-        creature.set_base_attribute(Attribute::Willpower, attributes[5]);
-
-        let level_scaling = (creature.level + 3) / 6;
-        if level_scaling > 0 {
-            self.add_modifier(
-                creature,
-                Modifier::Attribute(scaling_attributes[0], level_scaling),
-            );
-            self.add_modifier(
-                creature,
-                Modifier::Attribute(scaling_attributes[1], level_scaling),
-            );
-        }
-    }
 }
