@@ -113,7 +113,8 @@ impl Class {
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 1 point to get more HP
+            // 1 point to get more HP. Cap at 4, which costs an extra 1 point kinda; if you scale
+            // this too high, it gets stronk.
             + self.hit_points()
             // 1 point per trained skill
             + self.trained_skills()
