@@ -193,7 +193,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -263,7 +263,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{weak strike} using a bludgeoning weapon.
-        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -273,7 +273,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -283,7 +283,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature damaged by the strike takes the damage from the strike again during your next action.
+        Each damaged creature takes the damage from the strike again during your next action.
       `,
       rank: 5,
     },
@@ -294,7 +294,7 @@ export const bluntForce: CombatStyle = {
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature damaged by the strike are \\deafened as a \\glossterm{condition}.
+        You and each damaged creature are \\deafened as a \\glossterm{condition}.
       `,
       rank: 3,
     },

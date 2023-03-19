@@ -11,7 +11,7 @@ export const dirtyFighting: CombatStyle = {
       // -2 ranks / non-weak due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each creature damaged by the strike becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -22,7 +22,7 @@ export const dirtyFighting: CombatStyle = {
       // -2 ranks due to unarmed limitation
       effect: `
         Make a \\glossterm{weak strike} using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each creature damaged by the strike becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 3,
     },
@@ -205,7 +205,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -215,7 +215,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Each creature damaged by the strike is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Each damaged creature is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 5,
     },
@@ -225,7 +225,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You may switch places with one creature damaged by the strike that is the same \\glossterm{size category} as you or smaller.
+        You may switch places with one damaged creature that is the same \\glossterm{size category} as you or smaller.
       `,
       rank: 1,
     },
@@ -245,7 +245,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature damaged by the strike is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Each damaged creature is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 3,
     },
