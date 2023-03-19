@@ -96,7 +96,7 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
-                Each creature damaged by the strike burns if your attack result beats its Reflex defense.
+                Each damaged creature burns if your attack result beats its Reflex defense.
                 A burning creature takes fire damage equal to the damage you dealt with the strike during your next action.
             """,
             short_description="Deals fire damage and can ignite",
@@ -164,7 +164,7 @@ def generate_weapons():
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
-                Each creature damaged by the strike is \\slowed as a \\glossterm<condition> if your attack result beats its Fortitude defense.
+                Each damaged creature is \\slowed as a \\glossterm<condition> if your attack result beats its Fortitude defense.
             """,
             short_description="Deals cold damage and can slow",
             upgrades=[
@@ -347,7 +347,7 @@ def generate_weapons():
             description="""
                 This weapon shimmers with a chaotic pattern of colors, shedding multicolored light as a torch.
                 As a standard action, you can make a flashy \\glossterm<weak strike> using this weapon that accentuates its bewildering effect.
-                Each creature damaged by the strike is \\dazzled as a \\glossterm<condition> if your attack result beats its Reflex defense.
+                Each damaged creature is \\dazzled as a \\glossterm<condition> if your attack result beats its Reflex defense.
             """,
             short_description="Can dazzle",
             upgrades=[

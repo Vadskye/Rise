@@ -65,7 +65,7 @@ impl DamageEffect {
         let take_damage_effect = if let Some(ref effect) = self.take_damage_effect {
             format!(
                 "
-                    Each creature damaged by this attack is {effect}
+                    Each damaged creature is {effect}
                 ",
                 effect = effect.description(),
             )

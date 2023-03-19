@@ -76,7 +76,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
-        Each Large or smaller creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -199,7 +199,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 3,
     },
@@ -210,7 +210,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        Each creature damaged by the strike is \\stunned as a \\glossterm{condition}.
+        Each damaged creature is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -223,7 +223,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 3,
     },
@@ -236,7 +236,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         You may reroll the accuracy roll and take the highest result.
-        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Each damaged creature is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 7,
     },

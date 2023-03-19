@@ -77,7 +77,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        Each creature damaged by the strike is \\dazed as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 1,
     },
@@ -87,7 +87,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Each creature damaged by the strike is \\stunned as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        Each damaged creature is \\stunned as a \\glossterm{condition} if your attack result beats its Reflex defense.
       `,
       rank: 5,
     },
@@ -205,7 +205,7 @@ export const ebbAndFlow: CombatStyle = {
       // -2 ranks for self-daze
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each creature damaged by the strike are \\dazed as a \\glossterm{condition}.
+        You and each damaged creature are \\dazed as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 3,
@@ -216,7 +216,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        You and each creature damaged by the strike are \\stunned as a \\glossterm{condition}.
+        You and each damaged creature are \\stunned as a \\glossterm{condition}.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
       `,
       rank: 7,

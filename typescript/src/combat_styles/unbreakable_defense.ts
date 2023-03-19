@@ -130,7 +130,7 @@ export const unbreakableDefense: CombatStyle = {
       // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Each creature damaged by the strike is \\dazed if your attack result beats its Fortitude defense.
+        Each damaged creature is \\dazed if your attack result beats its Fortitude defense.
       `,
       rank: 1,
     },
@@ -141,7 +141,7 @@ export const unbreakableDefense: CombatStyle = {
       // -2 ranks due to shield limitation
       effect: `
         Make a \\glossterm{strike} using a shield.
-        Each creature damaged by the strike is \\stunned if your attack result beats its Fortitude defense.
+        Each damaged creature is \\stunned if your attack result beats its Fortitude defense.
       `,
       rank: 5,
     },
@@ -247,7 +247,7 @@ export const unbreakableDefense: CombatStyle = {
       // -2 ranks for melee goad
       effect: `
         Make a melee \\glossterm{weak strike}.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Each damaged creature is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
       `,
       rank: 3,
       tags: ['Emotion'],
@@ -258,7 +258,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        Each creature damaged by the strike is \\goaded by you as a \\glossterm{condition}.
+        Each damaged creature is \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Emotion'],
