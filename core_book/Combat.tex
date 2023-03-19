@@ -686,22 +686,29 @@
         \subsubsection{Dual Wielding}\label{Dual Wielding}
             If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
             This is called dual wielding.
-            You need a Dexterity of at least 2 to dual wield.
+            You need a Dexterity of at least 1 to dual wield.
             In addition, you cannot use a shield to dual wield, even if you are proficient with using it as a weapon.
 
             When you make a strike with two weapons with once, you make a separate attack with each weapon.
-            Both attacks must have the same primary target, and each attack deals its full \glossterm{weapon damage} if it hits.
+            % Should they both be required to hit the same primary target?
+            Each attack deals its full \glossterm{weapon damage} if it hits.
 
-            Dual-wielding has three downsides.
-            First, you cannot get a \glossterm{glancing blow} with either weapon while attacking with two weapons at once (see \pcref{Glancing Blows}).
-            If you would miss by 1 or 2, it is considered a full miss instead of a glancing blow.
-            Second, it works best with \weapontag{Light} weapons.
-            For each non-Light weapon you dual-wield with, you take a \minus1 accuracy penalty with both attacks.
-            Third, \glossterm{extra damage} never applies more than once to a single strike.
-            Extra damage applies if you hit with either weapon, but you don't double extra damage if you hit with both weapons.
-            You can choose which weapon is used to deal extra damage after determining which weapons hit.
+            Dual-wielding has four downsides.
+            \begin{itemize}
+                \item You cannot get a \glossterm{glancing blow} with either weapon while attacking with two weapons at once (see \pcref{Glancing Blows}).
+                    If you would miss by 1 or 2, it is considered a full miss instead of a glancing blow.
+                    % Necessary to avoid dual-wielding with heavy weapons or some nonsense
+                    Special abilities that say you get a \glossterm{glancing blow} when you miss have no effect.
+                \item You take a \minus1 accuracy penalty with both attacks.
+                    If your Dexterity is 4 or higher, this penalty is removed.
+                \item For each non-\weapontag{Light} weapon you dual-wield with, you take an additional \minus1 accuracy penalty with both attacks.
+                    This penalty increases to \minus2 for each \weapontag{Heavy} weapon.
+                \item Any \glossterm{extra damage} never applies more than once to a single strike.
+                    Extra damage applies if you hit with either weapon, but you don't double extra damage if you hit with both weapons.
+                    You can choose which weapon is used to deal extra damage after determining which weapons hit.
+            \end{itemize}
 
-            Some abilities check if you hit or miss with a strike.
+            Some abilities check if you hit or miss with a \glossterm{strike}.
             While dual-wielding, you can both hit and miss with the same strike if you hit with one weapon and miss with the other.
 
         \subsubsection{Secondary Strike Targets}\label{Secondary Strike Targets}
