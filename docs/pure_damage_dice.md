@@ -411,34 +411,21 @@ Equations: 3.2 + 0.53dpp medium, 4.2 + 0.92dpp heavy
 
 ## Heavy Weapons vs Dual Wielding
 
-Compare greataxe (+1a, 1d10) vs dual light hammers (+1a, 1d6).
-
-Dual strike mechanics: roll once for each weapon. If you hit with both, use the higher of the two damage rolls. Ignore glancing blows.
-"use higher of two damage rolls" starts at 30% more at low levels, but drops to 10% more at high levels. Needs individual calibration at each level with `output [highest 1 of 2d(6d8)]`.
-
-For simplicity, use "average investment damage", like items. Format is greataxe/hammers.
-
-Damage on hit (roll twice % modifier):
-* R1: 2d6/1d8 (129%)
-* R2: 1d8+1d6/1d10 (130%)
-* R3: 1d10+1d6/2d6 (120%)
-* R4: 3d6/1d8+1d6 (120%)
-* R5: 1d8+2d6/1d10+1d6 (121%)
-* R6: 1d10+2d6/3d6 (116%)
-* R7: 4d6/1d8+2d6 (116%)
-
 Assume 50% baseline accuracy (ignoring weapon-local accuracy for the moment). Same as greataxe, but greataxe gets glancing blows.
 Probability of missing with both weapons: 0.5 * 0.5 = 0.25
 Probability of hitting with both weapons: 0.5 * 0.5 = 0.25
 Probability of hitting with either weapon: 0.5
 Total damage = 0.5 * (weapon damage) + 0.25 * (weapon damage) * (roll twice multiplier)
-If you simplify "roll twice modifier" as 120%, this reduces to 80% of weapon damage, as opposed to the standard greataxe 60% of weapon damage from glancing blows. That implies that two-handed weapons should only deal 33% more damage than light weapons, which is wildly different from the current 2x damage.
+If you simplify "roll twice modifier" as 120%, this reduces to 80% of weapon damage, as opposed to the standard greataxe 60% of weapon damage from glancing blows. That implies that two-handed weapons should only deal 33% more damage than light weapons.
 
 What if dual-wielding let you add your damage with both weapons if you hit with both? 50% of 1x damage and 25% chance of 2x damage means you deal 100% of weapon damage on average each round. That would allow two-handed weapons to deal 67% more damage than light weapons.
 
 Accuracy-adjusted damage per round is simple - just the normal 3.2 + 0.53dpp. Heavy weapon damage is 0.6 * (4.2 + 0.92dpp) = 2.52 + 0.56dpp.
 * R1: dual 3.5/5.6, heavy 2.8/5.0
+* R4: dual 5.9/9, heavy 5.3/8.6
 * R7: dual 8.2/12.5, heavy 7.7/12.2
+
+This is a little too strong. Dual wielding should have a -1 baseline accuracy penalty, removed eventually - dex 4?
 
 This makes dual wielding better at low power and comparable at high power, which seems right. Dual wielding is also better for normal crit-fishing, but worse for desperate exertion crit-fishing.
 
