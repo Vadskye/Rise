@@ -80,7 +80,7 @@ fn generate_latex_defenses(class: &Class) -> String {
     if class.hit_points() > 0 {
         if class.damage_resistance() > 0 {
             hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistancec>).",
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
                 class.hit_points(),
                 class.damage_resistance(),
             )
