@@ -28,6 +28,7 @@ export const ebbAndFlow: CombatStyle = {
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
+      tags: ['Swift'],
     },
 
     {
@@ -35,11 +36,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} against them as a \\glossterm{reactive attack} if possible.
         These attacks resolve before the creature's attack, so if you incapacitate it with either strike, its attack does not affect you.
-        You can only attack that creature twice in this way, even if it attacks you multiple times.
+        You can only respond once in this way, even if the creature attacks you multiple times.
       `,
       rank: 5,
+      tags: ['Swift'],
     },
 
     {
@@ -196,7 +198,8 @@ export const ebbAndFlow: CombatStyle = {
         This attack resolves before the creature's action, so if you incapacitate it with the strike, its action fails.
         You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
-      rank: 3,
+      rank: 1,
+      tags: ['Swift'],
     },
 
     {
