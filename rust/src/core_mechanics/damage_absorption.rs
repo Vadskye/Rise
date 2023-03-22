@@ -15,7 +15,7 @@ where
     fn calc_damage_resistance(&self) -> i32 {
         let mut levelish = calc_levelish(
             self,
-            &Attribute::Willpower,
+            0,
             ModifierType::DamageResistanceFromLevel,
         );
         let mut dr_from_level = 0;
@@ -66,7 +66,7 @@ where
     fn calc_hit_points(&self) -> i32 {
         let mut levelish = calc_levelish(
             self,
-            &Attribute::Constitution,
+            self.get_base_attribute(&Attribute::Constitution),
             ModifierType::HitPointsFromLevel,
         );
         let mut hp_from_level = 0;
@@ -121,12 +121,8 @@ where
     }
 }
 
-fn calc_levelish(creature: &Creature, attribute: &Attribute, mt: ModifierType) -> i32 {
-    let attribute_multiplier = match creature.category {
-        CreatureCategory::Character => 1.0,
-        CreatureCategory::Monster(_) => 1.0,
-    };
+fn calc_levelish(creature: &Creature, attribute_modifier: i32, mt: ModifierType) -> i32 {
     return creature.level
-        + creature.calc_total_modifier(mt)
-        + (creature.get_base_attribute(attribute) as f64 * attribute_multiplier).floor() as i32;
+        + attribute_modifier
+        + creature.calc_total_modifier(mt);
 }
