@@ -371,7 +371,7 @@ def custom_statistic(i):
                     option({"value": "perform"}, "Perform"),
                     option({"value": "persuasion"}, "Persuasion"),
                     option({"value": "mundane_power"}, "Mundane power"),
-                    option({"value": "magical_pwoer"}, "Magical power"),
+                    option({"value": "magical_power"}, "Magical power"),
                     option({"value": "profession"}, "Profession"),
                     option({"value": "reflex"}, "Reflex defense"),
                     option({"value": "ride"}, "Ride"),
