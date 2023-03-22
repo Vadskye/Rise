@@ -550,6 +550,15 @@ Generic Scaling Strike, accuracy-modified:
 * R6, +2a, +0.88dpp: 11.5/19.5 (96%/101%)
 * R7, +2a, +1.17dpp: 15.4/26.3 (92%/98%)
 
+Cyclone
+* R3: 3/4.6 (71%/69%)
+* R4, +1a: 4.1/6.3 (69%/66%)
+* R5, +3a: 5.9/8.8 (71%/66%)
+* R5, +1a, 1d6: 7/9.3 (84%/69%)
+* R6, +1a, 0.875dpp: 10/17 (84%/89%)
+* R7, +1a, 1.17dpp: 13.5/23 (80%/86%)
+
+
 ## Class Non-Strike Ability Scaling
 
 Lay on Hands (standard power scaling):
