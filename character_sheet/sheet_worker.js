@@ -60,6 +60,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 3,
     hit_points: 5,
+    damage_resistance: 0,
     attunement_points: 2,
     fatigue_tolerance: 5,
     insight_points: 0,
@@ -72,6 +73,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 7,
     hit_points: 2,
+    damage_resistance: 2,
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -84,6 +86,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 4,
     mental: 6,
     hit_points: 2,
+    damage_resistance: 1,
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -96,6 +99,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 3,
+    damage_resistance: 0,
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -108,6 +112,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 7,
     mental: 5,
     hit_points: 2,
+    damage_resistance: 4,
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 1,
@@ -120,6 +125,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 6,
     hit_points: 3,
+    damage_resistance: 3,
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -132,6 +138,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 6,
     mental: 4,
     hit_points: 3,
+    damage_resistance: 0,
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -145,6 +152,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 7,
     mental: 5,
     hit_points: 1,
+    damage_resistance: 0,
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -157,6 +165,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 7,
     hit_points: 0,
+    damage_resistance: 4,
     attunement_points: 4,
     fatigue_tolerance: 3,
     insight_points: 1,
@@ -169,6 +178,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 7,
     hit_points: 2,
+    damage_resistance: 4,
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 1,
@@ -181,6 +191,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 5,
     mental: 7,
     hit_points: 0,
+    damage_resistance: 3,
     attunement_points: 4,
     fatigue_tolerance: 1,
     insight_points: 3,
@@ -195,6 +206,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 4,
+    damage_resistance: 2,
     attunement_points: 2,
     fatigue_tolerance: 3,
     insight_points: 1,
@@ -207,6 +219,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 7,
     mental: 5,
     hit_points: 2,
+    damage_resistance: 0,
     attunement_points: 2,
     fatigue_tolerance: 3,
     insight_points: 1,
@@ -219,6 +232,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 3,
     mental: 5,
     hit_points: 5,
+    damage_resistance: 0,
     attunement_points: 2,
     fatigue_tolerance: 5,
     insight_points: 0,
@@ -469,7 +483,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
 const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
   "attunement_points",
-  "base_hit_points",
   "class_skill_count",
   "dexterity",
   "fatigue_tolerance",
@@ -1228,12 +1241,12 @@ function handleDamageResistance() {
     {
       miscName: "damage_resistance",
       numeric: [
-        "willpower",
         "level",
         "challenge_rating",
         "body_armor_damage_resistance",
         "damage_resistance_vital_wound_multiplier",
       ],
+      string: ["base_class"],
     },
     {
       variablesWithoutListen: {
@@ -1241,7 +1254,8 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const effectiveLevel = v.level + v.willpower;
+      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
+      const effectiveLevel = v.level + classModifier;
       const baseDr = calcBaseDamageResistance(effectiveLevel);
 
       var crMultiplier = {
@@ -1262,7 +1276,7 @@ function handleDamageResistance() {
         base_damage_resistance_level: effectiveLevel,
         base_damage_resistance_level_explanation: formatCombinedExplanation(null, [
           { name: "level", value: v.level },
-          { name: "Wil", value: v.willpower },
+          { name: "class", value: classModifier  },
         ]),
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
