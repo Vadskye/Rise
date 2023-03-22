@@ -97,6 +97,7 @@ def generate_weapons():
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
                 Each damaged creature burns if your attack result beats its Reflex defense.
+                % TODO: this should be flat damage, not double damage
                 A burning creature takes fire damage equal to the damage you dealt with the strike during your next action.
             """,
             short_description="Deals fire damage and can ignite",
