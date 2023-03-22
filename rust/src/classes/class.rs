@@ -74,7 +74,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 30;
+        let expected_points = 34;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -90,14 +90,6 @@ impl Class {
 
     fn calculate_point_total(&self) -> i32 {
         let custom_modifier = match self {
-            // Martial classes get three free points since their rank 1 abilities are less overloaded
-            // and they rely more on their raw statistics
-            Self::Barbarian => -3,
-            Self::Fighter => -3,
-            Self::Monk => -3,
-            Self::Paladin => -3,
-            Self::Ranger => -3,
-            Self::Rogue => -3,
             // Druids have a couple of weird proficiencies that don't map easily but which are
             // collectively worth a point? But then it feels like they have too many trained skills,
             // and it's hard to get the numbers to add up
@@ -107,15 +99,14 @@ impl Class {
         return
             // 5 points per attunement point
             self.attunement_points() * 5
+            + hp_dr_points(self.damage_resistance())
             // 3 points to get an Armor defense
             + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 1 point to get more HP. Cap at 4, which costs an extra 1 point kinda; if you scale
-            // this too high, it gets stronk.
-            + self.hit_points()
+            + hp_dr_points(self.hit_points())
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per armor proficiency
@@ -136,7 +127,7 @@ impl Class {
             Self::Druid => 3,
             Self::Fighter => 2,
             Self::Harpy => 2,
-            Self::Monk => 3,
+            Self::Monk => 2,
             Self::Oozeborn => 2,
             Self::Paladin => 2,
             Self::Ranger => 2,
@@ -390,6 +381,25 @@ impl Class {
         }
     }
 
+    pub fn damage_resistance(&self) -> i32 {
+        match self {
+            Self::Barbarian => 0,
+            Self::Cleric => 2,
+            Self::Dragon => 2,
+            Self::Druid => 1,
+            Self::Fighter => 0,
+            Self::Harpy => 0,
+            Self::Monk => 4,
+            Self::Oozeborn => 0,
+            Self::Paladin => 3,
+            Self::Ranger => 0,
+            Self::Rogue => 0,
+            Self::Sorcerer => 4,
+            Self::Warlock => 4,
+            Self::Wizard => 3,
+        }
+    }
+
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Barbarian => match defense {
@@ -486,13 +496,13 @@ impl Class {
             Self::Dragon => 3,
             Self::Druid => 3,
             Self::Fighter => 4,
-            Self::Harpy => 3,
+            Self::Harpy => 4,
             Self::Monk => 3,
             Self::Oozeborn => 5,
             Self::Paladin => 4,
             Self::Ranger => 4,
             Self::Rogue => 3,
-            Self::Sorcerer => 3,
+            Self::Sorcerer => 2,
             Self::Warlock => 3,
             Self::Wizard => 1,
         }
@@ -503,14 +513,14 @@ impl Class {
     // +4 is about 60% more HP
     pub fn hit_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 4,
+            Self::Barbarian => 5,
             Self::Cleric => 2,
             Self::Dragon => 4,
             Self::Druid => 2,
             Self::Fighter => 3,
             Self::Harpy => 2,
             Self::Monk => 2,
-            Self::Oozeborn => 4,
+            Self::Oozeborn => 5,
             Self::Paladin => 3,
             Self::Ranger => 3,
             Self::Rogue => 1,
@@ -527,9 +537,9 @@ impl Class {
             Self::Dragon => 1,
             Self::Druid => 2,
             Self::Fighter => 1,
-            Self::Harpy => 1,
+            Self::Harpy => 2,
             Self::Monk => 1,
-            Self::Oozeborn => 0,
+            Self::Oozeborn => 1,
             Self::Paladin => 1,
             Self::Ranger => 1,
             Self::Rogue => 2,
@@ -594,7 +604,7 @@ impl Class {
             Self::Druid => 5,
             Self::Fighter => 3,
             Self::Harpy => 6,
-            Self::Monk => 6,
+            Self::Monk => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 5,
@@ -1658,5 +1668,15 @@ impl Class {
             }
             _ => "",
         }
+    }
+}
+
+
+// Going above +3 HP or DR costs an extra point per value
+fn hp_dr_points(value: i32) -> i32 {
+    if value < 4 {
+        return value;
+    } else {
+        return 3 + (value - 3) * 2;
     }
 }
