@@ -76,27 +76,39 @@ fn generate_latex_defenses(class: &Class) -> String {
     } else {
         "".to_string()
     };
-    let hp_text = if class.hit_points() > 0 {
-        format!(
-            "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
-            class.hit_points()
-        )
-    } else {
-        "".to_string()
-    };
+    let mut hp_dr_text = "".to_string();
+    if class.hit_points() > 0 {
+        if class.damage_resistance() > 0 {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistancec>).",
+                class.hit_points(),
+                class.damage_resistance(),
+            )
+        } else {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
+                class.hit_points(),
+            )
+        }
+    } else if class.damage_resistance() > 0 {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
+                class.damage_resistance(),
+            )
+    }
 
     return latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
             You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            {hp_text}
+            {hp_dr_text}
         ",
         armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        hp_text=hp_text,
+        hp_dr_text=hp_dr_text,
     ));
 }
 
