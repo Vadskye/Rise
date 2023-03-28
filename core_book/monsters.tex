@@ -17,86 +17,77 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         They have the following specific changes.
         \begin{itemize}
             \item Monsters have twice the base damage resistance of a player character
-            \item Monsters gain a \plus1 bonus to all defenses at 3rd level and 15th level
-            \item Monsters gain a \plus1 bonus to \glossterm{power} with all abilities at 9th level and 21st level
-            \item Elite monsters automatically remove excess conditions at the end of each round, and become more resistant to conditions at 12th level (see \pcref{Conditions on Monsters})
+            \item Monsters gain a \plus1 bonus to \glossterm{power} with all abilities at 3rd level and 12th level
+            \item Monsters gain a \plus1 bonus to \glossterm{accuracy} at 9th level and 18th level
         \end{itemize}
 
         Monster level scaling is summarized in \tref{Monster Advancement}.
         Monsters gain the same statistical benefits from their attributes that player characters do.
         The values listed in the Monster Advancement table do not include bonuses from attributes.
         When creating a new monster, make sure to decide its attributes appropriately, since they can have a large effect on the monster's overall power level and combat style.
-        In particular, attributes make monster defenses more varied.
-
-        The Monster Advancement table includes a Bite Damage column for convenient reference.
-        The monster bonus damage with strikes applies to all natural weapons, not just strikes.
-        However, bites are one of the most common monster natural weapons, and it's much more convenient to see a die value rather than a large +d value at high levels.
-        The damage value for other natural weapons, such as claws, can be derived from the bite damage listed.
+        In particular, variable attributes make monster defenses more varied.
 
     \begin{dtable*}
         \lcaption{Monster Advancement}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
             \multicolumn{7}{c}{\tb{Standard Monsters}} \\
-            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage}\fn{1} \tableheaderrule
-            1st        & 1             & 10      & 2       & \plus0        & 5             & 1d8\plus3   \\
-            2nd        & 1             & 11      & 4       & \plus1        & 6             & 1d8\plus3   \\
-            3rd        & 1             & 12      & 6       & \plus1        & 7             & 1d8\plus3   \\
-            4th        & 2             & 13      & 8       & \plus2        & 8             & 1d10\plus4  \\
-            5th        & 2             & 14      & 10      & \plus2        & 8             & 1d10\plus4  \\
-            6th        & 2             & 16      & 12      & \plus3        & 9             & 1d10\plus4  \\
-            7th        & 3             & 18      & 14      & \plus3        & 9             & 2d6\plus5   \\
-            8th        & 3             & 20      & 18      & \plus4        & 10            & 2d6\plus5   \\
-            9th        & 3             & 22      & 20      & \plus4        & 10            & 2d6\plus5   \\
-            10th       & 4             & 25      & 24      & \plus5        & 11            & 2d8\plus7   \\
-            11th       & 4             & 28      & 26      & \plus5        & 11            & 2d8\plus7   \\
-            12th       & 4             & 32      & 30      & \plus6        & 12            & 2d8\plus7   \\
-            13th       & 5             & 36      & 32      & \plus6        & 12            & 2d10\plus10 \\
-            14th       & 5             & 40      & 36      & \plus7        & 13            & 2d10\plus10 \\
-            15th       & 5             & 44      & 40      & \plus7        & 14            & 2d10\plus10 \\
-            16th       & 6             & 50      & 44      & \plus8        & 15            & 4d6\plus14  \\
-            17th       & 6             & 56      & 50      & \plus8        & 15            & 4d6\plus14  \\
-            18th       & 6             & 64      & 56      & \plus9        & 16            & 4d6\plus14  \\
-            19th       & 7             & 72      & 64      & \plus9        & 16            & 4d8\plus20  \\
-            20th       & 7             & 80      & 72      & \plus10       & 17            & 4d8\plus20  \\
-            21st       & 7             & 88      & 80      & \plus10       & 17            & 4d8\plus20  \\
-            \multicolumn{7}{c}{\tb{Elite Monsters}} \\
-            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy} & \tb{Defenses} & \tb{Bite Damage} \tableheaderrule
-            1st        & 2             & 40      & 8       & \plus1        & 6             & 1d8\plus6   \\
-            2nd        & 2             & 44      & 16      & \plus2        & 7             & 1d8\plus6   \\
-            3rd        & 2             & 48      & 24      & \plus2        & 8             & 1d8\plus6   \\
-            4th        & 3             & 52      & 32      & \plus3        & 9             & 1d10\plus8  \\
-            5th        & 3             & 56      & 40      & \plus3        & 9             & 1d10\plus8  \\
-            6th        & 3             & 64      & 48      & \plus4        & 10            & 1d10\plus8  \\
-            7th        & 4             & 72      & 56      & \plus4        & 10            & 2d6\plus10  \\
-            8th        & 4             & 80      & 72      & \plus5        & 11            & 2d6\plus10  \\
-            9th        & 4             & 88      & 80      & \plus5        & 11            & 2d6\plus10  \\
-            10th       & 5             & 100     & 96      & \plus6        & 12            & 2d8\plus14  \\
-            11th       & 5             & 112     & 104     & \plus6        & 12            & 2d8\plus14  \\
-            12th       & 5             & 128     & 120     & \plus7        & 13            & 2d8\plus14  \\
-            13th       & 6             & 144     & 128     & \plus7        & 13            & 2d10\plus20 \\
-            14th       & 6             & 160     & 144     & \plus8        & 14            & 2d10\plus20 \\
-            15th       & 6             & 176     & 160     & \plus8        & 15            & 2d10\plus20 \\
-            16th       & 7             & 200     & 176     & \plus9        & 16            & 4d6\plus28  \\
-            17th       & 7             & 224     & 200     & \plus9        & 16            & 4d6\plus28  \\
-            18th       & 7             & 256     & 224     & \plus10       & 17            & 4d6\plus28  \\
-            19th       & 8\fn{2}       & 288     & 256     & \plus10       & 17            & 4d8\plus40  \\
-            20th       & 8             & 320     & 288     & \plus11       & 18            & 4d8\plus40  \\
-            21st       & 8             & 352     & 320     & \plus11       & 18            & 4d8\plus40  \\
-        \end{dtabularx}
-        1. Assuming the monster has no free hands (see \pcref{Monster Natural Weapon Bonuses}). \\
-        2. There are no standard rank 8 abilities. However, these monsters may continue to scale the power of lower-rank abilities or have entirely novel abilities. \\
+            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses} & \tb{Skills, Power} & \tb{Special}                        \tableheaderrule
+            1st        & 1             & 6       & 0       & \tdash                  & \tdash             & \tdash                   \\
+            2nd        & 1             & 7       & 2       & \plus1                  & \plus1             & \tdash                   \\
+            3rd        & 1             & 8       & 4       & \plus1                  & \plus1             & \plus1 to two attributes \\
+            4th        & 2             & 9       & 6       & \plus2                  & \plus2             & \tdash                   \\
+            5th        & 2             & 10      & 8       & \plus2                  & \plus2             & \tdash                   \\
+            6th        & 2             & 12      & 10      & \plus3                  & \plus3             & \plus1 accuracy          \\
+            7th        & 3             & 14      & 12      & \plus3                  & \plus3             & \tdash                   \\
+            8th        & 3             & 16      & 14      & \plus4                  & \plus4             & \tdash                   \\
+            9th        & 3             & 18      & 16      & \plus4                  & \plus4             & \plus1 to two attributes \\
+            10th       & 4             & 20      & 18      & \plus5                  & \plus5             & \tdash                   \\
+            11th       & 4             & 22      & 20      & \plus5                  & \plus5             & \tdash                   \\
+            12th       & 4             & 25      & 24      & \plus6                  & \plus6             & \plus1 to all defenses   \\
+            13th       & 5             & 28      & 28      & \plus6                  & \plus6             & \tdash                   \\
+            14th       & 5             & 32      & 32      & \plus7                  & \plus7             & \tdash                   \\
+            15th       & 5             & 36      & 36      & \plus7                  & \plus7             & \plus1 to two attributes \\
+            16th       & 6             & 40      & 40      & \plus8                  & \plus8             & \tdash                   \\
+            17th       & 6             & 45      & 44      & \plus8                  & \plus8             & \tdash                   \\
+            18th       & 6             & 50      & 50      & \plus9                  & \plus9             & \plus1 accuracy          \\
+            19th       & 7             & 56      & 56      & \plus9                  & \plus9             & \tdash                   \\
+            20th       & 7             & 63      & 62      & \plus10                 & \plus10            & \tdash                   \\
+            21st       & 7             & 70      & 70      & \plus10                 & \plus10            & \plus1 to two attributes \\
+            \multicolumn{7}{c}{\tb{Elite Monsters}}                                                                                  \\ 
+            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses} & \tb{Skills, Power} & \tb{Special}             \tableheaderrule
+            1st        & 1             & 24      & 0       & \plus2                  & \tdash             & \tdash                   \\
+            2nd        & 1             & 28      & 8       & \plus2                  & \plus1             & \tdash                   \\
+            3rd        & 1             & 32      & 16      & \plus3                  & \plus1             & \plus1 to two attributes \\
+            4th        & 2             & 36      & 24      & \plus3                  & \plus2             & \tdash                   \\
+            5th        & 2             & 40      & 32      & \plus4                  & \plus2             & \tdash                   \\
+            6th        & 2             & 48      & 40      & \plus4                  & \plus3             & \plus1 accuracy          \\
+            7th        & 3             & 56      & 48      & \plus5                  & \plus3             & \tdash                   \\
+            8th        & 3             & 64      & 56      & \plus5                  & \plus4             & \tdash                   \\
+            9th        & 3             & 72      & 64      & \plus6                  & \plus4             & \plus1 to two attributes \\
+            10th       & 4             & 80      & 72      & \plus6                  & \plus5             & \tdash                   \\
+            11th       & 4             & 88      & 80      & \plus7                  & \plus5             & \tdash                   \\
+            12th       & 4             & 100     & 96      & \plus7                  & \plus6             & \plus1 to all defenses   \\
+            13th       & 5             & 112     & 112     & \plus8                  & \plus6             & \tdash                   \\
+            14th       & 5             & 128     & 128     & \plus8                  & \plus7             & \tdash                   \\
+            15th       & 5             & 144     & 144     & \plus9                  & \plus7             & \plus1 to two attributes \\
+            16th       & 6             & 160     & 160     & \plus9                  & \plus8             & \tdash                   \\
+            17th       & 6             & 180     & 176     & \plus10                 & \plus8             & \tdash                   \\
+            18th       & 6             & 200     & 200     & \plus10                 & \plus9             & \plus1 accuracy          \\
+            19th       & 7             & 224     & 224     & \plus11                 & \plus9             & \tdash                   \\
+            20th       & 7             & 252     & 248     & \plus11                 & \plus10            & \tdash                   \\
+            21st       & 7             & 280     & 280     & \plus12                 & \plus10            & \plus1 to two attributes \\
+        \end{dtabularx} 
     \end{dtable*}
 
     \subsection{Elite Monsters}\label{Elite Monsters}
         Elite monsters are approximately four times as strong as an ordinary monster.
         They have a number of benefits and modifiers to make them more appropriate as a solo encounter than simply using a very high level ordinary monster:
         \begin{itemize}
-            \item Elite monsters gain a \plus1 bonus to their \glossterm{accuracy} and all \glossterm{defenses}.
-            \item Elite monsters have twice the \glossterm{power} of standard monsters.
+            \item Elite monsters gain a \plus2 bonus to their \glossterm{accuracy} and all \glossterm{defenses}.
             \item Elite monsters have four times the \glossterm{hit points} and \glossterm{damage resistance} of standard monsters.
             \item Elite monsters can have a maximum attribute of 6 (see \pcref{Monster Attributes}).
-            \item Elite monsters gain a \plus1 bonus to their maximum ability \glossterm{rank} (see \pcref{Monster Ability Access}).
-            \item Elite monsters can take two standard actions each round. However, they cannot use the same ability or weapon twice in the same round, unless they have two different versions of the same weapon (such as multiple independent tentacles).
+            \item Elite monsters double their damage and healing with all abilities. This is separate from any other multipliers, so an elite monster using a double damage attack would deal four times the damage of a normal monster's attack.
+            \item Elite monsters can take an additional \glossterm{elite action} each round (see \pcref{Elite Actions}).
             \item Elite monsters automatically remove excess \glossterm{conditions} (see \pcref{Conditions on Monsters}).
         \end{itemize}
 
@@ -112,7 +103,6 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
             However, elite monsters can remove conditions automatically.
             At the end of each round, elite monsters affected by four or more conditions automatically remove their oldest \glossterm{condition}.
-            At 12th level, elite monsters start removing conditions as soon as they have three or more conditions.
             In addition, some elite monsters have unique abilities to remove conditions, as indicated in their descriptions.
 
         \subsection{Monster Resources}
@@ -124,7 +114,6 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         \subsection{Monster Ability Access}\label{Monster Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
             Like a player character, a monster's maximum accessible rank is based on its level, as shown in \tref{Monster Advancement}.
-            Elite monsters gain a \plus1 bonus to the maximum rank of abilities they can use, allowing them to use powerful abilities before player characters can.
 
             It's not always meaningful to give every monster multiple active abilities.
             However, maneuvers provide significant power at high levels, so high level monsters should generally use special abilities like maneuvers instead of simple strikes.
@@ -136,16 +125,6 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         A few specific monsters of legendary power can exceed this limit.
         In general, a monster with higher attributes will be stronger, but not all monsters need to start with the same attribute total.
 
-    \subsection{Monster Natural Armor}\label{Monster Natural Armor}
-        Monsters use slightly different armor mechanics than player characters.
-        They always add half their Dexterity to their Armor defense instead of their full Dexterity, as if they were wearing medium armor.
-        In addition, they gain a bonus equal to half their Constitution to their Armor defense.
-        This represents hardened skin, tough scales, or similar natural armor that monsters can develop.
-
-        More generally, Armor defense is intended to be a reliable and relatively consistent defense.
-        It is the most commonly attacked defense, and some character archetypes are only able to target Armor defense.
-        As a result, it should rarely be a monster's highest or lowest defense, and this calculation makes such extremes less likely.
-
     \subsection{Monster Dual Wielding}\label{Monster Dual Wielding}
         Monsters with a sufficiently high Dexterity are able to dual wield (see \pcref{Dual Wielding}).
         However, most monsters can only \glossterm{dual wield} with two copies of the same \weapontag{Light} natural weapon.
@@ -155,16 +134,21 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
     \subsection{Monster Actions}\label{Monster Actions}
         All monsters are able to make movements and take free actions, minor actions, and standard actions in the same way as player characters.
-        Elite monsters can take an additional standard action each round, as indicated in their descriptions.
+        Elite monsters can take an additional \glossterm{elite action} each round.
 
-        In general, elite monsters should be designed to attack multiple different PCs in every round.
-        If the full damage output of an elite monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
-        Alternately, if that PC is able to avoid or resist the damage, it will trivialize the fight and remove the sense of danger.
-        Instead, damage should be spread throughout the party to ensure that multiple people feel threatened and have to adjust their actions based on their personal danger tolerance.
+        \subsubsection{Elite Actions}\label{Elite Actions}
+            Every elite monster has at least one special ability which requires an elite action to use.
+            Elite actions cannot be converted into standard or minor actions, and elite monsters cannot use a standard action to use abilities that require an elite action.
+            Abilities that require elite actions are typically more powerful than normal combat abilities, and they can have unique effects.
 
-        Although splitting attacks between multiple defenders is usually a suboptimal battle strategy, it can be narratively justified in a variety of ways.
-        It may be physically impractical for a monster to use all of its natural weapons on the same creature.
-        Monsters may want to inflict debuffs on multiple attackers to reduce the damage they take, which may require dealing enough damage to inflict HP-based debuffs.
+            In general, elite monsters should be designed to attack multiple different PCs in every round.
+            If the full damage output of an elite monster is brought to bear on a single PC, it will likely kill that PC quickly, taking a player out of the fight too early.
+            Alternately, if that PC is able to avoid or resist the damage, it will trivialize the fight and remove the sense of danger.
+            Instead, damage should be spread throughout the party to ensure that multiple people feel threatened and have to adjust their actions based on their personal danger tolerance.
+
+            Although splitting attacks between multiple defenders is usually a suboptimal battle strategy, it can be narratively justified in a variety of ways.
+            It may be physically impractical for a monster to use all of its natural weapons on the same creature.
+            Monsters may want to inflict debuffs on multiple attackers to reduce the damage they take, which may require dealing enough damage to inflict HP-based debuffs.
 
     \subsection{Encounter Balancing}\label{Encounter Balancing}
         In general, a group of PCs of a given level will have an appropriate challenge from fighting an equal number of monsters of their level.
