@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::AbilityType;
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, DicePool, PowerScaling};
-use crate::creatures::Creature;
+use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use titlecase::titlecase;
@@ -49,10 +49,13 @@ impl DamageEffect {
         return AbilityType::Normal;
     }
 
-    pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool) -> DicePool {
+    pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> DicePool {
         let mut dice_pool = self
             .base_dice
             .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
+        if is_strike {
+            dice_pool.add_increments(attacker.calc_total_modifier(ModifierType::StrikeDamageDice));
+        }
         if attacker.is_elite() {
             // We don't use `multiplier`, because this is separate from any
             // attack-specific damage multipliers.
@@ -61,7 +64,7 @@ impl DamageEffect {
         return dice_pool;
     }
 
-    fn description(&self, attacker: &Creature, is_magical: bool, _is_strike: bool) -> String {
+    fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
                 "
@@ -116,7 +119,7 @@ impl DamageEffect {
                 {dice_pool} {damage_types} damage.
                 {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
-            dice_pool = self.calc_damage_dice(attacker, is_magical).to_string(),
+            dice_pool = self.calc_damage_dice(attacker, is_magical, is_strike).to_string(),
             damage_types =
                 latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
             extra_defense_effect = extra_defense_effect.trim(),

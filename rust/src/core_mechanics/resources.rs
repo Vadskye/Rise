@@ -51,13 +51,29 @@ where
 {
     fn calc_resource(&self, resource: &Resource) -> i32 {
         let value = match resource {
-            // Attunement points come exclusively from base class and some abilities
-            Resource::AttunementPoint => 0,
+            Resource::AttunementPoint => {
+                if self.level >= 8 {
+                    2
+                } else if self.level >= 5 {
+                    1
+                } else {
+                    0
+                }
+            }
             Resource::FatigueTolerance => {
                 self.get_base_attribute(&Attribute::Constitution)
                     + (self.get_base_attribute(&Attribute::Willpower) / 2)
             }
-            Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
+            Resource::InsightPoint => {
+                self.get_base_attribute(&Attribute::Intelligence)
+                    + if self.level >= 7 {
+                        2
+                    } else if self.level >= 4 {
+                        1
+                    } else {
+                        0
+                    }
+            }
             Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         };
         return value + self.calc_total_modifier(ModifierType::Resource(*resource));
