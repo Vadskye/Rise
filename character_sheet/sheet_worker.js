@@ -986,10 +986,16 @@ function handleAttributes() {
       {
         miscName: attributeName,
         numeric: [`${attributeName}_at_creation`, `${attributeName}_level_scaling`],
+        string: ["base_class"],
       },
       (v) => {
+        let totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
+        const bonusAttribute = (BASE_CLASS_MODIFIERS[v.base_class] || {}).bonus_attribute;
+        if (bonusAttribute && attributeName === bonusAttribute) {
+          totalValue += 2;
+        }
         setAttrs({
-          [attributeName]: v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc,
+          [attributeName]: totalValue,
         });
       }
     );
