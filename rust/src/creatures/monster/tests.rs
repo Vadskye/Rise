@@ -86,7 +86,7 @@ mod to_section {
                     \monsep Ment 17
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
-                    \pari \textbf{Power} 14\sparkle \monsep 14
+                    \pari \textbf{Power} 13\sparkle \monsep 13
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
@@ -99,14 +99,14 @@ mod to_section {
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6\plus1d10 physical damage.
+                \hit The target takes 6d6\plus2d8 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6 slashing damage.
+                \hit The target takes 2d6\plus2d10 slashing damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -143,7 +143,7 @@ mod to_section {
                     \monsep Ment 15
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
-                    \pari \textbf{Power} 12\sparkle \monsep 12
+                    \pari \textbf{Power} 11\sparkle \monsep 11
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \end{monsubsection}
@@ -152,49 +152,49 @@ mod to_section {
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6\plus1d8 physical damage.
+                \hit The target takes 2d6\plus1d10 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6\plus1d8 (w) physical damage.
+                \hit The target takes 2d6\plus1d10 (w) physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d6\plus1d10 (w) slashing damage.
+                \hit The target takes 1d6\plus1d8 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6\plus1d10 (w) slashing damage.
+                \hit The target takes 4d6 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d6\plus1d10 slashing damage.
+                \hit The target takes 1d6\plus1d8 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 3d6\plus1d10 slashing damage.
+                \hit The target takes 4d6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Strip the Flesh -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit The target takes 6d6\plus2d10 slashing damage.
+                \hit The target takes 8d6 slashing damage.
                  Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
             \end{activeability}
 ",
@@ -214,14 +214,14 @@ mod statistics {
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
         assert_eq!(
-            3,
+            4,
             creature.calc_magical_power(),
-            "Magical power: 1lvl+4wil = as level 5",
+            "Magical power: 0lvl+4wil",
         );
         assert_eq!(
-            3,
+            4,
             creature.calc_mundane_power(),
-            "Mundane power: 1lvl+4wil = as level 5",
+            "Mundane power: 0lvl+4str",
         );
 
         // HasAttributes

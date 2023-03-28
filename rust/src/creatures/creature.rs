@@ -105,6 +105,13 @@ impl Creature {
         }
     }
 
+    pub fn is_elite(&self) -> bool {
+        match self.category {
+            CreatureCategory::Character => false,
+            CreatureCategory::Monster(cr) => cr == ChallengeRating::Four,
+        }
+    }
+
     pub fn can_recover(&self) -> bool {
         match self.category {
             CreatureCategory::Character => true,

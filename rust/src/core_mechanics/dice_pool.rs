@@ -123,7 +123,7 @@ impl DicePool {
         return DicePool {
             dice: new_dice,
             maximized: self.maximized,
-            multiplier: 1,
+            multiplier: self.multiplier,
             weak: self.weak,
         };
     }

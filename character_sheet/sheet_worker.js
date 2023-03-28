@@ -670,7 +670,7 @@ function calcAccuracyCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 18 ? 2 : level >= 9 ? 1 : 0;
+    levelScaling += level >= 21 ? 2 : level >= 12 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 2;
@@ -683,22 +683,8 @@ function calcDefenseCrScaling(level, challengeRating) {
     return 0;
   }
   let levelScaling = 0;
-  // if (challengeRating > 0) {
-  //   levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
-  // }
-  if (challengeRating === 4) {
-    levelScaling += 2;
-  }
-  return levelScaling;
-}
-
-function calcPowerCrScaling(level, challengeRating) {
-  if (!challengeRating) {
-    return 0;
-  }
-  let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 12 ? 2 : level >= 3 ? 1 : 0;
+    levelScaling += level >= 15 ? 2 : level >= 6 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 2;
@@ -1861,8 +1847,7 @@ function handleMagicalPower() {
       ],
     },
     (v) => {
-      const crModifier = calcPowerCrScaling(v.level, v.challenge_rating);
-      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + crModifier;
+      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc;
 
       setAttrs({
         magical_power: totalValue,
@@ -1875,10 +1860,6 @@ function handleMagicalPower() {
           {
             name: `Wil`,
             value: v.willpower,
-          },
-          {
-            name: `CR`,
-            value: crModifier,
           },
         ]),
       });
@@ -1897,8 +1878,7 @@ function handleMundanePower() {
       ],
     },
     (v) => {
-      const crModifier = calcPowerCrScaling(v.level, v.challenge_rating);
-      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + crModifier;
+      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc;
 
       setAttrs({
         mundane_power: totalValue,
@@ -1911,10 +1891,6 @@ function handleMundanePower() {
           {
             name: `Str`,
             value: v.strength,
-          },
-          {
-            name: `CR`,
-            value: crModifier,
           },
         ]),
       });
