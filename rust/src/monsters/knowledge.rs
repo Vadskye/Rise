@@ -26,7 +26,7 @@ impl Knowledge {
                 return format!(
                     "\\par Knowledge ({subskill}) {difficulty}: {text}",
                     subskill = creature_type.knowledge(), // TODO
-                    difficulty = difficulty + level + 5,
+                    difficulty = difficulty + (level / 2) + 5,
                     text = self.knowledge[difficulty],
                 );
             })
