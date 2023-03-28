@@ -100,7 +100,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Aboleth".to_string(),
-        role: Role::Leader,
+        role: Role::Warrior,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
         trained_skills: Some(vec![

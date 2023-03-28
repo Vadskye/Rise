@@ -210,7 +210,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     ),
                     MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
                 ]),
-                role: Role::Leader,
+                role: Role::Mystic,
                 senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
                 weapons: self.weapons,
             }
