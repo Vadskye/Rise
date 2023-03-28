@@ -74,7 +74,7 @@ impl Modifier {
         match self {
             Self::Accuracy(v) => format!("{} {}", self.name(), v),
             Self::ActiveAbility(_) => self.name(),
-            Self::AllDefenses(_) => self.name(),
+            Self::AllDefenses(v) => format!("{} {}", self.name(), v),
             Self::Attack(_) => self.name(),
             Self::Attribute(_, v) => format!("{} by {}", self.name(), v),
             Self::BaseSpeed(v) => format!("{} {}", self.name(), v),
@@ -136,7 +136,7 @@ impl Modifier {
         match self {
             Self::Accuracy(_) => ModifierType::Accuracy,
             Self::ActiveAbility(_) => ModifierType::ActiveAbility,
-            Self::AllDefenses(_) => ModifierType::ActiveAbility,
+            Self::AllDefenses(_) => ModifierType::AllDefenses,
             Self::Attack(_) => ModifierType::Attack,
             Self::Attribute(a, _) => ModifierType::Attribute(*a),
             Self::BaseSpeed(_) => ModifierType::Speed,

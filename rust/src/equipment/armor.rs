@@ -480,6 +480,7 @@ pub trait HasArmor {
     fn replace_armor(&mut self, armor: Armor);
     fn remove_armor(&mut self, armor: Armor);
     fn calc_encumbrance(&self) -> i32;
+    // Find the lowest dex multiplier among all the armor components being worn
     fn minimum_dex_modifier(&self) -> Option<f64> {
         if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
             ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
