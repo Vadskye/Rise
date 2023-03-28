@@ -37,12 +37,12 @@ mod to_section {
                     \RaggedRight
                     \begin{monsterstatistics}
                 \pari \textbf{HP} 10
-                    \monsep \textbf{DR} 8
+                    \monsep \textbf{DR} 4
                 \pari \textbf{Defenses}
                     Armor 6
                     \monsep Fort 6
                     \monsep Ref 6
-                    \monsep Ment 10
+                    \monsep Ment 8
                     \rankline
                     \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
                     \pari \textbf{Power} 4\sparkle \monsep 4
@@ -77,13 +77,13 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 108
-                    \monsep \textbf{DR} 200
+                \pari \textbf{HP} 128
+                    \monsep \textbf{DR} 96
                 \pari \textbf{Defenses}
                     Armor 11
                     \monsep Fort 11
                     \monsep Ref 11
-                    \monsep Ment 19
+                    \monsep Ment 17
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 14\sparkle \monsep 14
@@ -134,13 +134,13 @@ mod to_section {
                     \monstersize{Medium planeforged}
                     \RaggedRight
                     \begin{monsterstatistics}
-                \pari \textbf{HP} 27
-                    \monsep \textbf{DR} 40
+                \pari \textbf{HP} 32
+                    \monsep \textbf{DR} 24
                 \pari \textbf{Defenses}
                     Armor 11
                     \monsep Fort 11
                     \monsep Ref 11
-                    \monsep Ment 17
+                    \monsep Ment 15
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 12\sparkle \monsep 12

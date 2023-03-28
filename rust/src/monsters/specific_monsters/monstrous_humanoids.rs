@@ -345,7 +345,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Ogre Skullclaimer".to_string(),
-                role: Role::Leader,
+                role: Role::Brute,
                 senses: None,
                 trained_skills: Some(vec![Skill::Intimidate]),
             }.monster(),
