@@ -35,9 +35,7 @@ impl Monster {
         challenge_rating.add_modifiers(&mut creature);
 
         // Level modifiers
-        let defense_modifier = if level >= 15 {
-            2
-        } else if level >= 6 {
+        let defense_modifier = if level >= 12 {
             1
         } else {
             0
@@ -47,9 +45,9 @@ impl Monster {
             Some("level scaling"),
             None,
         );
-        let accuracy_modifier = if level >= 21 {
-            2
-        } else if level >= 12 {
+        let accuracy_modifier = if level >= 18 {
+            1
+        } else if level >= 6 {
             1
         } else {
             0
