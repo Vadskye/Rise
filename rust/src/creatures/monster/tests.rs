@@ -80,10 +80,10 @@ mod to_section {
                 \pari \textbf{HP} 128
                     \monsep \textbf{DR} 96
                 \pari \textbf{Defenses}
-                    Armor 11
-                    \monsep Fort 11
-                    \monsep Ref 11
-                    \monsep Ment 17
+                    Armor 13
+                    \monsep Fort 13
+                    \monsep Ref 13
+                    \monsep Ment 19
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 13\sparkle \monsep 13
@@ -98,14 +98,14 @@ mod to_section {
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
                 \hit The target takes 6d6\plus2d8 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
                 \hit The target takes 2d6\plus2d10 slashing damage.
             \end{activeability}
 ",
@@ -151,49 +151,49 @@ mod to_section {
                 \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 2d6\plus1d10 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
                 \hit The target takes 2d6\plus1d10 (w) physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claws}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
                 \hit The target takes 1d6\plus1d8 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d6 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
                 \hit The target takes 1d6\plus1d8 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 4d6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Strip the Flesh -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit The target takes 8d6 slashing damage.
                  Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
             \end{activeability}
@@ -236,32 +236,32 @@ mod statistics {
 
         // HasDefenses
         assert_eq!(
-            7,
+            6,
             creature.calc_defense(&Defense::Armor),
-            "Armor: 5 monster + 1 dex + 1 con",
+            "Armor: 4 leader + 2 dex",
         );
         assert_eq!(
-            7,
+            6,
             creature.calc_defense(&Defense::Fortitude),
-            "Fort: 5 monster + 2 con",
+            "Fort: 4 leader + 2 con",
         );
         assert_eq!(
-            7,
+            6,
             creature.calc_defense(&Defense::Reflex),
-            "Ref: 5 monster + 2 dex",
+            "Ref: 4 leader + 2 dex",
         );
         assert_eq!(
-            9,
+            8,
             creature.calc_defense(&Defense::Mental),
-            "Ment: 5 monster + 4 wil",
+            "Ment: 4 leader + 4 wil",
         );
 
         // HasDamageAbsorption
-        assert_eq!(12, creature.calc_hit_points(), "HP: (1 level + 1 con)",);
+        assert_eq!(10, creature.calc_hit_points(), "HP: (1 level + 1 con + 2 leader)",);
         assert_eq!(
-            8,
+            4,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 1 con) * 2",
+            "DR: (1 level + 2 leader)",
         );
     }
 
@@ -272,14 +272,14 @@ mod statistics {
         // HasAttacks
         assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
         assert_eq!(
-            4,
+            6,
             creature.calc_magical_power(),
-            "Magical power: 1+6 = as level 7",
+            "Magical power: 0lvl+6wil",
         );
         assert_eq!(
-            4,
+            6,
             creature.calc_mundane_power(),
-            "Mundane power: 1+6 = as level 7",
+            "Mundane power: 0lvl+6str",
         );
 
         // HasAttributes
@@ -296,30 +296,30 @@ mod statistics {
         assert_eq!(
             8,
             creature.calc_defense(&Defense::Armor),
-            "Armor: 5 monster + 1 dex + 1 con + 1 CR",
+            "Armor: 4 leader + 2 dex + 2 elite",
         );
         assert_eq!(
             8,
             creature.calc_defense(&Defense::Fortitude),
-            "Fort: 5 monster + 2 con + 1 CR",
+            "Fort: 4 leader + 2 con + 2 elite",
         );
         assert_eq!(
             8,
             creature.calc_defense(&Defense::Reflex),
-            "Ref: 5 monster + 2 dex + 1 CR",
+            "Ref: 4 leader + 2 dex + 2 elite",
         );
         assert_eq!(
             12,
             creature.calc_defense(&Defense::Mental),
-            "Ment: 5 monster + 6 wil + 1 CR",
+            "Ment: 4 leader + 6 wil + 2 elite",
         );
 
         // HasDamageAbsorption
-        assert_eq!(48, creature.calc_hit_points(), "HP: (1 level + 2 con) * 4",);
+        assert_eq!(40, creature.calc_hit_points(), "HP: (1 level + 2 con + 2 leader)",);
         assert_eq!(
-            48,
+            16,
             creature.calc_damage_resistance(),
-            "DR: (1 level + 6 wil) * 8",
+            "DR: (1 level + 2 leader)",
         );
     }
 
