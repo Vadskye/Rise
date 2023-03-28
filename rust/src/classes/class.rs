@@ -100,8 +100,8 @@ impl Class {
             // 5 points per attunement point
             self.attunement_points() * 5
             + hp_dr_points(self.damage_resistance())
-            // 3 points to get an Armor defense
-            + self.defense_bonus(&Defense::Armor) * 3
+            // 2 points to get an Armor defense
+            + self.defense_bonus(&Defense::Armor) * 2
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point

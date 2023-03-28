@@ -37,7 +37,7 @@ impl Monster {
         // Level modifiers
         let defense_modifier = if level >= 15 {
             2
-        } else if level >= 3 {
+        } else if level >= 6 {
             1
         } else {
             0
@@ -47,14 +47,14 @@ impl Monster {
             Some("level scaling"),
             None,
         );
-        let power_modifier = if level >= 21 {
+        let accuracy_modifier = if level >= 21 {
             2
-        } else if level >= 9 {
+        } else if level >= 12 {
             1
         } else {
             0
         };
-        creature.add_modifier(Modifier::Power(power_modifier), Some("level scaling"), None);
+        creature.add_modifier(Modifier::Accuracy(accuracy_modifier), Some("level scaling"), None);
 
         return Monster {
             alignment: None,
