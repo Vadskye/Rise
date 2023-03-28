@@ -49,6 +49,18 @@ impl DamageEffect {
         return AbilityType::Normal;
     }
 
+    pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool) -> DicePool {
+        let mut dice_pool = self
+            .base_dice
+            .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
+        if attacker.is_elite() {
+            // We don't use `multiplier`, because this is separate from any
+            // attack-specific damage multipliers.
+            dice_pool = dice_pool.add_dice(dice_pool.dice.clone());
+        }
+        return dice_pool;
+    }
+
     fn description(&self, attacker: &Creature, is_magical: bool, _is_strike: bool) -> String {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
@@ -97,17 +109,14 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let dice_pool = self
-            .base_dice
-            .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
-        let mut damage_types = self.damage_types.clone();
+        let mut damage_types: Vec<DamageType> = self.damage_types.clone();
         damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         return format!(
             "
                 {dice_pool} {damage_types} damage.
                 {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
-            dice_pool = dice_pool.to_string(),
+            dice_pool = self.calc_damage_dice(attacker, is_magical).to_string(),
             damage_types =
                 latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
             extra_defense_effect = extra_defense_effect.trim(),
