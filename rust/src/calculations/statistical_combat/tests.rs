@@ -11,14 +11,14 @@ mod calculate_attack_outcome {
 
     #[test]
     fn simple_hit_probability() {
-        let outcome = calculate_attack_outcome(&StandardWeapon::Battleaxe.weapon().attack(), 0, 6);
+        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 6);
         assert_eq!(
             "0.500 single, 0.055 crit",
             outcome.short_description(),
             "Should be around 50% with +0 vs 6",
         );
 
-        let outcome = calculate_attack_outcome(&StandardWeapon::Battleaxe.weapon().attack(), 0, 0);
+        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 0);
         assert_eq!(
             "1.000 single, 0.111 crit",
             outcome.short_description(),
@@ -35,14 +35,14 @@ mod calculate_attack_outcome {
 
     #[test]
     fn extreme_hit_probability() {
-        let outcome = calculate_attack_outcome(&StandardWeapon::Battleaxe.weapon().attack(), 0, 16);
+        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16);
         assert_eq!(
             "0.050 single, 0.005 crit",
             outcome.short_description(),
             "Should be around 5% with +0 vs 16",
         );
 
-        let outcome = calculate_attack_outcome(&StandardWeapon::Battleaxe.weapon().attack(), 10, 6);
+        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6);
         assert_eq!(
             "1.000 single, 0.555 crit",
             outcome.short_description(),
@@ -52,7 +52,7 @@ mod calculate_attack_outcome {
 
     #[test]
     fn glance_probability() {
-        let attack = &StandardWeapon::Battleaxe.weapon().attack();
+        let attack = &StandardWeapon::Broadsword.weapon().attack();
         assert_eq!(
             "0.200",
             format!("{:.3}", calculate_glance_probability(attack, 0, 6)),
@@ -80,7 +80,7 @@ mod calculate_attack_outcome {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
         let attack = attacker
-            .get_attack_by_name("Generic Scaling Battleaxe")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
             "0.600 single, 0.066 crit",
@@ -110,7 +110,7 @@ mod calculate_attack_outcome {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
         let attack = attacker
-            .get_attack_by_name("Generic Scaling Battleaxe")
+            .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
             "0.500 single, 0.055 crit",
@@ -139,9 +139,9 @@ mod calculate_attack_outcome {
     fn monster_vs_standard_character_level_1() {
         let level = 1;
         let attacker = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
-        let attack = attacker.get_attack_by_name("Slam").unwrap();
+        let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.700 single, 0.077 crit",
+            "0.600 single, 0.066 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -157,9 +157,9 @@ mod calculate_attack_outcome {
     fn monster_vs_standard_character_level_20() {
         let level = 20;
         let attacker = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
-        let attack = attacker.get_attack_by_name("Slam").unwrap();
+        let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.800 single, 0.088 crit",
+            "0.600 single, 0.066 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -176,7 +176,7 @@ mod calculate_attack_outcome {
         fn calc_at_level(level: i32) -> String {
             let attacker = Character::standard_character(level, true).creature;
             let attack = attacker
-                .get_attack_by_name("Generic Scaling Battleaxe")
+                .get_attack_by_name("Generic Scaling Broadsword")
                 .unwrap();
             let defender = Character::standard_character(level, true).creature;
             return calculate_attack_outcome(
@@ -189,9 +189,9 @@ mod calculate_attack_outcome {
 
         assert_eq!(
             [
-                "0.600 single, 0.066 crit",
-                "0.600 single, 0.066 crit",
-                "0.600 single, 0.066 crit"
+                "0.500 single, 0.055 crit",
+                "0.700 single, 0.077 crit",
+                "0.800 single, 0.088 crit"
             ],
             [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
             "at levels 1/10/20",
@@ -228,7 +228,7 @@ mod calc_individual_dpr {
             "Defender should have all defenses 0",
         );
 
-        attacker.add_special_attack(StandardWeapon::Battleaxe.weapon().attack());
+        attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
         assert_eq!(
             "3.889",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
@@ -254,7 +254,7 @@ mod calc_individual_dpr {
     fn damage_per_round_with_modifier() {
         let mut attacker = Creature::new(1, CreatureCategory::Character);
         let mut defender = Creature::new(1, CreatureCategory::Character);
-        attacker.add_special_attack(StandardWeapon::Battleaxe.weapon().attack());
+        attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
         attacker.add_modifier(Modifier::Power(2), None, None);
         assert_eq!(
             "5.889",

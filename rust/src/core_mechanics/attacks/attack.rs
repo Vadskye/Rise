@@ -3,7 +3,6 @@ use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
-use crate::monsters::ChallengeRating;
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
@@ -97,7 +96,7 @@ impl Attack {
 
     pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
-            return Some(damage_effect.calc_damage_dice(creature, self.is_magical))
+            return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike))
         }
         return None;
     }
