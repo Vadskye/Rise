@@ -302,7 +302,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
                 movement_speeds: None,
-                role: Role::Leader,
+                role: Role::Skirmisher,
                 senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![

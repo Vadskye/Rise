@@ -9,48 +9,57 @@ const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
     armor_defense: 3,
+    damage_resistance: 2,
+    hit_points: 4,
     fortitude: 5,
     reflex: 3,
     mental: 3,
-    hit_points: 4,
-    mundane_power: 2,
-    magical_power: 2,
-  },
-  leader: {
-    armor_defense: 4,
-    fortitude: 4,
-    reflex: 4,
-    mental: 6,
-    hit_points: 2,
-    mundane_power: 0,
-    magical_power: 0,
+    bonus_attribute: 'strength',
   },
   skirmisher: {
     armor_defense: 4,
+    damage_resistance: 0,
+    hit_points: 0,
     fortitude: 4,
     reflex: 6,
     mental: 4,
-    hit_points: 0,
-    mundane_power: 1,
-    magical_power: 1,
-  },
-  sniper: {
-    armor_defense: 3,
-    fortitude: 4,
-    reflex: 4,
-    mental: 4,
-    hit_points: 0,
-    mundane_power: 1,
-    magical_power: 1,
+    bonus_attribute: 'dexterity',
   },
   warrior: {
     armor_defense: 6,
-    fortitude: 5,
+    damage_resistance: 4,
+    hit_points: 2,
+    fortitude: 4,
     reflex: 4,
-    mental: 5,
-    hit_points: 1,
-    mundane_power: 0,
-    magical_power: 0,
+    mental: 4,
+    bonus_attribute: 'constitution',
+  },
+  sniper: {
+    armor_defense: 3,
+    damage_resistance: 0,
+    hit_points: 0,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    bonus_attribute: 'perception',
+  },
+  mystic: {
+    armor_defense: 2,
+    damage_resistance: 4,
+    hit_points: 0,
+    fortitude: 4,
+    reflex: 4,
+    mental: 6,
+    bonus_attribute: 'willpower',
+  },
+  leader: {
+    armor_defense: 4,
+    damage_resistance: 2,
+    hit_points: 2,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    bonus_attribute: null,
   },
 
   // CLASSES
@@ -655,13 +664,41 @@ function formatDicePool(count, size, modifier) {
   }
 }
 
-function calcDefenseCrScaling(level, challengeRating) {
+function calcAccuracyCrScaling(level, challengeRating) {
   if (!challengeRating) {
     return 0;
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
+    levelScaling += level >= 18 ? 2 : level >= 9 ? 1 : 0;
+  }
+  if (challengeRating === 4) {
+    levelScaling += 2;
+  }
+  return levelScaling;
+}
+
+function calcDefenseCrScaling(level, challengeRating) {
+  if (!challengeRating) {
+    return 0;
+  }
+  let levelScaling = 0;
+  // if (challengeRating > 0) {
+  //   levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
+  // }
+  if (challengeRating === 4) {
+    levelScaling += 2;
+  }
+  return levelScaling;
+}
+
+function calcPowerCrScaling(level, challengeRating) {
+  if (!challengeRating) {
+    return 0;
+  }
+  let levelScaling = 0;
+  if (challengeRating > 0) {
+    levelScaling += level >= 12 ? 2 : level >= 3 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 2;
@@ -733,7 +770,7 @@ function handleAccuracy() {
       const levelModifier = v.level / 2;
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
-      const crModifier = v.challenge_rating == 4 ? 2 : 0;
+      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
       const accuracy =
         v.misc +
         levelishModifier +
@@ -801,7 +838,6 @@ function handleArmorDefense() {
       numeric: [
         "level",
         "dexterity",
-        "constitution",
         "body_armor_defense",
         "shield_defense",
         "challenge_rating",
@@ -819,13 +855,10 @@ function handleArmorDefense() {
             v.shield_usage_class === "medium"
           ? "medium"
           : "light";
-      if (worstUsageClass === "medium" || v.challenge_rating > 0) {
+      if (worstUsageClass === "medium") {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
-      }
-      if (v.challenge_rating > 0) {
-        attributeModifier += Math.floor(v.constitution / 2);
       }
 
       const levelModifier = Math.floor(v.level / 2);
@@ -1254,13 +1287,13 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
+      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].damage_resistance : 0;
       const effectiveLevel = v.level + classModifier;
       const baseDr = calcBaseDamageResistance(effectiveLevel);
 
       var crMultiplier = {
         1: 2,
-        4: 6,
+        4: 8,
       }[v.challenge_rating] || 1;
       const playerTotalDr =
         baseDr + v.body_armor_damage_resistance + v.misc;
@@ -1822,7 +1855,8 @@ function handleMagicalPower() {
       ],
     },
     (v) => {
-      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc;
+      const crModifier = calcPowerCrScaling(v.level, v.challenge_rating);
+      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + crModifier;
 
       setAttrs({
         magical_power: totalValue,
@@ -1835,6 +1869,10 @@ function handleMagicalPower() {
           {
             name: `Wil`,
             value: v.willpower,
+          },
+          {
+            name: `CR`,
+            value: crModifier,
           },
         ]),
       });
@@ -1853,7 +1891,8 @@ function handleMundanePower() {
       ],
     },
     (v) => {
-      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc;
+      const crModifier = calcPowerCrScaling(v.level, v.challenge_rating);
+      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + crModifier;
 
       setAttrs({
         mundane_power: totalValue,
@@ -1866,6 +1905,10 @@ function handleMundanePower() {
           {
             name: `Str`,
             value: v.strength,
+          },
+          {
+            name: `CR`,
+            value: crModifier,
           },
         ]),
       });
