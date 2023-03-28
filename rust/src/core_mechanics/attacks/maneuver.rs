@@ -8,7 +8,7 @@ use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
 };
 use crate::equipment::Weapon;
-use std::cmp::min;
+use std::cmp::{max,min};
 use titlecase::titlecase;
 
 use super::Attack;
@@ -118,7 +118,7 @@ impl Maneuver {
             Self::GenericScalingStrike(rank) => weapon
                 .attack()
                 // +1a at rank 2 and rank 3
-                .except(|a| a.accuracy += min(rank - 2, 0))
+                .except(|a| a.accuracy += max(0, min(2, rank - 1)))
                 .except_hit_damage(|d| match rank {
                     4 => d.base_dice = d.base_dice.add_die(Die::d4()),
                     5 => d.power_scalings.push(PowerScaling {

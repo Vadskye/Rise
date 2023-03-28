@@ -40,18 +40,17 @@ fn it_calculates_rank_abilities() {
         vec![
             "Armor Expertise",
             "Cleansing Discipline",
-            "Disciplined Force",
+            "Disciplined Strike",
             "Enduring Discipline",
             "Enhanced Maneuvers",
+            "Enhanced Maneuvers+",
             "Equipment Efficiency",
             "Maneuvers",
             // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
             "Maneuvers",
-            "Martial Force",
             "Martial Maneuvers",
             "Martial Maneuvers+",
-            "Mental Discipline",
             "Weapon Training"
         ],
         fighter_10_abilities,
@@ -72,6 +71,8 @@ fn it_calculates_level_21_fighter_defenses() {
         ],
     )
     .creature;
+    // Note that this fighter doesn't have any items, so armor defense is lower than the standard
+    // chaaracter.
     assert_eq!(
         "Armor b10 f11",
         format!(
@@ -99,13 +100,13 @@ fn it_calculates_level_21_fighter_defenses() {
         "10 level scaling + 3 class",
     );
     assert_eq!(
-        "Ment b10 f19",
+        "Ment b10 f17",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 5 class + 2 CD0 + 1 CD3 + 1 CD6",
+        "10 level scaling + 5 class + 1 CD1 + 1 CD5",
     );
 }
 
@@ -139,11 +140,10 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Battleaxe +15 (The target takes 4d8+13 slashing damage.)",
-            "Generic Scaling Battleaxe +13 (The target takes 4d8+42 slashing damage.)",
-            "Mighty Battleaxe +11 (The target takes 4d8+50 slashing damage.)",
-            // +2d from discipline, +2d from equip train, +2d from martial mastery
-            "Battleaxe +13 (The target takes 4d8+26 slashing damage.)",
+            "Certain Battleaxe +17 (The target takes 1d6+1d10 (w) slashing damage.)",
+            "Powerful Battleaxe +11 (The target takes 2d6+2d10 slashing damage.)",
+            "Generic Scaling Battleaxe +16 (The target takes 4d6+1d10 slashing damage.)",
+            "Battleaxe +14 (The target takes 1d6+1d10 slashing damage.)"
         ],
         fighter
             .calc_all_attacks()
@@ -168,31 +168,31 @@ fn it_calculates_level_21_fighter_resources() {
     )
     .creature;
     assert_eq!(
-        "AP b0 f5",
+        "AP b2 f5",
         format!(
             "AP b{} f{}",
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "4 class + 1 equipment training"
+        "2 class + 2 level + 1 equipment training"
     );
     assert_eq!(
-        "FT b0 f7",
+        "FT b0 f6",
         format!(
             "FT b{} f{}",
             baseline.calc_resource(&Resource::FatigueTolerance),
             fighter.calc_resource(&Resource::FatigueTolerance)
         ),
-        "5 class + 2 combat discipline",
+        "4 class + 2 combat discipline",
     );
     assert_eq!(
-        "Insight b0 f2",
+        "Insight b2 f3",
         format!(
             "Insight b{} f{}",
             baseline.calc_resource(&Resource::InsightPoint),
             fighter.calc_resource(&Resource::InsightPoint)
         ),
-        "2 class",
+        "2 level + 1 class",
     );
     assert_eq!(
         "Skills b0 f3",
@@ -216,14 +216,14 @@ mod standard_character_statistics {
         let expected_modifiers: Vec<&str> = vec![
             "Maneuvers: maneuver Certain Strike",
             "Maneuvers: maneuver Generic Scaling Strike",
-            "Maneuvers: maneuver Mighty Strike",
+            "Maneuvers: maneuver Power Strike",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
             "fighter: defense reflex by 3",
-            "fighter: resource attunement point by 4",
-            "fighter: resource fatigue tolerance by 5",
-            "fighter: resource insight point by 2",
+            "fighter: resource attunement point by 2",
+            "fighter: resource fatigue tolerance by 4",
+            "fighter: resource insight point by 1",
             "fighter: resource trained skill by 3",
             "fighter: HP from level 3",
         ];
@@ -252,8 +252,8 @@ mod standard_character_statistics {
 
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-        assert_eq!(1, creature.calc_magical_power(), "Magical power: 1");
-        assert_eq!(3, creature.calc_mundane_power(), "Mundane power: 3");
+        assert_eq!(0, creature.calc_magical_power(), "Magical power: 0");
+        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 4");
         assert_eq!(
             vec![
                 "Certain Battleaxe +3 (The target takes 1d8+1 slashing damage.)",
@@ -324,28 +324,26 @@ mod standard_character_statistics {
 
         let expected_modifiers: Vec<&str> = vec![
             "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Power Strike",
             "Weapon Training: accuracy 1",
+            "Enduring Discipline: defense mental by 1",
             "Enduring Discipline: vital roll 1",
             "Enduring Discipline: resource fatigue tolerance by 1",
-            "Martial Force: strike damage dice 1",
             "Equipment Efficiency: resource attunement point by 1",
             "Maneuvers: maneuver Generic Scaling Strike",
-            "Maneuvers: maneuver Mighty Strike",
             "Armor Expertise: encumbrance -1",
-            "Disciplined Force: strike damage dice 1",
-            "Mental Discipline: defense mental by 2",
             "Maneuvers: accuracy 1",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
             "fighter: defense reflex by 3",
-            "fighter: resource attunement point by 4",
-            "fighter: resource fatigue tolerance by 5",
-            "fighter: resource insight point by 2",
+            "fighter: resource attunement point by 2",
+            "fighter: resource fatigue tolerance by 4",
+            "fighter: resource insight point by 1",
             "fighter: resource trained skill by 3",
             "fighter: HP from level 3",
-            "attribute scaling with level: base attribute strength by 1",
-            "attribute scaling with level: base attribute constitution by 1",
+            "attribute scaling with level: base attribute strength by 2",
+            "attribute scaling with level: base attribute constitution by 2",
             "magic: strike damage dice 1",
             "magic: DR 8",
             "magic: HP 4",
@@ -467,32 +465,26 @@ mod standard_character_statistics {
 
         let expected_modifiers: Vec<&str> = vec![
             "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Power Strike",
             "Weapon Training: accuracy 1",
+            "Enduring Discipline: defense mental by 1",
             "Enduring Discipline: vital roll 1",
             "Enduring Discipline: resource fatigue tolerance by 1",
-            "Martial Force: strike damage dice 1",
             "Equipment Efficiency: resource attunement point by 1",
             "Armor Expertise: encumbrance -1",
-            "Disciplined Force: strike damage dice 1",
-            "Mental Discipline: defense mental by 2",
-            "Weapon Expertise: strike damage dice 1",
-            "Martial Force+: strike damage dice 1",
+            "Enduring Discipline+: defense mental by 1",
             "Enduring Discipline+: vital roll 1",
             "Enduring Discipline+: resource fatigue tolerance by 1",
             "Maneuvers: accuracy 2",
             "Armor Expertise+: encumbrance -1",
-            "Disciplined Force+: strike damage dice 1",
-            "Mental Discipline+: defense mental by 2",
             "Maneuvers: maneuver Generic Scaling Strike",
-            "Maneuvers: maneuver Mighty Strike",
-            "Weapon Expertise+: strike damage dice 1",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
             "fighter: defense reflex by 3",
-            "fighter: resource attunement point by 4",
-            "fighter: resource fatigue tolerance by 5",
-            "fighter: resource insight point by 2",
+            "fighter: resource attunement point by 2",
+            "fighter: resource fatigue tolerance by 4",
+            "fighter: resource insight point by 1",
             "fighter: resource trained skill by 3",
             "fighter: HP from level 3",
             "attribute scaling with level: base attribute strength by 3",
@@ -732,31 +724,29 @@ mod standard_perception_character_statistics {
 
         let expected_modifiers: Vec<&str> = vec![
             "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Power Strike",
             "Weapon Training: accuracy 1",
+            "Enduring Discipline: defense mental by 1",
             "Enduring Discipline: vital roll 1",
             "Enduring Discipline: resource fatigue tolerance by 1",
-            "Martial Force: strike damage dice 1",
             "Equipment Efficiency: resource attunement point by 1",
             "Maneuvers: maneuver Generic Scaling Strike",
-            "Maneuvers: maneuver Mighty Strike",
             "Armor Expertise: encumbrance -1",
-            "Disciplined Force: strike damage dice 1",
-            "Mental Discipline: defense mental by 2",
             "Maneuvers: accuracy 1",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
             "fighter: defense reflex by 3",
-            "fighter: resource attunement point by 4",
-            "fighter: resource fatigue tolerance by 5",
-            "fighter: resource insight point by 2",
+            "fighter: resource attunement point by 2",
+            "fighter: resource fatigue tolerance by 4",
+            "fighter: resource insight point by 1",
             "fighter: resource trained skill by 3",
             "fighter: HP from level 3",
             "magic: strike damage dice 1",
             "magic: DR 8",
             "magic: HP 4",
-            "attribute scaling with level: base attribute perception by 1",
-            "attribute scaling with level: base attribute constitution by 1",
+            "attribute scaling with level: base attribute perception by 2",
+            "attribute scaling with level: base attribute constitution by 2",
         ];
         assert_eq!(
             expected_modifiers,
@@ -875,32 +865,26 @@ mod standard_perception_character_statistics {
 
         let expected_modifiers: Vec<&str> = vec![
             "Maneuvers: maneuver Certain Strike",
+            "Maneuvers: maneuver Power Strike",
             "Weapon Training: accuracy 1",
+            "Enduring Discipline: defense mental by 1",
             "Enduring Discipline: vital roll 1",
             "Enduring Discipline: resource fatigue tolerance by 1",
-            "Martial Force: strike damage dice 1",
             "Equipment Efficiency: resource attunement point by 1",
             "Armor Expertise: encumbrance -1",
-            "Disciplined Force: strike damage dice 1",
-            "Mental Discipline: defense mental by 2",
-            "Weapon Expertise: strike damage dice 1",
-            "Martial Force+: strike damage dice 1",
+            "Enduring Discipline+: defense mental by 1",
             "Enduring Discipline+: vital roll 1",
             "Enduring Discipline+: resource fatigue tolerance by 1",
             "Maneuvers: accuracy 2",
             "Armor Expertise+: encumbrance -1",
-            "Disciplined Force+: strike damage dice 1",
-            "Mental Discipline+: defense mental by 2",
             "Maneuvers: maneuver Generic Scaling Strike",
-            "Maneuvers: maneuver Mighty Strike",
-            "Weapon Expertise+: strike damage dice 1",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
             "fighter: defense reflex by 3",
-            "fighter: resource attunement point by 4",
-            "fighter: resource fatigue tolerance by 5",
-            "fighter: resource insight point by 2",
+            "fighter: resource attunement point by 2",
+            "fighter: resource fatigue tolerance by 4",
+            "fighter: resource insight point by 1",
             "fighter: resource trained skill by 3",
             "fighter: HP from level 3",
             "magic: strike damage dice 2",

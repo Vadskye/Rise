@@ -205,7 +205,7 @@ impl SimpleDamageEffect {
 
     pub fn dr3h(damage_types: Vec<DamageType>) -> DamageEffect {
         return Self {
-            base_dice: DicePool::d4(),
+            base_dice: DicePool::d6(),
             damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
