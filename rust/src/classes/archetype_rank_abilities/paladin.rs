@@ -53,7 +53,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Aligned Aura+",
+            name: "Aligned Aura++",
             is_magical: true,
             rank: 7,
             description: r"
