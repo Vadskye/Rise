@@ -299,22 +299,22 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Wellspring of Power",
+            name: "Experienced Spellcaster",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{magical power}.
+                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Wellspring of Power+",
+            name: "Experienced Spellcaster+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus2.
+                The accuracy bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Accuracy(2)]),
         },
         RankAbility {
             name: "Attunement Point",
