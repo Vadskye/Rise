@@ -20,6 +20,7 @@ pub enum Maneuver {
     Armorpiercer,
     ArmorpiercerPlus,
     CertainStrike,
+    CertainStrikePlus,
     ElementalStrike(i32),
     GenericScalingStrike(i32),
     GraspingStrike,
@@ -28,28 +29,13 @@ pub enum Maneuver {
     Headshot,
     HeadshotPlus,
     PowerStrike,
+    PowerStrikePlus,
     DoubleStrike,
     PouncingStrike,
-    RecklessStrike(i32),
+    RecklessStrike,
     StripTheFlesh,
     Tenderize,
     Whirlwind,
-}
-
-fn standard_damage_scaling(rank: i32) -> i32 {
-    if rank >= 11 {
-        return 32;
-    } else if rank >= 9 {
-        return 24;
-    } else if rank >= 7 {
-        return 16;
-    } else if rank >= 5 {
-        return 8;
-    } else if rank >= 3 {
-        return 4;
-    } else {
-        return 2;
-    }
 }
 
 impl Maneuver {
@@ -64,7 +50,12 @@ impl Maneuver {
         }
     }
 
-    pub fn attack(&self, weapon: Weapon) -> Attack {
+    pub fn is_magical(&self) -> bool {
+        // TODO: return true once we add any magical maneuvers
+        return false;
+    }
+
+    pub fn attack(&self, weapon: Weapon, creature_rank: i32) -> Attack {
         let mut attack = match self {
             Self::Armorcrusher => weapon
                 .attack()
@@ -84,6 +75,9 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy += 3)
                 .except_hit_damage(|d| d.base_dice = d.base_dice.weak()),
+            Self::CertainStrikePlus => weapon
+                .attack()
+                .except(|a| a.accuracy += 5),
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
                 .attack()
@@ -189,6 +183,10 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy -= 3)
                 .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(2)),
+            Self::PowerStrikePlus => weapon
+                .attack()
+                .except(|a| a.accuracy -= 2)
+                .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(3)),
             Self::PouncingStrike => weapon
                 .attack()
                 .except(|a| {
@@ -202,8 +200,7 @@ impl Maneuver {
                         suffix: None,
                     });
                 }),
-            // TODO: add rank scaling?
-            Self::RecklessStrike(rank) => weapon
+            Self::RecklessStrike => weapon
                 .attack()
                 .except(|a| a.accuracy += 2)
                 .except(|a| {
@@ -258,6 +255,11 @@ impl Maneuver {
                         Targeting::Radius(None, AreaSize::Tiny, AreaTargets::Enemies);
                 })
         };
+        // TODO: should we warn if this is untrue? We're currently silently ignoring "early"
+        // maneuver access since that's reasonable for elite monster actions.
+        if creature_rank > self.rank() {
+            attack.accuracy += creature_rank - self.rank();
+        }
         attack.name = self.attack_name(&weapon);
         attack.replaces_weapon = if self.should_replace_weapon() {
             Some(weapon)
@@ -281,7 +283,7 @@ impl Maneuver {
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
             Self::PowerStrike => with_prefix("Powerful", weapon_name),
             Self::PouncingStrike => with_prefix("Pouncing", weapon_name),
-            Self::RecklessStrike(_) => with_prefix("Reckless", weapon_name),
+            Self::RecklessStrike => with_prefix("Reckless", weapon_name),
             _ => format!("{} -- {}", self.name(), weapon_name),
         }
     }
@@ -293,6 +295,7 @@ impl Maneuver {
             Self::Armorpiercer => "Armorpiercer",
             Self::ArmorpiercerPlus => "Armorpiercer+",
             Self::CertainStrike => "Certain Strike",
+            Self::CertainStrikePlus => "Certain Strike+",
             Self::ElementalStrike(_) => "Elemental Strike",
             Self::GenericScalingStrike(_) => "Generic Scaling Strike",
             Self::GraspingStrike => "Grasping Strike",
@@ -301,9 +304,10 @@ impl Maneuver {
             Self::Headshot => "Headshot",
             Self::HeadshotPlus => "Headshot+",
             Self::PowerStrike => "Power Strike",
+            Self::PowerStrikePlus => "Power Strike+",
             Self::DoubleStrike => "Double Strike",
             Self::PouncingStrike => "Pouncing Strike",
-            Self::RecklessStrike(_) => "Reckless Strike",
+            Self::RecklessStrike => "Reckless Strike",
             Self::StripTheFlesh => "Strip the Flesh",
             Self::Tenderize => "Tenderize",
             Self::Whirlwind => "Whirlwind",
@@ -317,17 +321,19 @@ impl Maneuver {
             Self::Armorpiercer => 1,
             Self::ArmorpiercerPlus => 3,
             Self::CertainStrike => 1,
-            Self::ElementalStrike(_) => 1,
-            Self::GenericScalingStrike(_) => 1,
+            Self::CertainStrikePlus => 5,
+            Self::ElementalStrike(r) => *r,
+            Self::GenericScalingStrike(r) => *r,
             Self::GraspingStrike => 1,
             Self::GraspingStrikePlus => 5,
             Self::Hamstring => 3,
             Self::Headshot => 3,
             Self::HeadshotPlus => 7,
             Self::PowerStrike => 1,
+            Self::PowerStrikePlus => 5,
             Self::DoubleStrike => 5,
             Self::PouncingStrike => 3,
-            Self::RecklessStrike(_) => 1,
+            Self::RecklessStrike => 1,
             Self::StripTheFlesh => 7,
             Self::Tenderize => 5,
             Self::Whirlwind => 1,

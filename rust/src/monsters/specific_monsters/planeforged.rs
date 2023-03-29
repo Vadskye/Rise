@@ -253,10 +253,10 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 16,
                 modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
+                    Modifier::Attack(StandardAttack::Combustion(6).attack()),
                     Modifier::Attack(
                         Maneuver::Tenderize
-                            .attack(StandardWeapon::MultipedalRam.weapon())
+                            .attack(StandardWeapon::MultipedalRam.weapon(), 6)
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -301,9 +301,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 14,
                 modifiers: Some(vec![
-                    Modifier::Attack(
+                    Modifier::Maneuver(
                         Maneuver::StripTheFlesh
-                            .attack(StandardWeapon::Greatsword.weapon())
                     ),
                 ]),
                 name: "Justicar".to_string(),
@@ -337,7 +336,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     Modifier::Attack(StandardAttack::Pyroclasm(5).attack()),
                     Modifier::Attack(
                         Maneuver::Whirlwind
-                            .attack(StandardWeapon::Slam.weapon())
+                            .attack(StandardWeapon::Slam.weapon(), 5)
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -476,7 +475,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(
-                        Maneuver::GraspingStrike.attack(StandardWeapon::Claws.weapon())
+                        Maneuver::GraspingStrike.attack(StandardWeapon::Claws.weapon(), 2)
                         .except(|a| a.name = "Impale".to_string())
                     ),
                     Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
