@@ -61,7 +61,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
-            (-10, "
+            (-5, "
                 Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.
                 They are said to have power over people's minds.
             "),

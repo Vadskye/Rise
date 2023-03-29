@@ -9,7 +9,7 @@ const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
     armor_defense: 3,
-    damage_resistance: 2,
+    damage_resistance: 0,
     hit_points: 4,
     fortitude: 5,
     reflex: 3,
@@ -18,7 +18,7 @@ const BASE_CLASS_MODIFIERS = {
   },
   skirmisher: {
     armor_defense: 4,
-    damage_resistance: 0,
+    damage_resistance: 2,
     hit_points: 0,
     fortitude: 4,
     reflex: 6,
