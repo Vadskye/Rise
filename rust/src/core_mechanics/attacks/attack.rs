@@ -94,6 +94,8 @@ impl Attack {
         return None;
     }
 
+    // A fairly thin convenience wrapper around DamageEffect.calc_damage_dice(). Could be used for
+    // other values, like healing, once that is supported.
     pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike))
@@ -101,6 +103,8 @@ impl Attack {
         return None;
     }
 
+    // Create a list of simple strikes that don't use any maneuvers. These attacks deal irrelevant
+    // damage at high levels.
     pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
         return weapons.into_iter().map(|w| w.attack()).collect();
@@ -244,7 +248,7 @@ where
         {
             if let Some(m) = maneuver {
                 for weapon in &self.weapons {
-                    all_attacks.push(m.attack(weapon.clone()));
+                    all_attacks.push(m.attack(weapon.clone(), self.rank()));
                 }
             }
         }

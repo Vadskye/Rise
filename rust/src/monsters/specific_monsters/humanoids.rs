@@ -71,7 +71,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 ])),
                 level: 3,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::RecklessStrike(1)),
+                    Modifier::Maneuver(Maneuver::RecklessStrike),
                 ]),
                 movement_speeds: None,
                 name: "Orc Deserter".to_string(),
@@ -445,7 +445,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     Modifier::Maneuver(Maneuver::PowerStrike),
                     Modifier::Attack(
                         Maneuver::Hamstring
-                            .attack(StandardWeapon::Greataxe.weapon())
+                            .attack(StandardWeapon::Greataxe.weapon(), 2)
                     ),
                 ]),
                 name: "Orc Clan Chief".to_string(),

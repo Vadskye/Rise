@@ -256,10 +256,10 @@ mod standard_character_statistics {
         assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 4");
         assert_eq!(
             vec![
-                "Certain Battleaxe +3 (The target takes 1d8+1 slashing damage.)",
-                "Generic Scaling Battleaxe +1 (The target takes 1d8+5 slashing damage.)",
-                "Mighty Battleaxe -1 (The target takes 1d8+7 slashing damage.)",
-                "Battleaxe +1 (The target takes 1d8+3 slashing damage.)"
+                "Certain Broadsword +4 (The target takes 1d10 (w) slashing damage.)",
+                "Generic Scaling Broadsword +1 (The target takes 1d10 slashing damage.)",
+                "Powerful Broadsword -2 (The target takes 2d10 slashing damage.)",
+                "Broadsword +1 (The target takes 1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -289,27 +289,27 @@ mod standard_character_statistics {
 
         // HasDamageAbsorption
         assert_eq!(
-            16,
+            12,
             creature.calc_hit_points(),
             "HP: (1 level + 2 con + 3 fighter)"
         );
-        assert_eq!(5, creature.calc_damage_resistance(), "DR: 5 scale",);
+        assert_eq!(4, creature.calc_damage_resistance(), "DR: 4 scale",);
 
         // HasResources
         assert_eq!(
-            4,
-            creature.calc_resource(&Resource::AttunementPoint),
-            "AP: 4 class",
-        );
-        assert_eq!(
-            7,
-            creature.calc_resource(&Resource::FatigueTolerance),
-            "FT: 5 fighter + 2 con",
-        );
-        assert_eq!(
             2,
+            creature.calc_resource(&Resource::AttunementPoint),
+            "AP: 2 class",
+        );
+        assert_eq!(
+            6,
+            creature.calc_resource(&Resource::FatigueTolerance),
+            "FT: 4 fighter + 2 con",
+        );
+        assert_eq!(
+            1,
             creature.calc_resource(&Resource::InsightPoint),
-            "Insight: 2 fighter",
+            "Insight: 1 fighter",
         );
         assert_eq!(
             3,
@@ -332,7 +332,6 @@ mod standard_character_statistics {
             "Equipment Efficiency: resource attunement point by 1",
             "Maneuvers: maneuver Generic Scaling Strike",
             "Armor Expertise: encumbrance -1",
-            "Maneuvers: accuracy 1",
             "fighter: defense armor by 1",
             "fighter: defense fortitude by 7",
             "fighter: defense mental by 5",
@@ -356,7 +355,7 @@ mod standard_character_statistics {
 
         // HasAttributes
         assert_eq!(
-            vec![5, 0, 3, 0, 2, 0],
+            vec![6, 0, 4, 0, 2, 0],
             Attribute::all()
                 .iter()
                 .map(|a| creature.get_base_attribute(&a))
@@ -373,26 +372,26 @@ mod standard_character_statistics {
 
         // HasAttacks
         assert_eq!(
-            8,
+            7,
             creature.calc_accuracy(),
-            "Accuracy: 5 level + 1 per + 1 equip train + 1 maneuvers",
+            "Accuracy: 5 level + 1 per + 1 equip train",
         );
         assert_eq!(
-            7,
+            5,
             creature.calc_magical_power(),
             "Magical power: as level 10"
         );
         assert_eq!(
-            14,
+            11,
             creature.calc_mundane_power(),
-            "Mundane power: 10 level + 5 str = as level 15"
+            "Mundane power: 5 level + 6 str"
         );
         assert_eq!(
             vec![
-                "Certain Battleaxe +10 (The target takes 2d8+7 slashing damage.)",
-                "Generic Scaling Battleaxe +8 (The target takes 2d8+18 slashing damage.)",
-                "Mighty Battleaxe +6 (The target takes 2d8+22 slashing damage.)",
-                "Battleaxe +8 (The target takes 2d8+14 slashing damage.)",
+                "Certain Broadsword +13 (The target takes 1d6+1d10 (w) slashing damage.)",
+                "Powerful Broadsword +7 (The target takes 2d6+2d10 slashing damage.)",
+                "Generic Scaling Broadsword +10 (The target takes 1d6+1d10 slashing damage.)",
+                "Broadsword +7 (The target takes 1d6+1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -409,9 +408,9 @@ mod standard_character_statistics {
             "Armor: 5 level + 4 layered hide + 2 shield + 1 fighter",
         );
         assert_eq!(
-            15,
+            16,
             creature.calc_defense(&Defense::Fortitude),
-            "Fort: 5 level + 7 fighter + 3 con",
+            "Fort: 5 level + 7 fighter + 4 con",
         );
         assert_eq!(
             8,
@@ -419,21 +418,21 @@ mod standard_character_statistics {
             "Ref: 5 level + 3 fighter",
         );
         assert_eq!(
-            12,
+            11,
             creature.calc_defense(&Defense::Mental),
-            "Ment: 5 level + 4 fighter + 3 combat discipline",
+            "Ment: 5 level + 5 fighter + 1 combat discipline",
         );
 
         // HasDamageAbsorption
         assert_eq!(
-            54,
+            49,
             creature.calc_hit_points(),
-            "HP: (10 level + 3 con + 3 fighter = as level 16) + 4 magic item",
+            "HP: (10 level + 4 con + 3 fighter = as level 17) + 4 magic item",
         );
         assert_eq!(
-            44,
+            37,
             creature.calc_damage_resistance(),
-            "DR: (as level 10) + 24 magic full plate + 8 magic item",
+            "DR: (as level 10) + 20 magic full plate + 8 magic item",
         );
 
         // HasResources
@@ -448,9 +447,9 @@ mod standard_character_statistics {
             "FT: 5 fighter + 3 con + 1 combat discipline",
         );
         assert_eq!(
-            2,
+            3,
             creature.calc_resource(&Resource::InsightPoint),
-            "Insight: 2 fighter",
+            "Insight: 1 fighter + 2 level",
         );
         assert_eq!(
             3,
@@ -472,10 +471,11 @@ mod standard_character_statistics {
             "Enduring Discipline: resource fatigue tolerance by 1",
             "Equipment Efficiency: resource attunement point by 1",
             "Armor Expertise: encumbrance -1",
+            "Maneuvers: maneuver Power Strike+",
+            "Maneuvers: maneuver Certain Strike+",
             "Enduring Discipline+: defense mental by 1",
             "Enduring Discipline+: vital roll 1",
             "Enduring Discipline+: resource fatigue tolerance by 1",
-            "Maneuvers: accuracy 2",
             "Armor Expertise+: encumbrance -1",
             "Maneuvers: maneuver Generic Scaling Strike",
             "fighter: defense armor by 1",
@@ -518,26 +518,24 @@ mod standard_character_statistics {
 
         // HasAttacks
         assert_eq!(
-            14,
+            12,
             creature.calc_accuracy(),
-            "Accuracy: 10 level + 1 per + 1 equip train + 2 martial mastery",
+            "Accuracy: 10 level + 1 per + 1 equip train",
         );
+        assert_eq!(10, creature.calc_magical_power(), "Magical power: 10 level");
         assert_eq!(
-            24,
-            creature.calc_magical_power(),
-            "Magical power: as level 20"
-        );
-        assert_eq!(
-            38,
+            17,
             creature.calc_mundane_power(),
-            "Mundane power: 20 lvl + 7 str = as level 21 + 12"
+            "Mundane power: 10 level + 7 str"
         );
         assert_eq!(
             vec![
-                "Certain Battleaxe +16 (The target takes 5d10+19 slashing damage.)",
-                "Generic Scaling Battleaxe +14 (The target takes 5d10+54 slashing damage.)",
-                "Mighty Battleaxe +12 (The target takes 5d10+62 slashing damage.)",
-                "Battleaxe +14 (The target takes 5d10+38 slashing damage.)"
+                "Certain Broadsword +21 (The target takes 2d6+1d10 (w) slashing damage.)",
+                "Powerful Broadsword +15 (The target takes 4d6+2d10 slashing damage.)",
+                "Power Strike+ -- Broadsword +12 (The target takes 6d6+3d10 slashing damage.)",
+                "Certain Strike+ -- Broadsword +19 (The target takes 2d6+1d10 slashing damage.)",
+                "Generic Scaling Broadsword +14 (The target takes 7d6+1d10 slashing damage.)",
+                "Broadsword +12 (The target takes 2d6+1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -564,21 +562,21 @@ mod standard_character_statistics {
             "Ref: 10 level + 3 fighter",
         );
         assert_eq!(
-            19,
+            17,
             creature.calc_defense(&Defense::Mental),
-            "Ment: 10 level + 5 fighter + 4 combat discipline",
+            "Ment: 10 level + 5 fighter + 2 combat discipline",
         );
 
         // HasDamageAbsorption
         assert_eq!(
-            176,
+            156,
             creature.calc_hit_points(),
             "HP: (20 level + 5 con + 3 fighter = as level 21 + 70) + 16 magic item",
         );
         assert_eq!(
-            128,
+            107,
             creature.calc_damage_resistance(),
-            "DR: (as level 20) + 72 magic full plate + 16 magic item",
+            "DR: (as level 20) + 60 magic full plate + 16 magic item",
         );
 
         // HasResources
@@ -588,14 +586,14 @@ mod standard_character_statistics {
             "AP: 4 class + 1 equipment training",
         );
         assert_eq!(
-            12,
+            11,
             creature.calc_resource(&Resource::FatigueTolerance),
-            "FT: 5 fighter + 5 con + 2 combat discipline",
+            "FT: 4 fighter + 5 con + 2 combat discipline",
         );
         assert_eq!(
-            2,
+            3,
             creature.calc_resource(&Resource::InsightPoint),
-            "Insight: 2 fighter",
+            "Insight: 1 fighter + 2 level",
         );
         assert_eq!(
             3,
@@ -831,9 +829,9 @@ mod standard_perception_character_statistics {
             "HP: (10 level + 3 con + 3 fighter = as level 16) + 4 magic item",
         );
         assert_eq!(
-            44,
+            40,
             creature.calc_damage_resistance(),
-            "DR: (as level 10) + 24 magic full plate + 8 magic item",
+            "DR: (as level 10) + 20 magic full plate + 8 magic item",
         );
 
         // HasResources
@@ -976,9 +974,9 @@ mod standard_perception_character_statistics {
             "HP: (20 level + 5 con + 3 fighter = as level 21 + 70) + 16 magic item",
         );
         assert_eq!(
-            128,
+            107,
             creature.calc_damage_resistance(),
-            "DR: (as level 20) + 72 magic full plate + 16 magic item",
+            "DR: (as level 20) + 60 magic full plate + 16 magic item",
         );
 
         // HasResources
