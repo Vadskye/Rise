@@ -21,12 +21,10 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                In addition, you gain a +1 bonus to your Fortitude defense.
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
             ",
             modifiers: Some(vec![
-                Modifier::DamageResistance(6),
-                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::HitPoints(6),
             ]),
         },
         RankAbility {
@@ -34,45 +32,44 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to four times your rank in this archetype.
-                In addition, the Fortitude defense bonus increases to +2.
+                The hit point bonus increases to four times your rank in this archetype.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+            modifiers: Some(vec![Modifier::HitPoints(9)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+            modifiers: Some(vec![Modifier::HitPoints(12)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(15)]),
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+            modifiers: Some(vec![Modifier::HitPoints(24)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+            modifiers: Some(vec![Modifier::HitPoints(28)]),
         },
         RankAbility {
             name: "Resilient Strike",
@@ -83,9 +80,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Strike}
                     \rankline
                     Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
-                    Regardless of whether you hit or miss, you can choose to regain \glossterm{damage resistance} equal to the damage you would deal with a normal hit from the strike.
-                    This recovery is rolled separately from the strike's actual damage.
-                    If you do, you increase your \glossterm{fatigue level} by one.
+                    You are also \glossterm{briefly} \glossterm{impervious} to all damage.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d8.
@@ -106,22 +101,22 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
-            name: "Resilient Recovery+",
+            name: "Limitless Recovery",
             is_magical: false,
             rank: 5,
             description: r"
-                When you use the \textit{recover} ability, you also regain half your maximum \glossterm{damage resistance} (see \pcref{Recover}).
-                This effect has the \abilitytag{Swift} tag, like the \ability{recover} ability.
+                You can use the \ability{recover} ability any number of times between short rests.
+                In addition, when you use it as a standard action, you only increase your \glossterm{fatigue level} by one.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Limitless Recovery",
+            name: "Unbloodied Resilience",
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \ability{recover} ability any number of times between short rests.
-                In addition, when you use it as a standard action, you only increase your \glossterm{fatigue level} by one.
+                While you have at least half your maximum hit points remaining, you cannot gain \glossterm{conditions}.
+                Recovering hit points above this value does not automatically remove any conditions you already have.
             ",
             modifiers: None,
         },
