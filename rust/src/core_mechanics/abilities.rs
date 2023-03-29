@@ -6,7 +6,7 @@ mod latex;
 mod targeting;
 mod usage_time;
 
-pub use ability_tag::AbilityTag;
+pub use ability_tag::{AbilityTag, SustainAction};
 pub use ability_type::AbilityType;
 pub use active_ability::ActiveAbility;
 pub use extra_context::{AbilityExtraContext, AbilityMovement, Cooldown};

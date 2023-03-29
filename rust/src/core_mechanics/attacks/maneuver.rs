@@ -32,6 +32,7 @@ pub enum Maneuver {
     PowerStrikePlus,
     DoubleStrike,
     PouncingStrike,
+    PouncingStrikePlus,
     RecklessStrike,
     StripTheFlesh,
     Tenderize,
@@ -39,12 +40,13 @@ pub enum Maneuver {
 }
 
 impl Maneuver {
-    pub fn assert_meets_rank_requirement(&self, creature_rank: i32) {
+    pub fn assert_meets_rank_requirement(&self, creature_name: &str, creature_rank: i32) {
         if creature_rank < self.rank() {
             panic!(
-                "Maneuver {} requires minimum rank {} but creature is rank {}",
+                "Maneuver {} requires minimum rank {} but creature {} is rank {}",
                 self.name(),
                 self.rank(),
+                creature_name,
                 creature_rank
             );
         }
@@ -195,6 +197,19 @@ impl Maneuver {
                         movement: Some(AbilityMovement {
                             move_before_attack: true,
                             requires_straight_line: true,
+                            speed: SpeedCategory::Half,
+                        }),
+                        suffix: None,
+                    });
+                }),
+            Self::PouncingStrikePlus => weapon
+                .attack()
+                .except(|a| {
+                    a.extra_context = Some(AbilityExtraContext {
+                        cooldown: None,
+                        movement: Some(AbilityMovement {
+                            move_before_attack: true,
+                            requires_straight_line: true,
                             speed: SpeedCategory::Normal,
                         }),
                         suffix: None,
@@ -255,8 +270,8 @@ impl Maneuver {
                         Targeting::Radius(None, AreaSize::Tiny, AreaTargets::Enemies);
                 })
         };
-        // TODO: should we warn if this is untrue? We're currently silently ignoring "early"
-        // maneuver access since that's reasonable for elite monster actions.
+
+        // If this is untrue, it's usually caught by `assert_meets_rank_requirement`.
         if creature_rank > self.rank() {
             attack.accuracy += creature_rank - self.rank();
         }
@@ -283,6 +298,7 @@ impl Maneuver {
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
             Self::PowerStrike => with_prefix("Powerful", weapon_name),
             Self::PouncingStrike => with_prefix("Pouncing", weapon_name),
+            Self::PouncingStrikePlus => with_prefix("Pouncing", weapon_name),
             Self::RecklessStrike => with_prefix("Reckless", weapon_name),
             _ => format!("{} -- {}", self.name(), weapon_name),
         }
@@ -307,6 +323,7 @@ impl Maneuver {
             Self::PowerStrikePlus => "Power Strike+",
             Self::DoubleStrike => "Double Strike",
             Self::PouncingStrike => "Pouncing Strike",
+            Self::PouncingStrikePlus => "Pouncing Strike+",
             Self::RecklessStrike => "Reckless Strike",
             Self::StripTheFlesh => "Strip the Flesh",
             Self::Tenderize => "Tenderize",
@@ -332,7 +349,8 @@ impl Maneuver {
             Self::PowerStrike => 1,
             Self::PowerStrikePlus => 5,
             Self::DoubleStrike => 5,
-            Self::PouncingStrike => 3,
+            Self::PouncingStrike => 1,
+            Self::PouncingStrikePlus => 3,
             Self::RecklessStrike => 1,
             Self::StripTheFlesh => 7,
             Self::Tenderize => 5,

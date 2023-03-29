@@ -73,7 +73,7 @@ impl StandardAttack {
                                     Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
                                       the target's skin is transformed into a clear, slimy membrane.
                                     Every 5 minutes, an afflicted creature must be moistened with cool, fresh water
-                                      or it will gain two \\glossterm<fatigue points>.
+                                      or it will increase its \\glossterm<fatigue level> by two.
                                     This effect lasts until the \\glossterm{vital wound} is removed.
                                 ".to_string()),
                             }),
@@ -93,7 +93,7 @@ impl StandardAttack {
                 is_strike: false,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
                 targeting: Targeting::Cone(AreaSize::Large, AreaTargets::Enemies),
             },
             Self::AnkhegDrag => Attack {
