@@ -6,77 +6,50 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 
 \section{Monster Statistics}
     Like player characters, monsters have levels, attributes, and abilities.
-    However, they do not have classes, legacy items, or many other elements of characters.
+    However, they do not have classes, insight points, or many other elements of characters.
     This section defines how monsters function.
 
     \subsection{Level Scaling}
         Each monster has a level that indicates its approximate strength.
         Monsters have some specific level scaling rules that differ from the rules for player characters.
+        This scaling is summarized in \tref{Monster Advancement}.
         In general, their automatic level scaling is designed to keep them on par with the power that player characters gain at higher levels, but without all of the complexity of high-level PCs.
         High level monsters should have slightly higher base values for their attributes, though this is not quantified, since monster attributes can be highly varied.
         They have the following specific changes.
         \begin{itemize}
-            \item Monsters have twice the base damage resistance of a player character
-            \item Monsters gain a \plus1 bonus to \glossterm{power} with all abilities at 3rd level and 12th level
-            \item Monsters gain a \plus1 bonus to \glossterm{accuracy} at 9th level and 18th level
+            \item Monsters do not gain insight points, attunement points, or legacy items.
+            \item Monsters have twice the base damage resistance of a player character.
+            \item Monsters gain a \plus1 bonus to \glossterm{accuracy} at 6th level and 18th level.
+            \item Monsters gain a \plus1 bonus to all defenses at 12th level.
         \end{itemize}
-
-        Monster level scaling is summarized in \tref{Monster Advancement}.
-        Monsters gain the same statistical benefits from their attributes that player characters do.
-        The values listed in the Monster Advancement table do not include bonuses from attributes.
-        When creating a new monster, make sure to decide its attributes appropriately, since they can have a large effect on the monster's overall power level and combat style.
-        In particular, variable attributes make monster defenses more varied.
 
     \begin{dtable*}
         \lcaption{Monster Advancement}
-        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
-            \multicolumn{7}{c}{\tb{Standard Monsters}} \\
-            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses} & \tb{Skills, Power} & \tb{Special}                        \tableheaderrule
-            1st        & 1             & 6       & 0       & \tdash                  & \tdash             & \tdash                   \\
-            2nd        & 1             & 7       & 2       & \plus1                  & \plus1             & \tdash                   \\
-            3rd        & 1             & 8       & 4       & \plus1                  & \plus1             & \plus1 to two attributes \\
-            4th        & 2             & 9       & 6       & \plus2                  & \plus2             & \tdash                   \\
-            5th        & 2             & 10      & 8       & \plus2                  & \plus2             & \tdash                   \\
-            6th        & 2             & 12      & 10      & \plus3                  & \plus3             & \plus1 accuracy          \\
-            7th        & 3             & 14      & 12      & \plus3                  & \plus3             & \tdash                   \\
-            8th        & 3             & 16      & 14      & \plus4                  & \plus4             & \tdash                   \\
-            9th        & 3             & 18      & 16      & \plus4                  & \plus4             & \plus1 to two attributes \\
-            10th       & 4             & 20      & 18      & \plus5                  & \plus5             & \tdash                   \\
-            11th       & 4             & 22      & 20      & \plus5                  & \plus5             & \tdash                   \\
-            12th       & 4             & 25      & 24      & \plus6                  & \plus6             & \plus1 to all defenses   \\
-            13th       & 5             & 28      & 28      & \plus6                  & \plus6             & \tdash                   \\
-            14th       & 5             & 32      & 32      & \plus7                  & \plus7             & \tdash                   \\
-            15th       & 5             & 36      & 36      & \plus7                  & \plus7             & \plus1 to two attributes \\
-            16th       & 6             & 40      & 40      & \plus8                  & \plus8             & \tdash                   \\
-            17th       & 6             & 45      & 44      & \plus8                  & \plus8             & \tdash                   \\
-            18th       & 6             & 50      & 50      & \plus9                  & \plus9             & \plus1 accuracy          \\
-            19th       & 7             & 56      & 56      & \plus9                  & \plus9             & \tdash                   \\
-            20th       & 7             & 63      & 62      & \plus10                 & \plus10            & \tdash                   \\
-            21st       & 7             & 70      & 70      & \plus10                 & \plus10            & \plus1 to two attributes \\
-            \multicolumn{7}{c}{\tb{Elite Monsters}}                                                                                  \\ 
-            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses} & \tb{Skills, Power} & \tb{Special}             \tableheaderrule
-            1st        & 1             & 24      & 0       & \plus2                  & \tdash             & \tdash                   \\
-            2nd        & 1             & 28      & 8       & \plus2                  & \plus1             & \tdash                   \\
-            3rd        & 1             & 32      & 16      & \plus3                  & \plus1             & \plus1 to two attributes \\
-            4th        & 2             & 36      & 24      & \plus3                  & \plus2             & \tdash                   \\
-            5th        & 2             & 40      & 32      & \plus4                  & \plus2             & \tdash                   \\
-            6th        & 2             & 48      & 40      & \plus4                  & \plus3             & \plus1 accuracy          \\
-            7th        & 3             & 56      & 48      & \plus5                  & \plus3             & \tdash                   \\
-            8th        & 3             & 64      & 56      & \plus5                  & \plus4             & \tdash                   \\
-            9th        & 3             & 72      & 64      & \plus6                  & \plus4             & \plus1 to two attributes \\
-            10th       & 4             & 80      & 72      & \plus6                  & \plus5             & \tdash                   \\
-            11th       & 4             & 88      & 80      & \plus7                  & \plus5             & \tdash                   \\
-            12th       & 4             & 100     & 96      & \plus7                  & \plus6             & \plus1 to all defenses   \\
-            13th       & 5             & 112     & 112     & \plus8                  & \plus6             & \tdash                   \\
-            14th       & 5             & 128     & 128     & \plus8                  & \plus7             & \tdash                   \\
-            15th       & 5             & 144     & 144     & \plus9                  & \plus7             & \plus1 to two attributes \\
-            16th       & 6             & 160     & 160     & \plus9                  & \plus8             & \tdash                   \\
-            17th       & 6             & 180     & 176     & \plus10                 & \plus8             & \tdash                   \\
-            18th       & 6             & 200     & 200     & \plus10                 & \plus9             & \plus1 accuracy          \\
-            19th       & 7             & 224     & 224     & \plus11                 & \plus9             & \tdash                   \\
-            20th       & 7             & 252     & 248     & \plus11                 & \plus10            & \tdash                   \\
-            21st       & 7             & 280     & 280     & \plus12                 & \plus10            & \plus1 to two attributes \\
+        \begin{dtabularx}{\textwidth}{l l l l l l l >{\lcol}X}
+            \tb{Level} & \tb{Max Rank} & \tb{HP} & \tb{DR} & \tb{Elite HP} & \tb{Elite DR} & \tb{Accuracy, Defenses, Skills, Power}\fn{1} & \tb{Special}                        \tableheaderrule
+            1st        & 1             & 6       & 0       & 24      & 0       & \tdash             & \tdash                   \\
+            2nd        & 1             & 7       & 2       & 28      & 8       & \plus1             & \tdash                   \\
+            3rd        & 1             & 8       & 4       & 32      & 16      & \plus1             & \plus1 to two attributes \\
+            4th        & 2             & 9       & 6       & 36      & 24      & \plus2             & \tdash                   \\
+            5th        & 2             & 10      & 8       & 40      & 32      & \plus2             & \tdash                   \\
+            6th        & 2             & 12      & 10      & 48      & 40      & \plus3             & \plus1 accuracy          \\
+            7th        & 3             & 14      & 12      & 56      & 48      & \plus3             & \tdash                   \\
+            8th        & 3             & 16      & 14      & 64      & 56      & \plus4             & \tdash                   \\
+            9th        & 3             & 18      & 16      & 72      & 64      & \plus4             & \plus1 to two attributes \\
+            10th       & 4             & 20      & 18      & 80      & 72      & \plus5             & \tdash                   \\
+            11th       & 4             & 22      & 20      & 88      & 80      & \plus5             & \tdash                   \\
+            12th       & 4             & 25      & 24      & 100     & 96      & \plus6             & \plus1 to all defenses   \\
+            13th       & 5             & 28      & 28      & 112     & 112     & \plus6             & \tdash                   \\
+            14th       & 5             & 32      & 32      & 128     & 128     & \plus7             & \tdash                   \\
+            15th       & 5             & 36      & 36      & 144     & 144     & \plus7             & \plus1 to two attributes \\
+            16th       & 6             & 40      & 40      & 160     & 160     & \plus8             & \tdash                   \\
+            17th       & 6             & 45      & 44      & 180     & 180     & \plus8             & \tdash                   \\
+            18th       & 6             & 50      & 50      & 200     & 200     & \plus9             & \plus1 accuracy          \\
+            19th       & 7             & 56      & 56      & 224     & 224     & \plus9             & \tdash                   \\
+            20th       & 7             & 63      & 62      & 252     & 248     & \plus10            & \tdash                   \\
+            21st       & 7             & 70      & 70      & 280     & 280     & \plus10            & \plus1 to two attributes \\
         \end{dtabularx} 
+        1. Elite monsters gain a \plus2 bonus to accuracy and defenses, as described below. \\
     \end{dtable*}
 
     \subsection{Elite Monsters}\label{Elite Monsters}
