@@ -46,8 +46,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \end{dtable!*}
 
     \subsection{Trained Skills}\label{Trained Skills}
-        You are \glossterm{trained} in certain skills.
-        Your \glossterm{class} gives you a certain number of trained skills from among the \glossterm{class skills} for that class.
+        You are trained in certain skills.
+        Your \glossterm{class} gives you a certain number of \glossterm{trained skills} from among the \glossterm{class skills} for that class.
         The class skills for each class are summarized in \tref{Class Skills}.
 
         There are other ways to become trained in skills that are not part of your class.
@@ -55,8 +55,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Some abilities can grant additional trained skills.
 
     \subsection{Skill Modifiers}
-        If you are \glossterm{untrained} in a skill, your bonus with that skill is equal to its associated attribute (if any).
-        If you are \glossterm{trained} in a skill, your bonus with that skill is equal to 3 \add half your level \add its associated attribute (if any).
+        If you are untrained in a skill, your bonus with that skill is equal to its associated attribute (if any).
+        If you are trained in a skill, your bonus with that skill is equal to 3 \add half your level \add its associated attribute (if any).
         Many abilities can increase or decrease your bonus with particular skills.
 
     \subsection{Tasks}\label{Tasks}
@@ -80,7 +80,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
         \parhead{Identify Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
         \parhead{Identify Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
-        \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Hide}).
+        \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Stealth}).
         Success with a sight-based Awareness check means you can see the creature perfectly.
         Success with any other sense just means you know its exact location, and are still \partiallyunaware of it.
         \parhead{Notice Hidden Object} If you succeed at an opposed Awareness vs. Craft or Devices check, you can notice hidden objects such as traps and secret doors.
@@ -205,7 +205,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Rebuild Item} You can make a Craft check to repair a \glossterm{destroyed} item. This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one lower than it actually is (to a minimum of 0).
         \parhead{Repair Item} You can make a Craft check to repair a \glossterm{broken} item. This takes as much time as creating an item two ranks lower than the item (to a minimum of 0), and does not require any raw materials other than the broken item.
 
-    \subsection{Crafting Items}
+    \subsection{Crafting Items}\label{Crafting Items}
         You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty.
 
         Each item takes a certain amount of working time to craft, as shown on \tref{Craft Requirements}.
@@ -257,7 +257,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             In addition, choose and state an action that the creature could take.
             \hit The target is unable to take any actions except to use the \textit{total defense} ability (see \pcref{Universal Abilities}).
             \crit The target performs the chosen action if it is physically capable of performing it.
-            This can include convincing creatures to perform forced marches and similar activities (see \pcref{Overland Exertion}).
             
             You take a \minus10 accuracy penalty against an actively hostile target.
             You take a \minus5 penalty to accuracy with this attack if the target is not an animal, as normal for Creature Handling attacks and checks.
@@ -386,6 +385,19 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 
         Essentially, you can fight while holding your breath for a number of rounds equal to your Endurance modifier with no risk of failure.
         If you stay still, you can hold your breath for a number of minutes equal to half your Endurance modifier with no risk of failure.
+        \parhead{Maintain Exertion}\label{Maintain Exertion}
+        Some activities are difficult to maintain indefinitely.
+        For example, running at a dead sprint typically exhausts a creature in less than a minute.
+        Even walking at a steady pace can become exhausting after hours without rest.
+        You can make an Endurance check to continue performing a strenuous activity without rest.
+
+        Generally, this requires a \glossterm{difficulty value} 5 Endurance check when you reach the point where an ordinary human might be forced to rest.
+        If you succeed, you can maintain the exertion for the same length of time.
+        At the end of that time, you must make another check with a difficulty value that is 5 higher.
+        Each time you succeed, the difficulty value increases by 5.
+        If you fail, you must rest.
+        The details of how long you have to rest depends on the activity you were performing, at the GM's discretion.
+
         \parhead{Stay Awake} You can make an Endurance check to stay awake beyond healthy limits.
         A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
         The \glossterm{difficulty value} starts at 5, and increases by 5 for each subsequent check until you catch up on your missed sleep.
@@ -694,11 +706,11 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
 \newpage
 \skill{Ride}{Dex}
     The Ride skill represents your ability to ride and control horses and other mounts.
-    Typical riding actions don't require checks. You can saddle, mount, ride, and dismount from a mount without a problem. However, some special actions require Ride checks. Some modifiers apply to all Ride checks, as described at \pcref{Ride Modifiers}.
+    Typical riding actions don't require checks. You can saddle, mount, ride, and dismount from a mount without a problem. However, some special actions require Ride checks.
 
     Unless an ability says otherwise, you can only use this skill to ride \glossterm{allies} that are exactly one size category larger than you.
 
-    \subsection{Common Ride Modifiers}\label{Common Ride Modifiers}
+    \subsection{Common Ride Modifiers}
         If a creature is not trained as a mount, the DV to ride it increases by 5.
         If it lacks a saddle and other riding gear, the DV to ride it increases by 5.
         If it takes a standard action other than movement, such as attacking, the DV to ride it that round increases by 5.

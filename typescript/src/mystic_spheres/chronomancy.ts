@@ -469,7 +469,7 @@ export const chronomancy: MysticSphere = {
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
           \\item You can don a new set of body armor or clothing and equip any weapons or shields.
             All of the items you equip this way must be unattended and in your square, but they can be in a hidden location, such as in a backpack.
-          \\item You can use the \\ability{disguise creature} ability to affect yourself with a \\minus2 penalty (see \\pcref{Disguise Creature}.
+          \\item You can use the \\textit{change appearance} ability to affect yourself with a \\minus2 penalty (see \\pcref{Change Appearance}.
         \\end{itemize}
 
         % There must be text between an itemize block and the end of a mdframed env
@@ -523,8 +523,8 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Legerdemain',
 
       effect: `
-        If you are \\glossterm{trained} with the Sleight of Hand skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Sleight of Hand as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       narrative: `

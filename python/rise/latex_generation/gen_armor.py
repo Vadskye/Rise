@@ -277,7 +277,7 @@ def generate_armor():
         create_armor(
             name="Hidden Armor",
             rank=1,
-            tags=["Sensation"],
+            tags=[],
             material_type="Body armor",
             description="""
                  As a standard action, you can use this armor.
@@ -338,7 +338,7 @@ def generate_armor():
             material_type="Body armor",
             description="""
                 You gain a +1 \\glossterm<magic bonus> to your Armor defense.
-                However, you take a -10 foot penalty to your \\glossterm<movement speed> with all movement modes.
+                However, you take a -10 foot penalty to your speed with all movement modes.
             """,
             short_description="Grants +1 AD, but -10 speed",
             upgrades=[

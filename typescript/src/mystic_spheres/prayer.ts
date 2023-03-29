@@ -551,7 +551,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
-        Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm{undead} or an evil \\glossterm{planeforged}.
+        Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
         `,
       rank: 1,
       type: 'Attune',
@@ -576,7 +576,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
-        Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm{planeforged}.
+        Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
         `,
       rank: 1,
       type: 'Attune',

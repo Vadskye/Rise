@@ -193,7 +193,7 @@
         This includes vital wounds that have no specific vital wound effect.
         The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
         Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
-        This roll is not a \glossterm{check}, so you can't affect it with abilities like \glossterm{desperate exertion}.
+        This roll is not a \glossterm{check}, so you can't affect it with abilities like \ability{desperate exertion}.
 
         \begin{dtable}
             \lcaption{Vital Wound Effects}
@@ -432,7 +432,7 @@
         A creature with a fly speed cannot fly while it is carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
         In addition, it cannot fly while it has any \glossterm{encumbrance}.
 
-        \parhead{Maximum Height} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
+        \parhead{Height Limit}\label{Height Limit} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
         This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
         You can fly above surfaces like water as long as they are thick enough to support your weight.
 
@@ -832,7 +832,8 @@
             You must be able to \glossterm{touch} each target, but unlike normal for touch abilities, you don't have to beat their Reflex defense.
             If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
 
-            On a hit, you can move up to half your movement speed in a straight line, \glossterm{pushing} each target as you move.
+            On a hit, you can move up to half your movement speed in a straight line.
+            You automatically \glossterm{push} each target as you move.
         \end{activeability}
 
         % It's important that this can only be used with movements

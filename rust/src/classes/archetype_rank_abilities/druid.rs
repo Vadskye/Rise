@@ -489,14 +489,14 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Myriad Form}
                         \rankline
-                        If you are \glossterm{trained} with the Disguise skill, you gain a +3 bonus to it.
+                        If you have Disguise as a \glossterm{trained skill}, you gain a +3 bonus to it.
                         Otherwise, you are treated as being trained in that skill.
 
                         \rankline
                         % No maximum because the ability is magical
                         \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
                             If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
-                        \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
+                        \rank{5} You can disguise yourself as a \glossterm{standard action} (see \pcref{Disguise}).
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
@@ -588,7 +588,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
                 You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
                 The armor regains its normal shape if you take it off.
-                For details about shapeshifting, see \pcref{Shapeshift}.
+                For details about shapeshifting, see \pcref{Shapeshifting}.
             ",
             modifiers: None,
         },
@@ -745,7 +745,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                This ability also protects you and your allies from plant \glossterm{animates}, elemental \glossterm{planeforged}, and all summoned creatures.
+                % TODO: does this need a glossterm? These are only defined fully in the Tome of Guidance.
+                This ability also protects you and your allies from plant animates, elemental planeforged, and all summoned creatures.
             ",
             modifiers: None,
         },

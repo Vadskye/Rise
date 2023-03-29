@@ -1,5 +1,6 @@
 import { SpellLike } from "@src/mystic_spheres";
 import { sentenceCase } from "change-case";
+import { formatTagLatex} from "@src/latex/format/ability_tag";
 
 export function spellTypePrefix(
   spell: Pick<SpellLike, "castingTime" | "tags" | "type" | "rank">,
@@ -24,7 +25,7 @@ export function spellTypePrefix(
     tags && tags.length > 0
       ? `${tags
           .sort()
-          .map((t) => (t.includes("abilitytag") ? t : `\\abilitytag{${t}}`))
+          .map(formatTagLatex)
           .join(", ")}`
       : "";
 

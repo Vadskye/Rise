@@ -102,7 +102,6 @@
 \newcommand{\panicked}{\debuff{panicked} \reminder{\minus4 Mental, cannot attack source}\xspace}
 \newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
 \newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
-\newcommand{\petrified}{\debuff{petrified}\xspace}
 \newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 Armor and Ref}\xspace}
 \newcommand{\shaken}{\debuff{shaken} \reminder{\minus1 Mental, \minus1 accuracy vs. source}\xspace}
 \newcommand{\slowed}{\debuff{slowed} \reminder{half speed, \minus2 Armor and Ref}\xspace}
@@ -351,7 +350,7 @@
             }
         }
     }
-    \label{#2}
+    \label{#3}
 }
 
 % args:
@@ -362,22 +361,24 @@
 {
     \IfValueT{#2}
     {
-        % Enable this to test for missing glossary definitions
-        % \label{#2}\label{#2s}
-        % Enable this to test for unnecessary glossary entries
-        % \pref{#2}
-
-        \hypertargetraised{#3:#2}{}
-        \hypertargetraised{#3:#2s}{}
+        \termlinks{#2}{#3}
     }
+    \termlinks{#1}{#3}
+    \parhead{#1}
+}
+
+% args:
+%   #1: name of term
+%   #2: hyperlink prefix
+\DeclareDocumentCommand{\termlinks}{m m}
+{
     % Enable this to test for missing glossary definitions
     % \label{#1}\label{#1s}
     % Enable this to test for unnecessary glossary entries
     % \pref{#1}
 
-    \hypertargetraised{#3:#1}{}
-    \hypertargetraised{#3:#1s}{}
-    \parhead{#1}
+    \hypertargetraised{#2:#1}{}
+    \hypertargetraised{#2:#1s}{}
 }
 
 \DeclareDocumentCommand{\trait}{o m}
@@ -404,6 +405,8 @@
     {\termdef{#1}[#2]{gloss}}
     {\termdef{#1}{gloss}}
 }
+\DeclareDocumentCommand{\glosssynonym}{m}
+{\termlinks{#1}{gloss}}
 
 \DeclareDocumentCommand{\sphereterm}{o m}
 {
@@ -544,6 +547,11 @@
         }
     }
     \label{item:#2}
+}
+
+\DeclareDocumentCommand{\upgraderank}{m m}
+{
+    \rank{\hypertargetraised{item:#1}}{#2\label{item:#1}}
 }
 
 % \, is a small non-breaking space

@@ -221,7 +221,6 @@ def debuff_explanation(debuff):
         "panicked": "-4 Mental, cannot attack source",
         "paralyzed": "cannot move",
         "partially unaware": "-2 Armor and Ref",
-        "petrified": "turned to stone",
         "prone": "half speed, -2 Armor and Ref",
         "shaken": "-1 Mental, -1 accuracy vs. source",
         "slowed": "half speed, -2 Armor and Ref",

@@ -1388,7 +1388,8 @@ def generate_tools():
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
                 Its stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
-                Its stage 3 effect makes the target \\petrified while the poison lasts.
+                Its stage 3 effect makes the target petrified while the poison lasts.
+                This makes the target \\paralyzed, except that they remain standing in the form of a statue.
             """,
             short_description="Slows and stuns, eventually petrifies",
         ),
