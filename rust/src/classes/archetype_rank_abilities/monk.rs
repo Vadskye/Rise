@@ -474,6 +474,15 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            name: "Ki Manifestation",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You learn an additional \textit{ki manifestation}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Ki Barrier+",
             is_magical: true,
             rank: 5,
@@ -500,15 +509,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 The power bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
-        },
-        RankAbility {
-            name: "Hardened Ki",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You gain a \plus1 bonus to your Willpower.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Endless Ki",
@@ -638,9 +638,19 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You are immune to being \dazed, \stunned, and \confused.
+            ",
+            // TODO: represent immunities?
+            modifiers: None,
+        },
+        RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
@@ -649,46 +659,27 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Feel the Flow of Life+",
+            name: "Diamond Soul",
             is_magical: true,
             rank: 4,
             description: r"
-                The range of your lifesense increases by 120 feet, and the range of your lifesight increases by 30 feet.
+                You gain a \plus1 bonus to your Willpower.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Feel the Flow of Life+",
             is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Transcend Uncertainty",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused.
-            ",
-            // TODO: represent immunities?
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Transcend Time",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You are immune to being \slowed and \immobilized.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Transcend Emotion",
             is_magical: false,
-            rank: 5,
+            rank: 3,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
                 In addition, you are immune to being \shaken, \frightened, and \panicked.
