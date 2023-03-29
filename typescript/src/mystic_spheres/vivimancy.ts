@@ -481,8 +481,8 @@ export const vivimancy: MysticSphere = {
       name: "Healer's Intuition",
 
       effect: `
-        If you are \\glossterm{trained} with the Medicine skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Medicine as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {

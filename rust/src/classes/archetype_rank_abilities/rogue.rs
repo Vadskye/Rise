@@ -127,7 +127,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain all Knowledge skills as \glossterm{class skills}.
-                In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are \glossterm{untrained} with.
+                In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are untrained in (see \pcref{Trained Skills}).
             ",
             modifiers: None,
         },
@@ -165,7 +165,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
                 You must use either an instrumental performance or a vocal performance, and not a visual performance.
                 If you use a vocal performance, the bardic performance gains the \abilitytag{Speech} tag, preventing it from affecting creatures that do not speak the language you perform in.
-                If you are \glossterm{trained} with a Perform skill capable of making an auditory performance, you gain a \plus1 bonus to \glossterm{accuracy} with any \textit{bardic performance} ability using that perform skill.
+                If you have a Perform \glossterm{trained skill} that you can use to make an auditory performance, you gain a \plus1 bonus to \glossterm{accuracy} with any \textit{bardic performance} ability using that perform skill.
 
                 The names of bardic performances do not have to precisely match your actual performance.
                 For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
@@ -425,7 +425,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
         },

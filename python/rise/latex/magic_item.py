@@ -107,7 +107,7 @@ class MagicItem(object):
         if self.upgrades is None:
             return None
         return "\n".join([
-            f"\\rank<\\hypertargetraised<item:{self.name + '+' * (upgrade_tier+1)}><{rank_price_text(self, u.rank)}>> {u.description}"
+            f"\\upgraderank<{self.name + '+' * (upgrade_tier+1)}><{rank_price_text(self, u.rank)}> {u.description}"
             for upgrade_tier, u in enumerate(self.upgrades)
         ])
 

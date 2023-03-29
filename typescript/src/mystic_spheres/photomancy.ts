@@ -13,12 +13,12 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain a +4 bonus, and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
+          you gain a +4 bonus, and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
           This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        name: 'disguise creature',
+        name: 'change appearance',
       },
       scaling: {
         2: `The bonus increases to +6.`,
@@ -102,7 +102,7 @@ export const photomancy: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         In addition, choose one of the targets as the primary target.
-        You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref{Disguise Creature}).
+        You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of each target's clothes and equipment, regardless of their original form.
       `,
       rank: 3,
@@ -345,7 +345,7 @@ export const photomancy: MysticSphere = {
       name: 'Disguise Image',
 
       effect: `
-        You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
+        You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
       `,
       rank: 1,
@@ -512,7 +512,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           Each target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
-          This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or \\glossterm{invisibility}.
+          This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or being \\trait{invisible}.
           Other miss chances, such as the miss chance from attacking it while dazzled, are unaffected.
         `,
         targeting: `

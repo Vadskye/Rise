@@ -148,7 +148,8 @@ export const toxicology: MysticSphere = {
         Choose one living creature within \\medrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
         The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
-        The stage 3 effect makes the target \\petrified while the poison lasts.
+        The stage 3 effect makes the target petrified while the poison lasts.
+        This makes the target \\paralyzed, except that they remain standing in the form of a statue.
       `,
       rank: 5,
       scaling: 'poison',

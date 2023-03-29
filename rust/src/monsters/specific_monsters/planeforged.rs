@@ -302,7 +302,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 level: 14,
                 modifiers: Some(vec![
                     Modifier::Maneuver(
-                        Maneuver::StripTheFlesh
+                        Maneuver::DoubleStrike
                     ),
                 ]),
                 name: "Justicar".to_string(),

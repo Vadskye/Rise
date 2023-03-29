@@ -477,7 +477,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Zealous Pursuit}
                     \par \noindent Usage time: One \glossterm{minor action}
                     \rankline
-                    You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \abilitytag{zealous fixation} ability.
+                    You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \textit{zealous fixation} ability.
                     You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.
                     If multiple valid destination spaces exist, you teleport into the one closest to your original location.
                     If no valid destination spaces exist, this ability fails with no effect.

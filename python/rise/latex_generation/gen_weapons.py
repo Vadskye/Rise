@@ -395,7 +395,7 @@ def generate_weapons():
             name="Ricocheting",
             rank=4,
             description="""
-                When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
+                When you make a ranged \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
                 Each secondary target must be within 15 feet of a primary target, and must not already be a target of the strike.
                 The strike affects each secondary target in the same way as the primary target.
                 If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
@@ -540,7 +540,7 @@ def generate_weapons():
 
                 In addition, as a standard action, you can throw this weapon in a spinning arc.
                 When you do, make a thrown \\glossterm<strike> against up to two targets within \\shortrange.
-                The targets must still be within your \\glossterm<range limits>, and you take any \\glossterm<longshot penalties> as normal.
+                The targets must still be within your \\glossterm<range limits>, and you take any \\glossterm<longshot penalty> as normal.
             """,
             short_description="Can be thrown to strike two nearby foes",
             upgrades=[
@@ -668,7 +668,7 @@ def generate_weapons():
                 Upgrade(
                     rank=7,
                     description="""
-                         You also reduce your \\glossterm<longshot penalties> with the weapon by 2.
+                         You also reduce your \\glossterm<longshot penalty> with the weapon by 2.
                     """,
                     short_description="Teleports long distances when thrown",
                 ),

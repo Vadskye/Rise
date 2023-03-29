@@ -84,8 +84,8 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Authority',
 
       effect: `
-        If you are \\glossterm{trained} with the Persuasion skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -463,7 +463,7 @@ export const channelDivinity: MysticSphere = {
         Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
-        You can specify the destination by naming an \\glossterm{astral anchor}.
+        You can specify the destination by naming an \\glossterm{astral beacon}.
         Alternately, you can specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.

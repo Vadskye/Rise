@@ -100,8 +100,8 @@ impl Class {
             // 5 points per attunement point
             self.attunement_points() * 5
             + hp_dr_points(self.damage_resistance())
-            // 2 points to get an Armor defense
-            + self.defense_bonus(&Defense::Armor) * 2
+            // 3 points to get an Armor defense
+            + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
@@ -1474,7 +1474,7 @@ impl Class {
                     \subsubsection{Knowledge Domain}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{magicalactiveability}{Share Knowledge}
@@ -1547,7 +1547,7 @@ impl Class {
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
@@ -1561,7 +1561,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{magicalactiveability}{Dimensional Travel}
@@ -1582,7 +1582,7 @@ impl Class {
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
                         \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -1639,7 +1639,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         % TODO: clarify whether you can have this and the druid ability
                         \parhead{Aspect} This ability functions like the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.

@@ -541,7 +541,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             MovementSpeed::new(
                 MovementMode::Fly(FlightManeuverability::Poor),
-                SpeedCategory::VeryFast,
+                SpeedCategory::Double,
             ),
         ]),
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
