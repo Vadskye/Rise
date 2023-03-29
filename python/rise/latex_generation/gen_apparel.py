@@ -1740,7 +1740,7 @@ def generate_apparel():
         ),
         create_apparel(
             name="Ring of Spell Investment, Greater",
-            rank=4,
+            rank=5,
             material_type="Ring",
             tags=[],
             description="""
