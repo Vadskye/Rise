@@ -88,9 +88,9 @@ class Spell(object):
             return ""
 
         fatigue_points_text = (
-            f"{(self.level ** 2) * 2} \\glossterm<fatigue points>"
+            f"{(self.level ** 2) * 2} \\glossterm<fatigue levels>"
             if self.ritual_time in ["24 hours", "one week"]
-            else "one \\glossterm<fatigue point>"
+            else "one \\glossterm<fatigue level>"
         )
         return f"This ritual takes {self.ritual_time} to perform, and it requires {fatigue_points_text} from its participants."
 

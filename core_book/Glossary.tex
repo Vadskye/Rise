@@ -32,11 +32,15 @@ For details, see \pcref{Archetypes}.
 \glossdef{archetype rank} Each ability from an \glossterm{archetype} has a minimum rank required to gain the ability.
 For details, see \pcref{Archetype Ranks}.
 
+\glossdef{area} Many abilities affect a broad area.
+There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
+For details, see \pcref{Area}.
+
 \glossdef{armor} Armor is a form of equipment that protects your body from harm.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
 For details, see \pcref{Armor}.
 
-\glossterm{astral beacon} An area with an astral beacon is easier to \glossterm{teleport} to using long-distance teleportation abilities.
+\glossdef{astral beacon} An area with an astral beacon is easier to \glossterm{teleport} to using long-distance teleportation abilities.
 For details, see \pcref{Astral Beacons}.
 
 \glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
@@ -331,6 +335,10 @@ Heavy undergrowth provides \glossterm{concealment} and is considered \glossterm{
 \glossdef{heavyweight} A heavyweight object has a \glossterm{weight category} that is one category larger than the object's \glossterm{size category}.
 For details, see \pcref{Weight Categories}.
 
+\glossdef{height limit} Some abilities have a height limit.
+A height limit defines your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+This is common for flying creatures (see \pcref{Flight}).
+
 \glossdef{hit point} Your hit points measure how hard you are to seriously injure or kill.
 You lose hit points when you take damage.
 If you run out of hit points, you gain \glossterm{vital wounds} when you take damage instead, which can cause you to die quickly.
@@ -414,9 +422,13 @@ For details, see \pcref{Stacking Rules}.
 There are four magic sources: arcane, divine, nature, and pact.
 Sorcerers and wizards cast arcane spells, clerics and paladins cast divine spells, druids cast nature spells, and warlocks cast pact spells.
 
-\glossdef{magical}[Magical] A magical ability is an ability whose origin derives from magic.
+\glossdef{magical} A magical ability is an ability whose origin derives from magic.
 Examples include \glossterm{spells}, a dragon's ability to fly, and a paladin's ability to smite foes.
 For details, see \pcref{Magical Abilities}.
+
+\glossdef{magical power} Your magical power is your \glossterm{power} with \magical abilities.
+It is typically equal to half your level \add your Willpower.
+For details, see \pcref{Power}.
 
 \glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to through particular combat styles.
 For details, see \pcref{Combat Styles}.
@@ -462,7 +474,7 @@ The most common mode is a \glossterm{land speed}.
 For details, see \pcref{Movement Modes}.
 
 \glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
-During the movement phase, creatures can \glossterm{move} and take \glossterm{move actions}.
+During the movement phase, creatures can make \glossterm{movements} (see \pcref{Movement and Positioning}.
 The movement phase is followed by the \glossterm{action phase}.
 
 \glossdef{multiclass} A multiclass character can gain access to \glossterm{archetypes} and other abilities from multiple classes.
@@ -472,6 +484,10 @@ For details, see \pcref{Multiclass Characters}.
 Mundane abilities have some form of natural explanation and do not fundamentally originate from a magical source.
 Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
 Unless otherwise indicated, all abilities are mundane in nature.
+
+\glossdef{mundane power} Your mundane power is your \glossterm{power} with \glossterm{mundane} abilities.
+It is typically equal to half your level \add your Strength.
+For details, see \pcref{Power}.
 
 \glossdef{mystic sphere} A mystic sphere is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
 For details, see \pcref{Mystic Spheres}.
@@ -543,9 +559,10 @@ A push movement is always a single straight line.
 
 \glossdef{range} The range of an ability determines how far away it can be used.
 Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+There are five standard ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
 For details, see \pcref{Range}.
 
-\glossdef{range limits} Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
+\glossdef{range limit}[range limits] Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
 The first number indicates the maximum range for a weapon's \glossterm{close range}.
 The second number indicates the maximum range for a weapon's \glossterm{long range}.
 For details, see \pcref{Weapon Range Limits}.
@@ -693,6 +710,8 @@ A \glossterm{strike} is a targeted ability, and so is a spell or other special a
 \glossdef{telepathy} A creature with telepathy can mentally communicate with other creatures within a given range.
 For details, see \pcref{Telepathy}.
 
+\glosssynonym{teleports}
+\glosssynonym{teleported}
 \glossdef{teleportation}[teleport] A creature or object that is teleported instantly leaves one location and arrives at another.
 Unless otherwise specified, teleporation requires \glossterm{line of sight}, \glossterm{line of effect}, and an unoccupied destination on stable ground.
 For deatils, see \pcref{Teleportation}.
@@ -704,7 +723,10 @@ For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
 
 \glossdef{touch} You can touch an adjacent creature if it is an \glossterm{ally} or if you beat its Reflex defense (see \pcref{Touch}).
 
-\glossdef{trained} If you are trained in a \glossterm{skill}, you have learned how to use it well.
+% TODO: define standard trap rules
+% \glossdef{trap}
+
+\glossdef{trained skill} If you are trained in a \glossterm{skill}, you have learned how to use it well.
 Your modifier with a trained skill is equal to 3 \add the higher of its associated attribute (if any) and half your level.
 For details, see \pcref{Trained Skills}.
 
@@ -724,11 +746,6 @@ Some abilities can only affect unattended items.
 \glossdef{undergrowth} The presence of a significant amount of roots, bushes, and similar plants that can obstruct movement is called undergrowth.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
 For details, see \pcref{Undergrowth}.
-
-\glossdef{untrained} If you are untrained in a \glossterm{skill}, you have no particular ability with it.
-You are untrained with all skills by default.
-Your modifier with a trained skill is equal to half of its associated attribute (if any).
-For details, see \pcref{Trained Skills}.
 
 \glossdef{usage class} The \glossterm{usage class} of armor is a measure of how much effort it takes to use it.
 For details, see \pcref{Armor Usage Classes}.

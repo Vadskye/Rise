@@ -252,18 +252,16 @@ def generate_apparel():
             rank=2,
             material_type="Gloves",
             description="""
-                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 1.
+                When you make a thrown \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 1 (see \\pcref<Thrown Strike>).
             """,
             short_description="Reduces thrown longshot penalty by 1",
-        ),
-        create_apparel(
-            name="Gloves of Telekinetic Propulsion, Greater",
-            rank=5,
-            material_type="Gloves",
-            description="""
-                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 2.
-            """,
-            short_description="Reduces thrown longshot penalty by 1",
+            upgrades=[
+                Upgrade(
+                    description="The penalty reduction increases to 2.",
+                    rank=5,
+                    short_description="Reduces thrown longshot penalty by 2",
+                ),
+            ],
         ),
     ]
     # Head
@@ -839,7 +837,7 @@ def generate_apparel():
             rank=5,
             material_type="Boots",
             description="""
-                You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flying>).
+                You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flight>).
             """,
             short_description="Grants flight up to 15 feet high",
         ),
@@ -1101,7 +1099,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are not \\glossterm<unconscious> due to \\glossterm<fatigue>, you automatically remove one of your \\glossterm<vital wounds>.
+                At the end of each round, if your \\glossterm<fatigue level> does not exceed your \\glossterm<fatigue tolerance>, you automatically remove one of your \\glossterm<vital wounds>.
                 You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
                 When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
             """,
@@ -1263,7 +1261,7 @@ def generate_apparel():
             name="Assassin's Cloak",
             rank=3,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 At the end of each round, if you took no actions that round, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
@@ -1274,7 +1272,7 @@ def generate_apparel():
             name="Assassin's Cloak, Greater",
             rank=5,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 At the end of each round, if you took no actions during the \\glossterm<action phase> of that round, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action during the action phase.
@@ -1285,7 +1283,7 @@ def generate_apparel():
             name="Assassin's Cloak, Supreme",
             rank=7,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 At the end of each round, if you took no \\glossterm<standard actions> during that round, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take a standard action.
@@ -1324,11 +1322,11 @@ def generate_apparel():
             name="Vanishing Cloak",
             rank=5,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 As a standard action, you can activate this cloak.
                 When you do, you \\glossterm<teleport> to an unoccupied location within \\rngmed range of your original location.
-                As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Hide>).
+                As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Stealth>).
                 Unlike most teleportation, this teleportation does not make any noise.
             """,
             short_description="Can teleport silently",
@@ -1337,7 +1335,7 @@ def generate_apparel():
             name="Vanishing Cloak, Greater",
             rank=7,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
@@ -1841,7 +1839,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with movement-based skills",
         ),
@@ -1853,7 +1851,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with movement-based skills",
         ),
@@ -1876,7 +1874,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Craft, Devices, Flexibility, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with finesse-based skills",
         ),
@@ -1888,7 +1886,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Craft, Devices, Medicine, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with finesse-based skills",
         ),
@@ -1911,7 +1909,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with observation-based skills",
         ),
@@ -1923,7 +1921,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with observation-based skills",
         ),
@@ -2395,7 +2393,7 @@ def generate_apparel():
             description="""
                 Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
             """,
-            short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
+            short_description="Using \\ability<cleansing discipline> also helps an adjacent ally",
         ),
         create_apparel(
             name="Amulet of Shared Discipline, Greater",
@@ -2405,7 +2403,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
-            short_description="Using the \\abilitytag<cleansing discipline> ability also helps a nearby ally",
+            short_description="Using the \\ability<cleansing discipline> ability also helps a nearby ally",
         ),
     ]
 
@@ -2718,7 +2716,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
         ),
@@ -2728,7 +2726,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
         ),
@@ -2738,7 +2736,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 3",
         ),

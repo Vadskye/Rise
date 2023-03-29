@@ -68,7 +68,8 @@ export const revelation: MysticSphere = {
       name: 'Purge Invisibility',
 
       effect: `
-        All \\glossterm{invisibility} effects within a \\largearea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
+        Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
+        Any effects that would cause them to be invisible are \\glossterm{suppressed}.
       `,
       rank: 2,
       scaling: {
@@ -523,8 +524,8 @@ export const revelation: MysticSphere = {
       name: 'Enhanced Senses',
 
       effect: `
-        If you are \\glossterm{trained} with the Awareness skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Awareness as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -539,8 +540,8 @@ export const revelation: MysticSphere = {
       name: 'Social Intuition',
 
       effect: `
-        If you are \\glossterm{trained} with the Social Insight skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Social Insight as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {

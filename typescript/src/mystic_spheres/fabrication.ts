@@ -562,7 +562,7 @@ export const fabrication: MysticSphere = {
           you can choose whether the barrier blocks sound.
           You can change whether the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
-          Both types of barrier still block \\glossterm{line of effect} for effects that deal \\glossterm{bludgeoning damage}, even if they narratively come from a sound or voice.
+          Both types of barrier still block \\glossterm{line of effect} for effects that deal bludgeoning damage, even if they narratively come from a sound or voice.
           If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
         `,
         name: 'mystic barrier',

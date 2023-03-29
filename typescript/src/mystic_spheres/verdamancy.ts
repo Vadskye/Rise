@@ -489,8 +489,8 @@ export const verdamancy: MysticSphere = {
       name: 'Survivalist',
 
       effect: `
-        If you are \\glossterm{trained} with the Survival skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Survival as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -600,7 +600,7 @@ export const verdamancy: MysticSphere = {
         In addition, choose a destination up to 100 miles away from you on your current plane.
         By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest chosen ritual participant.
 
-        You can specify the destination by naming an \\glossterm{astral anchor}.
+        You can specify the destination by naming an \\glossterm{astral beacon}.
         Alternately, you must specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.

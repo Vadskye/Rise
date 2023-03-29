@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
 use crate::core_mechanics::attacks::StandardAttack;
-use crate::core_mechanics::{Debuff, MovementSpeed, Sense, Size, SpecialDefenseType};
+use crate::core_mechanics::{Debuff, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -91,14 +91,17 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 ".to_string(),
                 is_magical: true,
                 name: "Dominate".to_string(),
-                tags: Some(vec![AbilityTag::Compulsion]),
+                tags: Some(vec![AbilityTag::Compulsion, AbilityTag::Elite]),
                 usage_time: None,
             }),
             Modifier::Attack(StandardAttack::AbolethSlam.attack()),
             Modifier::Attack(StandardAttack::AbolethPsionicBlast.attack()),
             Modifier::Attack(StandardAttack::MindCrush(5).attack()),
         ]),
-        movement_speeds: None,
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
+        ]),
         name: "Aboleth".to_string(),
         role: Role::Warrior,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),

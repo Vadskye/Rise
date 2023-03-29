@@ -30,7 +30,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
+          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
           This is a physical change to your body, so no amount of inspection will reveal your true form.
           A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
 
@@ -63,7 +63,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Disguise Creature}).
+          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Change Appearance}).
           This is a physical change to your body, so no amount of inspection will reveal your true form.
           A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
         `,
@@ -389,8 +389,8 @@ export const polymorph: MysticSphere = {
       name: 'Camouflage',
 
       effect: `
-        If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -481,7 +481,7 @@ export const polymorph: MysticSphere = {
       name: 'Vital Regeneration',
 
       effect: `
-        At the end of each round, if the target is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
@@ -678,7 +678,7 @@ export const polymorph: MysticSphere = {
         \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
         \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
         \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
-        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
+        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Awareness}).
       `,
       rank: 5,
       scaling: {
