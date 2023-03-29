@@ -342,6 +342,6 @@ impl HasModifiers for Creature {
 
 fn assert_modifier_is_valid(creature: &Creature, modifier: &Modifier) {
     if let Modifier::Maneuver(maneuver) = modifier {
-        maneuver.assert_meets_rank_requirement(creature.rank())
+        maneuver.assert_meets_rank_requirement(creature.name.as_ref().unwrap_or(&"???".to_string()), creature.rank())
     }
 }
