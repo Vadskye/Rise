@@ -29,8 +29,9 @@ impl ChallengeRating {
         if self == &ChallengeRating::Four {
             creature
                 .passive_abilities
-                .push(StandardPassiveAbility::TwoActions.ability());
-            let maximum_conditions = if creature.level >= 12 { 3 } else { 4 };
+                .push(StandardPassiveAbility::EliteActions.ability());
+            // TODO: figure out whether this should scale with level
+            let maximum_conditions = 4;
             creature
                 .passive_abilities
                 .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());

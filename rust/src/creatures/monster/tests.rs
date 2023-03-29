@@ -1,31 +1,11 @@
 use super::*;
 use crate::core_mechanics::attacks::{HasAttacks, Maneuver, StandardAttack};
 use crate::core_mechanics::{HasDamageAbsorption, HasDefenses};
-use std::cmp::max;
+use crate::testing::assert_multiline_eq;
 
 #[cfg(test)]
 mod to_section {
     use super::*;
-
-    fn assert_multiline_eq(left: &str, right: String) {
-        let left_split = left.split("\n").collect::<Vec<&str>>();
-        let right_split = right.split("\n").collect::<Vec<&str>>();
-        for i in 1..max(left_split.len(), right_split.len()) {
-            if i == left_split.len() {
-                panic!(
-                    "Left is missing line {}; right has `{}`\n{}\n",
-                    i, right_split[i], right,
-                );
-            } else if i == right_split.len() {
-                panic!(
-                    "Right is missing line {}; right has `{}`\n{}\n",
-                    i, left_split[i], right
-                );
-            } else {
-                assert_eq!(left_split[i], right_split[i], "\n{}\n", right);
-            }
-        }
-    }
 
     #[test]
     fn standard_monster_level_1_cr1() {

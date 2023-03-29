@@ -30,8 +30,8 @@ impl AbilityType {
     fn environment_tag(&self) -> String {
         match self {
             Self::Normal => "".to_string(),
-            Self::Sustain(action) => format!("[\\abilitytag<Sustain> {}]", action),
-            Self::Attune(subtype) => format!("[\\abilitytag<Attune>{}]", attune_suffix(subtype)),
+            Self::Sustain(action) => format!("<\\abilitytag<Sustain> {}>", action),
+            Self::Attune(subtype) => format!("<\\abilitytag<Attune>{}>", attune_suffix(subtype)),
         }
     }
 

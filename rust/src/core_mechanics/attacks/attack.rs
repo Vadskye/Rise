@@ -1,5 +1,4 @@
-use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
-use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
+use crate::core_mechanics::abilities::{AbilityExtraContext, latex_ability_block, Targeting, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
