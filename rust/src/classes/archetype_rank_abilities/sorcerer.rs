@@ -439,13 +439,13 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You can retain up to two spells with this ability.
+                You can retain up to three spells with this ability.
                 In addition, whenever you absorb a spell, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Absorption+",
+            name: "Spell Absorption++",
             is_magical: true,
             rank: 7,
             description: r"
