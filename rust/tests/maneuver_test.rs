@@ -4,23 +4,21 @@ mod maneuver_tests {
     use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
     use rise::core_mechanics::{Attribute, HasAttributes};
     use rise::creatures::creature::Creature;
-    use rise::creatures::{Character, CreatureCategory};
+    use rise::creatures::{Character, CreatureCategory, HasModifiers, Modifier};
     use rise::equipment::StandardWeapon;
 
     #[test]
     fn it_calculates_attack_counts() {
         let mut creature = Creature::new(1, CreatureCategory::Character);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
-        creature.add_special_attack(
-            Maneuver::CertainStrike.attack(StandardWeapon::Broadsword.weapon()),
-        );
+        creature.add_modifier( Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             2,
             creature.calc_all_attacks().len(),
-            "Should have 2 attack, since maneuvers do not override existing weapons"
+            "Should have 2 attacks, since maneuvers do not override existing weapons"
         );
         creature.add_special_attack(
-            Maneuver::CertainStrike.attack(StandardWeapon::Greatsword.weapon()),
+            Maneuver::CertainStrike.attack(StandardWeapon::Greatsword.weapon(), creature.rank()),
         );
         assert_eq!(
             3,
@@ -41,9 +39,7 @@ mod maneuver_tests {
         // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
         creature.set_base_attribute(Attribute::Strength, 3);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
-        creature.add_special_attack(
-            Maneuver::CertainStrike.attack(StandardWeapon::Broadsword.weapon()),
-        );
+        creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             vec![
                 "Certain Broadsword +2 (The target takes 1d8 slashing damage.)",

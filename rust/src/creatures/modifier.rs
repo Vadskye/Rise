@@ -175,7 +175,7 @@ impl Modifier {
             Self::ActiveAbility(a) => a.is_magical,
             Self::Attack(a) => a.is_magical,
             Self::PassiveAbility(a) => a.is_magical,
-            Self::Maneuver(m) => m.attack(StandardWeapon::Broadsword.weapon()).is_magical,
+            Self::Maneuver(m) => m.is_magical(),
             _ => false,
         }
     }

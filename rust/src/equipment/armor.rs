@@ -282,7 +282,7 @@ impl Armor {
             },
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(5, m),
+                damage_resistance: calc_dr(4, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 5,
@@ -292,7 +292,7 @@ impl Armor {
             },
             Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(5, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -314,7 +314,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
+                damage_resistance: calc_dr(6, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
@@ -324,7 +324,7 @@ impl Armor {
             },
             Self::PlatedMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
@@ -334,7 +334,7 @@ impl Armor {
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(12, m),
+                damage_resistance: calc_dr(10, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
@@ -531,28 +531,28 @@ mod tests {
     #[test]
     fn calc_special_material_damage_resistance() {
         assert_eq!(
-            12,
+            10,
             Armor::FullPlate(None).damage_resistance(),
             "Should be 12 with no material"
         );
         assert_eq!(
-            24,
+            20,
             Armor::FullPlate(Some(ArmorMaterial::Deepforged)).damage_resistance(),
             "Should be 2x with deepforged"
         );
         assert_eq!(
-            36,
+            30,
             Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
                 .damage_resistance(),
             "Should be 3x with dragonhide"
         );
         assert_eq!(
-            48,
+            40,
             Armor::FullPlate(Some(ArmorMaterial::Adamantine)).damage_resistance(),
             "Should be 4x with adamantine"
         );
         assert_eq!(
-            48,
+            40,
             Armor::FullPlate(Some(ArmorMaterial::PureDeepforged)).damage_resistance(),
             "Should be 4x with pure deepforged"
         );

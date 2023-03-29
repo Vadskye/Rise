@@ -177,7 +177,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         modifiers: Some(vec![
             Modifier::Attack(
                 Maneuver::ArmorpiercerPlus
-                    .attack(StandardWeapon::Slam.weapon())
+                    .attack(StandardWeapon::Slam.weapon(), 3)
                     .except(|a| a.name = "Impaling Tentacles".to_string())
                     .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
             ),
@@ -305,7 +305,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: 5,
         modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(
-                Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon()),
+                Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon(), 2),
             ),
         ])),
         movement_speeds: Some(vec![

@@ -121,7 +121,7 @@ mod to_section {
             .weapons
             .push(StandardWeapon::Greatsword.weapon());
         monster.creature.add_modifier(
-            Modifier::Attack(Maneuver::StripTheFlesh.attack(StandardWeapon::Greatsword.weapon())),
+            Modifier::Maneuver(Maneuver::StripTheFlesh),
             None,
             None,
         );
