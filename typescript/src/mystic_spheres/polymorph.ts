@@ -530,7 +530,6 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
       type: 'Attune',
     },
 
