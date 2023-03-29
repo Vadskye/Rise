@@ -62,8 +62,8 @@ impl Role {
 
     pub fn damage_resistance(&self) -> i32 {
         match self {
-            Role::Brute => 2,
-            Role::Skirmisher => 0,
+            Role::Brute => 0,
+            Role::Skirmisher => 2,
             Role::Warrior => 4,
             Role::Sniper => 0,
             Role::Mystic => 4,

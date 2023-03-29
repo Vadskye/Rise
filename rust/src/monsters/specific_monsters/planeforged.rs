@@ -220,7 +220,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
-            (-10, "
+            (-5, "
                 Angels are the ultimate champions of good in the endless battle of good and evil.
                 They are native to the Celestial Heavens, and they often serve the interests of good-aligned deities.
             "),
@@ -228,7 +228,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
                 Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
             "),
-            (10, "
+            (5, "
                 In battle, angels are feared for their fundamental perfection.
                 They tend not to have any weaknesses for attackers to use against them.
                 Their only true foes are demons, who use overwhelming hordes rather than any clever tactics.
