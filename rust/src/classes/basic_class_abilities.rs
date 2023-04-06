@@ -177,8 +177,11 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
     } else {
         let mut components = vec![String::from("simple weapons")];
         if let Some(specific_weapon_groups) = weapon_proficiencies.specific_weapon_groups {
-            for g in specific_weapon_groups {
-                components.push(g.name_plural().to_string());
+            if specific_weapon_groups.len() == 1 {
+                components.push(specific_weapon_groups[0].name_plural().to_string());
+            } else {
+                let specific_groups_text = specific_weapon_groups.iter().map(|g| g.name_plural().to_string()).collect::<Vec<String>>();
+                components.push(format!("any one of {}", latex_formatting::join_string_list(&specific_groups_text).unwrap()));
             }
         }
         if weapon_proficiencies.custom_weapon_groups > 0 {
