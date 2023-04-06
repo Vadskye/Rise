@@ -108,7 +108,7 @@ impl AgeCategory {
             is_strike: false,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
-            tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
+            tags: Some(vec![Tag::Ability(AbilityTag::Emotion), Tag::Ability(AbilityTag::Elite)]),
             targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
         });
     }
@@ -499,7 +499,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         is_strike: false,
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
-        tags: None,
+        tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
         targeting,
     };
 }
@@ -509,6 +509,7 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     for (i, modifier) in dragon_type.attribute_modifiers().iter().enumerate() {
         attributes[i] += modifier;
     }
+    // TODO: add more elite abilities
     let mut special_attacks = vec![breath_weapon(dragon_type, age_category)];
     if let Some(f) = age_category.frightful_presence() {
         special_attacks.push(f);

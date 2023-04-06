@@ -78,7 +78,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             Modifier::Attack(StandardAttack::DarkGrasp(3).attack()),
             Modifier::Attack(StandardAttack::DarkMiasma(3).attack().except(
                 |a| a.name = "Chilling Aura".to_string()
-            )),
+            ).except_elite()),
             Modifier::Impervious(SpecialDefenseType::Damage(DamageType::Cold)),
             Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
@@ -118,7 +118,7 @@ pub fn animates() -> Vec<MonsterEntry> {
         ])),
         level: 5,
         modifiers: Some(ModifierBundle::Amorphous.plus_modifiers(vec![
-            Modifier::Attack(StandardAttack::OozeDissolve(2).attack()),
+            Modifier::Attack(StandardAttack::OozeDissolve(2).attack().except_elite()),
             Modifier::Attack(StandardAttack::OozeEngulf(2).attack()),
             Modifier::PassiveAbility(PassiveAbility {
                 description: r"

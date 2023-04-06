@@ -151,7 +151,10 @@ impl StandardAttack {
                 is_strike: false,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
-                tags: Some(vec![Tag::Ability(AbilityTag::Compulsion)]),
+                tags: Some(vec![
+                    Tag::Ability(AbilityTag::Compulsion),
+                    Tag::Ability(AbilityTag::Elite),
+                ]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
             },
             Self::MonsterSpikes(rank) => Attack {
