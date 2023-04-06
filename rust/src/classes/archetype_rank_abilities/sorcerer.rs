@@ -177,7 +177,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
+                    \parhead{Powerful Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a +2 bonus to your \glossterm{magical power} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
