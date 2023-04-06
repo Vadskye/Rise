@@ -3,7 +3,6 @@ use crate::core_mechanics::{
     DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed, Sense, Size,
     SpeedCategory, StandardPassiveAbility,
 };
-
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
@@ -157,7 +156,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                     movement_speeds: None,
                     name: "Black bear".to_string(),
-                    role: Role::Brute,
+                    role: Role::Warrior,
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     trained_skills: Some(vec![
@@ -168,8 +167,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                     weapons: vec![StandardWeapon::MultipedalBite.weapon(), StandardWeapon::Claws.weapon()],
                 }),
                 animal(FullAnimalDefinition {
-                    attributes: vec![5, 0, 6, -8, 0, 1],
-                    challenge_rating: ChallengeRating::Four,
+                    attributes: vec![4, 0, 4, -8, 0, 1],
+                    challenge_rating: ChallengeRating::One,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear.".to_string()),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -180,7 +179,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     movement_speeds: None,
                     level: 5,
                     name: "Brown bear".to_string(),
-                    role: Role::Brute,
+                    role: Role::Warrior,
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Large,
                     trained_skills: Some(vec![
@@ -269,7 +268,8 @@ pub fn animals() -> Vec<MonsterEntry> {
             Modifier::Attack(
                 StandardAttack::BreathWeaponCone(5, DamageType::Cold, Defense::Fortitude)
                     .attack()
-                    .except(|a| a.name = "Frost Breath".to_string()),
+                    .except(|a| a.name = "Frost Breath".to_string())
+                    .except_elite(),
             ),
         ])),
         movement_speeds: None,
@@ -419,6 +419,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     });
     monsters.push(MonsterEntry::Monster(pony));
 
+    // TODO: add special "pick up stuff" ability
     let roc = animal(FullAnimalDefinition {
         attributes: vec![6, 1, 4, -7, 4, -1],
         challenge_rating: ChallengeRating::Four,
@@ -543,8 +544,8 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(bombardier_beetle));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![5, 1, 3, -9, 2, -3],
-        challenge_rating: ChallengeRating::Four,
+        attributes: vec![4, 2, 4, -9, 2, -3],
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: None,
         level: 3,

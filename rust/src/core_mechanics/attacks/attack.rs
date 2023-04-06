@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityExtraContext, latex_ability_block, Targeting, UsageTime};
+use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, latex_ability_block, Targeting, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
@@ -56,12 +56,27 @@ impl Attack {
         return attack;
     }
 
+    // The process of adding a tag is awkward, so it's convenient to encapsulate that process.
+    pub fn except_with_tag(&self, tag: Tag) -> Attack {
+        return self.except(|a| {
+            let mut tags = a.tags.clone().unwrap_or(vec![]);
+            tags.push(tag);
+            a.tags = Some(tags);
+        });
+    }
+
     // This allows passing in a closure to modify damage dealt on hit, which is harder than it
     // would seem because of the nesting structure within attacks.
     pub fn except_hit_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> Attack {
         let mut attack = self.clone();
         attack.hit = attack.hit.except_damage(f);
         return attack;
+    }
+
+    // This is a particularly common replacement for elite monsters, and managing the imports is
+    // annoying without this function.
+    pub fn except_elite(&self) -> Attack {
+        return self.except_with_tag(Tag::Ability(AbilityTag::Elite));
     }
 
     pub fn generate_modified_name(
