@@ -1716,7 +1716,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ring of Spell Investment",
-            rank=2,
+            rank=3,
             material_type="Ring",
             tags=[],
             description="""
@@ -1735,17 +1735,24 @@ def generate_apparel():
                 After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
             """,
             short_description="Can invest a spell to gain its effect later",
-        ),
-        create_apparel(
-            name="Ring of Spell Investment, Greater",
-            rank=5,
-            material_type="Ring",
-            tags=[],
-            description="""
-                This item functions like a \\mitem<ring of spell investment>, except that you can store up to three spells in the gloves.
-                When you activate the ring, you choose which spell to use.
-            """,
-            short_description="Can invest three spells to gain their effects later",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You can invest up to two spells in the ring.
+                        When you activate the ring, you choose which spell to use.
+                    """,
+                    rank=5,
+                    short_description="Can invest two spells to gain their effects later",
+                ),
+                Upgrade(
+                    description="""
+                        You can invest up to three spells in the ring.
+                        When you activate the ring, you choose which spell to use.
+                    """,
+                    rank=7,
+                    short_description="Can invest three spells to gain their effects later",
+                ),
+            ],
         ),
     ]
 
@@ -1756,7 +1763,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 bonus to Strength-based \\glossterm<checks>, and you gain a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +1 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 1.
             """,
             short_description="Grants +1 Strength for specific purposes",
@@ -1767,7 +1774,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +2 bonus to Strength-based \\glossterm<checks>, and you gain a +2 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +2 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 2.
             """,
             short_description="Grants +2 Strength for specific purposes",
@@ -1778,7 +1785,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +3 bonus to Strength-based \\glossterm<checks>, and you gain a +3 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +3 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +3 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 3.
             """,
             short_description="Grants +3 Strength for specific purposes",
