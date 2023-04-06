@@ -431,13 +431,14 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
+            // TODO: figure out how to add a "battle command" ability
             OrcDefinition {
                 attributes: vec![6, 1, 4, -2, 2, 2],
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Orc clan chiefs are the among the most powerful orc warriors.
-                        Even the lowest clan chiefs commands hundreds of powerful orc warriors, plus at least as many noncombatants.
+                        Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants.
                     "),
                 ])),
                 level: 6,
