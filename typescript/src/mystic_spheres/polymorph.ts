@@ -511,12 +511,12 @@ export const polymorph: MysticSphere = {
 
       // +2r for +1d, +1r for vital wound effect
       effect: `
-        At the end of each round, you regain 2d8 \\glossterm{hit points}.
-        If you gained a vital wound this round, you add your \\glossterm{power} to this healing.
+        At the end of each round, you regain 2d6 \\glossterm{hit points}.
+        If you gained a vital wound this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 4,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 4.' },
       type: 'Attune',
     },
 
@@ -525,8 +525,8 @@ export const polymorph: MysticSphere = {
 
       // +2r for +1d, +5r for HP effect
       effect: `
-        At the end of each round, you regain 4d8 \\glossterm{hit points}.
-        If you lost \\glossterm{hit points} this round, you add your \\glossterm{power} to this healing.
+        At the end of each round, you regain 4d6 \\glossterm{hit points}.
+        If you lost \\glossterm{hit points} this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
