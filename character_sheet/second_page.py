@@ -256,16 +256,16 @@ def calc_damage_resistance():
                         "Armor",
                         number_input(
                             {
-                                "name": "damage_resistance_bonus_armor",
+                                "name": "damage_resistance_armor",
                             }
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("damage_resistance_bonus", 4),
+                    equation_misc_repeat("damage_resistance", 4),
                 ],
                 result_attributes={
                     "disabled": "true",
-                    "name": "damage_resistance_bonus_display",
+                    "name": "damage_resistance_display",
                     "value": "(@{damage_resistance_maximum})",
                 },
             ),
@@ -487,6 +487,7 @@ def calc_land_speed():
             div({"class": "calc-header"}, "Land Speed"),
             equation(
                 [
+                    # These are never actually used in sheet_worker
                     underlabel("Size", number_input({"name": "speed_size"})),
                     minus(),
                     underlabel("Armor", number_input({"name": "speed_armor"})),

@@ -1,13 +1,12 @@
-use crate::core_mechanics::abilities::PowerProgression;
 use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
-    SpecialDefenseType, StandardPassiveAbility,
+    SpecialDefenseType,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
 use crate::latex_formatting;
-use crate::monsters::{ChallengeRating, CreatureType, Knowledge};
+use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
@@ -21,76 +20,39 @@ pub struct Monster {
     pub creature_type: CreatureType,
     pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
+    pub role: Role,
 }
 
 impl Monster {
     pub fn new(
         challenge_rating: ChallengeRating,
         creature_type: CreatureType,
+        role: Role,
         level: i32,
     ) -> Monster {
         let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating));
-        // Creature type modifiers
-        for defense in Defense::all() {
-            creature.add_modifier(
-                Modifier::Defense(defense, creature_type.defense_bonus(&defense)),
-                Some(creature_type.name()),
-                None,
-            );
-        }
+        role.set_core_statistics(&mut creature);
+        challenge_rating.add_modifiers(&mut creature);
 
-        // CR modifiers
-        creature.add_modifier(
-            Modifier::Accuracy(challenge_rating.accuracy_bonus()),
-            Some("challenge rating"),
-            None,
-        );
-        for defense in Defense::all() {
-            creature.add_modifier(
-                Modifier::Defense(defense, challenge_rating.defense_bonus()),
-                Some("challenge rating"),
-                None,
-            );
-        }
-        if challenge_rating == ChallengeRating::Four {
-            creature
-                .passive_abilities
-                .push(StandardPassiveAbility::TwoActions.ability());
-            let maximum_conditions = if level >= 12 { 3 } else { 4 };
-            creature
-                .passive_abilities
-                .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());
-        }
-
-        let defense_modifier = if level >= 15 {
-            2
-        } else if level >= 3 {
+        // Level modifiers
+        let defense_modifier = if level >= 12 {
             1
         } else {
             0
         };
-        for defense in Defense::all() {
-            creature.add_modifier(
-                Modifier::Defense(defense, defense_modifier),
-                Some("challenge rating"),
-                None,
-            );
-        }
         creature.add_modifier(
-            Modifier::StrikeDamageDice((level - 1) / 3),
-            Some("challenge rating"),
+            Modifier::AllDefenses(defense_modifier),
+            Some("level scaling"),
             None,
         );
-        let power_scaling = PowerProgression::Fast.calc_power((level + 2) / 3);
-        let power_scaling =
-            ((power_scaling as f64) * challenge_rating.power_scaling_multiplier()).floor() as i32;
-        if power_scaling > 0 {
-            creature.add_modifier(
-                Modifier::Power(power_scaling),
-                Some("challenge rating"),
-                None,
-            );
-        }
+        let accuracy_modifier = if level >= 18 {
+            1
+        } else if level >= 6 {
+            1
+        } else {
+            0
+        };
+        creature.add_modifier(Modifier::Accuracy(accuracy_modifier), Some("level scaling"), None);
 
         return Monster {
             alignment: None,
@@ -99,31 +61,39 @@ impl Monster {
             creature,
             description: None,
             knowledge: None,
+            role,
         };
     }
 
     pub fn standard_monster(
         challenge_rating: ChallengeRating,
         level: i32,
+        role: Option<Role>,
         starting_attribute: Option<i32>,
-        creature_type: Option<CreatureType>,
     ) -> Monster {
-        let creature_type = if let Some(a) = creature_type {
-            a
-        } else {
-            CreatureType::Planeforged
-        };
-        let mut monster = Monster::new(challenge_rating, creature_type, level);
-        monster.creature.weapons.push(StandardWeapon::Slam.weapon());
+        let role = if let Some(r) = role { r } else { Role::Leader };
+        let mut monster = Monster::new(challenge_rating, CreatureType::Planeforged, role, level);
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::Claws.weapon());
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::MultipedalBite.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
+
         let starting_attribute = if let Some(a) = starting_attribute {
             a
         } else {
             2
         };
 
-        for a in Attribute::all() {
-            monster.creature.set_base_attribute(a, starting_attribute);
+        // 2 for most attributes, 4 str, 4 wil
+        for attribute_name in Attribute::all() {
+            monster
+                .creature
+                .set_base_attribute(attribute_name, starting_attribute);
         }
         monster
             .creature
@@ -131,6 +101,10 @@ impl Monster {
         monster
             .creature
             .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
+
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Willpower]);
 
         return monster;
     }
@@ -145,7 +119,7 @@ impl Monster {
                     is_maneuver: false,
                     name: "Generic Monster Damage".to_string(),
                     range: None,
-                    rank: self.creature.rank() + self.challenge_rating.rank_modifier(),
+                    rank: self.creature.rank(),
                 }
                 .attack(),
             ),
@@ -166,7 +140,7 @@ impl Monster {
         };
         let latex = latex_formatting::latexify(format!(
             "
-                \\begin<{section_name}><{name}><{level}>{elite}
+                \\begin<{section_name}><{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
 
                     {description}
@@ -182,6 +156,7 @@ impl Monster {
             size_star = if section_name == "monsubsubsection" { "*" } else { "" },
             name = name,
             level = self.creature.level,
+            role = self.role.name(),
             elite = if matches!(self.challenge_rating, ChallengeRating::Four) { "[Elite]" } else {""},
             size = self.creature.size.name(),
             type = self.creature_type.name(),
@@ -220,6 +195,7 @@ impl Monster {
                     {other_skills}
                     \\rankline
                     \\pari \\textbf<Attributes> {attributes}
+                    \\pari \\textbf<Power> {magical_power}\\sparkle \\monsep {mundane_power}
                     \\pari \\textbf<Alignment> {alignment}
                 \\end<monsterstatistics>
             ",
@@ -230,6 +206,8 @@ impl Monster {
             attributes = self.latex_attributes(),
             social = self.latex_social(),
             other_skills = self.latex_other_skills(),
+            magical_power = self.creature.calc_magical_power(),
+            mundane_power = self.creature.calc_mundane_power(),
             alignment =
                 latex_formatting::uppercase_first_letter(self.alignment.as_deref().unwrap_or("")),
             space_and_reach = "", // TODO: only display for monsters with nonstandard space/reach

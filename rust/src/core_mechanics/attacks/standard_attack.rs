@@ -3,13 +3,13 @@ use crate::core_mechanics::abilities::{
     Range, Targeting,
 };
 use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, AttackTriggeredEffect, DamageEffect, DamageOverTimeEffect, DebuffEffect,
-    DebuffInsteadEffect, PoisonEffect, SimpleDamageEffect, VitalWoundEffect,
+    AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
+    DebuffInsteadEffect, PoisonEffect, VitalWoundEffect,
 };
-use crate::core_mechanics::attacks::{Attack, AttackEffect, LowDamageAndDebuff};
-use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory, Tag,
+use crate::core_mechanics::attacks::{
+    Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect,
 };
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
@@ -37,23 +37,21 @@ pub enum StandardAttack {
     DarkGrasp(i32),
     DarkMiasma(i32),
     DivineJudgment(i32),
-    DrainingGrasp(i32),
-    DrainLife(i32),
+    LifestealGrasp(i32),
+    Lifesteal(i32),
     Enrage(i32),
     Fireball(i32),
     Firebolt(i32),
-    GlimpseOfDivinity(i32),
-    GustOfWind(i32),
     Ignition(i32),
-    Inferno(i32),
+    InflictWound(i32),
+    Pyroclasm(i32),
     MindCrush(i32),
     PersonalIgnition(i32),
-    PiercingWindblast(i32),
     Pyrohemia(i32),
     Pyrophobia(i32),
     RetributiveLifebond(i32),
     Spikeform(i32),
-    Windblast(i32),
+    Windslash(i32),
     Windsnipe(i32),
     WordOfFaith(i32),
 }
@@ -75,7 +73,7 @@ impl StandardAttack {
                                     Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
                                       the target's skin is transformed into a clear, slimy membrane.
                                     Every 5 minutes, an afflicted creature must be moistened with cool, fresh water
-                                      or it will gain two \\glossterm<fatigue points>.
+                                      or it will increase its \\glossterm<fatigue level> by two.
                                     This effect lasts until the \\glossterm{vital wound} is removed.
                                 ".to_string()),
                             }),
@@ -90,16 +88,12 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Mental,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(5),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Energy])),
                 is_magical: true,
                 is_strike: false,
                 name: "Psionic Blast".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
                 targeting: Targeting::Cone(AreaSize::Large, AreaTargets::Enemies),
             },
             Self::AnkhegDrag => Attack {
@@ -116,7 +110,7 @@ impl StandardAttack {
                 targeting: Targeting::Creature(Range::Adjacent),
             },
             Self::FrostwebSpiderBite => {
-                let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
+                let mut frostweb_spider_bite = StandardWeapon::MultipedalBite.weapon().attack();
                 if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
                     e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(PoisonEffect {
                         stage1: vec![Debuff::Slowed],
@@ -138,7 +132,7 @@ impl StandardAttack {
                 name: "Flesh-Rending Bite".to_string(),
                 rank: *rank,
                 tags: None,
-            }.weapon_attack(&StandardWeapon::MonsterBite.weapon()),
+            }.weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
@@ -157,7 +151,10 @@ impl StandardAttack {
                 is_strike: false,
                 name: "Gibber".to_string(),
                 replaces_weapon: None,
-                tags: Some(vec![Tag::Ability(AbilityTag::Compulsion)]),
+                tags: Some(vec![
+                    Tag::Ability(AbilityTag::Compulsion),
+                    Tag::Ability(AbilityTag::Elite),
+                ]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
             },
             Self::MonsterSpikes(rank) => Attack {
@@ -165,12 +162,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Armor,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 5+
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 5 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Piercing],
-                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
-                }.damage_effect()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Piercing])),
                 is_magical: false,
                 is_strike: false,
                 name: "Retributive Spikes".to_string(),
@@ -183,12 +175,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d at ranks 3/5/7
-                    damage_dice: DamageDice::single_target_damage(*rank).add(max(0, (rank - 1) / 2)),
-                    damage_types: vec![DamageType::Acid],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Acid])),
                 is_magical: false,
                 is_strike: false,
                 name: "Dissolve".to_string(),
@@ -238,11 +225,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::single_target_damage(3),
-                    damage_types: vec![DamageType::Bludgeoning],
-                    power_multiplier: 0.0,
-                }.damage_effect()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Bludgeoning])),
                 is_magical: false,
                 is_strike: false,
                 name: "Thundering Hide".to_string(),
@@ -256,12 +239,9 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 3/5/7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 2),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
+                // This isn't really accurate, but it's close enough for a first lazy
+                // pass.
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
                 name: "Abyssal Rebuke".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
@@ -275,11 +255,9 @@ impl StandardAttack {
                     movement: None,
                     suffix: None,
                 }),
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_types: vec![*damage_type],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
+                // Normally a full AOE would be (rank - 2), but breath attacks get (rank - 1) to
+                // compensate for the cooldown.
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1, vec![*damage_type])),
                 is_magical: false,
                 is_strike: false,
                 name: "Breath Weapon".to_string(),
@@ -308,11 +286,7 @@ impl StandardAttack {
                     movement: None,
                     suffix: None,
                 }),
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_types: vec![*damage_type],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1, vec![*damage_type])),
                 is_magical: false,
                 is_strike: false,
                 name: "Breath Weapon".to_string(),
@@ -329,116 +303,69 @@ impl StandardAttack {
                     _ => panic!("Invalid rank {}", rank),
                 },
             },
+            // TODO: replace this with a more recent Pyromancy spell
             Self::Combustion(rank) => SimpleSpell {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at ranks 2, 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 {
-                        3
-                    } else if *rank >= 5 {
-                        2
-                    } else {
-                        1
-                    }),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Combustion", *rank, 4, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
+                name: "Combustion".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(if *rank >= 7 {
-                    Range::Medium
-                } else {
-                    Range::Short
-                }),
+                targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             // TODO: add descriptive text for +accuracy vs non-bright illumination
             Self::DarkGrasp(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank >= 7 { 2 } else { 0 }),
-                    damage_types: vec![DamageType::Cold],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Dark Grasp", *rank, 3, Some(7)),
+                // TODO: add debuff on damage + Ment defense
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(2, vec![DamageType::Cold])),
+                name: "Dark Grasp".to_string(),
                 tags: None,
                 targeting: Targeting::Anything(Range::Adjacent),
             }.attack(),
+            // TODO: add "shadowed" requirement
             Self::DarkMiasma(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_types: vec![DamageType::Cold],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Dark Miasma", *rank, 4, None),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(1, vec![DamageType::Cold])),
+                name: "Dark Miasma".to_string(),
                 tags: None,
-                targeting: if *rank >= 4 {
-                    Targeting::Radius(None, AreaSize::Large, AreaTargets::Creatures)
-                } else {
-                    Targeting::Radius(None, AreaSize::Small, AreaTargets::Enemies)
-                },
+                targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Enemies),
             }.attack(),
+            // TODO: replace with "Retributive Judgment" and add retributive accuracy
             Self::DivineJudgment(rank) => SimpleSpell {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at ranks 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Divine Judgment", *rank, 4, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Energy])),
+                name: "Divine Judgment".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(if *rank >= 7 {
-                    Range::Distant
-                } else if *rank >= 4 {
-                    Range::Long
-                } else {
-                    Range::Medium
-                }),
+                targeting: Targeting::Anything(Range::Short),
             }.attack(),
-            Self::DrainingGrasp(rank) => SimpleSpell {
-                accuracy: 0,
+            // TODO: add lifesteal text
+            Self::LifestealGrasp(rank) => SimpleSpell {
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::single_target_damage(*rank),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: "Draining Grasp".to_string(),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Energy])),
+                name: "Lifesteal Grasp".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Adjacent),
             }.attack(),
-            Self::DrainLife(rank) => SimpleSpell {
-                accuracy: 0,
+            // TODO: add lifesteal text
+            Self::Lifesteal(rank) => SimpleSpell {
+                accuracy: *rank - 4,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at ranks 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Drain Life", *rank, 4, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr3h(vec![DamageType::Energy])),
+                name: "Lifesteal".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(if *rank >= 7 {
-                    Range::Distant
-                } else if *rank >= 4 {
-                    Range::Long
-                } else {
-                    Range::Medium
-                }),
+                targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::Enrage(rank) => SimpleSpell {
-                accuracy: max(4, 3 + rank),
+                accuracy: *rank + 3,
                 crit: Some(AttackEffect::MustRemoveTwice),
                 defense: Defense::Mental,
                 hit: AttackEffect::Custom(AbilityType::Normal, r"
@@ -450,222 +377,94 @@ impl StandardAttack {
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::Fireball(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 4,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: if *rank >= 7 { 1.0 } else { 0.5 },
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Fire])),
+                name: "Fireball".to_string(),
                 tags: None,
                 targeting: Targeting::Radius(
                     Some(Range::Medium),
-                    AreaSize::Small,
+                    AreaSize::Medium,
                     AreaTargets::Everything,
                 ),
             }.attack(),
+            // TODO: replace this with an actual Pyromancy spell
             Self::Firebolt(rank) => SimpleSpell {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at ranks 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Firebolt", *rank, 4, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
+                name: "Firebolt".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(if *rank >= 7 {
-                    Range::Distant
-                } else if *rank >= 4 {
-                    Range::Long
-                } else {
-                    Range::Medium
-                }),
-            }.attack(),
-            Self::GlimpseOfDivinity(rank) => SimpleSpell {
-                accuracy: if *rank >= 7 { 0 } else { *rank - 3 },
-                crit: Some(AttackEffect::MustRemoveTwice),
-                defense: Defense::Mental,
-                hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: if *rank >= 7 {
-                        vec![Debuff::Dazzled, Debuff::Dazed]
-                    } else {
-                        vec![Debuff::Dazzled]
-                    },
-                    duration: AttackEffectDuration::Condition,
-                    immune_after_effect_ends: false,
-                }),
-                name: Attack::generate_modified_name("Glimpse of Divinity", *rank, 7, None),
-                tags: Some(vec![Tag::Ability(AbilityTag::Visual)]),
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
-            Self::GustOfWind(rank) => SimpleSpell {
-                accuracy: 0,
-                crit: None,
-                defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
-                    damage_types: vec![DamageType::Bludgeoning],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
-                    power_multiplier: 0.0,
-                    take_damage_effect: Some(AttackTriggeredEffect::Custom(
-                        AbilityType::Normal,
-                        format!(
-                            "
-                                In addition, each target damaged by the attack is \\glossterm{{pushed}} {feet} feet in the direction the line points away from the $name.
-                                Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
-                            ",
-                            feet = if *rank >= 5 { 60 } else { 30 },
-                        )
-                    )),
-                    vampiric_healing: None,
-                }),
-                name: Attack::generate_modified_name("Fireball", *rank, 3, Some(7)),
-                tags: None,
-                targeting: Targeting::Radius(
-                    Some(Range::Medium),
-                    AreaSize::Small,
-                    AreaTargets::Everything,
-                ),
-            }.attack(),
             Self::Ignition(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
-                    can_remove_with_dex: *rank >= 5,
-                    damage: DamageEffect {
-                        damage_dice: DamageDice::aoe_damage(*rank).add(-1),
-                        damage_modifier: 0,
-                        damage_types: vec![DamageType::Fire],
-                        extra_defense_effect: None,
-                        lose_hp_effect: None,
-                        power_multiplier: 0.5,
-                        take_damage_effect: None,
-                        vampiric_healing: None,
-                    },
+                    can_remove_with_dex: true,
+                    damage: SimpleDamageEffect::dr1(vec![DamageType::Fire]),
                     duration: AttackEffectDuration::Condition,
                     narrative_text: "catches on fire".to_string(),
                 }),
-                name: Attack::generate_modified_name("Ignition", *rank, 5, None),
+                name: "Ignition".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(Range::Medium),
+                targeting: Targeting::Creature(Range::Short),
             }.attack(),
-            Self::Inferno(rank) => SimpleSpell {
-                accuracy: 0,
+            Self::InflictWound(rank) => SimpleSpell {
+                accuracy: *rank - 1,
+                crit: None,
+                defense: Defense::Fortitude,
+                hit: AttackEffect::Damage(
+                    SimpleDamageEffect::dr1(vec![DamageType::Energy])
+                        .except(|effect| effect.lose_hp_effect = Some(AttackTriggeredEffect::RepeatDamage))
+                ),
+                name: "Inflict Wound".to_string(),
+                tags: None,
+                targeting: Targeting::Creature(Range::Short),
+            }.attack(),
+            // TODO: add "and you suffer a glancing blow"
+            Self::Pyroclasm(rank) => SimpleSpell {
+                accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Inferno", *rank, 3, Some(5)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Fire])),
+                name: "Pyroclasm".to_string(),
                 tags: None,
-                targeting: Targeting::Radius(
-                    None,
-                    if *rank >= 5 {
-                        AreaSize::Huge
-                    } else if *rank >= 3 {
-                        AreaSize::Large
-                    } else {
-                        AreaSize::Small
-                    },
-                    AreaTargets::Everything,
-                ),
+                targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Everything),
             }.attack(),
+            // TODO: add Int-based +2 accuracy, add subdual damage
             Self::MindCrush(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(DamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
-                    damage_types: vec![DamageType::Energy],
-                    extra_defense_effect: None,
-                    lose_hp_effect: None,
-                    power_multiplier: 0.5,
-                    take_damage_effect: Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                        // TODO: add immunity after daze for early levels
-                        debuffs: vec![if *rank >= 3 {
-                            Debuff::Dazed
-                        } else {
-                            Debuff::Stunned
-                        }],
-                        duration: AttackEffectDuration::Brief,
-                        immune_after_effect_ends: false,
-                    })),
-                    vampiric_healing: None,
-                }),
-                name: Attack::generate_modified_name("Mind Crush", *rank, 3, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Psychic])),
+                name: "Mind Crush".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::PersonalIgnition(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Fire],
-                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Personal Ignition", *rank, 7, None),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Fire])),
+                name: "Personal Ignition".to_string(),
                 tags: None,
+                // TODO: replace with "grappled by or natural weapon attack"
                 targeting: Targeting::MadeMeleeAttack,
             }.attack(),
-            Self::PiercingWindblast(rank) => SimpleSpell {
-                accuracy: 0,
-                crit: None,
-                defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 6
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 6 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Piercing],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Piercing Windblast", *rank, 6, None),
-                tags: None,
-                targeting: Targeting::Creature(if *rank >= 6 { Range::Long } else { Range::Medium }),
-            }.attack(),
+            // TODO: repeat the damage next round, rather than immediately
             Self::Pyrohemia(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(DamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_modifier: 0,
-                    damage_types: vec![DamageType::Fire],
-                    extra_defense_effect: None,
-                    lose_hp_effect: if *rank == 4 {
-                        Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                            debuffs: vec![Debuff::Stunned],
-                            duration: AttackEffectDuration::Brief,
-                            immune_after_effect_ends: false,
-                        }))
-                    } else {
-                        None
-                    },
-                    power_multiplier: 0.5,
-                    take_damage_effect: Some(AttackTriggeredEffect::Debuff(DebuffEffect {
-                        debuffs: vec![if *rank >= 6 {
-                            Debuff::Stunned
-                        } else {
-                            Debuff::Dazed
-                        }],
-                        duration: AttackEffectDuration::Brief,
-                        immune_after_effect_ends: false,
-                    })),
-                    vampiric_healing: None,
-                }),
-                name: Attack::generate_modified_name("Pyrohemia", *rank, 4, Some(6)),
+                hit: AttackEffect::Damage(
+                    SimpleDamageEffect::dr1(vec![DamageType::Fire])
+                        .except(|effect| effect.lose_hp_effect = Some(AttackTriggeredEffect::RepeatDamage))
+                ),
+                name: "Pyrohemia".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Short),
             }.attack(),
@@ -700,91 +499,52 @@ impl StandardAttack {
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::RetributiveLifebond(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at ranks 4 and 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add((*rank - 1) / 3),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 0.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Retributive Lifebond", *rank, 4, Some(7)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1l(vec![DamageType::Energy])),
+                name: "Retributive Lifebond".to_string(),
                 tags: None,
-                targeting: Targeting::CausedHpLoss(if *rank >= 7 {
-                    AreaSize::Large
-                } else if *rank >= 4 {
-                    AreaSize::Medium
-                } else {
-                    AreaSize::Small
-                }),
+                targeting: Targeting::CausedHpLoss(AreaSize::Medium),
             }.attack(),
             Self::Spikeform(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 7
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 7 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Piercing],
-                    power_multiplier: if *rank >= 7 { 0.5 } else { 0.0 },
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Spikeform", *rank, 7, None),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Piercing])),
+                name: "Spikeform".to_string(),
                 tags: None,
                 targeting: Targeting::MadeMeleeAttack,
             }.attack(),
-            Self::Windblast(rank) => SimpleSpell {
-                accuracy: 0,
+            // TODO: figure out "two targets adjacent to each other"
+            Self::Windslash(rank) => SimpleSpell {
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +2d extra at rank 5
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 5 { 2 } else { 0 }),
-                    damage_types: vec![DamageType::Bludgeoning],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Windblast", *rank, 5, None),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Slashing])),
+                name: "Windblast".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::Windsnipe(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 3,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    // +1d extra at rank 6
-                    damage_dice: DamageDice::single_target_damage(*rank).add(if *rank >= 6 { 1 } else { 0 }),
-                    damage_types: vec![DamageType::Bludgeoning],
-                    power_multiplier: 1.0,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Windsnipe", *rank, 5, None),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Bludgeoning])),
+                name: "Windsnipe".to_string(),
                 tags: None,
-                targeting: Targeting::Creature(if *rank >= 6 {
-                    Range::Extreme
-                } else {
-                    Range::Distant
-                }),
+                targeting: Targeting::Creature(Range::Distant),
             }.attack(),
             Self::WordOfFaith(rank) => SimpleSpell {
-                accuracy: 0,
+                accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(SimpleDamageEffect {
-                    damage_dice: DamageDice::aoe_damage(*rank),
-                    damage_types: vec![DamageType::Energy],
-                    power_multiplier: 0.5,
-                }.damage_effect()),
-                name: Attack::generate_modified_name("Word of Faith", *rank, 4, Some(6)),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Energy])),
+                name: "Word of Faith".to_string(),
                 tags: None,
                 targeting: Targeting::Radius(
                     None,
-                    if *rank >= 6 {
-                        AreaSize::Huge
-                    } else if *rank >= 4 {
-                        AreaSize::Large
-                    } else {
-                        AreaSize::Small
-                    },
+                    AreaSize::Small,
                     AreaTargets::Enemies,
                 ),
             }.attack(),

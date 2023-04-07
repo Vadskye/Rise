@@ -30,7 +30,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
+          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
           This is a physical change to your body, so no amount of inspection will reveal your true form.
           A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
 
@@ -63,7 +63,7 @@ export const polymorph: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Disguise Creature}).
+          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Change Appearance}).
           This is a physical change to your body, so no amount of inspection will reveal your true form.
           A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
         `,
@@ -92,30 +92,33 @@ export const polymorph: MysticSphere = {
       name: 'Twisting Claw',
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
-        Your \\glossterm{power} with the strike is halved.
         The attack is made against the target's Reflex defense instead of its Armor defense.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 1,
-      scaling: {
-        3: 'You gain a +1 \\glossterm{accuracy} bonus with the strike.',
-        5: 'The accuracy bonus increases to +2.',
-        7: 'The accuracy bonus increases to +3.',
-      },
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
-      name: 'Mighty Claw',
+      name: 'Power Claw',
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty and a +2 damage bonus using a \\glossterm{natural weapon}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        Make a melee \\glossterm{strike} with a -3 accuracy penalty.
+        The strike deals double \\glossterm{weapon damage}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +4.',
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Power Claw',
+      effect: `
+        Make a melee \\glossterm{strike} with a -3 accuracy penalty.
+        The strike deals triple \\glossterm{weapon damage}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+      `,
+      rank: 4,
+      scaling: 'accuracy',
     },
 
     {
@@ -123,13 +126,10 @@ export const polymorph: MysticSphere = {
       effect: `
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         The strike gains the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 2,
-      scaling: {
-        4: 'You gain a +1 \\glossterm{accuracy} bonus with the strike.',
-        6: 'The accuracy bonus increases to +2.',
-      },
+      scaling: 'accuracy',
     },
 
     {
@@ -267,19 +267,19 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} physical damage.
+          The target takes \\damageranksix{physical}.
           This damage is doubled if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against anything within \\shortrange.
         `,
       },
 
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -315,7 +315,8 @@ export const polymorph: MysticSphere = {
       name: 'Spikeform',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes \\damagerankone{piercing}.`,
+        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -323,8 +324,8 @@ export const polymorph: MysticSphere = {
       narrative: `
         Your body grows large spikes that impale creatures who attack you.
       `,
-      rank: 3,
-      scaling: 'damage',
+      rank: 2,
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -332,7 +333,8 @@ export const polymorph: MysticSphere = {
       name: 'Mighty Spikeform',
 
       attack: {
-        hit: `Each target takes 4d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes \\damagerankfour{piercing}.`,
+        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -340,7 +342,7 @@ export const polymorph: MysticSphere = {
       narrative: `
         Your body grows large spikes that impale creatures who attack you.
       `,
-      rank: 7,
+      rank: 5,
       type: 'Attune (deep)',
     },
 
@@ -348,17 +350,16 @@ export const polymorph: MysticSphere = {
       name: 'Extruding Spikes',
 
       attack: {
-        // TODO: is this damage correct?
-        hit: `Each target takes 2d10 piercing damage.`,
+        hit: `Each target takes \\damagerankfour{piercing}.`,
         targeting: `
-          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
+          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor with a -2 accuracy penalty against all \\glossterm{enemies} adjacent to you.
         `,
       },
       narrative: `
         Your body grows small spikes that you can consciously extrude to impale nearby foes.
       `,
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -388,8 +389,8 @@ export const polymorph: MysticSphere = {
       name: 'Camouflage',
 
       effect: `
-        If you are \\glossterm{trained} with the Stealth skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -405,17 +406,17 @@ export const polymorph: MysticSphere = {
 
       attack: {
         crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target takes 4d6 physical damage.
-        If it loses \\glossterm{hit points} from this damage, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
-        This has the following effects:
-        \\begin{itemize}
-          \\item Its exposed flesh makes it \\vulnerable to all damage.
-          \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-          \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
-        \\end{itemize}
+        hit: `
+          If the target is below its maximum \\glossterm{hit points}, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
+          This has the following effects:
+          \\begin{itemize}
+            \\item Its exposed flesh makes it \\vulnerable to all damage.
+            \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
+            \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
+          \\end{itemize}
 
-        % There must be text between an itemize block and the end of a mdframed env
-        \\hypertarget{itemizespace}{}
+          % There must be text between an itemize block and the end of a mdframed env
+          \\hypertarget{itemizespace}{}
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -429,11 +430,12 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} if it is a creature, or that many hit points if it is an object.
+        % d2
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1d per 2 \\glossterm{power} if it is a creature, or that many hit points if it is an object.
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
-      rank: 1,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -442,10 +444,10 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
       },
       rank: 5,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -454,11 +456,12 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains 1d8 + half \\glossterm{power} \\glossterm{hit points} at the end of each round.
+        % d1
+        The target \\glossterm{briefly} regains 1d6 \\glossterm{hit points} +1d per 2 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
-      rank: 2,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
+      rank: 3,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 3.' },
     },
 
     {
@@ -466,18 +469,19 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains 4d8 + half \\glossterm{power} \\glossterm{hit points} at the end of each round.
+        % d3
+        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 6.' },
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 6.' },
     },
 
     {
       name: 'Vital Regeneration',
 
       effect: `
-        At the end of each round, if the target is not \\glossterm{unconscious} due to \\glossterm{fatigue}, it automatically removes one of its \\glossterm{vital wounds}.
+        At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
@@ -497,36 +501,33 @@ export const polymorph: MysticSphere = {
         At the end of each round, you regain 1d6 \\glossterm{hit points}.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
-      rank: 1,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
       type: 'Attune',
     },
 
     {
       name: 'Empowered Regeneration',
 
-      // +2r for +1d, +1r for vital wound effect
       effect: `
-        At the end of each round, you regain 2d8 \\glossterm{hit points}.
-        If you gained a vital wound this round, you add your \\glossterm{power} to this healing.
+        At the end of each round, you regain 2d6 \\glossterm{hit points}.
+        If you gained a vital wound this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
-      rank: 4,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
+      rank: 5,
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
       type: 'Attune',
     },
 
     {
       name: 'Efficient Regeneration',
 
-      // +2r for +1d, +5r for HP effect
       effect: `
-        At the end of each round, you regain 4d8 \\glossterm{hit points}.
-        If you lost \\glossterm{hit points} this round, you add your \\glossterm{power} to this healing.
+        At the end of each round, you regain 2d10 \\glossterm{hit points}.
+        If you lost \\glossterm{hit points} this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
       type: 'Attune',
     },
 
@@ -576,17 +577,17 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          It takes 1d8 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
+          It takes \\damagerankonelow{physical} immediately and during each of your subsequent actions.
 
           This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
           The \\glossterm{difficulty value} of the check is equal to 10.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -596,14 +597,14 @@ export const polymorph: MysticSphere = {
         crit: `The damage from the condition is doubled.`,
         hit: `
           The target begins bleeding as a \\glossterm{condition}.
-          It takes 2d8 + half \\glossterm{power} physical damage immediately and during each of your subsequent actions.
+          It takes \\damagerankthreelow{physical} immediately and during each of your subsequent actions.
         `,
         targeting: `
-          Make an attack vs. Fortitude against the one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -675,7 +676,7 @@ export const polymorph: MysticSphere = {
         \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
         \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
         \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
-        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Senses}).
+        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Awareness}).
       `,
       rank: 5,
       scaling: {
@@ -688,7 +689,11 @@ export const polymorph: MysticSphere = {
       name: 'Dragon Breath',
 
       attack: {
-        hit: `Each target takes 2d8 + half \\glossterm{power} damage of your chosen type.`,
+        hit: `
+          Each target takes \\damagerankthree{}.
+          The damage is of the chosen type.
+        `,
+        missGlance: true,
         targeting: `
           Choose one of the following damage types: acid, cold, electricity, or fire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
@@ -697,7 +702,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune',
     },
 
@@ -716,31 +721,31 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          The target's body deteriorates as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
-      name: 'Mighty Cripple',
+      name: 'Intense Cripple',
 
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          The target's body deteriorates as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\immobilized.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -748,15 +753,15 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\vulnerable to all damage as a \\glossterm{condition}.
+          The target takes \\damagerankfive{physical}.
+          If it loses \\glossterm{hit points}, it is \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 4,
-      scaling: 'damage',
+      rank: 7,
+      scaling: 'accuracy',
     },
   ],
   rituals: [

@@ -72,7 +72,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -124,7 +127,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
                     \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
-                    Once this effect ends, the creature becomes immune to this effect until it takes a \glossterm{short rest}.
+                    Once this effect ends, the creature becomes immune to this effect until it finishes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
                     \rankline
@@ -134,22 +137,22 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Wellspring of Power",
+            name: "Experienced Spellcaster",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Wellspring of Power+",
+            name: "Experienced Spellcaster+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The accuracy bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Accuracy(2)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -240,15 +243,16 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                Once per week, you can request a miracle as a standard action.
+                You can request a miracle as a standard action.
                 You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
                 At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
+                After you use this ability, you increase your \glossterm{fatigue level} by three, and you cannot request another miracle for a week.
 
                 Miracles are most effective when your request is directly related to your deity's domains and general purview.
                 They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
                 If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
-                If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
+                If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
             ",
             modifiers: None,
         },
@@ -257,7 +261,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can use this ability once per 24 hours instead of once per week.
+                Using your \textit{miracle} ability does not increase your fatigue level, and you can perform two miracles per week instead of only one.
             ",
             modifiers: None,
         },
@@ -284,23 +288,21 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{divine aid} ability as a standard action.
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
-                    Choose yourself or one adjacent living \glossterm{ally}.
-                    The target regains 1d8 \add \glossterm{power} \glossterm{hit points}.
+                    Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
+                    The target regains 1d6 \glossterm{hit points} +1d per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The healing increases to 1d10.
-                    \rank{3} The healing increases to 2d8.
-                    \rank{4} The healing increases to 2d10.
-                    \rank{5} The healing increases to 4d8.
-                    \rank{6} The healing increases to 4d10.
-                    \rank{7} The healing increases by an amount equal to your \glossterm{power}.
+                    \rank{2} The base healing increases to 1d8.
+                    \rank{3} The bonus healing increases to 1d6 per 4 power.
+                    \rank{4} The base healing increases to 2d6.
+                    \rank{5} The bonus healing increases to 1d10 per 4 power.
+                    \rank{6} The base healing increases to 2d10.
+                    \rank{7} The bonus healing increases to 1d10 per 3 power.
                 \end{magicalactiveability}
-
-                \advancement This ability improves at each rank as described above.
             ",
             modifiers: None,
         },
@@ -338,7 +340,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
-                    Choose yourself or one adjacent living \glossterm{ally}.
+                    Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
                     The target removes one of its \glossterm{vital wounds}.
 
                     \rankline
@@ -379,9 +381,9 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
-                    Choose one adjacent intact corpse.
+                    Choose one intact corpse you \glossterm{touch}.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
-                    After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+                    After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -413,13 +415,17 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         // TODO: this is a little weak
         RankAbility {
-            name: "Practiced Persuasion",
+            name: "Persuasive Certainty",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus3 bonus to the Persuasion skill.
+                In addition, you gain a \plus1 bonus to your Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 3)]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Persuasion, 3),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             name: "Bless the Worthy",

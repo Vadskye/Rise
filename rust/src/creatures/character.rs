@@ -41,11 +41,13 @@ impl Character {
                 None,
             );
         }
-        creature.add_modifier(
-            Modifier::Power(class.power_progression().calc_power((level + 2) / 3)),
-            Some(class.name()),
-            None,
-        );
+        if class.hit_points() > 0 {
+            creature.add_modifier(
+                Modifier::HitPointsFromLevel(class.hit_points()),
+                Some(class.name()),
+                None,
+            );
+        }
 
         return Character {
             // archetypes,
@@ -95,6 +97,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 0);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -105,50 +110,52 @@ impl Character {
     }
 
     pub fn standard_greataxe(level: i32, use_point_buy: bool) -> Self {
-        let mut character = Self::new(
-            Class::Fighter,
-            level,
-            [
-                ClassArchetype::MartialMastery,
-                ClassArchetype::EquipmentTraining,
-                ClassArchetype::CombatDiscipline,
-            ],
-        );
-
+        let mut character = Self::standard_character(level, use_point_buy);
+        character.creature.remove_armor(Armor::StandardShield);
+        // Replace existing weapons with a greataxe
+        character.creature.weapons.retain(|_| false);
         character
             .creature
             .weapons
             .push(StandardWeapon::Greataxe.weapon());
+        return character;
+    }
+
+    pub fn standard_perception_character(level: i32) -> Self {
+        let mut character = Self::standard_character(level, false);
         character
             .creature
-            .add_armor(standard_armor_by_level(level, ArmorUsageClass::Heavy));
-        character.creature.name = Some("Standard Greataxe".to_string());
+            .set_base_attribute(Attribute::Strength, 2);
+        character
+            .creature
+            .set_base_attribute(Attribute::Dexterity, 0);
+        character
+            .creature
+            .set_base_attribute(Attribute::Constitution, 2);
+        character
+            .creature
+            .set_base_attribute(Attribute::Intelligence, 0);
+        character
+            .creature
+            .set_base_attribute(Attribute::Perception, 4);
+        character
+            .creature
+            .set_base_attribute(Attribute::Willpower, 0);
+        character
+            .creature
+            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Constitution]);
+        return character;
+    }
 
-        if use_point_buy {
-            character
-                .creature
-                .set_base_attribute(Attribute::Strength, 4);
-            character
-                .creature
-                .set_base_attribute(Attribute::Dexterity, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Constitution, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Intelligence, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Perception, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Willpower, 0);
-        }
-
-        for modifier in calc_standard_magic_modifiers(level) {
-            character.creature.add_magic_modifier(modifier);
-        }
-
+    pub fn perception_greataxe(level: i32) -> Self {
+        let mut character = Self::standard_perception_character(level);
+        character.creature.remove_armor(Armor::StandardShield);
+        // Replace existing weapons with a greataxe
+        character.creature.weapons.retain(|_| false);
+        character
+            .creature
+            .weapons
+            .push(StandardWeapon::Greataxe.weapon());
         return character;
     }
 
@@ -191,6 +198,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 0);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
         }
 
         for modifier in calc_standard_magic_modifiers(level) {
@@ -232,6 +242,9 @@ impl Character {
             character
                 .creature
                 .set_base_attribute(Attribute::Willpower, 4);
+            character
+                .creature
+                .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Willpower]);
         }
 
         // This is a hacky way to represent the fact that casters can attune to more powerful
@@ -272,34 +285,30 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     let mut modifiers = vec![];
     // In general, characters acquire one item of their appropriate rank per level, to a max of 5
     // relevant items.
-    // For most characters, power is most important, followed by damage resistance, and finally
-    // hit points.
-    // The level breakpoints for standard power and DR items are 4/10/16.
+    // For most characters, damage is most important, followed by DR and then hit points.
+    // The level breakpoints for HP/DR items are 4/10/16.
     // This ignores legacy items, but assumes that items are acquired as soon as possible. On
     // average, this should make the levels reasonably accurate.
 
-    let power = if level >= 22 {
-        16
-    } else if level >= 16 {
-        8
-    } else if level >= 10 {
-        4
-    } else if level >= 4 {
+    // Some people get +1d earlier with the rank 3 weapons; ignore that for this purpose.
+    let strike_damage = if level >= 19 {
         2
+    } else if level >= 10 {
+        1
     } else {
         0
     };
-    if power > 0 {
-        modifiers.push(Modifier::Power(power));
+    if strike_damage > 0 {
+        modifiers.push(Modifier::StrikeDamageDice(strike_damage));
     }
 
-    let dr = if level >= 23 {
+    let dr = if level >= 22 {
         32
-    } else if level >= 17 {
+    } else if level >= 16 {
         16
-    } else if level >= 11 {
+    } else if level >= 10 {
         8
-    } else if level >= 5 {
+    } else if level >= 4 {
         4
     } else {
         0
@@ -308,13 +317,13 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
         modifiers.push(Modifier::DamageResistance(dr));
     }
 
-    let hp = if level >= 24 {
+    let hp = if level >= 23 {
         32
-    } else if level >= 18 {
+    } else if level >= 17 {
         16
-    } else if level >= 12 {
+    } else if level >= 11 {
         8
-    } else if level >= 6 {
+    } else if level >= 5 {
         4
     } else {
         0

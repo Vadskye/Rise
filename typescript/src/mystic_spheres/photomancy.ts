@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const photomancy: MysticSphere = {
   name: 'Photomancy',
+  hasImage: true,
   shortDescription: 'Create and manipulate light to hinder foes and conceal allies.',
   sources: ['arcane', 'divine', 'nature', 'pact'],
 
@@ -12,12 +13,12 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain a +4 bonus, and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Disguise Creature}).
+          you gain a +4 bonus, and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
           This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
         `,
-        name: 'disguise creature',
+        name: 'change appearance',
       },
       scaling: {
         2: `The bonus increases to +6.`,
@@ -101,7 +102,7 @@ export const photomancy: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         In addition, choose one of the targets as the primary target.
-        You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref{Disguise Creature}).
+        You make a Disguise check to alter each target's appearance to exactly match the primary target (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of each target's clothes and equipment, regardless of their original form.
       `,
       rank: 3,
@@ -156,16 +157,15 @@ export const photomancy: MysticSphere = {
       // -1d
       attack: {
         hit: `
-          Each target takes 1d4 + half \\glossterm{power} energy damage.
-          Each creature that loses \\glossterm{hit points} from this damage is \\dazzled as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -176,10 +176,10 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'flash',
         exceptThat:
-          'the area increases to a \\largearea radius, and the damage increases to 2d6 + half \\glossterm{power}.',
+          'the area increases to a \\largearea radius from you.',
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -188,29 +188,16 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 + half \\glossterm{power} energy damage.
-          If the target takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
+          The target takes \\damagerankone{energy}.
+          If it takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\medrange.
+          Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
-      rank: 1,
-      scaling: 'damage',
-      tags: [],
-    },
-
-    {
-      name: 'Certain Searing Light',
-
-      functionsLike: {
-        name: 'searing light',
-        exceptThat:
-          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d6 + half \\glossterm{power}.',
-      },
-      rank: 4,
-      scaling: 'damage',
+      rank: 2,
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -221,37 +208,39 @@ export const photomancy: MysticSphere = {
       // add that much power here.
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankfour{energy}.
           If it takes damage, it is \\dazzled as a \\glossterm{condition}.
-          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
+          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be deadly for some creatures.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\longrange.
+          Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
     {
       name: 'Solar Flare',
 
-      // +1r for true sunlight, -1r for -1d
+      // +1r for true sunlight, +1r for enemies only - end up with d5l instead of d5?
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankfivelow{energy}.
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -260,8 +249,9 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankone{energy}.
         `,
+        missGlance: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
           When you cast this spell, and during your next action, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
@@ -278,7 +268,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to 4d6 + half \\glossterm{power}.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour{energy}.',
       },
       rank: 7,
       tags: [],
@@ -289,8 +279,9 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
         `,
+        missGlance: true,
         targeting: `
           Choose up to five \\tinyarea radius areas within \\longrange of you.
           Make an attack vs. Fortitude against all creatures in any of those areas.
@@ -299,7 +290,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Visual'],
     },
 
@@ -354,7 +345,7 @@ export const photomancy: MysticSphere = {
       name: 'Disguise Image',
 
       effect: `
-        You make a Disguise check to alter your appearance (see \\pcref{Disguise Creature}).
+        You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
       `,
       rank: 1,
@@ -401,11 +392,18 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
-      scaling: {
-        3: `The miss chance increases to 30\\%.`,
-        5: `The miss chance increases to 40\\%.`,
-        7: `The miss chance increases to 50\\%.`,
+      tags: ['Visual'],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Mirror Image',
+
+      functionsLike: {
+        name: 'mirror image',
+        exceptThat: 'the miss chance increases to 50\\%.',
       },
+      rank: 7,
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -461,34 +459,34 @@ export const photomancy: MysticSphere = {
         // random effect is bad, but the sphere can't normally do most of those and you
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          The target takes 1d8 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange.
+          Make an attack vs. Reflex against anything within \\medrange.
         `,
       },
-      rank: 2,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
-      name: 'Certain Chromatic Orb',
+      name: 'Mighty Chromatic Orb',
 
       functionsLike: {
-        exceptThat:
-          'you gain a +3 accuracy bonus, and the damage increases to 2d8 + half \\glossterm{power}.',
         name: 'chromatic orb',
+        exceptThat: 'the damage increases to \\damageranksix{energy}.',
       },
-      rank: 5,
-      scaling: 'damage',
+      rank: 7,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes \\damagerankone{energy}.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
@@ -496,14 +494,15 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Distant Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes 2d10 + half \\glossterm{power} energy damage.`,
+        hit: `Each target takes \\damagerankfour{energy}.`,
+        missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
@@ -511,7 +510,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -520,7 +519,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           Each target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
-          This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or \\glossterm{invisibility}.
+          This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or being \\trait{invisible}.
           Other miss chances, such as the miss chance from attacking it while dazzled, are unaffected.
         `,
         targeting: `

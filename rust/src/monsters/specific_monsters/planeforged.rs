@@ -11,7 +11,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Planeforged;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullPlaneforgedDefinition {
@@ -24,6 +24,7 @@ struct FullPlaneforgedDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -43,6 +44,7 @@ impl FullPlaneforgedDefinition {
             modifiers: self.modifiers,
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -79,6 +81,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
             modifiers: None,
             movement_speeds: None,
             name: "Flamefist Imp".to_string(),
+            role: Role::Skirmisher,
             senses: None,
             size: Size::Small,
             trained_skills: None,
@@ -99,7 +102,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
             level: 13,
             modifiers: Some(vec![
                 Modifier::Attack(StandardAttack::Combustion(6).attack()),
-                Modifier::Attack(StandardAttack::Inferno(6).attack()),
+                Modifier::Attack(StandardAttack::Pyroclasm(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
                 Modifier::Attack(StandardAttack::Ignition(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
@@ -107,6 +110,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
             ]),
             movement_speeds: None,
             name: "Soulfire Demon".to_string(),
+            role: Role::Sniper,
             senses: None,
             size: Size::Large,
             trained_skills: None,
@@ -160,9 +164,6 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Attack(
                 StandardAttack::DivineJudgment(rank).attack(),
             ));
-            modifiers.push(Modifier::Attack(
-                StandardAttack::GlimpseOfDivinity(rank).attack(),
-            ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
                 ability_type: AbilityType::Normal,
@@ -209,6 +210,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     ),
                     MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
                 ]),
+                role: Role::Mystic,
                 senses: Some(vec![Sense::Darkvision(120), Sense::LowLightVision]),
                 weapons: self.weapons,
             }
@@ -218,7 +220,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         knowledge: Some(Knowledge::new(vec![
-            (-10, "
+            (-5, "
                 Angels are the ultimate champions of good in the endless battle of good and evil.
                 They are native to the Celestial Heavens, and they often serve the interests of good-aligned deities.
             "),
@@ -226,7 +228,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.
                 Most angels evoke an overpowering sense of awe and beauty, but individual angels may have highly varied appearances.
             "),
-            (10, "
+            (5, "
                 In battle, angels are feared for their fundamental perfection.
                 They tend not to have any weaknesses for attackers to use against them.
                 Their only true foes are demons, who use overwhelming hordes rather than any clever tactics.
@@ -251,10 +253,10 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 16,
                 modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Combustion(7).attack()),
+                    Modifier::Attack(StandardAttack::Combustion(6).attack()),
                     Modifier::Attack(
                         Maneuver::Tenderize
-                            .attack(StandardWeapon::MonsterRam.weapon())
+                            .attack(StandardWeapon::MultipedalRam.weapon(), 6)
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -265,9 +267,9 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Endurance,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon()
+                    StandardWeapon::MultipedalBite.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
-                    StandardWeapon::MonsterRam.weapon()
+                    StandardWeapon::MultipedalRam.weapon()
                         .except(|w| w.damage_types.push(DamageType::Fire)),
                 ],
             }
@@ -299,9 +301,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 14,
                 modifiers: Some(vec![
-                    Modifier::Attack(
-                        Maneuver::StripTheFlesh
-                            .attack(StandardWeapon::Greatsword.weapon())
+                    Modifier::Maneuver(
+                        Maneuver::DoubleStrike
                     ),
                 ]),
                 name: "Justicar".to_string(),
@@ -332,10 +333,10 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 12,
                 modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Inferno(5).attack()),
+                    Modifier::Attack(StandardAttack::Pyroclasm(5).attack()),
                     Modifier::Attack(
                         Maneuver::Whirlwind
-                            .attack(StandardWeapon::Slam.weapon())
+                            .attack(StandardWeapon::Slam.weapon(), 5)
                             .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                     ),
                 ]),
@@ -365,6 +366,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -387,6 +389,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(modifiers),
                 movement_speeds: self.movement_speeds,
                 name: self.name,
+                role: self.role,
                 size: self.size,
                 trained_skills: self.trained_skills,
                 weapons: self.weapons,
@@ -435,20 +438,21 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(StandardAttack::Enrage(2).attack()),
-                    Modifier::Maneuver(Maneuver::PowerFlurry),
+                    Modifier::Maneuver(Maneuver::PowerStrike),
                     Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                         AbilityTag::Emotion,
                     )),
                 ]),
                 movement_speeds: None,
                 name: "Rageborn Demon".to_string(),
+                role: Role::Brute,
                 size: Size::Large,
                 trained_skills: Some(vec![
                     Skill::Endurance,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -471,7 +475,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: Some(vec![
                     Modifier::Attack(
-                        Maneuver::GraspingStrike.attack(StandardWeapon::MonsterClaws.weapon())
+                        Maneuver::GraspingStrike.attack(StandardWeapon::Claws.weapon(), 2)
                         .except(|a| a.name = "Impale".to_string())
                     ),
                     Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
@@ -479,6 +483,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         AbilityTag::Compulsion,
                     )),
                 ]),
+                role: Role::Warrior,
                 movement_speeds: None,
                 name: "Painborn Demon".to_string(),
                 size: Size::Medium,
@@ -508,12 +513,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
             )));
-            modifiers.push(Modifier::Attack(StandardAttack::GustOfWind(rank).attack()));
-            modifiers.push(Modifier::Attack(StandardAttack::Windblast(rank).attack()));
+            modifiers.push(Modifier::Attack(StandardAttack::Windslash(rank).attack()));
             if rank >= 3 {
-                modifiers.push(Modifier::Attack(
-                    StandardAttack::PiercingWindblast(rank).attack(),
-                ));
                 modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
             }
             return FullPlaneforgedDefinition {
@@ -533,6 +534,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                     MovementMode::Land,
                     SpeedCategory::Fast,
                 )]),
+                role: Role::Skirmisher,
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam.weapon()],
@@ -634,6 +636,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                     MovementMode::Land,
                     SpeedCategory::Fast,
                 )]),
+                role: Role::Skirmisher,
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam
@@ -733,6 +736,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 description: None,
                 knowledge: None,
                 movement_speeds: None,
+                role: Role::Brute,
                 senses: None,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Slam
@@ -832,6 +836,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             )]),
             movement_speeds: None,
             name: "Spark Elemental".to_string(),
+            role: Role::Skirmisher,
             senses: None,
             size: Size::Small,
             trained_skills: None,
@@ -852,6 +857,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -894,6 +900,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
                 movement_speeds: self.movement_speeds,
                 name: self.name,
+                role: self.role,
                 size: self.size,
                 trained_skills: self.trained_skills,
                 weapons: self.weapons,
@@ -948,15 +955,16 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Worker".to_string(),
+                role: Role::Skirmisher,
                 size: Size::Medium,
                 trained_skills: Some(vec![
                     Skill::Craft,
                 ]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                 ],
             }
             .monster(),
@@ -973,9 +981,9 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+                modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
                     Modifier::Attack(
-                        StandardWeapon::MonsterStinger.weapon().attack()
+                        StandardWeapon::MultipedalStinger.weapon().attack()
                         .except_hit_damage(
                             |d| d.lose_hp_effect = Some(
                                 AttackTriggeredEffect::Poison(PoisonEffect {
@@ -985,15 +993,13 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                                 })
                             )
                         )
-                        .except_hit_damage(
-                            |d| d.power_multiplier = 0.5
-                        )
                     ),
                 ])),
                 movement_speeds: Some(vec![
                     MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast)
                 ]),
                 name: "Warrior".to_string(),
+                role: Role::Warrior,
                 size: Size::Medium,
                 trained_skills: Some(vec![
                     Skill::Awareness,
@@ -1001,7 +1007,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     Skill::Endurance,
                     Skill::Jump,
                 ]),
-                weapons: vec![StandardWeapon::MonsterStinger.weapon()],
+                weapons: vec![StandardWeapon::MultipedalStinger.weapon()],
             }
             .monster(),
         ],

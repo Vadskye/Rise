@@ -34,14 +34,16 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{elemental strike} ability as a standard action.
                 \begin{magicalactiveability}{Elemental Strike}
                     \rankline
-                    Make a \glossterm{strike} with a +2 damage bonus.
+                    Make a \glossterm{strike}.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
-                    You may use either your Strength or your Willpower to determine your damage with this ability (see \pcref{Dice Bonuses From Attributes}).
+                    You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
 
                     \rankline
-                    \rank{3} The damage bonus increases to \plus4.
-                    \rank{5} The damage bonus increases to \plus8.
-                    \rank{7} The damage bonus increases to \plus16.
+                    \rank{3} You gain 1d4 \glossterm{extra damage} with the strike.
+                    \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
+                    \rank{5} The extra damage increases to 1d6 per 4 power.
+                    \rank{6} The extra damage increases to 1d6 per 3 power.
+                    \rank{7} The extra damage increases to 1d10 per 3 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
@@ -115,20 +117,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Elemental Power",
             is_magical: true,
-            rank: 2,
-            description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
-            ",
-            modifiers: Some(vec![Modifier::Power(2)]),
-        },
-        RankAbility {
-            name: "Elemental Power+",
-            is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +6.
+                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Elemental Balance",
@@ -250,7 +243,10 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
                 You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-                You cannot choose the same spell with more than two metamagic abilities.
+
+                Some metamagic abilities affect specific spells.
+                You can only choose spells with a rank no higher than your rank in this archetype.
+                In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
                     \parhead{Distant Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -303,22 +299,22 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Wellspring of Power",
+            name: "Experienced Spellcaster",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Wellspring of Power+",
+            name: "Experienced Spellcaster+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The accuracy bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Accuracy(2)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -377,7 +373,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
                         \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes damage as if you had hit it with your gore natural weapon.
+                        \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes \glossterm{weapon damage} from your gore natural weapon.
                         This damage cannot be combined with other effects that deal damage with a shove.
                     \end{magicalactiveability}
 
@@ -388,8 +384,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} When you grapple a creature with the \textit{grapple} ability, they also take damage as if you had hit it with a \glossterm{strike} using your bite weapon.
-                        You do not add your \glossterm{power} to this damage.
+                        \rank{3} When you grapple a creature with the \textit{grapple} ability, they also take \glossterm{weapon damage} from your bite natural weapon.
                         \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you grapple a creature with the \textit{grapple} ability, you are not considered to be \grappled (see \pcref{Asymmetric Grappling}).
                     \end{magicalactiveability}
@@ -420,16 +415,18 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Hound}
                         \rankline
-                        You gain the ability to move on all four limbs.
-                        When doing so, you gain a \plus10 foot bonus to your land speed, but you have no \glossterm{free hands}.
+                        You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
+                        In addition, you have the ability to move on all four limbs.
+                        When doing so, you become \trait{multipedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
+                        This gives you a \plus10 foot bonus to your \glossterm{land speed}, and gives your bite the \weapontag{Heavy} weapon tag.
+
                         When not using your hands to move, your ability to use your hands is unchanged.
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
-                        In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
                         \rank{3} You gain the \trait{scent} ability.
-                        \rank{5} You can run on three limbs instead of four, allowing you to retain one free hand while keeping the speed bonus.
-                        \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                        \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                        \rank{7} You can run on three limbs instead of four, allowing you to retain one free hand while multipedal.
                     \end{magicalactiveability}
 
                     % Seems boring? What abilities would make sense?
@@ -481,7 +478,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Wolf}
                         \rankline
-                        You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are adjacent to you and one of your \glossterm{allies}.
+                        You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are adjacent to both you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
@@ -492,25 +489,27 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Myriad Form}
                         \rankline
-                        If you are \glossterm{trained} with the Disguise skill, you gain a +3 bonus to it.
+                        If you have Disguise as a \glossterm{trained skill}, you gain a +3 bonus to it.
                         Otherwise, you are treated as being trained in that skill.
 
                         \rankline
+                        % No maximum because the ability is magical
                         \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
                             If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
-                        \rank{5} You can use the \textit{disguise creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
+                        \rank{5} You can disguise yourself as a \glossterm{standard action} (see \pcref{Disguise}).
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Photosynthesis}
                         \rankline
+                        % Weird to use non-rolled hp value, but the scaling is fine?
                         As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
                         This cannot heal you above half your maximum \glossterm{hit points}.
                         \rankline
                         \rank{3} You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        \rank{5} Using the \ability{recover} ability while in natural sunlight only increases your \glossterm{fatigue level} by one.
-                        \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
+                        \rank{5} The healing from this wild aspect increases to be equal to your \glossterm{power}.
+                        \rank{7} When you finish a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{magicalactiveability}
 
@@ -540,11 +539,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalattuneability}{Shift Body}{\abilitytag{Attune}}
                     \rankline
                     When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                    You gain a \plus1 bonus to the base value of that attribute.
+                    You gain a \plus1 bonus to that attribute.
                 \end{magicalattuneability}
             ",
             modifiers: Some(vec![
-                Modifier::BaseAttribute(Attribute::Constitution, 1),
+                Modifier::Attribute(Attribute::Constitution, 1),
                 Modifier::Resource(Resource::AttunementPoint, -1),
             ]),
         },
@@ -559,42 +558,26 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
-            name: "Regenerative Shift",
+            name: "Shifting Strike",
             is_magical: true,
             rank: 3,
             description: r"
-                Whenever you activate a new \ability{wild aspect}, you regain hit points equal to a quarter of your maximum hit points.
-                This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
-                This cannot increase your hit points above half your maximum hit points.
+                You can use the \textit{shifting strike} ability as a standard action.
+                % Assume that choosing defense is worth about +3 accuracy, which is roughly 50% more damage
+                \begin{magicalactiveability}{Shifting Strike}
+                    \rankline
+                    Choose Armor, Reflex, or Fortitude defense.
+                    Make a \glossterm{strike} against that defense with a \glossterm{natural weapon}.
+
+                    \rankline
+                    \rank{4} You can choose to deal double \glossterm{weapon damage} with the strike.
+                    If you do, you take a -4 accuracy penalty.
+                    \rank{5} You gain a +1 accuracy bonus with the strike.
+                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{7} The accuracy bonus increases to +3.
+                \end{magicalactiveability}
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Regenerative Shift+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you heal using this ability, you can also remove one \glossterm{condition}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Natural Force",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with natural weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Natural Force+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Animal Shape",
@@ -605,7 +588,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
                 You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
                 The armor regains its normal shape if you take it off.
-                For details about shapeshifting, see \pcref{Shapeshift}.
+                For details about shapeshifting, see \pcref{Shapeshifting}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Cleansing Shift",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                Whenever you activate a new \ability{wild aspect}, you can also remove one \glossterm{condition}.
             ",
             modifiers: None,
         },
@@ -641,7 +633,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{natural servant} ability.
                 This ability requires spending 1 hour performing rituals in a natural area.
-                \begin{magicalattuneability}{Natural Servant}{\abilitytag{Attune}}
+                \begin{magicalattuneability}{Natural Servant}{\abilitytag{Attune} (deep)}
                     \rankline
                     An animal native to the local environment appears to help you.
                     It follows your directions to the best of its ability as long as you remain in its natural environment.
@@ -652,20 +644,26 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
 
                     \begin{itemize}
-                        \item Its size category is Medium, and its \glossterm{base speed} is the normal base speed for its size (see \tref{Size Categories}).
-                        \item Its \glossterm{fatigue tolerance} is 0, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
-                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your level (see \tref{Hit Points and Damage Resistance}).
+                        \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
+                        \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
+                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your your level (see \tref{Character Advancement}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
-                        \item Its \glossterm{power} with its attacks is 0.
-                        \item It has no \glossterm{attunement points}.
-                        \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                        \item All of its strikes are \glossterm{weak strikes}.
+                        \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
-                        \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
+                        \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points and damage resistance.
                     \end{itemize}
-
                     % There must be text between an itemize block and the end of a mdframed env
-                    \hypertarget{itemizespace}{}
+
+                    \rankline
+                    \rank{2} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    \rank{3} The animal's strikes are no longer \glossterm{weak strikes}.
+                    \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} The animal's \glossterm{weapon damage} is doubled.
+                    However, the accuracy bonus is reduced to +2.
                 \end{magicalattuneability}
 
                 The special ability of the animal that appears depends on your environment, as described below.
@@ -723,7 +721,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Animal Speech+",
             is_magical: true,
-            rank: 6,
+            rank: 5,
             description: r"
                 When you use this ability, you may target any living creature that knows at least one language.
                 If you target a non-animal in this way, you do not gain the ability to speak with and understand the speech of other creatures of the target's species.
@@ -733,45 +731,24 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Nature's Ally",
             is_magical: true,
-            rank: 2,
+            rank: 3,
             description: r"
-                Animals will not willingly attack you or your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you.
-                They can be compelled to attack despite this protection with a Creature Handling check against a \glossterm{difficulty value} equal to 10 \add your level.
-                If any target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you take a \glossterm{short rest}.
+                You and your \glossterm{allies} within a \hugearea radius \glossterm{emanation} from you are under nature's protection.
+                Animals will not willingly attack protected creatures, and will automatically attempt to help if the protected creatures are in mortal danger.
+                For example, if you are attacked while in a forest, nearby birds might start harassing your foes, at the GM's discretion.
+                If any protected target attacks a creature that this ability protects you from, this ability is \glossterm{suppressed} until you finish a \glossterm{long rest}.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Nature's Ally+",
             is_magical: true,
-            rank: 5,
-            description: r"
-                This ability also protects you and your allies from plant-based \glossterm{animates }and elemental-based \glossterm{planeforged}.
-                In addition, all creatures that you are protected from with this ability automatically attempt to aid you and your allies if they observe you fighting.
-                Finally, the effect can no longer be bypassed with a Creature Handling check or any other form of control that does not first suppress this effect.
-                Even creatures summoned by enemies to fight you will immediately turn on their summoners or otherwise avoid attacking you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Nature's Might",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                You and your \textit{natural servant} gain a \plus1d damage bonus with \glossterm{natural weapons}.
-            ",
-            // TODO: make this only work with natural weapons
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Nature's Might+",
-            is_magical: true,
             rank: 6,
             description: r"
-                The damage bonus increases to \plus2d.
+                % TODO: does this need a glossterm? These are only defined fully in the Tome of Guidance.
+                This ability also protects you and your allies from plant animates, elemental planeforged, and all summoned creatures.
             ",
-            // TODO: make this only work with natural weapons
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Natural Attunement",

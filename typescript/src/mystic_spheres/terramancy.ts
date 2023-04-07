@@ -41,30 +41,29 @@ export const terramancy: MysticSphere = {
 
       // +1r for +1acc
       attack: {
-        hit: `The target takes 1d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes \\damagerankone{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Mighty Rock Throw',
 
-      // +4r for +2d
       attack: {
-        hit: `The target takes 4d8 + \\glossterm{power} bludgeoning damage.`,
+        hit: `The target takes \\damagerankfourhigh{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 accuracy bonus if you are on a Medium or larger body of stone.
         `,
       },
-      rank: 5,
-      scaling: 'damage',
+      rank: 4,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -74,7 +73,7 @@ export const terramancy: MysticSphere = {
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankonelow{bludgeoning}.
           If it loses \\glossterm{hit points} from this damage, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
@@ -87,23 +86,7 @@ export const terramancy: MysticSphere = {
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
       rank: 2,
-      scaling: 'damage',
-      tags: [],
-    },
-
-    {
-      name: 'Certain Crushing Gravity',
-
-      functionsLike: {
-        name: 'crushing gravity',
-        exceptThat:
-          'the accuracy bonus increases to +2 per size category, and the damage increases to 4d6 + \\glossterm{power}.',
-      },
-      narrative: `
-        The bigger they are, the more heavily gravity pulls them to the ground.
-      `,
-      rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: [],
     },
 
@@ -111,14 +94,15 @@ export const terramancy: MysticSphere = {
       name: 'Shrapnel Blast',
 
       attack: {
-        hit: `Each target takes 1d8 + half \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes \\damagerankone{bludgeoning and piercing}.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea cone from you.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -126,14 +110,14 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Shrapnel Blast',
 
       attack: {
-        hit: `Each target takes 4d6 + \\glossterm{power} bludgeoning and piercing damage.`,
+        hit: `Each target takes \\damagerankfivehigh{bludgeoning and piercing}.`,
         targeting: `
           Make an attack vs. Armor against everything in a \\medarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -150,7 +134,7 @@ export const terramancy: MysticSphere = {
         If you create body armor or a weapon, it can be created from any special material other than cold iron.
         The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
-        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
       `,
       rank: 1,
       type: 'Attune',
@@ -189,34 +173,15 @@ export const terramancy: MysticSphere = {
       // dodge it
       attack: {
         hit: `
-          The target takes 1d6 + half \\glossterm{power} piercing damage.
+          The target takes \\damagerankone{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
         `,
       },
-      rank: 1,
-      scaling: 'damage',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Certain Earthspike',
-
-      // +1r for med range, +2r for +2acc
-      // Can't go to full damage because this is single-target vs Reflex
-      attack: {
-        hit: `
-          The target takes 2d6 + half \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Reflex with a +2 accuracy bonus against anything within \\medrange that is \\sphereterm{grounded}.
-        `,
-      },
-      rank: 4,
-      scaling: 'damage',
+      rank: 2,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -225,15 +190,15 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 + half \\glossterm{power} piercing damage.
+          The target takes \\damagerankfivehigh{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
         `,
       },
-      rank: 7,
-      scaling: 'damage',
+      rank: 6,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -269,7 +234,7 @@ export const terramancy: MysticSphere = {
         // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
+          Make an attack vs. Reflex against all Large or smaller \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
         `,
       },
       narrative: `
@@ -299,8 +264,9 @@ export const terramancy: MysticSphere = {
       // +2r for also next round, -1r for grounded
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
@@ -310,7 +276,7 @@ export const terramancy: MysticSphere = {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -319,8 +285,9 @@ export const terramancy: MysticSphere = {
       // this scales very well with area, so it pays the full +2r price for large and huge
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfivehigh{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           The earth shakes in a \\hugearea radius \\glossterm{zone} around you.
           When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
@@ -330,7 +297,7 @@ export const terramancy: MysticSphere = {
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -339,10 +306,9 @@ export const terramancy: MysticSphere = {
       // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
       attack: {
         hit: `
-          The target takes 4d6 bludgeoning damage.
-          If it is Large or smaller and it loses \\glossterm{hit points} from this damage, it is swallowed by the earth as a \\glossterm{condition}.
+          If the target is Large or smaller and has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
-          During each of your subsequent actions, it takes 4d6 bludgeoning damage as the earth grinds it into paste.
+          During each of your subsequent actions, it takes \\damagerankfive{bludgeoning} as the earth grinds it into paste.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
           Special movement abilities such as teleportation can also remove the target from the fissure.
         `,
@@ -474,7 +440,8 @@ export const terramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} bludgeoning and fire damage.`,
+        hit: `Each target takes \\damagerankone{bludgeoning and fire}.`,
+        missGlance: true,
         targeting: `
           You create a volcano at a \\sphereterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
@@ -486,7 +453,7 @@ export const terramancy: MysticSphere = {
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
@@ -496,13 +463,13 @@ export const terramancy: MysticSphere = {
       // +4d for +1d and full power
       functionsLike: {
         name: 'volcano',
-        exceptThat: 'the damage increases to 4d8 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to \\damageranksixhigh{bludgeoning and fire}.',
       },
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
@@ -535,7 +502,7 @@ export const terramancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the Forceful \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        You may use the higher of your Strength and your Willpower to determine your damage with strikes using the weapon (see \\pcref{Dice Bonuses From Attributes}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
       narrative: `

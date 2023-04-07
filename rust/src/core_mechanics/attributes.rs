@@ -1,7 +1,7 @@
-use crate::creatures::{Creature, HasModifiers, ModifierType};
+use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
 use std::cmp::PartialEq;
 
-#[derive(Clone, Copy, Eq, Hash)]
+#[derive(Clone, Copy, Debug, Eq, Hash)]
 pub enum Attribute {
     Strength,
     Dexterity,
@@ -54,6 +54,7 @@ impl PartialEq for Attribute {
 
 pub trait HasAttributes {
     fn get_base_attribute(&self, attribute: &Attribute) -> i32;
+    fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]);
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
 }
 
@@ -67,7 +68,20 @@ where
         } else {
             0
         };
-        return value + self.calc_total_modifier(ModifierType::BaseAttribute(*attribute));
+        return value + self.calc_total_modifier(ModifierType::Attribute(*attribute));
+    }
+
+    fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]) {
+        let value = (level + 3) / 6;
+        if value > 0 {
+            for attribute in attributes.iter() {
+                self.add_modifier(
+                    Modifier::Attribute(*attribute, value),
+                    Some("attribute scaling with level"),
+                    None,
+                );
+            }
+        }
     }
 
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32) {

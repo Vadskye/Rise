@@ -1,13 +1,13 @@
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
 use crate::core_mechanics::attacks::StandardAttack;
-use crate::core_mechanics::{Debuff, MovementSpeed, Sense, Size, SpecialDefenseType};
+use crate::core_mechanics::{Debuff, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Aberration;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullAberrationDefinition {
@@ -20,6 +20,7 @@ struct FullAberrationDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -38,6 +39,7 @@ fn aberration(def: FullAberrationDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -59,7 +61,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         challenge_rating: ChallengeRating::Four,
         description: None,
         knowledge: Some(Knowledge::new(vec![
-            (-10, "
+            (-5, "
                 Legends speak of revolting water-dwelling creatures called aboleths that lurk in the deepest caves.
                 They are said to have power over people's minds.
             "),
@@ -89,15 +91,19 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 ".to_string(),
                 is_magical: true,
                 name: "Dominate".to_string(),
-                tags: Some(vec![AbilityTag::Compulsion]),
+                tags: Some(vec![AbilityTag::Compulsion, AbilityTag::Elite]),
                 usage_time: None,
             }),
             Modifier::Attack(StandardAttack::AbolethSlam.attack()),
             Modifier::Attack(StandardAttack::AbolethPsionicBlast.attack()),
             Modifier::Attack(StandardAttack::MindCrush(5).attack()),
         ]),
-        movement_speeds: None,
+        movement_speeds: Some(vec![
+            MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
+            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
+        ]),
         name: "Aboleth".to_string(),
+        role: Role::Warrior,
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
         trained_skills: Some(vec![
@@ -130,6 +136,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
         ]),
         movement_speeds: None,
+        role: Role::Brute,
         name: "Gibbering Mouther".to_string(),
         senses: Some(vec![Sense::Darkvision(240), Sense::Telepathy(480)]),
         size: Size::Huge,
@@ -138,7 +145,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             Skill::Swim,
         ]),
         // TODO: make attacks sweeping
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     return monsters;

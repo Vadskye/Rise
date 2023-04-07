@@ -2,7 +2,7 @@ use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use std::{cmp::max, fmt};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum Armor {
     // Light armor
     Leather(Option<ArmorMaterial>),
@@ -23,7 +23,7 @@ pub enum Armor {
     TowerShield,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum ArmorMaterial {
     Adamantine,
     PureAdamantine,
@@ -282,7 +282,7 @@ impl Armor {
             },
             Self::ScaleMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(5, m),
+                damage_resistance: calc_dr(4, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 5,
@@ -292,7 +292,7 @@ impl Armor {
             },
             Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(5, m),
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -314,7 +314,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
+                damage_resistance: calc_dr(6, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 5,
@@ -324,7 +324,7 @@ impl Armor {
             },
             Self::PlatedMail(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
@@ -334,7 +334,7 @@ impl Armor {
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(12, m),
+                damage_resistance: calc_dr(10, m),
                 defense: 4,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
@@ -353,6 +353,11 @@ impl Armor {
                 speed_modifier: 0,
             },
         }
+    }
+
+    fn is_body_armor(&self) -> bool {
+        // This is a bit of a hack; we could identify this with a name match instead.
+        return self.definition().damage_resistance > 0;
     }
 
     fn material(&self) -> &Option<ArmorMaterial> {
@@ -472,7 +477,10 @@ impl fmt::Display for ArmorUsageClass {
 pub trait HasArmor {
     fn add_armor(&mut self, armor: Armor);
     fn get_armor(&self) -> Vec<&Armor>;
+    fn replace_armor(&mut self, armor: Armor);
+    fn remove_armor(&mut self, armor: Armor);
     fn calc_encumbrance(&self) -> i32;
+    // Find the lowest dex multiplier among all the armor components being worn
     fn minimum_dex_modifier(&self) -> Option<f64> {
         if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
             ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
@@ -490,6 +498,16 @@ where
 {
     fn add_armor(&mut self, armor: Armor) {
         self.armor.push(armor);
+    }
+
+    fn replace_armor(&mut self, armor: Armor) {
+        self.armor
+            .retain(|a| a.is_body_armor() != armor.is_body_armor());
+        self.add_armor(armor)
+    }
+
+    fn remove_armor(&mut self, armor: Armor) {
+        self.armor.retain(|a| a.name() != armor.name());
     }
 
     fn get_armor(&self) -> Vec<&Armor> {
@@ -515,7 +533,7 @@ mod tests {
         assert_eq!(
             10,
             Armor::FullPlate(None).damage_resistance(),
-            "Should be 10 with no material"
+            "Should be 12 with no material"
         );
         assert_eq!(
             20,

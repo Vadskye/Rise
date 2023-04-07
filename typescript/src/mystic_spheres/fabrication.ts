@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
+  hasImage: true,
   shortDescription: 'Create objects to damage and impair foes.',
   sources: ['arcane', 'divine', 'pact'],
 
@@ -24,19 +25,38 @@ export const fabrication: MysticSphere = {
       },
       tags: ['Manifestation'],
     },
+
+    {
+      name: 'Forge',
+
+      effect: `
+        You can create any one weapon, shield, or body armor that you are proficient with.
+        It is sized appropriately for you, up to a maximum of a Medium size item.
+        The item appears in your hand or on the ground at your feet.
+
+        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+
+        Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
+        A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
+        If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, it automatically disappears.
+      `,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
   ],
   spells: [
     {
       name: 'Mystic Arrow',
 
       attack: {
-        hit: `The target takes 1d10 + \\glossterm{power} piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -45,44 +65,56 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} piercing damage.
-          If it loses \\glossterm{hit points} from this damage, it is knocked \\prone.
+          The target takes \\damageranktwo{piercing}.
+          If it is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Mystic Artillery',
 
-      // +2r for delay, +1r for range
+      // Long range would be d2, drop to d1 for delay
       attack: {
         hit: `
-          The target takes 2d10 + \\glossterm{power} piercing damage.
+          The target takes \\damagerankone{piercing}.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space.
-          During your next action, make an attack vs. Armor with the bolt against anything within \\distrange.
+          During your next action, make an attack vs. Armor with the bolt against anything within \\longrange.
         `,
       },
-      rank: 5,
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Mystic Artillery',
+
+      functionsLike: {
+        name: 'mystic artillery',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+      },
+      rank: 6,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: "Executioner's Axe",
 
-      // +2r for delay
-      // treat "two adjacent targets" as equivalent to close range with the delay;
-      // people can just run from it, so it's hard to actually get the double-hit off.
+      // two adjacent targets would normally be about d2h.
+      // Drop to d2l for the delay; delay is less powerful in melee than at range.
       attack: {
         hit: `
-          Each target takes 1d10 + \\glossterm{power} slashing damage.
+          Each target takes \\damageranktwolow{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -98,7 +130,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 4d10 + \\glossterm{power} slashing damage.
+          Each target takes \\damageranksixlow{slashing}.
         `,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
@@ -113,13 +145,13 @@ export const fabrication: MysticSphere = {
       name: 'Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes 1d6 + half \\glossterm{power} slashing damage.`,
+        hit: `Each target takes \\damagerankone{slashing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -127,13 +159,13 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes 2d10 + \\glossterm{power} slashing damage.`,
+        hit: `Each target takes \\damagerankfive{slashing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -141,13 +173,13 @@ export const fabrication: MysticSphere = {
       name: 'Precision Missileburst',
 
       attack: {
-        hit: `Each target takes 1d10 + half \\glossterm{power} piercing damage.`,
+        hit: `Each target takes \\damagerankone{piercing}.`,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -156,24 +188,23 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfour{piercing}.
         `,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Rain of Arrows',
 
-      // -1r for -1d
       attack: {
         hit: `
-          Each target takes 1d10 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankone{piercing}.
         `,
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
@@ -182,17 +213,16 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Massive Rain of Arrows',
 
-      // offset previous -1d
       attack: {
         hit: `
-          Each target takes 4d6 + half \\glossterm{power} piercing damage.
+          Each target takes \\damagerankfour{piercing}.
         `,
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
@@ -201,7 +231,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -209,7 +239,7 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       attack: {
-        hit: `The target takes 1d8 + half \\glossterm{power} slashing damage.`,
+        hit: `The target takes \\damagerankone{slashing}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
@@ -222,7 +252,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -232,12 +262,12 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to 4d6 + \\glossterm{power}.
+          the damage increases to \\damagerankfive{slashing}.
         `,
         name: 'blade barrier',
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -248,12 +278,12 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
-          In addition, the damage increases to 1d10 + half \\glossterm{power}.
+          In addition, the damage increases to \\damageranktwo{slashing}.
         `,
         name: 'blade barrier',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -266,32 +296,15 @@ export const fabrication: MysticSphere = {
         You create a normal item of that type in your hand.
         If the item stops touching you, it disappears, and this effect ends.
 
-        If you create a non-crossbow projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+        If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you can fire it without ammunition by creating projectiles as you fire.
         The projectiles disappear after the attack is complete.
-        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
 
         % Strange duration for a spell
         This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
       rank: 1,
       tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Forge',
-
-      effect: `
-        This spell creates one or two weapons, suits of body armor, or shields.
-        You can create any weapon, shield, or body armor that you are proficient with.
-        It is sized appropriately for you, up to a maximum of a Medium size item.
-        The items appear in your hand or on the ground at your feet.
-
-        If you create body armor or a weapon, it can be created from any special material other than cold iron.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-      `,
-      rank: 1,
-      tags: ['Manifestation'],
-      type: 'Attune',
     },
 
     {
@@ -313,7 +326,7 @@ export const fabrication: MysticSphere = {
       name: 'Caltrops',
 
       attack: {
-        hit: `The target takes 1d6 + half \\glossterm{power} piercing damage.`,
+        hit: `The target takes \\damagerankone{piercing}.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
@@ -322,8 +335,8 @@ export const fabrication: MysticSphere = {
           Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },
-      rank: 1,
-      scaling: 'damage',
+      rank: 2,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -333,10 +346,10 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to 2d10 + \\glossterm{power}.',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -353,7 +366,7 @@ export const fabrication: MysticSphere = {
         However, the item's rank cannot exceed half your spellcasting rank with this spell.
 
         The object persists until the end of the round, at which point it disappears.
-        Any attack with this ammunition is considered a \\magical attack, so you use your Willpower to determine your damage instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        Any attack with this ammunition is considered a \\magical attack, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
       `,
       rank: 1,
       tags: ['Manifestation'],
@@ -363,16 +376,27 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `The target takes 2d8 piercing damage.`,
+        hit: `The target takes \\damageranktwo{piercing}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
-          When you do, make an attack vs. Armor against that target.
+          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
           After the dagger deals damage, it disappears and another dagger appears in the swarm.
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Daggerswarm',
+
+      functionsLike: {
+        name: 'daggerswarm',
+        exceptThat: 'the damage increases to \\damagerankfive{piercing}.',
+      },
+      rank: 7,
       type: 'Attune (deep)',
     },
 
@@ -408,7 +432,7 @@ export const fabrication: MysticSphere = {
           This vulnerability ends for a target if it takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything that is Large or smaller in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 7,
@@ -447,16 +471,12 @@ export const fabrication: MysticSphere = {
       effect: `
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        If you create a non-crossbow projectile weapon, you also create ammunition necessary for you to attack with.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
       rank: 1,
-      scaling: {
-        3: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
-        5: `The accuracy bonus increases to +2.`,
-        7: `The accuracy bonus increases to +3.`,
-      },
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -542,7 +562,7 @@ export const fabrication: MysticSphere = {
           you can choose whether the barrier blocks sound.
           You can change whether the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
 
-          Both types of barrier still block \\glossterm{line of effect} for effects that deal \\glossterm{bludgeoning damage}, even if they narratively come from a sound or voice.
+          Both types of barrier still block \\glossterm{line of effect} for effects that deal bludgeoning damage, even if they narratively come from a sound or voice.
           If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
         `,
         name: 'mystic barrier',
@@ -562,14 +582,17 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes bludgeoning damage equal to 1d10 plus your \\glossterm{power}.
+            Each object in the path of the wall takes \\damagerankthree{bludgeoning}.
             Any object destroyed in this way does not block the barrier's area of effect.
             This does no damage to creatures, who block the path of the barrier like normal.
         `,
         name: 'mystic barrier',
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: {
+        5: 'You can choose to create a \\medarealong wall instead.',
+        7: 'You can choose to create a \\largearealong wall instead.',
+      },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -693,6 +716,22 @@ export const fabrication: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Ritual Forge',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        abilityType: "cantrip",
+        name: "forge",
+        exceptThat: `
+          any ritual participant can attune to the effect.
+          That participant must maintain proximity to the item to prevent it from disappearing.
+        `,
+      },
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
     {
       name: 'Manifest Object',
 

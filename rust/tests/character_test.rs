@@ -17,9 +17,7 @@ mod character_tests {
         let mut ability_names: Vec<&str> = abilities.iter().map(|a| a.name).collect();
         ability_names.sort();
         assert_eq!(
-            vec![
-                "Abyssal Rebuke",
-            ],
+            vec!["Abyssal Rebuke",],
             ability_names,
             "Should match expected names"
         );

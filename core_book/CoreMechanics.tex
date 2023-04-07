@@ -114,23 +114,23 @@ This chapter describes the core mechanics of Rise.
 
     \subsection{Short Rest}\label{Short Rest}
         Resting for ten minutes is considered a \glossterm{short rest}.
-        When you take a short rest, you gain the following benefits.
+        When you finish a short rest, you gain the following benefits.
         \begin{itemize}
             \item Your \glossterm{hit points} become equal to your maximum hit points.
             \item Your current \glossterm{damage resistance} becomes equal to your maximum damage resistance.
             \item You regain any \glossterm{attunement points} you released from \glossterm{deep attunement} effects (see \pcref{Deep Attunement}).
             \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
-            \item Some other abilities have specific effects that last until you take a short rest.
+            \item Some other abilities have specific effects that last until you finish a short rest.
         \end{itemize}
 
     \subsection{Long Rest}\label{Long Rest}
         Resting for eight hours is considered a \glossterm{long rest}.
-        When you take a long rest, you gain the following benefits.
+        When you finish a long rest, you gain the following benefits.
         \begin{itemize}
             \item You remove one of your vital wounds (see \pcref{Removing Vital Wounds}).
                 The Medicine skill can increase this healing (see \pcref{Accelerate Recovery}).
             \item Your \glossterm{fatigue level} becomes 0.
-            \item Some other abilities have specific effects that last until you take a long rest.
+            \item Some other abilities have specific effects that last until you finish a long rest.
         \end{itemize}
 
         You can take multiple long rests consecutively to recover from extensive vital wounds.
@@ -147,19 +147,19 @@ This chapter describes the core mechanics of Rise.
         \lcaption{Size Categories}
         \begin{dtabularx}{\textwidth}{l l l l l l X}
             \tb{Size}         & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex Defense} & \tb{Stealth} & \tb{Example Creature} \tableheaderrule
-            Fine              & 1/4 ft.          & 10 ft.           & \minus4 Str        & \plus4               & \minus20               & Fly                      \\
-            Diminuitive       & 1/2 ft.          & 10 ft.          & \minus3 Str        & \plus3               & \minus15               & Mouse                    \\
-            Tiny              & 1 ft.            & 20 ft.          & \minus2 Str        & \plus2               & \minus10               & Rat                      \\
-            Small             & 2-1/2 ft.        & 20 ft.          & \minus1 Str        & \plus1               & \minus5               & Cat                      \\
+            Fine              & 1/4 ft.          & 10 ft.           & \minus4 Str        & \plus4               & \plus20               & Fly                      \\
+            Diminuitive       & 1/2 ft.          & 10 ft.          & \minus3 Str        & \plus3               & \plus15               & Mouse                    \\
+            Tiny              & 1 ft.            & 20 ft.          & \minus2 Str        & \plus2               & \plus10               & Rat                      \\
+            Small             & 2-1/2 ft.        & 20 ft.          & \minus1 Str        & \plus1               & \plus5               & Cat                      \\
             Medium            & 5 ft.            & 30 ft.          & \tdash             & \tdash               & \tdash               & Human                    \\
-            Large (tall)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & \plus5              & Ogre                     \\
-            Large (long)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & \plus5              & Horse                    \\
-            Huge (tall)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & \plus10              & Cloud giant              \\
-            Huge (long)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & \plus10              & Bulette                  \\
-            Gargantuan (tall) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & \plus15              & 50-ft.\ animated statue  \\
-            Gargantuan (long) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & \plus15              & Kraken                   \\
-            Colossal (tall)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & \plus20              & Colossal animated object \\
-            Colossal (long)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & \plus20              & Great wyrm red dragon    \\
+            Large (tall)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & \minus5              & Ogre                     \\
+            Large (long)      & 10 ft.           & 40 ft.          & \plus1 Str         & \minus1              & \minus5              & Horse                    \\
+            Huge (tall)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & \minus10              & Cloud giant              \\
+            Huge (long)       & 20 ft.           & 50 ft.          & \plus2 Str         & \minus2              & \minus10              & Bulette                  \\
+            Gargantuan (tall) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & \minus15              & 50-ft.\ animated statue  \\
+            Gargantuan (long) & 40 ft.           & 60 ft.          & \plus3 Str         & \minus3              & \minus15              & Kraken                   \\
+            Colossal (tall)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & \minus20              & Colossal animated object \\
+            Colossal (long)   & 80\add ft.       & 80 ft.          & \plus4 Str         & \minus4              & \minus20              & Great wyrm red dragon    \\
         \end{dtabularx}
         1 Creatures can vary in space.  These are simply typical values. \\
         2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
@@ -195,9 +195,6 @@ This chapter describes the core mechanics of Rise.
         \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
 
     \subsection{Very Large Creatures}\label{Very Large Creatures}
-        Creature that are Gargantuan or larger are immune to all effects which would cause them to be \prone.
-        They are still physically capable of becoming prone of their own volition, but their sheer mass makes them hard to topple and slow to drop.
-
         \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
 
         \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
@@ -353,7 +350,7 @@ This chapter describes the core mechanics of Rise.
 
         Deep attunement abilities have two main differences from ordinary attunement abilities.
         First, they require expending two attunement points instead of only one.
-        Second, the attuning creature can't get back those attunement points by any means until they take a \glossterm{short rest}, even if they release the attunement.
+        Second, the attuning creature can't get back those attunement points by any means until they finish a \glossterm{short rest}, even if they release the attunement.
 
     \subsection{Targeted Attunement}\label{Targeted Attunement}
         Some attuned abilities affect specific creatures instead of the caster.
@@ -372,13 +369,12 @@ This chapter describes the core mechanics of Rise.
 
         \parhead{Magical Abilities}\label{Magical Abilities} A \magical ability is an ability fundamentally composed of or fuelled by magic.
         Magical abilities often have effects that would be impossible without magical intervention.
-        Examples include \glossterm{spells}, a dragon's breath weapon, and a paladin's ability to smite foes.
-        Abilities that are magical in nature are indicated with a \sparklespaceless in their name.
+        Examples include \glossterm{spells}, a dragon's ability to fly, and a paladin's ability to smite foes.
+        Abilities that are magical in nature are indicated with a \sparkle in their name.
         Abilities that are not magical are \glossterm{mundane}.
 
         \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has some form of natural explanation and does not fundamentally originate from a magical source.
         Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
-        Mundane attacks often target Armor defense.
         Unless otherwise indicated, all abilities are mundane in nature.
         Abilities that are not mundane are \magical.
 
@@ -422,6 +418,12 @@ This chapter describes the core mechanics of Rise.
         For abilities that affect an area within a range, the area's \glossterm{point of origin} must be within the range (see \pcref{Point of Origin}).
         There are five common ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
         Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+
+    \subsection{Touch}\label{Touch}
+        Some abilities specify that you must touch a target.
+        You can only touch creatures that are adjacent to you.
+        Touching a creature that is not an \glossterm{ally} requires an attack against the target's Reflex defense, which is usually mentioned as part of the ability's description.
+        Some creatures cannot be touched, such as \glossterm{incorporeal} creatures.
 
     \subsection{Area}\label{Area}
 
@@ -533,8 +535,8 @@ This chapter describes the core mechanics of Rise.
             They last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
 
-            At the start of your action during each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
-            This happens before ``during your action'' effects resolve, so you can't gain the benefits of a sustained ability during your action without sustaining it.
+            At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
+            This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
 
             Some sustained abilities include ``attuneable'' in the tag before the action type.
             When you use or sustain that ability, you can choose to \glossterm{attune} to it.
@@ -720,7 +722,7 @@ This chapter describes the core mechanics of Rise.
             Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
 
             \parhead{Attunement Rituals}
-                Rituals with the \abilitytag{Attune} (ritual) tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
+                Rituals with the \abilitytag{Attune} tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
                 Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
                 For details, see \pcref{Attuned Abilities}.
 
@@ -920,6 +922,11 @@ This chapter describes the core mechanics of Rise.
 
         This also applies to calculations using real-world values, such as movement and distance, as long as you're calculating the effects of abilities.
         For example, if you have two different abilities that double your range with a spell, your total range with that spell is three times the spell's normal range.
+
+        \subsubsection{Doubling Damage}
+            If you double your damage with a dice pool, you roll the same number of dice and modify the result.
+            This is different from a \glossterm{critical hit}, which changes the number of dice you roll.
+            As a result, if you get a \glossterm{critical hit} with a double-damage attack, you roll twice as many dice and then double the result, which typically means you deal 4x your normal damage.
 
     \subsection{Changing Statistics}
 

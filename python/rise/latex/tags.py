@@ -13,7 +13,6 @@ valid_tags = set(
         "Physical",
         "Scrying",
         "(see text)",
-        "Sensation",
         "Speech",
         "Subtle",
         "Sustain (standard)",

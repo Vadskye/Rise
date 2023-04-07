@@ -8,7 +8,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Humanoid;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullHumanoidDefinition {
@@ -21,6 +21,7 @@ struct FullHumanoidDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -39,6 +40,7 @@ fn humanoid(def: FullHumanoidDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -69,10 +71,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 ])),
                 level: 3,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::RecklessStrike(1)),
+                    Modifier::Maneuver(Maneuver::RecklessStrike),
                 ]),
                 movement_speeds: None,
                 name: "Orc Deserter".to_string(),
+                role: Role::Brute,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Endurance]),
@@ -93,10 +96,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
                 level: 1,
                 modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DrainLife(1).attack(),
+                    StandardAttack::InflictWound(1).attack(),
                 )]),
                 movement_speeds: None,
                 name: "Death Cultist".to_string(),
+                role: Role::Sniper,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -115,6 +119,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 ]),
                 movement_speeds: None,
                 name: "Pyromaniac".to_string(),
+                role: Role::Sniper,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -137,6 +142,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Goblin Peon".to_string(),
+                role: Role::Skirmisher,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -152,6 +158,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Goblin Guard".to_string(),
+                role: Role::Skirmisher,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -167,6 +174,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Goblin Warg Rider".to_string(),
+                role: Role::Skirmisher,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -184,6 +192,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 )]),
                 movement_speeds: None,
                 name: "Goblin Shaman".to_string(),
+                role: Role::Sniper,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -227,6 +236,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
                 ]),
                 name: "Lizardfolk Grunt".to_string(),
+                role: Role::Warrior,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -245,6 +255,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
                 ]),
                 name: "Lizardfolk Elite".to_string(),
+                role: Role::Warrior,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -271,6 +282,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Town Guard".to_string(),
+                role: Role::Warrior,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -288,6 +300,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 )]),
                 movement_speeds: None,
                 name: "Cleric of the Peace".to_string(),
+                role: Role::Leader,
                 senses: None,
                 size: Size::Medium,
                 trained_skills: None,
@@ -305,6 +318,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -320,6 +334,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 level: self.level,
                 name: self.name,
                 modifiers: self.modifiers,
+                role: self.role,
                 size: self.size,
                 trained_skills: self.trained_skills,
                 weapons: self.weapons,
@@ -361,6 +376,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     Modifier::Maneuver(Maneuver::Armorcrusher),
                 ]),
                 name: "Orc Butcher".to_string(),
+                role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Sledgehammer.weapon()],
@@ -376,6 +392,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 level: 2,
                 modifiers: None,
                 name: "Orc Grunt".to_string(),
+                role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
@@ -392,6 +409,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 level: 1,
                 modifiers: None,
                 name: "Orc Peon".to_string(),
+                role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon()],
@@ -406,30 +424,33 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     "),
                 ])),
                 level: 5,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::MightyStrike(2))]),
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::PowerStrike)]),
                 name: "Orc Veteran".to_string(),
+                role: Role::Warrior,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
             }.monster(),
+            // TODO: figure out how to add a "battle command" ability
             OrcDefinition {
                 attributes: vec![6, 1, 4, -2, 2, 2],
                 challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Orc clan chiefs are the among the most powerful orc warriors.
-                        Even the lowest clan chiefs commands hundreds of powerful orc warriors, plus at least as many noncombatants.
+                        Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants.
                     "),
                 ])),
                 level: 6,
                 modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::MightyStrike(3)),
+                    Modifier::Maneuver(Maneuver::PowerStrike),
                     Modifier::Attack(
                         Maneuver::Hamstring
-                            .attack(StandardWeapon::Greataxe.weapon())
+                            .attack(StandardWeapon::Greataxe.weapon(), 2)
                     ),
                 ]),
                 name: "Orc Clan Chief".to_string(),
+                role: Role::Warrior,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
@@ -447,6 +468,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     StandardAttack::DivineJudgment(1).attack(),
                 )]),
                 name: "Orc Shaman".to_string(),
+                role: Role::Mystic,
                 size: Size::Medium,
                 trained_skills: None,
                 weapons: vec![StandardWeapon::Battleaxe.weapon()],
