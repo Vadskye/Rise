@@ -501,31 +501,29 @@ export const polymorph: MysticSphere = {
         At the end of each round, you regain 1d6 \\glossterm{hit points}.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
-      rank: 1,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
       type: 'Attune',
     },
 
     {
       name: 'Empowered Regeneration',
 
-      // +2r for +1d, +1r for vital wound effect
       effect: `
         At the end of each round, you regain 2d6 \\glossterm{hit points}.
         If you gained a vital wound this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,
-      rank: 4,
-      scaling: { special: 'The healing increases by 1d6 for each rank beyond 4.' },
+      rank: 5,
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
       type: 'Attune',
     },
 
     {
       name: 'Efficient Regeneration',
 
-      // +2r for +1d, +5r for HP effect
       effect: `
-        At the end of each round, you regain 4d6 \\glossterm{hit points}.
+        At the end of each round, you regain 2d10 \\glossterm{hit points}.
         If you lost \\glossterm{hit points} this round, this healing is doubled.
         This healing cannot increase your hit points above half your maximum hit points.
       `,

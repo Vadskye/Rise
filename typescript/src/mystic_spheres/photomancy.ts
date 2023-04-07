@@ -392,11 +392,18 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
-      scaling: {
-        3: `The miss chance increases to 30\\%.`,
-        5: `The miss chance increases to 40\\%.`,
-        7: `The miss chance increases to 50\\%.`,
+      tags: ['Visual'],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Mirror Image',
+
+      functionsLike: {
+        name: 'mirror image',
+        exceptThat: 'the miss chance increases to 50\\%.',
       },
+      rank: 7,
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
