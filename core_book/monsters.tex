@@ -134,8 +134,17 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Standard monsters can only remove \glossterm{conditions} by taking a \glossterm{short rest}.
 
             However, elite monsters can remove conditions automatically.
-            At the end of each round, elite monsters affected by four or more conditions automatically remove their oldest \glossterm{condition}.
-            In addition, some elite monsters have unique abilities to remove conditions, as indicated in their descriptions.
+            Whenever an elite monster gains a unique condition, it is added to a ``condition track''.
+            The track starts at 1 and goes up to 10.
+            The first condition would be noted as a 1, the second condition would be noted as a 2, and so on.
+            If a monster gains two instances of the same condition, they are put in the same location on the track.
+
+            At the end of each round, each elite monster rolls 1d10.
+            If the result matches an existing condition on its condition track, that condition is removed.
+            When a monster has multiple copies of the same condition, only one instance of that condition is removed, so it may have to roll the same number multiple times to fully remove the condition.
+            If a location on the condition track becomes empty, all of the conditions to the right of that location shift down by 1.
+            This means the highest number on the condition track should always match the number of unique conditions the monster has.
+            The oldest condition should always be number 1, and the most recent condition should have the highest number on the track.
 
         \subsection{Monster Resources}
             Unless otherwise noted in their description, monsters have no resources, and their fatigue tolerance is treated as 0.
