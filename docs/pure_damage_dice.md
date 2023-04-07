@@ -558,6 +558,11 @@ Cyclone
 * R6, +1a, 0.875dpp: 10/17 (84%/89%)
 * R7, +1a, 1.17dpp: 13.5/23 (80%/86%)
 
+Flaming weapon
+* R3: +1d10 (150%/118%)
+* R5: +3d10 (165%/117%)
+* R7: +7d10 (167%/114%)
+
 
 ## Class Non-Strike Ability Scaling
 
