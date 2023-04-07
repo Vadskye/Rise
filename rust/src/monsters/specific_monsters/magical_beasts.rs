@@ -10,7 +10,7 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullMagicalBeastDefinition {
@@ -23,6 +23,7 @@ struct FullMagicalBeastDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -42,6 +43,7 @@ impl FullMagicalBeastDefinition {
             modifiers: self.modifiers,
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -82,7 +84,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 4,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(
                 StandardAttack::BreathWeaponLine(2, DamageType::Acid, Defense::Reflex)
                     .attack()
@@ -94,6 +96,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Ankheg".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Darkvision(60), Sense::Tremorsense(60)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -101,7 +104,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             Skill::Climb,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
+            StandardWeapon::MultipedalBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
         ],
     }.monster()));
 
@@ -145,6 +148,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Nightcrawler".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(60), Sense::Blindsense(120)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -173,7 +177,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         modifiers: Some(vec![
             Modifier::Attack(
                 Maneuver::ArmorpiercerPlus
-                    .attack(StandardWeapon::Slam.weapon())
+                    .attack(StandardWeapon::Slam.weapon(), 3)
                     .except(|a| a.name = "Impaling Tentacles".to_string())
                     .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
             ),
@@ -181,6 +185,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Hydra Maggot".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(60)]),
         size: Size::Large,
         trained_skills: Some(vec![
@@ -189,7 +194,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         weapons: vec![StandardWeapon::Slam.weapon()],
     }.monster()));
 
-    let stygian_leech_bite = StandardWeapon::MonsterBite
+    let stygian_leech_bite = StandardWeapon::MultipedalBite
         .weapon()
         .except(|w| w.damage_types.push(DamageType::Energy));
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
@@ -230,6 +235,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Stygian Leech".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Darkvision(120), Sense::Lifesense(120)]),
         size: Size::Medium,
         trained_skills: Some(vec![
@@ -268,6 +274,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
         ]),
         name: "Darkmantle".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Darkvision(120)]),
         size: Size::Small,
         trained_skills: Some(vec![
@@ -296,9 +303,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             "),
         ])),
         level: 5,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(
-                Maneuver::PouncingStrike.attack(StandardWeapon::MonsterClaws.weapon()),
+                Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon(), 2),
             ),
         ])),
         movement_speeds: Some(vec![
@@ -306,14 +313,15 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Griffon".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::LowLightVision]),
         size: Size::Large,
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon(),
-            StandardWeapon::MonsterClaws.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
+            StandardWeapon::Claws.weapon(),
         ],
     }.monster()));
 
@@ -346,13 +354,14 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Yrthak".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Blindsight(120)]),
         size: Size::Huge,
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterBite.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
         ],
     }.monster()));
 
@@ -362,6 +371,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
+        role: Role,
         size: Size,
         trained_skills: Option<Vec<Skill>>,
         weapons: Vec<Weapon>,
@@ -397,6 +407,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     SpeedCategory::Normal,
                 )]),
                 name: self.name,
+                role: self.role,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: self.size,
                 trained_skills: self.trained_skills,
@@ -430,13 +441,14 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![4, 0, 4, -9, 0, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 7,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Black Bear".to_string(),
+                role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -444,13 +456,14 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![5, 0, 6, -9, 2, 0],
                 challenge_rating: ChallengeRating::Four,
                 level: 9,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Brown Bear".to_string(),
+                role: Role::Brute,
                 size: Size::Large,
                 trained_skills: Some(vec![Skill::Climb, Skill::Endurance, Skill::Swim]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster(),
@@ -458,11 +471,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![-1, 4, -1, -9, 2, -3],
                 challenge_rating: ChallengeRating::One,
                 level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Rat".to_string(),
+                role: Role::Skirmisher,
                 size: Size::Tiny,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }
             .monster(),
             IchorDefinition {
@@ -471,10 +485,11 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 level: 13,
                 modifiers: None,
                 name: "Ichor Roc".to_string(),
+                role: Role::Brute,
                 size: Size::Gargantuan,
                 trained_skills: Some(vec![Skill::Awareness]),
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                     StandardWeapon::Talon.weapon(),
                 ],
             }
@@ -483,11 +498,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 attributes: vec![3, 4, 3, -9, 3, -1],
                 challenge_rating: ChallengeRating::One,
                 level: 5,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 name: "Ichor Wolf".to_string(),
+                role: Role::Skirmisher,
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }
             .monster(),
         ],

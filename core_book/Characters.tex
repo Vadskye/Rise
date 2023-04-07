@@ -48,7 +48,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             \begin{raggeditemize}
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
-                \item You add half your Strength in \glossterm{dice increments} to your damage and healing with \glossterm{mundane} abilities (see \pcref{Dice Bonuses From Attributes}).
+                \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
                 \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
                 \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
             \end{raggeditemize}
@@ -60,9 +60,9 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Dexterity tend to have strong defensive capabilities, and prefer wearing lighter armor.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Dexterity to your Reflex defense.
                 \item You add your Dexterity to your Armor defense.
                     This bonus can be reduced if you use medium or heavy armor (see \tref{Armor and Shields}).
+                \item You add your Dexterity to your Reflex defense.
                 \item You add your Dexterity to Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
             \end{raggeditemize}
         }
@@ -73,7 +73,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Constitution tend to have strong defensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Constitution to your level for the purpose of determining your \glossterm{hit points} and \glossterm{damage resistance} (see \pcref{Hit Points}, and \pcref{Damage Resistance}).
+                \item You add your Constitution to your level to determine your \glossterm{hit points} (see \pcref{Hit Points}).
                 \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
                 \item You add your Constitution to your Fortitude defense.
                 \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
@@ -87,7 +87,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             It has the following effects:
 
             \begin{raggeditemize}
-                \item If your Intelligence is positive, you become \glossterm{trained} in a number of skills equal to your Intelligence (see \pcref{Trained Skills}).
+                \item If your Intelligence is positive, you gain a number of \glossterm{trained skills} equal to your Intelligence (see \pcref{Trained Skills}).
                 \item You add your Intelligence to the number of \glossterm{insight points} you gain (see \pcref{Insight Points}).
                 \item You add your Intelligence to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
             \end{raggeditemize}
@@ -102,7 +102,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Perception tend to have strong offensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your Perception to your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item You add your Perception to your level to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
                 \item You add your Perception to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
             \end{raggeditemize}
         }
@@ -113,8 +113,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Willpower tend to be better at attacking with and defending against magical abilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add half your Willpower in \glossterm{dice increments} to your damage and healing with \magical abilities (see \pcref{Dice Bonuses From Attributes}).
-                \item You add half your Willpower to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
+                \item You add your Willpower to your \glossterm{magical power} (see \pcref{Power}).
                 \item You add your Willpower to your Mental defense.
             \end{raggeditemize}
         }
@@ -135,7 +134,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             For more extreme characters, you may use the ``savant array'':
 
             % 8 + 3 + 3 + 1 = 15
-            4, 2, 2, 1, 0, 0.
+            4, 2, 2, 1, 0, 0
 
             Finally, for more well-rounded characters, you may use the ``balanced array'':
 
@@ -164,7 +163,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         \subsubsection{Attribute Penalties}\label{Attribute Penalties}
             You can voluntarily take penalties to your attributes.
-            If you reduce an attribute by a total of \minus1, you become \glossterm{trained} in an additional skill (see \pcref{Trained Skills}).
+            If you reduce an attribute by a total of \minus1, you gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
             If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             You cannot gain these benefits from reducing more than two attributes below 0 in this way.
 
@@ -322,7 +321,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \parhead{Attributes} \minus1 Strength, either \plus1 Constitution or \plus1 Intelligence.
         \parhead{Special Abilities}
         \begin{raggeditemize}
-            \itemhead{Fae Light}[Magical] A gnome can use the \textit{fae light} ability as a standard action.
+            \itemhead{Fae Light}[\sparkle] A gnome can use the \textit{fae light} ability as a standard action.
                 \begin{activeability}{Fae Light}
                     \rankline
                     A Tiny glowing orb appears at a location within \rngmed range.
@@ -401,18 +400,16 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Good vs. Evil}
         The ancient battle between good and evil takes many forms, and distinguishing good from evil is a deeply complex task.
-        For the purposes of Rise, good and evil are strictly defined according to selfishness vs. altruism.
-        The actions of good characters may at times be morally reprehensible, and the actions of evil characters may seem to be virtuous.
-        However, this narrow definition of good and evil avoids the complexities of defining a more robust moral system while preserving the fundamental conflict between good and evil.
+        For the purposes of Rise, good and evil are strictly defined according to selfishness and altruism.
+        A good character may take actions that seem morally reprehensible to other people, but they would be motivated by their selfless and genuine belief that they are doing the right thing.
+        Likewise, the action of an evil character may have broadly positive outcomes, but they would take that action because of the benefit that they personally gain.
+        This narrow definition of good and evil avoids the complexities of defining a more robust moral system while preserving the fundamental conflict between good and evil.
 
         \parhead{Good} Good characters are altruistic.
         They take other creatures into account when making decisions, and actively try to help or improve others around them.
         Good characters may have significant disagreements about what actions are best, but they consistently prioritize the good of others or the ``greater good'' over their own desires.
         Different good characters may also have different perspectives on who they should take into account when making decisions.
         For example, some good characters actively work to protect animals and plants, while others only care about sapient creatures.
-
-        Sometimes, altruistic characters can commit reprehensible actions out of necessity or because they believe that a greater good is being served.
-        As long as their motivation is selfless, those characters are still considered to be ``good'' from the perspective of Rise's alignment system, which does not attempt to model all of the complexities of real-world morality.
 
         \parhead{Evil} Evil characters are selfish.
         They consistently prioritize their own desires and needs over the desires of others, even their allies or friends.
@@ -600,7 +597,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         You can also talk to your GM about spending them at level 1 and then retraining those insight points once you are higher level.
 
     \subsection{Step 8: Skills}
-        You should choose which skills you have \glossterm{trained} (see \pcref{Skills}).
+        You should choose which skills you have as \glossterm{trained skills} (see \pcref{Skills}).
         Your \glossterm{class} gives you a certain number of trained skills from among the \glossterm{class skills} for that class.
         The class skills for each class are summarized in \tref{Class Skills}.
 
@@ -654,7 +651,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         What is your character's name?
         This seemingly minor choice can reveal a lot about the tone your character will set in the universe.
         If your name is Sir Patty Cakes or Shanky, the game is likely to be lighter and sillier in tone.
-        Fancy fantasy-appropriate names ike Ayala or Theodolus tend to push the game in a slightly more serious direction, especially if you make the daring choice to include a canonical last name.
+        Fancy fantasy-appropriate names like Ayala or Theodolus tend to push the game in a slightly more serious direction, especially if you make the daring choice to include a canonical last name.
         As always, stay in tune with what the GM and the other players are expecting.
 
 \section{Character Advancement}\label{Character Advancement}
@@ -664,59 +661,68 @@ You can either skim past terms you don't yet understand or look them up as you g
     If you have enough experience, you gain a level.
     You gain some abilities at specific levels, as described in \trefnp{Character Advancement}.
 
+    \begin{dtable!*}
+        \lcaption{Character Advancement}
+        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
+            \tb{Level}\fn{1} & \tb{Max Rank}\fn{2} & \tb{HP} & \tb{DR} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
+            1st              & 1                   & 6       & 0       & \tdash                                 & 0       & \tdash                              \\
+            2nd              & \tdash              & 7       & 1       & \plus1                                 & 10      & \tdash                              \\ % +10 xp
+            3rd              & \tdash              & 8       & 2       & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
+            4th              & 2                   & 9       & 3       & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
+            5th              & \tdash              & 10      & 4       & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
+            6th              & \tdash              & 12      & 5       & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
+            7th              & 3                   & 14      & 6       & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
+            8th              & \tdash              & 16      & 7       & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
+            9th              & \tdash              & 18      & 8       & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
+            10th             & 4                   & 20      & 9       & \plus5                                 & 450     & \tdash                              \\ % +150 xp
+            11th             & \tdash              & 22      & 10      & \plus5                                 & 700     & \tdash                              \\ % +250 xp
+            12th             & \tdash              & 25      & 12      & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
+            13th             & 5                   & 28      & 14      & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
+            14th             & \tdash              & 32      & 16      & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
+            15th             & \tdash              & 36      & 18      & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
+            16th             & 6                   & 40      & 20      & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
+            17th             & \tdash              & 45      & 22      & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
+            18th             & \tdash              & 50      & 25      & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
+            19th             & 7                   & 56      & 28      & \plus9                                 & 14,000  & \tdash                              \\
+            20th             & \tdash              & 63      & 31      & \plus10                                & 20,000  & \tdash                              \\
+            21st             & \tdash              & 70      & 35      & \plus10                                & 30,000  & \plus1 to two attributes            \\
+        \end{dtabularx}
+        1. For some statistics, like your \glossterm{hit points}, you add your attributes to your level when calculating the total. If this total is more than 21 or less than 1, see the relevant section below this table to calculate your value. \\
+        2. See \pcref{Archetype Ranks}. \\
+    \end{dtable!*}
+
     When you gain a level, the following things happen:
     \begin{raggeditemize}
         \item Your \glossterm{hit points} increase (see \pcref{Hit Points}).
         \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
-        \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
-        \item At even levels, your bonus with \glossterm{trained} skills increases (see \pcref{Trained Skills})
-        \item At even levels, your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
-        \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
-        \item At 3rd level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
+        \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes}).
+        \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy}).
+        \item At even levels, \glossterm{magical power} and \glossterm{mundane power} each increase by 1 (see \pcref{Power}).
+        \item At even levels, your bonus with \glossterm{trained skills} increases (see \pcref{Trained Skills}).
+        \item At even levels, all of your \glossterm{defenses} increase by 1 (see \pcref{Defenses}).
+    \end{raggeditemize}
+
+    In addition, some irregular advancements happen at specific levels:
+    \begin{raggeditemize}
+        \item At 3rd level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
         \item At 4th level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
+        \item At 4th level and 7th level, you gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
+        \item At 5th level and 8th level, you gain an additional \glossterm{attunement point} (see \pcref{Attunement Points}).
+        \item At 6th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{raggeditemize}
 
     At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
     For example, you could change one of your trained skills for a different skill, change which weapon groups you are proficient with, or change the \glossterm{mystic spheres} you have access to (and corresponding spells).
     The GM may ask for a specific narrative justification for the change, require spending in-game time to retrain, or disallow changing some fundamental aspects of your character.
 
-    \begin{dtable!*}
-        \lcaption{Character Advancement}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X >{\lcol}X l}
-            \tb{Level} & \tb{Max Rank}\fn{1} & \tb{Accuracy, Defenses, Skills} & \tb{Special}                        & \tb{XP} \tableheaderrule
-            1st        & 1                   & \tdash                          & \tdash                              & 0      \\
-            2nd        & \tdash              & \plus1                          & \tdash                              & 10     \\ % +10 xp
-            3rd        & \tdash              & \plus1                          & Legacy item: rank 2                 & 25     \\ % +15 xp
-            4th        & 2                   & \plus2                          & \tdash                              & 45     \\ % +20 xp
-            5th        & \tdash              & \plus2                          & \plus1 \glossterm{attunement point} & 70     \\ % +25 xp
-            6th        & \tdash              & \plus3                          & \tdash                              & 100    \\ % +30 xp
-            7th        & 3                   & \plus3                          & \tdash                              & 140    \\ % +40 xp
-            8th        & \tdash              & \plus4                          & \tdash                              & 200    \\ % +60 xp
-            9th        & \tdash              & \plus4                          & Legacy item: ranks 4 and 2          & 300    \\ % +100 xp
-            10th       & 4                   & \plus5                          & \tdash                              & 450    \\ % +150 xp
-            11th       & \tdash              & \plus5                          & \plus1 \glossterm{attunement point} & 700    \\ % +250 xp
-            12th       & \tdash              & \plus6                          & \tdash                              & 1,000  \\ % +300 xp
-            13th       & 5                   & \plus6                          & \tdash                              & 1,400  \\ % +400 xp
-            14th       & \tdash              & \plus7                          & \tdash                              & 2,000  \\ % +600 xp
-            15th       & \tdash              & \plus7                          & Legacy item: ranks 6 and 4          & 3,000  \\ % +1000 xp
-            16th       & 6                   & \plus8                          & \tdash                              & 4,500  \\ % +1,500 xp
-            17th       & \tdash              & \plus8                          & \tdash                              & 7,000  \\ % +2,500 xp
-            18th       & \tdash              & \plus9                          & \tdash                              & 10,000 \\ % +3,000 xp
-            19th       & 7                   & \plus9                          & \tdash                              & 14,000 \\
-            20th       & \tdash              & \plus10                         & \tdash                              & 20,000 \\
-            21st       & \tdash              & \plus10                         & Legacy item: ranks 7 and 6          & 30,000 \\
-        \end{dtabularx}
-        1. See \pcref{Archetype Ranks}. \\
-    \end{dtable!*}
-
     \subsection{Legacy Items}\label{Legacy Items}
 
         Over time, items associated with places and people of great power gain magical properties.
         This process takes place for you as you gain levels in addition to in the world as a whole.
 
-        At 3rd level, you choose a nonmagical weapon, body armor, shield, apparel item, or implement you own.
+        At 6th level, you choose a nonmagical weapon, body armor, shield, apparel item, or implement you own.
         That item becomes a \glossterm{legacy item}.
-        You choose a single magic item property of rank 2 or lower, and your legacy item gains that property.
+        You choose a single magic item property of rank 3 or lower, and your legacy item gains that property.
         You do not have to \glossterm{attune} to your legacy item to gain its benefits.
         However, for each \glossterm{deep attunement} property that your legacy item has, you reduce your maximum \glossterm{attunement points} by one.
 
@@ -726,15 +732,14 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         \parhead{Legacy Item Scaling}
         Your legacy item increases in power as you gain levels.
-        At 9th level, you can add an additional item property to your weapon.
-        The item property must be rank 4 or lower.
-        At 15th and 21st level, you can change the properties on your legacy item, and the maximum rank of both properties increases by 2, to a maximum of rank 7.
+        At 12th level, you can add an additional item property to your weapon.
+        The item property must be rank 5 or lower.
+        At 18th level, you can change the properties on your legacy item, and the maximum rank of both properties increases by 2, to a maximum of rank 7.
         This is summarized below.
         \begin{raggeditemize}
-            \item 3rd level character: One property with max rank 2
-            \item 9th level character: One property with max rank 4, one property with max rank 2
-            \item 15th level character: One property with max rank 6, one property with max rank 4
-            \item 21st level character: One properties with max rank 7, one property with max rank 6
+            \item 6th level character: One property with max rank 3
+            \item 12th level character: One property with max rank 5, one property with max rank 3
+            \item 18th level character: One property with max rank 7, one property with max rank 5
         \end{raggeditemize}
 
         \parhead{Losing Your Legacy Item}
@@ -752,49 +757,20 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        Your accuracy with an attack is normally equal to half your level \add half your Perception.
-        In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+        Your accuracy is equal to half the sum of your level and Perception.
+        Many abilities can also modify your accuracy.
 
     \subsection{Damage Resistance}\label{Damage Resistance}
         Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
         For details about how damage resistance is used, see \pcref{Taking Damage}.
 
-        The amount of damage resistance you have is defined in \tref{Hit Points and Damage Resistance}.
-        You add your level and your Constitution to find the corresponding base value.
-        Body armor also provides a significant bonus to damage resistance, and many special abilities can increase your damage resistance.
+        The amount of damage resistance you have is defined in \tref{Character Advancement}.
+        You use your level to find the corresponding base value.
+        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed amount of additional damage resistance.
+        Body armor also provides a significant bonus to damage resistance.
 
-        \begin{dtable}
-            \lcaption{Hit Points and Damage Resistance}
-            \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Level \add Con} & \tb{Hit Points} & \tb{Damage Resistance} \tableheaderrule
-                0\fn{1}             & 9               & 0  \\
-                1                   & 10              & 1  \\
-                2                   & 11              & 2  \\
-                3                   & 12              & 3  \\
-                4                   & 13              & 4  \\
-                5                   & 14              & 5  \\
-                6                   & 16              & 6  \\
-                7                   & 18              & 7  \\
-                8                   & 20              & 9  \\
-                9                   & 22              & 10 \\
-                10                  & 25              & 12 \\
-                11                  & 28              & 13 \\
-                12                  & 32              & 15 \\
-                13                  & 36              & 16 \\
-                14                  & 40              & 18 \\
-                15                  & 44              & 20 \\
-                16                  & 50              & 22 \\
-                17                  & 56              & 25 \\
-                18                  & 64              & 28 \\
-                19                  & 72              & 32 \\
-                20                  & 80              & 36 \\
-                21                  & 88              & 40 \\
-                22\fn{2}            & 100             & 44 \\
-            \end{dtabularx}
-            1. For negative values, reduce maximum hit points by an amount equal to the negative value. \\
-            2. For values beyond 22, double the hit points and damage resistance of a creature with a value that is 6 lower.
-            For example, a level 21 creature with a 4 Constitution would have 144 hit points and 64 damage resistance. \\
-        \end{dtable}
+        If this value exceeds 21, you gain 5 hit points for every value beyond 21.
+        For example, a level 21 sorcerer would have 55 damage resistance.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
@@ -827,9 +803,14 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
         For details about how hit points are used, see \pcref{Taking Damage}.
 
-        The amount of hit points you have is defined in \tref{Hit Points and Damage Resistance}.
-        You add your level and your Constitution to find the corresponding base value.
-        Some special abilities can give you additional \glossterm{hit points}.
+        The amount of hit points you have is defined in \tref{Character Advancement}.
+        You add your level and your Constitution to find the corresponding value.
+        For example, a level 3 character with 2 Constitution would have 14 hit points.
+        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed number of additional hit points.
+
+        If the sum of your level and Constitution is negative, your hit points are equal to 6 \add half that negative value.
+        If the sum exceeds 21, you gain 10 hit points for every value beyond 21.
+        For example, a level 21 creature with a 4 Constitution would have 110 hit points.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -837,9 +818,17 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Power}\label{Power}
         Your \glossterm{power} is a general representation of how strong your abilities are.
+        You have two types of power: your \glossterm{magical power} affects your \magical abilities, and your \glossterm{mundane power} affects your \glossterm{mundane} abilities.
+        If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
+
+        Your mundane power is equal to your Strength \add half your level.
+        Similarly, your magical power is equal to your Willpower \add half your level.
+        If this is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0 total power.
+        Some abilities can increase your power further.
+
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
-        Your base class provides a bonus to your power (see \pcref{Class-Based Power Bonuses}).
-        In addition, some abilities can increase it.
+        % TODO: weapon damage wording
+        For example, you gain a \plus1d bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
 
 \section{Resources}\label{Resources}
 
@@ -850,7 +839,6 @@ You can either skim past terms you don't yet understand or look them up as you g
         For details, see \pcref{Attunement}.
 
         Your \glossterm{class} gives you a certain number of attunement points.
-        At 5th level and 11th level, you gain an additional attunement point.
         A small number of abilities can also grant additional \glossterm{attunement points}.
 
     \subsection{Fatigue}\label{Fatigue}
@@ -866,7 +854,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
             \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
                 Becoming slightly fatigued is not immediately detrimental.
-                Your fatigue level can be as high as your Constitution \add your Willpower without suffering any consequences (minimum 0).
+                Your fatigue level can be as high as your Constitution without suffering any consequences (minimum 0).
                 This value is called your \glossterm{fatigue tolerance}.
                 Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
@@ -879,636 +867,636 @@ You can either skim past terms you don't yet understand or look them up as you g
             Generally, this means that you are unconscious for 8 hours.
 
         \subsubsection{Recovering From Fatigue}
-            When you take a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
+            When you finish a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
             There are no other ways to reduce your fatigue level.
 
-\section{Sample Characters}
+% \section{Sample Characters}
 
-    This section lists sample characters for each class archetype.
-    You can simply pick up one of these characters and use it as your character.
-    Alternately, you can use a sample character as a starting point and adjust it to match your own character concept.
-    The sample characters are ordered by class first, and by archetype within each class second.
+%     This section lists sample characters for each class archetype.
+%     You can simply pick up one of these characters and use it as your character.
+%     Alternately, you can use a sample character as a starting point and adjust it to match your own character concept.
+%     The sample characters are ordered by class first, and by archetype within each class second.
 
-    \subsection{Barbarian}
+%     \subsection{Barbarian}
 
-        \subsubsection{Battleforged Resilience}
-            \parhead{Species} Dwarf.
-            % 2 1 3 0 2 2 base
-            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
-            \parhead{Class} Barbarian.
-            \parhead{Archetypes} Battleforged Resilience first, Primal Warrior second, Totemist (bear totem) third.
-            \parhead{Insight Points} None.
-            \parhead{Skills} Awareness, Climb, Endurance, Medicine, Survival
-            \parhead{Weapon Groups} Axes, thrown weapons.
-            \parhead{Languages} Common, Dwarven, Giantish.
-            \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best medium armor you can afford. If you gain proficiency with heavy armor, use that instead.
-            \parhead{Legacy Item} Shield.
-                At level 3, choose \mitem{covering shield}.
-                At level 9, choose \mitem{greater covering shield} and \mitem{shield of arrow catching}.
-                At level 15, choose \mitem{supreme covering shield} and \mitem{greater shield of arrow catching}.
-            \parhead{Combat Styles} Herald of War, Unbreakable Defense.
-            \parhead{Suggested Feats} Shieldbearer, Martial Training, Regenerator, Toughness.
-            \parhead{Combat Tactics} You are extremely difficult to kill.
-            Take advantage of that by wading into the front lines of combat and drawing attention away from your more vulnerable allies.
-            If you find yourself in danger, use defensive maneuvers like \maneuver{defensive strike} and \maneuver{flamboyant parry} to keep yourself safe.
-            On the other hand, if your foes try to ignore you after realizing how durable you are, force them to engage with you using maneuvers like \maneuver{challenging strike} and \maneuver{guard the pass}.
+%         \subsubsection{Battleforged Resilience}
+%             \parhead{Species} Dwarf.
+%             % 2 1 3 0 2 2 base
+%             \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
+%             \parhead{Class} Barbarian.
+%             \parhead{Archetypes} Battleforged Resilience first, Primal Warrior second, Totemist (bear totem) third.
+%             \parhead{Insight Points} None.
+%             \parhead{Skills} Awareness, Climb, Endurance, Medicine, Survival
+%             \parhead{Weapon Groups} Axes, thrown weapons.
+%             \parhead{Languages} Common, Dwarven, Giantish.
+%             \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best medium armor you can afford. If you gain proficiency with heavy armor, use that instead.
+%             \parhead{Legacy Item} Shield.
+%                 At level 3, choose \mitem{covering shield}.
+%                 At level 9, choose \mitem{greater covering shield} and \mitem{shield of arrow catching}.
+%                 At level 15, choose \mitem{supreme covering shield} and \mitem{greater shield of arrow catching}.
+%             \parhead{Combat Styles} Herald of War, Unbreakable Defense.
+%             \parhead{Suggested Feats} Shieldbearer, Martial Training, Regenerator, Toughness.
+%             \parhead{Combat Tactics} You are extremely difficult to kill.
+%             Take advantage of that by wading into the front lines of combat and drawing attention away from your more vulnerable allies.
+%             If you find yourself in danger, use defensive maneuvers like \maneuver{defensive strike} and \maneuver{flamboyant parry} to keep yourself safe.
+%             On the other hand, if your foes try to ignore you after realizing how durable you are, force them to engage with you using maneuvers like \maneuver{challenging strike} and \maneuver{guard the pass}.
 
-        \subsubsection{Battlerager}
-            \parhead{Species} Half-orc.
-            % 3 2 2 0 2 1 base
-            \parhead{Attributes} 4 Str, 2 Dex, 2 Con, -1 Int, 2 Per, 1 Wil (after species modifiers).
-            \parhead{Class} Barbarian.
-            \parhead{Archetypes} Battlerager first, Primal Warrior second, Totemist (lion totem) third.
-            \parhead{Insight Points} None.
-            \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
-            \parhead{Weapon Groups} Crossbows, headed weapons.
-            \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{bloodfuel}.
-                At level 9, choose \mitem{greater bloodfuel} and \mitem{bloodspray}.
-                At level 15, choose \mitem{supreme bloodfuel} and \mitem{greater bloodspray}.
-            \parhead{Combat Styles} Ebb and Flow, Herald of War.
-            \parhead{Suggested Feats} Greatweapon Warrior, Rapid Reaction, Swiftrunner.
-            \parhead{Combat Tactics} You are a furious frenzy of devastating damage and lethal critical hits.
-            When you roll a 10 on an attack roll, whatever you attacked will probably die.
-            Staying close to your allies is generally a good plan, since you don't have the durability to run into the middle of a horde of enemies safely.
-            Your maneuvers help you deal with high-Armor enemies and enemy swarms, and give you the ability to sacrifice most of your statistics other than damage in exchange for more damage.
+%         \subsubsection{Battlerager}
+%             \parhead{Species} Half-orc.
+%             % 3 2 2 0 2 1 base
+%             \parhead{Attributes} 4 Str, 2 Dex, 2 Con, -1 Int, 2 Per, 1 Wil (after species modifiers).
+%             \parhead{Class} Barbarian.
+%             \parhead{Archetypes} Battlerager first, Primal Warrior second, Totemist (lion totem) third.
+%             \parhead{Insight Points} None.
+%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
+%             \parhead{Weapon Groups} Crossbows, headed weapons.
+%             \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{bloodfuel}.
+%                 At level 9, choose \mitem{greater bloodfuel} and \mitem{bloodspray}.
+%                 At level 15, choose \mitem{supreme bloodfuel} and \mitem{greater bloodspray}.
+%             \parhead{Combat Styles} Ebb and Flow, Herald of War.
+%             \parhead{Suggested Feats} Greatweapon Warrior, Rapid Reaction, Swiftrunner.
+%             \parhead{Combat Tactics} You are a furious frenzy of devastating damage and lethal critical hits.
+%             When you roll a 10 on an attack roll, whatever you attacked will probably die.
+%             Staying close to your allies is generally a good plan, since you don't have the durability to run into the middle of a horde of enemies safely.
+%             Your maneuvers help you deal with high-Armor enemies and enemy swarms, and give you the ability to sacrifice most of your statistics other than damage in exchange for more damage.
 
-        \subsubsection{Outland Savage}
-            \parhead{Species} Elf.
-            % 2 3 2 1 2 0 base
-            \parhead{Attributes} 2 Str, 4 Dex, 1 Con, 1 Int, 2 Per, 0 Wil (after species modifiers).
-            \parhead{Class} Barbarian.
-            \parhead{Archetypes} Outland Savage first, Primal Warrior second, Totemist (wolf totem) third.
-            \parhead{Insight Points} 1 point for proficiency with exotic armor weapons.
-            \parhead{Skills} Awareness, Climb, Endurance, Jump, Stealth, Survival.
-            \parhead{Weapon Groups} Armor weapons, flexible weapons.
-            \parhead{Languages} Common, Orcish.
-            \parhead{Equipment} Flail, standard shield, scale mail. As you gain levels, use the best light armor you can afford. When you can, get spikes and a spiked knee crafted onto your armor.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{phasestep boots}.
-                At level 9, choose \mitem{enlarging belt} and \mitem{phasestep boots}.
-                At level 15, choose \mitem{supreme phasestep boots} and \mitem{enlarging belt}.
-            \parhead{Combat Styles} Dirty Fighting, Mobile Assault.
-            \parhead{Suggested Feats} Savage, Brawler, Swiftrunner.
-            \parhead{Combat Tactics} You can move around the battlefield very quickly, and you are incredibly accurate with special combat actions like shoving and grappling enemies.
-            Make the most of that by repositioning enemies, tripping them, or holding them in grapples so your allies can hit them.
-            While you aren't in a grapple, use your flail in two hands to maximize your damage.
-            When you enter a grapple, use your spiked knee to attack, since your flail is much less effective while grappling.
-            If you don't have any allies who like being on the front lines, you won't be as effective at helping them deal damage to enemies, but you're still very skilled at preventing enemies from reaching your allies.
-            In that case, consider choosing bear totem or shark totem instead of wolf totem.
+%         \subsubsection{Outland Savage}
+%             \parhead{Species} Elf.
+%             % 2 3 2 1 2 0 base
+%             \parhead{Attributes} 2 Str, 4 Dex, 1 Con, 1 Int, 2 Per, 0 Wil (after species modifiers).
+%             \parhead{Class} Barbarian.
+%             \parhead{Archetypes} Outland Savage first, Primal Warrior second, Totemist (wolf totem) third.
+%             \parhead{Insight Points} 1 point for proficiency with exotic armor weapons.
+%             \parhead{Skills} Awareness, Climb, Endurance, Jump, Stealth, Survival.
+%             \parhead{Weapon Groups} Armor weapons, flexible weapons.
+%             \parhead{Languages} Common, Orcish.
+%             \parhead{Equipment} Flail, standard shield, scale mail. As you gain levels, use the best light armor you can afford. When you can, get spikes and a spiked knee crafted onto your armor.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{phasestep boots}.
+%                 At level 9, choose \mitem{enlarging belt} and \mitem{phasestep boots}.
+%                 At level 15, choose \mitem{supreme phasestep boots} and \mitem{enlarging belt}.
+%             \parhead{Combat Styles} Dirty Fighting, Mobile Assault.
+%             \parhead{Suggested Feats} Savage, Brawler, Swiftrunner.
+%             \parhead{Combat Tactics} You can move around the battlefield very quickly, and you are incredibly accurate with special combat actions like shoving and grappling enemies.
+%             Make the most of that by repositioning enemies, tripping them, or holding them in grapples so your allies can hit them.
+%             While you aren't in a grapple, use your flail in two hands to maximize your damage.
+%             When you enter a grapple, use your spiked knee to attack, since your flail is much less effective while grappling.
+%             If you don't have any allies who like being on the front lines, you won't be as effective at helping them deal damage to enemies, but you're still very skilled at preventing enemies from reaching your allies.
+%             In that case, consider choosing bear totem or shark totem instead of wolf totem.
 
-        \subsubsection{Primal Warrior}
-            \parhead{Species} Human.
-            \parhead{Attributes} 3 Str, 2 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
-            \parhead{Class} Barbarian.
-            \parhead{Archetypes} Primal Warrior first, Battleforged Resilience second, Outland Savage third.
-            \parhead{Insight Points} 1 point for an additional combat style, 1 point for an additional maneuver.
-            \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
-            \parhead{Weapon Groups} Axes, crossbows.
-            \parhead{Languages} Common, Dwarven, Orcish.
-            \parhead{Equipment} Greataxe, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{shocking}.
-                At level 9, choose \mitem{banechannel} and \mitem{shocking}.
-                At level 15, choose \mitem{greater dimensional trace} and \mitem{banechannel}.
-            \parhead{Combat Styles} Dirty Fighting, Herald of War, Unbreakable Defense.
-            \parhead{Suggested Feats} Greatweapon Warrior, Weapon Focus, Swiftrunner.
-            \parhead{Combat Tactics} You have a great breadth of options available to you thanks to the number of maneuvers you know.
-            You have the survivability to stand in close combat, especially if you use maneuvers from Unreakable Defense, but you can also shout at mobile enemies from range with maneuvers from Herald of War.
-            Both Dirty Fighting and Herald of War give you maneuvers that work well against enemies with a high Armor defense, so you can adapt to whatever battle you find yourself in.
-            You can make the most of your versatility by learning maneuvers like \maneuver{knockback shove} that are sometimes useless, but which can be devastatingly effective in the right context.
+%         \subsubsection{Primal Warrior}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 3 Str, 2 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Barbarian.
+%             \parhead{Archetypes} Primal Warrior first, Battleforged Resilience second, Outland Savage third.
+%             \parhead{Insight Points} 1 point for an additional combat style, 1 point for an additional maneuver.
+%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
+%             \parhead{Weapon Groups} Axes, crossbows.
+%             \parhead{Languages} Common, Dwarven, Orcish.
+%             \parhead{Equipment} Greataxe, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{shocking}.
+%                 At level 9, choose \mitem{banechannel} and \mitem{shocking}.
+%                 At level 15, choose \mitem{greater dimensional trace} and \mitem{banechannel}.
+%             \parhead{Combat Styles} Dirty Fighting, Herald of War, Unbreakable Defense.
+%             \parhead{Suggested Feats} Greatweapon Warrior, Weapon Focus, Swiftrunner.
+%             \parhead{Combat Tactics} You have a great breadth of options available to you thanks to the number of maneuvers you know.
+%             You have the survivability to stand in close combat, especially if you use maneuvers from Unreakable Defense, but you can also shout at mobile enemies from range with maneuvers from Herald of War.
+%             Both Dirty Fighting and Herald of War give you maneuvers that work well against enemies with a high Armor defense, so you can adapt to whatever battle you find yourself in.
+%             You can make the most of your versatility by learning maneuvers like \maneuver{knockback shove} that are sometimes useless, but which can be devastatingly effective in the right context.
 
-        \subsubsection{Totemist}
-            Characters from this archetype can be very different based on their chosen totem.
-            A bear totem character might resemble the typical character for the Battleforged Resilience archetype.
-            A lion totem or shark totem character might resemble the typical character for the Battlerager archetype.
-            A wolf totem character might resemble the typical character for the Outland Savage archetype.
+%         \subsubsection{Totemist}
+%             Characters from this archetype can be very different based on their chosen totem.
+%             A bear totem character might resemble the typical character for the Battleforged Resilience archetype.
+%             A lion totem or shark totem character might resemble the typical character for the Battlerager archetype.
+%             A wolf totem character might resemble the typical character for the Outland Savage archetype.
 
-            If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
-            \parhead{Species} Human.
-            \parhead{Attributes} 2 Str, 2 Dex, 1 Con, 0 Int, 4 Per, 0 Wil.
-            \parhead{Class} Barbarian.
-            \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Outland Savage third.
-            \parhead{Insight Points} 1 point for proficiency with exotic bows.
-            \parhead{Skills} Awareness, Balance, Climb, Creature Handling, Jump, Survival.
-            \parhead{Weapon Groups} Crossbows, bows, thrown weapons.
-            \parhead{Languages} Common, Elven, Giantish.
-            \parhead{Equipment} Longbow, leather body armor. As you gain levels, buy a flatbow and use the best light armor you can afford.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{longshot}.
-                At level 9, choose \mitem{greater iridescent} and \mitem{longshot}.
-                At level 15, choose \mitem{supreme iridescent} and \mitem{greater longshot}.
-            \parhead{Combat Styles} Penetrating Precision, Unbreakable Defense.
-            \parhead{Suggested Feats} Sniper, Blindfighter, Swiftrunner.
-            \parhead{Combat Tactics} You have incredible accuracy from very long range.
-            Your defenses are relatively low, but as long as you stay far enough away from your foes, they can't take advantage of that weakness.
-            You have the ability to prioritize any target on the battlefield, so make the most of your maneuvers that impose conditions or deal additional damage on weakened foes.
+%             If you want to quickly create a character based on the eagle totem from this archetype, make the following choices:
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 2 Str, 2 Dex, 1 Con, 0 Int, 4 Per, 0 Wil.
+%             \parhead{Class} Barbarian.
+%             \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Outland Savage third.
+%             \parhead{Insight Points} 1 point for proficiency with exotic bows.
+%             \parhead{Skills} Awareness, Balance, Climb, Creature Handling, Jump, Survival.
+%             \parhead{Weapon Groups} Crossbows, bows, thrown weapons.
+%             \parhead{Languages} Common, Elven, Giantish.
+%             \parhead{Equipment} Longbow, leather body armor. As you gain levels, buy a flatbow and use the best light armor you can afford.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{longshot}.
+%                 At level 9, choose \mitem{greater iridescent} and \mitem{longshot}.
+%                 At level 15, choose \mitem{supreme iridescent} and \mitem{greater longshot}.
+%             \parhead{Combat Styles} Penetrating Precision, Unbreakable Defense.
+%             \parhead{Suggested Feats} Sniper, Blindfighter, Swiftrunner.
+%             \parhead{Combat Tactics} You have incredible accuracy from very long range.
+%             Your defenses are relatively low, but as long as you stay far enough away from your foes, they can't take advantage of that weakness.
+%             You have the ability to prioritize any target on the battlefield, so make the most of your maneuvers that impose conditions or deal additional damage on weakened foes.
 
-    \subsection{Cleric}
+%     \subsection{Cleric}
 
-        \subsubsection{Divine Magic}
-            \parhead{Species} Gnome.
-            % 0 0 2 1 2 4 base
-            \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 1 Int, 2 Per, 4 Wil (after species modifiers).
-            \parhead{Class} Cleric.
-            \parhead{Archetypes} Divine Magic first, Divine Spell Mastery second, Domain Influence third.
-            \parhead{Insight Points} 2 points for metamagic (including an extra mystic sphere), and 3 points for additional spells known.
-            \parhead{Skills} Knowledge (local, religion), Medicine, Persuasion, Social Insight
-            \parhead{Languages} Common, Gnome, Halfling.
-            \parhead{Equipment} Mace, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
-            \parhead{Legacy Item} 1-handed implement.
-                At level 3, choose \mitem{splitting staff}.
-                At level 9, choose \mitem{staff of radiance} and \mitem{splitting staff}.
-                At level 15, choose \mitem{greater splitting staff} and \mitem{staff of radiance}.
-            \parhead{Domains} Good, Magic
-            \parhead{Mystic Spheres} Channel Divinity and Photomancy
-            \parhead{Suggested Feats} Celestial Heritage, Sphere Focus: Photomancy, Sphere Focus: Prayer
-            \parhead{Combat Tactics} You can protect yourself and your allies and invoke divine wrath on your foes.
-            Your attacks can hit a variety of defenses, so use the best spells for the situation.
-            If you are facing a foe that not particularly vulnerable to your attacks, you can focus on helping your allies with ``boon'' spells to make their actions more effective and keep them safe.
+%         \subsubsection{Divine Magic}
+%             \parhead{Species} Gnome.
+%             % 0 0 2 1 2 4 base
+%             \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 1 Int, 2 Per, 4 Wil (after species modifiers).
+%             \parhead{Class} Cleric.
+%             \parhead{Archetypes} Divine Magic first, Divine Spell Mastery second, Domain Influence third.
+%             \parhead{Insight Points} 2 points for metamagic (including an extra mystic sphere), and 3 points for additional spells known.
+%             \parhead{Skills} Knowledge (local, religion), Medicine, Persuasion, Social Insight
+%             \parhead{Languages} Common, Gnome, Halfling.
+%             \parhead{Equipment} Mace, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+%             \parhead{Legacy Item} 1-handed implement.
+%                 At level 3, choose \mitem{splitting staff}.
+%                 At level 9, choose \mitem{staff of radiance} and \mitem{splitting staff}.
+%                 At level 15, choose \mitem{greater splitting staff} and \mitem{staff of radiance}.
+%             \parhead{Domains} Good, Magic
+%             \parhead{Mystic Spheres} Channel Divinity and Photomancy
+%             \parhead{Suggested Feats} Celestial Heritage, Sphere Focus: Photomancy, Sphere Focus: Prayer
+%             \parhead{Combat Tactics} You can protect yourself and your allies and invoke divine wrath on your foes.
+%             Your attacks can hit a variety of defenses, so use the best spells for the situation.
+%             If you are facing a foe that not particularly vulnerable to your attacks, you can focus on helping your allies with ``boon'' spells to make their actions more effective and keep them safe.
 
-        \subsubsection{Divine Spell Mastery}
-            Use the typical character for the Divine Magic cleric archetype.
-            Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
+%         \subsubsection{Divine Spell Mastery}
+%             Use the typical character for the Divine Magic cleric archetype.
+%             Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
 
-        \subsubsection{Domain Influence}
-            Characters from this archetype can be very different based on their chosen domains.
-            A character with spellcasting-focused domains might resemble the typical character for the Divine Magic cleric archetype.
-            If you want to quickly create a more martial character based on the Strength and War domains from this archetype, make the following choices:
+%         \subsubsection{Domain Influence}
+%             Characters from this archetype can be very different based on their chosen domains.
+%             A character with spellcasting-focused domains might resemble the typical character for the Divine Magic cleric archetype.
+%             If you want to quickly create a more martial character based on the Strength and War domains from this archetype, make the following choices:
 
-            \parhead{Species} Dwarf.
-            % 2 1 3 0 2 2 base
-            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
-            \parhead{Class} Cleric.
-            \parhead{Archetypes} Domain Influence first, Divine Magic second, Preacher third.
-            \parhead{Insight Points} 3 points for additional spells known.
-            \parhead{Skills} Awareness, Knowledge (local, religion), Medicine
-            \parhead{Weapon Group} Club-like weapons.
-            \parhead{Languages} Common, Draconic, Dwarven.
-            \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
-            \parhead{Legacy Item} Armor.
-                At level 3, choose \mitem{armor of health}.
-                At level 9, choose \mitem{greater armor of health} and \mitem{armor of fortification}.
-                At level 15, choose \mitem{supreme armor of health} and \mitem{armor of fortification+}.
-            \parhead{Domains} Destruction, War
-            \parhead{Mystic Sphere} Channel Divinity
-            \parhead{Suggested Feats} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
-            \parhead{Combat Tactics} You are a frontline fighter first and foremost.
-            Your magically enhanced resistance and high defenses make you durable in combat, though you lack mobility. 
-            When you need to distract foes or face down hordes, you can use your abilities from the Preacher archetype.
+%             \parhead{Species} Dwarf.
+%             % 2 1 3 0 2 2 base
+%             \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil (after species modifiers).
+%             \parhead{Class} Cleric.
+%             \parhead{Archetypes} Domain Influence first, Divine Magic second, Preacher third.
+%             \parhead{Insight Points} 3 points for additional spells known.
+%             \parhead{Skills} Awareness, Knowledge (local, religion), Medicine
+%             \parhead{Weapon Group} Club-like weapons.
+%             \parhead{Languages} Common, Draconic, Dwarven.
+%             \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford.
+%             \parhead{Legacy Item} Armor.
+%                 At level 3, choose \mitem{armor of health}.
+%                 At level 9, choose \mitem{greater armor of health} and \mitem{armor of fortification}.
+%                 At level 15, choose \mitem{supreme armor of health} and \mitem{armor of fortification+}.
+%             \parhead{Domains} Destruction, War
+%             \parhead{Mystic Sphere} Channel Divinity
+%             \parhead{Suggested Feats} Weapon Focus, Sphere Focus: Channel Divinity, Shieldbearer
+%             \parhead{Combat Tactics} You are a frontline fighter first and foremost.
+%             Your magically enhanced resistance and high defenses make you durable in combat, though you lack mobility. 
+%             When you need to distract foes or face down hordes, you can use your abilities from the Preacher archetype.
 
-        \subsubsection{Healer}
-            \parhead{Species} Human.
-            % 0 2 2 1 0 4 base
-            \parhead{Attributes} 0 Str, 2 Dex, 2 Con, 1 Int, 0 Per, 3 Wil.
-            \parhead{Class} Cleric.
-            \parhead{Archetypes} Healer first, Divine Magic second, Domain Influence third.
-            \parhead{Insight Points} 2 points for an additional mystic sphere, 3 points for additional spells known.
-            \parhead{Skills} Awareness, Deduction, Knowledge (local, religion), Medicine
-            \parhead{Weapon Group} Club-like weapons.
-            \parhead{Languages} Common, Draconic, Halfling.
-            \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
-            \parhead{Legacy Item} 1-handed implement.
-                At level 3, choose \mitem{staff of potency}.
-                At level 9, choose \mitem{greater staff of potency} and \mitem{staff of pleasant healing}.
-                At level 15, choose \mitem{supreme staff of potency} and \mitem{greater staff of pleasant healing}.
-            \parhead{Domains} Life, Protection
-            \parhead{Mystic Spheres} Prayer, Vivimancy
-            \parhead{Suggested Feats} Sphere Focus: Vivimancy, Boongiver, Sphere Focus: Prayer
-            \parhead{Combat Tactics} You have an unmatched mastery of healing and protection.
-            You have reasonably high defenses, so you can take to the front lines as necessary to make the most of your \ability{divine aid} and \ability{divine protection} abilities.
-            Although your \ability{healer's grace} ability is powerful, you shouldn't feel bad about attacking enemies.
-            That's especially important early in a fight when your allies don't need healing yet and your enemies haven't realized that it's pointless to attack your allies while you are still standing.
+%         \subsubsection{Healer}
+%             \parhead{Species} Human.
+%             % 0 2 2 1 0 4 base
+%             \parhead{Attributes} 0 Str, 2 Dex, 2 Con, 1 Int, 0 Per, 3 Wil.
+%             \parhead{Class} Cleric.
+%             \parhead{Archetypes} Healer first, Divine Magic second, Domain Influence third.
+%             \parhead{Insight Points} 2 points for an additional mystic sphere, 3 points for additional spells known.
+%             \parhead{Skills} Awareness, Deduction, Knowledge (local, religion), Medicine
+%             \parhead{Weapon Group} Club-like weapons.
+%             \parhead{Languages} Common, Draconic, Halfling.
+%             \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+%             \parhead{Legacy Item} 1-handed implement.
+%                 At level 3, choose \mitem{staff of potency}.
+%                 At level 9, choose \mitem{greater staff of potency} and \mitem{staff of pleasant healing}.
+%                 At level 15, choose \mitem{supreme staff of potency} and \mitem{greater staff of pleasant healing}.
+%             \parhead{Domains} Life, Protection
+%             \parhead{Mystic Spheres} Prayer, Vivimancy
+%             \parhead{Suggested Feats} Sphere Focus: Vivimancy, Boongiver, Sphere Focus: Prayer
+%             \parhead{Combat Tactics} You have an unmatched mastery of healing and protection.
+%             You have reasonably high defenses, so you can take to the front lines as necessary to make the most of your \ability{divine aid} and \ability{divine protection} abilities.
+%             Although your \ability{healer's grace} ability is powerful, you shouldn't feel bad about attacking enemies.
+%             That's especially important early in a fight when your allies don't need healing yet and your enemies haven't realized that it's pointless to attack your allies while you are still standing.
 
-        \subsubsection{Preacher}
-            \parhead{Species} Human.
-            \parhead{Attributes} 0 Str, 0 Dex, 2 Con, 2 Int, 4 Per, 0 Wil.
-            \parhead{Class} Cleric.
-            \parhead{Archetypes} Preacher first, Divine Magic second, Divine Spell Mastery third.
-            \parhead{Insight Points} 2 points for metamagic (including an extra mystic sphere), 3 points for additional spells known
-            \parhead{Skills} Awareness, Knowledge (local, religion), Linguistics, Medicine, Persuasion, Social Insight
-            \parhead{Languages} Common, Dwarven, Elven.
-            \parhead{Equipment} Club, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{amulet of blessed oration}.
-                At level 9, choose \mitem{greater amulet of blessed oration} and \mitem{greater shieldburst bracers}.
-                At level 15, choose \mitem{supreme amulet of blessed oration} and \mitem{supreme shieldburst bracers}.
-            \parhead{Mystic Spheres} Enchantment, Revelation
-            \parhead{Suggested Feats} Persuasion Specialization, Sphere Focus: Enchantment, Sphere Focus: Revelation
-            \parhead{Combat Tactics} Your social skills are virtually unmatched, and you have a wide variety of spells that give you narrative power in social situations.
-            In combat, your \ability{denounce the heathens} ability is essentially guaranteed to hit, so you should stay close enough to the front lines to make good use of it.
-            You can take advantage of the lowered defenses of your denounced foes to succeed with powerful mind-affecting spells.
+%         \subsubsection{Preacher}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 0 Str, 0 Dex, 2 Con, 2 Int, 4 Per, 0 Wil.
+%             \parhead{Class} Cleric.
+%             \parhead{Archetypes} Preacher first, Divine Magic second, Divine Spell Mastery third.
+%             \parhead{Insight Points} 2 points for metamagic (including an extra mystic sphere), 3 points for additional spells known
+%             \parhead{Skills} Awareness, Knowledge (local, religion), Linguistics, Medicine, Persuasion, Social Insight
+%             \parhead{Languages} Common, Dwarven, Elven.
+%             \parhead{Equipment} Club, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{amulet of blessed oration}.
+%                 At level 9, choose \mitem{greater amulet of blessed oration} and \mitem{greater shieldburst bracers}.
+%                 At level 15, choose \mitem{supreme amulet of blessed oration} and \mitem{supreme shieldburst bracers}.
+%             \parhead{Mystic Spheres} Enchantment, Revelation
+%             \parhead{Suggested Feats} Persuasion Specialization, Sphere Focus: Enchantment, Sphere Focus: Revelation
+%             \parhead{Combat Tactics} Your social skills are virtually unmatched, and you have a wide variety of spells that give you narrative power in social situations.
+%             In combat, your \ability{denounce the heathens} ability is essentially guaranteed to hit, so you should stay close enough to the front lines to make good use of it.
+%             You can take advantage of the lowered defenses of your denounced foes to succeed with powerful mind-affecting spells.
 
-    \subsection{Druid}
+%     \subsection{Druid}
 
-        \subsubsection{Elementalist}
-            \parhead{Species} Human.
-            \parhead{Attributes} 0 Str, 0 Dex, 1 Con, 2 Int, 4 Per, 2 Wil.
-            \parhead{Class} Druid.
-            \parhead{Archetypes} Nature Magic first, Elementalist second, Nature Spell Mastery third.
-            \parhead{Insight Points} 2 points for a mystic sphere, 1 point for metamagic (choosing an extra mystic sphere), 3 points for spells
-            \parhead{Skills} Awareness, Balance, Jump, Knowledge (dungeoneering, nature), Survival, Swim
-            \parhead{Languages} Common, Sylvan
-            \parhead{Equipment} Sickle, buckler, hide armor. As you gain levels, keep using hide armor.
-            You may want to keep leather armor around in case you need to do a lot of jumping or swimming - or at high levels, flying.
-            \parhead{Legacy Item} Implement.
-                At level 3, choose \mitem{staff of potency}.
-                At level 9, choose \mitem{greater staff of potency} and \mitem{greater selective staff}.
-                At level 15, choose \mitem{supreme staff of potency} and \mitem{supreme selective staff}.
-            \parhead{Mystic Spheres} Any three of the four elemental mystic spheres.
-            Your \textit{elemental spell} ability gives you access to spells from the fourth mystic sphere.
-            That means that the specific three mystic spheres you choose mostly just affect which wands you can use and which feats you can take.
-            \parhead{Suggested Feats} Sphere Focus: Aeromancy, Aquamancy, Pyromancy, or Terramancy
-            \parhead{Combat Tactics} You are a master of all four elements, so you have an immense variety of options available to you - if you choose the right spells.
-            You have a very high accuracy thanks to your Perception and a reasonably high power, so your primary role in combat will usually be to deploy the perfect damaging spell or debuff for the situation.
-            Your skills and Elementalist abilities give you a lot of narrative power, so stay alert for opportunities to overcome challenges without needing to fight at all.
+%         \subsubsection{Elementalist}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 0 Str, 0 Dex, 1 Con, 2 Int, 4 Per, 2 Wil.
+%             \parhead{Class} Druid.
+%             \parhead{Archetypes} Nature Magic first, Elementalist second, Nature Spell Mastery third.
+%             \parhead{Insight Points} 2 points for a mystic sphere, 1 point for metamagic (choosing an extra mystic sphere), 3 points for spells
+%             \parhead{Skills} Awareness, Balance, Jump, Knowledge (dungeoneering, nature), Survival, Swim
+%             \parhead{Languages} Common, Sylvan
+%             \parhead{Equipment} Sickle, buckler, hide armor. As you gain levels, keep using hide armor.
+%             You may want to keep leather armor around in case you need to do a lot of jumping or swimming - or at high levels, flying.
+%             \parhead{Legacy Item} Implement.
+%                 At level 3, choose \mitem{staff of potency}.
+%                 At level 9, choose \mitem{greater staff of potency} and \mitem{greater selective staff}.
+%                 At level 15, choose \mitem{supreme staff of potency} and \mitem{supreme selective staff}.
+%             \parhead{Mystic Spheres} Any three of the four elemental mystic spheres.
+%             Your \textit{elemental spell} ability gives you access to spells from the fourth mystic sphere.
+%             That means that the specific three mystic spheres you choose mostly just affect which wands you can use and which feats you can take.
+%             \parhead{Suggested Feats} Sphere Focus: Aeromancy, Aquamancy, Pyromancy, or Terramancy
+%             \parhead{Combat Tactics} You are a master of all four elements, so you have an immense variety of options available to you - if you choose the right spells.
+%             You have a very high accuracy thanks to your Perception and a reasonably high power, so your primary role in combat will usually be to deploy the perfect damaging spell or debuff for the situation.
+%             Your skills and Elementalist abilities give you a lot of narrative power, so stay alert for opportunities to overcome challenges without needing to fight at all.
 
-        \subsubsection{Nature Magic}
-            \parhead{Species} Elf.
-            % 0 3 1 1 3 2 base
-            \parhead{Attributes} 0 Str, 3 Dex, 0 Con, 1 Int, 4 Per, 2 Wil (after species modifiers).
-            \parhead{Class} Druid.
-            \parhead{Archetypes} Nature Magic first, Nature Spell Mastery second, Elementalist third.
-            \parhead{Insight Points} 1 point for metamagic (choosing an extra mystic sphere), 3 points for spells
-            \parhead{Skills} Awareness, Creature Handling, Knowledge (nature), Stealth, Survival
-            \parhead{Weapon Group} Headed weapons
-            \parhead{Languages} Common, Elven, Halfling.
-            \parhead{Equipment} Sickle, buckler, leather armor. As you gain levels, use the best light armor you can afford.
-            \parhead{Legacy Item} Implement.
-                At level 3, choose \mitem{extending staff}.
-                At level 9, choose \mitem{bushwalker's staff} and \mitem{extending staff}.
-                At level 15, choose \mitem{supreme extending staff} and \mitem{bushwalker's staff}.
-            \parhead{Mystic Spheres} Toxicology, Verdamancy
-            \parhead{Suggested Feats} Sphere Focus: Verdamancy, Sphere Focus: Aquamancy, Herbalist
-            \parhead{Combat Tactics} You are a master of plants and natural magic.
-            Your spells excel at constraining and debilitating your foes, especially with poisons.
-            Larger foes tend to be resistant to both poisons and movement impediments, so it's a good idea to have Reflex attacks like \spell{ensnaring grasp} and \spell{fire seeds} to deal with them.
+%         \subsubsection{Nature Magic}
+%             \parhead{Species} Elf.
+%             % 0 3 1 1 3 2 base
+%             \parhead{Attributes} 0 Str, 3 Dex, 0 Con, 1 Int, 4 Per, 2 Wil (after species modifiers).
+%             \parhead{Class} Druid.
+%             \parhead{Archetypes} Nature Magic first, Nature Spell Mastery second, Elementalist third.
+%             \parhead{Insight Points} 1 point for metamagic (choosing an extra mystic sphere), 3 points for spells
+%             \parhead{Skills} Awareness, Creature Handling, Knowledge (nature), Stealth, Survival
+%             \parhead{Weapon Group} Headed weapons
+%             \parhead{Languages} Common, Elven, Halfling.
+%             \parhead{Equipment} Sickle, buckler, leather armor. As you gain levels, use the best light armor you can afford.
+%             \parhead{Legacy Item} Implement.
+%                 At level 3, choose \mitem{extending staff}.
+%                 At level 9, choose \mitem{bushwalker's staff} and \mitem{extending staff}.
+%                 At level 15, choose \mitem{supreme extending staff} and \mitem{bushwalker's staff}.
+%             \parhead{Mystic Spheres} Toxicology, Verdamancy
+%             \parhead{Suggested Feats} Sphere Focus: Verdamancy, Sphere Focus: Aquamancy, Herbalist
+%             \parhead{Combat Tactics} You are a master of plants and natural magic.
+%             Your spells excel at constraining and debilitating your foes, especially with poisons.
+%             Larger foes tend to be resistant to both poisons and movement impediments, so it's a good idea to have Reflex attacks like \spell{ensnaring grasp} and \spell{fire seeds} to deal with them.
 
-        \subsubsection{Nature Spell Mastery}
-            Use the typical character for the Nature Magic druid archetype.
-            Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
+%         \subsubsection{Nature Spell Mastery}
+%             Use the typical character for the Nature Magic druid archetype.
+%             Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
 
-        \subsubsection{Shifter}
-            \parhead{Species} Human.
-            \parhead{Attributes} 3 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 0 Wil.
-            \parhead{Class} Druid.
-            \parhead{Archetypes} Shifter first, Nature Magic second, Wildspeaker third.
-            \parhead{Insight Points} 1 point for a wild aspect, 3 points for spells
-            \parhead{Skills} Awareness, Balance, Climb, Jump, Stealth, Survival
-            \parhead{Languages} Common, Sylvan
-            \parhead{Equipment} Natural weapon, buckler, chain shirt. As you gain levels, use the best light armor you can afford.
-            \parhead{Legacy Item} Armor.
-                At level 3, choose \mitem{lifesaver ring}.
-                At level 9, choose \mitem{bracers of mighty fists} and \mitem{lifesaver ring}.
-                At level 15, choose \mitem{supreme lifesaver ring} and \mitem{bracers of mighty fists}.
-            \parhead{Mystic Sphere} Polymorph
-            \parhead{Suggested Wild Aspects} Your choice of wild aspects has a significant effect on your capabilities, so choose wild aspects that match your goals.
-            The Bear, Viper, and Wolf forms excel at dealing damage in combat.
-            The Bull and Constrictor forms improve your ability to take unusual combat actions.
-            Other forms can be useful in specific circumstances and out of combat.
-            \parhead{Suggested Feats} Sphere Focus: Polymorph, Regenerator, Brawler, Savage
-            \parhead{Combat Tactics} You are a lethal blend of claws and teeth.
-            You can shift your form to gain the perfect abilities for your current circumstances, and your high physical attributes make you hard to kill and hard to ignore.
-            Your flexibility between natural weapons, spells, and high physical skills give you a lot of options in and out of combat.
-            In general, you do the most damage in close quarters where you can attack with your natural weapons, but you can use your spells to soften up strong enemies and finish off weakened enemies.
+%         \subsubsection{Shifter}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 3 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 0 Wil.
+%             \parhead{Class} Druid.
+%             \parhead{Archetypes} Shifter first, Nature Magic second, Wildspeaker third.
+%             \parhead{Insight Points} 1 point for a wild aspect, 3 points for spells
+%             \parhead{Skills} Awareness, Balance, Climb, Jump, Stealth, Survival
+%             \parhead{Languages} Common, Sylvan
+%             \parhead{Equipment} Natural weapon, buckler, chain shirt. As you gain levels, use the best light armor you can afford.
+%             \parhead{Legacy Item} Armor.
+%                 At level 3, choose \mitem{lifesaver ring}.
+%                 At level 9, choose \mitem{bracers of mighty fists} and \mitem{lifesaver ring}.
+%                 At level 15, choose \mitem{supreme lifesaver ring} and \mitem{bracers of mighty fists}.
+%             \parhead{Mystic Sphere} Polymorph
+%             \parhead{Suggested Wild Aspects} Your choice of wild aspects has a significant effect on your capabilities, so choose wild aspects that match your goals.
+%             The Bear, Viper, and Wolf forms excel at dealing damage in combat.
+%             The Bull and Constrictor forms improve your ability to take unusual combat actions.
+%             Other forms can be useful in specific circumstances and out of combat.
+%             \parhead{Suggested Feats} Sphere Focus: Polymorph, Regenerator, Brawler, Savage
+%             \parhead{Combat Tactics} You are a lethal blend of claws and teeth.
+%             You can shift your form to gain the perfect abilities for your current circumstances, and your high physical attributes make you hard to kill and hard to ignore.
+%             Your flexibility between natural weapons, spells, and high physical skills give you a lot of options in and out of combat.
+%             In general, you do the most damage in close quarters where you can attack with your natural weapons, but you can use your spells to soften up strong enemies and finish off weakened enemies.
 
-        \subsubsection{Wildspeaker}
-            \parhead{Species} Gnome.
-            \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 0 Int, 4 Per, 2 Wil.
-            \parhead{Class} Druid.
-            \parhead{Archetypes} Wildspeaker first, Nature Magic second, Nature Spell Mastery third.
-            \parhead{Insight Points} 1 point for metamagic, 3 points for spells.
-            \parhead{Skills} Awareness, Creature Handling, Knowledge (nature), Ride, Survival
-            \parhead{Weapon Group} Headed weapons
-            \parhead{Languages} Common, Gnome, Sylvan
-            \parhead{Equipment} Sickle, buckler, scale mail. As you gain levels, use the best medium armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{amulet of sturdy companionship}.
-                At level 9, choose \mitem{greater amulet of sturdy companionship} and \mitem{shrinking belt}.
-                At level 15, choose \mitem{supreme amulet of sturdy companionship} and \mitem{greater shrinking belt}.
-            \parhead{Mystic Sphere} Electromancy
-            \parhead{Suggested Feats} Sphere Focus: Electromancy, Ride Specialization, Creature Handling Specialization, Toughness
-            \parhead{Combat Tactics} You lead your faithful natural servant in battle.
-            It distracts your enemies while you blast them with lightning from afar.
-            Once you get a \textit{shrinking belt} or some other way to shrink yourself, you can ride your \textit{natural servant} into battle, which compensates for your short gnomish legs.
-            If you are both lucky and persuasive, you be able to use your \textit{speak with animals} ability to convince an animal to aid you on your journey, at least for a short time, in addition to your \textit{natural servant}.
+%         \subsubsection{Wildspeaker}
+%             \parhead{Species} Gnome.
+%             \parhead{Attributes} -1 Str, 0 Dex, 3 Con, 0 Int, 4 Per, 2 Wil.
+%             \parhead{Class} Druid.
+%             \parhead{Archetypes} Wildspeaker first, Nature Magic second, Nature Spell Mastery third.
+%             \parhead{Insight Points} 1 point for metamagic, 3 points for spells.
+%             \parhead{Skills} Awareness, Creature Handling, Knowledge (nature), Ride, Survival
+%             \parhead{Weapon Group} Headed weapons
+%             \parhead{Languages} Common, Gnome, Sylvan
+%             \parhead{Equipment} Sickle, buckler, scale mail. As you gain levels, use the best medium armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{amulet of sturdy companionship}.
+%                 At level 9, choose \mitem{greater amulet of sturdy companionship} and \mitem{shrinking belt}.
+%                 At level 15, choose \mitem{supreme amulet of sturdy companionship} and \mitem{greater shrinking belt}.
+%             \parhead{Mystic Sphere} Electromancy
+%             \parhead{Suggested Feats} Sphere Focus: Electromancy, Ride Specialization, Creature Handling Specialization, Toughness
+%             \parhead{Combat Tactics} You lead your faithful natural servant in battle.
+%             It distracts your enemies while you blast them with lightning from afar.
+%             Once you get a \textit{shrinking belt} or some other way to shrink yourself, you can ride your \textit{natural servant} into battle, which compensates for your short gnomish legs.
+%             If you are both lucky and persuasive, you be able to use your \textit{speak with animals} ability to convince an animal to aid you on your journey, at least for a short time, in addition to your \textit{natural servant}.
 
-    \subsection{Fighter}
+%     \subsection{Fighter}
 
-        \subsubsection{Combat Discipline}
-            \parhead{Species} Dwarf.
-            % 3 1 3 1 0 2 base
-            \parhead{Attributes} 3 Str, 0 Dex, 4 Con, 1 Int, 0 Per, 2 Wil (after species modifiers).
-            \parhead{Class} Fighter.
-            \parhead{Archetypes} Combat Discipline first, Martial Mastery second, Sentinel third.
-            \parhead{Insight Points} 3 points for maneuvers.
-            \parhead{Skills} Climb, Endurance, Jump, Swim
-            \parhead{Weapon Groups} Axes, crossbows
-            \parhead{Languages} Common, Dwarven, Orcish.
-            \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, buy a heavy crossbow and use the best heavy armor you can afford.
-            You can switch between a shepherd's axe for hard to hit enemies, a battleaxe for multi-enemy fights or fights where you need the extra damage from holding it in two hands, and throwing axes when you need a ranged weapon.
-            \parhead{Legacy Item} Shield.
-                At level 3, choose \mitem{shield of arrow catching}.
-                At level 9, choose \mitem{hardblock shield} and \mitem{shield of arrow catching}.
-                At level 15, choose \mitem{supreme shield of arrow catching} and \mitem{hardblock shield}.
-            \parhead{Combat Styles} Rip and Tear, Unbreakable Defense
-            \parhead{Suggested Feats} Shieldbearer, Toughness, Regenerator
-            \parhead{Combat Tactics} You are extremely difficult to kill, and your ability to ignore and remove conditions makes it hard for your foes to whittle you down over time.
-            You can charge confidently into the middle of battle, cutting down enemy ranged attackers regardless of their surrounding allies.
-            Alternately, you can hold the line to protect your own allies.
+%         \subsubsection{Combat Discipline}
+%             \parhead{Species} Dwarf.
+%             % 3 1 3 1 0 2 base
+%             \parhead{Attributes} 3 Str, 0 Dex, 4 Con, 1 Int, 0 Per, 2 Wil (after species modifiers).
+%             \parhead{Class} Fighter.
+%             \parhead{Archetypes} Combat Discipline first, Martial Mastery second, Sentinel third.
+%             \parhead{Insight Points} 3 points for maneuvers.
+%             \parhead{Skills} Climb, Endurance, Jump, Swim
+%             \parhead{Weapon Groups} Axes, crossbows
+%             \parhead{Languages} Common, Dwarven, Orcish.
+%             \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, buy a heavy crossbow and use the best heavy armor you can afford.
+%             You can switch between a shepherd's axe for hard to hit enemies, a battleaxe for multi-enemy fights or fights where you need the extra damage from holding it in two hands, and throwing axes when you need a ranged weapon.
+%             \parhead{Legacy Item} Shield.
+%                 At level 3, choose \mitem{shield of arrow catching}.
+%                 At level 9, choose \mitem{hardblock shield} and \mitem{shield of arrow catching}.
+%                 At level 15, choose \mitem{supreme shield of arrow catching} and \mitem{hardblock shield}.
+%             \parhead{Combat Styles} Rip and Tear, Unbreakable Defense
+%             \parhead{Suggested Feats} Shieldbearer, Toughness, Regenerator
+%             \parhead{Combat Tactics} You are extremely difficult to kill, and your ability to ignore and remove conditions makes it hard for your foes to whittle you down over time.
+%             You can charge confidently into the middle of battle, cutting down enemy ranged attackers regardless of their surrounding allies.
+%             Alternately, you can hold the line to protect your own allies.
 
-        \subsubsection{Equipment Training}
-            \parhead{Species} Halfling.
-            % 2 4 1 0 2 0 base
-            \parhead{Attributes} 1 Str, 5 Dex, 0 Con, 1 Int, 2 Per, 0 Wil.
-            \parhead{Class} Fighter.
-            \parhead{Archetypes} Equipment Training first, Martial Mastery second, Combat Discipline third.
-            \parhead{Insight Points} 3 points for maneuvers.
-            \parhead{Skills} Awareness, Balance, Flexibility, Stealth
-            \parhead{Weapon Groups} Blades, bows
-            \parhead{Languages} Common, Gnomish, Halfling
-            \parhead{Equipment} Kukri, standard shield, scale mail. As you gain levels, buy a longbow and use the best armor you can afford that allows you to apply your full Dexterity bonus to your Armor defense.
-                Keep an extra kukri with you so you can dual wield in fights where you don't need to use a shield.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{potency}.
-                At level 9, choose \mitem{greater potency} and \mitem{seeking}.
-                At level 15, choose \mitem{supreme potency} and \mitem{wolfpack}.
-            \parhead{Combat Styles} Flurry of Blows, Rip and Tear
-            \parhead{Suggested Feats} Swiftrunner, Rapid Reaction, Executioner, Two-Weapon Fighting
-            \parhead{Combat Tactics} You have an exceptionally high Armor defense, and your strikes are very accurate.
-            However, your low Strength and small weapons mean that you don't deal a lot of damage.
-            Focus on debilitating maneuvers like \maneuver{brow gash} or maneuvers that increase your damage like \maneuver{tear exposed flesh} to stay relevant in combat.
-            When your Armor defense isn't as important, such as when fighting spellcasters, you can dual wield to increase your damage.
-            Unlike most fighters, you are very agile and stealthy, so you can accompany rogues on scouting missions.
+%         \subsubsection{Equipment Training}
+%             \parhead{Species} Halfling.
+%             % 2 4 1 0 2 0 base
+%             \parhead{Attributes} 1 Str, 5 Dex, 0 Con, 1 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Fighter.
+%             \parhead{Archetypes} Equipment Training first, Martial Mastery second, Combat Discipline third.
+%             \parhead{Insight Points} 3 points for maneuvers.
+%             \parhead{Skills} Awareness, Balance, Flexibility, Stealth
+%             \parhead{Weapon Groups} Blades, bows
+%             \parhead{Languages} Common, Gnomish, Halfling
+%             \parhead{Equipment} Kukri, standard shield, scale mail. As you gain levels, buy a longbow and use the best armor you can afford that allows you to apply your full Dexterity bonus to your Armor defense.
+%                 Keep an extra kukri with you so you can dual wield in fights where you don't need to use a shield.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{potency}.
+%                 At level 9, choose \mitem{greater potency} and \mitem{seeking}.
+%                 At level 15, choose \mitem{supreme potency} and \mitem{wolfpack}.
+%             \parhead{Combat Styles} Flurry of Blows, Rip and Tear
+%             \parhead{Suggested Feats} Swiftrunner, Rapid Reaction, Executioner, Two-Weapon Fighting
+%             \parhead{Combat Tactics} You have an exceptionally high Armor defense, and your strikes are very accurate.
+%             However, your low Strength and small weapons mean that you don't deal a lot of damage.
+%             Focus on debilitating maneuvers like \maneuver{brow gash} or maneuvers that increase your damage like \maneuver{tear exposed flesh} to stay relevant in combat.
+%             When your Armor defense isn't as important, such as when fighting spellcasters, you can dual wield to increase your damage.
+%             Unlike most fighters, you are very agile and stealthy, so you can accompany rogues on scouting missions.
 
-        \subsubsection{Martial Mastery}
-            \parhead{Species} Human.
-            \parhead{Attributes} 4 Str, 0 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
-            \parhead{Class} Fighter.
-            \parhead{Archetypes} Martial Mastery first, Combat Discipline second, Tactician third.
-            \parhead{Insight Points} 1 point for an additional combat style, 3 points for maneuvers.
-            \parhead{Skills} Awareness, Climb, Endurance, Jump, Swim
-            \parhead{Weapon Groups} Blades, thrown weapons.
-            \parhead{Languages} Common, Giantish, Orcish.
-            \parhead{Equipment} Broadsword, standard shield, scale mail. As you gain levels, buy throwing axes and use the best heavy armor you can afford.
-            \parhead{Legacy Item} Armor.
-                At level 3, choose \mitem{resistant armor}.
-                At level 9, choose \mitem{greater resistant armor} and \mitem{armor of fortification}.
-                At level 15, choose \mitem{supreme resistant armor} and \mitem{armor of mystic fortification}.
-            \parhead{Combat Styles} Ebb and Flow, Herald of War, Rip and Tear
-            \parhead{Suggested Feats} Executioner, Blindfighter, Toughness
-            \parhead{Combat Tactics} You have great versatility in combat.
-            You have a large number of manuvers, and by mixing in thrown weapons and shouts, you can attack at multiple ranges and hit multiple defenses.
-            When your shield is unnecessary, you can hold your broadsword in two hands to improve your already respectable damage.
-            Many of your maneuvers work at any range, so you aren't forced to fight in melee against highly mobile or excessively lethal foes.
-            In addition to using maneuvers, you can coordinate your allies with battle tactics.
+%         \subsubsection{Martial Mastery}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 4 Str, 0 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Fighter.
+%             \parhead{Archetypes} Martial Mastery first, Combat Discipline second, Tactician third.
+%             \parhead{Insight Points} 1 point for an additional combat style, 3 points for maneuvers.
+%             \parhead{Skills} Awareness, Climb, Endurance, Jump, Swim
+%             \parhead{Weapon Groups} Blades, thrown weapons.
+%             \parhead{Languages} Common, Giantish, Orcish.
+%             \parhead{Equipment} Broadsword, standard shield, scale mail. As you gain levels, buy throwing axes and use the best heavy armor you can afford.
+%             \parhead{Legacy Item} Armor.
+%                 At level 3, choose \mitem{resistant armor}.
+%                 At level 9, choose \mitem{greater resistant armor} and \mitem{armor of fortification}.
+%                 At level 15, choose \mitem{supreme resistant armor} and \mitem{armor of mystic fortification}.
+%             \parhead{Combat Styles} Ebb and Flow, Herald of War, Rip and Tear
+%             \parhead{Suggested Feats} Executioner, Blindfighter, Toughness
+%             \parhead{Combat Tactics} You have great versatility in combat.
+%             You have a large number of manuvers, and by mixing in thrown weapons and shouts, you can attack at multiple ranges and hit multiple defenses.
+%             When your shield is unnecessary, you can hold your broadsword in two hands to improve your already respectable damage.
+%             Many of your maneuvers work at any range, so you aren't forced to fight in melee against highly mobile or excessively lethal foes.
+%             In addition to using maneuvers, you can coordinate your allies with battle tactics.
 
-        \subsubsection{Sentinel}
-            \parhead{Species} Dwarf.
-            % 2 1 2 0 4 0 base
-            \parhead{Attributes} 2 Str, 0 Dex, 3 Con, 0 Int, 4 Per, 0 Wil.
-            \parhead{Class} Fighter.
-            \parhead{Archetypes} Sentinel first, Martial Mastery second, Equipment Training third.
-            \parhead{Insight Points} 2 points for maneuvers.
-            \parhead{Skills} Awareness, Endurance, Intimidate
-            \parhead{Weapon Groups} Axes, crossbows
-            \parhead{Languages} Common, Dwarven, Orcish
-            \parhead{Equipment} Shepherd's axe, standard shield, scale mail. As you gain levels, buy a throwing axes, a heavy crossbow, and a greataxe and use the best heavy armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{protector's amulet}.
-                At level 9, choose \mitem{greater boots of speed} and \mitem{protector's amulet}.
-                At level 15, choose \mitem{supreme boots of speed} and \mitem{greater protector's amulet}.
-            \parhead{Combat Styles} Rip and Tear, Unbreakable Defense
-            \parhead{Suggested Feats} Shieldbearer, Toughness, Regenerator
-            \parhead{Combat Tactics} You hold the line in the middle of the fray, protecting your allies all over the battlefield.
-            You have an unmatched ability to constrain your foes' movement and force them to pay attention to you, limiting their ability to harm your allies.
-            Your damage is reasonable, but your main focus should be on defense so you can protect your more vulnerable and reckless allies.
-            A shepherd's axe is convenient because it allows you to attack foes who try to keep their distance from you.
-            However, when you need to deal damage, consider switching to a greataxe or dual-wielding a second shepherd's axe instead of holding a shield.
+%         \subsubsection{Sentinel}
+%             \parhead{Species} Dwarf.
+%             % 2 1 2 0 4 0 base
+%             \parhead{Attributes} 2 Str, 0 Dex, 3 Con, 0 Int, 4 Per, 0 Wil.
+%             \parhead{Class} Fighter.
+%             \parhead{Archetypes} Sentinel first, Martial Mastery second, Equipment Training third.
+%             \parhead{Insight Points} 2 points for maneuvers.
+%             \parhead{Skills} Awareness, Endurance, Intimidate
+%             \parhead{Weapon Groups} Axes, crossbows
+%             \parhead{Languages} Common, Dwarven, Orcish
+%             \parhead{Equipment} Shepherd's axe, standard shield, scale mail. As you gain levels, buy a throwing axes, a heavy crossbow, and a greataxe and use the best heavy armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{protector's amulet}.
+%                 At level 9, choose \mitem{greater boots of speed} and \mitem{protector's amulet}.
+%                 At level 15, choose \mitem{supreme boots of speed} and \mitem{greater protector's amulet}.
+%             \parhead{Combat Styles} Rip and Tear, Unbreakable Defense
+%             \parhead{Suggested Feats} Shieldbearer, Toughness, Regenerator
+%             \parhead{Combat Tactics} You hold the line in the middle of the fray, protecting your allies all over the battlefield.
+%             You have an unmatched ability to constrain your foes' movement and force them to pay attention to you, limiting their ability to harm your allies.
+%             Your damage is reasonable, but your main focus should be on defense so you can protect your more vulnerable and reckless allies.
+%             A shepherd's axe is convenient because it allows you to attack foes who try to keep their distance from you.
+%             However, when you need to deal damage, consider switching to a greataxe or dual-wielding a second shepherd's axe instead of holding a shield.
 
-        \subsubsection{Tactician}
-            \parhead{Species} Human.
-            \parhead{Attributes} 2 Str, 3 Dex, 1 Con, 2 Int, 2 Per, 0 Wil.
-            \parhead{Class} Fighter.
-            \parhead{Archetypes} Tactician first, Martial Mastery second, Equipment Training third.
-            \parhead{Insight Points} 2 points for battle tactics, 3 points for maneuvers.
-            % 3 fighter + 2 int + 1 human = 6 trained
-            \parhead{Skills} Awareness, Deduction, Endurance, Knowledge (dungeoneering, local), Medicine
-            \parhead{Weapon Groups} Bows, polearms.
-            \parhead{Languages} Common, Draconic, Elven
-            \parhead{Equipment} Longhammer, standard shield, chain shirt. As you gain levels, buy a longbow and use the best armor you can afford that allows you to apply your full Dexterity bonus to your Armor defense.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{resistant armor}.
-                At level 9, choose \mitem{greater resistant armor} and \mitem{featherlight armor}.
-                At level 15, choose \mitem{supreme resistant armor} and \mitem{swiftstep armor}.
-            \parhead{Combat Styles} Blunt Force, Mobile Assault
-            \parhead{Suggested Feats} Precognition, Leadership, Medicine Specialization
-            \parhead{Combat Tactics} You have a wealth of options in combat.
-            You can buff your allies' attacks, defend your allies, deal damage, or debuff your foes.
-            Use whichever battle tactics are most relevant to the current situation.
-            Your longhammer and high mobility allows you to keep your distance in combat while knocking your foes into more tactically advantageous positions.
-            Since you don't use a shield, you don't have the defensive power of most fighters, so you can't just charge heedlessly into the fray.
+%         \subsubsection{Tactician}
+%             \parhead{Species} Human.
+%             \parhead{Attributes} 2 Str, 3 Dex, 1 Con, 2 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Fighter.
+%             \parhead{Archetypes} Tactician first, Martial Mastery second, Equipment Training third.
+%             \parhead{Insight Points} 2 points for battle tactics, 3 points for maneuvers.
+%             % 3 fighter + 2 int + 1 human = 6 trained
+%             \parhead{Skills} Awareness, Deduction, Endurance, Knowledge (dungeoneering, local), Medicine
+%             \parhead{Weapon Groups} Bows, polearms.
+%             \parhead{Languages} Common, Draconic, Elven
+%             \parhead{Equipment} Longhammer, standard shield, chain shirt. As you gain levels, buy a longbow and use the best armor you can afford that allows you to apply your full Dexterity bonus to your Armor defense.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{resistant armor}.
+%                 At level 9, choose \mitem{greater resistant armor} and \mitem{featherlight armor}.
+%                 At level 15, choose \mitem{supreme resistant armor} and \mitem{swiftstep armor}.
+%             \parhead{Combat Styles} Blunt Force, Mobile Assault
+%             \parhead{Suggested Feats} Precognition, Leadership, Medicine Specialization
+%             \parhead{Combat Tactics} You have a wealth of options in combat.
+%             You can buff your allies' attacks, defend your allies, deal damage, or debuff your foes.
+%             Use whichever battle tactics are most relevant to the current situation.
+%             Your longhammer and high mobility allows you to keep your distance in combat while knocking your foes into more tactically advantageous positions.
+%             Since you don't use a shield, you don't have the defensive power of most fighters, so you can't just charge heedlessly into the fray.
 
-    \subsection{Monk}
+%     \subsection{Monk}
 
-        \subsubsection{Airdancer}
-            \parhead{Species} Elf.
-            % Base 2 4 1 0 2 0
-            \parhead{Attributes} 2 Str, 5 Dex, 0 Con, 0 Int, 2 Per, 0 Wil.
-            \parhead{Class} Monk.
-            \parhead{Archetypes} Airdancer first, Esoteric Warrior second, Ki third.
-            \parhead{Insight Points} 1 point for a ki manifestation, 1 point for a maneuver.
-            \parhead{Skills} Balance, Climb, Flexibility, Jump, Stealth, Swim
-            \parhead{Weapon Groups} Monk weapons
-            \parhead{Languages} Common, Elven, Halfling
-            \parhead{Equipment} Two jitte. Use your \textit{ki barrier} for your body armor.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{boots of levitation}.
-                At level 9, choose \mitem{greater boots of levitation} and \mitem{greater boots of reliable motion}.
-                At level 15, choose \mitem{supreme boots of levitation} and \mitem{supreme boots of reliable motion}.
-            \parhead{Combat Styles} Mobile Assault, Penetrating Precision
-            \parhead{Suggested Feats} Jump Specialization, Balance Specialization, Swiftrunner, Two-Weapon Fighting
-            \parhead{Combat Tactics} You are highly acrobatic in combat, leaping around your opponents with ease.
-            Once your Jump check result is high enough to jump over enemies, you can start ignoring attempts to block your movement.
-            The Leap of the Heavens \textit{ki manifestation} can help you reach that point quickly.
-            You are highly accurate, and your high Dexterity helps both your defenses and your skills.
-            If you are in physical danger, you can sheathe one of your kamas and use your \textit{ki barrier} as a shield to further increase your Armor defense.
-            However, your middling Constitution means you should pick your fights carefully.
-            Use your mobility to pick your battles and avoid being surrounded unnecessarily.
+%         \subsubsection{Airdancer}
+%             \parhead{Species} Elf.
+%             % Base 2 4 1 0 2 0
+%             \parhead{Attributes} 2 Str, 5 Dex, 0 Con, 0 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Monk.
+%             \parhead{Archetypes} Airdancer first, Esoteric Warrior second, Ki third.
+%             \parhead{Insight Points} 1 point for a ki manifestation, 1 point for a maneuver.
+%             \parhead{Skills} Balance, Climb, Flexibility, Jump, Stealth, Swim
+%             \parhead{Weapon Groups} Monk weapons
+%             \parhead{Languages} Common, Elven, Halfling
+%             \parhead{Equipment} Two jitte. Use your \textit{ki barrier} for your body armor.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{boots of levitation}.
+%                 At level 9, choose \mitem{greater boots of levitation} and \mitem{greater boots of reliable motion}.
+%                 At level 15, choose \mitem{supreme boots of levitation} and \mitem{supreme boots of reliable motion}.
+%             \parhead{Combat Styles} Mobile Assault, Penetrating Precision
+%             \parhead{Suggested Feats} Jump Specialization, Balance Specialization, Swiftrunner, Two-Weapon Fighting
+%             \parhead{Combat Tactics} You are highly acrobatic in combat, leaping around your opponents with ease.
+%             Once your Jump check result is high enough to jump over enemies, you can start ignoring attempts to block your movement.
+%             The Leap of the Heavens \textit{ki manifestation} can help you reach that point quickly.
+%             You are highly accurate, and your high Dexterity helps both your defenses and your skills.
+%             If you are in physical danger, you can sheathe one of your kamas and use your \textit{ki barrier} as a shield to further increase your Armor defense.
+%             However, your middling Constitution means you should pick your fights carefully.
+%             Use your mobility to pick your battles and avoid being surrounded unnecessarily.
 
-        \subsubsection{Esoteric Warrior}
-            \parhead{Species} Human
-            \parhead{Attributes} 2 Str, 3 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
-            \parhead{Class} Monk.
-            \parhead{Archetypes} Esoteric Warrior first, Perfected Form second, Transcendent Sage third.
-            \parhead{Insight Points} 4 points for maneuvers.
-            \parhead{Skills} Awareness, Balance, Climb, Flexibility, Endurance, Medicine, Jump, Stealth
-            \parhead{Weapon Groups} Monk weapons
-            \parhead{Languages} Common, Draconic, Elven
-            \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{gauntlet of the ram}.
-                At level 9, choose \mitem{bracers of mighty fists} and \mitem{boots of speed}.
-                At level 15, choose \mitem{supreme boots of speed} and \mitem{bracers of mighty fists}.
-            \parhead{Combat Styles} Dirty Fighting, Flurry of Blows
-            \parhead{Suggested Feats} Brawler, Juggernaut, Swiftrunner, Two-Weapon Fighting
-            \parhead{Combat Tactics} You can beat your opponents to death with nothing more than your bare hands.
-            Your primary combat strategy is generally to grapple, trip, or otherwise debuff your opponents with your free hands before you pummel them into submission.
-            You have a high movement speed, and you can take advantage of that by rushing down enemies who would prefer to keep their distance.
-            When that is combined with your immunity to many common debuffs, you are exceptionally effective against enemy spellcasters.
-            If you find yourself fighting more martially skilled foes, you may need to keep your distance with kunai or a bow, at least until they are weakened.
+%         \subsubsection{Esoteric Warrior}
+%             \parhead{Species} Human
+%             \parhead{Attributes} 2 Str, 3 Dex, 2 Con, 1 Int, 2 Per, 0 Wil.
+%             \parhead{Class} Monk.
+%             \parhead{Archetypes} Esoteric Warrior first, Perfected Form second, Transcendent Sage third.
+%             \parhead{Insight Points} 4 points for maneuvers.
+%             \parhead{Skills} Awareness, Balance, Climb, Flexibility, Endurance, Medicine, Jump, Stealth
+%             \parhead{Weapon Groups} Monk weapons
+%             \parhead{Languages} Common, Draconic, Elven
+%             \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{gauntlet of the ram}.
+%                 At level 9, choose \mitem{bracers of mighty fists} and \mitem{boots of speed}.
+%                 At level 15, choose \mitem{supreme boots of speed} and \mitem{bracers of mighty fists}.
+%             \parhead{Combat Styles} Dirty Fighting, Flurry of Blows
+%             \parhead{Suggested Feats} Brawler, Juggernaut, Swiftrunner, Two-Weapon Fighting
+%             \parhead{Combat Tactics} You can beat your opponents to death with nothing more than your bare hands.
+%             Your primary combat strategy is generally to grapple, trip, or otherwise debuff your opponents with your free hands before you pummel them into submission.
+%             You have a high movement speed, and you can take advantage of that by rushing down enemies who would prefer to keep their distance.
+%             When that is combined with your immunity to many common debuffs, you are exceptionally effective against enemy spellcasters.
+%             If you find yourself fighting more martially skilled foes, you may need to keep your distance with kunai or a bow, at least until they are weakened.
 
-        \subsubsection{Ki}
-            \parhead{Species} Halfling
-            % 0 2 2 1 0 4 base
-            \parhead{Attributes} -1 Str, 2 Dex, 2 Con, 1 Int, 0 Per, 5 Wil.
-            \parhead{Class} Monk.
-            \parhead{Archetypes} Ki first, Esoteric Warrior second, Transcendent Sage third.
-            \parhead{Insight Points} 2 points for ki manifestations, 1 point for a maneuver.
-            \parhead{Skills} Balance, Flexibility, Endurance, Medicine, Knowledge (arcana), Survival, Stealth
-            \parhead{Weapon Groups} Monk weapons
-            \parhead{Languages} Common, Draconic, Elven
-            \parhead{Equipment} Two kama. Use your \textit{ki barrier} for your body armor. As you gain levels, buy spare kunai.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{potency}.
-                At level 9, choose \mitem{greater potency} and \mitem{hefty}.
-                At level 15, choose \mitem{supreme potency} and \mitem{greater hefty}
-            \parhead{Combat Styles} Flurry of Blows, Mobile Assault
-            \parhead{Suggested Feats} Two-Weapon Fighting, Ghostblade, Iron Will, Spellwarped
-            \parhead{Combat Tactics} Although you appear small and physically weak, your attacks hit hard thanks to your \textit{ki energy} ability.
-            You can use a variety of ki manifestations to have surprising effects in combat.
-            Look for tricky combinations, like tripping your foes at a distance with \ability{extend the flow of ki} or using \ability{burst of blinding speed} to increase the power of movement-based maneuvers.
-            You can also use your ki manifestations to augment your skills in non-combat situations.
-            Your defenses are high and well-rounded, and you have immunities to a variety of common debuffs, so you can fight aggressively in combat.
-            Generally, you should dual-wield kama, but you can drop to a single kama if you need more Armor defense, or you can switch to throwing kunai to hit distant foes.
+%         \subsubsection{Ki}
+%             \parhead{Species} Halfling
+%             % 0 2 2 1 0 4 base
+%             \parhead{Attributes} -1 Str, 2 Dex, 2 Con, 1 Int, 0 Per, 5 Wil.
+%             \parhead{Class} Monk.
+%             \parhead{Archetypes} Ki first, Esoteric Warrior second, Transcendent Sage third.
+%             \parhead{Insight Points} 2 points for ki manifestations, 1 point for a maneuver.
+%             \parhead{Skills} Balance, Flexibility, Endurance, Medicine, Knowledge (arcana), Survival, Stealth
+%             \parhead{Weapon Groups} Monk weapons
+%             \parhead{Languages} Common, Draconic, Elven
+%             \parhead{Equipment} Two kama. Use your \textit{ki barrier} for your body armor. As you gain levels, buy spare kunai.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{potency}.
+%                 At level 9, choose \mitem{greater potency} and \mitem{hefty}.
+%                 At level 15, choose \mitem{supreme potency} and \mitem{greater hefty}
+%             \parhead{Combat Styles} Flurry of Blows, Mobile Assault
+%             \parhead{Suggested Feats} Two-Weapon Fighting, Ghostblade, Iron Will, Spellwarped
+%             \parhead{Combat Tactics} Although you appear small and physically weak, your attacks hit hard thanks to your \textit{ki energy} ability.
+%             You can use a variety of ki manifestations to have surprising effects in combat.
+%             Look for tricky combinations, like tripping your foes at a distance with \ability{extend the flow of ki} or using \ability{burst of blinding speed} to increase the power of movement-based maneuvers.
+%             You can also use your ki manifestations to augment your skills in non-combat situations.
+%             Your defenses are high and well-rounded, and you have immunities to a variety of common debuffs, so you can fight aggressively in combat.
+%             Generally, you should dual-wield kama, but you can drop to a single kama if you need more Armor defense, or you can switch to throwing kunai to hit distant foes.
 
-        \subsubsection{Perfected Form}
-            \parhead{Species} Human
-            \parhead{Attributes} 3 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 0 Wil.
-            \parhead{Class} Monk.
-            \parhead{Archetypes} Perfected Form first, Esoteric Warrior second, Airdancer third.
-            \parhead{Insight Points} 1 point for a trained skill, 2 points for maneuvers.
-            \parhead{Skills} Balance, Climb, Flexibility, Endurance, Jump, Stealth, Swim
-            \parhead{Weapon Groups} Monk weapons
-            \parhead{Languages} Common, Giantish, Orcish
-            \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{gauntlet of the ram}.
-                At level 9, choose \mitem{bracers of mighty fists} and \mitem{boots of speed}.
-                At level 15, choose \mitem{supreme boots of speed} and \mitem{bracers of mighty fists}.
-            \parhead{Combat Styles} Dirty Fighting, Mobile Assault
-            \parhead{Suggested Feats} Brawler, Juggernaut, Swiftrunner, Two-Weapon Fighting
-            \parhead{Combat Tactics} Your general fighting style is the same as the Esoteric Warrior sample character.
-            Your main differentiating factor is that you have even greater martial aptitude and durability.
-            However, you are less able to avoid to debilitating conditions, so be careful when fighting magical foes.
+%         \subsubsection{Perfected Form}
+%             \parhead{Species} Human
+%             \parhead{Attributes} 3 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 0 Wil.
+%             \parhead{Class} Monk.
+%             \parhead{Archetypes} Perfected Form first, Esoteric Warrior second, Airdancer third.
+%             \parhead{Insight Points} 1 point for a trained skill, 2 points for maneuvers.
+%             \parhead{Skills} Balance, Climb, Flexibility, Endurance, Jump, Stealth, Swim
+%             \parhead{Weapon Groups} Monk weapons
+%             \parhead{Languages} Common, Giantish, Orcish
+%             \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{gauntlet of the ram}.
+%                 At level 9, choose \mitem{bracers of mighty fists} and \mitem{boots of speed}.
+%                 At level 15, choose \mitem{supreme boots of speed} and \mitem{bracers of mighty fists}.
+%             \parhead{Combat Styles} Dirty Fighting, Mobile Assault
+%             \parhead{Suggested Feats} Brawler, Juggernaut, Swiftrunner, Two-Weapon Fighting
+%             \parhead{Combat Tactics} Your general fighting style is the same as the Esoteric Warrior sample character.
+%             Your main differentiating factor is that you have even greater martial aptitude and durability.
+%             However, you are less able to avoid to debilitating conditions, so be careful when fighting magical foes.
 
-        \subsubsection{Transcendent Sage}
-            The transcendent sage archetype by itself does not strongly influence your character's fighting style or abilities.
-            It provides a variety of passive abilities and immunities that require other archetypes to make a compelling character concept.
-            A typical character focusing on this archetype would be similar to the Ki character.
-            If you want to be more martially inclined, follow the Esoteric Warrior character.
+%         \subsubsection{Transcendent Sage}
+%             The transcendent sage archetype by itself does not strongly influence your character's fighting style or abilities.
+%             It provides a variety of passive abilities and immunities that require other archetypes to make a compelling character concept.
+%             A typical character focusing on this archetype would be similar to the Ki character.
+%             If you want to be more martially inclined, follow the Esoteric Warrior character.
 
-    \subsection{Paladin}
+%     \subsection{Paladin}
 
-        \subsubsection{Devoted Paragon}
-            The devoted paragon archetype can have different play styles based on your devoted alignment.
-            The character below is reasonable for any alignment other than evil.
-            An evil devoted paragon might focus more on inflicting debilitating conditions with spells from the \sphere{enchantment} or \sphere{vivimancy} \glossterm{mystic spheres}.
+%         \subsubsection{Devoted Paragon}
+%             The devoted paragon archetype can have different play styles based on your devoted alignment.
+%             The character below is reasonable for any alignment other than evil.
+%             An evil devoted paragon might focus more on inflicting debilitating conditions with spells from the \sphere{enchantment} or \sphere{vivimancy} \glossterm{mystic spheres}.
 
-            \parhead{Species} Dwarf
-            % 2 1 3 2 0 2
-            \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil.
-            \parhead{Class} Paladin.
-            \parhead{Archetypes} Devoted Paragon first, Divine Magic second, Stalwart Guardian third.
-            \parhead{Insight Points} 2 points for spells.
-            \parhead{Skills} Endurance, Persuasion, Social Insight
-            \parhead{Weapon Groups} Club-like weapons, crossbows.
-            \parhead{Languages} Common, Dwarven, Giantish
-            \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, buy a heavy crossbow and use the best heavy armor you can afford.
-            \parhead{Legacy Item} Shield.
-                At level 3, choose \mitem{covering shield}.
-                At level 9, choose \mitem{greater covering shield} and \mitem{soulguard shield}.
-                At level 15, choose \mitem{shield of mystic reflection} and \mitem{greater covering shield}.
-            \parhead{Mystic Sphere} Prayer.
-            \parhead{Suggested Feats} Leadership, Weapon Focus, Shieldbearer, Sphere Focus: Prayer
-            \parhead{Combat Tactics} You are a beacon to guide your allies in combat.
-            You should stay close to the front lines to ensure that your allies gain the benefit of your \textit{aligned aura} ability and take advantage of your reasonable melee damage.
-            You are very durable, and you can blanket your allies with powerful buffs from the \sphere{prayer} mystic sphere.
-            At high levels, make sure you have a special strike ability like \spell{exalted strike} or a \mitem{powerstrike} weapon.
+%             \parhead{Species} Dwarf
+%             % 2 1 3 2 0 2
+%             \parhead{Attributes} 2 Str, 0 Dex, 4 Con, 0 Int, 2 Per, 2 Wil.
+%             \parhead{Class} Paladin.
+%             \parhead{Archetypes} Devoted Paragon first, Divine Magic second, Stalwart Guardian third.
+%             \parhead{Insight Points} 2 points for spells.
+%             \parhead{Skills} Endurance, Persuasion, Social Insight
+%             \parhead{Weapon Groups} Club-like weapons, crossbows.
+%             \parhead{Languages} Common, Dwarven, Giantish
+%             \parhead{Equipment} Morning star, standard shield, scale mail. As you gain levels, buy a heavy crossbow and use the best heavy armor you can afford.
+%             \parhead{Legacy Item} Shield.
+%                 At level 3, choose \mitem{covering shield}.
+%                 At level 9, choose \mitem{greater covering shield} and \mitem{soulguard shield}.
+%                 At level 15, choose \mitem{shield of mystic reflection} and \mitem{greater covering shield}.
+%             \parhead{Mystic Sphere} Prayer.
+%             \parhead{Suggested Feats} Leadership, Weapon Focus, Shieldbearer, Sphere Focus: Prayer
+%             \parhead{Combat Tactics} You are a beacon to guide your allies in combat.
+%             You should stay close to the front lines to ensure that your allies gain the benefit of your \textit{aligned aura} ability and take advantage of your reasonable melee damage.
+%             You are very durable, and you can blanket your allies with powerful buffs from the \sphere{prayer} mystic sphere.
+%             At high levels, make sure you have a special strike ability like \spell{exalted strike} or a \mitem{powerstrike} weapon.
 
-        \subsubsection{Divine Magic}
+%         \subsubsection{Divine Magic}
 
-            \parhead{Species} Human
-            \parhead{Attributes} 1 Str, 0 Dex, 2 Con, 2 Int, 0 Per, 4 Wil.
-            \parhead{Class} Paladin.
-            \parhead{Archetypes} Divine Magic first, Divine Spell Expertise second, Devoted Paragon third.
-            \parhead{Insight Points} 2 points for an extra mystic sphere, 3 points for spells.
-            \parhead{Skills} Endurance, Medicine, Persuasion
-            \parhead{Weapon Groups} Axes, thrown weapons.
-            \parhead{Languages} Common, Dwarven, Giantish
-            \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford and switch to using an implement instead of a weapon.
-            \parhead{Legacy Item} Implement.
-                At level 3, choose \mitem{potency}.
-                At level 9, choose \mitem{greater covering shield} and \mitem{soulguard shield}.
-                At level 15, choose \mitem{shield of mystic reflection} and \mitem{greater covering shield}.
-            \parhead{Mystic Sphere} Channel Divinity, Vivimancy.
-            \parhead{Suggested Feats} Sphere Focus: Channel Divinity, Sphere Focus: Vivimancy, Boongiver
-            \parhead{Combat Tactics} Paladins make unusual spellcasters.
-            They lack the flexibility of more dedicated spellcasting classes because they lack the \ability{metamagic} ability and access to a variety of mystic spheres.
-            However, your \textit{divine spell versatility} and \textit{divine conduit} give you a unique combat style that rewards staying directly on the front lines.
-            In addition, you have an unusually high power thanks to \textit{wellspring of power} and \textit{paragon power}, so your damage and healing spells can be quite potent.
-            Make sure you have single-target damage spells like \spell{mystic bolt} and \spell{lifesteal} to make the most of your abilities.
+%             \parhead{Species} Human
+%             \parhead{Attributes} 1 Str, 0 Dex, 2 Con, 2 Int, 0 Per, 4 Wil.
+%             \parhead{Class} Paladin.
+%             \parhead{Archetypes} Divine Magic first, Divine Spell Expertise second, Devoted Paragon third.
+%             \parhead{Insight Points} 2 points for an extra mystic sphere, 3 points for spells.
+%             \parhead{Skills} Endurance, Medicine, Persuasion
+%             \parhead{Weapon Groups} Axes, thrown weapons.
+%             \parhead{Languages} Common, Dwarven, Giantish
+%             \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, use the best heavy armor you can afford and switch to using an implement instead of a weapon.
+%             \parhead{Legacy Item} Implement.
+%                 At level 3, choose \mitem{potency}.
+%                 At level 9, choose \mitem{greater covering shield} and \mitem{soulguard shield}.
+%                 At level 15, choose \mitem{shield of mystic reflection} and \mitem{greater covering shield}.
+%             \parhead{Mystic Sphere} Channel Divinity, Vivimancy.
+%             \parhead{Suggested Feats} Sphere Focus: Channel Divinity, Sphere Focus: Vivimancy, Boongiver
+%             \parhead{Combat Tactics} Paladins make unusual spellcasters.
+%             They lack the flexibility of more dedicated spellcasting classes because they lack the \ability{metamagic} ability and access to a variety of mystic spheres.
+%             However, your \textit{divine spell versatility} and \textit{divine conduit} give you a unique combat style that rewards staying directly on the front lines.
+%             In addition, you have an unusually high power thanks to \textit{wellspring of power} and \textit{paragon power}, so your damage and healing spells can be quite potent.
+%             Make sure you have single-target damage spells like \spell{mystic bolt} and \spell{lifesteal} to make the most of your abilities.
 
-        \subsubsection{Divine Spell Expertise}
-            Use the typical character for the Divine Magic paladin archetype.
-            Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
+%         \subsubsection{Divine Spell Expertise}
+%             Use the typical character for the Divine Magic paladin archetype.
+%             Even if you focus on spells through this archetype, you should generally still rank up your spells before improving your rank in this archetype.
 
-        \subsubsection{Stalwart Guardian}
+%         \subsubsection{Stalwart Guardian}
 
-            \parhead{Species} Halfling
-            % 0 3 3 0 0 3 base
-            \parhead{Attributes} -1 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 4 Wil (after species modifiers).
-            \parhead{Class} Paladin.
-            \parhead{Archetypes} Stalwart Guardian first, Divine Magic second, Zealous Warrior third.
-            \parhead{Insight Points} 2 points for spells.
-            \parhead{Skills} Endurance, Medicine, Ride
-            \parhead{Weapon Groups} Club-like weapons, thrown weapons.
-            \parhead{Languages} Common, Dwarven, Giantish
-            \parhead{Equipment} Smallsword, standard shield, scale mail. As you gain levels, buy spare throwing axes and use the best light armor you can afford.
-            \parhead{Legacy Item} Apparel.
-                At level 3, choose \mitem{amulet of divine healing}.
-                At level 9, choose \mitem{greater amulet of divine healing} and \mitem{boots of speed}.
-                At level 15, choose \mitem{supreme amulet of divine healing} and \mitem{greater boots of speed}.
-            \parhead{Mystic Sphere} Fabrication.
-            \parhead{Suggested Feats} Shieldbearer, Sphere Focus: Prayer
-            \parhead{Combat Tactics} You have exceptionally high defenses, and you can heal your less well protected allies.
-            Your damage is reasonable thanks to your \ability{smite} ability, which allows you to use your high Willpower in place of your poor Strength.
-            You can use spells like \spell{mystic barrier} and \spell{blade barrier} to control the battlefield and funnel your foes into positions where you can make the most of your defensive abilities.
+%             \parhead{Species} Halfling
+%             % 0 3 3 0 0 3 base
+%             \parhead{Attributes} -1 Str, 3 Dex, 3 Con, 0 Int, 0 Per, 4 Wil (after species modifiers).
+%             \parhead{Class} Paladin.
+%             \parhead{Archetypes} Stalwart Guardian first, Divine Magic second, Zealous Warrior third.
+%             \parhead{Insight Points} 2 points for spells.
+%             \parhead{Skills} Endurance, Medicine, Ride
+%             \parhead{Weapon Groups} Club-like weapons, thrown weapons.
+%             \parhead{Languages} Common, Dwarven, Giantish
+%             \parhead{Equipment} Smallsword, standard shield, scale mail. As you gain levels, buy spare throwing axes and use the best light armor you can afford.
+%             \parhead{Legacy Item} Apparel.
+%                 At level 3, choose \mitem{amulet of divine healing}.
+%                 At level 9, choose \mitem{greater amulet of divine healing} and \mitem{boots of speed}.
+%                 At level 15, choose \mitem{supreme amulet of divine healing} and \mitem{greater boots of speed}.
+%             \parhead{Mystic Sphere} Fabrication.
+%             \parhead{Suggested Feats} Shieldbearer, Sphere Focus: Prayer
+%             \parhead{Combat Tactics} You have exceptionally high defenses, and you can heal your less well protected allies.
+%             Your damage is reasonable thanks to your \ability{smite} ability, which allows you to use your high Willpower in place of your poor Strength.
+%             You can use spells like \spell{mystic barrier} and \spell{blade barrier} to control the battlefield and funnel your foes into positions where you can make the most of your defensive abilities.
 
-        \subsubsection{Zealous Warrior}
+%         \subsubsection{Zealous Warrior}
 
-            \parhead{Species} Elf
-            % 1 0 1 0 3 4 base
-            \parhead{Attributes} 1 Str, 0 Dex, 0 Con, 0 Int, 4 Per, 4 Wil (after species modifiers).
-            \parhead{Class} Paladin.
-            \parhead{Archetypes} Zealous Warrior first, Divine Magic second, Stalwart Guardian third.
-            \parhead{Insight Points} 2 points for spells.
-            \parhead{Skills} Awareness, Persuasion, Social Insight
-            \parhead{Weapon Groups} Club-like weapons, bows
-            \parhead{Languages} Common, Dwarven, Giantish
-            \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a longbow and use the best heavy armor you can afford.
-            \parhead{Legacy Item} Weapon.
-                At level 3, choose \mitem{potency}.
-                At level 9, choose \mitem{greater potency} and \mitem{blessed}.
-                At level 15, choose \mitem{supreme potency} and \mitem{honed}.
-            \parhead{Mystic Sphere} Channel Divinity.
-            \parhead{Suggested Feats} Greatweapon Warrior, Spellsword, Celestial Heritage
-            \parhead{Combat Tactics} You are an extremely dangerous martial combatant.
-            Thanks to your \ability{smite} ability, you have high damage and devastatingly powerful critical hits.
-            Your defenses are unimpressive, but you have enough damage resistance from heavy armor to avoid being too squishy.
-            The biggest weakness you have is your slow speed and vulnerability to debilitating conditions.
-            Make sure you take some ranged spells like \spell{retributive judgment} to deal with foes who try to avoid your greatmace.
+%             \parhead{Species} Elf
+%             % 1 0 1 0 3 4 base
+%             \parhead{Attributes} 1 Str, 0 Dex, 0 Con, 0 Int, 4 Per, 4 Wil (after species modifiers).
+%             \parhead{Class} Paladin.
+%             \parhead{Archetypes} Zealous Warrior first, Divine Magic second, Stalwart Guardian third.
+%             \parhead{Insight Points} 2 points for spells.
+%             \parhead{Skills} Awareness, Persuasion, Social Insight
+%             \parhead{Weapon Groups} Club-like weapons, bows
+%             \parhead{Languages} Common, Dwarven, Giantish
+%             \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a longbow and use the best heavy armor you can afford.
+%             \parhead{Legacy Item} Weapon.
+%                 At level 3, choose \mitem{potency}.
+%                 At level 9, choose \mitem{greater potency} and \mitem{blessed}.
+%                 At level 15, choose \mitem{supreme potency} and \mitem{honed}.
+%             \parhead{Mystic Sphere} Channel Divinity.
+%             \parhead{Suggested Feats} Greatweapon Warrior, Spellsword, Celestial Heritage
+%             \parhead{Combat Tactics} You are an extremely dangerous martial combatant.
+%             Thanks to your \ability{smite} ability, you have high damage and devastatingly powerful critical hits.
+%             Your defenses are unimpressive, but you have enough damage resistance from heavy armor to avoid being too squishy.
+%             The biggest weakness you have is your slow speed and vulnerability to debilitating conditions.
+%             Make sure you take some ranged spells like \spell{retributive judgment} to deal with foes who try to avoid your greatmace.
 
-            Alternately, you could focus more heavily on ranged combat, since \ability{smite} can be used with projectile weapons.
-            If that is your goal, consider the Mystic Archer and Sniper feats instead of Greatweapon Warrior and Spellsword.
+%             Alternately, you could focus more heavily on ranged combat, since \ability{smite} can be used with \weapontag{Projectile} weapons.
+%             If that is your goal, consider the Mystic Archer and Sniper feats instead of Greatweapon Warrior and Spellsword.

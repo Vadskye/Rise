@@ -19,30 +19,68 @@ def create_weapon(name, rank, description, short_description, tags=None, upgrade
         upgrades=upgrades,
     )
 
-
+# All magic weapon abilities should only affect attacks USING THE WEAPON.
+# Otherwise, people are going to run around with magic teeth/claws/boot daggers
+# and never actually use them to attack.
 def generate_weapons():
     weapons = []
 
     weapons += [
         create_weapon(
-            name="Concussive",
-            rank=2,
+            name="Blade Barrage",
+            rank=3,
             # tags=[tag],
             description="""
-                This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-                All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
-
-                As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with concussive force.
-                Each creature damaged by the strike is \\deafened as a \\glossterm<condition> if your attack results also beats its Fortitude defense.
+                As a standard action, you can make a melee \\glossterm<strike> using this weapon that spawns a swarm of blades.
+                The strike targets all \\glossterm<enemies> in a \\smallarea cone from you.
+                For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+                On a miss, you get a \\glossterm<glancing blow>.
             """,
-            short_description="Deals bludgeoning damage and can deafen",
+            short_description="Can deal escalating damage in a cone",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        You gain a +2 accuracy bonus with the concussive strike.
+                        If you used this ability during the previous round, the strike deals double \\glossterm<weapon damage>.
                     """,
-                    short_description="Deals bludgeoning damage and can deafen",
+                    short_description="Can deal escalating damage in a cone",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The strike always deals double \\glossterm<weapon damage>.
+                    """,
+                    short_description="Can deal escalating damage in a cone",
+                ),
+            ]
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Concussive",
+            rank=1,
+            # tags=[tag],
+            description="""
+                This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
+                All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
+                This can allow you to use maneuvers from the \\textit<blunt force> combat style (see \\pcref<Blunt Force>).
+            """,
+            short_description="Deals bludgeoning damage",
+            upgrades=[
+                Upgrade(
+                    rank=4,
+                    description="""
+                        The weapon also deals +1d damage.
+                    """,
+                    short_description="Deals +1d bludgeoning damage",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The damage bonus increases to +2d.
+                    """,
+                    short_description="Deals +2d bludgeoning damage",
                 ),
             ]
         ),
@@ -58,16 +96,22 @@ def generate_weapons():
                 It sheds light as a torch, and all damage dealt with it is fire damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with fiery energy.
-                Your \\glossterm<power> with the strike is halved.
-                Each creature damaged by the strike burns if your attack result beats its Reflex defense.
-                A burning creature takes fire damage equal to the damage you dealt with the strike during the next \\glossterm<action phase>.
+                Each damaged creature burns if your attack result beats its Reflex defense.
+                A burning creature takes 2d6 fire damage during your next action.
             """,
             short_description="Deals fire damage and can ignite",
             upgrades=[
                 Upgrade(
-                    rank=6,
+                    rank=5,
                     description="""
-                        Your power with the fiery strike is not halved.
+                        The extra damage increases to 3d10.
+                    """,
+                    short_description="Deals fire damage and can ignite",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The extra damage increases to 7d10.
                     """,
                     short_description="Deals fire damage and can ignite",
                 ),
@@ -77,25 +121,32 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Chaining",
-            rank=2,
+            name="Arcing",
+            rank=3,
             tags=[],
             description="""
                 This weapon continuously crackles with electricity.
                 All damage dealt with it is electricity damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with electrical energy.
-                The strike \\sphereterm<chains> once (see \\pcref<Electromancy>).
+                The strike \\glossterm<chains> once.
                 Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
             """,
-            short_description="Deals electricity damage and can chain 15 feet",
+            short_description="Deals electricity damage and can chain",
             upgrades=[
                 Upgrade(
-                    rank=6,
+                    rank=5,
                     description="""
-                        The strike \\sphereterm<chains> three times (see \\pcref<Electromancy>).
+                        The strike also deals 2d6 \\glossterm<extra damage>.
                     """,
-                    short_description="Deals electricity damage and can chain multiple times",
+                    short_description="Deals electricity damage and can chain",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The extra damage increases to 4d10.
+                    """,
+                    short_description="Deals electricity damage and can chain",
                 ),
             ]
         ),
@@ -104,24 +155,30 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Freezing",
-            rank=2,
+            rank=3,
             tags=[],
             description="""
                 This weapon is bitterly cold to the touch.
                 All damage dealt with it is cold damage in addition to its normal damage types (see \\pcref<Multiple Damage Types>).
 
                 As a standard action, you can make a \\glossterm<strike> using this weapon that is imbued with frigid energy.
-                Your \\glossterm<power> with the strike is halved.
-                Each creature that loses \\glossterm<hit points> from the strike is \\slowed as a \\glossterm<condition>.
+                Each damaged creature is \\slowed as a \\glossterm<condition> if your attack result beats its Fortitude defense.
             """,
             short_description="Deals cold damage and can slow",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        Your \\glossterm<power> with the frigid strike is not halved.
+                        Each creature that loses \\glossterm<hit points> from the strike is \\immobilized instead of slowed if your attack result beats its Fortitude defense.
+                        The strike also deals 1d6 \\glossterm<extra damage>.
                     """,
-                    short_description="Deals cold damage and can slow",
+                ),
+                Upgrade(
+                    rank=7,
+                    description="""
+                        Creatures damaged by the strike do not have to lose hit points to be immobilized instead of slowed.
+                        In addition, the extra damage increases to 2d10.
+                    """,
                 ),
             ]
         ),
@@ -129,26 +186,19 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Potency",
-            rank=2,
+            name="Mighty",
+            rank=3,
             description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
+                If your Strength is at least 3, you gain a +1d damage bonus with strikes using this weapon.
             """,
-            short_description="Grants +2 power",
+            short_description="Grants +1d damage if you have 3 Str",
             upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The power bonus increases to +4.
-                    """,
-                    short_description="Grants +4 power",
-                ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The power bonus increases to +8.
+                        If your Strength is at least 5, you gain a +2d damage bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +8 power",
+                    short_description="Grants +2d damage if you have 5 Str",
                 ),
             ],
         ),
@@ -159,23 +209,16 @@ def generate_weapons():
             name="Studied",
             rank=3,
             description="""
-                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Intelligence.
+                If your Intelligence is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants power equal to Intelligence",
+            short_description="Grants +1 accuracy if you have 3 Int",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        The bonus increases to twice your Intelligence.
+                        If your Intelligence is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants power equal to twice Intelligence",
-                ),
-                Upgrade(
-                    rank=7,
-                    description="""
-                        The bonus increases to four times your Intelligence.
-                    """,
-                    short_description="Grants power equal to 4x Intelligence",
+                    short_description="Grants +2 accuracy if you have 5 Int",
                 ),
             ],
         ),
@@ -186,23 +229,36 @@ def generate_weapons():
             name="Finesse",
             rank=3,
             description="""
-                You gain a \\glossterm<magic bonus> to your \\glossterm<power> equal to your Dexterity.
+                If your Dexterity is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants power equal to Dexterity",
+            short_description="Grants +1 accuracy if you have 3 Dex",
             upgrades=[
                 Upgrade(
-                    rank=5,
+                    rank=6,
                     description="""
-                        The bonus increases to twice your Dexterity.
+                        If your Dexterity is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants power equal to twice Dexterity",
+                    short_description="Grants +2 accuracy if you have 5 Dex",
                 ),
+            ],
+        ),
+    ]
+
+    weapons += [
+        create_weapon(
+            name="Infused",
+            rank=3,
+            description="""
+                If your Willpower is at least 3, you gain a +1d damage bonus with strikes using this weapon.
+            """,
+            short_description="Grants +1d damage if you have 3 Wil",
+            upgrades=[
                 Upgrade(
-                    rank=7,
+                    rank=6,
                     description="""
-                        The bonus increases to four times your Dexterity.
+                        If your Willpower is at least 5, you gain a +2d damage bonus with strikes using this weapon.
                     """,
-                    short_description="Grants power equal to 4x Dexterity",
+                    short_description="Grants +2d damage if you have 5 Wil",
                 ),
             ],
         ),
@@ -238,7 +294,7 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Unbalanced",
-            rank=3,
+            rank=2,
             description="""
                 You take a -1 \\glossterm<accuracy> penalty to strikes using this weapon.
                 However, your attack rolls with strikes using this weapon \\glossterm<explode> on a 9.
@@ -247,7 +303,7 @@ def generate_weapons():
             short_description="-1 accuracy, but explode on a 9",
             upgrades=[
                 Upgrade(
-                    rank=7,
+                    rank=6,
                     description="""
                         The accuracy penalty increases to -2.
                         However, you also explode on an 8.
@@ -260,53 +316,22 @@ def generate_weapons():
 
     weapons += [
         create_weapon(
-            name="Honed",
-            rank=4,
-            description="""
-                This weapon has the Keen weapon tag.
-                You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon for the purpose of determining whether you get a \\glossterm<critical hit> (see \\pcref<Weapon Tags>).
-                If the weapon already has the Keen weapon tag, this has no effect.
-            """,
-            short_description="Grants the Keen weapon tag",
-        ),
-        create_weapon(
-            name="Impactful",
-            rank=4,
-            description="""
-                This weapon has the Impact weapon tag.
-                When you get a \\glossterm{critical hit} with this weapon, you roll triple damage dice instead of double damage dice.
-                If the weapon already has the Impact weapon tag, this has no effect.
-            """,
-            short_description="Grants the Impact weapon tag",
-        ),
-    ]
-
-    weapons += [
-        create_weapon(
             name="Bloodfuel",
-            rank=2,
+            rank=4,
             description="""
                 As a standard action, you can make a \\glossterm<strike> using this weapon that uses your own blood to fuel its power.
-                You gain a +4 bonus to \\glossterm<power> with the attack.
-                However, you lose 2 \\glossterm<hit points>.
+                The strike deals double weapon damage.
+                However, you lose 4 \\glossterm<hit points>.
             """,
-            short_description="Can spend 2 HP for +4 power",
+            short_description="Can spend 4 HP for double damage",
             upgrades=[
-                Upgrade(
-                    rank=4,
-                    description="""
-                        The power bonus increases to +8.
-                        However, the hit point loss increases to 4.
-                    """,
-                    short_description="Can spend 4 HP for +8 power",
-                ),
                 Upgrade(
                     rank=6,
                     description="""
-                        The power bonus increases to +16.
+                        The weapon damage is tripled instead of doubled.
                         However, the hit point loss increases to 8.
                     """,
-                    short_description="Can spend 8 HP for +16 power",
+                    short_description="Can spend 8 HP for triple damage",
                 ),
             ],
         ),
@@ -315,30 +340,28 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Iridescent",
-            rank=2,
+            rank=1,
             tags=[],
             description="""
-                This weapon shimmers with a chaotic pattern of colors.
-                As a standard action, you can make a flashy \\glossterm<strike> using this weapon that accentuates its bewildering effect.
-                Your \\glossterm<power> with the strike is halved.
-                Each creature damaged by the strike is \\glossterm<briefly> \\dazzled.
+                This weapon shimmers with a chaotic pattern of colors, shedding multicolored light as a torch.
+                As a standard action, you can make a flashy \\glossterm<weak strike> using this weapon that accentuates its bewildering effect.
+                Each damaged creature is \\dazzled as a \\glossterm<condition> if your attack result beats its Reflex defense.
             """,
-            short_description="Can briefly dazzle",
+            short_description="Can dazzle",
             upgrades=[
                 Upgrade(
-                    rank=4,
+                    rank=3,
                     description="""
-                        The dazzling effect becomes a \\glossterm<condition>.
+                        The strike is not weak.
                     """,
                     short_description="Can dazzle",
                 ),
                 Upgrade(
-                    rank=6,
+                    rank=7,
                     description="""
-                        The dazzling effect becomes a \\glossterm<condition>,
-                        and each creature that loses \\glossterm<hit points> from the strike is \\glossterm<briefly> \\blinded.
+                        Each creature that loses \\glossterm<hit points> from the strike is \\blinded instead of dazzled if your attack result beats its Reflex defense.
                     """,
-                    short_description="Can dazzle and briefly blind",
+                    short_description="Can dazzle and blind",
                 ),
             ],
         ),
@@ -369,7 +392,7 @@ def generate_weapons():
             name="Ricocheting",
             rank=4,
             description="""
-                When you make a \\glossterm<ranged> \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
+                When you make a ranged \\glossterm<strike> with this weapon, you may also target one additional secondary creature or object.
                 Each secondary target must be within 15 feet of a primary target, and must not already be a target of the strike.
                 The strike affects each secondary target in the same way as the primary target.
                 If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
@@ -413,9 +436,8 @@ def generate_weapons():
             name="Screaming",
             rank=1,
             description="""
-                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, this weapons emits a blood-curdling scream.
-                This causes you and that creature to \\glossterm<briefly> become \\shaken by each other.
-                After a creature stops being shaken in this way, it becomes immune to this effect until it takes a \\glossterm<short rest>.
+                Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it weapon emits a blood-curdling scream.
+                This causes you and that creature to become \\shaken by each other as a \\glossterm<condition>.
             """,
             tags=["Attune (deep)", "Emotion"],
             short_description="Screams, making you and struck foes shaken",
@@ -515,7 +537,7 @@ def generate_weapons():
 
                 In addition, as a standard action, you can throw this weapon in a spinning arc.
                 When you do, make a thrown \\glossterm<strike> against up to two targets within \\shortrange.
-                The targets must still be within your \\glossterm<range limits>, and you take any \\glossterm<longshot penalties> as normal.
+                The targets must still be within your \\glossterm<range limits>, and you take any \\glossterm<longshot penalty> as normal.
             """,
             short_description="Can be thrown to strike two nearby foes",
             upgrades=[
@@ -643,7 +665,7 @@ def generate_weapons():
                 Upgrade(
                     rank=7,
                     description="""
-                         You also reduce your \\glossterm<longshot penalties> with the weapon by 2.
+                         You also reduce your \\glossterm<longshot penalty> with the weapon by 2.
                     """,
                     short_description="Teleports long distances when thrown",
                 ),
@@ -687,7 +709,7 @@ def generate_weapons():
                 Damage that would be dealt by the weapon can be delayed indefinitely.
                 While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
-                As a \\glossterm<minor action>, you can cut yourself with this weapon to activate it.
+                As a \\glossterm<minor action>, you can hurt yourself with this weapon to activate it.
                 This deals a single point of physical damage to you.
                 When you do, each creature hit with the weapon takes untyped damage equal to the total delayed damage built up by the weapon for that target.
                 Creatures farther than one mile away from the weapon are unaffected by this damage.
@@ -709,14 +731,7 @@ def generate_weapons():
             short_description="Grants +2 bonus with \\textit<desperate exertion>",
             upgrades=[
                 Upgrade(
-                    rank=5,
-                    description="""
-                        The accuracy bonus increases to +3.
-                    """,
-                    short_description="Grants +3 bonus with \\textit<desperate exertion>",
-                ),
-                Upgrade(
-                    rank=7,
+                    rank=6,
                     description="""
                         The accuracy bonus increases to +4.
                     """,
@@ -726,25 +741,13 @@ def generate_weapons():
         ),
     ]
 
-    weapons += [
-        create_weapon(
-            name="Wolfpack",
-            rank=5,
-            tags=[],
-            description="""
-                Each creature that is adjacent to both you and one of your \\glossterm<allies> takes a -1 penalty to Armor and Reflex defenses.
-            """,
-            short_description="Imposes -1 defense penalty with ally's help",
-        ),
-    ]
-
     weapons.append(
         create_weapon(
             name="Fated",
             rank=7,
             tags=["Attune (deep)"],
             description="""
-                When you miss with a \\glossterm<strike> with this weapon, you can reroll the attack and take the higher result.
+                When you miss with an attack using this weapon, you can reroll the attack and take the higher result.
                 After you reroll an attack in this way, you \\glossterm<briefly> cannot do so again.
             """,
             short_description="Rolls attacks twice",
@@ -756,8 +759,9 @@ def generate_weapons():
             name="Vorpal",
             rank=7,
             description="""
-                You gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon for the purpose of determining whether you get a \\glossterm<critical hit> (see \\pcref<Weapon Tags>).
-                In addition, critical hits with \\glossterm<strikes> using this weapon deal maximum damage.
+                Critical hits with melee \\glossterm<strikes> using this weapon roll triple damage dice instead of double damage dice.
+                A double critical hit would deal quadruple damage dice, and so on.
+                If you make a creature lose at least half its maximum \\glossterm<hit points> with a melee critical hit using this weapon, it immediately dies.
             """,
             short_description="Inflicts lethal critical hits",
         )
@@ -822,19 +826,19 @@ def generate_weapons():
             rank=4,
             tags=[],
             description="""
-                As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
+                As a standard action, you can make a \\glossterm<strike> with 1d8 \\glossterm<extra damage> using this weapon.
+                Damage dealt by the strike is energy damage in addition to its other types.
                 If a living creature loses \\glossterm{hit points} from this strike, you can increase your \\glossterm{fatigue level} by one.
-                If you do, you regain 2d10+7 hit points.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
+                When you do, you regain 3d8 hit points.
             """,
-            short_description="Can attack with +4 damage and steal HP",
+            short_description="Can attack with +1d8 damage and steal HP",
             upgrades=[
                 Upgrade(
                     rank=6,
                     description="""
-                        The damage bonus increases to +8, and the healing increases to 4d10+14.
+                        The extra damage increases to 3d8, and the healing increases to 6d8.
                     """,
-                    short_description="Can attack with +8 damage and steal HP",
+                    short_description="Can attack with +3d8 damage and steal HP",
                 ),
             ],
         ),
@@ -846,51 +850,23 @@ def generate_weapons():
             rank=3,
             tags=[],
             description="""
-                As a standard action, you can make a \\glossterm<strike> with a +2 accuracy bonus using this weapon.
+                As a standard action, you can make a \\glossterm<strike> with a +3 accuracy bonus using this weapon.
             """,
-            short_description="Can attack with +2 accuracy",
+            short_description="Can attack with +3 accuracy",
             upgrades=[
                 Upgrade(
                     rank=5,
                     description="""
-                        The accuracy bonus increases to +3.
+                        The accuracy bonus increases to +6.
                     """,
-                    short_description="Can attack with +3 accuracy",
+                    short_description="Can attack with +6 accuracy",
                 ),
                 Upgrade(
                     rank=7,
                     description="""
-                        The accuracy bonus increases to +4.
+                        The accuracy bonus increases to +10.
                     """,
-                    short_description="Can attack with +4 accuracy",
-                ),
-            ],
-        ),
-    ]
-
-    weapons += [
-        create_weapon(
-            name="Powerstrike",
-            rank=3,
-            tags=[],
-            description="""
-                As a standard action, you can make a \\glossterm<strike> with a +4 damage bonus using this weapon.
-            """,
-            short_description="Can attack with +4 damage",
-            upgrades=[
-                Upgrade(
-                    rank=5,
-                    description="""
-                        The damage bonus increases to +8.
-                    """,
-                    short_description="Can attack with +8 damage",
-                ),
-                Upgrade(
-                    rank=7,
-                    description="""
-                        The damage bonus increases to +16.
-                    """,
-                    short_description="Can attack with +16 damage",
+                    short_description="Can attack with +10 accuracy",
                 ),
             ],
         ),

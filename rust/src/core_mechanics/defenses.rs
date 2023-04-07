@@ -6,7 +6,7 @@ use std::fmt;
 use super::abilities::AbilityTag;
 use super::HasAttributes;
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Defense {
     Armor,
     Fortitude,
@@ -61,7 +61,7 @@ impl fmt::Display for Defense {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum SpecialDefenseType {
     AllDamage,
     AbilityTag(AbilityTag),
@@ -118,15 +118,10 @@ where
                     1.0
                 }
             }
-            CreatureCategory::Monster(_) => 0.5,
+            CreatureCategory::Monster(_) => 1.0,
         };
-        let mut armor_attribute_modifier =
+        let armor_attribute_modifier =
             (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;
-        if matches!(self.category, CreatureCategory::Monster(_)) {
-            let con_armor_bonus =
-                (self.get_base_attribute(&Attribute::Constitution) as f64 * 0.5).floor() as i32;
-            armor_attribute_modifier += con_armor_bonus;
-        }
         let attribute_bonus = match defense {
             Defense::Armor => armor_attribute_modifier,
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
@@ -147,7 +142,8 @@ where
             + attribute_bonus
             + armor_bonus
             + size_modifier
-            + self.calc_total_modifier(ModifierType::Defense(*defense));
+            + self.calc_total_modifier(ModifierType::Defense(*defense))
+            + self.calc_total_modifier(ModifierType::AllDefenses);
     }
 
     fn calc_special_defenses(&self) -> SpecialDefenses {

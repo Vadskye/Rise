@@ -63,13 +63,13 @@ export const aquamancy: MysticSphere = {
     },
   ],
   spells: [
-    // no rank modifier for extremely situational accuracy bonus
     {
       name: 'Desiccate',
 
+      // The accuracy bonus drops damage from d3 to d2h
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} physical damage.
+          The target takes \\damageranktwohigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -77,15 +77,15 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
-    // +2r for situational +4acc
     {
       name: 'Mighty Desiccate',
 
+      // This accuracy bonus is high enough to drop from d7 to d6h
       attack: {
         hit: `
-          The target takes 4d10 + \\glossterm{power} physical damage.
+          The target takes \\damageranksixhigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -93,7 +93,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     // swimming is r2.5
     {
@@ -122,14 +122,15 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d6 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -138,14 +139,15 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankthree{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -154,7 +156,7 @@ export const aquamancy: MysticSphere = {
       // 1 rank for movement
       attack: {
         hit: `
-          The target takes 1d8 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankone{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -163,16 +165,16 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
       name: 'Intense Aquajet Propulsion',
 
-      // 3 ranks for movement
+      // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          The target takes 2d8 + \\glossterm{power} bludgeoning damage.
+          The target takes \\damagerankfourhigh{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -180,8 +182,8 @@ export const aquamancy: MysticSphere = {
           If you are underwater, this movement is doubled and you can also move vertically.
         `,
       },
-      rank: 4,
-      scaling: 'damage',
+      rank: 5,
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -190,14 +192,15 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -206,14 +209,15 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfivehigh{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -248,10 +252,11 @@ export const aquamancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damageranktwo{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
+        missGlance: true,
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
@@ -259,18 +264,19 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
       name: 'Geyser',
 
       attack: {
-        // This can't be full power due to restrictions on Reflex-based single target
+        // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankonelow{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
@@ -278,18 +284,19 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
       name: 'Mighty Geyser',
 
       attack: {
-        // This can't be full power due to restrictions on Reflex-based single target
+        // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes 2d10 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfourlow{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
           If this spell has its area increased, only the length of the line increases.
@@ -297,7 +304,7 @@ export const aquamancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -352,7 +359,7 @@ export const aquamancy: MysticSphere = {
         You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
         The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
         In addition, it has the \\weapontag{Sweeping} (1) \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
-        Strikes using it are considered \\magical abilities, which means you use your Willpower to determine your damage dice instead of your Strength (see \\pcref{Dice Bonuses From Attributes}).
+        Strikes using it are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
@@ -480,14 +487,14 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 bludgeoning damage.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you \\glossterm{knockback} it up to 30 feet horizontally (see \\pcref{Knockback Effects}).
+          The target takes \\damageranktwohigh{bludgeoning}.
+          If it is Medium or smaller and your attack result also beats its Fortitude defense, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 1,
+      rank: 3,
       scaling: 'accuracy',
     },
     {
@@ -495,13 +502,13 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'forceful aquajet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
+        // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
-          'the damage increases to 2d8. In addition, the knockback distance increases to 60 feet.',
+          'the damage increases to \\damagerankfivehigh{bludgeoning}, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
-      rank: 5,
-      scaling: 'damage',
+      rank: 7,
+      scaling: 'accuracy',
     },
     {
       name: 'Personal Aquarium',
@@ -549,8 +556,8 @@ export const aquamancy: MysticSphere = {
       name: 'Slippery Escapist',
 
       effect: `
-        If you are \\glossterm{trained} with the Flexibility skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Flexibility as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -565,11 +572,11 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 4d6 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is transformed into a puddle of water as a \\glossterm{condition}.
+          The target's body becomes partially liquified as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes 5d10 damage during each of your subsequent actions as it dissolves.
+            \\item If it is submerged in water or other liquid, it takes 4d10 damage during each of your subsequent actions as it dissolves.
             \\item It is \\prone and cannot stand up.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
@@ -579,7 +586,7 @@ export const aquamancy: MysticSphere = {
           \\hypertarget{itemizespace}{}
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 7,

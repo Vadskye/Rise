@@ -1,8 +1,8 @@
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, MovementMode, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
-use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
     return vec![
@@ -14,9 +14,9 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
+                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune} (deep), \abilitytag{Emotion}}
                     \rankline
-                    Choose an adjacent non-\glossterm{elite} Medium or smaller animal \glossterm{ally}.
+                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} that you \glossterm{touch}.
                     Its level must not exceed your level.
                     The target serves as a loyal companion to you.
                     It follows your directions to the best of its ability.
@@ -25,23 +25,31 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
                     All other aspects of the animal, such as its speed and natural weapons, are unchanged.
                     Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+                    Generally, your animal companion acts immediately before or after your action in combat, though the GM may decide that it acts separately in specific circumstances.
 
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
                     \begin{itemize}
-                        % TODO: figure out why this is a 2
-                        \item Its \glossterm{fatigue tolerance} is 2.
-                        \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your Constitution \add your level (see \tref{Hit Points and Damage Resistance}).
+                        \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
+                        \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
+                        \item Its \glossterm{hit points} are equal to the standard value for your level \add Constitution (see \tref{Character Advancement}).
+                        \item Its \glossterm{damage resistance} is equal to the standard value for your level \add Willpower.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
-                        \item Its \glossterm{power} with its attacks is 0.
-                        \item It has no \glossterm{attunement points}.
-                        \item The damage dealt by its natural weapons increases by \plus1d for each rank in this archetype beyond 1.
+                        \item All of its strikes are \glossterm{weak strikes}.
+                        \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
-                        \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points, damage resistance, and power.
+                        \item It automatically shares the benefits of all of your \glossterm{magic bonuses} to hit points and damage resistance.
                     \end{itemize}
-
                     % There must be text between an itemize block and the end of a mdframed env
-                    \hypertarget{itemizespace}{}
+
+                    \rankline
+                    \rank{2} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    \rank{3} The animal's strikes are no longer \glossterm{weak strikes}.
+                    \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} The animal's \glossterm{weapon damage} is doubled.
+                    However, the accuracy bonus is reduced to +2.
                 \end{magicalattuneability}
 
             ",
@@ -54,7 +62,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Your animal companion gains an \glossterm{attunement point}.
-                In addition, it gains a \plus1 bonus to \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{vital rolls}.
+                In addition, it gains a \plus1 bonus to its \glossterm{defenses}.
             ",
             modifiers: None,
         },
@@ -64,38 +72,45 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Your animal companion gains an additional attunement point.
-                In addition, its bonuses to accuracy, defenses, and vital rolls increase to \plus2.
+                In addition, its bonuses to defenses increases to \plus2.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Pack Tactics",
+            name: "Tag-Team Takedown",
             is_magical: false,
-            rank: 2,
+            rank: 3,
             description: r"
-                Any \glossterm{enemy} that is adjacent to both you and your animal companion takes a \minus1 penalty to \glossterm{accuracy} against creatures other than you.
+                As a standard action, you can use the \ability{tag-team takedown} ability.
+                When you use this ability, your animal companion generally waits until after you attack to make its own attack.
+                \begin{activeability}{Tag-Team Takedown}
+                    \rankline
+                    Make a \glossterm{strike}.
+                    Your \ability{animal companion} gains 1d6 \glossterm{extra damage} this round against each damaged creature.
+
+                    \rankline
+                    \rank{4} The extra damage increases to 1d10.
+                    \rank{5} The extra damage increases to 2d10.
+                    \rank{6} The extra damage increases to 3d10.
+                    \rank{7} The extra damage increases to 5d10.
+                \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Pack Tactics+",
+            name: "Survival Bond",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
-                The penalty also applies to all defenses.
+                Whenever you regain \glossterm{hit points} or \glossterm{damage resistance}, your animal companion also regains that many hit points or damage resistance.
+                If the healing ability had any limit, such as only healing up to half your maximum hit points, that limit also applies to your animal companion.
             ",
-            // It's actually better than this, since it applies to all allies
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Beast Affinity",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a \plus3 bonus to the Creature Handling skill.
             ",
@@ -104,29 +119,11 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Beast Affinity+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
-                The Creature Handling bonus increases to \plus5.
+                The Creature Handling bonus increases to \plus6.
             ",
-            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 2)]),
-        },
-        RankAbility {
-            name: "Power of Beasts",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You and your \textit{animal companion} gain a \plus1d damage bonus with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Power of Beasts+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
     ];
 }
@@ -138,8 +135,9 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you take a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+                Whenever you finish a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
                 You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
+                In addition, whenever you see a creature of that type, you intuitively know what effects it is \vulnerable to.
                 This benefit lasts until you choose a different creature type with this ability.
 
             ",
@@ -185,40 +183,34 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Warden's Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Warden's Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
             name: "Steadfast Warden",
             is_magical: false,
-            rank: 3,
+            rank: 6,
             description: r"
                 You gain a \plus2 bonus to your Fortitude defense.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
-            name: "Steadfast Warden+",
+            name: "Banestrike",
             is_magical: false,
-            rank: 6,
+            rank: 3,
             description: r"
-                The defense bonus increases to \plus4.
+                As a standard action, you can use the \ability{banestrike} ability.
+                \begin{activeability}{Banestrike}
+                    \rankline
+                    Make a \glossterm{strike}.
+                    The strike deals double \glossterm{weapon damage} against targets that are \vulnerable to it.
+
+                    \rankline
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
+                    \rank{5} The strike deals triple weapon damage against vulnerable targets instead of double weapon damage.
+                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{7} The accuracy bonus increases to +4.
+                \end{activeability}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
+            modifiers: None,
         },
     ];
 }
@@ -390,24 +382,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Hunter's Prowess",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Hunter's Prowess+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
             name: "Flexible Hunting Style",
             is_magical: false,
             rank: 5,
@@ -436,7 +410,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Keen Vision+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 The longshot penalty reduction increases to 2.
                 In addition, the range of your darkvision increases by 120 feet.
@@ -445,27 +419,9 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Perceive Weakness",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Perceive Weakness+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The accuracy bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
             name: "Blindsight",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 Your perceptions are so finely honed that you can sense your enemies without seeing them.
                 You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
@@ -486,6 +442,26 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            name: "Ambush",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                As a standard action, you can use the \ability{ambush} ability.
+                \begin{activeability}{Ambush}
+                    \rankline
+                    Move up to your speed and make a \glossterm{strike} with a +2 accuracy bonus.
+                    The strike deals double damage to \unaware targets.
+
+                    \rankline
+                    \rank{4} The strike deals 1d4 \glossterm{extra damage}.
+                    \rank{5} The extra damage increases to 1d8.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} The extra damage increases to 2d10.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Skirmisher",
             is_magical: false,
             rank: 4,
@@ -493,6 +469,15 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus10 foot bonus to your land speed.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Perceive Weakness",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{accuracy}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ];
 }
@@ -552,48 +537,43 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Wild Force",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                You gain the ability to customize your wild maneuvers.
+                For each rank 1 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 wild maneuvers.
+                {
+                    \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
+                    If your enhancement level is at least 4, the range triples instead.
+                    You can only apply this enhancement to maneuvers that have a listed range.
+
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+
+                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
+                    If your enhancement level is at least 4, the area triples instead.
+                    You can only apply this enhancement to maneuvers that affect an area.
+                }
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Wild Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain the ability to customize your weaker wild maneuvers.
-                For each rank 1 and rank 3 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-
-                Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 wild maneuvers.
-                {
-                    \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
-                    You can only apply this enhancement to maneuvers that have a listed range limit.
-
-                    \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
-                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
-
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
-
-                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
-                    You can only apply this enhancement to maneuvers that affect an area.
-                }
+                You can also choose an enhancement for each of your rank 3 wild maneuvers.
             ",
             modifiers: None,
         },
@@ -603,7 +583,6 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 wild maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 wild maneuvers.
             ",
             modifiers: None,
         },

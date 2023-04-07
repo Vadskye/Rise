@@ -95,8 +95,10 @@ export const aeromancy: MysticSphere = {
       name: 'Propulsion',
 
       effect: `
-        Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        You \\glossterm{knockback} the target up to 60 feet in any direction.
+        Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
+        The target must have a \\glossterm{weight category} of Medium or less.
+
+        You \\glossterm{knockback} the target up to 60 feet in any direction, to a maximum of a 60 foot \\glossterm{height limit}.
         You cannot change the direction of the movement partway through.
         Moving the target upwards costs twice the normal movement cost.
       `,
@@ -123,13 +125,15 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d10 \\add \\glossterm{power} slashing damage.
+          The target takes \\damagerankone{slashing}.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\longrange.',
+        targeting: `
+          Make an attack vs. Armor against any two targets within \\medrange that are adjacent to each other.
+        `,
       },
       // narrative: '',
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Mighty Windslash',
@@ -137,13 +141,15 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 4d8 \\add \\glossterm{power} slashing damage.
+          The target takes \\damagerankfourlow{slashing}.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
+        targeting: `
+          Make an attack vs. Armor against any two targets within \\longrange that are adjacent to each other.
+        `,
       },
       // narrative: '',
-      rank: 6,
-      scaling: 'damage',
+      rank: 5,
+      scaling: 'accuracy',
     },
     {
       name: 'Windsnipe',
@@ -151,56 +157,57 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          The target takes 1d6 \\add half \\glossterm{power} bludgeoning damage.
-          If it loses \\glossterm{hit points} from this damage, you \\glossterm{push} it up to 30 feet horizontally.
+          The target takes \\damageranktwolow{bludgeoning}.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\distrange.',
       },
       // narrative: '',
-      rank: 1,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
     {
-      name: 'Efficient Windsnipe',
+      name: 'Distant Windsnipe',
 
       attack: {
         // crit: '',
         hit: `
-          The target takes 2d8 \\add half \\glossterm{power} bludgeoning damage.
-          If it takes damage, you \\glossterm{push} it up to 30 feet horizontally.
+          The target takes \\damagerankfourlow{bludgeoning}.
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\distrange.',
+        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },
       // narrative: '',
-      rank: 5,
-      scaling: 'damage',
+      rank: 6,
+      scaling: 'accuracy',
     },
     {
       name: 'Buffet',
 
+      // treat as r2, halfway between 15' and 30'
       attack: {
         hit: `
-          The target takes 1d6 bludgeoning damage.
-          If it is Large or smaller and loses \\glossterm{hit points} from this damage, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
+          This distance is doubled if if the target is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 1,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
     {
       name: 'Intense Buffet',
 
-      functionsLike: {
-        name: 'buffet',
-        // This deals an immediate 6d6 if you smash someone against a barrier, which is a lot of damage.
-        exceptThat:
-          'the damage increases to 2d6. In addition, the knockback distance increases to 60 feet, and the maximum size category increases to Huge.',
+      attack: {
+        hit: `
+          If the target has a \\glossterm{weight category} of Large or less, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
+          This distance is doubled if if the target is outside in open air.
+          Moving the target upwards costs twice the normal movement cost.
+        `,
+        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 5,
+      rank: 7,
       scaling: 'accuracy',
     },
     {
@@ -297,7 +304,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankthree{bludgeoning}.
         `,
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -308,7 +315,7 @@ export const aeromancy: MysticSphere = {
       // effect: '',
       // narrative: '',
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
     {
@@ -343,15 +350,16 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damageranktwo{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
         `,
       },
       // narrative: '',
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Massive Cyclone',
@@ -359,14 +367,16 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d6 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfive{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\distrange.
         `,
       },
       // narrative: '',
       rank: 7,
+      scaling: 'accuracy',
     },
     // 2 levels for push; normally, 30' push is r1, but clockwise is much worse than
     // towards/away, so it's closer to r0.5
@@ -376,7 +386,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 2d10 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankthree{bludgeoning}.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -386,7 +396,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Windtheft',
@@ -397,7 +407,8 @@ export const aeromancy: MysticSphere = {
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Small or smaller object within \\medrange.
+          Make an attack vs. Reflex against one object within \\medrange.
+          The object must have a \\glossterm{weight category} of Small or less.
           If the object is attended by a creature, the attack must also beat the attending creature's Fortitude and Reflex defenses.
           If it is held in two hands or well secured, this attack automatically fails.
         `,
@@ -411,7 +422,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You create a cloud of dust in a \\medarea radius \\glossterm{zone} within \\medrange from you.
-        The cloud provides has \\glossterm{concealment} for everything in the area.
+        The cloud provides \\glossterm{concealment} for everything in the area.
       `,
       // narrative: '',
       rank: 2,
@@ -455,8 +466,8 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d10 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\blinded as a \\glossterm{condition}.
+          The target is surrounded by swirling dust as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\blinded.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\longrange.
@@ -518,7 +529,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 1d10 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -526,7 +537,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Massive Windburst',
@@ -534,7 +545,7 @@ export const aeromancy: MysticSphere = {
       attack: {
         // crit: '',
         hit: `
-          Each target takes 4d8 \\add half \\glossterm{power} bludgeoning damage.
+          Each target takes \\damagerankfive{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -542,7 +553,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 7,
-      scaling: 'damage',
     },
 
     {

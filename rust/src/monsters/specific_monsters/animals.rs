@@ -3,14 +3,13 @@ use crate::core_mechanics::{
     DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed, Sense, Size,
     SpeedCategory, StandardPassiveAbility,
 };
-
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::Animal;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition};
+use crate::monsters::{monster_group, FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullAnimalDefinition {
@@ -22,6 +21,7 @@ struct FullAnimalDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -39,6 +39,7 @@ fn animal(def: FullAnimalDefinition) -> Monster {
         modifiers: def.modifiers,
         movement_speeds: def.movement_speeds,
         name: def.name,
+        role: def.role,
         senses: def.senses,
         size: def.size,
         trained_skills: def.trained_skills,
@@ -54,10 +55,6 @@ fn animal(def: FullAnimalDefinition) -> Monster {
 pub fn animals() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    let mut half_power_bite = StandardWeapon::MonsterBite.weapon().attack();
-    if let Some(e) = half_power_bite.damage_effect_mut() {
-        e.power_multiplier = 0.5;
-    }
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
         attributes: vec![3, 0, 3, -8, 1, 0],
         challenge_rating: ChallengeRating::One,
@@ -67,16 +64,16 @@ pub fn animals() -> Vec<MonsterEntry> {
             "Camels are known for their ability to travel long distances without food or water.",
         )])),
         level: 1,
-        modifiers: Some(vec![
-            // Camels have a high strength, but they shouldn't deal massive damage
-            Modifier::Attack(half_power_bite.clone()),
-        ]),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Camel".to_string(),
+        role: Role::Brute,
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![Skill::Endurance]),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        // Camels use a weaker bite because they shouldn't do as much damage as their
+        // Strength would indicate.
+        weapons: vec![StandardWeapon::Bite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -100,12 +97,13 @@ pub fn animals() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
         ]),
         name: "Baboon".to_string(),
+        role: Role::Skirmisher,
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![
             Skill::Climb,
         ]),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -129,13 +127,14 @@ pub fn animals() -> Vec<MonsterEntry> {
             ),
         ])),
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Badger".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Scent]),
         size: Size::Small,
         trained_skills: Some(vec![Skill::Endurance]),
-        weapons: vec![StandardWeapon::MonsterClaws.weapon()],
+        weapons: vec![StandardWeapon::Claws.weapon()],
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(
@@ -154,9 +153,10 @@ pub fn animals() -> Vec<MonsterEntry> {
                         "),
                     ])),
                     level: 3,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                    modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                     movement_speeds: None,
                     name: "Black bear".to_string(),
+                    role: Role::Warrior,
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Medium,
                     trained_skills: Some(vec![
@@ -164,21 +164,22 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Skill::Endurance,
                         Skill::Swim,
                     ]),
-                    weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
+                    weapons: vec![StandardWeapon::MultipedalBite.weapon(), StandardWeapon::Claws.weapon()],
                 }),
                 animal(FullAnimalDefinition {
-                    attributes: vec![5, 0, 6, -8, 0, 1],
-                    challenge_rating: ChallengeRating::Four,
+                    attributes: vec![4, 0, 4, -8, 0, 1],
+                    challenge_rating: ChallengeRating::One,
                     description: Some("A brown bear's statistics can be used for almost any big bear, including a grizzly bear.".to_string()),
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
                             Brown bears tend to be bad-tempered and territorial.
                         "),
                     ])),
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                    modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                     movement_speeds: None,
                     level: 5,
                     name: "Brown bear".to_string(),
+                    role: Role::Warrior,
                     senses: Some(vec![Sense::Scent]),
                     size: Size::Large,
                     trained_skills: Some(vec![
@@ -186,7 +187,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Skill::Endurance,
                         Skill::Swim,
                     ]),
-                    weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::MonsterClaws.weapon()],
+                    weapons: vec![StandardWeapon::MultipedalBite.weapon(), StandardWeapon::Claws.weapon()],
                 }),
             ],
         }
@@ -198,9 +199,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Cat".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
         size: Size::Small,
         trained_skills: Some(vec![
@@ -209,7 +211,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             Skill::Flexibility,
             Skill::Stealth,
         ]),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
@@ -222,13 +224,14 @@ pub fn animals() -> Vec<MonsterEntry> {
                 description: None,
                 knowledge: None,
                 level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Wild dog".to_string(),
+                role: Role::Skirmisher,
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }),
             animal(FullAnimalDefinition {
                 attributes: vec![2, 3, 1, -7, 2, -1],
@@ -242,13 +245,14 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ",
                 )])),
                 level: 2,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+                modifiers: Some(ModifierBundle::Multipedal.modifiers()),
                 movement_speeds: None,
                 name: "Riding dog".to_string(),
+                role: Role::Skirmisher,
                 senses: Some(vec![Sense::Scent]),
                 size: Size::Medium,
                 trained_skills: Some(vec![Skill::Awareness, Skill::Endurance]),
-                weapons: vec![StandardWeapon::MonsterBite.weapon()],
+                weapons: vec![StandardWeapon::MultipedalBite.weapon()],
             }),
         ],
     }));
@@ -259,23 +263,26 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 12,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Attack(StandardAttack::FrostwebSpiderBite.attack()),
             Modifier::Attack(
                 StandardAttack::BreathWeaponCone(5, DamageType::Cold, Defense::Fortitude)
                     .attack()
-                    .except(|a| a.name = "Frost Breath".to_string()),
+                    .except(|a| a.name = "Frost Breath".to_string())
+                    .except_elite(),
             ),
         ])),
         movement_speeds: None,
         name: "Frostweb Spider".to_string(),
+        // Maybe brute?
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Tremorsense(240), Sense::Tremorsight(60)]),
         size: Size::Large,
         trained_skills: None,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
-    let mut poisonous_stinger = StandardWeapon::MonsterStinger.weapon().attack();
+    let mut poisonous_stinger = StandardWeapon::MultipedalStinger.weapon().attack();
     if let Some(e) = poisonous_stinger.damage_effect_mut() {
         e.lose_hp_effect = Some(attack_effect::AttackTriggeredEffect::Poison(
             attack_effect::PoisonEffect {
@@ -303,13 +310,14 @@ pub fn animals() -> Vec<MonsterEntry> {
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Fast)
         ]),
+        role: Role::Skirmisher,
         senses: None,
         name: "Giant Wasp".to_string(),
         size: Size::Large,
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
-        weapons: vec![StandardWeapon::MonsterStinger.weapon()],
+        weapons: vec![StandardWeapon::MultipedalStinger.weapon()],
     },
     )));
 
@@ -328,16 +336,17 @@ pub fn animals() -> Vec<MonsterEntry> {
                 "),
             ])),
             level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+            modifiers: Some(ModifierBundle::Multipedal.modifiers()),
             movement_speeds: None,
             name: "Dire Rat".to_string(),
+            role: Role::Skirmisher,
             senses: Some(vec![Sense::LowLightVision, Sense::Scent]),
             size: Size::Small,
             trained_skills: Some(vec![
                 Skill::Climb,
                 Skill::Swim,
             ]),
-            weapons: vec![StandardWeapon::MonsterBite.weapon()],
+            weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         },
     )));
 
@@ -347,13 +356,14 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 2,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Wolf".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
         trained_skills: None,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
@@ -362,13 +372,14 @@ pub fn animals() -> Vec<MonsterEntry> {
         description: None,
         knowledge: None,
         level: 1,
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
         name: "Warg".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
         trained_skills: None,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     // TODO: add carrying capacity to knowledge result
@@ -378,13 +389,16 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Horse".to_string(),
         size: Size::Large,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
         description: None,
         knowledge: None,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
+        modifiers: None,
         movement_speeds: None,
+        role: Role::Skirmisher,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
+        // Horses use a weaker bite because they shouldn't do as much damage as their
+        // Strength would indicate.
+        weapons: vec![StandardWeapon::Bite.weapon()],
     });
     monsters.push(MonsterEntry::Monster(horse));
 
@@ -394,23 +408,25 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 2,
         name: "Pony".to_string(),
         size: Size::Medium,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Attack(half_power_bite.clone())])),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: None,
         movement_speeds: None,
+        role: Role::Skirmisher,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(pony));
 
+    // TODO: add special "pick up stuff" ability
     let roc = animal(FullAnimalDefinition {
         attributes: vec![6, 1, 4, -7, 4, -1],
         challenge_rating: ChallengeRating::Four,
         level: 9,
         name: "Roc".to_string(),
         size: Size::Gargantuan,
-        weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::Talon.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon(), StandardWeapon::Talon.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -426,6 +442,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         ])),
         modifiers: None,
         movement_speeds: None,
+        role: Role::Brute,
         senses: None,
         trained_skills: Some(vec![Skill::Awareness]),
     });
@@ -437,7 +454,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 6,
         name: "Vampire Eel".to_string(),
         size: Size::Medium,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
@@ -451,6 +468,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             MovementMode::Swim,
             SpeedCategory::Normal,
         )]),
+        role: Role::Skirmisher,
         senses: None,
         trained_skills: Some(vec![Skill::Swim]),
     });
@@ -462,7 +480,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 5,
         name: "Dire Wolf".to_string(),
         size: Size::Large,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
@@ -472,8 +490,9 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Dire wolves are efficient pack hunters that will kill anything they can catch.
             ",
         )])),
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
+        role: Role::Skirmisher,
         senses: Some(vec![Sense::Scent]),
         trained_skills: None,
     });
@@ -493,6 +512,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             MovementMode::Fly(FlightManeuverability::Normal),
             SpeedCategory::Normal,
         )]),
+        role: Role::Skirmisher,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
     })));
@@ -503,7 +523,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         level: 7,
         name: "Giant Bombardier Beetle".to_string(),
         size: Size::Large,
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -515,20 +535,21 @@ pub fn animals() -> Vec<MonsterEntry> {
                 Giant bombardier beetles normally attack only to defend themselves, their nests, or their eggs.
             "),
         ])),
-        modifiers: Some(ModifierBundle::Quadrupedal.modifiers()),
+        modifiers: Some(ModifierBundle::Multipedal.modifiers()),
         movement_speeds: None,
+        role: Role::Brute,
         senses: None,
         trained_skills: Some(vec![Skill::Endurance]),
     });
     monsters.push(MonsterEntry::Monster(bombardier_beetle));
 
     monsters.push(MonsterEntry::Monster(animal(FullAnimalDefinition {
-        attributes: vec![5, 1, 3, -9, 2, -3],
-        challenge_rating: ChallengeRating::Four,
+        attributes: vec![4, 2, 4, -9, 2, -3],
+        challenge_rating: ChallengeRating::One,
         description: None,
         knowledge: None,
         level: 3,
-        modifiers: Some(ModifierBundle::Quadrupedal.plus_modifiers(vec![
+        modifiers: Some(ModifierBundle::Multipedal.plus_modifiers(vec![
             Modifier::Maneuver(Maneuver::GraspingStrike),
             Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()),
         ])),
@@ -537,10 +558,11 @@ pub fn animals() -> Vec<MonsterEntry> {
             MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
         ]),
         name: "Crocodile".to_string(),
+        role: Role::Brute,
         senses: Some(vec![Sense::Scent]),
         size: Size::Medium,
         trained_skills: Some(vec![Skill::Endurance, Skill::Stealth, Skill::Swim]),
-        weapons: vec![StandardWeapon::MonsterBite.weapon()],
+        weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     })));
 
     return monsters;

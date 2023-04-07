@@ -12,7 +12,7 @@ use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 use std::cmp::{max, min};
 
@@ -28,6 +28,7 @@ struct FullUndeadDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -51,6 +52,7 @@ impl FullUndeadDefinition {
             modifiers: Some(modifiers),
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -88,12 +90,13 @@ pub fn undeads() -> Vec<MonsterEntry> {
         ])),
         level: 3,
         modifiers: Some(ModifierBundle::Incorporeal.plus_modifiers(vec![
-            Modifier::Attack(StandardAttack::DrainingGrasp(1).attack()),
+            Modifier::Attack(StandardAttack::InflictWound(1).attack()),
         ])),
         movement_speeds: Some(vec![
             MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
         ]),
         name: "Allip".to_string(),
+        role: Role::Skirmisher,
         senses: Some(vec![
             Sense::Darkvision(60),
             Sense::Lifesense(120),
@@ -148,11 +151,12 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Always neutral evil".to_string(),
                 description: None,
                 movement_speeds: None,
+                role: Role::Brute,
                 senses: Some(vec![Sense::Darkvision(60)]),
                 size: Size::Medium,
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
-                    StandardWeapon::MonsterClaws.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
+                    StandardWeapon::Claws.weapon(),
                 ],
             }
             .monster();
@@ -276,7 +280,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                         + self.challenge_rating.rank_modifier(),
                     tags: None,
                 }
-                .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
+                .weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
             ));
             modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(
@@ -298,10 +302,11 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
                 movement_speeds: None,
+                role: Role::Skirmisher,
                 senses: Some(vec![Sense::Darkvision(120)]),
                 size: Size::Medium,
                 weapons: vec![
-                    StandardWeapon::MonsterBite.weapon(),
+                    StandardWeapon::MultipedalBite.weapon(),
                     StandardWeapon::Slam.weapon(),
                 ],
             }
@@ -500,6 +505,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
         movement_speeds: Some(creature.movement_speeds.clone()),
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
+        role: Role::Warrior,
         senses: Some(senses),
         size: creature.size.clone(),
         trained_skills: None,
@@ -566,6 +572,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         modifiers: Some(modifiers),
         movement_speeds: Some(movement_speeds),
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
+        role: Role::Brute,
         senses: Some(senses),
         size: creature.size.clone(),
         trained_skills: None,

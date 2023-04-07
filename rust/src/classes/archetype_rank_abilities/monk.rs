@@ -7,41 +7,63 @@ use super::standard_modifiers::add_standard_maneuver_modifiers;
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Acrobatic Accuracy",
+            name: "Float Like Air",
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you make a Jump check that moves you over or adjacent to a creature, if your Jump check result beats that creature's Reflex defense, you gain a \plus1 bonus to \glossterm{accuracy} against that creature for the rest of the current round.
+                When you move with a Jump check, your maximum height is equal to your Jump check result, rather than half your Jump check result (see \pcref{Jump}).
+                This does not affect the forward distance you can reach with your jumps.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Acrobatic Accuracy+",
+            name: "Float Like Air+",
             is_magical: false,
+            rank: 6,
+            description: r"
+                Your maximum height increases to twice your Jump check result.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Move Like Wind",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Move Like Wind+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus increases to +20 feet.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            name: "Heart of Air+",
+            is_magical: true,
             rank: 4,
             description: r"
-                The accuracy bonus increases to +2.
+                When you move with a Jump check, you can land in midair as if it was solid ground.
+                Your landing location has a \glossterm{height limit} of 30 feet, like a fly speed (see \pcref{Flight}).
+                You cannot walk in the air, but you can continue jumping or remain in place.
+                The air holds you until the end of the current round, at which point you fall normally.
+                After you land on air in this way, you \glossterm{briefly} cannot do so again.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Acrobatic Accuracy+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The accuracy bonus increases to +3.
-                In addition, the effect lasts \glossterm{briefly} instead of only for the current round.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Evasion",
             is_magical: false,
             rank: 2,
             description: r"
-                You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+                You take no damage from \glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
                 This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-                If you have the \textit{evasion} rogue ability with the same effect as this ability, you reduce the total damage you take to one quarter of the normal value instead.
+                If you have the \textit{evasion} rogue ability with the same effect as this ability, you also gain a \plus2 bonus to your Armor and Reflex defenses against area attacks.
             ",
             modifiers: None,
         },
@@ -50,30 +72,43 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                This ability also protects you from area attacks against your Fortitude and Mental defenses.
+                You also take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Aerial Strike",
+            is_magical: false,
+            rank: 3,
+            // Expected jump skill at rank 3: 6 plus attribute, so about 8
+            // Expected jump height: 8 from skill + 5.5 from roll, so can reliably jump completely
+            // over Medium creatures.
+            description: r"
+                As a standard action, you can use the \textit{aerial strike} ability.
+                \begin{activeability}{Aerial Strike}
+                    \rankline
+                    Make a Jump check and move that far, up to a maximum distance equal to your \glossterm{base speed}.
+                    In addition, you can make a \glossterm{strike} with +1d4 \glossterm{extra damage} at any point during that jump.
+                    % TODO: is Jump clear enough about how to be directly above a creature?
+                    This extra damage is doubled against each creature that you are directly above when you make the strike.
+
+                    \rankline
+                    % Weaker scaling than normal because the double damage is easy at high levels
+                    \rank{4} The extra damage increases to 1d8.
+                    \rank{5} The extra damage increases to 2d6.
+                    \rank{6} The extra damage increases to 2d10.
+                    \rank{7} The extra damage increases to 4d6.
+                \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Airdance",
             is_magical: true,
-            rank: 3,
+            rank: 7,
             description: r"
-                When you move with a Jump check, you can land in midair as if it was solid ground.
-                Your landing location must be no more than 30 feet above above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-                You cannot walk in the air, but you can continue jumping or remain in place.
-                The air holds you until the end of the current round, at which point you fall normally.
-                After you land on air in this way, you \glossterm{briefly} cannot do so again.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Airdance+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                When you use this ability to land in the air, you can walk around freely in the air as if it was fully solid until the end of the round.
-                In addition, the maxium height above the ground increases to 60 feet.
+                You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a \glossterm{height limit} of 30 feet (see \pcref{Flight}).
+                While flying, you can jump as if you were on solid ground, allowing you to rapidly gain height and change directions unexpectedly.
             ",
             modifiers: None,
         },
@@ -135,50 +170,42 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Esoteric Force",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                You gain the ability to customize your esoteric maneuvers.
+                For each rank 1 esoteric maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+
+                Whenever you increase your rank in this archetype, you can change your enhancements.
+                However, you must still apply them to rank 1 esoteric maneuvers.
+                {
+                    \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    However, you cannot get a \glossterm{critical hit}.
+                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+                }
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
-            name: "Esoteric Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Enhanced Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain the ability to customize your weaker esoteric maneuvers.
-                For each rank 1 and rank 3 esoteric maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-
-                Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 esoteric maneuvers.
-                {
-                    \parhead{Debilitating Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, your \glossterm{power} with the maneuver is treated as 0.
-                    You can only apply this enhancement to manuevers which can inflict a \glossterm{condition}.
-
-                    \parhead{Guarding Maneuver} You gain a +1 bonus to your Armor defense when you use the maneuver.
-                    This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
-
-                    \parhead{Mobile Maneuver} You can move up to 5 feet before or after using your chosen maneuver.
-                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
-
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
-
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
-                }
+                You can also choose an enhancement for each of your rank 3 esoteric maneuvers.
             ",
             modifiers: None,
         },
@@ -188,7 +215,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 esoteric maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 esoteric maneuvers.
             ",
             modifiers: None,
         },
@@ -237,7 +263,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You can channel your ki to temporarily enhance your abilities.
                 Choose two \textit{ki manifestations} from the list below.
@@ -253,9 +279,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
 
                         \rankline
-                        \rank{3} You can negate any number of conditions instead of only one condition.
-                        \rank{5} The defense penalty is reduced to \minus1.
-                        \rank{7} The defense penalty is removed.
+                        \rank{4} The defense penalty is reduced to \minus1.
+                        \rank{6} The defense penalty is removed.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Burst of Blinding Speed}
@@ -264,9 +289,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus10 foot bonus to your land speed this phase.
 
                         \rankline
-                        \rank{3} You can also ignore \glossterm{difficult terrain} this phase.
-                        \rank{5} The speed bonus increases to \plus20 feet.
-                        \rank{7} You can also move or stand on liquids as if they were solid this phase.
+                        \rank{4} You can also ignore \glossterm{difficult terrain} this phase.
+                        \rank{6} The speed bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Calm the Inner Tempest}
@@ -275,9 +299,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}
@@ -286,9 +309,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
-                        \rank{3} You can attack enemies up to 15 feet away from you.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} You can attack enemies up to 20 feet away from you.
+                        \rank{4} You can attack enemies up to 15 feet away from you.
+                        \rank{6} You can attack enemies up to 20 feet away from you.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flash Step}
@@ -302,21 +324,19 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
 
                         \rankline
-                        \rank{3} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                        \rank{5} You can use this ability to move even if you are \immobilized or \grappled.
-                        \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
-                        If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
+                        \rank{4} The movement cost to teleport is reduced to be equal to the distance you teleport.
+                        \rank{6} You can use this ability to move even if you are \immobilized or \grappled.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        When you use the \ability{offhand strike} ability this round, you roll the attack roll twice and take the higher result.
+                        When you make a \glossterm{strike} this round, you roll the attack roll twice and take the higher result.
+                        However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
 
                         \rankline
-                        \rank{3} You also gain a +1 \glossterm{accuracy} bonus with the \ability{offhand strike} ability.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The accuracy bonus increases to +2.
+                        \rank{4} You also gain a +1 \glossterm{accuracy} bonus with strikes.
+                        \rank{6} The accuracy bonus increases to +2.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}
@@ -325,9 +345,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}
@@ -336,9 +355,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
 
                         \rankline
-                        \rank{3} You also gain a +2 \glossterm{power} bonus with strikes.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The power bonus increases to +4.
+                        \rank{4} You also gain +1d4 extra damage with strikes.
+                        \rank{6} The extra damage increases to +1d6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Leap of the Heavens}
@@ -347,9 +365,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}
@@ -358,9 +375,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Scale the Highest Tower}
@@ -370,20 +386,19 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         % TODO: is this wording correct?
 
                         \rankline
-                        \rank{3} The Climb bonus increases to \plus8.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to \plus12.
+                        \rank{4} The Climb bonus increases to \plus8.
+                        \rank{6} The bonus increases to \plus12.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a +2 bonus to your defenses against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller this round.
+                        You gain a +2 bonus to your defenses against ranged \glossterm{strikes}.
+                        However, you take a -2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
-                        \rank{3} The bonus increases to +3.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The bonus increases to +4.
+                        \rank{4} The bonus increases to +3.
+                        \rank{6} The bonus increases to +4.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
@@ -393,9 +408,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, your attacks also have a 20\% failure chance this round.
 
                         \rankline
-                        \rank{3} The failure chance for attacks against you increases to 25\%.
-                        \rank{5} When you use this ability, you can choose whether it becomes a \glossterm{brief} effect.
-                        \rank{7} The failure chance for attacks against you increases to 30\%.
+                        \rank{4} The failure chance for attacks against you increases to 25\%.
+                        \rank{6} The failure chance for attacks against you increases to 30\%.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Thread the Eye of the Storm}
@@ -404,9 +418,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
 
                         \rankline
-                        \rank{3} The penalty reduction increases to 2.
-                        \rank{5} This becomes a \glossterm{brief} effect.
-                        \rank{7} The penalty reduction increases to 3.
+                        \rank{4} The penalty reduction increases to 2.
+                        \rank{6} The penalty reduction increases to 3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
@@ -416,9 +429,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
 
                         \rankline
-                        \rank{3} You also gain a \plus2 bonus to those checks while this effect lasts.
-                        \rank{5} The effect lasts until the end of the current round.
-                        \rank{7} The penalty is removed.
+                        \rank{4} You also gain a \plus2 bonus to those checks while this effect lasts.
+                        \rank{6} The penalty during the next round is removed.
                     \end{magicalactiveability}
 
                     % TODO: add more
@@ -432,10 +444,11 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you make a \glossterm{strike}, you can choose to treat it as a \magical ability.
-                This allows you to use your Willpower to determine your damage instead of your Strength (see \pcref{Dice Bonuses From Attributes}).
+                This allows you to use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
                 In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
                 If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
                 Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
+                You can still use \glossterm{maneuvers} that require specific damage types, as long as you meet the requirements before this damage type conversion.
             ",
             // TODO: use higher of Str/Wil for strikes
             modifiers: None,
@@ -443,7 +456,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
                 This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
@@ -461,6 +474,15 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            name: "Ki Manifestation",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                You learn an additional \textit{ki manifestation}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Ki Barrier+",
             is_magical: true,
             rank: 5,
@@ -475,27 +497,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Ki Power+",
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to \plus6.
+                The power bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Hardened Ki",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You gain a \plus1 bonus to your Willpower.
-            ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Endless Ki",
@@ -517,7 +530,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus2 bonus to accuracy and a \plus1d bonus to damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
+                You gain a \plus2 accuracy bonus and a \plus1d damage bonus with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
@@ -543,32 +556,40 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
-            name: "Unhindered Movement",
+            name: "Unhindered Agility",
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus10 foot bonus to your land speed while you have no \glossterm{encumbrance}.
+                You gain a +1 bonus to your Armor and Reflex defenses while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
         },
         RankAbility {
-            name: "Unhindered Movement+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The speed bonus increases to \plus20 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
-        },
-        RankAbility {
-            name: "Unhindered Agility",
+            name: "Unhindered Agility+",
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus2 bonus to your Reflex defense while you have no \glossterm{encumbrance}.
+                The bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 3)]),
-                
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
+        },
+        RankAbility {
+            name: "Unhindered Agility+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                The bonus increases to +3.
+            ",
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::Defense(Defense::Reflex, 2),
+            ]),
         },
         RankAbility {
             name: "Perfect Precision",
@@ -597,7 +618,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                 You permanently gain a \plus1 bonus to that attribute.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Perfect Body+",
@@ -607,8 +628,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 The bonus applies to all physical attributes, not just the one you chose.
             ",
             modifiers: Some(vec![
-                Modifier::BaseAttribute(Attribute::Strength, 1),
-                Modifier::BaseAttribute(Attribute::Dexterity, 1),
+                Modifier::Attribute(Attribute::Strength, 1),
+                Modifier::Attribute(Attribute::Dexterity, 1),
             ]),
         },
     ];
@@ -617,9 +638,19 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You are immune to being \dazed, \stunned, and \confused.
+            ",
+            // TODO: represent immunities?
+            modifiers: None,
+        },
+        RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
@@ -628,64 +659,27 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Feel the Flow of Life+",
+            name: "Diamond Soul",
             is_magical: true,
             rank: 4,
             description: r"
-                The range of your lifesense increases by 120 feet, and the range of your lifesight increases by 30 feet.
+                You gain a \plus1 bonus to your Willpower.
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Feel the Flow of Life+",
             is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Transcend Uncertainty",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused.
-            ",
-            // TODO: represent immunities?
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Transcend Time",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You are immune to being \slowed and \immobilized.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Transcendent Might",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Transcendent Might+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to +2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
             name: "Transcend Emotion",
             is_magical: false,
-            rank: 5,
+            rank: 3,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
                 In addition, you are immune to being \shaken, \frightened, and \panicked.

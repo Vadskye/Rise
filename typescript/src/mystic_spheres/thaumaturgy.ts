@@ -44,102 +44,104 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Magic Missile',
 
-      // -2d, -1 range level in exchange for the strong miss effect
+      // -1 range and low scaling in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes 1d4 + \\glossterm{power} energy damage.
-          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
+          The target takes \\damagerankonelow{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
+          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting damage unavoidably.
       `,
       rank: 1,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Distant Magic Missile',
 
-      // +2r for range, +1r to offset previous -1d
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
-          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
+          The target takes \\damagerankthree{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
+          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 4,
-      scaling: 'damage',
+      rank: 5,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Magic Missile',
 
-      // +2r to offset previous -2d, +2r for +2d
-      // total of +10d
+      // -1 range and low scaling for miss effect
       attack: {
         hit: `
-          The target takes 5d10 + \\glossterm{power} energy damage.
-          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
+          The target takes \\damagerankfourlow{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
+          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
         `,
       },
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting massive damage unavoidably.
       `,
-      rank: 7,
-      scaling: 'damage',
+      rank: 4,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Magic Missile Storm',
 
-      // -1d, -1 range level in exchange for the strong miss effect
+      // -1 range for ignoring cover
       attack: {
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} energy damage.
-          \\miss Each target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
+          Each target takes \\damagerankone{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+          This attack ignores \\glossterm{cover}.
         `,
       },
       narrative: `
         A barrage of unerring projectiles made of pure magical energy streak towards an area, inflicting damage unavoidably.
       `,
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
-      name: 'Massive Magic Missile Storm',
+      name: 'Mighty Magic Missile Storm',
 
-      // -1d, -1 range level in exchange for the strong miss effect
+      // -1 range for ignoring cover
       attack: {
         hit: `
-          The target takes 2d8 + half \\glossterm{power} energy damage.
-          \\miss The target suffers a \\glossterm{glancing blow} from this attack, even if you missed by more than 2.
+          Each target takes \\damageranksix{energy}.
         `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
+          Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+          This attack ignores \\glossterm{cover}.
         `,
       },
       narrative: `
         A massive barrage of unerring projectiles made of pure magical energy streak towards your foes, inflicting damage unavoidably.
       `,
-      rank: 6,
-      scaling: 'damage',
+      rank: 7,
     },
 
     {
@@ -299,34 +301,44 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Enhance Magic',
+      name: 'Enhance Magic -- Might',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to your \\glossterm{power}.
+        Whenever you cast a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
+        If you do, the spell deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
+        After you enhance a spell in this way, this effect ends.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `The extra damage increases to 1d8.`,
+        5: `The extra damage increases to 2d6.`,
+        7: `The extra damage increases to 2d10.`,
       },
       type: 'Attune',
     },
 
     {
-      name: 'Mass Enhance Magic',
+      name: 'Enhance Magic -- Distance',
 
-      functionsLike: {
-        mass: true,
-        name: 'Enhance Magic',
-      },
-      // narrative: '',
+      effect: `
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to double its range.
+        After you enhance a spell in this way, this effect ends.
+      `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +8.`,
-      },
-      type: 'Attune (target)',
+      type: 'Attune',
+    },
+
+    {
+      name: 'Enhance Magic -- Echo',
+
+      effect: `
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to echo it.
+        If you do, the spell takes effect again during your next action.
+        It has the same choices for all decisions, such as targets.
+        After you echo a spell in this way, this effect ends.
+      `,
+      rank: 5,
+      type: 'Attune',
     },
 
     {
@@ -425,7 +437,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         crit: `The effect ends after the target fails to cast three spells instead of only one.`,
         hit: `As a \\glossterm{condition}, the next time the target tries to cast a spell, the spell automatically fails with no effect instead.
-        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it takes a \\glossterm{short rest}.`,
+        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.`,
         targeting: `
         Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,

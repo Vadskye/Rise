@@ -16,6 +16,7 @@
 \newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{sphere:#1}{#1}}}}    %Italicize mystic spheres
 \newcommand{\ability}[1]{\mbox{\hyperlink{ability:#1}{#1}}}
 \newcommand{\spell}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
+\newcommand{\cantrip}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
 \newcommand{\maneuver}[1]{\mbox{\hyperlink{maneuver:#1}{#1}}}
 \newcommand{\stance}[1]{\mbox{\hyperlink{stance:#1}{#1}}}
 \newcommand{\spellindirect}[2]{\hyperlink{spell:#1}{#2}}
@@ -97,11 +98,10 @@
 % Too complicated to try to summarize :/
 \newcommand{\grappled}{\debuff{grappled}\xspace}
 \newcommand{\helpless}{\debuff{helpless} \reminder{\minus6 Armor and Ref}\xspace}
-\newcommand{\immobilized}{\debuff{immobilized} \reminder{\minus4 Ref, cannot use movement speeds}\xspace}
+\newcommand{\immobilized}{\debuff{immobilized} \reminder{\minus4 Armor and Ref, cannot use movement speeds}\xspace}
 \newcommand{\panicked}{\debuff{panicked} \reminder{\minus4 Mental, cannot attack source}\xspace}
 \newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
 \newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
-\newcommand{\petrified}{\debuff{petrified}\xspace}
 \newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 Armor and Ref}\xspace}
 \newcommand{\shaken}{\debuff{shaken} \reminder{\minus1 Mental, \minus1 accuracy vs. source}\xspace}
 \newcommand{\slowed}{\debuff{slowed} \reminder{half speed, \minus2 Armor and Ref}\xspace}
@@ -350,7 +350,7 @@
             }
         }
     }
-    \label{#2}
+    \label{#3}
 }
 
 % args:
@@ -361,22 +361,24 @@
 {
     \IfValueT{#2}
     {
-        % Enable this to test for missing glossary definitions
-        % \label{#2}\label{#2s}
-        % Enable this to test for unnecessary glossary entries
-        % \pref{#2}
-
-        \hypertargetraised{#3:#2}{}
-        \hypertargetraised{#3:#2s}{}
+        \termlinks{#2}{#3}
     }
+    \termlinks{#1}{#3}
+    \parhead{#1}
+}
+
+% args:
+%   #1: name of term
+%   #2: hyperlink prefix
+\DeclareDocumentCommand{\termlinks}{m m}
+{
     % Enable this to test for missing glossary definitions
     % \label{#1}\label{#1s}
     % Enable this to test for unnecessary glossary entries
     % \pref{#1}
 
-    \hypertargetraised{#3:#1}{}
-    \hypertargetraised{#3:#1s}{}
-    \parhead{#1}
+    \hypertargetraised{#2:#1}{}
+    \hypertargetraised{#2:#1s}{}
 }
 
 \DeclareDocumentCommand{\trait}{o m}
@@ -403,6 +405,8 @@
     {\termdef{#1}[#2]{gloss}}
     {\termdef{#1}{gloss}}
 }
+\DeclareDocumentCommand{\glosssynonym}{m}
+{\termlinks{#1}{gloss}}
 
 \DeclareDocumentCommand{\sphereterm}{o m}
 {
@@ -545,13 +549,89 @@
     \label{item:#2}
 }
 
+\DeclareDocumentCommand{\upgraderank}{m m}
+{
+    \rank{\hypertargetraised{item:#1}}{#2\label{item:#1}}
+}
+
 % \, is a small non-breaking space
 \DeclareDocumentCommand{\sparkle}{}{\,\sparklespaceless}
 
 \DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
+
+% "high" scaling means it scales a lot with power, but may be weak at low power
+% "low" scaling means it scales less with power, but is stronger at low power
 
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
 
 \newcommand{\pari}{\par\noindent}
+
+
+\newcommand{\damagerankzero}[1]
+{1d4 #1 damage \plus1d per 3 power}
+
+\newcommand{\damagerankone}[1]
+{1d6 #1 damage \plus1d per 2 power}
+\newcommand{\damagerankonehigh}[1]
+{1d6 #1 damage \plus1d per 2 power} % Same as d1, unfortunately
+\newcommand{\damagerankonelow}[1]
+{1d8 #1 damage \plus1d per 3 power}
+
+\newcommand{\damageranktwo}[1]
+{1d8 #1 damage \plus1d per 2 power}
+\newcommand{\damageranktwohigh}[1]
+{1d6 #1 damage plus 1d6 per 4 power}
+\newcommand{\damageranktwolow}[1]
+{1d10 #1 damage \plus1d per 3 power}
+
+\newcommand{\damagerankthree}[1]
+{1d8 #1 damage plus 1d6 per 4 power}
+% This is a little higher than it should be
+\newcommand{\damagerankthreehigh}[1]
+{1d6 #1 damage plus 1d8 per 4 power}
+\newcommand{\damagerankthreelow}[1]
+{1d8 #1 damage plus 1d6 per 4 power} % Same as d3, unfortunately
+
+\newcommand{\damagerankfour}[1]
+{1d8 #1 damage plus 1d8 per 4 power}
+\newcommand{\damagerankfourhigh}[1]
+{1d8 per 3 power #1 damage} % Or could use 1d6 + d6 per 3 power
+\newcommand{\damagerankfourlow}[1]
+{1d10 #1 damage plus 1d6 per 4 power}
+
+\newcommand{\damagerankfive}[1]
+{2d6 #1 damage plus 1d6 per 3 power}
+\newcommand{\damagerankfivehigh}[1]
+{1d10 per 3 power #1 damage} % Or could use d6 per 2 power, but that's weaker
+\newcommand{\damagerankfivelow}[1]
+{2d8 #1 damage plus 1d6 per 4 power}
+
+\newcommand{\damageranksix}[1]
+{1d10 #1 damage plus 1d10 per 3 power}
+\newcommand{\damageranksixhigh}[1]
+{1d8 per 2 power #1 damage}
+\newcommand{\damageranksixlow}[1]
+{4d6 #1 damage plus 1d6 per 4 power} % many options
+
+\newcommand{\damagerankseven}[1]
+{2d10 #1 damage plus 1d10 per 3 power}
+\newcommand{\damageranksevenhigh}[1]
+{1d10 per 2 power #1 damage}
+\newcommand{\damageranksevenlow}[1]
+{6d6 #1 damage plus 1d6 per 3 power} % many options
+
+\newcommand{\damagerankeight}[1]
+{4d10 #1 damage plus 1d10 per 3 power}
+\newcommand{\damagerankeighthigh}[1]
+{2d10 #1 damage plus 1d10 per 2 power}
+\newcommand{\damagerankeightlow}[1]
+{7d8 #1 damage plus 1d8 per 3 power} % many options
+
+\newcommand{\damageranknine}[1]
+{4d10 #1 damage plus 1d10 per 2 power}
+\newcommand{\damagerankninehigh}[1]
+{1d6\plus1d10 per 2 power #1 damage}
+\newcommand{\damagerankninelow}[1]
+{8d10 #1 damage plus 1d10 per 3 power} % many options

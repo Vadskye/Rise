@@ -68,7 +68,7 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
-  scaling?: "accuracy" | "damage" | Record<string, string>;
+  scaling?: "accuracy" | "poison" | Record<string, string>;
   tableText?: string;
   tags?: string[];
   type?:
@@ -106,11 +106,12 @@ export interface SpellLike extends BaseSpellLike {
 export interface StandardAttack {
   crit?: string;
   hit: string;
+  missGlance?: boolean;
   targeting: string;
 }
 
 export interface FunctionsLike {
-  abilityType?: "spell" | "maneuver" | "ability" | "ritual";
+  abilityType?: "cantrip" | "spell" | "maneuver" | "ability" | "ritual";
   exceptThat?: string;
   mass?: boolean;
   name: string;

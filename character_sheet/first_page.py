@@ -27,11 +27,9 @@ from cgi_simple import (
 from active_abilities_page import (
     ability,
     attack_button_text,
-    calc_attack_power,
     construct_damage_text,
     other_damaging_attack_button_text,
     crit_damage_button,
-    glance_damage_button,
     strike_based_attack,
     other_damaging_attack,
     nondamaging_attack,
@@ -495,15 +493,8 @@ def active_ability_button(ability_type):
             )
             extra_buttons.append(
                 crit_damage_button(
-                    "@{weapon_" + i + "_total_damage_dice}",
+                    "@{weapon_" + i + "_total_damage}",
                     "crit_" + i,
-                    " - @{weapon_" + i + "_name}",
-                )
-            )
-            extra_buttons.append(
-                glance_damage_button(
-                    "@{weapon_" + i + "_total_damage_modifier}",
-                    "glance_" + i,
                     " - @{weapon_" + i + "_name}",
                 )
             )

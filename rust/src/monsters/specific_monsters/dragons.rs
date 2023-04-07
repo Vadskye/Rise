@@ -1,12 +1,10 @@
 use crate::core_mechanics::abilities::{
     AbilityExtraContext, AbilityTag, AreaSize, AreaTargets, Cooldown, Targeting,
 };
-use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, DebuffEffect, SimpleDamageEffect,
-};
-use crate::core_mechanics::attacks::{Attack, AttackEffect};
+use crate::core_mechanics::attacks::attack_effect::{AttackEffectDuration, DebuffEffect};
+use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Size, SpecialDefenseType, SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
@@ -16,7 +14,7 @@ use crate::monsters::creature_type::CreatureType::Dragon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 
 enum AgeCategory {
     Wyrmling,
@@ -110,7 +108,7 @@ impl AgeCategory {
             is_strike: false,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
-            tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
+            tags: Some(vec![Tag::Ability(AbilityTag::Emotion), Tag::Ability(AbilityTag::Elite)]),
             targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
         });
     }
@@ -147,8 +145,8 @@ impl AgeCategory {
 
     fn weapons(&self) -> Vec<Weapon> {
         let mut weapons = vec![
-            StandardWeapon::MonsterBite.weapon(),
-            StandardWeapon::MonsterClaws.weapon(),
+            StandardWeapon::MultipedalBite.weapon(),
+            StandardWeapon::Claws.weapon(),
         ];
         match self {
             Self::Adult => weapons.push(StandardWeapon::Slam.weapon()),
@@ -480,6 +478,10 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     } else {
         age_category.breath_weapon_cone()
     };
+    let damage_rank = damage_rank(
+        age_category.level() + dragon_type.level_modifier(),
+        age_category.challenge_rating(),
+    );
     return Attack {
         accuracy: 0,
         crit: None,
@@ -489,22 +491,15 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             movement: None,
             suffix: None,
         }),
-        hit: AttackEffect::Damage(
-            SimpleDamageEffect {
-                damage_dice: DamageDice::aoe_damage(damage_rank(
-                    age_category.level() + dragon_type.level_modifier(),
-                    age_category.challenge_rating(),
-                )),
-                damage_types: vec![dragon_type.damage_type()],
-                power_multiplier: 0.5,
-            }
-            .damage_effect(),
-        ),
+        hit: AttackEffect::Damage(SimpleDamageEffect::dr(
+            damage_rank,
+            vec![dragon_type.damage_type()],
+        )),
         is_magical: false,
         is_strike: false,
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
-        tags: None,
+        tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
         targeting,
     };
 }
@@ -514,13 +509,14 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     for (i, modifier) in dragon_type.attribute_modifiers().iter().enumerate() {
         attributes[i] += modifier;
     }
+    // TODO: add more elite abilities
     let mut special_attacks = vec![breath_weapon(dragon_type, age_category)];
     if let Some(f) = age_category.frightful_presence() {
         special_attacks.push(f);
     }
 
     let mut modifiers: Vec<Modifier> =
-        ModifierBundle::Quadrupedal.plus_modifiers(vec![Modifier::Immune(
+        ModifierBundle::Multipedal.plus_modifiers(vec![Modifier::Immune(
             SpecialDefenseType::Damage(dragon_type.damage_type()),
         )]);
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
@@ -546,10 +542,11 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
             MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             MovementSpeed::new(
                 MovementMode::Fly(FlightManeuverability::Poor),
-                SpeedCategory::VeryFast,
+                SpeedCategory::Double,
             ),
         ]),
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
+        role: Role::Warrior,
         senses: None,
         size: age_category.size(),
         trained_skills: None,

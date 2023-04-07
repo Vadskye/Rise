@@ -2,12 +2,12 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.magic_item import MagicItem, generate_table
+from rise.latex.magic_item import MagicItem, Upgrade, generate_table
 from rise.latex.util import latexify
 from rise.latex.tags import add_attune_tag
 
 def create_implement(
-    name, rank, material_type, description, short_description, tags=None
+    name, rank, material_type, description, short_description, tags=None, upgrades=None,
 ):
     return MagicItem(
         name=name,
@@ -17,6 +17,7 @@ def create_implement(
         short_description=short_description,
         is_magical=True,
         tags=add_attune_tag(tags),
+        upgrades=upgrades,
     )
 
 
@@ -392,9 +393,9 @@ def generate_implements():
             material_type="Staff",
             description="""
                 Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
-                When you do, choose a location within \\rngshort range.
+                When you do, choose a location within \\shortrange.
                 The ability takes effect as if you were in the chosen location.
-                In addition, you increase your \\glossterm<fatigue level> by one.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
                 This affects your \\glossterm<line of effect> for the ability, but not your \\glossterm<line of sight> (since you still see from your normal location).
                 % Wording?
                 Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
@@ -404,10 +405,10 @@ def generate_implements():
         ),
         create_implement(
             name="Reaching Staff, Greater",
-            rank=5,
+            rank=7,
             material_type="Staff",
             description="""
-                This implement functions like a \\textit<reaching staff>, except that activating it does not increase your \\glossterm<fatigue level>.
+                This implement functions like a \\textit<reaching staff>, except that activating it does not increase your fatigue level.
             """,
             short_description="Can use abilities from a short distance away",
         ),
@@ -416,15 +417,15 @@ def generate_implements():
     implements += [
         create_implement(
             name="Distant Staff",
-            rank=3,
+            rank=2,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\magical ability with a \\glossterm<range>, you may activate this staff.
-                When you do, you double the spell's range.
-                In addition, you increase your \\glossterm<fatigue level> by two.
+                When you do, you double the spell's range, to a maximum of 180 feet.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
             """,
-            short_description="Can exert to double area size",
+            short_description="Can exert to double range",
         ),
         create_implement(
             name="Distant Staff, Greater",
@@ -432,22 +433,23 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<distant staff>, except that activating it only increases your fatigue level by one.
+                This implement functions like a \\textit<distant staff>, except that activating it does not increase your fatigue level.
             """,
-            short_description="Can exert to double range",
+            short_description="Can double range",
         ),
     ]
 
     implements += [
         create_implement(
             name="Widening Staff",
-            rank=4,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a \\magical ability that affects an area and does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags, you may activate this staff.
+                % TODO: maximum area?
                 When you do, you double the spell's area.
-                In addition, you increase your \\glossterm<fatigue level> by two.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
             """,
             short_description="Can exert to double area size",
         ),
@@ -457,41 +459,9 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                This implement functions like a \\textit<widening staff>, except that activating it only increases your fatigue level by one.
+                This implement functions like a \\textit<widening staff>, except that activating it does not increase your fatigue level.
             """,
-            short_description="Can exert to double area size",
-        ),
-    ]
-    implements += [
-        create_implement(
-            name="Staff of Potency",
-            rank=2,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +2 power",
-        ),
-        create_implement(
-            name="Staff of Potency, Greater",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +4 power",
-        ),
-        create_implement(
-            name="Staff of Potency, Supreme",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +8 power",
+            short_description="Can double area size",
         ),
     ]
 
@@ -537,30 +507,21 @@ def generate_implements():
             rank=2,
             material_type="Staff",
             tags=[],
+            # d2
             description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d6+4 \\glossterm<energy damage>.
+                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 2d6 \\glossterm<energy damage>.
             """,
-            short_description="Deals 2d6+4 damage when foes remove conditions",
-        ),
-        create_implement(
-            name="Hexbite Staff, Greater",
-            rank=4,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 4d6+7 \\glossterm<energy damage>.
-            """,
-            short_description="Deals 4d6+7 damage when foes remove conditions",
-        ),
-        create_implement(
-            name="Hexbite Staff, Supreme",
-            rank=6,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever a creature removes a \\glossterm<condition> that you inflicted on it, it takes 5d10+14 \\glossterm<energy damage>.
-            """,
-            short_description="Deals 5d10+14 damage when foes remove conditions",
+            short_description="Deals 2d6 damage when foes remove conditions",
+            upgrades=[
+                Upgrade(
+                    description="The damage increases to 4d6.",
+                    rank=4,
+                ),
+                Upgrade(
+                    description="The damage increases to 8d6.",
+                    rank=6,
+                ),
+            ],
         ),
     ]
 
@@ -649,20 +610,20 @@ def generate_implements():
     implements += [
         create_implement(
             name="Splitting Staff",
-            rank=2,
+            rank=3,
             material_type="Staff",
             tags=[],
             description="""
                 Whenever you use a non-\\glossterm<strike> \\magical ability that targets a single creature or object and which does not have the \\abilitytag<Sustain> tag, you may activate this staff.
                 When you do, increase the number of targets that the ability affects by one.
-                In addition, you increase your \\glossterm<fatigue level> by one.
+                In addition, you increase your \\glossterm<fatigue level> by one, and you \\glossterm<briefly> cannot activate this effect again.
                 If the spell does not have a defined range, this staff has no effect on it.
             """,
             short_description="Can exert to add an extra target",
         ),
         create_implement(
             name="Splitting Staff, Greater",
-            rank=6,
+            rank=7,
             material_type="Staff",
             tags=[],
             description="""
@@ -679,9 +640,10 @@ def generate_implements():
             material_type="Staff",
             tags=[],
             description="""
-                Whenever you use a \\magical ability that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                During the \\glossterm<action phase> of the next round, the spell takes effect again with the same choices for all decisions, such as targets.
+                Whenever you cast a spell that does not have the \\abilitytag<Sustain> or \\abilitytag<Attune> tags, you may activate this staff.
+                When you do, you increase your \\glossterm<fatigue level> by two, and you \\glossterm<briefly> cannot activate this effect again.
+                During your next action, the spell takes effect again with the same choices for all decisions, such as targets.
+                You cannot use the \\ability<desperate exertion> ability to affect the spell or its echo.
             """,
             short_description="Can exert to repeat effect",
         ),
@@ -776,6 +738,69 @@ def generate_implements():
                 In addition, any non-damaging effects of the attack are unchanged.
             """,
             short_description="Changes energy damage types",
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Brutish",
+            rank=4,
+            material_type="Staff",
+            description="""
+                If your Strength is at least 3, you gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage if you have 3 Str",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        If your Strength is at least 5, the damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage if you have 5 Str",
+                ),
+            ],
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Educated",
+            rank=4,
+            material_type="Staff",
+            description="""
+                If your Intelligence is at least 3, you gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage if you have 3 Int",
+            upgrades=[
+                Upgrade(
+                    rank=6,
+                    description="""
+                        If your Intelligence is at least 5, the damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage if you have 5 Int",
+                ),
+            ],
+        ),
+    ]
+
+    implements += [
+        create_implement(
+            name="Potent",
+            rank=5,
+            material_type="Staff",
+            description="""
+                You gain 1d4 \\glossterm<extra damage> with \\magical abilities.
+            """,
+            short_description="Grants +1d4 damage",
+            upgrades=[
+                Upgrade(
+                    rank=7,
+                    description="""
+                        The damage increases to 1d8.
+                    """,
+                    short_description="Grants +1d8 damage",
+                ),
+            ],
         ),
     ]
 

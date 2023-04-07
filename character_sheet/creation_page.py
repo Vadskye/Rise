@@ -102,13 +102,36 @@ def creation_guidance():
                         option({"value": "animal hybrid"}, "(Animal Hybrid)"),
                         option({"value": "changeling"}, "(Changeling)"),
                         option({"value": "dragon"}, "(Dragon)"),
-                        option({"value": "drakkenfel"}, "(Drakkenfel)"),
                         option({"value": "drow"}, "(Drow)"),
                         option({"value": "dryaidi"}, "(Dryaidi)"),
                         option({"value": "eladrin"}, "(Eladrin)"),
                         option({"value": "orc"}, "(Orc)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
                         option({"value": "tiefling"}, "(Tiefling)"),
+                    ],
+                ),
+            ),
+            creation_step(
+                "Size",
+                """
+                    Set your character's size.
+                    Normally, your size is Medium.
+                    Some special abilities can increase your size.
+                    Changing your size here automatically updates your base speed, Reflex defense, and Stealth skill.
+                """,
+                select(
+                    {"class": "size", "name": "size"},
+                    [
+                        option({"value": ""}, ""),
+                        option({"value": "fine"}, "Fine"),
+                        option({"value": "diminuitive"}, "Diminuitive"),
+                        option({"value": "tiny"}, "Tiny"),
+                        option({"value": "small"}, "Small"),
+                        option({"value": "medium"}, "Medium"),
+                        option({"value": "large"}, "Large"),
+                        option({"value": "huge"}, "Huge"),
+                        option({"value": "gargantuan"}, "Gargantuan"),
+                        option({"value": "colossal"}, "Colossal"),
                     ],
                 ),
             ),
@@ -123,33 +146,62 @@ def creation_guidance():
                 "Attributes",
                 """
                     Choose your character's attributes, not counting any species modifiers.
+                    As you level up, your attributes increase.
+                    You can add those improvements in the second row.
                     If you have special abilities that modify your attributes, you can add those on the <b>Modifiers</b> tab.
                 """,
-                flex_row(
-                    {"class": "attributes"},
-                    [
-                        labeled_number_input(
-                            "Str", input_attributes={"name": f"strength_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Dex", input_attributes={"name": f"dexterity_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Con",
-                            input_attributes={"name": f"constitution_at_creation"},
-                        ),
-                        labeled_number_input(
-                            "Int",
-                            input_attributes={"name": f"intelligence_at_creation"},
-                        ),
-                        labeled_number_input(
-                            "Per", input_attributes={"name": f"perception_at_creation"}
-                        ),
-                        labeled_number_input(
-                            "Wil", input_attributes={"name": f"willpower_at_creation"}
-                        ),
-                    ],
-                ),
+                [
+                    flex_row(
+                        {"class": "attributes"},
+                        [
+                            labeled_number_input(
+                                "Str", input_attributes={"name": f"strength_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Dex", input_attributes={"name": f"dexterity_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Con",
+                                input_attributes={"name": f"constitution_at_creation"},
+                            ),
+                            labeled_number_input(
+                                "Int",
+                                input_attributes={"name": f"intelligence_at_creation"},
+                            ),
+                            labeled_number_input(
+                                "Per", input_attributes={"name": f"perception_at_creation"}
+                            ),
+                            labeled_number_input(
+                                "Wil", input_attributes={"name": f"willpower_at_creation"}
+                            ),
+                        ],
+                    ),
+                    flex_row(
+                        {"class": "attribute-scaling"},
+                        [
+                            labeled_number_input(
+                                "+Str", input_attributes={"name": f"strength_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Dex", input_attributes={"name": f"dexterity_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Con",
+                                input_attributes={"name": f"constitution_level_scaling"},
+                            ),
+                            labeled_number_input(
+                                "+Int",
+                                input_attributes={"name": f"intelligence_level_scaling"},
+                            ),
+                            labeled_number_input(
+                                "+Per", input_attributes={"name": f"perception_level_scaling"}
+                            ),
+                            labeled_number_input(
+                                "+Wil", input_attributes={"name": f"willpower_level_scaling"}
+                            ),
+                        ],
+                    ),
+                ],
             ),
             creation_step(
                 "Base class",
@@ -173,8 +225,14 @@ def creation_guidance():
                         option({"value": "warlock"}, "Warlock"),
                         option({"value": "wizard"}, "Wizard"),
                         option({"value": "dragon"}, "(Dragon)"),
-                        option({"value": "monster"}, "(Monster)"),
+                        option({"value": "harpy"}, "(Harpy)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
+                        option({"value": "brute"}, "(Monster - Brute)"),
+                        option({"value": "leader"}, "(Monster - Leader)"),
+                        option({"value": "mystic"}, "(Monster - Mystic)"),
+                        option({"value": "skirmisher"}, "(Monster - Skirmisher)"),
+                        option({"value": "sniper"}, "(Monster - Sniper)"),
+                        option({"value": "warrior"}, "(Monster - Warrior)"),
                     ],
                 ),
             ),
@@ -290,7 +348,7 @@ def insight_points_step():
         f"""
             Spend your character's insight points.
             You can use this section to track what you spent insight points on.
-            If you spend insight points to learn an additional standard special ability, such as a spell or maneuver, you can record that as a moidifer in the <b>Modifiers</b> tab.
+            If you spend insight points to learn an additional standard special ability, such as a spell or maneuver, you can record that as a modifer in the <b>Modifiers</b> tab.
             That will keep the number listed in the "Abilities Known" section of the <b>Identity</b> tab accurate for you.
             <br>
             The specific effects of abilities you learn with insight points can be tracked in the <b>Abilities</b> tab if you want to have a button representing the ability, or in the <b>Identity</b> tab if you don't need that.

@@ -14,7 +14,9 @@
         width: 20em;
     }
 
-    .attributes {
+    .attributes, .attribute-scaling {
+        margin-top: 0;
+        margin-bottom: 0;
         justify-content: space-between;
     }
 
@@ -31,19 +33,17 @@
         }
     }
 
-    .inline-number {
-        cursor: inherit;
-        padding-bottom: 2px;
-        text-align: center;
-        width: 1.5em;
-    }
-
     .base-class {
-        width: 8em;
+        // Needs to be long enough for "(Monster - Skirmisher)"
+        width: 13em;
     }
 
     .species {
         width: 10em;
+    }
+
+    .size {
+        width: 8em;
     }
 
     .skill-row {

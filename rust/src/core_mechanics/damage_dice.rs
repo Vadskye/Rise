@@ -1,12 +1,16 @@
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageDice {
     count: i32,
     increments: i32,
+    maximized: bool,
     size: i32,
 }
 
 impl DamageDice {
     // Commonly used damage dice for weapon and spell definitions
+    pub fn d3() -> Self {
+        return Self::new(2);
+    }
     pub fn d4() -> Self {
         return Self::new(3);
     }
@@ -26,6 +30,7 @@ impl DamageDice {
             return DamageDice {
                 count: increments - 8,
                 increments,
+                maximized: false,
                 size: 10,
             };
         }
@@ -52,24 +57,41 @@ impl DamageDice {
         return DamageDice {
             count,
             increments,
+            maximized: false,
             size,
         };
     }
 
+    pub fn new_maximizable(increments: i32, maximized: bool) -> DamageDice {
+        let mut new_die = Self::new(increments);
+        new_die.maximized = maximized;
+        return new_die;
+    }
+
     pub fn add(&self, increments: i32) -> DamageDice {
-        Self::new(self.increments + increments)
+        return Self::new_maximizable(self.increments + increments, self.maximized);
     }
 
     pub fn to_string(&self) -> String {
         if self.size == 1 {
             return "1".to_string();
+        } else if self.maximized {
+            return format!("{}", self.count * self.size);
         } else {
-            return format!("{}d{}", self.count, self.size);
+            return format!("{}d{}", self.count, self.size,);
         }
     }
 
     pub fn average_damage(&self) -> f64 {
-        return ((self.count * (self.size + 1)) as f64) / 2.0;
+        if self.maximized {
+            return (self.count * self.size) as f64;
+        } else {
+            return ((self.count * (self.size + 1)) as f64) / 2.0;
+        }
+    }
+
+    pub fn maximize(&mut self) {
+        self.maximized = true;
     }
 
     pub fn aoe_damage(rank: i32) -> Self {
@@ -77,7 +99,7 @@ impl DamageDice {
     }
 
     pub fn single_target_damage(rank: i32) -> Self {
-        return Self::d8().add(rank - 1);
+        return Self::d10().add(rank - 1);
     }
 }
 

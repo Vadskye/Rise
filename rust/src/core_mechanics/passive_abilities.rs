@@ -1,4 +1,4 @@
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct PassiveAbility {
     pub description: String,
     pub is_magical: bool,
@@ -12,11 +12,7 @@ impl PassiveAbility {
                 \\parhead<{name}>{magical} {description}
             ",
             description = self.description,
-            magical = if self.is_magical {
-                "[\\sparkle]"
-            } else {
-                ""
-            },
+            magical = if self.is_magical { "[\\sparkle]" } else { "" },
             name = self.name,
         );
     }
@@ -26,8 +22,7 @@ pub enum StandardPassiveAbility {
     Amphibious,
     Animated,
     ConditionRemoval(i32),
-    TwoActions,
-    ThreeActions,
+    EliteActions,
     Undead,
 }
 
@@ -56,15 +51,10 @@ impl StandardPassiveAbility {
                     name: "Condition Removal".to_string(),
                 };
             },
-            Self::ThreeActions => PassiveAbility {
-                description: "The $name can take three standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
+            Self::EliteActions => PassiveAbility {
+                description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),
                 is_magical: false,
-                name: "Multiple Actions".to_string(),
-            },
-            Self::TwoActions => PassiveAbility {
-                description: "The $name can take two standard actions each round. It cannot use the same ability or weapon twice in the same round.".to_string(),
-                is_magical: false,
-                name: "Multiple Actions".to_string(),
+                name: "Elite Actions".to_string(),
             },
             Self::Undead => PassiveAbility {
                 description: r"

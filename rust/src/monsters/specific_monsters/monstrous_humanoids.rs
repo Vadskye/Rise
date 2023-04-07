@@ -7,7 +7,7 @@ use crate::monsters::creature_type::CreatureType::MonstrousHumanoid;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 use crate::skills::Skill;
 
 struct FullMonstrousHumanoidDefinition {
@@ -20,6 +20,7 @@ struct FullMonstrousHumanoidDefinition {
     modifiers: Option<Vec<Modifier>>,
     movement_speeds: Option<Vec<MovementSpeed>>,
     name: String,
+    role: Role,
     senses: Option<Vec<Sense>>,
     size: Size,
     trained_skills: Option<Vec<Skill>>,
@@ -39,6 +40,7 @@ impl FullMonstrousHumanoidDefinition {
             modifiers: self.modifiers,
             movement_speeds: self.movement_speeds,
             name: self.name,
+            role: self.role,
             senses: self.senses,
             size: self.size,
             trained_skills: self.trained_skills,
@@ -71,13 +73,14 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Minotaur".to_string(),
+        role: Role::Brute,
         senses: None,
         size: Size::Large,
         trained_skills: Some(vec![
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MonsterGore.weapon(),
+            StandardWeapon::MultipedalGore.weapon(),
         ],
     }.monster()));
 
@@ -99,6 +102,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         ]),
         movement_speeds: None,
         name: "Choker".to_string(),
+        role: Role::Skirmisher,
         senses: None,
         size: Size::Medium,
         trained_skills: Some(vec![
@@ -160,6 +164,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Hill Giant".to_string(),
+                role: Role::Brute,
                 senses: None,
                 size: Size::Huge,
                 trained_skills: Some(vec![]),
@@ -190,6 +195,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Stone Giant".to_string(),
+                role: Role::Warrior,
                 senses: None,
                 size: Size::Gargantuan,
                 trained_skills: Some(vec![]),
@@ -213,6 +219,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
         modifiers: Option<Vec<Modifier>>,
         movement_speeds: Option<Vec<MovementSpeed>>,
         name: String,
+        role: Role,
         senses: Option<Vec<Sense>>,
         trained_skills: Option<Vec<Skill>>,
     }
@@ -229,6 +236,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: self.modifiers,
                 movement_speeds: self.movement_speeds,
                 name: self.name,
+                role: self.role,
                 senses: self.senses,
                 trained_skills: self.trained_skills,
 
@@ -275,6 +283,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Ogre Ganger".to_string(),
+                role: Role::Brute,
                 senses: None,
                 trained_skills: None,
             }.monster(),
@@ -292,6 +301,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Ogre Menace".to_string(),
+                role: Role::Brute,
                 senses: None,
                 trained_skills: Some(vec![Skill::Intimidate]),
             }.monster(),
@@ -310,10 +320,11 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     // TODO: is pyromancy the right school?
                     Modifier::Attack(StandardAttack::Firebolt(2).attack()),
                     Modifier::Attack(StandardAttack::Ignition(2).attack()),
-                    Modifier::Attack(StandardAttack::Inferno(2).attack()),
+                    Modifier::Attack(StandardAttack::Pyroclasm(2).attack()),
                 ]),
                 movement_speeds: None,
                 name: "Ogre Mage".to_string(),
+                role: Role::Sniper,
                 senses: None,
                 trained_skills: None,
             }.monster(),
@@ -334,6 +345,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                 modifiers: None,
                 movement_speeds: None,
                 name: "Ogre Skullclaimer".to_string(),
+                role: Role::Brute,
                 senses: None,
                 trained_skills: Some(vec![Skill::Intimidate]),
             }.monster(),

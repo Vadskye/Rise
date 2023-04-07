@@ -105,7 +105,9 @@ def defensive_statistics():
         [
             div({"class": "section-header"}, "Defensive Statistics"),
             stat_row("hit_points", "HP"),
+            stat_row("base_hit_points_level", "Level for base HP"),
             stat_row("damage_resistance", "DR"),
+            stat_row("base_damage_resistance_level", "Level for base DR"),
             stat_row("Armor defense"),
             stat_row("Fortitude"),
             stat_row("Reflex"),
@@ -120,9 +122,9 @@ def offensive_statistics():
         [
             div({"class": "section-header"}, "Offensive Statistics"),
             stat_row("Accuracy"),
-            stat_row("magical_damage_dice", "Magical strike +d"),
-            stat_row("mundane_damage_dice", "Mundane strike +d"),
-            stat_row("Power"),
+            stat_row("accuracy_with_strikes", "Bonus accuracy with strikes"),
+            stat_row("Magical power"),
+            stat_row("Mundane power"),
         ]
     )
 

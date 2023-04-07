@@ -1,12 +1,12 @@
 use crate::core_mechanics::abilities::AbilityType;
 use crate::core_mechanics::attacks::HasAttacks;
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense};
-use crate::creatures::Creature;
+use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, DicePool, PowerScaling};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use titlecase::titlecase;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttackEffect {
     BriefDurationInstead,
     Custom(AbilityType, String),
@@ -23,45 +23,13 @@ pub enum AttackEffect {
     VitalWound(VitalWoundEffect),
 }
 
-#[derive(Clone)]
-pub struct SimpleDamageEffect {
-    pub damage_dice: DamageDice,
-    pub damage_types: Vec<DamageType>,
-    pub power_multiplier: f64,
-}
-
-impl SimpleDamageEffect {
-    pub fn damage_effect(&self) -> DamageEffect {
-        return DamageEffect {
-            // from self
-            damage_dice: self.damage_dice.clone(),
-            damage_types: self.damage_types.clone(),
-            power_multiplier: self.power_multiplier,
-
-            // default values
-            damage_modifier: 0,
-            extra_defense_effect: None,
-            lose_hp_effect: None,
-            take_damage_effect: None,
-            vampiric_healing: None,
-        };
-    }
-
-    // fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
-    //     return self
-    //         .damage_effect()
-    //         .description(attacker, is_magical, is_strike);
-    // }
-}
-
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageEffect {
     pub extra_defense_effect: Option<(Defense, AttackTriggeredEffect)>,
-    pub damage_dice: DamageDice,
+    pub base_dice: DicePool,
+    pub power_scalings: Vec<PowerScaling>,
     pub damage_types: Vec<DamageType>,
-    pub damage_modifier: i32,
     pub lose_hp_effect: Option<AttackTriggeredEffect>,
-    pub power_multiplier: f64,
     pub take_damage_effect: Option<AttackTriggeredEffect>,
     pub vampiric_healing: Option<HealingEffect>,
 }
@@ -81,6 +49,21 @@ impl DamageEffect {
         return AbilityType::Normal;
     }
 
+    pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> DicePool {
+        let mut dice_pool = self
+            .base_dice
+            .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
+        if is_strike {
+            dice_pool.add_increments(attacker.calc_total_modifier(ModifierType::StrikeDamageDice));
+        }
+        if attacker.is_elite() {
+            // We don't use `multiplier`, because this is separate from any
+            // attack-specific damage multipliers.
+            dice_pool = dice_pool.add_dice(dice_pool.dice.clone());
+        }
+        return dice_pool;
+    }
+
     fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
         let extra_defense_effect = if let Some(ref effect) = self.extra_defense_effect {
             format!(
@@ -97,7 +80,7 @@ impl DamageEffect {
         let take_damage_effect = if let Some(ref effect) = self.take_damage_effect {
             format!(
                 "
-                    Each creature damaged by this attack is {effect}
+                    Each damaged creature is {effect}
                 ",
                 effect = effect.description(),
             )
@@ -129,24 +112,14 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let damage_modifier =
-            self.damage_modifier + (attacker.calc_power() as f64 * self.power_multiplier) as i32;
-        let mut damage_types = self.damage_types.clone();
+        let mut damage_types: Vec<DamageType> = self.damage_types.clone();
         damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         return format!(
             "
-                {damage_dice}{damage_modifier} {damage_types} damage.
+                {dice_pool} {damage_types} damage.
                 {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
-            damage_dice = self
-                .damage_dice
-                .add(attacker.calc_damage_increments(is_strike, is_magical))
-                .to_string(),
-            damage_modifier = if damage_modifier == 0 {
-                "".to_string()
-            } else {
-                latex_formatting::modifier(damage_modifier)
-            },
+            dice_pool = self.calc_damage_dice(attacker, is_magical, is_strike).to_string(),
             damage_types =
                 latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
             extra_defense_effect = extra_defense_effect.trim(),
@@ -157,9 +130,15 @@ impl DamageEffect {
         .trim()
         .to_string();
     }
+
+    pub fn except<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> DamageEffect {
+        let mut damage_effect = self.clone();
+        f(&mut damage_effect);
+        return damage_effect;
+    }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DamageOverTimeEffect {
     pub can_remove_with_dex: bool,
     pub damage: DamageEffect,
@@ -191,7 +170,7 @@ impl DamageOverTimeEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DebuffEffect {
     pub debuffs: Vec<Debuff>,
     pub duration: AttackEffectDuration,
@@ -208,19 +187,29 @@ impl DebuffEffect {
         let debuff_text =
             latex_formatting::join_string_list(&debuff_texts).unwrap_or("".to_string());
         let immune_text = if self.immune_after_effect_ends {
-            " After this effect ends, the target becomes immune to this effect until it takes a \\glossterm{short rest}."
+            " After this effect ends, the target becomes immune to this effect until it finishes a \\glossterm{short rest}."
         } else {
             ""
         };
         if self.duration == AttackEffectDuration::Brief {
-            return format!("{} {}.{}", self.duration.description(), debuff_text, immune_text);
+            return format!(
+                "{} {}.{}",
+                self.duration.description(),
+                debuff_text,
+                immune_text
+            );
         } else {
-            return format!("{} {}.{}", debuff_text, self.duration.description(), immune_text);
+            return format!(
+                "{} {}.{}",
+                debuff_text,
+                self.duration.description(),
+                immune_text
+            );
         }
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct DebuffInsteadEffect {
     pub debuffs: Vec<Debuff>,
     pub instead_of: Debuff,
@@ -238,7 +227,7 @@ impl DebuffInsteadEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct HealingEffect {
     pub healing_dice: DamageDice,
     pub is_magical: bool,
@@ -251,16 +240,16 @@ impl HealingEffect {
             "{dice}{modifier} hit points.",
             dice = self
                 .healing_dice
-                .add(healer.calc_damage_increments(false, self.is_magical))
+                // .add(healer.calc_damage_increments(false))
                 .to_string(),
             modifier = latex_formatting::modifier(
-                (self.power_multiplier * healer.calc_power() as f64).floor() as i32
+                (self.power_multiplier * healer.calc_power(self.is_magical) as f64).floor() as i32
             ),
         );
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct PoisonEffect {
     pub stage1: Vec<Debuff>,
     pub stage3_debuff: Option<Vec<Debuff>>,
@@ -302,7 +291,7 @@ impl PoisonEffect {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct VitalWoundEffect {
     pub special_effect: Option<String>,
 }
@@ -316,7 +305,7 @@ impl VitalWoundEffect {
     }
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum AttackEffectDuration {
     Brief,
     Condition,
@@ -341,19 +330,6 @@ impl AttackEffect {
         }
     }
 
-    pub fn area_damage(rank: i32, damage_types: Vec<DamageType>) -> Self {
-        return Self::Damage(DamageEffect {
-            extra_defense_effect: None,
-            damage_dice: DamageDice::aoe_damage(rank),
-            damage_modifier: 0,
-            damage_types,
-            lose_hp_effect: None,
-            power_multiplier: 0.5,
-            take_damage_effect: None,
-            vampiric_healing: None,
-        });
-    }
-
     pub fn except_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> AttackEffect {
         let mut attack_effect = self.clone();
         match attack_effect {
@@ -368,11 +344,10 @@ impl AttackEffect {
     pub fn from_weapon(weapon: Weapon) -> Self {
         return Self::Damage(DamageEffect {
             extra_defense_effect: None,
-            damage_dice: weapon.damage_dice,
-            damage_modifier: 0,
-            damage_types: weapon.damage_types,
+            base_dice: weapon.damage_dice.clone(),
+            damage_types: weapon.damage_types.clone(),
             lose_hp_effect: None,
-            power_multiplier: 1.0,
+            power_scalings: weapon.power_scalings().clone(),
             take_damage_effect: None,
             vampiric_healing: None,
         });
@@ -485,11 +460,12 @@ impl AttackEffectDuration {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttackTriggeredEffect {
     Custom(AbilityType, String),
     Debuff(DebuffEffect),
     Grappled,
+    RepeatDamage,
     Poison(PoisonEffect),
     VitalWound(VitalWoundEffect),
 }
@@ -507,6 +483,8 @@ impl AttackTriggeredEffect {
             Self::Custom(_, d) => d.to_string(),
             Self::Debuff(e) => e.description(),
             Self::Grappled => "\\grappled by the $name.".to_string(),
+            // TODO: is this formatted correctly??
+            Self::RepeatDamage => "takes that damage again during its next action".to_string(),
             Self::Poison(e) => e.description(),
             Self::VitalWound(e) => e.description(),
         }
