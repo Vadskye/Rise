@@ -32,11 +32,15 @@ For details, see \pcref{Archetypes}.
 \glossdef{archetype rank} Each ability from an \glossterm{archetype} has a minimum rank required to gain the ability.
 For details, see \pcref{Archetype Ranks}.
 
+\glossdef{area} Many abilities affect a broad area.
+There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
+For details, see \pcref{Area}.
+
 \glossdef{armor} Armor is a form of equipment that protects your body from harm.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
 For details, see \pcref{Armor}.
 
-\glossterm{astral beacon} An area with an astral beacon is easier to \glossterm{teleport} to using long-distance teleportation abilities.
+\glossdef{astral beacon} An area with an astral beacon is easier to \glossterm{teleport} to using long-distance teleportation abilities.
 For details, see \pcref{Astral Beacons}.
 
 \glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
@@ -103,7 +107,15 @@ For details, see \pcref{Casting Components}.
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
 
-\glossdef{chain} See \pcref{Electromancy}.
+\glossdef{chain} An ability can specify that it chains a certain number of times.
+For each time that the spell chains, you may choose an additional secondary target for the spell.
+Each additional target must be within 15 feet of the previous target in the chain, starting with the spell's primary target.
+These additional targets must have \glossterm{line of sight} to you and \glossterm{line of effect} to the previous target in the chain.
+However, they do not need \glossterm{line of effect} to you, and they can be beyond the ability's original range.
+
+Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the ability in the exact same way as the primary target.
+Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
+You can't chain off of the ground.
 
 \glossdef{check}[checks] A check is a d10 roll required to accomplish an action that has a chance of failure that is not an attack.
 If the result of your roll, including your modifier, is high enough, you succeed.
@@ -148,8 +160,8 @@ For details, see \pcref{Constitution}.
 For details, see \pcref{Cover}.
 
 \glossdef{critical hit}[critical hits] When you make an attack, if your result beat the target's defense by 10 or more, you get a critical hit.
-Unless otherwise noted, damaging attacks deal double damage on a critical hit.
-Some abilities have special effects on critical hits.
+Unless otherwise noted, damaging attacks roll twice as many damage dice on a critical hit.
+For details, see \pcref{Critical Hits}.
 
 \glossdef{critical success} When you make a check, if your result beat the \glossterm{difficulty value} by 10 or more, you get a critical success.
 Some abilities have special effects on critical successes.
@@ -218,7 +230,14 @@ Unless otherwise noted, all \magical abilities with a duration can be dismissed,
 This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
 You can dismiss abilities as a \glossterm{free action} (see \pcref{Dismissal}).
 
+\glossdef{dual wield}[dual wielding] If you wield two weapons at once, you can attack with both simultaneously whenever you make a \glossterm{strike}.
+For details, see \pcref{Dual Wielding}.
+
 \glossdef{elite} Elite monsters are much more dangerous than standard monsters.
+For details, see \pcref{Elite Monsters}.
+
+\glossdef{elite action}[elite actions] Elite monsters can take a special extra action every round called an elite action.
+Every elite monster has at least one special ability which requires an elite action to use.
 For details, see \pcref{Elite Monsters}.
 
 \glossdef{emanation} An emanation is a type of area that an ability can have (see \pcref{Area Types}).
@@ -247,6 +266,17 @@ Some class abilities grant proficiency with exotic weapons.
 \glossdef{explode}[explosions] When you roll a 10 on an \glossterm{attack roll}, the die can explode.
 If it does, you roll it again and add the two results together to determine the total.
 For details, see \pcref{Exploding Attacks}.
+
+\glossdef{extra damage} Some abilities add extra damage to your damaging attacks, or cause creatures to suffer extra damage from any incoming damaging attacks.
+Extra damage applies when damaging attacks hit or get a \glossterm{glancing blow}.
+On a glancing blow, extra damage is halved just like the attack's base damage.
+
+Most sources of extra damage do not have a specific damage type.
+The extra damage normally has the same damage type as the attack's base damage.
+If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
+
+Some damaging abilities affect extra damage differently.
+For example, the \ability{enraged strike} ability doubles the \glossterm{weapon damage} of the attack, but does not double any extra damage applied to the attack.
 
 \glossdef{failure chance}[failure chance] If you have a failure chance with an \glossterm{attack}, you have a random chance to miss with the attack regardless of the result of your attack roll.
 If you have multiple failure chances, only the highest one applies.
@@ -290,10 +320,9 @@ You cannot use the same hand for two different purposes in the same \glossterm{p
 
 \glossdef{glances} When a creature glances another creature with an attack, it means that the attacker scored a \glossterm{glancing blow}.
 
-\glossdef{glancing blow} When you miss on an attack by 2 or less, it is called a glancing blow.
-whenever you get a glancing blow with a damaging attack, you roll no damage dice.
-You still add your power to the attack.
-In addition, some abilities have specific effects when you get a glancing blow, as indicated in their descriptions.
+\glossdef{glancing blow}[Glancing blow] When you miss on any attack by 2 or less, it is called a glancing blow.
+In addition, many attacks that affect an area inflict a glancing blow even if they miss by more than 2.
+Whenever you get a glancing blow with a damaging attack, you deal half damage.
 For details, see \pcref{Glancing Blows}.
 
 \glossdef{glide speed} A creature with a glide speed can glide through the air.
@@ -303,11 +332,12 @@ For details, see \pcref{Gliding}.
 \glossdef{heavy undergrowth} A space overrun with thick bushes, vines, and similar natural obstacles has heavy undergrowth.
 Heavy undergrowth provides \glossterm{concealment} and is considered \glossterm{difficult terrain}.
 
-\glossdef{heavy weapon} A heavy weapon is a type of \glossterm{weapon} that requires two hands to wield properly.
-For details, see \pcref{Weapon Usage Classes}.
-
 \glossdef{heavyweight} A heavyweight object has a \glossterm{weight category} that is one category larger than the object's \glossterm{size category}.
 For details, see \pcref{Weight Categories}.
+
+\glossdef{height limit} Some abilities have a height limit.
+A height limit defines your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+This is common for flying creatures (see \pcref{Flight}).
 
 \glossdef{hit point} Your hit points measure how hard you are to seriously injure or kill.
 You lose hit points when you take damage.
@@ -357,9 +387,6 @@ For details, see \pcref{Legacy Items}.
 \glossdef{light undergrowth} A space with passable bushes, vines, and similar natural obstacles has light undergrowth.
 Light undergrowth provides \glossterm{concealment}.
 
-\glossdef{light weapon}[light weapons] A light weapon is a type of \glossterm{weapon} that is relatively small and easy to use.
-For details, see \pcref{Weapon Usage Classes}.
-
 \glossdef{lightweight} A lightweight object has a \glossterm{weight category} that is one category smaller than the object's \glossterm{size category}.
 For details, see \pcref{Weight Limits}.
 
@@ -395,9 +422,13 @@ For details, see \pcref{Stacking Rules}.
 There are four magic sources: arcane, divine, nature, and pact.
 Sorcerers and wizards cast arcane spells, clerics and paladins cast divine spells, druids cast nature spells, and warlocks cast pact spells.
 
-\glossdef{magical}[Magical] A magical ability is an ability whose origin derives from magic.
+\glossdef{magical} A magical ability is an ability whose origin derives from magic.
 Examples include \glossterm{spells}, a dragon's ability to fly, and a paladin's ability to smite foes.
 For details, see \pcref{Magical Abilities}.
+
+\glossdef{magical power} Your magical power is your \glossterm{power} with \magical abilities.
+It is typically equal to half your level \add your Willpower.
+For details, see \pcref{Power}.
 
 \glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to through particular combat styles.
 For details, see \pcref{Combat Styles}.
@@ -407,9 +438,9 @@ There are three types of maneuverability: good, average, and poor.
 Unless otherwise stated, a creature with a fly speed has aveage maneuverability.
 For details, see \pcref{Flying Maneuverability}.
 
-% TODO: ``medium'' is an annoying name
-\glossdef{medium weapon} A medium weapon is a type of \glossterm{weapon} that can be wielded in either one or two hands.
-For details, see \pcref{Weapon Usage Classes}.
+\glossdef{manufactured weapon} A manufactured weapon is a \glossterm{weapon} created by someone.
+A \glossterm{natural weapon} is not a manufactured weapon. 
+Some abilities affect or require manufactured weapons instead of natural weapons.
 
 \glossdef{melee}[Melee] A melee attack is an attack using your body or a weapon that does not leave your grasp.
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
@@ -443,7 +474,7 @@ The most common mode is a \glossterm{land speed}.
 For details, see \pcref{Movement Modes}.
 
 \glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
-During the movement phase, creatures can \glossterm{move} and take \glossterm{move actions}.
+During the movement phase, creatures can make \glossterm{movements} (see \pcref{Movement and Positioning}.
 The movement phase is followed by the \glossterm{action phase}.
 
 \glossdef{multiclass} A multiclass character can gain access to \glossterm{archetypes} and other abilities from multiple classes.
@@ -453,6 +484,10 @@ For details, see \pcref{Multiclass Characters}.
 Mundane abilities have some form of natural explanation and do not fundamentally originate from a magical source.
 Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
 Unless otherwise indicated, all abilities are mundane in nature.
+
+\glossdef{mundane power} Your mundane power is your \glossterm{power} with \glossterm{mundane} abilities.
+It is typically equal to half your level \add your Strength.
+For details, see \pcref{Power}.
 
 \glossdef{mystic sphere} A mystic sphere is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
 For details, see \pcref{Mystic Spheres}.
@@ -516,9 +551,6 @@ If you try to use armor you are not proficient with, it is less effective and yo
 \glossdef{projectile} A projectile is an object fired from a weapon at a target.
 Arrows and bolts are projectiles.
 
-\glossdef{projectile weapon} A projectile weapon is a weapon designed to fire \glossterm{projectiles}.
-For details about how to attack with projectile weapons, see \pcref{Projectile Strike}.
-
 \glossdef{push}[pushed] A push is a type of \glossterm{forced movement}.
 It represents being pushed by a constant force.
 If a creature being pushed encounters an obstacle, it stops moving with no negative consequences.
@@ -527,15 +559,17 @@ A push movement is always a single straight line.
 
 \glossdef{range} The range of an ability determines how far away it can be used.
 Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+There are five standard ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
 For details, see \pcref{Range}.
 
-\glossdef{range limits} Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
+\glossdef{range limit}[range limits] Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
 The first number indicates the maximum range for a weapon's \glossterm{close range}.
 The second number indicates the maximum range for a weapon's \glossterm{long range}.
 For details, see \pcref{Weapon Range Limits}.
 
-\glossdef{rank} Spells and rituals have a rank.
-The rank defines the minimum \glossterm{archetype rank} you must have to learn and use them.
+\glossdef{rank} Many abilities have a rank.
+This is typically equal to the minimum \glossterm{archetype rank} you need to learn or use the ability.
+For abilities with no explicitly defined rank, use one third of the minimum level required to learn or use the ability (minimum 0).
 
 \glossdef{rare language}[rare languages] Rare languages are languages that are only spoken by rare or distant creatures or cultures.
 They are described in \tref{Rare Languages}.
@@ -579,7 +613,7 @@ For details, see \pcref{Scent}.
 \glossdef{scrying sensor} A scrying sensor is a magical construct created by some magical abilities.
 Scrying sensors are Fine objects resembling a human eye in size and shape, though they are \trait{invisible}.
 Scrying sensors typically float in a fixed position in the air.
-They cannot normally be moved by external forces without destroying the sensor.
+They normally can't be moved by external forces without destroying the sensor.
 Unless otherwise specified, a scrying sensor's visual acuity is the same as that of a normal human, giving it a \plus0 bonus to the Awareness skill and similar checks.
 
 \glossdef{sentient} A sentient creature has an Intelligence of at least \minus5.
@@ -621,7 +655,7 @@ For details, see \pcref{Size Categories}.
 
 \glossdef{speed} Your speed represents the number of feet you can move with a single movement (see \pcref{The Movement Phase}).
 
-\glossdef{spell}[Spell] A spell is a disrete \glossterm{magical} ability with combat-relevant effects.
+\glossdef{spell}[Spell] A spell is a disrete \magical ability with combat-relevant effects.
 For details, see \pcref{Spells}.
 
 \glossdef{spell list} The list of spells you can cast from a particular \glossterm{magic source}.
@@ -649,7 +683,7 @@ For details, see \pcref{Subdual Damage}.
 \glossdef{suppressed}[suppress] A suppressed ability has temporarily ceased to function.
 It has no effect for as long as it remains suppressed.
 Time spent while suppressed counts against the ability's duration, and it may expire while suppressed if it lasts for a specific amount of time.
-Only \glossterm{magical} abilities can be suppressed.
+Only \magical abilities can be suppressed.
 Mundane results of magical abilities that have already occured, such as the water created by a \ritual{create water} ritual, cannot themselves be suppressed, and do not disappear if they enter an area that suppresses magical abilities.
 
 \glossdef{sustain}[sustained] Some abilities last as long as you sustain them.
@@ -676,6 +710,8 @@ A \glossterm{strike} is a targeted ability, and so is a spell or other special a
 \glossdef{telepathy} A creature with telepathy can mentally communicate with other creatures within a given range.
 For details, see \pcref{Telepathy}.
 
+\glosssynonym{teleports}
+\glosssynonym{teleported}
 \glossdef{teleportation}[teleport] A creature or object that is teleported instantly leaves one location and arrives at another.
 Unless otherwise specified, teleporation requires \glossterm{line of sight}, \glossterm{line of effect}, and an unoccupied destination on stable ground.
 For deatils, see \pcref{Teleportation}.
@@ -685,7 +721,12 @@ For details about attacking with thrown weapons, see \pcref{Thrown Strike}.
 
 \glossdef{time lock} See \pcref{Chronomancy}.
 
-\glossdef{trained} If you are trained in a \glossterm{skill}, you have learned how to use it well.
+\glossdef{touch} You can touch an adjacent creature if it is an \glossterm{ally} or if you beat its Reflex defense (see \pcref{Touch}).
+
+% TODO: define standard trap rules
+% \glossdef{trap}
+
+\glossdef{trained skill} If you are trained in a \glossterm{skill}, you have learned how to use it well.
 Your modifier with a trained skill is equal to 3 \add the higher of its associated attribute (if any) and half your level.
 For details, see \pcref{Trained Skills}.
 
@@ -706,13 +747,8 @@ Some abilities can only affect unattended items.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
 For details, see \pcref{Undergrowth}.
 
-\glossdef{untrained} If you are untrained in a \glossterm{skill}, you have no particular ability with it.
-You are untrained with all skills by default.
-Your modifier with a trained skill is equal to half of its associated attribute (if any).
-For details, see \pcref{Trained Skills}.
-
-\glossdef{usage class} The \glossterm{usage class} of a weapon or armor is a measure of how much effort it takes to use the item.
-For details, see \pcref{Weapon Usage Classes} and \pcref{Armor Usage Classes}.
+\glossdef{usage class} The \glossterm{usage class} of armor is a measure of how much effort it takes to use it.
+For details, see \pcref{Armor Usage Classes}.
 
 \glossdef{verbal components}[verbal] Verbal components are words required to cast most spells.
 For details, see \pcref{Casting Components}.
@@ -729,9 +765,18 @@ For details, see \pcref{Vulnerable}.
 \glossdef{wall} A wall is an area shape that an ability can have (see \pcref{Area Shapes}).
 A wall-shaped area has a length and height, but its width is not measured in squares.
 
+\glossdef{weak strike} When you make a weak strike, you roll your \glossterm{weapon damage} twice and take the lower result.
+You do not reroll any \glossterm{extra damage} that the strike deals.
+For details, see \pcref{Weak Strikes}.
+
 \glossdef{weapon}[weapons] A weapon is an object used to inflict damage.
 Some creatures can treat parts of their body as weapons.
 For details, see \pcref{Weapons}.
+
+\glossdef{weapon damage} Your weapon damage is the damage you deal with weapons.
+Typically, weapon damage is dealt by \glossterm{strikes} (see \pcref{Strikes}).
+You gain a \plus1d bonus to your weapon damage per 2 \glossterm{power} (see \pcref{Power}).
+For details, see \pcref{Weapon Damage}.
 
 \glossdef{weapon group} A weapon group is a category of \glossterm{weapons} with a similar design and fighting style.
 You have proficiency with some number of weapon groups based on your \glossterm{class}.

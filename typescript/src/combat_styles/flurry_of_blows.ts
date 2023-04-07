@@ -2,40 +2,32 @@ import { CombatStyle } from '.';
 
 export const flurryOfBlows: CombatStyle = {
   name: 'Flurry of Blows',
-  shortDescription: 'Attack rapidly at any range.',
+  shortDescription: 'Attack too rapidly for your foes to react.',
 
   maneuvers: [
     {
-      name: 'Twinstrike',
-
-      // roll twice is a little over 2.5 accuracy; not adding power makes this normally
-      // worse than certain strike, but it's better for crit fishing
-      effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
-      `,
-      rank: 1,
-    },
-
-    // roll three times is about 4.5 accuracy
-    {
-      name: 'Triplestrike',
+      name: 'Double Strike',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll twice and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
+        Make two \\glossterm{strikes} with a -1 accuracy penalty.
       `,
       rank: 5,
+    },
+
+    {
+      name: 'Triple Strike',
+
+      effect: `
+        Make three \\glossterm{strikes} with a -1 accuracy penalty.
+      `,
+      rank: 7,
     },
 
     {
       name: 'Rapid Quaff',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Make a \\glossterm{weak strike}.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
@@ -43,59 +35,36 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Desperate Flurry',
-
-      // Two fatigue instead of one fatigue like desperate smash because it also doubles
-      // damage from power
-      effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by two.
-
-        Make two \\glossterm{strikes}.
-        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Desperate Flurry+',
+      name: 'Desperate Double Strike',
 
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make three \\glossterm{strikes}.
-        Your \\glossterm{power} with each strike is halved.
+        Make two \\glossterm{weak strikes}.
+        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
-      rank: 7,
+      rank: 1,
     },
 
-    // TODO: unclear rank
     {
-      name: 'Strike Flurry',
+      name: 'Desperate Triple Strike',
 
       effect: `
-        Make two \\glossterm{strikes}.
-        You do not add your \\glossterm{power} to damage with either strike.
+        After you use this ability, you increase your \\glossterm{fatigue level} by two.
+
+        Make three \\glossterm{strikes}.
+        You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 5,
-    },
-
-    {
-      name: 'Power Flurry',
-
-      effect: `
-        Make two \\glossterm{strikes} with a -2 penalty to \\glossterm{accuracy}.
-        Your \\glossterm{power} is halved with both strikes.
-      `,
-      rank: 3,
     },
 
     {
       name: 'Whirlwind',
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        Your \\glossterm{power} with the strike is halved.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 1,
     },
@@ -104,20 +73,21 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Tripping Whirlwind',
 
       effect: `
-        Make a melee \\glossterm{strike} using a light or medium slashing or bludgeoning weapon.
-        Your \\glossterm{power} with the strike is halved.
+        Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        Each creature damaged by the strike falls \\prone if your attack result beats its Fortitude defense.
+        On a miss, you get a \\glossterm{glancing blow}.
+        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
-      name: 'Whirlwind Flurry',
+      name: 'Double Whirlwind',
 
       effect: `
-        Make two melee \\glossterm{strikes} using a light or medium slashing or bludgeoning weapon against all \\glossterm{enemies} adjacent to you.
-        You take a -2 accuracy penalty with both strikes, and you do not add your \\glossterm{power} to damage with either strike.
+        Make two melee \\glossterm{strikes}.
+        The strikes target all \\glossterm{enemies} adjacent to you.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 7,
     },
@@ -126,18 +96,17 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Barrage',
 
       effect: `
-        Make two ranged \\glossterm{strikes} with a -4 penalty to \\glossterm{accuracy}.
-        Your \\glossterm{power} with both strikes is halved.
+        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon with a -4 penalty to \\glossterm{accuracy}.
         For each previous consecutive round that you used this ability in the same location, you reduce the accuracy penalty by 1.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Shrapnel Burst',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea cone from you.
         This strike costs five projectiles.
       `,
       rank: 3,
@@ -147,7 +116,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Shrapnel Burst+',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\largearea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\largearea cone from you.
         This strike costs ten projectiles.
       `,
       rank: 5,
@@ -157,7 +126,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Volley Fire',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a projectile weapon against each creature in a \\smallarea radius within \\medrange.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
       `,
       rank: 5,
@@ -167,10 +136,10 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Quickdraw',
 
       effect: `
-        You can sheathe any small or medium weapons you wield, then draw one or two small or medium weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike}.
+        You can sheathe any non-\\weapontag{Heavy} weapons you wield, then draw one or two non-\\weapontag{Heavy} weapons into your \\glossterm{free hands}.
+        Then, you can make a \\glossterm{strike} with a -2 accuracy penalty.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -178,17 +147,17 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any weapons you wield, then draw one or two weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike}.
+        Then, you can make a \\glossterm{strike} with a -2 accuracy penalty.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
       name: 'Quickfire',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\glossterm{projectile} weapon.
-        You do not suffer the normal -4 accuracy penalty for using a \\abilitytag{Projectile} weapon against a creature adjacent to you on this attack.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
+        You do not suffer the normal -4 accuracy penalty for using a Projectile weapon against a creature adjacent to you on this attack.
       `,
       rank: 3,
     },
@@ -199,106 +168,88 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
-        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
       `,
       rank: 1,
     },
 
     {
-      name: 'Frenzied Flurry',
+      name: 'Frenzied Multistrike',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you can make an additional \\glossterm{strike}, up to a maximum of three extra strikes.
-        Your \\glossterm{power} with each extra strike is halved.
-        If you \\glossterm{teleport}, your streak of consecutive rounds is broken.
-      `,
-      rank: 7,
-    },
-
-    {
-      name: 'Deathseeking Flurry',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Then, make an additional melee strike against each creature that lost hit points from the first strike.
-        The second strike cannot target any other creatures.
-        You do not add your \\glossterm{power} to damage with either strike.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Deathseeking Flurry+',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Then, make an additional melee strike against each creature that lost hit points from the first strike.
-        The second strike cannot target any other creatures.
+        For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of three extra strikes.
       `,
       rank: 5,
+    },
+
+    {
+      name: 'Deathseeking Double Strike',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        Then, make an additional strike against each creature that lost hit points from the first strike.
+        The second strike cannot target any other creatures.
+      `,
+      rank: 3,
     },
 
     {
       name: 'Static Strike',
 
       effect: `
-        Make a melee strike.
-        Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        If your attack result beats a target's Fortitude defense, you gain a +2 damage bonus with the strike against that target.
-      `,
-      rank: 1,
-      scaling: {
-        3: 'The damage bonus increases to +4.',
-        5: 'The damage bonus increases to +8.',
-        7: 'The damage bonus increases to +16.',
-      },
-    },
-
-    {
-      name: 'Mindbreak Twinstrike',
-
-      effect: `
         Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazed as a \\glossterm{condition}.
+        Damage dealt by the strike is electricity damage in addition to its normal damage types.
+        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
       `,
       rank: 3,
     },
 
     {
-      name: 'Mindshatter Twinstrike',
+      name: 'Static Strike+',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You may reroll the accuracy roll and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Damage dealt by the strike is electricity damage in addition to its normal damage types.
+        Each damaged creature is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
     },
 
     {
-      name: 'Eye-Watering Swiftstrike',
+      name: 'Disorienting Flurry',
+
+      // reroll is about +2 ranks, weak strike dazed would normally be r1, this is
+      // probably strong but maybe okay?
+      effect: `
+        Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
+        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Mental defense.
+      `,
+      rank: 3,
+    },
+
+    {
+      name: 'Disorienting Flurry+',
+
+      // reroll is about +2 ranks, strike stunned would normally be r5, this is
+      // probably strong but maybe okay?
+      effect: `
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        You may reroll the accuracy roll and take the highest result.
+        Each damaged creature is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
+      `,
+      rank: 7,
+    },
+
+    {
+      name: 'Dazzling Flurry',
 
       effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        You do not add your \\glossterm{power} to damage with the strike.
+        Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
         Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
-    },
-
-    {
-      name: 'Blinding Swiftstrike',
-
-      effect: `
-        Make a melee \\glossterm{strike} with a +2 accuracy bonus.
-        You do not add your \\glossterm{power} to damage with the strike.
-        Each creature that loses \\glossterm{hit points} from the strike is \\glossterm{briefly} \\blinded.
-      `,
-      rank: 7,
     },
   ],
 };

@@ -1,9 +1,7 @@
 use std::cmp::max;
 
 use crate::core_mechanics::attacks::Attack;
-use crate::core_mechanics::{
-    Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
-};
+use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
 use crate::monsters::ChallengeRating;
@@ -12,7 +10,7 @@ use std::collections::HashMap;
 
 use super::{HasModifiers, ModifierType};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Creature {
     pub anonymous_modifiers: Vec<Modifier>,
     pub armor: Vec<Armor>,
@@ -33,7 +31,7 @@ pub struct Creature {
     pub weapons: Vec<Weapon>,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum CreatureCategory {
     Character,
     Monster(ChallengeRating),
@@ -107,6 +105,13 @@ impl Creature {
         }
     }
 
+    pub fn is_elite(&self) -> bool {
+        match self.category {
+            CreatureCategory::Character => false,
+            CreatureCategory::Monster(cr) => cr == ChallengeRating::Four,
+        }
+    }
+
     pub fn can_recover(&self) -> bool {
         match self.category {
             CreatureCategory::Character => true,
@@ -117,7 +122,9 @@ impl Creature {
     pub fn rank(&self) -> i32 {
         match self.category {
             CreatureCategory::Character => calculate_standard_rank(self.level),
-            CreatureCategory::Monster(cr) => calculate_standard_rank(self.level) + cr.rank_modifier(),
+            CreatureCategory::Monster(cr) => {
+                calculate_standard_rank(self.level) + cr.rank_modifier()
+            }
         }
     }
 }

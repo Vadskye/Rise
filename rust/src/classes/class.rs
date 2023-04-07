@@ -1,6 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::abilities::PowerProgression;
 use crate::core_mechanics::{Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
@@ -75,7 +74,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 40;
+        let expected_points = 34;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -91,14 +90,6 @@ impl Class {
 
     fn calculate_point_total(&self) -> i32 {
         let custom_modifier = match self {
-            // Martial classes get three free points since their rank 1 abilities are less overloaded
-            // and they rely more on their raw statistics
-            Self::Barbarian => -3,
-            Self::Fighter => -3,
-            Self::Monk => -3,
-            Self::Paladin => -3,
-            Self::Ranger => -3,
-            Self::Rogue => -3,
             // Druids have a couple of weird proficiencies that don't map easily but which are
             // collectively worth a point? But then it feels like they have too many trained skills,
             // and it's hard to get the numbers to add up
@@ -108,18 +99,16 @@ impl Class {
         return
             // 5 points per attunement point
             self.attunement_points() * 5
+            + hp_dr_points(self.damage_resistance())
             // 3 points to get an Armor defense
             + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            // 6 points to get a higher power progression
-            + if self.power_progression().calc_power(1) == 3 { 6 } else { 0 }
+            + hp_dr_points(self.hit_points())
             // 1 point per trained skill
             + self.trained_skills()
-            // 3 points per vital roll bonus
-            + self.vital_rolls() * 3
             // 1 point per armor proficiency
             + (self.armor_proficiencies().usage_classes.len() as i32)
             // 1 point for each weapon proficiency
@@ -132,20 +121,20 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
-            Self::Barbarian => 3,
-            Self::Cleric => 4,
-            Self::Dragon => 3,
-            Self::Druid => 4,
-            Self::Fighter => 3,
-            Self::Harpy => 3,
-            Self::Monk => 4,
-            Self::Oozeborn => 3,
-            Self::Paladin => 3,
-            Self::Ranger => 3,
-            Self::Rogue => 4,
-            Self::Sorcerer => 5,
-            Self::Warlock => 4,
-            Self::Wizard => 5,
+            Self::Barbarian => 2,
+            Self::Cleric => 3,
+            Self::Dragon => 2,
+            Self::Druid => 3,
+            Self::Fighter => 2,
+            Self::Harpy => 2,
+            Self::Monk => 2,
+            Self::Oozeborn => 2,
+            Self::Paladin => 2,
+            Self::Ranger => 2,
+            Self::Rogue => 3,
+            Self::Sorcerer => 4,
+            Self::Warlock => 3,
+            Self::Wizard => 4,
         }
     }
 
@@ -392,6 +381,25 @@ impl Class {
         }
     }
 
+    pub fn damage_resistance(&self) -> i32 {
+        match self {
+            Self::Barbarian => 0,
+            Self::Cleric => 2,
+            Self::Dragon => 2,
+            Self::Druid => 1,
+            Self::Fighter => 0,
+            Self::Harpy => 0,
+            Self::Monk => 4,
+            Self::Oozeborn => 0,
+            Self::Paladin => 3,
+            Self::Ranger => 0,
+            Self::Rogue => 0,
+            Self::Sorcerer => 4,
+            Self::Warlock => 4,
+            Self::Wizard => 3,
+        }
+    }
+
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Barbarian => match defense {
@@ -484,36 +492,58 @@ impl Class {
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
             Self::Barbarian => 5,
-            Self::Cleric => 4,
-            Self::Dragon => 5,
-            Self::Druid => 4,
-            Self::Fighter => 5,
+            Self::Cleric => 3,
+            Self::Dragon => 3,
+            Self::Druid => 3,
+            Self::Fighter => 4,
             Self::Harpy => 4,
-            Self::Monk => 4,
-            Self::Oozeborn => 6,
-            Self::Paladin => 5,
-            Self::Ranger => 5,
-            Self::Rogue => 4,
-            Self::Sorcerer => 4,
-            Self::Warlock => 4,
-            Self::Wizard => 2,
+            Self::Monk => 3,
+            Self::Oozeborn => 5,
+            Self::Paladin => 4,
+            Self::Ranger => 4,
+            Self::Rogue => 3,
+            Self::Sorcerer => 2,
+            Self::Warlock => 3,
+            Self::Wizard => 1,
+        }
+    }
+
+    // Each +1 level to hit points is about 10% more HP
+    // +3 is about 40% more HP
+    // +4 is about 60% more HP
+    pub fn hit_points(&self) -> i32 {
+        match self {
+            Self::Barbarian => 5,
+            Self::Cleric => 2,
+            Self::Dragon => 4,
+            Self::Druid => 2,
+            Self::Fighter => 3,
+            Self::Harpy => 2,
+            Self::Monk => 2,
+            Self::Oozeborn => 5,
+            Self::Paladin => 3,
+            Self::Ranger => 3,
+            Self::Rogue => 1,
+            Self::Sorcerer => 0,
+            Self::Warlock => 2,
+            Self::Wizard => 0,
         }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Barbarian => 0,
-            Self::Cleric => 3,
-            Self::Dragon => 2,
-            Self::Druid => 3,
-            Self::Fighter => 2,
+            Self::Cleric => 2,
+            Self::Dragon => 1,
+            Self::Druid => 2,
+            Self::Fighter => 1,
             Self::Harpy => 2,
-            Self::Monk => 2,
+            Self::Monk => 1,
             Self::Oozeborn => 1,
-            Self::Paladin => 2,
-            Self::Ranger => 2,
-            Self::Rogue => 3,
-            Self::Sorcerer => 2,
+            Self::Paladin => 1,
+            Self::Ranger => 1,
+            Self::Rogue => 2,
+            Self::Sorcerer => 1,
             Self::Warlock => 1,
             Self::Wizard => 3,
         }
@@ -535,14 +565,6 @@ impl Class {
             Self::Sorcerer => "sorcerer",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
-        }
-    }
-
-    pub fn power_progression(&self) -> PowerProgression {
-        match self {
-            Self::Barbarian => PowerProgression::Fast,
-            Self::Warlock => PowerProgression::Fast,
-            _ => PowerProgression::Medium,
         }
     }
 
@@ -576,39 +598,20 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 4,
             Self::Dragon => 3,
             Self::Druid => 5,
             Self::Fighter => 3,
             Self::Harpy => 6,
-            Self::Monk => 6,
+            Self::Monk => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 5,
             Self::Rogue => 7,
             Self::Sorcerer => 3,
-            Self::Warlock => 3,
-            Self::Wizard => 5,
-        }
-    }
-
-    pub fn vital_rolls(&self) -> i32 {
-        match self {
-            Self::Barbarian => 1,
-            Self::Cleric => 0,
-            Self::Dragon => 1,
-            Self::Druid => 0,
-            Self::Fighter => 1,
-            Self::Harpy => 1,
-            Self::Monk => 0,
-            Self::Oozeborn => 2,
-            Self::Paladin => 1,
-            Self::Ranger => 1,
-            Self::Rogue => 0,
-            Self::Sorcerer => 0,
-            Self::Warlock => 0,
-            Self::Wizard => 0,
+            Self::Warlock => 4,
+            Self::Wizard => 3,
         }
     }
 
@@ -1091,9 +1094,9 @@ impl Class {
 
                 \\includegraphics[width=\\columnwidth]<classes/{class_name_lower}>
 
-                {description}
-
                 {archetype_table}
+
+                {description}
 
                 \\classbasics<Alignment> {class_alignment}.
 
@@ -1134,8 +1137,8 @@ impl Class {
             "
                 \\begin<dtable!*>
                     \\lcaption<{class_name} Progression>
-                    \\begin<dtabularx><\\textwidth><p<3em> l {archetype_columns}>
-                        \\tb<Rank (Level)> & \\tb<Power> & {archetype_headers} \\tableheaderrule
+                    \\begin<dtabularx><\\textwidth><l {archetype_columns}>
+                        \\tb<Rank (Level)> & {archetype_headers} \\tableheaderrule
                         {rank_rows}
                     \\end<dtabularx>
                 \\end<dtable!*>
@@ -1162,7 +1165,7 @@ impl Class {
         for rank in 1..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
-                    {rank} ({minimum_level}) & \\plus{power} & {archetype_abilities} \\\\
+                    {rank} ({minimum_level}) & {archetype_abilities} \\\\
                 ",
                 rank = rank,
                 minimum_level = if rank == 0 {
@@ -1171,7 +1174,6 @@ impl Class {
                     format!("{}", rank * 3 - 2)
                 },
                 archetype_abilities = abilities_by_archetype_rank[rank],
-                power = self.power_progression().calc_power(rank as i32),
             ))
         }
         return rank_rows
@@ -1271,7 +1273,7 @@ impl Class {
                     Of course, soulkeepers generally try to accelerate this process as much as possible with various forms of torture.
                     Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
 
-                    \cf{War}{Whispers of the Lost}[Magical]
+                    \cf{War}{Whispers of the Lost}[\sparkle]
                     You hear the voices of souls that inhabit your soulkeeper's plane, linked to you through your soulkeeper.
                     Choose one of the following types of whispers that you hear.
                     {
@@ -1332,10 +1334,10 @@ impl Class {
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{magicalactiveability}{Twist of Fate}
                             \rankline
-                            An improbable event occurs within \rnglong range.
+                            An improbable event occurs within \distrange.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
-                            After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+                            After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
                         \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                         As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
@@ -1356,18 +1358,19 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \parhead{Gift} You can use the \textit{destructive attack} ability as a standard action.
-                        \begin{magicalactiveability}{Destructive Attack}
+                        \parhead{Gift} Your abilities deal double damage to objects.
+                        \parhead{Aspect} You can use the \textit{destructive strike} ability as a standard action.
+                        \begin{magicalactiveability}{Destructive Strike}
                             \rankline
-                            Make a \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy}.
-                            You gain a \plus4 damage bonus with the strike.
+                            Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                            You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
 
                             \rankline
-                            \rank{3} The damage bonus increases to \plus8.
-                            \rank{5} The damage bonus increases to \plus16.
-                            \rank{7} The damage bonus increases to \plus24.
+                            \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
+                            \rank{5} The extra damage increases to 1d6 per 4 power.
+                            \rank{6} The extra damage increases to 1d6 per 3 power.
+                            \rank{7} The extra damage increases to 1d10 per 3 power.
                         \end{magicalactiveability}
-                        \parhead{Aspect} Your abilities deal double damage to objects.
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
                         \begin{magicalactiveability}{Lay Waste}
                             \rankline
@@ -1383,7 +1386,7 @@ impl Class {
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
+                        \parhead{Gift} You gain a \plus2 bonus to your Fortitude defense.
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
@@ -1399,6 +1402,7 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
+                        % intentionally adjacent rather than touch
                         \parhead{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
                         Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
                         You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
@@ -1412,10 +1416,10 @@ impl Class {
                             \hit The target takes an evil action as soon as it can.
                             Once it takes the evil action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
@@ -1442,9 +1446,11 @@ impl Class {
                         \end{magicalattuneability}
                         \parhead{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
                         This can help you deal damage to enemies that are highly resistant to fire damage.
+                        Your \glossterm{allies} are still immune to fire damage that you convert in this way.
                         In addition, you become immune to fire damage.
 
                     \subsubsection{Good Domain}
+                        % intentionally adjacent rather than touch
                         \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
@@ -1457,10 +1463,10 @@ impl Class {
                             \hit The target takes a good action as soon as it can.
                             Once it takes the good action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
@@ -1468,7 +1474,7 @@ impl Class {
                     \subsubsection{Knowledge Domain}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{magicalactiveability}{Share Knowledge}
@@ -1489,6 +1495,7 @@ impl Class {
                         \parhead{Gift} You gain a \plus2 bonus to Mental defense.
                         % Clarify - does this apply to exploding dice?
                         \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                         \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \rankline
@@ -1508,7 +1515,7 @@ impl Class {
 
                     \subsubsection{Life Domain}
                         \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
-                        \parhead{Aspect} You gain a \plus1 bonus to \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+                        \parhead{Aspect} You gain a bonus to your \glossterm{hit points} equal to three times your rank in the Domain Influence archetype.
                         \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
                         \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
@@ -1519,14 +1526,15 @@ impl Class {
 
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus3 bonus to your \glossterm{power}.
-                        \parhead{Mastery} The power bonus from this domain's essence increases to \plus6.
+                        \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power}.
+                        \parhead{Mastery} The power bonus from this domain's essence increases to \plus2.
 
                     \subsubsection{Protection Domain}
                         \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
+                            % Intentionally adjacent rather than touch
                             Choose an \glossterm{ally} adjacent to you.
                             It gains a \plus1 bonus to all defenses this round.
 
@@ -1539,7 +1547,7 @@ impl Class {
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
@@ -1553,7 +1561,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{magicalactiveability}{Dimensional Travel}
@@ -1574,7 +1582,7 @@ impl Class {
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
                         \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -1586,7 +1594,7 @@ impl Class {
                             \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
                             It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                             At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-                            After this effect ends, the target becomes immune to this effect until it takes a \glossterm{short rest}.
+                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
@@ -1600,9 +1608,9 @@ impl Class {
                         \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
                         In addition, you gain proficiency with an additional \glossterm{usage class} of armor.
                         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-                        \parhead{Aspect} You gain a \plus1d bonus to your damage with all weapons.
+                        \parhead{Aspect} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                         \parhead{Essence} You gain a \plus1 bonus to your Armor defense.
-                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus2d.
+                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus2.
 
                     \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1631,11 +1639,13 @@ impl Class {
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained} skill (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         % TODO: clarify whether you can have this and the druid ability
                         \parhead{Aspect} This ability functions like the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.
-                        \parhead{Mastery} You can maintain both of your wild aspects simultaneously.
+                        \parhead{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
+                        When you do, you increase your \glossterm{fatigue level} by two.
+                        This hybrid wild aspect only lasts for ten minutes, at which point you choose which single wild aspect remains active.
 
                 \subsection{Ex-Clerics}
                     If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
@@ -1658,5 +1668,15 @@ impl Class {
             }
             _ => "",
         }
+    }
+}
+
+
+// Going above +3 HP or DR costs an extra point per value
+fn hp_dr_points(value: i32) -> i32 {
+    if value < 4 {
+        return value;
+    } else {
+        return 3 + (value - 3) * 2;
     }
 }

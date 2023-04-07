@@ -5,6 +5,7 @@ mod generate_stock_monsters;
 mod knowledge;
 mod monster_entry;
 mod monster_group;
+mod role;
 pub mod specific_monsters;
 
 pub use challenge_rating::ChallengeRating;
@@ -14,3 +15,4 @@ pub use generate_stock_monsters::generate_stock_monsters;
 pub use knowledge::Knowledge;
 pub use monster_entry::generate_monster_entries;
 pub use monster_entry::latex_by_name;
+pub use role::Role;

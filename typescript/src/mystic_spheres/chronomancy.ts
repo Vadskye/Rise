@@ -75,32 +75,39 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Twinstrike',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        You may reroll the accuracy roll and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
+        This spell has no \\glossterm{somatic components}.
+
+        Make two \\glossterm{weak strikes}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 1,
-      scaling: {
-        3: 'You gain a +1 accuracy bonus with the strike.',
-        5: 'The accuracy bonus increases to +2.',
-        7: 'The accuracy bonus increases to +3.',
-      },
+      scaling: 'accuracy',
+      tags: [],
+    },
+    {
+      name: 'Accelerated Mighty Twinstrike',
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make two \\glossterm{strikes}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+      `,
+      rank: 5,
+      scaling: 'accuracy',
       tags: [],
     },
     {
       name: 'Accelerated Triplestrike',
 
       effect: `
-        Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        You may reroll the accuracy roll twice and take the highest result.
-        However, you do not add your \\glossterm{power} to damage with the strike.
+        This spell has no \\glossterm{somatic components}.
+
+        Make three \\glossterm{strikes}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
-      rank: 5,
-      scaling: {
-        7: 'You gain a +1 accuracy bonus with the strike.',
-      },
+      rank: 7,
+      tags: [],
     },
 
     // This is a very unique combination of triggers and effects, so correct rank is hard
@@ -132,15 +139,15 @@ export const chronomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 1d6 energy damage.
+          The target takes \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 1,
-      scaling: 'damage',
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
@@ -216,12 +223,12 @@ export const chronomancy: MysticSphere = {
       name: 'Weapon Haste',
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -3 penalty to \\glossterm{accuracy}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        You do not add your \\glossterm{power} to damage with the strike.
+        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -2 accuracy penalty.
+        You cannot \\glossterm{dual wield} with this strike.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 4,
-      scaling: { 6: `The accuracy penalty is reduced to -2.` },
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -322,6 +329,21 @@ export const chronomancy: MysticSphere = {
     },
 
     {
+      name: 'Efficient Time Lock -- Location',
+
+      functionsLike: {
+        name: 'time lock -- location',
+        exceptThat: `
+          the target attunes to the effect, so you don't have to sustain it.
+          When you cast this spell, you can choose whether the lock unseals automatically when the target ends its attunement.
+          If you do, you can still \\glossterm{dismiss} the effect to end it without unsealing the lock.
+        `,
+      },
+      rank: 5,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Time Lock -- Health',
 
       effect: `
@@ -364,7 +386,7 @@ export const chronomancy: MysticSphere = {
         You are still vulnerable to danger, such as from heat or dangerous gases.
         However, you cannot be detected by any means while you travel.
 
-        After you cast this spell, you cannot cast it again until you take a \\glossterm{short rest}.
+        After you cast this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 7,
     },
@@ -373,7 +395,7 @@ export const chronomancy: MysticSphere = {
       name: 'Evasion',
 
       effect: `
-        You take half damage from abilities that affect an area and attack your Armor or Reflex defense.
+        You take no damage from \\glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 3,
@@ -392,7 +414,7 @@ export const chronomancy: MysticSphere = {
         In addition, you can release the time freeze as a \\glossterm{free action}.
         When this spell ends, time resumes in the same phase that it was originally frozen.
 
-        After casting this spell, you cannot cast it again until you take a \\glossterm{short rest}.
+        After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
     },
@@ -404,30 +426,19 @@ export const chronomancy: MysticSphere = {
       // narrative: '',
       attack: {
         hit: `
-          The target takes 1d10 + half \\glossterm{power} energy damage.
+          The target takes \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After it returns to normal, it becomes immune to being frozen in time in this way until it takes a \\glossterm{short rest}.
+          After it returns to normal, it becomes immune to being frozen in time in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 3,
-      scaling: 'damage',
-    },
-    {
-      name: 'Certain Timeseal',
-
-      functionsLike: {
-        name: 'timeseal',
-        exceptThat:
-          'you gain a +3 accuracy bonus with the attack, and the damage increases to 2d10 + half \\glossterm{power}.',
-      },
-      rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -443,11 +454,7 @@ export const chronomancy: MysticSphere = {
         This spell seeks to mimic with time-altering magic what some skilled warriors can do naturally.
       `,
       rank: 1,
-      scaling: {
-        3: 'You gain a +1 accuracy bonus with the strike.',
-        5: 'The accuracy bonus increases to +2.',
-        7: 'The accuracy bonus increases to +3.',
-      },
+      scaling: 'accuracy',
     },
 
     {
@@ -462,7 +469,7 @@ export const chronomancy: MysticSphere = {
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
           \\item You can don a new set of body armor or clothing and equip any weapons or shields.
             All of the items you equip this way must be unattended and in your square, but they can be in a hidden location, such as in a backpack.
-          \\item You can use the \\ability{disguise creature} ability to affect yourself with a \\minus2 penalty (see \\pcref{Disguise Creature}.
+          \\item You can use the \\textit{change appearance} ability to affect yourself with a \\minus2 penalty (see \\pcref{Change Appearance}.
         \\end{itemize}
 
         % There must be text between an itemize block and the end of a mdframed env
@@ -516,8 +523,8 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Legerdemain',
 
       effect: `
-        If you are \\glossterm{trained} with the Sleight of Hand skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Sleight of Hand as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       narrative: `
@@ -536,11 +543,11 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1d per 2 power, and increases its \\glossterm{fatigue level} by one.
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
-      rank: 1,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -549,10 +556,10 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'rewind damage',
-        exceptThat: 'the recovery increases to 4d6 + \\glossterm{power}.',
+        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
       },
       rank: 5,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 5.' },
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -560,38 +567,40 @@ export const chronomancy: MysticSphere = {
       name: 'Wave of Senescence',
       attack: {
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankone{energy}.
           As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\smallarea cone.
           In addition, you choose to focus the aging effects of the cone on either sight or hearing.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Intense Wave of Senescence',
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
           As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled and \\deafened.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\medarea cone.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
-    // +1r for +2 acc
+    // d2l instead of d2 for accuracy
     {
       name: 'Unstable Aging',
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes \\damageranktwolow{energy}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -599,14 +608,14 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
-    // +3r for +4 acc
+    // d5h instead of d6 for accuracy
     {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes \\damagerankfivehigh{energy}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -614,7 +623,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [

@@ -1,4 +1,4 @@
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AbilityTag {
     Attune(AttuneType),
     Auditory,
@@ -6,6 +6,7 @@ pub enum AbilityTag {
     Creation,
     Curse,
     Detection,
+    Elite,
     Emotion,
     Manifestation,
     // Ritual,
@@ -27,6 +28,7 @@ impl AbilityTag {
             Self::Creation => r"Creation".to_string(),
             Self::Curse => r"Curse".to_string(),
             Self::Detection => r"Detection".to_string(),
+            Self::Elite => r"Elite".to_string(),
             Self::Emotion => r"Emotion".to_string(),
             Self::Manifestation => r"Manifestation".to_string(),
             Self::Scrying => r"Scrying".to_string(),
@@ -40,12 +42,15 @@ impl AbilityTag {
 
     pub fn latex(&self) -> String {
         match self {
-            Self::Attune(attune_type) => format!("\\abilitytag{{Attune}} ({})", attune_type.description()),
+            Self::Attune(attune_type) => {
+                format!("\\abilitytag{{Attune}} ({})", attune_type.description())
+            }
             Self::Auditory => r"\abilitytag{Auditory}".to_string(),
             Self::Compulsion => r"\abilitytag{Compulsion}".to_string(),
             Self::Creation => r"\abilitytag{Creation}".to_string(),
             Self::Curse => r"\abilitytag{Curse}".to_string(),
             Self::Detection => r"\abilitytag{Detection}".to_string(),
+            Self::Elite => r"\abilitytag{Elite}".to_string(),
             Self::Emotion => r"\abilitytag{Emotion}".to_string(),
             Self::Manifestation => r"\abilitytag{Manifestation}".to_string(),
             Self::Scrying => r"\abilitytag{Scrying}".to_string(),
@@ -58,7 +63,7 @@ impl AbilityTag {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum AttuneType {
     Ritual,
     Personal,
@@ -75,7 +80,7 @@ impl AttuneType {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum SustainAction {
     Standard,
     Minor,

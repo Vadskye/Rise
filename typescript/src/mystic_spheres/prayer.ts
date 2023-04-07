@@ -8,25 +8,23 @@ export const prayer: MysticSphere = {
   cantrips: [
     {
       effect: `
-        Choose one adjacent \\glossterm{ally}.
-        The target gains a +1 bonus to \\glossterm{accuracy} this round.
+        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{accuracy} this round.
       `,
       name: 'Boon of Competence',
       scaling: {
-        2: 'The range increases to \\shortrange.',
+        2: 'The target can be any ally within \\shortrange.',
         4: 'The bonus increases to +2.',
         6: 'The range increases to \\medrange.',
       },
     },
     {
       effect: `
-        Choose one adjacent \\glossterm{ally}.
-        The target gains a +1 bonus to \\glossterm{defenses} this round.
+        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{defenses} this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       name: 'Boon of Protection',
       scaling: {
-        2: 'The range increases to \\shortrange.',
+        2: 'The target can be any ally within \\shortrange.',
         4: 'The bonus increases to +2.',
         6: 'The range increases to \\medrange.',
       },
@@ -174,21 +172,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Potency',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
-      `,
-      rank: 2,
-      scaling: {
-        4: `The bonus increases to +4.`,
-        6: `The bonus increases to +8.`,
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Blessing of Perseverance',
 
       effect: `
@@ -282,22 +265,22 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Mastery',
+      name: 'Indomitable Blessing',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        In addition, each target gains a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
       scaling: {
         4: `
           The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to power increases to +4.
+          In addition, the bonus to vital rolls increases to +2.
         `,
         6: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to power increases to +8.
+          In addition, the bonus to vital rolls increases to +3.
         `,
       },
       type: 'Attune (deep, target)',
@@ -335,24 +318,23 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} +1d per two \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
-      rank: 1,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 1.' },
+      rank: 2,
+      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
     {
       name: 'Empowered Boon of Shielding',
 
-      effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 2d10 + \\glossterm{power} \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to all \\glossterm{defenses} this round.
-      `,
+      functionsLike: {
+        name: 'boon of shielding',
+        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
+      },
       rank: 5,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 4.' },
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -360,26 +342,34 @@ export const prayer: MysticSphere = {
       name: 'Consecrated Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +2 accuracy bonus to the reroll.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +3 accuracy bonus to the reroll.
         This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
       `,
       rank: 1,
-      scaling: {
-        3: 'The accuracy bonus increases to +3.',
-        5: 'The accuracy bonus increases to +4.',
-        7: 'The accuracy bonus increases to +5.',
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Consecrated Strike',
+      functionsLike: {
+        name: 'consecrated strike',
+        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
+      rank: 5,
+      scaling: 'accuracy',
     },
 
     {
       name: 'Exalted Strike',
       effect: `
         Make a \\glossterm{strike}.
-        You may use the higher of your Strength and your Willpower to determine your damage with the strike (see \\pcref{Dice Bonuses From Attributes}).
-        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{prayer} \\glossterm{mystic sphere} that you are attuned to, to a maximum of +3.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{channel divinity} and \\sphere{prayer} \\glossterm{mystic spheres} that you are attuned to.
+        If this accuracy bonus would be +4 or higher, you may reduce it by 4 to make the strike deal double \\glossterm{weapon damage}.
       `,
-      rank: 4,
+      rank: 3,
+      scaling: 'accuracy',
     },
 
     {
@@ -388,7 +378,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\dazed until it takes a \\glossterm{short rest}.
+          The target is \\dazed until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -404,7 +394,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\stunned until it takes a \\glossterm{short rest}.
+          The target is \\stunned until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -421,7 +411,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           While the target is below its maximum \\glossterm{hit points}, it is \\slowed.
-          This effect lasts until the target takes a \\glossterm{short rest}.
+          This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -437,7 +427,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\slowed until it takes a \\glossterm{short rest}.
+          The target is \\slowed until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -454,7 +444,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           While the target is below its maximum \\glossterm{hit points}, it is \\blinded.
-          This effect lasts until the target takes a \\glossterm{short rest}.
+          This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -469,8 +459,8 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target's weapons shed light like a torch.
-        In addition, all damage they deal with \\glossterm{strikes} becomes energy damage in addition to the attack's normal damage types.
+        Each target's \\glossterm{manufactured weapons} shed light like a torch.
+        In addition, all damage they deal with \\glossterm{strikes} using those weapons becomes energy damage in addition to the attack's normal damage types.
       `,
       rank: 1,
       type: 'Attune (target)',
@@ -480,9 +470,9 @@ export const prayer: MysticSphere = {
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is highly flammable until it takes a \\glossterm{short rest}.
+        hit: `The target is highly flammable until it finishes a \\glossterm{short rest}.
         Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes 1d8 + half \\glossterm{power} fire damage during each of your actions.
+        While ignited in this way, it takes \\damageranktwo{fire} during each of your actions.
 
         It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
         Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -561,7 +551,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
-        Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck \\glossterm{undead} or an evil \\glossterm{planeforged}.
+        Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
         `,
       rank: 1,
       type: 'Attune',
@@ -573,7 +563,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
         `,
         name: 'bless water',
       },
@@ -586,7 +576,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
-        Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good \\glossterm{planeforged}.
+        Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
         `,
       rank: 1,
       type: 'Attune',
@@ -598,7 +588,7 @@ export const prayer: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} (ritual) tag and the effect lasts permanently.
+          it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
         `,
         name: 'curse water',
       },

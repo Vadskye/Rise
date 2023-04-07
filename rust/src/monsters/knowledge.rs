@@ -1,7 +1,7 @@
 use crate::monsters::creature_type::CreatureType;
 use std::collections::HashMap;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Knowledge {
     knowledge: HashMap<i32, String>,
 }
@@ -26,7 +26,7 @@ impl Knowledge {
                 return format!(
                     "\\par Knowledge ({subskill}) {difficulty}: {text}",
                     subskill = creature_type.knowledge(), // TODO
-                    difficulty = difficulty + level + 5,
+                    difficulty = difficulty + (level / 2) + 5,
                     text = self.knowledge[difficulty],
                 );
             })

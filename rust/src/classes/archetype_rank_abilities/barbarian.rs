@@ -21,16 +21,18 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+            modifiers: Some(vec![
+                Modifier::HitPoints(6),
+            ]),
         },
         RankAbility {
             name: "Battle-Scarred+",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
-                The damage resistance bonus increases to five times your rank in this archetype.
+                The hit point bonus increases to four times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -39,72 +41,55 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
+            modifiers: Some(vec![Modifier::HitPoints(9)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+            modifiers: Some(vec![Modifier::HitPoints(12)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(20)]),
+            modifiers: Some(vec![Modifier::HitPoints(15)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(24)]),
+            modifiers: Some(vec![Modifier::HitPoints(24)]),
         },
         RankAbility {
             name: "Battle-Scarred",
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+            modifiers: Some(vec![Modifier::HitPoints(28)]),
         },
         RankAbility {
-            name: "Resilient Recovery",
+            name: "Resilient Strike",
             is_magical: false,
             rank: 3,
             description: r"
-                When you use the \textit{recover} ability, you also regain a quarter of your maximum \glossterm{damage resistance} (see \pcref{Recover}).
-                This effect has the \abilitytag{Swift} tag, like the \ability{recover} ability.
+                As a standard action, you can use the \textit{resilient strike} ability.
+                \begin{activeability}{Resilient Strike}
+                    \rankline
+                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                    You are also \glossterm{briefly} \glossterm{impervious} to all damage.
+
+                    \rankline
+                    \rank{4} The extra damage increases to 1d8.
+                    \rank{5} The extra damage increases to 2d8.
+                    \rank{6} The extra damage increases to 3d10.
+                    \rank{7} The extra damage increases to 5d10.
+                \end{activeability}
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Resilient Recovery+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage resistance recovery increases to half your maximum damage resistance.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Battleforged Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Battleforged Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Primal Resilience",
@@ -113,15 +98,25 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Constitution, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Limitless Recovery",
             is_magical: false,
-            rank: 7,
+            rank: 5,
             description: r"
                 You can use the \ability{recover} ability any number of times between short rests.
                 In addition, when you use it as a standard action, you only increase your \glossterm{fatigue level} by one.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Unbloodied Resilience",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                While you have at least half your maximum hit points remaining, you cannot gain \glossterm{conditions}.
+                Recovering hit points above this value does not automatically remove any conditions you already have.
             ",
             modifiers: None,
         },
@@ -142,113 +137,53 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        % This is an aggressive scaling that prevents any direct upgrades later in the archetype
-                        \item You gain a \plus2 bonus to your \glossterm{power}.
-                        \item You gain a \plus2 bonus to \glossterm{vital rolls}.
-                        \item You take a \minus2 penalty to Armor and Reflex defenses.
+                        \item You gain a +2 accuracy bonus.
+                        \item If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+                            This does not affect bonus dice rolled for exploding attacks.
+                        \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
                         \item You are unable to use any \magical abilities that require a standard action.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
-                        \item When this ability ends for any reason, you \glossterm{briefly} cannot use it again.
+                        \item When this ability ends for any reason, you increase your \glossterm{fatigue level} by one.
                     \end{itemize}
-
-                    \rankline
-                    \rank{3} The power bonus increases to \plus4.
-                    \rank{5} The power bonus increases to \plus8.
-                    \rank{7} The power bonus increases to \plus16.
                 \end{sustainability}
             ",
             modifiers: Some(vec![
-                Modifier::Power(2),
-                Modifier::VitalRoll(2),
+                Modifier::Accuracy(2),
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
             ]),
         },
         RankAbility {
-            name: "Rage",
+            name: "Fearless Rage",
             is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::Power(4)]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::Power(8)]),
-        },
-        RankAbility {
-            name: "Rage",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::Power(16)]),
+            rank: 2,
+            description: r"
+                You are immune to being \shaken, \frightened, and \panicked during your \ability{rage} ability.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Enraged Strike",
             is_magical: false,
-            rank: 2,
+            rank: 3,
             description: r"
                 As a standard action, you can use the \textit{enraged strike} ability.
                 \begin{activeability}{Enraged Strike}
                     \rankline
                     Make a melee \glossterm{strike}.
-                    You gain a \plus2 accuracy bonus and a \plus4 damage bonus with the strike against each creature that dealt damage to you during the previous round.
+                    The strike deals double \glossterm{weapon damage} against each creature that dealt damage to you during the previous round.
 
                     \rankline
-                    \rank{4} The damage bonus increases to \plus8.
-                    \rank{6} The damage bonus increases to \plus16.
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The strike deals triple weapon damage instead of double weapon damage.
+                    \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
             modifiers: None,
-        },
-        RankAbility {
-            name: "Enraged Strike+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                When you use this ability, you gain the accuracy and damage bonuses against each creature that attacked you during the previous round, regardless of whether they dealt damage to you.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Insensible Anger",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You ignore all penalties to your accuracy and damage resistance from \glossterm{vital wounds}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Insensible Anger+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You ignore penalties to your movement speed and defenses from vital wounds.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Furious Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Furious Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
             name: "Primal Brawn",
@@ -257,14 +192,23 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Strength.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Strength, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Strength, 1)]),
         },
         RankAbility {
-            name: "Fearless Rage",
+            name: "Insensible Anger",
             is_magical: false,
             rank: 5,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked during your \textit{rage} ability.
+                You ignore all penalties to your accuracy and movement speed from \glossterm{vital wounds}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Unwavering Rage",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks during your \ability{rage} ability.
             ",
             modifiers: None,
         },
@@ -273,7 +217,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
+                When you use your \textit{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
                 Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
             ",
@@ -313,28 +257,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Savage Rush",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                When you use the \ability{sprint} ability, you can move through spaces occupied by enemies as if they were unoccupied during that movement (see \pcref{Sprint}).
-                In addition, when you use the \ability{charge}, \ability{overrun} or \ability{shove} abilities, you can simultaneously use the \ability{sprint} ability to increase your movement speed during the effect.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Savage Rush+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You can move through spaces occupied by enemies as if they were unoccupied.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Versatile Savagery",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Forceful, Grappling, or Tripping.
                 You may treat all weapons you wield as if they had the chosen weapon tag.
@@ -342,22 +267,25 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Savage Force",
+            name: "Savage Rush",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
+                As a standard action, you can use the \textit{savage rush} ability.
+                \begin{activeability}{Savage Rush}
+                    \rankline
+                    Move up to your movement speed.
+                    During this movement, you can move through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
+                    At the end of this movement, you may make a melee \glossterm{strike}.
+
+                    \rankline
+                    \rank{4} You gain 1d4 \glossterm{extra damage} with the strike per 4 power.
+                    \rank{5} The extra damage increases to 1d6 per 4 power.
+                    \rank{6} The extra damage increases to 1d6 per 3 power.
+                    \rank{7} The extra damage increases to 1d10 per 3 power.
+                \end{activeability}
             ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Savage Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Primal Agility",
@@ -366,7 +294,16 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: Some(vec![Modifier::BaseAttribute(Attribute::Dexterity, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
+        },
+        RankAbility {
+            name: "Unstoppable",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You can move through spaces occupied by enemies as if they were unoccupied.
+            ",
+            modifiers: None,
         },
         RankAbility {
             name: "Primal Rush",
@@ -436,61 +373,43 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Primal Force",
+            name: "Enhanced Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Primal Force+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Enhanced Maneuvers",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain the ability to customize your weaker primal maneuvers.
-                For each rank 1 and rank 3 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                You gain the ability to customize your primal maneuvers.
+                For each rank 1 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
+                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your enhancements.
-                However, you must still apply them to rank 1 or rank 3 primal maneuvers.
+                However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver against creatures who are at less than their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who are at less than their maximum \glossterm{hit points}.
                     You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
 
-                    % at rank 4, level 10, reasonable base damage would be 2d8+10. Assuming 60% accuracy:
-                    % base dpr: 19*0.6 = 11.4
-                    % +2 acc: 19*0.8 = 15.2
-                    % +4 dmg: 23*0.6 = 13.8
-                    % +6 dmg: 25*0.6 = 15.0
-                    % +8 dmg: 27*0.6 = 16.2
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
+                    If your enhancement level is at least 5, this becomes an accuracy bonus.
+                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
 
-                    % at rank 6, level 16, reasonable base damage would be 4d6+20. Assuming 60% accuracy:
-                    % base dpr: 33*0.6 = 19.8
-                    % +2 acc: 33*0.8 = 26.4
-                    % +8 dmg: 41*0.6 = 24.6
-                    % +16 dmg: 49*0.6 = 29.4
-                    \parhead{Powerful Maneuver} You gain a \plus3 bonus to your \glossterm{power} with your chosen maneuver.
-                    This bonus increases to \plus5 at rank 6.
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
 
-                    \parhead{Precise Maneuver} You gain a \plus1 accuracy bonus with your chosen maneuver.
-
-                    \parhead{Reckless Maneuver} You gain a \plus2 accuracy bonus with your chosen maneuver.
-                    However, you \glossterm{briefly} take a \minus2 penalty to your defenses after you use that maneuver.
+                    \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
 
                     \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
+                    If your enhancement level is at least 4, the area triples instead.
                     You can only apply this enhancement to maneuvers that affect an area.
                 }
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Enhanced Maneuvers+",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You can also choose an enhancement for each of your rank 3 primal maneuvers.
             ",
             modifiers: None,
         },
@@ -500,7 +419,6 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can also choose an enhancement for each of your rank 5 primal maneuvers.
-                In addition, you double the effect of enhancements you apply to your rank 1 primal maneuvers.
             ",
             modifiers: None,
         },
@@ -586,9 +504,33 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            name: "Feral Strike",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                As a standard action, you can use the \textit{feral strike} ability.
+                \begin{activeability}{Feral Strike}
+                    \rankline
+                    Make a melee \glossterm{strike}.
+                    % 50% chance of +5.5 accuracy, so almost +3 accuracy
+                    This attack roll \glossterm{explodes} on a 5 or higher on the first roll.
+
+                    \rankline
+                    \rank{4} The first roll explodes on a 3 or higher.
+                    \rank{5} The first roll explodes regardless of your roll.
+                    \rank{6} Subsequent rolls also explode on an 8 or higher.
+                    \rank{7} Your \glossterm{weapon damage} with the attack is doubled.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Feral Explosion",
             is_magical: false,
-            rank: 2,
+            rank: 5,
+            // Math: By default, 10% chance of +2 accuracy and 1% chance of +4 accuracy, so +0.24
+            // accuracy. But +0.5 accuracy if you can explode on a 9 from something else like
+            // Executioner, and of course +2 accuracy with Feral Strike specifically.
             description: r"
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                 This bonus stacks with itself if you explode multiple times with the same attack roll.
@@ -597,25 +539,13 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Feral Explosion+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                Your attacks \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
-                This does not affect additional rolls with exploding dice.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Animal Instincts",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a \plus2 bonus to your Reflex defense.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
         RankAbility {
             name: "Animal Instincts+",
@@ -624,27 +554,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus4.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Reflex, 2),
-            ]),
-        },
-        RankAbility {
-            name: "Totemic Force",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                You gain a \plus1d bonus to your damage with all weapons.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
-        },
-        RankAbility {
-            name: "Totemic Force+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The damage bonus increases to \plus2d.
-            ",
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
     ];
 }

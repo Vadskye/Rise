@@ -1,14 +1,15 @@
-use crate::core_mechanics::abilities::{latex_ability_block, UsageTime};
-use crate::core_mechanics::abilities::{AbilityExtraContext, Targeting};
+use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, latex_ability_block, Targeting, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
-use crate::core_mechanics::{Attribute, DamageDice, Defense, HasAttributes, Tag};
+use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
 use super::{AttackEffect, Maneuver};
 
-#[derive(Clone)]
+// This represents an attack that a creature can make. It does not save information about the
+// creature *using* the attack.
+#[derive(Clone, Debug)]
 pub struct Attack {
     pub accuracy: i32,
     pub crit: Option<AttackEffect>,
@@ -23,16 +24,27 @@ pub struct Attack {
     pub targeting: Targeting,
 }
 
+// This is implemented by creatures, and includes a lot of the calculations necessary to figure out
+// how attacks work. It's possible that "power" should be calculated separately, since it's also
+// useful for healing and some passive abilities.
 pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
+    fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
+        return self
+            .calc_all_attacks()
+            .into_iter()
+            .find(|a| a.name.contains(name));
+    }
     fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
         return self.calc_all_attacks().into_iter().find(|a| a.name == name);
     }
     fn calc_accuracy(&self) -> i32;
-    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
-    fn calc_power(&self) -> i32;
+    fn calc_magical_power(&self) -> i32;
+    fn calc_mundane_power(&self) -> i32;
+    fn calc_power(&self, is_magical: bool) -> i32;
+    fn explain_attacks(&self) -> Vec<String>;
 }
 
 impl Attack {
@@ -44,12 +56,27 @@ impl Attack {
         return attack;
     }
 
+    // The process of adding a tag is awkward, so it's convenient to encapsulate that process.
+    pub fn except_with_tag(&self, tag: Tag) -> Attack {
+        return self.except(|a| {
+            let mut tags = a.tags.clone().unwrap_or(vec![]);
+            tags.push(tag);
+            a.tags = Some(tags);
+        });
+    }
+
     // This allows passing in a closure to modify damage dealt on hit, which is harder than it
     // would seem because of the nesting structure within attacks.
     pub fn except_hit_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> Attack {
         let mut attack = self.clone();
         attack.hit = attack.hit.except_damage(f);
         return attack;
+    }
+
+    // This is a particularly common replacement for elite monsters, and managing the imports is
+    // annoying without this function.
+    pub fn except_elite(&self) -> Attack {
+        return self.except_with_tag(Tag::Ability(AbilityTag::Elite));
     }
 
     pub fn generate_modified_name(
@@ -81,27 +108,17 @@ impl Attack {
         return None;
     }
 
-    pub fn calc_damage_dice(&self, creature: &Creature) -> Option<DamageDice> {
+    // A fairly thin convenience wrapper around DamageEffect.calc_damage_dice(). Could be used for
+    // other values, like healing, once that is supported.
+    pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
-            return Some(
-                damage_effect
-                    .damage_dice
-                    .add(creature.calc_damage_increments(self.is_strike, self.is_magical)),
-            );
+            return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike))
         }
         return None;
     }
 
-    pub fn calc_damage_modifier(&self, creature: &Creature) -> Option<i32> {
-        if let Some(damage_effect) = self.damage_effect() {
-            return Some(
-                damage_effect.damage_modifier
-                    + (damage_effect.power_multiplier * creature.calc_power() as f64) as i32,
-            );
-        }
-        return None;
-    }
-
+    // Create a list of simple strikes that don't use any maneuvers. These attacks deal irrelevant
+    // damage at high levels.
     pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
         return weapons.into_iter().map(|w| w.attack()).collect();
@@ -245,7 +262,7 @@ where
         {
             if let Some(m) = maneuver {
                 for weapon in &self.weapons {
-                    all_attacks.push(m.attack(weapon.clone()));
+                    all_attacks.push(m.attack(weapon.clone(), self.rank()));
                 }
             }
         }
@@ -283,29 +300,39 @@ where
         let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
         // note implicit floor due to integer storage
         return accuracy_from_armor
-            + self.level / 2
-            + self.get_base_attribute(&Attribute::Perception) / 2
+            + (self.level + self.get_base_attribute(&Attribute::Perception)) / 2
             + self.calc_total_modifier(ModifierType::Accuracy);
     }
 
-    fn calc_damage_increments(&self, is_strike: bool, is_magical: bool) -> i32 {
+    fn calc_magical_power(&self) -> i32 {
+        return self.calc_power(true);
+    }
+
+    fn calc_mundane_power(&self) -> i32 {
+        return self.calc_power(false);
+    }
+
+    fn calc_power(&self, is_magical: bool) -> i32 {
         let attribute = match is_magical {
             true => &Attribute::Willpower,
             false => &Attribute::Strength,
         };
-        let mut increments: i32 = self.get_base_attribute(attribute) / 2;
-        if is_strike {
-            increments += self.calc_total_modifier(ModifierType::StrikeDamageDice);
-        }
-        increments += match self.category {
-            CreatureCategory::Character => 0,
-            CreatureCategory::Monster(cr) => cr.damage_increments(),
+        let specific_modifier = match is_magical {
+            true => self.calc_total_modifier(ModifierType::MagicalPower),
+            false => self.calc_total_modifier(ModifierType::MundanePower),
         };
-        return increments;
+        return (self.level / 2)
+            + self.get_base_attribute(attribute)
+            + specific_modifier
+            + self.calc_total_modifier(ModifierType::Power);
     }
 
-    fn calc_power(&self) -> i32 {
-        return self.calc_total_modifier(ModifierType::Power);
+    fn explain_attacks(&self) -> Vec<String> {
+        return self
+            .calc_all_attacks()
+            .iter()
+            .map(|a| a.shorthand_description(self))
+            .collect::<Vec<String>>();
     }
 }
 

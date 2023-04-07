@@ -18,7 +18,7 @@ from cgi_simple import (
     sidelabel,
     span,
     textarea,
-    this_or_that,
+    text_input,
     underlabel,
     underlabeled_checkbox,
     underlabel_spaced,
@@ -27,6 +27,15 @@ from status_page import custom_modifier
 
 
 def create_page(destination):
+    def number_reminder(name):
+        return text_input(
+            {"class": "inline-number", "readonly": True, "name": name}
+        )
+    def text_reminder(name):
+        return span(
+            {"name": name}
+        )
+
     return flex_col(
         {"class": "page items-page"},
         [
@@ -45,7 +54,10 @@ def create_page(destination):
             armor(destination, "Body armor"),
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
-            *weapons(destination),
+            div({"class": "weapons-explanation"}, f"""
+                As a reminder, your magical✨ power is {number_reminder("magical_power")} ({text_reminder("magical_weapon_plusd")}) and your mundane power is {number_reminder("mundane_power")} ({text_reminder("mundane_weapon_plusd")}).
+            """),
+            *weapons(),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
@@ -56,10 +68,6 @@ def create_page(destination):
                     fieldset(
                         {"class": "repeating_attunedmodifiers"},
                         custom_modifier(show_toggle="deep", show_text=True),
-                    ),
-                    fieldset(
-                        {"class": "repeating_attunements"},
-                        attunement(),
                     ),
                 ]
                 if destination == "roll20"
@@ -246,7 +254,7 @@ def armor(destination, armor_type):
     )
 
 
-def weapons(destination):
+def weapons():
     return [weapon(i) for i in range(3)]
 
 
@@ -264,27 +272,14 @@ def weapon(i):
                 {"name": f"weapon_{i}_accuracy"},
             ),
             labeled_text_input(
-                "Base Die",
+                "Magical Damage",
                 {"class": "weapon-damage-dice"},
-                {"name": f"weapon_{i}_damage_dice"},
+                {"name": f"weapon_{i}_magical_damage_dice"},
             ),
             labeled_text_input(
-                "Magical",
-                {"class": "calculated-weapon-damage-dice"},
-                {
-                    "class": "readonly-disabled",
-                    "name": f"weapon_{i}_magical_dice",
-                    "readonly": True,
-                },
-            ),
-            labeled_text_input(
-                "Mundane",
-                {"class": "calculated-weapon-damage-dice"},
-                {
-                    "class": "readonly-disabled",
-                    "name": f"weapon_{i}_mundane_dice",
-                    "readonly": True,
-                },
+                "Mundane Damage",
+                {"class": "weapon-damage-dice"},
+                {"name": f"weapon_{i}_mundane_damage_dice"},
             ),
             labeled_text_input(
                 "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}

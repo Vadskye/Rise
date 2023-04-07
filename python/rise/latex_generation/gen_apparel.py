@@ -53,49 +53,13 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Gloves of Potency",
-            rank=2,
-            material_type="Glove",
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +2 power",
-            upgrades=[
-                Upgrade(
-                    description="The power bonus increases to +4.",
-                    rank=4,
-                    short_description="Grants +4 power",
-                ),
-                Upgrade(
-                    description="The power bonus increases to +8.",
-                    rank=6,
-                    short_description="Grants +8 power",
-                ),
-            ],
-        ),
-    ]
-
-    apparel += [
-        create_apparel(
             name="Ambidextrous Gloves",
             rank=2,
             material_type="Glove",
             description="""
-                You gain a +1 \\glossterm<accuracy> bonus with the \\ability<offhand strike> ability.
+                You can \\glossterm<dual wield> regardless of your Dexterity (see \\pcref{Dual Wielding}).
             """,
-            short_description="Grants +1 accuracy with offhand strikes",
-            upgrades=[
-                Upgrade(
-                    description="The accuracy bonus increases to +2.",
-                    rank=4,
-                    short_description="Grants +2 accuracy with offhand strikes",
-                ),
-                Upgrade(
-                    description="The accuracy bonus increases to +3.",
-                    rank=6,
-                    short_description="Grants +3 accuracy with offhand strikes",
-                ),
-            ],
+            short_description="Allows dual wielding without Dexterity",
         ),
     ]
 
@@ -127,7 +91,7 @@ def generate_apparel():
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
                 This functions like body armor that provides a +3 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                It also provides a +6 bonus to your \\glossterm{damage resistance}.
+                It also provides a +5 bonus to your \\glossterm{damage resistance}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
                 This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
@@ -137,12 +101,12 @@ def generate_apparel():
             short_description="Grants encumbrance-free medium armor",
             upgrades=[
                 Upgrade(
-                    description="The damage resistance bonus increases to +12.",
+                    description="The damage resistance bonus increases to +10.",
                     rank=4,
                     short_description="Grants encumbrance-free medium armor",
                 ),
                 Upgrade(
-                    description="The damage resistance bonus increases to +24.",
+                    description="The damage resistance bonus increases to +20.",
                     rank=6,
                     short_description="Grants encumbrance-free medium armor",
                 ),
@@ -216,24 +180,12 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Gauntlets of Improvisation",
-            rank=1,
+            rank=2,
             material_type="Gauntlet",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using \\glossterm<improvised weapons>.
+                You are \\glossterm<proficient> with \\glossterm<improvised weapons> (see \\pcref<Weapon Proficiency>).
             """,
-            short_description="Grants +2 power with improvised weapons",
-            upgrades=[
-                Upgrade(
-                    description="The power bonus increases to +4.",
-                    rank=3,
-                    short_description="Grants +4 power with improvised weapons",
-                ),
-                Upgrade(
-                    description="The power bonus increases to +8.",
-                    rank=5,
-                    short_description="Grants +8 power with improvised weapons",
-                ),
-            ],
+            short_description="Grants proficiency with improvised weapons",
         ),
     ]
 
@@ -246,16 +198,12 @@ def generate_apparel():
                 Your punch/kick \\glossterm<natural weapon> gains the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
             """,
             short_description="Knocks back punched enemies",
-        ),
-        create_apparel(
-            name="Gauntlet of the Ram, Greater",
-            rank=5,
-            material_type="Gauntlet",
-            description="""
-                Your punch/kick \\glossterm<natural weapon> gains the Forceful \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                In addition, the \\glossterm<knockback> distance from that tag increases to 30 feet.
-            """,
-            short_description="Knocks back punched enemies a great distance",
+            upgrades=[
+                Upgrade(
+                    description="The knockback distance insteases to 30 feet.",
+                    rank=5,
+                )
+            ],
         ),
     ]
 
@@ -281,16 +229,15 @@ def generate_apparel():
                 The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
             """,
             short_description="Allows throwing objects up to 60 feet",
-        ),
-        create_apparel(
-            name="Throwing Gloves, Greater",
-            rank=6,
-            material_type="Gloves",
-            description="""
-                You can throw any item as if it had the Thrown (60/120) \\glossterm<weapon tag> (see \\pcref<Weapon Tags>).
-                The item must be at least one size category smaller than you, and you must be able to pick it up within your \\glossterm<weight limits>.
-            """,
-            short_description="Allows throwing objects up to 120 feet",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The tag improves to Thrown (60/120).
+                    """,
+                    rank=6,
+                    short_description="Allows throwing objects up to 120 feet",
+                ),
+            ],
         ),
     ]
 
@@ -300,24 +247,22 @@ def generate_apparel():
             rank=2,
             material_type="Gloves",
             description="""
-                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 1.
+                When you make a thrown \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 1 (see \\pcref<Thrown Strike>).
             """,
             short_description="Reduces thrown longshot penalty by 1",
-        ),
-        create_apparel(
-            name="Gloves of Telekinetic Propulsion, Greater",
-            rank=5,
-            material_type="Gloves",
-            description="""
-                When you make a \\glossterm<thrown> \\glossterm<strike>, you reduce your \\glossterm<longshot penalty> by 2.
-            """,
-            short_description="Reduces thrown longshot penalty by 1",
+            upgrades=[
+                Upgrade(
+                    description="The penalty reduction increases to 2.",
+                    rank=5,
+                    short_description="Reduces thrown longshot penalty by 2",
+                ),
+            ],
         ),
     ]
     # Head
 
     apparel += [
-        # close range, +1d = rank 2 spell
+        # short range rank 2 spell
         create_apparel(
             name="Circlet of Blasting",
             rank=2,
@@ -326,35 +271,25 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 2d8+4 fire damage.
+                \\hit The target takes 1d8+1d6 fire damage.
             """,
-            short_description="Can blast foe with fire",
-        ),
-        # close range, +2d = rank 4 spell
-        create_apparel(
-            name="Circlet of Blasting, Greater",
-            rank=4,
-            material_type="Circlet",
-            tags=[],
-            description="""
-                As a standard action, you can activate this circlet.
-                When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 4d8+7 fire damage.
-            """,
-            short_description="Can blast foe with intense fire",
-        ),
-        # close range, +3d = rank 6 spell, so this is priced as rank 7
-        create_apparel(
-            name="Circlet of Blasting, Supreme",
-            rank=6,
-            material_type="Circlet",
-            tags=[],
-            description="""
-                As a standard action, you can activate this circlet.
-                When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 6d10+14 fire damage.
-            """,
-            short_description="Can blast foe with supremely intense fire",
+            short_description="Can deal 1d8+1d6 damage",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The damage increases to 5d6.
+                    """,
+                    rank=4,
+                    short_description="Can deal 5d6 damage",
+                ),
+                Upgrade(
+                    description="""
+                        The damage increases to 6d10.
+                    """,
+                    rank=6,
+                    short_description="Can deal 6d10 damage",
+                ),
+            ],
         ),
     ]
 
@@ -367,24 +302,15 @@ def generate_apparel():
                 You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
             short_description="Grants +2 Persuasion",
-        ),
-        create_apparel(
-            name="Circlet of Persuasion, Greater",
-            rank=3,
-            material_type="Circlet",
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
-            """,
-            short_description="Grants +3 Persuasion",
-        ),
-        create_apparel(
-            name="Circlet of Persuasion, Supreme",
-            rank=5,
-            material_type="Circlet",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
-            """,
-            short_description="Grants +4 Persuasion",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +4.
+                    """,
+                    rank=5,
+                    short_description="Grants +4 Persuasion",
+                ),
+            ],
         ),
     ]
 
@@ -430,35 +356,34 @@ def generate_apparel():
     )
 
     apparel += [
+        # t2 area, d1 damage
         create_apparel(
-            name="Crown of Lightning",
+            name="Crown of Flame",
             rank=2,
             material_type="Crown",
             tags=[],
             description="""
-                This crown continuously crackles with electricity.
-                The constant sparks shed light as a torch.
+                This crown continuously burns, shedding light as a torch.
 
-                As a standard action, you can intensify the crown's energy to shock nearby enemies.
-                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areasmall radius from you.
-                On a hit, each target takes 1d10+2 electricity damage.
+                As a standard action, you can intensify the crown's flame to incinerate nearby enemies.
+                When you do, make an attack vs. Reflex against your \\glossterm<enemies> within a \\areasmall radius from you.
+                On a hit, each target takes 1d10 fire damage.
             """,
-            short_description="Can deal 1d10+2 damage to nearby foes",
-        ),
-        create_apparel(
-            name="Crown of Lightning, Greater",
-            rank=5,
-            material_type="Crown",
-            tags=[],
-            description="""
-                This crown continuously crackles with electricity.
-                The constant sparks shed light as a torch.
-
-                As a standard action, you can intensify the crown's energy to shock nearby enemies.
-                When you do, make an attack vs. Fortitude against your \\glossterm<enemies> within a \\areamed radius from you.
-                On a hit, each target takes 4d6+5 electricity damage.
-            """,
-            short_description="Can deal 4d6+5 damage to nearby foes",
+            short_description="Can deal 1d10 damage to nearby foes",
+            upgrades=[
+                Upgrade(
+                    # d3
+                    description="The damage increases to 1d8+2d6.",
+                    rank=4,
+                    short_description="Can deal 1d8+2d6 damage to nearby foes",
+                ),
+                Upgrade(
+                    # d5
+                    description="The damage increases to 6d6, and the area increases to a \\medarea radius.",
+                    rank=6,
+                    short_description="Can deal 6d6 damage to nearby foes",
+                ),
+            ],
         ),
     ]
 
@@ -504,33 +429,30 @@ def generate_apparel():
             tags=[],
             description="""
                 As a \\glossterm<free action>, you can activate these boots.
+                After you activate the boots, you \\glossterm<briefly> cannot do so again.
                 When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
                 This does not allow you to move through inanimate objects.
                 If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
                 If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
             """,
-            short_description="Can exert to briefly move through creatures",
-        ),
-        create_apparel(
-            name="Phasestep Boots, Greater",
-            rank=4,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<phasestep boots>, except that their effect is always active.
-            """,
-            short_description="Can move through creatures",
-        ),
-        create_apparel(
-            name="Phasestep Boots, Supreme",
-            rank=6,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<phasestep boots>, except that their effect is always active.
-                In addition, you ignore all sources of \\glossterm<difficult terrain>.
-            """,
-            short_description="Can move through creatures and some terrain",
+            short_description="Can exert to move through creatures",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        Activating the effect does not increase your fatigue level.
+                    """,
+                    rank=4,
+                    short_description="Can sometimes move through creatures",
+                ),
+                Upgrade(
+                    description="""
+                        The boots do not require activation.
+                        Instead, the effect is constantly active.
+                    """,
+                    rank=6,
+                    short_description="Can move through creatures",
+                ),
+            ],
         ),
     ]
 
@@ -547,16 +469,15 @@ def generate_apparel():
                 These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
             """,
             short_description="Can very briefly walk on air",
-        ),
-        create_apparel(
-            name="Boots of the Skydancer, Greater",
-            rank=5,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\magicitem<boots of the skydancer>, except that the ability lasts \\glossterm<briefly>.
-            """,
-            short_description="Can briefly walk on air",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The effect lasts \\glossterm<briefly> instead of only during the current phase.
+                    """,
+                    rank=6,
+                    short_description="Can briefly walk on air",
+                ),
+            ],
         ),
     ]
 
@@ -569,16 +490,15 @@ def generate_apparel():
                 You are immune to being \\slowed, \\immobilized, and \\paralyzed.
             """,
             short_description="Grants immunity to common mobility restrictions",
-        ),
-        create_apparel(
-            name="Boots of Freedom, Greater",
-            rank=7,
-            material_type="Boots",
-            description="""
-                You are immune to being \\slowed, \\immobilized, and \\paralyzed.
-                In addition, you are unaffected by \\glossterm<difficult terrain> and immune to being \\grappled or knocked \\prone.
-            """,
-            short_description="Grants immunity to almost all mobility restrictions",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You are also unaffected by \\glossterm<difficult terrain> and immune to being \\grappled or knocked \\prone.
+                    """,
+                    rank=7,
+                    short_description="Grants immunity to almost all mobility restrictions",
+                ),
+            ],
         ),
     ]
 
@@ -596,26 +516,23 @@ def generate_apparel():
                 Failure means you fall \\prone and your movement for that phase ends.
             """,
             short_description="Redirects personal gravity to adjacent objects",
-        ),
-        create_apparel(
-            name="Boots of Gravitation, Greater",
-            rank=5,
-            material_type="Boots",
-            description="""
-                These boots function like \\mitem<boots of gravitation>, except that the maximum distance increases to 15 feet.
-                This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
-            """,
-            short_description="Redirects personal gravity to nearby objects",
-        ),
-        create_apparel(
-            name="Boots of Gravitation, Supreme",
-            rank=7,
-            material_type="Boots",
-            description="""
-                These boots function like \\mitem<boots of gravitation>, except that the maximum distance increases to 30 feet.
-                This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
-            """,
-            short_description="Redirects personal gravity to distant objects",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The maximum distance increases to 15 feet.
+                        This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
+                    """,
+                    rank=5,
+                    short_description="Redirects personal gravity to nearby objects",
+                ),
+                Upgrade(
+                    description="""
+                        The maximum distance increases to 30 feet.
+                    """,
+                    rank=7,
+                    short_description="Redirects personal gravity to distant objects",
+                ),
+            ],
         ),
     ]
 
@@ -642,16 +559,15 @@ def generate_apparel():
                 Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your land speed.
             """,
             short_description="Helps you survive when you become afraid",
-        ),
-        create_apparel(
-            name="Boots of the Fearful, Greater",
-            rank=5,
-            material_type="Boots",
-            tags=[],
-            description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +4 bonus to your Armor defense and Reflex defense, as well as a +20 foot bonus to your land speed.
-            """,
-            short_description="Drastically helps you survive when you become afraid",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The defense bonus increases to +2, and the speed bonus increases to +20 feet.
+                    """,
+                    rank=5,
+                    short_description="",
+                ),
+            ],
         ),
     ]
 
@@ -665,16 +581,15 @@ def generate_apparel():
                 Being \\prone does not reduce your movement speed.
             """,
             short_description="Move at full speed while prone",
-        ),
-        create_apparel(
-            name="Belt of Scuttling, Greater",
-            rank=4,
-            material_type="Belt",
-            tags=[],
-            description="""
-                Being \\prone does not reduce your movement speed or your defenses.
-            """,
-            short_description="Move at full speed and defend normally while prone",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        Being prone also does not reduce your defenses.
+                    """,
+                    rank=4,
+                    short_description="Move at full speed and defend normally while prone",
+                ),
+            ],
         ),
     ]
 
@@ -685,32 +600,26 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d6 hit points.
+                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 1d4 hit points.
                 This effect cannot heal you above half your maximum hit points.
             """,
-            short_description="Regains 1d6 hit points while below half hit points",
-        ),
-        create_apparel(
-            name="Lifesaver Ring, Greater",
-            rank=4,
-            material_type="Ring",
-            tags=[],
-            description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 2d6 hit points.
-                This effect cannot heal you above half your maximum hit points.
-            """,
-            short_description="Regains 2d6 hit points while below half hit points",
-        ),
-        create_apparel(
-            name="Lifesaver Ring, Supreme",
-            rank=6,
-            material_type="Ring",
-            tags=[],
-            description="""
-                At the end of each round, if you are below half your maximum \\glossterm<hit points>, you regain 4d6 hit points.
-                This effect cannot heal you above half your maximum hit points.
-            """,
-            short_description="Regains 4d6 hit points while below half hit points",
+            short_description="Regain 1d4 hit points while below half hit points",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The healing increases to 1d10.
+                    """,
+                    rank=4,
+                    short_description="Regain 1d8 hit points while below half hit points",
+                ),
+                Upgrade(
+                    description="""
+                        The healing increases to 2d8.
+                    """,
+                    rank=6,
+                    short_description="Regain 2d8 hit points while below half hit points",
+                ),
+            ],
         ),
     ]
 
@@ -791,22 +700,21 @@ def generate_apparel():
             rank=2,
             material_type="Cloak",
             description="""
-                Whenever a mount that you are riding would gain a \\glossterm<vital wound>, you may activate this cloak.
-                When you do, the mount does not gain a vital wound.
-                However, it immediately falls unconscious until it finishes a \\glossterm<short rest>, and you increase your \\glossterm<fatigue level> by one.
+                Whenever a mount that you are riding would gain one or more \\glossterm<vital wounds>, you may activate this cloak.
+                When you do, you increase your \\glossterm<fatigue level> by one, and the mount does not make a \\glossterm<vital roll> for the vital wounds.
+                Instead, each vital wound is treated as having a vital roll of 1, which prevents the mount from dying from its wounds.
+                However, it immediately falls unconscious until it finishes a \\glossterm<short rest>, and 
             """,
-            short_description="Can exert to save your mount from a vital wound",
-        ),
-        create_apparel(
-            name="Cloak of the Noble Rider, Greater",
-            rank=4,
-            material_type="Cloak",
-            description="""
-                Whenever a mount that you are riding would gain a \\glossterm<vital wound>, you may activate this cloak.
-                When you do, the mount does not gain a vital wound.
-                However, it immediately falls unconscious until it finishes a \\glossterm<short rest>.
-            """,
-            short_description="Can save your mount from vital wounds",
+            short_description="Can exert to save your mount from death",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        Activating this cloak does not increase your fatigue level.
+                    """,
+                    rank=4,
+                    short_description="Can save your mount from death",
+                ),
+            ],
         ),
     ]
 
@@ -816,27 +724,26 @@ def generate_apparel():
             rank=2,
             material_type="Cloak",
             description="""
-                Creatures that are \\glossterm<incorporeal> are only \\glossterm<impervious> to physical damage you inflict instead of being immmune to it.
+                Creatures that are \\trait<incorporeal> are only \\impervious to physical damage you inflict instead of being immune to it.
+                In addition, you can touch incorporeal creatures, though they are impervious to any attacks you make to touch them.
             """,
             short_description="Grants limited ability to hit incorporeal creatures",
-        ),
-        create_apparel(
-            name="Ghost Shroud, Greater",
-            rank=4,
-            material_type="Cloak",
-            description="""
-                Creatures that are \\glossterm<incorporeal> are not immune to physical damage you inflict.
-            """,
-            short_description="Grants ability to hit incorporeal creatures",
-        ),
-        create_apparel(
-            name="Ghost Shroud, Supreme",
-            rank=6,
-            material_type="Cloak",
-            description="""
-                Creatures that are \\glossterm<incorporeal> are \\glossterm<vulnerable> to physical damage you inflict instead of being immune.
-            """,
-            short_description="Grants ability to hit incorporeal creatures with ease",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        Incorporeal creatures are not impervious to your physical damage and touch attacks.
+                    """,
+                    rank=4,
+                    short_description="Grants ability to hit incorporeal creatures",
+                ),
+                Upgrade(
+                    description="""
+                        Incorporeal creatures are \\vulnerable to your physical damage and touch attacks.
+                    """,
+                    rank=7,
+                    short_description="Grants ability to easily hit incorporeal creatures",
+                ),
+            ],
         ),
     ]
 
@@ -888,18 +795,18 @@ def generate_apparel():
             rank=5,
             material_type="Boots",
             description="""
-                You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flying>).
+                You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flight>).
             """,
             short_description="Grants flight up to 15 feet high",
-        ),
-        create_apparel(
-            name="Winged Boots, Greater",
-            rank=7,
-            material_type="Boots",
-            description="""
-                These boots function like \\mitem<winged boots>, except that the \\glossterm<height limit> increases to 30 feet.
-            """,
-            short_description="Grants flight up to 30 feet high",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The height limit increases to 30 feet.
+                    """,
+                    rank=7,
+                    short_description="Grants flight up to 30 feet high",
+                ),
+            ],
         ),
     ]
 
@@ -912,24 +819,15 @@ def generate_apparel():
                 You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
             """,
             short_description="Grants +2 Stealth",
-        ),
-        create_apparel(
-            name="Boots of Elvenkind, Greater",
-            rank=3,
-            material_type="Boots",
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
-            """,
-            short_description="Grants +3 Stealth",
-        ),
-        create_apparel(
-            name="Boots of Elvenkind, Supreme",
-            rank=5,
-            material_type="Boots",
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
-            """,
-            short_description="Grants +4 Stealth",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +4.
+                    """,
+                    rank=5,
+                    short_description="Grants +4 Stealth",
+                ),
+            ],
         ),
     ]
 
@@ -959,16 +857,15 @@ def generate_apparel():
                 While you are at or below half your maximum \\glossterm<hit points>, you gain a +1 bonus to your Armor defense.
             """,
             short_description="Grants +1 Armor at low health",
-        ),
-        create_apparel(
-            name="Cloak of Death's Door, Greater",
-            rank=5,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                While you are at or below half your maximum \\glossterm<hit points>, you gain a +1 bonus to all defenses.
-            """,
-            short_description="Grants +1 defenses at low health",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus applies to all defenses.
+                    """,
+                    rank=5,
+                    short_description="Grants +1 defenses at low health",
+                ),
+            ],
         ),
     ]
 
@@ -983,17 +880,15 @@ def generate_apparel():
                 However, you also take a -1 penalty to all defenses against creatures adjacent to you.
             """,
             short_description="Grants +1 accuracy and -1 defenses against adjacent creatures",
-        ),
-        create_apparel(
-            name="Enraging Cloak, Greater",
-            rank=7,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                You gain a +2 accuracy bonus against creatures adjacent to you.
-                However, you also take a -2 penalty to all defenses against creatures adjacent to you.
-            """,
-            short_description="Grants +2 accuracy and -2 defenses against adjacent creatures",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus and penalty both increase to +2.
+                    """,
+                    rank=7,
+                    short_description="Grants +2 accuracy and -2 defenses against adjacent creatures",
+                ),
+            ],
         ),
     ]
 
@@ -1004,32 +899,19 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +4 bonus to your defenses against attacks from the \\sphere<polymorph> sphere.
+                You are \\impervious to attacks from the \\sphere<polymorph> sphere.
                 This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
             """,
             short_description="Grants +4 defenses vs form-altering attacks",
-        ),
-        create_apparel(
-            name="Ring of the True Form, Greater",
-            rank=3,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +8 bonus to your defenses against attacks from the \\sphere<polymorph> sphere.
-                This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
-            """,
-            short_description="Grants +8 defenses vs form-altering attacks",
-        ),
-        create_apparel(
-            name="Ring of the True Form, Supreme",
-            rank=5,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You are immune to attacks from the \\sphere<polymorph> sphere.
-                This immunity also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
-            """,
-            short_description="Grants immunity to form-altering attacks",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You are immune instead of impervious.
+                    """,
+                    rank=5,
+                    short_description="Grants immunity to form-altering attacks",
+                ),
+            ],
         ),
     ]
 
@@ -1043,26 +925,15 @@ def generate_apparel():
                 You gain a +2 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
             """,
             short_description="Grants +2 to social skills",
-        ),
-        create_apparel(
-            name="Ring of Honeyed Words, Greater",
-            rank=4,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
-            """,
-            short_description="Grants +3 to social skills",
-        ),
-        create_apparel(
-            name="Ring of Honeyed Words, Supreme",
-            rank=6,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +4 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
-            """,
-            short_description="Grants +4 to social skills",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +4.
+                    """,
+                    rank=6,
+                    short_description="Grants +4 to social skills",
+                ),
+            ],
         ),
     ]
 
@@ -1103,16 +974,15 @@ def generate_apparel():
                 You stop being attuned to this item when it activates in this way, and you must attune to it again to gain its effects.
             """,
             short_description="Can protect against one critical strike",
-        ),
-        create_apparel(
-            name="Ring of Blessed Protection, Greater",
-            rank=5,
-            material_type="Ring",
-            tags=['Attune (deep)'],
-            description="""
-                This item functions like a \\textit<ring of blessed protection>, except that it protects against any attack, not just strikes.
-            """,
-            short_description="Can protect against one critical attack",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The ring protects against any attack, not just strikes
+                    """,
+                    rank=5,
+                    short_description="Can protect against one critical attack",
+                ),
+            ],
         ),
     ]
 
@@ -1150,7 +1020,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                At the end of each round, if you are not \\glossterm<unconscious> due to \\glossterm<fatigue>, you automatically remove one of your \\glossterm<vital wounds>.
+                At the end of each round, if your \\glossterm<fatigue level> does not exceed your \\glossterm<fatigue tolerance>, you automatically remove one of your \\glossterm<vital wounds>.
                 You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
                 When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
             """,
@@ -1165,7 +1035,7 @@ def generate_apparel():
             material_type="Bracers",
             description="""
                 Your \\glossterm<natural weapons> gain the \\weapontag<Impact> \\glossterm<weapon tag>.
-                When you get a \\glossterm{critical hit} with natural weapons, you roll triple damage dice instead of double damage dice.
+                When you get a \\glossterm{critical hit} with natural weapons, you deal maximum damage.
                 If the natural weapon already has the Impact weapon tag, this has no effect.
             """,
             short_description="Grants Impact weapon tag with natural weapons",
@@ -1181,24 +1051,22 @@ def generate_apparel():
                 You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +4 hit points",
-        ),
-        create_apparel(
-            name="Belt of Health, Greater",
-            rank=4,
-            material_type="Belt",
-            description="""
-                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +8 hit points",
-        ),
-        create_apparel(
-            name="Belt of Health, Supreme",
-            rank=6,
-            material_type="Belt",
-            description="""
-                You gain a +16 \\glossterm<magic bonus> to your \\glossterm<hit points>.
-            """,
-            short_description="Grants +16 hit points",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +8.
+                    """,
+                    rank=4,
+                    short_description="Grants +8 hit points",
+                ),
+                Upgrade(
+                    description="""
+                        The bonus increases to +16.
+                    """,
+                    rank=6,
+                    short_description="Grants +16 hit points",
+                ),
+            ],
         ),
     ]
 
@@ -1223,42 +1091,41 @@ def generate_apparel():
             material_type="Cloak",
             tags=[],
             description="""
-                You gain a +4 bonus to your defenses against attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
+                You are \\impervious to attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
             """,
-            short_description="Grants +4 to defenses against detection",
-        ),
-        create_apparel(
-            name="Cloak of Nondetection, Greater",
-            rank=5,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                You gain a +8 bonus to your defenses against attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
-            """,
-            short_description="Grants +8 to defenses against detection",
+            short_description="Grants +4 to defenses against magical detection",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You are immune instead of impervious.
+                        This does not help against abilities that do not make attacks, so you can still be seen in scrying sensors that are not targeted on you personally.
+                    """,
+                    rank=6,
+                    short_description="Grants immunity to magical detection attacks",
+                ),
+            ],
         ),
     ]
 
     apparel += [
         create_apparel(
             name="Challenger's Cloak",
-            rank=5,
+            rank=4,
             material_type="Cloak",
             tags=[],
             description="""
                 Each creature suffering penalties for being \\goaded by you takes an additional -1 \\glossterm<accuracy> penalty against creatures other than you.
             """,
             short_description="Increases accuracy penalty on goaded foes by 1",
-        ),
-        create_apparel(
-            name="Challenger's Cloak, Greater",
-            rank=7,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                Each creature suffering penalties for being \\goaded by you takes an additional -2 \\glossterm<accuracy> penalty against creatures other than you.
-            """,
-            short_description="Increases accuracy penalty on goaded foes by 2",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The penalty increases to -2.
+                    """,
+                    rank=7,
+                    short_description="Increases accuracy penalty on goaded foes by 2",
+                ),
+            ],
         ),
     ]
 
@@ -1270,33 +1137,27 @@ def generate_apparel():
             rank=2,
             material_type="Cloak",
             tags=[],
+            # Very specific trigger; call it d3 damage,
+            # which is good for a non-action
             description="""
-                Whenever a creature grapples you, you immediately deal it 2d6+4 piercing damage.
+                Whenever a creature grapples you, you immediately deal it 1d8+1d6 piercing damage.
                 This does not affect creatures that you initiate a grapple with.
             """,
-            short_description="Deals damage to creatures that grapple you",
-        ),
-        create_apparel(
-            name="Quilled Cloak, Greater",
-            rank=4,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                Whenever a creature grapples you, you immediately deal it 4d6+7 piercing damage.
-                This does not affect creatures that you initiate a grapple with.
-            """,
-            short_description="Deals more damage to creatures that grapple you",
-        ),
-        create_apparel(
-            name="Quilled Cloak, Supreme",
-            rank=6,
-            material_type="Cloak",
-            tags=[],
-            description="""
-                Whenever a creature grapples you, you immediately deal it 5d10+14 piercing damage.
-                This does not affect creatures that you initiate a grapple with.
-            """,
-            short_description="Deals even more damage to creatures that grapple you",
+            short_description="Deals 1d8+2d6 damage when grappled",
+            upgrades=[
+                Upgrade(
+                    # d5
+                    description="The damage increases to 4d6.",
+                    rank=4,
+                    short_description="Deals 4d6 damage when grappled",
+                ),
+                Upgrade(
+                    # d7
+                    description="The damage increases to 6d10.",
+                    rank=6,
+                    short_description="Deals 6d10 damage when grappled",
+                ),
+            ],
         ),
     ]
 
@@ -1318,34 +1179,28 @@ def generate_apparel():
             name="Assassin's Cloak",
             rank=3,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 At the end of each round, if you took no actions that round, you become \\trait<invisible> (see \\pcref<Invisible>).
                 This invisibility ends after you take any action.
             """,
             short_description="Grants invisibility while inactive",
-        ),
-        create_apparel(
-            name="Assassin's Cloak, Greater",
-            rank=5,
-            material_type="Cloak",
-            tags=["Sensation"],
-            description="""
-                At the end of each round, if you took no actions during the \\glossterm<action phase> of that round, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action during the action phase.
-            """,
-            short_description="Grants invisibility while mostly inactive",
-        ),
-        create_apparel(
-            name="Assassin's Cloak, Supreme",
-            rank=7,
-            material_type="Cloak",
-            tags=["Sensation"],
-            description="""
-                At the end of each round, if you took no \\glossterm<standard actions> during that round, you become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take a standard action.
-            """,
-            short_description="Grants invisibility while slightly active",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        Making a movement during the movement phase does not prevent you from becoming invisible.
+                    """,
+                    rank=5,
+                    short_description="Grants invisibility while mostly inactive",
+                ),
+                Upgrade(
+                    description="""
+                        Free actions and minor actions do not prevent you from becoming invisible.
+                    """,
+                    rank=7,
+                    short_description="Grants invisibility while mostly inactive",
+                ),
+            ],
         ),
     ]
 
@@ -1361,16 +1216,15 @@ def generate_apparel():
                 There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
             """,
             short_description="Fills nearby area with fog",
-        ),
-        create_apparel(
-            name="Cloak of Mist, Greater",
-            rank=7,
-            material_type="Cloak",
-            tags=["Manifestation"],
-            description="""
-                This cloak functions like a \\mitem<cloak of mist>, except that the fog fills a \\largearea radius.
-            """,
-            short_description="Fills a large area with fog",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The fog's area increases to a \\largearea radius.
+                    """,
+                    rank=7,
+                    short_description="Fills a large area with fog",
+                ),
+            ],
         ),
     ]
 
@@ -1379,27 +1233,23 @@ def generate_apparel():
             name="Vanishing Cloak",
             rank=5,
             material_type="Cloak",
-            tags=["Sensation"],
+            tags=[],
             description="""
                 As a standard action, you can activate this cloak.
                 When you do, you \\glossterm<teleport> to an unoccupied location within \\rngmed range of your original location.
-                As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Hide>).
+                As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Stealth>).
                 Unlike most teleportation, this teleportation does not make any noise.
             """,
             short_description="Can teleport silently",
-        ),
-        create_apparel(
-            name="Vanishing Cloak, Greater",
-            rank=7,
-            material_type="Cloak",
-            tags=["Sensation"],
-            description="""
-                This cloak functions like a \\mitem<vanishing cloak>, except that you also \\glossterm{briefly} become \\trait<invisible> (see \\pcref<Invisible>).
-                This invisibility ends after you take any action.
-
-                If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
-            """,
-            short_description="Can teleport silently and grant brief invisibility",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The range increases to \\longrange.
+                    """,
+                    rank=7,
+                    short_description="Can teleport silently",
+                ),
+            ],
         ),
     ]
 
@@ -1414,17 +1264,15 @@ def generate_apparel():
                 This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
             """,
             short_description="Grants +1 defenses against targeted spells",
-        ),
-        create_apparel(
-            name="Hexward Ring, Greater",
-            rank=7,
-            material_type="Ring",
-            tags=[],
-            description="""
-                You gain a +2 bonus to your defenses against spells that target you directly.
-                This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
-            """,
-            short_description="Grants +2 defenses against targeted spells",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +2.
+                    """,
+                    rank=7,
+                    short_description="Grants +2 defenses against targeted spells",
+                ),
+            ],
         ),
     ]
 
@@ -1437,32 +1285,26 @@ def generate_apparel():
             material_type="Belt",
             tags=['Swift'],
             description="""
-                As a standard action, you can use this belt to regain 1d10+4 hit points.
+                As a standard action, you can use this belt to regain 2d6 hit points.
                 When you do, you increase your \\glossterm<fatigue level> by one.
             """,
-            short_description="Exert to heal 1d10+4 hit points",
-        ),
-        create_apparel(
-            name="Belt of Healing, Greater",
-            rank=4,
-            material_type="Belt",
-            tags=['Swift'],
-            description="""
-                As a standard action, you can use this belt to regain 2d10+7 hit points.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-            """,
-            short_description="Exert to heal 2d10+7 hit points",
-        ),
-        create_apparel(
-            name="Belt of Healing, Supreme",
-            rank=6,
-            material_type="Belt",
-            tags=['Swift'],
-            description="""
-                As a standard action, you can use this belt to regain 4d10+14 hit points.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-            """,
-            short_description="Exert to heal 4d10+14 hit points",
+            short_description="Exert to heal 2d6 hit points",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The healing increases to 4d6.
+                    """,
+                    rank=4,
+                    short_description="Exert to heal 4d6 hit points",
+                ),
+                Upgrade(
+                    description="""
+                        The healing increases to 8d6.
+                    """,
+                    rank=6,
+                    short_description="Exert to heal 8d6 hit points",
+                ),
+            ],
         ),
     ]
 
@@ -1501,26 +1343,15 @@ def generate_apparel():
                 It also reduces your \\glossterm<base speed> (see \\pcref<Size Categories>).
             """,
             short_description="Reduces your size",
-        ),
-        create_apparel(
-            name="Shrinking Belt, Greater",
-            rank=5,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This belt functions like a \\mitem<shrinking belt>, except that you also gain a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, offsetting the penalty from reducing your size.
-            """,
-            short_description="Reduces your size without reducing weight limits",
-        ),
-        create_apparel(
-            name="Shrinking Belt, Supreme",
-            rank=7,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This belt functions like a \\mitem<greater shrinking belt>, except that you can choose to decrease your size by either one size category or two size categories.
-            """,
-            short_description="Greatly reduces your size",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You can also choose to decrease your size by two size categories.
+                    """,
+                    rank=7,
+                    short_description="Greatly reduces your size",
+                ),
+            ],
         ),
     ]
 
@@ -1543,16 +1374,15 @@ def generate_apparel():
                 If this belt is destroyed, the items within it become lost in the Astral Plane.
             """,
             short_description="Contains five large pockets",
-        ),
-        create_apparel(
-            name="Utility Belt, Greater",
-            rank=5,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This belt functions like a \\mitem<utility belt>, except that the belt has ten pockets, each of which is a one foot cube on the inside.
-            """,
-            short_description="Contains ten very large pockets",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The belt has ten pockets instead of five, and each pocket is a one foot cube instead of a six inch cube.
+                    """,
+                    rank=5,
+                    short_description="Contains ten large pockets",
+                ),
+            ],
         ),
     ]
 
@@ -1609,144 +1439,92 @@ def generate_apparel():
     ]
 
     apparel += [
-        create_apparel(
-            name="Gloves of Infused Force",
-            rank=2,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                As a standard action, you can activate these gloves to infuse them with power.
-                When you hit with a \\glossterm<strike> while these gloves are infused, you gain a +4 bonus to \\glossterm<power> with the strike and the gloves stop being infused.
-            """,
-            short_description="Grants +4 power to next strike",
-        ),
-        create_apparel(
-            name="Gloves of Infused Force, Greater",
-            rank=4,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                These gloves function like \\mitem<gloves of infused force>, except that the power bonus increases to +8.
-            """,
-            short_description="Grants +8 power to next strike",
-        ),
-        create_apparel(
-            name="Gloves of Infused Force, Supreme",
-            rank=6,
-            material_type="Gloves",
-            tags=[],
-            description="""
-                These gloves function like \\mitem<gloves of infused force>, except that the power bonus increases to +16.
-            """,
-            short_description="Grants +16 power to next strike",
-        ),
-    ]
-
-    apparel += [
-        # standard tiny cone
+        # standard small cone
         create_apparel(
             name="Pyromancer's Glove",
             rank=1,
             material_type="Glove",
             tags=[],
             description="""
-                As a standard action, you can activate this glove.
+                As a standard action, you can activate this glove using a \\glossterm<free hand>.
                 When you do, make an attack vs. Reflex against everything within a \\smallarea cone.
-                \\hit Each target takes 1d8+1 fire damage.
+                \\hit Each target takes 1d8 fire damage.
             """,
-            short_description="Deals 1d8+1 damage in a cone",
-        ),
-        create_apparel(
-            name="Pyromancer's Glove, Greater",
-            rank=4,
-            material_type="Glove",
-            tags=[],
-            description="""
-                As a standard action, you can activate this glove.
-                When you do, make an attack vs. Reflex against everything within a \\medarea cone.
-                \\hit Each target takes 2d10+3 fire damage.
-            """,
-            short_description="Deals 2d10+3 damage in a cone",
-        ),
-        create_apparel(
-            name="Pyromancer's Glove, Supreme",
-            rank=7,
-            material_type="Glove",
-            tags=[],
-            description="""
-                As a standard action, you can activate this glove.
-                When you do, make an attack vs. Reflex against everything within a \\largearea cone.
-                \\hit Each target takes 5d10+10 fire damage.
-            """,
-            short_description="Deals 5d10+10 damage in a cone",
+            short_description="Deals 1d8 damage in a cone",
+            upgrades=[
+                Upgrade(
+                    # d3
+                    description="The damage increases to 1d8+2d6, and the area increases to a \\medarea cone.",
+                    rank=4,
+                    short_description="Deals 1d8+2d6 damage in a cone",
+                ),
+                Upgrade(
+                    # d6
+                    description="The damage increases to 5d10, and the area increases to a \\largearea cone.",
+                    rank=7,
+                    short_description="Deals 5d10 damage in a cone",
+                ),
+            ],
         ),
     ]
 
     apparel += [
         create_apparel(
             name="Belt of Vital Persistence",
-            rank=1,
+            rank=2,
             material_type="Belt",
             tags=[],
             description="""
                 When you make a \\glossterm<vital roll>, you can activate this item.
-                When you do, you increase your \\glossterm<fatigue level> by one, and you gain a +1 bonus to the vital roll.
+                When you do, you increase your \\glossterm<fatigue level> by two, and you gain a +2 bonus to the vital roll.
                 You can use this ability after you see the result of the vital roll.
             """,
-            short_description="Can exert for +1 to a vital roll",
-        ),
-        create_apparel(
-            name="Belt of Vital Persistence, Greater",
-            rank=3,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +2.
-            """,
             short_description="Can exert for +2 to a vital roll",
-        ),
-        create_apparel(
-            name="Belt of Vital Persistence, Supreme",
-            rank=5,
-            material_type="Belt",
-            tags=[],
-            description="""
-                This item functions like a \\textit<belt of vital persistence>, except that the bonus it grants increases to +3.
-            """,
-            short_description="Can exert for +3 to a vital roll",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +3.
+                    """,
+                    rank=4,
+                    short_description="Can exert for +3 to a vital roll",
+                ),
+                Upgrade(
+                    description="""
+                        The bonus increases to +4.
+                    """,
+                    rank=6,
+                    short_description="Can exert for +4 to a vital roll",
+                ),
+            ],
         ),
     ]
 
     apparel += [
         create_apparel(
             name="Lifekeeping Belt",
-            rank=3,
+            rank=1,
             material_type="Belt",
             tags=[],
             description="""
                 You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants +1 bonus to vital rolls",
-        ),
-        create_apparel(
-            name="Lifekeeping Belt, Greater",
-            rank=5,
-            material_type="Belt",
-            tags=[],
-            description="""
-                You gain a +2 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-            """,
-            short_description="Grants +2 bonus to vital rolls",
-        ),
-        create_apparel(
-            name="Lifekeeping Belt, Supreme",
-            rank=7,
-            material_type="Belt",
-            tags=[],
-            description="""
-                You gain a +3 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
-            """,
-            short_description="Grants +3 bonus to vital rolls",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        The bonus increases to +2.
+                    """,
+                    rank=3,
+                    short_description="Grants +2 bonus to vital rolls",
+                ),
+                Upgrade(
+                    description="""
+                        The bonus increases to +3.
+                    """,
+                    rank=5,
+                    short_description="Grants +3 bonus to vital rolls",
+                ),
+            ],
         ),
     ]
 
@@ -1783,7 +1561,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ring of Spell Investment",
-            rank=2,
+            rank=3,
             material_type="Ring",
             tags=[],
             description="""
@@ -1802,17 +1580,24 @@ def generate_apparel():
                 After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
             """,
             short_description="Can invest a spell to gain its effect later",
-        ),
-        create_apparel(
-            name="Ring of Spell Investment, Greater",
-            rank=4,
-            material_type="Ring",
-            tags=[],
-            description="""
-                This item functions like a \\mitem<ring of spell investment>, except that you can store up to three spells in the gloves.
-                When you activate the ring, you choose which spell to use.
-            """,
-            short_description="Can invest three spells to gain their effects later",
+            upgrades=[
+                Upgrade(
+                    description="""
+                        You can invest up to two spells in the ring.
+                        When you activate the ring, you choose which spell to use.
+                    """,
+                    rank=5,
+                    short_description="Can invest two spells to gain their effects later",
+                ),
+                Upgrade(
+                    description="""
+                        You can invest up to three spells in the ring.
+                        When you activate the ring, you choose which spell to use.
+                    """,
+                    rank=7,
+                    short_description="Can invest three spells to gain their effects later",
+                ),
+            ],
         ),
     ]
 
@@ -1823,7 +1608,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 bonus to Strength-based \\glossterm<checks>, and you gain a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +1 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 1.
             """,
             short_description="Grants +1 Strength for specific purposes",
@@ -1834,7 +1619,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +2 bonus to Strength-based \\glossterm<checks>, and you gain a +2 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +2 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 2.
             """,
             short_description="Grants +2 Strength for specific purposes",
@@ -1845,7 +1630,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +3 bonus to Strength-based \\glossterm<checks>, and you gain a +3 bonus to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +3 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +3 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 3.
             """,
             short_description="Grants +3 Strength for specific purposes",
@@ -1906,7 +1691,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with movement-based skills",
         ),
@@ -1918,7 +1703,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with movement-based skills",
         ),
@@ -1941,7 +1726,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Craft, Devices, Flexibility, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with finesse-based skills",
         ),
@@ -1953,7 +1738,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Craft, Devices, Medicine, or Sleight of Hand skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with finesse-based skills",
         ),
@@ -1976,7 +1761,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and exert more easily with observation-based skills",
         ),
@@ -1988,7 +1773,7 @@ def generate_apparel():
             description="""
                 Whenever you roll a 1 or 2 on an attack or check using the Awareness, Deduction, Social Insight, or Survival skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
-                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<desperate exertion>).
+                In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
             short_description="Can reroll 1s and 2s and exert more easily with observation-based skills",
         ),
@@ -2003,32 +1788,23 @@ def generate_apparel():
             description="""
                 Whenever you make a Jump check, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one.
-                In addition, you double your maximum vertical height from the jump, and you can land in midair at any point during your jump this round.
+                In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
                 You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
-                These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
+                These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
             """,
             short_description="Can exert to briefly levitate in midair",
-        ),
-        create_apparel(
-            name="Boots of Levitation, Greater",
-            rank=4,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
-            """,
-            short_description="Can briefly levitate in midair",
-        ),
-        create_apparel(
-            name="Boots of Levitation, Supreme",
-            rank=6,
-            material_type="Boots",
-            tags=[],
-            description="""
-                These boots function like \\mitem<boots of levitation>, except that you do not increase your fatigue level when you activate them.
-                In addition, you can activate them twice before you land on a solid surface capable of supporting your weight.
-            """,
-            short_description="Can briefly levitate twice in midair",
+            upgrades=[
+                Upgrade(
+                    description="You can activate the boots twice before landing.",
+                    rank=4,
+                    short_description="Can exert to briefly levitate in midair twice",
+                ),
+                Upgrade(
+                    description="You also do not increase your fatigue level when you activate the boots.",
+                    rank=7,
+                    short_description="Can briefly levitate in midair twice",
+                ),
+            ],
         ),
     ]
 
@@ -2196,23 +1972,23 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Ring of Mastery",
+            name="Indomitable Ring",
             rank=3,
             material_type="Ring",
             tags=["Attune (deep)"],
             description="""
                 You gain a +6 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus3 \\glossterm<magic bonus> to \\glossterm<power>.
+                In addition, you gain a \\plus1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants many small bonuses",
             upgrades=[
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +12, and the power bonus increases to +6.",
+                    description="The hit point and damage resistance bonuses increase to +12, and the vital roll bonus increases to +2.",
                     rank=5,
                     short_description="Grants many bonuses",
                 ),
                 Upgrade(
-                    description="The hit point and damage resistance bonuses increase to +24, and the power bonus increases to +12.",
+                    description="The hit point and damage resistance bonuses increase to +24, and the vital roll bonus increases to +3.",
                     rank=7,
                     short_description="Grants many large bonuses",
                 ),
@@ -2327,14 +2103,15 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Ghoultouch Gauntlet",
-            rank=5,
+            rank=7,
             material_type="Gauntlet",
             tags=[],
+            # "paralyzed" is r4; double defense and no DR makes that work.
             description="""
-                As a standard action, you can make an attack vs. Fortitude against an adjacent living creature.
-                On a hit, the target takes 2d8 physical damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\glossterm<briefly> \\paralyzed.
-                Whether the attack hits or misses, the target is immune to this ability until it takes a \\glossterm<short rest>.
+                As a standard action, you can activate this gauntlet using a \\glossterm<free hand>.
+                When you do, make an attack vs. Reflex and Fortitude against a living creature you \\glossterm<touch>.
+                On a hit, if the target has no remaining \\glossterm<damage resistance>, it becomes \\paralyzed as a \\glossterm<condition>.
+                Whether the attack hits or misses, the target is immune to this ability until it finishes a \\glossterm<short rest>.
             """,
             short_description="Grants a paralyzing touch",
         ),
@@ -2382,12 +2159,12 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<rage> barbarian ability, its penalties to Armor and Reflex defense are reduced by 1.
+                When you use the \\ability<rage> barbarian ability, if you have at least 3 Dexterity, its penalties to Armor and Reflex defense are reduced by 1.
             """,
             short_description="Reduces defense penalties from \\textit<rage>",
             upgrades=[
                 Upgrade(
-                    description="The defense penalties are entirely removed.",
+                    description="If you have at least 5 Dexterity, the defense penalties are entirely removed.",
                     rank=7,
                     short_description="Removes defense penalties from \\textit<rage>",
                 ),
@@ -2402,29 +2179,21 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<power>.
+                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +2 bonus to your \\glossterm<power>.
             """,
-            short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
-        ),
-        create_apparel(
-            name="Amulet of Divine Healing, Greater",
-            rank=4,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +8 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +8 power with \\ability<divine aid> and \\ability<lay on hands>",
-        ),
-        create_apparel(
-            name="Amulet of Divine Healing, Supreme",
-            rank=6,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +16 \\glossterm<magic bonus> to your \\glossterm<power>.
-            """,
-            short_description="Grants +16 power with \\ability<divine aid> and \\ability<lay on hands>",
+            short_description="Grants +2 power with \\ability<divine aid> and \\ability<lay on hands>",
+            upgrades=[
+                Upgrade(
+                    description="The bonus increases to +3.",
+                    rank=4,
+                    short_description="Grants +3 power with \\ability<divine aid> and \\ability<lay on hands>",
+                ),
+                Upgrade(
+                    description="The bonus increases to +4.",
+                    rank=6,
+                    short_description="Grants +4 power with \\ability<divine aid> and \\ability<lay on hands>",
+                ),
+            ],
         ),
     ]
 
@@ -2476,7 +2245,7 @@ def generate_apparel():
             description="""
                 Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
             """,
-            short_description="Using \\abilitytag<cleansing discipline> also helps an adjacent ally",
+            short_description="Using \\ability<cleansing discipline> also helps an adjacent ally",
         ),
         create_apparel(
             name="Amulet of Shared Discipline, Greater",
@@ -2486,7 +2255,7 @@ def generate_apparel():
             description="""
                 This item functions like a \\textit<amulet of shared discipline>, except that the range increases to \\medrange.
             """,
-            short_description="Using the \\abilitytag<cleansing discipline> ability also helps a nearby ally",
+            short_description="Using the \\ability<cleansing discipline> ability also helps a nearby ally",
         ),
     ]
 
@@ -2585,7 +2354,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Belt of Epic Constitution",
-            rank=7,
+            rank=6,
             material_type="Belt",
             tags=["Attune (deep)"],
             description="""
@@ -2598,7 +2367,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Cloak of Epic Dexterity",
-            rank=7,
+            rank=6,
             material_type="Cloak",
             tags=["Attune (deep)"],
             description="""
@@ -2611,7 +2380,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Bracers of Epic Strength",
-            rank=7,
+            rank=6,
             material_type="Bracers",
             tags=["Attune (deep)"],
             description="""
@@ -2624,7 +2393,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Glasses of Epic Perception",
-            rank=7,
+            rank=6,
             material_type="Glasses",
             tags=["Attune (deep)"],
             description="""
@@ -2637,7 +2406,7 @@ def generate_apparel():
     apparel += [
         create_apparel(
             name="Circlet of Epic Willpower",
-            rank=7,
+            rank=6,
             material_type="Circlet",
             tags=["Attune (deep)"],
             description="""
@@ -2733,14 +2502,14 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                You can use the \\ability<sneak attack> rogue ability with medium weapons.
+                You can use the \\ability<sneak attack> rogue ability with any non-\\weapontag<Heavy> weapon.
             """,
-            short_description="Can \\ability<sneak attack> with medium weapons",
+            short_description="Can \\ability<sneak attack> with non-Light weapons",
             upgrades=[
                 Upgrade(
-                    description="You can also \\ability<sneak attack> with heavy weapons.",
+                    description="You can also \\ability<sneak attack> with Heavy weapons.",
                     rank=6,
-                    short_description="Can \\ability<sneak attack> with heavy weapons",
+                    short_description="Can \\ability<sneak attack> with Heavy weapons",
                 ),
             ],
         ),
@@ -2799,7 +2568,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
         ),
@@ -2809,7 +2578,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
         ),
@@ -2819,7 +2588,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all \\glossterm<untrained> skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 3",
         ),
@@ -2827,40 +2596,23 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Spellfeeding Amulet",
+            name="Spellbounce Amulet",
             rank=2,
             material_type="Amulet",
             tags=[],
+            # same healing as a healing belt; reward is not having to spend an
+            # action.
             description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 2d6+4 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
+                Whenever you absorb a spell with the \\ability<spell absorption> sorcerer ability, you \\glossterm<briefly> gain a +2 accuracy bonus with that spell.
             """,
-            short_description="Exert to heal 2d6+4 with \\ability<spell absorption>",
-        ),
-        create_apparel(
-            name="Spellfeeding Amulet, Greater",
-            rank=4,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 4d6+7 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
-            """,
-            short_description="Exert to heal 4d6+7 with \\ability<spell absorption>",
-        ),
-        create_apparel(
-            name="Spellfeeding Amulet, Supreme",
-            rank=6,
-            material_type="Amulet",
-            tags=[],
-            description="""
-                Once per round, when you absorb a spell with the \\ability<spell absorption> sorcerer ability, you may regain 5d10+14 \\glossterm<hit points>.
-                When you do, you increase your \\glossterm<fatigue level> by one.
-                This ability does not have the \\abilitytag<Swift> tag, so it resolves after incoming attacks during the current phase.
-            """,
-            short_description="Exert to heal 5d10+14 with \\ability<spell absorption>",
+            short_description="Grants brief +2 accuracy with absorbed spells",
+            upgrades=[
+                Upgrade(
+                    description="The accuracy bonus increases to +4.",
+                    rank=5,
+                    short_description="Grants brief +4 accuracy with absorbed spells",
+                ),
+            ],
         ),
     ]
 
@@ -2976,7 +2728,7 @@ def generate_apparel():
             description="""
                 When you use the \\ability<denounce the heathens> or \\ability<bless the worthy> cleric abilities, their area is tripled.
             """,
-            short_description="Triples area of \\ability<denounce the heathens> and \\ability<bless the worthy>",
+            short_description="Triples area of Preacher abilities",
         ),
         create_apparel(
             name="Amulet of Blessed Oration, Supreme",
@@ -2984,9 +2736,9 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                When you use the \\ability<denounce the heathens>, \\ability<condemn the fearful>, or \\ability<condemn the fearful> cleric abilities, their area is quadrupled.
+                When you use the \\ability<denounce the heathens> or \\ability<condemn the fearful> cleric abilities, their area is quadrupled.
             """,
-            short_description="Quadruples area of preacher abilities",
+            short_description="Quadruples area of Preacher abilities",
         ),
     ]
 

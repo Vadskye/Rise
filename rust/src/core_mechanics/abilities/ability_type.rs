@@ -1,4 +1,4 @@
-#[derive(Clone, PartialEq)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum AbilityType {
     Normal,
     Sustain(String),
@@ -24,14 +24,14 @@ impl AbilityType {
             format!("magical{}", base_tag)
         } else {
             base_tag.to_string()
-        }
+        };
     }
 
     fn environment_tag(&self) -> String {
         match self {
             Self::Normal => "".to_string(),
-            Self::Sustain(action) => format!("[\\abilitytag<Sustain> {}]", action),
-            Self::Attune(subtype) => format!("[\\abilitytag<Attune>{}]", attune_suffix(subtype)),
+            Self::Sustain(action) => format!("<\\abilitytag<Sustain> {}>", action),
+            Self::Attune(subtype) => format!("<\\abilitytag<Attune>{}>", attune_suffix(subtype)),
         }
     }
 
@@ -45,7 +45,10 @@ impl AbilityType {
     }
 
     pub fn end(&self, is_magical: bool) -> String {
-        return format!("\\end<{environment}>", environment = self.environment(is_magical));
+        return format!(
+            "\\end<{environment}>",
+            environment = self.environment(is_magical)
+        );
     }
 }
 

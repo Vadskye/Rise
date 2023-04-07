@@ -41,11 +41,6 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
       `,
       rank: 1,
-      scaling: {
-        3: `You also gain a +2 \\glossterm{magic bonus} to \\glossterm{power} while you wield a weapon from the chosen weapon group.`,
-        5: `The power bonus increases to +4.`,
-        7: `The power bonus increases to +8.`,
-      },
       type: 'Attune',
     },
 
@@ -56,11 +51,16 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
       `,
       rank: 1,
-      scaling: {
-        3: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance} while wearing armor.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Proficiency',
+
+      effect: `
+        You gain \\glossterm{proficiency} with all weapons and armor, including exotic weapons.
+      `,
+      rank: 4,
       type: 'Attune',
     },
 
@@ -68,7 +68,8 @@ export const revelation: MysticSphere = {
       name: 'Purge Invisibility',
 
       effect: `
-        All \\glossterm{invisibility} effects within a \\largearea radius \\glossterm{emanation} from you are \\glossterm{suppressed}.
+        Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
+        Any effects that would cause them to be invisible are \\glossterm{suppressed}.
       `,
       rank: 2,
       scaling: {
@@ -117,16 +118,18 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Offense',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Whenever you make an attack roll, you can see into the future to change your fate.
+        If you do, you roll the attack roll twice and take the higher result.
+        After you change your fate in this way, this effect ends.
       `,
       narrative: `
         You intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `You also gain a +1 accuracy bonus to the attack roll.`,
+        5: `The bonus increases to +2.`,
+        7: `The bonus increases to +3.`,
       },
       type: 'Attune',
     },
@@ -521,8 +524,8 @@ export const revelation: MysticSphere = {
       name: 'Enhanced Senses',
 
       effect: `
-        If you are \\glossterm{trained} with the Awareness skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Awareness as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -537,8 +540,8 @@ export const revelation: MysticSphere = {
       name: 'Social Intuition',
 
       effect: `
-        If you are \\glossterm{trained} with the Social Insight skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Social Insight as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -960,6 +963,36 @@ export const revelation: MysticSphere = {
         This effect is permanent.
         `,
       rank: 3,
+    },
+    {
+      name: 'Find the Path',
+
+      castingTime: '1 hour',
+      effect: `
+        When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
+        You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
+        You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
+
+        The guidance provided by this ability adjusts to match the current physical capabilities of each ritual participant, including flight and other unusual movement modes.
+        It does not consider teleportation spells or any other active abilities which could allow the creatures to bypass physical obstacles.
+        It does not see into the future, and changing circumstances may cause the most direct path to change over time.
+        It also does not consider hostile creatures, traps, and other passable dangers which may endanger or slow progress.
+      `,
+      rank: 4,
+      tags: ['Attune'],
+    },
+    {
+      name: 'Efficient Find the Path',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        exceptThat: `
+          the casting time is shorter, and the ritual is much less exhausting.
+        `,
+        name: 'find the path',
+      },
+      rank: 6,
+      tags: ['Attune'],
     },
   ],
 };

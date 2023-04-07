@@ -3,7 +3,7 @@ use crate::equipment::StandardWeapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::FullMonsterDefinition;
+use crate::monsters::{FullMonsterDefinition, Role};
 
 pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
     let mut stock_monsters: Vec<MonsterEntry> = vec![];
@@ -30,6 +30,7 @@ pub fn generate_stock_monsters() -> Vec<MonsterEntry> {
                                 ""
                             },
                         ),
+                        role: Role::Leader,
                         senses: None,
                         size: Size::Medium,
                         trained_skills: None,

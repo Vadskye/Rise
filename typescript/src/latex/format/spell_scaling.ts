@@ -14,8 +14,8 @@ export function spellScaling(spell: Pick<SpellLike, "name" | "scaling" | "rank">
 
   if (spell.scaling === "accuracy") {
     return `The attack's \\glossterm{accuracy} increases by +1 for each rank beyond ${rank}.`;
-  } else if (spell.scaling === "damage") {
-    return `The damage increases by +1d for each rank beyond ${rank}.`;
+  } else if (spell.scaling === "poison") {
+    return `The poison's \\glossterm{accuracy} increases by +1 for each rank beyond ${rank}.`;
   } else if (spell.scaling.special) {
     return spell.scaling.special;
   } else if (spell.scaling && typeof spell.scaling === "object") {

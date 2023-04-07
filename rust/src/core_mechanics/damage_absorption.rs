@@ -13,39 +13,42 @@ where
     Creature: HasAttributes + HasModifiers + HasArmor,
 {
     fn calc_damage_resistance(&self) -> i32 {
-        let mut levelish = calc_levelish(self);
+        let mut levelish = calc_levelish(
+            self,
+            0,
+            ModifierType::DamageResistanceFromLevel,
+        );
         let mut dr_from_level = 0;
         if levelish > 0 {
-            let mut multiplier = 1;
-            while levelish > 21 {
-                levelish -= 6;
-                multiplier += 1;
+            if levelish > 21 {
+                // +5 DR for each point beyond 21
+                dr_from_level = (levelish - 21) * 5;
+                levelish = 21;
             }
-            dr_from_level += multiplier
-                * (match levelish {
-                    1 => 1,
-                    2 => 2,
-                    3 => 3,
-                    4 => 4,
-                    5 => 5,
-                    6 => 6,
-                    7 => 7,
-                    8 => 9,
-                    9 => 10,
-                    10 => 12,
-                    11 => 13,
-                    12 => 15,
-                    13 => 16,
-                    14 => 18,
-                    15 => 20,
-                    16 => 22,
-                    17 => 25,
-                    18 => 28,
-                    19 => 32,
-                    20 => 36,
-                    21 => 40,
-                    _ => panic!("Invalid levelish {}", levelish),
-                });
+            dr_from_level += match levelish {
+                1 => 0,
+                2 => 1,
+                3 => 2,
+                4 => 3,
+                5 => 4,
+                6 => 5,
+                7 => 6,
+                8 => 7,
+                9 => 8,
+                10 => 9,
+                11 => 10,
+                12 => 12,
+                13 => 14,
+                14 => 16,
+                15 => 18,
+                16 => 20,
+                17 => 22,
+                18 => 25,
+                19 => 28,
+                20 => 31,
+                21 => 35,
+                _ => panic!("Invalid levelish {}", levelish),
+            };
         }
 
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
@@ -61,42 +64,44 @@ where
     }
 
     fn calc_hit_points(&self) -> i32 {
-        let mut levelish = calc_levelish(self);
-        let hp_from_level;
+        let mut levelish = calc_levelish(
+            self,
+            self.get_base_attribute(&Attribute::Constitution),
+            ModifierType::HitPointsFromLevel,
+        );
+        let mut hp_from_level = 0;
         if levelish > 0 {
-            let mut multiplier = 1;
-            while levelish > 21 {
-                levelish -= 6;
-                multiplier += 1;
+            if levelish > 21 {
+                // +10 HP for each point beyond 21
+                hp_from_level = (levelish - 21) * 10;
+                levelish = 21;
             }
-            hp_from_level = multiplier
-                * (match levelish {
-                    1 => 10,
-                    2 => 11,
-                    3 => 12,
-                    4 => 13,
-                    5 => 14,
-                    6 => 16,   // +2
-                    7 => 18,   // +2
-                    8 => 20,   // +2
-                    9 => 22,   // +2
-                    10 => 25,  // +3
-                    11 => 28,  // +3
-                    12 => 32,  // +4
-                    13 => 36,  // +4
-                    14 => 40,  // +4
-                    15 => 44,  // +4
-                    16 => 50,  // +6
-                    17 => 56,  // +6
-                    18 => 64,  // +8
-                    19 => 72,  // +8
-                    20 => 80,  // +8
-                    21 => 88,  // +8
-                    22 => 100, // +12
-                    _ => panic!("Invalid levelish {}", levelish),
-                });
+            hp_from_level += match levelish {
+                1 => 6,
+                2 => 7,
+                3 => 8,
+                4 => 9,
+                5 => 10,
+                6 => 12,  // +2
+                7 => 14,  // +2
+                8 => 16,  // +2
+                9 => 18,  // +2
+                10 => 20, // +3
+                11 => 22, // +3
+                12 => 25, // +4
+                13 => 28, // +4
+                14 => 32, // +4
+                15 => 36, // +4
+                16 => 40, // +6
+                17 => 45, // +6
+                18 => 50, // +8
+                19 => 56, // +8
+                20 => 63, // +8
+                21 => 70, // +10
+                _ => panic!("Invalid levelish {}", levelish),
+            }
         } else {
-            hp_from_level = 9 + levelish;
+            hp_from_level = 5 + (levelish / 2);
         }
 
         let hp = hp_from_level + self.calc_total_modifier(ModifierType::HitPoints);
@@ -116,12 +121,8 @@ where
     }
 }
 
-fn calc_levelish(creature: &Creature) -> i32 {
-    let con_multiplier = match creature.category {
-        CreatureCategory::Character => 1.0,
-        CreatureCategory::Monster(_) => 0.5,
-    };
+fn calc_levelish(creature: &Creature, attribute_modifier: i32, mt: ModifierType) -> i32 {
     return creature.level
-        + (creature.get_base_attribute(&Attribute::Constitution) as f64 * con_multiplier).floor()
-            as i32;
+        + attribute_modifier
+        + creature.calc_total_modifier(mt);
 }

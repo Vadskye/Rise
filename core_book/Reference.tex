@@ -26,6 +26,9 @@
     They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
     For its ability to penetrate other materials, use the most similar substance from the list above.
 
+    \abilitytagdef{Elite} Elite abilities require an \glossterm{elite action} to use.
+    They can only be used by \glossterm{elite} monsters.
+
     \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
     They have no effect on objects or creatures without minds.
 
@@ -56,7 +59,7 @@
     \abilitytagdef{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
     Creatures successfully affected by Subtle abilities do not generally know that they are being influenced.
     However, a creature that successfully resists a Subtle ability can generally notice that it resisted a special effect of some kind, just like a non-Subtle ability.
-    You can notice the effects of a Subtle ability on yourself with the Awareness skill (see \pcref{Notice Subtle Effects}).
+    You can notice the effects of a Subtle ability on yourself with the Awareness skill (see \pcref{Notice Subtle Effect}).
 
     \abilitytagdef{Sustain} Sustain abilities require an action to maintain.
     The tag includes an action type, such as (minor), which indicates the type of action required to sustain the ability.
@@ -115,6 +118,7 @@
     \debuffdef{dominated}[dominate] A dominated creature is mentally compelled to obey another creature.
     It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
     If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
+    A creature that is both dominated and \confused obeys its dominated orders, ignoring the confusion.
 
     \debuffdef{flying} A creature that is flying takes a \minus2 penalty to its Armor and Reflex defenses.
     If it has a poor \glossterm{maneuverability}, this penalty increases to \minus4 (see \pcref{Maneuverability}).
@@ -134,7 +138,7 @@
     While grappled, you suffer certain penalties and restrictions, as described below.
     \begin{itemize}
         \item You are unable to use one of your hands for any purposes other than grappling.
-            This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with heavy weapons.
+            This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
             This does not affect creatures without hands.
         \item You take a \minus2 penalty to Armor and Reflex defenses.
         \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
@@ -168,9 +172,13 @@
     For details, see \pcref{Awareness and Surprise}.
 
     \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
-    It takes a \minus2 penalty to Armor and Reflex defenses, though it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes}.
+    It takes a \minus2 penalty to Armor and Reflex defenses.
+    However, it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes} as long as the attacker is not adjacent.
     It moves at half of its normal speed, and is considered one size category smaller than normal when determining whether it is subject to \abilitytag{Size-Based} effects, including critical hits.
+
     If a creature becomes prone while in a precarious situation, such as on a narrow ledge, it may fall.
+    Mounted creatures that are knocked prone fall off their mounts.
+    Creatures cannot glide or fly while prone.
 
     A creature can stand up from being prone as part of a \glossterm{movement} using one of their move speeds.
     This generally requires one \glossterm{free hand}.
@@ -277,6 +285,12 @@
     \traitdef{Lifesight}{lifesight}
         Lifesight functions like \trait{blindsight}, except that it can only see living creatures.
 
+    \traitdef{Limbless}{limbless}
+        A limbless creature has no arms or legs.
+        Limbless creatures are immune to being \prone.
+        In addition, they treat natural weapons that do not require free hands, like a bite, as if they had the \weapontag{Heavy} weapon tag and were being held in two hands.
+        This gives them a weapon damage bonus equal to \plus1d per 3 \glossterm{power}.
+
     \traitdef{Low-light Vision}{low-light vision}
         A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
         This provides no benefit in areas of complete darkness.
@@ -289,6 +303,15 @@
 
         It is possible for mindless creatures to still act as if they were intelligent through various magical means.
         For example, animated objects can obey simple commands by virtue of the magic that controls them, but they are still mindless.
+
+    \traitdef{Multipedal}{multipedal}
+        A multipedal creature uses three or more legs to move.
+        Bidepal creatures, like humans, are not multipedal.
+
+        Multipedal creatures gain a \plus10 foot bonus to their \glossterm{land speed}.
+        In addition, they treat natural weapons that do not require free hands, like a bite, as if they had the \weapontag{Heavy} weapon tag and were being held in two hands.
+        This gives them a weapon damage bonus equal to \plus1d per 3 \glossterm{power}.
+        Some specific monsters, like horses, do not gain this benefit if they are weak or unable to effectively use their whole body to support their attacks.
 
     \traitdef{Scent}{scent}
         A creature with the scent ability has an unusually good sense of smell.
@@ -325,8 +348,9 @@
 
     \traitdef{Undead}{undead}
         Undead creatures are affected in unusual ways by effects that directly manipulate life energy.
-        They are always considered living \glossterm{allies} for the purpose of effects that would cause living creatures to regain \glossterm{hit points}.
+        They can be targeted as if they were living \glossterm{allies} by effects that would cause living creatures to regain \glossterm{hit points}.
         Whenever they would regain \glossterm{hit points} from an ability that normally only affects living creatures, they instead take energy damage equal to the hit points that they would have regained, ignoring any hit point maximum the ability would normally have.
+        If the ability requires an attack roll, such as an attack vs. Reflex to touch the target, they are \vulnerable against that attack, and a \glossterm{critical hit} doubles the damage they take as normal for damaging attacks.
 
         Any other effects beyond simple hit point recovery are ignored.
         For example, if a cleric uses their \ability{divine aid} ability to heal an undead creature, the undead would take damage, but it would not gain any bonus to its defenses.

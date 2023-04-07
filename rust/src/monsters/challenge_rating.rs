@@ -1,8 +1,9 @@
-use crate::creatures::{Creature, Monster};
+use crate::core_mechanics::StandardPassiveAbility;
+use crate::creatures::{Creature, HasModifiers, Modifier, Monster};
 use serde::Serialize;
 use std::cmp::max;
 
-#[derive(Copy, Clone, PartialEq, Serialize)]
+#[derive(Copy, Clone, Debug, PartialEq, Serialize)]
 pub enum ChallengeRating {
     Half,
     One,
@@ -14,11 +15,34 @@ impl ChallengeRating {
         return vec![Self::One, Self::Four];
     }
 
+    pub fn add_modifiers(&self, creature: &mut Creature) {
+        creature.add_modifier(
+            Modifier::Accuracy(self.accuracy_bonus()),
+            Some("challenge rating"),
+            None,
+        );
+        creature.add_modifier(
+            Modifier::AllDefenses(self.defense_bonus()),
+            Some("challenge rating"),
+            None,
+        );
+        if self == &ChallengeRating::Four {
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::EliteActions.ability());
+            // TODO: figure out whether this should scale with level
+            let maximum_conditions = 4;
+            creature
+                .passive_abilities
+                .push(StandardPassiveAbility::ConditionRemoval(maximum_conditions).ability());
+        }
+    }
+
     pub fn accuracy_bonus(&self) -> i32 {
         match self {
             Self::Half => 0,
             Self::One => 0,
-            Self::Four => 1,
+            Self::Four => 2,
         }
     }
 
@@ -52,7 +76,7 @@ impl ChallengeRating {
         match self {
             Self::Half => 0,
             Self::One => 0,
-            Self::Four => 1,
+            Self::Four => 2,
         }
     }
 
@@ -62,7 +86,7 @@ impl ChallengeRating {
         match self {
             Self::Half => 0.5,
             Self::One => 1.0,
-            Self::Four => 2.0,
+            Self::Four => 1.0,
         }
     }
 
@@ -70,7 +94,7 @@ impl ChallengeRating {
         match self {
             Self::Half => 0,
             Self::One => 0,
-            Self::Four => 1,
+            Self::Four => 0,
         }
     }
 
@@ -115,9 +139,7 @@ impl ChallengeRating {
         }
 
         match count {
-            1 => vec![
-                sm(ChallengeRating::Four, level + 3),
-            ],
+            1 => vec![sm(ChallengeRating::Four, level + 3)],
             2 => vec![
                 sm(ChallengeRating::Four, level),
                 sm(ChallengeRating::One, level + 3),

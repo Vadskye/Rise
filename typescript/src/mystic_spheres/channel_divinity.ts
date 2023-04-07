@@ -52,7 +52,8 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
-        First, you heal 2d6 + half \\glossterm{power} \\glossterm{hit points}.
+        % d3
+        First, you heal 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power}.
         This healing cannot increase your hit points above half your maximum hit points.
         Second, you remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
@@ -83,8 +84,8 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Authority',
 
       effect: `
-        If you are \\glossterm{trained} with the Persuasion skill, you gain a +3 \\glossterm{magic bonus} to it.
-        Otherwise, you are treated as being \\glossterm{trained} in that skill.
+        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
       scaling: {
@@ -100,17 +101,17 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, you gain a +4 \\glossterm{magic bonus} to \\glossterm{power}.
+        In addition, you gain a +2 \\glossterm{magic bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 3,
       scaling: {
         5: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to power increases to +8.
+          In addition, the bonus to vital rolls increases to +3.
         `,
         7: `
           The bonuses to hit points and damage resistance increase to +32.
-          In addition, the bonus to power increases to +16.
+          In addition, the bonus to vital rolls increases to +4.
         `,
       },
       type: 'Attune (deep)',
@@ -135,35 +136,35 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Retributive Judgment',
 
-      // +1 level for situational +2 accuracy
+      // close range for accuracy
       attack: {
         hit: `
-          The target takes 1d10 + \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
           You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Retributive Judgment',
 
-      // +3 levels for situational +4 accuracy, +2 levels for +1d
+      // close range and d5h for accuracy
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes \\damagerankfivehigh{energy}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
           You gain a +4 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 6,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -171,30 +172,47 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 1d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankone{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       rank: 2,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
       name: 'Massive Word of Faith',
 
-      // +3r for area, +2r for +1d
       attack: {
         hit: `
-          Each target takes 4d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Word of Faith',
+
+      attack: {
+        hit: `
+          Each target takes \\damageranksix{energy}.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -202,15 +220,16 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes 2d8 + half \\glossterm{power} energy damage.
+          Each target takes \\damagerankthree{energy}.
           Each target that takes damage this way is \\shaken by you as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 5,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -268,7 +287,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it takes a \\glossterm{short rest}.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
@@ -296,10 +315,10 @@ export const channelDivinity: MysticSphere = {
       name: 'Faithful Endurance',
 
       effect: `
-        You gain a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
+        You gain a +2 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
-      scaling: { 4: `The bonus increases to +2.`, 6: `The bonus increases to +3.` },
+      scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
       type: 'Attune',
     },
 
@@ -307,13 +326,15 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Power',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{power}.
+        Whenever you make a damaging attack, you can infuse that attack with divine power.
+        If you do, the attack deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
+        After you enhance an attack in this way, this effect ends.
       `,
       rank: 1,
       scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
+        3: `The extra damage increases to 1d8.`,
+        5: `The extra damage increases to 2d6.`,
+        7: `The extra damage increases to 2d10.`,
       },
       type: 'Attune',
     },
@@ -349,10 +370,10 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + half \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After it returns, it becomes immune to being teleported in this way until it takes a \\glossterm{short rest}.
+          After it returns, it becomes immune to being teleported in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -360,7 +381,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
 
     {
@@ -379,7 +400,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes 2d6 + \\glossterm{power} energy damage.
+          The target takes \\damageranktwo{energy}.
           If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -388,14 +409,14 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
     {
       name: 'Intense Fearful Judgment',
 
       attack: {
         hit: `
-          The target takes 4d8 + \\glossterm{power} energy damage.
+          The target takes \\damageranksix{energy}.
           If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -404,7 +425,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 7,
-      scaling: 'damage',
+      scaling: 'accuracy',
     },
   ],
   rituals: [
@@ -442,7 +463,7 @@ export const channelDivinity: MysticSphere = {
         Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
-        You can specify the destination by naming an \\glossterm{astral anchor}.
+        You can specify the destination by naming an \\glossterm{astral beacon}.
         Alternately, you can specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.

@@ -4,187 +4,247 @@ const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
   "debuff",
   "vital_wound",
 ]);
+// Treat roles as classes too
 const BASE_CLASS_MODIFIERS = {
-  monster: {
-    power: "monster",
-    armor_defense: 5,
+  // ROLES
+  brute: {
+    armor_defense: 3,
+    damage_resistance: 0,
+    hit_points: 4,
     fortitude: 5,
-    reflex: 5,
-    mental: 5,
-    vital_rolls: 0,
-    attunement_points: 0,
-    fatigue_tolerance: 0,
-    insight_points: 0,
-    class_skill_count: 0,
-    proficiencies: "",
+    reflex: 3,
+    mental: 3,
+    bonus_attribute: 'strength',
   },
+  skirmisher: {
+    armor_defense: 4,
+    damage_resistance: 2,
+    hit_points: 0,
+    fortitude: 4,
+    reflex: 6,
+    mental: 4,
+    bonus_attribute: 'dexterity',
+  },
+  warrior: {
+    armor_defense: 6,
+    damage_resistance: 4,
+    hit_points: 2,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    bonus_attribute: 'constitution',
+  },
+  sniper: {
+    armor_defense: 3,
+    damage_resistance: 0,
+    hit_points: 0,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    bonus_attribute: 'perception',
+  },
+  mystic: {
+    armor_defense: 2,
+    damage_resistance: 4,
+    hit_points: 0,
+    fortitude: 4,
+    reflex: 4,
+    mental: 6,
+    bonus_attribute: 'willpower',
+  },
+  leader: {
+    armor_defense: 4,
+    damage_resistance: 2,
+    hit_points: 2,
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
+    bonus_attribute: null,
+  },
+
+  // CLASSES
   barbarian: {
-    power: "fast",
     armor_defense: 0,
     fortitude: 7,
     reflex: 5,
     mental: 3,
-    vital_rolls: 1,
-    attunement_points: 3,
+    hit_points: 5,
+    damage_resistance: 0,
+    attunement_points: 2,
     fatigue_tolerance: 5,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 4,
     proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
-    insight_points: 3,
+    hit_points: 2,
+    damage_resistance: 2,
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 2,
     class_skill_count: 4,
     proficiencies: "Light and medium armor",
   },
   druid: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 5,
     reflex: 4,
     mental: 6,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
-    insight_points: 3,
+    hit_points: 2,
+    damage_resistance: 1,
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 2,
     class_skill_count: 5,
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
   },
   fighter: {
-    power: "normal",
     armor_defense: 1,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
-    insight_points: 2,
+    hit_points: 3,
+    damage_resistance: 0,
+    attunement_points: 2,
+    fatigue_tolerance: 4,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
   },
   monk: {
-    power: "normal",
     armor_defense: 1,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
-    insight_points: 2,
+    hit_points: 2,
+    damage_resistance: 4,
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 1,
     class_skill_count: 6,
     proficiencies: "Light armor, monk weapons",
   },
   paladin: {
-    power: "normal",
     armor_defense: 1,
     fortitude: 6,
     reflex: 3,
     mental: 6,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
-    insight_points: 2,
+    hit_points: 3,
+    damage_resistance: 3,
+    attunement_points: 2,
+    fatigue_tolerance: 4,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "All armor, two weapon groups",
   },
   ranger: {
-    power: "normal",
     armor_defense: 1,
     fortitude: 5,
     reflex: 6,
     mental: 4,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
-    insight_points: 2,
+    hit_points: 3,
+    damage_resistance: 0,
+    attunement_points: 2,
+    fatigue_tolerance: 4,
+    insight_points: 1,
     class_skill_count: 5,
     proficiencies:
       "Light armor, hide armor, one weapon group, and one ranged weapon group",
   },
   rogue: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
-    insight_points: 3,
+    hit_points: 1,
+    damage_resistance: 0,
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 2,
     class_skill_count: 7,
     proficiencies: "Light armor, one weapon group, and saps",
   },
   sorcerer: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 5,
-    fatigue_tolerance: 4,
-    insight_points: 2,
+    hit_points: 0,
+    damage_resistance: 4,
+    attunement_points: 4,
+    fatigue_tolerance: 3,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "None",
   },
   warlock: {
-    power: "fast",
     armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 4,
-    fatigue_tolerance: 4,
+    hit_points: 2,
+    damage_resistance: 4,
+    attunement_points: 3,
+    fatigue_tolerance: 3,
     insight_points: 1,
-    class_skill_count: 3,
+    class_skill_count: 4,
     proficiencies: "Light armor",
   },
   wizard: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    vital_rolls: 0,
-    attunement_points: 5,
-    fatigue_tolerance: 2,
+    hit_points: 0,
+    damage_resistance: 3,
+    attunement_points: 4,
+    fatigue_tolerance: 1,
     insight_points: 3,
-    class_skill_count: 5,
+    class_skill_count: 3,
     proficiencies: "None",
   },
+
+  // OPTIONAL CLASSES
   dragon: {
-    power: "normal",
     armor_defense: 1,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 1,
-    attunement_points: 3,
-    fatigue_tolerance: 5,
-    insight_points: 2,
+    hit_points: 4,
+    damage_resistance: 2,
+    attunement_points: 2,
+    fatigue_tolerance: 3,
+    insight_points: 1,
     class_skill_count: 3,
     proficiencies: "Light and medium armor",
   },
+  harpy: {
+    armor_defense: 1,
+    fortitude: 3,
+    reflex: 7,
+    mental: 5,
+    hit_points: 2,
+    damage_resistance: 0,
+    attunement_points: 2,
+    fatigue_tolerance: 3,
+    insight_points: 1,
+    class_skill_count: 6,
+    proficiencies: "Light armor",
+  },
   oozeborn: {
-    power: "normal",
     armor_defense: 0,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    vital_rolls: 2,
-    attunement_points: 3,
-    fatigue_tolerance: 6,
-    insight_points: 1,
+    hit_points: 5,
+    damage_resistance: 0,
+    attunement_points: 2,
+    fatigue_tolerance: 5,
+    insight_points: 0,
     class_skill_count: 4,
     proficiencies: "Light armor",
   },
@@ -306,6 +366,7 @@ function onGet(variables, options, callback = null) {
         .map((e) => attrs[e])
         .filter(Boolean)
         .join(",");
+      // console.log("changeString, getVariables, v", changeString, getVariables, v);
       callback(v);
     });
   });
@@ -398,12 +459,13 @@ const KNOWABLE_CONCEPTS = [
 const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
   [
     "accuracy",
+    "accuracy_with_strikes",
     "all_defenses",
     "all_skills",
     "armor_defense",
     "attunement_points",
     "constitution",
-    "damage_resistance_bonus",
+    "damage_resistance",
     "dexterity",
     "encumbrance",
     "fatigue_tolerance",
@@ -414,12 +476,12 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "mental",
     "nonclass_skill_count",
     "perception",
-    "power",
+    "magical_power",
+    "mundane_power",
     "reflex",
     "speed",
     "strength",
     "vital_rolls",
-    "weapon_damage_dice",
     "willpower",
   ]
     .concat(ALL_SKILLS)
@@ -427,8 +489,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
 );
 
 // Class and species, mostly
-// Note: although class influences power, that is explicitly skipped here to resolve
-// timing issues
 const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "armor_defense",
   "attunement_points",
@@ -443,8 +503,10 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "reflex",
   "speed",
   "strength",
-  "vital_rolls",
   "willpower",
+  // Monster classes only
+  "magical_power",
+  "mundane_power",
 ]);
 
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
@@ -511,16 +573,17 @@ function handleEverything() {
   handleCustomModifiers();
   handleDebuffs();
   // handleModifierExplanations();
-  handleMonsterBaseClass();
   handleMonsterChatColor();
   handleResources();
   handleRust();
+  handleSize();
   handleSkills();
   handleVitalWounds();
 }
 
 function handleCoreStatistics() {
   handleAccuracy();
+  handleAccuracyWithStrikes();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
@@ -528,11 +591,12 @@ function handleCoreStatistics() {
   handleFatiguePenalty();
   handleHitPoints();
   handleLandSpeed();
-  handlePower();
+  handleMagicalPower();
+  handleMundanePower();
   handleVitalRolls();
   handleUniversalAbilities();
   handleUnknownStatistic();
-  handleWeaponDamageDice();
+  // handleWeaponDamageDice();
   handleWeaponSanitization();
 }
 
@@ -600,16 +664,30 @@ function formatDicePool(count, size, modifier) {
   }
 }
 
+function calcAccuracyCrScaling(level, challengeRating) {
+  if (!challengeRating) {
+    return 0;
+  }
+  let levelScaling = 0;
+  if (challengeRating > 0) {
+    levelScaling += level >= 21 ? 2 : level >= 12 ? 1 : 0;
+  }
+  if (challengeRating === 4) {
+    levelScaling += 2;
+  }
+  return levelScaling;
+}
+
 function calcDefenseCrScaling(level, challengeRating) {
   if (!challengeRating) {
     return 0;
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 15 ? 2 : level >= 3 ? 1 : 0;
+    levelScaling += level >= 15 ? 2 : level >= 6 ? 1 : 0;
   }
   if (challengeRating === 4) {
-    levelScaling += 1;
+    levelScaling += 2;
   }
   return levelScaling;
 }
@@ -675,14 +753,14 @@ function handleAccuracy() {
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
     (v) => {
-      const levelModifier = Math.floor(v.level / 2);
-      const perceptionModifier = Math.floor(v.perception / 2);
-      const crModifier = v.challenge_rating == 4 ? 1 : 0;
+      const levelModifier = v.level / 2;
+      const perceptionModifier = v.perception / 2;
+      const levelishModifier = Math.floor(levelModifier + perceptionModifier);
+      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
       const accuracy =
         v.misc +
-        levelModifier +
-        crModifier +
-        perceptionModifier -
+        levelishModifier +
+        crModifier -
         v.fatigue_penalty;
       setAttrs({
         accuracy,
@@ -697,12 +775,25 @@ function handleAccuracy() {
   );
 }
 
+function handleAccuracyWithStrikes() {
+  onGet(
+    {
+      miscName: "accuracy_with_strikes",
+    },
+    (v) => {
+      setAttrs({
+        accuracy_with_strikes: v.misc,
+        accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
+      });
+    }
+  );
+}
+
 function handleActiveAbilityDice() {
   function getAbilityDicePoolAttrs(keyPrefix, callback) {
     return getDicePoolAttrs(
       keyPrefix,
       "dice_pool",
-      "power_multiplier",
       callback
     );
   }
@@ -710,21 +801,15 @@ function handleActiveAbilityDice() {
   // Local change
   on(
     "change:repeating_abilities:dice_pool" +
-      " change:repeating_abilities:power_multiplier" +
       " change:repeating_abilities:is_magical",
     function () {
       const keyPrefix = "repeating_abilities";
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
-        const diceText = parsed.dicePoolWithModifier
-          ? "{{Value=[[@{calculated_dice_and_modifier}]]}}"
+        const diceText = parsed.dicePool
+          ? "{{Value=[[@{calculated_dice_pool}]]}}"
           : "";
         setAttrs({
-          [`${keyPrefix}_calculated_dice_and_modifier`]:
-            parsed.dicePoolWithModifier,
           [`${keyPrefix}_calculated_dice_pool`]: parsed.dicePool,
-          [`${keyPrefix}_calculated_modifier`]: parsed.modifier,
-          [`${keyPrefix}_calculated_dice_and_modifier`]:
-            parsed.dicePoolWithModifier,
           [`${keyPrefix}_dice_text`]: diceText,
         });
       });
@@ -739,7 +824,6 @@ function handleArmorDefense() {
       numeric: [
         "level",
         "dexterity",
-        "constitution",
         "body_armor_defense",
         "shield_defense",
         "challenge_rating",
@@ -757,13 +841,10 @@ function handleArmorDefense() {
             v.shield_usage_class === "medium"
           ? "medium"
           : "light";
-      if (worstUsageClass === "medium" || v.challenge_rating > 0) {
+      if (worstUsageClass === "medium") {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
-      }
-      if (v.challenge_rating > 0) {
-        attributeModifier += Math.floor(v.constitution / 2);
       }
 
       const levelModifier = Math.floor(v.level / 2);
@@ -848,7 +929,7 @@ function setAttackTargeting(sectionPrefix, v) {
 }
 
 function calcAttackTargeting(isTargeted, rawDefense) {
-  rawDefense = (rawDefense || "").toLowerCase();
+  rawDefense = (rawDefense || "").toLowerCase().trim();
   const targetText = isTargeted
     ? "{{Target=@{target|Defender|token_name}}}"
     : "";
@@ -890,11 +971,17 @@ function handleAttributes() {
     onGet(
       {
         miscName: attributeName,
-        numeric: [`${attributeName}_at_creation`],
+        numeric: [`${attributeName}_at_creation`, `${attributeName}_level_scaling`],
+        string: ["base_class"],
       },
       (v) => {
+        let totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
+        const bonusAttribute = (BASE_CLASS_MODIFIERS[v.base_class] || {}).bonus_attribute;
+        if (bonusAttribute && attributeName === bonusAttribute) {
+          totalValue += 2;
+        }
         setAttrs({
-          [attributeName]: v[`${attributeName}_at_creation`] + v.misc,
+          [attributeName]: totalValue,
         });
       }
     );
@@ -940,7 +1027,7 @@ function handleAttunementPoints() {
     },
     (v) => {
       let fromLevel = 0;
-      if (v.level >= 11) {
+      if (v.level >= 8) {
         fromLevel = 2;
       } else if (v.level >= 5) {
         fromLevel = 1;
@@ -959,8 +1046,6 @@ function handleAttunementPoints() {
   );
 }
 
-// Note: although class influences power, that is explicitly skipped here to resolve
-// timing issues
 function handleCreationModifiers() {
   onGet(
     {
@@ -973,12 +1058,8 @@ function handleCreationModifiers() {
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs = {
-        base_class_proficiencies: classModifiers
-          ? classModifiers.proficiencies
-          : "",
-        class_skill_count: classModifiers
-          ? classModifiers.class_skill_count
-          : "",
+        base_class_proficiencies: (classModifiers && classModifiers.proficiencies) || "",
+        class_skill_count: (classModifiers && classModifiers.class_skill_count) || 0,
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
@@ -986,12 +1067,13 @@ function handleCreationModifiers() {
         "fortitude",
         "reflex",
         "mental",
-        "vital_rolls",
         "attunement_points",
         "fatigue_tolerance",
         "insight_points",
+        "magical_power",
+        "mundane_power",
       ]) {
-        const modifierValue = classModifiers ? classModifiers[modifierKey] : 0;
+        const modifierValue = (classModifiers && classModifiers[modifierKey]) || 0;
         attrs[`${modifierKey}_creation_explanation`] =
           formatNamedModifierExplanation({
             name: v.base_class,
@@ -1174,7 +1256,6 @@ class NamedModifierMap {
 }
 
 function handleDamageDice() {
-  handleDicePoolAttributes();
   handleActiveAbilityDice();
   handleOtherDamagingAttacks();
   handleStrikeAttacks();
@@ -1183,14 +1264,14 @@ function handleDamageDice() {
 function handleDamageResistance() {
   onGet(
     {
-      miscName: "damage_resistance_bonus",
+      miscName: "damage_resistance",
       numeric: [
-        "constitution",
         "level",
         "challenge_rating",
         "body_armor_damage_resistance",
-        "damage_resistance_bonus_vital_wound_multiplier",
+        "damage_resistance_vital_wound_multiplier",
       ],
+      string: ["base_class"],
     },
     {
       variablesWithoutListen: {
@@ -1198,51 +1279,49 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const fromLevel = calcBaseDamageResistance(v.level);
-      const conModifier =
-        v.challenge_rating > 0
-          ? Math.floor(v.constitution / 2)
-          : v.constitution;
-      const fromLevelAndCon = calcBaseDamageResistance(v.level + conModifier);
+      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].damage_resistance : 0;
+      const effectiveLevel = v.level + classModifier;
+      const baseDr = calcBaseDamageResistance(effectiveLevel);
+
       var crMultiplier = {
-        0: 1,
-        0.5: 0,
         1: 2,
         4: 8,
-      }[v.challenge_rating || 0];
-      const playerTotalValue =
-        fromLevelAndCon + v.body_armor_damage_resistance + v.misc;
-      const crMultipliedValue = Math.floor(playerTotalValue * crMultiplier);
+      }[v.challenge_rating] || 1;
+      const playerTotalDr =
+        baseDr + v.body_armor_damage_resistance + v.misc;
+      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
-      const totalValue = Math.floor(
+      const monsterTotalDr = Math.floor(
         crMultipliedValue *
-          Math.max(0, v.damage_resistance_bonus_vital_wound_multiplier || 1)
+          Math.max(0, v.damage_resistance_vital_wound_multiplier || 1)
       );
 
       let attrs = {
+        base_damage_resistance_level: effectiveLevel,
+        base_damage_resistance_level_explanation: formatCombinedExplanation(null, [
+          { name: "level", value: v.level },
+          { name: "class", value: classModifier  },
+        ]),
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
-            { name: "level", value: fromLevel },
-            { name: "Con", value: fromLevelAndCon - fromLevel },
+            { name: "base", value: baseDr },
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "CR", value: crMultipliedValue - playerTotalValue },
-            { name: "vital", value: totalValue - crMultipliedValue },
+            { name: "CR", value: crMultipliedValue - playerTotalDr },
+            { name: "vital", value: monsterTotalDr - crMultipliedValue },
           ]
         ),
-        damage_resistance_from_level: Math.floor(
-          fromLevelAndCon * crMultiplier
-        ),
-        damage_resistance_max: totalValue,
-        damage_resistance_maximum: totalValue,
+        damage_resistance: undefined,
+        damage_resistance_max: monsterTotalDr,
+        damage_resistance_maximum: monsterTotalDr,
       };
       let should_set_current_dr =
-        totalValue < v.damage_resistance ||
+        monsterTotalDr < v.damage_resistance ||
         v.damage_resistance === v.damage_resistance_maximum ||
         !v.damage_resistance_maximum;
       if (should_set_current_dr) {
-        attrs.damage_resistance = totalValue;
+        attrs.damage_resistance = monsterTotalDr;
       }
       setAttrs(attrs);
     }
@@ -1252,35 +1331,37 @@ function handleDamageResistance() {
 function calcBaseDamageResistance(levelish) {
   let baseDr = 0;
   if (levelish > 0) {
-    var multiplier = 1;
-    while (levelish > 21) {
-      levelish -= 6;
-      multiplier += 1;
+    if (levelish > 21) {
+      // +5 DR per levelish over 21
+      baseDr = 5 * (levelish - 21);
+      levelish = 21;
     }
-    baseDr =
+    baseDr +=
       {
-        1: 1,
-        2: 2,
-        3: 3,
-        4: 4,
-        5: 5,
-        6: 6,
-        7: 7,
-        8: 9,
-        9: 10,
-        10: 12,
-        11: 13,
-        12: 15,
-        13: 16,
-        14: 18,
-        15: 20,
-        16: 22,
-        17: 25,
-        18: 28,
-        19: 32,
-        20: 36,
-        21: 40,
-      }[levelish] * multiplier;
+        1: 0, 
+        2: 1,
+        3: 2,
+        4: 3,
+        5: 4,
+        6: 5,
+        7: 6,
+        8: 7,
+        9: 8,
+        10:9,
+        11:10,
+        12:12,
+        13:14,
+        14:16,
+        15:18,
+        16:20,
+        17:22,
+        18:25,
+        19:28,
+        20:31,
+        21:35,
+      }[levelish];
+  } else {
+    baseDr = levelish;
   }
   return baseDr;
 }
@@ -1496,20 +1577,17 @@ function handleFatigueTolerance() {
   onGet(
     {
       miscName: "fatigue_tolerance",
-      numeric: ["constitution", "willpower"],
+      numeric: ["constitution"],
     },
     (v) => {
-      const fromWillpower = Math.floor(v.willpower / 2);
-      const fromAttributes = v.constitution + fromWillpower;
-      const totalValue = Math.max(0, fromAttributes + v.misc);
+      const totalValue = Math.max(0, v.constitution + v.misc);
       setAttrs({
-        fatigue_tolerance_attributes: fromAttributes,
+        fatigue_tolerance_attributes: v.constitution,
         fatigue_tolerance: totalValue,
         fatigue_tolerance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
             { name: "Con", value: v.constitution },
-            { name: "Wil", value: fromWillpower },
           ]
         ),
         // for red bars
@@ -1528,7 +1606,9 @@ function handleHitPoints() {
         "level",
         "constitution",
         "challenge_rating",
+        "hit_points_from_level",
       ],
+      string: ["base_class"],
     },
     {
       variablesWithoutListen: {
@@ -1536,38 +1616,39 @@ function handleHitPoints() {
       },
     },
     (v) => {
-      const hpFromLevel = calcBaseHitPoints(v.level);
-      const conModifier =
-        v.challenge_rating > 0
-          ? Math.floor(v.constitution / 2)
-          : v.constitution;
-      const hpFromLevelAndCon = calcBaseHitPoints(v.level + conModifier);
+      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
+      const effectiveLevel = v.level + v.constitution + classModifier;
+      const baseHp = calcBaseHitPoints(effectiveLevel);
 
       let crMultiplier = {
-        0: 1,
-        0.5: 1,
         1: 1,
         4: 4,
-      }[v.challenge_rating || 0];
+      }[v.challenge_rating] || 1;
 
-      const playerTotalValue = hpFromLevelAndCon + v.misc;
-      const totalValue = Math.floor(playerTotalValue * crMultiplier);
+      const playerTotalHp = baseHp + v.misc;
+      const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       let attrs = {
-        hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "level", value: hpFromLevel },
-          { name: "Con", value: hpFromLevelAndCon - hpFromLevel },
-          { name: "CR", value: totalValue - playerTotalValue },
+        base_hit_points_level: effectiveLevel,
+        base_hit_points_level_explanation: formatCombinedExplanation(null, [
+          { name: "level", value: v.level },
+          { name: "Con", value: v.constitution },
+          { name: "class", value: classModifier  },
         ]),
-        hit_points_max: totalValue,
-        hit_points_maximum: totalValue,
+        hit_points: undefined,
+        hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "base", value: baseHp },
+          { name: "CR", value: monsterTotalHp - playerTotalHp },
+        ]),
+        hit_points_max: monsterTotalHp,
+        hit_points_maximum: monsterTotalHp,
       };
       let shouldSetCurrentHp =
-        totalValue < v.hit_points ||
+        monsterTotalHp < v.hit_points ||
         v.hit_points === v.hit_points_maximum ||
         !v.hit_points_maximum;
       if (shouldSetCurrentHp) {
-        attrs.hit_points = totalValue;
+        attrs.hit_points = monsterTotalHp;
       }
       setAttrs(attrs);
     }
@@ -1575,39 +1656,38 @@ function handleHitPoints() {
 }
 
 function calcBaseHitPoints(levelish) {
-  let baseHp = 9 + levelish;
+  let baseHp = 0;
   if (levelish > 0) {
-    var multiplier = 1;
-    while (levelish > 21) {
-      levelish -= 6;
-      multiplier *= 2;
+    if (levelish > 21) {
+      // +10 HP per levelish over 21
+      baseHp = 10 * (levelish - 21);
+      levelish = 21;
     }
-    baseHp =
-      multiplier *
-        {
-          1: 10,
-          2: 11,
-          3: 12,
-          4: 13,
-          5: 14,
-          6: 16,
-          7: 18,
-          8: 20,
-          9: 22,
-          10: 25,
-          11: 28,
-          12: 32,
-          13: 36,
-          14: 40,
-          15: 44,
-          16: 50,
-          17: 56,
-          18: 64,
-          19: 72,
-          20: 80,
-          21: 88,
-          22: 100,
-        }[levelish] || 1;
+    baseHp += {
+      1: 6,
+      2: 7,
+      3: 8,
+      4: 9,
+      5: 10,
+      6: 12,
+      7: 14,
+      8: 16,
+      9: 18,
+      10:20,
+      11:22,
+      12:25,
+      13:28,
+      14:32,
+      15:36,
+      16:40,
+      17:45,
+      18:50,
+      19:56,
+      20:63,
+      21:70,
+    }[levelish];
+  } else {
+    baseHp = 6 + Math.floor(levelish / 2);
   }
   return baseHp;
 }
@@ -1616,15 +1696,21 @@ function handleInsightPoints() {
   onGet(
     {
       miscName: "insight_points",
-      numeric: ["intelligence"],
+      numeric: ["intelligence", "level"],
     },
     (v) => {
-      const totalValue = Math.max(0, v.intelligence + v.misc);
+      let fromLevel = 0;
+      if (v.level >= 7) {
+        fromLevel = 2;
+      } else if (v.level >= 4) {
+        fromLevel = 1;
+      }
+      const totalValue = v.intelligence + v.misc + fromLevel;
       setAttrs({
         insight_points: totalValue,
         insight_points_explanation: formatCombinedExplanation(
           v.miscExplanation,
-          [{ name: "Int", value: v.intelligence }]
+          [{ name: "Int", value: v.intelligence }, { name: "level", value: fromLevel }]
         ),
       });
     }
@@ -1635,15 +1721,16 @@ function handleLandSpeed() {
   onGet(
     {
       miscName: "speed",
-      numeric: ["speed_size", "body_armor_speed"],
+      numeric: ["base_speed", "body_armor_speed"],
     },
     (v) => {
-      // TODO: handle size more correctly
-      const totalValue = 30 + v.body_armor_speed + v.misc;
+      // In case people don't bother to set their size to Medium explicitly
+      const base_speed = v.base_speed || 30;
+      const totalValue = base_speed + v.body_armor_speed + v.misc;
       setAttrs({
         land_speed: totalValue,
         land_speed_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "size", value: 30 },
+          { name: "base speed", value: v.base_speed },
           { name: "body armor", value: v.body_armor_speed },
         ]),
       });
@@ -1654,7 +1741,7 @@ function handleLandSpeed() {
 // function handleModifierExplanations() {
 //   let modifierNames = [
 //     "hit_points",
-//     "damage_resistance", // Note: uses "damage_resistance_bonus" for custom modifer :(
+//     "damage_resistance",
 //     "armor_defense",
 //     "fortitude",
 //     "reflex",
@@ -1707,17 +1794,22 @@ function handleNonArmorDefense(defense, attribute) {
         attribute,
         "challenge_rating",
         "all_defenses_vital_wound_modifier",
+        "size_reflex_modifier",
       ],
     },
     (v) => {
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
-      const totalValue =
+      let totalValue =
         levelModifier +
         crModifier +
         v[attribute] +
         v.misc +
         v.all_defenses_vital_wound_modifier;
+
+      if (defense === "reflex") {
+        totalValue += v.size_reflex_modifier;
+      }
 
       setAttrs({
         [defense]: totalValue,
@@ -1735,81 +1827,70 @@ function handleNonArmorDefense(defense, attribute) {
   );
 }
 
-function handlePower() {
+function formatWeaponDamagePlusd(power) {
+  const plusd = Math.floor(power / 2);
+  const plusd6 = Math.floor(plusd / 3);
+  const plusd6Text = plusd6 > 0 ? `+${plusd6}d6` : '';
+  const plusdOnly = plusd % 3;
+  const plusdOnlyText = plusdOnly > 0 ? `+${plusdOnly}d` : '';
+  return [plusdOnlyText, plusd6Text].filter(Boolean).join(" and ");
+}
+
+function handleMagicalPower() {
   onGet(
     {
-      miscName: "power",
+      miscName: "magical_power",
       numeric: [
         "challenge_rating",
-        "archetype_rank_0",
-        "archetype_rank_1",
-        "archetype_rank_2",
+        "level",
+        "willpower",
       ],
-      string: ["base_class"],
     },
     (v) => {
-      // TODO: confirm that the rank is actually from the character's base class
-      const maxRank =
-        Math.max(v.archetype_rank_0, v.archetype_rank_1, v.archetype_rank_2) ||
-        0;
-      const baseClassModifiers = BASE_CLASS_MODIFIERS[v.base_class];
-      const classPowerProgression = baseClassModifiers
-        ? baseClassModifiers.power
-        : null;
-      let classPowerModifier = 0;
-      if (classPowerProgression === "fast") {
-        classPowerModifier = {
-          0: 0,
-          1: 3,
-          2: 4,
-          3: 5,
-          4: 7,
-          5: 10,
-          6: 14,
-          7: 20,
-          8: 28,
-        }[maxRank];
-      } else if (classPowerProgression === "normal") {
-        classPowerModifier = {
-          0: 0,
-          1: 2,
-          2: 3,
-          3: 4,
-          4: 6,
-          5: 8,
-          6: 12,
-          7: 16,
-          8: 22,
-        }[maxRank];
-      } else if (classPowerProgression === "monster") {
-        classPowerModifier = {
-          0: 0,
-          1: 3,
-          2: 4,
-          3: 5,
-          4: 7,
-          5: 10,
-          6: 14,
-          7: 20,
-          8: 28,
-        }[Math.floor((v.level + 2) / 3)];
-        classPowerModifier =
-          classPowerModifier *
-          (v.challenge_rating
-            ? {
-                0.5: 0.5,
-                1: 1,
-                4: 2,
-              }[v.challenge_rating]
-            : 0);
-      }
+      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc;
 
       setAttrs({
-        power: classPowerModifier + v.misc,
-        power_explanation: formatCombinedExplanation(v.miscExplanation, [
+        magical_power: totalValue,
+        magical_weapon_plusd: formatWeaponDamagePlusd(totalValue),
+        magical_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
-            name: `${v.base_class} rank ${maxRank}`,
-            value: classPowerModifier,
+            name: `half level`,
+            value: Math.floor(v.level / 2),
+          },
+          {
+            name: `Wil`,
+            value: v.willpower,
+          },
+        ]),
+      });
+    }
+  );
+}
+
+function handleMundanePower() {
+  onGet(
+    {
+      miscName: "mundane_power",
+      numeric: [
+        "challenge_rating",
+        "level",
+        "strength",
+      ],
+    },
+    (v) => {
+      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc;
+
+      setAttrs({
+        mundane_power: totalValue,
+        mundane_weapon_plusd: formatWeaponDamagePlusd(totalValue),
+        mundane_power_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {
+            name: `half level`,
+            value: Math.floor(v.level / 2),
+          },
+          {
+            name: `Str`,
+            value: v.strength,
           },
         ]),
       });
@@ -1886,6 +1967,49 @@ function handleRust() {
         is_monster: v.challenge_rating > 0 ? "1" : "0",
       });
     }
+  );
+}
+
+function handleSize() {
+  onGet(
+    {
+      string: ["size"],
+    },
+    (v) => {
+      // Size modifiers are repetitive, so multiplying this value is easier.
+      const stepsFromMedium = {
+        fine: -4,
+        diminuitive: -3,
+        tiny: -2,
+        small: -1,
+        medium: 0,
+        large: 1,
+        huge: 2,
+        gargantuan: 3,
+        colossal: 4,
+      }[v.size] || 0;
+
+      let baseSpeed = 0;
+      if (stepsFromMedium === 4) {
+        // Colossal is a special case
+        baseSpeed = 80;
+      } else if (stepsFromMedium >= 0) {
+        baseSpeed = 30 + stepsFromMedium * 10;
+      } else if (stepsFromMedium >= -2) {
+        baseSpeed = 20;
+      } else {
+        baseSpeed = 10;
+      }
+
+      const reflexDefense = -stepsFromMedium;
+      const stealth = -stepsFromMedium * 5;
+
+      setAttrs({
+        base_speed: baseSpeed,
+        size_reflex_modifier: reflexDefense,
+        size_stealth_modifier: stealth,
+      });
+    },
   );
 }
 
@@ -2027,6 +2151,7 @@ function handleSkills() {
       const numeric = [
         "fatigue_penalty",
         "level",
+        "size_stealth_modifier",
         ...customModifierNames("all_skills"),
       ];
       const shouldAddAttribute = attribute !== "other";
@@ -2050,13 +2175,17 @@ function handleSkills() {
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
           const encumbranceModifier = v.encumbrance || 0;
           const attributeModifier = v[attribute] || 0;
-          const skillValue =
+          let skillValue =
             fromTraining +
             attributeModifier +
             v.misc +
             sumCustomModifiers(v, "all_skills") -
             v.fatigue_penalty -
             encumbranceModifier;
+
+          if (skill === 'stealth') {
+            skillValue += v.size_stealth_modifier;
+          }
 
           const attrs = {
             [`${skill}_attribute`]: attributeModifier,
@@ -2086,64 +2215,25 @@ function uppercaseFirstLetter(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
-function handleDicePoolAttributes() {
-  onGet(
-    {
-      numeric: ["strength", "intelligence", "willpower"],
-      string: ["feat_name_0", "feat_name_1", "feat_name_2", "feat_name_3"],
-    },
-    (v) => {
-      // TODO: fix precognition after repeating change
-      // const feats = [
-      //   v.feat_name_0,
-      //   v.feat_name_1,
-      //   v.feat_name_2,
-      //   v.feat_name_3,
-      // ];
-      const feats = [];
-      const magicalAttribute = feats.includes("Precognition")
-        ? Math.max(v.willpower, v.intelligence)
-        : v.willpower;
-      const mundaneAttribute = feats.includes("Precognition")
-        ? Math.max(v.strength, v.intelligence)
-        : v.strength;
-      setAttrs({
-        magical_dice_pool_modifier: Math.floor(magicalAttribute / 2),
-        mundane_dice_pool_modifier: Math.floor(mundaneAttribute / 2),
-      });
-    }
-  );
-}
-
 function getDicePoolAttrs(
   keyPrefix,
   dicePoolKey,
-  powerMultiplierKey,
   callback
 ) {
   dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
-  powerMultiplierKey = `${keyPrefix}_${powerMultiplierKey}`;
   const isMagicalKey = `${keyPrefix}_is_magical`;
   getAttrs(
     [
-      "magical_dice_pool_modifier",
-      "mundane_dice_pool_modifier",
-      "power",
+      "mundane_power",
+      "magical_power",
       dicePoolKey,
-      powerMultiplierKey,
       isMagicalKey,
     ],
     function (v) {
-      let dicePoolModifier =
-        v[isMagicalKey] === "1"
-          ? Number(v.magical_dice_pool_modifier)
-          : Number(v.mundane_dice_pool_modifier);
       callback(
         calculateDicePoolModifier({
           dicePool: v[dicePoolKey],
-          dicePoolModifier,
-          power: Number(v.power),
-          powerMultiplier: Number(v[powerMultiplierKey]),
+          power: v[isMagicalKey] ? v.magical_power : v.mundane_power,
         })
       );
     }
@@ -2152,45 +2242,19 @@ function getDicePoolAttrs(
 
 function setCalculatedDicePool(
   keyPrefix,
-  { dicePoolWithModifier, dicePool, modifier }
+  { dicePool }
 ) {
   setAttrs({
-    [`${keyPrefix}_calculated_dice_and_modifier`]: dicePoolWithModifier,
     [`${keyPrefix}_calculated_dice_pool`]: dicePool,
-    [`${keyPrefix}_calculated_modifier`]: modifier,
   });
 }
 
 function calculateDicePoolModifier({
   dicePool,
-  dicePoolModifier,
   power,
-  powerMultiplier,
 }) {
-  dicePool = parseDicePool(dicePool);
-  let totalDamage = "";
-  let totalDamageDice = "";
-  let totalDamageModifier = "";
-  if (dicePool) {
-    const modifier = dicePool.modifier + Math.floor(power * powerMultiplier);
-
-    if (dicePool.count) {
-      let { count, size } = addDiceIncrements(
-        dicePool.count,
-        dicePool.size,
-        dicePoolModifier
-      );
-      totalDamage = formatDicePool(count, size, modifier);
-      totalDamageDice = formatDicePool(count, size, 0);
-    } else {
-      totalDamage = modifier;
-    }
-    totalDamageModifier = modifier;
-  }
   return {
-    dicePoolWithModifier: totalDamage,
-    dicePool: totalDamageDice,
-    modifier: totalDamageModifier,
+    dicePool: dicePool,
   };
 }
 
@@ -2202,7 +2266,6 @@ function handleOtherDamagingAttacks() {
     return getDicePoolAttrs(
       keyPrefix,
       "attack_damage_dice",
-      "attack_power",
       callback
     );
   }
@@ -2210,7 +2273,6 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     "change:repeating_otherdamagingattacks:attack_damage_dice" +
-      " change:repeating_otherdamagingattacks:attack_power" +
       " change:repeating_otherdamagingattacks:is_magical",
     function () {
       getOdaDamageDiceAttrs("repeating_otherdamagingattacks", (parsed) => {
@@ -2221,8 +2283,7 @@ function handleOtherDamagingAttacks() {
 
   // Global other damaging attack change
   on(
-    "change:mundane_dice_pool_modifier change:magical_dice_pool_modifier" +
-      " change:power change:level",
+    "change:magical_power change:mundane_power change:level",
     function () {
       getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
@@ -2246,91 +2307,89 @@ function handleStrikeAttacks() {
     if (sectionId) {
       sectionId = sectionId + "_";
     }
-    const attack_power_key = `repeating_strikeattacks_${sectionId}attack_power`;
-    const damage_modifier_key = `repeating_strikeattacks_${sectionId}attack_damage_modifier`;
+    const extra_damage_key = `repeating_strikeattacks_${sectionId}attack_extra_damage`;
     const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
     const weapon_keys = [];
     for (let i = 0; i < 3; i++) {
-      weapon_keys.push(`weapon_${i}_magical_dice`);
-      weapon_keys.push(`weapon_${i}_mundane_dice`);
+      weapon_keys.push(`weapon_${i}_magical_damage_dice`);
+      weapon_keys.push(`weapon_${i}_mundane_damage_dice`);
     }
     getAttrs(
       [
-        attack_power_key,
-        damage_modifier_key,
+        extra_damage_key,
         is_magical_key,
         ...weapon_keys,
-        "power",
+        // These aren't used as variables, but we need to listen to them
+        "magical_power",
+        "mundane_power",
       ],
       function (v) {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
 
         const weaponDice = [];
         for (let i = 0; i < 3; i++) {
-          weaponDice.push(v[`weapon_${i}_${dice_type}_dice`]);
+          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_dice`]);
         }
         callback({
-          attackPower: Number(v[attack_power_key]),
-          damageModifier: Number(v[damage_modifier_key]),
-          power: Number(v.power),
+          extraDamage: v[extra_damage_key],
           weaponDice,
         });
       }
     );
   }
 
-  function getWeaponDamageDiceAttrs(weaponIndex, callback) {
-    const weapon_damage_key = `weapon_${weaponIndex}_damage_dice`;
-    getAttrs(
-      [
-        "level",
-        "strength",
-        "willpower",
-        "mundane_dice_pool_modifier",
-        "magical_dice_pool_modifier",
-        "weapon_damage_dice",
-        weapon_damage_key,
-      ],
-      function (v) {
-        const parsedAttrs = {
-          allWeaponsDamageDiceBonus: Number(v.weapon_damage_dice) || 0,
-          magicalDicePoolModifier: Number(v.magical_dice_pool_modifier) || 0,
-          mundaneDicePoolModifier: Number(v.mundane_dice_pool_modifier) || 0,
-          weaponDamageDice: v[weapon_damage_key],
-        };
-        callback(parsedAttrs);
-      }
-    );
-  }
+  // function getWeaponDamageDiceAttrs(weaponIndex, callback) {
+  //   const weapon_damage_key = `weapon_${weaponIndex}_damage_dice`;
+  //   getAttrs(
+  //     [
+  //       "level",
+  //       "strength",
+  //       "willpower",
+  //       "mundane_dice_pool_modifier",
+  //       "magical_dice_pool_modifier",
+  //       "weapon_damage_dice",
+  //       weapon_damage_key,
+  //     ],
+  //     function (v) {
+  //       const parsedAttrs = {
+  //         allWeaponsDamageDiceBonus: Number(v.weapon_damage_dice) || 0,
+  //         magicalDicePoolModifier: Number(v.magical_dice_pool_modifier) || 0,
+  //         mundaneDicePoolModifier: Number(v.mundane_dice_pool_modifier) || 0,
+  //         weaponDamageDice: v[weapon_damage_key],
+  //       };
+  //       callback(parsedAttrs);
+  //     }
+  //   );
+  // }
 
-  function calcWeaponDamageStrings(v) {
-    const dicePool = parseDicePool(v.weaponDamageDice);
-    if (!dicePool) {
-      return {
-        magical: "",
-        mundane: "",
-      };
-    }
-    let with_global_bonus = addDiceIncrements(
-      dicePool.count,
-      dicePool.size,
-      v.allWeaponsDamageDiceBonus
-    );
-    let magical = addDiceIncrements(
-      with_global_bonus.count,
-      with_global_bonus.size,
-      v.magicalDicePoolModifier
-    );
-    let mundane = addDiceIncrements(
-      with_global_bonus.count,
-      with_global_bonus.size,
-      v.mundaneDicePoolModifier
-    );
-    return {
-      magical: formatDicePool(magical.count, magical.size, dicePool.modifier),
-      mundane: formatDicePool(mundane.count, mundane.size, dicePool.modifier),
-    };
-  }
+  // function calcWeaponDamageStrings(v) {
+  //   const dicePool = parseDicePool(v.weaponDamageDice);
+  //   if (!dicePool) {
+  //     return {
+  //       magical: "",
+  //       mundane: "",
+  //     };
+  //   }
+  //   let with_global_bonus = addDiceIncrements(
+  //     dicePool.count,
+  //     dicePool.size,
+  //     v.allWeaponsDamageDiceBonus
+  //   );
+  //   let magical = addDiceIncrements(
+  //     with_global_bonus.count,
+  //     with_global_bonus.size,
+  //     v.magicalDicePoolModifier
+  //   );
+  //   let mundane = addDiceIncrements(
+  //     with_global_bonus.count,
+  //     with_global_bonus.size,
+  //     v.mundaneDicePoolModifier
+  //   );
+  //   return {
+  //     magical: formatDicePool(magical.count, magical.size, dicePool.modifier),
+  //     mundane: formatDicePool(mundane.count, mundane.size, dicePool.modifier),
+  //   };
+  // }
 
   function setStrikeTotalDamage(sectionId, parsed) {
     if (sectionId) {
@@ -2339,37 +2398,18 @@ function handleStrikeAttacks() {
     const attrs = {};
     for (let i = 0; i < 3; i++) {
       const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
-      const weaponDice = parseDicePool(parsed.weaponDice[i]);
-      let total_damage = "";
-      let total_damage_dice = "";
-      let total_damage_modifier = "";
-      if (weaponDice) {
-        const modifier =
-          weaponDice.modifier +
-          Math.floor(parsed.power * parsed.attackPower) +
-          parsed.damageModifier;
-        total_damage = formatDicePool(
-          weaponDice.count,
-          weaponDice.size,
-          modifier
-        );
-        total_damage_dice = formatDicePool(
-          weaponDice.count,
-          weaponDice.size,
-          0
-        );
-        total_damage_modifier = modifier;
-      }
-      attrs[weapon_prefix + "total_damage"] = total_damage;
-      attrs[weapon_prefix + "total_damage_dice"] = total_damage_dice;
-      attrs[weapon_prefix + "total_damage_modifier"] = total_damage_modifier;
+      const damageComponents = [
+        parsed.weaponDice[i],
+        parsed.extraDamage,
+      ];
+      attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
     }
     setAttrs(attrs);
   }
 
   // Local strike attack change
   on(
-    "change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_power change:repeating_strikeattacks:attack_damage_modifier",
+    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage",
     function () {
       getStrikeAttrs("", (parsed) => {
         setStrikeTotalDamage("", parsed);
@@ -2379,8 +2419,9 @@ function handleStrikeAttacks() {
 
   // Global strike attack change
   on(
-    "change:weapon_0_magical_dice change:weapon_1_magical_dice change:weapon_2_magical_dice" +
-      " change:level change:power",
+    "change:weapon_0_magical_damage_dice change:weapon_1_magical_damage_dice change:weapon_2_magical_damage_dice" +
+      "change:weapon_0_mundane_damage_dice change:weapon_1_mundane_damage_dice change:weapon_2_mundane_damage_dice" +
+      " change:level change:magical_power change:mundane_power",
     function () {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
@@ -2393,23 +2434,23 @@ function handleStrikeAttacks() {
   );
 
   // Weapon change
-  for (let i = 0; i < 3; i++) {
-    on(
-      `change:weapon_${i}_damage_dice` +
-        " change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3" +
-        " change:level change:weapon_damage_dice" +
-        " change:strength change:intelligence change:willpower",
-      function () {
-        getWeaponDamageDiceAttrs(i, (parsed) => {
-          const { magical, mundane } = calcWeaponDamageStrings(parsed);
-          setAttrs({
-            [`weapon_${i}_magical_dice`]: magical,
-            [`weapon_${i}_mundane_dice`]: mundane,
-          });
-        });
-      }
-    );
-  }
+  // for (let i = 0; i < 3; i++) {
+  //   on(
+  //     `change:weapon_${i}_damage_dice` +
+  //       " change:feat_name_0 change:feat_name_1 change:feat_name_2 change:feat_name_3" +
+  //       " change:level change:weapon_damage_dice" +
+  //       " change:strength change:intelligence change:willpower",
+  //     function () {
+  //       getWeaponDamageDiceAttrs(i, (parsed) => {
+  //         const { magical, mundane } = calcWeaponDamageStrings(parsed);
+  //         setAttrs({
+  //           [`weapon_${i}_magical_dice`]: magical,
+  //           [`weapon_${i}_mundane_dice`]: mundane,
+  //         });
+  //       });
+  //     }
+  //   );
+  // }
 
   // Changing whether a strike is targeted
 }
@@ -2517,7 +2558,7 @@ function handleVitalWounds() {
               value: speed_penalty,
             }),
             speed_vital_wound_modifier: speed_penalty,
-            damage_resistance_bonus_vital_wound_multiplier:
+            damage_resistance_vital_wound_multiplier:
               resistance_multiplier,
           };
           if (eventInfo.triggerName != "remove:repeating_vitalwounds") {
@@ -2534,43 +2575,43 @@ function handleVitalWounds() {
   );
 }
 
-function handleWeaponDamageDice() {
-  onGet(
-    {
-      miscName: "weapon_damage_dice",
-      numeric: ["level", "challenge_rating", "strength", "willpower"],
-    },
-    (v) => {
-      const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
-      const totalValue = fromCr + v.misc;
-      const magicalValue = totalValue + Math.floor(v.willpower / 2);
-      const mundaneValue = totalValue + Math.floor(v.strength / 2);
-      setAttrs({
-        magical_damage_dice: magicalValue,
-        magical_damage_dice_explanation: formatCombinedExplanation(
-          v.miscExplanation,
-          [
-            { name: "Wil", value: magicalValue - totalValue },
-            { name: "CR", value: fromCr },
-          ]
-        ),
-        mundane_damage_dice: mundaneValue,
-        mundane_damage_dice_explanation: formatCombinedExplanation(
-          v.miscExplanation,
-          [
-            { name: "Str", value: mundaneValue - totalValue },
-            { name: "CR", value: fromCr },
-          ]
-        ),
-        weapon_damage_dice_explanation: formatCombinedExplanation(
-          v.miscExplanation,
-          [{ name: "CR", value: fromCr }]
-        ),
-        weapon_damage_dice: totalValue,
-      });
-    }
-  );
-}
+// function handleWeaponDamageDice() {
+//   onGet(
+//     {
+//       miscName: "weapon_damage_dice",
+//       numeric: ["level", "challenge_rating", "strength", "willpower"],
+//     },
+//     (v) => {
+//       const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
+//       const totalValue = fromCr + v.misc;
+//       const magicalValue = totalValue + Math.floor(v.willpower / 2);
+//       const mundaneValue = totalValue + Math.floor(v.strength / 2);
+//       setAttrs({
+//         magical_damage_dice: magicalValue,
+//         magical_damage_dice_explanation: formatCombinedExplanation(
+//           v.miscExplanation,
+//           [
+//             { name: "Wil", value: magicalValue - totalValue },
+//             { name: "CR", value: fromCr },
+//           ]
+//         ),
+//         mundane_damage_dice: mundaneValue,
+//         mundane_damage_dice_explanation: formatCombinedExplanation(
+//           v.miscExplanation,
+//           [
+//             { name: "Str", value: mundaneValue - totalValue },
+//             { name: "CR", value: fromCr },
+//           ]
+//         ),
+//         weapon_damage_dice_explanation: formatCombinedExplanation(
+//           v.miscExplanation,
+//           [{ name: "CR", value: fromCr }]
+//         ),
+//         weapon_damage_dice: totalValue,
+//       });
+//     }
+//   );
+// }
 
 function handleWeaponSanitization() {
   const keys = [];
@@ -2593,19 +2634,6 @@ function handleWeaponSanitization() {
           .replaceAll("/", "&#47;");
       }
       setAttrs(attrs);
-    }
-  );
-}
-
-function handleMonsterBaseClass() {
-  onGet(
-    {
-      numeric: ["challenge_rating"],
-    },
-    (v) => {
-      if (v.challenge_rating > 0) {
-        setAttrs({ base_class: "monster" });
-      }
     }
   );
 }

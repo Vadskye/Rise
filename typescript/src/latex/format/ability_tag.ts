@@ -1,18 +1,15 @@
-import { AbilityTag } from "@src/data";
+const tagPattern = /([^(]+) ?(\([^)]+\))?/;
 
-const tagPattern = /([^(]+)( \([^)]\))?/;
-
-export function abilityTag(tag: AbilityTag): string {
+export function formatTagLatex(tag: string): string {
+  if (tag.includes("abilitytag")) {
+    return tag;
+  }
   const match = tag.match(tagPattern);
   if (!match) {
     throw new Error(`Unable to parse tag '${tag}'`);
   }
 
-  const tagName = match[1];
+  const tagName = match[1].trim();
   const parenthetical = match[2];
-  return parenthetical ? `\\glossterm{${tagName}} (${parenthetical})` : `\\glossterm{${tagName}}`;
-}
-
-export function activeAbilityTags(tags: AbilityTag[]): string {
-  return tags.length > 0 ? `[${tags.map(abilityTag).join(", ")}]` : "";
+  return parenthetical ? `\\abilitytag{${tagName}} ${parenthetical}` : `\\abilitytag{${tagName}}`;
 }

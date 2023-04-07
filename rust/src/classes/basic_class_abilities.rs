@@ -52,7 +52,7 @@ fn generate_latex_resources(class: &Class) -> String {
                 "\\glossterm<attunement points>",
             )
         ),
-        fatigue_tolerance = format!("{} + your Constitution + half your Willpower", class.fatigue_tolerance()),
+        fatigue_tolerance = format!("{} + your Constitution", class.fatigue_tolerance()),
         insight_points = if class.insight_points() > 0 {
             format!("{} + your Intelligence", class.insight_points())
         } else {
@@ -76,26 +76,39 @@ fn generate_latex_defenses(class: &Class) -> String {
     } else {
         "".to_string()
     };
-    let vital_text = if class.vital_rolls() > 0 {
-        format!(
-            "In addition, you gain a \\plus{} bonus to your \\glossterm<vital rolls>.",
-            class.vital_rolls()
-        )
-    } else {
-        "".to_string()
-    };
+    let mut hp_dr_text = "".to_string();
+    if class.hit_points() > 0 {
+        if class.damage_resistance() > 0 {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
+                class.hit_points(),
+                class.damage_resistance(),
+            )
+        } else {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
+                class.hit_points(),
+            )
+        }
+    } else if class.damage_resistance() > 0 {
+            hp_dr_text = format!(
+                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
+                class.damage_resistance(),
+            )
+    }
+
     return latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
             You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            {vital_text}
+            {hp_dr_text}
         ",
         armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        vital_text=vital_text,
+        hp_dr_text=hp_dr_text,
     ));
 }
 
@@ -164,8 +177,11 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
     } else {
         let mut components = vec![String::from("simple weapons")];
         if let Some(specific_weapon_groups) = weapon_proficiencies.specific_weapon_groups {
-            for g in specific_weapon_groups {
-                components.push(g.name_plural().to_string());
+            if specific_weapon_groups.len() == 1 {
+                components.push(specific_weapon_groups[0].name_plural().to_string());
+            } else {
+                let specific_groups_text = specific_weapon_groups.iter().map(|g| g.name_plural().to_string()).collect::<Vec<String>>();
+                components.push(format!("any one of {}", latex_formatting::join_string_list(&specific_groups_text).unwrap()));
             }
         }
         if weapon_proficiencies.custom_weapon_groups > 0 {
