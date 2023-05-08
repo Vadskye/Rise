@@ -72,25 +72,26 @@ export const chronomancy: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Accelerated Twinstrike',
+      name: 'Accelerated Flurry',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{weak strikes}.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+        Make a \\glossterm{weak strike}.
+        You may reroll the accuracy roll and take the highest result.
+        In addition, you use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 1,
       scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Accelerated Mighty Twinstrike',
+      name: 'Accelerated Double Strike',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{strikes}.
+        Make two \\glossterm{strikes} with a -1 accuracy penalty.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 5,
@@ -98,12 +99,12 @@ export const chronomancy: MysticSphere = {
       tags: [],
     },
     {
-      name: 'Accelerated Triplestrike',
+      name: 'Accelerated Triple Strike',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} with a -1 accuracy penalty.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 7,
