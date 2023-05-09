@@ -290,7 +290,7 @@ def creation_guidance():
                     Describe your character's core personality.
                     This can be vague, and it can change over time, but it can be useful to record something as a guide.
                 """,
-                textarea({"class": "personality"}),
+                textarea({"class": "personality", "name": "personality"}),
             ),
             creation_step(
                 "Background",
@@ -298,7 +298,7 @@ def creation_guidance():
                     Describe your character's background.
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
-                textarea({"class": "background"}),
+                textarea({"class": "background", "name": "background"}),
             ),
             creation_step(
                 "Appearance",
@@ -306,7 +306,7 @@ def creation_guidance():
                     Describe your character's appearance.
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
-                textarea({"class": "appearance"}),
+                textarea({"class": "appearance", "name": "appearance"}),
             ),
             creation_step(
                 "Name",
