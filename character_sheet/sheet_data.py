@@ -63,6 +63,7 @@ SUBSKILLS = [
     "Craft",
     "Knowledge",
     "Perform",
+    "Profession",
 ]
 
 ROLL20_CALC = {
