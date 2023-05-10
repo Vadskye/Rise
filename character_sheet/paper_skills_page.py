@@ -33,15 +33,12 @@ def create_page(destination):
     return flex_col(
         {"class": "page skills-page"},
         [
-            div(
-                {"class": "tab-explanation"},
-                """
-                This tab is used to track your skills.
-                On the left side, you can indicate your level of training in each skill.
-                On the right side, you can add custom bonuses or penalties to each skill to determine your total skill modifier.
-            """,
-            ),
             *calc_skills(destination),
+            div(
+                """
+                    If you are trained with a skill, you gain a bonus equal to 3 + half your level.
+                """,
+            ),
         ],
     )
 
@@ -51,7 +48,7 @@ def calc_skills(destination):
         return [
             display_skills_for_attribute(attribute, calc_skill)
             for attribute in filter(lambda a: a != "Willpower", ATTRIBUTES + ["Other"])
-        ] + [trained_skills_tracker()]
+        ]
     else:
         return [
             flex_row(
@@ -75,41 +72,10 @@ def calc_skills(destination):
                             display_skills_for_attribute(attribute, calc_skill)
                             for attribute in ["Intelligence", "Perception"]
                         ]
-                        + [trained_skills_tracker()],
                     ),
                 ],
             )
         ]
-
-
-def trained_skills_tracker():
-    return flex_row(
-        {"class": "trained-skills"},
-        [
-            div({"class": "trained-skills-label"}, "Trained Skills"),
-            underlabel(
-                "Current",
-                number_input(
-                    {
-                        "disabled": True,
-                        "name": "skill_points_spent_display",
-                        "value": "@{skill_points_spent}",
-                    }
-                ),
-            ),
-            span({"class": "trained-skills-separator"}, "/"),
-            underlabel(
-                "Max",
-                number_input(
-                    {
-                        "disabled": True,
-                        "name": "skill_points_total_display",
-                        "value": "@{skill_points}",
-                    }
-                ),
-            ),
-        ],
-    )
 
 
 def calc_skill(skill_name, attribute=None):
@@ -117,9 +83,23 @@ def calc_skill(skill_name, attribute=None):
     skill_parsable = skill_name.lower().replace(" ", "_")
     attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None
 
-    return flex_row(
+    skill_row = flex_row(
         {"class": "skill-row"},
         [
+            div(
+                {"class": "calc-header"},
+                [
+                    visible_skill_name,
+                ],
+            ),
+            equation(
+                calc_skill_equation_components(skill_parsable, attribute),
+                result_attributes={
+                    "disabled": True,
+                    "name": f"{skill_parsable}_display",
+                    "value": f"@{{{skill_parsable}_total}}",
+                },
+            ),
             flex_row(
                 {"class": "skill-points-row"},
                 [
@@ -134,30 +114,16 @@ def calc_skill(skill_name, attribute=None):
                     ),
                 ],
             ),
-            div(
-                {"class": "calc-header"},
-                [
-                    visible_skill_name,
-                    text_input(
-                        {
-                            "class": "subskill-type",
-                            "name": f"{skill_parsable}_type",
-                        }
-                    )
-                    if skill_name in SUBSKILLS
-                    else "",
-                ],
-            ),
-            equation(
-                calc_skill_equation_components(skill_parsable, attribute),
-                result_attributes={
-                    "disabled": True,
-                    "name": f"{skill_parsable}_display",
-                    "value": f"@{{{skill_parsable}_total}}",
-                },
-            ),
         ],
     )
+
+    if skill_name in SUBSKILLS:
+        return flex_col({"class": "skill-with-subskill"}, [
+            skill_row,
+            labeled_text_input(f"{skill_name} subskills trained", {"class": "subskills-trained"}),
+        ])
+    else:
+        return skill_row
 
 
 def calc_skill_equation_components(skill_parsable, attribute):
