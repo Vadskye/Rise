@@ -53,15 +53,15 @@ def create_page(destination):
                 ],
             ),
             # New attacks
-            div({"class": "section-header"}, "Strike-Based Attacks"),
-            fieldset(
-                {"class": f"repeating_strikeattacks"},
-                strike_based_attack(),
-            ),
-            div({"class": "section-header"}, "Other Damaging Attacks"),
+            div({"class": "section-header"}, "Damaging Attacks"),
             fieldset(
                 {"class": f"repeating_otherdamagingattacks"},
                 other_damaging_attack(),
+            ),
+            div({"class": "section-header"}, "Weapon-Based Strikes"),
+            fieldset(
+                {"class": f"repeating_strikeattacks"},
+                strike_based_attack(),
             ),
             div({"class": "section-header"}, "Non-Damaging Attacks"),
             fieldset(

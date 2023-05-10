@@ -43,7 +43,6 @@ def create_page(destination):
         [
             """
                 This tab is used to create your character.
-                It's the first place you should start using the sheet.
             """,
             creation_guidance(),
             subskill_rowids(),
@@ -68,13 +67,6 @@ def creation_guidance():
                     Choose your character's motivations and goals.
                 """,
                 textarea({"name": "motivation_and_goals"}),
-            ),
-            creation_step(
-                "Alignment",
-                """
-                    Choose your character's alignment.
-                """,
-                text_input({"name": "alignment"}),
             ),
             creation_step(
                 "Species",
@@ -307,6 +299,14 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "appearance", "name": "appearance"}),
+            ),
+            creation_step(
+                "Alignment",
+                """
+                    Choose your character's alignment: good or evil, and lawful or chaotic.
+                    You can decide to stay neutral along either or both alignment dimensions.
+                """,
+                textarea({"class": "alignment", "name": "alignment"}),
             ),
             creation_step(
                 "Name",

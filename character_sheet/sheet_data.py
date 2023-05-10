@@ -33,8 +33,8 @@ ATTRIBUTE_SKILLS = {
     ],
     "perception": [
         "Awareness",
-        "Deception",
         "Creature Handling",
+        "Deception",
         "Persuasion",
         "Social Insight",
         "Survival",
