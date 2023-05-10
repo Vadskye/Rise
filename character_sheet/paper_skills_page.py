@@ -112,18 +112,6 @@ def trained_skills_tracker():
     )
 
 
-def skill_labels():
-    return flex_row(
-        {"class": "skill-labels"},
-        [
-            div({"class": "skill-label skill-label-points"}, "Points"),
-            div({"class": "skill-label skill-label-training"}, "T/M"),
-            div({"class": "skill-label skill-label-class"}, "Class?"),
-            div({"class": "skill-label skill-label-misc"}, "Misc"),
-        ],
-    )
-
-
 def calc_skill(skill_name, attribute=None):
     visible_skill_name = re.sub("\\d", "", skill_name).title()
     skill_parsable = skill_name.lower().replace(" ", "_")

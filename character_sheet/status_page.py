@@ -95,10 +95,6 @@ def create_page(_destination):
                 {"class": "repeating_permanentmodifiers"},
                 custom_modifier(show_toggle=False, show_text=False),
             ),
-            fieldset(
-                {"class": "repeating_custommodifiers"},
-                custom_modifier(show_toggle=True, show_text=False),
-            ),
             textarea(
                 {
                     "class": "hidden",

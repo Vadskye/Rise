@@ -88,8 +88,10 @@ div.full-sheet {
     }
 
     textarea {
+        // Since textareas have a full border, they want to look lighter than
+        // normal black.
+        border: 1px solid #555555;
         margin-bottom: 0px;
-        height: 6em;
         // it seems like textareas naturally bleed into their surroundings due to
         // the weird behavior of their padding
         width: calc(100% - 1em);
