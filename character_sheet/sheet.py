@@ -8,11 +8,11 @@ import rolltemplate
 import re
 import identity_page
 import second_page
+import paper_creation_page
 import creation_page
 import header_bar
 import sheet_worker
-import skills_page
-import third_page
+import paper_skills_page
 import items_page
 import calculation_page
 import reference_page
@@ -40,8 +40,8 @@ def main(destination):
             [
                 ["first_page", first_page],
                 ["second_page", second_page],
-                ["third_page", third_page],
-                ["skills_page", skills_page],
+                ["paper_creation_page", paper_creation_page],
+                ["paper_skills_page", paper_skills_page],
                 ["items_page", items_page],
             ]
         ):

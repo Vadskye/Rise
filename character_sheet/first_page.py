@@ -55,8 +55,8 @@ def create_page(destination):
                     flex_col(
                         {"class": "main-body"},
                         [
-                            statistics_header(),
-                            div({"class": "section-header"}, "Movement"),
+                            statistics_header(destination),
+                            div({"class": "section-header"}, "Movement and Senses"),
                             movement(destination),
                             *(
                                 roll20_abilities()
@@ -90,20 +90,20 @@ def paper_ability():
 
 def roll20_abilities():
     return [
-        div({"class": "section-header"}, "Strike-Based Attacks"),
-        flex_row(
-            {"class": "active-ability-group"},
-            fieldset(
-                {"class": f"repeating_strikeattacks"},
-                strike_based_attack(),
-            ),
-        ),
-        div({"class": "section-header"}, "Other Damaging Attacks"),
+        div({"class": "section-header"}, "Damaging Attacks"),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
                 {"class": f"repeating_otherdamagingattacks"},
                 other_damaging_attack(),
+            ),
+        ),
+        div({"class": "section-header"}, "Weapon-Based Strikes"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_strikeattacks"},
+                strike_based_attack(),
             ),
         ),
         div({"class": "section-header"}, "Non-Damaging Attacks"),
@@ -300,13 +300,13 @@ def untrained_subskill_box(display_name, parseable_name):
     )
 
 
-def statistics_header():
+def statistics_header(destination):
     return "".join(
         [
             flex_row(
                 {"class": "all-statistics"},
                 [
-                    core_statistics(),
+                    core_statistics(destination),
                     defenses(),
                 ],
             )
@@ -352,7 +352,7 @@ def defenses():
 
 
 
-def core_statistics():
+def core_statistics(destination):
     return flex_col(
         {"class": "core-statistics"},
         [
@@ -382,7 +382,7 @@ def core_statistics():
                 ),
             ),
             sidelabel(
-                "DR",
+                "DR" if destination == "roll20" else "Damage resistance",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [
@@ -406,7 +406,7 @@ def core_statistics():
                 ),
             ),
             sidelabel(
-                "Fatigue level",
+                "Fatigue level" if destination == "roll20" else "Fatigue tolerance",
                 flex_row(
                     {"class": "core-statistics-split"},
                     [
@@ -452,13 +452,7 @@ def movement(destination):
                 },
             ),
             *[
-                freeform_number_input(
-                    text_input_attributes={"class": "movement-speed-name", "name": f"movement_speed_{i}_name"},
-                    number_input_attributes={
-                        "class": "large-number-input",
-                        "name": f"movement_speed_{i}_value",
-                    },
-                )
+                text_input({"class": "movement-speed-name", "name": f"movement_speed_{i}_name"})
                 for i in range(4)
             ],
         ],

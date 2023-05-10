@@ -1,0 +1,26 @@
+// Need this extra layer of precision to override settings in sheet.less
+div.full-sheet {
+    .creation-guidance {
+        width: 16em;
+
+        .trained-skills, .description, .archetypes, .equipment-proficiencies, .feats {
+            height: 6.96em;
+        }
+    }
+    .abilities {
+        margin-left: 0.25em;
+        flex-grow: 1;
+
+        .ability-name {
+            width: 10em;
+        }
+        .ability-effects {
+            margin-left: 0.25em;
+            flex-grow: 1;
+        }
+        .active-abilities-known, .insight-point-allocation {
+            // This odd height helps sync up the bottom of the page
+            height: 7.85em;
+        }
+    }
+}
