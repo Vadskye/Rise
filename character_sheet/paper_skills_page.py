@@ -2,6 +2,7 @@ from cgi_simple import (
     checkbox,
     div,
     equation,
+    equation_misc_repeat,
     fieldset,
     flex_col,
     flex_row,
@@ -25,7 +26,6 @@ from sheet_data import (
     ROLL20_CALC,
     SUBSKILLS,
 )
-from second_page import equation_misc_repeat
 import re
 
 

@@ -497,3 +497,25 @@ def labeled_span(label_name, attributes=None, input_attributes=None):
             span({"class": "under-label"}, label_name),
         ]
     )
+
+def equation_misc(name, i=0):
+    return flex_col(
+        [
+            number_input(
+                {
+                    "class": "equation-misc",
+                    "name": f"{name}_misc_{i}",
+                }
+            ),
+            text_input(
+                {
+                    "class": "invisible-text-input",
+                    "name": f"{name}_misc_label_{i}",
+                }
+            ),
+        ]
+    )
+
+
+def equation_misc_repeat(name, count=1, joiner=plus):
+    return joiner().join([equation_misc(name, i) for i in range(count)])

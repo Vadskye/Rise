@@ -29,11 +29,11 @@ from status_page import custom_modifier
 def create_page(destination):
     def number_reminder(name):
         return text_input(
-            {"class": "inline-number", "readonly": True, "name": name}
+            {"class": "inline-number reminder", "readonly": True, "name": name}
         )
     def text_reminder(name):
         return span(
-            {"name": name}
+            {"class": "reminder", "name": name}
         )
 
     return flex_col(
@@ -45,11 +45,8 @@ def create_page(destination):
                 This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """,
             ),
-            div({"class": "section-header"}, "Inventory"),
-            textarea({"class": "inventory", "name": "inventory"}),
             # TODO: add weight limits here?
-            div({"class": "section-header"}, "Proficiences"),
-            proficiencies(),
+            *(proficiencies() if destination == "roll20" else []),
             div({"class": "section-header"}, "Armor"),
             armor(destination, "Body armor"),
             armor(destination, "Shield"),
@@ -73,6 +70,8 @@ def create_page(destination):
                 if destination == "roll20"
                 else [attunement() for _ in range(8)],
             ),
+            div({"class": "section-header"}, "Inventory"),
+            textarea({"class": "inventory", "name": "inventory"}),
         ],
     )
 
@@ -151,21 +150,24 @@ def equipment():
 
 
 def proficiencies():
-    return flex_row(
-        {"class": "proficiencies"},
-        [
-            labeled_text_input(
-                "Base class",
-                input_attributes={"readonly": True, "name": "base_class_proficiencies"},
-            ),
-            labeled_text_input(
-                "Weapon groups", input_attributes={"name": "weapon_groups"}
-            ),
-            labeled_text_input(
-                "Other proficiencies", input_attributes={"name": "other_proficiencies"}
-            ),
-        ],
-    )
+    return [
+        div({"class": "section-header"}, "Proficiences"),
+        flex_row(
+            {"class": "proficiencies"},
+            [
+                labeled_text_input(
+                    "Base class",
+                    input_attributes={"readonly": True, "name": "base_class_proficiencies"},
+                ),
+                labeled_text_input(
+                    "Weapon groups", input_attributes={"name": "weapon_groups"}
+                ),
+                labeled_text_input(
+                    "Other proficiencies", input_attributes={"name": "other_proficiencies"}
+                ),
+            ],
+        )
+    ]
 
 
 def legacy_item(destination):
@@ -248,7 +250,7 @@ def armor(destination, armor_type):
                     {"class": "usage-class-dropdown"},
                 )
                 if destination == "roll20"
-                else labeled_text_input("Usage Class", {"class": "usage-class"})
+                else labeled_text_input("Usage class", {"class": "usage-class"})
             ),
         ],
     )
@@ -272,20 +274,17 @@ def weapon(i):
                 {"name": f"weapon_{i}_accuracy"},
             ),
             labeled_text_input(
-                "Magical Damage",
+                "Magical damage",
                 {"class": "weapon-damage-dice"},
                 {"name": f"weapon_{i}_magical_damage_dice"},
             ),
             labeled_text_input(
-                "Mundane Damage",
+                "Mundane damage",
                 {"class": "weapon-damage-dice"},
                 {"name": f"weapon_{i}_mundane_damage_dice"},
             ),
             labeled_text_input(
                 "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
-            ),
-            labeled_text_input(
-                "Effects", {"class": "weapon-effects"}, {"name": f"weapon_{i}_effects"}
             ),
         ],
     )
