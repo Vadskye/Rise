@@ -90,7 +90,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Two-Weapon Rend+',
 
       effect: `
-        Make a melee strike using a slashing weapon.
+        Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
         Each target that takes damage from both weapons bleeds.
         A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
       `,
