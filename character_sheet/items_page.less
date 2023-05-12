@@ -28,7 +28,7 @@
     }
 
     > div.name {
-        flex-basis: 25em;
+        flex-basis: 22em;
     }
 }
 .attunement-effect, .weapon-effects {
@@ -38,17 +38,13 @@
     margin-right: 0.5em;
 }
 .weapon-damage-dice {
-    width: 5em;
+    width: 6em;
 }
 .weapon-name {
-    width: 10em;
+    flex-grow: 1;
 }
 .weapon-tags {
     width: 15em;
-}
-
-.paper .usage-class {
-    width: 10em;
 }
 
 .attune-points {
@@ -67,16 +63,6 @@
 }
 .equipment-effects {
     flex-grow: 1;
-}
-
-.paper {
-    textarea {
-        width: calc(100% - 0.5em);
-        height: 12em;
-    }
-    .is-active {
-        font-size: 14pt;
-    }
 }
 
 .proficiencies {
@@ -114,8 +100,19 @@
 }
 
 .paper {
+    .usage-class {
+        flex-basis: 8em;
+    }
+
+    textarea {
+        width: calc(100% - 0.5em);
+    }
+    .is-active {
+        font-size: 14pt;
+    }
+
     .inventory {
-        height: 10em;
+        height: 14em;
     }
 
     .repeating_legacymodifiers {
@@ -123,7 +120,11 @@
     }
 
     .legacy-item-effect {
-        height: 4em;
+        height: 6em;
+    }
+
+    .weapons-explanation {
+        display: none;
     }
 }
 

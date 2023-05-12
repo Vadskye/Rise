@@ -7,7 +7,7 @@ import active_abilities_page
 import rolltemplate
 import re
 import identity_page
-import second_page
+import paper_calculation_page
 import paper_creation_page
 import creation_page
 import header_bar
@@ -39,10 +39,10 @@ def main(destination):
         for i, (name, module) in enumerate(
             [
                 ["first_page", first_page],
-                ["second_page", second_page],
                 ["paper_creation_page", paper_creation_page],
                 ["paper_skills_page", paper_skills_page],
                 ["items_page", items_page],
+                ["paper_calculation_page", paper_calculation_page],
             ]
         ):
             page = i + 1
