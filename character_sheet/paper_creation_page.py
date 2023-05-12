@@ -32,7 +32,6 @@ from sheet_data import (
     ATTRIBUTES,
     SUBSKILLS,
 )
-from second_page import equation_misc_repeat
 import re
 
 
@@ -74,7 +73,7 @@ def abilities():
         {"class": "abilities"},
         [
             div({"class": "section-header"}, "Passive Abilities"),
-            *[passive_ability() for i in range(16)],
+            *[passive_ability() for i in range(14)],
             div({"class": "section-header"}, "Insight Point Allocation"),
             textarea({"class": "insight-point-allocation"}),
             div({"class": "section-header"}, "Active Abilities Known"),

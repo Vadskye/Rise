@@ -2,6 +2,8 @@ from cgi_simple import (
     checkbox,
     div,
     equation,
+    equation_misc,
+    equation_misc_repeat,
     fieldset,
     flex_col,
     flex_row,
@@ -23,40 +25,18 @@ from sheet_data import (
 )
 from sheet_worker import standard_damage_at_power
 
-def equation_misc(name, i=0):
-    return flex_col(
-        [
-            number_input(
-                {
-                    "class": "equation-misc",
-                    "name": f"{name}_misc_{i}",
-                }
-            ),
-            text_input(
-                {
-                    "class": "invisible-text-input",
-                    "name": f"{name}_misc_label_{i}",
-                }
-            ),
-        ]
-    )
-
-
-def equation_misc_repeat(name, count=1, joiner=plus):
-    return joiner().join([equation_misc(name, i) for i in range(count)])
-
 
 def create_page(destination):
     return flex_col(
         {"class": "page second-page"},
         [
             div(
-                {"class": "tab-explanation"},
+                {"class": "page-explanation"},
                 """
-            This tab is used to track your core character statistics.
-            There are open spaces in each equation so you can add custom modifiers for each statistic.
-            Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
-        """,
+                    This page is used to track your core character statistics.
+                    There are open spaces in each equation so you can add custom modifiers for each statistic.
+                    Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
+                """,
             ),
             flex_row(
                 [
@@ -67,9 +47,13 @@ def create_page(destination):
                             div({"class": "section-header"}, "Core Statistics"),
                             calc_encumbrance(),
                             calc_land_speed(),
-                            calc_vital_rolls(),
                             calc_weight_limits(),
                             calc_unknown_statistic(),
+                            div({"class": "section-header"}, "Resources"),
+                            calc_attunement_points(),
+                            calc_fatigue_tolerance(),
+                            calc_insight_points(),
+                            calc_skill_points(),
                         ],
                     ),
                     flex_col(
@@ -80,21 +64,24 @@ def create_page(destination):
                                 [
                                     div(
                                         {"class": "section-header"},
-                                        "Defensive Statistics",
+                                        "Defenses",
                                     ),
                                     calc_defenses(),
+                                    div(
+                                        {"class": "section-header"},
+                                        "Survival Statistics",
+                                    ),
+                                    calc_survival(),
                                     div(
                                         {"class": "section-header"},
                                         "Offensive Statistics",
                                     ),
                                     calc_accuracy(),
-                                    calc_power(),
+                                    calc_blank_accuracy(),
+                                    calc_blank_accuracy(),
+                                    calc_power("Magical"),
+                                    calc_power("Mundane"),
                                     calc_weapon_damage_dice(),
-                                    div({"class": "section-header"}, "Resources"),
-                                    calc_attunement_points(),
-                                    calc_fatigue_tolerance(),
-                                    calc_insight_points(),
-                                    calc_skill_points(),
                                 ],
                             ),
                         ],
@@ -134,7 +121,7 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower, 2),
+                            equation_misc_repeat(attribute_lower, 3),
                         ],
                         result_attributes={
                             "disabled": "true",
@@ -231,6 +218,23 @@ def calc_accuracy():
         ]
     )
 
+def calc_blank_accuracy():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, text_input({"class": "accuracy_type"}) + " Accuracy"),
+            equation(
+                [
+                    underlabel(
+                        "Base",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("strike_accuracy", 4),
+                ],
+            ),
+        ]
+    )
+
 
 def calc_damage_resistance():
     return flex_row(
@@ -288,7 +292,7 @@ def calc_attunement_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("attunement_points", 4),
+                    equation_misc_repeat("attunement_points", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -303,7 +307,7 @@ def calc_attunement_points():
 def calc_fatigue_tolerance():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Fatigue Tolerance"),
+            div({"class": "calc-header fatigue-tolerance"}, "Fatigue Tolerance"),
             equation(
                 [
                     underlabel(
@@ -326,17 +330,6 @@ def calc_fatigue_tolerance():
                         ),
                     ),
                     plus(),
-                    underlabel(
-                        "Wil/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "fatigue_tolerance_wil_display",
-                                "value": "floor(@{willpower}/2)",
-                            }
-                        ),
-                    ),
-                    plus(),
                     equation_misc_repeat("fatigue_tolerance", 2),
                 ],
                 result_attributes={
@@ -344,6 +337,32 @@ def calc_fatigue_tolerance():
                     "name": "fatigue_tolerance_display",
                     "value": "@{fatigue_tolerance}",
                 },
+            ),
+        ]
+    )
+
+
+def calc_hit_points_level():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "HP Level"),
+            equation(
+                {
+                    "class": "large-number-equation",
+                },
+                [
+                    underlabel(
+                        "Level",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("hit_points_level", 4),
+                ],
             ),
         ]
     )
@@ -381,10 +400,36 @@ def calc_hit_points():
     )
 
 
-def calc_power():
+def calc_damage_resistance_level():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Power"),
+            div({"class": "calc-header"}, "DR Level"),
+            equation(
+                {
+                    "class": "large-number-equation",
+                },
+                [
+                    underlabel(
+                        "Level",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("damage_resistance_level", 4),
+                ],
+            ),
+        ]
+    )
+
+
+def calc_power(power_type):
+    return flex_row(
+        [
+            div({"class": "calc-header"}, f"{power_type} Power"),
             equation(
                 [
                     underlabel(
@@ -394,11 +439,6 @@ def calc_power():
                     plus(),
                     equation_misc_repeat("power", 4),
                 ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "power_display",
-                    "value": "@{power}",
-                },
             ),
         ]
     )
@@ -591,12 +631,22 @@ def calc_defenses():
     return div(
         {"class": "defenses"},
         [
-            calc_hit_points(),
-            calc_damage_resistance(),
             calc_armor(),
             calc_fort(),
             calc_ref(),
             calc_mental(),
+        ],
+    )
+
+def calc_survival():
+    return div(
+        {"class": "survival"},
+        [
+            calc_hit_points_level(),
+            calc_hit_points(),
+            calc_damage_resistance_level(),
+            calc_damage_resistance(),
+            calc_vital_rolls(),
         ],
     )
 
@@ -627,7 +677,7 @@ def calc_skill_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("skill_points", 3),
+                    equation_misc_repeat("skill_points", 2),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -665,7 +715,7 @@ def calc_insight_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("insight_points", 3),
+                    equation_misc_repeat("insight_points", 2),
                 ],
                 result_attributes={
                     "disabled": "true",
