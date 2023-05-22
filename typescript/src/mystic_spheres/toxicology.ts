@@ -108,7 +108,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
-        The poison inflicts 2d8 damage per \\glossterm{poison stage}.
+        The poison inflicts 2d8 poison damage per \\glossterm{poison stage}.
       `,
       rank: 2,
       scaling: 'poison',
@@ -121,7 +121,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-        The poison inflicts 3d8 damage per \\glossterm{poison stage}.
+        The poison inflicts 3d8 poison damage per \\glossterm{poison stage}.
       `,
       rank: 3,
       scaling: 'poison',
@@ -162,7 +162,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
-        The poison inflicts 1d6 damage per \\glossterm{poison stage}.
+        The poison inflicts 1d6 poison damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
@@ -176,7 +176,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by dragon bile (see \\pcref{Poison}).
-        The poison inflicts 3d8 damage per \\glossterm{poison stage}.
+        The poison inflicts 3d8 poison damage per \\glossterm{poison stage}.
       `,
       rank: 5,
       scaling: 'poison',
