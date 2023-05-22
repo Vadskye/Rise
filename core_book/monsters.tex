@@ -118,7 +118,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             \item Elite monsters gain a \plus2 bonus to their \glossterm{accuracy} and all \glossterm{defenses}.
             \item Elite monsters have four times the \glossterm{hit points} and \glossterm{damage resistance} of standard monsters.
             \item Elite monsters can have a maximum attribute of 6 (see \pcref{Monster Attributes}).
-            \item Elite monsters double their damage and healing with all abilities. This is separate from any other multipliers, so an elite monster using a double damage attack would deal four times the damage of a normal monster's attack.
+            \item Elite monsters double their damage and healing with all abilities. This stacks multiplicatively with any other modifiers, so an elite monster using a double damage attack would deal four times the damage of a normal monster's attack.
             \item Elite monsters can take an additional \glossterm{elite action} each round (see \pcref{Elite Actions}).
             \item Elite monsters automatically remove excess \glossterm{conditions} (see \pcref{Conditions on Monsters}).
         \end{itemize}
@@ -218,6 +218,14 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         Each monster has a set of associated information that you can learn with a knowledge check of the listed difficulty value.
         Most monsters have multiple tiers of information that you can learn depending on how good your Knowledge check is.
         All information recorded in these descriptions is accurate, though lower check results may not provide full context for a monster's behavior or nature.
+
+\section{Quick Monster Creation}
+
+    This table describes the statistics for a non-elite monster with 0 in all attributes, other than the monster's bonus attribute from its role.
+    It can be a useful reference to when creating custom monsters at a particular role and level.
+    The format is extremely terse to save space: ``HP/DR; Armor/Fort/Ref/Ment''.
+
+    \input{generated/monster_reference_table.tex}
 
 \section{Monster Descriptions}
 
