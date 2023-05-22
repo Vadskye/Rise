@@ -225,7 +225,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts 1d6 damage per \\glossterm{poison stage}.
+        The poison inflicts 1d6 poison damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
@@ -239,7 +239,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
-        The poison inflicts 2d6 damage per \\glossterm{poison stage}.
+        The poison inflicts 2d6 poison damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 3,
@@ -253,7 +253,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
-        The poison inflicts 4d8 damage per \\glossterm{poison stage}.
+        The poison inflicts 4d8 poison damage per \\glossterm{poison stage}.
       `,
       rank: 6,
       scaling: 'poison',
