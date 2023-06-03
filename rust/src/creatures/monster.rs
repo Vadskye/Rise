@@ -10,6 +10,7 @@ use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
+use crate::core_mechanics::abilities::LatexAbility;
 
 use super::ModifierType;
 
@@ -396,7 +397,7 @@ impl Monster {
         }
         active_abilities.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         for active_ability in active_abilities {
-            ability_texts.push(active_ability.clone().latex_ability_block());
+            ability_texts.push(active_ability.clone().latex_ability_block(&self.creature));
         }
 
         let mut passive_ability_texts = self
