@@ -3,7 +3,6 @@ use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{
     Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
 };
-use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
 use super::Creature;

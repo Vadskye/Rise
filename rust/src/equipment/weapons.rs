@@ -294,7 +294,7 @@ impl Weapon {
             crit: None,
             defense: Defense::Armor,
             extra_context: None,
-            hit: AttackEffect::from_weapon(self.clone()),
+            hit: AttackEffect::from_weapon(self),
             name: titlecase(&self.name),
             is_magical: false,
             is_strike: true,
