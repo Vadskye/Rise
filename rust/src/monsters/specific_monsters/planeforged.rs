@@ -167,7 +167,6 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
             modifiers.push(Modifier::ActiveAbility(ActiveAbility {
                 ability_type: AbilityType::Normal,
-                cooldown: None,
                 effect: format!(
                     "
                         The $name teleports horizontally into an unoccupied location within {range}.
@@ -177,7 +176,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 ),
                 is_magical: true,
                 name: "Divine Translocation".to_string(),
-                tags: None,
+                tags: vec![],
                 usage_time: None,
             }));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
