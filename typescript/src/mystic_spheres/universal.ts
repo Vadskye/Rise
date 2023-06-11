@@ -64,6 +64,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: 'accuracy',
     },
     {
       name: 'Mighty Mystic Bolt',
@@ -76,6 +77,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: 'accuracy',
     },
     {
       name: 'Mystic Discharge',
@@ -89,6 +91,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: 'accuracy',
     },
     {
       name: 'Massive Mystic Discharge',
@@ -102,6 +105,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 5,
+      scaling: 'accuracy',
     },
   ],
   rituals: [
