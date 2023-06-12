@@ -90,6 +90,7 @@ impl AgeCategory {
             return None;
         }
         let size = size.unwrap();
+        // TODO: this should be a triggered ActiveAbility
         return Some(Attack {
             accuracy: 0,
             crit: Some(AttackEffect::Debuff(DebuffEffect {
@@ -108,7 +109,7 @@ impl AgeCategory {
             is_strike: false,
             name: "Frightful Presence".to_string(),
             replaces_weapon: None,
-            tags: Some(vec![Tag::Ability(AbilityTag::Emotion), Tag::Ability(AbilityTag::Elite)]),
+            tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
             targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
         });
     }
@@ -482,6 +483,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         age_category.level() + dragon_type.level_modifier(),
         age_category.challenge_rating(),
     );
+    // TODO: this should be an elite ActiveAbility
     return Attack {
         accuracy: 0,
         crit: None,
@@ -499,7 +501,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         is_strike: false,
         name: "Breath Weapon".to_string(),
         replaces_weapon: None,
-        tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
+        tags: None,
         targeting,
     };
 }

@@ -1,54 +1,28 @@
-use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
+use crate::core_mechanics::abilities::{
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+};
 use crate::core_mechanics::{
     MovementMode, MovementSpeed, Sense, Size, SpeedCategory, StandardPassiveAbility,
 };
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
-use crate::monsters::challenge_rating::ChallengeRating;
-use crate::monsters::creature_type::CreatureType::Humanoid;
+use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Role};
+use crate::monsters::{
+    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
+};
 use crate::skills::Skill;
+use crate::core_mechanics::{DamageType, DicePool};
 
-struct FullHumanoidDefinition {
-    alignment: String,
-    attributes: Vec<i32>,
-    challenge_rating: ChallengeRating,
-    description: Option<String>,
-    knowledge: Option<Knowledge>,
-    level: i32,
-    modifiers: Option<Vec<Modifier>>,
-    movement_speeds: Option<Vec<MovementSpeed>>,
-    name: String,
-    role: Role,
-    senses: Option<Vec<Sense>>,
-    size: Size,
-    trained_skills: Option<Vec<Skill>>,
-    weapons: Vec<Weapon>,
-}
-
-fn humanoid(def: FullHumanoidDefinition) -> Monster {
-    return FullMonsterDefinition {
-        // From def
-        alignment: def.alignment,
-        attributes: def.attributes,
-        challenge_rating: def.challenge_rating,
-        description: def.description,
-        knowledge: def.knowledge,
-        level: def.level,
-        modifiers: def.modifiers,
-        movement_speeds: def.movement_speeds,
+fn humanoid(def: MonsterDef) -> Monster {
+    return MonsterDef {
+        abilities: def.abilities,
+        narrative: def.narrative,
         name: def.name,
-        role: def.role,
-        senses: def.senses,
-        size: def.size,
-        trained_skills: def.trained_skills,
-        weapons: def.weapons,
-
-        creature_type: Humanoid,
+        statistics: def.statistics,
     }
-    .monster();
+    .monster(CreatureType::Humanoid);
 }
 
 pub fn humanoids() -> Vec<MonsterEntry> {
@@ -58,28 +32,35 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         name: "Bandits".to_string(),
         knowledge: None,
         monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful evil".to_string(),
-                attributes: vec![4, 1, 2, -1, 0, 0],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: Some(Knowledge::new(vec![
-                    (0, "
-                        Orc deserters have abandoned their clans and struck out on their own.
-                        Some are unable to leave their martial past behind them, so they turn their talents to banditry.
-                    "),
-                ])),
-                level: 3,
-                modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::RecklessStrike),
-                ]),
-                movement_speeds: None,
-                name: "Orc Deserter".to_string(),
-                role: Role::Brute,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: Some(vec![Skill::Endurance]),
-                weapons: vec![StandardWeapon::Greataxe.weapon()],
+            humanoid(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::HeavyCrossbow.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    description: None,
+                    knowledge: Some(Knowledge::new(vec![
+                        (0, "
+                            Army deserters have abandoned their past life in an army and struck out on their own.
+                            Since the punishments for desertion are typically harsh, they have little to lose.
+                        "),
+                    ])),
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![2, 0, 2, 0, 0, 0],
+                    elite: false,
+                    level: 1,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+                name: "Army Deserter".to_string(),
             }),
         ],
     }));
@@ -88,122 +69,311 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         name: "Cultists".to_string(),
         knowledge: None,
         monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful evil".to_string(),
-                attributes: vec![0, 0, 1, -1, 0, 4],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::InflictWound(1).attack(),
-                )]),
-                movement_speeds: None,
+            humanoid(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility {
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy attack vs. Fortitude against one living creature within \medrange.
+                                \hit The target takes $dr1 energy damage.
+                            ".to_string(),
+                            is_magical: true,
+                            name: "Drain Life".to_string(),
+                            tags: vec![AbilityTag::Spell],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Sickle.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Endurance],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    description: None,
+                    knowledge: None,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 0, 2, -1, 0, 2],
+                    elite: false,
+                    level: 1,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
                 name: "Death Cultist".to_string(),
-                role: Role::Sniper,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Sickle.weapon()],
             }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful evil".to_string(),
-                attributes: vec![0, 2, 0, -1, 0, 4],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
+            humanoid(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility {
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name must have a free hand to cast this spell.
+
+                                The $name makes a $accuracy attack vs. Reflex against something it \glossterm{touches}.
+                                \hit The target takes $dr1 fire damage immediately, and again during the $name's next action.
+                            ".to_string(),
+                            is_magical: true,
+                            name: "Burning Grasp".to_string(),
+                            tags: vec![AbilityTag::Spell],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Custom(CustomAbility {
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy attack vs. Fortitude against one creature within \medrange.
+                                \hit The target takes $dr1 fire damage.
+                                If it loses hit points, it takes $dr1 fire damage again during the $name's next action.
+                            ".to_string(),
+                            is_magical: true,
+                            name: "Pyrohemia".to_string(),
+                            tags: vec![AbilityTag::Spell],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Custom(CustomAbility {
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy attack vs. Reflex against everything in a \medarea radius from it.
+                                In addition, it suffers a glancing blow from this attack.
+                                \hit Each target takes $dr1 fire damage.
+                            ".to_string(),
+                            is_magical: true,
+                            name: "Pyroclasm".to_string(),
+                            tags: vec![AbilityTag::Spell],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Club.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually chaotic evil".to_string(),
+                    description: None,
+                    knowledge: None,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 2, 0, -1, 2, 3],
+                    elite: false,
                 level: 4,
-                modifiers: Some(vec![
-                    Modifier::Attack(StandardAttack::Combustion(2).attack()),
-                    Modifier::Attack(StandardAttack::Firebolt(2).attack()),
-                ]),
-                movement_speeds: None,
-                name: "Pyromaniac".to_string(),
-                role: Role::Sniper,
-                senses: None,
+                role: Role::Mystic,
                 size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Club.weapon()],
+                },
+                name: "Pyromaniac".to_string(),
             }),
         ],
     }));
+
+    fn goblin(name: &str, abilities: MonsterAbilities, statistics: MonsterStatistics) -> Monster {
+        return humanoid(MonsterDef {
+            abilities,
+            name: name.to_string(),
+            narrative: Some(MonsterNarrative {
+                alignment: "Usually chaotic evil".to_string(),
+                description: None,
+                knowledge: None,
+            }),
+            statistics,
+        });
+    }
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Goblins".to_string(),
         knowledge: None,
         monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually chaotic evil".to_string(),
-                attributes: vec![-1, 3, -2, -2, 1, -2],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: None,
-                movement_speeds: None,
-                name: "Goblin Peon".to_string(),
-                role: Role::Skirmisher,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually chaotic evil".to_string(),
-                attributes: vec![1, 3, 0, -2, 1, -2],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: None,
-                movement_speeds: None,
-                name: "Goblin Guard".to_string(),
-                role: Role::Skirmisher,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually chaotic evil".to_string(),
-                attributes: vec![1, 3, 1, -2, 1, -2],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: None,
-                movement_speeds: None,
-                name: "Goblin Warg Rider".to_string(),
-                role: Role::Skirmisher,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually chaotic evil".to_string(),
-                attributes: vec![0, 2, 1, -2, 2, 3],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DivineJudgment(1).attack(),
-                )]),
-                movement_speeds: None,
-                name: "Goblin Shaman".to_string(),
-                role: Role::Sniper,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
+            goblin(
+                "Goblin Peon",
+                MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Stealth],
+                },
+                MonsterStatistics {
+                    attributes: vec![-1, 2, -2, -2, 1, -2],
+                    elite: false,
+                    level: 1,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            ),
+            goblin(
+                "Goblin Guard",
+                MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(StandardWeapon::Spear.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Awareness],
+                },
+                MonsterStatistics {
+                    attributes: vec![-1, 3, -1, -2, 1, -2],
+                    elite: false,
+                    level: 1,
+                    role: Role::Warrior,
+                    size: Size::Medium,
+                },
+            ),
+            goblin(
+                "Goblin Warg Rider",
+                MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Lance.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(StandardWeapon::Spear.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Ride],
+                },
+                MonsterStatistics {
+                    attributes: vec![-1, 3, 0, -2, 2, -2],
+                    elite: false,
+                    level: 3,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            ),
+            goblin(
+                "Goblin Shaman",
+                MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility::divine_judgment(1)),
+                        ActiveAbility::Strike(StrikeAbility::consecrated_strike(1, StandardWeapon::Spear.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Awareness],
+                },
+                MonsterStatistics {
+                    attributes: vec![-1, 3, 0, -2, 2, 2],
+                    elite: false,
+                    level: 1,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
+            ),
         ],
     }));
 
     add_humans(&mut monsters);
 
     add_orcs(&mut monsters);
+
+    add_lizardfolk(&mut monsters);
+
+    return monsters;
+}
+
+pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
+    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+        name: "Townsfolk".to_string(),
+        knowledge: None,
+        monsters: vec![
+            humanoid(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Broadsword.weapon())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful neutral".to_string(),
+                    description: None,
+                    knowledge: Some(Knowledge::new(vec![
+                        (0, "
+                            Town guards are common throughout civilization.
+                            This represents the sort of ordinary guard that would be found even in rural towns, not an elite bodyguard.
+                        "),
+                    ])),
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![1, 1, 1, 0, 0, 0],
+                    elite: false,
+                    level: 1,
+                    role: Role::Warrior,
+                    size: Size::Medium,
+                },
+                name: "Town Guard".to_string(),
+            }),
+            humanoid(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility::inflict_wound(2)),
+                        ActiveAbility::Custom(CustomAbility::stabilize_life(2)),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![Skill::Medicine],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Any".to_string(),
+                    description: None,
+                    knowledge: Some(Knowledge::new(vec![
+                        (0, "
+                            Town healers are typically clerics or druids with some healing ability.
+                            They may be prominent leaders of a temple, or they may prefer solitude, but it is rare to find a reasonably sized town that does not have a healer of some variety.
+                        "),
+                    ])),
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 0, 0, 0, 2, 3],
+                    elite: false,
+                    level: 4,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
+                name: "Town Healer".to_string(),
+            }),
+        ],
+    }));
+}
+
+pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
+    struct LizardfolkAbilities {
+        active_abilities: Vec<ActiveAbility>,
+        modifiers: Vec<Modifier>,
+        trained_skills: Vec<Skill>,
+    }
+
+    fn lizardfolk(name: &str, mut abilities: LizardfolkAbilities, statistics: MonsterStatistics) -> Monster {
+        abilities.modifiers.push(Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()));
+        return humanoid(MonsterDef {
+            abilities: MonsterAbilities {
+                active_abilities: abilities.active_abilities,
+                modifiers: abilities.modifiers,
+                movement_speeds: Some(vec![
+                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
+                    MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
+                ]),
+                senses: vec![],
+                trained_skills: abilities.trained_skills,
+            },
+            name: name.to_string(),
+            narrative: Some(MonsterNarrative {
+                alignment: "Usually true neutral".to_string(),
+                description: None,
+                knowledge: None,
+            }),
+            statistics,
+        });
+    }
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Lizardfolk".to_string(),
@@ -223,129 +393,85 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             "),
         ])),
         monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually true neutral".to_string(),
-                attributes: vec![3, 0, 4, 0, 0, 1],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 3,
-                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_speeds: Some(vec![
-                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
-                    MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
-                ]),
-                name: "Lizardfolk Grunt".to_string(),
-                role: Role::Warrior,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually true neutral".to_string(),
-                attributes: vec![3, 0, 4, 0, 2, 2],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 6,
-                modifiers: Some(vec![Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability())]),
-                movement_speeds: Some(vec![
-                    MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
-                    MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
-                ]),
-                name: "Lizardfolk Elite".to_string(),
-                role: Role::Warrior,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Spear.weapon()],
-            }),
-        ],
-    }));
-
-    return monsters;
-}
-
-pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
-        name: "Humans".to_string(),
-        knowledge: None,
-        monsters: vec![
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful neutral".to_string(),
-                attributes: vec![2, 0, 1, 0, 0, 1],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: None,
-                movement_speeds: None,
-                name: "Town Guard".to_string(),
-                role: Role::Warrior,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Broadsword.weapon()],
-            }),
-            humanoid(FullHumanoidDefinition {
-                alignment: "Usually lawful neutral".to_string(),
-                attributes: vec![1, 0, 0, 0, 0, 3],
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: None,
-                level: 1,
-                modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DivineJudgment(1).attack(),
-                )]),
-                movement_speeds: None,
-                name: "Cleric of the Peace".to_string(),
-                role: Role::Leader,
-                senses: None,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Warhammer.weapon()],
-            }),
+            lizardfolk(
+                "Lizardfolk Grunt",
+                LizardfolkAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::defensive_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![2, 2, 3, -1, 1, 0],
+                    elite: false,
+                    level: 3,
+                    role: Role::Warrior,
+                    size: Size::Medium,
+                },
+            ),
+            lizardfolk(
+                "Lizardfolk Champion",
+                LizardfolkAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::defensive_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::redeeming_followup(StandardWeapon::Spear.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![3, 3, 4, 0, 2, 1],
+                    elite: false,
+                    level: 5,
+                    role: Role::Warrior,
+                    size: Size::Medium,
+                },
+            ),
         ],
     }));
 }
 
 pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
-    struct OrcDefinition {
-        attributes: Vec<i32>,
-        challenge_rating: ChallengeRating,
-        knowledge: Option<Knowledge>,
-        level: i32,
-        modifiers: Option<Vec<Modifier>>,
-        name: String,
-        role: Role,
-        size: Size,
-        trained_skills: Option<Vec<Skill>>,
-        weapons: Vec<Weapon>,
+    struct OrcAbilities {
+        active_abilities: Vec<ActiveAbility>,
+        modifiers: Vec<Modifier>,
+        trained_skills: Vec<Skill>,
     }
 
-    impl OrcDefinition {
-        fn monster(self) -> Monster {
-            return humanoid(FullHumanoidDefinition {
-                // From def
-                attributes: self.attributes,
-                challenge_rating: self.challenge_rating,
-                knowledge: self.knowledge,
-                level: self.level,
-                name: self.name,
-                modifiers: self.modifiers,
-                role: self.role,
-                size: self.size,
-                trained_skills: self.trained_skills,
-                weapons: self.weapons,
-
+    fn orc(name: &str, knowledge: Knowledge, mut abilities: OrcAbilities, statistics: MonsterStatistics) -> Monster {
+        abilities.trained_skills.push(Skill::Endurance);
+        return humanoid(MonsterDef {
+            abilities: MonsterAbilities {
+                active_abilities: abilities.active_abilities,
+                modifiers: abilities.modifiers,
+                movement_speeds: None,
+                senses: vec![Sense::Darkvision(60)],
+                trained_skills: abilities.trained_skills,
+            },
+            name: name.to_string(),
+            narrative: Some(MonsterNarrative {
                 alignment: "Usually lawful evil".to_string(),
                 description: None,
-                movement_speeds: None,
-                senses: Some(vec![Sense::Darkvision(60)]),
-            });
-        }
+                knowledge: Some(knowledge),
+            }),
+            statistics,
+        });
     }
+
+    // like a greatsword
+    let cleaver = Weapon {
+        accuracy: 0,
+        damage_dice: DicePool::d8(),
+        damage_types: vec![DamageType::Slashing],
+        name: "Butcher's Cleaver".to_string(),
+        tags: vec![WeaponTag::Heavy, WeaponTag::Sweeping(2)],
+    };
+
+    let mut chief_battle_command = CustomAbility::battle_command(3);
+    chief_battle_command.usage_time = UsageTime::Elite;
 
     monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
         name: "Orcs".to_string(),
@@ -367,112 +493,154 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
             "),
         ])),
         monsters: vec![
-            OrcDefinition {
-                attributes: vec![4, 0, 2, -2, 2, 0],
-                challenge_rating: ChallengeRating::One,
-                knowledge: None,
-                level: 2,
-                modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::Armorcrusher),
-                ]),
-                name: "Orc Butcher".to_string(),
-                role: Role::Brute,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Sledgehammer.weapon()],
-            }.monster(),
-            OrcDefinition {
-                attributes: vec![4, 0, 2, -2, 1, 0],
-                challenge_rating: ChallengeRating::One,
-                knowledge: Some(Knowledge::new(vec![
-                    (0, "
-                        Orc grunts are the standard warrior that orc clans field in battle.
-                    "),
-                ])),
-                level: 2,
-                modifiers: None,
-                name: "Orc Grunt".to_string(),
-                role: Role::Brute,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Greataxe.weapon()],
-            }.monster(),
-            OrcDefinition {
-                attributes: vec![3, 0, 0, -2, 0, 0],
-                challenge_rating: ChallengeRating::One,
-                knowledge: Some(Knowledge::new(vec![
+            orc(
+                "Orc Peon",
+                Knowledge::new(vec![
                     (0, "
                         Orc peons are the weakest warrior that orc clans field in battle.
                         They have the lowest status of any adult in orc society.
+                        Peons are typically fresh recruits who have not yet been fully incorporated into an orc army.
                     "),
-                ])),
-                level: 1,
-                modifiers: None,
-                name: "Orc Peon".to_string(),
-                role: Role::Brute,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Greataxe.weapon()],
-            }.monster(),
-            OrcDefinition {
-                attributes: vec![4, 0, 3, -2, 1, 1],
-                challenge_rating: ChallengeRating::One,
-                knowledge: Some(Knowledge::new(vec![
+                ]),
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![4, 0, 1, -2, 0, 0],
+                    elite: false,
+                    level: 1,
+                    role: Role::Brute,
+                    size: Size::Medium,
+                },
+            ),
+            orc(
+                "Orc Grunt",
+                Knowledge::new(vec![
+                    (0, "
+                        Orc grunts are the standard warrior that orc clans field in battle.
+                    "),
+                ]),
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![4, 0, 2, -2, 0, 0],
+                    elite: false,
+                    level: 2,
+                    role: Role::Brute,
+                    size: Size::Medium,
+                },
+            ),
+            orc(
+                "Orc Butcher",
+                Knowledge::new(vec![
+                    (0, "
+                        Orc butchers usually run the field kitchens in orc armies.
+                        They tend to be smarter than the average orc warrior, but are no less ferocious when challenged.
+                    "),
+                ]),
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(cleaver.clone())),
+                        ActiveAbility::Strike(StrikeAbility::bloodletting_strike(cleaver.clone())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![3, 1, 2, 0, 0, 0],
+                    elite: false,
+                    level: 3,
+                    role: Role::Brute,
+                    size: Size::Medium,
+                },
+            ),
+            orc(
+                "Orc Veteran",
+                Knowledge::new(vec![
                     (0, "
                         Orc veterans are battle-hardened elite warriors who are deadly at any range.
                         They often serve as bodyguards to orc chieftains or as devastating shock troops in battle.
                     "),
-                ])),
-                level: 5,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::PowerStrike)]),
-                name: "Orc Veteran".to_string(),
-                role: Role::Warrior,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
-            }.monster(),
-            // TODO: figure out how to add a "battle command" ability
-            OrcDefinition {
-                attributes: vec![6, 1, 4, -2, 2, 2],
-                challenge_rating: ChallengeRating::Four,
-                knowledge: Some(Knowledge::new(vec![
+                ]),
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::heartpiercer(StandardWeapon::Longbow.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![4, 0, 3, -2, 1, 1],
+                    elite: false,
+                    level: 5,
+                    role: Role::Brute,
+                    size: Size::Medium,
+                },
+            ),
+            orc(
+                "Orc Clan Chief",
+                Knowledge::new(vec![
                     (0, "
                         Orc clan chiefs are the among the most powerful orc warriors.
                         Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants.
                     "),
-                ])),
-                level: 6,
-                modifiers: Some(vec![
-                    Modifier::Maneuver(Maneuver::PowerStrike),
-                    Modifier::Attack(
-                        Maneuver::Hamstring
-                            .attack(StandardWeapon::Greataxe.weapon(), 2)
-                    ),
                 ]),
-                name: "Orc Clan Chief".to_string(),
-                role: Role::Warrior,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Greataxe.weapon(), StandardWeapon::Longbow.weapon()],
-            }.monster(),
-            OrcDefinition {
-                attributes: vec![4, 0, 2, -2, 1, 2],
-                challenge_rating: ChallengeRating::One,
-                knowledge: Some(Knowledge::new(vec![
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::distant_shot(StandardWeapon::Longbow.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::guardbreaker(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::hamstring(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Custom(chief_battle_command),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![6, 0, 4, 0, 2, 3],
+                    elite: true,
+                    level: 6,
+                    role: Role::Leader,
+                    size: Size::Medium,
+                },
+            ),
+            orc(
+                "Orc Shaman",
+                Knowledge::new(vec![
                     (0, "
                         Orc shamans provide orc battle squads with divine magical support.
+                        If they prove both their mettle and wisdom in combat, they may eventually become trusted advisors to a clan chief.
                     "),
-                ])),
-                level: 2,
-                modifiers: Some(vec![Modifier::Attack(
-                    StandardAttack::DivineJudgment(1).attack(),
-                )]),
-                name: "Orc Shaman".to_string(),
-                role: Role::Mystic,
-                size: Size::Medium,
-                trained_skills: None,
-                weapons: vec![StandardWeapon::Battleaxe.weapon()],
-            }.monster(),
+                ]),
+                OrcAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility::divine_judgment(1)),
+                        ActiveAbility::Custom(CustomAbility::true_strike(1)),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Battleaxe.weapon())),
+                    ],
+                    modifiers: vec![],
+                    trained_skills: vec![],
+                },
+                MonsterStatistics {
+                    attributes: vec![4, 1, 1, -1, 2, 2],
+                    elite: false,
+                    level: 2,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
+            ),
         ],
     }));
 }

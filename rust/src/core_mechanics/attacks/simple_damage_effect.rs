@@ -78,7 +78,7 @@ impl SimpleDamageEffect {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 3,
+                power_per_increment: 2,
             }],
         }
         .damage_effect();
