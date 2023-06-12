@@ -122,7 +122,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You gain a +3 accuracy bonus to the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +3 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
@@ -136,7 +136,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You gain a +10 accuracy bonus to the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +10 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
