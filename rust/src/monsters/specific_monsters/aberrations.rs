@@ -1,47 +1,36 @@
-use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
-use crate::core_mechanics::attacks::{StandardAttack, DamageScaling};
+use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
 use crate::core_mechanics::{
-    Debuff, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory,
+    Defense, Debuff, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::StandardWeapon;
-use crate::monsters::creature_type::CreatureType::Aberration;
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::{
-    MonsterAbilities, MonsterNarrative, MonsterStatistics, Role, SimpleMonsterDefinition,
+    MonsterAbilities, MonsterNarrative, MonsterStatistics, Role, MonsterDef,
 };
 use crate::skills::Skill;
 
-struct AberrationDefinition {
-    pub abilities: Option<MonsterAbilities>,
-    pub narrative: Option<MonsterNarrative>,
-    pub name: String,
-    pub statistics: MonsterStatistics,
-}
-
-fn aberration(def: AberrationDefinition) -> Monster {
-    return SimpleMonsterDefinition {
-        // From def
+fn aberration(def: MonsterDef) -> Monster {
+    return MonsterDef {
+        // From self
         abilities: def.abilities,
         narrative: def.narrative,
         name: def.name,
         statistics: def.statistics,
-
-        // Default values
-        creature_type: Aberration,
     }
-    .monster();
+    .monster(CreatureType::Aberration);
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     // TODO: add ritual casting
-    monsters.push(MonsterEntry::Monster(aberration(AberrationDefinition {
-        abilities: Some(MonsterAbilities {
+    monsters.push(MonsterEntry::Monster(aberration(MonsterDef {
+        abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility {
+                ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Attune(None),
                     effect: r"
                         The aboleth \glossterm{dominates} the mind of an unconscious humanoid or aberration it touches.
@@ -49,10 +38,10 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ".to_string(),
                     is_magical: true,
                     name: "Dominate".to_string(),
-                    tags: vec![AbilityTag::Compulsion, AbilityTag::Elite],
-                    usage_time: None,
-                },
-                ActiveAbility {
+                    tags: vec![AbilityTag::Compulsion],
+                    usage_time: UsageTime::Elite,
+                }),
+                ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
@@ -61,10 +50,10 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ".to_string(),
                     is_magical: true,
                     name: "Psionic Blast".to_string(),
-                    tags: vec![AbilityTag::Compulsion, AbilityTag::Elite],
-                    usage_time: None,
-                },
-                ActiveAbility {
+                    tags: vec![AbilityTag::Compulsion],
+                    usage_time: UsageTime::Elite,
+                }),
+                ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
@@ -73,28 +62,45 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ".to_string(),
                     is_magical: true,
                     name: "Mind Crush".to_string(),
-                    tags: vec![AbilityTag::Compulsion, AbilityTag::Elite],
-                    usage_time: None,
-                },
-                ActiveAbility {
+                    tags: vec![AbilityTag::Compulsion],
+                    usage_time: UsageTime::Elite,
+                }),
+                ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
+                    effect: r"
+                        Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
+                        The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
+                        \hit The target takes $dr2l poison damage.
+                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
+
+                        \par Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
+                        The poison's accuracy is $accuracy+2.
+                        Its stage 1 effect makes the target \slowed while the poison lasts.
+                        Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
+                        Instead of making a \glossterm{vital roll} for the \glossterm{vital wound},
+                          the target's skin is transformed into a clear, slimy membrane.
+                        An afflicted creature must be moistened with cool, fresh water at least once every ten minutes
+                          or it will increase its \glossterm<fatigue level> by two.
+                        This effect lasts until the vital wound is removed.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Slime-Covered Body".to_string(),
+                    tags: vec![],
+                    usage_time: UsageTime::Triggered,
+                }),
+                ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy melee strike with a tentacle.
                         \hit Each target takes $damage bludgeoning damage.
-                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
-
-                        Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
-                        The poison's accuracy is $accuracy+2.
-                        Its stage 1 effect makes the target \slowed while the poison lasts.
-                        Its stage 3 effect makes the target dissolve into an sludgelike mass while the poison lasts, as the \textit{sludgeform} spell.
+                        Each creature that loses hit points from this damage is poisoned by aboleth slime, as the aboleth's \ability{slime-covered body} ability.
                     ".to_string(),
                     is_magical: true,
                     name: "Slimy Tentacle Slam".to_string(),
                     tags: vec![],
-                    usage_time: None,
-                },
+                    weapon: StandardWeapon::Slam.weapon(),
+                }),
             ],
-            modifiers: vec![],
+            modifiers: vec![Modifier::Defense(Defense::Armor, 4)],
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Swim, SpeedCategory::Normal),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
@@ -106,7 +112,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 Skill::SocialInsight,
                 Skill::Swim,
             ],
-        }),
+        },
         narrative: Some(MonsterNarrative {
             alignment: "Usually lawful evil".to_string(),
             description: None,
@@ -132,18 +138,41 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, -2, 5, 4, 4, 6],
+            attributes: vec![4, 0, 6, 4, 4, 5],
             elite: true,
             level: 12,
-            role: Role::Warrior,
+            role: Role::Mystic,
             size: Size::Huge,
         },
         name: "Aboleth".to_string(),
     })));
 
-    monsters.push(MonsterEntry::Monster(aberration(AberrationDefinition {
-        abilities: Some(MonsterAbilities {
-            active_abilities: vec![],
+    monsters.push(MonsterEntry::Monster(aberration(MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![
+                ActiveAbility::Custom(CustomAbility {
+                    ability_type: AbilityType::Normal,
+                    effect: r"
+                        The $name makes a $accuracy attack vs. Mental against all creatures within a \largearea radius.
+                        \hit Each target takes $dr1 psychic damage.
+                        Each damaged creature is \dazed as a condition.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Gibber".to_string(),
+                    tags: vec![AbilityTag::Compulsion],
+                    usage_time: UsageTime::Elite,
+                }),
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy melee strike against all adjacent enemies.
+                        \hit Each target takes $damage physical damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Swarm of Mouths".to_string(),
+                    tags: vec![],
+                    weapon: StandardWeapon::MultipedalBite.weapon(),
+                }),
+            ],
             // TODO: make attacks sweeping
             // attacks: vec![
             //     StandardAttack::GibberingMoutherGibber.attack(),
@@ -157,18 +186,19 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 Skill::Endurance,
                 Skill::Swim,
             ],
-        }),
+        },
         narrative: Some(MonsterNarrative {
             alignment: "Usually lawful evil".to_string(),
             description: None,
             knowledge: Some(Knowledge::new(vec![
                 (0, "
                     A gibbering mouther is a horrible creature seemingly drawn from a lunatic's nightmares.
-                    They are named for their tendency for speak gibberish to baffle the minds of their prey.
+                    Its body is an amorphous mass of flesh punctuated with mouths of various improbable shapes and sizes.
+                    Gibbering mouthers are named for their tendency for speak gibberish to baffle the minds of their prey.
                 "),
                 (5, "
-                    Although gibbering mouthers are not intelligent enough to be actively evil, they thirst after bodily fluids and seem to prefer the blood of intelligent creatures.
-                    They speak their gibberish in Common, but cannot understand it.
+                    Gibbering mouthers hunger for the flesh of living creatures, which they eat and incorporate into their own bodies.
+                    They speak their gibberish in no specific language, and cannot understand any languages, though they tend to mimic fragments of sounds they hear to form their gibberish.
                 "),
             ])),
         }),
