@@ -7,10 +7,8 @@ use crate::creatures::{HasModifiers, Modifier};
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill};
 
-pub struct SimpleMonsterDefinition {
-    // We keep creature type separate since it is usually overridden by each creature type file.
-    pub creature_type: CreatureType,
-    pub abilities: Option<MonsterAbilities>,
+pub struct MonsterDef {
+    pub abilities: MonsterAbilities,
     pub narrative: Option<MonsterNarrative>,
     // Name is listed separately from MonsterNarrative since it's mandatory, and the rest of the
     // narrative is skippable.
@@ -98,17 +96,15 @@ impl MonsterStatistics {
     }
 }
 
-impl SimpleMonsterDefinition {
-    pub fn monster(self) -> Monster {
-        let mut monster = self.statistics.monster(self.creature_type);
+impl MonsterDef {
+    pub fn monster(self, creature_type: CreatureType) -> Monster {
+        let mut monster = self.statistics.monster(creature_type);
         monster.creature.name = Some(self.name);
 
         if let Some(narrative) = self.narrative {
             narrative.update_monster(&mut monster);
         }
-        if let Some(abilities) = self.abilities {
-            abilities.update_creature(&mut monster.creature);
-        }
+        self.abilities.update_creature(&mut monster.creature);
 
         return monster;
     }

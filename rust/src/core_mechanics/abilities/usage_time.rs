@@ -1,18 +1,22 @@
 #[derive(Clone, Debug)]
 pub enum UsageTime {
     Standard,
+    Elite,
     Minor,
     Triggered,
 }
 
 impl UsageTime {
-    pub fn latex_ability_header(&self) -> Option<String> {
-        match self {
-            UsageTime::Standard => None,
-            UsageTime::Minor => {
-                Some(r"\par \noindent Usage time: One \glossterm{minor action}.".to_string())
-            }
-            UsageTime::Triggered => Some(r"\par \noindent Usage time: Triggered.".to_string()),
-        }
+    pub fn latex_ability_header(&self) -> String {
+        let specific_text = match self {
+            UsageTime::Standard => "Standard action",
+            UsageTime::Elite => r"Elite action",
+            UsageTime::Minor => r"Minor action",
+            UsageTime::Triggered => r"Triggered",
+        };
+        return format!(
+            "\\par \\noindent Usage: {}.",
+            specific_text,
+        );
     }
 }

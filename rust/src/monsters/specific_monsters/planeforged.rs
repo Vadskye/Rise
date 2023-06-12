@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility};
+use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, CustomAbility, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::attacks::{Maneuver, PureDamage, StandardAttack};
 use crate::core_mechanics::{
@@ -165,7 +165,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 StandardAttack::DivineJudgment(rank).attack(),
             ));
             modifiers.push(Modifier::Attack(StandardAttack::WordOfFaith(rank).attack()));
-            modifiers.push(Modifier::ActiveAbility(ActiveAbility {
+            modifiers.push(Modifier::ActiveAbility(ActiveAbility::Custom(CustomAbility {
                 ability_type: AbilityType::Normal,
                 effect: format!(
                     "
@@ -177,8 +177,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 is_magical: true,
                 name: "Divine Translocation".to_string(),
                 tags: vec![],
-                usage_time: None,
-            }));
+                usage_time: UsageTime::Elite,
+            })));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: format!("
                     The $name can perform any ritual of rank {} or lower from the \\sphere{{channel divinity}} or \\sphere{{prayer}} mystic spheres.

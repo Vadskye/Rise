@@ -1,4 +1,5 @@
 use std::fmt;
+use crate::latex_formatting;
 
 #[derive(Clone, Copy, Debug)]
 pub enum DamageType {
@@ -28,6 +29,12 @@ impl DamageType {
             Self::Piercing => "piercing",
             Self::Slashing => "slashing",
         }
+    }
+
+    pub fn format_damage_types(damage_types: &Vec<Self>) -> String {
+        let mut damage_types = damage_types.clone();
+        damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
+        return latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from(""))
     }
 }
 
