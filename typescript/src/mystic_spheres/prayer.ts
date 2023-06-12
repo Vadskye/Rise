@@ -343,8 +343,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +3 accuracy bonus to the reroll.
-        This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
+        Whether you hit or miss, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
       `,
       rank: 1,
       scaling: 'accuracy',
