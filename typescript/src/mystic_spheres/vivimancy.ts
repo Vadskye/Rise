@@ -3,7 +3,7 @@ import { MysticSphere } from '.';
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
   shortDescription: 'Manipulate life energy to aid allies or harm foes.',
-  sources: ['arcane', 'divine', 'pact'],
+  sources: ['arcane', 'divine', 'pact', 'nature'],
 
   cantrips: [
     {
@@ -147,7 +147,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains 2d6 \\glossterm{hit points}.
+        The target regains 1d8 \\glossterm{hit points} +1d per 2 power.
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 2,
@@ -160,11 +160,11 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains 8d6 \\glossterm{hit points}.
+        The target regains 1d10 \\glossterm{hit points} plus 1d10 per 3 power.
         This cannot increase the target's hit points above half its maximum hit points.
       `,
       rank: 6,
-      scaling: { special: 'The healing increases by 2d6 for each rank beyond 6.' },
+      scaling: { special: 'The healing increases by 1d10 for each rank beyond 6.' },
       tags: ['Swift'],
     },
 
@@ -589,6 +589,8 @@ export const vivimancy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
   ],
+  // TODO: should the "soul" spells move elsewhere? They don't fit neatly into druid
+  // narrative tropes, and they undercut the idea that this is the "life" sphere.
   rituals: [
     {
       name: 'Remove Disease',
@@ -761,6 +763,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
     },
 
+    // TODO: prohibit warlock and druid necromancers???
     {
       name: 'Animate Dead',
 
