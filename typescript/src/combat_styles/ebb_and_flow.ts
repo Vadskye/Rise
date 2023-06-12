@@ -240,7 +240,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
-        Each target damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
+        Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
       `,
       rank: 3,
     },
