@@ -152,7 +152,7 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: 'Flash',
+      name: 'Lightburst',
 
       // -1d
       attack: {
@@ -160,25 +160,28 @@ export const photomancy: MysticSphere = {
           Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
         `,
       },
-      rank: 1,
+      rank: 3,
       scaling: 'accuracy',
       tags: [],
     },
 
     {
-      name: 'Massive Flash',
+      name: 'Flash',
 
-      // offset previous -1d
-      functionsLike: {
-        name: 'flash',
-        exceptThat:
-          'the area increases to a \\largearea radius from you.',
+      attack: {
+        hit: `
+          The target is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange of you.
+          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
+        `,
       },
-      rank: 4,
+      rank: 1,
       scaling: 'accuracy',
       tags: [],
     },
