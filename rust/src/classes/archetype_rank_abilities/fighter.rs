@@ -528,7 +528,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{tactical assault} ability.
+                As a standard action, you can use the \textit{coordinated assault} ability.
                 \begin{activeability}{Coordinated Assault}
                     \rankline
                     You can move up to half your land speed.
