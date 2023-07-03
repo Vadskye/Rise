@@ -559,7 +559,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Shifting Strike",
-            is_magical: true,
+            is_magical: false,
             rank: 3,
             description: r"
                 You can use the \textit{shifting strike} ability as a standard action.
