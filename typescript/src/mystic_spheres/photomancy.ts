@@ -342,43 +342,6 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: 'Disguise Image',
-
-      effect: `
-        You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
-        You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
-      `,
-      rank: 1,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Disguise Image',
-
-      functionsLike: {
-        mass: true,
-        name: 'Disguise Image',
-      },
-      // narrative: '',
-      rank: 3,
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Malleable Disguise',
-
-      functionsLike: {
-        exceptThat: `
-          you can change the nature of the disguise as a \\glossterm{standard action}.
-        `,
-        name: 'disguise image',
-      },
-      rank: 4,
-      type: 'Attune',
-    },
-
-    {
       name: 'Mirror Image',
 
       effect: `
@@ -532,6 +495,45 @@ export const photomancy: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Disguise Image',
+
+      castingTime: "ten minutes",
+      effect: `
+        You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
+        You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
+      `,
+      rank: 1,
+      tags: ['Visual'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Mass Disguise Image',
+
+      castingTime: "ten minutes",
+      functionsLike: {
+        mass: true,
+        name: 'Disguise Image',
+      },
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
+    },
+
+    {
+      name: 'Malleable Disguise',
+
+      castingTime: "ten minutes",
+      functionsLike: {
+        exceptThat: `
+          you can change the nature of the disguise as a \\glossterm{standard action}.
+        `,
+        name: 'disguise image',
+      },
+      rank: 4,
+      type: 'Attune',
+    },
     {
       name: 'Continuous Light',
 
