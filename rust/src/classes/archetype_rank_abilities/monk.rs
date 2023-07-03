@@ -182,15 +182,15 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 esoteric maneuvers.
                 {
                     \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
                     However, you cannot get a \glossterm{critical hit}.
-                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+                    You can only apply this enhancement to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
                     \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
                     If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
                     You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.

@@ -248,19 +248,19 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 martial maneuvers.
                 {
                     \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
                     However, you cannot get a \glossterm{critical hit}.
-                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+                    You can only apply this enhancement to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
                     \parhead{Guarding Maneuver} You gain a bonus to your Armor defense equal to half your enhancement level (minimum 1) when you use the maneuver.
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
                     If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
                 }
