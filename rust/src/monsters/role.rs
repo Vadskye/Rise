@@ -1,7 +1,7 @@
-use crate::core_mechanics::{Attribute, Defense, HasAttributes};
+use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
-#[derive(Copy, Clone, Hash)]
+#[derive(Copy, Clone, Debug, Hash)]
 pub enum Role {
     Brute,      // +str, melee HP-heavy damage sponge, like barbarian or any heavy weapon user
     Skirmisher, // +dex, high mobility mixed range, like rogue/monk/ranger

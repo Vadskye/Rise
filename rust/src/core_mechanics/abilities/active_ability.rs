@@ -50,15 +50,6 @@ pub struct CustomAbility {
     pub usage_time: UsageTime,
 }
 
-#[derive(Clone, Debug)]
-pub struct StrikeAbility {
-    pub effect: String,
-    pub is_magical: bool,
-    pub name: String,
-    pub tags: Vec<AbilityTag>,
-    pub weapon: Weapon,
-}
-
 impl CustomAbility {
     pub fn latex_ability_block(self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
@@ -164,6 +155,15 @@ impl CustomAbility {
             usage_time: UsageTime::Standard,
         };
     }
+}
+
+#[derive(Clone, Debug)]
+pub struct StrikeAbility {
+    pub effect: String,
+    pub is_magical: bool,
+    pub name: String,
+    pub tags: Vec<AbilityTag>,
+    pub weapon: Weapon,
 }
 
 impl StrikeAbility {
@@ -325,8 +325,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its {weapon}.
                 It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \\glossterm<critical hit>.
-                \\hit Each target takes $damage $damagetypes damage.
-                \\glance No effect.
+                \hit Each target takes $damage $damagetypes damage.
+                \glance No effect.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Heartpiercer", &weapon),
@@ -353,7 +353,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
                 After making the attack, it briefly takes a -4 penalty to all defenses.
-                \\hit Each target takes $damage $damagetypes damage.
+                \hit Each target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Reckless Strike", &weapon),
@@ -380,6 +380,19 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit Each target takes $damage $damagetypes.
+            ".to_string(),
+            is_magical: false,
+            name: weapon.name.clone(),
+            tags: vec![],
+            weapon,
+        };
+    }
+
+    pub fn dual_strike(weapon: Weapon) -> Self {
+        return Self {
+            effect: r"
+                The $name makes two $accuracy strikes vs. Armor with its $weapons.
                 \hit Each target takes $damage $damagetypes.
             ".to_string(),
             is_magical: false,
@@ -480,7 +493,7 @@ fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
     let mut replaced_effect = effect.to_string();
 
     // TODO: should we match "$weapons" with different behavior?
-    let weapon_pattern = Regex::new(r"\$weapon\b").unwrap();
+    let weapon_pattern = Regex::new(r"\$weapon").unwrap();
     for _ in weapon_pattern.find_iter(&replaced_effect.clone()) {
         // Unwrap the weapon here. If we found a $weapon match but we don't have a weapon,
         // crashing is appropriate.
@@ -866,12 +879,23 @@ The $name glows like a torch for a minute.
         use crate::equipment::StandardWeapon;
 
         #[test]
-        fn replaces_broadsword_types() {
+        fn replaces_broadsword_name() {
             assert_eq!(
                 "Deals some damage with a broadsword.",
                 replace_weapon_name_terms(
                     "Deals some damage with a $weapon.",
                     &Some(&StandardWeapon::Broadsword.weapon()),
+                ),
+            );
+        }
+
+        #[test]
+        fn replaces_claws_name() {
+            assert_eq!(
+                "Deals some damage with its claws.",
+                replace_weapon_name_terms(
+                    "Deals some damage with its $weapons.",
+                    &Some(&StandardWeapon::Claw.weapon()),
                 ),
             );
         }

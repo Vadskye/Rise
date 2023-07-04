@@ -16,13 +16,7 @@ use crate::skills::Skill;
 use crate::core_mechanics::{DamageType, DicePool};
 
 fn humanoid(def: MonsterDef) -> Monster {
-    return MonsterDef {
-        abilities: def.abilities,
-        narrative: def.narrative,
-        name: def.name,
-        statistics: def.statistics,
-    }
-    .monster(CreatureType::Humanoid);
+    return def.monster(CreatureType::Humanoid);
 }
 
 pub fn humanoids() -> Vec<MonsterEntry> {
@@ -46,6 +40,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually lawful evil".to_string(),
                     description: None,
+                    art: true,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
                             Army deserters have abandoned their past life in an army and struck out on their own.
@@ -92,6 +87,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually lawful evil".to_string(),
+                    art: false,
                     description: None,
                     knowledge: None,
                 }),
@@ -153,6 +149,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually chaotic evil".to_string(),
+                    art: false,
                     description: None,
                     knowledge: None,
                 }),
@@ -174,6 +171,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
             name: name.to_string(),
             narrative: Some(MonsterNarrative {
                 alignment: "Usually chaotic evil".to_string(),
+                art: false,
                 description: None,
                 knowledge: None,
             }),
@@ -294,6 +292,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually lawful neutral".to_string(),
+                    art: false,
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -324,6 +323,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Any".to_string(),
+                    art: false,
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
@@ -368,6 +368,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
             name: name.to_string(),
             narrative: Some(MonsterNarrative {
                 alignment: "Usually true neutral".to_string(),
+                art: false,
                 description: None,
                 knowledge: None,
             }),
@@ -454,6 +455,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
             name: name.to_string(),
             narrative: Some(MonsterNarrative {
                 alignment: "Usually lawful evil".to_string(),
+                art: false,
                 description: None,
                 knowledge: Some(knowledge),
             }),
@@ -621,7 +623,11 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 Knowledge::new(vec![
                     (0, "
                         Orc shamans provide orc battle squads with divine magical support.
-                        If they prove both their mettle and wisdom in combat, they may eventually become trusted advisors to a clan chief.
+                        They primarily aid their allies, though they have no fear of taking up arms themselves when necessary.
+                    "),
+                    (5, "
+                        If an orc shaman proves their mettle and wisdom in combat, they may eventually become a trusted advisor to a clan chief.
+                        The advice and spiritual guidance of a capable shaman often has more influence on the success of an orc clan than mere strength of arms, and good clan chiefs recognize that fact.
                     "),
                 ]),
                 OrcAbilities {
@@ -637,7 +643,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     attributes: vec![4, 1, 1, -1, 2, 2],
                     elite: false,
                     level: 2,
-                    role: Role::Mystic,
+                    role: Role::Leader,
                     size: Size::Medium,
                 },
             ),
