@@ -1321,12 +1321,12 @@ def generate_tools():
             is_magical=False,
             consumable=True,
             name="Poison, Giant Wasp Venom",
-            rank=1,
+            rank=2,
             material_type="Poison",
             tags=[],
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus3.
+                The poison's accuracy is \\plus4.
                 Its stage 1 effect makes the target \\slowed while the poison lasts.
                 Its stage 3 effect makes the target \\immobilized while the poison lasts.
             """,
