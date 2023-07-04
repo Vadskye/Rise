@@ -13,14 +13,7 @@ use crate::monsters::{
 use crate::skills::Skill;
 
 fn aberration(def: MonsterDef) -> Monster {
-    return MonsterDef {
-        // From self
-        abilities: def.abilities,
-        narrative: def.narrative,
-        name: def.name,
-        statistics: def.statistics,
-    }
-    .monster(CreatureType::Aberration);
+    return def.monster(CreatureType::Aberration);
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
@@ -115,6 +108,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         },
         narrative: Some(MonsterNarrative {
             alignment: "Usually lawful evil".to_string(),
+            art: true,
             description: None,
             knowledge: Some(Knowledge::new(vec![
                 (-5, "
@@ -189,6 +183,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         },
         narrative: Some(MonsterNarrative {
             alignment: "Usually lawful evil".to_string(),
+            art: true,
             description: None,
             knowledge: Some(Knowledge::new(vec![
                 (0, "

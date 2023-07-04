@@ -16,6 +16,7 @@ pub struct MonsterDef {
     pub statistics: MonsterStatistics,
 }
 
+#[derive(Clone, Debug)]
 pub struct MonsterAbilities {
     pub active_abilities: Vec<ActiveAbility>,
     pub modifiers: Vec<Modifier>,
@@ -49,8 +50,10 @@ impl MonsterAbilities {
 }
 
 // These help define a monster's place in the narrative universe.
+#[derive(Clone, Debug)]
 pub struct MonsterNarrative {
     pub alignment: String,
+    pub art: bool,
     pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
 }
@@ -58,12 +61,14 @@ pub struct MonsterNarrative {
 impl MonsterNarrative {
     fn update_monster(self, monster: &mut Monster) {
         monster.alignment = Some(self.alignment);
+        monster.art = self.art;
         monster.description = self.description;
         monster.knowledge = self.knowledge;
     }
 }
 
 // These are simple, mandatory fields that every monster should have defined.
+#[derive(Clone, Debug)]
 pub struct MonsterStatistics {
     pub attributes: Vec<i32>,
     pub elite: bool,
