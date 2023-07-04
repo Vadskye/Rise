@@ -334,7 +334,7 @@ export const electromancy: MysticSphere = {
       attack: {
         hit: `
           The target is \\stunned as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\confused instead of dazed.
+          While it has no remaining \\glossterm{damage resistance}, it is \\confused instead of stunned.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
