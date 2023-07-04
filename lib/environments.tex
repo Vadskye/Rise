@@ -284,6 +284,8 @@
 \DeclareDocumentEnvironment{monsubsection}{m o m o}
 {
     \setlength\multicolsep{0pt}
+    \noindent
+    \begin{minipage}{\columnwidth}
     \begin{multicols}{2}
         \IfValueTF{#2}
         {
@@ -310,11 +312,14 @@
     \end{multicols}
 }
 {
+    \end{minipage}
 }
 
 \DeclareDocumentEnvironment{monsubsubsection}{m o m o}
 {
     \setlength\multicolsep{0pt}
+    \noindent
+    \begin{minipage}{\columnwidth}
     \begin{multicols}{2}
         \IfValueTF{#2}
         {
@@ -341,6 +346,7 @@
     \end{multicols}
 }
 {
+    \end{minipage}
 }
 
 
