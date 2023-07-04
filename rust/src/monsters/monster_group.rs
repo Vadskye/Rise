@@ -19,6 +19,7 @@ impl MonsterGroup {
         // TODO: include general description and/or knowledge checks
         return latex_formatting::latexify(format!(
             "
+                \\newpage
                 \\subsection*<{name}>
                 \\vspace<0.5em>
                 {knowledge}
@@ -37,7 +38,7 @@ impl MonsterGroup {
             name = titlecase(self.name.as_str()),
             monsters = monsters
                 .iter()
-                .map(|m| m.to_section(Some("monsubsubsection")))
+                .map(|m| m.to_section(Some(self.name.clone())))
                 .collect::<Vec<String>>()
                 .join("\n"),
         ));

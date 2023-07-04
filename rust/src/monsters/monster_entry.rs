@@ -43,14 +43,14 @@ pub fn latex_by_name(name: &str) -> String {
             for monster in group.monsters {
                 if let Some(ref monster_name) = monster.creature.name {
                     if monster_name.to_string() == name {
-                        return monster.to_section(Some("monsubsubsection"));
+                        return monster.to_section(Some(group.name));
                     }
                 }
             }
         } else if let MonsterEntry::Monster(monster) = entry {
             if let Some(ref monster_name) = monster.creature.name {
                 if monster_name.to_string() == name {
-                    return monster.to_section(Some("monsubsubsection"));
+                    return monster.to_section(None);
                 }
             }
         }
