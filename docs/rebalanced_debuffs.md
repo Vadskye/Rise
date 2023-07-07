@@ -219,6 +219,10 @@ Notation:
       * t2 condition if damaged
     * Unrestricted 2x damage strike matches "dX-2 at Med range"
       * As melee strike
+    * Melee 2x damage strike roughly matches "dX-1 at Grasp range"
+      * t3.5 condition if lose HP
+      * t3 condition if beat extra defense
+      * t2.5 condition if damaged
 
 Examples:
 * Rank 3

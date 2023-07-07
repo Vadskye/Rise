@@ -282,15 +282,15 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: 'Sudden Rift',
+      name: 'Astral Rupture',
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{energy}.
+          Each target takes \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
       },
       narrative: `
@@ -300,16 +300,15 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Massive Sudden Rift',
+      name: 'Massive Astral Rupture',
 
-      // +3r for area, +2r for +1d
       attack: {
         hit: `
-          Each target takes \\damagerankfive{energy}.
+          Each target takes \\damagerankseven{energy}.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.
+          Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\largearea radius from you.
         `,
       },
       narrative: `
@@ -319,7 +318,7 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Persistent Rift',
+      name: 'Persistent Planar Rift',
 
       attack: {
         hit: `
@@ -336,7 +335,7 @@ export const astromancy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Growing Rift',
+      name: 'Growing Planar Rift',
 
       attack: {
         hit: `
@@ -442,8 +441,8 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
-          When it returns, it takes \\damagerankfourlow{bludgeoning}.
-          If it is unable to breathe water and your attack result beats its Reflex defense, it takes double damage.
+          When it returns, it takes \\damagerankfour{bludgeoning}.
+          If it is unable to breathe water and your attack result beats its Reflex defense, this attack deals maximum damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
