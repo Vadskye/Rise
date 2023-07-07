@@ -66,8 +66,7 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target attracts electricity as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to lightning damage.
+          If the target has no remaining \\glossterm{damage resistance}, becomes is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -166,12 +165,11 @@ export const electromancy: MysticSphere = {
       name: 'Stunning Discharge',
 
       attack: {
-        crit: `Creatures that have remaining damage resistance are also affected.`,
         hit: `
           Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
         `,
       },
       rank: 1,
@@ -182,12 +180,11 @@ export const electromancy: MysticSphere = {
       name: 'Brain-Scrambling Discharge',
 
       attack: {
-        crit: `Creatures that have remaining damage resistance are also affected.`,
         hit: `
           Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
         `,
       },
       rank: 5,
@@ -539,17 +536,16 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: 'Short-Circuit',
+      name: 'Overcharge',
       attack: {
-        crit: `
-          The target is \\stunned instead of dazed.
-        `,
         hit: `
-          Each target is \\dazed as a \\glossterm{condition}.
+          As a \\glossterm{condition}, each target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Mental against one creature within \\medrange.
           This attack \\glossterm{chains} once.
+          You gain a +2 accuracy bonus against \\glossterm{metallic} targets.
         `,
       },
       rank: 1,
@@ -557,20 +553,17 @@ export const electromancy: MysticSphere = {
     },
 
     {
-      name: 'Intense Short-Circuit',
+      name: 'Short-Circuit',
       attack: {
-        crit: `
-          The target is \\confused instead of stunned.
-        `,
         hit: `
-          Each target is \\stunned as a \\glossterm{condition}.
+          Each target with no remaining \\glossterm{damage resistance} becomes \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against anything within \\medrange.
           This attack \\glossterm{chains} once.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
     },
 
@@ -606,7 +599,7 @@ export const electromancy: MysticSphere = {
       name: 'Mighty Arcing Strike',
       functionsLike: {
         name: 'arcing strike',
-        exceptThat: "the strike is not weak, and it chains twice instead of once.",
+        exceptThat: "the strike is not weak.",
       },
       rank: 3,
       scaling: 'accuracy',
