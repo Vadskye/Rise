@@ -559,7 +559,8 @@ export const enchantment: MysticSphere = {
     {
       name: 'Friend to Foe',
 
-      // Same as "skip standard action" because it is sometimes detrimental
+      // Same as "skip standard action" because it is sometimes detrimental. Higher level
+      // because it's more complicated to use, and to balance level progression.
       attack: {
         hit: `
           The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
@@ -567,10 +568,10 @@ export const enchantment: MysticSphere = {
           After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
