@@ -99,20 +99,19 @@ export const aquamancy: MysticSphere = {
     {
       name: 'Constraining Bubble',
 
+      // -2 ranks for one round delay
       attack: {
-        crit: `
-          The water also the covers the target's face.
-          This does not meaningfully impede its sight, but it cannot breathe anything other than the water.
-        `,
         hit: `
           As a \\glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
-          This does not impede its ability to breathe, but it is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
+          This does not restrict its ability to breathe, and has no immediate negative effects.
+          However, after your action next round, the water expands to impede the target's movements.
+          It is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
-          Make an attack vs. Reflex against a Huge or smaller creature within \\medrange.
+          Make an attack vs. Reflex against one Large or smaller creature within \\medrange.
         `,
       },
-      rank: 7,
+      rank: 5,
       tags: ['Manifestation'],
     },
 
@@ -120,7 +119,6 @@ export const aquamancy: MysticSphere = {
       name: 'Crashing Wave',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankone{bludgeoning}.
         `,
@@ -137,7 +135,6 @@ export const aquamancy: MysticSphere = {
       name: 'Mighty Crashing Wave',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankthree{bludgeoning}.
         `,
@@ -190,7 +187,6 @@ export const aquamancy: MysticSphere = {
       name: 'Fountain',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankone{bludgeoning}.
         `,
@@ -207,7 +203,6 @@ export const aquamancy: MysticSphere = {
       name: 'Mighty Fountain',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankfivehigh{bludgeoning}.
         `,
@@ -244,13 +239,11 @@ export const aquamancy: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
-    // +2 levels for push
     {
       name: 'Raging River',
 
       // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damageranktwo{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
@@ -568,7 +561,7 @@ export const aquamancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Puddlify',
+      name: 'Liquifying Grasp',
 
       attack: {
         hit: `
@@ -576,7 +569,7 @@ export const aquamancy: MysticSphere = {
           While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes 4d10 damage during each of your subsequent actions as it dissolves.
+            \\item If it is submerged in water or other liquid, it takes \\damagerankthree physical damage during each of your subsequent actions as it dissolves.
             \\item It is \\prone and cannot stand up.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
@@ -586,10 +579,40 @@ export const aquamancy: MysticSphere = {
           \\hypertarget{itemizespace}{}
         `,
         targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Reflex and Fortitude against one creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 3,
+    },
+    {
+      name: 'Liquify',
+
+      attack: {
+        hit: `
+          The target's body becomes partially liquified as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
+          This functions like the effect of the \\spell{liquifying grasp} spell, except that the damage while submerged increases to \\damagerankseven.
+        `,
+        targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 7,
+    },
+    {
+      name: 'Slippery Puddle',
+
+      attack: {
+        hit: `Each target falls \\prone.`,
+        targeting: `
+          Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in a \\smallarea radius within \\shortrange.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
   ],
   rituals: [
