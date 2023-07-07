@@ -227,18 +227,18 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Finesse",
-            rank=3,
+            rank=4,
             description="""
-                If your Dexterity is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
+                If your Dexterity is at least 4, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants +1 accuracy if you have 3 Dex",
+            short_description="Grants +1 accuracy if you have 4 Dex",
             upgrades=[
                 Upgrade(
-                    rank=6,
+                    rank=7,
                     description="""
-                        If your Dexterity is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
+                        If your Dexterity is at least 6, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +2 accuracy if you have 5 Dex",
+                    short_description="Grants +2 accuracy if you have 6 Dex",
                 ),
             ],
         ),
