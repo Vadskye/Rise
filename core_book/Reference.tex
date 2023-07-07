@@ -94,16 +94,13 @@
     \debuffdef{climbing} A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
     \debuffdef{confused} A confused creature takes a \minus2 penalty to all defenses and is unable to independently control its actions.
-    This penalty does not stack with the \dazed or \stunned effects.
+    This penalty does not stack with the \stunned effect.
     When a creature becomes confused, and at the beginning of each round, it randomly decides to have one of two behaviors that round: attack its \glossterm{enemies}, or protect itself and its \glossterm{allies} without attacking.
     Within those constraints, it can freely choose its actions.
     If it can't carry out the indicated action, it does nothing but babble incoherently.
 
     % Kind of an awkward hack
     A confused creature automatically stops being confused after ten minutes, even if it was unable to rest due to its confusion.
-
-    \debuffdef{dazed} A dazed creature takes a \minus1 penalty to all defenses.
-    This does not stack with the \stunned or \confused effects.
 
     \debuffdef{dazzled} A dazzled creature has difficulty seeing.
     It loses the benefits of the \trait{darkvision} and \trait{low-light vision} abilities if it has them.
@@ -122,7 +119,7 @@
 
     \debuffdef{frightened} A frightened creature takes a \minus2 penalty to its Mental defense.
     In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
-    This does not stack with the \shaken or \panicked effects.
+    This does not stack with the \panicked effect.
     If the source of a frightened creature's fear is \glossterm{defeated}, this effect is broken.
     Being frightened is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
@@ -181,12 +178,6 @@
     This generally requires one \glossterm{free hand}.
     Standing up from a prone position costs half of the creature's speed during that movement.
 
-    \debuffdef{shaken} A shaken creature takes a \minus1 penalty to its Mental defense.
-    In addition, it takes a \minus1 penalty to \glossterm{accuracy} against the source of its fear.
-    This does not stack with the \frightened or \panicked effects.
-    If the source of a shaken creature's fear is \glossterm{defeated}, this effect is broken.
-    Being shaken is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
-
     \debuffdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
     This does not stack with the \immobilized effect.
 
@@ -195,7 +186,7 @@
     For details, see \pcref{Squeezing}.
 
     \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
-    This does not stack with the \dazed or \confused effects.
+    This does not stack with the \confused effect.
 
     \debuffdef{swimming} A creature that is swimming without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
@@ -254,7 +245,7 @@
         Being immune to part of an attack does not grant immunity to other aspects of that attack.
         If an attack deals damage of multiple types, a creature is immune to that attack only if it is impervious to all of the attack's damage types.
         This also applies to more specific immunities that are not related to damage types.
-        For example, if you are immune to being \dazed, you still take full damage from an attack that deals damage and dazes you.
+        For example, if you are immune to being \stunned, you still take full damage from an attack that deals damage and stuns you.
 
     \traitdef{Incorporeal}{incorporeal}
         An incorporeal creature does not have a tangible body.
@@ -338,10 +329,9 @@
         This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid obstacles that are no more than half a foot thick.
 
     \traitdef{Vulnerable}{vulnerable}
-        A creature can be vulnerable to a particular damage type or debuff.
-        It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or that would cause it suffer that debuff.
-        This penalty applies against the whole attack even if the attack would only inflict the debuff or damage under specific circumstances, such as if the attack gets a critical hit or if the attack causes the creature to lose hit points.
-        For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is vulnerable.
+        A creature can be vulnerable to a particular damage type or ability tag.
+        It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or from abilities with that tag.
+        For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
 
     \traitdef{Undead}{undead}
         Undead creatures are affected in unusual ways by effects that directly manipulate life energy.
