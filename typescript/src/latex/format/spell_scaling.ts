@@ -9,8 +9,8 @@ export function spellScaling(spell: Pick<SpellLike, "name" | "scaling" | "rank">
     return null;
   }
 
-  // Cantrips have no rank listed
-  const rank = spell.rank || 0;
+  // Cantrips have no rank listed. They start their scaling from rank 1.
+  const rank = spell.rank || 1;
 
   if (spell.scaling === "accuracy") {
     return `The attack's \\glossterm{accuracy} increases by +1 for each rank beyond ${rank}.`;
