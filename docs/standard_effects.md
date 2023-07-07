@@ -197,9 +197,7 @@ have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
   * -4 ranks: debuff only applies when the target loses HP from the attack
-  * -2 ranks: debuff only applies if you beat an additional defense (strike-based attacks only)
-  * +0 ranks: trade -1a for +1d or vice versa
-  * +0 ranks: trade -1a/-1d for minor benefit
+  * -2 ranks: debuff only applies if you beat an additional defense
   * +0 rank: add specific crit effect to non-damaging effect; standard crit effects:
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time

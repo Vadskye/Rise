@@ -71,61 +71,6 @@ In the old system, +2r for damage gave +1d. +1d is about a 25% damage increase f
 
 Put another way, +2r for damage gave a 50% increase in the damage *difference* between rank X and rank X+2, or a 25% increase after taking into account the effect of power.
 
-# Nonlinear Power Scaling
-
-Your power is on a (level + str/wil)-based track. Power doubles every 6 levels on that track. Spells deal damage based on your power. You should gain other flat damage modifiers over time from other sources, like class features and feats, so 6 Wil doesn't fully double your damage.
-
-## Power per Level
-
-Level: Power 
-1:  1 
-2:  2 
-3:  2 
-4:  3 
-5:  3 
-6:  4 
-7:  4 
-8:  5 
-9:  6 
-10: 7 
-11: 8 
-12: 9 
-13: 10
-14: 12
-15: 14
-16: 16
-17: 18
-18: 20
-19: 22
-20: 24
-21: 26
-+3 per point beyond 21.
-
-## Power per Rank
-
-* R1: base 1, max 3
-* R2: base 3, max 5
-* R3: base 4, max 8
-* R4: base 7, max 14
-* R5: base 10, max 22
-* R6: base 16, max 29
-* R7: base 22, max 41
-
-## Single-Target Spell Scaling
-
-* R1: 1d6 damage, +1d per 2 power
-  * 1d6 (3.5) base, 1d8 (4.5) max
-  * At R3: 1d10 (5.5) base, 1d8+1d6 (8) max
-* R3: 1d6 damage, +1d6 per 4 power
-  * 2d6 (7) base, 3d6 (10.5) max
-  * At R5: 3d6 (10.5) base, 6d6 (21) max
-  * At R7: 6d6 (28) base, 11d6 (38.5) max
-* R5: 2d6 base, +1d6 per 4 power
-
-## Problems
-
-+1d6 per 4 power is the baseline scaling for all spells, and it's kind of boring / slow. That reduces differentiation between spells, and is cumbersome. What would AOE spells be? 1d6 per 6 power?
-
 # Linear Power Scaling
 
 Your power is equal to half your level + full Str/Wil. At low levels, power for high investment characters is a large multiple of power for low investment characters. However, this can be solved by providing abilities with weak power scaling at low levels, and strong power scaling at high levels.
@@ -139,53 +84,7 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 * R6: base 8, max 15
 * R7: base 9.5, max 17.5
 
-## Single-Target Spell Scaling
-
-* R1: 1d6 damage, +1d per 2 power (0.5x power)
-  * 1d6 (3.5) base, 1d10 (5.5) max, +57% investment
-  * At R3: 1d8 (4.5) base, 1d8+1d6 (8) max
-* R3: 1d10 damage, +1d per 2 power (0.5x power)
-  * 2d6 (7) base, 3d6 (10.5) max, +50% investment
-* R3: 1d8 damage, +1d6 per 4 power (0.9x power)
-  * 1d8 (4.5, 7.1 partial) base, 1d8+2d6 (11.5) max, +61% investment counting partial
-  * At R5: 1d8+1d6 (8, 9.7 partial) base, 1d8+3d6 (15) max, +54% investment counting partial
-* R4: 1d8 + 1d6 damage per 3 power (1.2x power)
-  * 1d8+1d6 (8, 10.3 partial) base, 1d8+3d6 (15, 16.2 partial) max, +57% investment counting partial
-* R5: 1d8 damage, +1d8 per 3 power (1.5x power)
-  * 3d8 (13.5) base, 5d8 (22.5) max, +66% investment
-  * At R7: 4d8 (18) base, 6d8 (27) max), +50% investment
-* R5: 1d10 damage, +1d10 per 4 power (1.4x power)
-  * 2d10 (11, 13.8 partial) base, 4d10 (22) max, +59% investment counting partial
-  * At R7: 3d10 (16.5) base, 5d10 (27.5) max, +67% investment
-* R5: 2d6 damage, +1d6 per 3 power (1.2x power)
-  * 4d6 (14) base, 6d6 (21) max, +50% investment
-  * At R7: 5d6 (17.5) base, 7d6 (24.5) max, +40% investment
-* R5: 1d10 damage per 3 power (1.8x power)
-  * 2d10 (11) base, 4d10 (22) max, +100% investment
-* R7: 4d6 damage, +1d6 per 2 power (1.8x power)
-  * 8d6 (28) base, 12d6 (42) max, +50% investment
-* R7: 1d10 damage per 2 power (2.8x power)
-  * 4d10 (22) base, 8d10 (44) max, +100% investment
-
-<!-- * R3: 1d6 damage, +1d6 per 3 power -->
-<!--   * 2d6 (7) base, 3d6 (10.5) max, +83% investment counting partial progress -->
-<!--   * At R5: 3d6 (10.5) base, 5d6 (17.5) max -->
-<!-- * R3: 1d6 damage, +1d per power -->
-<!--   * 2d6 (7) base, 1d10+2d6 (12.5) max, +78% investment -->
-<!-- * R3: 1d10 damage, +1d6 per 4 power -->
-<!--   * 1d10 (5.5, 8.1 partial) base, 1d10+2d6 (12.5) max, +54% investment counting partial -->
-<!--   * At R5: 1d10+1d6 (9, 10.7 partial) base, 1d10+3d6 (16) max, +50% investment counting partial -->
-<!-- * R5: 1d8 damage per 2 power -->
-<!--   * 3d8 (13.5) base, 6d8 (27) max -->
-<!--   * At R7: 4d8 (18) base, 8d8 (36) max -->
-<!-- * R7: 1d10 damage, +1d10 per 2 power -->
-<!--   * 5d10 (27.5) base, 9d10 (49.5) max, +80% investment -->
-<!-- * R5: 1d8 damage per 2 power -->
-<!--   * 3d8 (13.5) base, 6d8 (27) max, +100% investment -->
-<!-- * R4: 1d10 damage per 4 power -->
-<!--   * 1d10 (5.5, 6.8 partial) base, 2d10 (11, 13.8 partial) max, +100% investment counting partial -->
-
-## Autocalculated Single-Target Damage Scaling
+## Single-Target Damage Scaling
 
 * R1
   * 1d6 + 1d per 2 power
@@ -745,6 +644,7 @@ Standard for all ranks:
     * dX-2l at Ext range
     * dX-1 melee retributive with Deep attune
     * dX-2 Med range retributive with Deep attune
+    * dX-1 at Short range twice (immediately and during next action)
     * dX-2 at Med range twice (immediately and during next action)
     * dX-1l at Med range, doubled if you beat an extra defense
     * dX-2 with -2 accuracy as a minor action (deep attune)
@@ -753,19 +653,9 @@ Standard for all ranks:
     * dX-2 at tX area
     * dX at t1 area
     * dX-1 at t(0.5X) area?
+    * dX-2 in tX-2 area, Sustain (minor), can't combine with enemies-only
   * Damage + debuff
-    * dX at Short/Grasp range:
-      * ctX debuff condition if lose HP
-      * ct(X-2) debuff condition if beat extra defense
-      * ct(X-4) debuff condition if take damage
-    * dX-1 at Med range / in t1 area:
-      * ctX debuff condition if lose HP
-      * ct(X-2) debuff condition if beat extra defense
-      * ct(X-4) debuff condition if take damage
-    * dX-2 at Med range / in t1 area:
-      * ctX+2 debuff condition if lose HP
-      * ctX debuff condition if beat extra defense
-      * ct(X-2) debuff condition if take damage
+    * See "Rebalanced Debuffs"
 * Damage over time
   * Instead of dealing dX damage:
     * dX-2 immediately and during next action
