@@ -759,11 +759,12 @@ def generate_weapons():
             name="Vorpal",
             rank=7,
             description="""
-                Critical hits with melee \\glossterm<strikes> using this weapon roll triple damage dice instead of double damage dice.
-                A double critical hit would deal quadruple damage dice, and so on.
-                If you make a creature lose at least half its maximum \\glossterm<hit points> with a melee critical hit using this weapon, it immediately dies.
+                As a standard action, you can make a melee \\glossterm<strike> using this weapon that can decapitate enemies.
+                The strike deals triple \\glossterm<weapon damage>.
+                If you get a critical hit against a creature and it loses hit points, it immediately dies.
+                Creatures that do not have a head are immune to this death effect.
             """,
-            short_description="Inflicts lethal critical hits",
+            short_description="Can decapitate foes",
         )
     )
 
