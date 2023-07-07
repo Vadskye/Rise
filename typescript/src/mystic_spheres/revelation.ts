@@ -89,11 +89,6 @@ export const revelation: MysticSphere = {
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
-      scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
       tags: [],
     },
 
@@ -107,10 +102,6 @@ export const revelation: MysticSphere = {
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
       rank: 2,
-      scaling: {
-        4: `The bonus increases to +2.`,
-        6: `The bonus increases to +3.`,
-      },
       tags: [],
     },
 
