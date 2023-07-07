@@ -9,11 +9,7 @@ export const terramancy: MysticSphere = {
   // In general, -1r if it only works against grounded
   // +1r for +2acc vs grounded on stone or while grounded on stone
   specialRules: `
-    Some spells from this mystic sphere are more effective if you or the target are grounded.
-
-    \\spheredef{grounded} A grounded creature or object is standing on or otherwise supported by a stable surface that can support its weight.
-    The surface must be at least as large as the creature or object resting on it.
-    Some effects only work if the creature or object is grounded by a particular material, such as stone. 
+    Some spells from this mystic sphere are more effective if you or the target are \\glossterm{grounded}.
   `,
 
   cantrips: [
@@ -445,7 +441,7 @@ export const terramancy: MysticSphere = {
         targeting: `
           You create a volcano at a \\sphereterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
-          It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+          It affects a \\smallarea radius \\glossterm{zone} in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
