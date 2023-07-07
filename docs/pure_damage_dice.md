@@ -161,6 +161,8 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 
 ## Scaling By Rank Equations
 `x` is base damage, `y` is damage per power (dpp), and the right number is equal to the ideal damage target.
+Note that, as a rough approximation, dX+3 deals approximately twice the damage of dX.
+Each subsequent damage rank gives about 40% more damage scaling from power.
 
 * R1: x + 0.5y = 3.5, x + 4.5y = 5.6
   * 3.2 base damage, 0.53 damage per power
@@ -216,6 +218,23 @@ So area spells should use a damage progression from about two ranks lower. Very 
 
 In general, if you spend 2 ranks on non-damage upgrades (like range), you should use a strongish scaling 1 rank lower.
 
+## Higher Rank Damage Scaling
+
+At rank 2, base damage is 5/8, power is 2/7:
+* Using dr3: 4.5 + 0.875dpp = 6.3/10.6 (126%/133%)
+* Using dr4: 4.5 + 1.125dpp = 6.8/12.4 (136%/155%)
+* Using dr5: 7.0 + 1.167dpp = 9.3/15.2 (186%/190%)
+
+At rank 5, base damage is 14/22.4, power is 6.5/12.5:
+* Using dr6: 5.5 + 1.833dpp = 17.4/28.4 (124%/127%)
+* Using dr7: 11  + 1.833dpp = 22.9/33.9 (164%/151%)
+* Using dr8: 22  + 1.833dpp = 33.9/44.9 (242%/200%)
+* Using dr8h: 11 + 2.750dpp = 28.9/45.4 (206%/202%)
+
+At rank 7, base damage is 28/44.8, power is 9.5/17.5:
+* Using dr8: 22  + 1.833dpp = 39.0/55.8 (139%/126%)
+* Using dr9: 22  + 2.750dpp = 48.1/70.1 (172%/157%)
+
 ## Weapon Damage Scaling
 
 Base melee weapon damage at each rank:
@@ -243,18 +262,13 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
 
 ## Standard Maneuvers
 
+For debuffs, see "Rebalanced Debuffs"
+
 * R1
   * Damage
     * Glancing blow on miss if beat extra defense
     * Strike with 1d4 +1d/r extra damage, 1 fatigue
     * Strike, double weapon damage on crit, minor downside?
-  * Debuffs
-    * Strike, push 5' if damaged
-    * Strike, T0.5 condition if damaged and beat extra defense
-    * Strike, T1 condition if lose HP
-    * Strike, T1.5 condition if lose HP and beat extra defense
-    * Weak strike, T1 condition if damaged and beat extra defense
-    * Weak strike, T1.5 condition if lose HP
 * R3
   * Damage
     * Strike against Fort/Ref
@@ -268,22 +282,11 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Move with a check, dr2h vs all adjacent if check was high enough
     * Strike with extra weapon tag
     * Strike, -2 accuracy, double weapon damage
-  * Debuffs
-    * Weak strike, T1.5 condition if damaged and beat extra defense
-    * Weak strike, T2 condition if lose HP
-    * Strike, T2 condition if lose HP and beat extra defense
-    * Strike, T1.5 condition if lose HP
-    * Strike, T1 condition if damaged and beat extra defense
-    * Strike, T0.5 condition if damaged
 * R5
   * Damage
     * Strike, deal same damage next round
     * Strike, double weapon damage, minor upside
     * Two strikes, -1 accuracy
-  * Debuffs
-    * Strike, push with full move if damaged
-    * Strike, T2 condition if damaged and beat extra defense
-    * Strike, T3 condition if lose HP and beat extra defense
 * R7
   * Damage
     * Three strikes, -1 accuracy
@@ -292,9 +295,6 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, triple weapon damage, minor downside?
     * Strike, 1d8 per 2 power extra damage if beat extra defense
       * +5d8/9d8
-  * Debuffs
-    * Strike, double weapon damage, T2 condition if damaged
-    * Strike, double weapon damage, T3 condition if lose HP
 
 ## Heavy Weapons
 
@@ -756,3 +756,21 @@ Impact is 70-80% more damage depending on whether the damage is primarily d6 or 
 If it's 70% more damage, total damage per round is (0.9 * 1) + (0.1 * 2 * 1.7) = 1.24x weapon damage.
 
 In a baseline scenario of 0.65x weapon damage per round, Impact increases the 5% crit chance to 3.4x normal damage instead of 2x normal damage, so about 0.72 wdpr.
+
+## Conditional Extra Damage Spells
+
+### Must Beat Two Defenses
+
+Hard to do math to validate how important this is. Estimate that it's about the same as -2 accuracy. On a base hit rate of 60%, -2 accuracy is the same as dealing 66% of normal damage, so it needs +50% damage to be reasonable. From "Higher Rank Damage Scaling", using an x+2 scaling is roughly +50% damage.
+
+Conclusion: at rank X, deal dr(X+2) damage. If the result would be dr8 or higher, use "high power" scaling instead of regular scaling to limit the power from flat damage dice.
+
+### If Beat Extra Defense
+
+This applies to spells that deal damage if you beat one defense, and then have an increased effect if you also beat an extra defense. The simplest way to represent this is "if you also beat X defense, double damage" or "if you also beat X defense, maximum damage", since it's annoying to dynamically modify the actual dice pool situationally.
+
+Overall, this should deal about 40% more damage when it works, since it has a better fallback than "must beat two defenses" but is useful in very similar situations.
+
+If the base damage is 75% of a "normal" damaging effect, maximizing damage deals about 135% of base damage.
+
+Conclusion: at rank X, deal dr(X-1) damage, maximized if you beat an extra defense.

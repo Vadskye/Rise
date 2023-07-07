@@ -614,6 +614,38 @@ export const aquamancy: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
+    {
+      name: 'Drown',
+
+      attack: {
+        hit: `
+          The target takes \\damagerankthree{bludgeoning}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude and Reflex against anything within \\medrange.
+          This attack automatically fails against creatures that can breathe water.
+        `,
+      },
+      // narrative: '',
+      rank: 1,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Mighty Drown',
+
+      attack: {
+        hit: `
+          The target takes \\damagerankseven{bludgeoning}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude and Reflex against anything within \\medrange.
+          This attack automatically fails against creatures that can breathe water.
+        `,
+      },
+      // narrative: '',
+      rank: 4,
+      scaling: 'accuracy',
+    },
   ],
   rituals: [
     {

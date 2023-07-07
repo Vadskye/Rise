@@ -313,23 +313,6 @@ export const electromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\dazed as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\stunned instead of dazed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-          This attack \\glossterm{chains} once.
-        `,
-      },
-      rank: 3,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Intense Electroshock',
-
-      attack: {
-        hit: `
           The target is \\stunned as a \\glossterm{condition}.
           While it has no remaining \\glossterm{damage resistance}, it is \\confused instead of stunned.
         `,
