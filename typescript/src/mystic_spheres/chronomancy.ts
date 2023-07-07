@@ -33,7 +33,7 @@ export const chronomancy: MysticSphere = {
         4: 'You can read at five times your normal speed.',
         6: 'You can read at ten times your normal speed.',
       },
-      type: 'Sustain (minor)',
+      type: 'Attune',
     },
     {
       name: 'Rapid Aging',
@@ -111,40 +111,38 @@ export const chronomancy: MysticSphere = {
       tags: [],
     },
 
-    // This is a very unique combination of triggers and effects, so correct rank is hard
     {
-      name: 'Temporal Dislocation',
+      name: 'Timeseal',
 
       attack: {
-        crit: `
-          The chance increases to 50\\% if the target takes damage, or 100\\% if it loses hit points.
-        `,
         hit: `
-          The target is dislocated in time as a \\glossterm{condition}.
-          At the end of each round, if the target took damage during that round, it has a 20\\% chance to be sent forward in time by one round.
-          This chance increases to 50\\% if it lost hit points during the round.
-          During that time, it ceases to exist.
-          At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+          If the target has no remaining damage resistance, it becomes \\glossterm{briefly} frozen in time.
+          It becomes completely immune to all damage, attacks, and effects of any kind.
+          In addition, it cannot act in any way, and the duration of other effects on it does not expire.
+          At the end of the next round, it returns to normal, with no awareness of the intervening time.
+          After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 3,
       scaling: 'accuracy',
       tags: [],
     },
 
     {
-      name: 'Disjointed Deceleration',
+      name: 'Slowing Grasp',
 
       attack: {
         hit: `
-          The target takes \\damagerankone{energy}.
+          The target takes \\damagerankthree{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Reflex against one creature you \\glossterm{touch}.
         `,
       },
       rank: 3,
@@ -155,8 +153,25 @@ export const chronomancy: MysticSphere = {
       name: 'Slow',
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `The target is \\slowed as a \\glossterm{condition}.`,
+        hit: `
+          The target's local time stream is disturbed as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 1,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Efficient Slow',
+
+      attack: {
+        hit: `
+          The target is \\slowed as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
@@ -168,14 +183,11 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Mass Slow',
 
-      attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
-        `,
+      functionsLike: {
+        name: 'slow',
+        exceptThat: 'it affects all creatures in a \\medarea radius within \\medrange.',
       },
-      rank: 7,
+      rank: 3,
       scaling: 'accuracy',
     },
 
@@ -184,10 +196,9 @@ export const chronomancy: MysticSphere = {
       name: 'Stutterstop',
 
       attack: {
-        crit: `The target is immobilized every round as long as it has no remaining damage resistance.`,
         hit: `
           As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
-          At the start of each round, if it has no remaining \\glossterm{damage resistance}, it has a 50\\% chance to be \\immobilized during that round.
+          At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\immobilized during that round.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -238,7 +249,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        When you cast this spell, you increase your \\glossterm{fatigue level} by one.
+        When you cast this spell, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot cast this spell again.
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
         The duplicate is identical in all ways to the target when the spell resolves.
@@ -256,7 +267,7 @@ export const chronomancy: MysticSphere = {
         It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
-      rank: 5,
+      rank: 6,
     },
 
     {
@@ -421,28 +432,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Timeseal',
-
-      // effect: '',
-      // narrative: '',
-      attack: {
-        hit: `
-          The target takes \\damagerankone{energy}.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} frozen in time.
-          It becomes completely immune to all damage, attacks, and effects of any kind.
-          In addition, it cannot act in any way, and the duration of other effects on it does not expire.
-          At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After it returns to normal, it becomes immune to being frozen in time in this way until it finishes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 3,
-      scaling: 'accuracy',
-    },
-
-    {
       name: 'Accelerated Draw',
 
       effect: `
@@ -492,7 +481,7 @@ export const chronomancy: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain a +10 foot \\glossterm{magic bonus} to your land speed for the duration of the movement.
+          you gain a +10 foot bonus to your land speed for the duration of the movement.
         `,
         name: 'sprint',
       },
@@ -505,19 +494,6 @@ export const chronomancy: MysticSphere = {
         5: 'The speed bonus increases to +30 feet.',
         7: 'The speed bonus increases to +40 feet.',
       },
-    },
-
-    {
-      name: 'Sudden Expiration',
-
-      effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
-      `,
-      rank: 4,
-      narrative: `
-        You twist time to let your ally's nausea run its natural course in mere seconds.
-        It is painful to undergo such a selective temporal acceleration, but the consequences of such distraction on the battlefield would be far worse.
-      `,
     },
 
     {
@@ -564,36 +540,37 @@ export const chronomancy: MysticSphere = {
       tags: ['Swift'],
     },
 
+    // small cone instead of med cone because you can choose the condition and it has the
+    // weird accuracy bonus
     {
       name: 'Wave of Senescence',
       attack: {
         hit: `
-          Each target takes \\damagerankone{energy}.
-          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
+          As a \\glossterm{condition}, each target is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
         `,
-        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\smallarea cone.
           In addition, you choose to focus the aging effects of the cone on either sight or hearing.
+          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
+    // +1 rank to combine dazzled and deafened
     {
-      name: 'Intense Wave of Senescence',
+      name: 'Massive Wave of Senescence',
       attack: {
         hit: `
-          Each target takes \\damagerankthree{energy}.
-          As a \\glossterm{condition}, each creature that loses hit points from this damage is \\dazzled and \\deafened.
+          As a \\glossterm{condition}, each target is \\dazzled and \\deafened.
         `,
-        missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against each creature in a \\medarea cone.
+          Make an attack vs. Fortitude against each creature in a \\largearea cone.
+          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
     },
     // d2l instead of d2 for accuracy
@@ -611,12 +588,12 @@ export const chronomancy: MysticSphere = {
       rank: 2,
       scaling: 'accuracy',
     },
-    // d5h instead of d6 for accuracy
+    // d6l instead of d6 for accuracy
     {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          The target takes \\damagerankfivehigh{energy}.
+          The target takes \\damageranksixlow{energy}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

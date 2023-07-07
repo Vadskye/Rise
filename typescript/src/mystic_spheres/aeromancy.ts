@@ -61,35 +61,39 @@ export const aeromancy: MysticSphere = {
     },
   ],
   spells: [
-    // Treat as r1.5 debuff
+    // Treat as t1 debuff
     {
       name: 'Arrow Attraction',
 
-      effect: `
-        Choose a creature or object within \\medrange.
-        That creature takes a -2 penalty to defenses against ranged \\glossterm{strikes}.
-      `,
+      attack: {
+        hit: `
+          As a \\glossterm{condition}, the target takes a -2 penalty to defenses against projectile \\glossterm{strikes}.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against one creature within \\medrange.
+        `,
+      },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
       `,
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
-      tags: ['Sustain (minor)'],
+      tags: [],
     },
 
     {
       name: 'Intense Arrow Attraction',
 
-      effect: `
-        Choose a creature or object within \\medrange.
-        That creature takes a -4 penalty to defenses against ranged \\glossterm{strikes}.
-      `,
+      functionsLike: {
+        name: 'arrow attraction',
+        exceptThat: 'the penalty increases to -4.',
+      },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows with extreme precision.
       `,
-      rank: 7,
+      rank: 5,
       scaling: 'accuracy',
-      tags: ['Sustain (minor)'],
+      tags: [],
     },
     {
       name: 'Propulsion',
@@ -123,12 +127,12 @@ export const aeromancy: MysticSphere = {
       name: 'Windslash',
 
       attack: {
-        // crit: '',
         hit: `
           The target takes \\damagerankone{slashing}.
         `,
         targeting: `
-          Make an attack vs. Armor against any two targets within \\medrange that are adjacent to each other.
+          Make an attack vs. Armor against up to two targets within \\medrange.
+          If you choose two targets, they must be adjacent to each other.
         `,
       },
       // narrative: '',
@@ -139,12 +143,12 @@ export const aeromancy: MysticSphere = {
       name: 'Mighty Windslash',
 
       attack: {
-        // crit: '',
         hit: `
           The target takes \\damagerankfourlow{slashing}.
         `,
         targeting: `
-          Make an attack vs. Armor against any two targets within \\longrange that are adjacent to each other.
+          Make an attack vs. Armor against up to two targets within \\longrange.
+          If you choose two targets, they must be adjacent to each other.
         `,
       },
       // narrative: '',
@@ -155,7 +159,6 @@ export const aeromancy: MysticSphere = {
       name: 'Windsnipe',
 
       attack: {
-        // crit: '',
         hit: `
           The target takes \\damageranktwolow{bludgeoning}.
         `,
@@ -169,7 +172,6 @@ export const aeromancy: MysticSphere = {
       name: 'Distant Windsnipe',
 
       attack: {
-        // crit: '',
         hit: `
           The target takes \\damagerankfourlow{bludgeoning}.
         `,
@@ -180,19 +182,68 @@ export const aeromancy: MysticSphere = {
       scaling: 'accuracy',
     },
     {
+      name: 'Windseal Grasp',
+
+      attack: {
+        hit: `
+          The target is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Reflex and Fortitude against one creature you \\glossterm{touch}.
+        `,
+      },
+      // narrative: '',
+      rank: 1,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Windseal',
+
+      attack: {
+        hit: `
+          The target is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      // narrative: '',
+      rank: 4,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Skyseal',
+
+      attack: {
+        hit: `
+          If the target has no remaining \\glossterm{damage resistance} and has a \\glossterm{weight category} of Large or less, it is borne aloft by heavy winds as a \\glossterm{condition}.
+          It floats five feet above the ground.
+          As long as it does not have a \\glossterm{fly speed}, it is \\immobilized.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against anyhthing within \\medrange.
+        `,
+      },
+      // narrative: '',
+      rank: 6,
+      scaling: 'accuracy',
+    },
+    {
       name: 'Buffet',
 
-      // treat as r2, halfway between 15' and 30'
+      // weight category limit offsets outdoor doubling
       attack: {
         hit: `
           If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
-          This distance is doubled if if the target is outside in open air.
+          The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
     },
     {
@@ -201,13 +252,13 @@ export const aeromancy: MysticSphere = {
       attack: {
         hit: `
           If the target has a \\glossterm{weight category} of Large or less, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
-          This distance is doubled if if the target is outside in open air.
+          The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 7,
+      rank: 5,
       scaling: 'accuracy',
     },
     {
@@ -219,9 +270,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       type: 'Attune',
-      scaling: {
-        6: 'The maximum height increases to 60 feet.',
-      },
     },
     {
       name: 'Agile Flight',
@@ -245,45 +293,37 @@ export const aeromancy: MysticSphere = {
       rank: 7,
       type: 'Attune',
     },
-    // -1 rank for stacking up creatures (bad against groups)
     {
       name: 'Wind Tunnel',
 
+      // t0.5 in t2 area is normally rank -1, then +2 for sustain minor
       attack: {
-        crit: 'The target is pushed 30 feet instead.',
         hit: `
           Each target is \\glossterm{pushed} 15 feet in the direction the wind blows.
           Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
         `,
         targeting: `
-          You create a continuous blast of wind in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
-          The wind blows in a direction that you choose when you cast the spell.
-          When you cast this spell, and during each subsequent \\glossterm{action phase}, make an attack vs. Fortitude against everything in the area.
+          You create a continuous blast of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
+          The wind blows either towards you or away from you.
+          You choose the direction when you cast the spell.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },
       // effect: '',
       // narrative: '',
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
     {
       name: 'Intense Wind Tunnel',
 
-      attack: {
-        crit: 'The target is pushed 60 feet instead.',
-        hit: `
-          Each target is \\glossterm{pushed} 30 feet in the direction the wind blows.
-          Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
-        `,
-        targeting: `
-          You create a continuous flow of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
-          The wind blows in a direction that you choose when you cast the spell.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
-        `,
+      functionsLike: {
+        name: 'wind tunnel',
+        exceptThat: "the push distance increases to 30 feet, and the area's length increases to \\hugearealong.",
       },
       // narrative: '',
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
@@ -302,7 +342,6 @@ export const aeromancy: MysticSphere = {
       name: 'Retributive Winds',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankthree{bludgeoning}.
         `,
@@ -348,7 +387,6 @@ export const aeromancy: MysticSphere = {
       name: 'Cyclone',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damageranktwo{bludgeoning}.
         `,
@@ -365,7 +403,6 @@ export const aeromancy: MysticSphere = {
       name: 'Massive Cyclone',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankfive{bludgeoning}.
         `,
@@ -384,7 +421,6 @@ export const aeromancy: MysticSphere = {
       name: 'Hurricane',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankthree{bludgeoning}.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
@@ -420,45 +456,57 @@ export const aeromancy: MysticSphere = {
     {
       name: 'Dust Cloud',
 
-      effect: `
-        You create a cloud of dust in a \\medarea radius \\glossterm{zone} within \\medrange from you.
-        The cloud provides \\glossterm{concealment} for everything in the area.
-      `,
+      attack: {
+        hit: `
+          Each target is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against each creature in a \\smallarea radius within \\medrange.
+        `,
+      },
       // narrative: '',
       rank: 2,
-      tags: ['Sustain (attuneable, minor)'],
-      scaling: {
-        4: 'You can choose to create a \\largearea radius instead.',
-        6: 'You can choose to create a \\hugearea radius instead.',
-      },
+      tags: [],
+      scaling: 'accuracy',
     },
     {
       name: 'Dust Storm',
 
-      functionsLike: {
-        name: 'dust cloud',
-        exceptThat: 'you can move the cloud up to 15 feet at the end of each round.',
+      // Treat as large area in long range, a t6 area
+      // The blinding imposes no extra rank penalty since slowly growing is already a
+      // little odd.
+      attack: {
+        hit: `
+          Each target is \\dazzled as a \\glossterm{condition}.
+          If it was already dazzled by this effect, and it has no remaining \\glossterm{damage resistance}, this condition makes it \\blinded instead.
+        `,
+        targeting: `
+          You create a dust storm at a location within \\longrange.
+          The area affected by the storm increases over time.
+          It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
+        `,
       },
       // narrative: '',
-      rank: 4,
-      scaling: {
-        6: 'You can choose to create a \\largearea radius instead.',
-      },
+      rank: 5,
+      scaling: 'accuracy',
+      type: 'Sustain (standard)',
     },
     {
       name: 'Dust In The Eyes',
 
+      // +1 rank for +2 accuracy
       attack: {
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\longrange.
-          If there is dirt, dust, or a collection of loose objects of similar size within 15 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
+          Make an attack vs. Reflex against one creature within \\shortrange.
+          If there is dirt, dust, or a collection of loose objects of similar size within 30 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
         `,
       },
       // narrative: '',
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
     {
@@ -467,15 +515,15 @@ export const aeromancy: MysticSphere = {
       attack: {
         hit: `
           The target is surrounded by swirling dust as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\blinded.
+          While it is below its maximum hit points, it is \\blinded.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\longrange.
-          If there is dirt, dust, or a collection of loose objects of similar size within 15 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
+          Make an attack vs. Reflex against one creature within \\shortrange.
+          If there is dirt, dust, or a collection of loose objects of similar size within 30 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
         `,
       },
       // narrative: '',
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
     },
     {
@@ -527,7 +575,6 @@ export const aeromancy: MysticSphere = {
       name: 'Windburst',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankone{bludgeoning}.
         `,
@@ -543,7 +590,6 @@ export const aeromancy: MysticSphere = {
       name: 'Massive Windburst',
 
       attack: {
-        // crit: '',
         hit: `
           Each target takes \\damagerankfive{bludgeoning}.
         `,
