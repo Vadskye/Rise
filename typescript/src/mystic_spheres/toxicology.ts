@@ -40,6 +40,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Corrosive Grasp',
 
+      // baseline for grasp is dX+1. +2dr from extra defense, -2dr from next round damage
       attack: {
         hit: `
           The target takes \\damageranktwo{acid} damage immediately, and again during your next action.
@@ -48,28 +49,21 @@ export const toxicology: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude and Reflex against something you \\glossterm{touch}.
         `,
       },
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Corrosive Grasp',
 
-      attack: {
-        hit: `
-          The target takes \\damagerankfive{acid} immediately, and again during your next action.
-          This damage is doubled if the target is an object that is not \\glossterm{metallic}.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
-        `,
+      functionsLike: {
+        name: 'corrosive grasp',
+        exceptThat: 'the damage increases to \\damagerankfive{acid}.',
       },
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
     },
 
@@ -215,6 +209,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `Each target takes \\damagerankone{acid}.`,
+        missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against everything adjacent to you.
         `,
@@ -233,6 +228,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `Each target takes \\damagerankfour{acid}.`,
+        missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -268,7 +264,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{acid} immediately, and again during your next action.
+          The target takes \\damagerankfivehigh{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -297,37 +293,49 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Acid Bath',
+      name: 'Acid Pool',
 
       attack: {
         hit: `
-          The target takes \\damagerankthreehigh{acid} immediately, and again during your next action.
-          If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
-          The target's body is completely dissolved by acid, leaving behind only a splash of black sludge.
-          Its equipment is unaffected.
+          Each target takes \\damagerankone{acid}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          You create a pool of acid in a \\smallarea radius cylinder-shaped \\glossterm{zone} within \\shortrange.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },
       rank: 4,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Sustain (minor)'],
+    },
+
+    {
+      name: 'Mighty Acid Pool',
+
+      functionsLike: {
+        name: 'acid pool',
+        exceptThat: 'the damage increases to \\damagerankfive{acid}.',
+      },
+      rank: 7,
+      scaling: 'accuracy',
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
 
     {
       name: 'Acid Breath',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{acid}.`,
+        hit: `
+          Each target takes \\damagerankone{acid} immediately, and again during your next action.
+        `,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything in a \\medarea cone from you.
+          When you do, make an attack vs. Reflex against everything in a \\largearea cone from you.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
-      rank: 2,
+      rank: 4,
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -341,7 +349,7 @@ export const toxicology: MysticSphere = {
           the damage increases to \\damagerankfive{acid}.
         `,
       },
-      rank: 6,
+      rank: 7,
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -349,12 +357,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Acid Rain',
 
+      // dX+1 for delay, +1dr for open area requirement
       attack: {
-        hit: `Each target takes \\damagerankone{acid}.`,
+        hit: `
+          Each target takes \\damagerankthree{acid} immediately, and again during your next action.
+        `,
         missGlance: true,
         targeting: `
-          You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.
+          When you cast this spell, you choose a \\medarea radius within \\shortrange.
+          Acid rain appears high in the sky over that area, falling down towards it.
+          During your next action, the rain falls in your chosen area, and you make an attack vs. Fortitude against everything in the area.
+          If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
+          This attack does not damage any \\glossterm{walls} in the area.
         `,
       },
       rank: 3,
@@ -363,34 +377,13 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Distant Acid Rain',
-
-      attack: {
-        hit: `Each target takes \\damagerankthree{acid}.`,
-        missGlance: true,
-        targeting: `
-          You create an acidic rain in a \\areasmall radius cylinder-shaped \\glossterm{zone} within \\medrange.
-          When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
       name: 'Massive Acid Rain',
 
-      attack: {
-        // Unclear damage
-        hit: `Each target takes \\damagerankfourhigh{acid}.`,
-        missGlance: true,
-        targeting: `
-          You create an acidic rain in a \\largearea radius cylinder-shaped \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Fortitude against everything in the area.
-        `,
+      functionsLike: {
+        name: 'acid rain',
+        exceptThat: 'it affects a \\largearea radius within \\longrange, and the damage increases to \\damageranksix{acid}.',
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -426,32 +419,54 @@ export const toxicology: MysticSphere = {
 
       effect: `
         You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
+        The target increases its \\glossterm{fatigue level} by one if it removes a condition in this way.
       `,
       rank: 4,
     },
     {
-      name: 'Fungal Growth',
+      name: 'Terrifying Fungus',
 
       attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `The target becomes covered in devouring fungus as a \\glossterm{condition}.
-        It takes \\damagerankone{acid} immediately and during each of your subsequent actions.
+        hit: `
+          The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
+          It is \\frightened of you and all other sources of fungus as a \\glossterm{condition}.
 
-        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
-        Dropping \\prone as part of this action gives a +5 bonus to this check.`,
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Emotion'],
     },
     {
-      name: 'Greater Fungal Growth',
+      name: 'Devouring Fungus',
+
+      attack: {
+        crit: `All damage from the condition is doubled, not just the initial damage.`,
+        hit: `
+          The target becomes covered in devouring fungus as a \\glossterm{condition}.
+          It takes \\damagerankone{acid} immediately and during each of your subsequent actions.
+
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Mighty Devouring Fungus',
 
       functionsLike: {
         name: "fungal growth",
-        exceptThat: "the damage increases to \\damagerankfourlow{acid}, and the condition cannot be removed with a Dexterity check.",
+        exceptThat: "the damage increases to \\damagerankfour{acid}",
       },
       rank: 5,
       scaling: 'accuracy',

@@ -333,7 +333,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
-        hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
+        hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -349,7 +349,7 @@ export const enchantment: MysticSphere = {
       name: 'Intense Fearsome Aura',
 
       attack: {
-        hit: `Each target is \\panicked by you as a \\glossterm{condition}.`,
+        hit: `The target is \\panicked by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -423,10 +423,12 @@ export const enchantment: MysticSphere = {
       name: 'Enrage',
 
       attack: {
-        hit: `As a \\glossterm{condition}, the target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
-        For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.`,
+        hit: `
+          As a \\glossterm{condition}, the target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+        `,
         targeting: `
-        Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -694,7 +696,7 @@ export const enchantment: MysticSphere = {
         If the target is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make a \\glossterm{reactive attack} vs. Mental against it.
-        Your accuracy with this attack is equal to half your level \\add half your Perception.
+        Your accuracy with this attack is equal to half the sum of your level and Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
         `,
@@ -723,7 +725,7 @@ export const enchantment: MysticSphere = {
         If the target is moved, this effect ends.
 
         Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make a \\glossterm{reactive attack} vs. Mental against it.
-        Your accuracy with this attack is equal to half your level \\add half your Perception.
+        Your accuracy with this attack is equal to half the sum of your level and Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
         `,

@@ -4,6 +4,8 @@ export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
   shortDescription: 'Manipulate shadows and darkness to conceal allies and inhibit foes.',
   sources: ['arcane', 'pact'],
+  // Spells that only work vs shadowed targets have +2r. (so dr5 damage at r3)
+  // Alternately, a spell can pay -1r to get +2a vs shadowed targets, or -2r for +4a
   specialRules: `
     \\spheredef{shadowed} A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
   `,
@@ -106,7 +108,7 @@ export const umbramancy: MysticSphere = {
       scaling: {
         3: `The range increases to 90 feet.`,
         5: `The range increases to 120 feet.`,
-        7: `The range increases to 180 feet.`,
+        7: `The range increases to 150 feet.`,
       },
       type: 'Attune',
     },
@@ -130,12 +132,12 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Dark Miasma',
 
+      // -2r for shadowed requirement
       attack: {
-        // Shadowed requirement allows t3 area
         hit: `Each target takes \\damagerankone{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\sphereterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 1,
@@ -143,43 +145,34 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Intense Dark Miasma',
+      name: 'Spreading Dark Miasma',
 
+      // -2r for shadowed requirement. Enemies-only large radius is t4. Spend the 2r on
+      // damage instead of area.
       attack: {
-        // +2r for shadowed accuracy
-        hit: `Each target takes \\damagerankthree{cold}.`,
+        hit: `Each target takes \\damagerankfourlow{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-          You gain a +4 accuracy bonus against each \\glossterm{shadowed} target.
+          You create a field of miasma centered on your location.
+          The area affected by the miasma increases over time.
+          It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
+      tags: ['Sustain (standard)'],
     },
 
     {
       name: 'Mighty Dark Miasma',
 
+      // Spend the 2r from shadowed on damage instead of area
       attack: {
-        hit: `Each target takes \\damagerankfour{cold}.`,
+        hit: `Each target takes \\damagerankeightlow{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 4,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Massive Dark Miasma',
-
-      attack: {
-        hit: `Each target takes \\damageranksix{cold}.`,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Mental against all \\sphereterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 7,
@@ -193,7 +186,7 @@ export const umbramancy: MysticSphere = {
         // +1r for shadowed
         hit: `
           The target takes \\damageranktwo{cold}.
-          If it takes damage and your attack result beats its Mental defense, it is \\shaken by you as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -207,12 +200,20 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Intense Dark Grasp',
+      name: 'Efficient Dark Grasp',
 
-      functionsLike: {
-        name: 'dark grasp',
-        exceptThat:
-          'the target is \\frightened instead of shaken, and the damage increases to \\damageranksix{cold}.',
+      attack: {
+        // +1r for shadowed
+        hit: `
+          The target takes \\damageranksixlow{cold}.
+          If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+        `,
       },
       rank: 6,
       scaling: 'accuracy',
@@ -223,7 +224,7 @@ export const umbramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `Each target takes \\damagerankthree{cold}.`,
+        hit: `Each target takes \\damagerankthreelow{cold}.`,
         missGlance: true,
         targeting: `
           You create a field of darkness at a \\sphereterm{shadowed} location within \\shortrange.
@@ -233,42 +234,22 @@ export const umbramancy: MysticSphere = {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
-      tags: ['Sustain (standard)'],
-    },
-
-    {
-      name: 'Massive Creeping Darkness',
-
-      attack: {
-        hit: `Each target takes \\damagerankfive{cold}.`,
-        missGlance: true,
-        targeting: `
-          You create a field of darkness at a \\sphereterm{shadowed} location within \\medrange.
-          The area affected by the field increases over time.
-          It affects a \\medarea radius in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
-          Light in the area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Sustain (standard)'],
+      tags: ['Sustain (minor)'],
     },
 
     {
       name: 'Heed the Dark Call',
 
       attack: {
-        // -1 range for shadowed
         hit: `
           The target feels the call of darkness as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\frightened by you.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+          Make an attack vs. Mental against one creature within \\medrange.
+          You gain a +4 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 1,
@@ -279,14 +260,13 @@ export const umbramancy: MysticSphere = {
       name: 'Intense Heed the Dark Call',
 
       attack: {
-        // +1r for shadowed
         hit: `
           The target feels the call of darkness as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\panicked by you.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\longrange.
-          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+          Make an attack vs. Mental against one creature within \\medrange.
+          You gain a +4 accuracy bonus if the target is \\sphereterm{shadowed}.
         `,
       },
       rank: 5,
@@ -311,15 +291,22 @@ export const umbramancy: MysticSphere = {
       name: 'Fade Into Darkness',
 
       effect: `
-        At the end of each round, if you took no actions that round and are not in \\glossterm{brilliant illumination}, you become \\trait{invisible} (see \\pcref{Invisible}).
-        This invisibility ends after you take any action.
+        At the end of each round, if you took no actions that round and are \\sphereterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
+        This invisibility ends after you take any action, or if you stop being shadowed.
       `,
       rank: 2,
-      scaling: {
-        4: `Moving during the \\glossterm{movement phase} does not end your invisibility or prevent you from becoming invisible.`,
-        6: `Taking \\glossterm{free actions} and \\glossterm{minor actions} does not end your invisibility or prevent you from becoming invisible.`,
-      },
       type: 'Attune',
+    },
+
+    {
+      name: 'Greater Fade Into Darkness',
+
+      effect: `
+        At the end of each round, if you did not take a standard action that round and are \\sphereterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
+        This invisibility ends after you take a standard action, or if you stop being shadowed.
+      `,
+      rank: 6,
+      type: 'Attune (deep)',
     },
 
     {

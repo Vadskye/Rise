@@ -55,7 +55,8 @@ export const channelDivinity: MysticSphere = {
         % d3
         First, you heal 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power}.
         This healing cannot increase your hit points above half your maximum hit points.
-        Second, you remove one \\glossterm{condition} affecting you.
+        Second, you may remove one \\glossterm{condition} affecting you.
+        If you do, you increase your \\glossterm{fatigue level} by one.
         This cannot remove an effect applied during that round.
         Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
@@ -295,7 +296,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target is \\frightened by you as a \\glossterm{condition}.
+          The target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
