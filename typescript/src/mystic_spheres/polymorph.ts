@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
@@ -91,18 +92,22 @@ export const polymorph: MysticSphere = {
     {
       name: 'Twisting Claw',
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 3,
+      rank: 2,
       scaling: 'accuracy',
     },
 
     {
       name: 'Power Claw',
       effect: `
-        Make a melee \\glossterm{strike} with a -3 accuracy penalty.
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty using a \\glossterm{natural weapon}.
         The strike deals double \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -113,7 +118,9 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mighty Power Claw',
       effect: `
-        Make a melee \\glossterm{strike} with a -3 accuracy penalty.
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty using a \\glossterm{natural weapon}.
         The strike deals triple \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -124,11 +131,13 @@ export const polymorph: MysticSphere = {
     {
       name: 'Distant Claw',
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         The strike gains the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
@@ -136,14 +145,14 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
-          The target takes 2d8 physical damage.
-          If it loses \\glossterm{hit points} from this damage, it is \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot land speed, a 20 foot climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
         `,
         targeting: `
-        Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude and Mental against one Huge or smaller creature within \\medrange.
         `,
       },
       rank: 5,
@@ -267,7 +276,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranksix{physical}.
+          The target takes \\damagerankfive{physical}.
           This damage is doubled if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
@@ -278,7 +287,7 @@ export const polymorph: MysticSphere = {
         `,
       },
 
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
     },
 
@@ -305,7 +314,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'malleable body',
-        exceptThat: 'you become \\glossterm{immune} to critical hits from strikes.',
+        exceptThat: 'you also become \\glossterm{immune} to critical hits from strikes.',
       },
       rank: 7,
       type: 'Attune (deep)',
@@ -351,6 +360,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `Each target takes \\damagerankfour{piercing}.`,
+        missGlance: true,
         targeting: `
           As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor with a -2 accuracy penalty against all \\glossterm{enemies} adjacent to you.
         `,
@@ -405,9 +415,9 @@ export const polymorph: MysticSphere = {
       name: 'Sludgeform',
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: CONDITION_CRIT,
         hit: `
-          If the target is below its maximum \\glossterm{hit points}, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
           This has the following effects:
           \\begin{itemize}
             \\item Its exposed flesh makes it \\vulnerable to all damage.
@@ -419,7 +429,7 @@ export const polymorph: MysticSphere = {
           \\hypertarget{itemizespace}{}
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 7,
@@ -572,36 +582,26 @@ export const polymorph: MysticSphere = {
     {
       name: 'Bleed',
 
-      // +1 level relative to Ignition because the check DV is always 10
       attack: {
-        crit: `The damage from the condition is doubled.`,
+        crit: MULTIHIT_CRIT,
         hit: `
-          The target begins bleeding as a \\glossterm{condition}.
-          It takes \\damagerankonelow{physical} immediately and during each of your subsequent actions.
-
-          This effect can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-          The \\glossterm{difficulty value} of the check is equal to 10.
+          The target takes \\damagerankone{slashing}.
+          If it loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Bleed',
 
-      attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `
-          The target begins bleeding as a \\glossterm{condition}.
-          It takes \\damagerankthreelow{physical} immediately and during each of your subsequent actions.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-        `,
+      functionsLike: {
+        name: 'bleed',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -611,12 +611,14 @@ export const polymorph: MysticSphere = {
       name: 'Eyes of Darksight',
 
       effect: `
-        You gain \\trait{darkvision} with a 60 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
+        You gain \\trait{darkvision} with a 30 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
+        If you already have darkvision, the range of that ability increases by this amount instead.
       `,
-      rank: 2,
+      rank: 1,
       scaling: {
-        4: `The radius increases to 120 feet.`,
-        6: `The radius increases to 240 feet.`,
+        3: `The radius increases to 60 feet.`,
+        5: `The radius increases to 90 feet.`,
+        7: `The radius increases to 120 feet.`,
       },
       type: 'Attune',
     },
@@ -630,7 +632,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       scaling: {
-        6: `The radius of the darkvision increases by 60 feet, and the radius of the blindsense increases by 30 feet.`,
+        6: `The radius of both senses increases by 30 feet.`,
       },
       type: 'Attune',
     },
@@ -668,24 +670,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Mass Sensory Enhancement',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        For each creature, you choose one of the following effects.
-        \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
-        \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
-        \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
-        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Awareness}).
-      `,
-      rank: 5,
-      scaling: {
-        7: 'For each target, you can choose any two of the listed enhancements.',
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Dragon Breath',
 
       attack: {
@@ -710,7 +694,7 @@ export const polymorph: MysticSphere = {
       name: 'Cleansing Bodymorph',
 
       effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
+        You remove a \\glossterm{condition} of your choice.
         This cannot remove conditions caused by \\abilitytag{Compulsion} or \\abilitytag{Emotion} abilities.
       `,
       rank: 4,
@@ -720,6 +704,7 @@ export const polymorph: MysticSphere = {
       name: 'Cripple',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
@@ -736,6 +721,7 @@ export const polymorph: MysticSphere = {
       name: 'Intense Cripple',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\immobilized.
@@ -753,7 +739,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{physical}.
+          The target takes \\damagerankfive{slashing}.
           If it loses \\glossterm{hit points}, it is \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `
@@ -763,8 +749,81 @@ export const polymorph: MysticSphere = {
       rank: 7,
       scaling: 'accuracy',
     },
+
+    {
+      name: 'Fleshspike',
+
+      attack: {
+        hit: `
+          The target takes \\damagerankthree{piercing}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Armor against one adjacent creature.
+        `,
+      },
+      narrative: `
+        Your arm transforms into a hideous spike that you use to impale your enemy.
+      `,
+      rank: 1,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Bloody Fleshspike',
+
+      attack: {
+        hit: `
+          The target takes \\damagerankfour{piercing}.
+          If it loses hit points, it takes this damage again during your next action.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Armor against one adjacent creature.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Impaling Fleshspike',
+
+      // like dX at Grasp range, but +1dr and -2ct.
+      attack: {
+        hit: `
+          The target takes \\damageranksix{piercing}.
+          If it loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Armor against one adjacent creature.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+    },
   ],
   rituals: [
+    {
+      name: 'Sensory Enhancement',
+
+      castingTime: 'one hour',
+      effect: `
+        Choose up to six ritual participants.
+        For each creature, you choose one of the following effects.
+        \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
+        \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
+        If it already has darkvision, the range of that ability increases by 60 feet instead.
+        \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
+        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Awareness}).
+      `,
+      rank: 4,
+      type: 'Attune (target)',
+    },
     {
       name: 'Mountform',
 

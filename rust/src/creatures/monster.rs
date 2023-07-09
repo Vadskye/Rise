@@ -15,6 +15,7 @@ use super::ModifierType;
 
 pub struct Monster {
     pub alignment: Option<String>,
+    pub art: bool,
     pub challenge_rating: ChallengeRating,
     pub creature: Creature,
     pub creature_type: CreatureType,
@@ -56,6 +57,7 @@ impl Monster {
 
         return Monster {
             alignment: None,
+            art: false,
             challenge_rating,
             creature_type,
             creature,
@@ -131,8 +133,8 @@ impl Monster {
 
 // LaTeX conversion
 impl Monster {
-    pub fn to_section(&self, section_name: Option<&str>) -> String {
-        let section_name = section_name.unwrap_or("monsubsection");
+    pub fn to_section(&self, parent_monster_group_name: Option<String>) -> String {
+        let section_name = if parent_monster_group_name.is_some() { "monsubsubsection" } else { "monsubsection" };
         let name = if let Some(ref n) = self.creature.name {
             titlecase(n)
         } else {
@@ -140,18 +142,22 @@ impl Monster {
         };
         let latex = latex_formatting::latexify(format!(
             "
+                {pagebreak}
+                {art}
                 \\begin<{section_name}><{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
 
                     {description}
                     {knowledge}
 
-                    \\RaggedRight
+                    \\par \\RaggedRight
                     {content}
                 \\end<{section_name}>
                 \\monsterabilitiesheader<$Name>
                 {abilities}
             ",
+            pagebreak = if parent_monster_group_name.is_some() { "" } else { r"\newpage" },
+            art = self.latex_art(parent_monster_group_name).trim(),
             section_name = section_name,
             size_star = if section_name == "monsubsubsection" { "*" } else { "" },
             name = name,
@@ -161,7 +167,7 @@ impl Monster {
             size = self.creature.size.name(),
             type = self.creature_type.name(),
             description = self.description.as_deref().unwrap_or(""),
-            knowledge = if let Some(ref k) = self.knowledge { k.to_latex(&self.creature_type, self.creature.level)} else { "".to_string() },
+            knowledge = if let Some(ref k) = self.knowledge { k.to_latex(&self.creature_type, self.creature.level)} else { r"".to_string() },
             content = self.latex_content().trim(),
             abilities = self.latex_abilities().trim(),
         ))
@@ -180,6 +186,21 @@ impl Monster {
         // easier.
         let empty_line_pattern = Regex::new(r"\n+").unwrap();
         return empty_line_pattern.replace_all(&latex, "\n").to_string();
+    }
+
+    fn latex_art(&self, parent_monster_group_name: Option<String>) -> String {
+        if self.art {
+            let name = self.creature.name.as_ref().unwrap().to_lowercase();
+            let path = if let Some(p) = parent_monster_group_name {
+                format!("{} - {}", p.to_lowercase(), name)
+            } else { name.to_string() };
+            return format!(
+                "\\noindent\\includegraphics[width=\\columnwidth]<monsters/{path}>\\vspace<0.5em>",
+                path = path,
+            );
+        } else {
+            return "".to_string();
+        }
     }
 
     fn latex_content(&self) -> String {
@@ -391,12 +412,12 @@ impl Monster {
             .get_modifiers_by_type(ModifierType::ActiveAbility)
         {
             if let Modifier::ActiveAbility(a) = modifier {
-                active_abilities.push(a);
+                active_abilities.push(a.clone());
             }
         }
-        active_abilities.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
+        active_abilities.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         for active_ability in active_abilities {
-            ability_texts.push(active_ability.clone().latex_ability_block());
+            ability_texts.push(active_ability.latex_ability_block(&self.creature));
         }
 
         let mut passive_ability_texts = self

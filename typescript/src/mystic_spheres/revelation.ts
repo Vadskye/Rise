@@ -1,9 +1,10 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
   shortDescription: 'Share visions of the present and future, granting insight or combat prowess.',
-  sources: ['arcane', 'divine', 'nature'],
+  sources: ['arcane', 'divine'],
 
   cantrips: [
     {
@@ -89,11 +90,6 @@ export const revelation: MysticSphere = {
         If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
       `,
       rank: 1,
-      scaling: {
-        3: `The bonus increases to +2.`,
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
       tags: [],
     },
 
@@ -107,10 +103,6 @@ export const revelation: MysticSphere = {
         If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
       `,
       rank: 2,
-      scaling: {
-        4: `The bonus increases to +2.`,
-        6: `The bonus increases to +3.`,
-      },
       tags: [],
     },
 
@@ -146,9 +138,17 @@ export const revelation: MysticSphere = {
         You intuitively perceive gaps in your foes' armor.
       `,
       rank: 4,
-      scaling: {
-        6: 'Applying this effect to a strike does not prevent you from applying it again.',
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Armorbreak Sight',
+
+      functionsLike: {
+        name: 'armorbreak sight',
+        exceptThat: 'using it does not prevent you from immediately using it again.',
       },
+      rank: 7,
       type: 'Attune (deep)',
     },
 
@@ -203,12 +203,15 @@ export const revelation: MysticSphere = {
       name: 'Discern Lies',
 
       attack: {
-        hit: `When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
-        This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.`,
+        hit: `
+          When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
+          This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+        `,
         targeting: `
-        This spell has no \\glossterm{verbal components}.
+          This spell has no \\glossterm{verbal components}.
 
-        Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
+          Whether you hit or miss, the target becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
       },
 
@@ -233,11 +236,11 @@ export const revelation: MysticSphere = {
       name: 'Gift of Knowledge',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to all Knowledge skills (see \\pcref{Knowledge}).
+        You gain a +3 \\glossterm{magic bonus} to all Knowledge skills (see \\pcref{Knowledge}).
         In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
       `,
       rank: 4,
-      scaling: { 6: `The bonus increases to +5.` },
+      scaling: { 6: `The bonus increases to +4.` },
       type: 'Attune',
     },
 
@@ -315,18 +318,20 @@ export const revelation: MysticSphere = {
     {
       name: 'Reveal Weakness',
 
-      // TODO: unclear rank (1.25??)
+      // TODO: unclear rank (1??)
       attack: {
-        crit: `The penalty increases to -4.`,
-        hit: `As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
-        It takes a -2 penalty to the chosen defense.`,
+        crit: CONDITION_CRIT,
+        hit: `
+          As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
+          It takes a -2 penalty to the chosen defense.
+        `,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
@@ -335,30 +340,30 @@ export const revelation: MysticSphere = {
 
       functionsLike: {
         name: 'reveal weakness',
-        exceptThat: 'the penalty increases to -4, or -8 on a critical hit.',
+        exceptThat: 'the penalty increases to -4.',
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
     },
 
     {
-      name: 'Twinned True Strike',
+      name: 'Empowered True Strike',
 
       functionsLike: {
         name: 'True Strike',
         exceptThat:
-          'it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.',
+          'the accuracy bonus increases to +4. However, after you cast this spell, you \\glossterm{briefly} cannot cast it again.',
       },
       rank: 6,
     },
 
     {
-      name: 'Twinned True Cast',
+      name: 'Empowered True Cast',
 
       functionsLike: {
         name: 'True Cast',
         exceptThat:
-          'it affects one or two creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.',
+          'the accuracy bonus increases to +4. However, after you cast this spell, you \\glossterm{briefly} cannot cast it again.',
       },
       rank: 7,
     },
@@ -370,13 +375,14 @@ export const revelation: MysticSphere = {
       name: 'Reveal Vulnerability',
 
       attack: {
-        crit: 'The condition must be removed twice before the effect ends.',
+        crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
-          Damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
+          As a \\glossterm{condition}, each target's vulnerabilities become clear for all to see.
+          Anyone looking at it intuitively knows whether it is \\vulnerable to any specific damage types or ability tags.
+          In addition, damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 accuracy bonus against one creature within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 2,
@@ -387,7 +393,7 @@ export const revelation: MysticSphere = {
       name: 'Myriad Visions',
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: CONDITION_CRIT,
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -401,22 +407,16 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Blinding Visions',
+      name: 'Field of Visions',
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
-        hit: `
-          The target is \\dazed and \\dazzled as a \\glossterm{condition}.
-          While it has no remaining \\glossterm{damage resistance}, it is \\blinded instead of dazzled.
-        `,
+        crit: CONDITION_CRIT,
+        hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against each \\glossterm{enemy} in a \\medarea radius within \\medrange.
         `,
       },
-      narrative: `
-        Your foe sees an overwhelming barrage of visions of possible futures that make it virtually impossible for it to determine reality.
-      `,
-      rank: 7,
+      rank: 4,
       scaling: 'accuracy',
     },
 
@@ -483,26 +483,28 @@ export const revelation: MysticSphere = {
         If undisturbed, the sensor floats in the air in its position.
       `,
       rank: 3,
-      scaling: {
-        5: `The range increases to \\longrange.`,
-        7: `The range increases to \\distrange.`,
-      },
       tags: ['Scrying'],
       type: 'Sustain (minor)',
     },
 
     {
-      name: 'Longshot',
+      name: 'Distant Sight',
 
       effect: `
         You reduce your \\glossterm{longshot penalty} by 1.
       `,
-      rank: 3,
-      scaling: {
-        5: `The penalty reduction increases to 2.`,
-        7: `The penalty reduction increases to 3.`,
-      },
+      rank: 2,
       type: 'Attune',
+    },
+
+    {
+      name: 'Empowered Distant Sight',
+
+      effect: `
+        You reduce your \\glossterm{longshot penalty} by 3.
+      `,
+      rank: 6,
+      type: 'Attune (deep)',
     },
 
     {
@@ -513,10 +515,7 @@ export const revelation: MysticSphere = {
         name: 'Longshot',
       },
       // narrative: '',
-      rank: 5,
-      scaling: {
-        7: `The penalty reduction increases to 2.`,
-      },
+      rank: 4,
       type: 'Attune (target)',
     },
 
@@ -556,9 +555,12 @@ export const revelation: MysticSphere = {
       name: 'Sensory Chain',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          If you cannot see yourself, you are \\blinded for combat purposes.
+
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
           Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} against the new creature.
           You can only make this attack against a given target once per \\glossterm{phase}.
@@ -579,9 +581,11 @@ export const revelation: MysticSphere = {
       name: "Animal's Sight",
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          If you cannot see yourself, you are \\blinded for combat purposes.
         `,
         targeting: `
           Make an attack vs. Mental against one animal within \\medrange.

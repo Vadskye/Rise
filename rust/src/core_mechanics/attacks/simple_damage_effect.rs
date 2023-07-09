@@ -28,6 +28,41 @@ impl SimpleDamageEffect {
             vampiric_healing: None,
         };
     }
+
+    pub fn from_string(text: &str, damage_types: Vec<DamageType>) -> DamageEffect {
+        // TODO: remove the leading $
+        match text {
+            "$dr0" => Self::dr0(damage_types),
+            "$dr1" => Self::dr1(damage_types),
+            "$dr2" => Self::dr2(damage_types),
+            "$dr3" => Self::dr3(damage_types),
+            "$dr4" => Self::dr4(damage_types),
+            "$dr5" => Self::dr5(damage_types),
+            "$dr6" => Self::dr6(damage_types),
+            "$dr7" => Self::dr7(damage_types),
+            "$dr8" => Self::dr8(damage_types),
+            "$dr9" => Self::dr9(damage_types),
+            "$dr1h" => Self::dr1h(damage_types),
+            "$dr2h" => Self::dr2h(damage_types),
+            "$dr3h" => Self::dr3h(damage_types),
+            "$dr4h" => Self::dr4h(damage_types),
+            "$dr5h" => Self::dr5h(damage_types),
+            "$dr6h" => Self::dr6h(damage_types),
+            "$dr7h" => Self::dr7h(damage_types),
+            "$dr8h" => Self::dr8h(damage_types),
+            "$dr9h" => Self::dr9h(damage_types),
+            "$dr1l" => Self::dr1l(damage_types),
+            "$dr2l" => Self::dr2l(damage_types),
+            "$dr3l" => Self::dr3l(damage_types),
+            "$dr4l" => Self::dr4l(damage_types),
+            "$dr5l" => Self::dr5l(damage_types),
+            "$dr6l" => Self::dr6l(damage_types),
+            "$dr7l" => Self::dr7l(damage_types),
+            "$dr8l" => Self::dr8l(damage_types),
+            "$dr9l" => Self::dr9l(damage_types),
+            _ => panic!("Unable to parse damage string: '{}'", text),
+        }
+    }
 }
 
 // This lists all of the standard damage values for abilities of each rank.
@@ -43,7 +78,7 @@ impl SimpleDamageEffect {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 3,
+                power_per_increment: 2,
             }],
         }
         .damage_effect();

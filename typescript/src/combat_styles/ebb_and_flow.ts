@@ -75,32 +75,12 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Dazing Feint',
-
-      effect: `
-        Make a melee \\glossterm{weak strike}.
-        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Reflex defense.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Stunning Feint',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        Each damaged creature is \\stunned as a \\glossterm{condition} if your attack result beats its Reflex defense.
-      `,
-      rank: 5,
-    },
-
-    {
       name: 'Sacrificial Strike',
 
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
     },
@@ -109,9 +89,9 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sacrificial Flurry',
 
       effect: `
-        Make two melee \\glossterm{strikes} with a +1 accuracy bonus.
+        Make two melee \\glossterm{strikes}.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 5,
     },
@@ -169,7 +149,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Hunting Strike',
 
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a strike.
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
@@ -183,7 +163,7 @@ export const ebbAndFlow: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the accuracy bonus from each strike increases to +2, and the strike is not weak. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
+          'the accuracy bonus from each strike increases to +2, and the strike deals double \\glossterm{weapon damage}. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
         name: 'hunting strike',
       },
       rank: 7,
@@ -203,29 +183,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Dizzying Assault',
-
-      // -2 ranks for self-daze
-      effect: `
-        Make a melee \\glossterm{strike}.
-        You and each damaged creature are \\dazed as a \\glossterm{condition}.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Dizzying Assault+',
-
-      effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        You and each damaged creature are \\stunned as a \\glossterm{condition}.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you or the damaged creatures during the current phase.
-      `,
-      rank: 7,
-    },
-
-    {
       name: 'Back Into the Fray',
 
       effect: `
@@ -240,7 +197,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
-        Each target damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
+        Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
       `,
       rank: 3,
     },
@@ -251,6 +208,16 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} using two weapons (see \\pcref{Dual Wielding}).
         After making this strike, you \\glossterm{briefly} gain a +1 accuracy bonus with strikes for each weapon that you hit with.
+      `,
+      rank: 1,
+    },
+
+    {
+      name: 'Tag-Team Followup',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current phase.
       `,
       rank: 1,
     },

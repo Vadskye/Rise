@@ -3,7 +3,6 @@ use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{
     Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
 };
-use crate::equipment::StandardWeapon;
 use crate::skills::Skill;
 
 use super::Creature;
@@ -104,7 +103,7 @@ impl Modifier {
     pub fn name(&self) -> String {
         match self {
             Self::Accuracy(_) => format!("accuracy"),
-            Self::ActiveAbility(a) => format!("active ability {}", a.name),
+            Self::ActiveAbility(a) => format!("active ability {}", a.name()),
             Self::AllDefenses(_) => format!("all defenses"),
             Self::Attack(a) => format!("attack {}", a.name),
             Self::Attribute(a, _) => format!("base attribute {}", a.name()),
@@ -172,7 +171,7 @@ impl Modifier {
 
     pub fn is_magical(&self) -> bool {
         match self {
-            Self::ActiveAbility(a) => a.is_magical,
+            Self::ActiveAbility(a) => a.is_magical(),
             Self::Attack(a) => a.is_magical,
             Self::PassiveAbility(a) => a.is_magical,
             Self::Maneuver(m) => m.is_magical(),

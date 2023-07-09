@@ -71,61 +71,6 @@ In the old system, +2r for damage gave +1d. +1d is about a 25% damage increase f
 
 Put another way, +2r for damage gave a 50% increase in the damage *difference* between rank X and rank X+2, or a 25% increase after taking into account the effect of power.
 
-# Nonlinear Power Scaling
-
-Your power is on a (level + str/wil)-based track. Power doubles every 6 levels on that track. Spells deal damage based on your power. You should gain other flat damage modifiers over time from other sources, like class features and feats, so 6 Wil doesn't fully double your damage.
-
-## Power per Level
-
-Level: Power 
-1:  1 
-2:  2 
-3:  2 
-4:  3 
-5:  3 
-6:  4 
-7:  4 
-8:  5 
-9:  6 
-10: 7 
-11: 8 
-12: 9 
-13: 10
-14: 12
-15: 14
-16: 16
-17: 18
-18: 20
-19: 22
-20: 24
-21: 26
-+3 per point beyond 21.
-
-## Power per Rank
-
-* R1: base 1, max 3
-* R2: base 3, max 5
-* R3: base 4, max 8
-* R4: base 7, max 14
-* R5: base 10, max 22
-* R6: base 16, max 29
-* R7: base 22, max 41
-
-## Single-Target Spell Scaling
-
-* R1: 1d6 damage, +1d per 2 power
-  * 1d6 (3.5) base, 1d8 (4.5) max
-  * At R3: 1d10 (5.5) base, 1d8+1d6 (8) max
-* R3: 1d6 damage, +1d6 per 4 power
-  * 2d6 (7) base, 3d6 (10.5) max
-  * At R5: 3d6 (10.5) base, 6d6 (21) max
-  * At R7: 6d6 (28) base, 11d6 (38.5) max
-* R5: 2d6 base, +1d6 per 4 power
-
-## Problems
-
-+1d6 per 4 power is the baseline scaling for all spells, and it's kind of boring / slow. That reduces differentiation between spells, and is cumbersome. What would AOE spells be? 1d6 per 6 power?
-
 # Linear Power Scaling
 
 Your power is equal to half your level + full Str/Wil. At low levels, power for high investment characters is a large multiple of power for low investment characters. However, this can be solved by providing abilities with weak power scaling at low levels, and strong power scaling at high levels.
@@ -139,53 +84,7 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 * R6: base 8, max 15
 * R7: base 9.5, max 17.5
 
-## Single-Target Spell Scaling
-
-* R1: 1d6 damage, +1d per 2 power (0.5x power)
-  * 1d6 (3.5) base, 1d10 (5.5) max, +57% investment
-  * At R3: 1d8 (4.5) base, 1d8+1d6 (8) max
-* R3: 1d10 damage, +1d per 2 power (0.5x power)
-  * 2d6 (7) base, 3d6 (10.5) max, +50% investment
-* R3: 1d8 damage, +1d6 per 4 power (0.9x power)
-  * 1d8 (4.5, 7.1 partial) base, 1d8+2d6 (11.5) max, +61% investment counting partial
-  * At R5: 1d8+1d6 (8, 9.7 partial) base, 1d8+3d6 (15) max, +54% investment counting partial
-* R4: 1d8 + 1d6 damage per 3 power (1.2x power)
-  * 1d8+1d6 (8, 10.3 partial) base, 1d8+3d6 (15, 16.2 partial) max, +57% investment counting partial
-* R5: 1d8 damage, +1d8 per 3 power (1.5x power)
-  * 3d8 (13.5) base, 5d8 (22.5) max, +66% investment
-  * At R7: 4d8 (18) base, 6d8 (27) max), +50% investment
-* R5: 1d10 damage, +1d10 per 4 power (1.4x power)
-  * 2d10 (11, 13.8 partial) base, 4d10 (22) max, +59% investment counting partial
-  * At R7: 3d10 (16.5) base, 5d10 (27.5) max, +67% investment
-* R5: 2d6 damage, +1d6 per 3 power (1.2x power)
-  * 4d6 (14) base, 6d6 (21) max, +50% investment
-  * At R7: 5d6 (17.5) base, 7d6 (24.5) max, +40% investment
-* R5: 1d10 damage per 3 power (1.8x power)
-  * 2d10 (11) base, 4d10 (22) max, +100% investment
-* R7: 4d6 damage, +1d6 per 2 power (1.8x power)
-  * 8d6 (28) base, 12d6 (42) max, +50% investment
-* R7: 1d10 damage per 2 power (2.8x power)
-  * 4d10 (22) base, 8d10 (44) max, +100% investment
-
-<!-- * R3: 1d6 damage, +1d6 per 3 power -->
-<!--   * 2d6 (7) base, 3d6 (10.5) max, +83% investment counting partial progress -->
-<!--   * At R5: 3d6 (10.5) base, 5d6 (17.5) max -->
-<!-- * R3: 1d6 damage, +1d per power -->
-<!--   * 2d6 (7) base, 1d10+2d6 (12.5) max, +78% investment -->
-<!-- * R3: 1d10 damage, +1d6 per 4 power -->
-<!--   * 1d10 (5.5, 8.1 partial) base, 1d10+2d6 (12.5) max, +54% investment counting partial -->
-<!--   * At R5: 1d10+1d6 (9, 10.7 partial) base, 1d10+3d6 (16) max, +50% investment counting partial -->
-<!-- * R5: 1d8 damage per 2 power -->
-<!--   * 3d8 (13.5) base, 6d8 (27) max -->
-<!--   * At R7: 4d8 (18) base, 8d8 (36) max -->
-<!-- * R7: 1d10 damage, +1d10 per 2 power -->
-<!--   * 5d10 (27.5) base, 9d10 (49.5) max, +80% investment -->
-<!-- * R5: 1d8 damage per 2 power -->
-<!--   * 3d8 (13.5) base, 6d8 (27) max, +100% investment -->
-<!-- * R4: 1d10 damage per 4 power -->
-<!--   * 1d10 (5.5, 6.8 partial) base, 2d10 (11, 13.8 partial) max, +100% investment counting partial -->
-
-## Autocalculated Single-Target Damage Scaling
+## Single-Target Damage Scaling
 
 * R1
   * 1d6 + 1d per 2 power
@@ -262,6 +161,8 @@ Your power is equal to half your level + full Str/Wil. At low levels, power for 
 
 ## Scaling By Rank Equations
 `x` is base damage, `y` is damage per power (dpp), and the right number is equal to the ideal damage target.
+Note that, as a rough approximation, dX+3 deals approximately twice the damage of dX.
+Each subsequent damage rank gives about 40% more damage scaling from power.
 
 * R1: x + 0.5y = 3.5, x + 4.5y = 5.6
   * 3.2 base damage, 0.53 damage per power
@@ -317,6 +218,23 @@ So area spells should use a damage progression from about two ranks lower. Very 
 
 In general, if you spend 2 ranks on non-damage upgrades (like range), you should use a strongish scaling 1 rank lower.
 
+## Higher Rank Damage Scaling
+
+At rank 2, base damage is 5/8, power is 2/7:
+* Using dr3: 4.5 + 0.875dpp = 6.3/10.6 (126%/133%)
+* Using dr4: 4.5 + 1.125dpp = 6.8/12.4 (136%/155%)
+* Using dr5: 7.0 + 1.167dpp = 9.3/15.2 (186%/190%)
+
+At rank 5, base damage is 14/22.4, power is 6.5/12.5:
+* Using dr6: 5.5 + 1.833dpp = 17.4/28.4 (124%/127%)
+* Using dr7: 11  + 1.833dpp = 22.9/33.9 (164%/151%)
+* Using dr8: 22  + 1.833dpp = 33.9/44.9 (242%/200%)
+* Using dr8h: 11 + 2.750dpp = 28.9/45.4 (206%/202%)
+
+At rank 7, base damage is 28/44.8, power is 9.5/17.5:
+* Using dr8: 22  + 1.833dpp = 39.0/55.8 (139%/126%)
+* Using dr9: 22  + 2.750dpp = 48.1/70.1 (172%/157%)
+
 ## Weapon Damage Scaling
 
 Base melee weapon damage at each rank:
@@ -344,18 +262,13 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
 
 ## Standard Maneuvers
 
+For debuffs, see "Rebalanced Debuffs"
+
 * R1
   * Damage
     * Glancing blow on miss if beat extra defense
     * Strike with 1d4 +1d/r extra damage, 1 fatigue
     * Strike, double weapon damage on crit, minor downside?
-  * Debuffs
-    * Strike, push 5' if damaged
-    * Strike, T0.5 condition if damaged and beat extra defense
-    * Strike, T1 condition if lose HP
-    * Strike, T1.5 condition if lose HP and beat extra defense
-    * Weak strike, T1 condition if damaged and beat extra defense
-    * Weak strike, T1.5 condition if lose HP
 * R3
   * Damage
     * Strike against Fort/Ref
@@ -369,22 +282,12 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Move with a check, dr2h vs all adjacent if check was high enough
     * Strike with extra weapon tag
     * Strike, -2 accuracy, double weapon damage
-  * Debuffs
-    * Weak strike, T1.5 condition if damaged and beat extra defense
-    * Weak strike, T2 condition if lose HP
-    * Strike, T2 condition if lose HP and beat extra defense
-    * Strike, T1.5 condition if lose HP
-    * Strike, T1 condition if damaged and beat extra defense
-    * Strike, T0.5 condition if damaged
+    * Strike, double weapon damage if beat extra defense
 * R5
   * Damage
     * Strike, deal same damage next round
     * Strike, double weapon damage, minor upside
     * Two strikes, -1 accuracy
-  * Debuffs
-    * Strike, push with full move if damaged
-    * Strike, T2 condition if damaged and beat extra defense
-    * Strike, T3 condition if lose HP and beat extra defense
 * R7
   * Damage
     * Three strikes, -1 accuracy
@@ -393,9 +296,6 @@ Observation: In general, you can offset the damage difference with +1 accuracy p
     * Strike, triple weapon damage, minor downside?
     * Strike, 1d8 per 2 power extra damage if beat extra defense
       * +5d8/9d8
-  * Debuffs
-    * Strike, double weapon damage, T2 condition if damaged
-    * Strike, double weapon damage, T3 condition if lose HP
 
 ## Heavy Weapons
 
@@ -728,13 +628,6 @@ Goal: HP should be 3x/4x accuracy-modified damage target (assuming DR should be 
 Notation: dX means "standard damage for rank X". A suffix of "h" means "high power scaling", and "l" means "low power scaling". High power scaling is generally stronger, while low power scaling is generally weaker.
 
 Standard for all ranks:
-* ctX 
-  * "condition that you could get as a pure debuff at Med range at rank X"
-  * ct1 = t1 condition
-  * ct3 = t1.5 condition
-  * ct5 = t2 condition
-  * ct7 = t2.5 condition
-  * ct9 = t3 condition
 * RX
   * Single-target pure damage
     * dX at Med range
@@ -745,80 +638,32 @@ Standard for all ranks:
     * dX-2l at Ext range
     * dX-1 melee retributive with Deep attune
     * dX-2 Med range retributive with Deep attune
+    * dX-1 at Short range twice (immediately and during next action)
     * dX-2 at Med range twice (immediately and during next action)
-    * dX-1l at Med range, doubled if you beat an extra defense
+    * dX-1 at Med range, maximized if you beat an extra defense
     * dX-2 with -2 accuracy as a minor action (deep attune)
     * dX-2 with -2 accuracy as a minor action (sustain)
+    * dX+1 at Med range with one round delay (must be same target in round 1 and 2)
+    * dX at Med range with one round delay (choose target in round 2)
+    * dX+2 adjacent (free hand, but not vs Reflex)
+    * dX+1 adjacent (Grasp vs Reflex)
   * AOE
-    * dX-2 at tX area
-    * dX at t1 area
-    * dX-1 at t(0.5X) area?
+    * dX-2 in tX area
+    * dX in t1 area
+    * dX-1 in t(0.5X) area?
+    * dX-2 in tX-2 area, Sustain (minor), no enemies-only
+    * dX-2 in t(0.5X) zone, repeat next round so enemies can escape, no enemies-only
+    * dX+1 in tX zone with a 1-round delay so creatures can escape, no enemies-only
+    * dX-1 in tX self-based area (radius/cone/etc) with a 1-round delay, area chosen in second round
   * Damage + debuff
-    * dX at Short/Grasp range:
-      * ctX debuff condition if lose HP
-      * ct(X-2) debuff condition if beat extra defense
-      * ct(X-4) debuff condition if take damage
-    * dX-1 at Med range / in t1 area:
-      * ctX debuff condition if lose HP
-      * ct(X-2) debuff condition if beat extra defense
-      * ct(X-4) debuff condition if take damage
-    * dX-2 at Med range / in t1 area:
-      * ctX+2 debuff condition if lose HP
-      * ctX debuff condition if beat extra defense
-      * ct(X-2) debuff condition if take damage
+    * See "Rebalanced Debuffs"
 * Damage over time
   * Instead of dealing dX damage:
     * dX-2 immediately and during next action
     * dX-1 immediately, again during next action if it lost HP the first time
-    * dX-2l as a condition
-    * dX-2l as a sustained single-target effect (heat metal)
-    * dX-1 as a removable condition (fire Dex check)
-
-* R1
-  * Single-target debuff
-    * d1 at Short range:
-      * t1 debuff condition if lose HP
-      * t0.5 debuff condition if beat extra defense
-* R2
-  * Single-target debuff
-    * d1 at Short range:
-      * t0.5 debuff condition if take damage
-      * t1 debuff condition if beat extra defense
-      * t1.5 debuff condition if lose HP
-    * d1 at Med range:
-      * t1 debuff condition if lose HP
-      * t0.5 debuff condition if beat extra defense
-    * d1 at Grasp range:
-      * t0.5 debuff condition if take damage
-      * t1.5 debuff condition if lose HP
-* R3
-  * Single-target debuff
-    * d1 at Med range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-    * d2 at Med range:
-      * t0.5 debuff condition if take damage
-      * t1 debuff condition if take beat extra defense
-      * t1.5 debuff condition if lose HP
-* R4
-  * Single-target debuff
-    * d3 at Grasp range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-* R5
-  * Single-target debuff
-    * d4 at Med range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-* R6
-  * Single-target debuff
-    * d5 at Grasp range:
-      * t1.5 debuff condition if take damage
-* R7
-  * Single-target debuff
-    * d5 at Med range:
-      * t2 debuff condition if take damage
-      * t3 debuff condition if lose HP
+    * dX-3 as a standard action removable condition condition
+    * dX-3 as a sustained single-target effect?? (heat metal)
+    * dX-2 as a movement-removable condition (fire Dex check)
 
 ## Accuracy-Modified Spell Damage Scaling
 
@@ -844,7 +689,7 @@ At rank 6, a +2d weapon provides (127%/118%) damage.
 At rank 4, a +1d4 staff provides (125%/116%) damage.
 At rank 6, a +1d8 staff provides (123%/114%) damage.
 
-## Impact/Keen
+## Keen
 The simple baseline for a weapon improvement is about 17% more damage (0.6 accuracy -> 0.7 accuracy).
 
 Assume a 10% crit chance from aggressive accuracy-maximizing/crit-fishing.
@@ -852,17 +697,30 @@ That means you hit on a 1, and are +5 accuracy over normal, so glancing blows ar
 Example: +0 accuracy vs AD 1. You would crit on any explosion, but wouldn't crit a non-exploding 10.
 Total damage per round starts at 1.11x weapon damage.
 
-### Keen
-
 Keen is +4 accuracy to crits, so +4 vs AD 1. Crit on 7-10, and 4% chance to double-crit (10 -> 7/8/9/10).
 Total damage per round is 1.44x weapon damage, or 30% more. That seems appropriate for how extreme this scenario is.
 If Keen wasn't a significant damage improvement in an ultra crit-optimized scenario, it would be pointless.
 
 In a baseline scenario of 0.65x weapon damage per round, Keen upgrades the 5% crit chance to a 9% crit chance, so about 0.7 total wdpr.
 
-### Impact
+## Conditional Extra Damage Effects
 
-Impact is 70-80% more damage depending on whether the damage is primarily d6 or d10.
-If it's 70% more damage, total damage per round is (0.9 * 1) + (0.1 * 2 * 1.7) = 1.24x weapon damage.
+### Must Beat Two Defenses
 
-In a baseline scenario of 0.65x weapon damage per round, Impact increases the 5% crit chance to 3.4x normal damage instead of 2x normal damage, so about 0.72 wdpr.
+Hard to do math to validate how important this is. Estimate that it's about the same as -2 accuracy. On a base hit rate of 60%, -2 accuracy is the same as dealing 66% of normal damage, so it needs +50% damage to be reasonable. From "Higher Rank Damage Scaling", using an x+2 scaling is roughly +50% damage.
+
+Conclusion: at rank X, deal dr(X+2) damage. If the result would be dr8 or higher, use "high power" scaling instead of regular scaling to limit the power from flat damage dice.
+
+### If Beat Extra Defense
+
+This applies to spells that deal damage if you beat one defense, and then have an increased effect if you also beat an extra defense. The simplest way to represent this is "if you also beat X defense, double damage" or "if you also beat X defense, maximum damage", since it's annoying to dynamically modify the actual dice pool situationally.
+
+Overall, this should deal about 40% more damage when it works, since it has a better fallback than "must beat two defenses" but is useful in very similar situations.
+
+If the base damage is 75% of a "normal" damaging effect, maximizing damage deals about 135% of base damage.
+
+Conclusion: at rank X, deal dr(X-1) damage, maximized if you beat an extra defense.
+
+### If Hit With Two Weapons
+
+60% hit rate, so 36% chance of hitting with both weapons. About the same as "must beat two defenses", given the limitations.

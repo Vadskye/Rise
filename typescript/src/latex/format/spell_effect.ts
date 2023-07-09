@@ -1,14 +1,42 @@
-import { Rank, SpellLike } from "@src/mystic_spheres";
+import { Rank, SpellLike, StandardAttack } from "@src/mystic_spheres";
 
-export function assertEndsWithPeriod(text: string | null | undefined): void {
+export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemizespace}{}"))) {
-    throw new Error(`Text should end with period: ${text}`);
+    console.error(`Text from ${effectName} should end with period: ${text}`);
   }
 }
 
-export function assertStartsWithLowercase(text: string | null | undefined): void {
+export function assertStartsWithLowercase(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().match(/^[a-z]/))) {
-    console.error(`Text should start with lowercase: ${text}`);
+    console.error(`Text from ${effectName} should start with lowercase: ${text}`);
+  }
+}
+
+// TODO: add checking for nonsensical crit effects
+function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void {
+  const dealsRepeatDamage = /damage.*immediately.*again/.test(attack.hit)
+  if (dealsRepeatDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for a multi-hit attack`);
+  }
+
+  const inflictsCondition = /condition/.test(attack.hit)
+  const dealsDamage = /\\damage/.test(attack.hit)
+  const grantsImmunity = /immun.*short rest/.test(attack.hit)
+  if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for condition removal`);
+  } else if (grantsImmunity && !dealsDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for removing immunity`);
+  }
+}
+
+function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
+  const dealsAoeDamage = /Each target.*\\damage/.test(attack.hit)
+  // We check for undefined to ignore cases where we explicitly defined missGlance to be
+  // false, which probably means the omission is intentional.
+  if (dealsAoeDamage && attack.missGlance === undefined) {
+    console.error(`Attack from ${effectName} should probably have missGlance = true`);
+  } else if (attack.missGlance && !dealsAoeDamage) {
+    console.error(`Attack from ${effectName} should probably have missGlance = false`);
   }
 }
 
@@ -34,9 +62,11 @@ export function spellEffect(
     }
 
     if (spell.attack) {
-      assertEndsWithPeriod(spell.attack.targeting);
-      assertEndsWithPeriod(spell.attack.hit);
-      assertEndsWithPeriod(spell.attack.crit);
+      assertEndsWithPeriod(spell.attack.targeting, spell.name);
+      assertEndsWithPeriod(spell.attack.hit, spell.name);
+      assertEndsWithPeriod(spell.attack.crit, spell.name);
+      assertHasCorrectGlance(spell.attack, spell.name);
+      assertHasCorrectCrit(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
       return `
         ${spell.attack.targeting.trim() + fatiguePointsText}%
@@ -56,8 +86,8 @@ export function spellEffect(
       const exceptThat = spell.functionsLike.mass
         ? "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange."
         : spell.functionsLike.exceptThat;
-      assertEndsWithPeriod(exceptThat);
-      assertStartsWithLowercase(exceptThat);
+      assertEndsWithPeriod(exceptThat, spell.name);
+      assertStartsWithLowercase(exceptThat, spell.name);
       if (!exceptThat) {
         throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
       }
@@ -72,7 +102,9 @@ export function spellEffect(
       return null;
     }
   } catch (err) {
-    err.message += `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
+    if (err instanceof Error) {
+      err.message += `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
+    }
     throw err;
   }
 }

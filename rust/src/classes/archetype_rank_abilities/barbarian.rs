@@ -138,7 +138,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
                         \item You gain a +2 accuracy bonus.
-                        \item If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+                        \item If you roll a 9 on an attack roll, it \glossterm{explodes} (see \pcref{Exploding Attacks}).
                             This does not affect bonus dice rolled for exploding attacks.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
@@ -160,7 +160,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked during your \ability{rage} ability.
+                You are immune to being \frightened and \panicked during your \ability{rage} ability.
             ",
             modifiers: None,
         },
@@ -386,17 +386,17 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who are at less than their maximum \glossterm{hit points}.
-                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a melee \glossterm{strike}.
 
                     \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
                     If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
 
                     \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
-                    You can only apply this enhancement to manuevers which cause you to make a melee \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a melee \glossterm{strike}.
 
                     \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
                     If your enhancement level is at least 4, the area triples instead.

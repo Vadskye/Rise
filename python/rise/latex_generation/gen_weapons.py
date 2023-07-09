@@ -227,18 +227,18 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Finesse",
-            rank=3,
+            rank=4,
             description="""
-                If your Dexterity is at least 3, you gain a +1 accuracy bonus with strikes using this weapon.
+                If your Dexterity is at least 4, you gain a +1 accuracy bonus with strikes using this weapon.
             """,
-            short_description="Grants +1 accuracy if you have 3 Dex",
+            short_description="Grants +1 accuracy if you have 4 Dex",
             upgrades=[
                 Upgrade(
-                    rank=6,
+                    rank=7,
                     description="""
-                        If your Dexterity is at least 5, you gain a +2 accuracy bonus with strikes using this weapon.
+                        If your Dexterity is at least 6, you gain a +2 accuracy bonus with strikes using this weapon.
                     """,
-                    short_description="Grants +2 accuracy if you have 5 Dex",
+                    short_description="Grants +2 accuracy if you have 6 Dex",
                 ),
             ],
         ),
@@ -434,22 +434,13 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Screaming",
-            rank=1,
+            rank=3,
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it weapon emits a blood-curdling scream.
-                This causes you and that creature to become \\shaken by each other as a \\glossterm<condition>.
+                This causes you and that creature to become \\frightened by each other as a \\glossterm<condition>.
             """,
             tags=["Attune (deep)", "Emotion"],
-            short_description="Screams, making you and struck foes shaken",
-            upgrades=[
-                Upgrade(
-                    rank=5,
-                    description="""
-                        You and the struck creature are \\frightened by each other instead of shaken.
-                    """,
-                    short_description="Screams, making you and struck foes frightened",
-                ),
-            ],
+            short_description="Screams, frightening you and struck foes",
         ),
     ]
 
@@ -458,7 +449,7 @@ def generate_weapons():
             name="Routing",
             rank=2,
             description="""
-                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
+                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\frightened or \\panicked.
             """,
             short_description="Grants +1 accuracy vs scared foes",
             upgrades=[
@@ -759,11 +750,12 @@ def generate_weapons():
             name="Vorpal",
             rank=7,
             description="""
-                Critical hits with melee \\glossterm<strikes> using this weapon roll triple damage dice instead of double damage dice.
-                A double critical hit would deal quadruple damage dice, and so on.
-                If you make a creature lose at least half its maximum \\glossterm<hit points> with a melee critical hit using this weapon, it immediately dies.
+                As a standard action, you can make a melee \\glossterm<strike> using this weapon that can decapitate enemies.
+                The strike deals triple \\glossterm<weapon damage>.
+                If you get a critical hit against a creature and it loses hit points, it immediately dies.
+                Creatures that do not have a head are immune to this death effect.
             """,
-            short_description="Inflicts lethal critical hits",
+            short_description="Can decapitate foes",
         )
     )
 

@@ -164,11 +164,11 @@ Each debuff rank is +4 spell ranks over its predecessor
 
 * Rank 0.5
   * Generally do relatively little
-  * Conditions: deafened, shaken
+  * Conditions: deafened
   * Instant effects: push 15'
 * Rank 1
   * Generally give -1 to a category (accuracy/defenses)
-  * Conditions: Dazed, dazzled, shaken
+  * Conditions: dazzled
   * Instant effects: knockback 15', push 30', teleport 30'
   * Special: end of round medium damage (DR 5/10 check to remove), unable to regain HP (-1 level), lose one attunement, enraged (cannot take non-attack actions)
 * Rank 1.5
@@ -197,9 +197,7 @@ have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
   * -4 ranks: debuff only applies when the target loses HP from the attack
-  * -2 ranks: debuff only applies if you beat an additional defense (strike-based attacks only)
-  * +0 ranks: trade -1a for +1d or vice versa
-  * +0 ranks: trade -1a/-1d for minor benefit
+  * -2 ranks: debuff only applies if you beat an additional defense
   * +0 rank: add specific crit effect to non-damaging effect; standard crit effects:
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time

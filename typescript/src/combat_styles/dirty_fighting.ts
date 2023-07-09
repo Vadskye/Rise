@@ -6,25 +6,14 @@ export const dirtyFighting: CombatStyle = {
 
   maneuvers: [
     {
-      name: 'Dazing Fist',
-
-      // -2 ranks / non-weak due to unarmed limitation
-      effect: `
-        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each damaged creature becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
-      `,
-      rank: 1,
-    },
-
-    {
       name: 'Stunning Fist',
 
-      // -2 ranks due to unarmed limitation
+      // +2r for condition purposes due to unarmed limitation
       effect: `
-        Make a \\glossterm{weak strike} using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each damaged creature becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -32,7 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        Each creature that loses \\glossterm{hit points} from the strike takes \\damagerankseven{bludgeoning} if your attack result beats its Fortitude defense.
+        If the target loses hit points, it takes \\damagerankseven{bludgeoning}.
       `,
       rank: 5,
     },
@@ -142,7 +131,6 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         exceptThat: `
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
-          Any accuracy bonuses you have that apply specifically to the \\textit{disarm} ability also apply to this ability.
         `,
         name: 'disarm',
       },
@@ -172,7 +160,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'maneuver',
         exceptThat: `
-          the damage increases to \\damageranksix{bludgeoning}.
+          the damage increases to \\damageranksixhigh{bludgeoning}.
         `,
         name: 'battering ram',
       },
@@ -183,7 +171,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Alchemical Strike',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
+        Make a melee strike.
         In addition, you can throw a tanglefoot bag, vial of alchemist's fire, or similar small object at a target of the strike.
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
@@ -205,7 +193,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
+        If your attack beats the target's Fortitude defense, it falls \\prone.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
     },
@@ -215,7 +204,17 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Each damaged creature is \\slowed as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
+      `,
+      rank: 3,
+    },
+
+    {
+      name: 'Anklesprainer+',
+
+      effect: `
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -225,7 +224,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You may switch places with one damaged creature that is the same \\glossterm{size category} as you or smaller.
+        If the target takes damage, you may switch spaces with it, as long as this would not result in either of you entering a occupied space.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
     },
@@ -235,7 +235,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        As a \\glossterm{condition}, each creature that loses \\glossterm{hit points} from the strike treats you as being \\trait{invisible} (see \\pcref{Invisible}).
+        If the target takes damage and your attack result beats its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
     },
@@ -245,7 +245,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each damaged creature is \\dazzled as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        If the target takes damage and your attack result beats its Reflex defense, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -255,7 +255,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition} if your attack result beats its Reflex defense.
+        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -266,7 +266,6 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your attack result beats a target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
-        After you attack a creature with this ability, it \\glossterm{briefly} becomes immune to the extra damage from this ability.
       `,
       rank: 3,
     },
@@ -277,7 +276,6 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your attack result beats a target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
-        After you attack a creature with this ability, it \\glossterm{briefly} becomes immune to the extra damage from this ability.
       `,
       rank: 7,
     },

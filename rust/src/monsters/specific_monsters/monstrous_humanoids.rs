@@ -80,7 +80,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             Skill::Awareness,
         ]),
         weapons: vec![
-            StandardWeapon::MultipedalGore.weapon(),
+            StandardWeapon::MultipedalHorns.weapon(),
         ],
     }.monster()));
 

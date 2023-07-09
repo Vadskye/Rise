@@ -1,4 +1,6 @@
 import { CombatStyle } from '.';
+// TODO: move this to a more generally shared location
+import {CONDITION_CRIT } from '../mystic_spheres/constants';
 
 export const heraldOfWar: CombatStyle = {
   name: 'Herald of War',
@@ -17,13 +19,13 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Dazing Roar',
+      name: 'Stunning Roar',
 
       attack: {
-        crit: `Each target is \\stunned instead of dazed.`,
-        hit: `Each target is \\dazed as a \\glossterm{condition}.`,
+        crit: CONDITION_CRIT,
+        hit: `Each target with no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Compulsion'],
@@ -31,13 +33,13 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Stunning Roar',
+      name: 'Stunning Roar+',
 
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: CONDITION_CRIT,
         hit: `Each target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Compulsion'],
@@ -47,9 +49,8 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Goading Roar',
 
-      // -1r for meleeish range goad
       attack: {
-        crit: `The condition must be removed twice before the effect ends.`,
+        crit: CONDITION_CRIT,
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -63,10 +64,9 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Roar',
 
       attack: {
-        crit: `Each target is \\frightened instead of shaken.`,
-        hit: `Each target is \\shaken by you as a \\glossterm{condition}.`,
+        hit: `Each target with no remaining \\glossterm{damage resistance} is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Emotion'],
@@ -77,10 +77,9 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Roar+',
 
       attack: {
-        crit: `Each target is \\panicked instead of frightened.`,
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Emotion'],
@@ -91,25 +90,26 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout',
 
       attack: {
-        hit: `Each target takes \\damagerankthreelow{bludgeoning}.`,
+        hit: `Each target takes \\damagerankone{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
         `,
       },
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `Each target takes \\damageranksevenlow{bludgeoning}.`,
+        hit: `Each target takes \\damagerankfourhigh{bludgeoning}.`,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
       },
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -132,14 +132,14 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{bludgeoning}.
-          If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
+          The target takes \\damagerankthreehigh{bludgeoning}.
+          If it takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
         `,
       },
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -158,7 +158,8 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Each damaged creature is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
     },
@@ -167,34 +168,38 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Blow',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Each damaged creature is \\shaken by you if your attack result beats its Mental defense.
+        Make a melee \\glossterm{strike}.
+        If the target loses \\glossterm{hit points}, it becomes \\frightened by you.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 1,
-      tags: ['Emotion'],
+      tags: [],
     },
 
     {
       name: 'Fearsome Blow+',
 
       effect: `
-        Make a \\glossterm{strike}.
-        Each damaged creature is \\frightened by you if your attack result beats its Mental defense.
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        If the target takes damage, it becomes \\frightened by you.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
-      tags: ['Emotion'],
+      tags: [],
     },
 
-    // The rank here is pretty ambiguous
+    // The rank here is pretty ambiguous. The baseline for a small radius enemies-only
+    // frighten would be r3. Making it conditional on a melee strike is maybe fine? This
+    // can't frighten and deal damage to the same target, so it's pretty situational.
     {
       name: 'Awe-Inspiring Strike',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
-        If you deal damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each target is \\shaken by you as a \\glossterm{condition}.
+        Make a melee strike.
+        If the target takes damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        On a hit, each target is \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {

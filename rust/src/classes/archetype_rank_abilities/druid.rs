@@ -81,7 +81,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Elemental Influence",
             is_magical: true,
-            rank: 2,
+            rank: 3,
             description: r"
                 You can use the \textit{elemental influence} ability as a standard action.
                 \begin{magicalsustainability}{Elemental Influence}{\abilitytag{Sustain} (standard)}
@@ -117,16 +117,25 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Elemental Power",
             is_magical: true,
+            rank: 3,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
+            ",
+            modifiers: Some(vec![Modifier::Power(1)]),
+        },
+        RankAbility {
+            name: "Elemental Power+",
+            is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                The power bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Elemental Balance",
             is_magical: true,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a benefit from each of the four elements.
                 \begin{itemize}
@@ -149,7 +158,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
-                    \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
+                    \item Fire: You are immune to fire damage.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
             ",
@@ -467,8 +476,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You do not need to use \glossterm{free hands} to climb (see \pcref{Climb}).
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
-                        The first poison stage makes the target \dazed as long as it is poisoned.
-                        The third poison stage makes the target \stunned instead of dazed.
+                        Its stage 1 effect makes the target \glossterm{briefly} \stunned.
+                        Its stage 3 effect makes the target stunned while the poison lasts.
 
                         \rankline
                         \rank{3} You gain a \plus1 accuracy bonus with all poisons.
@@ -559,7 +568,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Shifting Strike",
-            is_magical: true,
+            is_magical: false,
             rank: 3,
             description: r"
                 You can use the \textit{shifting strike} ability as a standard action.
@@ -648,7 +657,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
                         \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your your level (see \tref{Character Advancement}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
+                        \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
                         \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
