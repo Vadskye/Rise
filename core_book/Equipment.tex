@@ -288,23 +288,25 @@ Items are divided into five broad categories, described below.
 
     \subsection{Weapon Tags}\label{Weapon Tags}
         Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
-        \weapontagdef{Ammunition} This weapon is designed to be fired by a \weapontag{Projectile} weapon or thrown in large quantities.
-        It is cheaper to buy and craft, but it is usually \glossterm{broken} after being fired or thrown.
-        Ammunition cannot have magic weapon properties.
+        \weapontagdef{Ammunition} When you hit with a strike using this weapon, it becomes \glossterm{broken}.
+        It cannot have magic weapon properties.
+        However, whenever you buy or craft this weapon, you receive multiple copies, as indicated in the table below.
         \weapontagdef{Compact} This weapon is unusually small.
         It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
         This makes it easier to conceal (see \pcref{Sleight of Hand}).
         In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-        \weapontagdef{Forceful} Whenever you deal damage to a target no more than one size category larger than you with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
+        \weapontagdef{Forceful} Whenever you deal damage to a target with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
         On a critical hit, this knockback distance is doubled.
+        This is a \abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
         \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
         You normally need two hands to use a Heavy weapon.
         If you have a Strength of 3 or higher, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
         While holding a Heavy weapon in two hands, you gain a \plus1d bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
         This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
-        \weapontagdef{Impact} When you get a \glossterm{critical hit} with this weapon, you deal maximum \glossterm{weapon damage}.
-        This does not affect any \glossterm{extra damage} that applies to the attack.
+        % 20% chance of +5.5a is slightly better than +1a, but only for getting critical hits
+        \weapontagdef{Impact} If you roll an 8 or 9 on an attack roll with this weapon, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
+        This does not affect bonus dice rolled for exploding attacks.
         \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         \weapontagdef{Light} Light weapons are smaller and easier to handle than other weapons.
         Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Wielding}).
@@ -473,7 +475,7 @@ Items are divided into five broad categories, described below.
                 Spears                            &               &             &                          &                             &                                             \\
                 \tind Greatspear                  & \plus0        & 1d10        & Piercing                 & 0 (10 gp)                   & Heavy, Long                                 \\
                 \tind Javelin                     & \plus0        & 1d6         & Piercing                 & 0 (10 gp)                   & Thrown (60/120)                             \\
-                \tind Lance\fn{2}                 & \plus0        & 1d8         & Piercing                 & 0 (10 gp)                   & Heavy, Long, Mounted                        \\
+                \tind Lance (5)\fn{2}             & \plus0        & 1d10        & Piercing                 & 0 (10 gp)                   & Ammunition, Long, Mounted                        \\
                 \tind Ranseur                     & \plus1        & 1d8         & Piercing                 & 0 (10 gp)                   & Heavy, Long                                 \\
                 \tind Spear                       & \plus0        & 1d6         & Piercing                 & 0 (10 gp)                   & Thrown (30/60), Versatile Grip              \\
                 \tind Spontoon                    & \plus1        & 1d6         & Piercing                 & 0 (10 gp)                   & Versatile Grip                              \\
@@ -606,6 +608,8 @@ Items are divided into five broad categories, described below.
         \parhead{Fire Arrows} These arrows are treated with alchemist's fire so they can be ignited before being shot.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
         It takes a \glossterm{free action} to ignite a fire arrow assuming you have access to an active flame the size of a torch or larger.
+        \parhead{Lance} A lance can only be used effectively while mounted.
+        Using a lance on foot imposes a \minus2 accuracy penalty for not being \glossterm{proficient} with the weapon.
         \parhead{Lightning Arrows} These arrows are treated with a reactive alchemical substance so they deal electricity damage on contact.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
         \parhead{Longbow} You need both hands to fire a bow. One hand is free when not firing the bow. Loading a bow is a free action that requires one \glossterm{free hand} while holding the bow in the other hand.
@@ -740,15 +744,13 @@ Items are divided into five broad categories, described below.
                 \lcaption{Donning Armor}
                 \begin{dtabularx}{\columnwidth}{>{\lcol}X c c}
                     \tb{Armor Type}   & \tb{Don}          & \tb{Remove} \tableheaderrule
-                    Light shield      & 1 minor action    & 1 minor action           \\
-                    Medium shield     & 1 standard action & 1 standard action       \\
-                    Tower shield      & 1 standard action & 1 standard action       \\
-                    Light body armor  & 1 minute          & 1 minute\fn{1}          \\
-                    Medium body armor & 4 minutes\fn{1}   & 1 minute\fn{1}          \\
-                    Heavy body armor  & 4 minutes\fn{2}   & 1d4\plus1 minutes\fn{1} \\
+                    Light shield      & 1 minor action    & 1 minor action    \\
+                    Medium shield     & 1 standard action & 1 standard action \\
+                    Tower shield      & 1 standard action & 1 standard action \\
+                    Light body armor  & 1 minute          & 1 minute          \\
+                    Medium body armor & 5 minutes         & 1 minute          \\
+                    Heavy body armor  & 5 minutes         & 5 minutes         \\
                 \end{dtabularx}
-                1 If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time. \\
-                2 The wearer must have help to don this armor.
             \end{dtable}
 
         \subsubsection{Weight and Size}
@@ -799,7 +801,6 @@ Items are divided into five broad categories, described below.
                 \tind Full plate      & \plus4       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal         & 3 (1,000 gp) \\
                 \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood & 1 (40 gp)    \\
                 Extras                &              &                        &                  &              &                &               &              \\
-                \tind Locked gauntlet & \tdash       & \tdash                 & Special          & \tdash       & \tdash         & Metal         & 0 (10 gp)    \\
                 \tind Shield spikes   & \tdash       & \tdash                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
             \end{dtabularx}
             1 The hand holding the shield is not free, which may limit your actions. \\

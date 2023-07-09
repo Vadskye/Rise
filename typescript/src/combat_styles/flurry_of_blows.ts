@@ -76,7 +76,8 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
-        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
+        Each damaged creature falls \\prone if your attack result beats its Fortitude defense.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 5,
     },
@@ -96,8 +97,8 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Barrage',
 
       effect: `
-        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon with a -4 penalty to \\glossterm{accuracy}.
-        For each previous consecutive round that you used this ability in the same location, you reduce the accuracy penalty by 1.
+        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon with a -4 accuracy penalty.
+        For each previous consecutive round that you used this ability in the same location, you reduce this accuracy penalty by 1.
       `,
       rank: 1,
     },
@@ -106,20 +107,22 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Shrapnel Burst',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea cone from you.
-        This strike costs five projectiles.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
+        The strike targets everything in a \\smallarea cone from you.
+        It costs five projectiles.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Shrapnel Burst+',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\largearea cone from you.
-        This strike costs ten projectiles.
+        Make a ranged \\glossterm{strike} with double \\glossterm{weapon damage} using a \\weapontag{Projectile} weapon.
+        The strike targets everything in a \\largearea cone from you.
+        It costs ten projectiles.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -129,7 +132,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -177,7 +180,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of three extra strikes.
+        For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of two extra strikes.
       `,
       rank: 5,
     },
@@ -199,7 +202,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -210,35 +213,22 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        Each damaged creature is \\stunned as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
     },
 
     {
-      name: 'Disorienting Flurry',
+      name: 'Dazzling Flurry+',
 
-      // reroll is about +2 ranks, weak strike dazed would normally be r1, this is
-      // probably strong but maybe okay?
+      // reroll is about +2 ranks, weak strike dazzled would normally be r1, this is
+      // probably weak but maybe okay?
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a strike.
         You may reroll the accuracy roll and take the highest result.
-        Each damaged creature is \\dazed as a \\glossterm{condition} if your attack result beats its Mental defense.
+        If the target takes damage, it becomes \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 3,
-    },
-
-    {
-      name: 'Disorienting Flurry+',
-
-      // reroll is about +2 ranks, strike stunned would normally be r5, this is
-      // probably strong but maybe okay?
-      effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        You may reroll the accuracy roll and take the highest result.
-        Each damaged creature is \\stunned as a \\glossterm{condition} if your attack result beats its Mental defense.
-      `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -247,7 +237,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },

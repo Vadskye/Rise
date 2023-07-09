@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const summoning: MysticSphere = {
   name: 'Summoning',
@@ -35,7 +36,7 @@ export const summoning: MysticSphere = {
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
           \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement}).
           \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception.
+          \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
           \\item Its \\glossterm{land speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
@@ -63,7 +64,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranktwolow{physical}.
-          However, its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -76,12 +77,11 @@ export const summoning: MysticSphere = {
     {
       name: 'Empowered Summon Offensive Monster',
 
-      // +2 levels for +2acc, +2 levels for +1d
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranksixlow{physical}.
-          However, its \\glossterm{hit points} and \\glossterm{damage resistance} are halved.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -132,7 +132,7 @@ export const summoning: MysticSphere = {
           If it loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against anything on solid ground within \\shortrange.
+          Make an attack vs. Armor against anything that is \\glossterm{grounded} within \\shortrange.
         `,
       },
       narrative: `
@@ -148,11 +148,11 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{bludgeoning}.
+          The target takes \\damagerankfive{bludgeoning}.
           If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against anything on solid ground within \\medrange.
+          Make an attack vs. Armor against anything on solid ground within \\shortrange.
         `,
       },
       narrative: `
@@ -172,7 +172,7 @@ export const summoning: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything on solid ground in a \\medarealong, 5 ft. wide line from you.
+          Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\medarealong, 5 ft. wide line from you.
           You summon a Medium creature that tramples through the area before disappearing.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
@@ -189,7 +189,7 @@ export const summoning: MysticSphere = {
         hit: `Each target takes \\damageranktwo{bludgeoning}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything on solid ground in a \\hugearealong, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\hugearealong, 10 ft. wide line from you.
           You summon a Large creature that tramples through the area before disappearing.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
@@ -214,7 +214,7 @@ export const summoning: MysticSphere = {
           \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Character Advancement}).
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half your level \\add half your Perception, plus any accuracy modifier for the chosen weapon.
+          \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception, plus any accuracy modifier for the chosen weapon.
           \\item It has a 30 foot \\glossterm{fly speed} and no \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 5 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
@@ -225,7 +225,7 @@ export const summoning: MysticSphere = {
         The weapon prefers to avoid accuracy and damage penalties that would be imposed by cover or special weapon grips.
         It choses randomly if all possible targets are equally easy to attack.
 
-        When the weapon hits hits, it deals damage appropriate for your chosen weapon.
+        When the weapon hits, it deals damage appropriate for your chosen weapon.
         This damage is improved by your \\glossterm{magical power} as normal for \\magical attacks.
       `,
       rank: 3,
@@ -290,14 +290,12 @@ export const summoning: MysticSphere = {
     {
       name: 'Summon Water Elemental',
 
-      // original targets: One unoccupied square on stable ground within \medrange
-
       functionsLike: {
         exceptThat: `
-        the summoned creature appears to be an water elemental.
-        Its attacks deal \\damagerankonelow{bludgeoning}.
-        It has a 30 foot \\glossterm{swim speed}.
-        However, it is \\glossterm{vulnerable} to electricity damage.
+          the summoned creature appears to be an water elemental.
+          Its attacks deal \\damagerankonelow{bludgeoning}.
+          It has a 30 foot \\glossterm{swim speed}.
+          However, it is \\glossterm{vulnerable} to electricity damage.
         `,
         name: 'summon monster',
       },
@@ -310,13 +308,11 @@ export const summoning: MysticSphere = {
     {
       name: 'Summon Air Elemental',
 
-      // original targets: One unoccupied square on stable ground within \medrange
-
       functionsLike: {
         exceptThat: `
-        the summoned creature appears to be an air elemental.
-        Its attacks deal \\damagerankthreelow{bludgeoning}.
-        It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability} and a 30 foot \\glossterm{height limit}.
+          the summoned creature appears to be an air elemental.
+          Its attacks deal \\damagerankthreelow{bludgeoning}.
+          It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability} and a 30 foot \\glossterm{height limit}.
         `,
         name: 'summon monster',
       },
@@ -377,7 +373,9 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from your location.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies.
+
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 1,
@@ -395,7 +393,9 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of dogs appears in a \\medarea radius \\glossterm{zone} from your location.
           The dogs disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 3,
@@ -414,7 +414,9 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
           The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 5,
@@ -433,7 +435,9 @@ export const summoning: MysticSphere = {
         targeting: `
           A swarm of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies in the eyes.
+
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 6,
@@ -452,7 +456,9 @@ export const summoning: MysticSphere = {
         targeting: `
           A horde of bears appears in a \\largearea radius \\glossterm{zone} from your location.
           The bears disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to maul your enemies.
+
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 7,
@@ -483,11 +489,11 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the summoned creature appears to be a snake.
-        Its attacks deal \\damagerankthreelow{physical}.
-        Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
-        It is immediately \\dazed while it is poisoned.
-        The poison's third stage causes the target to become \\stunned as long as it is poisoned.
+          the summoned creature appears to be a snake.
+          Its attacks deal \\damagerankthreelow{physical}.
+          Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
+          Its stage 1 effect makes the target \\stunned while the poison lasts.
+          Its stage 3 effect makes the target \\blinded while the poison lasts.
         `,
         name: 'summon monster',
       },
@@ -500,10 +506,13 @@ export const summoning: MysticSphere = {
       name: 'Summon Annoying Insects',
 
       attack: {
-        crit: `The target is \\stunned instead of dazed.`,
-        hit: `The target is \\dazed as a \\glossterm{condition}.`,
+        crit: CONDITION_CRIT,
+        hit: `
+          A swarm of insects surround the target as a \\glossterm{condition}.
+          While it is below its maximum hit points, it is \\stunned.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       narrative: `
@@ -518,15 +527,15 @@ export const summoning: MysticSphere = {
       name: 'Intense Summon Annoying Insects',
 
       attack: {
-        crit: `The target is \\confused instead of dazed.`,
-        hit: `The target is \\stunned as a \\glossterm{condition}.`,
+        crit: CONDITION_CRIT,
+        hit: `
+          A swarm of insects surround the target as a \\glossterm{condition}.
+          While it is below its maximum hit points, it is \\confused.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      narrative: `
-        It's hard to concentrate on a fight when you keep being distracted by a swarm of sand flies that buzz right into your eyes.
-      `,
       rank: 5,
       scaling: 'accuracy',
       tags: ['Manifestation'],

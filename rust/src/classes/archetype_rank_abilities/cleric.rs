@@ -393,6 +393,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
     return vec![
+        // enemies in medium radius is a t3 area
+        // assuming -1ct for brief, stunned would be t1, for a total of a r2 effect??
         RankAbility {
             name: "Denounce the Heathens",
             is_magical: false,
@@ -403,12 +405,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \glossterm{briefly} \dazed.
+                    \hit Each target is \glossterm{briefly} \stunned.
 
                     \rankline
-                    \rank{3} Each target with no remaining \glossterm{damage resistance} is \stunned instead of dazed.
-                    \rank{5} Each target is stunned instead of dazed.
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \confused instead of stunned.
+                    \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
+                    \rank{5} Each target is stunned as a condition instead of only briefly.
+                    \rank{7} Each target with no remaining \glossterm{damage resistance} is also briefly \confused.
                 \end{activeability}
             ",
             modifiers: None,
@@ -470,6 +472,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // t1.5 debuff in t5 area is a r6 effect
         RankAbility {
             name: "Condemn the Fearful",
             is_magical: false,
@@ -478,14 +481,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{activeability}{Condemn the Fearful}
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius from you.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \hugearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is afraid of you as a \glossterm{condition}.
-                    If it has \glossterm{damage resistance} remaining, it is \shaken by you.
-                    Otherwise, it is \frightened by you.
+                    \hit Each target is \frightened of you as a \glossterm{condition}.
 
                     \rankline
-                    \rank{7} The area increases to a \hugearea radius.
+                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \panicked by you instead of frightened.
                 \end{activeability}
             ",
             modifiers: None,

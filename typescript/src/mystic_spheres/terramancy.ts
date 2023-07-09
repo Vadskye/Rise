@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const terramancy: MysticSphere = {
   name: 'Terramancy',
@@ -9,11 +10,7 @@ export const terramancy: MysticSphere = {
   // In general, -1r if it only works against grounded
   // +1r for +2acc vs grounded on stone or while grounded on stone
   specialRules: `
-    Some spells from this mystic sphere are more effective if you or the target are grounded.
-
-    \\spheredef{grounded} A grounded creature or object is standing on or otherwise supported by a stable surface that can support its weight.
-    The surface must be at least as large as the creature or object resting on it.
-    Some effects only work if the creature or object is grounded by a particular material, such as stone. 
+    Some spells from this mystic sphere are more effective if you or the target are \\glossterm{grounded}.
   `,
 
   cantrips: [
@@ -44,7 +41,7 @@ export const terramancy: MysticSphere = {
         hit: `The target takes \\damagerankone{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
-          You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
+          You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 1,
@@ -59,10 +56,62 @@ export const terramancy: MysticSphere = {
         hit: `The target takes \\damagerankfourhigh{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
-          You gain a +2 accuracy bonus if you are on a Medium or larger body of stone.
+          You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 4,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Boulder Heave',
+
+      attack: {
+        hit: `The target takes \\damagerankthree{bludgeoning}.`,
+        targeting: `
+          When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
+          If the area above you is occupied, this spell fails without effect.
+          During your next action, if that target is still within \\medrange, make an attack vs. Armor against it.
+          Otherwise, the boulder disappears and this spell is wasted.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Meteor',
+
+      // dX+1 for delay, +1dr for open area requirement
+      attack: {
+        hit: `Each target takes \\damageranksix{bludgeoning}.`,
+        missGlance: true,
+        targeting: `
+          When you cast this spell, you choose a \\medarea radius within \\medrange.
+          A meteor appears high in the sky over that area, falling down towards it.
+          During your next action, the meteor crashes into your chosen area, and you make an attack vs. Armor against everything in the area.
+          If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
+        `,
+      },
+      rank: 4,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Meteor Swarm',
+
+      functionsLike: {
+        name: 'meteor',
+        exceptThat: `
+          you can choose up to four separate areas within \\distrange, creating one meteor per area.
+          In addition, the damage increases to \\damageranknine{bludgeoning}.
+          Any individual creature can only be attacked by one meteor, even if it occupies multiple areas, and overlapping the areas has no benefit.
+        `,
+      },
+      rank: 7,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -79,7 +128,7 @@ export const terramancy: MysticSphere = {
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
           You gain a +1 accuracy bonus for each size category by which the target is larger than Medium.
-          This accuracy bonus is doubled if the target is not \\sphereterm{grounded}.
+          This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
       },
       narrative: `
@@ -91,32 +140,33 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: 'Shrapnel Blast',
+      name: 'Rockshard Blast',
 
       attack: {
-        hit: `Each target takes \\damagerankone{bludgeoning and piercing}.`,
+        hit: `Each target takes \\damageranktwo{bludgeoning and piercing}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against everything in a \\smallarea cone from you.
+          Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Mighty Shrapnel Blast',
+      name: 'Mighty Rockshard Blast',
 
       attack: {
-        hit: `Each target takes \\damagerankfivehigh{bludgeoning and piercing}.`,
+        hit: `Each target takes \\damagerankfourhigh{bludgeoning and piercing}.`,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Armor against everything in a \\medarea cone from you.
+          Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -145,7 +195,7 @@ export const terramancy: MysticSphere = {
 
       effect: `
         You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
-        In addition, you are always considered either \\sphereterm{grounded} or not grounded, whichever is more beneficial for you.
+        In addition, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
 
         For example, you would not take damage from the \\spell{earthquake} spell.
         You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
@@ -168,36 +218,33 @@ export const terramancy: MysticSphere = {
     {
       name: 'Earthspike',
 
-      // -1r for grounded, -1r for short range allows medium damage
-      // Reflex defense since it's coming up from the ground - you can't shield it, just
-      // dodge it
       attack: {
         hit: `
           The target takes \\damagerankone{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
+          Make an attack vs. Armor and Reflex against anything within \\medrange that is \\glossterm{grounded}.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Intense Earthspike',
+      name: 'Penetrating Earthspike',
 
       attack: {
         hit: `
-          The target takes \\damagerankfivehigh{piercing}.
+          The target takes \\damagerankfour{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange that is \\sphereterm{grounded}.
+          Make an attack vs. Reflex against anything within \\medrange that is \\glossterm{grounded}.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -223,45 +270,32 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: 'Tremor',
+      name: 'Rippling Earthwave',
 
-      // -1r for grounded
       attack: {
-        crit: `
-          Each target is also unable to stand up as a \\glossterm{condition}.
-          If it is somehow brought into a standing position, it will immediately fall and become prone again.
-        `,
-        // No relevant glance effect
         hit: `Each target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller \\sphereterm{grounded} creatures in a \\smallarea within \\shortrange.
+          Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in in a \\medarea cone from you.
         `,
       },
-      narrative: `
-        You create an highly localized tremor that rips through the ground.
-      `,
       rank: 3,
       scaling: 'accuracy',
     },
 
     {
-      name: 'Massive Tremor',
+      name: 'Massive Rippling Earthwave',
 
       functionsLike: {
-        name: 'tremor',
-        exceptThat: 'the area increases to a \\medarea radius within \\longrange.',
+        name: 'rippling earthwave',
+        exceptThat: 'the area increases to a \\hugearea cone.',
       },
-      narrative: `
-        You create an intense tremor that rips through the ground.
-      `,
       rank: 6,
       scaling: 'accuracy',
     },
 
     {
-      name: 'Earthquake',
+      name: 'Tremor',
 
-      // +2r for also next round, -1r for grounded
       attack: {
         hit: `
           Each target takes \\damagerankone{bludgeoning}.
@@ -269,7 +303,7 @@ export const terramancy: MysticSphere = {
         missGlance: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\glossterm{grounded}.
         `,
       },
       narrative: `
@@ -280,17 +314,16 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: 'Massive Earthquake',
+      name: 'Earthquake',
 
-      // this scales very well with area, so it pays the full +2r price for large and huge
       attack: {
         hit: `
-          Each target takes \\damagerankfivehigh{bludgeoning}.
+          Each target takes \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
-          The earth shakes in a \\hugearea radius \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\sphereterm{grounded}.
+          The earth shakes in a \\largearea radius \\glossterm{zone} around you.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\glossterm{grounded}.
         `,
       },
       narrative: `
@@ -306,14 +339,14 @@ export const terramancy: MysticSphere = {
       // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
       attack: {
         hit: `
-          If the target is Large or smaller and has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive{bludgeoning} as the earth grinds it into paste.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
           Special movement abilities such as teleportation can also remove the target from the fissure.
         `,
         targeting: `
-          Make an attack vs. Reflex against one \\sphereterm{grounded} creature within \\shortrange.
+          Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if the target is grounded on stone.
         `,
       },
@@ -327,9 +360,8 @@ export const terramancy: MysticSphere = {
       name: 'Earthbind',
 
       // treat as r1 condition.
-      // -1r for 60' height cap, +1r for stone
       attack: {
-        crit: `It is also \\slowed as part of the same condition.`,
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is unable to use any fly speed or glide speed, and it takes a -4 penalty to Jump checks.
@@ -337,10 +369,10 @@ export const terramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
-          You gain a +2 \\glossterm{accuracy} bonus if you are \\sphereterm{grounded} on stone.
+          You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
@@ -351,16 +383,16 @@ export const terramancy: MysticSphere = {
         name: 'earthbind',
         exceptThat: `
           the target is also \\slowed as part of the same condition.
-          On a critical hit, the condition must be removed twice before the effect ends.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
     },
 
     {
       name: 'Quagmire',
 
+      // TODO: define correct rank
       effect: `
         % TODO: wording to allow it to affect smaller parts of larger objects
         % TODO: define maximum resistance
@@ -404,14 +436,22 @@ export const terramancy: MysticSphere = {
       name: 'Earthglide',
 
       effect: `
-        You can move through earth and unworked stone at a rate of 5 feet per round.
+        You can move through earth and unworked stone at a rate of 10 feet per round.
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
       rank: 5,
-      scaling: {
-        7: `Your speed increases to be equal to 10 feet less than the \\glossterm{base speed} for your size.`,
-      },
       type: 'Attune',
+    },
+
+    {
+      name: 'Greater Earthglide',
+
+      effect: `
+        You can move through earth and unworked stone at a rate equal to your \\glossterm{base speed}.
+        This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
+      `,
+      rank: 7,
+      type: 'Attune (deep)',
     },
 
     {
@@ -440,37 +480,21 @@ export const terramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `Each target takes \\damagerankone{bludgeoning and fire}.`,
+        hit: `Each target takes \\damagerankthree{bludgeoning and fire}.`,
         missGlance: true,
         targeting: `
-          You create a volcano at a \\sphereterm{grounded} location within \\shortrange.
+          You create a volcano at a \\glossterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
-          It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+          It affects a \\smallarea radius \\glossterm{zone} in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
-      rank: 3,
+      rank: 5,
       scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (standard)'],
-    },
-
-    {
-      name: 'Mighty Volcano',
-
-      // +4d for +1d and full power
-      functionsLike: {
-        name: 'volcano',
-        exceptThat: 'the damage increases to \\damageranksixhigh{bludgeoning and fire}.',
-      },
-      narrative: `
-        You create a small volcano that showers everything nearby in burning shrapnel.
-      `,
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (standard)'],
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
 
     {
@@ -517,7 +541,7 @@ export const terramancy: MysticSphere = {
 
       effect: `
         You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
-        Every square of the wall must be \\sphereterm{grounded}.
+        Every square of the wall must be \\glossterm{grounded}.
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.

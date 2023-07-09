@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',
@@ -148,14 +149,13 @@ export const thaumaturgy: MysticSphere = {
       name: 'Suppress Item',
 
       attack: {
-        crit: 'You can sustain this spell as a \\glossterm{free action}.',
         hit: `All magical properties the target has are \\glossterm{suppressed}.`,
         targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one Large or smaller \\magical object within \\longrange.
+          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against one Large or smaller \\magical object within \\medrange.
           If the object is attended by a creature, the attack must also beat the attending creature's Mental defense.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       type: 'Sustain (minor)',
     },
@@ -164,13 +164,11 @@ export const thaumaturgy: MysticSphere = {
       name: 'Dismissal',
 
       attack: {
-        // No relevant crit effect
-        // No relevant glance effect
         hit: `The target is treated as if the ability that created it was \\glossterm{dismissed}.
         This usually causes the target to disappear.`,
         targeting: `
         Make an attack against anything within \\medrange.
-        If the target is an effect of an ongoing \\magical ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + the \\glossterm{rank} of the effect.
+        If the target is an effect of an ongoing \\magical ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + twice the \\glossterm{rank} of the effect.
         Otherwise, this spell has no effect.
         `,
       },
@@ -192,7 +190,7 @@ export const thaumaturgy: MysticSphere = {
           It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
           The attack cannot \\glossterm{explode} by any means.
 
-          The target's defense against this attack is equal to 5 \\add its \\glossterm{rank}.
+          The target's defense against this attack is equal to 5 \\add twice its \\glossterm{rank}.
           For effects that have no specific rank, such as some monster abilities, treat their rank as being equal to one third of their level.
 
           This spell cannot be used to interrupt or negate immediate effects, such as spells being cast.
@@ -206,12 +204,12 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Intense Suppress Magic',
+      name: 'Greater Suppress Magic',
 
       functionsLike: {
         name: 'suppress magic',
         exceptThat: `
-          it can also affect \\abilitytag{Curse} effects, and the range increases to \\distrange.
+          it can also affect \\abilitytag{Curse} effects.
         `,
       },
       rank: 5,
@@ -225,66 +223,11 @@ export const thaumaturgy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           on a hit, the effect ends completely instead of being suppressed.
-          However, the target's defense increases to 5 \\add twice its rank.
         `,
         name: 'suppress magic',
       },
       rank: 4,
       scaling: 'accuracy',
-    },
-
-    {
-      name: 'Intense Dispel Magic',
-
-      functionsLike: {
-        exceptThat: `
-          on a hit, the effect ends completely instead of being suppressed.
-          In addition, this can also affect \\abilitytag{Curse} effects, and the range increases to \\distrange.
-          However, the target's defense increases to 5 \\add twice its rank.
-        `,
-        name: 'suppress magic',
-      },
-      rank: 7,
-    },
-
-    {
-      name: 'Malign Transferance',
-
-      // original targets: ['Yourself or an \\glossterm{ally} within \\medrange', 'One other creature within that range']
-      attack: {
-        crit: `The effect becomes a \\glossterm{condition} on the struck creature.`,
-        // No glance effect; weird shenanigans if you autoremove the conditions
-        hit: `
-          One magical condition of your choice is removed from yourself or your chosen ally.
-          In addition, the struck creature \\glossterm{briefly} suffers the effect of the removed condition.
-        `,
-        targeting: `
-          Choose yourself or one \\glossterm{ally} within \\medrange that is currently affected by a \\magical \\glossterm{condition}.
-          In addition, make an attack vs. Mental against one other creature within \\medrange.
-        `,
-      },
-      rank: 4,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Malign Confluence',
-
-      attack: {
-        crit: `Each transferred effect becomes a separate \\glossterm{condition} on the struck creature.`,
-        // No glance effect; weird shenanigans if you autoremove the conditions
-        hit: `
-          One magical condition of your choice is removed from each of the five chosen creatures.
-          In addition, the struck creature \\glossterm{briefly} suffers the effects of each removed condition. 
-        `,
-        targeting: `
-          Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-          Each chosen creature must be currently affected by a \\magical condition.
-          In addition, make an attack vs. Mental against one other creature within \\medrange.
-        `,
-      },
-
-      rank: 7,
     },
 
     {
@@ -297,7 +240,7 @@ export const thaumaturgy: MysticSphere = {
         After you absorb three spells in this way, this effect ends.
       `,
       rank: 7,
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
     {
@@ -338,24 +281,7 @@ export const thaumaturgy: MysticSphere = {
         After you echo a spell in this way, this effect ends.
       `,
       rank: 5,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Antimagic Field',
-
-      effect: `
-        You radiate an antimagic field within a \\smallarea radius \\glossterm{emanation} from you.
-        All \\magical effects within the area that are dismissable or have a duration are \\glossterm{suppressed}.
-        This includes attuned spells and magic items, magical conditions, and sustained magical effects.
-        However, it does not include passive magical abilities on creatures, such as the ability to cast spells.
-        It also does not include \\abilitytag{Curse} effects, which are more difficult to remove.
-
-        Unlike most emanation spells, you cannot exclude yourself from this \\glossterm{emanation}.
-        However, this spell does not supress itself.
-      `,
-      rank: 7,
-      type: 'Sustain (standard)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -385,10 +311,7 @@ export const thaumaturgy: MysticSphere = {
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
       rank: 4,
-      scaling: {
-        6: 'You can choose to create a \\hugearea radius instead.',
-      },
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -398,10 +321,6 @@ export const thaumaturgy: MysticSphere = {
         Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
       `,
       rank: 2,
-      scaling: {
-        4: 'You can choose to affect a \\hugearea radius instead.',
-        6: 'You can choose to affect a \\gargarea radius instead.',
-      },
       type: 'Attune',
     },
 
@@ -423,6 +342,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Choose a \\magical ability you are currently sustaining that requires either a \\glossterm{free action} or a \\glossterm{minor action} to sustain.
         That ability is automatically sustained as long as this effect lasts.
+        % TODO: is this safe?
         This can allow you to sustain that ability for longer than 5 minutes.
         This does not allow you to make any choices as part of sustaining the chosen ability, such as telling summoned creatures how to act.
         Instead, you always make the same choice you made the last time you manually sustained the effect.
@@ -434,15 +354,30 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Spellseal',
 
+      // -2r relative to mind blank's effect because it doesn't always work
       attack: {
-        crit: `The effect ends after the target fails to cast three spells instead of only one.`,
-        hit: `As a \\glossterm{condition}, the next time the target tries to cast a spell, the spell automatically fails with no effect instead.
-        When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.`,
+        crit: CONDITION_CRIT,
+        hit: `
+          The target's magic is partially sealed as a \\glossterm{condition}.
+          The first time it tries to cast a spell while it is below its maximum \\glossterm{hit points}, the spell automatically fails with no effect instead.
+          When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
+        `,
         targeting: `
-        Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
+          Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Efficient Spellseal',
+
+      functionsLike: {
+        name: 'spellseal',
+        exceptThat: 'it works even if the target is at full hit points.',
+      },
+      rank: 5,
       scaling: 'accuracy',
     },
 
@@ -459,27 +394,21 @@ export const thaumaturgy: MysticSphere = {
         This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
       `,
       rank: 4,
-      scaling: {
-        6: 'You can choose to affect a \\hugearea radius instead.',
-      },
       type: 'Attune',
     },
 
     {
-      name: 'Spellward',
+      name: 'Dead Magic Zone',
 
       effect: `
-        Choose a \\glossterm{zone} within \\longrange.
-        You can choose this spell's radius, up to a maximum of a \\largearea radius.
+        Choose a \\glossterm{zone} within \\medrange.
+        You can choose this spell's radius, up to a maximum of a \\medarea radius.
         Whenever a creature casts a spell in the area, that spell has a 50\\% chance to fail with no effect.
       `,
       narrative: `
         You break an area's connection to magic.
       `,
       rank: 5,
-      scaling: {
-        7: 'The maximum area increases to a \\hugearea radius.',
-      },
       type: 'Sustain (minor)',
     },
 
@@ -503,14 +432,11 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Reflect Magic',
 
-      functionsLike: {
-        name: 'total defense',
-        abilityType: 'ability',
-        exceptThat: `
-          whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
-          It cannot choose to reduce its accuracy or damage against itself.
-        `,
-      },
+      effect: `
+        You gain a +2 bonus to all defenses this round.
+        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+        It cannot choose to reduce its accuracy or damage against itself.
+      `,
       rank: 3,
       tags: ['Swift'],
     },
@@ -518,15 +444,12 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Reflect Targeted Magic',
 
-      functionsLike: {
-        name: 'total defense',
-        abilityType: 'ability',
-        exceptThat: `
-          any \\glossterm{targeted} \\magical abilities that would target you this round also target the creature using that ability in addition to you.
-          It cannot choose to reduce its accuracy or damage against itself.
-          Any other targets of the ability are affected normally.
-        `,
-      },
+      effect: `
+        You gain a +2 bonus to all defenses this round.
+        In addition, any \\glossterm{targeted} \\magical abilities that would target you this round also target the creature using that ability in addition to you.
+        It cannot choose to reduce its accuracy or damage against itself.
+        Any other targets of the ability are affected normally.
+      `,
       rank: 5,
       tags: ['Swift'],
     },

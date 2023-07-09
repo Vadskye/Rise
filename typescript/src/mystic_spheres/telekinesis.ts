@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -59,9 +60,9 @@ export const telekinesis: MysticSphere = {
       `,
       // narrative: '',
       scaling: {
-        2: 'You also gain a +1 bonus to your Armor and Reflex defenses.',
-        4: 'The defense bonuses increase to +2.',
-        6: 'The defense bonuses increase to +3.',
+        2: 'You also gain a +1 bonus to your Armor defense.',
+        4: 'The defense bonus increases to +2.',
+        6: 'The defense bonus increases to +3.',
       },
       tags: ['Swift'],
     },
@@ -73,13 +74,16 @@ export const telekinesis: MysticSphere = {
       // price as one rank cheaper than slowed; it's better against low-Strength targets, but worse in
       // general
       attack: {
-        crit: `The difficulty value of the Strength check increases by 10.`,
-        hit: `As a \\glossterm{condition}, the target is unable to move closer to you without effort.
-        This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
-        As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
-        If it succeeds, it can move towards you at half speed.`,
+        crit: CONDITION_CRIT,
+        hit: `
+          As a \\glossterm{condition}, the target is unable to move closer to you without effort.
+          This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
+          As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
+          If it succeeds, it can move normally.
+          Otherwise, it is unable to move towards you, and that part of its movement is wasted.
+      `,
         targeting: `
-        Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
 
@@ -93,7 +97,7 @@ export const telekinesis: MysticSphere = {
       functionsLike: {
         name: 'interposing force',
         exceptThat:
-          'the \\glossterm{difficulty value} of the Strength check increases to 10, or to 15 on a critical hit.',
+          'the \\glossterm{difficulty value} of the Strength check increases to 10.',
       },
       rank: 7,
       scaling: 'accuracy',
@@ -187,16 +191,62 @@ export const telekinesis: MysticSphere = {
     },
 
     {
+      name: 'Greater Rapid Reload',
+
+      functionsLike: {
+        name: 'rapid reload',
+        exceptThat: 'using this ability does not prevent you from using it again.'
+      },
+      rank: 6,
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Kinetic Discharge',
+
+      // Baseline would be dr2 for enemies-only delayed Med radius. Drop to dr1 for
+      // kinetic charge mechanic.
+      attack: {
+        hit: `
+          Each target takes \\damagerankone{bludgeoning}.
+        `,
+        missGlance: true,
+        targeting: `
+          This spell has no immediate effect.
+          Whenever you take physical damage during this spell's effect, you build up a kinetic charge.
+          This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
+          When you stop sustaining this spell, make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +5.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Sustain (minor)', 'Swift (see text)'],
+    },
+
+    {
+      name: 'Mighty Kinetic Discharge',
+
+      functionsLike: {
+        name: 'kinetic discharge',
+        exceptThat: 'the damage increases to \\damagerankfivehigh{bludgeoning}.',
+      },
+      rank: 6,
+      scaling: 'accuracy',
+      tags: ['Sustain (minor)', 'Swift (see text)'],
+    },
+
+    {
       name: 'Blastwave',
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
-          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 15 feet horizontally away from you.
+          Each target takes \\damagerankthree{bludgeoning}.
+          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+          Make an attack vs. Reflex and Fortitude against everything in a \\smallarea cone from you.
         `,
       },
       rank: 3,
@@ -204,16 +254,16 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Intense Blastwave',
+      name: 'Massive Blastwave',
 
-      // +2r for 30' knockback, +1r for med cone
       attack: {
         hit: `
-          Each target takes \\damagerankfour{bludgeoning}.
+          Each target takes \\damageranksix{bludgeoning}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+          Make an attack vs. Reflex and Fortitude against everything in a \\largearea cone from you.
         `,
       },
       rank: 6,
@@ -222,29 +272,25 @@ export const telekinesis: MysticSphere = {
 
     {
       name: 'Mind Shove',
-      // +1r for a size-limited r1 debuff that sometimes, but not always, has extra damage attached
       attack: {
         hit: `
-          You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take \\damagerankonelow{bludgeoning}.
+          You \\glossterm{push} each target up to 30 feet in a straight line.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Large or smaller within \\medrange of you.
+          Make an attack vs. Fortitude against everything that is Large or smaller in a \\smallarea radius within \\medrange of you.
         `,
       },
       rank: 2,
     },
 
     {
-      name: 'Mighty Mind Shove',
-      // +1r for long range, +2r for full damage, +1r for size limit
+      name: 'Intense Mind Shove',
       attack: {
         hit: `
-          You \\glossterm{push} the target up to 30 feet in a straight line.
-          If the target impacts a solid object before it moves the maximum distance, it stops moving and both it and the object take \\damagerankfive{bludgeoning}.
+          You \\glossterm{push} each target up to 60 feet in a straight line.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Huge or smaller within \\medrange of you.
+          Make an attack vs. Fortitude against everything that is Huge or smaller in a \\smallarea radius within \\medrange of you.
         `,
       },
       rank: 6,
@@ -255,7 +301,8 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          You \\glossterm{knockback} the target up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Medium or smaller within \\medrange.
@@ -270,7 +317,8 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          You \\glossterm{knockback} the target up to 30 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 60 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
@@ -285,30 +333,34 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
-        The target is reduced to half of its normal weight.
+        The target's weight is reduced by one \\glossterm{weight category}.
         This gives it a +4 \\glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
       `,
       rank: 1,
-      scaling: {
-        3: `The bonus increases to +6.`,
-        5: `The target is reduced to a quarter of its normal weight. In addition, the bonus increases to +8.`,
-        7: `The bonus increases to +10.`,
-      },
       type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: 'Mind Parry',
+      name: 'Empowered Telekinetic Lift',
 
-      functionsLike: {
-        name: 'total defense',
-        abilityType: 'ability',
-        exceptThat: `
-          whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
-          It cannot choose to reduce its accuracy or damage against itself.
-          This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
-        `,
-      },
+      effect: `
+        Choose yourself or one Large or smaller \\glossterm{unattended} object within \\medrange.
+        The target's weight is reduced by two \\glossterm{weight categories}.
+        This gives it a +8 \\glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
+      `,
+      rank: 4,
+      type: 'Sustain (standard)',
+    },
+
+    {
+      name: 'Kinetic Redirection',
+
+      effect: `
+        You gain a +2 bonus to your Armor and Reflex defenses this round.
+        In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        It cannot choose to reduce its accuracy or damage against itself.
+        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+      `,
       rank: 2,
       tags: ['Swift'],
     },
@@ -383,7 +435,7 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You can make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
-        You not have to be proficient with bows, and you do not have to manually draw the arrow.
+        You do not have to be proficient with bows, and you do not have to manually draw the arrow.
         It must be easily accessible on your person, such as in a quiver.
         As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
@@ -487,8 +539,6 @@ export const telekinesis: MysticSphere = {
 
       // TODO: correct rank
       attack: {
-        crit:
-          'You also \\glossterm{knockback} the target 15 feet in the direction that it tried to enter the area from.',
         hit: `
           Each target is unable to enter the spell's area for the rest of the round.
           The rest of its movement in the current phase is cancelled.
@@ -508,6 +558,7 @@ export const telekinesis: MysticSphere = {
       name: 'Compression',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{bludgeoning} immediately, and again during your next action.
         `,
@@ -523,15 +574,37 @@ export const telekinesis: MysticSphere = {
       name: 'Implosion',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
+          The sphere left behind is three size categories smaller than the original creature.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.
         `,
       },
       rank: 6,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Kinetic Impedance',
+
+      // -2r from regular slowed since it doesn't block escaping
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          The target is impeded as a \\glossterm{condition}.
+          While it is within \\shortrange of you, it is \\slowed.
+          It suffers no ill effects beyond that range.
+      `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+        `,
+      },
+
+      rank: 2,
       scaling: 'accuracy',
     },
   ],

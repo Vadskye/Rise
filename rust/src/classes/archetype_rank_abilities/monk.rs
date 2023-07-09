@@ -182,15 +182,15 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 However, you must still apply them to rank 1 esoteric maneuvers.
                 {
                     \parhead{Counter Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who made a \glossterm{strike} against you during the previous round.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Debilitating Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
                     However, you cannot get a \glossterm{critical hit}.
-                    You can only apply this enhancement to manuevers which deal damage and can inflict a \glossterm{condition}.
+                    You can only apply this enhancement to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
                     \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
                     If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
                     You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
@@ -638,24 +638,24 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Transcend Uncertainty",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused.
-            ",
-            // TODO: represent immunities?
-            modifiers: None,
-        },
-        RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
                 In addition, you gain \trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
             ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You are immune to being \stunned and \confused.
+            ",
+            // TODO: represent immunities?
             modifiers: None,
         },
         RankAbility {
@@ -682,7 +682,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
-                In addition, you are immune to being \shaken, \frightened, and \panicked.
+                In addition, you are immune to being \frightened and \panicked.
             ",
             modifiers: None,
         },

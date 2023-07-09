@@ -4,7 +4,7 @@ import { MysticSphere, SpellLike } from '@src/mystic_spheres';
 import _ from 'lodash';
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
-  assertEndsWithPeriod(sphere.shortDescription);
+  assertEndsWithPeriod(sphere.shortDescription, sphere.name);
 
   const imageText = sphere.hasImage
     ? `\\includegraphics[width=\\columnwidth]{mystic spheres/${sphere.name.toLowerCase()}}`

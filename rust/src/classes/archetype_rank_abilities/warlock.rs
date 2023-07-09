@@ -135,7 +135,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Banish to the Abyss}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The target takes \damagerankthreelow{fire}.
+                    \hit The target takes \damagerankthree{fire}.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it finishes a \glossterm{short rest}.
@@ -144,7 +144,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} You gain a +1 accuracy bonus with the attack.
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The damage bonus from your power increases to 1d6 per 3 power.
-                    \rank{7} The accuracy bonus increases to +4.
+                    \rank{7} The accuracy bonus increases to +3.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -155,7 +155,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power}.
-                In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage in place of fire damage.
+                In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage instead of fire damage.
                 Any other aspects of the ability, including damage types other than fire, remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
@@ -184,7 +184,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \crit The effect lasts until this curse is removed.
 
                     \rankline
-                    \rank{7} gain a \plus2 \glossterm{accuracy} bonus with the attack.
+                    \rank{7} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -702,7 +702,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
+                You are immune to being \stunned and \confused during your \textit{possession} ability.
             ",
             modifiers: None,
         },

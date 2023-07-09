@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const channelDivinity: MysticSphere = {
   name: 'Channel Divinity',
@@ -55,7 +56,8 @@ export const channelDivinity: MysticSphere = {
         % d3
         First, you heal 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power}.
         This healing cannot increase your hit points above half your maximum hit points.
-        Second, you remove one \\glossterm{condition} affecting you.
+        Second, you may remove one \\glossterm{condition} affecting you.
+        If you do, you increase your \\glossterm{fatigue level} by one.
         This cannot remove an effect applied during that round.
         Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
@@ -216,16 +218,31 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Word of Fear',
+      name: 'Fearful Awe',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
-          Each target takes \\damagerankthree{energy}.
-          Each target that takes damage this way is \\shaken by you as a \\glossterm{condition}.
+          Each target with no remaining \\glossterm{damage resistance} becomes \\frightened by you as a \\glossterm{condition}.
         `,
-        missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      rank: 1,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Efficient Fearful Awe',
+
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          Each target is \\frightened by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       rank: 5,
@@ -281,32 +298,17 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Presence',
 
       attack: {
-        crit: `The target is \\frightened by you instead of shaken.`,
+        crit: CONDITION_CRIT,
         hit: `
-          Each target is \\shaken by you as a \\glossterm{condition}.
+          The target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
-          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
       rank: 3,
       scaling: 'accuracy',
-      tags: ['Emotion'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Intense Divine Presence',
-
-      functionsLike: {
-        name: 'divine presence',
-        exceptThat: `
-          each target is \\frightened by you instead of shaken.
-          On a critical hit, the target is \\panicked by you instead of frightened.
-        `,
-      },
-      rank: 7,
       tags: ['Emotion'],
       type: 'Attune (deep)',
     },
@@ -352,22 +354,9 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Divine Seal',
-
-      effect: `
-        Choose a \\medarea radius \\glossterm{zone} within \\longrange.
-        Whenever a creature casts a divine spell in the area, if that creature does not share your deity (for clerics) or devoted alignment (for paladins), the spell has a 50\\% chance to fail with no effect.
-      `,
-      rank: 4,
-      scaling: {
-        6: 'You can choose to create a \\largearea radius instead.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
       name: 'Banish Anathema',
 
+      // baseline is r3 due to +2 accuracy
       attack: {
         hit: `
           The target takes \\damageranktwo{energy}.
@@ -394,18 +383,16 @@ export const channelDivinity: MysticSphere = {
       type: 'Attune',
     },
 
-    // -1r for short range, +1r for retributive
     {
       name: 'Fearful Judgment',
 
       attack: {
         hit: `
-          The target takes \\damageranktwo{energy}.
-          If it takes damage, it is \\shaken by you as a \\glossterm{condition}.
+          The target takes \\damagerankthreehigh{energy}.
+          If it loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
-          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 3,
@@ -416,12 +403,11 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranksix{energy}.
-          If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
+          The target takes \\damageranksevenhigh{energy}.
+          If it loses hit points, it is \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
-          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
       rank: 7,
@@ -429,6 +415,17 @@ export const channelDivinity: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Divine Seal',
+
+      castingTime: "ten minutes",
+      effect: `
+        The area within an \\largearea radius \\glossterm{zone} from your location becomes sealed by your deity.
+        Whenever a creature casts a divine spell in the area, if that creature does not share your deity, the spell has a 50\\% chance to fail with no effect.
+      `,
+      rank: 3,
+      type: 'Attune',
+    },
     {
       name: 'Consecrated Ground',
 

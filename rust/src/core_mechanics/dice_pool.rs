@@ -174,17 +174,27 @@ impl DicePool {
         let mut contained_sizes: Vec<&i32> = counts.keys().collect();
         contained_sizes.sort();
 
-        let dice_texts: Vec<String> = contained_sizes
-            .iter()
-            .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
-            .collect();
-        let joined = dice_texts.join("+");
         if self.maximized {
-            return format!("{} (m)", joined);
-        } else if self.weak {
-            return format!("{} (w)", joined);
+            // If the dice pool is maximized, just return the single number indicating the total
+            // damage.
+            let mut sum = 0;
+            for size in contained_sizes {
+                sum += size * counts[size]
+            }
+            return sum.to_string()
         } else {
-            return joined;
+            let dice_texts: Vec<String> = contained_sizes
+                .iter()
+                .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
+                .collect();
+            let joined = dice_texts.join("+");
+            if self.maximized {
+                return format!("{} (m)", joined);
+            } else if self.weak {
+                return format!("{} (w)", joined);
+            } else {
+                return joined;
+            }
         }
     }
 
@@ -344,5 +354,11 @@ mod tests {
         );
 
         assert_eq!(24.0, DicePool::xdy(3, 8).maximize().average_damage());
+    }
+
+    #[test]
+    fn stringifies_maximized_dice() {
+        assert_eq!("6", DicePool::d6().maximize().to_string());
+        assert_eq!("12", DicePool::d6().add_increments(3).maximize().to_string());
     }
 }

@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
@@ -10,8 +11,15 @@ use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType::MagicalBeast;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Role};
+use crate::monsters::{
+    monster_group, FullMonsterDefinition, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
+};
+use crate::monsters::creature_type::CreatureType;
 use crate::skills::Skill;
+
+fn magical_beast(def: MonsterDef) -> Monster {
+    return def.monster(CreatureType::MagicalBeast);
+}
 
 struct FullMagicalBeastDefinition {
     alignment: String,
@@ -107,6 +115,50 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             StandardWeapon::MultipedalBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
         ],
     }.monster()));
+
+    monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
+        abilities: MonsterAbilities {
+            // TODO: poisonous bite, ice breath, webs
+            active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                StandardWeapon::MultipedalBite.weapon(),
+            ))],
+            modifiers: ModifierBundle::Multipedal.modifiers(),
+            movement_speeds: None,
+            // TODO: tremorsense on webs ice?
+            senses: vec![Sense::Tremorsense(90)],
+            trained_skills: vec![Skill::Endurance],
+        },
+        narrative: None,
+        statistics: MonsterStatistics {
+            attributes: vec![6, 6, 2, 1, 3, 0],
+            elite: true,
+            level: 12,
+            role: Role::Skirmisher,
+            size: Size::Large,
+        },
+        name: "Frostweb Spider".to_string(),
+    })));
+
+    monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                StandardWeapon::MultipedalBite.weapon(),
+            ))],
+            modifiers: ModifierBundle::Multipedal.modifiers(),
+            movement_speeds: None,
+            senses: vec![Sense::Scent],
+            trained_skills: vec![],
+        },
+        narrative: None,
+        statistics: MonsterStatistics {
+            attributes: vec![3, 2, 1, -4, 2, -1],
+            elite: false,
+            level: 2,
+            role: Role::Skirmisher,
+            size: Size::Medium,
+        },
+        name: "Warg".to_string(),
+    })));
 
     monsters.push(MonsterEntry::Monster(FullMagicalBeastDefinition {
         alignment: "Always true neutral".to_string(),

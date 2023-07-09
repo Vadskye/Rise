@@ -10,7 +10,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{weak strike} using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        The attack is made against the target's Fortitude defense instead of its Armor defense.
       `,
       rank: 1,
     },
@@ -20,7 +20,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        The attack is made against each target's Fortitude defense instead of its Armor defense.
+        The attack is made against the target's Fortitude defense instead of its Armor defense.
       `,
       rank: 3,
     },
@@ -83,7 +83,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
+        If the target takes damage and your attack result beats its Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
       `,
       rank: 3,
     },
@@ -93,7 +93,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats a target's Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
+        If the target takes damage and your attack result beats its Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
       `,
       rank: 7,
     },
@@ -103,7 +103,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\vulnerable to all damage as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -112,18 +112,18 @@ export const bluntForce: CombatStyle = {
       name: 'Headshot',
 
       effect: `
-        Make a \\glossterm{weak strike} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\stunned as a \\glossterm{condition}.
+        Make a melee \\glossterm{weak strike} using a bludgeoning weapon.
+        If the target loses \\glossterm{hit points}, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Headshot+',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a bludgeoning weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\confused as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a bludgeoning weapon.
+        If the target loses hit points, it is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -183,7 +183,8 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        Each Large or smaller creature that loses \\glossterm{hit points} from the strike falls \\prone if your attack result beats its Fortitude defense.
+        If the target loses \\glossterm{hit points}, it falls \\prone.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
     },
@@ -193,18 +194,8 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        Each Large or smaller damaged creature falls \\prone if your attack result beats its Fortitude defense.
-      `,
-      rank: 5,
-    },
-
-    {
-      name: 'Forceful Strike',
-
-      effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The strike gains the \\glossterm{Forceful} weapon tag (see \\pcref{Weapon Tags}).
-        If it already has that weapon tag, the maximum size category of creature that you can \\glossterm{knockback} with that tag increases by one size category, and the knockback distance increases by 10 feet.
+        If the target takes damage, it falls \\prone.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
     },
@@ -217,7 +208,7 @@ export const bluntForce: CombatStyle = {
         After you make the strike, you can move up to 5 feet.
         During this movement, you can move into space occupied by creatures that you damaged with the strike.
         When you do, you \\glossterm{push} that creature up to 5 feet in any direction.
-        You cannot push creatures that are two or more size categories larger than you with this ability.
+        This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
     },
@@ -262,18 +253,18 @@ export const bluntForce: CombatStyle = {
       name: 'Gutshot',
 
       effect: `
-        Make a \\glossterm{weak strike} using a bludgeoning weapon.
-        Each damaged creature becomes \\dazed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Make a melee strike using a bludgeoning weapon.
+        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
       name: 'Gutshot+',
 
       effect: `
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each damaged creature becomes \\stunned as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a bludgeoning weapon.
+        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -283,9 +274,9 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        Each damaged creature takes the damage from the strike again during your next action.
+        If the target takes damage and your attack result beats its Fortitude defense, it deals maximum damage.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -296,7 +287,7 @@ export const bluntForce: CombatStyle = {
         Make a melee \\glossterm{strike}.
         You and each damaged creature are \\deafened as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
