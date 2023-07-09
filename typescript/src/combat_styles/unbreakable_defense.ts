@@ -125,25 +125,13 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Dazing Shield Slam',
-
-      // -2 ranks due to shield limitation
-      effect: `
-        Make a \\glossterm{strike} using a shield.
-        Each damaged creature is \\dazed if your attack result beats its Fortitude defense.
-      `,
-      rank: 1,
-    },
-
-    {
       name: 'Stunning Shield Slam',
 
-      // -2 ranks due to shield limitation
       effect: `
-        Make a \\glossterm{strike} using a shield.
-        Each damaged creature is \\stunned if your attack result beats its Fortitude defense.
+        Make a melee \\glossterm{strike} using a shield.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 1,
     },
 
     {
@@ -244,24 +232,25 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Covering Strike',
 
-      // -2 ranks for melee goad
       effect: `
-        Make a melee \\glossterm{weak strike}.
-        Each damaged creature is \\goaded by you as a \\glossterm{condition} if your attack result beats its Mental defense.
+        Make a melee \\glossterm{strike}.
+        If the target takes damage and your attack result beats its Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
-      tags: ['Emotion'],
+      tags: [],
     },
 
     {
       name: 'Covering Strike+',
 
       effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        Each damaged creature is \\goaded by you as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
+        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,
-      tags: ['Emotion'],
+      tags: [],
     },
   ],
 };

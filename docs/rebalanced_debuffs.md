@@ -75,7 +75,7 @@ Remove "dazed" and "shaken". New debuff tiers:
   * Instant: prone, repeat
 * T2: goaded, slowed, stunned
   * Instant: knockback 30', push 60', teleport 60'
-* T2.5: submerged (swimming penalties), vulnerable to one damage type
+* T2.5: submerged (swimming penalties), vulnerable to one damage type, treat you as invisible
   * Instant: stop existing briefly / banishment, skip standard action
 * T3: Confused, blinded, panicked, vulnerable to all damage
   * Instant: knockback 60', push 90', teleport 90', selfstrike
@@ -197,14 +197,21 @@ Notation:
     * Melee strike matches "dX at Grasp range"
       * t1.5 condition if lose HP
       * t1 condition if beat extra defense
+    * Melee weak strike matches "dX at Grasp range"
+      * t2 condition if lose HP
+      * t1.5 condition if beat extra defense
+      * t1 condition if take damage
     * Unrestricted strike matches "dX at Short range"
       * t1 condition if lose HP
+    * Unrestricted weak strike matches "dX-1 at Short range"
+      * t1.5 condition if lose HP
+      * t1 condition if beat extra defense
   * Rank 3
     * Melee strike matches "dX-1 at Grasp range"
       * t2.5 condition if lose HP
       * t2 condition if beat extra defense
       * t1.5 condition if damaged
-    * Unrestricted strike matches "dX-2 at Med range"
+    * Unrestricted strike matches "dX-1 at Short range"
       * t2 condition if lose HP
       * t1.5 condition if beat extra defense
       * t1 condition if damaged
@@ -213,8 +220,10 @@ Notation:
       * t2.5 condition if lose HP
       * t2 condition if beat extra defense
       * t1.5 condition if damaged
-    * Unrestricted strike almost matches "dX-2 at Med range" but is too weak
-      * As melee strike, plus trinket text that is worth about +1 accuracy
+    * Unrestricted strike almost matches "dX-2 at Short range" but does less damage, so give it the extra ct+1
+      * t3 condition if lose HP
+      * t2.5 condition if beat extra defense
+      * t2 condition if take damage
   * Rank 7
     * Melee 3x damage strike matches "dX at Grasp range"
       * t3 condition if lose HP

@@ -33,7 +33,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Spring Attack',
 
       effect: `
-        Move up to half your movement speed and make a \\glossterm{strike} with a -1 accuracy penalty.
+        Move up to half your movement speed and make a melee \\glossterm{strike}.
         After making the strike, you can use the other half of your movement.
       `,
       rank: 3,
@@ -49,20 +49,11 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Wanderer's Strike+",
-
-      effect: `
-        You can move up your speed and make a \\glossterm{strike} with a +1 accuracy bonus, in either order.
-      `,
-      rank: 5,
-    },
-
-    {
       name: 'Push Through',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        You can \\glossterm{briefly} move through the space of each damaged creature.
+        If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
       `,
       rank: 1,
     },
@@ -86,7 +77,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Your movement speed is \\glossterm{briefly} doubled.
-        However, you also cannot use the \\textit{sprint} ability during that time.
+        However, you cannot use the \\textit{sprint} ability during that time.
       `,
       rank: 1,
     },
@@ -107,6 +98,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} horizontally to a location within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} that targets all \\glossterm{enemies} within a 5 ft.\\ wide line between your starting location and your ending location.
+        On a miss, you get a \\glossterm{glancing blow}.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
@@ -162,8 +154,10 @@ export const mobileAssault: CombatStyle = {
       name: 'Vault Over',
 
       effect: `
-        Make an attack vs. Reflex against one creature you \\glossterm{touch} that is no more than one size category larger than you.
+        Make an attack vs. Reflex against one creature you \\glossterm{touch}.
         Your \\glossterm{accuracy} with this attack is equal to your Jump skill.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+
         If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
         Your final destination cannot be more distant from your starting location than half your \\glossterm{land speed}.
@@ -176,7 +170,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Passing Splitstrike',
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty, then move up to 10 feet and make another melee \\glossterm{strike} with a -1 accuracy penalty.
+        Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
         You cannot include the same creature or object as a target of both strikes.
       `,
       rank: 3,
@@ -203,10 +197,11 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        Each creature that loses \\glossterm{hit points} from the strike is \\shaken by you as a \\glossterm{condition}.
+        If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
-      tags: ['Emotion'],
+      tags: [],
     },
 
     {
@@ -214,10 +209,11 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        Each creature that loses \\glossterm{hit points} from the strike is \\frightened by you as a \\glossterm{condition}.
+        If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
+        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,
-      tags: ['Emotion'],
+      tags: [],
     },
 
     {
