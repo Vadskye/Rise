@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import {CONDITION_CRIT} from './constants';
 
 export const aquamancy: MysticSphere = {
   name: 'Aquamancy',
@@ -101,6 +102,7 @@ export const aquamancy: MysticSphere = {
 
       // -2 ranks for one round delay
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
           This does not restrict its ability to breathe, and has no immediate negative effects.

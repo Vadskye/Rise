@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const toxicology: MysticSphere = {
   name: 'Toxicology',
@@ -42,6 +43,7 @@ export const toxicology: MysticSphere = {
 
       // baseline for grasp is dX+1. +2dr from extra defense, -2dr from next round damage
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damageranktwo{acid} damage immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
@@ -246,6 +248,7 @@ export const toxicology: MysticSphere = {
       name: 'Sudden Rot',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
@@ -263,6 +266,7 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Sudden Rot',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankfivehigh{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
@@ -299,6 +303,7 @@ export const toxicology: MysticSphere = {
         hit: `
           Each target takes \\damagerankone{acid}.
         `,
+        missGlance: true,
         targeting: `
           You create a pool of acid in a \\smallarea radius cylinder-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
@@ -325,6 +330,7 @@ export const toxicology: MysticSphere = {
       name: 'Acid Breath',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           Each target takes \\damagerankone{acid} immediately, and again during your next action.
         `,
@@ -359,6 +365,7 @@ export const toxicology: MysticSphere = {
 
       // dX+1 for delay, +1dr for open area requirement
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           Each target takes \\damagerankthree{acid} immediately, and again during your next action.
         `,
@@ -427,6 +434,7 @@ export const toxicology: MysticSphere = {
       name: 'Terrifying Fungus',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
           It is \\frightened of you and all other sources of fungus as a \\glossterm{condition}.
@@ -466,7 +474,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: "fungal growth",
-        exceptThat: "the damage increases to \\damagerankfour{acid}",
+        exceptThat: "the damage increases to \\damagerankfour{acid}.",
       },
       rank: 5,
       scaling: 'accuracy',

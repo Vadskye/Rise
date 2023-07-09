@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -73,6 +74,7 @@ export const telekinesis: MysticSphere = {
       // price as one rank cheaper than slowed; it's better against low-Strength targets, but worse in
       // general
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
@@ -212,7 +214,7 @@ export const telekinesis: MysticSphere = {
         targeting: `
           This spell has no immediate effect.
           Whenever you take physical damage during this spell's effect, you build up a kinetic charge.
-          This is a \\abilitytag<Swift> effect, so you build up kinetic charges during the first round that you cast this spell.
+          This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
           When you stop sustaining this spell, make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +5.
         `,
@@ -556,6 +558,7 @@ export const telekinesis: MysticSphere = {
       name: 'Compression',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{bludgeoning} immediately, and again during your next action.
         `,
@@ -571,6 +574,7 @@ export const telekinesis: MysticSphere = {
       name: 'Implosion',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
@@ -589,6 +593,7 @@ export const telekinesis: MysticSphere = {
 
       // -2r from regular slowed since it doesn't block escaping
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is impeded as a \\glossterm{condition}.
           While it is within \\shortrange of you, it is \\slowed.

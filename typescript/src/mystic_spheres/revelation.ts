@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -319,6 +320,7 @@ export const revelation: MysticSphere = {
 
       // TODO: unclear rank (1??)
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
           It takes a -2 penalty to the chosen defense.
@@ -373,6 +375,7 @@ export const revelation: MysticSphere = {
       name: 'Reveal Vulnerability',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, each target's vulnerabilities become clear for all to see.
           Anyone looking at it intuitively knows whether it is \\vulnerable to any specific damage types or ability tags.
@@ -390,6 +393,7 @@ export const revelation: MysticSphere = {
       name: 'Myriad Visions',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -406,6 +410,7 @@ export const revelation: MysticSphere = {
       name: 'Field of Visions',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against each \\glossterm{enemy} in a \\medarea radius within \\medrange.
@@ -550,6 +555,7 @@ export const revelation: MysticSphere = {
       name: 'Sensory Chain',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
@@ -575,6 +581,7 @@ export const revelation: MysticSphere = {
       name: "Animal's Sight",
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
           If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.

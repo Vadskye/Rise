@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
@@ -144,6 +145,7 @@ export const polymorph: MysticSphere = {
       name: 'Baleful Polymorph',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot land speed, a 20 foot climb speed, and a bite natural weapon.
@@ -413,6 +415,7 @@ export const polymorph: MysticSphere = {
       name: 'Sludgeform',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
           This has the following effects:
@@ -580,9 +583,7 @@ export const polymorph: MysticSphere = {
       name: 'Bleed',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{slashing}.
           If it loses \\glossterm{hit points}, it takes this damage again during your next action.
@@ -703,6 +704,7 @@ export const polymorph: MysticSphere = {
       name: 'Cripple',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
@@ -719,6 +721,7 @@ export const polymorph: MysticSphere = {
       name: 'Intense Cripple',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\immobilized.

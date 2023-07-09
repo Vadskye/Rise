@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const electromancy: MysticSphere = {
   name: 'Electromancy',
@@ -65,6 +66,7 @@ export const electromancy: MysticSphere = {
       name: 'Lightning Rod',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, becomes is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
@@ -91,6 +93,7 @@ export const electromancy: MysticSphere = {
       name: 'Efficient Lightning Rod',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
@@ -165,6 +168,7 @@ export const electromancy: MysticSphere = {
       name: 'Stunning Discharge',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
@@ -180,6 +184,7 @@ export const electromancy: MysticSphere = {
       name: 'Brain-Scrambling Discharge',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
@@ -318,6 +323,7 @@ export const electromancy: MysticSphere = {
       name: 'Electroshock',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\stunned as a \\glossterm{condition}.
           While it is below its maximum hit points, it is \\confused instead of stunned.
@@ -528,6 +534,7 @@ export const electromancy: MysticSphere = {
     {
       name: 'Overcharge',
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, each target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
@@ -545,6 +552,7 @@ export const electromancy: MysticSphere = {
     {
       name: 'Short-Circuit',
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} becomes \\confused as a \\glossterm{condition}.
         `,

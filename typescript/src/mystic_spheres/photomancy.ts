@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const photomancy: MysticSphere = {
   name: 'Photomancy',
@@ -51,6 +52,7 @@ export const photomancy: MysticSphere = {
       name: 'Color Spray',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
           If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a separate condition.
@@ -68,6 +70,7 @@ export const photomancy: MysticSphere = {
       name: 'Prismatic Spray',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled and \\stunned as two separate conditions.
         `,
@@ -140,6 +143,7 @@ export const photomancy: MysticSphere = {
       name: 'Flash',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -157,6 +161,7 @@ export const photomancy: MysticSphere = {
       name: 'Blinding Flash',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it becomes \\blinded as a \\glossterm{condition}.
         `,
@@ -309,6 +314,7 @@ export const photomancy: MysticSphere = {
 
       // t3 area, -2r for delay + sustain
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
@@ -476,6 +482,7 @@ export const photomancy: MysticSphere = {
       name: 'Faerie Fire',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
           This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or being \\trait{invisible}.
@@ -494,6 +501,7 @@ export const photomancy: MysticSphere = {
       name: 'Radiant Aura',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.

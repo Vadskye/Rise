@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -46,6 +47,7 @@ export const verdamancy: MysticSphere = {
 
       // -2r for removal mechanic
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
           This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Strength check as a \\glossterm{movement} to break the plants.
@@ -313,6 +315,7 @@ export const verdamancy: MysticSphere = {
 
       // +1r for light undergrowth
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{piercing} damage immediately, and again during your next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
@@ -573,6 +576,7 @@ export const verdamancy: MysticSphere = {
 
       // Basically "stop existing", so t2.5? Should probably be t3, add immunity
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           A Huge grove of trees grows around the target, trapping it inside the wood as a \\glossterm{condition}.
           While it is trapped in the trees, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
