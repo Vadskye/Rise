@@ -71,7 +71,7 @@ Remove "dazed" and "shaken". New debuff tiers:
   * Instant: push 15', teleport 15'
 * T1: dazzled
   * Instant: knockback 15', push 30', teleport 30'
-* T1.5: Frightened
+* T1.5: Frightened, difficult terrain (zone only)
   * Instant: prone, repeat
 * T2: goaded, slowed, stunned
   * Instant: knockback 30', push 60', teleport 60'
@@ -79,7 +79,7 @@ Remove "dazed" and "shaken". New debuff tiers:
   * Instant: stop existing briefly / banishment, skip standard action
 * T3: Confused, blinded, panicked, vulnerable to all damage
   * Instant: knockback 60', push 90', teleport 90', selfstrike
-* T3.5: Immobilized
+* T3.5: Immobilized, shapeshift into a form with no free hands
 * T4: Asleep, paralyzed
 
 ## Rank Modifiers
@@ -87,14 +87,17 @@ Remove "dazed" and "shaken". New debuff tiers:
 * Both strike-based and non-strike-based:
   * -4 ranks: debuff only applies once the target is out of damage resistance / is below max HP
   * -3 ranks: debuff is removed if the target takes damage
+  * -2 ranks: debuff can be removed with movement (fire Dex check)
   * -2 ranks: debuff only applies if you beat an additional defense
   * -2 ranks: target is immune after first successful application until short rest (brief / instant effects)
   * -2 ranks: effect is delayed by one round
   * -1 ranks: target is immune after first successful application until short rest (conditions)
   * -1 ranks: requires adjacent ally or adjacent Medium+ object (not compatible with Close or closer range)
   * -1 ranks: requires target to have already taken damage during the current round
+  * -1 ranks: Effect can be destroyed (HP = 3x power)
   * +4 ranks: Add additional debuff of the same rank removed at the same time as existing debuff
 * Non-strikes only:
+  * -4 ranks: effect is delayed by one round in a predefined area, allowing creatures to escape (can't combine with enemies only)
   * -1 ranks: convert ability to Sustained zone that automatically affects everything in the area (area only, can't combine with enemies only)
   * -1 ranks: convert ability to attunement, no-component standard action with brief cooldown
   * +0 ranks: convert ability to attunement, no-component standard action

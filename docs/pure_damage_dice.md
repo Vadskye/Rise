@@ -627,13 +627,6 @@ Goal: HP should be 3x/4x accuracy-modified damage target (assuming DR should be 
 Notation: dX means "standard damage for rank X". A suffix of "h" means "high power scaling", and "l" means "low power scaling". High power scaling is generally stronger, while low power scaling is generally weaker.
 
 Standard for all ranks:
-* ctX 
-  * "condition that you could get as a pure debuff at Med range at rank X"
-  * ct1 = t1 condition
-  * ct3 = t1.5 condition
-  * ct5 = t2 condition
-  * ct7 = t2.5 condition
-  * ct9 = t3 condition
 * RX
   * Single-target pure damage
     * dX at Med range
@@ -649,66 +642,27 @@ Standard for all ranks:
     * dX-1l at Med range, doubled if you beat an extra defense
     * dX-2 with -2 accuracy as a minor action (deep attune)
     * dX-2 with -2 accuracy as a minor action (sustain)
+    * dX+1 at Med range with one round delay (must be same target in round 1 and 2)
+    * dX at Med range with one round delay (choose target in round 2)
+    * dX+2 adjacent (free hand, but not vs Reflex)
+    * dX+1 adjacent (Grasp vs Reflex)
   * AOE
-    * dX-2 at tX area
-    * dX at t1 area
-    * dX-1 at t(0.5X) area?
-    * dX-2 in tX-2 area, Sustain (minor), can't combine with enemies-only
+    * dX-2 in tX area
+    * dX in t1 area
+    * dX-1 in t(0.5X) area?
+    * dX-2 in tX-2 area, Sustain (minor), no enemies-only
+    * dX-2 in t(0.5X) zone, repeat next round so enemies can escape, no enemies-only
+    * dX+1 in tX zone with a 1-round delay so creatures can escape, no enemies-only
+    * dX-1 in tX self-based area (radius/cone/etc) with a 1-round delay, area chosen in second round
   * Damage + debuff
     * See "Rebalanced Debuffs"
 * Damage over time
   * Instead of dealing dX damage:
     * dX-2 immediately and during next action
     * dX-1 immediately, again during next action if it lost HP the first time
-    * dX-2l as a condition
-    * dX-2l as a sustained single-target effect (heat metal)
-    * dX-1 as a removable condition (fire Dex check)
-
-* R1
-  * Single-target debuff
-    * d1 at Short range:
-      * t1 debuff condition if lose HP
-      * t0.5 debuff condition if beat extra defense
-* R2
-  * Single-target debuff
-    * d1 at Short range:
-      * t0.5 debuff condition if take damage
-      * t1 debuff condition if beat extra defense
-      * t1.5 debuff condition if lose HP
-    * d1 at Med range:
-      * t1 debuff condition if lose HP
-      * t0.5 debuff condition if beat extra defense
-    * d1 at Grasp range:
-      * t0.5 debuff condition if take damage
-      * t1.5 debuff condition if lose HP
-* R3
-  * Single-target debuff
-    * d1 at Med range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-    * d2 at Med range:
-      * t0.5 debuff condition if take damage
-      * t1 debuff condition if take beat extra defense
-      * t1.5 debuff condition if lose HP
-* R4
-  * Single-target debuff
-    * d3 at Grasp range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-* R5
-  * Single-target debuff
-    * d4 at Med range:
-      * t1 debuff condition if take damage
-      * t2 debuff condition if lose HP
-* R6
-  * Single-target debuff
-    * d5 at Grasp range:
-      * t1.5 debuff condition if take damage
-* R7
-  * Single-target debuff
-    * d5 at Med range:
-      * t2 debuff condition if take damage
-      * t3 debuff condition if lose HP
+    * dX-3 as a standard action removable condition condition
+    * dX-3 as a sustained single-target effect?? (heat metal)
+    * dX-2 as a movement-removable condition (fire Dex check)
 
 ## Accuracy-Modified Spell Damage Scaling
 

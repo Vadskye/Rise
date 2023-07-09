@@ -428,7 +428,7 @@ export const cryomancy: MysticSphere = {
 
       // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `Each target takes \\damagerankfour{piercing and cold}.`,
+        hit: `The target takes \\damagerankfour{piercing and cold}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -444,7 +444,7 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle Carapace',
 
       attack: {
-        hit: `Each target takes \\damagerankseven{piercing and cold}.`,
+        hit: `The target takes \\damagerankseven{piercing and cold}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -580,6 +580,38 @@ export const cryomancy: MysticSphere = {
       rank: 5,
       scaling: 'accuracy',
       tags: [],
+    },
+
+    {
+      name: 'Chilling Aura',
+
+      attack: {
+        hit: `
+          The target is chilled as a \\glossterm{condition}.
+          While it is below its maximum hit points, it is \\slowed.
+        `,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: [],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Freezing Aura',
+
+      functionsLike: {
+        name: 'chilling aura',
+        exceptThat: 'affected creatures become slowed even if they are at full hit points.',
+      },
+      rank: 6,
+      scaling: 'accuracy',
+      tags: [],
+      type: 'Attune (deep)',
     },
   ],
   rituals: [

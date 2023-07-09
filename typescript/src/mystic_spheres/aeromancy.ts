@@ -343,7 +343,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{bludgeoning}.
+          The target takes \\damagerankthree{bludgeoning}.
         `,
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -426,6 +426,7 @@ export const aeromancy: MysticSphere = {
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -578,6 +579,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each target takes \\damagerankone{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -593,6 +595,7 @@ export const aeromancy: MysticSphere = {
         hit: `
           Each target takes \\damagerankfive{bludgeoning}.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
