@@ -85,12 +85,12 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 When you use this ability, your animal companion generally waits until after you attack to make its own attack.
                 \begin{activeability}{Tag-Team Takedown}
                     \rankline
-                    Make a \glossterm{strike}.
-                    Your \ability{animal companion} gains 1d6 \glossterm{extra damage} this round against each damaged creature.
+                    Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                    Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The extra damage increases to 2d10.
+                    \rank{4} The extra damage increases to 1d8.
+                    \rank{5} The extra damage increases to 2d8.
                     \rank{6} The extra damage increases to 3d10.
                     \rank{7} The extra damage increases to 5d10.
                 \end{activeability}
@@ -200,12 +200,12 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Banestrike}
                     \rankline
                     Make a \glossterm{strike}.
-                    The strike deals double \glossterm{weapon damage} against targets that are \vulnerable to it.
+                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double \glossterm{weapon damage}.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The strike deals triple weapon damage against vulnerable targets instead of double weapon damage.
+                    \rank{5} The strike deals triple weapon damage instead of double weapon damage.
                     \rank{6} The accuracy bonus increases to +2.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}

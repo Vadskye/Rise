@@ -199,9 +199,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You \glossterm{briefly} gain a \plus4 accuracy bonus against each target.
 
                         \rankline
-                        \rank{3} The bonus increases to \plus5.
-                        \rank{5} The bonus increases to \plus6.
-                        \rank{7} The bonus increases to \plus7.
+                        \rank{3} The area increases to a \hugearea radius.
+                        \rank{5} The area increases to a \gargarea radius.
+                        \rank{7} The ability affects all enemies who can see or hear you.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Cacaphony}[\abilitytag{Auditory}]
@@ -211,12 +211,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \miss \glossterm{Glancing blow}.
 
                         \rankline
-                        \rank{2} The area increases to a \smallarea radius.
-                        \rank{3} The damage increases to \damagerankthree{bludgeoning}.
-                        \rank{4} The area increases to a \medarea radius.
-                        \rank{5} The damage increases to \damagerankfour{bludgeoning}.
-                        \rank{6} The area increases to a \largearea radius.
-                        \rank{7} The damage increases to \damagerankfive{bludgeoning}.
+                        \rank{2} The damage increases to \damageranktwo{bludgeoning}.
+                        \rank{3} The area increases to a \smallarea radius.
+                        \rank{4} The damage increases to \damagerankthree{bludgeoning}.
+                        \rank{5} The area increases to a \medarea radius.
+                        \rank{6} The damage increases to \damagerankfive{bludgeoning}.
+                        \rank{7} The area increases to a \largearea radius.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -246,28 +246,28 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Auditory}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
-                        The target chooses one of its \glossterm{brief} effects or \glossterm{conditions}.
+                        The target chooses one of its \glossterm{conditions}.
                         For the duration of your performance, the target ignores that effect.
 
                         \rankline
                         \rank{3} You can target an additional \glossterm{ally} within range.
-                        \rank{5} This ability loses the \abilitytag{Sustain} (minor) tag.
-                            Instead, the chosen effect is removed entirely.
-                        \rank{7} Each target can remove two effects instead of one.
+                        \rank{5} If a target increases its \glossterm{fatigue level} by one, it can remove the chosen effect permanently.
+                        \rank{7} This ability affects two conditions instead of one.
+                        A target must increase its fatigue level by two to remove both conditions.
                     \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Dazzling Discordance}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
+                        Make an attack vs. Mental against all \glossterm{enemies} within a \smallarea radius from you.
                         \hit For the duration of your performance, each target is \dazzled.
 
                         \rankline
-                        \rank{2} The area increases to a \smallarea radius.
-                        \rank{3} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
-                        \rank{4} The area increases to a \medarea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The area increases to a \largearea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        \rank{2} The area increases to a \medarea radius.
+                        \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
+                        \rank{4} The area increases to a \largearea radius.
+                        \rank{5} The accuracy bonus increases to \plus2.
+                        \rank{6} The area increases to a \hugearea radius.
+                        \rank{7} The accuracy bonus increases to \plus3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
@@ -287,8 +287,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the target is \dazed.
-                        \crit For the duration of your performance, the target is \stunned.
+                        \hit For the duration of your performance, the target is \stunned while it has no remaining \glossterm{damage resistance}.
+                        \crit The target is stunned even if it has damage resistance remaining.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -297,7 +297,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalsustainability}{Frightening Fugue}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \shortrange.
-                        \hit The target is \shaken by you for the duration of your performance. While it has no remaining \glossterm{damage resistance}, it is \frightened by you instead.
+                        \hit The target is \frightened by you for the duration of your performance.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
@@ -318,12 +318,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
-                        For the duration of your performance, the target gains a \plus2 bonus to \glossterm{checks}.
+                        For the duration of your performance, the target gains a \plus1 bonus to \glossterm{checks}.
 
                         \rankline
-                        \rank{3} The bonus increases to \plus3.
-                        \rank{5} The bonus increases to \plus4.
-                        \rank{7} The bonus increases to \plus5.
+                        \rank{3} The bonus increases to \plus2.
+                        \rank{5} The bonus increases to \plus3.
+                        \rank{7} The bonus increases to \plus4.
                     \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
@@ -363,17 +363,17 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Stutterstep Staccato}[\abilitytag{Auditory}]
                         \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \tinyarea radius from you.
-                        \hit Each target is \glossterm{briefly} \slowed.
-                        \crit Each target is \slowed as a \glossterm{condition}.
+                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
+                        \hit For the duration of your performance, each target is \slowed while it has no remaining \glossterm{damage resistance}.
+                        \crit The target is slowed even if it has damage resistance remaining.
 
                         \rankline
-                        \rank{2} The area increases to a \smallarea radius.
-                        \rank{3} You gain a \plus2 \glossterm{accuracy} bonus with the attack.
-                        \rank{4} The area increases to a \medarea radius.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{6} The area increases to a \largearea radius.
-                        \rank{7} The accuracy bonus increases to \plus6.
+                        \rank{2} The area increases to a \medarea radius.
+                        \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
+                        \rank{4} The area increases to a \largearea radius.
+                        \rank{5} The accuracy bonus increases to \plus2.
+                        \rank{6} The area increases to a \hugearea radius.
+                        \rank{7} The accuracy bonus increases to \plus3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Vigorous Verse}[\abilitytag{Auditory}]
@@ -758,12 +758,13 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
-                    \hit The target is \dazed as a \glossterm{condition}.
+                    \hit The target it is compelled to spend its next \glossterm{standard action} doing nothing at all.
+                    After it takes this standard action, it becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                     \rankline
                     \rank{3} You can target an additional creature within range.
-                    \rank{5} The range increases to \rngmed.
-                    \rank{7} The maximum number of targets increases to 5.
+                    \rank{5} If the target has no remaining damage resistance, it does not become immune to this effect.
+                    \rank{7} The maximum number of targets increases to 3.
                 \end{activeability}
             ",
             modifiers: None,
@@ -801,11 +802,11 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Exploit Distraction}
                     \rankline
                     Make a \glossterm{strike}.
-                    The strike deals double \glossterm{weapon damage} against each creature that gained a new \glossterm{condition} this round.
+                    If the target gained a new \glossterm{condition} this round, the strike deals double \glossterm{weapon damage}.
                     This does not apply if the creature was already suffering an identical condition when it gained the new condition.
 
                     \rankline
-                    \rank{4} The increased damage also applies against each creature that gained a new condition during the previous round, as long as it is still affected by that condition.
+                    \rank{4} The increased damage also applies if the target gained a new condition during the previous round, as long as it is still affected by that condition.
                     \rank{5} You gain a +1 accuracy bonus with the strike.
                     \rank{6} The strike deals triple weapon damage instead of double weapon damage.
                     \rank{7} The accuracy bonus increases to +3.
@@ -825,7 +826,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     Your \glossterm{accuracy} is equal to your Deception skill.
                     In addition, choose a location on stable ground within range.
                     \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
-                    This effect automatically ends if the target takes any damage.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
