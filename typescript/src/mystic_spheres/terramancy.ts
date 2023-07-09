@@ -338,14 +338,14 @@ export const terramancy: MysticSphere = {
       // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
       attack: {
         hit: `
-          If the target is Large or smaller and has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive{bludgeoning} as the earth grinds it into paste.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
           Special movement abilities such as teleportation can also remove the target from the fissure.
         `,
         targeting: `
-          Make an attack vs. Reflex against one \\glossterm{grounded} creature within \\shortrange.
+          Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if the target is grounded on stone.
         `,
       },

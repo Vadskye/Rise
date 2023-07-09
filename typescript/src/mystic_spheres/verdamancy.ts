@@ -4,7 +4,7 @@ export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
   shortDescription: 'Animate and manipulate plants.',
   sources: ['domain', 'nature'],
-  // Adding brief light undergrowth adds +2 ranks to a reasonably sized area.
+  // Adding brief light undergrowth adds +2 area tiers to a reasonably sized area.
   // Target's space + adjacent spaces is only +1 rank.
 
   cantrips: [
@@ -42,35 +42,35 @@ export const verdamancy: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Entangling Plants',
+      name: 'Entangle',
 
+      // -2r for removal mechanic
       attack: {
-        crit: `The condition persists even if the target stops being in undergrowth.`,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
-          The condition is removed if the target stops being in undergrowth. 
+          This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Strength check as a \\glossterm{movement} to break the plants.
+          If the target makes this check as a standard action, it gains a +5 bonus.
+          In addition, this condition is removed if the target takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is in \\glossterm{undergrowth}.
+          Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\medrange.
+          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
         `,
       },
       narrative: `
-        Plants twist and writhe to trap your foe.
+        Plants grow from nowhere to trap your foe.
       `,
-      rank: 1,
+      rank: 3,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Manifestation'],
     },
-    {
-      name: 'Entangle',
 
-      attack: {
-        crit: `The target also cannot move farther than 10 feet from its original location until it ends the effect.`,
-        hit: `The target is \\slowed as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\medrange that is on a stable surface.
-          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-        `,
+    {
+      name: 'Mass Entangle',
+
+      functionsLike: {
+        name: 'entangle',
+        exceptThat: 'it affects all creatures in a \\medarea radius within \\medrange.',
       },
       narrative: `
         Plants grow from nowhere to trap your foe.
@@ -101,10 +101,9 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Intense Vine Whip',
 
-      // +2r for longer push, +2r for more damage
       attack: {
         hit: `
-          The target takes \\damagerankfour{bludgeoning}.
+          The target takes \\damagerankfive{bludgeoning}.
           If the target takes damage, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
@@ -120,14 +119,14 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Vinestorm',
 
+      // +1 area tier for undergrowth
       attack: {
-        // d1l for undergrowth?
         hit: `
-          Each target takes \\damagerankonelow{bludgeoning}.
+          Each target takes \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Armor against all creatures within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
           After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
         `,
@@ -140,6 +139,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Mighty Vinestorm',
 
+      // with +1t from undergrowth, t3 area
       attack: {
         hit: `
           Each target takes \\damagerankfive{bludgeoning}.
@@ -159,8 +159,9 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Massive Vinestorm',
 
+      // with +2t from undergrowth, t5 area
       attack: {
-        hit: `Each target takes \\damagerankthreelow{bludgeoning}.`,
+        hit: `Each target takes \\damagerankthree{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
@@ -310,47 +311,43 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Embedded Growth',
 
+      // +1r for light undergrowth
       attack: {
-        // Medicine removal is harder than fire, but light undergrowth is a buff - use d1?
         hit: `
-          The target begins growing painful plants inside its body as a \\glossterm{condition}.
-          It takes \\damagerankonelow{piercing} immediately and during each of your subsequent actions.
-          Whenever it takes damage from the growth, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
-
-          The condition can be removed with the \\textit{treat condition} ability from the Medicine skill (see \\pcref{Medicine}).
-          The \\glossterm{difficulty value} of the check is equal to 5.
+          The target takes \\damagerankone{piercing} damage immediately, and again during your next action.
+          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Reflex and Fortitude against one creature within \\shortrange.
         `,
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
     },
 
     {
-      name: 'Intense Embedded Growth',
+      name: 'Mighty Embedded Growth',
 
       functionsLike: {
         name: 'embedded growth',
-        exceptThat: 'the DV of the Medicine check increases to 15, and the damage increases to \\damagerankfourlow{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfourlow{piercing}.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
     },
 
     {
       name: 'Fire Seeds',
 
-      // d2l instead of d2 because this lets party members throw fireballs?
+      // +1r for sharing
       attack: {
-        hit: `Each target takes \\damageranktwolow{fire}.`,
+        hit: `Each target takes \\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
@@ -371,9 +368,9 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankfivelow{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfourlow{fire}.',
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
     },
@@ -399,7 +396,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
 
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
@@ -411,11 +408,11 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
-          the damage increases to \\damagerankfour{piercing}.
+          the damage increases to \\damagerankfivelow{piercing}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
@@ -446,18 +443,18 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Blight',
 
-      // d2l instead of d2 for all the weird stuff
+      // Short range instead of med range for the two weird effects
       attack: {
         hit: `
-          The target takes \\damageranktwolow{physical} immediately, and again during your next action.
-          Whenever it takes damage this way, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} lose all \\glossterm{undergrowth}.
+          The target takes \\damagerankone{physical}.
           This damage is doubled if the target is a plant, including plant creatures.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
+          In addition, all \\glossterm{undergrowth} in a \\smallarea radius around the target \\glossterm{briefly} shrivels away into the ground.
         `,
       },
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
     },
 
@@ -468,7 +465,7 @@ export const verdamancy: MysticSphere = {
         name: 'blight',
         exceptThat: 'the damage increases to \\damagerankfivelow{physical}.',
       },
-      rank: 7,
+      rank: 5,
       scaling: 'accuracy',
     },
 
@@ -514,13 +511,24 @@ export const verdamancy: MysticSphere = {
         You can extend the grass to surround you at a whim.
       `,
       rank: 1,
-      scaling: {
-        3: 'When you cast this spell, you can choose to affect a \\medarea radius instead.',
-        5: 'When you cast this spell, you can choose to affect a \\largearea radius instead.',
-        7: 'When you cast this spell, you can choose to affect a \\hugearea radius instead.',
-      },
       tags: ['Manifestation'],
       type: 'Attune',
+    },
+
+    {
+      name: 'Massive Flourishing Grass',
+
+      functionsLike: {
+        name: 'flourishing grass',
+        exceptThat: 'the area of undergrowth increases to a \\largearea radius.',
+      },
+      narrative: `
+        Long, thin grass continuously grows and writhes on your body.
+        You can extend the grass to surround you at a whim.
+      `,
+      rank: 4,
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {
@@ -559,6 +567,26 @@ export const verdamancy: MysticSphere = {
       },
       tags: ['Manifestation'],
       type: 'Attune',
+    },
+    {
+      name: 'Treeseal',
+
+      // Basically "stop existing", so t2.5? Should probably be t3, add immunity
+      attack: {
+        hit: `
+          A Huge grove of trees grows around the target, trapping it inside the wood as a \\glossterm{condition}.
+          While it is trapped in the trees, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+
+          The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, and all of its defenses are 5.
+          If the grove is destroyed, this condition ends.
+          Special movement abilities such as teleportation can also remove the target from the trees, ending this effect.
+          Once this condition ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one Large or smaller \\glossterm{grounded} creature within \\medrange.
+        `,
+      },
+      rank: 7,
     },
   ],
   rituals: [
