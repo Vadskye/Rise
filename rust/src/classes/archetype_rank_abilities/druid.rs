@@ -119,7 +119,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{magical power}.
+                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
