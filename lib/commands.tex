@@ -83,7 +83,6 @@
 \newcommand{\charmed}{\debuff{charmed} \reminder{friendly with charmer}\xspace}
 \newcommand{\climbing}{\debuff{climbing} \reminder{\minus2 accuracy, defenses}\xspace}
 \newcommand{\confused}{\debuff{confused} \reminder{\minus2 defenses, randomly attack or defend}\xspace}
-\newcommand{\dazed}{\debuff{dazed} \reminder{\minus1 defenses}\xspace}
 % Assume 60% hit chance, so 0.6 dpr.
 % with -1 accuracy, 0.5 dpr.
 % with 20% miss chance, 0.48 dpr.
@@ -103,7 +102,6 @@
 \newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
 \newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
 \newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 Armor and Ref}\xspace}
-\newcommand{\shaken}{\debuff{shaken} \reminder{\minus1 Mental, \minus1 accuracy vs. source}\xspace}
 \newcommand{\slowed}{\debuff{slowed} \reminder{half speed, \minus2 Armor and Ref}\xspace}
 \newcommand{\squeezing}{\debuff{squeezing} \reminder{\minus2 Armor and Ref}\xspace}
 \newcommand{\stunned}{\debuff{stunned} \reminder{\minus2 defenses}\xspace}
@@ -467,6 +465,10 @@
     \par \textbf{Hit}:\xspace
 }
 
+\DeclareDocumentCommand{\glance}{}
+{
+    \par \textbf{Glancing blow}:\xspace
+}
 
 \DeclareDocumentCommand{\crit}{}
 {

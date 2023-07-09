@@ -4,7 +4,7 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
-    DebuffInsteadEffect, PoisonEffect, VitalWoundEffect,
+    DebuffInsteadEffect, PoisonEffect,
 };
 use crate::core_mechanics::attacks::{
     Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect,
@@ -17,8 +17,6 @@ use super::attack::SimpleSpell;
 
 pub enum StandardAttack {
     // Monster abilities
-    AbolethSlam,
-    AbolethPsionicBlast,
     AnkhegDrag,
     GhoulBite(i32),
     GibberingMoutherGibber,
@@ -48,7 +46,6 @@ pub enum StandardAttack {
     MindCrush(i32),
     PersonalIgnition(i32),
     Pyrohemia(i32),
-    Pyrophobia(i32),
     RetributiveLifebond(i32),
     Spikeform(i32),
     Windslash(i32),
@@ -60,42 +57,6 @@ impl StandardAttack {
     pub fn attack(&self) -> Attack {
         match self {
             // Monster abilities
-            Self::AbolethSlam => {
-                let mut aboleth_slam = StandardWeapon::Slam.weapon().attack();
-                aboleth_slam.name = "Sliming Tentacle".to_string();
-                if let Some(e) = aboleth_slam.damage_effect_mut() {
-                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(
-                        PoisonEffect {
-                            stage1: vec![Debuff::Stunned],
-                            stage3_debuff: None,
-                            stage3_vital: Some(VitalWoundEffect {
-                                special_effect: Some("
-                                    Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound},
-                                      the target's skin is transformed into a clear, slimy membrane.
-                                    Every 5 minutes, an afflicted creature must be moistened with cool, fresh water
-                                      or it will increase its \\glossterm<fatigue level> by two.
-                                    This effect lasts until the \\glossterm{vital wound} is removed.
-                                ".to_string()),
-                            }),
-                        },
-                    ));
-                }
-                return aboleth_slam;
-            }
-            // Large enemies-only cone is a rank 4 effect
-            Self::AbolethPsionicBlast => Attack {
-                accuracy: 0,
-                crit: None,
-                defense: Defense::Mental,
-                extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Energy])),
-                is_magical: true,
-                is_strike: false,
-                name: "Psionic Blast".to_string(),
-                replaces_weapon: None,
-                tags: Some(vec![Tag::Ability(AbilityTag::Elite)]),
-                targeting: Targeting::Cone(AreaSize::Large, AreaTargets::Enemies),
-            },
             Self::AnkhegDrag => Attack {
                 accuracy: 4,
                 crit: None,
@@ -143,7 +104,8 @@ impl StandardAttack {
                 defense: Defense::Mental,
                 extra_context: None,
                 hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![Debuff::Dazed],
+                    // TODO: convert to lose HP effect
+                    debuffs: vec![Debuff::Stunned],
                     duration: AttackEffectDuration::Brief,
                     immune_after_effect_ends: false,
                 }),
@@ -153,7 +115,6 @@ impl StandardAttack {
                 replaces_weapon: None,
                 tags: Some(vec![
                     Tag::Ability(AbilityTag::Compulsion),
-                    Tag::Ability(AbilityTag::Elite),
                 ]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Creatures),
             },
@@ -467,36 +428,6 @@ impl StandardAttack {
                 name: "Pyrohemia".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Short),
-            }.attack(),
-            Self::Pyrophobia(rank) => SimpleSpell {
-                accuracy: if *rank >= 5 { *rank - 5 } else { *rank - 1 },
-                crit: Some(AttackEffect::DebuffInstead(DebuffInsteadEffect {
-                    debuffs: vec![if *rank >= 5 {
-                        Debuff::Panicked("the $name and all other sources of fire".to_string())
-                    } else {
-                        Debuff::Frightened("the $name and all other sources of fire".to_string())
-                    }],
-                    instead_of: Debuff::Shaken(
-                        "the $name and all other sources of fire".to_string(),
-                    ),
-                })),
-                defense: Defense::Mental,
-                hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![if *rank >= 5 {
-                        Debuff::Frightened("the $name and all other sources of fire".to_string())
-                    } else {
-                        Debuff::Shaken("the $name and all other sources of fire".to_string())
-                    }],
-                    duration: AttackEffectDuration::Condition,
-                    immune_after_effect_ends: false,
-                }),
-                name: if *rank >= 5 {
-                    "Primal Pyrophobia".to_string()
-                } else {
-                    "Pyrophobia".to_string()
-                },
-                tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
-                targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::RetributiveLifebond(rank) => SimpleSpell {
                 accuracy: *rank - 1,

@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -20,7 +20,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against creatures that are not wearing metal body armor.
+        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) if the target is not wearing metal body armor.
       `,
       rank: 3,
     },
@@ -30,7 +30,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        The strike deals 1d10 \\glossterm{extra damage} per 3 power against creatures that are not wearing metal body armor.
+        The strike deals 1d10 \\glossterm{extra damage} per 3 power if the target is not wearing metal body armor.
       `,
       rank: 7,
     },
@@ -40,7 +40,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\dazzled as a \\glossterm{condition}.
+        If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -50,7 +50,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\blinded as a \\glossterm{condition}.
+        If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -60,28 +60,20 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike} using a slashing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
+        If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 3,
-    },
-
-    {
-      name: 'Hamstring+',
-
-      effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        Each damaged creature is \\slowed as a condition.
-      `,
-      rank: 7,
+      rank: 1,
     },
 
     {
       name: 'Two-Weapon Rend',
 
+      // 1d6 +1d per 2 power is about the same damage as an extra strike, so about 50%
+      // more damage compared to hitting with two weapons.
       effect: `
         Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
-        Each target that takes damage from both weapons bleeds.
-        A bleeding creature takes 1d4 slashing damage +1d per two \\glossterm{power} during your next action.
+        If the target takes damage from both weapons, it bleeds.
+        A bleeding creature takes 1d6 slashing damage +1d per two \\glossterm{power} during your next action.
       `,
       rank: 1,
     },
@@ -89,8 +81,9 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Two-Weapon Rend+',
 
+      // Unclear if correct damage
       effect: `
-        Make a melee strike using a slashing weapon.
+        Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
         Each target that takes damage from both weapons bleeds.
         A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
       `,
@@ -103,7 +96,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        If your attack result beats a target's Reflex defense, the target takes 1d6 fire damage per 4 power (minimum 1d6) during your next action.
+        If the target takes damage and your attack result beats its Reflex defense, it takes 1d6 fire damage per 4 power (minimum 1d6) during your next action.
       `,
       rank: 3,
     },
@@ -112,7 +105,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Flintspark Strike+',
 
       effect: `
-        Make a strike using a slashing weapon.
+        Make a strike with double \\glossterm{weapon damage} using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
         If your attack result beats a target's Reflex defense, the target takes 1d10 fire damage per 3 power during your next action.
       `,
@@ -127,7 +120,7 @@ export const ripAndTear: CombatStyle = {
         The strike gains the \\glossterm{Sweeping} (1) tag, or you gain a +1 bonus to the Sweeping value if it already had that tag.
         This allows the strike to hit an additional target (see \\pcref{Weapon Tags}).
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -137,7 +130,7 @@ export const ripAndTear: CombatStyle = {
         Make a thrown \\glossterm{strike} using a slashing weapon.
         The strike also targets an additional creature or object within 10 feet of the strike's primary target.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
@@ -166,12 +159,26 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
+      name: 'Desperate Bloodwhirl',
+
+      effect: `
+        After you use this ability, you increase your \\glossterm{fatigue level} by one.
+
+        Make a melee \\glossterm{strike} using a slashing weapon.
+        The strike targets all \\glossterm{enemies} adjacent to you.
+        On a miss, you get a \\glossterm{glancing blow}.
+        Each creature that loses \\glossterm{hit points} takes damage from the strike again during your next action.
+        You cannot use the \\textit{desperate exertion} ability to affect this strike.
+      `,
+      rank: 1,
+    },
+
+    {
       name: 'Bloodletting Strike',
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Each damaged creature bleeds if your attack result beats its Fortitude defense.
-        A bleeding creature takes 1d4 slashing damage +1d per two \\glossterm{power} during your next action.
+        Make a \\glossterm{weak strike} using a slashing weapon.
+        If the target loses hit points, it takes damage from the strike again during your next action.
       `,
       rank: 1,
     },
@@ -180,11 +187,10 @@ export const ripAndTear: CombatStyle = {
       name: 'Bloodletting Strike+',
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        Each damaged creature bleeds if your attack result beats its Fortitude defense.
-        A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
+        Make a strike using a slashing weapon.
+        If the target takes damage, it takes damage from the strike again during your next action.
       `,
-      rank: 5,
+      rank: 3,
     },
 
     {
@@ -203,7 +209,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make two \\glossterm{strikes} using a slashing weapon.
-        You gain a +2 accuracy bonus with the first strike, and a -2 accuracy penalty with the second strike.
+        You gain a +1 accuracy bonus with the first strike, and a -3 accuracy penalty with the second strike.
       `,
       rank: 5,
     },
@@ -213,9 +219,21 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target does not have any remaining \\glossterm{damage resistance}, it takes all damage from the strike again during your next action.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d8 +1d per two power \\glossterm{extra damage}.
       `,
+      // narrative: '',
       rank: 3,
+    },
+
+    {
+      name: 'Tear Exposed Flesh+',
+
+      effect: `
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d10 \\glossterm{extra damage} per 3 power.
+      `,
+      // narrative: '',
+      rank: 7,
     },
   ],
 };

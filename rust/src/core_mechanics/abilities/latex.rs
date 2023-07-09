@@ -28,7 +28,7 @@ pub fn latex_ability_block(
 fn latex_ability_header(tags: Vec<String>, usage_time: Option<UsageTime>) -> String {
     let tags_text = tags.join(", ");
     let usage_time_text = if let Some(u) = usage_time {
-        u.latex_ability_header().unwrap_or("".to_string())
+        u.latex_ability_header()
     } else {
         "".to_string()
     };

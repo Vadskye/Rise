@@ -136,6 +136,18 @@ impl DamageEffect {
         f(&mut damage_effect);
         return damage_effect;
     }
+
+    pub fn from_weapon(weapon: &Weapon) -> Self {
+        return Self {
+            extra_defense_effect: None,
+            base_dice: weapon.damage_dice.clone(),
+            damage_types: weapon.damage_types.clone(),
+            lose_hp_effect: None,
+            power_scalings: weapon.power_scalings().clone(),
+            take_damage_effect: None,
+            vampiric_healing: None,
+        }
+    }
 }
 
 #[derive(Clone, Debug)]
@@ -341,16 +353,8 @@ impl AttackEffect {
         return attack_effect;
     }
 
-    pub fn from_weapon(weapon: Weapon) -> Self {
-        return Self::Damage(DamageEffect {
-            extra_defense_effect: None,
-            base_dice: weapon.damage_dice.clone(),
-            damage_types: weapon.damage_types.clone(),
-            lose_hp_effect: None,
-            power_scalings: weapon.power_scalings().clone(),
-            take_damage_effect: None,
-            vampiric_healing: None,
-        });
+    pub fn from_weapon(weapon: &Weapon) -> Self {
+        return Self::Damage(DamageEffect::from_weapon(weapon));
     }
 
     pub fn description(

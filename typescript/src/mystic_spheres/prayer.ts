@@ -89,17 +89,11 @@ export const prayer: MysticSphere = {
       name: 'Boon of Precision',
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The next time the target makes a \\glossterm{strike} this round,
-          it gains a +2 bonus to \\glossterm{accuracy} and rolls twice and takes the higher result.
-        If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
+        Choose one \\glossterm{ally} within \\medrange.
+        The next time the target makes an attack this round,
+          it gains a +1 accuracy bnous and rolls twice and takes the higher result.
       `,
-      rank: 1,
-      scaling: {
-        3: `The accuracy bonus increases to +3.`,
-        5: `The accuracy bonus increases to +4.`,
-        7: `The accuracy bonus increases to +5.`,
-      },
+      rank: 2,
       tags: [],
     },
 
@@ -107,15 +101,10 @@ export const prayer: MysticSphere = {
       name: 'Boon of Deadly Fortune',
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose one \\glossterm{ally} within \\medrange.
         The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
-        If you cast this spell on yourself, it affects the first attack you make before the end of the next round.
       `,
-      rank: 2,
-      scaling: {
-        4: `The accuracy bonus increases to +5.`,
-        6: `The accuracy bonus increases to +6.`,
-      },
+      rank: 1,
       tags: [],
     },
 
@@ -123,8 +112,8 @@ export const prayer: MysticSphere = {
       name: 'Boon of Invulnerability',
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target becomes takes half damage from all sources this round.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
       `,
       rank: 6,
@@ -135,15 +124,11 @@ export const prayer: MysticSphere = {
       name: 'Boon of Avoidance',
 
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose one \\glossterm{ally} within \\medrange.
         The target gains a +2 bonus to Armor and Reflex defenses this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +3.`,
-        7: `The bonus increases to +4.`,
-      },
       tags: ['Swift'],
     },
 
@@ -191,19 +176,18 @@ export const prayer: MysticSphere = {
       name: 'Boon of Cleansing',
 
       effect: `
-        You or one \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
+        One \\glossterm{ally} within \\medrange can remove a \\glossterm{condition}.
+        If it does, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
-      scaling: {
-        6: `The target can remove two effects.`,
-      },
     },
 
     {
       name: 'Cleansing Benediction',
 
       effect: `
-        You and each \\glossterm{ally} within a \\smallarea radius from you can each remove a \\glossterm{condition}.
+        Each \\glossterm{ally} within a \\largearea radius from you can each remove a \\glossterm{condition}.
+        Each ally that removes a condition in this way increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
     },
@@ -258,7 +242,8 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target removes one \\glossterm{condition} of its choice affecting it.
+        At the end of each round, each target may remove one \\glossterm{condition} of its choice affecting it.
+        Whenever it does, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
       type: 'Attune (target)',
@@ -317,7 +302,7 @@ export const prayer: MysticSphere = {
       name: 'Boon of Shielding',
 
       effect: `
-        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        Choose an \\glossterm{ally} within \\shortrange.
         The target regains 1d8 \\glossterm{damage resistance} +1d per two \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
@@ -343,8 +328,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If you use the \\ability{desperate exertion} ability to affect this strike, you gain an additional +3 accuracy bonus to the reroll.
-        This stacks with the normal +2 bonus from the \\textit{desperate exertion} ability.
+        Whether you hit or miss, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
       `,
       rank: 1,
       scaling: 'accuracy',
@@ -373,34 +357,36 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Curse of Fugue',
+      name: 'Curse of Rage',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\dazed until it finishes a \\glossterm{short rest}.
+          The target is enraged until it finishes a \\glossterm{short rest}.
+          It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
-      tags: ['Curse'],
+      tags: ['Curse', 'Emotion'],
     },
     {
-      name: 'Intense Curse of Fugue',
+      name: 'Curse of Poor Eyesight',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\stunned until it finishes a \\glossterm{short rest}.
+          The target is \\dazzled until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Fortitude and Mental against one creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Curse'],
     },
@@ -417,7 +403,7 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: ['Curse'],
     },
@@ -433,9 +419,27 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Curse'],
+    },
+    {
+      name: 'Curse of Anxiety',
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          The target becomes anxious until it finishes a \\glossterm{short rest}.
+          Whenever a creature deals damage to the target, it becomes \\frightened by that creature until this effect ends.
+          As normal, it stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\shortrange.
+        `,
+      },
+      rank: 4,
+      scaling: 'accuracy',
+      tags: ['Curse', 'Emotion'],
     },
     {
       name: 'Curse of Blindness',
@@ -447,12 +451,29 @@ export const prayer: MysticSphere = {
           This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Fortitude and Mental against one creature within \\medrange.
         `,
       },
       rank: 5,
       scaling: 'accuracy',
       tags: ['Curse'],
+    },
+    {
+      name: 'Curse of Bewilderment',
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          While the target is below its maximum \\glossterm{hit points}, it is \\confused.
+          This effect lasts until the target finishes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 7,
+      scaling: 'accuracy',
+      tags: ['Compulsion', 'Curse'],
     },
     {
       name: 'Holy Blades',
@@ -464,27 +485,6 @@ export const prayer: MysticSphere = {
       `,
       rank: 1,
       type: 'Attune (target)',
-    },
-    {
-      name: 'Curse of Flammability',
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `The target is highly flammable until it finishes a \\glossterm{short rest}.
-        Like dry wood or kindling, it catches on fire whenever it takes any fire damage.
-        While ignited in this way, it takes \\damageranktwo{fire} during each of your actions.
-
-        It can put out the fire by making a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
-        Dropping \\prone as part of this action gives a +5 bonus to this check.
-        Putting out the flames in this way does not remove this curse.`,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-
-      rank: 3,
-      scaling: 'accuracy',
-      tags: ['Curse'],
     },
   ],
   rituals: [

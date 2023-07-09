@@ -31,7 +31,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
                 Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
                 Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
                 Linguistics       & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & C        & C        & C        & Int          \\
-                Medicine          & C        & C        & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
+                Medicine          & C        & C        & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
                 Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
                 Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
                 Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
@@ -448,7 +448,8 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \begin{activeability}{Demoralize}
             \rankline
             Make an Intimidate vs. Mental attack against a creature within \rngmed range.
-            \hit The target is \glossterm{briefly} \shaken by you.
+            % TODO: this is a little weird as a universal ability. It's r-1 power level.
+            \hit If the target has no remaining \glossterm{damage resistance}, it is \frightened by you as a \glossterm{condition}.
         \end{activeability}
 
 \newpage
@@ -564,10 +565,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \parhead{Identify Affliction}\label{Identify Affliction}
             You can make a Medicine check to identify a poison, disease, or similar affliction currently affecting a creature.
             The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the poison or disease.
-        \parhead{Treat Condition}\label{Treat Condition}
-            As a standard action, you can make a Medicine check to treat some specific conditions.
-            Success usually means the condition is removed, as indicated by the effect's description.
-            A condition cannot be removed by this ability unless says this ability can remove it.
         \parhead{Treat Disease} With five minutes of work, you can make a Medicine check to treat a creature that is currently diseased.
             The next time it is attacked by its current disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
         \parhead{Treat Poison} As a standard action, you can make a Medicine check to treat a creature that is currently poisoned.

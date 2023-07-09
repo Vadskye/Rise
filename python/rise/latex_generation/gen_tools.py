@@ -20,7 +20,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you.
+                When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you and increase your \\glossterm<fatigue level> by one.
             """,
             short_description="Removes a condition",
             upgrades=[
@@ -28,6 +28,7 @@ def generate_tools():
                     rank=6,
                     description="""
                         You remove two conditions instead of only one.
+                        You increase your fatigue level by one for each condition that you remove in this way.
                     """,
                     short_description="Removes two conditions",
                 ),
@@ -419,7 +420,7 @@ def generate_tools():
                     rank=3,
                     description="""
                         The damage increases to 2d6.
-                        In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
+                        In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
                     """,
                     short_description="Throw to deal 2d6 bludgeoning damage, deafen, and daze",
                 ),
@@ -725,7 +726,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +3 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, the creature takes 1d8 damage.
+                On a hit, the creature takes 1d8 piercing damage.
                 If it loses \\glossterm<hit points> from this damage, it is \\immobilized until it breaks free of the trap.
                 Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
             """,
@@ -756,7 +757,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +5 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 1d8 damage.
+                On a hit, each target takes 1d8 fire damage.
             """,
             short_description="Deals 1d8 fire damage in a small area",
             upgrades=[
@@ -1181,10 +1182,10 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect makes the target \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts.
+                Its stage 1 effect makes the target \\glossterm<briefly> stunned.
+                Its stage 3 effect makes the target stunned while the poison lasts.
             """,
-            short_description="Dazes and eventually stuns",
+            short_description="Stuns with each stage",
         ),
         # -2 ranks for -1d
         MagicItem(
@@ -1197,7 +1198,7 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                It inflicts 1d6 damage per \\glossterm<poison stage>.
+                It inflicts 1d6 poison damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 1d6 damage per stage",
@@ -1213,7 +1214,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its inflicts 1d6 damage per \\glossterm<poison stage>.
+                Its inflicts 1d6 poison damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 1d6 damage per stage",
@@ -1229,10 +1230,10 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect makes the target \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts.
+                Its stage 1 effect makes the target \\glossterm<briefly> \\stunned.
+                Its stage 3 effect makes the target stunned while the poison lasts.
             """,
-            short_description="Dazes and eventually stuns",
+            short_description="Stuns with each stage",
         ),
         MagicItem(
             is_magical=False,
@@ -1244,7 +1245,7 @@ def generate_tools():
             description="""
                 This is an ingestion-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                It inflicts 2d6 damage per \\glossterm<poison stage>.
+                It inflicts 2d6 poison damage per \\glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             """,
             short_description="Deals 2d6 damage",
@@ -1259,7 +1260,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                It inflicts 3d8 damage per \\glossterm<poison stage>.
+                It inflicts 3d8 poison damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 3d8 damage endlessly",
         ),
@@ -1289,7 +1290,7 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus11.
-                It inflicts 4d8 damage per \\glossterm<poison stage>.
+                It inflicts 4d8 poison damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 4d8 damage endlessly",
         ),
@@ -1321,12 +1322,12 @@ def generate_tools():
             is_magical=False,
             consumable=True,
             name="Poison, Giant Wasp Venom",
-            rank=1,
+            rank=2,
             material_type="Poison",
             tags=[],
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
-                The poison's accuracy is \\plus3.
+                The poison's accuracy is \\plus4.
                 Its stage 1 effect makes the target \\slowed while the poison lasts.
                 Its stage 3 effect makes the target \\immobilized while the poison lasts.
             """,
@@ -1343,7 +1344,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus4.
-                It inflicts 2d8 damage per \\glossterm<poison stage>.
+                It inflicts 2d8 poison damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 2d8 damage endlessly",
         ),
@@ -1358,7 +1359,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                It inflicts 3d8 damage per \\glossterm<poison stage>.
+                It inflicts 3d8 poison damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 3d8 damage endlessly",
         ),
@@ -1373,7 +1374,7 @@ def generate_tools():
             description="""
                 This is a injury-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus8.
-                It inflicts 4d8 damage per \\glossterm<poison stage>.
+                It inflicts 4d8 poison damage per \\glossterm<poison stage>.
             """,
             short_description="Deals 4d8 damage endlessly",
         ),

@@ -1,7 +1,7 @@
-use crate::core_mechanics::{Attribute, Defense, HasAttributes};
+use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
-#[derive(Copy, Clone, Hash)]
+#[derive(Copy, Clone, Debug, Hash)]
 pub enum Role {
     Brute,      // +str, melee HP-heavy damage sponge, like barbarian or any heavy weapon user
     Skirmisher, // +dex, high mobility mixed range, like rogue/monk/ranger
@@ -13,6 +13,18 @@ pub enum Role {
 
 // No clear balancing. Hoping that the role differentiation makes them hard to directly compare.
 impl Role {
+    pub fn all() -> Vec<Self> {
+        return vec![
+            Self::Brute,
+            Self::Skirmisher,
+            Self::Warrior,
+            Self::Sniper,
+            Self::Mystic,
+            Self::Leader,
+        ]
+    }
+
+
     // Shorthand to avoid specifying the name and priority every time
     fn add_modifier(&self, creature: &mut Creature, modifier: Modifier) {
         creature.add_modifier(modifier, Some(self.name()), None);

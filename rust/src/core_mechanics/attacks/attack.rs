@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityExtraContext, AbilityTag, latex_ability_block, Targeting, UsageTime};
+use crate::core_mechanics::abilities::{AbilityExtraContext, latex_ability_block, Targeting, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
@@ -76,7 +76,8 @@ impl Attack {
     // This is a particularly common replacement for elite monsters, and managing the imports is
     // annoying without this function.
     pub fn except_elite(&self) -> Attack {
-        return self.except_with_tag(Tag::Ability(AbilityTag::Elite));
+        eprintln!("Error: unable to support elite attacks. Convert {} into an ActiveAbility.", self.name);
+        return self.clone();
     }
 
     pub fn generate_modified_name(

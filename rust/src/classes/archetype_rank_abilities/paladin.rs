@@ -80,7 +80,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Chaos} You are immune to being \slowed and \immobilized.
                 \subparhead{Evil} You are immune to being \charmed and \goaded.
                 \subparhead{Good} You are immune to \abilitytag{Curse} attacks and being \dominated.
-                \subparhead{Law} You are immune to being \dazed.
+                \subparhead{Law} You are immune to being \stunned and \confused.
             ",
             modifiers: None,
         },
@@ -378,7 +378,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Detect Anathema",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You can use the \textit{detect anathema} ability as a standard action.
                 \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
@@ -398,7 +398,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Smite",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 You can use the \textit{smite} ability as a standard action.
                 \begin{magicalactiveability}{Smite}
@@ -424,7 +424,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked.
+                You are immune to being \frightened and \panicked.
             ",
             modifiers: None,
         },

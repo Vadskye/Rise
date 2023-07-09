@@ -62,6 +62,7 @@ impl ModifierBundle {
             ],
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
+                Modifier::Skill(Skill::Balance, 5),
             ],
         }
     }

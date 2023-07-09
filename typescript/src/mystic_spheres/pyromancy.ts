@@ -1,9 +1,12 @@
 import { MysticSphere } from '.';
+import {MULTIHIT_CRIT} from './constants';
 
 export const pyromancy: MysticSphere = {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
   sources: ['arcane', 'domain', 'nature', 'pact'],
+  // Special: this sphere gets +1dr for area attacks, but is bad at everything other than
+  // damage.
 
   cantrips: [
     {
@@ -82,6 +85,7 @@ export const pyromancy: MysticSphere = {
       name: 'Burning Grasp',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{fire} immediately, and again during your next action.
         `,
@@ -99,6 +103,7 @@ export const pyromancy: MysticSphere = {
       name: 'Mighty Burning Grasp',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankfourhigh{fire} immediately, and again during your next action.
         `,
@@ -115,9 +120,10 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Pyroclasm',
 
+      // +1dr from sphere
       attack: {
         hit: `
-          Each target takes \\damagerankone{fire}.
+          Each target takes \\damageranktwo{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -133,6 +139,7 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Massive Pyroclasm',
 
+      // +1dr from sphere
       attack: {
         hit: `
           Each target takes \\damagerankthreehigh{fire}.
@@ -151,31 +158,54 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Fireball',
 
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damageranktwo{fire}.`,
+        hit: `Each target takes \\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
         `,
       },
 
-      rank: 4,
+      rank: 3,
       scaling: 'accuracy',
     },
 
     {
       name: 'Delayed Fireball',
 
-      // +2r for delay, +1r for range
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankfivehigh{fire}.`,
+        hit: `Each target takes \\damagerankseven{fire}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you create a small bead of fire in midair within your space.
-          During your next action, the bead flies out and explodes as you direct.
-          When it does, make an attack vs. Reflex against everything in a \\medarea radius within \\longrange.
+          When you cast this spell, you create a Fine bead of fire in midair at a location in \\longrange.
+          The bead sheds light like a torch.
+          It is immune to most forms of damage, but if it takes cold damage, it is destroyed and this spell has no further effect.
+          At the end of the next round, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
         `,
       },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Immolating Fireball',
+
+      // +1dr from sphere
+      attack: {
+        hit: `
+          Each target takes \\damageranksevenhigh{fire}.
+          If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
+          Only a pile of ashes remains.
+          An immolated creature's equipment is unaffected.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+        `,
+      },
+
       rank: 7,
       scaling: 'accuracy',
     },
@@ -183,8 +213,9 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Burning Hands',
 
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankone{fire}.`,
+        hit: `Each target takes \\damageranktwo{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -196,13 +227,14 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Massive Burning Hands',
+      name: 'Mighty Burning Hands',
 
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damageranktwohigh{fire}.`,
+        hit: `Each target takes \\damagerankfivehigh{fire}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea cone from you.
+          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
       },
       rank: 4,
@@ -213,14 +245,16 @@ export const pyromancy: MysticSphere = {
       name: 'Ignition',
 
       attack: {
-        crit: `The damage from the condition is doubled.`,
-        hit: `The target catches on fire as a \\glossterm{condition}.
-        It takes \\damagerankone{fire} immediately and during each of your subsequent actions.
+        crit: `All damage from the condition is doubled, not just the initial damage.`,
+        hit: `
+          The target catches on fire as a \\glossterm{condition}.
+          It takes \\damagerankone{fire} immediately and during each of your subsequent actions.
 
-        The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
-        Dropping \\prone as part of this action gives a +5 bonus to this check.`,
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
+          Dropping \\prone as part of this action gives a +5 bonus to this check.
+        `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
         `,
       },
       rank: 1,
@@ -239,45 +273,11 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Enduring Ignition',
-
-      functionsLike: {
-        name: "ignition",
-        exceptThat: "the damage increases to \\damagerankfivelow{fire}, and the condition cannot be removed with a Dexterity check.",
-      },
-      rank: 6,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Heat Metal',
-
-      // -1r for metallic requirement and no crit damage
-      attack: {
-        crit: `
-          This attack does not deal extra damage on a \\glossterm{critical hit}.
-        `,
-        hit: `
-          The object becomes burning hot to the touch.
-          It and anything touching it takes \\damagerankonelow{fire} immediately and during each of your subsequent actions.
-        `,
-        targeting: `
-          Choose one \\glossterm{metallic} object within \\medrange.
-          It must be no smaller than Tiny size and no larger than Large size.
-          If the target is \\glossterm{attended}, make an attack vs. Reflex against the attending creature.
-          Otherwise, this attack automatically hits.
-        `,
-      },
-      rank: 2,
-      scaling: 'accuracy',
-      type: 'Sustain (minor)',
-    },
-
-    {
       name: 'Flame Breath',
 
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damageranktwo{fire}.`,
+        hit: `Each target takes \\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -296,7 +296,7 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{fire}.
+          the damage increases to \\damageranksixhigh{fire}.
           In addition, the area increases to a \\gargarea cone.
         `,
       },
@@ -308,17 +308,18 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Eyes of Flame',
 
-      // d2h instead of d2 for attune requirement
+      // +1dr for brief cooldown
       attack: {
         hit: `
-          The target takes \\damageranktwohigh{fire} immediately, and again during your next action.
+          The target takes \\damagerankthree{fire}.
         `,
         targeting: `
           You can set things on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against anything within \\shortrange from you.
+          After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -328,9 +329,9 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: "eyes of flame",
-        exceptThat: "the damage increases to \\damagerankfivehigh{fire}.",
+        exceptThat: "the damage increases to \\damageranksevenhigh{fire}.",
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -357,8 +358,9 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Flame Serpent',
 
+      // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankthreehigh{fire}.`,
+        hit: `Each target takes \\damagerankfourhigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -409,14 +411,26 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         // TODO: is this damage correct?
-        hit: `Each target takes \\damagerankfour{fire}.`,
+        hit: `Each target takes \\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
-          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude with a -2 accuracy penalty against everything in the area.
+          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
         `,
       },
-      rank: 6,
+      rank: 4,
+      scaling: 'accuracy',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Flame Aura',
+
+      functionsLike: {
+        name: 'flame aura',
+        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
+      },
+      rank: 7,
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -482,49 +496,13 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Pyrophobia',
-
-      attack: {
-        crit: `The target is \\frightened instead of shaken.`,
-        hit: `
-          The target is \\shaken by you as a \\glossterm{condition}.
-          Whenever it takes fire damage, the penalties from this condition are \\glossterm{briefly} doubled.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-    },
-
-    {
-      name: 'Primal Pyrophobia',
-
-      attack: {
-        crit: `The target is \\panicked instead of frightened.`,
-        hit: `
-          The target is \\frightened by you as a \\glossterm{condition}.
-          Whenever it takes fire damage, the penalties from this condition are \\glossterm{briefly} doubled.
-        `,
-        targeting: `
-        Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-    },
-
-    {
       name: 'Pyrohemia',
 
-      // normal damaging effect would be 1d8 + power; +2d for HP restriction seems fine
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{fire}.
-          If it loses \\glossterm{hit points}, it takes \\damagerankone{fire} again during your next action.
+          If it loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
@@ -537,14 +515,9 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Mighty Pyrohemia',
 
-      attack: {
-        hit: `
-          The target takes \\damagerankfourhigh{fire}.
-          If it loses \\glossterm{hit points} from this damage, it takes \\damagerankfourhigh{fire} again during your next action.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
+      functionsLike: {
+        name: 'pyrohemia',
+        exceptThat: 'the damage increases to \\damagerankfourhigh{fire}.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -553,18 +526,19 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Kindled Fireburst',
 
+      // -1r for existing fire requirement, +1dr for sphere
       attack: {
-        hit: `Each target takes \\damagerankone{fire}.`,
+        hit: `Each target takes \\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
-          Choose one Tiny or larger active fire within \\medrange.
+          Choose one Tiny or larger active fire within \\shortrange.
           Make an attack vs. Reflex against everything within an \\medarea radius from it.
         `,
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
-      rank: 3,
+      rank: 2,
       scaling: 'accuracy',
     },
 
@@ -573,7 +547,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damagerankfourhigh{fire}.',
+        exceptThat: 'the damage increases to \\damageranksixhigh{fire}.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
@@ -588,8 +562,7 @@ export const pyromancy: MysticSphere = {
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
       `,
-      rank: 5,
-      scaling: { 7: `The maximum height increases to 60 feet.` },
+      rank: 6,
       type: 'Attune',
     },
 
@@ -725,7 +698,7 @@ export const pyromancy: MysticSphere = {
         To read the writing, a creature must concentrate on reading it, which requires a standard action.
         If a creature reads the object, the object explodes.
         You make an attack vs. Reflex against everything within a \\medarea radius from the object.
-        Your accuracy with this attack is equal to half your level \\add half your Perception.
+        Your accuracy with this attack is equal to half the sum of your level and Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         Each struck target takes \\damagerankthree{fire}.
         A miss is still considered a \\glossterm{glancing blow}.
