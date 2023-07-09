@@ -109,7 +109,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Mental against all Large or smaller creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all Large or smaller creatures in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 3,
