@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import {MULTIHIT_CRIT} from './constants';
 
 export const pyromancy: MysticSphere = {
   name: 'Pyromancy',
@@ -84,9 +85,7 @@ export const pyromancy: MysticSphere = {
       name: 'Burning Grasp',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{fire} immediately, and again during your next action.
         `,
@@ -104,9 +103,7 @@ export const pyromancy: MysticSphere = {
       name: 'Mighty Burning Grasp',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankfourhigh{fire} immediately, and again during your next action.
         `,
@@ -502,9 +499,7 @@ export const pyromancy: MysticSphere = {
       name: 'Pyrohemia',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
+        crit: MULTIHIT_CRIT,
         hit: `
           The target takes \\damagerankone{fire}.
           If it loses \\glossterm{hit points}, it takes this damage again during your next action.

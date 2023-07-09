@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const channelDivinity: MysticSphere = {
   name: 'Channel Divinity',
@@ -220,6 +221,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Fearful Awe',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} becomes \\frightened by you as a \\glossterm{condition}.
         `,
@@ -235,6 +237,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Efficient Fearful Awe',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\frightened by you as a \\glossterm{condition}.
         `,
@@ -295,6 +298,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Presence',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\frightened by you as a \\glossterm{condition}.
         `,

@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',
@@ -355,6 +356,7 @@ export const thaumaturgy: MysticSphere = {
 
       // -2r relative to mind blank's effect because it doesn't always work
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's magic is partially sealed as a \\glossterm{condition}.
           The first time it tries to cast a spell while it is below its maximum \\glossterm{hit points}, the spell automatically fails with no effect instead.

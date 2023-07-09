@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { IMMUNITY_CRIT, CONDITION_CRIT } from './constants';
 
 export const enchantment: MysticSphere = {
   name: 'Enchantment',
@@ -28,6 +29,7 @@ export const enchantment: MysticSphere = {
 
       // Treat as a t1.5 debuff. Short range because it's a cantrip.
       attack: {
+        crit: IMMUNITY_CRIT,
         hit: `
           During the next round, the target must repeat all actions that it took this round.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
@@ -63,6 +65,7 @@ export const enchantment: MysticSphere = {
       name: 'Monologue',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `As a \\glossterm{condition}, the target is forced to speak out loud constantly whenever it can.
         This does not control what it talks about, so a reasonably savvy creature may be able to avoid revealing anything of great interest.
         In combat, most creatures with an intelligence of 0 or less will explain their thoughts about the combat, which can help you predict their actions.`,
@@ -82,6 +85,7 @@ export const enchantment: MysticSphere = {
 
       // This is T1; it is a weird hybrid of immobilized and a minor T1 effect
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{movement} to dance, if it is physically capable of dancing.
@@ -117,6 +121,7 @@ export const enchantment: MysticSphere = {
       name: 'Taunt',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -131,6 +136,7 @@ export const enchantment: MysticSphere = {
       name: 'Confusion',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
@@ -182,6 +188,7 @@ export const enchantment: MysticSphere = {
 
       // +1 level over normal med range r2 debuff due to sleep effect
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
           This condition is automatically removed if the target loses \\glossterm{hit points}.
@@ -205,6 +212,7 @@ export const enchantment: MysticSphere = {
       name: 'Mind Blank',
 
       attack: {
+        crit: IMMUNITY_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
@@ -222,8 +230,8 @@ export const enchantment: MysticSphere = {
       name: 'Efficient Mind Blank',
 
       functionsLike: {
-        name: "mind blank",
-        exceptThat: "it works even if the target has damage resistance remaining.",
+        name: 'mind blank',
+        exceptThat: 'it works even if the target has damage resistance remaining.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -234,6 +242,7 @@ export const enchantment: MysticSphere = {
       name: 'Selfstrike',
 
       attack: {
+        crit: IMMUNITY_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
@@ -254,8 +263,8 @@ export const enchantment: MysticSphere = {
       name: 'Efficient Selfstrike',
 
       functionsLike: {
-        name: "selfstrike",
-        exceptThat: "it works even if the target has damage resistance remaining.",
+        name: 'selfstrike',
+        exceptThat: 'it works even if the target has damage resistance remaining.',
       },
       rank: 7,
       tags: ['Compulsion'],
@@ -265,6 +274,7 @@ export const enchantment: MysticSphere = {
       name: 'Discordant Song',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is enraged as a \\glossterm{condition}.
           It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
@@ -282,6 +292,7 @@ export const enchantment: MysticSphere = {
       name: 'Discordant Symphony',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is enraged as a \\glossterm{condition}.
           It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
@@ -299,6 +310,7 @@ export const enchantment: MysticSphere = {
       name: 'Cause Fear',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, each target is \\frightened by the chosen creature.
         `,
@@ -316,6 +328,7 @@ export const enchantment: MysticSphere = {
       name: 'Cause Panic',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is \\panicked by the chosen creature.
         `,
@@ -333,6 +346,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -349,6 +363,7 @@ export const enchantment: MysticSphere = {
       name: 'Intense Fearsome Aura',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\panicked by you as a \\glossterm{condition}.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -423,6 +438,7 @@ export const enchantment: MysticSphere = {
       name: 'Enrage',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
           For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
@@ -440,6 +456,7 @@ export const enchantment: MysticSphere = {
       name: 'Demotivate',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
           Unlike normal conditions, this effect stacks with itself if applied multiple times, up to a maximum of -10.
@@ -491,6 +508,7 @@ export const enchantment: MysticSphere = {
       name: 'Solipsism',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target believes that it is the only real creature, and the rest of the world is an illusion.
           It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
@@ -528,6 +546,7 @@ export const enchantment: MysticSphere = {
       name: 'Agony',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
           While it is at less than its maximum \\glossterm{hit points}, it is \\stunned.
@@ -545,6 +564,7 @@ export const enchantment: MysticSphere = {
       name: 'Crippling Agony',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target feels crippling pain from even minor injuries.
           While it is at less than its maximum \\glossterm{hit points}, it is \\immobilized.
@@ -564,6 +584,7 @@ export const enchantment: MysticSphere = {
       // Same as "skip standard action" because it is sometimes detrimental. Higher level
       // because it's more complicated to use, and to balance level progression.
       attack: {
+        crit: IMMUNITY_CRIT,
         hit: `
           The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
