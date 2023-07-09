@@ -152,7 +152,7 @@ def generate_implements():
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Creatures that are shaken, frightened or panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.
+                Creatures that are frightened or panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.
             """,
             short_description="Fear effects also penalize Fortitude",
         ),
@@ -162,7 +162,7 @@ def generate_implements():
             material_type="Staff",
             tags=["Emotion"],
             description="""
-                Creatures that are shaken, frightened or panicked by you suffer a penalty to their non-Mental defenses equal to the penalty they suffer to their Mental defense.
+                Creatures that are frightened or panicked by you suffer a penalty to their non-Mental defenses equal to the penalty they suffer to their Mental defense.
             """,
             short_description="Fear effects penalize all defenses",
         ),
@@ -171,16 +171,6 @@ def generate_implements():
     implements += [
         create_implement(
             name="Staff of Discordance",
-            rank=3,
-            material_type="Staff",
-            tags=[],
-            description="""
-                Whenever you cause an enemy to be \\dazed as a \\glossterm<condition>, it is also \\glossterm<briefly> \\stunned.
-            """,
-            short_description="Makes dazed creatures briefly stunned",
-        ),
-        create_implement(
-            name="Staff of Discordance, Greater",
             rank=6,
             material_type="Staff",
             tags=[],

@@ -161,7 +161,6 @@ def debuffs():
                 [
                     debuff("blinded"),
                     debuff("confused"),
-                    debuff("dazed"),
                     debuff("dazzled"),
                     debuff("frightened"),
                     debuff("goaded"),
@@ -171,7 +170,6 @@ def debuffs():
                 [
                     debuff("immobilized"),
                     debuff("panicked"),
-                    debuff("shaken"),
                     debuff("slowed"),
                     debuff("stunned"),
                 ]
@@ -203,7 +201,6 @@ def debuff_explanation(debuff):
         "charmed": "friendly with charmer",
         "climbing": "-2 accuracy, defenses",
         "confused": "-2 defenses and randomly attack or defend",
-        "dazed": "-1 defenses",
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
         "dominated": "must obey commands",
@@ -218,7 +215,6 @@ def debuff_explanation(debuff):
         "paralyzed": "cannot move",
         "partially unaware": "-2 Armor and Ref",
         "prone": "half speed, -2 Armor and Ref",
-        "shaken": "-1 Mental, -1 accuracy vs. source",
         "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
         "stunned": "-2 defenses",

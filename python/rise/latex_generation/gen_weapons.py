@@ -434,22 +434,13 @@ def generate_weapons():
     weapons += [
         create_weapon(
             name="Screaming",
-            rank=1,
+            rank=3,
             description="""
                 Whenever you make a creature lose \\glossterm<hit points> with a \\glossterm<strike> using this weapon, it weapon emits a blood-curdling scream.
-                This causes you and that creature to become \\shaken by each other as a \\glossterm<condition>.
+                This causes you and that creature to become \\frightened by each other as a \\glossterm<condition>.
             """,
             tags=["Attune (deep)", "Emotion"],
-            short_description="Screams, making you and struck foes shaken",
-            upgrades=[
-                Upgrade(
-                    rank=5,
-                    description="""
-                        You and the struck creature are \\frightened by each other instead of shaken.
-                    """,
-                    short_description="Screams, making you and struck foes frightened",
-                ),
-            ],
+            short_description="Screams, frightening you and struck foes",
         ),
     ]
 
@@ -458,7 +449,7 @@ def generate_weapons():
             name="Routing",
             rank=2,
             description="""
-                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\shaken, \\frightened, or \\panicked.
+                You gain a +1 bonus to \\glossterm<accuracy> with \\glossterm<strikes> using this weapon against creatures that are suffering penalties for being \\frightened or \\panicked.
             """,
             short_description="Grants +1 accuracy vs scared foes",
             upgrades=[

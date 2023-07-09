@@ -556,7 +556,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you become \\shaken, \\frightened, or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your land speed.
+                Whenever you become \\frightened or \\panicked, if you were not already suffering any of those effects, you \\glossterm<briefly> gain a +2 bonus to your Armor defense and Reflex defense, as well as a +10 foot bonus to your land speed.
             """,
             short_description="Helps you survive when you become afraid",
             upgrades=[
@@ -625,27 +625,17 @@ def generate_apparel():
 
     apparel += [
         create_apparel(
-            name="Dazeshare Ring",
-            rank=2,
-            material_type="Ring",
-            tags=[],
-            description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
-                On a hit, each target becomes \\glossterm<briefly> dazed.
-            """,
-            short_description="Dazes enemies when you are dazed or worse",
-        ),
-        create_apparel(
             name="Stunshare Ring",
-            rank=6,
+            rank=3,
             material_type="Ring",
             tags=[],
             description="""
-                Whenever you become \\dazed, \\stunned, or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
+                Whenever you become \\stunned or \\confused, make a \\glossterm<reactive attack> vs. Mental against all \\glossterm<enemies> adjacent to you.
                 On a hit, each target becomes \\glossterm<briefly> stunned.
             """,
-            short_description="Stuns enemies when you are dazed or worse",
+            short_description="Stuns enemies when you are stunned or worse",
         ),
+        # TODO: higher area upgrade
     ]
 
     apparel.append(

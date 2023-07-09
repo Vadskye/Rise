@@ -214,7 +214,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
-        The stage 1 effect makes the target \\dazed while the poison lasts.
+        The stage 1 effect makes the target \\glossterm{briefly} \\stunned.
         The stage 3 effect makes the target \\stunned while the poison lasts.
       `,
       rank: 1,

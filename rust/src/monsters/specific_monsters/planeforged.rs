@@ -105,7 +105,6 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 Modifier::Attack(StandardAttack::Pyroclasm(6).attack()),
                 Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
                 Modifier::Attack(StandardAttack::Ignition(6).attack()),
-                Modifier::Attack(StandardAttack::Pyrophobia(6).attack()),
                 Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(WeaponMaterial::ColdIron)),
             ]),
             movement_speeds: None,
@@ -152,9 +151,6 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             };
 
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
-            modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
-                Debuff::Shaken("".to_string()),
-            )));
             modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
                 Debuff::Frightened("".to_string()),
             )));
@@ -986,7 +982,8 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                         .except_hit_damage(
                             |d| d.lose_hp_effect = Some(
                                 AttackTriggeredEffect::Poison(PoisonEffect {
-                                    stage1: vec![Debuff::Dazed],
+                                    // TODO: replace with "briefly stunned"
+                                    stage1: vec![Debuff::Stunned],
                                     stage3_debuff: Some(vec![Debuff::Stunned]),
                                     stage3_vital: None,
                                 })

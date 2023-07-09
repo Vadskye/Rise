@@ -101,7 +101,7 @@ impl AgeCategory {
             defense: Defense::Mental,
             extra_context: None,
             hit: AttackEffect::Debuff(DebuffEffect {
-                debuffs: vec![Debuff::Shaken("the $name".to_string())],
+                debuffs: vec![Debuff::Frightened("the $name".to_string())],
                 duration: AttackEffectDuration::Condition,
                 immune_after_effect_ends: true,
             }),
