@@ -196,7 +196,7 @@
         Reaching the higher ranks typically requires saving a significant fraction of a major plane from some sort of catastrophe.
 
         \subsubsection{Hero of Legend Ranks}
-            \parhead{Rank 1 -- Worthy Hero} You and all \glossterm{allies} who can see or hear you are immune to being shaken, frightened, and panicked.
+            \parhead{Rank 1 -- Worthy Hero} You and all \glossterm{allies} who can see or hear you are immune to being frightened and panicked.
             In addition, you gain a \plus100 bonus to your \glossterm{hit points}.
 
             \parhead{Rank 2 -- Heroic Intervention} As a \glossterm{free action}, you may choose any number of \glossterm{allies} within \shortrange of you.
@@ -740,13 +740,13 @@
             \cf{Hrp}[4]{Greater Winged Combat} You can use your \textit{winged combat} any number of times in the same round.
             You must still land at the end of each phase.
 
-            % dazed enemies in medarea radius is a rank 5 spell. charm + not a condition make this better.
+            % TODO: define correct rank
             \cf{Hrp}[5]{Siren Song} You can use the \textit{siren song} ability as a standard action.
             \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                 \rankline
-                Make an attack vs. Mental against any number of creatures within a \medarea radius from you.
-                \hit Each target is both \charmed by you and \dazed as long as it can still hear you sing.
-                It remains dazed even if it stops being charmed, such as if you or your allies attack it.
+                Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                \hit Each target is both \charmed by you and \stunned as long as it can still hear you sing.
+                It remains stunned even if it stops being charmed, such as if you or your allies attack it.
                 This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice that it is being influenced.
                 \rankline
                 \rank{7} The area increases to a \largearea radius.

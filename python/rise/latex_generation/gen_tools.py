@@ -420,7 +420,7 @@ def generate_tools():
                     rank=3,
                     description="""
                         The damage increases to 2d6.
-                        In addition, each creature that loses hit points from the damage is also \\dazed as part of the same condition.
+                        In addition, each creature that loses hit points from the damage is also \\stunned as part of the same condition.
                     """,
                     short_description="Throw to deal 2d6 bludgeoning damage, deafen, and daze",
                 ),
@@ -1182,10 +1182,10 @@ def generate_tools():
             description="""
                 This is a contact-based powder poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus2.
-                Its stage 1 effect makes the target \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts.
+                Its stage 1 effect makes the target \\glossterm<briefly> stunned.
+                Its stage 3 effect makes the target stunned while the poison lasts.
             """,
-            short_description="Dazes and eventually stuns",
+            short_description="Stuns with each stage",
         ),
         # -2 ranks for -1d
         MagicItem(
@@ -1230,10 +1230,10 @@ def generate_tools():
             description="""
                 This is a contact-based liquid poison (see \\pcref<Poison>).
                 The poison's accuracy is \\plus5.
-                Its stage 1 effect makes the target \\dazed while the poison lasts.
-                Its stage 3 effect makes the target \\stunned while the poison lasts.
+                Its stage 1 effect makes the target \\glossterm<briefly> \\stunned.
+                Its stage 3 effect makes the target stunned while the poison lasts.
             """,
-            short_description="Dazes and eventually stuns",
+            short_description="Stuns with each stage",
         ),
         MagicItem(
             is_magical=False,

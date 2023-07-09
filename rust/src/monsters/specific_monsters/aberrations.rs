@@ -149,7 +149,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against all creatures within a \largearea radius.
                         \hit Each target takes $dr1 psychic damage.
-                        Each damaged creature is \dazed as a condition.
+                        Each creature that loses hit points is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
                     name: "Gibber".to_string(),

@@ -638,24 +638,24 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     return vec![
         RankAbility {
-            name: "Transcend Uncertainty",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You are immune to being \dazed, \stunned, and \confused.
-            ",
-            // TODO: represent immunities?
-            modifiers: None,
-        },
-        RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 You become so attuned to the natural energy of life that you can sense it even when sight fails you.
                 You gain \trait{lifesense} with a 120 foot range, allowing you to sense the location of living creatures without light (see \pcref{Lifesense}).
                 In addition, you gain \trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \pcref{Lifesight}).
             ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You are immune to being \stunned and \confused.
+            ",
+            // TODO: represent immunities?
             modifiers: None,
         },
         RankAbility {
@@ -682,7 +682,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
-                In addition, you are immune to being \shaken, \frightened, and \panicked.
+                In addition, you are immune to being \frightened and \panicked.
             ",
             modifiers: None,
         },

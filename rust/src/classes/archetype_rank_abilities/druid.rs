@@ -476,8 +476,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You do not need to use \glossterm{free hands} to climb (see \pcref{Climb}).
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         When a creature takes damage from your bite \glossterm{natural weapon}, it is \glossterm{poisoned} (see \pcref{Poison}).
-                        The first poison stage makes the target \dazed as long as it is poisoned.
-                        The third poison stage makes the target \stunned instead of dazed.
+                        Its stage 1 effect makes the target \glossterm{briefly} \stunned.
+                        Its stage 3 effect makes the target stunned while the poison lasts.
 
                         \rankline
                         \rank{3} You gain a \plus1 accuracy bonus with all poisons.
