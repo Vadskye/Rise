@@ -204,7 +204,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
+        If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -214,7 +214,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
+        If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
     },
