@@ -781,16 +781,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{magicalactiveability}{Spectral Strike}
             \rankline
             Make a melee \glossterm{strike}.
-            The attack is made against each target's Reflex defense instead of its Armor defense.
+            The attack is made against the target's Reflex defense instead of its Armor defense.
             You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
-            Each creature that loses \glossterm{hit points} from this strike is \slowed as a \glossterm{condition} if your attack result also beats its Fortitude defense.
+            If the target takes damage and your attack result beats its Fortitude defense, it is \slowed as a \glossterm{condition}.
 
             \rankline
             \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
             \featlevel{12} The extra damage increases to 2d6.
             \featlevel{15} The extra damage increases to 2d6 plus 1d6 per 4 \glossterm{power}.
             \featlevel{18} The extra damage increases to 2d8 plus 1d8 per 4 \glossterm{power}.
-            % \featlevel{21} The slowing effect works against each creature that took damage from the strike, not just against creatures that lost hit points.
         \end{magicalactiveability}
 
         \ff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
@@ -1829,21 +1828,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Sphere Focus: Summoning}{Casting, Magical}
         \featpre Access to the \sphere{Summoning} \glossterm{mystic sphere}.
 
-        \ff[1]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
+        \ff[1]{Empower Summon} You can use the \textit{empower summon} ability as a \glossterm{minor action}.
+        \begin{magicalactiveability}{Empower Summon}[\abilitytag{Swift}]
+            Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
+            That creature gains a \plus2 bonus to its \glossterm{accuracy} and \glossterm{defenses} this round.
+        \end{magicalactiveability}
+
+        \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Resummon}
             \rankline
-            After you use this ability, you increase your \glossterm{fatigue level} by two.
+            After you use this ability, you increase your \glossterm{fatigue level} by one.
 
             Choose a spell from the \sphere{Summoning} mystic sphere that you are still \glossterm{attuned} to, even if all creatures created by that spell are dead.
             All effects of that spell, including any active creatures, immediately end.
             Then, you recreate all creatures from that spell as if you had just cast it.
             Those creatures do not act until the next round.
-        \end{magicalactiveability}
-
-        \ff[6]{Empower Summon} You can use the \textit{empower summon} ability as a \glossterm{minor action}.
-        \begin{magicalactiveability}{Empower Summon}[\abilitytag{Swift}]
-            Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
-            That creature gains a \plus2 bonus to its \glossterm{accuracy} and \glossterm{defenses} this round.
         \end{magicalactiveability}
 
         \ff[12]{Generosity} Whenever you \glossterm{attune} to an item or spell that is not a \glossterm{deep attunement}, you may use this ability.
@@ -2083,8 +2082,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
             You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
-            \hit The target takes \damagerankone{psychic} and becomes \dazed as a \glossterm{condition}.
-            If it loses \glossterm{hit points} from this damage, it becomes \stunned instead.
+            \hit The target takes \damagerankone{psychic}.
+            If it loses \glossterm{hit points} from this damage, it becomes \stunned as a \glossterm{condition}.
 
             \rankline
             % increase to d3l
@@ -2094,8 +2093,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             % increase to d5ish
             \featlevel{15} The damage bonus increases to 1d6 per 3 power.
             % at r7, can upgrade condition
-            \featlevel{18} The target is always stunned instead of dazed.
-            If it loses hit points, it becomes \confused instead.
+            \featlevel{18} The target is \confused instead of stunned.
         \end{magicalactiveability}
 
         \ff[12]{Read Mind} You can use the \textit{read mind} ability as a standard action.
