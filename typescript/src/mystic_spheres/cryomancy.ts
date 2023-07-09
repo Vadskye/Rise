@@ -579,7 +579,7 @@ export const cryomancy: MysticSphere = {
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Damage dealt by the strike is cold damage in addition to its normal damage types.
-        Each damaged creature is \\slowed as a \\glossterm{condition} if your attack result beats its Fortitude defense.
+        Each damaged creature is \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
       scaling: 'accuracy',
