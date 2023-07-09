@@ -20,7 +20,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you.
+                When you drink this \\glossterm<potion>, you remove a \\glossterm<condition> affecting you and increase your \\glossterm<fatigue level> by one.
             """,
             short_description="Removes a condition",
             upgrades=[
@@ -28,6 +28,7 @@ def generate_tools():
                     rank=6,
                     description="""
                         You remove two conditions instead of only one.
+                        You increase your fatigue level by one for each condition that you remove in this way.
                     """,
                     short_description="Removes two conditions",
                 ),
