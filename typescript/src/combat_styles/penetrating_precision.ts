@@ -41,7 +41,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered against each creature that lost \\glossterm{hit points} from the strike.
+        If the target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
     },
@@ -52,16 +52,17 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you using a piercing weapon.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Penetrating Shot+',
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\hugearealong, 5 ft. wide line from you using a piercing weapon.
+        Make a ranged \\glossterm{strike} with double \\glossterm{weapon damage} using a piercing weapon.
+        The strike targets everything in a \\hugearealong, 5 ft. wide line from you.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -69,7 +70,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon.
-        You reduce your \\glossterm{longshot penalty} with the strike by 4.
+        You reduce your \\glossterm{longshot penalty} with the strike by 3.
       `,
       rank: 3,
     },
@@ -86,33 +87,11 @@ export const penetratingPrecision: CombatStyle = {
     },
 
     {
-      name: 'Deathblow',
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals double \\glossterm{weapon damage}.
-      `,
-      // narrative: '',
-      rank: 3,
-    },
-
-    {
-      name: 'Deathblow+',
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals quadruple \\glossterm{weapon damage}.
-      `,
-      // narrative: '',
-      rank: 7,
-    },
-
-    {
       name: 'Arrowguide',
 
       effect: `
         Make a ranged \\glossterm{weak strike} using a piercing weapon.
-        You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against each target of that strike.
+        You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against the target.
       `,
       rank: 1,
     },
@@ -149,8 +128,8 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike',
 
       effect: `
-        Make a melee \\glossterm{weak strike} using a piercing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\slowed as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} using a piercing weapon.
+        If the target takes damage and your attack result beats its Reflex defense, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -160,9 +139,9 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a piercing weapon.
-        Each creature that loses \\glossterm{hit points} from the strike is \\immobilized as a \\glossterm{condition}.
+        If the target takes damage and your attack result beats its Reflex defense, it is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -181,7 +160,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Choose a number from 1--10, then make a \\glossterm{strike} using a piercing weapon.
         If you roll that number on your attack roll, you gain a +4 accuracy bonus.
-        Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
+        Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 1,
     },
@@ -192,7 +171,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
         If you roll either number on your attack roll, you gain a +4 accuracy bonus and the strike deals double \\glossterm{weapon damage}.
-        Dice from \\glossterm{explosions} do not count for this purpose, and you use your final die result after applying any rerolls.
+        Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
       `,
       rank: 5,
     },
