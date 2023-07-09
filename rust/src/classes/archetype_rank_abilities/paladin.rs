@@ -378,7 +378,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Detect Anathema",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You can use the \textit{detect anathema} ability as a standard action.
                 \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
@@ -398,7 +398,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Smite",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 You can use the \textit{smite} ability as a standard action.
                 \begin{magicalactiveability}{Smite}
