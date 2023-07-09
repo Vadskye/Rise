@@ -81,7 +81,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Elemental Influence",
             is_magical: true,
-            rank: 2,
+            rank: 3,
             description: r"
                 You can use the \textit{elemental influence} ability as a standard action.
                 \begin{magicalsustainability}{Elemental Influence}{\abilitytag{Sustain} (standard)}
@@ -117,16 +117,25 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Elemental Power",
             is_magical: true,
+            rank: 3,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{magical power}.
+            ",
+            modifiers: Some(vec![Modifier::Power(1)]),
+        },
+        RankAbility {
+            name: "Elemental Power+",
+            is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                The power bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Elemental Balance",
             is_magical: true,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a benefit from each of the four elements.
                 \begin{itemize}
@@ -149,7 +158,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The bonus to your Fortitude defense increases to \plus2.
-                    \item Fire: You treat all fire damage you take as being \glossterm{environmental damage}.
+                    \item Fire: You are immune to fire damage.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
             ",
