@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const summoning: MysticSphere = {
   name: 'Summoning',
@@ -505,6 +506,7 @@ export const summoning: MysticSphere = {
       name: 'Summon Annoying Insects',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           A swarm of insects surround the target as a \\glossterm{condition}.
           While it is below its maximum hit points, it is \\stunned.
@@ -525,6 +527,7 @@ export const summoning: MysticSphere = {
       name: 'Intense Summon Annoying Insects',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           A swarm of insects surround the target as a \\glossterm{condition}.
           While it is below its maximum hit points, it is \\confused.

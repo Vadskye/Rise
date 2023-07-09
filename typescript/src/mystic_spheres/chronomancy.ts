@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const chronomancy: MysticSphere = {
   name: 'Chronomancy',
@@ -135,6 +136,7 @@ export const chronomancy: MysticSphere = {
       name: 'Slowing Grasp',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target takes \\damagerankthree{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
@@ -153,6 +155,7 @@ export const chronomancy: MysticSphere = {
       name: 'Slow',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's local time stream is disturbed as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
@@ -169,6 +172,7 @@ export const chronomancy: MysticSphere = {
       name: 'Efficient Slow',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
         `,
@@ -196,6 +200,7 @@ export const chronomancy: MysticSphere = {
       name: 'Stutterstop',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
           At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\immobilized during that round.
@@ -546,6 +551,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Wave of Senescence',
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, each target is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
         `,
@@ -563,6 +569,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Massive Wave of Senescence',
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, each target is \\dazzled and \\deafened.
         `,

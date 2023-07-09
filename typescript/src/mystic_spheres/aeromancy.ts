@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const aeromancy: MysticSphere = {
   name: 'Aeromancy',
@@ -66,6 +67,7 @@ export const aeromancy: MysticSphere = {
       name: 'Arrow Attraction',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target takes a -2 penalty to defenses against projectile \\glossterm{strikes}.
         `,
@@ -185,6 +187,7 @@ export const aeromancy: MysticSphere = {
       name: 'Windseal Grasp',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
         `,
@@ -202,6 +205,7 @@ export const aeromancy: MysticSphere = {
       name: 'Windseal',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
         `,
@@ -217,6 +221,7 @@ export const aeromancy: MysticSphere = {
       name: 'Skyseal',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance} and has a \\glossterm{weight category} of Large or less, it is borne aloft by heavy winds as a \\glossterm{condition}.
           It floats five feet above the ground.
@@ -320,7 +325,8 @@ export const aeromancy: MysticSphere = {
 
       functionsLike: {
         name: 'wind tunnel',
-        exceptThat: "the push distance increases to 30 feet, and the area's length increases to \\hugearealong.",
+        exceptThat:
+          "the push distance increases to 30 feet, and the area's length increases to \\hugearealong.",
       },
       // narrative: '',
       rank: 5,
@@ -458,6 +464,7 @@ export const aeromancy: MysticSphere = {
       name: 'Dust Cloud',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -477,6 +484,7 @@ export const aeromancy: MysticSphere = {
       // The blinding imposes no extra rank penalty since slowly growing is already a
       // little odd.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
           If it was already dazzled by this effect, and it has no remaining \\glossterm{damage resistance}, this condition makes it \\blinded instead.
@@ -498,6 +506,7 @@ export const aeromancy: MysticSphere = {
 
       // +1 rank for +2 accuracy
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -514,6 +523,7 @@ export const aeromancy: MysticSphere = {
       name: 'Dustblind',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is surrounded by swirling dust as a \\glossterm{condition}.
           While it is below its maximum hit points, it is \\blinded.

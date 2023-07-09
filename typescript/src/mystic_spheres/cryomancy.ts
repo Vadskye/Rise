@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const cryomancy: MysticSphere = {
   name: 'Cryomancy',
@@ -336,6 +337,7 @@ export const cryomancy: MysticSphere = {
 
       // +1r for icy terrain
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} becomes \\slowed as a \\glossterm{condition}.
         `,
@@ -353,6 +355,7 @@ export const cryomancy: MysticSphere = {
 
       // +1r for icy terrain
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target with no remaining \\glossterm{damage resistance} becomes \\slowed as a \\glossterm{condition}.
         `,
@@ -474,6 +477,7 @@ export const cryomancy: MysticSphere = {
       name: 'Bonechill',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it becomes \\immobilized as a \\glossterm{condition}.
         `,
@@ -586,6 +590,7 @@ export const cryomancy: MysticSphere = {
       name: 'Chilling Aura',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is chilled as a \\glossterm{condition}.
           While it is below its maximum hit points, it is \\slowed.

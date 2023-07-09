@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -243,6 +244,7 @@ export const umbramancy: MysticSphere = {
       name: 'Heed the Dark Call',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target feels the call of darkness as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\frightened by you.
@@ -260,6 +262,7 @@ export const umbramancy: MysticSphere = {
       name: 'Intense Heed the Dark Call',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target feels the call of darkness as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\panicked by you.
@@ -314,6 +317,7 @@ export const umbramancy: MysticSphere = {
 
       // +1r for shadowed
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's eyesight is darkened as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\blinded as a \\glossterm{condition}.
@@ -432,6 +436,7 @@ export const umbramancy: MysticSphere = {
       // TODO: very ambiguous rank. It's currently scaled as r3.5, since it can provide
       // immunity to melee attackers.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target's shadow is bound to the light as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it treats areas of \\glossterm{shadowy illumination} and unlit areas as solid barriers.

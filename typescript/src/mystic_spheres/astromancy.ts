@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { IMMUNITY_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
@@ -124,6 +125,7 @@ export const astromancy: MysticSphere = {
       name: 'Banishment',
 
       attack: {
+        crit: IMMUNITY_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
@@ -376,9 +378,7 @@ export const astromancy: MysticSphere = {
       name: 'Planar Jaunt -- Plane of Fire',
 
       attack: {
-        crit: `
-          Both instances of damage are doubled, not just the initial damage.
-        `,
+        crit: MULTIHIT_CRIT,
         hit: `
           The target \\sphereterm{flickers} to the Plane of Fire.
           When it returns, it takes \\damagerankone{fire}.

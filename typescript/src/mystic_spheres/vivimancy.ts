@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { CONDITION_CRIT } from './constants';
 
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
@@ -362,6 +363,7 @@ export const vivimancy: MysticSphere = {
       name: 'Withering',
 
       attack: {
+        crit: CONDITION_CRIT,
         // No relevant glance effect
         hit: `As a \\glossterm{condition}, the target's body withers.
         It takes a -2 penalty to Fortitude defense.

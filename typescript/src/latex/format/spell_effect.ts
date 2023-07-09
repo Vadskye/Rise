@@ -12,6 +12,23 @@ export function assertStartsWithLowercase(text: string | null | undefined, effec
   }
 }
 
+// TODO: add checking for nonsensical crit effects
+function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void {
+  const dealsRepeatDamage = /damage.*immediately.*again/.test(attack.hit)
+  if (dealsRepeatDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for a multi-hit attack`);
+  }
+
+  const inflictsCondition = /condition/.test(attack.hit)
+  const dealsDamage = /\\damage/.test(attack.hit)
+  const grantsImmunity = /immun.*short rest/.test(attack.hit)
+  if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for condition removal`);
+  } else if (grantsImmunity && !dealsDamage && attack.crit === undefined) {
+    console.error(`Attack from ${effectName} should have explicit crit effect for removing immunity`);
+  }
+}
+
 function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
   const dealsAoeDamage = /Each target.*\\damage/.test(attack.hit)
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
@@ -49,6 +66,7 @@ export function spellEffect(
       assertEndsWithPeriod(spell.attack.hit, spell.name);
       assertEndsWithPeriod(spell.attack.crit, spell.name);
       assertHasCorrectGlance(spell.attack, spell.name);
+      assertHasCorrectCrit(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
       return `
         ${spell.attack.targeting.trim() + fatiguePointsText}%
@@ -84,7 +102,9 @@ export function spellEffect(
       return null;
     }
   } catch (err) {
-    err.message += `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
+    if (err instanceof Error) {
+      err.message += `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
+    }
     throw err;
   }
 }
