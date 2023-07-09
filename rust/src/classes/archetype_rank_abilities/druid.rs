@@ -648,7 +648,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
                         \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your your level (see \tref{Character Advancement}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half your level \add half your Perception.
+                        \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
                         \item All of its strikes are \glossterm{weak strikes}.
                         \item Its \glossterm{power} is 0.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
