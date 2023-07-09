@@ -204,21 +204,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The ability affects all enemies who can see or hear you.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Cacaphony}[\abilitytag{Auditory}]
-                        \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes \damagerankone{bludgeoning}.
-                        \miss \glossterm{Glancing blow}.
-
-                        \rankline
-                        \rank{2} The damage increases to \damageranktwo{bludgeoning}.
-                        \rank{3} The area increases to a \smallarea radius.
-                        \rank{4} The damage increases to \damagerankthree{bludgeoning}.
-                        \rank{5} The area increases to a \medarea radius.
-                        \rank{6} The damage increases to \damagerankfive{bludgeoning}.
-                        \rank{7} The area increases to a \largearea radius.
-                    \end{magicalactiveability}
-
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \par \noindent Usage time: One \glossterm{minor action}.
                         \rankline
@@ -255,6 +240,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} This ability affects two conditions instead of one.
                         A target must increase its fatigue level by two to remove both conditions.
                     \end{magicalsustainability}
+
+                    \begin{magicalactiveability}{Crashing Cacaphony}[\abilitytag{Auditory}]
+                        \rankline
+                        Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
+                        \hit Each target takes \damagerankone{bludgeoning}.
+                        \miss \glossterm{Glancing blow}.
+
+                        \rankline
+                        \rank{2} The damage increases to \damageranktwo{bludgeoning}.
+                        \rank{3} The area increases to a \smallarea radius.
+                        \rank{4} The damage increases to \damagerankthree{bludgeoning}.
+                        \rank{5} The area increases to a \medarea radius.
+                        \rank{6} The damage increases to \damagerankfive{bludgeoning}.
+                        \rank{7} The area increases to a \largearea radius.
+                    \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Dazzling Discordance}[\abilitytag{Auditory}]
                         \rankline
