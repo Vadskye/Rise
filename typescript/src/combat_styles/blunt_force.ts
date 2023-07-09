@@ -253,20 +253,10 @@ export const bluntForce: CombatStyle = {
       name: 'Gutshot',
 
       effect: `
-        Make a melee strike using a bludgeoning weapon.
+        Make a strike with a -1 accuracy penalty using a bludgeoning weapon.
         If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
-    },
-
-    {
-      name: 'Gutshot+',
-
-      effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a bludgeoning weapon.
-        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
-      `,
-      rank: 5,
     },
 
     {
