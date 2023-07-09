@@ -565,8 +565,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target's body becomes partially liquified as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
+          If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water.
           This has the following effects:
           \\begin{itemize}
             \\item If it is submerged in water or other liquid, it takes \\damagerankthree physical damage during each of your subsequent actions as it dissolves.
@@ -591,8 +590,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target's body becomes partially liquified as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is transformed into a puddle of water.
+          If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water.
           This functions like the effect of the \\spell{liquifying grasp} spell, except that the damage while submerged increases to \\damagerankseven.
         `,
         targeting: `

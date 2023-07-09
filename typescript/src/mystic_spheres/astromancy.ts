@@ -249,7 +249,7 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          this spell does not have \\glossterm{verbal components}.
+          this spell has no \\glossterm{verbal components}.
           In addition, the target's departure and arrival with this spell are silent.
         `,
         name: 'translocation',

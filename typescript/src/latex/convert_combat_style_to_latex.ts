@@ -7,7 +7,7 @@ import * as format from "@src/latex/format";
 import { assertEndsWithPeriod } from "@src/latex/format/spell_effect";
 
 export function convertCombatStyleToLatex(style: CombatStyle): string {
-  assertEndsWithPeriod(style.shortDescription);
+  assertEndsWithPeriod(style.shortDescription, style.name);
   return format.latexify(`
     \\section{{${style.name}}}
       \\hypertargetraised{style:${style.name.toLowerCase()}}{}%

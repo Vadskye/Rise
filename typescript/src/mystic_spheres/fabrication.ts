@@ -39,27 +39,13 @@ export const fabrication: MysticSphere = {
 
         Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
         A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
-        If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, it automatically disappears.
+        If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, your attunement to that item ends and it disappears.
       `,
       tags: ['Manifestation'],
       type: 'Attune',
     },
   ],
   spells: [
-    {
-      name: 'Mystic Arrow',
-
-      attack: {
-        hit: `The target takes \\damagerankone{piercing}.`,
-        targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
-        `,
-      },
-      rank: 2,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
     {
       name: 'Mystic Blast Arrow',
 
@@ -80,17 +66,17 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Artillery',
 
-      // Long range would be d2, drop to d1 for delay
       attack: {
         hit: `
           The target takes \\damagerankone{piercing}.
         `,
         targeting: `
-          When you cast this spell, you create a ballista bolt in midair within your space.
-          During your next action, make an attack vs. Armor with the bolt against anything within \\longrange.
+          When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
+          During your next action, if that target is still within \\longrange, make an attack vs. Armor against it.
+          Otherwise, the bolt disappears and this spell is wasted.
         `,
       },
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -100,9 +86,9 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'mystic artillery',
-        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfourhigh{piercing}.',
       },
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -110,12 +96,12 @@ export const fabrication: MysticSphere = {
     {
       name: "Executioner's Axe",
 
-      // two adjacent targets would normally be about d2h.
-      // Drop to d2l for the delay; delay is less powerful in melee than at range.
+      // Melee single-target attack would normally be d4. Drop to d3h for multitarget.
       attack: {
         hit: `
-          Each target takes \\damageranktwolow{slashing}.
+          Each target takes \\damagerankthreehigh{slashing}.
         `,
+        missGlance: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
           During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
@@ -128,14 +114,9 @@ export const fabrication: MysticSphere = {
     {
       name: "Mighty Executioner's Axe",
 
-      attack: {
-        hit: `
-          Each target takes \\damageranksixlow{slashing}.
-        `,
-        targeting: `
-          When you cast this spell, you create a greataxe in midair within your space.
-          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
-        `,
+      functionsLike: {
+        name: "executioner's axe",
+        exceptThat: "the damage increases to \\damageranksevenhigh{slashing}.",
       },
       rank: 6,
       tags: ['Manifestation'],
@@ -146,6 +127,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `Each target takes \\damagerankone{slashing}.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
@@ -159,42 +141,13 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes \\damagerankfive{slashing}.`,
+        hit: `Each target takes \\damagerankfour{slashing}.`,
+        missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Precision Missileburst',
-
-      attack: {
-        hit: `Each target takes \\damagerankone{piercing}.`,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 3,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Massive Precision Missileburst',
-
-      attack: {
-        hit: `
-          Each target takes \\damagerankfour{piercing}.
-        `,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\hugearea radius from you.
-        `,
-      },
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -206,6 +159,7 @@ export const fabrication: MysticSphere = {
         hit: `
           Each target takes \\damagerankone{piercing}.
         `,
+        missGlance: true,
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
           When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
@@ -224,6 +178,7 @@ export const fabrication: MysticSphere = {
         hit: `
           Each target takes \\damagerankfour{piercing}.
         `,
+        missGlance: true,
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
           When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
@@ -315,7 +270,6 @@ export const fabrication: MysticSphere = {
         The webs make the area \\glossterm{difficult terrain}.
         The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
       `,
-
       rank: 3,
       scaling: 'accuracy',
       tags: ['Manifestation'],
@@ -404,17 +358,12 @@ export const fabrication: MysticSphere = {
       name: 'Grease',
 
       attack: {
-        crit: `
-          Each target is also unable to stand up as a \\glossterm{condition}.
-          If it is somehow brought into a standing position, it will immediately fall and become prone again.
-        `,
-        // No relevant glance effect
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -423,19 +372,15 @@ export const fabrication: MysticSphere = {
       name: 'Oil Slick',
 
       attack: {
-        crit: `
-          Each target is also unable to stand up as a \\glossterm{condition}.
-          If it is somehow brought into a standing position, it will immediately fall and become prone again.
-        `,
         hit: `
           Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
           This vulnerability ends for a target if it takes fire damage.
         `,
         targeting: `
-          Make an attack vs. Reflex against everything that is Large or smaller in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything that is Large or smaller and \\glossterm{grounded} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -469,6 +414,8 @@ export const fabrication: MysticSphere = {
       name: 'Instant Weapon',
 
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         You create a nonmagical weapon that you are proficient with your hand.
         You can immediately make a \\glossterm{strike} with that weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
@@ -493,9 +440,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: {
-        7: `You gain a +1 bonus to \\glossterm{accuracy} with the strike.`,
-      },
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -713,6 +658,58 @@ export const fabrication: MysticSphere = {
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
+    },
+    {
+      name: 'Shrapnel Grenade',
+
+      attack: {
+        hit: `
+          Each target takes \\damagerankthree{piercing}.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Armor and Reflex against everything within a \\smallarea radius in \\shortrange.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Mighty Shrapnel Grenade',
+
+      attack: {
+        hit: `
+          Each target takes \\damageranksix{piercing}.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Armor and Reflex against everything within a \\smallarea radius in \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+    // TODO: may not be within sphere's narrative scope
+    {
+      name: 'Powderkeg',
+
+      attack: {
+        hit: `
+          Each target takes \\damagerankthree{piercing and fire}.
+        `,
+        missGlance: true,
+        targeting: `
+          You create a powderkeg on the ground within \\shortrange.
+          The powderkeg has 10 hit points, and it automatically takes 5 physical damage whenever you sustain this spell.
+          It explodes when it reaches 0 hit points, or when it takes any fire damage.
+          When it explodes, make an attack vs. Armor and Reflex against everything within a \\medarea radius of it.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Manifestation', 'Sustain (minor)'],
     },
   ],
   rituals: [

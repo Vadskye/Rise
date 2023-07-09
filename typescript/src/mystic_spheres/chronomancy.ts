@@ -319,6 +319,7 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's conditions to become identical to the locked conditions.
         This removes any excess conditions and reapplies any missing conditions.
+        In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
       type: 'Sustain (minor)',
@@ -602,6 +603,15 @@ export const chronomancy: MysticSphere = {
       },
       rank: 6,
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Accelerated Expiration',
+
+      effect: `
+        You remove a \\glossterm{condition} of your choice.
+      `,
+      rank: 4,
     },
   ],
   rituals: [

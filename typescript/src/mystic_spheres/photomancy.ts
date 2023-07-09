@@ -51,29 +51,15 @@ export const photomancy: MysticSphere = {
       name: 'Color Spray',
 
       attack: {
-        crit: `The target is \\stunned instead of dazed.`,
         hit: `
-          Each target is \\dazed as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
+          If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a separate condition.
         `,
         targeting: `
-          Make an attack vs. Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Reflex and Mental against each creature within a \\medarea cone from you.
         `,
       },
-      rank: 2,
-      scaling: 'accuracy',
-      tags: ['Visual'],
-    },
-
-    {
-      name: 'Massive Color Spray',
-
-      functionsLike: {
-        exceptThat: `
-          the area increases to a \\hugearea cone from you.
-        `,
-        name: 'color spray',
-      },
-      rank: 5,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -82,15 +68,14 @@ export const photomancy: MysticSphere = {
       name: 'Prismatic Spray',
 
       attack: {
-        crit: `The target is \\confused instead of stunned.`,
         hit: `
-          Each target is \\stunned as a \\glossterm{condition}.
+          Each target is \\dazzled and \\stunned as two separate conditions.
         `,
         targeting: `
-          Make an attack vs. Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Reflex and Mental against each creature within a \\medarea cone from you.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -114,10 +99,10 @@ export const photomancy: MysticSphere = {
       name: 'Blurred Motion',
 
       effect: `
-        If you move at least 15 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
+        If you move at least 10 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
       rank: 3,
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
 
     {
@@ -152,24 +137,6 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: 'Lightburst',
-
-      // -1d
-      attack: {
-        hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
-        `,
-      },
-      rank: 3,
-      scaling: 'accuracy',
-      tags: [],
-    },
-
-    {
       name: 'Flash',
 
       attack: {
@@ -187,19 +154,58 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: 'Blinding Flash',
+
+      attack: {
+        hit: `
+          If the target has no remaining \\glossterm{damage resistance}, it becomes \\blinded as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one creature within \\medrange of you.
+          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      tags: [],
+    },
+
+    {
+      name: 'Borrow Vision',
+
+      attack: {
+        hit: `
+          This spell has no \\glossterm{verbal components}.
+
+          You see out of the target's eyes instead of your own.
+          This does not inhibit the target's vision.
+          Whenever you sustain this spell, you can change between seeing out of your eyes and seeing out of the target's eyes.
+          If you cannot see yourself, you are \\blinded for combat purposes.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange of you.
+          If you target an \\glossterm{ally}, this attack automatically succeeds.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Subtle', 'Sustain (minor)'],
+    },
+
+    {
       name: 'Searing Light',
 
       attack: {
         hit: `
           The target takes \\damagerankone{energy}.
-          If it takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
+          If this attack beats the target's Fortitude defense, it deals maximum damage.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: [],
     },
@@ -207,13 +213,12 @@ export const photomancy: MysticSphere = {
     {
       name: 'Solar Ray',
 
-      // +1r for true sunlight; that shouldn't be on a low-level effect, but it doesn't
-      // add that much power here.
+      // No rank modifier for true sunlight
       attack: {
         hit: `
-          The target takes \\damagerankfour{energy}.
-          If it takes damage, it is \\dazzled as a \\glossterm{condition}.
-          If it loses \\glossterm{hit points}, it also suffers consequences as if it had been struck by a beam of natural sunlight.
+          The target takes \\damagerankfivelow{energy}.
+          If this attack beats the target's Fortitude defense, it deals maximum damage.
+          If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
         `,
         targeting: `
@@ -229,7 +234,9 @@ export const photomancy: MysticSphere = {
     {
       name: 'Solar Flare',
 
-      // +1r for true sunlight, +1r for enemies only - end up with d5l instead of d5?
+      // +2r for delay, +2r for Fortitude and Reflex. Base rank is 8? Call it 7 to avoid
+      // stacking too high. That allows a t3.5 area, dr5 damage, and t1.25 debuff. Use a
+      // t4 area and a t1 debuff.
       attack: {
         hit: `
           Each target takes \\damagerankfivelow{energy}.
@@ -238,11 +245,11 @@ export const photomancy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
+          When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius \\glossterm{emanation} around you.
+          During your next action, make an attack vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
         `,
       },
-      rank: 6,
+      rank: 4,
       scaling: 'accuracy',
       tags: [],
     },
@@ -282,12 +289,12 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{energy}.
+          Each target takes \\damagerankfive{energy}.
         `,
         missGlance: true,
         targeting: `
           Choose up to five \\tinyarea radius areas within \\longrange of you.
-          Make an attack vs. Fortitude against all creatures in any of those areas.
+          Make an attack vs. Reflex and Fortitude against all creatures in any of those areas.
           The areas can overlap, but this does not allow you to make multiple attacks against the same creature.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from each area.
         `,
@@ -300,35 +307,20 @@ export const photomancy: MysticSphere = {
     {
       name: 'Kaleidoscopic Pattern',
 
+      // t3 area, -2r for delay + sustain
       attack: {
-        crit: `The target is \\stunned instead of dazed.`,
         hit: `
-          Each target is \\dazed as a \\glossterm{condition}.
+          Each target with no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.
+          This has no immediate effect other than creating \\glossterm{bright illumination} in the area.
+          During each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
         `,
       },
-      rank: 3,
+      rank: 4,
       scaling: 'accuracy',
-      tags: ['Compulsion', 'Visual'],
-    },
-
-    {
-      name: 'Intense Kaleidoscopic Pattern',
-
-      attack: {
-        crit: `The target is \\confused instead of dazed.`,
-        hit: `
-          Each target is \\stunned as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Compulsion', 'Visual'],
+      tags: ['Compulsion', 'Sustain (minor)', 'Visual'],
     },
 
     {
@@ -369,7 +361,7 @@ export const photomancy: MysticSphere = {
         name: 'mirror image',
         exceptThat: 'the miss chance increases to 50\\%.',
       },
-      rank: 7,
+      rank: 6,
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -399,10 +391,9 @@ export const photomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        You \\glossterm{briefly} become \\trait{invisible}.
-        This invisibility ends after you take any action.
+        You \\glossterm{briefly} become \\trait{invisible} (see \\pcref{Invisible}).
       `,
-      rank: 4,
+      rank: 3,
     },
 
     {
@@ -412,10 +403,10 @@ export const photomancy: MysticSphere = {
         This spell has no \\glossterm{verbal components}.
 
         You become \\trait{invisible}.
-        This invisibility ends after you take damage.
+        This invisibility ends if you take damage.
       `,
-      rank: 7,
-      tags: ['Sustain (standard)'],
+      rank: 6,
+      tags: ['Attune (deep)'],
     },
 
     {
@@ -437,11 +428,13 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: 'Mighty Chromatic Orb',
+      name: 'Efficient Chromatic Orb',
 
       functionsLike: {
         name: 'chromatic orb',
-        exceptThat: 'the damage increases to \\damageranksix{energy}.',
+        exceptThat: `
+          the damage increases to \\damagerankfivelow{energy}, and damaged creatures suffer a condition even if they did not lose hit points.
+        `,
       },
       rank: 7,
       scaling: 'accuracy',
@@ -489,12 +482,56 @@ export const photomancy: MysticSphere = {
           Other miss chances, such as the miss chance from attacking it while dazzled, are unaffected.
         `,
         targeting: `
-          Make an attack vs. Reflex against all creatures in a \\medarea radius within \\longrange.
+          Make an attack vs. Mental against all creatures in a \\medarea radius within \\longrange.
         `,
       },
       rank: 1,
       scaling: 'accuracy',
       tags: [],
+    },
+
+    {
+      name: 'Radiant Aura',
+
+      attack: {
+        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
+        targeting: `
+          You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.
+          Whenever an \\glossterm{enemy} enters that area, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: [],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Reflective Lightbeam',
+
+      attack: {
+        hit: `Each target takes \\damagerankone{energy}.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
+          You can make the line bend at a 90 degree angle once during its length.
+          This can allow it to include areas that you do not have \\glossterm{line of sight} or \\glossterm{line of effect} to.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Reflective Lightbeam',
+
+      functionsLike: {
+        name: 'reflective lightbeam',
+        exceptThat: 'the damage increases to \\damagerankfivelow{energy}.',
+      },
+      rank: 6,
+      scaling: 'accuracy',
     },
   ],
   rituals: [
