@@ -221,8 +221,8 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Dazzling Flurry+',
 
-      // reroll is about +2 ranks, weak strike dazed would normally be r1, this is
-      // probably strong but maybe okay?
+      // reroll is about +2 ranks, weak strike dazzled would normally be r1, this is
+      // probably weak but maybe okay?
       effect: `
         Make a strike.
         You may reroll the accuracy roll and take the highest result.

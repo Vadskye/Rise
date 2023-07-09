@@ -160,7 +160,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You are immune to being \shaken, \frightened, and \panicked during your \ability{rage} ability.
+                You are immune to being \frightened and \panicked during your \ability{rage} ability.
             ",
             modifiers: None,
         },

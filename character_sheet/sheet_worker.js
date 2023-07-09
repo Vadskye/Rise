@@ -1383,9 +1383,7 @@ function handleDebuffs() {
         "partially_unaware",
         "unaware",
         // rank 1 debuffs
-        "dazed",
         "dazzled",
-        "shaken",
         // rank 2 debuffs
         "frightened",
         "slowed",
@@ -1456,9 +1454,6 @@ function handleDebuffs() {
       }
 
       // rank 1 debuffs
-      if (v.dazed && !(v.stunned || v.confused)) {
-        minus1("dazed", "all_defenses");
-      }
       if (v.dazzled && !v.blinded) {
         debuffHeaders += " {{Miss chance=Miss on 1: [[d5]]}}";
       }
@@ -1481,10 +1476,6 @@ function handleDebuffs() {
       if (v.goaded) {
         debuffHeaders += " {{Goaded=+2 accuracy vs source}}";
         minus2("goaded", "accuracy");
-      }
-      if (v.shaken && !v.frightened && !v.panicked) {
-        debuffHeaders += " {{Shaken=-1 accuracy vs source}}";
-        minus1("shaken", "mental");
       }
       if (v.slowed && !v.immobilized) {
         minus2("slowed", "armor_defense");

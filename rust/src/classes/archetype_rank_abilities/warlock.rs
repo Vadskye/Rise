@@ -702,7 +702,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You are immune to being \dazed, \stunned, and \confused during your \textit{possession} ability.
+                You are immune to being \stunned and \confused during your \textit{possession} ability.
             ",
             modifiers: None,
         },

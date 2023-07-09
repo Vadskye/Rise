@@ -46,7 +46,6 @@ pub enum StandardAttack {
     MindCrush(i32),
     PersonalIgnition(i32),
     Pyrohemia(i32),
-    Pyrophobia(i32),
     RetributiveLifebond(i32),
     Spikeform(i32),
     Windslash(i32),
@@ -105,7 +104,8 @@ impl StandardAttack {
                 defense: Defense::Mental,
                 extra_context: None,
                 hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![Debuff::Dazed],
+                    // TODO: convert to lose HP effect
+                    debuffs: vec![Debuff::Stunned],
                     duration: AttackEffectDuration::Brief,
                     immune_after_effect_ends: false,
                 }),
@@ -428,36 +428,6 @@ impl StandardAttack {
                 name: "Pyrohemia".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Short),
-            }.attack(),
-            Self::Pyrophobia(rank) => SimpleSpell {
-                accuracy: if *rank >= 5 { *rank - 5 } else { *rank - 1 },
-                crit: Some(AttackEffect::DebuffInstead(DebuffInsteadEffect {
-                    debuffs: vec![if *rank >= 5 {
-                        Debuff::Panicked("the $name and all other sources of fire".to_string())
-                    } else {
-                        Debuff::Frightened("the $name and all other sources of fire".to_string())
-                    }],
-                    instead_of: Debuff::Shaken(
-                        "the $name and all other sources of fire".to_string(),
-                    ),
-                })),
-                defense: Defense::Mental,
-                hit: AttackEffect::Debuff(DebuffEffect {
-                    debuffs: vec![if *rank >= 5 {
-                        Debuff::Frightened("the $name and all other sources of fire".to_string())
-                    } else {
-                        Debuff::Shaken("the $name and all other sources of fire".to_string())
-                    }],
-                    duration: AttackEffectDuration::Condition,
-                    immune_after_effect_ends: false,
-                }),
-                name: if *rank >= 5 {
-                    "Primal Pyrophobia".to_string()
-                } else {
-                    "Pyrophobia".to_string()
-                },
-                tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
-                targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::RetributiveLifebond(rank) => SimpleSpell {
                 accuracy: *rank - 1,
