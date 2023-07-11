@@ -856,8 +856,8 @@ You can either skim past terms you don't yet understand or look them up as you g
         For details about how hit points are used, see \pcref{Taking Damage}.
 
         The amount of hit points you have is defined in \tref{Character Advancement}.
-        You add your level and your Constitution to find the corresponding value.
-        For example, a level 3 character with 2 Constitution would have 14 hit points.
+        You add your level and your Constitution to find your effective level for the purpose of determining your hit points.
+        For example, a level 3 character with 2 Constitution would have 10 hit points, as would a level 5 character with 0 Constitution.
         Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed number of additional hit points.
 
         If the sum of your level and Constitution is negative, your hit points are equal to 6 \add half that negative value.
@@ -875,9 +875,9 @@ You can either skim past terms you don't yet understand or look them up as you g
 
         Your mundane power is equal to your Strength \add half your level.
         Similarly, your magical power is equal to your Willpower \add half your level.
-        % TODO: negative power should decrease damage. Otherwise, mice have a very high minimum bite damage.
-        If this is negative, you subtract that value from any other bonuses you would have to that type of power, to a minimum of 0 total power.
-        Some abilities can increase your power further.
+        If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
+        For example, a strike with a broadsword would normally deal 1d6 damage \plus1d per 2 power.
+        A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
         % TODO: weapon damage wording
