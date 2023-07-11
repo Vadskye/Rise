@@ -47,6 +47,23 @@ export const fabrication: MysticSphere = {
   ],
   spells: [
     {
+      name: 'Mystic Forge',
+
+      // TODO: should this be lower than rank 5?
+      functionsLike: {
+        name: 'forge',
+        exceptThat: `
+          the item you create is magical, but cannot be made from any special material.
+          When you learn this spell, you choose a single magic weapon or armor property with a rank no higher than your spellcasting rank with this spell.
+          If you create an item that the property can be applied to, the item has that property.
+          Whenever your spellcasting rank with this spell increases, you can choose a new magic property.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      tags: ['Attune'],
+    },
+    {
       name: 'Mystic Blast Arrow',
 
       attack: {
@@ -330,7 +347,7 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `The target takes \\damageranktwo{piercing}.`,
+        hit: `The target takes \\damagerankthree{piercing}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -338,19 +355,8 @@ export const fabrication: MysticSphere = {
           After the dagger deals damage, it disappears and another dagger appears in the swarm.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Mighty Daggerswarm',
-
-      functionsLike: {
-        name: 'daggerswarm',
-        exceptThat: 'the damage increases to \\damagerankfive{piercing}.',
-      },
-      rank: 7,
       type: 'Attune (deep)',
     },
 
@@ -434,12 +440,12 @@ export const fabrication: MysticSphere = {
         name: 'instant weapon',
         exceptThat: `
           the weapon you create is magical.
-          When you learn this spell, you choose a single magic weapon ability with a rank no higher than your spellcasting rank with this spell.
-          The weapon has that ability.
-          Whenever your spellcasting rank with this spell increases, you can choose a new magic weapon ability.
+          When you learn this spell, you choose a single magic weapon property with a rank no higher than your spellcasting rank with this spell.
+          The weapon has that property.
+          Whenever your spellcasting rank with this spell increases, you can choose a new magic weapon property.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
