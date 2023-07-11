@@ -389,7 +389,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} You also learn the location of all creatures with that alignment.
-                    \rank{5} The area increases to a \largearea cone.
+                    \rank{5} The area increases to a \hugearea cone.
                     \rank{7} You can use this ability as a \glossterm{minor action}.
                 \end{magicalactiveability}
             ",
