@@ -148,7 +148,7 @@ def skill_modifiers():
                                 "Modifier",
                             ),
                             div("Base attribute"),
-                            div("1 + half level + attribute"),
+                            div("3 + half level + attribute"),
                         ]
                     ),
                 ],
@@ -195,10 +195,13 @@ def common_concepts():
                 "Common Concepts",
             ),
             p(
-                """<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks roll double damage dice on a critical hit. This does not multiply the damage from your power."""
+                """<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks roll double damage dice on a critical hit."""
             ),
             p(
-                """<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Unless otherwise specified, all damaging attacks roll no damage dice on a glancing blow. This does not reduce the damage from your power. If you would not normally add your power to damage with the attack, a glancing blow deals no damage."""
+                """<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Unless otherwise specified, all damaging attacks deal half damage on a glancing blow."""
+            ),
+            p(
+                """<b>Rounding</b>: Always round down.""",
             ),
             p(
                 f"""
