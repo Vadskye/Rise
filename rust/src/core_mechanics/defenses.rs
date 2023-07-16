@@ -157,12 +157,6 @@ where
                 special_defenses.vulnerable.push(def.clone());
             }
         }
-        if matches!(self.get_size(), Size::Gargantuan) || matches!(self.get_size(), Size::Colossal)
-        {
-            special_defenses
-                .immune
-                .push(SpecialDefenseType::Debuff(Debuff::Prone))
-        }
         return special_defenses;
     }
 }
