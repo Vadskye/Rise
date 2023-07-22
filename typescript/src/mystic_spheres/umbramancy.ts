@@ -8,7 +8,8 @@ export const umbramancy: MysticSphere = {
   // Spells that only work vs shadowed targets have +2r. (so dr5 damage at r3)
   // Alternately, a spell can pay -1r to get +2a vs shadowed targets, or -2r for +4a
   specialRules: `
-    \\spheredef{shadowed} A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+    Many spells from this sphere are particularly effective on \\glossterm{shadowed} targets.
+    A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
   `,
 
   cantrips: [
@@ -138,7 +139,7 @@ export const umbramancy: MysticSphere = {
         hit: `Each target takes \\damagerankone{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\sphereterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 1,
@@ -173,7 +174,7 @@ export const umbramancy: MysticSphere = {
         hit: `Each target takes \\damagerankeightlow{cold}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\sphereterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 7,
@@ -193,7 +194,7 @@ export const umbramancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Reflex against something you \\glossterm{touch}.
-          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
       rank: 2,
@@ -213,7 +214,7 @@ export const umbramancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Reflex against something you \\glossterm{touch}.
-          You gain a +2 accuracy bonus if the target is \\sphereterm{shadowed}.
+          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
       rank: 6,
@@ -228,7 +229,7 @@ export const umbramancy: MysticSphere = {
         hit: `Each target takes \\damagerankthreelow{cold}.`,
         missGlance: true,
         targeting: `
-          You create a field of darkness at a \\sphereterm{shadowed} location within \\shortrange.
+          You create a field of darkness at a \\glossterm{shadowed} location within \\shortrange.
           The area affected by the field increases over time.
           It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
           Light in the area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
@@ -251,7 +252,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +4 accuracy bonus if the target is \\sphereterm{shadowed}.
+          You gain a +4 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
       rank: 1,
@@ -269,7 +270,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +4 accuracy bonus if the target is \\sphereterm{shadowed}.
+          You gain a +4 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
       rank: 5,
@@ -294,7 +295,7 @@ export const umbramancy: MysticSphere = {
       name: 'Fade Into Darkness',
 
       effect: `
-        At the end of each round, if you took no actions that round and are \\sphereterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
+        At the end of each round, if you took no actions that round and are \\glossterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
         This invisibility ends after you take any action, or if you stop being shadowed.
       `,
       rank: 2,
@@ -305,7 +306,7 @@ export const umbramancy: MysticSphere = {
       name: 'Greater Fade Into Darkness',
 
       effect: `
-        At the end of each round, if you did not take a standard action that round and are \\sphereterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
+        At the end of each round, if you did not take a standard action that round and are \\glossterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
         This invisibility ends after you take a standard action, or if you stop being shadowed.
       `,
       rank: 6,
@@ -324,7 +325,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each \\sphereterm{shadowed} creature.
+          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each \\glossterm{shadowed} creature.
         `,
       },
       rank: 6,
@@ -444,7 +445,7 @@ export const umbramancy: MysticSphere = {
           However, this condition has no effect if it enters those areas by other means, such as by \\glossterm{teleportation} or if the light around it is suddenly extinguished.
         `,
         targeting: `
-          Make an attack vs. Mental against a creature within \\shortrange that is not \\sphereterm{shadowed}.
+          Make an attack vs. Mental against a creature within \\shortrange that is not \\glossterm{shadowed}.
         `,
       },
       narrative: `
@@ -489,7 +490,7 @@ export const umbramancy: MysticSphere = {
           \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
         \\end{itemize}
 
-        At the end of each round, if you are not \\sphereterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
+        At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
         If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
