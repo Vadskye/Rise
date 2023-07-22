@@ -314,6 +314,16 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
         If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
         In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
+        \weapontagdef{Massive} This weapon cannot be used to attack individual creatures.
+        Instead, a strike with a Massive weapon affects everything in a cube.
+        Unlike a \abilitytag{Sweeping} weapon, this is an area attack, not a \glossterm{targeted} attack.
+
+        Massive weapons have a measurement that indicates the length of each side of the cube in feet.
+        For example, a net is a \abilitytag{Massive} (10) weapon, so it affects everything in a 10 foot wide cube.
+        If a weapon has the Massive tag, that replaces any Sweeping tag it would otherwise have.
+
+        Creatures that are Huge or larger automatically gain the Massive tag on all of their weapons.
+        For details, see \tref{Size Categories}.
         \weapontagdef{Mounted}\label{Mounted Weapon} If you are mounted, and your mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
         \weapontagdef{Parrying} If a creature attacks you with a \glossterm{melee} \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
         \weapontagdef{Projectile} This weapon fires ammunition at range to deal damage.
@@ -549,7 +559,7 @@ Items are divided into five broad categories, described below.
                 \tind Bolas                       & \plus1        & 1d3         & Bludgeoning              & 0 (10 gp)                   & Light, Thrown (30/60), Tripping             \\
                 \tind Dwarven throwing axe        & \plus0        & 1d8         & Slashing                 & 0 (10 gp)                   & Thrown (60/120)                             \\
                 \tind Dwarven waraxe              & \plus0        & 1d8         & Slashing                 & 1 (40 gp)                   & Thrown (30/60), Versatile Grip              \\
-                \tind Net\fn{2}                   & \plus0        & \tdash      & \tdash                   & 0 (10 gp)                   & Thrown (5/15)                 \\
+                \tind Net\fn{2}                   & \plus0        & \tdash      & \tdash                   & 0 (10 gp)                   & Massive (10), Thrown (5/15)                 \\
             \end{longtable}
             1 See \pcref{Item Ranks}. \\
             2 This weapon has special rules. \\
