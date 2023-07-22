@@ -13,6 +13,10 @@ pub enum ActiveAbility {
     Strike(StrikeAbility),
 }
 
+const CONDITION_CRIT: &str = r"
+    \crit The condition must be removed an additional time before the effect ends.
+";
+
 impl ActiveAbility {
     pub fn latex_ability_block(self, creature: &Creature) -> String {
         match self {
@@ -32,6 +36,13 @@ impl ActiveAbility {
         match self {
             Self::Custom(c) => c.is_magical,
             Self::Strike(s) => s.is_magical,
+        }
+    }
+
+    pub fn is_elite(&self) -> bool {
+        match self {
+            Self::Custom(c) => c.usage_time == UsageTime::Elite,
+            Self::Strike(_) => false,
         }
     }
 }
@@ -91,7 +102,7 @@ impl CustomAbility {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
-                    The $name makes a $accuracy+{accuracy_modifier} vs. Mental against one creature within \\medrange.
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
                     \\hit The target takes $dr1 energy damage.
                 ",
                 accuracy_modifier = rank - 1,
@@ -103,12 +114,33 @@ impl CustomAbility {
         };
     }
 
+    pub fn heed_the_dark_call(rank: i32) -> Self {
+        return Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
+                    It gains a +4 accuracy bonus if the target is \\glossterm<shadowed>.
+                    \\hit The target feels the call of darkness as a \\glossterm<condition>.
+                    While it is below its maximum \\glossterm<hit points>, it is \\frightened by the $name.
+                    {condition_crit}
+                ",
+                accuracy_modifier = rank - 1,
+                condition_crit = CONDITION_CRIT,
+            ),
+            is_magical: false,
+            name: "Heed the Dark Call".to_string(),
+            tags: vec![],
+            usage_time: UsageTime::Standard,
+        };
+    }
+
     pub fn inflict_wound(rank: i32) -> Self {
         return Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
-                    The $name makes a $accuracy+{accuracy_modifier} vs. Fortitude against one living creature within \\shortrange.
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Fortitude against one living creature within \\shortrange.
                     \\hit The target takes $dr1 energy damage.
                     If it loses hit points from this damage, it takes the damage again.
                 ",
@@ -194,7 +226,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Armorcrusher", &weapon),
@@ -207,7 +239,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Armorpiercer", &weapon),
@@ -222,7 +254,7 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each damaged creature bleeds if this attack beats its Fortitude defense.
                 A bleeding creature takes $dr0 slashing damage during the $name's next action.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Bloodletting Strike", &weapon),
@@ -237,7 +269,7 @@ impl StrikeAbility {
                 "
                     The $name makes a $accuracy+{accuracy_modifier} strike vs. Armor with its $weapon.
                     In addition, it \\glossterm<briefly> gains a +2 bonus to its Mental defense.
-                    \\hit Each target takes $damage $damagetypes damage.
+                    \\hit The target takes $damage $damagetypes damage.
                 ",
                 accuracy_modifier = rank - 1,
             ),
@@ -253,7 +285,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
                 In addition, it gains a +1 bonus to its Armor and Reflex defenses as a \abilitytag<Swift> effect.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Defensive Strike", &weapon),
@@ -267,7 +299,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It reduces its \glossterm{longshot penalty} with the strike by 4.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Distant Shot", &weapon),
@@ -282,7 +314,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Frenzied Strike", &weapon),
@@ -297,7 +329,7 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 In addition, it chooses one of its allies.
                 Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Guardbreaker", &weapon),
@@ -311,7 +343,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Hamstring", &weapon),
@@ -324,8 +356,8 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its {weapon}.
-                It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \\glossterm<critical hit>.
-                \hit Each target takes $damage $damagetypes damage.
+                It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
+                \hit The target takes $damage $damagetypes damage.
                 \glance No effect.
             ".to_string(),
             is_magical: false,
@@ -339,7 +371,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy-3 strike vs. Armor with its $weapon.
-                \hit Each target takes $damage*2 $damagetypes damage.
+                \hit The target takes $damage*2 $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Power Strike", &weapon),
@@ -353,7 +385,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
                 After making the attack, it briefly takes a -4 penalty to all defenses.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Reckless Strike", &weapon),
@@ -367,7 +399,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
-                \hit Each target takes $damage $damagetypes damage.
+                \hit The target takes $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Redeeming Followup", &weapon),
@@ -380,7 +412,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit Each target takes $damage $damagetypes.
+                \hit The target takes $damage $damagetypes.
             ".to_string(),
             is_magical: false,
             name: weapon.name.clone(),
@@ -389,11 +421,42 @@ impl StrikeAbility {
         };
     }
 
+    // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
     pub fn dual_strike(weapon: Weapon) -> Self {
         return Self {
             effect: r"
                 The $name makes two $accuracy strikes vs. Armor with its $weapons.
-                \hit Each target takes $damage $damagetypes.
+                \hit The target takes $damage $damagetypes.
+            ".to_string(),
+            is_magical: false,
+            name: weapon.name.clone(),
+            tags: vec![],
+            weapon,
+        };
+    }
+
+    pub fn knockdown(weapon: Weapon) -> Self {
+        return Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit The target takes $damage $damagetypes.
+                If it loses hit points, it falls \prone.
+                This is a \abilitytag{Size-Based} effect.
+            ".to_string(),
+            is_magical: false,
+            name: weapon.name.clone(),
+            tags: vec![],
+            weapon,
+        };
+    }
+
+    pub fn knockdown_plus(weapon: Weapon) -> Self {
+        return Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit The target takes $damage $damagetypes.
+                If it takes damage, it falls \prone.
+                This is a \abilitytag{Size-Based} effect.
             ".to_string(),
             is_magical: false,
             name: weapon.name.clone(),
@@ -930,7 +993,6 @@ The $name glows like a torch for a minute.
         #[test]
         fn replaces_aboleth_slime() {
             assert_multiline_eq(
-                // Slam is 1d10 base, but not heavy
                 r"
                     The $name makes a +5 melee strike with a tentacle.
                     \hit Each target takes 1d6+1d8 bludgeoning damage.
@@ -954,7 +1016,7 @@ The $name glows like a torch for a minute.
                 ",
                     &sample_creature(),
                     false,
-                    Some(&StandardWeapon::Slam.weapon()),
+                    Some(&StandardWeapon::MultipedalRam.weapon()),
                 ),
             );
         }

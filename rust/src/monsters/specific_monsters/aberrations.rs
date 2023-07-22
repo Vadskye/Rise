@@ -1,19 +1,18 @@
-use crate::core_mechanics::abilities::{AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
+use crate::core_mechanics::abilities::{
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+};
 use crate::core_mechanics::{
-    Defense, Debuff, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory,
+    Debuff, Defense, MovementMode, MovementSpeed, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::StandardWeapon;
-use crate::monsters::creature_type::CreatureType;
+use crate::equipment::Weapon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{
-    MonsterAbilities, MonsterNarrative, MonsterStatistics, Role, MonsterDef,
-};
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn aberration(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::Aberration);
+    return def.aberration();
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
@@ -88,9 +87,9 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         Each creature that loses hit points from this damage is poisoned by aboleth slime, as the aboleth's \ability{slime-covered body} ability.
                     ".to_string(),
                     is_magical: true,
-                    name: "Slimy Tentacle Slam".to_string(),
+                    name: "Slimy Tentacle".to_string(),
                     tags: vec![],
-                    weapon: StandardWeapon::Slam.weapon(),
+                    weapon: Weapon::tentacle(),
                 }),
             ],
             modifiers: vec![Modifier::Defense(Defense::Armor, 4)],
@@ -164,7 +163,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     is_magical: true,
                     name: "Swarm of Mouths".to_string(),
                     tags: vec![],
-                    weapon: StandardWeapon::MultipedalBite.weapon(),
+                    weapon: Weapon::bite(),
                 }),
             ],
             // TODO: make attacks sweeping

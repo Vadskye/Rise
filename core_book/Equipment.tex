@@ -255,6 +255,9 @@ Items are divided into five broad categories, described below.
             Natural weapons do not normally require a \glossterm{free hand} to use.
             All bipedal creatures also have two punch/kick natural weapons.
 
+            Common natural weapons are listed in \tref{Natural Weapons}.
+            In addition, some monsters and effects have unique natural weapons, such as the \spell{stonefist} spell.
+
         \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. Most weapons are one size category smaller than their wielder, but \weapontag{Heavy} weapons are the same size category as the wielder.
         All weapons are \glossterm{lightweight} unless otherwise noted.
 
@@ -572,14 +575,17 @@ Items are divided into five broad categories, described below.
             \lcaption{Natural Weapons}
             \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{15em} >{\ccol}X}
                 \tb{Natural Weapons}    & \tb{Accuracy} & \tb{Damage} & \tb{Damage Type} & \tb{Weapon Tags} \tableheaderrule
-                Bite                    & \plus0        & 1d6         & Physical         & Grappling \\
+                % Bite is weird since it does physical damage instead of any subtype, so it can't be used with many maneuvers.
+                % Also, many creatures with a bite attack are not good at grappling.
+                % For those reasons, it gets an extra +1d.
+                Bite                    & \plus0        & 1d8         & Physical         & Grappling \\
                 Claw\fn{1}              & \plus2        & 1d4         & Slashing         & Light     \\
                 Horn                    & \plus0        & 1d6         & Piercing         & Impact    \\
                 Punch/kick\fn{1} \fn{2} & \plus0        & 1d3         & Bludgeoning      & Subdual   \\
                 Ram                     & \plus0        & 1d6         & Bludgeoning      & Forceful  \\
-                Slam\fn{1}              & \plus0        & 1d10        & Bludgeoning      & \tdash    \\
                 Stinger                 & \plus1        & 1d6         & Piercing         & \tdash    \\
                 Talon\fn{2}             & \plus2        & 1d4         & Piercing         & Light     \\
+                Tentacle                & \plus0        & 1d6         & Bludgeoning      & Long    \\
             \end{dtabularx}
             1 This natural weapon must normally be used with a \glossterm{free hand}. \\
             2 This weapon has special rules. \\

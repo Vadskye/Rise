@@ -22,6 +22,38 @@ impl Weapon {
             return vec![PowerScaling::standard_weapon_scaling()];
         }
     }
+
+    pub fn bite() -> Self {
+        return StandardWeapon::MultipedalBite.weapon();
+    }
+
+    pub fn fist() -> Self {
+        return StandardWeapon::Claw.weapon().except(|w| {
+            w.damage_types = vec![DamageType::Bludgeoning];
+            w.name = "Fist".to_string();
+        });
+    }
+
+    pub fn ram() -> Self {
+        return StandardWeapon::MultipedalRam.weapon();
+    }
+
+    pub fn spikes() -> Self {
+        return StandardWeapon::Claws.weapon().except(|w| {
+            w.damage_types = vec![DamageType::Piercing];
+            w.name = "Claws".to_string();
+        });
+    }
+
+    pub fn tail_slam() -> Self {
+        return StandardWeapon::MultipedalRam.weapon().except(|w| {
+            w.name = "Tail Slam".to_string();
+        });
+    }
+
+    pub fn tentacle() -> Self {
+        return StandardWeapon::MonsterTentacle.weapon();
+    }
 }
 
 #[derive(Clone, Debug, PartialEq)]
@@ -35,6 +67,7 @@ pub enum WeaponTag {
     Keen,
     Light,
     Long,
+    Massive(i32),
     Mounted,
     Parrying,
     Projectile(i32, i32),
@@ -57,6 +90,7 @@ impl WeaponTag {
             Self::Keen => r"\weapontag{Keen}".to_string(),
             Self::Light => r"\weapontag{Light}".to_string(),
             Self::Long => r"\weapontag{Long}".to_string(),
+            Self::Massive(ft) => format!("\\weapontag{{Massive}} ({})", ft),
             Self::Mounted => r"\weapontag{Mounted}".to_string(),
             Self::Parrying => r"\weapontag{Parrying}".to_string(),
             Self::Projectile(close, long) => {
@@ -88,6 +122,7 @@ pub enum StandardWeapon {
     Lance,
     Longbow,
     MorningStar,
+    MonsterTentacle,
     MultipedalBite,
     MultipedalHorn,
     MultipedalHorns,
@@ -96,7 +131,6 @@ pub enum StandardWeapon {
     Sap,
     Scimitar,
     Sickle,
-    Slam,
     Sledgehammer,
     Spear,
     Talon,
@@ -215,30 +249,37 @@ impl StandardWeapon {
                 name: "Morning star".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
             },
+            Self::MonsterTentacle => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Tentacle".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Long],
+            },
             Self::MultipedalBite => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Physical],
                 name: "Bite".to_string(),
                 tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
             },
             Self::MultipedalHorn => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Horn".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::MultipedalHorns => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Horns".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::MultipedalRam => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6(),
+                damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
@@ -270,13 +311,6 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Slashing],
                 name: "Sickle".to_string(),
                 tags: vec![WeaponTag::Light, WeaponTag::Sweeping(1)],
-            },
-            Self::Slam => Weapon {
-                accuracy: 0,
-                damage_dice: DicePool::d10(),
-                damage_types: vec![DamageType::Bludgeoning],
-                name: "Slam".to_string(),
-                tags: vec![],
             },
             Self::Sledgehammer => Weapon {
                 accuracy: -1,

@@ -522,10 +522,10 @@ export const terramancy: MysticSphere = {
     {
       name: 'Stonefist',
 
+      // 1d10 plus Forceful is one upgrade above a normal weapon
       effect: `
-        You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Forceful \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        You gain a stonefist \\glossterm{natural weapon}, replacing one of your \\glossterm{free hands}.
+        It deals 1d10 bludgeoning damage and has \\weapontag{Forceful} weapon tag (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
@@ -534,6 +534,19 @@ export const terramancy: MysticSphere = {
       `,
       tags: ['Manifestation'],
       type: 'Attune',
+    },
+
+    {
+      name: 'Mighty Stonefist',
+
+      // Three upgrades above a normal weapon. TODO figure out whether this is balanced??
+      functionsLike: {
+        name: 'stonefist',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
+      },
+      rank: 6,
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
 
     {

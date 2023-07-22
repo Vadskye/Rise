@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::{
-    Attribute, HasAttributes, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
+    Attribute, HasAttributes, MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpeedCategory,
 };
 use crate::creatures::{Creature, Monster};
 use crate::creatures::{HasModifiers, Modifier};
@@ -33,8 +33,7 @@ impl MonsterAbilities {
             modifiers.push(Modifier::ActiveAbility(ability));
         }
         for modifier in modifiers {
-            creature
-                .add_modifier(modifier, None, None);
+            creature.add_modifier(modifier, None, None);
         }
         creature.movement_speeds = self.movement_speeds.unwrap_or(vec![MovementSpeed::new(
             MovementMode::Land,
@@ -111,6 +110,39 @@ impl MonsterDef {
         }
         self.abilities.update_creature(&mut monster.creature);
 
+        monster.validate_design();
+
         return monster;
+    }
+
+    pub fn aberration(self) -> Monster {
+        return self.monster(CreatureType::Aberration);
+    }
+    pub fn animal(self) -> Monster {
+        return self.monster(CreatureType::Animal);
+    }
+    pub fn animate(self) -> Monster {
+        return self.monster(CreatureType::Animate);
+    }
+    pub fn dragon(self) -> Monster {
+        return self.monster(CreatureType::Dragon);
+    }
+    pub fn humanoid(self) -> Monster {
+        return self.monster(CreatureType::Humanoid);
+    }
+    pub fn magical_beast(self) -> Monster {
+        return self.monster(CreatureType::MagicalBeast);
+    }
+    pub fn monstrous_humanoid(self) -> Monster {
+        return self.monster(CreatureType::MonstrousHumanoid);
+    }
+    pub fn planeforged(self) -> Monster {
+        return self.monster(CreatureType::Planeforged);
+    }
+    pub fn undead(mut self) -> Monster {
+        self.abilities
+            .modifiers
+            .push(Modifier::PassiveAbility(PassiveAbility::undead()));
+        return self.monster(CreatureType::Undead);
     }
 }

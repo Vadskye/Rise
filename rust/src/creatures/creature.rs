@@ -2,6 +2,7 @@ use std::cmp::max;
 
 use crate::core_mechanics::attacks::Attack;
 use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
+use crate::core_mechanics::abilities::ActiveAbility;
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
 use crate::monsters::ChallengeRating;
@@ -126,6 +127,18 @@ impl Creature {
                 calculate_standard_rank(self.level) + cr.rank_modifier()
             }
         }
+    }
+
+    pub fn active_abilities(&self) -> Vec<ActiveAbility> {
+        let mut active_abilities = vec![];
+        for modifier in self
+            .get_modifiers_by_type(ModifierType::ActiveAbility)
+        {
+            if let Modifier::ActiveAbility(a) = modifier {
+                active_abilities.push(a.clone());
+            }
+        }
+        return active_abilities;
     }
 }
 
