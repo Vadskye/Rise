@@ -351,9 +351,8 @@ export const aquamancy: MysticSphere = {
       name: 'Aqueous Tentacle',
 
       effect: `
-        You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the \\weapontag{Sweeping} (1) \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        You gain an aqueous \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
+        It deals 1d8 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
         Strikes using it are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
       `,
       narrative: `
@@ -364,30 +363,33 @@ export const aquamancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Octopus Tentacles',
+      name: 'Mighty Aqueous Tentacle',
 
       functionsLike: {
-        exceptThat: `
-          you create eight tentacles that extend from your body.
-          The tentacles have the \\weapontag{Grappling} weapon tag.
-          Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
-          This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
-        `,
         name: 'aqueous tentacle',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6.',
       },
-      rank: 4,
-      type: 'Attune',
+      narrative: `
+        You grow a massive watery tentacle that extends from your body.
+      `,
+      rank: 6,
+      tags: ['Manifestation'],
+      type: 'Attune (deep)',
     },
     {
-      name: 'Kraken Tentacles',
+      name: 'Octopus Tentacles',
 
-      functionsLike: {
-        exceptThat: `
-          the tentacles also have the \\weapontag{Long} weapon tag.
-        `,
-        name: 'octopus tentacles',
-      },
-      rank: 7,
+      effect: `
+        You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles.
+        Each natural weapon deals 1d6 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Light} weapon tags (see \\pcref{Weapon Tags}).
+        Strikes using the tentacles are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
+
+        Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
+        This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
+        Alternately, you can \\glossterm{dual wield} with the tentacles.
+        If you do, your attacks have \\weapontag{Sweeping} (3) instead of \\weapontag{Sweeping} (7).
+      `,
+      rank: 4,
       type: 'Attune',
     },
     {

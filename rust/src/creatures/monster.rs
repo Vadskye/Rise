@@ -1,4 +1,5 @@
 use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
+use crate::core_mechanics::Attribute::{Strength, Willpower};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
     SpecialDefenseType,
@@ -10,8 +11,6 @@ use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
-
-use super::ModifierType;
 
 pub struct Monster {
     pub alignment: Option<String>,
@@ -36,11 +35,7 @@ impl Monster {
         challenge_rating.add_modifiers(&mut creature);
 
         // Level modifiers
-        let defense_modifier = if level >= 12 {
-            1
-        } else {
-            0
-        };
+        let defense_modifier = if level >= 12 { 1 } else { 0 };
         creature.add_modifier(
             Modifier::AllDefenses(defense_modifier),
             Some("level scaling"),
@@ -53,7 +48,11 @@ impl Monster {
         } else {
             0
         };
-        creature.add_modifier(Modifier::Accuracy(accuracy_modifier), Some("level scaling"), None);
+        creature.add_modifier(
+            Modifier::Accuracy(accuracy_modifier),
+            Some("level scaling"),
+            None,
+        );
 
         return Monster {
             alignment: None,
@@ -65,6 +64,11 @@ impl Monster {
             knowledge: None,
             role,
         };
+    }
+
+    // TODO: store `elite` instead of `challenge_rating`
+    pub fn elite(&self) -> bool {
+        return self.challenge_rating == ChallengeRating::Four;
     }
 
     pub fn standard_monster(
@@ -99,14 +103,14 @@ impl Monster {
         }
         monster
             .creature
-            .set_base_attribute(Attribute::Strength, challenge_rating.max_base_attribute());
+            .set_base_attribute(Strength, challenge_rating.max_base_attribute());
         monster
             .creature
-            .set_base_attribute(Attribute::Willpower, challenge_rating.max_base_attribute());
+            .set_base_attribute(Willpower, challenge_rating.max_base_attribute());
 
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Willpower]);
+            .set_attribute_scaling(level, [Strength, Willpower]);
 
         return monster;
     }
@@ -129,12 +133,109 @@ impl Monster {
             None,
         );
     }
+
+    // TODO: validate that -10 int monsters have Mindless and vice versa
+    pub fn validate_design(&self) {
+        self.validate_attribute_sum();
+        self.validate_attribute_max();
+        self.validate_elite_abilities();
+    }
+
+    fn name(&self) -> String {
+        return self.creature.name.as_ref().unwrap_or(&"ANONYMOUS".to_string()).to_string();
+    }
+
+    // Validate that the monster has approximately the right total number of attributes.
+    // For this purpose, we use raw attributes instead of point value like PCs use,
+    // and we ignore Intelligence since it does not affect monster power level.
+    fn validate_attribute_sum(&self) {
+        // TODO: verify that this sum is reasonable. A baseline level 1 PC has a sum of
+        // approximately 10, but that includes Intelligence.
+        let mut expected_attribute_sum = 10;
+
+        // Elite monsters should have higher attributes
+        if self.elite() {
+            // TODO: validate that this difference is reasonable
+            expected_attribute_sum += 4;
+        }
+
+        // Add scaling from level, just like PCs use. Note that the order affects rounding.
+        expected_attribute_sum += ((self.creature.level + 3) / 6) * 2;
+
+        let mut actual_attribute_sum = 0;
+        for attribute in Attribute::monster_validation() {
+            actual_attribute_sum += self.creature.get_base_attribute(&attribute);
+        }
+
+        let diff = (actual_attribute_sum - expected_attribute_sum).abs();
+
+        // TODO: tune this threshold
+        let threshold = 5;
+        if diff >= threshold {
+            eprintln!(
+                "Monster {} has attribute sum {}, expected {}",
+                self.name(),
+                actual_attribute_sum,
+                expected_attribute_sum
+            );
+        }
+    }
+
+    fn validate_attribute_max(&self) {
+        // A normal monster should cap at 4 base, +2 from role
+        let mut expected_attribute_max = 6;
+
+        // Elite monsters can have higher attributes
+        if self.elite() {
+            expected_attribute_max += 2;
+        }
+
+        // Add scaling from level, just like PCs use
+        expected_attribute_max += (self.creature.level + 3) / 6;
+
+        for attribute in Attribute::monster_validation() {
+            let actual = self.creature.get_base_attribute(&attribute);
+            if actual > expected_attribute_max {
+                eprintln!(
+                    "Monster {} has {} of {}, expected max {}",
+                    self.name(),
+                    attribute.name(),
+                    actual,
+                    expected_attribute_max,
+                );
+            }
+        }
+    }
+
+    fn validate_elite_abilities(&self) {
+        let mut has_elite_ability = false;
+        for ability in self.creature.active_abilities() {
+            if ability.is_elite() {
+                has_elite_ability = true;
+            }
+        }
+        if has_elite_ability != self.elite() {
+            eprintln!(
+                "Monster {} {}",
+                self.name(),
+                if has_elite_ability {
+                    "has elite ability but is not elite"
+                } else {
+                    "is elite but does not have an elite ability"
+                },
+            );
+        }
+    }
 }
 
 // LaTeX conversion
 impl Monster {
     pub fn to_section(&self, parent_monster_group_name: Option<String>) -> String {
-        let section_name = if parent_monster_group_name.is_some() { "monsubsubsection" } else { "monsubsection" };
+        let section_name = if parent_monster_group_name.is_some() {
+            "monsubsubsection"
+        } else {
+            "monsubsection"
+        };
         let name = if let Some(ref n) = self.creature.name {
             titlecase(n)
         } else {
@@ -193,7 +294,9 @@ impl Monster {
             let name = self.creature.name.as_ref().unwrap().to_lowercase();
             let path = if let Some(p) = parent_monster_group_name {
                 format!("{} - {}", p.to_lowercase(), name)
-            } else { name.to_string() };
+            } else {
+                name.to_string()
+            };
             return format!(
                 "\\noindent\\includegraphics[width=\\columnwidth]<monsters/{path}>\\vspace<0.5em>",
                 path = path,
@@ -387,10 +490,11 @@ impl Monster {
         return Attribute::all()
             .iter()
             .map(|a| {
+                let val = self.creature.get_base_attribute(a);
                 format!(
                     "{} {}",
                     a.shorthand_name(),
-                    self.creature.get_base_attribute(a)
+                    if val > -10 { format!("{}", val) } else { "\\tdash".to_string() },
                 )
             })
             .collect::<Vec<String>>()
@@ -406,15 +510,7 @@ impl Monster {
             .map(|a| a.latex_ability_block(&self.creature))
             .collect::<Vec<String>>();
 
-        let mut active_abilities = vec![];
-        for modifier in self
-            .creature
-            .get_modifiers_by_type(ModifierType::ActiveAbility)
-        {
-            if let Modifier::ActiveAbility(a) = modifier {
-                active_abilities.push(a.clone());
-            }
-        }
+        let mut active_abilities = self.creature.active_abilities();
         active_abilities.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
         for active_ability in active_abilities {
             ability_texts.push(active_ability.latex_ability_block(&self.creature));

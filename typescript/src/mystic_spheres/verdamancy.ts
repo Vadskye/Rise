@@ -180,30 +180,37 @@ export const verdamancy: MysticSphere = {
       name: 'Vine Tentacle',
 
       effect: `
-        You gain a slam \\glossterm{natural weapon} (see \\tref{Natural Weapons}).
-        The natural weapon deals 1d10 damage, as normal for a slam natural weapon.
-        In addition, it has the Long \\glossterm{weapon tag} (see \\pcref{Weapon Tags}).
+        You gain an vine \\glossterm{natural weapon}.
+        It deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
-      narrative: `
-        You grow a massive vine tentacle from your body.
-      `,
       tags: ['Manifestation'],
       type: 'Attune',
     },
 
     {
-      name: 'Forceful Vine Tentacle',
+      name: 'Mighty Vine Tentacle',
 
       functionsLike: {
         name: 'vine tentacle',
-        exceptThat: 'the tentacle also has the Forceful weapon tag (see \\pcref{Weapon Tags}).',
+        exceptThat: 'the damage dealt by the weapon increases to 1d10.',
       },
-      rank: 5,
-      narrative: `
-        You grow a massive vine tentacle from your body.
+      rank: 6,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Braided Vine Tentacle',
+
+      // +2 over normal, but Versatile Grip is more of a sidegrade
+      effect: `
+        You gain a vine \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
+        It deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
+      rank: 3,
       tags: ['Manifestation'],
       type: 'Attune',
     },

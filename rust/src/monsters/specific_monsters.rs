@@ -24,7 +24,7 @@ pub fn all_specific_monster_functions() -> Vec<fn() -> Vec<MonsterEntry>> {
         aberrations,
         animals,
         animates,
-        dragons,
+        // dragons,
         humanoids,
         magical_beasts,
         monstrous_humanoids,

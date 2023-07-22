@@ -1,3 +1,5 @@
+// TODO: move this under the "abilities" folder
+
 #[derive(Clone, Debug)]
 pub struct PassiveAbility {
     pub description: String,
@@ -16,13 +18,22 @@ impl PassiveAbility {
             name = self.name,
         );
     }
+
+    pub fn sightless() -> Self {
+        return StandardPassiveAbility::Sightless.ability();
+    }
+    pub fn undead() -> Self {
+        return StandardPassiveAbility::Undead.ability();
+    }
 }
 
+// TODO: replace this system with static functions on PassiveAbility
 pub enum StandardPassiveAbility {
     Amphibious,
     Animated,
     ConditionRemoval(i32),
     EliteActions,
+    Sightless,
     Undead,
 }
 
@@ -55,6 +66,11 @@ impl StandardPassiveAbility {
                 description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),
                 is_magical: false,
                 name: "Elite Actions".to_string(),
+            },
+            Self::Sightless => PassiveAbility {
+                description: r"The $name cannot see normally. If it has no relevant special vision abilities, it is \blinded.".to_string(),
+                is_magical: false,
+                name: "Sightless".to_string(),
             },
             Self::Undead => PassiveAbility {
                 description: r"

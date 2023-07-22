@@ -9,12 +9,13 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
-use crate::monsters::challenge_rating::ChallengeRating;
-use crate::monsters::creature_type::CreatureType::Dragon;
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{FullMonsterDefinition, Role};
+use crate::monsters::{
+    MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
+};
 
 enum AgeCategory {
     Wyrmling,
@@ -65,16 +66,6 @@ impl AgeCategory {
             Self::Wyrm => AreaSize::Gargantuan,
         };
         return Targeting::Cone(size, AreaTargets::Everything);
-    }
-
-    fn challenge_rating(&self) -> ChallengeRating {
-        match self {
-            Self::Wyrmling => ChallengeRating::One,
-            Self::Juvenile => ChallengeRating::Four,
-            Self::Adult => ChallengeRating::Four,
-            Self::Ancient => ChallengeRating::Four,
-            Self::Wyrm => ChallengeRating::Four,
-        }
     }
 
     // TODO: handle automatic trigger
@@ -150,17 +141,17 @@ impl AgeCategory {
             StandardWeapon::Claws.weapon(),
         ];
         match self {
-            Self::Adult => weapons.push(StandardWeapon::Slam.weapon()),
-            Self::Ancient => weapons.push(StandardWeapon::Slam.weapon()),
-            Self::Wyrm => weapons.push(StandardWeapon::Slam.weapon()),
+            Self::Adult => weapons.push(Weapon::tail_slam()),
+            Self::Ancient => weapons.push(Weapon::tail_slam()),
+            Self::Wyrm => weapons.push(Weapon::tail_slam()),
             _ => {}
         };
         return weapons;
     }
 }
 
-fn damage_rank(level: i32, cr: ChallengeRating) -> i32 {
-    return ((level - 1) / 3) + cr.rank_modifier();
+fn damage_rank(level: i32) -> i32 {
+    return (level - 1) / 3;
 }
 
 enum DragonType {
@@ -481,7 +472,6 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     };
     let damage_rank = damage_rank(
         age_category.level() + dragon_type.level_modifier(),
-        age_category.challenge_rating(),
     );
     // TODO: this should be an elite ActiveAbility
     return Attack {
@@ -531,30 +521,37 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     }
     let level = age_category.level() + dragon_type.level_modifier();
 
-    return FullMonsterDefinition {
-        alignment: dragon_type.alignment().to_string(),
-        attributes,
-        challenge_rating: age_category.challenge_rating(),
-        creature_type: Dragon,
-        description: None,
-        knowledge: None,
-        level,
-        modifiers: Some(modifiers),
-        movement_speeds: Some(vec![
-            MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
-            MovementSpeed::new(
-                MovementMode::Fly(FlightManeuverability::Poor),
-                SpeedCategory::Double,
-            ),
-        ]),
+    return MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![],
+            // TODO: use age_category.weapons() and active_abilities
+            modifiers,
+            movement_speeds: Some(vec![
+                MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
+                MovementSpeed::new(
+                    MovementMode::Fly(FlightManeuverability::Poor),
+                    SpeedCategory::Double,
+                ),
+            ]),
+            senses: vec![],
+            trained_skills: vec![],
+        },
+        narrative: Some(MonsterNarrative {
+            // TODO: some dragons have art currently, all dragons should have art
+            art: false,
+            alignment: dragon_type.alignment().to_string(),
+            description: None,
+            knowledge: None,
+        }),
+        statistics: MonsterStatistics {
+            attributes,
+            elite: true,
+            level,
+            role: Role::Warrior,
+            size: age_category.size(),
+        },
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
-        role: Role::Warrior,
-        senses: None,
-        size: age_category.size(),
-        trained_skills: None,
-        weapons: age_category.weapons(),
-    }
-    .monster();
+    }.monster(CreatureType::Dragon);
 }
 
 pub fn dragons() -> Vec<MonsterEntry> {

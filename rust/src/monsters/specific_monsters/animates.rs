@@ -1,16 +1,24 @@
 use crate::core_mechanics::attacks::StandardAttack;
+use crate::core_mechanics::abilities::{
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
     Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
-use crate::monsters::creature_type::CreatureType::Animate;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{monster_group, FullMonsterDefinition, Role};
+use crate::monsters::{
+    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
+};
 use crate::skills::Skill;
+
+fn animate(def: MonsterDef) -> Monster {
+    return def.animate();
+}
 
 struct FullAnimateDefinition {
     alignment: String,
@@ -29,130 +37,144 @@ struct FullAnimateDefinition {
     weapons: Vec<Weapon>,
 }
 
-fn animate(def: FullAnimateDefinition) -> Monster {
-    return FullMonsterDefinition {
-        // From def
-        alignment: def.alignment,
-        attributes: def.attributes,
-        challenge_rating: def.challenge_rating,
-        description: def.description,
-        knowledge: def.knowledge,
-        level: def.level,
-        modifiers: def.modifiers,
-        movement_speeds: def.movement_speeds,
-        name: def.name,
-        role: def.role,
-        senses: def.senses,
-        size: def.size,
-        trained_skills: def.trained_skills,
-        weapons: def.weapons,
-
-        // Default values
-        creature_type: Animate,
-    }
-    .monster();
-}
-
 pub fn animates() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    monsters.push(MonsterEntry::Monster(animate(FullAnimateDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes: vec![0, 3, 0, 1, 2, 2],
-        challenge_rating: ChallengeRating::Four,
-        description: None,
-        knowledge: Some(Knowledge::new(vec![
-            (0, "
-                An darkwraith is a shadow disconnected from its host through strange umbramantic power.
-                Though it appears similar to a ghost, it is not undead.
-                It instinctively seeks out sources of warmth, including most living creatures, to suppress them with its chilling aura.
-            "),
-            (5, "
-                Darkwraiths bear a hateful malevolence towards anything that brings light.
-                Although they swarm around sources of warmth, they will not attack directly with their dark grasp unless provoked by light or damage.
-                Darkwraiths cannot speak or make noise of any kind.
-            "),
-        ])),
-        level: 4,
-        modifiers: Some(vec![
-            Modifier::Attack(StandardAttack::DarkGrasp(3).attack()),
-            Modifier::Attack(StandardAttack::DarkMiasma(3).attack().except(
-                |a| a.name = "Chilling Aura".to_string()
-            ).except_elite()),
-            Modifier::Impervious(SpecialDefenseType::Damage(DamageType::Cold)),
-            Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
-        ]),
-        movement_speeds: Some(vec![
-            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
-        ]),
+    monsters.push(MonsterEntry::Monster(animate(MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![
+                ActiveAbility::Custom(CustomAbility {
+                    ability_type: AbilityType::Normal,
+                    effect: r"
+                        The $name makes an attack vs. Reflex against one creature it \glossterm{touches}.
+                        It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
+                        \hit The target takes $dr2 cold damage.
+                        If the target loses hit points, it is \frightened by the $name as a \glossterm{condition}.
+                        This is an \abilitytag{Emotion} effct.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Dark Grasp".to_string(),
+                    tags: vec![],
+                    usage_time: UsageTime::Standard,
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    ability_type: AbilityType::Normal,
+                    effect: r"
+                        The $name makes an attack vs. Fortitude against all \glossterm{shadowed} creatures within a \largearea radius of it.
+                        \hit Each target takes $dr1 cold damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Umbral Aura".to_string(),
+                    tags: vec![],
+                    usage_time: UsageTime::Elite,
+                }),
+            ],
+            modifiers: vec![
+                Modifier::immune_damage(DamageType::Cold),
+                Modifier::immune_debuff(Debuff::Prone),
+            ],
+            movement_speeds: Some(vec![
+                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+            ]),
+            senses: vec![Sense::Darkvision(120)],
+            trained_skills: vec![
+                Skill::Awareness,
+                Skill::Stealth,
+            ],
+        },
+        narrative: Some(MonsterNarrative {
+            art: true,
+            alignment: "Always neutral evil".to_string(),
+            description: None,
+            knowledge: Some(Knowledge::new(vec![
+                (0, "
+                    An darkwraith is a shadow disconnected from its host through strange umbramantic power.
+                    Its body loosely resembles a dark humanoid shape, with all details obscured.
+                    Despite its resemblance to a ghost, it is neither undead nor incorporeal.
+                    It instinctively seeks out sources of light and warmth, including most living creatures, to suppress their hated radiance.
+                "),
+                (5, "
+                    Darkwraiths bear a hateful malevolence towards anything that brings light.
+                    Although they swarm around sources of warmth, they will not attack directly with their dark grasp unless provoked by light or damage.
+                    Darkwraiths cannot speak or make noise of any kind.
+                "),
+            ])),
+        }),
+        statistics: MonsterStatistics {
+            attributes: vec![0, 4, 0, 1, 4, 4],
+            elite: true,
+            level: 4,
+            role: Role::Skirmisher,
+            size: Size::Medium,
+        },
         name: "Darkwraith".to_string(),
-        role: Role::Skirmisher,
-        senses: None,
-        size: Size::Medium,
-        trained_skills: Some(vec![
-            Skill::Awareness,
-            Skill::Stealth,
-        ]),
-        weapons: vec![],
     })));
 
     add_animated_objects(&mut monsters);
 
     add_treants(&mut monsters);
 
-    monsters.push(MonsterEntry::Monster(animate(FullAnimateDefinition {
-        alignment: "Always true neutral".to_string(),
-        attributes: vec![4, -9, 7, -9, 0, -9],
-        challenge_rating: ChallengeRating::Four,
-        description: None,
-        knowledge: Some(Knowledge::new(vec![
-            (0, "
-                Gelatinous cubes are virtually transparent oozes that creep along underground tunnels, digesting anything organic they encounter.
-                They are feared for their near invisibility while immobile, making them easy to stumble into accidentally.
-            "),
-            (5, "
-                When a gelatinous cube finds prey, it simply moves through the unfortunate creature, trapping it inside the ooze's body.
-                Creatures engulfed in this way can find it difficult to escape while they are being slowly digested.
-                Gelatinous cubes are unusually fast compared to other oozes, though they are still slow compared to most creatures.
-            "),
-        ])),
-        level: 5,
-        modifiers: Some(ModifierBundle::Amorphous.plus_modifiers(vec![
-            Modifier::Attack(StandardAttack::OozeDissolve(2).attack().except_elite()),
-            Modifier::Attack(StandardAttack::OozeEngulf(2).attack()),
-            Modifier::PassiveAbility(PassiveAbility {
-                description: r"
-                    The $name can move freely through spaces occupied by other creatures who do not have this ability.
-                ".to_string(),
-                is_magical: false,
-                name: "Gelatinous".to_string(),
-            }),
-            Modifier::PassiveAbility(PassiveAbility {
-                description: r"
-                    The $name is transparent, making it hard to see.
-                    While it remains immobile, it is always treated as having \glossterm{concealment}, allowing it to hide (see \pcref{Stealth}).
-                    In addition, it gains a +10 bonus to Stealth checks made to simply hide in place.
-                    Once it starts moving or fighting, it loses this concealment, since its simple cubic shape makes it fairly easy to track.
+    monsters.push(MonsterEntry::Monster(animate(MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![],
+            modifiers: ModifierBundle::Amorphous.plus_modifiers(vec![
+                Modifier::PassiveAbility(PassiveAbility::sightless()),
+                Modifier::Attack(StandardAttack::OozeDissolve(2).attack().except_elite()),
+                Modifier::Attack(StandardAttack::OozeEngulf(2).attack()),
+                Modifier::PassiveAbility(PassiveAbility {
+                    description: r"
+                        The $name can move freely through spaces occupied by other creatures who do not have this ability.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Gelatinous".to_string(),
+                }),
+                Modifier::PassiveAbility(PassiveAbility {
+                    description: r"
+                        The $name is transparent, making it hard to see.
+                        While it remains immobile, it is always treated as having \glossterm{concealment}, allowing it to hide (see \pcref{Stealth}).
+                        In addition, it gains a +10 bonus to Stealth checks made to simply hide in place.
+                        Once it starts moving or fighting, it loses this concealment, since its simple cubic shape makes it fairly easy to track.
 
-                    If the $name has recently fed, it may have partially dissolved remains visibly suspended inside its body, which can make it much easier to notice.
-                ".to_string(),
-                is_magical: false,
-                name: "Transparent".to_string(),
-            }),
-        ])),
-        movement_speeds: Some(vec![
-            MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow)
-        ]),
+                        If the $name has recently fed, it may have partially dissolved remains visibly suspended inside its body, which can make it much easier to notice.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Transparent".to_string(),
+                }),
+            ]),
+            movement_speeds: Some(vec![
+                MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow)
+            ]),
+            senses: vec![Sense::Tremorsense(120), Sense::Tremorsight(60)],
+            trained_skills: vec![
+                Skill::Endurance,
+                Skill::Flexibility,
+                Skill::Stealth,
+            ],
+        },
+        narrative: Some(MonsterNarrative {
+            art: true,
+            alignment: "Always true neutral".to_string(),
+            description: None,
+            knowledge: Some(Knowledge::new(vec![
+                (0, "
+                    Gelatinous cubes are virtually transparent oozes that creep along underground tunnels, digesting anything organic they encounter.
+                    They are feared for their near invisibility while immobile, making them easy to stumble into accidentally.
+                "),
+                (5, "
+                    When a gelatinous cube finds prey, it simply moves through the unfortunate creature, trapping it inside the ooze's body.
+                    Creatures engulfed in this way can find it difficult to escape while they are being slowly digested.
+                    Gelatinous cubes are unusually fast compared to other oozes, though they are still slow compared to most creatures.
+                "),
+            ])),
+        }),
+        statistics: MonsterStatistics {
+            attributes: vec![4, -9, 7, -9, 0, -9],
+            elite: true,
+            level: 5,
+            role: Role::Brute,
+            size: Size::Large,
+        },
         name: "Gelatinous Cube".to_string(),
-        role: Role::Brute,
-        senses: None,
-        size: Size::Large,
-        trained_skills: Some(vec![
-            Skill::Endurance,
-            Skill::Flexibility,
-            Skill::Stealth,
-        ]),
-        weapons: vec![],
     })));
 
     return monsters;
@@ -161,27 +183,35 @@ pub fn animates() -> Vec<MonsterEntry> {
 fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
     // TODO: attach knowledge checks to the group as a whole, not any individual animated object
     fn create_animated_object(
+        active_abilities: Vec<ActiveAbility>,
         attributes: Vec<i32>,
-        challenge_rating: ChallengeRating,
+        elite: bool,
         level: i32,
         name: &str,
         size: Size,
     ) -> Monster {
-        return animate(FullAnimateDefinition {
-            alignment: "Always true neutral".to_string(),
-            attributes,
-            challenge_rating,
-            description: None,
-            knowledge: None,
-            level,
-            modifiers: None,
-            movement_speeds: None,
+        return animate(MonsterDef {
+            abilities: MonsterAbilities {
+                active_abilities,
+                modifiers: ModifierBundle::Mindless.modifiers(),
+                movement_speeds: None,
+                senses: vec![Sense::Darkvision(60)],
+                trained_skills: vec![],
+            },
+            narrative: Some(MonsterNarrative {
+                art: false,
+                alignment: "Always true neutral".to_string(),
+                description: None,
+                knowledge: None,
+            }),
+            statistics: MonsterStatistics {
+                attributes,
+                elite,
+                level,
+                role: Role::Brute,
+                size,
+            },
             name: name.to_string(),
-            role: Role::Brute,
-            senses: Some(vec![Sense::Darkvision(60)]),
-            size,
-            trained_skills: None,
-            weapons: vec![StandardWeapon::Slam.weapon()],
         });
     }
 
@@ -190,50 +220,57 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         name: "Animated Objects".to_string(),
         monsters: vec![
             create_animated_object(
-                vec![-4, 3, -4, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::ram()))],
+                vec![-4, 4, -4, -10, 0, 0],
+                false,
                 1,
                 "Tiny Object",
                 Size::Tiny,
             ),
             create_animated_object(
-                vec![-2, 2, -2, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::ram()))],
+                vec![0, 3, 0, -10, 0, 0],
+                false,
                 1,
                 "Small Object",
                 Size::Small,
             ),
             create_animated_object(
-                vec![0, 0, 0, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::knockdown(Weapon::ram()))],
+                vec![2, 2, 2, -10, 0, 0],
+                false,
                 2,
                 "Medium Object",
                 Size::Medium,
             ),
             create_animated_object(
-                vec![2, -1, 2, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::knockdown(Weapon::ram()))],
+                vec![3, 1, 3, -10, 0, 0],
+                false,
                 4,
                 "Large Object",
                 Size::Large,
             ),
             create_animated_object(
-                vec![3, -2, 3, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(Weapon::ram()))],
+                vec![4, 0, 4, -10, 0, 0],
+                false,
                 7,
                 "Huge Object",
                 Size::Huge,
             ),
             create_animated_object(
-                vec![4, -2, 4, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(Weapon::ram()))],
+                vec![5, -1, 5, -10, 0, 0],
+                false,
                 9,
                 "Gargantuan Object",
                 Size::Gargantuan,
             ),
             create_animated_object(
-                vec![5, -3, 5, 0, 0, -5],
-                ChallengeRating::One,
+                vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(Weapon::ram()))],
+                vec![6, -2, 6, -10, 0, 0],
+                false,
                 11,
                 "Colossal Object",
                 Size::Colossal,
@@ -271,24 +308,33 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     ".to_string(),
                 })
             );
-            return animate(FullAnimateDefinition {
-                alignment: self.alignment,
-                attributes: self.attributes,
-                challenge_rating: ChallengeRating::One,
-                description: None,
-                knowledge: Some(self.knowledge),
-                level: self.level,
-                modifiers: Some(modifiers),
-                movement_speeds: Some(vec![MovementSpeed::new(
-                    MovementMode::Land,
-                    SpeedCategory::Slow,
-                )]),
+            return animate(MonsterDef {
+                abilities: MonsterAbilities {
+                    active_abilities: vec![],
+                    // TODO: add weapon
+                    modifiers,
+                    movement_speeds: Some(vec![MovementSpeed::new(
+                        MovementMode::Land,
+                        SpeedCategory::Slow,
+                    )]),
+                    senses: vec![],
+                    trained_skills: vec![Skill::Awareness],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: self.alignment,
+                    art: false,
+                    description: None,
+                    knowledge: Some(self.knowledge),
+                }),
+                statistics: MonsterStatistics {
+                    attributes: self.attributes,
+                    // TODO: should some treants be elite?
+                    elite: false,
+                    level: self.level,
+                    role: Role::Warrior,
+                    size: self.size,
+                },
                 name: self.name,
-                role: Role::Warrior,
-                senses: None,
-                size: self.size,
-                trained_skills: Some(vec![Skill::Awareness]),
-                weapons: vec![StandardWeapon::Slam.weapon()],
             });
         }
     }

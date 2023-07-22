@@ -44,6 +44,17 @@ impl Attribute {
             Attribute::Willpower,
         ];
     }
+
+    // Omit Intelligence, since it doesn't affect the power of monsters
+    pub fn monster_validation() -> Vec<Attribute> {
+        return vec![
+            Attribute::Strength,
+            Attribute::Dexterity,
+            Attribute::Constitution,
+            Attribute::Perception,
+            Attribute::Willpower,
+        ];
+    }
 }
 
 impl PartialEq for Attribute {
