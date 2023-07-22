@@ -1,15 +1,9 @@
-use crate::core_mechanics::abilities::{
-    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
-};
-use crate::core_mechanics::attacks::{attack_effect, Maneuver, StandardAttack};
+use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed, Sense, Size,
-    SpeedCategory, StandardPassiveAbility,
+    FlightManeuverability, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
 };
-use crate::creatures::{Modifier, ModifierBundle, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
-use crate::monsters::challenge_rating::ChallengeRating;
-use crate::monsters::creature_type::CreatureType;
+use crate::creatures::{ModifierBundle, Monster};
+use crate::equipment::StandardWeapon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::{
@@ -17,24 +11,8 @@ use crate::monsters::{
 };
 use crate::skills::Skill;
 
-struct FullAnimalDefinition {
-    attributes: Vec<i32>,
-    challenge_rating: ChallengeRating,
-    description: Option<String>,
-    knowledge: Option<Knowledge>,
-    level: i32,
-    modifiers: Option<Vec<Modifier>>,
-    movement_speeds: Option<Vec<MovementSpeed>>,
-    name: String,
-    role: Role,
-    senses: Option<Vec<Sense>>,
-    size: Size,
-    trained_skills: Option<Vec<Skill>>,
-    weapons: Vec<Weapon>,
-}
-
 fn animal(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::Animal);
+    return def.animal();
 }
 
 fn empty_narrative() -> Option<MonsterNarrative> {
@@ -376,7 +354,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![0, 3, 0, -9, 2, -2],
+                        attributes: vec![1, 3, 0, -9, 3, -2],
                         elite: false,
                         level: 1,
                         role: Role::Skirmisher,
@@ -462,7 +440,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         role: Role::Skirmisher,
                         size: Size::Large,
                     },
-                    name: "Light horse".to_string(),
+                    name: "Light Horse".to_string(),
                 }),
                 animal(MonsterDef {
                     abilities: draft_horse_abilities,
@@ -485,7 +463,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         role: Role::Brute,
                         size: Size::Large,
                     },
-                    name: "Draft horse".to_string(),
+                    name: "Draft Horse".to_string(),
                 }),
                 animal(MonsterDef {
                     abilities: horse_abilities.clone(),

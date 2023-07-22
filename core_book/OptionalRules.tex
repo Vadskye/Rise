@@ -236,9 +236,10 @@
         \subsubsection{Mutant Ranks}
             \parhead{Rank 1 -- Unnatural Arsenal} You grow an extra functioning arm and hand.
             In addition, you gain a wide variety of natural weapons (see \tref{Natural Weapons}).
-            You gain a bite, gore, ram, and stinger.
-            In addition, two of your hands become claws, while a third becomes a slam weapon.
+            You gain a bite, horn, ram, stinger, and tentacle.
+            In addition, two of your hands become claws.
             You gain these weapons in addition to any natural weapons you already have, no matter how biologically implausible that may be.
+            % TODO: mutants will often have Massive, so Sweeping is oddly redundant.
             In addition, each of your natural weapons has the \weapontag{Sweeping} (3) weapon tag in addition to its other weapon tags.
 
             \parhead{Rank 2 -- Regeneration} At the end of each round, you regain hit points equal to a quarter of your maximum hit points.
@@ -537,7 +538,9 @@
 
             \cf{Dgn}[7]{Draconic Bulk+} Your size category increases to Large.
             The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
-            You gain a slam natural weapon, except that it also has the Sweeping (1) \glossterm{weapon tag} (see \pcref{Natural Weapons}).
+            % Natural dragons treat their tail slam as heavy, but that may not work for a PC? They also treat their Bite as heavy, which these dragons don't do.
+            You also gain a tail slam \glossterm{natural weapon}.
+            It deals 1d10 bludgeoning damage and has the \weapontag{Forceful} weapon tag (see \pcref{Weapon Tags}).
             % TODO: too fast?
             In addition, you gain a \plus20 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
 
@@ -891,7 +894,11 @@
                     This physically changes your body to match the results of your disguise.
                     You gain a \plus4 bonus on the check, and you ignore penalties for changing your gender, species, subtype, age, and number of limbs (up to 4).
                     However, this effect is unable to alter your equipment in any way.
+
+                    You cannot create more than two \glossterm{free hands} with this ability.
                     If you add at least two legs, you gain a \plus10 foot bonus to your land speed.
+                    % TODO: awkwardly worded
+                    This speed bonus does not stack with the bonus for becoming \trait{multipedal}, so the only benefit you gain from creating three or more legs is a \plus5 bonus to the Balance skill.
 
                     You can sustain this ability for any length of time without mental strain, ignoring the normal 5 minute limit.
                 \end{sustainability}
@@ -905,7 +912,10 @@
         
         \subsubsection{Oozeborn Archetype}
 
-            \cf{Ooz}[1]{Acidic Slam} You gain a slam \glossterm{natural weapon}, which deals 1d10 damage and requires a free hand to use, except that it also has the Long \glossterm{weapon tag} (see \pcref{Natural Weapons}).
+            \cf{Ooz}[1]{Acidic Pseudopod} One of your arms becomes a pseudopod \glossterm{natural weapon}.
+            It deals 1d10 bludgeoning and acid damage and has the \weapontag{Long} weapon tag (see \pcref{Weapon Tags}).
+            You do not have a \glossterm{free hand} on that arm while using it as a weapon in this way.
+
             In addition, all damage you deal with natural weapons is acid damage in addition to its other types.
             This does not affect damage you deal with manufactured weapons.
 
@@ -920,6 +930,9 @@
             This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
 
             \cf{Ooz}[3]{Greater Amorphous Form} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+            In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
+            Instead, it lasts until you choose to \glossterm{dismiss} it as a \glossterm{free action}.
+            This allows you to maintain your shape while unconscious.
 
             \cf{Ooz}[3]{Greater Compressible Body} You reduce your penalties for \squeezing by 1.
 
@@ -932,9 +945,6 @@
             In addition, you may absorb \glossterm{allies} with that ability in addition to unattended objects.
 
             \cf{Ooz}[6]{Supreme Amorphous Form} The bonus from your \textit{greater amorphous form} ability increases to \plus8.
-            In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
-            Instead, it lasts until you choose to \glossterm{dismiss} it as a \glossterm{free action}.
-            This allows you to maintain your shape while unconscious.
 
             \cf{Ooz}[6]{Supreme Compressible Body} You reduce your penalties for squeezing by 2, which means you take no penalties for squeezing unless you use the \ability{tight squeeze} ability (see \pcref{Flexibility}).
 
@@ -943,7 +953,7 @@
             For example, this can allow you to use a \weapontag{Heavy} weapon and a shield simultaneously.
 
             In addition, your arms become stronger and more agile.
-            You can use any of your arms as a slam natural weapon, and your slam natural weapon gains the \weapontag{Light} weapon tag (see \pcref{Weapon Tags}).
+            You can use any of your arms as a pseudopod natural weapon, and your pseudopods gain the \weapontag{Light} weapon tag (see \pcref{Weapon Tags}).
 
         \subsubsection{Basic Class Abilities}
             If you choose oozeborn as your base class, you gain the following abilities.

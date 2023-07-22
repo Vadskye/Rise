@@ -11,6 +11,7 @@ pub struct MovementSpeed {
 pub enum MovementMode {
     Burrow,
     Climb,
+    // TODO: all fly speeds should have a height limit
     Fly(FlightManeuverability),
     Glide,
     Land,

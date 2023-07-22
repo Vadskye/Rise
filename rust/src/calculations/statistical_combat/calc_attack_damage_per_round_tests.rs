@@ -6,10 +6,11 @@ use crate::monsters::ChallengeRating;
 
 fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
     let claws = attacker.get_attack_by_substring("Claw").unwrap();
-    let slam = attacker.get_attack_by_substring("Slam").unwrap();
+    // TODO: this used to be a slam, so all of the damage values are wrong
+    let bite = attacker.get_attack_by_substring("Bite").unwrap();
     return vec![
         calc_attack_damage_per_round(&claws, &attacker, &defender).explain(),
-        calc_attack_damage_per_round(&slam, &attacker, &defender).explain(),
+        calc_attack_damage_per_round(&bite, &attacker, &defender).explain(),
     ];
 }
 
@@ -44,7 +45,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +3 (The target takes 1d6+3 slashing damage.)",
-                    "Slam +1 (The target takes 1d10+3 bludgeoning damage.)",
+                    "Bite +1 (The target takes 1d10+3 bludgeoning damage.)",
                 ],
                 attacker.explain_attacks(),
             );
@@ -68,7 +69,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +5 (The target takes 1d6+4 slashing damage.)",
-                    "Slam +3 (The target takes 1d10+4 bludgeoning damage.)"
+                    "Bite +3 (The target takes 1d10+4 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -97,7 +98,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +8 (The target takes 2d6+14 slashing damage.)",
-                    "Slam +6 (The target takes 2d10+14 bludgeoning damage.)"
+                    "Bite +6 (The target takes 2d10+14 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -122,7 +123,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +10 (The target takes 2d6+18 slashing damage.)",
-                    "Slam +8 (The target takes 2d10+18 bludgeoning damage.)"
+                    "Bite +8 (The target takes 2d10+18 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -151,7 +152,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +8 (The target takes 2d6+14 slashing damage.)",
-                    "Slam +6 (The target takes 2d10+14 bludgeoning damage.)"
+                    "Bite +6 (The target takes 2d10+14 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -176,7 +177,7 @@ mod monster_attacks {
             assert_eq!(
                 vec![
                     "Claws +10 (The target takes 2d6+18 slashing damage.)",
-                    "Slam +8 (The target takes 2d10+18 bludgeoning damage.)"
+                    "Bite +8 (The target takes 2d10+18 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );

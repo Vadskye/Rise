@@ -8,61 +8,17 @@ use crate::core_mechanics::{
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::challenge_rating::ChallengeRating;
-use crate::monsters::creature_type::CreatureType::Undead;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{FullMonsterDefinition, Role};
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 use std::cmp::{max, min};
 
 use super::humanoids::{add_humans, add_orcs};
 
-struct FullUndeadDefinition {
-    alignment: String,
-    attributes: Vec<i32>,
-    challenge_rating: ChallengeRating,
-    description: Option<String>,
-    knowledge: Option<Knowledge>,
-    level: i32,
-    modifiers: Option<Vec<Modifier>>,
-    movement_speeds: Option<Vec<MovementSpeed>>,
-    name: String,
-    role: Role,
-    senses: Option<Vec<Sense>>,
-    size: Size,
-    trained_skills: Option<Vec<Skill>>,
-    weapons: Vec<Weapon>,
-}
-
-impl FullUndeadDefinition {
-    fn monster(self) -> Monster {
-        let mut modifiers = self.modifiers.unwrap_or(vec![]).clone();
-        modifiers.push(Modifier::PassiveAbility(
-            StandardPassiveAbility::Undead.ability(),
-        ));
-        return FullMonsterDefinition {
-            // From self
-            alignment: self.alignment,
-            attributes: self.attributes,
-            challenge_rating: self.challenge_rating,
-            description: self.description,
-            knowledge: self.knowledge,
-            level: self.level,
-            modifiers: Some(modifiers),
-            movement_speeds: self.movement_speeds,
-            name: self.name,
-            role: self.role,
-            senses: self.senses,
-            size: self.size,
-            trained_skills: self.trained_skills,
-            weapons: self.weapons,
-
-            // Default values
-            creature_type: Undead,
-        }
-        .monster();
-    }
+fn undead(mut def: MonsterDef) -> Monster {
+    return def.undead();
 }
 
 pub fn undeads() -> Vec<MonsterEntry> {
@@ -73,41 +29,48 @@ pub fn undeads() -> Vec<MonsterEntry> {
     add_skeletons(&mut monsters);
     add_zombies(&mut monsters);
 
-    monsters.push(MonsterEntry::Monster(FullUndeadDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes: vec![0, 3, 0, 1, 2, 2],
-        challenge_rating: ChallengeRating::Four,
-        description: None,
-        knowledge: Some(Knowledge::new(vec![
-            (0, "
-                Allips are incorporeal ghost-like creatures.
-                They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
-            "),
-            (5, "
-                An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
-                It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
-            "),
-        ])),
-        level: 3,
-        modifiers: Some(ModifierBundle::Incorporeal.plus_modifiers(vec![
-            Modifier::Attack(StandardAttack::InflictWound(1).attack()),
-        ])),
-        movement_speeds: Some(vec![
-            MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
-        ]),
+    monsters.push(MonsterEntry::Monster(undead(MonsterDef {
+        abilities: MonsterAbilities {
+            active_abilities: vec![],
+            modifiers: ModifierBundle::Incorporeal.plus_modifiers(vec![
+                Modifier::Attack(StandardAttack::InflictWound(1).attack()),
+            ]),
+            movement_speeds: Some(vec![
+                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+            ]),
+            senses: vec![
+                Sense::Darkvision(60),
+                Sense::Lifesense(120),
+            ],
+            trained_skills: vec![
+                Skill::Awareness,
+                Skill::Stealth,
+            ],
+        },
+        narrative: Some(MonsterNarrative {
+            alignment: "Always neutral evil".to_string(),
+            art: true,
+            description: None,
+            knowledge: Some(Knowledge::new(vec![
+                (0, "
+                    Allips are incorporeal ghost-like creatures.
+                    They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
+                "),
+                (5, "
+                    An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
+                    It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
+                "),
+            ])),
+        }),
+        statistics: MonsterStatistics {
+            attributes: vec![0, 3, 0, 1, 2, 2],
+            elite: true,
+            level: 3,
+            role: Role::Skirmisher,
+            size: Size::Medium,
+        },
         name: "Allip".to_string(),
-        role: Role::Skirmisher,
-        senses: Some(vec![
-            Sense::Darkvision(60),
-            Sense::Lifesense(120),
-        ]),
-        size: Size::Medium,
-        trained_skills: Some(vec![
-            Skill::Awareness,
-            Skill::Stealth,
-        ]),
-        weapons: vec![],
-    }.monster()));
+    })));
 
     return monsters;
 }
@@ -115,22 +78,18 @@ pub fn undeads() -> Vec<MonsterEntry> {
 pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
     struct Ghoul {
         attributes: Vec<i32>,
-        challenge_rating: ChallengeRating,
         knowledge: Option<Knowledge>,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
-        trained_skills: Option<Vec<Skill>>,
+        trained_skills: Vec<Skill>,
     }
 
     impl Ghoul {
         fn monster(self) -> Monster {
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::Attack(
-                StandardAttack::GhoulBite(
-                    calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier(),
-                )
-                .attack(),
+                StandardAttack::GhoulBite(calculate_standard_rank(self.level)).attack(),
             ));
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                 AbilityTag::Compulsion,
@@ -138,28 +97,33 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                 AbilityTag::Emotion,
             )));
-            return FullUndeadDefinition {
-                // From def
-                attributes: self.attributes,
-                challenge_rating: self.challenge_rating,
-                knowledge: self.knowledge,
-                level: self.level,
+            return undead(MonsterDef {
                 name: self.name,
-                modifiers: Some(modifiers),
-                trained_skills: self.trained_skills,
-
-                alignment: "Always neutral evil".to_string(),
-                description: None,
-                movement_speeds: None,
-                role: Role::Brute,
-                senses: Some(vec![Sense::Darkvision(60)]),
-                size: Size::Medium,
-                weapons: vec![
-                    StandardWeapon::MultipedalBite.weapon(),
-                    StandardWeapon::Claws.weapon(),
-                ],
-            }
-            .monster();
+                abilities: MonsterAbilities {
+                    active_abilities: vec![],
+                    // weapons: vec![
+                    //     StandardWeapon::MultipedalBite.weapon(),
+                    //     StandardWeapon::Claws.weapon(),
+                    // ],
+                    modifiers,
+                    movement_speeds: None,
+                    senses: vec![Sense::Darkvision(60)],
+                    trained_skills: self.trained_skills,
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Always neutral evil".to_string(),
+                    art: false,
+                    description: None,
+                    knowledge: self.knowledge,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: self.attributes,
+                    elite: false,
+                    level: self.level,
+                    role: Role::Brute,
+                    size: Size::Medium,
+                },
+            });
         }
     }
 
@@ -180,7 +144,6 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             Ghoul {
                 attributes: vec![2, 4, 0, -4, 1, -2],
-                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Drudge ghouls are the weakest form of ghoul.
@@ -190,11 +153,10 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 level: 3,
                 modifiers: None,
                 name: "Drudge Ghoul".to_string(),
-                trained_skills: None,
+                trained_skills: vec![],
             }.monster(),
             Ghoul {
                 attributes: vec![3, 4, 1, -3, 1, 0],
-                challenge_rating: ChallengeRating::One,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         True ghouls are the most common form of ghoul.
@@ -203,7 +165,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 level: 6,
                 modifiers: None,
                 name: "True Ghoul".to_string(),
-                trained_skills: None,
+                trained_skills: vec![],
             }.monster(),
         ],
     }));
@@ -212,12 +174,11 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
 pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
     struct Vampire {
         attributes: Vec<i32>,
-        challenge_rating: ChallengeRating,
         knowledge: Option<Knowledge>,
         level: i32,
         modifiers: Option<Vec<Modifier>>,
         name: String,
-        trained_skills: Option<Vec<Skill>>,
+        trained_skills: Vec<Skill>,
     }
 
     impl Vampire {
@@ -276,41 +237,38 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     is_magical: true,
                     is_maneuver: true,
                     name: "Drink Blood".to_string(),
-                    rank: calculate_standard_rank(self.level)
-                        + self.challenge_rating.rank_modifier(),
+                    rank: calculate_standard_rank(self.level),
                     tags: None,
                 }
                 .weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
             ));
             modifiers.push(Modifier::Attack(
-                StandardAttack::VampireAlluringGaze(
-                    calculate_standard_rank(self.level) + self.challenge_rating.rank_modifier(),
-                )
-                .attack(),
+                StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
             ));
 
-            return FullUndeadDefinition {
-                // From def
-                attributes: self.attributes,
-                challenge_rating: self.challenge_rating,
-                knowledge: self.knowledge,
-                level: self.level,
+            return undead(MonsterDef {
                 name: self.name,
-                modifiers: Some(modifiers),
-                trained_skills: self.trained_skills,
-
-                alignment: "Usually lawful evil".to_string(),
-                description: None,
-                movement_speeds: None,
-                role: Role::Skirmisher,
-                senses: Some(vec![Sense::Darkvision(120)]),
-                size: Size::Medium,
-                weapons: vec![
-                    StandardWeapon::MultipedalBite.weapon(),
-                    StandardWeapon::Slam.weapon(),
-                ],
-            }
-            .monster();
+                abilities: MonsterAbilities {
+                    active_abilities: vec![],
+                    modifiers,
+                    movement_speeds: None,
+                    senses: vec![Sense::Darkvision(120)],
+                    trained_skills: self.trained_skills,
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    art: false,
+                    description: None,
+                    knowledge: self.knowledge,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: self.attributes,
+                    elite: true,
+                    level: self.level,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            });
         }
     }
 
@@ -338,7 +296,6 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             Vampire {
                 attributes: vec![5, 6, 4, 3, 4, 3],
-                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Fledgling vampires are the weakest form of vampire.
@@ -353,14 +310,13 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 level: 5,
                 modifiers: None,
                 name: "Fledgling Vampire".to_string(),
-                trained_skills: Some(vec![
+                trained_skills: vec![
                     Skill::Awareness,
                     Skill::Intimidate,
-                ]),
+                ],
             }.monster(),
             Vampire {
                 attributes: vec![6, 6, 5, 4, 6, 4],
-                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         True vampires have fully awakened their vampiric potential.
@@ -370,16 +326,15 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 level: 10,
                 modifiers: None,
                 name: "True Vampire".to_string(),
-                trained_skills: Some(vec![
+                trained_skills: vec![
                     Skill::Awareness,
                     Skill::Intimidate,
                     Skill::SocialInsight,
                     Skill::Persuasion,
-                ]),
+                ],
             }.monster(),
             Vampire {
                 attributes: vec![6, 6, 6, 5, 6, 5],
-                challenge_rating: ChallengeRating::Four,
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Vampire lords are one of the most powerful types of undead.
@@ -388,13 +343,13 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ])),
                 level: 15,
                 modifiers: None,
-                name: "True Vampire".to_string(),
-                trained_skills: Some(vec![
+                name: "Vampire Lord".to_string(),
+                trained_skills: vec![
                     Skill::Awareness,
                     Skill::Intimidate,
                     Skill::SocialInsight,
                     Skill::Persuasion,
-                ]),
+                ],
             }.monster(),
         ],
     }));
@@ -495,23 +450,30 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         senses.push(Sense::Darkvision(60));
     }
 
-    return FullUndeadDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes,
-        challenge_rating: monster.challenge_rating,
-        description: monster.description.clone(),
-        knowledge: None,
-        level: creature.level,
-        modifiers: Some(ModifierBundle::Mindless.plus_modifiers(modifiers)),
-        movement_speeds: Some(creature.movement_speeds.clone()),
+    return undead(MonsterDef {
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
-        role: Role::Warrior,
-        senses: Some(senses),
-        size: creature.size.clone(),
-        trained_skills: None,
-        weapons: creature.weapons.clone(),
-    }
-    .monster();
+        abilities: MonsterAbilities {
+            active_abilities: vec![],
+            // weapons: creature.weapons.clone(),
+            modifiers: ModifierBundle::Mindless.plus_modifiers(modifiers),
+            movement_speeds: Some(creature.movement_speeds.clone()),
+            senses,
+            trained_skills: vec![],
+        },
+        narrative: Some(MonsterNarrative {
+            alignment: "Always neutral evil".to_string(),
+            art: false,
+            description: monster.description.clone(),
+            knowledge: None,
+        }),
+        statistics: MonsterStatistics {
+            attributes,
+            elite: monster.challenge_rating == ChallengeRating::Four,
+            level: creature.level,
+            role: Role::Warrior,
+            size: creature.size.clone(),
+        },
+    });
 }
 
 fn convert_to_zombie(monster: &Monster) -> Monster {
@@ -562,23 +524,30 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         movement_speeds.push(MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow));
     }
 
-    return FullUndeadDefinition {
-        alignment: "Always neutral evil".to_string(),
-        attributes,
-        challenge_rating: monster.challenge_rating,
-        description: monster.description.clone(),
-        knowledge: None,
-        level: creature.level,
-        modifiers: Some(modifiers),
-        movement_speeds: Some(movement_speeds),
+    return undead(MonsterDef {
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
-        role: Role::Brute,
-        senses: Some(senses),
-        size: creature.size.clone(),
-        trained_skills: None,
-        weapons: vec![StandardWeapon::Slam.weapon()],
-    }
-    .monster();
+        abilities: MonsterAbilities {
+            active_abilities: vec![],
+            // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+            modifiers,
+            movement_speeds: Some(movement_speeds),
+            senses,
+            trained_skills: vec![],
+        },
+        narrative: Some(MonsterNarrative {
+            alignment: "Always neutral evil".to_string(),
+            art: false,
+            description: monster.description.clone(),
+            knowledge: None,
+        }),
+        statistics: MonsterStatistics {
+            attributes,
+            elite: monster.challenge_rating == ChallengeRating::Four,
+            level: creature.level,
+            role: Role::Brute,
+            size: creature.size.clone(),
+        },
+    });
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
@@ -598,7 +567,7 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
             (5, r"
                 Zombies retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \magical abilities.
                 They lose the ability to wield any weapons, though they can sometimes be found wearing the same armor as the original creature.
-                Instead of using weapons, zombies simply slam into their foes with brute force.
+                Instead of using weapons, zombies prefer to bite their foes.
                 In addition, zombies are always stronger and less agile than the original creature.
                 All zombies are vulnerable to slashing damage thanks to their exposed and easily torn skin and muscles.
             "),

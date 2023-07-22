@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{
-    Attribute, DamageDice, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
+    Attribute, DamageDice, DamageType, Debuff, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
 };
 use crate::skills::Skill;
 
@@ -68,6 +68,7 @@ pub enum ModifierType {
     VitalRoll,
 }
 
+// Modifier methods
 impl Modifier {
     pub fn description(&self) -> String {
         match self {
@@ -215,6 +216,22 @@ impl Modifier {
             Self::VitalRoll(v) => *v,
             Self::Vulnerable(_) => 0,
         };
+    }
+}
+
+// static methods that generate new Modifiers
+impl Modifier {
+    pub fn immune_damage(dt: DamageType) -> Self {
+        return Self::Immune(SpecialDefenseType::Damage(dt));
+    }
+    pub fn immune_debuff(d: Debuff) -> Self {
+        return Self::Immune(SpecialDefenseType::Debuff(d));
+    }
+    pub fn impervious_damage(dt: DamageType) -> Self {
+        return Self::Impervious(SpecialDefenseType::Damage(dt));
+    }
+    pub fn vulnerable_damage(dt: DamageType) -> Self {
+        return Self::Vulnerable(SpecialDefenseType::Damage(dt));
     }
 }
 
