@@ -1,5 +1,5 @@
 use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
-use crate::core_mechanics::Attribute::{Strength, Willpower};
+use crate::core_mechanics::Attribute::{Strength, Intelligence, Willpower};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
     SpecialDefenseType,
@@ -139,6 +139,7 @@ impl Monster {
         self.validate_attribute_sum();
         self.validate_attribute_max();
         self.validate_elite_abilities();
+        self.validate_skills();
     }
 
     fn name(&self) -> String {
@@ -223,6 +224,16 @@ impl Monster {
                 } else {
                     "is elite but does not have an elite ability"
                 },
+            );
+        }
+    }
+
+    // TODO: Should all monsters have skills?
+    fn validate_skills(&self) {
+        if self.creature.get_base_attribute(&Intelligence) >= 0 && self.creature.skill_training.is_none() {
+            eprintln!(
+                "Monster {} has a non-negative intelligence but has no skills",
+                self.name(),
             );
         }
     }
