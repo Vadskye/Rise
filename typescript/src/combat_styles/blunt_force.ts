@@ -264,7 +264,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        If the target takes damage and your attack result beats its Fortitude defense, it deals maximum damage.
+        If the target takes damage and your attack result beats its Fortitude defense, the strike deals maximum damage.
       `,
       rank: 3,
     },
