@@ -118,7 +118,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `
           \\damagerankone{bludgeoning}.
-          If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.
@@ -133,7 +133,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `
           \\damagerankthreehigh{bludgeoning}.
-          If it takes damage, it is \\deafened as a \\glossterm{condition}.
+          If the target takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange of you.

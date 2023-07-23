@@ -67,7 +67,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone{cold}.
-          If it loses hit points, it slowly begins freezing as a \\glossterm{condition}.
+          If the target loses hit points, it slowly begins freezing as a \\glossterm{condition}.
           After your action next round, it becomes \\slowed.
         `,
         targeting: `
@@ -86,7 +86,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfour{cold}.
-          If it takes damage, it is \\slowed as a \\glossterm{condition}.
+          If the target takes damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -137,7 +137,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive{cold}.
-          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
           This condition is automatically removed if the target takes damage.
         `,
         targeting: `
@@ -269,7 +269,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthreehigh{cold}.
-          If it takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -286,7 +286,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksevenhigh{cold}.
-          If it takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.

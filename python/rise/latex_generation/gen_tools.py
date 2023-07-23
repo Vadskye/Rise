@@ -726,8 +726,8 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +3 attack vs. Armor against it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, the creature takes 1d8 piercing damage.
-                If it loses \\glossterm<hit points> from this damage, it is \\immobilized until it breaks free of the trap.
+                On a hit, you deal the target 1d8 piercing damage.
+                If it loses \\glossterm<hit points>, it is \\immobilized until it breaks free of the trap.
                 Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
             """,
             short_description="Deals 1d8 damage and immobilizes",

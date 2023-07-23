@@ -423,7 +423,7 @@ export const photomancy: MysticSphere = {
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
           \\damagerankone{energy}.
-          If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
+          If the target loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange.
