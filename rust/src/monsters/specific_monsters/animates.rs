@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, FlightManeuverability, MovementMode, MovementSpeed,
@@ -199,7 +199,10 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         return animate(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities,
-                modifiers: ModifierBundle::Mindless.modifiers(),
+                modifiers: vec![
+                    Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
+                    Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
+                ],
                 movement_speeds: None,
                 senses: vec![Sense::Darkvision(60)],
                 trained_skills: vec![],
@@ -223,7 +226,15 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         art: true,
-        description: None,
+        description: Some(PassiveAbility {
+            description: r"
+                Animated objects are not \glossterm{sentient}.
+                They are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+                Their Intelligence attribute represents their capacity for complex action according to the instructions given to them by their creator rather than true intelligence.
+            ".to_string(),
+            is_magical: false,
+            name: "Mindless".to_string(),
+        }.to_latex()),
         knowledge: None,
         name: "Animated Objects".to_string(),
         monsters: vec![
