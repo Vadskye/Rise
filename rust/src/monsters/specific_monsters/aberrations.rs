@@ -157,8 +157,9 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 }),
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
-                        The $name makes a $accuracy melee strike against all adjacent enemies.
-                        \hit Each target takes $damage physical damage.
+                        The $name makes a $accuracy strike with its bite.
+                        The strike targets all adjacent \glossterm{enemies}.
+                        \hit Each target takes $fullweapondamage.
                     ".to_string(),
                     is_magical: true,
                     name: "Swarm of Mouths".to_string(),
