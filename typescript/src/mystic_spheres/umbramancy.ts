@@ -188,7 +188,7 @@ export const umbramancy: MysticSphere = {
         // +1r for shadowed
         hit: `
           \\damageranktwo{cold}.
-          If it loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -208,7 +208,7 @@ export const umbramancy: MysticSphere = {
         // +1r for shadowed
         hit: `
           \\damageranksixlow{cold}.
-          If it takes damage, it is \\frightened by you as a \\glossterm{condition}.
+          If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -462,7 +462,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive{cold}.
-          If it loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           It cannot move on its own.
           As a \\glossterm{movement}, you can control its movement instead of your own.
 

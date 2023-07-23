@@ -123,7 +123,7 @@ export const terramancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankonelow{bludgeoning}.
-          If it loses \\glossterm{hit points} from this damage, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -221,7 +221,7 @@ export const terramancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone{piercing}.
-          If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against anything within \\medrange that is \\glossterm{grounded}.
@@ -238,7 +238,7 @@ export const terramancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfour{piercing}.
-          If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\medrange that is \\glossterm{grounded}.

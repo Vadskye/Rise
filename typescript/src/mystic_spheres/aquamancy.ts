@@ -484,8 +484,8 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwohigh{bludgeoning}.
-          If it is Medium or smaller and your attack result also beats its Fortitude defense, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          \\damagerankone{bludgeoning}.
+          If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\medrange.',
@@ -499,7 +499,6 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'forceful aquajet',
-        // This deals an immediate 6d10 if you smash someone against a barrier, which is a lot of damage.
         exceptThat:
           'the damage increases to \\damagerankfivehigh{bludgeoning}, and the knockback distance increases to 30 feet.',
       },

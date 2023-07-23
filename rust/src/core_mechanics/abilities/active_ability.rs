@@ -142,7 +142,7 @@ impl CustomAbility {
                 "
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Fortitude against one living creature within \\shortrange.
                     \\hit $dr1 energy damage.
-                    If it loses hit points from this damage, it takes the damage again.
+                    If the target loses hit points from this damage, it takes the damage again.
                 ",
                 accuracy_modifier = rank - 2,
             ),
@@ -447,8 +447,8 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $damage $damagetypes.
-                If it loses hit points, it falls \prone.
+                \hit $fullweapondamage.
+                If the target loses hit points, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
             "
             .to_string(),
@@ -463,8 +463,8 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $damage $damagetypes.
-                If it takes damage, it falls \prone.
+                \hit $fullweapondamage.
+                If the target takes damage, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
             "
             .to_string(),

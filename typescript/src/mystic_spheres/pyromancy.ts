@@ -502,7 +502,7 @@ export const pyromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone{fire}.
-          If it loses \\glossterm{hit points}, it takes this damage again during your next action.
+          If the target loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
