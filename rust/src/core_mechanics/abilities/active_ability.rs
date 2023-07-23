@@ -503,9 +503,9 @@ fn replace_attack_terms(
 }
 
 fn replace_full_weapon_damage_terms(effect: &str) -> String {
-    let full_weapon_damage_pattern = Regex::new(r"$fullweapondamage").unwrap();
+    let full_weapon_damage_pattern = Regex::new(r"\$fullweapondamage").unwrap();
     return full_weapon_damage_pattern
-        .replace_all(&effect, "$damage $damagetypes damage")
+        .replace_all(&effect, "$$damage $$damagetypes damage")
         .to_string();
 }
 
@@ -596,7 +596,7 @@ fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
 fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
     let mut replaced_effect = effect.to_string();
 
-    let extra_damage_pattern = Regex::new(r"$d(\d)p(\d)\b").unwrap();
+    let extra_damage_pattern = Regex::new(r"\$d(\d)p(\d)").unwrap();
     for (_, [die_size, per_power]) in extra_damage_pattern
         .captures_iter(effect)
         // TODO: update regex so this works
@@ -714,6 +714,27 @@ The $name glows like a torch for a minute.
                 .trim()
                 .to_string(),
         );
+    }
+
+    mod replace_full_weapon_damage_terms {
+        use super::*;
+        use crate::equipment::StandardWeapon;
+
+        #[test]
+        fn replaces_one_term() {
+            assert_eq!(
+                "takes $damage $damagetypes damage.",
+                replace_full_weapon_damage_terms("takes $fullweapondamage."),
+            );
+        }
+
+        #[test]
+        fn replaces_two_terms() {
+            assert_eq!(
+                "takes $damage $damagetypes damage and $damage $damagetypes damage.",
+                replace_full_weapon_damage_terms("takes $fullweapondamage and $fullweapondamage."),
+            );
+        }
     }
 
     mod replace_accuracy_terms {
@@ -1031,11 +1052,10 @@ The $name glows like a torch for a minute.
             assert_eq!(
                 // 1d6 per 4 power should be 1d6 total
                 "Deals 1d6 electricity damage",
-                replace_damage_terms(
+                replace_extra_damage_terms(
                     "Deals $d6p4 electricity damage",
                     &sample_creature(),
                     true,
-                    None,
                 ),
             );
         }
@@ -1044,11 +1064,10 @@ The $name glows like a torch for a minute.
         fn replaces_1d8_per_1_power() {
             assert_eq!(
                 "Deals 5d8 electricity damage",
-                replace_damage_terms(
+                replace_extra_damage_terms(
                     "Deals $d8p1 electricity damage",
                     &sample_creature(),
                     true,
-                    None,
                 ),
             );
         }
