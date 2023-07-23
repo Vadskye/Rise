@@ -566,6 +566,24 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     treants.push(
         TreantDefinition {
             active_abilities: vec![
+                treeclub_strike(
+                    "Bracing Treeclub",
+                    r"
+                        The $name makes a $accuracy strike vs. Armor.
+                        In addition, it is \glossterm{impervious} to all damage this round.
+                        Because this is a \\abilitytag{Swift} ability, it affects attacks against it during the current phase.
+                        \\hit $fullweapondamage.
+                    ",
+                ),
+                treeclub_strike(
+                    "Felling Treeclub",
+                    r"
+                        The $name makes a $accuracy+3 strike vs. Armor.
+                        \\hit $fullweapondamage.
+                        If the target loses hit points, it falls \prone.
+                        This is a \abilitytag{Size-Based} effect.
+                    ",
+                ),
             ],
             alignment: "Usually true neutral".to_string(),
             attributes: vec![6, -2, 6, 0, 2, 2],
