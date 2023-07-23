@@ -26,7 +26,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
                     effect: r"
-                        The $name makes an attack vs. Reflex against one creature it \glossterm{touches}.
+                        The $name makes a $accuracy attack vs. Reflex against one creature it \glossterm{touches}.
                         It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
                         \hit The target takes $dr2 cold damage.
                         If the target loses hit points, it is \frightened by the $name as a \glossterm{condition}.
@@ -40,7 +40,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
                     effect: r"
-                        The $name makes an attack vs. Fortitude against all \glossterm{shadowed} creatures within a \largearea radius of it.
+                        The $name makes a $accuracy attack vs. Fortitude against all \glossterm{shadowed} creatures within a \largearea radius of it.
                         \hit Each target takes $dr1 cold damage.
                     ".to_string(),
                     is_magical: true,
@@ -427,7 +427,8 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             active_abilities: vec![
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
-                        The $name makes a strike with its treeclub against all adjacent enemies.
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        The strike targets all adjacent enemies.
                         \hit Each target takes $fullweapondamage.
                         \miss \glossterm{Glancing blow}.
                     ".to_string(),
