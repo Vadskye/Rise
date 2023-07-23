@@ -1,19 +1,17 @@
 use crate::core_mechanics::abilities::{
-    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
-use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
-use crate::creatures::{Modifier, ModifierBundle, Monster};
+use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{
-    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::monster_group::MonsterGroup;
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn animate(def: MonsterDef) -> Monster {
@@ -122,7 +120,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything in its space.
                         \hit Each target takes $dr2 acid damage.
-                        \glance Half damage.
+                        \miss \glossterm{Glancing blow}.
                     ".to_string(),
                     is_magical: false,
                     name: "Dissolve".to_string(),
@@ -241,7 +239,9 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         });
     }
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        art: true,
+        description: None,
         knowledge: None,
         name: "Animated Objects".to_string(),
         monsters: vec![
@@ -333,24 +333,6 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     impl TreantDefinition {
         fn monster(mut self) -> Monster {
-            self.active_abilities.push(
-                ActiveAbility::Custom(CustomAbility {
-                    ability_type: AbilityType::Normal,
-                    effect: r"
-                        The $name animates a tree to fight by its side.
-                        The tree must be no larger than the treant, and it must be the same type of tree as the treant.
-
-                        The tree's combat statistics are the same as the treant's, except that the tree may be a different size category, and it lacks this ability.
-                        This ability lasts until the treant uses it again or dismisses it as a \glossterm{free action}.
-                        When this ability ends, the tree sets down roots in its new location if possible.
-                        Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
-                    ".to_string(),
-                    is_magical: true,
-                    name: "Animate Tree".to_string(),
-                    tags: vec![],
-                    usage_time: UsageTime::Standard,
-                }),
-            );
             return animate(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: self.active_abilities,
@@ -382,7 +364,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         }
     }
 
-    let tree_club = Weapon {
+    let treeclub = Weapon {
         accuracy: 0,
         damage_dice: DicePool::d10(),
         damage_types: vec![DamageType::Bludgeoning],
@@ -390,138 +372,197 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
     };
 
-    monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
-            knowledge: None,
-            name: "Treants".to_string(),
-            monsters: vec![
-                TreantDefinition {
-                    active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility {
-                            effect: r"
-                                The $name makes a $accuracy strike vs. Armor with its treeclub.
-                                It gains a +2 accuracy bonus if it missed the target with a strike last round.
-                                \hit The target takes $fullweapondamage.
-                            ".to_string(),
-                            is_magical: false,
-                            name: "Rebounding Treeclub".to_string(),
-                            tags: vec![],
-                            weapon: tree_club.clone(),
-                        }),
-                    ],
-                    alignment: "Usually true neutral".to_string(),
-                    attributes: vec![2, 0, 3, 0, 4, -2],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Birch treants tend to be shy, and they to avoid conflict if at all possible.
-                    ")]),
-                    level: 5,
-                    modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
-                    name: "Birch Treant".to_string(),
-                    size: Size::Large,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility {
-                            effect: r"
-                                The $name makes a $accuracy strike vs. Armor with its treeclub.
-                                \hit The target takes $fullweapondamage.
-                                If it takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
-                            ".to_string(),
-                            is_magical: false,
-                            name: "Anklespraining Treeclub".to_string(),
-                            tags: vec![],
-                            weapon: tree_club.clone(),
-                        }),
-                        ActiveAbility::Strike(StrikeAbility {
-                            effect: r"
-                                The $name makes a $accuracy strike vs. Armor with its treeclub.
-                                \hit The target takes $fullweapondamage.
-                                If the attack result beats the target's Reflex defense, the strike deals $d6p4 \glossterm{extra damage}.
-                            ".to_string(),
-                            is_magical: false,
-                            name: "Tricky Treeclub".to_string(),
-                            tags: vec![],
-                            weapon: tree_club.clone(),
-                        }),
-                    ],
-                    alignment: "Usually true neutral".to_string(),
-                    attributes: vec![2, 0, 3, 0, 3, 1],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Chestnut treants tend to mischievous and outgoing.
-                        They like playing small tricks on interesting creatures that pass by.
-                    ")]),
-                    level: 6,
-                    modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
-                    name: "Chestnut Treant".to_string(),
-                    size: Size::Large,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![],
-                    alignment: "Usually true neutral".to_string(),
-                    attributes: vec![2, 3, 2, 1, 2, -2],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
-                        Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
-                    ")]),
-                    level: 7,
-                    modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
-                    name: "Willow Treant".to_string(),
-                    size: Size::Large,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![],
-                    alignment: "Usually neutral evil".to_string(),
-                    attributes: vec![3, 0, 1, 1, 2, 1],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
-                        Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
-                    ")]),
-                    level: 8,
-                    modifiers: vec![],
-                    name: "Darkroot Treant".to_string(),
-                    size: Size::Large,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![],
-                    alignment: "Usually neutral good".to_string(),
-                    attributes: vec![3, -2, 4, 0, 2, 3],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Pine treants tend to be the most steadfast treants.
-                        They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
-                    ")]),
-                    level: 9,
-                    modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
-                    name: "Pine Treant".to_string(),
-                    size: Size::Huge,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![],
-                    alignment: "Usually neutral good".to_string(),
-                    attributes: vec![4, -2, 4, 1, 2, 3],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
-                    ")]),
-                    level: 10,
-                    modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
-                    name: "Oak Treant".to_string(),
-                    size: Size::Huge,
-                }.monster(),
-                TreantDefinition {
-                    active_abilities: vec![],
-                    alignment: "Usually true neutral".to_string(),
-                    attributes: vec![4, -2, 6, 0, 0, 2],
-                    knowledge: Knowledge::new(vec![(0, "
-                        Cyprus treants are the most durable of treants.
-                        They are virtually indestructible, and are fearsome when roused to anger.
-                    ")]),
-                    level: 11,
-                    modifiers: vec![
-                        Modifier::Defense(Defense::Armor, 2),
-                    ],
-                    name: "Cyprus Treant".to_string(),
-                    size: Size::Huge,
-                }.monster(),
+    let mut treants = vec![];
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        It gains a +2 accuracy bonus if it missed the target with a strike last round.
+                        \hit The target takes $fullweapondamage.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Rebounding Treeclub".to_string(),
+                    tags: vec![],
+                    weapon: treeclub.clone(),
+                }),
             ],
-        },
-    ));
+            alignment: "Usually true neutral".to_string(),
+            attributes: vec![2, 0, 4, 0, 4, -2],
+            knowledge: Knowledge::new(vec![(0, "
+                Birch treants tend to be shy, and they to avoid conflict if at all possible.
+            ")]),
+            level: 5,
+            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            name: "Birch Treant".to_string(),
+            size: Size::Large,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Anklespraining Treeclub".to_string(),
+                    tags: vec![],
+                    weapon: treeclub.clone(),
+                }),
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        If the attack result beats the target's Reflex defense, the strike deals $d6p4 \glossterm{extra damage}.
+                        \hit The target takes $fullweapondamage.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Tricky Treeclub".to_string(),
+                    tags: vec![],
+                    weapon: treeclub.clone(),
+                }),
+            ],
+            alignment: "Usually true neutral".to_string(),
+            attributes: vec![2, 0, 4, 0, 3, 1],
+            knowledge: Knowledge::new(vec![(0, "
+                Chestnut treants tend to mischievous and outgoing.
+                They like playing small tricks on interesting creatures that pass by.
+            ")]),
+            level: 6,
+            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            name: "Chestnut Treant".to_string(),
+            size: Size::Large,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a strike with its treeclub against all adjacent enemies.
+                        \hit Each target takes $fullweapondamage.
+                        \miss \glossterm{Glancing blow}.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Whirling Treeclub".to_string(),
+                    tags: vec![],
+                    weapon: treeclub.clone(),
+                }),
+            ],
+            alignment: "Usually true neutral".to_string(),
+            attributes: vec![2, 3, 3, 1, 2, -2],
+            knowledge: Knowledge::new(vec![(0, "
+                Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
+                Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
+            ")]),
+            level: 7,
+            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            name: "Willow Treant".to_string(),
+            size: Size::Large,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![],
+            alignment: "Usually neutral evil".to_string(),
+            attributes: vec![3, 0, 1, 1, 2, 1],
+            knowledge: Knowledge::new(vec![(0, "
+                Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
+                Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
+            ")]),
+            level: 8,
+            modifiers: vec![],
+            name: "Darkroot Treant".to_string(),
+            size: Size::Large,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![],
+            alignment: "Usually neutral good".to_string(),
+            attributes: vec![3, -2, 4, 0, 2, 3],
+            knowledge: Knowledge::new(vec![(0, "
+                Pine treants tend to be the most steadfast treants.
+                They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
+            ")]),
+            level: 9,
+            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            name: "Pine Treant".to_string(),
+            size: Size::Huge,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![],
+            alignment: "Usually neutral good".to_string(),
+            attributes: vec![4, -2, 4, 1, 2, 3],
+            knowledge: Knowledge::new(vec![(0, "
+                Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
+            ")]),
+            level: 10,
+            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            name: "Oak Treant".to_string(),
+            size: Size::Huge,
+        }.monster(),
+    );
+
+    treants.push(
+        TreantDefinition {
+            active_abilities: vec![],
+            alignment: "Usually true neutral".to_string(),
+            attributes: vec![4, -2, 6, 0, 0, 2],
+            knowledge: Knowledge::new(vec![(
+                0,
+                "
+                Cyprus treants are the most durable of treants.
+                They are virtually indestructible, and are fearsome when roused to anger.
+            ",
+            )]),
+            level: 11,
+            modifiers: vec![Modifier::Defense(Defense::Armor, 2)],
+            name: "Cyprus Treant".to_string(),
+            size: Size::Huge,
+        }
+        .monster(),
+    );
+
+    let animate_tree = ActiveAbility::Custom(CustomAbility {
+        ability_type: AbilityType::Normal,
+        effect: r"
+            The treant animates a tree to fight by its side.
+            The tree must be no larger than the treant, and it must be the same type of tree as the treant.
+
+            The tree's combat statistics are the same as the treant's, except that the tree may be a different size category, and it lacks this ability.
+            This ability lasts until the treant uses it again or dismisses it as a \glossterm{free action}.
+            When this ability ends, the tree sets down roots in its new location if possible.
+            Treants avoid stranding trees in unsustainable locations except in desperate circumstances.
+        ".to_string(),
+        is_magical: true,
+        name: "Animate Tree".to_string(),
+        tags: vec![],
+        usage_time: UsageTime::Standard,
+    });
+
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        art: false,
+        description: Some(format!(
+            "
+                All treants have the \\ability<animate tree> ability.
+                {}
+            ",
+            animate_tree.latex_ability_block(&Creature::new(1, CreatureCategory::Character))
+        )),
+        knowledge: None,
+        name: "Treants".to_string(),
+        monsters: treants,
+    }));
 }

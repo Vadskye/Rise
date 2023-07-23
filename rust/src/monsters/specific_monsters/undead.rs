@@ -17,7 +17,7 @@ use std::cmp::{max, min};
 
 use super::humanoids::{add_humans, add_orcs};
 
-fn undead(mut def: MonsterDef) -> Monster {
+fn undead(def: MonsterDef) -> Monster {
     return def.undead();
 }
 
@@ -129,6 +129,8 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Ghouls".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Ghouls are undead creatures that hunger for the flesh of the living.
@@ -274,6 +276,8 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Vampires".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Vampires are humanoid-looking undead that feast on the blood of the living.
@@ -363,6 +367,8 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Skeletons".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Skeletons are the reanimated corpses of once-living creatures.
@@ -558,6 +564,8 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Zombies".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Zombies are the reanimated corpses of once-living creatures.

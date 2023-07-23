@@ -1,6 +1,7 @@
 use crate::core_mechanics::abilities::{
     AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
+use crate::core_mechanics::{DamageType, DicePool};
 use crate::core_mechanics::{
     MovementMode, MovementSpeed, Sense, Size, SpeedCategory, StandardPassiveAbility,
 };
@@ -9,11 +10,9 @@ use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{
-    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::monster_group::MonsterGroup;
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
-use crate::core_mechanics::{DamageType, DicePool};
 
 fn humanoid(def: MonsterDef) -> Monster {
     return def.monster(CreatureType::Humanoid);
@@ -22,8 +21,10 @@ fn humanoid(def: MonsterDef) -> Monster {
 pub fn humanoids() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Bandits".to_string(),
+        art: false,
+        description: None,
         knowledge: None,
         monsters: vec![
             humanoid(MonsterDef {
@@ -60,8 +61,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         ],
     }));
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Cultists".to_string(),
+        art: false,
+        description: None,
         knowledge: None,
         monsters: vec![
             humanoid(MonsterDef {
@@ -179,16 +182,18 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         });
     }
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Goblins".to_string(),
+        art: false,
+        description: None,
         knowledge: None,
         monsters: vec![
             goblin(
                 "Goblin Peon",
                 MonsterAbilities {
-                    active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
-                    ],
+                    active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                        StandardWeapon::Spear.weapon(),
+                    ))],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
@@ -206,8 +211,12 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 "Goblin Guard",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::armorpiercer(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(
+                            StandardWeapon::Spear.weapon(),
+                        )),
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(
+                            StandardWeapon::Spear.weapon(),
+                        )),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -226,9 +235,15 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 "Goblin Warg Rider",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Lance.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::armorpiercer(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(
+                            StandardWeapon::Lance.weapon(),
+                        )),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(
+                            StandardWeapon::Spear.weapon(),
+                        )),
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(
+                            StandardWeapon::Spear.weapon(),
+                        )),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -248,7 +263,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 MonsterAbilities {
                     active_abilities: vec![
                         ActiveAbility::Custom(CustomAbility::divine_judgment(1)),
-                        ActiveAbility::Strike(StrikeAbility::consecrated_strike(1, StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::consecrated_strike(
+                            1,
+                            StandardWeapon::Spear.weapon(),
+                        )),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -276,8 +294,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
 }
 
 pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Townsfolk".to_string(),
+        art: false,
+        description: None,
         knowledge: None,
         monsters: vec![
             humanoid(MonsterDef {
@@ -352,8 +372,14 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
         trained_skills: Vec<Skill>,
     }
 
-    fn lizardfolk(name: &str, mut abilities: LizardfolkAbilities, statistics: MonsterStatistics) -> Monster {
-        abilities.modifiers.push(Modifier::PassiveAbility(StandardPassiveAbility::Amphibious.ability()));
+    fn lizardfolk(
+        name: &str,
+        mut abilities: LizardfolkAbilities,
+        statistics: MonsterStatistics,
+    ) -> Monster {
+        abilities.modifiers.push(Modifier::PassiveAbility(
+            StandardPassiveAbility::Amphibious.ability(),
+        ));
         return humanoid(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities: abilities.active_abilities,
@@ -376,8 +402,10 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
         });
     }
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Lizardfolk".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Lizardfolk are Medium bipedal creatures covered in reptilian scales.
@@ -442,7 +470,12 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
         trained_skills: Vec<Skill>,
     }
 
-    fn orc(name: &str, knowledge: Knowledge, mut abilities: OrcAbilities, statistics: MonsterStatistics) -> Monster {
+    fn orc(
+        name: &str,
+        knowledge: Knowledge,
+        mut abilities: OrcAbilities,
+        statistics: MonsterStatistics,
+    ) -> Monster {
         abilities.trained_skills.push(Skill::Endurance);
         return humanoid(MonsterDef {
             abilities: MonsterAbilities {
@@ -475,8 +508,10 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
     let mut chief_battle_command = CustomAbility::battle_command(3);
     chief_battle_command.usage_time = UsageTime::Elite;
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Orcs".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.

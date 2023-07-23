@@ -5,6 +5,8 @@ use crate::monsters::CreatureType;
 use titlecase::titlecase;
 
 pub struct MonsterGroup {
+    pub art: bool,
+    pub description: Option<String>,
     pub knowledge: Option<Knowledge>,
     pub monsters: Vec<Monster>,
     pub name: String,
@@ -22,9 +24,11 @@ impl MonsterGroup {
                 \\newpage
                 \\subsection*<{name}>
                 \\vspace<0.5em>
+                {description}
                 {knowledge}
                 {monsters}
             ",
+            description = self.description.as_ref().unwrap_or(&"".to_string()),
             knowledge = if let Some(ref k) = self.knowledge {
                 if monsters.len() > 0 {
                     k.to_latex(&monsters[0].creature_type, monsters[0].creature.level)
