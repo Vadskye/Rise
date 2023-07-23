@@ -294,8 +294,8 @@ impl Monster {
                 \\monsterabilitiesheader<$Name>
                 {abilities}
             ",
-            pagebreak = if parent_monster_group_name.is_some() { "" } else { r"\newpage" },
-            art = self.latex_art(parent_monster_group_name).trim(),
+            pagebreak = if parent_monster_group_name.is_some() { r"" } else { r"\newpage" },
+            art = self.latex_art(parent_monster_group_name),
             section_name = section_name,
             size_star = if section_name == "monsubsubsection" { "*" } else { "" },
             name = name,

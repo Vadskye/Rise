@@ -502,7 +502,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Air Elementals".to_string(),
-        art: false,
+        art: true,
         description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
