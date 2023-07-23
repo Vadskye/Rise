@@ -173,7 +173,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{weak strike}.
+        Make a strike.
         In addition, you regain 1d6 hit points plus 1d6 per 4 \\glossterm{power}.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
