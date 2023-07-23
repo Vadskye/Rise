@@ -2,7 +2,7 @@ use crate::core_mechanics::abilities::{
     AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
-use crate::core_mechanics::attacks::{Maneuver, PureDamage, StandardAttack};
+use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
@@ -33,24 +33,23 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Imps".to_string(),
+        art: false,
+        description: None,
         knowledge: None,
         monsters: vec![planeforged(MonsterDef {
             abilities: MonsterAbilities {
-                active_abilities: vec![
-                    ActiveAbility::Strike(StrikeAbility {
-                        effect: r"
+                active_abilities: vec![ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
                             The $name makes two $accuracy strikes vs. armor with its $weapons.
                             \hit The target takes $damage bludgeoning and fire damage.
-                        ".to_string(),
-                        is_magical: false,
-                        name: "Flaming Flurry".to_string(),
-                        tags: vec![],
-                        weapon: Weapon::fist(),
-                    }),
-                ],
-                modifiers: vec![
-                    Modifier::vulnerable_damage(DamageType::Cold),
-                ],
+                        "
+                    .to_string(),
+                    is_magical: false,
+                    name: "Flaming Flurry".to_string(),
+                    tags: vec![],
+                    weapon: Weapon::fist(),
+                })],
+                modifiers: vec![Modifier::vulnerable_damage(DamageType::Cold)],
                 movement_speeds: None,
                 senses: vec![],
                 trained_skills: vec![],
@@ -136,10 +135,13 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
         def.abilities.senses.push(Sense::LowLightVision);
 
-        return planeforged(def)
+        return planeforged(def);
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Angels".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (-5, "
                 Angels are the ultimate champions of good in the endless battle of good and evil.
@@ -155,7 +157,6 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                 Their only true foes are demons, who use overwhelming hordes rather than any clever tactics.
             "),
         ])),
-        name: "Angels".to_string(),
         monsters: vec![
             angel(MonsterDef {
                 name: "Seraph".to_string(),
@@ -307,11 +308,12 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 }
 
 fn add_demons(monsters: &mut Vec<MonsterEntry>) {
-    let fire_immunity = Modifier::Immune(SpecialDefenseType::Damage(
-                DamageType::Fire,
-            ));
+    let fire_immunity = Modifier::Immune(SpecialDefenseType::Damage(DamageType::Fire));
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Demonspawn".to_string(),
+        art: false,
+        description: None,
         // TODO: give demonspawn a more coherent narrative identity distinct from "demons"?
         knowledge: Some(Knowledge::new(vec![
             (0, "
@@ -323,7 +325,6 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 They all share an immunity to fire.
             "),
         ])),
-        name: "Demonspawn".to_string(),
         monsters: vec![
             planeforged(MonsterDef {
                 abilities: MonsterAbilities {
@@ -500,6 +501,9 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Air Elementals".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Air elementals are formed from the pure essence of the Plane of Air.
@@ -509,7 +513,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 Air elementals have no insulation in their wispy bodies, making them vulnerable to electrical attacks.
             "),
         ])),
-        name: "Air Elementals".to_string(),
         monsters: vec![
             AirElemental {
                 attributes: vec![2, 4, 0, -3, 2, 0],
@@ -600,6 +603,9 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Fire Elementals".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Fire elementals are formed from the pure essence of the Plane of Fire.
@@ -610,7 +616,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 This makes them vulnerable to cold attacks, which can chill their very core.
             "),
         ])),
-        name: "Fire Elementals".to_string(),
         monsters: vec![
             FireElemental {
                 attributes: vec![2, 4, 0, -3, 0, 2],
@@ -703,6 +708,9 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Magma Elementals".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![(
             0,
             "
@@ -718,7 +726,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 However, piercing attacks can penetrate their outer shell, causing the magma inside to spew out until it cools.
             ",
         )])),
-        name: "Magma Elementals".to_string(),
         monsters: vec![
             MagmaElemental {
                 attributes: vec![4, 4, 5, -4, 0, 0],
@@ -770,8 +777,12 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             60
         };
         let tremorsight_radius = tremorsense_radius / 4;
-        def.abilities.senses.push(Sense::Tremorsense(tremorsense_radius));
-        def.abilities.senses.push(Sense::Tremorsight(tremorsight_radius));
+        def.abilities
+            .senses
+            .push(Sense::Tremorsense(tremorsense_radius));
+        def.abilities
+            .senses
+            .push(Sense::Tremorsight(tremorsight_radius));
 
         let ref mut modifiers = def.abilities.modifiers;
         modifiers.push(Modifier::PassiveAbility(PassiveAbility {
@@ -793,6 +804,9 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Formians".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Formians are ant-like inhabitants native to Ordus, the Aligned Plane of law.
@@ -812,7 +826,6 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 These isolated formians typically die of dehydration or similar causes, though in rare cases they may be claimed by another formian queen.
             "),
         ])),
-        name: "Formians".to_string(),
         monsters: vec![
             formian(MonsterDef {
                 name: "Worker".to_string(),

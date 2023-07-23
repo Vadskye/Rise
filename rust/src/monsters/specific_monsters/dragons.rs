@@ -558,6 +558,9 @@ pub fn dragons() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Dragons".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
               Legends speak of reptilian flying creatures called dragons.
@@ -601,7 +604,6 @@ pub fn dragons() -> Vec<MonsterEntry> {
               This is a difficult decision for a dragon to make, and most dragons never eat a single gold piece.
             "),
         ])),
-        name: "Dragons".to_string(),
         monsters: vec![],
     }));
 
@@ -612,6 +614,8 @@ pub fn dragons() -> Vec<MonsterEntry> {
             .collect();
 
         monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+            art: false,
+            description: None,
             knowledge: Some(dragon_type.knowledge()),
             name: format!("{} Dragons", dragon_type.name()),
             monsters: dragons,

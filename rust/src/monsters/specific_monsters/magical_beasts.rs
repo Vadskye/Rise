@@ -9,12 +9,12 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
-use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
+use crate::monsters::monster_group::MonsterGroup;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::{
-    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
+    MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
 };
 use crate::skills::Skill;
 
@@ -482,7 +482,10 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         }
     }
 
-    monsters.push(MonsterEntry::MonsterGroup(monster_group::MonsterGroup {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Ichor-Tainted".to_string(),
+        art: true,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 The dreadful magical liquid known as ichor has no known origin.
@@ -500,7 +503,6 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 Some scholars theorize that this means the ichor originated from the Far Realm, while others think it is a mere imitation.
             "),
         ])),
-        name: "Ichor-Tainted".to_string(),
         monsters: vec![
             IchorDefinition {
                 attributes: vec![4, 0, 4, -9, 0, -1],

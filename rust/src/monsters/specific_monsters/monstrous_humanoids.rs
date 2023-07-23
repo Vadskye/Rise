@@ -94,6 +94,9 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
 
     // TODO: add Giant language
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Giants".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
               Giants are massive humanoid creatures that tower over lesser creatures.
@@ -108,7 +111,6 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                 The object may also deal less damage than a boulder depending on its construction.
             "),
         ])),
-        name: "Giants".to_string(),
         monsters: vec![
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
@@ -200,6 +202,9 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
 
 fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Ogres".to_string(),
+        art: false,
+        description: None,
         knowledge: Some(Knowledge::new(vec![
             (0, "
               Ogres are Large, hideous humanoid creatures with a taste for human flesh.
@@ -215,7 +220,6 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
               They use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
             "),
         ])),
-        name: "Ogres".to_string(),
         monsters: vec![
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
