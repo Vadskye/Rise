@@ -103,7 +103,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit The target takes $dr1 energy damage.
+                    \\hit $dr1 energy damage.
                 ",
                 accuracy_modifier = rank - 1,
             ),
@@ -141,7 +141,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Fortitude against one living creature within \\shortrange.
-                    \\hit The target takes $dr1 energy damage.
+                    \\hit $dr1 energy damage.
                     If it loses hit points from this damage, it takes the damage again.
                 ",
                 accuracy_modifier = rank - 2,
@@ -226,7 +226,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
-                \hit The target takes $fullweapondamage.
+                \hit $fullweapondamage.
             "
             .to_string(),
             is_magical: false,
@@ -240,7 +240,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             "
             .to_string(),
             is_magical: false,
@@ -256,7 +256,7 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each damaged creature bleeds if this attack beats its Fortitude defense.
                 A bleeding creature takes $dr0 slashing damage during the $name's next action.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             "
             .to_string(),
             is_magical: false,
@@ -272,7 +272,7 @@ impl StrikeAbility {
                 "
                     The $name makes a $accuracy+{accuracy_modifier} strike vs. Armor with its $weapon.
                     In addition, it \\glossterm<briefly> gains a +2 bonus to its Mental defense.
-                    \\hit The target takes $damage $damagetypes damage.
+                    \\hit $damage $damagetypes damage.
                 ",
                 accuracy_modifier = rank - 1,
             ),
@@ -288,7 +288,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
                 In addition, it gains a +1 bonus to its Armor and Reflex defenses as a \abilitytag<Swift> effect.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Defensive Strike", &weapon),
@@ -302,7 +302,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It reduces its \glossterm{longshot penalty} with the strike by 4.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             "
             .to_string(),
             is_magical: true,
@@ -318,7 +318,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Frenzied Strike", &weapon),
@@ -333,7 +333,7 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 In addition, it chooses one of its allies.
                 Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Guardbreaker", &weapon),
@@ -347,7 +347,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
             name: strike_prefix("Hamstring", &weapon),
@@ -361,7 +361,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its {weapon}.
                 It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
                 \glance No effect.
             ".to_string(),
             is_magical: false,
@@ -375,7 +375,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy-3 strike vs. Armor with its $weapon.
-                \hit The target takes $damage*2 $damagetypes damage.
+                \hit $damage*2 $damagetypes damage.
             "
             .to_string(),
             is_magical: true,
@@ -390,7 +390,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
                 After making the attack, it briefly takes a -4 penalty to all defenses.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             "
             .to_string(),
             is_magical: false,
@@ -405,7 +405,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
-                \hit The target takes $damage $damagetypes damage.
+                \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
             name: strike_prefix("Redeeming Followup", &weapon),
@@ -418,7 +418,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit The target takes $damage $damagetypes.
+                \hit $damage $damagetypes.
             "
             .to_string(),
             is_magical: false,
@@ -433,7 +433,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes two $accuracy strikes vs. Armor with its $weapons.
-                \hit The target takes $damage $damagetypes.
+                \hit $damage $damagetypes.
             "
             .to_string(),
             is_magical: false,
@@ -447,7 +447,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit The target takes $damage $damagetypes.
+                \hit $damage $damagetypes.
                 If it loses hit points, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
             "
@@ -463,7 +463,7 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit The target takes $damage $damagetypes.
+                \hit $damage $damagetypes.
                 If it takes damage, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
             "
@@ -1082,13 +1082,13 @@ The $name glows like a torch for a minute.
                 // dr4 is 1d8 + (1d8 per 4 power)
                 r"
                     The $name makes a +5 attack vs. Mental against one creature within \medrange.
-                    \hit The target takes 2d8 psychic damage.
+                    \hit 2d8 psychic damage.
                     Each creature that loses hit points from this damage is \stunned as a condition.
                 ",
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                    \hit The target takes $dr4 psychic damage.
+                    \hit $dr4 psychic damage.
                     Each creature that loses hit points from this damage is \stunned as a condition.
                 ",
                     &sample_creature(),
@@ -1103,7 +1103,7 @@ The $name glows like a torch for a minute.
             assert_multiline_eq(
                 r"
                     The $name makes a +5 melee strike with a tentacle.
-                    \hit Each target takes 1d6+1d8 bludgeoning damage.
+                    \hit 1d6+1d8 bludgeoning damage.
                     Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
                     Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
@@ -1114,7 +1114,7 @@ The $name glows like a torch for a minute.
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy melee strike with a tentacle.
-                    \hit Each target takes $damage $damagetypes damage.
+                    \hit $damage $damagetypes damage.
                     Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
                     Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).

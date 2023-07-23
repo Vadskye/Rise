@@ -68,7 +68,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranktwo{piercing}.
+          \\damageranktwo{piercing}.
           If it is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -85,7 +85,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{piercing}.
+          \\damagerankone{piercing}.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
@@ -116,7 +116,7 @@ export const fabrication: MysticSphere = {
       // Melee single-target attack would normally be d4. Drop to d3h for multitarget.
       attack: {
         hit: `
-          Each target takes \\damagerankthreehigh{slashing}.
+          \\damagerankthreehigh{slashing}.
         `,
         missGlance: false,
         targeting: `
@@ -143,7 +143,7 @@ export const fabrication: MysticSphere = {
       name: 'Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes \\damagerankone{slashing}.`,
+        hit: `\\damagerankone{slashing}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
@@ -158,7 +158,7 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{slashing}.`,
+        hit: `\\damagerankfour{slashing}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
@@ -174,7 +174,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{piercing}.
+          \\damagerankone{piercing}.
         `,
         missGlance: true,
         targeting: `
@@ -193,7 +193,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfour{piercing}.
+          \\damagerankfour{piercing}.
         `,
         missGlance: true,
         targeting: `
@@ -211,7 +211,7 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       attack: {
-        hit: `The target takes \\damagerankone{slashing}.`,
+        hit: `\\damagerankone{slashing}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
@@ -297,7 +297,7 @@ export const fabrication: MysticSphere = {
       name: 'Caltrops',
 
       attack: {
-        hit: `The target takes \\damagerankone{piercing}.`,
+        hit: `\\damagerankone{piercing}.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
@@ -347,7 +347,7 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `The target takes \\damagerankthree{piercing}.`,
+        hit: `\\damagerankthree{piercing}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -670,7 +670,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{piercing}.
+          \\damagerankthree{piercing}.
         `,
         missGlance: true,
         targeting: `
@@ -686,7 +686,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damageranksix{piercing}.
+          \\damageranksix{piercing}.
         `,
         missGlance: true,
         targeting: `
@@ -703,7 +703,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{piercing and fire}.
+          \\damagerankthree{piercing and fire}.
         `,
         missGlance: true,
         targeting: `

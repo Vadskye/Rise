@@ -42,8 +42,8 @@ mod maneuver_tests {
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             vec![
-                "Certain Broadsword +2 (The target takes 1d8 slashing damage.)",
-                "Broadsword +0 (The target takes 1d8 slashing damage.)"
+                "Certain Broadsword +2 (1d8 slashing damage.)",
+                "Broadsword +0 (1d8 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -72,8 +72,8 @@ mod maneuver_tests {
             .push(StandardWeapon::Broadsword.weapon());
         assert_eq!(
         vec![
-            "Elemental Broadsword +5 (The target takes 2d6+8 bludgeoning, fire, and slashing damage.)",
-            "Broadsword +5 (The target takes 2d6+6 slashing damage.)"
+            "Elemental Broadsword +5 (2d6+8 bludgeoning, fire, and slashing damage.)",
+            "Broadsword +5 (2d6+6 slashing damage.)"
         ],
         druid
             .creature.calc_all_attacks()

@@ -70,7 +70,7 @@ export const aquamancy: MysticSphere = {
       // The accuracy bonus drops damage from d3 to d2h
       attack: {
         hit: `
-          The target takes \\damageranktwohigh{physical}.
+          \\damageranktwohigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -86,7 +86,7 @@ export const aquamancy: MysticSphere = {
       // This accuracy bonus is high enough to drop from d7 to d6h
       attack: {
         hit: `
-          The target takes \\damageranksixhigh{physical}.
+          \\damageranksixhigh{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -122,7 +122,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -138,7 +138,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -155,7 +155,7 @@ export const aquamancy: MysticSphere = {
       // 1 rank for movement
       attack: {
         hit: `
-          The target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -173,7 +173,7 @@ export const aquamancy: MysticSphere = {
       // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          The target takes \\damagerankfourhigh{bludgeoning}.
+          \\damagerankfourhigh{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -190,7 +190,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -206,7 +206,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfivehigh{bludgeoning}.
+          \\damagerankfivehigh{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -247,7 +247,7 @@ export const aquamancy: MysticSphere = {
       // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
         hit: `
-          Each target takes \\damageranktwo{bludgeoning}.
+          \\damageranktwo{bludgeoning}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -269,7 +269,7 @@ export const aquamancy: MysticSphere = {
         // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes \\damagerankonelow{bludgeoning}.
+          \\damagerankonelow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -289,7 +289,7 @@ export const aquamancy: MysticSphere = {
         // This can't be full scaling due to restrictions on Reflex-based single target
         // attacks
         hit: `
-          Each target takes \\damagerankfourlow{bludgeoning}.
+          \\damagerankfourlow{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -484,7 +484,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranktwohigh{bludgeoning}.
+          \\damageranktwohigh{bludgeoning}.
           If it is Medium or smaller and your attack result also beats its Fortitude defense, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
@@ -621,7 +621,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthree{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against anything within \\medrange.
@@ -637,7 +637,7 @@ export const aquamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankseven{bludgeoning}.
+          \\damagerankseven{bludgeoning}.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against anything within \\medrange.

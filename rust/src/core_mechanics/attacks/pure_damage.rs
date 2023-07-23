@@ -140,7 +140,7 @@ mod tests {
 \\begin<magicalactiveability>*<Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\medrange.
-\\hit The target takes 1d8+2 energy damage.
+\\hit 1d8+2 energy damage.
 \\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );
@@ -163,7 +163,7 @@ The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 \\begin<magicalactiveability>*<Greater Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\medrange.
-\\hit The target takes 2d8+2 energy damage.
+\\hit 2d8+2 energy damage.
 \\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );
@@ -186,7 +186,7 @@ The $name makes a +0 attack vs. Armor against one creature within \\medrange.
 \\begin<magicalactiveability>*<Supreme Mystic Bolt>
 \\rankline
 The $name makes a +0 attack vs. Armor against one creature within \\longrange.
-\\hit The target takes 4d10+2 energy damage.
+\\hit 4d10+2 energy damage.
 \\end<magicalactiveability>",
             get_standard_ability_block(mystic_bolt)
         );

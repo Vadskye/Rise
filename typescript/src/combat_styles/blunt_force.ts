@@ -29,7 +29,7 @@ export const bluntForce: CombatStyle = {
       name: 'Ground Stomp',
 
       attack: {
-        hit: `Each target takes \\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
@@ -42,7 +42,7 @@ export const bluntForce: CombatStyle = {
       name: 'Ground Stomp+',
 
       attack: {
-        hit: `Each target takes \\damagerankfive{bludgeoning}.`,
+        hit: `\\damagerankfive{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
@@ -132,7 +132,7 @@ export const bluntForce: CombatStyle = {
       name: 'Leap Slam',
 
       attack: {
-        hit: `Each target takes \\damageranktwohigh{bludgeoning}.`,
+        hit: `\\damageranktwohigh{bludgeoning}.`,
         missGlance: true,
         targeting: `
           You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
@@ -336,7 +336,7 @@ export const bluntForce: CombatStyle = {
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
         You cannot get a \\glossterm{critical hit} with this strike.
         If you deal damage with the strike to a creature that is Small or larger, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\smallarea radius of the target of your strike.
-        Each struck secondary target takes damage equal to the damage you dealt with the strike.
+        You deal each struck secondary target damage equal to the damage you dealt with the strike.
         On a miss against a secondary target, you get a \\glossterm{glancing blow}.
       `,
       rank: 3,

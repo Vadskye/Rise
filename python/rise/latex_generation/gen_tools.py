@@ -255,7 +255,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Armor against anything within \\rngshort range.
-                On a hit, the target takes 1d8 fire damage.
+                \\hit 1d8 fire damage.
             """,
             short_description="Throw to deal 1d8 fire damage",
             upgrades=[
@@ -295,7 +295,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d10 acid damage.
+                \\hit 1d10 acid damage.
             """,
             short_description="Throw to deal 1d10 acid damage",
             upgrades=[
@@ -328,7 +328,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Reflex against everything in a \\smallarea radius within \\rngshort range.
-                On a hit, each target takes 1d8 fire damage.
+                \\hit 1d8 fire damage.
             """,
             short_description="Throw to deal 1d8 fire damage in an area",
             upgrades=[
@@ -411,7 +411,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against everything in a \\tinyarea radius within \\rngshort range.
-                On a hit, each target takes 1d6 bludgeoning damage.
+                \\hit 1d6 bludgeoning damage.
                 Each creature that loses \\glossterm<hit points> from this damage is \\deafened as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d6 bludgeoning damage and deafen",
@@ -446,7 +446,7 @@ def generate_tools():
             description="""
                 You can throw this item as a standard action.
                 When you do, make an attack vs. Fortitude against anything within \\shortrange.
-                On a hit, the target takes 1d8 cold damage.
+                \\hit 1d8 cold damage.
                 If a creature loses \\glossterm<hit points> from this damage, it is \\slowed as a \\glossterm<condition>.
             """,
             short_description="Throw to deal 1d8 cold damage and slow",
@@ -757,7 +757,7 @@ def generate_tools():
 
                 The first time a creature walks through that space, the trap makes a +5 attack vs. Reflex against everything within a \\smallarea radius of it.
                 After the trap triggers, it must be manually deployed again.
-                On a hit, each target takes 1d8 fire damage.
+                \\hit 1d8 fire damage.
             """,
             short_description="Deals 1d8 fire damage in a small area",
             upgrades=[

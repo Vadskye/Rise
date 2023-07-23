@@ -32,7 +32,7 @@ def generate_armor():
             # d2l
             description="""
                 Whenever an \\glossterm<enemy> within a \\medarea radius \\glossterm<emanation> from you causes you to lose \\glossterm<hit points>, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 2d8 energy damage.
+                \\hit 2d8 energy damage.
             """,
             short_description="Deals 2d8 damage to attackers when you lose HP",
             upgrades=[
@@ -236,7 +236,7 @@ def generate_armor():
             # d2
             description="""
                 Whenever an adjacent creature deals damage to you, make a \\glossterm<reactive attack> vs. Fortitude against them.
-                \\hit Each target takes 1d10+1d6 energy damage.
+                \\hit 1d10+1d6 energy damage.
             """,
             short_description="Deals 1d10+1d6 damage to adjacent attackers",
             upgrades=[
@@ -604,9 +604,9 @@ def generate_armor():
                 This shield normally has a cloth covering its face.
                 As a standard action, you can pull the cloth back and reveal the horrifying face emblazoned on the shield.
                 When you do, make an attack vs. Fortitude against all creatures within a \\medarea cone.
-                On a hit, each target takes 2d6 physical damage as its body turns to stone.
-                Each creature that loses \\glossterm<hit points> from this damage is \\slowed as a \\glossterm<condition>.
                 Whether you hit or miss, each creature who can see the face is immune to this ability until it finishes a \\glossterm<short rest>.
+                \\hit 2d6 physical damage.
+                Each creature that loses \\glossterm<hit points> from this damage is \\slowed as a \\glossterm<condition>.
 
                 If the cloth is prematurely pulled back, allowing creatures to see the shield without a dramatic reveal, the shield has no effect.
             """,

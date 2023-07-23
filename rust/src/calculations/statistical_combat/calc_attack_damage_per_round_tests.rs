@@ -44,8 +44,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +3 (The target takes 1d6+3 slashing damage.)",
-                    "Bite +1 (The target takes 1d10+3 bludgeoning damage.)",
+                    "Claws +3 (1d6+3 slashing damage.)",
+                    "Bite +1 (1d10+3 bludgeoning damage.)",
                 ],
                 attacker.explain_attacks(),
             );
@@ -68,8 +68,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +5 (The target takes 1d6+4 slashing damage.)",
-                    "Bite +3 (The target takes 1d10+4 bludgeoning damage.)"
+                    "Claws +5 (1d6+4 slashing damage.)",
+                    "Bite +3 (1d10+4 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -97,8 +97,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +8 (The target takes 2d6+14 slashing damage.)",
-                    "Bite +6 (The target takes 2d10+14 bludgeoning damage.)"
+                    "Claws +8 (2d6+14 slashing damage.)",
+                    "Bite +6 (2d10+14 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -122,8 +122,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +10 (The target takes 2d6+18 slashing damage.)",
-                    "Bite +8 (The target takes 2d10+18 bludgeoning damage.)"
+                    "Claws +10 (2d6+18 slashing damage.)",
+                    "Bite +8 (2d10+18 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -151,8 +151,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +8 (The target takes 2d6+14 slashing damage.)",
-                    "Bite +6 (The target takes 2d10+14 bludgeoning damage.)"
+                    "Claws +8 (2d6+14 slashing damage.)",
+                    "Bite +6 (2d10+14 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -176,8 +176,8 @@ mod monster_attacks {
 
             assert_eq!(
                 vec![
-                    "Claws +10 (The target takes 2d6+18 slashing damage.)",
-                    "Bite +8 (The target takes 2d10+18 bludgeoning damage.)"
+                    "Claws +10 (2d6+18 slashing damage.)",
+                    "Bite +8 (2d10+18 bludgeoning damage.)"
                 ],
                 attacker.explain_attacks(),
             );
@@ -205,10 +205,10 @@ mod standard_character {
         let defender = Monster::standard_monster(ChallengeRating::One, 1, None, None).creature;
         assert_eq!(
             vec![
-                "Certain Battleaxe +4 (The target takes 1d8+1 slashing damage.)",
-                "Generic Scaling Battleaxe +1 (The target takes 1d8+5 slashing damage.)",
-                "Mighty Battleaxe +0 (The target takes 8+3 slashing damage.)",
-                "Battleaxe +1 (The target takes 1d8+3 slashing damage.)"
+                "Certain Battleaxe +4 (1d8+1 slashing damage.)",
+                "Generic Scaling Battleaxe +1 (1d8+5 slashing damage.)",
+                "Mighty Battleaxe +0 (8+3 slashing damage.)",
+                "Battleaxe +1 (1d8+3 slashing damage.)"
             ],
             attacker.explain_attacks(),
         );
@@ -264,10 +264,10 @@ mod standard_character {
 
         assert_eq!(
             vec![
-                "Certain Battleaxe +11 (The target takes 2d8+7 slashing damage.)",
-                "Mighty Battleaxe +7 (The target takes 16+14 slashing damage.)",
-                "Generic Scaling Battleaxe +8 (The target takes 2d8+18 slashing damage.)",
-                "Battleaxe +8 (The target takes 2d8+14 slashing damage.)"
+                "Certain Battleaxe +11 (2d8+7 slashing damage.)",
+                "Mighty Battleaxe +7 (16+14 slashing damage.)",
+                "Generic Scaling Battleaxe +8 (2d8+18 slashing damage.)",
+                "Battleaxe +8 (2d8+14 slashing damage.)"
             ],
             attacker.explain_attacks(),
         );
@@ -322,10 +322,10 @@ mod standard_character {
 
         assert_eq!(
             vec![
-                "Certain Battleaxe +17 (The target takes 5d10+22 slashing damage.)",
-                "Mighty Battleaxe +13 (The target takes 50+44 slashing damage.)",
-                "Generic Scaling Battleaxe +14 (The target takes 5d10+60 slashing damage.)",
-                "Battleaxe +14 (The target takes 5d10+44 slashing damage.)"
+                "Certain Battleaxe +17 (5d10+22 slashing damage.)",
+                "Mighty Battleaxe +13 (50+44 slashing damage.)",
+                "Generic Scaling Battleaxe +14 (5d10+60 slashing damage.)",
+                "Battleaxe +14 (5d10+44 slashing damage.)"
             ],
             attacker.explain_attacks(),
         );
@@ -390,10 +390,10 @@ mod standard_greataxe {
         let defender = Monster::standard_monster(ChallengeRating::One, 1, None, None).creature;
         assert_eq!(
             vec![
-                "Certain Greataxe +4 (The target takes 2d6+1 slashing damage.)",
-                "Generic Scaling Greataxe +1 (The target takes 2d6+5 slashing damage.)",
-                "Mighty Greataxe +0 (The target takes 12+3 slashing damage.)",
-                "Greataxe +1 (The target takes 2d6+3 slashing damage.)",
+                "Certain Greataxe +4 (2d6+1 slashing damage.)",
+                "Generic Scaling Greataxe +1 (2d6+5 slashing damage.)",
+                "Mighty Greataxe +0 (12+3 slashing damage.)",
+                "Greataxe +1 (2d6+3 slashing damage.)",
             ],
             attacker.explain_attacks(),
         );
@@ -526,10 +526,10 @@ mod perception_greataxe {
         let defender = Monster::standard_monster(ChallengeRating::One, 1, None, None).creature;
         assert_eq!(
             vec![
-                "Certain Greataxe +5 (The target takes 2d6+1 slashing damage.)",
-                "Generic Scaling Greataxe +2 (The target takes 2d6+4 slashing damage.)",
-                "Mighty Greataxe +1 (The target takes 12+2 slashing damage.)",
-                "Greataxe +2 (The target takes 2d6+2 slashing damage.)"
+                "Certain Greataxe +5 (2d6+1 slashing damage.)",
+                "Generic Scaling Greataxe +2 (2d6+4 slashing damage.)",
+                "Mighty Greataxe +1 (12+2 slashing damage.)",
+                "Greataxe +2 (2d6+2 slashing damage.)"
             ],
             attacker.explain_attacks(),
         );
