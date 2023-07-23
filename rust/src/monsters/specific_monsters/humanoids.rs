@@ -184,7 +184,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Goblins".to_string(),
-        art: false,
+        art: true,
         description: None,
         knowledge: None,
         monsters: vec![
@@ -232,7 +232,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 },
             ),
             goblin(
-                "Goblin Warg Rider",
+                "Goblin Wolf Rider",
                 MonsterAbilities {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::normal_strike(
@@ -322,7 +322,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![1, 1, 1, 0, 0, 0],
+                    attributes: vec![1, 1, -1, 0, 0, 0],
                     elite: false,
                     level: 1,
                     role: Role::Warrior,
