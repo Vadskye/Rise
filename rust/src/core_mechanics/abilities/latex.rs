@@ -58,4 +58,9 @@ fn validate_effect(effect: &str, name: &str) {
     if strike_pattern.is_match(effect) && !with_its_pattern.is_match(effect) {
         warn("makes a strike without clarifying the weapon used");
     }
+
+    let attack_without_accuracy_pattern = Regex::new(r"make[^0-9]*(attack|strike)[^0-9]*vs\.").unwrap();
+    if attack_without_accuracy_pattern.is_match(effect) {
+        warn("makes an attack without defining its accuracy");
+    }
 }
