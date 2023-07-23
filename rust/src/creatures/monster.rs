@@ -281,12 +281,12 @@ impl Monster {
         let latex = latex_formatting::latexify(format!(
             "
                 {pagebreak}
-                {art}
                 \\begin<{section_name}><{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
-
+                    {art}
                     {description}
                     {knowledge}
+                    {content_buffer}
 
                     \\par \\RaggedRight
                     {content}
@@ -306,6 +306,9 @@ impl Monster {
             type = self.creature_type.name(),
             description = self.description.as_deref().unwrap_or(""),
             knowledge = if let Some(ref k) = self.knowledge { k.to_latex(&self.creature_type, self.creature.level)} else { r"".to_string() },
+            content_buffer = if self.description.is_some() || self.knowledge.is_some() {
+                r"\vspace{0.5em}"
+            } else { "" },
             content = self.latex_content().trim(),
             abilities = self.latex_abilities().trim(),
         ))
