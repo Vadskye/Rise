@@ -41,7 +41,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 active_abilities: vec![ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                             The $name makes two $accuracy strikes vs. armor with its $weapons.
-                            \hit The target takes $damage bludgeoning and fire damage.
+                            \hit $damage bludgeoning and fire damage.
                         "
                     .to_string(),
                     is_magical: false,

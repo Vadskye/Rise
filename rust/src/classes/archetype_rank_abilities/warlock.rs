@@ -18,7 +18,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
                     You gain a \plus2 accuracy bonus with this attack against any creature that damaged you during the previous round.
-                    \hit The target takes \damagerankone{fire}.
+                    \hit \damagerankone{fire}.
 
                     \rankline
                     \rank{2} You gain a +1 accuracy bonus with the attack.
@@ -135,7 +135,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Banish to the Abyss}
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit The target takes \damagerankthree{fire}.
+                    \hit \damagerankthree{fire}.
                     If it loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it finishes a \glossterm{short rest}.

@@ -13,7 +13,7 @@ export const pyromancy: MysticSphere = {
       name: 'Kindle',
 
       attack: {
-        hit: `The target takes 2 fire damage.
+        hit: `2 fire damage.
         If the target is highly flammable, such as a torch or campfire, it ignites.`,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -52,7 +52,7 @@ export const pyromancy: MysticSphere = {
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
         At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius and shadowy illumination in an 60 foot radius.
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
-        On a hit, the target takes 2 fire damage.
+        On a hit, you deal the target 2 fire damage.
 
         This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
       `,
@@ -87,7 +87,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{fire} immediately, and again during your next action.
+          \\damagerankone{fire} immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -105,7 +105,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankfourhigh{fire} immediately, and again during your next action.
+          \\damagerankfourhigh{fire} immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -123,7 +123,7 @@ export const pyromancy: MysticSphere = {
       // +1dr from sphere
       attack: {
         hit: `
-          Each target takes \\damageranktwo{fire}.
+          \\damageranktwo{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -142,7 +142,7 @@ export const pyromancy: MysticSphere = {
       // +1dr from sphere
       attack: {
         hit: `
-          Each target takes \\damagerankthreehigh{fire}.
+          \\damagerankthreehigh{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -160,7 +160,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damageranktwohigh{fire}.`,
+        hit: `\\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
@@ -176,7 +176,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankseven{fire}.`,
+        hit: `\\damagerankseven{fire}.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\longrange.
@@ -195,7 +195,7 @@ export const pyromancy: MysticSphere = {
       // +1dr from sphere
       attack: {
         hit: `
-          Each target takes \\damageranksevenhigh{fire}.
+          \\damageranksevenhigh{fire}.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
@@ -215,7 +215,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damageranktwo{fire}.`,
+        hit: `\\damageranktwo{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -231,7 +231,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankfivehigh{fire}.`,
+        hit: `\\damagerankfivehigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -277,7 +277,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankthreehigh{fire}.`,
+        hit: `\\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -311,7 +311,7 @@ export const pyromancy: MysticSphere = {
       // +1dr for brief cooldown
       attack: {
         hit: `
-          The target takes \\damagerankthree{fire}.
+          \\damagerankthree{fire}.
         `,
         targeting: `
           You can set things on fire simply by staring at them as a standard action.
@@ -340,7 +340,7 @@ export const pyromancy: MysticSphere = {
       name: 'Flaming Spheres',
 
       attack: {
-        hit: `The target takes \\damagerankthree{fire}.`,
+        hit: `\\damagerankthree{fire}.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
@@ -360,7 +360,7 @@ export const pyromancy: MysticSphere = {
 
       // +1dr from sphere
       attack: {
-        hit: `Each target takes \\damagerankfourhigh{fire}.`,
+        hit: `\\damagerankfourhigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -374,7 +374,7 @@ export const pyromancy: MysticSphere = {
       name: 'Personal Ignition',
 
       attack: {
-        hit: `The target takes \\damagerankone{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         targeting: `
           During each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -411,7 +411,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         // TODO: is this damage correct?
-        hit: `Each target takes \\damagerankone{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
@@ -462,7 +462,7 @@ export const pyromancy: MysticSphere = {
       name: 'Wall of Fire',
 
       attack: {
-        hit: `The target takes \\damagerankone{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
@@ -501,7 +501,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{fire}.
+          \\damagerankone{fire}.
           If it loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
@@ -528,7 +528,7 @@ export const pyromancy: MysticSphere = {
 
       // -1r for existing fire requirement, +1dr for sphere
       attack: {
-        hit: `Each target takes \\damageranktwohigh{fire}.`,
+        hit: `\\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
           Choose one Tiny or larger active fire within \\shortrange.
@@ -586,7 +586,7 @@ export const pyromancy: MysticSphere = {
       name: 'Flame Dash',
 
       attack: {
-        hit: `Each target takes \\damagerankone{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -601,7 +601,7 @@ export const pyromancy: MysticSphere = {
       name: 'Distant Flame Dash',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{fire}.`,
+        hit: `\\damagerankfour{fire}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -697,14 +697,14 @@ export const pyromancy: MysticSphere = {
         It becomes a \\glossterm{trap}.
         To read the writing, a creature must concentrate on reading it, which requires a standard action.
         If a creature reads the object, the object explodes.
-        You make an attack vs. Reflex against everything within a \\medarea radius from the object.
-        Your accuracy with this attack is equal to half the sum of your level and Perception.
-        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        Each struck target takes \\damagerankthree{fire}.
-        A miss is still considered a \\glossterm{glancing blow}.
-
         After the object explodes in this way, the ritual is \\glossterm{dismissed}.
         If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
+
+        When the object explodes, make an attack vs. Reflex against everything within a \\medarea radius from the object.
+        Your accuracy with this attack is equal to half the sum of your level and Perception.
+        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
+        \\hit \\damagerankthree{fire}.
+        \\miss \\glossterm{Glancing blow}.
       `,
       rank: 4,
       scaling: {

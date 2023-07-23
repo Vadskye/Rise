@@ -34,14 +34,14 @@ mod to_section {
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d6 physical damage.
+                \hit 2d6 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d8 slashing damage.
+                \hit 1d8 slashing damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -79,14 +79,14 @@ mod to_section {
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit The target takes 6d6\plus2d8 physical damage.
+                \hit 6d6\plus2d8 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d6\plus2d10 slashing damage.
+                \hit 2d6\plus2d10 slashing damage.
             \end{activeability}
 ",
             monster.to_section(None),
@@ -132,49 +132,49 @@ mod to_section {
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d6\plus1d10 physical damage.
+                \hit 2d6\plus1d10 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 2d6\plus1d10 (w) physical damage.
+                \hit 2d6\plus1d10 (w) physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d6\plus1d8 (w) slashing damage.
+                \hit 1d6\plus1d8 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6 (w) slashing damage.
+                \hit 4d6 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit The target takes 1d6\plus1d8 slashing damage.
+                \hit 1d6\plus1d8 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 4d6 slashing damage.
+                \hit 4d6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Strip the Flesh -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit The target takes 8d6 slashing damage.
+                \hit 8d6 slashing damage.
                  Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
             \end{activeability}
 ",
@@ -335,8 +335,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Firebolt +1 (The target takes 1d10 fire damage.)", // CR 1
-                "Firebolt +3 (The target takes 4d6 fire damage.)",  // CR 4
+                "Firebolt +1 (1d10 fire damage.)", // CR 1
+                "Firebolt +3 (4d6 fire damage.)",  // CR 4
             ];
             assert_eq!(expected, actual, "CR 1/4");
         }
@@ -349,8 +349,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Firebolt +6 (The target takes 1d6+2d8 fire damage.)", // CR 1
-                "Firebolt +8 (The target takes 2d6+4d8 fire damage.)", // CR 4
+                "Firebolt +6 (1d6+2d8 fire damage.)", // CR 1
+                "Firebolt +8 (2d6+4d8 fire damage.)", // CR 4
             ];
             assert_eq!(expected, actual, "CR 1/4");
         }
@@ -363,8 +363,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Firebolt +10 (The target takes 7d8 fire damage.)",
-                "Firebolt +12 (The target takes 16d8 fire damage.)",
+                "Firebolt +10 (7d8 fire damage.)",
+                "Firebolt +12 (16d8 fire damage.)",
             ];
             assert_eq!(expected, actual, "CR 1/4",);
         }
@@ -377,8 +377,8 @@ mod statistics {
                 firebolt_description(generate_creature(ChallengeRating::Four, level)),
             ];
             let expected = [
-                "Firebolt +12 (The target takes 9d10 fire damage.)",
-                "Firebolt +14 (The target takes 20d10 fire damage.)",
+                "Firebolt +12 (9d10 fire damage.)",
+                "Firebolt +14 (20d10 fire damage.)",
             ];
             assert_eq!(expected, actual, "CR 1/4",);
         }

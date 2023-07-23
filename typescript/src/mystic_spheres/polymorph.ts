@@ -276,7 +276,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{physical}.
+          \\damagerankfive{physical}.
           This damage is doubled if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
@@ -324,7 +324,7 @@ export const polymorph: MysticSphere = {
       name: 'Spikeform',
 
       attack: {
-        hit: `Each target takes \\damagerankone{piercing}.`,
+        hit: `\\damagerankone{piercing}.`,
         missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -342,7 +342,7 @@ export const polymorph: MysticSphere = {
       name: 'Mighty Spikeform',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{piercing}.`,
+        hit: `\\damagerankfour{piercing}.`,
         missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -359,7 +359,7 @@ export const polymorph: MysticSphere = {
       name: 'Extruding Spikes',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{piercing}.`,
+        hit: `\\damagerankfour{piercing}.`,
         missGlance: true,
         targeting: `
           As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor with a -2 accuracy penalty against all \\glossterm{enemies} adjacent to you.
@@ -585,7 +585,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{slashing}.
+          \\damagerankone{slashing}.
           If it loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
@@ -674,7 +674,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{}.
+          \\damagerankthree{}.
           The damage is of the chosen type.
         `,
         missGlance: true,
@@ -739,7 +739,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{slashing}.
+          \\damagerankfive{slashing}.
           If it loses \\glossterm{hit points}, it is \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `
@@ -755,7 +755,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthree{piercing}.
+          \\damagerankthree{piercing}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -775,7 +775,7 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{piercing}.
+          \\damagerankfour{piercing}.
           If it loses hit points, it takes this damage again during your next action.
         `,
         targeting: `
@@ -794,7 +794,7 @@ export const polymorph: MysticSphere = {
       // like dX at Grasp range, but +1dr and -2ct.
       attack: {
         hit: `
-          The target takes \\damageranksix{piercing}.
+          \\damageranksix{piercing}.
           If it loses hit points, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `

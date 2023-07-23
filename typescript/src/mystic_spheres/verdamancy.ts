@@ -87,7 +87,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
           If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
         `,
         targeting: `
@@ -105,7 +105,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
           If the target takes damage, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
@@ -124,7 +124,7 @@ export const verdamancy: MysticSphere = {
       // +1 area tier for undergrowth
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -144,7 +144,7 @@ export const verdamancy: MysticSphere = {
       // with +1t from undergrowth, t3 area
       attack: {
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -163,7 +163,7 @@ export const verdamancy: MysticSphere = {
 
       // with +2t from undergrowth, t5 area
       attack: {
-        hit: `Each target takes \\damagerankthree{bludgeoning}.`,
+        hit: `\\damagerankthree{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
@@ -324,7 +324,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{piercing} damage immediately, and again during your next action.
+          \\damagerankone{piercing} damage immediately, and again during your next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
         `,
         targeting: `
@@ -357,7 +357,7 @@ export const verdamancy: MysticSphere = {
 
       // +1r for sharing
       attack: {
-        hit: `Each target takes \\damagerankone{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
@@ -389,7 +389,7 @@ export const verdamancy: MysticSphere = {
       name: 'Wall of Thorns',
 
       attack: {
-        hit: `The target takes \\damagerankone{piercing}.`,
+        hit: `\\damagerankone{piercing}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of thorns within \\medrange.
           The base of at least half of the wall must be in arable earth.
@@ -456,7 +456,7 @@ export const verdamancy: MysticSphere = {
       // Short range instead of med range for the two weird effects
       attack: {
         hit: `
-          The target takes \\damagerankone{physical}.
+          \\damagerankone{physical}.
           This damage is doubled if the target is a plant, including plant creatures.
         `,
         targeting: `

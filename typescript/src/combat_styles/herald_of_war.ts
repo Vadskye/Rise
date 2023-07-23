@@ -90,7 +90,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout',
 
       attack: {
-        hit: `Each target takes \\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
@@ -103,7 +103,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `Each target takes \\damagerankfourhigh{bludgeoning}.`,
+        hit: `\\damagerankfourhigh{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
@@ -117,7 +117,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
           If it loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -132,7 +132,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthreehigh{bludgeoning}.
+          \\damagerankthreehigh{bludgeoning}.
           If it takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `

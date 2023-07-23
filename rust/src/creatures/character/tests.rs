@@ -140,10 +140,10 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Battleaxe +17 (The target takes 1d6+1d10 (w) slashing damage.)",
-            "Powerful Battleaxe +11 (The target takes 2d6+2d10 slashing damage.)",
-            "Generic Scaling Battleaxe +16 (The target takes 4d6+1d10 slashing damage.)",
-            "Battleaxe +14 (The target takes 1d6+1d10 slashing damage.)"
+            "Certain Battleaxe +17 (1d6+1d10 (w) slashing damage.)",
+            "Powerful Battleaxe +11 (2d6+2d10 slashing damage.)",
+            "Generic Scaling Battleaxe +16 (4d6+1d10 slashing damage.)",
+            "Battleaxe +14 (1d6+1d10 slashing damage.)"
         ],
         fighter
             .calc_all_attacks()
@@ -256,10 +256,10 @@ mod standard_character_statistics {
         assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 4");
         assert_eq!(
             vec![
-                "Certain Broadsword +4 (The target takes 1d10 (w) slashing damage.)",
-                "Generic Scaling Broadsword +1 (The target takes 1d10 slashing damage.)",
-                "Powerful Broadsword -2 (The target takes 2d10 slashing damage.)",
-                "Broadsword +1 (The target takes 1d10 slashing damage.)"
+                "Certain Broadsword +4 (1d10 (w) slashing damage.)",
+                "Generic Scaling Broadsword +1 (1d10 slashing damage.)",
+                "Powerful Broadsword -2 (2d10 slashing damage.)",
+                "Broadsword +1 (1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -388,10 +388,10 @@ mod standard_character_statistics {
         );
         assert_eq!(
             vec![
-                "Certain Broadsword +13 (The target takes 1d6+1d10 (w) slashing damage.)",
-                "Powerful Broadsword +7 (The target takes 2d6+2d10 slashing damage.)",
-                "Generic Scaling Broadsword +10 (The target takes 1d6+1d10 slashing damage.)",
-                "Broadsword +7 (The target takes 1d6+1d10 slashing damage.)"
+                "Certain Broadsword +13 (1d6+1d10 (w) slashing damage.)",
+                "Powerful Broadsword +7 (2d6+2d10 slashing damage.)",
+                "Generic Scaling Broadsword +10 (1d6+1d10 slashing damage.)",
+                "Broadsword +7 (1d6+1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -530,12 +530,12 @@ mod standard_character_statistics {
         );
         assert_eq!(
             vec![
-                "Certain Broadsword +21 (The target takes 2d6+1d10 (w) slashing damage.)",
-                "Powerful Broadsword +15 (The target takes 4d6+2d10 slashing damage.)",
-                "Power Strike+ -- Broadsword +12 (The target takes 6d6+3d10 slashing damage.)",
-                "Certain Strike+ -- Broadsword +19 (The target takes 2d6+1d10 slashing damage.)",
-                "Generic Scaling Broadsword +14 (The target takes 7d6+1d10 slashing damage.)",
-                "Broadsword +12 (The target takes 2d6+1d10 slashing damage.)"
+                "Certain Broadsword +21 (2d6+1d10 (w) slashing damage.)",
+                "Powerful Broadsword +15 (4d6+2d10 slashing damage.)",
+                "Power Strike+ -- Broadsword +12 (6d6+3d10 slashing damage.)",
+                "Certain Strike+ -- Broadsword +19 (2d6+1d10 slashing damage.)",
+                "Generic Scaling Broadsword +14 (7d6+1d10 slashing damage.)",
+                "Broadsword +12 (2d6+1d10 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -654,10 +654,10 @@ mod standard_perception_character_statistics {
         assert_eq!(2, creature.calc_mundane_power(), "Mundane power: 2");
         assert_eq!(
             vec![
-                "Certain Battleaxe +4 (The target takes 1d8+1 slashing damage.)",
-                "Generic Scaling Battleaxe +2 (The target takes 1d8+4 slashing damage.)",
-                "Mighty Battleaxe +0 (The target takes 1d8+6 slashing damage.)",
-                "Battleaxe +2 (The target takes 1d8+2 slashing damage.)"
+                "Certain Battleaxe +4 (1d8+1 slashing damage.)",
+                "Generic Scaling Battleaxe +2 (1d8+4 slashing damage.)",
+                "Mighty Battleaxe +0 (1d8+6 slashing damage.)",
+                "Battleaxe +2 (1d8+2 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -787,10 +787,10 @@ mod standard_perception_character_statistics {
         );
         assert_eq!(
             vec![
-                "Certain Battleaxe +11 (The target takes 2d8+4 slashing damage.)",
-                "Generic Scaling Battleaxe +9 (The target takes 2d8+13 slashing damage.)",
-                "Mighty Battleaxe +7 (The target takes 2d8+17 slashing damage.)",
-                "Battleaxe +9 (The target takes 2d8+9 slashing damage.)",
+                "Certain Battleaxe +11 (2d8+4 slashing damage.)",
+                "Generic Scaling Battleaxe +9 (2d8+13 slashing damage.)",
+                "Mighty Battleaxe +7 (2d8+17 slashing damage.)",
+                "Battleaxe +9 (2d8+9 slashing damage.)",
             ],
             creature
                 .calc_all_attacks()
@@ -932,10 +932,10 @@ mod standard_perception_character_statistics {
         );
         assert_eq!(
             vec![
-                "Certain Battleaxe +18 (The target takes 5d10+14 slashing damage.)",
-                "Generic Scaling Battleaxe +16 (The target takes 5d10+44 slashing damage.)",
-                "Mighty Battleaxe +14 (The target takes 5d10+52 slashing damage.)",
-                "Battleaxe +16 (The target takes 5d10+28 slashing damage.)"
+                "Certain Battleaxe +18 (5d10+14 slashing damage.)",
+                "Generic Scaling Battleaxe +16 (5d10+44 slashing damage.)",
+                "Mighty Battleaxe +14 (5d10+52 slashing damage.)",
+                "Battleaxe +16 (5d10+28 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()

@@ -48,7 +48,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range and low scaling in exchange for the strong miss effect
       attack: {
         hit: `
-          The target takes \\damagerankonelow{energy}.
+          \\damagerankonelow{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -68,7 +68,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthree{energy}.
+          \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -89,7 +89,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range and low scaling for miss effect
       attack: {
         hit: `
-          The target takes \\damagerankfourlow{energy}.
+          \\damagerankfourlow{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -110,7 +110,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for ignoring cover
       attack: {
         hit: `
-          Each target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -131,7 +131,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for ignoring cover
       attack: {
         hit: `
-          Each target takes \\damageranksix{energy}.
+          \\damageranksix{energy}.
         `,
         missGlance: true,
         targeting: `

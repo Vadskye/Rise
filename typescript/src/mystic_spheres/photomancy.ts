@@ -202,7 +202,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
           If this attack beats the target's Fortitude defense, it deals maximum damage.
         `,
         targeting: `
@@ -221,7 +221,7 @@ export const photomancy: MysticSphere = {
       // No rank modifier for true sunlight
       attack: {
         hit: `
-          The target takes \\damagerankfivelow{energy}.
+          \\damagerankfivelow{energy}.
           If this attack beats the target's Fortitude defense, it deals maximum damage.
           If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
@@ -244,7 +244,7 @@ export const photomancy: MysticSphere = {
       // t4 area and a t1 debuff.
       attack: {
         hit: `
-          Each target takes \\damagerankfivelow{energy}.
+          \\damagerankfivelow{energy}.
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
@@ -264,7 +264,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -294,7 +294,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{energy}.
+          \\damagerankfive{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -422,7 +422,7 @@ export const photomancy: MysticSphere = {
         // random effect is bad, but the sphere can't normally do most of those and you
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          The target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
@@ -450,7 +450,7 @@ export const photomancy: MysticSphere = {
       name: 'Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes \\damagerankone{energy}.`,
+        hit: `\\damagerankone{energy}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -466,7 +466,7 @@ export const photomancy: MysticSphere = {
       name: 'Distant Lightbeam Dash',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{energy}.`,
+        hit: `\\damagerankfour{energy}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -519,7 +519,7 @@ export const photomancy: MysticSphere = {
       name: 'Reflective Lightbeam',
 
       attack: {
-        hit: `Each target takes \\damagerankone{energy}.`,
+        hit: `\\damagerankone{energy}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.

@@ -37,7 +37,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
-                        \hit Each target takes $dr2 psychic damage.
+                        \hit $dr2 psychic damage.
                         Each creature that loses hit points from this damage is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
@@ -49,7 +49,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                        \hit The target takes $dr4 psychic damage.
+                        \hit $dr4 psychic damage.
                         Each creature that loses hit points from this damage is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
@@ -62,7 +62,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-                        \hit The target takes $dr2l poison damage.
+                        \hit $dr2l poison damage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
                         \par Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
@@ -83,7 +83,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy melee strike with a tentacle.
-                        \hit Each target takes $damage bludgeoning damage.
+                        \hit $damage bludgeoning damage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime, as the aboleth's \ability{slime-covered body} ability.
                     ".to_string(),
                     is_magical: true,
@@ -147,7 +147,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against all creatures within a \largearea radius.
-                        \hit Each target takes $dr1 psychic damage.
+                        \hit $dr1 psychic damage.
                         Each creature that loses hit points is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
@@ -159,7 +159,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy strike with its bite.
                         The strike targets all adjacent \glossterm{enemies}.
-                        \hit Each target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                     ".to_string(),
                     is_magical: true,
                     name: "Swarm of Mouths".to_string(),

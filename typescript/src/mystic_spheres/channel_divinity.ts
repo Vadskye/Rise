@@ -140,7 +140,7 @@ export const channelDivinity: MysticSphere = {
       // close range for accuracy
       attack: {
         hit: `
-          The target takes \\damageranktwo{energy}.
+          \\damageranktwo{energy}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -157,7 +157,7 @@ export const channelDivinity: MysticSphere = {
       // close range and d5h for accuracy
       attack: {
         hit: `
-          The target takes \\damagerankfivehigh{energy}.
+          \\damagerankfivehigh{energy}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -173,7 +173,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -189,7 +189,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{energy}.
+          \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -205,7 +205,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damageranksix{energy}.
+          \\damageranksix{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -358,7 +358,7 @@ export const channelDivinity: MysticSphere = {
       // baseline is r3 due to +2 accuracy
       attack: {
         hit: `
-          The target takes \\damageranktwo{energy}.
+          \\damageranktwo{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it finishes a \\glossterm{short rest}.
@@ -387,7 +387,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthreehigh{energy}.
+          \\damagerankthreehigh{energy}.
           If it loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -402,7 +402,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranksevenhigh{energy}.
+          \\damageranksevenhigh{energy}.
           If it loses hit points, it is \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `

@@ -28,7 +28,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against one creature it \glossterm{touches}.
                         It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
-                        \hit The target takes $dr2 cold damage.
+                        \hit $dr2 cold damage.
                         If it loses hit points, it is \frightened by the $name as a \glossterm{condition}.
                         This is an \abilitytag{Emotion} effct.
                     ".to_string(),
@@ -41,7 +41,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against all \glossterm{shadowed} creatures within a \largearea radius of it.
-                        \hit Each target takes $dr1 cold damage.
+                        \hit $dr1 cold damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Umbral Aura".to_string(),
@@ -101,7 +101,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything in its space.
-                        \hit Each target takes $dr2 acid damage.
+                        \hit $dr2 acid damage.
                         \miss \glossterm{Glancing blow}.
                     ".to_string(),
                     is_magical: false,
@@ -372,7 +372,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         It gains a +2 accuracy bonus if it missed the target with a strike last round.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                     ",
                 ),
             ],
@@ -395,7 +395,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Anklespraining Treeclub",
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
                     ",
                 ),
@@ -404,7 +404,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         If the attack result beats the target's Reflex defense, the strike deals $d6p4 \glossterm{extra damage}.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                     "
                 ),
             ],
@@ -429,7 +429,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         The strike targets all adjacent enemies.
-                        \hit Each target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         \miss \glossterm{Glancing blow}.
                     ",
                 ),
@@ -437,7 +437,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Lashing Treeclub",
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it loses hit points, the $name makes an additional strike against it.
                     ",
                 ),
@@ -462,7 +462,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Festering Treeclub",
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it loses hit points, it takes damage from the strike again during the $name's next action.
                     ",
                 ),
@@ -470,7 +470,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Sickening Treeclub",
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it takes damage and the attack result beats its Fortitude defense, it is \stunned as a \glossterm{condition}.
                     ",
                 ),
@@ -496,14 +496,14 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         If the attack result beats the target's Fortitude defense, the strike deals $d6p4 \glossterm{extra damage}.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                     ",
                 ),
                 treeclub_strike(
                     "Felling Treeclub",
                     r"
                         The $name makes a $accuracy+2 strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it loses hit points, it falls \prone.
                         This is a \abilitytag{Size-Based} effect.
                     ",
@@ -533,7 +533,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Surefell Treeclub",
                     r"
                         The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                         If it takes damage, it falls \prone.
                     ",
                 ),
@@ -542,7 +542,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
                         If the attack result beats the target's Fortitude defense, the strike deals maximum damage.
-                        \hit The target takes $fullweapondamage.
+                        \hit $fullweapondamage.
                     ",
                 ),
             ],

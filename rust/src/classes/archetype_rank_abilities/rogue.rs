@@ -244,7 +244,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Crashing Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target takes \damagerankone{bludgeoning}.
+                        \hit \damagerankone{bludgeoning}.
                         \miss \glossterm{Glancing blow}.
 
                         \rankline
@@ -273,7 +273,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit The target takes \damagerankone{psychic}.
+                        \hit \damagerankone{psychic}.
 
                         \rankline
                         \rank{2} The base damage increases to 1d8.

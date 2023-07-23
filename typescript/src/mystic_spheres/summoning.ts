@@ -128,7 +128,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
           If it loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -148,7 +148,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
           If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -168,7 +168,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -186,7 +186,7 @@ export const summoning: MysticSphere = {
       name: 'Massive Trampling Summon',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{bludgeoning}.`,
+        hit: `\\damageranktwo{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\hugearealong, 10 ft. wide line from you.
@@ -367,7 +367,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{piercing}.
+          \\damagerankone{piercing}.
         `,
         missGlance: true,
         targeting: `
@@ -387,7 +387,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{physical}.
+          \\damagerankone{physical}.
         `,
         missGlance: true,
         targeting: `
@@ -407,7 +407,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{physical}.
+          \\damagerankthree{physical}.
           Each Large or smaller creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
         missGlance: true,
@@ -428,7 +428,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfour{piercing}
+          \\damagerankfour{piercing}
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
         `,
         missGlance: true,
@@ -450,7 +450,7 @@ export const summoning: MysticSphere = {
       // +2r for large, +2r for +1d
       attack: {
         hit: `
-          Each target takes \\damageranksix{physical}.
+          \\damageranksix{physical}.
         `,
         missGlance: true,
         targeting: `

@@ -208,7 +208,7 @@ export const telekinesis: MysticSphere = {
       // kinetic charge mechanic.
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -241,7 +241,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         missGlance: true,
@@ -258,7 +258,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damageranksix{bludgeoning}.
+          \\damageranksix{bludgeoning}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         missGlance: true,
@@ -560,7 +560,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{bludgeoning} immediately, and again during your next action.
+          \\damagerankone{bludgeoning} immediately, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.
@@ -576,7 +576,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
+          \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,
