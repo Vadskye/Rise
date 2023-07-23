@@ -214,10 +214,10 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
                     This penalty is removed as soon as the vampire drinks blood.
                     A vampire can can enter a torpor to survive indefinitely without blood.
-                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and \frightened by any creatures bearing garlic as a condition.
+                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and becomes \frightened by any creatures bearing garlic as a condition.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
-                    \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes briefly \stunned.
-                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and becomes \immobilized as a condition.
+                    \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
+                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
                     It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
                     \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \blinded as a condition.
