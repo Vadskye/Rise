@@ -303,10 +303,11 @@
 
         \columnbreak
         \begin{flushright}
-            \large\textbf{Level~#3}
+            Level~#3
             \IfValueT{#4}
             {
-                \textbf{~[#4]}
+                % For some reason this space is eaten if we don't use {} here
+                {}~--~\textbf{#4}
             }
         \end{flushright}
     \end{multicols}
@@ -337,10 +338,11 @@
 
         \columnbreak
         \begin{flushright}
-            \textbf{Level~#3}
+            Level~#3
             \IfValueT{#4}
             {
-                \textbf{~[#4]}
+                % For some reason this space is eaten if we don't use {} here
+                {}~--~\textbf{#4}
             }
         \end{flushright}
     \end{multicols}
