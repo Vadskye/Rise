@@ -6,9 +6,8 @@ use crate::creatures::{ModifierBundle, Monster};
 use crate::equipment::StandardWeapon;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{
-    monster_group, MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::monster_group::MonsterGroup;
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn animal(def: MonsterDef) -> Monster {
@@ -137,8 +136,10 @@ pub fn animals() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
+        MonsterGroup {
             name: "Bears".to_string(),
+            art: false,
+            description: None,
             knowledge: None,
             monsters: vec![
                 animal(MonsterDef {
@@ -324,8 +325,10 @@ pub fn animals() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
+        MonsterGroup {
             name: "Dire animals".to_string(),
+            art: false,
+            description: None,
             knowledge: None,
             monsters: vec![
                 animal(MonsterDef {
@@ -417,8 +420,10 @@ pub fn animals() -> Vec<MonsterEntry> {
     draft_horse_abilities.trained_skills.push(Skill::Endurance);
 
     monsters.push(MonsterEntry::MonsterGroup(
-        monster_group::MonsterGroup {
+        MonsterGroup {
             name: "Horses".to_string(),
+            art: false,
+            description: None,
             knowledge: None,
             monsters: vec![
                 animal(MonsterDef {
