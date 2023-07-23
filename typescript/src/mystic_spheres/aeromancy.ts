@@ -130,7 +130,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{slashing}.
+          \\damagerankone{slashing}.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\medrange.
@@ -146,7 +146,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfourlow{slashing}.
+          \\damagerankfourlow{slashing}.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\longrange.
@@ -162,7 +162,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranktwolow{bludgeoning}.
+          \\damageranktwolow{bludgeoning}.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\distrange.',
       },
@@ -175,7 +175,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfourlow{bludgeoning}.
+          \\damagerankfourlow{bludgeoning}.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },
@@ -349,7 +349,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankthree{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
         `,
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -394,7 +394,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damageranktwo{bludgeoning}.
+          \\damageranktwo{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -410,7 +410,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -428,7 +428,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -587,7 +587,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -603,7 +603,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `

@@ -74,7 +74,7 @@ mod character_tests {
         assert_eq!(1, attacks.len(), "Should have one attack");
         let abyssal_blast = &attacks[0];
         assert_eq!(
-            "Abyssal Rebuke +10 (The target takes 6d10+35 fire damage.)",
+            "Abyssal Rebuke +10 (6d10+35 fire damage.)",
             abyssal_blast.shorthand_description(&warlock.creature),
             "Should have correct description"
         );

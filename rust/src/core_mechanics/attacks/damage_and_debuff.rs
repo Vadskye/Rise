@@ -192,7 +192,7 @@ mod tests {
 \\begin<magicalactiveability>*<Organ Failure>
 \\rankline
 The $name makes a +0 attack vs. Fortitude against one creature within \\medrange.
-\\hit The target takes 1d4 physical damage.
+\\hit 1d4 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
 \\end<magicalactiveability>",
             get_standard_ability_block(organ_failure)
@@ -218,7 +218,7 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 \\begin<magicalactiveability>*<Super Organ Failure>
 \\rankline
 The $name makes a +5 attack vs. Fortitude against one creature within \\longrange.
-\\hit The target takes 2d10 physical damage.
+\\hit 2d10 physical damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\stunned as a \\glossterm{condition}.
 \\end<magicalactiveability>",
             get_standard_ability_block(organ_failure)
@@ -244,7 +244,7 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 \\begin<ability>*<Strip the Flesh>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
-\\hit The target takes 1d10 bludgeoning damage.
+\\hit 1d10 bludgeoning damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\vulnerable to all damage as a \\glossterm{condition}.
 \\end<ability>",
             get_standard_ability_block(strip_the_flesh)
@@ -270,7 +270,7 @@ Each creature that loses \\glossterm<hit points> from this attack is \\vulnerabl
 \\begin<ability>*<Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
-\\hit The target takes 1d10 bludgeoning damage.
+\\hit 1d10 bludgeoning damage.
 Each damaged creature is \\glossterm{briefly} \\dazzled.
 \\end<ability>",
             get_standard_ability_block(eye_poke)
@@ -296,7 +296,7 @@ Each damaged creature is \\glossterm{briefly} \\dazzled.
 \\begin<ability>*<Greater Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
-\\hit The target takes 1d10 bludgeoning damage.
+\\hit 1d10 bludgeoning damage.
 Each damaged creature is \\dazzled as a \\glossterm{condition}.
 \\end<ability>",
             get_standard_ability_block(eye_poke)
@@ -322,7 +322,7 @@ Each damaged creature is \\dazzled as a \\glossterm{condition}.
 \\begin<ability>*<Super Eye Poke>
 \\rankline
 The $name makes a +2 \\glossterm{strike} vs. Armor.
-\\hit The target takes 1d10 bludgeoning damage.
+\\hit 1d10 bludgeoning damage.
 Each damaged creature is \\dazzled as a \\glossterm{condition}.
 \\end<ability>",
             get_standard_ability_block(eye_poke)

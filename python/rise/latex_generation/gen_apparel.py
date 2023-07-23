@@ -271,7 +271,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this circlet.
                 When you do, make an attack vs. Armor against a creature or object within \\rngshort range.
-                \\hit The target takes 1d8+1d6 fire damage.
+                \\hit 1d8+1d6 fire damage.
             """,
             short_description="Can deal 1d8+1d6 damage",
             upgrades=[
@@ -367,7 +367,7 @@ def generate_apparel():
 
                 As a standard action, you can intensify the crown's flame to incinerate nearby enemies.
                 When you do, make an attack vs. Reflex against your \\glossterm<enemies> within a \\areasmall radius from you.
-                On a hit, each target takes 1d10 fire damage.
+                \\hit 1d10 fire damage.
             """,
             short_description="Can deal 1d10 damage to nearby foes",
             upgrades=[
@@ -413,7 +413,7 @@ def generate_apparel():
             description="""
                 % This only works if you only take falling damage during the movement phase, which seems possible?
                 When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
-                \\hit Each target takes bludgeoning damage equal to half the damage you took from falling.
+                \\hit You deal each target bludgeoning damage equal to half the damage you took from falling.
                 \\crit As above, and each target is knocked \\prone.
                 This attack does not deal extra damage on a critical hit.
             """,
@@ -1438,7 +1438,7 @@ def generate_apparel():
             description="""
                 As a standard action, you can activate this glove using a \\glossterm<free hand>.
                 When you do, make an attack vs. Reflex against everything within a \\smallarea cone.
-                \\hit Each target takes 1d8 fire damage.
+                \\hit 1d8 fire damage.
             """,
             short_description="Deals 1d8 damage in a cone",
             upgrades=[

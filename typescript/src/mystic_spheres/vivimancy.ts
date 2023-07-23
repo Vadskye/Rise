@@ -43,7 +43,7 @@ export const vivimancy: MysticSphere = {
       // baseline for multi-defense grasp is dr4, drop to dr3 for healing
       attack: {
         hit: `
-          The target takes \\damagerankthree{energy}.
+          \\damagerankthree{energy}.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           % dr1
           When you do, you regain 1d6 hit points +1d per 2 power.
@@ -79,7 +79,7 @@ export const vivimancy: MysticSphere = {
       // +1r for HP theft
       attack: {
         hit: `
-          The target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
           If it loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           % dr2
           When you do, you regain 1d8 hit points +1d per 2 power.
@@ -175,7 +175,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
           If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
         `,
         targeting: `
@@ -232,7 +232,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damageranktwo{energy}.
+          \\damageranktwo{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -250,7 +250,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfivehigh{energy}.
+          \\damagerankfivehigh{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -330,7 +330,7 @@ export const vivimancy: MysticSphere = {
       name: 'Corpse Explosion',
 
       attack: {
-        hit: `Each target takes \\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
@@ -381,7 +381,7 @@ export const vivimancy: MysticSphere = {
       name: 'Retributive Lifebond',
 
       attack: {
-        hit: `The target takes \\damagerankonelow{energy}.`,
+        hit: `\\damagerankonelow{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -395,7 +395,7 @@ export const vivimancy: MysticSphere = {
       name: 'Massive Retributive Lifebond',
 
       attack: {
-        hit: `The target takes \\damagerankthreelow{energy}.`,
+        hit: `\\damagerankthreelow{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -409,7 +409,7 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Retributive Lifebond',
 
       attack: {
-        hit: `The target takes \\damageranksix{energy}.`,
+        hit: `\\damageranksix{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -498,7 +498,7 @@ export const vivimancy: MysticSphere = {
       name: 'Wall of Death',
 
       attack: {
-        hit: `The target takes \\damagerankone{energy}.`,
+        hit: `\\damagerankone{energy}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of death within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.

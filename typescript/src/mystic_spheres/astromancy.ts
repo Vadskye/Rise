@@ -82,7 +82,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{energy}.
+          \\damagerankone{energy}.
           If it is Large or smaller and loses \\glossterm{hit points}, you may \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
@@ -104,7 +104,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damageranksix{energy}.
+          \\damageranksix{energy}.
           If it is Huge or smaller and loses hit points, you \\glossterm{teleport} it up to 90 feet.
         `,
         targeting: `
@@ -288,7 +288,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{energy}.
+          \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -306,7 +306,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankseven{energy}.
+          \\damagerankseven{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -324,7 +324,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankthree{energy}.
+          \\damagerankthree{energy}.
         `,
         missGlance: true,
         targeting: `
@@ -341,7 +341,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{energy}.
+          \\damagerankfive{energy}.
         `,
         missGlance: true,
         targeting: `

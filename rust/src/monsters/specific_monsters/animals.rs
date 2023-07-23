@@ -274,7 +274,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
-                        \hit The target takes $damage $damagetypes damage.
+                        \hit $damage $damagetypes damage.
                         Each creature that loses hit points from this damage is poisoned by giant wasp venom.
 
                         \par Giant wasp venom is an injury-based liquid poison (see \pcref{Poison}).

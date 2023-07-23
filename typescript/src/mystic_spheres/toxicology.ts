@@ -45,7 +45,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damageranktwo{acid} damage immediately, and again during your next action.
+          \\damageranktwo{acid} damage immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -210,7 +210,7 @@ export const toxicology: MysticSphere = {
       name: 'Acidic Blood',
 
       attack: {
-        hit: `Each target takes \\damagerankone{acid}.`,
+        hit: `\\damagerankone{acid}.`,
         missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against everything adjacent to you.
@@ -229,7 +229,7 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Acidic Blood',
 
       attack: {
-        hit: `Each target takes \\damagerankfour{acid}.`,
+        hit: `\\damagerankfour{acid}.`,
         missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -250,7 +250,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankone{acid} immediately, and again during your next action.
+          \\damagerankone{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -268,7 +268,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target takes \\damagerankfivehigh{acid} immediately, and again during your next action.
+          \\damagerankfivehigh{acid} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -301,7 +301,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{acid}.
+          \\damagerankone{acid}.
         `,
         missGlance: true,
         targeting: `
@@ -332,7 +332,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          Each target takes \\damagerankone{acid} immediately, and again during your next action.
+          \\damagerankone{acid} immediately, and again during your next action.
         `,
         missGlance: true,
         targeting: `
@@ -367,7 +367,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          Each target takes \\damagerankthree{acid} immediately, and again during your next action.
+          \\damagerankthree{acid} immediately, and again during your next action.
         `,
         missGlance: true,
         targeting: `

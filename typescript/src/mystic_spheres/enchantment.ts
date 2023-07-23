@@ -606,7 +606,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           % damageranktwolow
-          The target takes 1d6 psychic \\glossterm{subdual damage} \\plus1d per 2 power.
+          1d6 psychic \\glossterm{subdual damage} \\plus1d per 2 power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -623,7 +623,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           % damagerankfive
-          The target takes 2d6 psychic \\glossterm{subdual damage} plus 1d6 per 3 power.
+          2d6 psychic \\glossterm{subdual damage} plus 1d6 per 3 power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.

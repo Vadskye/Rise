@@ -38,7 +38,7 @@ export const terramancy: MysticSphere = {
 
       // +1r for +1acc
       attack: {
-        hit: `The target takes \\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -53,7 +53,7 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Rock Throw',
 
       attack: {
-        hit: `The target takes \\damagerankfourhigh{bludgeoning}.`,
+        hit: `\\damagerankfourhigh{bludgeoning}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
@@ -68,7 +68,7 @@ export const terramancy: MysticSphere = {
       name: 'Boulder Heave',
 
       attack: {
-        hit: `The target takes \\damagerankthree{bludgeoning}.`,
+        hit: `\\damagerankthree{bludgeoning}.`,
         targeting: `
           When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
           If the area above you is occupied, this spell fails without effect.
@@ -86,7 +86,7 @@ export const terramancy: MysticSphere = {
 
       // dX+1 for delay, +1dr for open area requirement
       attack: {
-        hit: `Each target takes \\damageranksix{bludgeoning}.`,
+        hit: `\\damageranksix{bludgeoning}.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you choose a \\medarea radius within \\medrange.
@@ -122,7 +122,7 @@ export const terramancy: MysticSphere = {
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          The target takes \\damagerankonelow{bludgeoning}.
+          \\damagerankonelow{bludgeoning}.
           If it loses \\glossterm{hit points} from this damage, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
@@ -143,7 +143,7 @@ export const terramancy: MysticSphere = {
       name: 'Rockshard Blast',
 
       attack: {
-        hit: `Each target takes \\damageranktwo{bludgeoning and piercing}.`,
+        hit: `\\damageranktwo{bludgeoning and piercing}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
@@ -159,7 +159,7 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Rockshard Blast',
 
       attack: {
-        hit: `Each target takes \\damagerankfourhigh{bludgeoning and piercing}.`,
+        hit: `\\damagerankfourhigh{bludgeoning and piercing}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
@@ -220,7 +220,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankone{piercing}.
+          \\damagerankone{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -237,7 +237,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target takes \\damagerankfour{piercing}.
+          \\damagerankfour{piercing}.
           If it loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -298,7 +298,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankone{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -318,7 +318,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          Each target takes \\damagerankfive{bludgeoning}.
+          \\damagerankfive{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
@@ -480,7 +480,7 @@ export const terramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `Each target takes \\damagerankthree{bludgeoning and fire}.`,
+        hit: `\\damagerankthree{bludgeoning and fire}.`,
         missGlance: true,
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.

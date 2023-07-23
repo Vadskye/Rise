@@ -74,7 +74,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Fortitude against one living creature within \medrange.
-                                \hit The target takes $dr1 energy damage.
+                                \hit $dr1 energy damage.
                             ".to_string(),
                             is_magical: true,
                             name: "Drain Life".to_string(),
@@ -112,7 +112,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                                 The $name must have a free hand to cast this spell.
 
                                 The $name makes a $accuracy attack vs. Reflex against something it \glossterm{touches}.
-                                \hit The target takes $dr1 fire damage immediately, and again during the $name's next action.
+                                \hit $dr1 fire damage immediately, and again during the $name's next action.
                             ".to_string(),
                             is_magical: true,
                             name: "Burning Grasp".to_string(),
@@ -123,8 +123,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Fortitude against one creature within \medrange.
-                                \hit The target takes $dr1 fire damage.
-                                If it loses hit points, it takes $dr1 fire damage again during the $name's next action.
+                                \hit $dr1 fire damage.
+                                If the target loses hit points, it takes $dr1 fire damage again during the $name's next action.
                             ".to_string(),
                             is_magical: true,
                             name: "Pyrohemia".to_string(),
@@ -136,7 +136,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             effect: r"
                                 The $name makes a $accuracy attack vs. Reflex against everything in a \medarea radius from it.
                                 In addition, it suffers a glancing blow from this attack.
-                                \hit Each target takes $dr1 fire damage.
+                                \hit $dr1 fire damage.
                             ".to_string(),
                             is_magical: true,
                             name: "Pyroclasm".to_string(),
