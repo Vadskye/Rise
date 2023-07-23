@@ -188,9 +188,9 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike using a slashing weapon.
-        If the target takes damage, it takes damage from the strike again during your next action.
+        If the target loses hit points, it takes damage from the strike again during each of your next two actions.
       `,
-      rank: 3,
+      rank: 5,
     },
 
     {

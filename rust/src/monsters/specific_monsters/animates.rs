@@ -29,7 +29,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Reflex against one creature it \glossterm{touches}.
                         It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
                         \hit The target takes $dr2 cold damage.
-                        If the target loses hit points, it is \frightened by the $name as a \glossterm{condition}.
+                        If it loses hit points, it is \frightened by the $name as a \glossterm{condition}.
                         This is an \abilitytag{Emotion} effct.
                     ".to_string(),
                     is_magical: true,
@@ -346,30 +346,35 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         }
     }
 
-    let treeclub = Weapon {
-        accuracy: 0,
-        damage_dice: DicePool::d10(),
-        damage_types: vec![DamageType::Bludgeoning],
-        name: "Treeclub".to_string(),
-        tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
-    };
+    fn treeclub_strike(name: &str, effect: &str) -> ActiveAbility {
+        return ActiveAbility::Strike(StrikeAbility {
+            effect: effect.to_string(),
+            is_magical: false,
+            name: name.to_string(),
+            tags: vec![],
+            weapon: Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Treeclub".to_string(),
+                tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
+            },
+        });
+    }
 
     let mut treants = vec![];
 
     treants.push(
         TreantDefinition {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility {
-                    effect: r"
+                treeclub_strike(
+                    "Rebounding Treeclub",
+                    r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         It gains a +2 accuracy bonus if it missed the target with a strike last round.
                         \hit The target takes $fullweapondamage.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Rebounding Treeclub".to_string(),
-                    tags: vec![],
-                    weapon: treeclub.clone(),
-                }),
+                    ",
+                ),
             ],
             alignment: "Usually true neutral".to_string(),
             attributes: vec![2, 0, 4, 0, 4, -2],
@@ -386,28 +391,22 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     treants.push(
         TreantDefinition {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility {
-                    effect: r"
+                treeclub_strike(
+                    "Anklespraining Treeclub",
+                    r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit The target takes $fullweapondamage.
                         If it takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Anklespraining Treeclub".to_string(),
-                    tags: vec![],
-                    weapon: treeclub.clone(),
-                }),
-                ActiveAbility::Strike(StrikeAbility {
-                    effect: r"
+                    ",
+                ),
+                treeclub_strike(
+                    "Tricky Treeclub",
+                    r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         If the attack result beats the target's Reflex defense, the strike deals $d6p4 \glossterm{extra damage}.
                         \hit The target takes $fullweapondamage.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Tricky Treeclub".to_string(),
-                    tags: vec![],
-                    weapon: treeclub.clone(),
-                }),
+                    "
+                ),
             ],
             alignment: "Usually true neutral".to_string(),
             attributes: vec![2, 0, 4, 0, 3, 1],
@@ -425,24 +424,29 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     treants.push(
         TreantDefinition {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility {
-                    effect: r"
+                treeclub_strike(
+                    "Whirling Treeclub",
+                    r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         The strike targets all adjacent enemies.
                         \hit Each target takes $fullweapondamage.
                         \miss \glossterm{Glancing blow}.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Whirling Treeclub".to_string(),
-                    tags: vec![],
-                    weapon: treeclub.clone(),
-                }),
+                    ",
+                ),
+                treeclub_strike(
+                    "Lashing Treeclub",
+                    r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it loses hit points, the $name makes an additional strike against it.
+                    ",
+                ),
             ],
             alignment: "Usually true neutral".to_string(),
             attributes: vec![2, 3, 3, 1, 2, -2],
             knowledge: Knowledge::new(vec![(0, "
                 Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
-                Their attitudes tend to be similarly flexible, and they tend to be easily persuadable.
+                Their attitudes tend to be similarly flexible, and they can be easily persuadable.
             ")]),
             level: 7,
             modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
@@ -453,9 +457,26 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     treants.push(
         TreantDefinition {
-            active_abilities: vec![],
+            active_abilities: vec![
+                treeclub_strike(
+                    "Festering Treeclub",
+                    r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it loses hit points, it takes damage from the strike again during the $name's next action.
+                    ",
+                ),
+                treeclub_strike(
+                    "Sickening Treeclub",
+                    r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it takes damage and the attack result beats its Fortitude defense, it is \stunned as a \glossterm{condition}.
+                    ",
+                ),
+            ],
             alignment: "Usually neutral evil".to_string(),
-            attributes: vec![3, 0, 1, 1, 2, 1],
+            attributes: vec![5, 0, 3, 1, 2, 2],
             knowledge: Knowledge::new(vec![(0, "
                 Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                 Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
@@ -469,15 +490,37 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     treants.push(
         TreantDefinition {
-            active_abilities: vec![],
+            active_abilities: vec![
+                treeclub_strike(
+                    "Resounding Treeclub",
+                    r"
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
+                        If the attack result beats the target's Fortitude defense, the strike deals $d6p4 \glossterm{extra damage}.
+                        \hit The target takes $fullweapondamage.
+                    ",
+                ),
+                treeclub_strike(
+                    "Felling Treeclub",
+                    r"
+                        The $name makes a $accuracy+2 strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it loses hit points, it falls \prone.
+                        This is a \abilitytag{Size-Based} effect.
+                    ",
+                ),
+            ],
             alignment: "Usually neutral good".to_string(),
-            attributes: vec![3, -2, 4, 0, 2, 3],
+            attributes: vec![4, -2, 6, 2, 2, 4],
             knowledge: Knowledge::new(vec![(0, "
                 Pine treants tend to be the most steadfast treants.
                 They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
             ")]),
             level: 9,
-            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            modifiers: vec![
+                // All Huge treants get +2 armor
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::vulnerable_damage(DamageType::Fire),
+            ],
             name: "Pine Treant".to_string(),
             size: Size::Huge,
         }.monster(),
@@ -485,14 +528,35 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     treants.push(
         TreantDefinition {
-            active_abilities: vec![],
+            active_abilities: vec![
+                treeclub_strike(
+                    "Surefell Treeclub",
+                    r"
+                        The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
+                        \hit The target takes $fullweapondamage.
+                        If it takes damage, it falls \prone.
+                    ",
+                ),
+                treeclub_strike(
+                    "Boneshattering Treeclub",
+                    r"
+                        The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
+                        If the attack result beats the target's Fortitude defense, the strike deals maximum damage.
+                        \hit The target takes $fullweapondamage.
+                    ",
+                ),
+            ],
             alignment: "Usually neutral good".to_string(),
-            attributes: vec![4, -2, 4, 1, 2, 3],
+            attributes: vec![5, -2, 5, 0, 0, 6],
             knowledge: Knowledge::new(vec![(0, "
-                Oak treants tend to be the most stubborn treants, and they brook no guff from wayward adventurers.
+                Oak treants tend to be the most stubborn treants.
+                They brook no guff from wayward adventurers.
             ")]),
             level: 10,
-            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            modifiers: vec![
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::vulnerable_damage(DamageType::Fire),
+            ],
             name: "Oak Treant".to_string(),
             size: Size::Huge,
         }.monster(),
@@ -502,11 +566,11 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         TreantDefinition {
             active_abilities: vec![],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![4, -2, 6, 0, 0, 2],
+            attributes: vec![6, -2, 6, 0, 2, 2],
             knowledge: Knowledge::new(vec![(
                 0,
                 "
-                Cyprus treants are the most durable of treants.
+                Cyprus treants are the most durable treants.
                 They are virtually indestructible, and are fearsome when roused to anger.
             ",
             )]),
