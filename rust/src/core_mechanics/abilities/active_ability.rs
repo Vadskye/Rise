@@ -599,7 +599,6 @@ fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: boo
     let extra_damage_pattern = Regex::new(r"\$d(\d)p(\d)").unwrap();
     for (_, [die_size, per_power]) in extra_damage_pattern
         .captures_iter(effect)
-        // TODO: update regex so this works
         .map(|c| c.extract())
     {
         let damage_effect = SimpleDamageEffect {
