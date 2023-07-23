@@ -7,7 +7,6 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};
-use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
@@ -16,23 +15,6 @@ use crate::skills::Skill;
 
 fn animate(def: MonsterDef) -> Monster {
     return def.animate();
-}
-
-struct FullAnimateDefinition {
-    alignment: String,
-    attributes: Vec<i32>,
-    challenge_rating: ChallengeRating,
-    description: Option<String>,
-    knowledge: Option<Knowledge>,
-    level: i32,
-    movement_speeds: Option<Vec<MovementSpeed>>,
-    name: String,
-    modifiers: Option<Vec<Modifier>>,
-    role: Role,
-    senses: Option<Vec<Sense>>,
-    size: Size,
-    trained_skills: Option<Vec<Skill>>,
-    weapons: Vec<Weapon>,
 }
 
 pub fn animates() -> Vec<MonsterEntry> {
@@ -332,7 +314,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     }
 
     impl TreantDefinition {
-        fn monster(mut self) -> Monster {
+        fn monster(self) -> Monster {
             return animate(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: self.active_abilities,
