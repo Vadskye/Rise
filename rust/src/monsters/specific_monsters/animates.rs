@@ -438,7 +438,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If the target loses hit points, the $name makes an additional strike against it.
+                        If the target loses hit points, the $name makes an additional strike against it with the same accuracy and damage.
                     ",
                 ),
             ],
@@ -513,7 +513,8 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             attributes: vec![4, -2, 6, 2, 2, 4],
             knowledge: Knowledge::new(vec![(0, "
                 Pine treants tend to be the most steadfast treants.
-                They are strong-willed, but while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
+                They are strong-willed, like oak trees.
+                However, while oak treants are stubborn, pine treants are resolutely benevolent, sheltering all who need aid.
             ")]),
             level: 9,
             modifiers: vec![
@@ -564,7 +565,8 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     treants.push(
         TreantDefinition {
-            active_abilities: vec![],
+            active_abilities: vec![
+            ],
             alignment: "Usually true neutral".to_string(),
             attributes: vec![6, -2, 6, 0, 2, 2],
             knowledge: Knowledge::new(vec![(
