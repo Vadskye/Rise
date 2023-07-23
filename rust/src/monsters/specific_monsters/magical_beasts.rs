@@ -278,11 +278,11 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![2, 3, 0, -6, 2, 3],
+            attributes: vec![3, 4, 1, -6, 2, 3],
             elite: false,
             level: 7,
             role: Role::Brute,
-            size: Size::Medium,
+            size: Size::Large,
         },
         name: "Stygian Leech".to_string(),
     })));

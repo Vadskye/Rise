@@ -22,12 +22,14 @@ impl MonsterGroup {
         return latex_formatting::latexify(format!(
             "
                 \\newpage
+                {art}
                 \\subsection*<{name}>
                 \\vspace<0.5em>
                 {description}
                 {knowledge}
                 {monsters}
             ",
+            art = self.latex_art(),
             description = self.description.as_ref().unwrap_or(&"".to_string()),
             knowledge = if let Some(ref k) = self.knowledge {
                 if monsters.len() > 0 {
@@ -44,7 +46,19 @@ impl MonsterGroup {
                 .iter()
                 .map(|m| m.to_section(Some(self.name.clone())))
                 .collect::<Vec<String>>()
-                .join("\n"),
+                .join("\n\\vspace{2em}\n"),
         ));
+    }
+
+    fn latex_art(&self) -> String {
+        if self.art {
+            let name = self.name.to_lowercase();
+            return format!(
+                "\\noindent\\includegraphics[width=\\columnwidth]<monsters/{name}>\\vspace<0.5em>",
+                name = name,
+            );
+        } else {
+            return "".to_string();
+        }
     }
 }
