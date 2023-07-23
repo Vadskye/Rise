@@ -1,5 +1,5 @@
 use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
-use crate::core_mechanics::Attribute::{Strength, Intelligence, Willpower};
+use crate::core_mechanics::Attribute::{Intelligence, Strength, Willpower};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
     SpecialDefenseType,
@@ -136,6 +136,7 @@ impl Monster {
 
     // TODO: validate that -10 int monsters have Mindless and vice versa
     pub fn validate_design(&self) {
+        self.validate_active_abilities();
         self.validate_attribute_sum();
         self.validate_attribute_max();
         self.validate_elite_abilities();
@@ -143,7 +144,30 @@ impl Monster {
     }
 
     fn name(&self) -> String {
-        return self.creature.name.as_ref().unwrap_or(&"ANONYMOUS".to_string()).to_string();
+        return self
+            .creature
+            .name
+            .as_ref()
+            .unwrap_or(&"ANONYMOUS".to_string())
+            .to_string();
+    }
+
+    fn validate_active_abilities(&self) {
+        if self.creature.active_abilities().len() == 0 {
+            eprintln!("Monster {} has no active abilities", self.name());
+        }
+
+        let attack_pattern = Regex::new(r" vs\. ").unwrap();
+        let mut has_attack = false;
+        for active_ability in self.creature.active_abilities() {
+            if attack_pattern.is_match(&active_ability.latex_ability_block(&self.creature)) {
+                has_attack = true;
+                break;
+            }
+        }
+        if !has_attack {
+            eprintln!("Monster {} has no attacks", self.name());
+        }
     }
 
     // Validate that the monster has approximately the right total number of attributes.
@@ -171,7 +195,7 @@ impl Monster {
         let diff = (actual_attribute_sum - expected_attribute_sum).abs();
 
         // TODO: tune this threshold
-        let threshold = 5;
+        let threshold = 4;
         if diff >= threshold {
             eprintln!(
                 "Monster {} has attribute sum {}, expected {}",
@@ -230,7 +254,9 @@ impl Monster {
 
     // TODO: Should all monsters have skills?
     fn validate_skills(&self) {
-        if self.creature.get_base_attribute(&Intelligence) >= 0 && self.creature.skill_training.is_none() {
+        if self.creature.get_base_attribute(&Intelligence) >= 0
+            && self.creature.skill_training.is_none()
+        {
             eprintln!(
                 "Monster {} has a non-negative intelligence but has no skills",
                 self.name(),
@@ -505,7 +531,11 @@ impl Monster {
                 format!(
                     "{} {}",
                     a.shorthand_name(),
-                    if val > -10 { format!("{}", val) } else { "\\tdash".to_string() },
+                    if val > -10 {
+                        format!("{}", val)
+                    } else {
+                        "\\tdash".to_string()
+                    },
                 )
             })
             .collect::<Vec<String>>()

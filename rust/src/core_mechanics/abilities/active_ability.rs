@@ -1,7 +1,7 @@
 use super::latex::latex_ability_block;
 use crate::core_mechanics::abilities::{AbilityTag, AbilityType, UsageTime};
 use crate::core_mechanics::attacks::{DamageEffect, HasAttacks, SimpleDamageEffect};
-use crate::core_mechanics::DamageType;
+use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 use regex::Match;
@@ -226,8 +226,9 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
-                \hit The target takes $damage $damagetypes damage.
-            ".to_string(),
+                \hit The target takes $fullweapondamage.
+            "
+            .to_string(),
             is_magical: false,
             name: strike_prefix("Armorcrusher", &weapon),
             tags: vec![],
@@ -240,7 +241,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
                 \hit The target takes $damage $damagetypes damage.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: strike_prefix("Armorpiercer", &weapon),
             tags: vec![],
@@ -255,7 +257,8 @@ impl StrikeAbility {
                 Each damaged creature bleeds if this attack beats its Fortitude defense.
                 A bleeding creature takes $dr0 slashing damage during the $name's next action.
                 \hit The target takes $damage $damagetypes damage.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: strike_prefix("Bloodletting Strike", &weapon),
             tags: vec![],
@@ -300,7 +303,8 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It reduces its \glossterm{longshot penalty} with the strike by 4.
                 \hit The target takes $damage $damagetypes damage.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: true,
             name: strike_prefix("Distant Shot", &weapon),
             tags: vec![],
@@ -372,7 +376,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy-3 strike vs. Armor with its $weapon.
                 \hit The target takes $damage*2 $damagetypes damage.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: true,
             name: strike_prefix("Power Strike", &weapon),
             tags: vec![],
@@ -386,7 +391,8 @@ impl StrikeAbility {
                 The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
                 After making the attack, it briefly takes a -4 penalty to all defenses.
                 \hit The target takes $damage $damagetypes damage.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: strike_prefix("Reckless Strike", &weapon),
             tags: vec![],
@@ -413,7 +419,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit The target takes $damage $damagetypes.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: weapon.name.clone(),
             tags: vec![],
@@ -427,7 +434,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes two $accuracy strikes vs. Armor with its $weapons.
                 \hit The target takes $damage $damagetypes.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: weapon.name.clone(),
             tags: vec![],
@@ -442,7 +450,8 @@ impl StrikeAbility {
                 \hit The target takes $damage $damagetypes.
                 If it loses hit points, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: weapon.name.clone(),
             tags: vec![],
@@ -457,7 +466,8 @@ impl StrikeAbility {
                 \hit The target takes $damage $damagetypes.
                 If it takes damage, it falls \prone.
                 This is a \abilitytag{Size-Based} effect.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: false,
             name: weapon.name.clone(),
             tags: vec![],
@@ -478,13 +488,25 @@ fn replace_attack_terms(
 ) -> String {
     let mut replaced_effect = effect.to_string();
 
+    // Generally, $fullweapondamage is the easiest way to indicate strike damage. However, the
+    // individual $damage and $damagetypes terms are avaiable to make it easier to write
+    // special weapon effects.
+    replaced_effect = replace_full_weapon_damage_terms(&replaced_effect);
     replaced_effect = replace_accuracy_terms(&replaced_effect, creature, weapon);
     replaced_effect = replace_damage_terms(&replaced_effect, creature, is_magical, weapon);
     replaced_effect = replace_damage_rank_terms(&replaced_effect, creature, is_magical);
     replaced_effect = replace_damage_type_terms(&replaced_effect, weapon);
-    replaced_effect = replace_weapon_name_terms(&replaced_effect, &weapon); 
+    replaced_effect = replace_weapon_name_terms(&replaced_effect, &weapon);
+    replaced_effect = replace_extra_damage_terms(&replaced_effect, creature, is_magical);
 
     return replaced_effect.to_string();
+}
+
+fn replace_full_weapon_damage_terms(effect: &str) -> String {
+    let full_weapon_damage_pattern = Regex::new(r"$fullweapondamage").unwrap();
+    return full_weapon_damage_pattern
+        .replace_all(&effect, "$damage $damagetypes damage")
+        .to_string();
 }
 
 fn replace_accuracy_terms(effect: &str, creature: &Creature, weapon: Option<&Weapon>) -> String {
@@ -546,7 +568,9 @@ fn replace_damage_type_terms(effect: &str, weapon: Option<&Weapon>) -> String {
         // Unwrap the weapon here. If we found a $damagetypes match but we don't have a weapon,
         // crashing is appropriate.
         let damage_type_text = DamageType::format_damage_types(&weapon.unwrap().damage_types);
-        replaced_effect = damage_type_pattern.replacen(&replaced_effect, 1, damage_type_text).to_string();
+        replaced_effect = damage_type_pattern
+            .replacen(&replaced_effect, 1, damage_type_text)
+            .to_string();
     }
 
     return replaced_effect;
@@ -561,12 +585,41 @@ fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
         // Unwrap the weapon here. If we found a $weapon match but we don't have a weapon,
         // crashing is appropriate.
         let weapon_name = &weapon.unwrap().name.to_lowercase();
-        replaced_effect = weapon_pattern.replacen(&replaced_effect, 1, weapon_name).to_string();
+        replaced_effect = weapon_pattern
+            .replacen(&replaced_effect, 1, weapon_name)
+            .to_string();
     }
 
     return replaced_effect;
 }
 
+fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
+    let mut replaced_effect = effect.to_string();
+
+    let extra_damage_pattern = Regex::new(r"$d(\d)p(\d)\b").unwrap();
+    for (_, [die_size, per_power]) in extra_damage_pattern
+        .captures_iter(effect)
+        // TODO: update regex so this works
+        .map(|c| c.extract())
+    {
+        let damage_effect = SimpleDamageEffect {
+            base_dice: DicePool::empty(),
+            damage_types: vec![],
+            power_scalings: vec![PowerScaling {
+                dice: Some(DicePool::xdy(1, die_size.parse::<i32>().unwrap())),
+                power_per_dice: per_power.parse::<i32>().unwrap(),
+                power_per_increment: 0,
+            }],
+        }
+        .damage_effect();
+        let damage_dice = damage_effect.calc_damage_dice(creature, is_magical, false);
+        replaced_effect = extra_damage_pattern
+            .replacen(&replaced_effect, 1, damage_dice.to_string())
+            .to_string();
+    }
+
+    return replaced_effect;
+}
 
 // For a given accuracy block, such as "$accuracy" or "$accuracy+2", return the specific text that
 // should replace it, such as "+5".
@@ -604,7 +657,12 @@ fn parse_accuracy_match(
     return format!("{}{}", accuracy_sign, accuracy);
 }
 
-fn calc_weapon_damage(damage_match: Match, creature: &Creature, is_magical: bool, weapon: &Weapon) -> String {
+fn calc_weapon_damage(
+    damage_match: Match,
+    creature: &Creature,
+    is_magical: bool,
+    weapon: &Weapon,
+) -> String {
     // Handle weapon damage multipliers
     let multiplier_pattern = Regex::new(r"\$damage\*?(\d)?\b").unwrap();
     let multiplier_captures = multiplier_pattern.captures(damage_match.as_str()).unwrap();
@@ -959,6 +1017,38 @@ The $name glows like a torch for a minute.
                 replace_weapon_name_terms(
                     "Deals some damage with its $weapons.",
                     &Some(&StandardWeapon::Claw.weapon()),
+                ),
+            );
+        }
+    }
+
+    // Note that the default creature has 5 power
+    mod replace_extra_damage_terms {
+        use super::*;
+
+        #[test]
+        fn replaces_1d6_per_4_power() {
+            assert_eq!(
+                // 1d6 per 4 power should be 1d6 total
+                "Deals 1d6 electricity damage",
+                replace_damage_terms(
+                    "Deals $d6p4 electricity damage",
+                    &sample_creature(),
+                    true,
+                    None,
+                ),
+            );
+        }
+
+        #[test]
+        fn replaces_1d8_per_1_power() {
+            assert_eq!(
+                "Deals 5d8 electricity damage",
+                replace_damage_terms(
+                    "Deals $d8p1 electricity damage",
+                    &sample_creature(),
+                    true,
+                    None,
                 ),
             );
         }
