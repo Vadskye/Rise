@@ -129,7 +129,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone{bludgeoning}.
-          If it loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
+          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
           Make an attack vs. Armor against anything that is \\glossterm{grounded} within \\shortrange.
@@ -149,7 +149,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive{bludgeoning}.
-          If it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
+          If the target takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
           Make an attack vs. Armor against anything on solid ground within \\shortrange.

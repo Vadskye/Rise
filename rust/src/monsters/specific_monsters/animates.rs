@@ -29,7 +29,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Reflex against one creature it \glossterm{touches}.
                         It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
                         \hit $dr2 cold damage.
-                        If it loses hit points, it is \frightened by the $name as a \glossterm{condition}.
+                        If the target loses hit points, it is \frightened by the $name as a \glossterm{condition}.
                         This is an \abilitytag{Emotion} effct.
                     ".to_string(),
                     is_magical: true,
@@ -396,7 +396,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
+                        If the target takes damage and the attack result beats its Reflex defense, it becomes \slowed as a \glossterm{condition}.
                     ",
                 ),
                 treeclub_strike(
@@ -438,7 +438,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it loses hit points, the $name makes an additional strike against it.
+                        If the target loses hit points, the $name makes an additional strike against it.
                     ",
                 ),
             ],
@@ -463,7 +463,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it loses hit points, it takes damage from the strike again during the $name's next action.
+                        If the target loses hit points, it takes damage from the strike again during the $name's next action.
                     ",
                 ),
                 treeclub_strike(
@@ -471,7 +471,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it takes damage and the attack result beats its Fortitude defense, it is \stunned as a \glossterm{condition}.
+                        If the target takes damage and the attack result beats its Fortitude defense, it is \stunned as a \glossterm{condition}.
                     ",
                 ),
             ],
@@ -504,7 +504,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy+2 strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it loses hit points, it falls \prone.
+                        If the target loses hit points, it falls \prone.
                         This is a \abilitytag{Size-Based} effect.
                     ",
                 ),
@@ -534,7 +534,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If it takes damage, it falls \prone.
+                        If the target takes damage, it falls \prone.
                     ",
                 ),
                 treeclub_strike(

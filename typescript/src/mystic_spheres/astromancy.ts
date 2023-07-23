@@ -83,7 +83,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone{energy}.
-          If it is Large or smaller and loses \\glossterm{hit points}, you may \\glossterm{teleport} it up to 30 feet.
+          If the target is Large or smaller and loses \\glossterm{hit points}, you may \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -105,7 +105,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix{energy}.
-          If it is Huge or smaller and loses hit points, you \\glossterm{teleport} it up to 90 feet.
+          If the target is Huge or smaller and loses hit points, you \\glossterm{teleport} it up to 90 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -381,8 +381,8 @@ export const astromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           The target \\sphereterm{flickers} to the Plane of Fire.
-          When it returns, it takes \\damagerankone{fire}.
-          If it loses \\glossterm{hit points}, it takes this damage again during your next action.
+          When it returns, you deal it \\damagerankone{fire}.
+          If the target loses \\glossterm{hit points}, you deal it this damage again during your next action.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -400,7 +400,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Earth.
-          When it returns, it takes \\damagerankone{bludgeoning}.
+          When it returns, you deal it \\damagerankone{bludgeoning}.
           If it loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -421,7 +421,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Air.
-          When it returns, it takes \\damageranktwo{bludgeoning}.
+          When it returns, you deal it \\damageranktwo{bludgeoning}.
           If it is Large or smaller and your attack result also beats its Fortitude defense, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -441,7 +441,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
-          When it returns, it takes \\damagerankfour{bludgeoning}.
+          When it returns, it you deal it \\damagerankfour{bludgeoning}.
           If it is unable to breathe water and your attack result beats its Reflex defense, this attack deals maximum damage.
         `,
         targeting: `
@@ -480,7 +480,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Far Realm.
-          When it returns, it takes \\damagerankfive{energy}.
+          When it returns, you deal it \\damagerankfive{energy}.
           If it loses \\glossterm{hit points} from this damage, it is \\confused as a condition.
         `,
         targeting: `
