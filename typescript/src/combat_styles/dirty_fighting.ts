@@ -245,9 +245,9 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Reflex defense, it becomes \\dazzled as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
