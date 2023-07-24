@@ -34,8 +34,20 @@ impl Weapon {
         });
     }
 
+    pub fn lance() -> Self {
+        return StandardWeapon::Lance.weapon();
+    }
+
+    pub fn longbow() -> Self {
+        return StandardWeapon::Longbow.weapon();
+    }
+
     pub fn ram() -> Self {
         return StandardWeapon::MultipedalRam.weapon();
+    }
+
+    pub fn spear() -> Self {
+        return StandardWeapon::Spear.weapon();
     }
 
     pub fn spikes() -> Self {
@@ -101,6 +113,33 @@ impl WeaponTag {
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
             Self::Tripping => r"\weapontag{Tripping}".to_string(),
             Self::VersatileGrip => r"\weapontag{Versatile Grip}".to_string(),
+        }
+    }
+
+    // True if the tag should be visible in monster attacks. Purely statistical tags, like Heavy,
+    // should be omitted so tags only appear if they are meaningful to a GM.
+    pub fn visible_in_monster_tags(&self) -> bool {
+        match self {
+            Self::Ammunition => false,
+            Self::Compact => true,
+            Self::Forceful => true,
+            Self::Grappling => true,
+            Self::Heavy => false,
+            Self::Impact => true,
+            Self::Keen => true,
+            Self::Light => true,
+            Self::Long => true,
+            Self::Massive(_) => true,
+            // The bonus here is assumed wherever it is used
+            Self::Mounted => false,
+            Self::Parrying => true,
+            Self::Projectile(_, _) => true,
+            Self::Sweeping(_) => true,
+            Self::Subdual => true,
+            Self::Thrown(_, _) => true,
+            Self::Tripping => true,
+            // TODO: monsters should somehow take this into account in the listed damage values?
+            Self::VersatileGrip => false,
         }
     }
 }
