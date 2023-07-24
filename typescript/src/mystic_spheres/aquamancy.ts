@@ -274,7 +274,6 @@ export const aquamancy: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
-          If this spell has its area increased, only the length of the line increases.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
@@ -294,7 +293,6 @@ export const aquamancy: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
-          If this spell has its area increased, only the length of the line increases.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
