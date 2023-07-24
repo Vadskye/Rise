@@ -6,6 +6,10 @@ pub enum AbilityType {
 }
 
 impl AbilityType {
+    pub fn sustain(action: &str) -> Self {
+        return Self::Sustain(action.to_string());
+    }
+
     pub fn name(&self) -> String {
         match self {
             Self::Normal => "".to_string(),
