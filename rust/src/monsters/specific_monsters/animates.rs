@@ -81,7 +81,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![0, 4, 0, 1, 4, 4],
+            attributes: vec![0, 6, 0, 1, 4, 4],
             elite: true,
             level: 4,
             role: Role::Skirmisher,
@@ -174,7 +174,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, -4, 8, -9, 0, -2],
+            attributes: vec![6, -4, 8, -9, 0, -2],
             elite: true,
             level: 5,
             role: Role::Brute,
@@ -388,7 +388,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![2, 0, 4, 0, 4, -2],
+            attributes: vec![2, 0, 5, 0, 4, -2],
             knowledge: Knowledge::new(vec![(0, "
                 Birch treants tend to be shy, and they to avoid conflict if at all possible.
             ")]),
@@ -420,7 +420,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![2, 0, 4, 0, 3, 1],
+            attributes: vec![2, 0, 6, 0, 3, 1],
             knowledge: Knowledge::new(vec![(0, "
                 Chestnut treants tend to mischievous and outgoing.
                 They like playing small tricks on interesting creatures that pass by.
@@ -454,7 +454,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![2, 3, 3, 1, 2, -2],
+            attributes: vec![2, 3, 5, 1, 2, -2],
             knowledge: Knowledge::new(vec![(0, "
                 Willow treants are the most agile treants, and they can twist and bend their bodies with surprising finesse.
                 Their attitudes tend to be similarly flexible, and they can be easily persuadable.
@@ -487,7 +487,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually neutral evil".to_string(),
-            attributes: vec![5, 0, 3, 1, 2, 2],
+            attributes: vec![5, 0, 5, 1, 2, 2],
             knowledge: Knowledge::new(vec![(0, "
                 Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                 Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
@@ -521,7 +521,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually neutral good".to_string(),
-            attributes: vec![4, -2, 6, 2, 2, 4],
+            attributes: vec![4, -2, 8, 2, 2, 4],
             knowledge: Knowledge::new(vec![(0, "
                 Pine treants tend to be the most steadfast treants.
                 They are strong-willed, like oak trees.
@@ -559,7 +559,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually neutral good".to_string(),
-            attributes: vec![5, -2, 5, 0, 0, 6],
+            attributes: vec![5, -2, 7, 0, 0, 6],
             knowledge: Knowledge::new(vec![(0, "
                 Oak treants tend to be the most stubborn treants.
                 They brook no guff from wayward adventurers.
@@ -580,24 +580,24 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 treeclub_strike(
                     "Bracing Treeclub",
                     r"
-                        The $name makes a $accuracy strike vs. Armor.
+                        The $name makes a $accuracy strike vs. Armor with its treeclub.
                         In addition, it is \glossterm{impervious} to all damage this round.
-                        Because this is a \\abilitytag{Swift} ability, it affects attacks against it during the current phase.
-                        \\hit $fullweapondamage.
+                        Because this is a \abilitytag{Swift} ability, it affects attacks against it during the current phase.
+                        \hit $fullweapondamage.
                     ",
                 ),
                 treeclub_strike(
                     "Felling Treeclub",
                     r"
-                        The $name makes a $accuracy+3 strike vs. Armor.
-                        \\hit $fullweapondamage.
+                        The $name makes a $accuracy+3 strike vs. Armor with its treeclub.
+                        \hit $fullweapondamage.
                         If the target loses hit points, it falls \prone.
                         This is a \abilitytag{Size-Based} effect.
                     ",
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![6, -2, 6, 0, 2, 2],
+            attributes: vec![6, -2, 8, 0, 2, 2],
             knowledge: Knowledge::new(vec![(
                 0,
                 "
