@@ -61,7 +61,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 knowledge: None,
             }),
             statistics: MonsterStatistics {
-                attributes: vec![2, 4, 2, 1, 0, -2],
+                attributes: vec![3, 5, 2, 1, 0, -2],
                 elite: false,
                 level: 5,
                 role: Role::Skirmisher,
@@ -194,7 +194,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![5, 6, 4, 4, 4, 6],
+                    attributes: vec![5, 6, 4, 4, 4, 8],
                     elite: true,
                     level: 16,
                     role: Role::Mystic,
@@ -251,7 +251,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![5, 5, 5, 4, 6, 4],
+                    attributes: vec![5, 5, 5, 4, 6, 6],
                     elite: true,
                     level: 14,
                     size: Size::Large,
@@ -363,7 +363,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![6, 4, 3, -4, 2, 4],
+                    attributes: vec![8, 3, 2, -4, 2, 4],
                     elite: true,
                     level: 5,
                     role: Role::Brute,
@@ -411,7 +411,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![3, 2, 6, -4, 1, 1],
+                    attributes: vec![4, 2, 8, -4, 1, 1],
                     elite: true,
                     level: 7,
                     role: Role::Warrior,
@@ -439,7 +439,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     knowledge: None,
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![3, 2, 3, 2, 4, 4],
+                    attributes: vec![3, 2, 3, 2, 6, 6],
                     elite: true,
                     level: 13,
                     role: Role::Sniper,
@@ -515,35 +515,35 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         ])),
         monsters: vec![
             AirElemental {
-                attributes: vec![2, 4, 0, -3, 2, 0],
+                attributes: vec![2, 5, 0, -3, 2, 0],
                 level: 4,
                 name: "Breeze".to_string(),
                 size: Size::Small,
             }
             .monster(),
             AirElemental {
-                attributes: vec![4, 5, 0, -2, 3, 0],
+                attributes: vec![4, 6, 0, -2, 3, 0],
                 level: 8,
                 name: "Gale".to_string(),
                 size: Size::Medium,
             }
             .monster(),
             AirElemental {
-                attributes: vec![4, 5, 0, -2, 4, 0],
+                attributes: vec![4, 7, 0, -2, 4, 0],
                 level: 12,
                 name: "Tempest".to_string(),
                 size: Size::Large,
             }
             .monster(),
             AirElemental {
-                attributes: vec![4, 6, 2, 1, 5, 1],
+                attributes: vec![4, 8, 2, 1, 5, 1],
                 level: 16,
                 name: "Tornado".to_string(),
                 size: Size::Large,
             }
             .monster(),
             AirElemental {
-                attributes: vec![6, 6, 2, 2, 6, 2],
+                attributes: vec![6, 9, 2, 2, 6, 2],
                 level: 20,
                 name: "Elder".to_string(),
                 size: Size::Huge,
@@ -632,21 +632,21 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             }
             .monster(),
             FireElemental {
-                attributes: vec![4, 5, 0, -2, 0, 2],
+                attributes: vec![5, 6, 0, -2, 0, 3],
                 level: 12,
                 name: "Bonfire".to_string(),
                 size: Size::Large,
             }
             .monster(),
             FireElemental {
-                attributes: vec![4, 6, 2, 1, 2, 4],
+                attributes: vec![6, 6, 2, 1, 2, 3],
                 level: 16,
                 name: "Inferno".to_string(),
                 size: Size::Large,
             }
             .monster(),
             FireElemental {
-                attributes: vec![6, 6, 2, 2, 2, 4],
+                attributes: vec![7, 7, 2, 2, 2, 4],
                 level: 20,
                 name: "Elder".to_string(),
                 size: Size::Huge,
@@ -728,7 +728,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         )])),
         monsters: vec![
             MagmaElemental {
-                attributes: vec![4, 4, 5, -4, 0, 0],
+                attributes: vec![4, 4, 7, -4, 0, 0],
                 level: 6,
                 modifiers: vec![
                     Modifier::Attack(StandardAttack::Combustion(2).attack()),
@@ -739,7 +739,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             }
             .monster(),
             MagmaElemental {
-                attributes: vec![5, 5, 6, -3, 0, 0],
+                attributes: vec![5, 5, 8, -3, 0, 0],
                 level: 12,
                 modifiers: vec![
                     Modifier::Attack(StandardAttack::Combustion(4).attack()),
@@ -750,7 +750,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             }
             .monster(),
             MagmaElemental {
-                attributes: vec![5, 5, 6, -3, 0, 0],
+                attributes: vec![5, 5, 9, -3, 0, 0],
                 level: 18,
                 modifiers: vec![
                     Modifier::Attack(StandardAttack::Combustion(6).attack()),
@@ -867,7 +867,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 },
             }),
             formian(MonsterDef {
-                name: "Warrior".to_string(),
+                name: "Drone".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     // weapons: vec![StandardWeapon::MultipedalStinger.weapon()],
@@ -903,8 +903,8 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     description: None,
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
-                            Warriors are the basic fighting unit of formian society.
-                            In combat, warriors use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.
+                            Drones are the basic fighting unit of formian society.
+                            In combat, drones use their high mobility to ruthlessly coordinate attacks on their most dangerous or most vulnerable foes.
                         "),
                         (5, "
                             Even the smallest formian colony typically has dozens of warriors, and larger colonies can have thousands.
@@ -912,7 +912,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![3, 3, 1, -4, 3, 0],
+                    attributes: vec![3, 4, 3, -4, 3, 0],
                     elite: false,
                     level: 5,
                     role: Role::Warrior,

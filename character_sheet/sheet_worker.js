@@ -8,13 +8,12 @@ const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
 const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
-    armor_defense: 3,
+    armor_defense: 4,
     damage_resistance: 0,
     hit_points: 4,
-    fortitude: 5,
-    reflex: 3,
-    mental: 3,
-    bonus_attribute: 'strength',
+    fortitude: 4,
+    reflex: 4,
+    mental: 4,
   },
   skirmisher: {
     armor_defense: 4,
@@ -23,7 +22,6 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 4,
     reflex: 6,
     mental: 4,
-    bonus_attribute: 'dexterity',
   },
   warrior: {
     armor_defense: 6,
@@ -32,7 +30,6 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 4,
     reflex: 4,
     mental: 4,
-    bonus_attribute: 'constitution',
   },
   sniper: {
     armor_defense: 3,
@@ -41,7 +38,6 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 4,
     reflex: 4,
     mental: 4,
-    bonus_attribute: 'perception',
   },
   mystic: {
     armor_defense: 2,
@@ -50,7 +46,6 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 4,
     reflex: 4,
     mental: 6,
-    bonus_attribute: 'willpower',
   },
   leader: {
     armor_defense: 4,
@@ -59,7 +54,6 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 4,
     reflex: 4,
     mental: 4,
-    bonus_attribute: null,
   },
 
   // CLASSES
@@ -975,11 +969,7 @@ function handleAttributes() {
         string: ["base_class"],
       },
       (v) => {
-        let totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
-        const bonusAttribute = (BASE_CLASS_MODIFIERS[v.base_class] || {}).bonus_attribute;
-        if (bonusAttribute && attributeName === bonusAttribute) {
-          totalValue += 2;
-        }
+        const totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
         setAttrs({
           [attributeName]: totalValue,
         });

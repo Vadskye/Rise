@@ -1,14 +1,14 @@
-use crate::core_mechanics::{Attribute, Defense};
+use crate::core_mechanics::Defense;
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Hash)]
 pub enum Role {
     Brute,      // +str, melee HP-heavy damage sponge, like barbarian or any heavy weapon user
     Skirmisher, // +dex, high mobility mixed range, like rogue/monk/ranger
-    Warrior,    // +con, melee or short range defense tank, like a typical sword and board fighter/paladin
-    Sniper,     // +per, low mobility long range, like an archer
-    Mystic,     // +wil, low HP, high DR, typically a caster
-    Leader,     // average in all respects
+    Warrior, // +con, melee or short range defense tank, like a typical sword and board fighter/paladin
+    Sniper,  // +per, low mobility long range, like an archer
+    Mystic,  // +wil, low HP, high DR, typically a caster
+    Leader,  // average in all respects
 }
 
 // No clear balancing. Hoping that the role differentiation makes them hard to directly compare.
@@ -21,9 +21,8 @@ impl Role {
             Self::Sniper,
             Self::Mystic,
             Self::Leader,
-        ]
+        ];
     }
-
 
     // Shorthand to avoid specifying the name and priority every time
     fn add_modifier(&self, creature: &mut Creature, modifier: Modifier) {
@@ -34,28 +33,17 @@ impl Role {
         for defense in Defense::all() {
             self.add_modifier(creature, Modifier::Defense(defense, self.defense(&defense)))
         }
-        if let Some(a) = self.bonus_attribute() {
-            self.add_modifier(creature, Modifier::Attribute(a, 2));
-        }
-        self.add_modifier(creature, Modifier::DamageResistanceFromLevel(self.damage_resistance()));
+        self.add_modifier(
+            creature,
+            Modifier::DamageResistanceFromLevel(self.damage_resistance()),
+        );
         self.add_modifier(creature, Modifier::HitPointsFromLevel(self.hit_points()));
-    }
-
-    pub fn bonus_attribute(&self) -> Option<Attribute> {
-        return match self {
-            Role::Brute => Some(Attribute::Strength),
-            Role::Skirmisher => Some(Attribute::Dexterity),
-            Role::Warrior => Some(Attribute::Constitution),
-            Role::Sniper => Some(Attribute::Perception),
-            Role::Mystic => Some(Attribute::Willpower),
-            Role::Leader => None,
-        };
     }
 
     pub fn defense(&self, defense: &Defense) -> i32 {
         // order: Armor, Fort, Ref, Ment
         let defenses = match self {
-            Role::Brute => [3, 5, 3, 3],
+            Role::Brute => [4, 4, 4, 4],
             Role::Skirmisher => [4, 4, 6, 4],
             Role::Warrior => [6, 4, 4, 4],
             Role::Sniper => [3, 4, 4, 4],

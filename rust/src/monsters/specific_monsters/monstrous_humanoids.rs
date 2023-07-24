@@ -42,7 +42,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, -1, 3, 0, 2, 1],
+            attributes: vec![7, 0, 4, 0, 2, 1],
             elite: true,
             level: 6,
             role: Role::Brute,
@@ -76,7 +76,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 4, -1, -5, 0, -1],
+            attributes: vec![5, 5, -1, -5, 0, -1],
             elite: false,
             level: 4,
             role: Role::Skirmisher,
@@ -147,7 +147,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![5, -2, 4, -2, -2, -2],
+                    attributes: vec![8, -2, 4, -2, -2, -2],
                     elite: false,
                     level: 10,
                     role: Role::Brute,
@@ -186,7 +186,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![5, -1, 5, 0, 0, -2],
+                    attributes: vec![7, -1, 7, 0, 2, -2],
                     elite: true,
                     level: 11,
                     role: Role::Warrior,
@@ -240,7 +240,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![4, -1, 1, -4, 0, -1],
+                    attributes: vec![6, -1, 2, -4, 0, -1],
                     elite: false,
                     level: 4,
                     role: Role::Brute,
@@ -270,7 +270,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![4, -1, 3, -2, 0, -1],
+                    attributes: vec![6, -1, 4, -2, 0, -1],
                     elite: false,
                     level: 6,
                     role: Role::Brute,
@@ -304,7 +304,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![4, -1, 0, 0, 2, 3],
+                    attributes: vec![4, -1, 0, 0, 2, 5],
                     elite: false,
                     level: 7,
                     role: Role::Mystic,
@@ -336,7 +336,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![6, -1, 3, -1, 2, 1],
+                    attributes: vec![8, -1, 4, -1, 3, 2],
                     elite: true,
                     level: 7,
                     role: Role::Brute,
