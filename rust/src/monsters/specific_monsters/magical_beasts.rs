@@ -74,7 +74,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 4, 1, -8, 2, -2],
+            attributes: vec![5, 5, 1, -8, 2, -2],
             elite: true,
             level: 4,
             role: Role::Skirmisher,
@@ -97,7 +97,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         },
         narrative: None,
         statistics: MonsterStatistics {
-            attributes: vec![6, 6, 2, 1, 3, 0],
+            attributes: vec![6, 8, 2, 1, 3, 0],
             elite: true,
             level: 12,
             role: Role::Skirmisher,
@@ -118,7 +118,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         },
         narrative: None,
         statistics: MonsterStatistics {
-            attributes: vec![3, 2, 1, -4, 2, -1],
+            attributes: vec![3, 4, 1, -4, 2, -1],
             elite: false,
             level: 2,
             role: Role::Skirmisher,
@@ -175,7 +175,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![3, 4, 1, -8, 0, 3],
+            attributes: vec![5, 4, 1, -8, 0, 3],
             elite: false,
             level: 7,
             role: Role::Brute,
@@ -219,7 +219,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 6, 1, -8, 2, -1],
+            attributes: vec![6, 6, 1, -8, 2, -1],
             elite: true,
             level: 7,
             role: Role::Brute,
@@ -278,7 +278,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![3, 4, 1, -6, 2, 3],
+            attributes: vec![5, 4, 1, -6, 2, 3],
             elite: false,
             level: 7,
             role: Role::Brute,
@@ -326,7 +326,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 4, -2, -6, 3, 0],
+            attributes: vec![4, 3, -2, -6, 3, 0],
             elite: false,
             level: 2,
             role: Role::Skirmisher,
@@ -374,7 +374,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 4, 1, -3, 2, 2],
+            attributes: vec![5, 5, 2, -3, 2, 2],
             elite: true,
             level: 5,
             role: Role::Skirmisher,
@@ -419,7 +419,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 2, 2, -4, 6, -1],
+            attributes: vec![5, 4, 2, -4, 6, -1],
             elite: true,
             level: 6,
             role: Role::Skirmisher,
@@ -505,7 +505,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ])),
         monsters: vec![
             IchorDefinition {
-                attributes: vec![4, 0, 4, -9, 0, -1],
+                attributes: vec![4, 0, 6, -9, 1, -1],
                 elite: false,
                 level: 5,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -520,7 +520,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             }
             .monster(),
             IchorDefinition {
-                attributes: vec![5, 0, 6, -9, 2, 0],
+                attributes: vec![5, 0, 7, -9, 1, 2],
                 elite: false,
                 level: 8,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -534,20 +534,20 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 // ],
             }
             .monster(),
+            // IchorDefinition {
+            //     attributes: vec![-3, 4, -3, -9, 2, -3],
+            //     elite: false,
+            //     level: 1,
+            //     modifiers: ModifierBundle::Multipedal.modifiers(),
+            //     name: "Ichor Rat".to_string(),
+            //     role: Role::Skirmisher,
+            //     size: Size::Tiny,
+            //     trained_skills: vec![Skill::Awareness],
+            //     // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+            // }
+            // .monster(),
             IchorDefinition {
-                attributes: vec![-1, 4, -1, -9, 2, -3],
-                elite: false,
-                level: 1,
-                modifiers: ModifierBundle::Multipedal.modifiers(),
-                name: "Ichor Rat".to_string(),
-                role: Role::Skirmisher,
-                size: Size::Tiny,
-                trained_skills: vec![Skill::Awareness],
-                // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
-            }
-            .monster(),
-            IchorDefinition {
-                attributes: vec![6, 1, 4, -7, 4, -1],
+                attributes: vec![8, 2, 5, -7, 4, 1],
                 elite: true,
                 level: 11,
                 modifiers: vec![],
@@ -562,7 +562,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             }
             .monster(),
             IchorDefinition {
-                attributes: vec![3, 4, 3, -9, 3, -1],
+                attributes: vec![0, 2, 0, -8, 2, -1],
                 elite: false,
                 level: 3,
                 modifiers: ModifierBundle::Multipedal.modifiers(),

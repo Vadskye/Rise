@@ -47,7 +47,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             )])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![1, 0, 3, -8, 1, 0],
+            attributes: vec![3, 0, 3, -8, 1, 0],
             elite: false,
             level: 1,
             role: Role::Brute,
@@ -85,7 +85,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![2, 2, 1, -8, 2, -1],
+            attributes: vec![2, 3, 1, -8, 2, -1],
             elite: false,
             level: 1,
             role: Role::Skirmisher,
@@ -126,7 +126,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![-2, 2, 2, -8, 1, -1],
+            attributes: vec![-2, 2, 3, -8, 1, -1],
             elite: false,
             level: 1,
             role: Role::Warrior,
@@ -165,7 +165,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 0, 4, -8, 0, -1],
+                        attributes: vec![4, 0, 6, -8, 1, -2],
                         elite: false,
                         level: 3,
                         role: Role::Warrior,
@@ -195,7 +195,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 0, 4, -8, 0, -1],
+                        attributes: vec![5, 0, 7, -8, 1, 2],
                         elite: false,
                         level: 6,
                         role: Role::Warrior,
@@ -224,7 +224,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         },
         narrative: empty_narrative(),
         statistics: MonsterStatistics {
-            attributes: vec![-7, 3, -3, -7, 2, -2],
+            attributes: vec![-7, 4, -3, -7, 2, -2],
             elite: false,
             level: 1,
             role: Role::Skirmisher,
@@ -259,7 +259,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![0, 0, 0, -7, 2, -1],
+            attributes: vec![0, 1, 0, -7, 2, -1],
             elite: false,
             level: 1,
             role: Role::Skirmisher,
@@ -315,7 +315,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![2, 4, 0, -8, 3, -2],
+            attributes: vec![2, 5, 0, -8, 3, -2],
             elite: false,
             level: 1,
             role: Role::Skirmisher,
@@ -357,7 +357,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![1, 3, 0, -9, 3, -2],
+                        attributes: vec![1, 4, 0, -9, 3, -2],
                         elite: false,
                         level: 1,
                         role: Role::Skirmisher,
@@ -388,7 +388,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 3, 1, -7, 3, 0],
+                        attributes: vec![4, 4, 1, -7, 3, 0],
                         elite: false,
                         level: 6,
                         role: Role::Skirmisher,
@@ -439,7 +439,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![2, 0, 2, -8, 0, -1],
+                        attributes: vec![2, 2, 2, -8, 0, -1],
                         elite: false,
                         level: 2,
                         role: Role::Skirmisher,
@@ -462,7 +462,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![2, 1, 2, -8, 0, -1],
+                        attributes: vec![4, 1, 2, -8, 0, -1],
                         elite: false,
                         level: 2,
                         role: Role::Brute,
@@ -484,7 +484,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 0, 3, -8, 0, -1],
+                        attributes: vec![4, 2, 3, -8, 0, -1],
                         elite: false,
                         level: 3,
                         role: Role::Skirmisher,
@@ -509,7 +509,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         },
         narrative: None,
         statistics: MonsterStatistics {
-            attributes: vec![1, 0, 3, -8, 1, 0],
+            attributes: vec![2, 0, 3, -8, 1, 0],
             elite: false,
             level: 2,
             role: Role::Brute,

@@ -28,18 +28,21 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         knowledge: None,
         monsters: vec![
             humanoid(MonsterDef {
+                name: "Army Deserter".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::HeavyCrossbow.weapon())),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
-                    trained_skills: vec![],
+                    trained_skills: vec![
+                        Skill::Endurance,
+                    ],
                 },
                 narrative: Some(MonsterNarrative {
-                    alignment: "Usually lawful evil".to_string(),
+                    alignment: "Usually neutral evil".to_string(),
                     description: None,
                     art: true,
                     knowledge: Some(Knowledge::new(vec![
@@ -50,13 +53,101 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![2, 0, 2, 0, 0, 0],
+                    attributes: vec![2, 2, 2, 0, 0, 0],
                     elite: false,
                     level: 1,
                     role: Role::Skirmisher,
                     size: Size::Medium,
                 },
-                name: "Army Deserter".to_string(),
+            }),
+            humanoid(MonsterDef {
+                name: "Veteran Archer".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(Weapon::longbow())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::longbow())),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![
+                        Skill::Awareness,
+                    ],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually chaotic evil".to_string(),
+                    description: None,
+                    art: true,
+                    knowledge: None,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![2, 3, 0, 0, 4, 0],
+                    elite: false,
+                    level: 3,
+                    role: Role::Sniper,
+                    size: Size::Medium,
+                },
+            }),
+            humanoid(MonsterDef {
+                name: "Renegade Bolter".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility {
+                            name: "Arc".to_string(),
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy+1 attack vs. Fortitude against anything within \shortrange.
+                                This attack \glossterm{chains} once.
+                                \hit $dr1 electricity damage.
+                            ".to_string(),
+                            is_magical: true,
+                            tags: vec![],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Custom(CustomAbility {
+                            name: "Lightning Bolt".to_string(),
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
+                                \hit $dr1 electricity damage.
+                            ".to_string(),
+                            is_magical: true,
+                            tags: vec![],
+                            usage_time: UsageTime::Standard,
+                        }),
+                        ActiveAbility::Custom(CustomAbility {
+                            name: "Stunning Discharge".to_string(),
+                            ability_type: AbilityType::Normal,
+                            effect: r"
+                                The $name makes a $accuracy attack vs. Fortitude against all creatures in a \medarea radius from it.
+                                \hit Each target that has no remaining \glossterm{damage resistance} is \stunned as a \glossterm{condition}.
+                                \critcondition
+                            ".to_string(),
+                            is_magical: true,
+                            tags: vec![],
+                            usage_time: UsageTime::Standard,
+                        }),
+                    ],
+                    modifiers: vec![],
+                    movement_speeds: None,
+                    senses: vec![],
+                    trained_skills: vec![
+                        Skill::Awareness,
+                    ],
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually neutral evil".to_string(),
+                    description: None,
+                    art: true,
+                    knowledge: None,
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 3, 0, 0, 3, 5],
+                    elite: false,
+                    level: 4,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
             }),
         ],
     }));
@@ -95,7 +186,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     knowledge: None,
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![0, 0, 2, -1, 0, 2],
+                    attributes: vec![0, 1, 2, -1, 0, 4],
                     elite: false,
                     level: 1,
                     role: Role::Mystic,
@@ -157,7 +248,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     knowledge: None,
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![0, 2, 0, -1, 2, 3],
+                    attributes: vec![0, 2, 0, -1, 2, 5],
                     elite: false,
                 level: 4,
                 role: Role::Mystic,
@@ -189,45 +280,22 @@ pub fn humanoids() -> Vec<MonsterEntry> {
         knowledge: None,
         monsters: vec![
             goblin(
-                "Goblin Peon",
-                MonsterAbilities {
-                    active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                        StandardWeapon::Spear.weapon(),
-                    ))],
-                    modifiers: vec![],
-                    movement_speeds: None,
-                    senses: vec![],
-                    trained_skills: vec![Skill::Stealth],
-                },
-                MonsterStatistics {
-                    attributes: vec![-1, 2, -2, -2, 1, -2],
-                    elite: false,
-                    level: 1,
-                    role: Role::Skirmisher,
-                    size: Size::Medium,
-                },
-            ),
-            goblin(
-                "Goblin Guard",
+                "Goblin Warrior",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(
-                            StandardWeapon::Spear.weapon(),
-                        )),
-                        ActiveAbility::Strike(StrikeAbility::armorpiercer(
-                            StandardWeapon::Spear.weapon(),
-                        )),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::rushed_strike(Weapon::spear())),
                     ],
-                    modifiers: vec![],
+                    modifiers: vec![Modifier::buckler()],
                     movement_speeds: None,
                     senses: vec![],
                     trained_skills: vec![Skill::Awareness],
                 },
                 MonsterStatistics {
-                    attributes: vec![-1, 3, -1, -2, 1, -2],
+                    attributes: vec![-1, 4, 0, -2, 2, -2],
                     elite: false,
                     level: 1,
-                    role: Role::Warrior,
+                    role: Role::Skirmisher,
                     size: Size::Medium,
                 },
             ),
@@ -236,13 +304,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 MonsterAbilities {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::normal_strike(
-                            StandardWeapon::Lance.weapon(),
+                            Weapon::lance(),
                         )),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(
-                            StandardWeapon::Spear.weapon(),
-                        )),
-                        ActiveAbility::Strike(StrikeAbility::armorpiercer(
-                            StandardWeapon::Spear.weapon(),
+                            Weapon::spear(),
                         )),
                     ],
                     modifiers: vec![],
@@ -251,7 +316,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     trained_skills: vec![Skill::Ride],
                 },
                 MonsterStatistics {
-                    attributes: vec![-1, 3, 0, -2, 2, -2],
+                    attributes: vec![-1, 4, 0, -2, 2, -2],
                     elite: false,
                     level: 3,
                     role: Role::Skirmisher,
@@ -274,7 +339,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     trained_skills: vec![Skill::Awareness],
                 },
                 MonsterStatistics {
-                    attributes: vec![-1, 3, 0, -2, 2, 2],
+                    attributes: vec![-1, 3, 0, -2, 2, 3],
                     elite: false,
                     level: 1,
                     role: Role::Mystic,
@@ -322,7 +387,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![1, 1, -1, 0, 0, 0],
+                    attributes: vec![1, 1, 1, 0, 0, 0],
                     elite: false,
                     level: 1,
                     role: Role::Warrior,
@@ -353,7 +418,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![0, 0, 0, 0, 2, 3],
+                    attributes: vec![0, 0, 0, 0, 3, 3],
                     elite: false,
                     level: 4,
                     role: Role::Mystic,
@@ -433,7 +498,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![2, 2, 3, -1, 1, 0],
+                    attributes: vec![2, 2, 5, -1, 1, 0],
                     elite: false,
                     level: 3,
                     role: Role::Warrior,
@@ -452,7 +517,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![3, 3, 4, 0, 2, 1],
+                    attributes: vec![3, 3, 6, 0, 2, 1],
                     elite: false,
                     level: 5,
                     role: Role::Warrior,
@@ -547,7 +612,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![4, 0, 1, -2, 0, 0],
+                    attributes: vec![5, 0, 1, -2, 0, 0],
                     elite: false,
                     level: 1,
                     role: Role::Brute,
@@ -570,7 +635,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![4, 0, 2, -2, 0, 0],
+                    attributes: vec![6, 0, 2, -2, 0, 0],
                     elite: false,
                     level: 2,
                     role: Role::Brute,
@@ -594,7 +659,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![3, 1, 2, 0, 0, 0],
+                    attributes: vec![6, 1, 2, 0, 0, 0],
                     elite: false,
                     level: 3,
                     role: Role::Brute,
@@ -619,7 +684,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![4, 0, 3, -2, 1, 1],
+                    attributes: vec![7, 0, 3, -2, 1, 1],
                     elite: false,
                     level: 5,
                     role: Role::Brute,
@@ -646,7 +711,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![6, 0, 4, 0, 2, 3],
+                    attributes: vec![7, 0, 4, 0, 2, 3],
                     elite: true,
                     level: 6,
                     role: Role::Leader,
@@ -675,7 +740,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![4, 1, 1, -1, 2, 2],
+                    attributes: vec![5, 1, 2, -1, 2, 4],
                     elite: false,
                     level: 2,
                     role: Role::Leader,

@@ -57,13 +57,14 @@ pub fn undeads() -> Vec<MonsterEntry> {
                     They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
                 "),
                 (5, "
-                    An allip is the spectral remains of someone driven to suicide by a madness that afflicted it in life.
-                    It craves only revenge and unrelentingly pursues those who tormented it in life and pushed it over the brink.
+                    An allip is the spectral remains of someone driven to suicide by madness.
+                    It craves only revenge and unrelentingly pursues those that it believes tormented it in life.
+                    This belief may or may not have any basis in reality.
                 "),
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![0, 3, 0, 1, 2, 2],
+            attributes: vec![0, 3, 0, -2, -2, 6],
             elite: true,
             level: 3,
             role: Role::Skirmisher,
@@ -145,7 +146,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
         ])),
         monsters: vec![
             Ghoul {
-                attributes: vec![2, 4, 0, -4, 1, -2],
+                attributes: vec![4, 4, 0, -4, 1, -2],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Drudge ghouls are the weakest form of ghoul.
@@ -158,7 +159,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 trained_skills: vec![],
             }.monster(),
             Ghoul {
-                attributes: vec![3, 4, 1, -3, 1, 0],
+                attributes: vec![5, 5, 1, -3, 1, 0],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         True ghouls are the most common form of ghoul.
@@ -299,7 +300,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         ])),
         monsters: vec![
             Vampire {
-                attributes: vec![5, 6, 4, 3, 4, 3],
+                attributes: vec![3, 4, 2, 3, 2, 3],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Fledgling vampires are the weakest form of vampire.
@@ -320,7 +321,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ],
             }.monster(),
             Vampire {
-                attributes: vec![6, 6, 5, 4, 6, 4],
+                attributes: vec![4, 5, 2, 4, 3, 4],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         True vampires have fully awakened their vampiric potential.
@@ -338,7 +339,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ],
             }.monster(),
             Vampire {
-                attributes: vec![6, 6, 6, 5, 6, 5],
+                attributes: vec![4, 6, 3, 5, 4, 5],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Vampire lords are one of the most powerful types of undead.
