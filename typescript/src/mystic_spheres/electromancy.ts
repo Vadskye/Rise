@@ -349,7 +349,6 @@ export const electromancy: MysticSphere = {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
           If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
           Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
-          If this spell has its area increased, only the length of the line increases.
         `,
       },
       rank: 2,
