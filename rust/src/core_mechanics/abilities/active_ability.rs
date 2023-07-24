@@ -204,7 +204,9 @@ impl StrikeAbility {
         let mut latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
         // Add the tags from the weapon
         for tag in self.weapon.tags.iter() {
-            latex_tags.push(tag.latex());
+            if tag.visible_in_monster_tags() {
+                latex_tags.push(tag.latex());
+            }
         }
         // TODO: does this sort by the visible tag name, or does it put all \\abilitytag
         // entries before all \\weapontag entries?
@@ -230,7 +232,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: false,
-            name: strike_prefix("Armorcrusher", &weapon),
+            name: strike_prefix("Armorcrushing", &weapon),
             tags: vec![],
             weapon,
         };
@@ -240,11 +242,11 @@ impl StrikeAbility {
         return Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
-                \hit $damage $damagetypes damage.
+                \hit $fullweapondamage.
             "
             .to_string(),
             is_magical: false,
-            name: strike_prefix("Armorpiercer", &weapon),
+            name: strike_prefix("Armorpiercing", &weapon),
             tags: vec![],
             weapon,
         };
@@ -260,7 +262,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: false,
-            name: strike_prefix("Bloodletting Strike", &weapon),
+            name: strike_prefix("Bloodletting", &weapon),
             tags: vec![],
             weapon,
         };
@@ -277,7 +279,7 @@ impl StrikeAbility {
                 accuracy_modifier = rank - 1,
             ),
             is_magical: true,
-            name: strike_prefix("Consecrated Strike", &weapon),
+            name: strike_prefix("Consecrated", &weapon),
             tags: vec![],
             weapon,
         };
@@ -291,7 +293,7 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
-            name: strike_prefix("Defensive Strike", &weapon),
+            name: strike_prefix("Defensive", &weapon),
             tags: vec![],
             weapon,
         };
@@ -306,7 +308,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: true,
-            name: strike_prefix("Distant Shot", &weapon),
+            name: strike_prefix("Distant", &weapon),
             tags: vec![],
             weapon,
         };
@@ -321,7 +323,7 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
-            name: strike_prefix("Frenzied Strike", &weapon),
+            name: strike_prefix("Frenzied", &weapon),
             tags: vec![],
             weapon,
         };
@@ -336,7 +338,7 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
-            name: strike_prefix("Guardbreaker", &weapon),
+            name: strike_prefix("Guardbreaking", &weapon),
             tags: vec![],
             weapon,
         };
@@ -350,7 +352,7 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: true,
-            name: strike_prefix("Hamstring", &weapon),
+            name: strike_prefix("Hamstring --", &weapon),
             tags: vec![],
             weapon,
         };
@@ -365,7 +367,7 @@ impl StrikeAbility {
                 \glance No effect.
             ".to_string(),
             is_magical: false,
-            name: strike_prefix("Heartpiercer", &weapon),
+            name: strike_prefix("Heartpiercing", &weapon),
             tags: vec![],
             weapon,
         };
@@ -379,7 +381,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: true,
-            name: strike_prefix("Power Strike", &weapon),
+            name: strike_prefix("Power", &weapon),
             tags: vec![],
             weapon,
         };
@@ -394,7 +396,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: false,
-            name: strike_prefix("Reckless Strike", &weapon),
+            name: strike_prefix("Reckless", &weapon),
             tags: vec![],
             weapon,
         };
@@ -408,7 +410,37 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             ".to_string(),
             is_magical: false,
-            name: strike_prefix("Redeeming Followup", &weapon),
+            name: strike_prefix("Redeeming", &weapon),
+            tags: vec![],
+            weapon,
+        };
+    }
+
+    pub fn rushed_strike(weapon: Weapon) -> Self {
+        return Self {
+            effect: r"
+                The $name makes a $accuracy-1 strike vs. Armor with its $weapon.
+                It can also move up to half its speed either before or after making the strike.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            is_magical: false,
+            name: strike_prefix("Rushed", &weapon),
+            tags: vec![],
+            weapon,
+        };
+    }
+
+    pub fn rushed_strike_plus(weapon: Weapon) -> Self {
+        return Self {
+            effect: r"
+                The $name makes a $accuracy-2 strike vs. Armor with its $weapon.
+                It can also move up to its speed either before or after making the strike.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            is_magical: false,
+            name: strike_prefix("Rushed", &weapon),
             tags: vec![],
             weapon,
         };
@@ -453,7 +485,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: false,
-            name: weapon.name.clone(),
+            name: strike_prefix("Knockdown --", &weapon),
             tags: vec![],
             weapon,
         };
@@ -469,7 +501,7 @@ impl StrikeAbility {
             "
             .to_string(),
             is_magical: false,
-            name: weapon.name.clone(),
+            name: strike_prefix("Knockdown --", &weapon),
             tags: vec![],
             weapon,
         };
@@ -477,7 +509,7 @@ impl StrikeAbility {
 }
 
 fn strike_prefix(prefix: &str, weapon: &Weapon) -> String {
-    return format!("{} -- {}", prefix, weapon.name);
+    return format!("{} {}", prefix, weapon.name);
 }
 
 fn replace_attack_terms(
@@ -717,7 +749,6 @@ The $name glows like a torch for a minute.
 
     mod replace_full_weapon_damage_terms {
         use super::*;
-        use crate::equipment::StandardWeapon;
 
         #[test]
         fn replaces_one_term() {
