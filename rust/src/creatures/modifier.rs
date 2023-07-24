@@ -221,6 +221,12 @@ impl Modifier {
 
 // static methods that generate new Modifiers
 impl Modifier {
+    pub fn buckler() -> Self {
+        return Self::Defense(Defense::Armor, 1);
+    }
+    pub fn shield() -> Self {
+        return Self::Defense(Defense::Armor, 2);
+    }
     pub fn immune_damage(dt: DamageType) -> Self {
         return Self::Immune(SpecialDefenseType::Damage(dt));
     }
