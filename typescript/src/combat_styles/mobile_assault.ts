@@ -40,12 +40,21 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Wanderer's Strike",
+      name: "Rushed Strike",
 
       effect: `
-        You can move up to half your speed and make a \\glossterm{weak strike}, in either order.
+        You can move up to half your speed and make a strike with a -1 accuracy penalty, in either order.
       `,
       rank: 1,
+    },
+
+    {
+      name: "Rushed Strike+",
+
+      effect: `
+        You can move up to your speed and make a strike with a -2 accuracy penalty, in either order.
+      `,
+      rank: 3,
     },
 
     {
