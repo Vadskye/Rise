@@ -31,13 +31,13 @@ pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
     fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
-        return self
+        self
             .calc_all_attacks()
             .into_iter()
-            .find(|a| a.name.contains(name));
+            .find(|a| a.name.contains(name))
     }
     fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
-        return self.calc_all_attacks().into_iter().find(|a| a.name == name);
+        self.calc_all_attacks().into_iter().find(|a| a.name == name)
     }
     fn calc_accuracy(&self) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
@@ -53,16 +53,16 @@ impl Attack {
     pub fn except<F: FnOnce(&mut Attack)>(&self, f: F) -> Attack {
         let mut attack = self.clone();
         f(&mut attack);
-        return attack;
+        attack
     }
 
     // The process of adding a tag is awkward, so it's convenient to encapsulate that process.
     pub fn except_with_tag(&self, tag: Tag) -> Attack {
-        return self.except(|a| {
+        self.except(|a| {
             let mut tags = a.tags.clone().unwrap_or(vec![]);
             tags.push(tag);
             a.tags = Some(tags);
-        });
+        })
     }
 
     // This allows passing in a closure to modify damage dealt on hit, which is harder than it
@@ -70,14 +70,14 @@ impl Attack {
     pub fn except_hit_damage<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> Attack {
         let mut attack = self.clone();
         attack.hit = attack.hit.except_damage(f);
-        return attack;
+        attack
     }
 
     // This is a particularly common replacement for elite monsters, and managing the imports is
     // annoying without this function.
     pub fn except_elite(&self) -> Attack {
         eprintln!("Error: unable to support elite attacks. Convert {} into an ActiveAbility.", self.name);
-        return self.clone();
+        self.clone()
     }
 
     pub fn generate_modified_name(
@@ -87,7 +87,7 @@ impl Attack {
         supreme_rank: Option<i32>,
     ) -> String {
         if supreme_rank.is_some() && rank >= supreme_rank.unwrap() {
-            return format!("Supreme {}", name);
+            format!("Supreme {}", name)
         } else if rank >= greater_rank {
             return format!("Greater {}", name);
         } else {
@@ -99,14 +99,14 @@ impl Attack {
         if let AttackEffect::Damage(ref mut e) = self.hit {
             return Some(e);
         }
-        return None;
+        None
     }
 
     pub fn damage_effect(&self) -> Option<&DamageEffect> {
         if let AttackEffect::Damage(ref e) = self.hit {
             return Some(e);
         }
-        return None;
+        None
     }
 
     // A fairly thin convenience wrapper around DamageEffect.calc_damage_dice(). Could be used for
@@ -115,18 +115,18 @@ impl Attack {
         if let Some(damage_effect) = self.damage_effect() {
             return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike))
         }
-        return None;
+        None
     }
 
     // Create a list of simple strikes that don't use any maneuvers. These attacks deal irrelevant
     // damage at high levels.
     pub fn calc_strikes(weapons: Vec<&Weapon>) -> Vec<Attack> {
         // TODO: combine maneuvers with weapons and handle non-weapon attacks
-        return weapons.into_iter().map(|w| w.attack()).collect();
+        weapons.into_iter().map(|w| w.attack()).collect()
     }
 
     pub fn shorthand_description(&self, creature: &Creature) -> String {
-        return format!(
+        format!(
             "{name} {accuracy} ({hit})",
             name = latex_formatting::uppercase_first_letter(&self.name),
             accuracy = latex_formatting::modifier(self.accuracy + creature.calc_accuracy()),
@@ -138,9 +138,8 @@ impl Attack {
                     self.is_strike,
                     self.targeting.subjects()
                 )
-                .trim()
-                .to_string(),
-        );
+                .trim(),
+        )
     }
 }
 
@@ -158,14 +157,14 @@ impl Attack {
         } else {
             None
         };
-        return latex_ability_block(
+        latex_ability_block(
             self.hit.ability_type(),
             self.latex_effect(creature),
             tags_text,
             self.is_magical,
             self.name.clone(),
             usage_time,
-        );
+        )
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
@@ -173,7 +172,7 @@ impl Attack {
         if let Some(ref c) = self.extra_context {
             context = c;
         }
-        return format!(
+        format!(
             "
                 {targeting}
                 {cooldown}
@@ -194,8 +193,7 @@ impl Attack {
                     self.is_strike,
                     self.targeting.subjects()
                 )
-                .trim()
-                .to_string(),
+                .trim(),
             critical = if let Some(ref g) = self.crit {
                 format!(
                     "\\crit {}",
@@ -219,7 +217,7 @@ impl Attack {
                 self.accuracy + creature.calc_accuracy(),
                 &context.movement
             ),
-        );
+        )
     }
 }
 
@@ -274,12 +272,12 @@ where
             .filter(|weapon| {
                 let same_weapon_attack = all_attacks.iter().any(|attack| {
                     if let Some(ref w) = attack.replaces_weapon {
-                        return w.name == weapon.name;
+                        w.name == weapon.name
                     } else {
-                        return false;
+                        false
                     }
                 });
-                return !same_weapon_attack;
+                !same_weapon_attack
             })
             .collect();
         let strikes = Attack::calc_strikes(weapons_without_attacks);
@@ -287,7 +285,7 @@ where
             all_attacks.push(strike);
         }
 
-        return all_attacks;
+        all_attacks
     }
 
     fn calc_damage_per_round_multiplier(&self) -> f64 {
@@ -300,17 +298,17 @@ where
     fn calc_accuracy(&self) -> i32 {
         let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
         // note implicit floor due to integer storage
-        return accuracy_from_armor
+        accuracy_from_armor
             + (self.level + self.get_base_attribute(&Attribute::Perception)) / 2
-            + self.calc_total_modifier(ModifierType::Accuracy);
+            + self.calc_total_modifier(ModifierType::Accuracy)
     }
 
     fn calc_magical_power(&self) -> i32 {
-        return self.calc_power(true);
+        self.calc_power(true)
     }
 
     fn calc_mundane_power(&self) -> i32 {
-        return self.calc_power(false);
+        self.calc_power(false)
     }
 
     fn calc_power(&self, is_magical: bool) -> i32 {
@@ -322,10 +320,10 @@ where
             true => self.calc_total_modifier(ModifierType::MagicalPower),
             false => self.calc_total_modifier(ModifierType::MundanePower),
         };
-        return (self.level / 2)
+        (self.level / 2)
             + self.get_base_attribute(attribute)
             + specific_modifier
-            + self.calc_total_modifier(ModifierType::Power);
+            + self.calc_total_modifier(ModifierType::Power)
     }
 
     fn explain_attacks(&self) -> Vec<String> {
@@ -349,7 +347,7 @@ pub struct SimpleSpell {
 
 impl SimpleSpell {
     pub fn attack(self) -> Attack {
-        return Attack {
+        Attack {
             // from self
             accuracy: self.accuracy,
             crit: self.crit,
@@ -364,6 +362,6 @@ impl SimpleSpell {
             is_magical: true,
             is_strike: false,
             replaces_weapon: None,
-        };
+        }
     }
 }

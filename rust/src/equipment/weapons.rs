@@ -17,54 +17,54 @@ impl Weapon {
     pub fn power_scalings(&self) -> Vec<PowerScaling> {
         // TODO: handle versatile grip
         if self.tags.contains(&WeaponTag::Heavy) {
-            return PowerScaling::heavy_weapon_scalings();
+            PowerScaling::heavy_weapon_scalings()
         } else {
-            return vec![PowerScaling::standard_weapon_scaling()];
+            vec![PowerScaling::standard_weapon_scaling()]
         }
     }
 
     pub fn bite() -> Self {
-        return StandardWeapon::MultipedalBite.weapon();
+        StandardWeapon::MultipedalBite.weapon()
     }
 
     pub fn fist() -> Self {
-        return StandardWeapon::Claw.weapon().except(|w| {
+        StandardWeapon::Claw.weapon().except(|w| {
             w.damage_types = vec![DamageType::Bludgeoning];
             w.name = "Fist".to_string();
-        });
+        })
     }
 
     pub fn lance() -> Self {
-        return StandardWeapon::Lance.weapon();
+        StandardWeapon::Lance.weapon()
     }
 
     pub fn longbow() -> Self {
-        return StandardWeapon::Longbow.weapon();
+        StandardWeapon::Longbow.weapon()
     }
 
     pub fn ram() -> Self {
-        return StandardWeapon::MultipedalRam.weapon();
+        StandardWeapon::MultipedalRam.weapon()
     }
 
     pub fn spear() -> Self {
-        return StandardWeapon::Spear.weapon();
+        StandardWeapon::Spear.weapon()
     }
 
     pub fn spikes() -> Self {
-        return StandardWeapon::Claws.weapon().except(|w| {
+        StandardWeapon::Claws.weapon().except(|w| {
             w.damage_types = vec![DamageType::Piercing];
             w.name = "Claws".to_string();
-        });
+        })
     }
 
     pub fn tail_slam() -> Self {
-        return StandardWeapon::MultipedalRam.weapon().except(|w| {
+        StandardWeapon::MultipedalRam.weapon().except(|w| {
             w.name = "Tail Slam".to_string();
-        });
+        })
     }
 
     pub fn tentacle() -> Self {
-        return StandardWeapon::MonsterTentacle.weapon();
+        StandardWeapon::MonsterTentacle.weapon()
     }
 }
 
@@ -395,7 +395,7 @@ impl StandardWeapon {
 impl Weapon {
     pub fn attack(&self) -> Attack {
         let generic_tags = self.tags.iter().map(|t| Tag::Weapon(t.clone())).collect();
-        return Attack {
+        Attack {
             accuracy: self.accuracy,
             crit: None,
             defense: Defense::Armor,
@@ -407,16 +407,16 @@ impl Weapon {
             replaces_weapon: Some(self.clone()),
             tags: Some(generic_tags),
             targeting: Targeting::Strike,
-        };
+        }
     }
 
     pub fn except<F: FnOnce(&mut Self)>(mut self, f: F) -> Self {
         f(&mut self);
-        return self;
+        self
     }
 
     pub fn plural_name(&self) -> String {
-        return format!("{}s", self.name);
+        format!("{}s", self.name)
     }
 }
 

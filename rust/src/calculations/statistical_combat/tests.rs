@@ -179,12 +179,12 @@ mod calculate_attack_outcome {
                 .get_attack_by_name("Generic Scaling Broadsword")
                 .unwrap();
             let defender = Character::standard_character(level, true).creature;
-            return calculate_attack_outcome(
+            calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
                 defender.calc_defense(&Defense::Armor),
             )
-            .short_description();
+            .short_description()
         }
 
         assert_eq!(
@@ -377,7 +377,7 @@ mod calc_rounds_to_live {
     use super::*;
 
     fn calc_individual_rounds_to_live(attacker: &Creature, defender: &Creature) -> f64 {
-        return calc_rounds_to_live(&vec![attacker], &vec![defender]);
+        calc_rounds_to_live(&vec![attacker], &vec![defender])
     }
 
     #[test]
@@ -385,7 +385,7 @@ mod calc_rounds_to_live {
         fn calc_at_level(level: i32) -> f64 {
             let attacker = Character::standard_barbarian(level, true).creature;
             let defender = Character::standard_barbarian(level, true).creature;
-            return calc_individual_rounds_to_live(&attacker, &defender);
+            calc_individual_rounds_to_live(&attacker, &defender)
         }
 
         assert_eq!(
@@ -406,7 +406,7 @@ mod calc_rounds_to_live {
         fn calc_at_level(level: i32) -> f64 {
             let attacker = Character::standard_character(level, true).creature;
             let defender = Character::standard_character(level, true).creature;
-            return calc_individual_rounds_to_live(&attacker, &defender);
+            calc_individual_rounds_to_live(&attacker, &defender)
         }
 
         assert_eq!(
@@ -427,10 +427,10 @@ mod calc_rounds_to_live {
         fn calc_at_level(level: i32) -> [f64; 2] {
             let attacker = Character::standard_character(level, true).creature;
             let defender = Character::standard_sorcerer(level, true).creature;
-            return [
+            [
                 calc_individual_rounds_to_live(&attacker, &defender),
                 calc_individual_rounds_to_live(&defender, &attacker),
-            ];
+            ]
         }
 
         assert_eq!(
@@ -457,7 +457,7 @@ mod calc_rounds_to_live {
         fn calc_at_level(level: i32) -> f64 {
             let attacker = Character::standard_sorcerer(level, true).creature;
             let defender = Character::standard_sorcerer(level, true).creature;
-            return calc_individual_rounds_to_live(&attacker, &defender);
+            calc_individual_rounds_to_live(&attacker, &defender)
         }
 
         assert_eq!(

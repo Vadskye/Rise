@@ -12,7 +12,7 @@ pub fn latex_ability_block(
     usage_time: Option<UsageTime>,
 ) -> String {
     validate_effect(&effect, &name);
-    return format!(
+    format!(
         "
             {begin}
                 {header}
@@ -24,7 +24,7 @@ pub fn latex_ability_block(
         header = latex_ability_header(formatted_tags, usage_time),
         effect = effect,
         end = ability_type.end(is_magical),
-    );
+    )
 }
 
 fn latex_ability_header(tags: Vec<String>, usage_time: Option<UsageTime>) -> String {
@@ -34,7 +34,7 @@ fn latex_ability_header(tags: Vec<String>, usage_time: Option<UsageTime>) -> Str
     } else {
         "".to_string()
     };
-    return vec![tags_text, usage_time_text].join("\n");
+    vec![tags_text, usage_time_text].join("\n")
 }
 
 // Check for common typos

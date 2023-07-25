@@ -3,8 +3,7 @@ use crate::core_mechanics::abilities::{
     Range, Targeting,
 };
 use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
-    DebuffInsteadEffect, PoisonEffect,
+    AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect, PoisonEffect,
 };
 use crate::core_mechanics::attacks::{
     Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect,
@@ -79,7 +78,7 @@ impl StandardAttack {
                         stage3_vital: None,
                     }));
                 }
-                return frostweb_spider_bite;
+                frostweb_spider_bite
             }
             Self::GhoulBite(rank) => LowDamageAndDebuff {
                 damage_types: vec![],

@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize, Size};
+use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
@@ -16,7 +16,7 @@ pub enum Defense {
 
 impl Defense {
     pub fn all() -> Vec<Self> {
-        return vec![Self::Armor, Self::Fortitude, Self::Mental, Self::Reflex];
+        vec![Self::Armor, Self::Fortitude, Self::Mental, Self::Reflex]
     }
 
     pub fn name(&self) -> &str {
@@ -79,11 +79,11 @@ pub struct SpecialDefenses {
 
 impl SpecialDefenses {
     pub fn new() -> Self {
-        return Self {
+        Self {
             immune: vec![],
             impervious: vec![],
             vulnerable: vec![],
-        };
+        }
     }
 }
 
@@ -138,12 +138,12 @@ where
         } else {
             0
         };
-        return self.level / 2
+        self.level / 2
             + attribute_bonus
             + armor_bonus
             + size_modifier
             + self.calc_total_modifier(ModifierType::Defense(*defense))
-            + self.calc_total_modifier(ModifierType::AllDefenses);
+            + self.calc_total_modifier(ModifierType::AllDefenses)
     }
 
     fn calc_special_defenses(&self) -> SpecialDefenses {
@@ -157,6 +157,6 @@ where
                 special_defenses.vulnerable.push(def.clone());
             }
         }
-        return special_defenses;
+        special_defenses
     }
 }

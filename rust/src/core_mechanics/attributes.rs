@@ -35,25 +35,25 @@ impl Attribute {
     }
 
     pub fn all() -> Vec<Attribute> {
-        return vec![
+        vec![
             Attribute::Strength,
             Attribute::Dexterity,
             Attribute::Constitution,
             Attribute::Intelligence,
             Attribute::Perception,
             Attribute::Willpower,
-        ];
+        ]
     }
 
     // Omit Intelligence, since it doesn't affect the power of monsters
     pub fn monster_validation() -> Vec<Attribute> {
-        return vec![
+        vec![
             Attribute::Strength,
             Attribute::Dexterity,
             Attribute::Constitution,
             Attribute::Perception,
             Attribute::Willpower,
-        ];
+        ]
     }
 }
 
@@ -79,7 +79,7 @@ where
         } else {
             0
         };
-        return value + self.calc_total_modifier(ModifierType::Attribute(*attribute));
+        value + self.calc_total_modifier(ModifierType::Attribute(*attribute))
     }
 
     fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]) {

@@ -4,7 +4,7 @@ use crate::creatures::Modifier;
 use crate::skills::Skill;
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Divine Spells",
             is_magical: true,
@@ -59,11 +59,11 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Metamagic",
             is_magical: true,
@@ -163,11 +163,11 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Domain Gifts",
             is_magical: true,
@@ -275,11 +275,11 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Divine Aid",
             is_magical: true,
@@ -388,11 +388,11 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         // enemies in medium radius is a t3 area
         // assuming -1ct for brief, stunned would be t1, for a total of a r2 effect??
         RankAbility {
@@ -507,5 +507,5 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

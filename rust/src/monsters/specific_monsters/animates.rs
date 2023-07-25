@@ -14,7 +14,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn animate(def: MonsterDef) -> Monster {
-    return def.animate();
+    def.animate()
 }
 
 pub fn animates() -> Vec<MonsterEntry> {
@@ -183,7 +183,7 @@ pub fn animates() -> Vec<MonsterEntry> {
         name: "Gelatinous Cube".to_string(),
     })));
 
-    return monsters;
+    monsters
 }
 
 fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
@@ -196,7 +196,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         name: &str,
         size: Size,
     ) -> Monster {
-        return animate(MonsterDef {
+        animate(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities,
                 modifiers: vec![
@@ -221,7 +221,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 size,
             },
             name: name.to_string(),
-        });
+        })
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -326,7 +326,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     impl TreantDefinition {
         fn monster(self) -> Monster {
-            return animate(MonsterDef {
+            animate(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: self.active_abilities,
                     // TODO: add weapon
@@ -353,12 +353,12 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     size: self.size,
                 },
                 name: self.name,
-            });
+            })
         }
     }
 
     fn treeclub_strike(name: &str, effect: &str) -> ActiveAbility {
-        return ActiveAbility::Strike(StrikeAbility {
+        ActiveAbility::Strike(StrikeAbility {
             effect: effect.to_string(),
             is_magical: false,
             name: name.to_string(),
@@ -370,7 +370,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 name: "Treeclub".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
             },
-        });
+        })
     }
 
     let mut treants = vec![];

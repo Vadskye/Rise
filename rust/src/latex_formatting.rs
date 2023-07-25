@@ -4,10 +4,10 @@ use std::fmt::Display;
 pub fn latexify(text: String) -> String {
     let mut short_text = text.clone().trim().to_string();
     short_text.truncate(50);
-    if text.contains("\t") {
+    if text.contains('\t') {
         eprintln!("Problem latexifying text: contains a tab ({})", short_text)
     }
-    if text.contains("\r") {
+    if text.contains('\r') {
         eprintln!(
             "Problem latexifying text: contains a carriage return ({})",
             short_text
@@ -23,8 +23,8 @@ pub fn latexify(text: String) -> String {
     }
 
     let text = text
-        .replace("<", "{")
-        .replace(">", "}")
+        .replace('<', "{")
+        .replace('>', "}")
         .replace(" + ", " \\add ")
         // TODO: this is an incredibly stupid hack
         .replace("}{\\lcol}", ">{\\lcol}");
@@ -38,22 +38,22 @@ pub fn latexify(text: String) -> String {
     let minus = Regex::new(r"-(\d)").unwrap();
     let text = minus.replace_all(text.as_ref(), r"\minus$1");
 
-    return text.to_string();
+    text.to_string()
 }
 
 pub fn join_formattable_list<T: Display>(strings: &Vec<T>) -> Option<String> {
     let strings: Vec<String> = strings.iter().map(|c| format!("{}", c)).collect();
-    return join_string_list(&strings);
+    join_string_list(&strings)
 }
 
 pub fn join_string_list(strings: &Vec<String>) -> Option<String> {
     let strings: Vec<&str> = strings.iter().map(|c| c.as_str()).collect();
-    return join_str_list(&strings);
+    join_str_list(&strings)
 }
 
 pub fn join_str_list(strings: &Vec<&str>) -> Option<String> {
-    if strings.len() == 0 {
-        return None;
+    if strings.is_empty() {
+        None
     } else if strings.len() == 1 {
         return Some(strings[0].to_string());
     } else if strings.len() == 2 {
@@ -71,15 +71,15 @@ pub fn uppercase_first_letter(text: &str) -> String {
     if let Some(c) = text.get(0..1) {
         return c.to_ascii_uppercase() + if let Some(s) = text.get(1..) { s } else { "" };
     } else {
-        return text.to_string();
+        text.to_string()
     }
 }
 
 pub fn modifier(val: i32) -> String {
     if val >= 0 {
-        return format!("+{}", val);
+        format!("+{}", val)
     } else {
-        return format!("{}", val);
+        format!("{}", val)
     }
 }
 
@@ -106,7 +106,7 @@ pub fn standardize_indentation(text: &str) -> String {
     let indentation_pattern = Regex::new(r"(?m)^\s+").unwrap();
     let no_indentation = indentation_pattern.replace_all(text.trim(), "").to_string();
     // It's easier to write the strings in code if we have a preceding line break
-    return format!("\n{}", no_indentation);
+    format!("\n{}", no_indentation)
 }
 
 #[cfg(test)]

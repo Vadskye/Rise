@@ -5,7 +5,7 @@ use crate::creatures::Modifier;
 use crate::skills::Skill;
 
 pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Animal Companion",
             is_magical: true,
@@ -125,11 +125,11 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
-    ];
+    ]
 }
 
 pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Know Your Enemy",
             is_magical: false,
@@ -212,11 +212,11 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Quarry",
             is_magical: false,
@@ -390,11 +390,11 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn scout<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Keen Vision",
             is_magical: false,
@@ -479,7 +479,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
-    ];
+    ]
 }
 
 pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
@@ -588,5 +588,5 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }

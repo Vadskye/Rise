@@ -46,7 +46,7 @@ impl DamageEffect {
                 return effect.ability_type();
             }
         }
-        return AbilityType::Normal;
+        AbilityType::Normal
     }
 
     pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> DicePool {
@@ -61,7 +61,7 @@ impl DamageEffect {
             // attack-specific damage multipliers.
             dice_pool = dice_pool.add_dice(dice_pool.dice.clone());
         }
-        return dice_pool;
+        dice_pool
     }
 
     fn description(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> String {
@@ -113,7 +113,7 @@ impl DamageEffect {
         };
 
         let mut damage_types: Vec<DamageType> = self.damage_types.clone();
-        damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
+        damage_types.sort_by_key(|a| a.name().to_lowercase());
         return format!(
             "
                 {dice_pool} {damage_types} damage.
@@ -134,11 +134,11 @@ impl DamageEffect {
     pub fn except<F: FnOnce(&mut DamageEffect)>(&self, f: F) -> DamageEffect {
         let mut damage_effect = self.clone();
         f(&mut damage_effect);
-        return damage_effect;
+        damage_effect
     }
 
     pub fn from_weapon(weapon: &Weapon) -> Self {
-        return Self {
+        Self {
             extra_defense_effect: None,
             base_dice: weapon.damage_dice.clone(),
             damage_types: weapon.damage_types.clone(),
@@ -204,19 +204,19 @@ impl DebuffEffect {
             ""
         };
         if self.duration == AttackEffectDuration::Brief {
-            return format!(
+            format!(
                 "{} {}.{}",
                 self.duration.description(),
                 debuff_text,
                 immune_text
-            );
+            )
         } else {
-            return format!(
+            format!(
                 "{} {}.{}",
                 debuff_text,
                 self.duration.description(),
                 immune_text
-            );
+            )
         }
     }
 }
@@ -235,7 +235,7 @@ impl DebuffInsteadEffect {
             .map(|d| d.latex_link())
             .collect::<Vec<String>>()
             .join(", ");
-        return format!("{} instead of {}.", debuff_texts, self.instead_of.name());
+        format!("{} instead of {}.", debuff_texts, self.instead_of.name())
     }
 }
 
@@ -248,7 +248,7 @@ pub struct HealingEffect {
 
 impl HealingEffect {
     fn description(&self, healer: &Creature) -> String {
-        return format!(
+        format!(
             "{dice}{modifier} hit points.",
             dice = self
                 .healing_dice
@@ -257,7 +257,7 @@ impl HealingEffect {
             modifier = latex_formatting::modifier(
                 (self.power_multiplier * healer.calc_power(self.is_magical) as f64).floor() as i32
             ),
-        );
+        )
     }
 }
 
@@ -289,7 +289,7 @@ impl PoisonEffect {
         )
         .unwrap();
 
-        return format!(
+        format!(
             "
                 \\glossterm<poisoned>.
                 As long as it is poisoned, it is {debuffs}.
@@ -299,7 +299,7 @@ impl PoisonEffect {
             ",
             debuffs = debuffs,
             third_stage = third_stage,
-        );
+        )
     }
 }
 
@@ -310,10 +310,10 @@ pub struct VitalWoundEffect {
 
 impl VitalWoundEffect {
     fn description(&self) -> String {
-        return format!(
+        format!(
             "gains a \\glossterm<vital wound>. {special_effect}.",
             special_effect = self.special_effect.as_deref().unwrap_or(""),
-        );
+        )
     }
 }
 
@@ -350,11 +350,11 @@ impl AttackEffect {
             }
             _ => {}
         };
-        return attack_effect;
+        attack_effect
     }
 
     pub fn from_weapon(weapon: &Weapon) -> Self {
-        return Self::Damage(DamageEffect::from_weapon(weapon));
+        Self::Damage(DamageEffect::from_weapon(weapon))
     }
 
     pub fn description(
@@ -366,92 +366,90 @@ impl AttackEffect {
     ) -> String {
         match self {
             Self::BriefDurationInstead => {
-                return r"The effect lasts \glossterm{briefly}.".to_string();
+                r"The effect lasts \glossterm{briefly}.".to_string()
             }
             Self::Custom(_, text) => {
-                return text.clone();
+                text.clone()
             }
             Self::Damage(effect) => {
-                return format!(
+                format!(
                     "{the_subject} takes {damage}",
                     damage = effect.description(attacker, is_magical, is_strike),
                     the_subject = the_subject,
-                );
+                )
             }
             Self::DamageOverTime(effect) => {
-                return format!(
+                format!(
                     "{the_subject} {damage}",
                     damage = effect.description(attacker, is_magical, the_subject),
                     the_subject = the_subject.to_lowercase(),
-                );
+                )
             }
             Self::Debuff(effect) => {
-                return format!(
+                format!(
                     "{the_subject} is {debuffs}",
                     debuffs = effect.description(),
                     the_subject = the_subject,
-                );
+                )
             }
             Self::DebuffInstead(effect) => {
-                return format!(
+                format!(
                     "{the_subject} is {debuffs}",
                     debuffs = effect.description(),
                     the_subject = the_subject,
-                );
+                )
             }
             Self::HalfDamage => {
-                return "Half damage.".to_string();
+                "Half damage.".to_string()
             }
             Self::Healing(effect) => {
-                return format!(
+                format!(
                     "{the_subject} {heals}",
                     heals = effect.description(attacker),
                     the_subject = the_subject,
-                );
+                )
             }
             Self::Knockback(feet) => {
-                return format!(
+                format!(
                     "
                         {the_subject} is \\glossterm<knocked back> up to {feet} ft. in any direction.
                     ",
                     the_subject = the_subject,
                     feet = feet,
-                );
+                )
             }
             Self::MustRemoveTwice => {
-                return format!(
-                    "
+                "
                         The condition must be removed twice before the effect ends.
-                    ",
-                );
+                    ".to_string()
             }
             Self::Poison(effect) => {
-                return format!(
+                format!(
                     "
                         {the_subject} is {poisoned}
                     ",
                     the_subject = the_subject,
                     poisoned = effect.description(),
-                );
+                )
             }
             Self::Push(feet) => {
-                return format!(
+                format!(
                     "
                         {the_subject} is \\glossterm<pushed> up to {feet} ft. in any direction.
                         The creature moves the same distance that it pushes {the_subject}.
                     ",
                     the_subject = the_subject,
                     feet = feet,
-                );
+                )
             }
             Self::VitalWound(effect) => {
-                return format!(
+                format!(
                     "{the_subject} {vital_wound}",
                     the_subject = the_subject,
                     vital_wound = effect.description(),
-                );
+                )
             }
-        };
+        }
     }
 }
 

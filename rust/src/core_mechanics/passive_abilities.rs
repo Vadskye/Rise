@@ -9,21 +9,21 @@ pub struct PassiveAbility {
 
 impl PassiveAbility {
     pub fn to_latex(&self) -> String {
-        return format!(
+        format!(
             "
                 \\parhead<{name}>{magical} {description}
             ",
             description = self.description,
             magical = if self.is_magical { "[\\sparkle]" } else { "" },
             name = self.name,
-        );
+        )
     }
 
     pub fn sightless() -> Self {
-        return StandardPassiveAbility::Sightless.ability();
+        StandardPassiveAbility::Sightless.ability()
     }
     pub fn undead() -> Self {
-        return StandardPassiveAbility::Undead.ability();
+        StandardPassiveAbility::Undead.ability()
     }
 }
 
@@ -56,11 +56,11 @@ impl StandardPassiveAbility {
             Self::ConditionRemoval(count) => {
                 // This count handling is stupid
                 let conditions = if *count == 3 {r"three or more \glossterm{conditions}" } else { r"four or more \glossterm{conditions}" };
-                return PassiveAbility {
+                PassiveAbility {
                     description: format!("At the end of each round, if the $name has {}, it removes its oldest condition.", conditions),
                     is_magical: false,
                     name: "Condition Removal".to_string(),
-                };
+                }
             },
             Self::EliteActions => PassiveAbility {
                 description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),

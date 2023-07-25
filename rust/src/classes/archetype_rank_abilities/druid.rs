@@ -4,7 +4,7 @@ use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
 pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Elemental Spell",
             is_magical: true,
@@ -182,11 +182,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Nature Spells",
             is_magical: true,
@@ -239,11 +239,11 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Metamagic",
             is_magical: true,
@@ -334,11 +334,11 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Wild Aspects",
             is_magical: true,
@@ -630,11 +630,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Natural Servant",
             is_magical: true,
@@ -780,5 +780,5 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

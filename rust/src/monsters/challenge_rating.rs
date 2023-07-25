@@ -12,7 +12,7 @@ pub enum ChallengeRating {
 
 impl ChallengeRating {
     pub fn all() -> Vec<Self> {
-        return vec![Self::One, Self::Four];
+        vec![Self::One, Self::Four]
     }
 
     pub fn add_modifiers(&self, creature: &mut Creature) {
@@ -135,7 +135,7 @@ impl ChallengeRating {
         fn sm(cr: ChallengeRating, l: i32) -> Creature {
             let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
             monster.add_magical_attack();
-            return monster.creature;
+            monster.creature
         }
 
         match count {
@@ -197,7 +197,7 @@ impl ChallengeRating {
         fn sm(cr: ChallengeRating, l: i32) -> Creature {
             let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
             monster.add_magical_attack();
-            return monster.creature;
+            monster.creature
         }
 
         match count {

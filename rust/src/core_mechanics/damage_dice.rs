@@ -9,19 +9,19 @@ pub struct DamageDice {
 impl DamageDice {
     // Commonly used damage dice for weapon and spell definitions
     pub fn d3() -> Self {
-        return Self::new(2);
+        Self::new(2)
     }
     pub fn d4() -> Self {
-        return Self::new(3);
+        Self::new(3)
     }
     pub fn d6() -> Self {
-        return Self::new(4);
+        Self::new(4)
     }
     pub fn d8() -> Self {
-        return Self::new(5);
+        Self::new(5)
     }
     pub fn d10() -> Self {
-        return Self::new(6);
+        Self::new(6)
     }
 
     pub fn new(increments: i32) -> DamageDice {
@@ -54,27 +54,27 @@ impl DamageDice {
             6 => 10,
             _ => panic!("Invalid dice increments {}", increments),
         };
-        return DamageDice {
+        DamageDice {
             count,
             increments,
             maximized: false,
             size,
-        };
+        }
     }
 
     pub fn new_maximizable(increments: i32, maximized: bool) -> DamageDice {
         let mut new_die = Self::new(increments);
         new_die.maximized = maximized;
-        return new_die;
+        new_die
     }
 
     pub fn add(&self, increments: i32) -> DamageDice {
-        return Self::new_maximizable(self.increments + increments, self.maximized);
+        Self::new_maximizable(self.increments + increments, self.maximized)
     }
 
     pub fn to_string(&self) -> String {
         if self.size == 1 {
-            return "1".to_string();
+            "1".to_string()
         } else if self.maximized {
             return format!("{}", self.count * self.size);
         } else {
@@ -84,9 +84,9 @@ impl DamageDice {
 
     pub fn average_damage(&self) -> f64 {
         if self.maximized {
-            return (self.count * self.size) as f64;
+            (self.count * self.size) as f64
         } else {
-            return ((self.count * (self.size + 1)) as f64) / 2.0;
+            ((self.count * (self.size + 1)) as f64) / 2.0
         }
     }
 
@@ -95,11 +95,11 @@ impl DamageDice {
     }
 
     pub fn aoe_damage(rank: i32) -> Self {
-        return Self::d6().add(rank - 1);
+        Self::d6().add(rank - 1)
     }
 
     pub fn single_target_damage(rank: i32) -> Self {
-        return Self::d10().add(rank - 1);
+        Self::d10().add(rank - 1)
     }
 }
 

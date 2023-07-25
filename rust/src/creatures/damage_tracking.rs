@@ -27,11 +27,11 @@ where
     }
 
     fn remaining_damage_resistance(&self) -> i32 {
-        return self.calc_damage_resistance() - self.damage_resistance_lost;
+        self.calc_damage_resistance() - self.damage_resistance_lost
     }
 
     fn remaining_hit_points(&self) -> i32 {
-        return self.calc_effective_combat_hit_points() - self.hit_points_lost;
+        self.calc_effective_combat_hit_points() - self.hit_points_lost
     }
 
     fn take_damage(&mut self, damage: i32) {

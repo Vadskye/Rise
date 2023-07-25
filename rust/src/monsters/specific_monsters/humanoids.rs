@@ -15,7 +15,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn humanoid(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::Humanoid);
+    def.monster(CreatureType::Humanoid)
 }
 
 pub fn humanoids() -> Vec<MonsterEntry> {
@@ -260,7 +260,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
     }));
 
     fn goblin(name: &str, abilities: MonsterAbilities, statistics: MonsterStatistics) -> Monster {
-        return humanoid(MonsterDef {
+        humanoid(MonsterDef {
             abilities,
             name: name.to_string(),
             narrative: Some(MonsterNarrative {
@@ -270,7 +270,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 knowledge: None,
             }),
             statistics,
-        });
+        })
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -355,7 +355,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
 
     add_lizardfolk(&mut monsters);
 
-    return monsters;
+    monsters
 }
 
 pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
@@ -445,7 +445,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
         abilities.modifiers.push(Modifier::PassiveAbility(
             StandardPassiveAbility::Amphibious.ability(),
         ));
-        return humanoid(MonsterDef {
+        humanoid(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities: abilities.active_abilities,
                 modifiers: abilities.modifiers,
@@ -464,7 +464,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: None,
             }),
             statistics,
-        });
+        })
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -552,7 +552,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
         statistics: MonsterStatistics,
     ) -> Monster {
         abilities.trained_skills.push(Skill::Endurance);
-        return humanoid(MonsterDef {
+        humanoid(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities: abilities.active_abilities,
                 modifiers: abilities.modifiers,
@@ -568,7 +568,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 knowledge: Some(knowledge),
             }),
             statistics,
-        });
+        })
     }
 
     // like a greatsword

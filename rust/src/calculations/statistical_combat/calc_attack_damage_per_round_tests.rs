@@ -8,10 +8,10 @@ fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<String>
     let claws = attacker.get_attack_by_substring("Claw").unwrap();
     // TODO: this used to be a slam, so all of the damage values are wrong
     let bite = attacker.get_attack_by_substring("Bite").unwrap();
-    return vec![
-        calc_attack_damage_per_round(&claws, &attacker, &defender).explain(),
-        calc_attack_damage_per_round(&bite, &attacker, &defender).explain(),
-    ];
+    vec![
+        calc_attack_damage_per_round(&claws, attacker, defender).explain(),
+        calc_attack_damage_per_round(&bite, attacker, defender).explain(),
+    ]
 }
 
 fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
@@ -21,12 +21,12 @@ fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String
     let normal_strike = attacker
         .get_attack_by_name(&attacker.weapons[0].name)
         .unwrap();
-    return vec![
-        calc_attack_damage_per_round(&certain_strike, &attacker, &defender).explain(),
-        calc_attack_damage_per_round(&generic_strike, &attacker, &defender).explain(),
-        calc_attack_damage_per_round(&mighty_strike, &attacker, &defender).explain(),
-        calc_attack_damage_per_round(&normal_strike, &attacker, &defender).explain(),
-    ];
+    vec![
+        calc_attack_damage_per_round(&certain_strike, attacker, defender).explain(),
+        calc_attack_damage_per_round(&generic_strike, attacker, defender).explain(),
+        calc_attack_damage_per_round(&mighty_strike, attacker, defender).explain(),
+        calc_attack_damage_per_round(&normal_strike, attacker, defender).explain(),
+    ]
 }
 
 #[cfg(test)]

@@ -7,12 +7,12 @@ pub struct Die {
 
 impl Die {
     pub fn new(size: i32) -> Self {
-        return Self { size };
+        Self { size }
     }
 
     pub fn add_increment(&self) -> Vec<Die> {
         if self.size < 4 {
-            return vec![Die::new(self.size + 1)];
+            vec![Die::new(self.size + 1)]
         } else if self.size < 10 {
             return vec![Die::new(self.size + 2)];
         } else {
@@ -22,23 +22,23 @@ impl Die {
 
     // Commonly used dice
     pub fn d3() -> Self {
-        return Self::new(3);
+        Self::new(3)
     }
     pub fn d4() -> Self {
-        return Self::new(4);
+        Self::new(4)
     }
     pub fn d6() -> Self {
-        return Self::new(6);
+        Self::new(6)
     }
     pub fn d8() -> Self {
-        return Self::new(8);
+        Self::new(8)
     }
     pub fn d10() -> Self {
-        return Self::new(10);
+        Self::new(10)
     }
 
     pub fn to_string(&self) -> String {
-        return format!("1d{}", self.size);
+        format!("1d{}", self.size)
     }
 }
 
@@ -57,40 +57,40 @@ pub struct DicePool {
 
 impl DicePool {
     pub fn new_die(die: Die) -> Self {
-        return Self {
+        Self {
             dice: vec![die],
             maximized: false,
             multiplier: 1,
             weak: false,
-        };
+        }
     }
 
     // These are sometimes nice, especially when thinking about weapons.
     // It's possible that just using `xdy()` is better.
     pub fn d3() -> Self {
-        return Self::xdy(1, 3);
+        Self::xdy(1, 3)
     }
     pub fn d4() -> Self {
-        return Self::xdy(1, 4);
+        Self::xdy(1, 4)
     }
     pub fn d6() -> Self {
-        return Self::xdy(1, 6);
+        Self::xdy(1, 6)
     }
     pub fn d8() -> Self {
-        return Self::xdy(1, 8);
+        Self::xdy(1, 8)
     }
     pub fn d10() -> Self {
-        return Self::xdy(1, 10);
+        Self::xdy(1, 10)
     }
 
     // Shorthand when you don't want to think about maximized/weak, which is almost always.
     pub fn new(dice: Vec<Die>) -> DicePool {
-        return Self {
+        Self {
             dice,
             maximized: false,
             multiplier: 1,
             weak: false,
-        };
+        }
     }
 
     // It's legal to have a DicePool with an empty `dice`.
@@ -98,12 +98,12 @@ impl DicePool {
     // damage comes from the power scaling.
     // However, you can't add +1d to an empty DicePool.
     pub fn empty() -> DicePool {
-        return Self {
+        Self {
             dice: vec![],
             maximized: false,
             multiplier: 1,
             weak: false,
-        };
+        }
     }
 
     // X dice of Y size: `xdy(2, 8)` is 2d8.
@@ -112,7 +112,7 @@ impl DicePool {
         for _ in 0..count {
             dice.push(Die::new(size));
         }
-        return Self::new(dice);
+        Self::new(dice)
     }
 
     pub fn add_dice(&self, extra_dice: Vec<Die>) -> DicePool {
@@ -120,23 +120,23 @@ impl DicePool {
         // Need to make sure the largest die is at the end
         new_dice.append(&mut extra_dice.clone());
         new_dice.sort_by_key(|d| d.size);
-        return DicePool {
+        DicePool {
             dice: new_dice,
             maximized: self.maximized,
             multiplier: self.multiplier,
             weak: self.weak,
-        };
+        }
     }
 
     pub fn add_die(&self, die: Die) -> DicePool {
-        return self.add_dice(vec![die]);
+        self.add_dice(vec![die])
     }
 
     // Add +1d increments. Each +1d increment increases the single largest die in the pool by
     // one die size (1d4->1d6->1d8->1d10).
     // 1d10 splits into 2d6, which is why we do the awkward pop -> append dance.
     pub fn add_increments(&self, increments: i32) -> DicePool {
-        if self.dice.len() == 0 {
+        if self.dice.is_empty() {
             panic!("Can't increment empty dice pool");
         }
 
@@ -151,12 +151,12 @@ impl DicePool {
             dice.append(&mut incremented_dice);
             increments -= 1;
         }
-        return DicePool {
+        DicePool {
             dice,
             maximized: self.maximized,
             multiplier: self.multiplier,
             weak: self.weak,
-        };
+        }
     }
 
     // Construct a standard "1d8" or "2d8+1d10" string.
@@ -181,7 +181,7 @@ impl DicePool {
             for size in contained_sizes {
                 sum += size * counts[size]
             }
-            return sum.to_string()
+            sum.to_string()
         } else {
             let dice_texts: Vec<String> = contained_sizes
                 .iter()
@@ -189,7 +189,7 @@ impl DicePool {
                 .collect();
             let joined = dice_texts.join("+");
             if self.maximized {
-                return format!("{} (m)", joined);
+                format!("{} (m)", joined)
             } else if self.weak {
                 return format!("{} (w)", joined);
             } else {
@@ -213,31 +213,31 @@ impl DicePool {
             sum *= 0.75;
         }
         sum *= self.multiplier as f64;
-        return sum;
+        sum
     }
 
     // Useful for "double weapon damage" or "triple weapon damage" effects
     pub fn multiply(&self, multiplier: i32) -> DicePool {
-        return DicePool {
+        DicePool {
             dice: self.dice.clone(),
             maximized: self.maximized,
             multiplier,
             weak: self.weak,
-        };
+        }
     }
 
     // Return a new DicePool that is maximized.
     pub fn maximize(&self) -> Self {
         let mut new_pool = self.clone();
         new_pool.maximized = true;
-        return new_pool;
+        new_pool
     }
 
     // Return a new DicePool that is weak. TODO: awkward name?
     pub fn weak(&self) -> Self {
         let mut new_pool = self.clone();
         new_pool.weak = true;
-        return new_pool;
+        new_pool
     }
 
     pub fn calc_scaled_pool(&self, power_scalings: &Vec<PowerScaling>, power: i32) -> DicePool {
@@ -259,7 +259,7 @@ impl DicePool {
                 }
             }
         }
-        return combined_pool;
+        combined_pool
     }
 }
 
@@ -274,24 +274,24 @@ impl PowerScaling {
     // Normally, weapons gain +1d per 2 power. Low-level spells also tend to use this
     // scaling.
     pub fn standard_weapon_scaling() -> Self {
-        return Self {
+        Self {
             dice: None,
             power_per_dice: 0,
             power_per_increment: 2,
-        };
+        }
     }
 
     pub fn heavy_weapon_scalings() -> Vec<Self> {
         // Two scalings: one that gives +1d per 2 power, and one that gives +1d per 3
         // power.
-        return vec![
+        vec![
             Self::standard_weapon_scaling(),
             Self {
                 dice: None,
                 power_per_dice: 0,
                 power_per_increment: 3,
             },
-        ];
+        ]
     }
 }
 

@@ -1,7 +1,7 @@
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
-use crate::core_mechanics::{MovementSpeed, Sense, Size};
+use crate::core_mechanics::{Size};
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
+use crate::equipment::{StandardWeapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -12,7 +12,7 @@ use crate::monsters::{
 use crate::skills::Skill;
 
 fn monstrous_humanoid(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::MonstrousHumanoid);
+    def.monster(CreatureType::MonstrousHumanoid)
 }
 
 pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
@@ -88,7 +88,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
     // This uses a new struct, so it's cleaner to split it into a separate function
     add_ogres(&mut monsters);
 
-    let giant_club = StandardWeapon::Club
+    let _giant_club = StandardWeapon::Club
         .weapon()
         .except(|w| w.tags.push(WeaponTag::Sweeping(1)));
 
@@ -197,7 +197,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         ],
     }));
 
-    return monsters;
+    monsters
 }
 
 fn add_ogres(monsters: &mut Vec<MonsterEntry>) {

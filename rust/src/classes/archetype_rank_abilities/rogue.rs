@@ -5,7 +5,7 @@ use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Sneak Attack",
             is_magical: false,
@@ -116,11 +116,11 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Bardic Lore",
             is_magical: false,
@@ -447,7 +447,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
@@ -555,11 +555,11 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Dabbler",
             is_magical: false,
@@ -743,11 +743,11 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
-    ];
+    ]
 }
 
 pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Confound",
             is_magical: false,
@@ -860,5 +860,5 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

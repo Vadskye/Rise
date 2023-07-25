@@ -226,7 +226,7 @@ impl ClassArchetype {
         return self
             .abilities_at_rank(rank)
             .into_iter()
-            .filter(|a| a.description.trim() != "" || a.name.contains("+"))
+            .filter(|a| a.description.trim() != "" || a.name.contains('+'))
             .collect();
     }
 
@@ -414,7 +414,7 @@ impl ClassArchetype {
                 You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
         };
-        return format!(
+        format!(
             "{} {}",
             description,
             if self.is_magical() {
@@ -422,7 +422,7 @@ impl ClassArchetype {
             } else {
                 ""
             }
-        );
+        )
     }
 }
 
@@ -440,7 +440,7 @@ impl ClassArchetype {
             })
             .collect::<Vec<String>>();
         rank_ability_descriptions.sort();
-        return format!(
+        format!(
             "
                 \\archetypedef{magical_sparkle}<{class_shorthand}><{archetype_name}>
                 {short_description}
@@ -452,11 +452,11 @@ impl ClassArchetype {
             magical_sparkle = if self.is_magical() { "*" } else { "" },
             rank_abilities = rank_ability_descriptions.join("\n\n"),
             short_description = self.short_description(),
-        );
+        )
     }
 
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             // Barbarian
             ClassArchetype::BattleforgedResilience,
             ClassArchetype::Battlerager,
@@ -523,7 +523,7 @@ impl ClassArchetype {
             ClassArchetype::Alchemist,
             ClassArchetype::ArcaneScholar,
             ClassArchetype::SchoolSpecialist,
-        ];
+        ]
     }
 }
 

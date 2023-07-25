@@ -4,7 +4,7 @@ use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Enduring Discipline",
             is_magical: false,
@@ -95,11 +95,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Weapon Training",
             is_magical: false,
@@ -178,7 +178,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
@@ -287,12 +287,12 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 // TODO: This archetype has several abilities that are hard to represent numerically
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Protect",
             is_magical: false,
@@ -380,11 +380,11 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Battle Tactics",
             is_magical: false,
@@ -556,5 +556,5 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

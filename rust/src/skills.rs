@@ -82,9 +82,9 @@ impl Skill {
 
     pub fn apply_encumbrance(&self) -> bool {
         if let Some(attribute) = self.attribute() {
-            return attribute == Attribute::Strength || attribute == Attribute::Dexterity;
+            attribute == Attribute::Strength || attribute == Attribute::Dexterity
         } else {
-            return false;
+            false
         }
     }
 
@@ -119,7 +119,7 @@ impl Skill {
     }
 
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Awareness,
             Self::Balance,
             Self::Climb,
@@ -145,14 +145,14 @@ impl Skill {
             Self::Stealth,
             Self::Survival,
             Self::Swim,
-        ];
+        ]
     }
 
     pub fn all_from_skill_category(category: &SkillCategory) -> Vec<Self> {
-        return Self::all()
+        Self::all()
             .into_iter()
             .filter(|s| &s.skill_category() == category)
-            .collect();
+            .collect()
     }
 
     pub fn skill_category(&self) -> SkillCategory {
@@ -195,11 +195,11 @@ impl Skill {
         match self {
             Self::Knowledge(subskills) => {
                 if subskills.len() == KnowledgeSubskill::all().len() {
-                    return String::from("Knowledge (all kinds, taken individually)");
+                    String::from("Knowledge (all kinds, taken individually)")
                 } else {
                     let subskill_names: Vec<&str> =
                         subskills.iter().map(|subskill| subskill.name()).collect();
-                    return format!("Knowledge ({})", subskill_names.join(", "));
+                    format!("Knowledge ({})", subskill_names.join(", "))
                 }
             }
             _ => titlecase(self.name()),
@@ -211,9 +211,9 @@ impl PartialEq for Skill {
     fn eq(&self, other: &Self) -> bool {
         if let Self::Knowledge(subskills) = self {
             if let Self::Knowledge(other_subskills) = other {
-                return subskills.eq(other_subskills);
+                subskills.eq(other_subskills)
             } else {
-                return false;
+                false
             }
         } else {
             return self.name() == other.name();
@@ -241,7 +241,7 @@ pub enum KnowledgeSubskill {
 
 impl KnowledgeSubskill {
     pub fn all() -> Vec<KnowledgeSubskill> {
-        return vec![
+        vec![
             KnowledgeSubskill::Arcana,
             KnowledgeSubskill::Dungeoneering,
             KnowledgeSubskill::Engineering,
@@ -250,7 +250,7 @@ impl KnowledgeSubskill {
             KnowledgeSubskill::Nature,
             KnowledgeSubskill::Planes,
             KnowledgeSubskill::Religion,
-        ];
+        ]
     }
 
     pub fn name(&self) -> &str {
@@ -298,19 +298,19 @@ where
         if self.skill_training.is_none() {
             self.skill_training = Some(HashMap::new());
         }
-        let ref mut skill_training = self.skill_training.as_mut().unwrap();
+        let skill_training = &mut self.skill_training.as_mut().unwrap();
         skill_training.insert(skill, trained);
     }
 
     fn is_skill_trained(&self, skill: &Skill) -> bool {
         if let Some(ref skill_training) = self.skill_training {
             if let Some(p) = skill_training.get(skill) {
-                return *p;
+                *p
             } else {
-                return false;
+                false
             }
         } else {
-            return false;
+            false
         }
     }
 
@@ -331,7 +331,7 @@ where
             0
         };
 
-        return attribute_modifier + training_modifier - encumbrance_modifier
-            + self.calc_total_modifier(ModifierType::Skill(skill.clone()));
+        attribute_modifier + training_modifier - encumbrance_modifier
+            + self.calc_total_modifier(ModifierType::Skill(skill.clone()))
     }
 }

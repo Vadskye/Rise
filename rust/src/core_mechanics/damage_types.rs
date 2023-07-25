@@ -33,8 +33,8 @@ impl DamageType {
 
     pub fn format_damage_types(damage_types: &Vec<Self>) -> String {
         let mut damage_types = damage_types.clone();
-        damage_types.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
-        return latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from(""))
+        damage_types.sort_by_key(|a| a.name().to_lowercase());
+        latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from(""))
     }
 }
 

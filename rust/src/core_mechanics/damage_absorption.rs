@@ -57,10 +57,10 @@ where
             + dr_from_armor
             + self.calc_total_modifier(ModifierType::DamageResistance);
 
-        return match self.category {
+        match self.category {
             CreatureCategory::Character => dr,
             CreatureCategory::Monster(cr) => (dr as f64 * cr.dr_multiplier()) as i32,
-        };
+        }
     }
 
     fn calc_hit_points(&self) -> i32 {
@@ -106,23 +106,23 @@ where
 
         let hp = hp_from_level + self.calc_total_modifier(ModifierType::HitPoints);
 
-        return match self.category {
+        match self.category {
             CreatureCategory::Character => hp,
             CreatureCategory::Monster(cr) => (hp as f64 * cr.hp_multiplier()) as i32,
-        };
+        }
     }
 
     fn calc_effective_combat_hit_points(&self) -> i32 {
         if self.can_recover() {
-            return ((self.calc_hit_points() as f64) * 1.25).floor() as i32;
+            ((self.calc_hit_points() as f64) * 1.25).floor() as i32
         } else {
-            return self.calc_hit_points();
+            self.calc_hit_points()
         }
     }
 }
 
 fn calc_levelish(creature: &Creature, attribute_modifier: i32, mt: ModifierType) -> i32 {
-    return creature.level
+    creature.level
         + attribute_modifier
-        + creature.calc_total_modifier(mt);
+        + creature.calc_total_modifier(mt)
 }

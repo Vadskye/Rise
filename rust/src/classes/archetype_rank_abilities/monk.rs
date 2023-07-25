@@ -5,7 +5,7 @@ use crate::creatures::Modifier;
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Float Like Air",
             is_magical: false,
@@ -112,7 +112,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
@@ -220,11 +220,11 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
@@ -520,11 +520,11 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Unarmed Warrior",
             is_magical: false,
@@ -633,11 +633,11 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Attribute(Attribute::Dexterity, 1),
             ]),
         },
-    ];
+    ]
 }
 
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
@@ -708,5 +708,5 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

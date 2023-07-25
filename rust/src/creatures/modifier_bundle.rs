@@ -16,7 +16,7 @@ impl ModifierBundle {
     pub fn plus_modifiers(&self, extra_modifiers: Vec<Modifier>) -> Vec<Modifier> {
         let mut modifiers = self.modifiers();
         modifiers.append(&mut extra_modifiers.clone());
-        return modifiers;
+        modifiers
     }
 
     pub fn modifiers(&self) -> Vec<Modifier> {

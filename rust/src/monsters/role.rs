@@ -14,14 +14,14 @@ pub enum Role {
 // No clear balancing. Hoping that the role differentiation makes them hard to directly compare.
 impl Role {
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Brute,
             Self::Skirmisher,
             Self::Warrior,
             Self::Sniper,
             Self::Mystic,
             Self::Leader,
-        ];
+        ]
     }
 
     // Shorthand to avoid specifying the name and priority every time
@@ -57,7 +57,7 @@ impl Role {
             Defense::Reflex => 2,
             Defense::Mental => 3,
         };
-        return defenses[i];
+        defenses[i]
     }
 
     pub fn damage_resistance(&self) -> i32 {
