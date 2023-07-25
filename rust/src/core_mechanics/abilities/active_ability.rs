@@ -51,7 +51,7 @@ impl ActiveAbility {
             Self::Custom(c) => c.plus_accuracy(modifier),
             Self::Strike(s) => s.plus_accuracy(modifier),
         };
-        return self;
+        self
     }
 }
 
@@ -76,14 +76,14 @@ impl CustomAbility {
 
         // This function is used by both ActiveAbility and Attack, which explains the odd
         // duplication.
-        return latex_ability_block(
+        latex_ability_block(
             self.ability_type,
             replace_attack_terms(&self.effect, creature, self.is_magical, None),
             latex_tags,
             self.is_magical,
             self.name,
             Some(self.usage_time),
-        );
+        )
     }
 
     fn plus_accuracy(&mut self, modifier: i32) {
@@ -91,7 +91,7 @@ impl CustomAbility {
     }
 
     pub fn battle_command(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -105,12 +105,12 @@ impl CustomAbility {
             name: "Battle Command".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 
     // This is just Mystic Bolt with a specific common flavor
     pub fn divine_judgment(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -123,11 +123,11 @@ impl CustomAbility {
             name: "Divine Judgment".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 
     pub fn heed_the_dark_call(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -144,11 +144,11 @@ impl CustomAbility {
             name: "Heed the Dark Call".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 
     pub fn inflict_wound(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -162,11 +162,11 @@ impl CustomAbility {
             name: "Inflict Wound".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 
     pub fn stabilize_life(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -179,11 +179,11 @@ impl CustomAbility {
             name: "Stabilize Life".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 
     pub fn true_strike(rank: i32) -> Self {
-        return Self {
+        Self {
             ability_type: AbilityType::Normal,
             effect: format!(
                 "
@@ -197,7 +197,7 @@ impl CustomAbility {
             name: "True Strike".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        };
+        }
     }
 }
 
@@ -226,14 +226,14 @@ impl StrikeAbility {
 
         // This function is used by both ActiveAbility and Attack, which explains the odd
         // duplication.
-        return latex_ability_block(
+        latex_ability_block(
             AbilityType::Normal,
             replace_attack_terms(&self.effect, creature, self.is_magical, Some(&self.weapon)),
             latex_tags,
             self.is_magical,
             self.name,
             None,
-        );
+        )
     }
 
     fn plus_accuracy(&mut self, modifier: i32) {
@@ -241,7 +241,7 @@ impl StrikeAbility {
     }
 
     pub fn armorcrusher(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
                 \hit $fullweapondamage.
@@ -251,11 +251,11 @@ impl StrikeAbility {
             name: strike_prefix("Armorcrushing", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn armorpiercer(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
                 \hit $fullweapondamage.
@@ -265,11 +265,11 @@ impl StrikeAbility {
             name: strike_prefix("Armorpiercing", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn bloodletting_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each damaged creature bleeds if this attack beats its Fortitude defense.
@@ -281,11 +281,11 @@ impl StrikeAbility {
             name: strike_prefix("Bloodletting", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn consecrated_strike(rank: i32, weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} strike vs. Armor with its $weapon.
@@ -298,11 +298,11 @@ impl StrikeAbility {
             name: strike_prefix("Consecrated", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn defensive_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
                 In addition, it gains a +1 bonus to its Armor and Reflex defenses as a \abilitytag<Swift> effect.
@@ -312,11 +312,11 @@ impl StrikeAbility {
             name: strike_prefix("Defensive", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn distant_shot(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It reduces its \glossterm{longshot penalty} with the strike by 4.
@@ -327,12 +327,12 @@ impl StrikeAbility {
             name: strike_prefix("Distant", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     // Must be melee-only
     pub fn frenzied_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
@@ -342,11 +342,11 @@ impl StrikeAbility {
             name: strike_prefix("Frenzied", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn guardbreaker(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 In addition, it chooses one of its allies.
@@ -357,11 +357,11 @@ impl StrikeAbility {
             name: strike_prefix("Guardbreaking", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn hamstring(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
@@ -371,11 +371,11 @@ impl StrikeAbility {
             name: strike_prefix("Hamstring --", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn heartpiercer(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its {weapon}.
                 It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
@@ -386,11 +386,11 @@ impl StrikeAbility {
             name: strike_prefix("Heartpiercing", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn power_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy-3 strike vs. Armor with its $weapon.
                 \hit $damage*2 $damagetypes damage.
@@ -400,11 +400,11 @@ impl StrikeAbility {
             name: strike_prefix("Power", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn reckless_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
                 After making the attack, it briefly takes a -4 penalty to all defenses.
@@ -415,11 +415,11 @@ impl StrikeAbility {
             name: strike_prefix("Reckless", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn redeeming_followup(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
@@ -429,11 +429,11 @@ impl StrikeAbility {
             name: strike_prefix("Redeeming", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn rushed_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy-1 strike vs. Armor with its $weapon.
                 It can also move up to half its speed either before or after making the strike.
@@ -444,11 +444,11 @@ impl StrikeAbility {
             name: strike_prefix("Rushed", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn rushed_strike_plus(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy-2 strike vs. Armor with its $weapon.
                 It can also move up to its speed either before or after making the strike.
@@ -459,11 +459,11 @@ impl StrikeAbility {
             name: strike_prefix("Rushed", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn normal_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $damage $damagetypes.
@@ -473,12 +473,12 @@ impl StrikeAbility {
             name: weapon.name.clone(),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
     pub fn dual_strike(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes two $accuracy strikes vs. Armor with its $weapons.
                 \hit $damage $damagetypes.
@@ -488,11 +488,11 @@ impl StrikeAbility {
             name: weapon.name.clone(),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn knockdown(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
@@ -504,11 +504,11 @@ impl StrikeAbility {
             name: strike_prefix("Knockdown --", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 
     pub fn knockdown_plus(weapon: Weapon) -> Self {
-        return Self {
+        Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
@@ -520,12 +520,12 @@ impl StrikeAbility {
             name: strike_prefix("Knockdown --", &weapon),
             tags: vec![],
             weapon,
-        };
+        }
     }
 }
 
 fn strike_prefix(prefix: &str, weapon: &Weapon) -> String {
-    return format!("{} {}", prefix, weapon.name);
+    format!("{} {}", prefix, weapon.name)
 }
 
 fn replace_attack_terms(
@@ -547,13 +547,13 @@ fn replace_attack_terms(
     replaced_effect = replace_weapon_name_terms(&replaced_effect, &weapon);
     replaced_effect = replace_extra_damage_terms(&replaced_effect, creature, is_magical);
 
-    return replaced_effect.to_string();
+    replaced_effect.to_string()
 }
 
 fn replace_full_weapon_damage_terms(effect: &str) -> String {
     let full_weapon_damage_pattern = Regex::new(r"\$fullweapondamage").unwrap();
     return full_weapon_damage_pattern
-        .replace_all(&effect, "$$damage $$damagetypes damage")
+        .replace_all(effect, "$$damage $$damagetypes damage")
         .to_string();
 }
 
@@ -569,7 +569,7 @@ fn replace_accuracy_terms(effect: &str, creature: &Creature, weapon: Option<&Wea
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();
     }
-    return replaced_effect;
+    replaced_effect
 }
 
 fn replace_damage_terms(
@@ -589,7 +589,7 @@ fn replace_damage_terms(
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();
     }
-    return replaced_effect;
+    replaced_effect
 }
 
 fn replace_damage_rank_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
@@ -605,7 +605,7 @@ fn replace_damage_rank_terms(effect: &str, creature: &Creature, is_magical: bool
             .to_string();
     }
 
-    return replaced_effect;
+    replaced_effect
 }
 
 fn replace_damage_type_terms(effect: &str, weapon: Option<&Weapon>) -> String {
@@ -621,7 +621,7 @@ fn replace_damage_type_terms(effect: &str, weapon: Option<&Weapon>) -> String {
             .to_string();
     }
 
-    return replaced_effect;
+    replaced_effect
 }
 
 fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
@@ -638,7 +638,7 @@ fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
             .to_string();
     }
 
-    return replaced_effect;
+    replaced_effect
 }
 
 fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: bool) -> String {
@@ -665,7 +665,7 @@ fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: boo
             .to_string();
     }
 
-    return replaced_effect;
+    replaced_effect
 }
 
 // For a given accuracy block, such as "$accuracy" or "$accuracy+2", return the specific text that
@@ -701,7 +701,7 @@ fn parse_accuracy_match(
     }
 
     let accuracy_sign = if accuracy >= 0 { "+" } else { "-" };
-    return format!("{}{}", accuracy_sign, accuracy);
+    format!("{}{}", accuracy_sign, accuracy)
 }
 
 fn calc_weapon_damage(
@@ -722,7 +722,7 @@ fn calc_weapon_damage(
     let damage_effect = DamageEffect::from_weapon(weapon);
     let mut damage_dice = damage_effect.calc_damage_dice(creature, is_magical, true);
     damage_dice.multiplier = multiplier;
-    return damage_dice.to_string();
+    damage_dice.to_string()
 }
 
 #[cfg(test)]
@@ -733,7 +733,7 @@ mod tests {
     use crate::testing::assert_multiline_eq;
 
     fn sample_creature() -> Creature {
-        return Creature::new(10, CreatureCategory::Character);
+        Creature::new(10, CreatureCategory::Character)
     }
 
     #[test]
@@ -954,7 +954,7 @@ The $name glows like a torch for a minute.
         fn dr_sample_creature() -> Creature {
             let mut creature = Creature::new(10, CreatureCategory::Character);
             creature.set_base_attribute(Attribute::Strength, 5);
-            return creature;
+            creature
         }
 
         #[test]
@@ -1228,5 +1228,5 @@ fn add_accuracy_to_effect(modifier: i32, effect: &str, name: &str) -> String {
             name
         );
     }
-    return replaced_effect;
+    replaced_effect
 }

@@ -11,16 +11,16 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn animal(def: MonsterDef) -> Monster {
-    return def.animal();
+    def.animal()
 }
 
 fn empty_narrative() -> Option<MonsterNarrative> {
-    return Some(MonsterNarrative {
+    Some(MonsterNarrative {
         alignment: "Always true neutral".to_string(),
         description: None,
         art: false,
         knowledge: None,
-    });
+    })
 }
 
 pub fn animals() -> Vec<MonsterEntry> {
@@ -655,5 +655,5 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     weapons: vec![StandardWeapon::MultipedalBite.weapon()],
     // })));
 
-    return monsters;
+    monsters
 }

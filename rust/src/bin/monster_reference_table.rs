@@ -9,7 +9,7 @@ fn main() {
     for level in 1..22 {
         level_rows.push(calc_row(level));
     }
-    let mut table_text = format!(
+    let table_text = format!(
         "
             \\begin<dtable*>
                 \\lcaption<Quick Monster Creation>
@@ -27,7 +27,7 @@ fn main() {
 
 fn calc_cell(role: Role, level: i32) -> String {
     let monster = Monster::new(ChallengeRating::One, CreatureType::Planeforged, role, level);
-    return format!(
+    format!(
         "{hp}/{dr}; {armor}/{fort}/{ment}/{ref}",
         hp = monster.creature.calc_hit_points(),
         dr = monster.creature.calc_damage_resistance(),
@@ -40,5 +40,5 @@ fn calc_cell(role: Role, level: i32) -> String {
 
 fn calc_row(level: i32) -> String {
     let role_cells = Role::all().into_iter().map(|r| calc_cell(r, level)).collect::<Vec<String>>().join(" & ");
-    return format!("\\nth<{level}> & {role_cells} \\\\", level = level, role_cells = role_cells);
+    format!("\\nth<{level}> & {role_cells} \\\\", level = level, role_cells = role_cells)
 }

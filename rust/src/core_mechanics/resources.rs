@@ -11,12 +11,12 @@ pub enum Resource {
 
 impl Resource {
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::AttunementPoint,
             Self::FatigueTolerance,
             Self::InsightPoint,
             Self::TrainedSkill,
-        ];
+        ]
     }
 
     pub fn name(&self) -> &str {
@@ -76,6 +76,6 @@ where
             }
             Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         };
-        return value + self.calc_total_modifier(ModifierType::Resource(*resource));
+        value + self.calc_total_modifier(ModifierType::Resource(*resource))
     }
 }

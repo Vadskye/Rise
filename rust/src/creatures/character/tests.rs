@@ -238,7 +238,7 @@ mod standard_character_statistics {
             vec![4, 0, 2, 0, 2, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -358,7 +358,7 @@ mod standard_character_statistics {
             vec![6, 0, 4, 0, 2, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -504,7 +504,7 @@ mod standard_character_statistics {
             vec![7, 0, 5, 0, 2, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -636,7 +636,7 @@ mod standard_perception_character_statistics {
             vec![2, 0, 2, 0, 4, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -757,7 +757,7 @@ mod standard_perception_character_statistics {
             vec![2, 0, 3, 0, 5, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -902,7 +902,7 @@ mod standard_perception_character_statistics {
             vec![2, 0, 5, 0, 7, 0],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );

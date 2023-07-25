@@ -53,7 +53,7 @@ impl Targeting {
                     AreaSize::Gargantuan => 7,
                     AreaSize::Custom(_) => 7,
                 };
-                return minimum_rank + targets.rank_modifier();
+                minimum_rank + targets.rank_modifier()
             }
             Self::Line(width, size, targets) => {
                 let minimum_rank = match size {
@@ -71,7 +71,7 @@ impl Targeting {
                     15 => 2,
                     _ => panic!("Invalid line width {}", width),
                 };
-                return minimum_rank + width_modifier + targets.rank_modifier();
+                minimum_rank + width_modifier + targets.rank_modifier()
             }
             Self::MadeMeleeAttack => 1,
             Self::MovementPath => 1,
@@ -90,7 +90,7 @@ impl Targeting {
                 } else {
                     0
                 };
-                return minimum_rank + range_modifier + targets.rank_modifier();
+                minimum_rank + range_modifier + targets.rank_modifier()
             }
             Self::SharingSpace => 1,
             Self::Strike => 1,
@@ -226,10 +226,10 @@ impl Targeting {
             ),
         };
 
-        if movement_after_attack == "" {
-            return main_attack;
+        if movement_after_attack.is_empty() {
+            main_attack
         } else {
-            return format!("{} {}", main_attack, movement_after_attack);
+            format!("{} {}", main_attack, movement_after_attack)
         }
     }
 

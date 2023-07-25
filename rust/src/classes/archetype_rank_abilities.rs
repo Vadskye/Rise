@@ -26,7 +26,7 @@ pub struct RankAbility<'a> {
 // LaTeX
 impl RankAbility<'_> {
     pub fn latex_class_feature(&self, class_shorthand: &str, include_magical_tag: bool) -> String {
-        return format!(
+        format!(
             "
                 \\cf<{class_shorthand}>[{rank}]<{ability_name}>{magical}
                 {ability_description}
@@ -40,7 +40,7 @@ impl RankAbility<'_> {
                 ""
             },
             rank = self.rank,
-        );
+        )
     }
 }
 
@@ -115,10 +115,10 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
     }
 }
 
-pub fn calc_rank_abilities<'a>(
+pub fn calc_rank_abilities(
     level: i32,
-    archetypes: &'a [ClassArchetype; 3],
-) -> Vec<RankAbility<'a>> {
+    archetypes: &[ClassArchetype; 3],
+) -> Vec<RankAbility<'_>> {
     let mut rank_abilities: Vec<RankAbility> = vec![];
     for i in 0..level {
         rank_abilities.append(
@@ -127,5 +127,5 @@ pub fn calc_rank_abilities<'a>(
                 .as_mut(),
         );
     }
-    return rank_abilities;
+    rank_abilities
 }

@@ -49,11 +49,11 @@ impl Character {
             );
         }
 
-        return Character {
+        Character {
             // archetypes,
             class,
             creature,
-        };
+        }
     }
 
     // Currently this creates a Martial Mastery fighter
@@ -106,7 +106,7 @@ impl Character {
             character.creature.add_magic_modifier(modifier);
         }
 
-        return character;
+        character
     }
 
     pub fn standard_greataxe(level: i32, use_point_buy: bool) -> Self {
@@ -118,7 +118,7 @@ impl Character {
             .creature
             .weapons
             .push(StandardWeapon::Greataxe.weapon());
-        return character;
+        character
     }
 
     pub fn standard_perception_character(level: i32) -> Self {
@@ -144,7 +144,7 @@ impl Character {
         character
             .creature
             .set_attribute_scaling(level, [Attribute::Perception, Attribute::Constitution]);
-        return character;
+        character
     }
 
     pub fn perception_greataxe(level: i32) -> Self {
@@ -156,7 +156,7 @@ impl Character {
             .creature
             .weapons
             .push(StandardWeapon::Greataxe.weapon());
-        return character;
+        character
     }
 
     pub fn standard_barbarian(level: i32, use_point_buy: bool) -> Self {
@@ -207,7 +207,7 @@ impl Character {
             character.creature.add_magic_modifier(modifier);
         }
 
-        return character;
+        character
     }
 
     pub fn standard_sorcerer(level: i32, use_point_buy: bool) -> Self {
@@ -253,13 +253,13 @@ impl Character {
             character.creature.add_magic_modifier(modifier);
         }
 
-        return character;
+        character
     }
 
     pub fn description(&self) -> String {
         // let mut attacks = self.calc_all_attacks();
         // attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
-        return format!(
+        format!(
             "
                 {creature_latex}
                 {class_name} {level}
@@ -277,7 +277,7 @@ impl Character {
             //     .map(|a| a.shorthand_description(self))
             //     .collect::<Vec<String>>()
             //     .join("\n"),
-        );
+        )
     }
 }
 
@@ -332,7 +332,7 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
         modifiers.push(Modifier::HitPoints(hp));
     }
 
-    return modifiers;
+    modifiers
 }
 
 // Use a relatively smooth level progression for a rank-appropriate item
@@ -341,7 +341,7 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
     match max_usage_class {
         ArmorUsageClass::Heavy => {
             if level >= 7 {
-                return Armor::FullPlate(Some(ArmorMaterial::Magic(magic_item_rank)));
+                Armor::FullPlate(Some(ArmorMaterial::Magic(magic_item_rank)))
             } else if level >= 4 {
                 return Armor::PlatedMail(None);
             } else {
@@ -350,13 +350,13 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
         }
         ArmorUsageClass::Medium => {
             if level >= 4 {
-                return Armor::Breastplate(Some(ArmorMaterial::Magic(magic_item_rank)));
+                Armor::Breastplate(Some(ArmorMaterial::Magic(magic_item_rank)))
             } else {
-                return Armor::ScaleMail(None);
+                Armor::ScaleMail(None)
             }
         }
         ArmorUsageClass::Light => {
-            return Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank)));
+            Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank)))
         }
     }
 }

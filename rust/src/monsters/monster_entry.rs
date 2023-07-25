@@ -9,7 +9,7 @@ pub fn generate_monster_entries() -> Vec<MonsterEntry> {
     }
 
     // entries.append(generate_stock_monsters::generate_stock_monsters().as_mut());
-    return entries;
+    entries
 }
 
 pub enum MonsterEntry {
@@ -20,7 +20,7 @@ pub enum MonsterEntry {
 impl MonsterEntry {
     pub fn to_latex(&self) -> String {
         if let MonsterEntry::Monster(m) = self {
-            return m.to_section(None);
+            m.to_section(None)
         } else if let MonsterEntry::MonsterGroup(m) = self {
             return m.to_latex();
         } else {
@@ -42,14 +42,14 @@ pub fn latex_by_name(name: &str) -> String {
         if let MonsterEntry::MonsterGroup(group) = entry {
             for monster in group.monsters {
                 if let Some(ref monster_name) = monster.creature.name {
-                    if monster_name.to_string() == name {
+                    if *monster_name == name {
                         return monster.to_section(Some(group.name));
                     }
                 }
             }
         } else if let MonsterEntry::Monster(monster) = entry {
             if let Some(ref monster_name) = monster.creature.name {
-                if monster_name.to_string() == name {
+                if *monster_name == name {
                     return monster.to_section(None);
                 }
             }

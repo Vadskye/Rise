@@ -23,7 +23,7 @@ impl VitalWound {
         let mut rng = rand::thread_rng();
         let roll = rng.gen_range(1..11) - modifier;
         if roll < 0 {
-            return Self::Negative(roll);
+            Self::Negative(roll)
         } else if roll > 9 {
             return Self::NoEffect;
         } else {
@@ -124,6 +124,6 @@ where
                 return true;
             }
         }
-        return false;
+        false
     }
 }

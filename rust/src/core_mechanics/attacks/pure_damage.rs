@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{Range, Targeting};
 use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
-use crate::core_mechanics::{DamageType, Defense, Die, PowerScaling};
+use crate::core_mechanics::{DamageType, Defense};
 use crate::equipment::Weapon;
 
 pub struct PureDamage {
@@ -22,7 +22,7 @@ impl PureDamage {
     pub fn attack(&self) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
-        return Attack {
+        Attack {
             accuracy: 0,
             crit: None,
             defense: self.defense,
@@ -34,13 +34,13 @@ impl PureDamage {
             replaces_weapon: None,
             tags: None,
             targeting: Targeting::Creature(spent_rank_results.maybe_range.unwrap()),
-        };
+        }
     }
 
     pub fn weapon_attack(&self, weapon: &Weapon) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
-        return weapon
+        weapon
             .attack()
             .except(|a| {
                 a.accuracy += spent_rank_results.accuracy_modifier;
@@ -49,7 +49,7 @@ impl PureDamage {
             })
             .except_hit_damage(|d| {
                 d.damage_types.append(&mut self.damage_types.clone());
-            });
+            })
     }
 
     // If we have ranks to spend, spend them in the following order:
@@ -83,17 +83,17 @@ impl PureDamage {
             }
         }
 
-        return SpentRankResults {
+        SpentRankResults {
             accuracy_modifier: spendable_ranks,
             maybe_range,
-        };
+        }
     }
 
     fn calculate_minimum_rank(&self) -> i32 {
         if let Some(ref r) = self.range {
-            return r.minimum_rank();
+            r.minimum_rank()
         } else {
-            return 0;
+            0
         }
     }
 }
@@ -106,20 +106,20 @@ mod tests {
     use crate::latex_formatting::standardize_indentation;
 
     fn get_basic_creature() -> Creature {
-        return Character::standard_character(1, false).creature;
+        Character::standard_character(1, false).creature
     }
 
     fn get_standard_ability_block(config: PureDamage) -> String {
         if config.is_maneuver {
-            return standardize_indentation(
+            standardize_indentation(
                 &config
                     .weapon_attack(&StandardWeapon::Club.weapon())
                     .latex_ability_block(&get_basic_creature()),
-            );
+            )
         } else {
-            return standardize_indentation(
+            standardize_indentation(
                 &config.attack().latex_ability_block(&get_basic_creature()),
-            );
+            )
         }
     }
 

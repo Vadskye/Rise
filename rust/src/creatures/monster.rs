@@ -68,7 +68,7 @@ impl Monster {
 
     // TODO: store `elite` instead of `challenge_rating`
     pub fn elite(&self) -> bool {
-        return self.challenge_rating == ChallengeRating::Four;
+        self.challenge_rating == ChallengeRating::Four
     }
 
     pub fn standard_monster(
@@ -112,7 +112,7 @@ impl Monster {
             .creature
             .set_attribute_scaling(level, [Strength, Willpower]);
 
-        return monster;
+        monster
     }
 
     pub fn add_magical_attack(&mut self) {
@@ -153,7 +153,7 @@ impl Monster {
     }
 
     fn validate_active_abilities(&self) {
-        if self.creature.active_abilities().len() == 0 {
+        if self.creature.active_abilities().is_empty() {
             eprintln!("Monster {} has no active abilities", self.name());
         }
 
@@ -344,17 +344,17 @@ impl Monster {
             } else {
                 name.to_string()
             };
-            return format!(
+            format!(
                 "\\noindent\\includegraphics[width=\\columnwidth]<monsters/{path}>\\vspace<0.5em>",
                 path = path,
-            );
+            )
         } else {
-            return "".to_string();
+            "".to_string()
         }
     }
 
     fn latex_content(&self) -> String {
-        return format!(
+        format!(
             "
                 \\begin<monsterstatistics>
                     {defensive_statistics}
@@ -388,17 +388,17 @@ impl Monster {
                                   // included in more specific attacks or abilities.
                                   // accuracy = latex_formatting::modifier(self.creature.calc_accuracy()),
                                   // power = self.latex_power(),
-        );
+        )
     }
 
     fn latex_special_defense_modifiers(&self) -> String {
         let special_defenses = self.creature.calc_special_defenses();
 
         fn explain_special_defense_types(header: &str, types: Vec<SpecialDefenseType>) -> String {
-            if types.len() == 0 {
+            if types.is_empty() {
                 return "".to_string();
             }
-            return format!(
+            format!(
                 "\\pari \\textbf<{header}> {types}",
                 header = header,
                 types = latex_formatting::uppercase_first_letter(
@@ -409,10 +409,10 @@ impl Monster {
                         .join(", ")
                         .as_str()
                 ),
-            );
+            )
         }
 
-        return format!(
+        format!(
             "
                 {immune}
                 {impervious}
@@ -421,7 +421,7 @@ impl Monster {
             immune = explain_special_defense_types("Immune", special_defenses.immune),
             impervious = explain_special_defense_types("Impervious", special_defenses.impervious),
             vulnerable = explain_special_defense_types("Vulnerable", special_defenses.vulnerable),
-        );
+        )
     }
 
     fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
@@ -436,8 +436,8 @@ impl Monster {
                 )
             })
             .collect::<Vec<String>>();
-        skills.sort_by(|a, b| a.to_lowercase().cmp(&b.to_lowercase()));
-        return skills;
+        skills.sort_by_key(|a| a.to_lowercase());
+        skills
     }
 
     fn latex_movement(&self) -> String {
@@ -449,15 +449,15 @@ impl Monster {
             .collect::<Vec<String>>();
         movement_components
             .extend(self.latex_skill_modifiers_from_category(&SkillCategory::Movement));
-        if movement_components.len() > 0 {
-            return format!(
+        if !movement_components.is_empty() {
+            format!(
                 "
                     \\pari \\textbf<Movement> {movement}
                 ",
                 movement = movement_components.join("\\monsep "),
-            );
+            )
         } else {
-            return "".to_string();
+            "".to_string()
         }
     }
 
@@ -469,48 +469,48 @@ impl Monster {
             .map(|s| s.latex_description())
             .collect::<Vec<String>>();
         sense_components.extend(self.latex_skill_modifiers_from_category(&SkillCategory::Senses));
-        if sense_components.len() > 0 {
-            return format!(
+        if !sense_components.is_empty() {
+            format!(
                 "
                     \\pari \\textbf<Senses> {senses}
                 ",
                 senses = latex_formatting::uppercase_first_letter(&sense_components.join(", ")),
-            );
+            )
         } else {
-            return "".to_string();
+            "".to_string()
         }
     }
 
     fn latex_social(&self) -> String {
         let skills = self.latex_skill_modifiers_from_category(&SkillCategory::Social);
-        if skills.len() > 0 {
-            return format!(
+        if !skills.is_empty() {
+            format!(
                 "
                     \\pari \\textbf<Social> {skills}
                 ",
                 skills = skills.join(", "),
-            );
+            )
         } else {
-            return "".to_string();
+            "".to_string()
         }
     }
 
     fn latex_other_skills(&self) -> String {
         let skills = self.latex_skill_modifiers_from_category(&SkillCategory::Other);
-        if skills.len() > 0 {
-            return format!(
+        if !skills.is_empty() {
+            format!(
                 "
                     \\pari \\textbf<Other skills> {skills}
                 ",
                 skills = skills.join(", "),
-            );
+            )
         } else {
-            return "".to_string();
+            "".to_string()
         }
     }
 
     fn latex_defensive_statistics(&self) -> String {
-        return format!(
+        format!(
             "
                 \\pari \\textbf<HP> {hp}
                     \\monsep \\textbf<DR> {dr}
@@ -526,7 +526,7 @@ impl Monster {
             fort = self.creature.calc_defense(&Defense::Fortitude),
             ref = self.creature.calc_defense(&Defense::Reflex),
             ment = self.creature.calc_defense(&Defense::Mental),
-        );
+        )
     }
 
     // fn latex_power(&self) -> String {
@@ -562,7 +562,7 @@ impl Monster {
             .collect::<Vec<String>>();
 
         let mut active_abilities = self.creature.active_abilities();
-        active_abilities.sort_by(|a, b| a.name().to_lowercase().cmp(&b.name().to_lowercase()));
+        active_abilities.sort_by_key(|a| a.name().to_lowercase());
         for active_ability in active_abilities {
             ability_texts.push(active_ability.latex_ability_block(&self.creature));
         }
@@ -575,7 +575,7 @@ impl Monster {
             .collect::<Vec<String>>();
         passive_ability_texts.sort();
         ability_texts = [&passive_ability_texts[..], &ability_texts[..]].concat();
-        return ability_texts.join("\\par ");
+        ability_texts.join("\\par ")
     }
 }
 

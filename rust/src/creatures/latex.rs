@@ -31,7 +31,7 @@ pub fn format_creature_attributes(creature: &impl HasAttributes) -> Vec<String> 
         .iter()
         .map(|attribute| {
             let base = creature.get_base_attribute(attribute);
-            return format!("{} {}", attribute.shorthand_name(), base);
+            format!("{} {}", attribute.shorthand_name(), base)
         })
         .collect::<Vec<String>>();
 }

@@ -54,7 +54,7 @@ impl Maneuver {
 
     pub fn is_magical(&self) -> bool {
         // TODO: return true once we add any magical maneuvers
-        return false;
+        false
     }
 
     pub fn attack(&self, weapon: Weapon, creature_rank: i32) -> Attack {
@@ -281,13 +281,13 @@ impl Maneuver {
         } else {
             None
         };
-        return attack;
+        attack
     }
 
     pub fn attack_name(&self, weapon: &Weapon) -> String {
         let weapon_name = titlecase(weapon.name.as_str());
         fn with_prefix(prefix: &str, n: String) -> String {
-            return format!("{} {}", prefix, n);
+            format!("{} {}", prefix, n)
         }
         match self {
             Self::CertainStrike => with_prefix("Certain", weapon_name),
@@ -359,8 +359,6 @@ impl Maneuver {
     }
 
     fn should_replace_weapon(&self) -> bool {
-        match self {
-            _ => false,
-        }
+        false
     }
 }

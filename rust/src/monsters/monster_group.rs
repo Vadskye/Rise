@@ -19,7 +19,7 @@ impl MonsterGroup {
         // size or age.
         let monsters: Vec<&Monster> = self.monsters.iter().collect();
         // TODO: include general description and/or knowledge checks
-        return latex_formatting::latexify(format!(
+        latex_formatting::latexify(format!(
             "
                 \\newpage
                 \\subsection*<{name}>
@@ -33,7 +33,7 @@ impl MonsterGroup {
             name = titlecase(self.name.as_str()),
             description = self.description.as_ref().unwrap_or(&"".to_string()),
             knowledge = if let Some(ref k) = self.knowledge {
-                if monsters.len() > 0 {
+                if !monsters.is_empty() {
                     k.to_latex(&monsters[0].creature_type, monsters[0].creature.level)
                 } else {
                     // TODO: correctly support empty monster groups
@@ -50,18 +50,18 @@ impl MonsterGroup {
                 .map(|m| m.to_section(Some(self.name.clone())))
                 .collect::<Vec<String>>()
                 .join("\n\\vspace{2em}\n"),
-        ));
+        ))
     }
 
     fn latex_art(&self) -> String {
         if self.art {
             let name = self.name.to_lowercase();
-            return format!(
+            format!(
                 "\\noindent\\includegraphics[width=\\columnwidth]<monsters/{name}>",
                 name = name,
-            );
+            )
         } else {
-            return r"\vspace{0.5em}".to_string();
+            r"\vspace{0.5em}".to_string()
         }
     }
 }

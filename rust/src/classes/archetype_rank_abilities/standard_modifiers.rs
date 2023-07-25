@@ -3,7 +3,7 @@ use crate::core_mechanics::attacks::Maneuver;
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::creatures::Modifier;
 
-pub fn add_standard_spell_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<'a>>) {
+pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
     rank_abilities.append(&mut vec![
         RankAbility {
             name: "Spells",
@@ -85,7 +85,7 @@ pub fn add_standard_spell_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<'a>
     ]);
 }
 
-pub fn add_standard_maneuver_modifiers<'a>(rank_abilities: &mut Vec<RankAbility<'a>>) {
+pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
     rank_abilities.append(&mut vec![
         RankAbility {
             name: "Maneuvers",

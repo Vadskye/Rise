@@ -103,31 +103,31 @@ impl Modifier {
 
     pub fn name(&self) -> String {
         match self {
-            Self::Accuracy(_) => format!("accuracy"),
+            Self::Accuracy(_) => "accuracy".to_string(),
             Self::ActiveAbility(a) => format!("active ability {}", a.name()),
-            Self::AllDefenses(_) => format!("all defenses"),
+            Self::AllDefenses(_) => "all defenses".to_string(),
             Self::Attack(a) => format!("attack {}", a.name),
             Self::Attribute(a, _) => format!("base attribute {}", a.name()),
-            Self::BaseSpeed(_) => format!("base speed"),
-            Self::DamageResistance(_) => format!("DR"),
-            Self::DamageResistanceFromLevel(_) => format!("DR from level"),
+            Self::BaseSpeed(_) => "base speed".to_string(),
+            Self::DamageResistance(_) => "DR".to_string(),
+            Self::DamageResistanceFromLevel(_) => "DR from level".to_string(),
             Self::Defense(d, _) => format!("defense {}", d.name()),
-            Self::Encumbrance(_) => format!("encumbrance"),
-            Self::ExtraDamage(_) => format!("extra damage"),
-            Self::HitPoints(_) => format!("HP"),
-            Self::HitPointsFromLevel(_) => format!("HP from level"),
+            Self::Encumbrance(_) => "encumbrance".to_string(),
+            Self::ExtraDamage(_) => "extra damage".to_string(),
+            Self::HitPoints(_) => "HP".to_string(),
+            Self::HitPointsFromLevel(_) => "HP from level".to_string(),
             Self::Immune(t) => format!("immune to {}", t.description()),
             Self::Impervious(t) => format!("impervious to {}", t.description()),
-            Self::MagicalPower(_) => format!("magical power"),
+            Self::MagicalPower(_) => "magical power".to_string(),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
             Self::MovementSpeed(m, _) => format!("{} speed", m.name()),
-            Self::MundanePower(_) => format!("mundane power"),
+            Self::MundanePower(_) => "mundane power".to_string(),
             Self::PassiveAbility(a) => format!("passive ability {}", a.name),
-            Self::Power(_) => format!("power"),
+            Self::Power(_) => "power".to_string(),
             Self::Resource(r, _) => format!("resource {}", r.name()),
             Self::Skill(s, _) => format!("skill {}", s.name()),
-            Self::StrikeDamageDice(_) => format!("strike damage dice"),
-            Self::VitalRoll(_) => format!("vital roll"),
+            Self::StrikeDamageDice(_) => "strike damage dice".to_string(),
+            Self::VitalRoll(_) => "vital roll".to_string(),
             Self::Vulnerable(t) => format!("vulnerable to {}", t.description()),
         }
     }
@@ -188,7 +188,7 @@ impl Modifier {
     }
 
     pub fn value(&self) -> i32 {
-        return match self {
+        match self {
             Self::Accuracy(v) => *v,
             Self::ActiveAbility(_) => 0,
             Self::AllDefenses(v) => *v,
@@ -215,32 +215,32 @@ impl Modifier {
             Self::StrikeDamageDice(v) => *v,
             Self::VitalRoll(v) => *v,
             Self::Vulnerable(_) => 0,
-        };
+        }
     }
 }
 
 // static methods that generate new Modifiers
 impl Modifier {
     pub fn buckler() -> Self {
-        return Self::Defense(Defense::Armor, 1);
+        Self::Defense(Defense::Armor, 1)
     }
     pub fn reptile() -> Self {
-        return Self::vulnerable_damage(DamageType::Cold);
+        Self::vulnerable_damage(DamageType::Cold)
     }
     pub fn shield() -> Self {
-        return Self::Defense(Defense::Armor, 2);
+        Self::Defense(Defense::Armor, 2)
     }
     pub fn immune_damage(dt: DamageType) -> Self {
-        return Self::Immune(SpecialDefenseType::Damage(dt));
+        Self::Immune(SpecialDefenseType::Damage(dt))
     }
     pub fn immune_debuff(d: Debuff) -> Self {
-        return Self::Immune(SpecialDefenseType::Debuff(d));
+        Self::Immune(SpecialDefenseType::Debuff(d))
     }
     pub fn impervious_damage(dt: DamageType) -> Self {
-        return Self::Impervious(SpecialDefenseType::Damage(dt));
+        Self::Impervious(SpecialDefenseType::Damage(dt))
     }
     pub fn vulnerable_damage(dt: DamageType) -> Self {
-        return Self::Vulnerable(SpecialDefenseType::Damage(dt));
+        Self::Vulnerable(SpecialDefenseType::Damage(dt))
     }
 }
 
@@ -253,15 +253,15 @@ pub struct IdentifiedModifier {
 
 impl IdentifiedModifier {
     pub fn key(&self) -> String {
-        return format!("{} {}", self.source, self.modifier.name());
+        format!("{} {}", self.source, self.modifier.name())
     }
 
     pub fn description(&self) -> String {
-        return format!("{}: {}", self.source, self.modifier.description());
+        format!("{}: {}", self.source, self.modifier.description())
     }
 
     fn replaces(&self, other: &Self) -> bool {
-        return self.key() == other.key() && self.priority > other.priority;
+        self.key() == other.key() && self.priority > other.priority
     }
 }
 
@@ -317,7 +317,7 @@ impl HasModifiers for Creature {
         for m in &self.anonymous_modifiers {
             modifiers.push(m);
         }
-        return modifiers;
+        modifiers
     }
 
     fn get_modifiers_by_type(&self, mt: ModifierType) -> Vec<&Modifier> {
@@ -361,7 +361,7 @@ impl HasModifiers for Creature {
                 .map(|m| m.description())
                 .collect::<Vec<String>>(),
         );
-        return explanations;
+        explanations
     }
 }
 

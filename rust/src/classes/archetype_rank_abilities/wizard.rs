@@ -5,7 +5,7 @@ use crate::creatures::Modifier;
 use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Portable Workshop",
             is_magical: true,
@@ -129,7 +129,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
@@ -278,11 +278,11 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Ritualist",
             is_magical: true,
@@ -403,11 +403,11 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Metamagic",
             is_magical: true,
@@ -500,11 +500,11 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "School Specialization",
             is_magical: true,
@@ -645,5 +645,5 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             // TODO: represent this somehow?
             modifiers: None,
         },
-    ];
+    ]
 }
