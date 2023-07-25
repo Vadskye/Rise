@@ -3,10 +3,9 @@ use crate::core_mechanics::attacks::{LowDamageAndDebuff, StandardAttack};
 use crate::core_mechanics::{
     Attribute, DamageType, Debuff, Defense, FlightManeuverability, HasAttributes, MovementMode,
     MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
-    StandardPassiveAbility,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::{StandardWeapon};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -18,7 +17,7 @@ use std::cmp::{max, min};
 use super::humanoids::{add_humans, add_orcs};
 
 fn undead(def: MonsterDef) -> Monster {
-    return def.undead();
+    def.undead()
 }
 
 pub fn undeads() -> Vec<MonsterEntry> {
@@ -73,7 +72,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
         name: "Allip".to_string(),
     })));
 
-    return monsters;
+    monsters
 }
 
 pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
@@ -98,7 +97,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                 AbilityTag::Emotion,
             )));
-            return undead(MonsterDef {
+            undead(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
@@ -124,7 +123,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                     role: Role::Brute,
                     size: Size::Medium,
                 },
-            });
+            })
         }
     }
 
@@ -249,7 +248,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
             ));
 
-            return undead(MonsterDef {
+            undead(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
@@ -271,7 +270,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     role: Role::Skirmisher,
                     size: Size::Medium,
                 },
-            });
+            })
         }
     }
 
@@ -363,7 +362,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
 fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
     let skeletons = generate_corpses()
         .iter()
-        .map(|c| convert_to_skeleton(c))
+        .map(convert_to_skeleton)
         .collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -412,11 +411,11 @@ fn generate_corpses() -> Vec<Monster> {
         }
     }
 
-    return corpses;
+    corpses
 }
 
 fn convert_to_skeleton(monster: &Monster) -> Monster {
-    let ref creature = monster.creature;
+    let creature = &monster.creature;
     // +1 str, +1 dex, -2 con, fixed int/per/wil
     let max_attribute = monster.challenge_rating.max_base_attribute();
     let attributes = vec![
@@ -457,7 +456,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         senses.push(Sense::Darkvision(60));
     }
 
-    return undead(MonsterDef {
+    undead(MonsterDef {
         name: format!("Skeletal {}", creature.name.as_ref().unwrap()),
         abilities: MonsterAbilities {
             active_abilities: vec![],
@@ -480,7 +479,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
             role: Role::Warrior,
             size: creature.size.clone(),
         },
-    });
+    })
 }
 
 fn convert_to_zombie(monster: &Monster) -> Monster {
@@ -523,15 +522,15 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
     }
 
     let mut movement_speeds = vec![];
-    if creature.movement_speeds.len() > 0 {
-        for ref original_mode in &creature.movement_speeds {
+    if !creature.movement_speeds.is_empty() {
+        for original_mode in &creature.movement_speeds {
             movement_speeds.push(original_mode.slower())
         }
     } else {
         movement_speeds.push(MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow));
     }
 
-    return undead(MonsterDef {
+    undead(MonsterDef {
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
         abilities: MonsterAbilities {
             active_abilities: vec![],
@@ -554,13 +553,13 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
             role: Role::Brute,
             size: creature.size.clone(),
         },
-    });
+    })
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
     let zombies = generate_corpses()
         .iter()
-        .map(|c| convert_to_zombie(c))
+        .map(convert_to_zombie)
         .collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {

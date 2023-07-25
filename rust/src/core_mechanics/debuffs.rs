@@ -26,7 +26,7 @@ pub enum Debuff {
 
 impl Debuff {
     pub fn mental_debuffs() -> Vec<Self> {
-        return vec![];
+        vec![]
     }
 
     pub fn direct_upgrade(&self) -> Option<Self> {

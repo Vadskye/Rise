@@ -42,7 +42,7 @@ impl FullMonsterDefinition {
         let creature = &mut monster.creature;
         creature.name = Some(self.name);
         for (i, attribute) in Attribute::all().iter().enumerate() {
-            creature.set_base_attribute(attribute.clone(), self.attributes[i]);
+            creature.set_base_attribute(*attribute, self.attributes[i]);
         }
         for weapon in self.weapons {
             creature.weapons.push(weapon);
@@ -68,6 +68,6 @@ impl FullMonsterDefinition {
             }
         }
 
-        return monster;
+        monster
     }
 }

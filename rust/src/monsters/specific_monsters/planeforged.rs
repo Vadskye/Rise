@@ -4,7 +4,7 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
@@ -17,7 +17,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn planeforged(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::Planeforged);
+    def.monster(CreatureType::Planeforged)
 }
 
 pub fn planeforgeds() -> Vec<MonsterEntry> {
@@ -71,7 +71,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
         })],
     }));
 
-    return monsters;
+    monsters
 }
 
 fn add_angels(monsters: &mut Vec<MonsterEntry>) {
@@ -87,7 +87,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
             "\\medrange"
         };
 
-        let ref mut modifiers = def.abilities.modifiers;
+        let modifiers = &mut def.abilities.modifiers;
         modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
             Debuff::Frightened("".to_string()),
         )));
@@ -135,7 +135,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
         def.abilities.senses.push(Sense::LowLightVision);
 
-        return planeforged(def);
+        planeforged(def)
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -308,7 +308,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 }
 
 fn add_demons(monsters: &mut Vec<MonsterEntry>) {
-    let fire_immunity = Modifier::Immune(SpecialDefenseType::Damage(DamageType::Fire));
+    let _fire_immunity = Modifier::Immune(SpecialDefenseType::Damage(DamageType::Fire));
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Demonspawn".to_string(),
@@ -470,7 +470,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             if rank >= 3 {
                 modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
             }
-            return planeforged(MonsterDef {
+            planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
@@ -496,7 +496,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                     size: self.size,
                     role: Role::Skirmisher,
                 },
-            });
+            })
         }
     }
 
@@ -570,7 +570,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 modifiers.push(Modifier::Attack(StandardAttack::Ignition(rank).attack()));
                 modifiers.push(Modifier::Attack(StandardAttack::Fireball(rank).attack()));
             }
-            return planeforged(MonsterDef {
+            planeforged(MonsterDef {
                 abilities: MonsterAbilities {
                     // TODO: no strikes, only touch attacks
                     active_abilities: vec![],
@@ -598,7 +598,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
                 // From self
                 name: self.name,
-            });
+            })
         }
     }
 
@@ -670,8 +670,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             self.modifiers
                 .push(Modifier::impervious_damage(DamageType::Cold));
 
-            let ram = Weapon::ram().except(|w| w.damage_types.push(DamageType::Fire));
-            return planeforged(MonsterDef {
+            let _ram = Weapon::ram().except(|w| w.damage_types.push(DamageType::Fire));
+            planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
@@ -693,18 +693,18 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                     size: self.size,
                     role: Role::Brute,
                 },
-            });
+            })
         }
     }
 
     fn generate_magma_throw(rank: i32) -> Modifier {
-        return Modifier::Attack(
+        Modifier::Attack(
             StandardAttack::Firebolt(rank)
                 .attack()
                 .except(|a| a.name = "Magma Throw".to_string())
                 .except(|a| a.is_magical = false)
                 .except_hit_damage(|d| d.damage_types.push(DamageType::Bludgeoning)),
-        );
+        )
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -784,7 +784,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             .senses
             .push(Sense::Tremorsight(tremorsight_radius));
 
-        let ref mut modifiers = def.abilities.modifiers;
+        let modifiers = &mut def.abilities.modifiers;
         modifiers.push(Modifier::PassiveAbility(PassiveAbility {
             description: r"
                 All formians within 50 miles of their queen are in constant telepathic communication with her, regardless of any intervening physical obstacles.
@@ -800,7 +800,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         modifiers.append(&mut ModifierBundle::Mindless.modifiers());
         modifiers.append(&mut ModifierBundle::Multipedal.modifiers());
 
-        return planeforged(def);
+        planeforged(def)
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {

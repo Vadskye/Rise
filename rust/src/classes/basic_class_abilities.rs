@@ -6,7 +6,7 @@ use numerics::Numerics;
 // Generate the whole "Basic Class Abilities" subsection used to explain a class in the
 // Classes chapter.
 pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
-    return format!(
+    format!(
         "
             \\subsection<Basic Class Abilities>
             If you are a {name}, you gain the following abilities.
@@ -27,12 +27,12 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
         armor_proficiencies = generate_latex_armor_proficiencies(class).trim(),
         class_skills = generate_latex_class_skills(class).trim(),
         weapon_proficiencies = generate_latex_weapon_proficiencies(class).trim(),
-    );
+    )
 }
 
 // Generate the Resources section of the basic class abilities.
 fn generate_latex_resources(class: &Class) -> String {
-    return format!(
+    format!(
         "
             \\cf<{shorthand_name}><Resources>
             You have the following \\glossterm<resources>:
@@ -66,7 +66,7 @@ fn generate_latex_resources(class: &Class) -> String {
                 "\\glossterm<trained skills>",
             )
         ),
-    );
+    )
 }
 
 fn generate_latex_defenses(class: &Class) -> String {
@@ -97,7 +97,7 @@ fn generate_latex_defenses(class: &Class) -> String {
             )
     }
 
-    return latex_formatting::latexify(format!(
+    latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
             You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
@@ -109,20 +109,20 @@ fn generate_latex_defenses(class: &Class) -> String {
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
         hp_dr_text=hp_dr_text,
-    ));
+    ))
 }
 
 fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
     let converter = Numerics::builder().build();
     let english_number = converter.convert_number(val).unwrap();
     let suffix = if val == 1 { singular } else { plural };
-    return format!("{} {}", english_number[0], suffix);
+    format!("{} {}", english_number[0], suffix)
 }
 
 fn generate_latex_armor_proficiencies(class: &Class) -> String {
     let armor_proficiencies = class.armor_proficiencies();
     let proficiences_text: String;
-    if armor_proficiencies.usage_classes.len() == 0 {
+    if armor_proficiencies.usage_classes.is_empty() {
         proficiences_text = "
             You are not proficient with any type of armor.
             Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \\glossterm{somatic components} to fail (see \\pcref{Somatic Component Failure}).
@@ -155,14 +155,14 @@ fn generate_latex_armor_proficiencies(class: &Class) -> String {
         )
     }
 
-    return format!(
+    format!(
         "
             \\cf<{shorthand_name}><Armor Proficiencies>
             {proficiencies}
         ",
         proficiencies = proficiences_text,
         shorthand_name = class.shorthand_name(),
-    );
+    )
 }
 
 fn generate_latex_weapon_proficiencies(class: &Class) -> String {
@@ -205,14 +205,14 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
             latex_formatting::join_string_list(&components).unwrap_or(String::from("")),
         );
     }
-    return format!(
+    format!(
         "
             \\cf<{shorthand_name}><Weapon Proficiencies>
             {proficiencies}
         ",
         shorthand_name = class.shorthand_name(),
         proficiencies = proficiences_text,
-    );
+    )
 }
 
 fn generate_latex_class_skills(class: &Class) -> String {
@@ -236,7 +236,7 @@ fn generate_latex_class_skills(class: &Class) -> String {
         // It's easier to directly push this text onto `attribute_texts` instead of creating a
         // separate object to avoid needing to bundle the skills in an object with the attribute
         // itself.
-        if skills_for_attribute.len() > 0 {
+        if !skills_for_attribute.is_empty() {
             attribute_texts.push(format!(
                 "\\item \\subparhead<{attribute_name}> {skills_text}.",
                 attribute_name = latex_formatting::uppercase_first_letter(attr.name()),
@@ -256,14 +256,14 @@ fn generate_latex_class_skills(class: &Class) -> String {
         .collect();
     // In practice, every class currently has the standard set of attribute-less skills like
     // Profession as class skills, but this structure is still better in case that changes.
-    if skills_without_attribute.len() > 0 {
+    if !skills_without_attribute.is_empty() {
         attribute_texts.push(format!(
             "\\item \\subparhead<Other> {skills_text}.",
             skills_text = skills_without_attribute.join(", "),
         ))
     }
 
-    return format!(
+    format!(
         "
             \\cf<{shorthand_name}><Class Skills>
             You have the following \\glossterm<class skills>:
@@ -274,5 +274,5 @@ fn generate_latex_class_skills(class: &Class) -> String {
         ",
         attribute_texts = attribute_texts.join("\n"),
         shorthand_name = class.shorthand_name(),
-    );
+    )
 }

@@ -92,11 +92,11 @@ impl MonsterStatistics {
         for (i, attribute) in Attribute::all().iter().enumerate() {
             monster
                 .creature
-                .set_base_attribute(attribute.clone(), self.attributes[i]);
+                .set_base_attribute(*attribute, self.attributes[i]);
         }
         monster.creature.set_size(self.size);
 
-        return monster;
+        monster
     }
 }
 
@@ -112,37 +112,37 @@ impl MonsterDef {
 
         monster.validate_design();
 
-        return monster;
+        monster
     }
 
     pub fn aberration(self) -> Monster {
-        return self.monster(CreatureType::Aberration);
+        self.monster(CreatureType::Aberration)
     }
     pub fn animal(self) -> Monster {
-        return self.monster(CreatureType::Animal);
+        self.monster(CreatureType::Animal)
     }
     pub fn animate(self) -> Monster {
-        return self.monster(CreatureType::Animate);
+        self.monster(CreatureType::Animate)
     }
     pub fn dragon(self) -> Monster {
-        return self.monster(CreatureType::Dragon);
+        self.monster(CreatureType::Dragon)
     }
     pub fn humanoid(self) -> Monster {
-        return self.monster(CreatureType::Humanoid);
+        self.monster(CreatureType::Humanoid)
     }
     pub fn magical_beast(self) -> Monster {
-        return self.monster(CreatureType::MagicalBeast);
+        self.monster(CreatureType::MagicalBeast)
     }
     pub fn monstrous_humanoid(self) -> Monster {
-        return self.monster(CreatureType::MonstrousHumanoid);
+        self.monster(CreatureType::MonstrousHumanoid)
     }
     pub fn planeforged(self) -> Monster {
-        return self.monster(CreatureType::Planeforged);
+        self.monster(CreatureType::Planeforged)
     }
     pub fn undead(mut self) -> Monster {
         self.abilities
             .modifiers
             .push(Modifier::PassiveAbility(PassiveAbility::undead()));
-        return self.monster(CreatureType::Undead);
+        self.monster(CreatureType::Undead)
     }
 }

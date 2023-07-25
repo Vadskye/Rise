@@ -76,12 +76,12 @@ impl LowDamageAndDebuff {
             take_damage_effect = Some(triggered_effect);
         }
 
-        return SpentRankResults {
+        SpentRankResults {
             accuracy,
             maybe_range,
             lose_hp_effect,
             take_damage_effect,
-        };
+        }
     }
 
     fn calculate_minimum_rank(&self) -> i32 {
@@ -102,13 +102,13 @@ impl LowDamageAndDebuff {
                 minimum_rank
             );
         }
-        return minimum_rank;
+        minimum_rank
     }
 
     pub fn attack(&self) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
-        return Attack {
+        Attack {
             accuracy: spent_rank_results.accuracy,
             crit: None,
             defense: self.defense,
@@ -125,13 +125,13 @@ impl LowDamageAndDebuff {
             replaces_weapon: None,
             tags: self.tags.clone(),
             targeting: Targeting::Creature(spent_rank_results.maybe_range.unwrap()),
-        };
+        }
     }
 
     pub fn weapon_attack(&self, weapon: &Weapon) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
-        return weapon
+        weapon
             .attack()
             .except(|a| {
                 a.accuracy += spent_rank_results.accuracy;
@@ -143,7 +143,7 @@ impl LowDamageAndDebuff {
                 d.damage_types.append(&mut self.damage_types.clone());
                 d.lose_hp_effect = spent_rank_results.lose_hp_effect.clone();
                 d.take_damage_effect = spent_rank_results.take_damage_effect;
-            });
+            })
     }
 }
 
@@ -156,20 +156,20 @@ mod tests {
     use crate::latex_formatting::standardize_indentation;
 
     fn get_basic_creature() -> Creature {
-        return Character::standard_character(1, false).creature;
+        Character::standard_character(1, false).creature
     }
 
     fn get_standard_ability_block(config: LowDamageAndDebuff) -> String {
         if config.is_maneuver {
-            return standardize_indentation(
+            standardize_indentation(
                 &config
                     .weapon_attack(&StandardWeapon::Club.weapon())
                     .latex_ability_block(&get_basic_creature()),
-            );
+            )
         } else {
-            return standardize_indentation(
+            standardize_indentation(
                 &config.attack().latex_ability_block(&get_basic_creature()),
-            );
+            )
         }
     }
 

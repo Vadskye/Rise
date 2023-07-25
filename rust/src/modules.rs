@@ -10,11 +10,11 @@ pub struct Module {
 
 impl Module {
     pub fn all() -> Vec<Self> {
-        return vec![the_house_of_liberation::generate_module()];
+        vec![the_house_of_liberation::generate_module()]
     }
 
     pub fn to_latex(&self) -> String {
-        return latexify(format!(
+        latexify(format!(
             "
                 \\chapter<{name}>
 
@@ -25,6 +25,6 @@ impl Module {
             description = self.description,
             introduction = self.introduction,
             name = self.name,
-        ));
+        ))
     }
 }

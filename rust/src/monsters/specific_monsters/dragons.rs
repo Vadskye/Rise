@@ -27,13 +27,13 @@ enum AgeCategory {
 
 impl AgeCategory {
     fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Wyrmling,
             Self::Juvenile,
             Self::Adult,
             Self::Ancient,
             Self::Wyrm,
-        ];
+        ]
     }
 
     fn attributes(&self) -> Vec<i32> {
@@ -54,7 +54,7 @@ impl AgeCategory {
             Self::Ancient => (15, AreaSize::Gargantuan),
             Self::Wyrm => (20, AreaSize::Custom(480)),
         };
-        return Targeting::Line(width, size, AreaTargets::Everything);
+        Targeting::Line(width, size, AreaTargets::Everything)
     }
 
     fn breath_weapon_cone(&self) -> Targeting {
@@ -65,7 +65,7 @@ impl AgeCategory {
             Self::Ancient => AreaSize::Huge,
             Self::Wyrm => AreaSize::Gargantuan,
         };
-        return Targeting::Cone(size, AreaTargets::Everything);
+        Targeting::Cone(size, AreaTargets::Everything)
     }
 
     // TODO: handle automatic trigger
@@ -77,12 +77,10 @@ impl AgeCategory {
             Self::Ancient => Some(AreaSize::Gargantuan),
             Self::Wyrm => Some(AreaSize::Custom(480)),
         };
-        if size.is_none() {
-            return None;
-        }
+        size.as_ref()?;
         let size = size.unwrap();
         // TODO: this should be a triggered ActiveAbility
-        return Some(Attack {
+        Some(Attack {
             accuracy: 0,
             crit: Some(AttackEffect::Debuff(DebuffEffect {
                 debuffs: vec![Debuff::Frightened("the $name".to_string())],
@@ -102,7 +100,7 @@ impl AgeCategory {
             replaces_weapon: None,
             tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
             targeting: Targeting::Radius(None, size, AreaTargets::Enemies),
-        });
+        })
     }
 
     fn level(&self) -> i32 {
@@ -146,12 +144,12 @@ impl AgeCategory {
             Self::Wyrm => weapons.push(Weapon::tail_slam()),
             _ => {}
         };
-        return weapons;
+        weapons
     }
 }
 
 fn damage_rank(level: i32) -> i32 {
-    return (level - 1) / 3;
+    (level - 1) / 3
 }
 
 enum DragonType {
@@ -169,7 +167,7 @@ enum DragonType {
 
 impl DragonType {
     fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Black,
             Self::Blue,
             Self::Brass,
@@ -180,7 +178,7 @@ impl DragonType {
             Self::Red,
             Self::Silver,
             Self::White,
-        ];
+        ]
     }
 
     fn attribute_modifiers(&self) -> Vec<i32> {
@@ -474,7 +472,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         age_category.level() + dragon_type.level_modifier(),
     );
     // TODO: this should be an elite ActiveAbility
-    return Attack {
+    Attack {
         accuracy: 0,
         crit: None,
         defense: Defense::Reflex,
@@ -493,7 +491,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
         replaces_weapon: None,
         tags: None,
         targeting,
-    };
+    }
 }
 
 fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
@@ -622,5 +620,5 @@ pub fn dragons() -> Vec<MonsterEntry> {
         }));
     }
 
-    return monsters;
+    monsters
 }

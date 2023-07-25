@@ -3,7 +3,7 @@ use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Aligned Aura",
             is_magical: true,
@@ -111,11 +111,11 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
         },
-    ];
+    ]
 }
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Divine Spells",
             is_magical: true,
@@ -170,11 +170,11 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Divine Spell Versatility",
             is_magical: false,
@@ -240,11 +240,11 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Lay on Hands",
             is_magical: true,
@@ -370,11 +370,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Mental, 1),
             ]),
         },
-    ];
+    ]
 }
 
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Detect Anathema",
             is_magical: true,
@@ -487,5 +487,5 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

@@ -151,11 +151,11 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Metamagic",
             is_magical: true,
@@ -251,11 +251,11 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Draconic Bloodline",
             is_magical: false,
@@ -383,11 +383,11 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Innate Magic",
             is_magical: true,
@@ -475,11 +475,11 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Wildspell",
             is_magical: true,
@@ -588,5 +588,5 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }

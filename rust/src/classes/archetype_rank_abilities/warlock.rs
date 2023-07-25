@@ -7,7 +7,7 @@ use crate::skills::Skill;
 use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Abyssal Rebuke",
             is_magical: true,
@@ -189,11 +189,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Reader of Hidden Tomes",
             is_magical: true,
@@ -406,7 +406,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Power(2)]),
         },
-    ];
+    ]
 }
 
 pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
@@ -494,11 +494,11 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Metamagic",
             is_magical: true,
@@ -590,11 +590,11 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
-    ];
+    ]
 }
 
 pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Possession",
             is_magical: true,
@@ -731,5 +731,5 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Power(8)]),
         },
-    ];
+    ]
 }

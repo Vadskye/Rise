@@ -64,7 +64,7 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
                     .collect(),
                 red: red.iter().filter(|d| !d.is_vitally_unconscious()).collect(),
             };
-            if living.blue.len() == 0 || living.red.len() == 0 {
+            if living.blue.is_empty() || living.red.is_empty() {
                 return CombatResult {
                     blue_accuracy,
                     red_accuracy,
@@ -131,13 +131,13 @@ fn survival_percent(creatures: &Vec<Creature>) -> f64 {
         .iter()
         .map(|d| d.calc_damage_resistance() + d.calc_effective_combat_hit_points())
         .sum();
-    return max(0, remaining_damage_absorption) as f64 / max_damage_absorption as f64;
+    max(0, remaining_damage_absorption) as f64 / max_damage_absorption as f64
 }
 
 fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64 {
     return attackers
         .iter()
-        .map(|a| calc_individual_dpr(*a, defender))
+        .map(|a| calc_individual_dpr(a, defender))
         .sum();
 }
 
@@ -157,7 +157,7 @@ fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -
     // deal with the variance of high and low rolls. Dropping to quarter-round precision
     // precision still leaves some awareness of the downsides of excess overkill while being
     // more precise than true integer rounds
-    return (rounds_to_survive * 4.0).ceil() / 4.0;
+    (rounds_to_survive * 4.0).ceil() / 4.0
 }
 
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
@@ -166,24 +166,24 @@ fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     // println!("Best attack: {}", best_attack.unwrap().name);
 
     if let Some(attack) = best_attack {
-        return calc_attack_damage_per_round(&attack, attacker, defender).total()
-            * attacker.calc_damage_per_round_multiplier();
+        calc_attack_damage_per_round(&attack, attacker, defender).total()
+            * attacker.calc_damage_per_round_multiplier()
     } else {
-        return 0.0;
+        0.0
     }
 }
 
 fn calc_best_attack_accuracy(attacker: &Creature, defender: &Creature) -> f64 {
     let best_attack: Option<Attack> = find_best_attack(attacker, defender);
     if let Some(ref a) = best_attack {
-        return calculate_attack_outcome(
+        calculate_attack_outcome(
             a,
             attacker.calc_accuracy(),
             defender.calc_defense(&a.defense),
         )
-        .hit_probability;
+        .hit_probability
     } else {
-        return 0.0;
+        0.0
     }
 }
 
@@ -200,7 +200,7 @@ fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> 
         }
     }
 
-    return best_attack;
+    best_attack
 }
 
 // This only makes sense in the context of a specific defender.
@@ -215,13 +215,13 @@ pub struct AttackDamagePerRound {
 
 impl AttackDamagePerRound {
     fn total(&self) -> f64 {
-        return self.hit_probability * self.damage_per_hit
+        self.hit_probability * self.damage_per_hit
             + self.glance_probability * self.damage_per_glance
-            + self.crit_probability * self.damage_per_crit;
+            + self.crit_probability * self.damage_per_crit
     }
 
     pub fn explain(&self) -> String {
-        return format!(
+        format!(
             "{total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
             total=dec2(self.total()),
             damage_per_hit=dec1(self.damage_per_hit),
@@ -233,7 +233,7 @@ impl AttackDamagePerRound {
             hdpr=dec2(self.damage_per_hit * self.hit_probability),
             cdpr=dec2(self.damage_per_crit * self.crit_probability),
             gdpr=dec2(self.damage_per_glance * self.glance_probability),
-        );
+        )
     }
 }
 
@@ -243,7 +243,7 @@ pub fn calc_attack_damage_per_round(
     defender: &Creature,
 ) -> AttackDamagePerRound {
     let attack_outcome_probability = calculate_attack_outcome(
-        &attack,
+        attack,
         attacker.calc_accuracy(),
         defender.calc_defense(&attack.defense),
     );
@@ -259,7 +259,7 @@ pub fn calc_attack_damage_per_round(
         damage_per_hit = damage_dice.average_damage();
     }
 
-    return AttackDamagePerRound {
+    AttackDamagePerRound {
         crit_probability: attack_outcome_probability.crit_probability,
         glance_probability: calculate_glance_probability(
             attack,
@@ -270,7 +270,7 @@ pub fn calc_attack_damage_per_round(
         damage_per_crit,
         damage_per_glance,
         damage_per_hit,
-    };
+    }
 }
 
 struct AttackOutcomeProbability {
@@ -281,10 +281,10 @@ struct AttackOutcomeProbability {
 #[cfg(test)]
 impl AttackOutcomeProbability {
     fn short_description(&self) -> String {
-        return format!(
+        format!(
             "{:.3} single, {:.3} crit",
             self.hit_probability, self.crit_probability
-        );
+        )
     }
 }
 
@@ -336,18 +336,18 @@ fn calculate_attack_outcome(
 
 // TODO: handle dual-wielding, which should set this to 0.
 fn calculate_glance_probability(attack: &Attack, accuracy: i32, defense: i32) -> f64 {
-    return calculate_attack_outcome(attack, accuracy + 2, defense).hit_probability
-        - calculate_attack_outcome(attack, accuracy, defense).hit_probability;
+    calculate_attack_outcome(attack, accuracy + 2, defense).hit_probability
+        - calculate_attack_outcome(attack, accuracy, defense).hit_probability
 }
 
 // Format to one decimal place
 fn dec1(val: f64) -> String {
-    return format!("{:.1}", val);
+    format!("{:.1}", val)
 }
 
 // Format to two decimal places
 fn dec2(val: f64) -> String {
-    return format!("{:.2}", val);
+    format!("{:.2}", val)
 }
 
 #[cfg(test)]

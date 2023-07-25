@@ -12,7 +12,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn aberration(def: MonsterDef) -> Monster {
-    return def.aberration();
+    def.aberration()
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
@@ -207,5 +207,5 @@ pub fn aberrations() -> Vec<MonsterEntry> {
         name: "Gibbering Mouther".to_string(),
     })));
 
-    return monsters;
+    monsters
 }

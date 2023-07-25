@@ -196,19 +196,19 @@ impl ArmorMaterial {
     }
 
     fn dr_multiplier(&self) -> f64 {
-        return self.definition().dr_multiplier;
+        self.definition().dr_multiplier
     }
 
     fn encumbrance_modifier(&self) -> i32 {
-        return self.definition().encumbrance_modifier;
+        self.definition().encumbrance_modifier
     }
 
     fn item_rank_modifier(&self) -> i32 {
-        return self.definition().item_rank_modifier;
+        self.definition().item_rank_modifier
     }
 
     fn name(&self) -> String {
-        return self.definition().name;
+        self.definition().name
     }
 }
 
@@ -357,7 +357,7 @@ impl Armor {
 
     fn is_body_armor(&self) -> bool {
         // This is a bit of a hack; we could identify this with a name match instead.
-        return self.definition().damage_resistance > 0;
+        self.definition().damage_resistance > 0
     }
 
     fn material(&self) -> &Option<ArmorMaterial> {
@@ -383,56 +383,56 @@ impl Armor {
     }
 
     pub fn accuracy_modifier(&self) -> i32 {
-        return self.definition().accuracy_modifier;
+        self.definition().accuracy_modifier
     }
 
     pub fn damage_resistance(&self) -> i32 {
-        return self.definition().damage_resistance;
+        self.definition().damage_resistance
     }
 
     pub fn dex_multiplier(&self) -> f64 {
         let multiplier = self.definition().dex_multiplier;
         if multiplier < 1.0 && self.material().is_some() {
             let material = self.material().as_ref().unwrap();
-            return match material {
+            match material {
                 ArmorMaterial::PureMithral => multiplier + 0.5,
                 _ => multiplier,
-            };
+            }
         } else {
-            return multiplier;
+            multiplier
         }
     }
 
     pub fn defense(&self) -> i32 {
-        return self.definition().defense;
+        self.definition().defense
     }
 
     pub fn encumbrance(&self) -> i32 {
         if let Some(m) = self.material() {
-            return self.definition().encumbrance + m.encumbrance_modifier();
+            self.definition().encumbrance + m.encumbrance_modifier()
         } else {
-            return self.definition().encumbrance;
+            self.definition().encumbrance
         }
     }
 
     pub fn item_rank(&self) -> i32 {
         if let Some(m) = self.material() {
-            return self.definition().item_rank + m.item_rank_modifier();
+            self.definition().item_rank + m.item_rank_modifier()
         } else {
-            return self.definition().item_rank;
+            self.definition().item_rank
         }
     }
 
     pub fn name(&self) -> String {
         if let Some(m) = self.material() {
-            return format!("{} {}", m.name(), self.definition().name);
+            format!("{} {}", m.name(), self.definition().name)
         } else {
-            return self.definition().name;
+            self.definition().name
         }
     }
 
     pub fn speed_modifier(&self) -> i32 {
-        return self.definition().speed_modifier;
+        self.definition().speed_modifier
     }
 }
 
@@ -452,11 +452,11 @@ pub enum ArmorUsageClass {
 
 impl ArmorUsageClass {
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             ArmorUsageClass::Light,
             ArmorUsageClass::Medium,
             ArmorUsageClass::Heavy,
-        ];
+        ]
     }
 
     pub fn name(&self) -> &str {
@@ -482,13 +482,9 @@ pub trait HasArmor {
     fn calc_encumbrance(&self) -> i32;
     // Find the lowest dex multiplier among all the armor components being worn
     fn minimum_dex_modifier(&self) -> Option<f64> {
-        if let Some(lowest_armor) = self.get_armor().iter().min_by(|x, y| {
+        self.get_armor().iter().min_by(|x, y| {
             ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
-        }) {
-            return Some(lowest_armor.dex_multiplier());
-        } else {
-            return None;
-        }
+        }).map(|lowest_armor| lowest_armor.dex_multiplier())
     }
 }
 
@@ -516,11 +512,11 @@ where
 
     fn calc_encumbrance(&self) -> i32 {
         let armor_encumbrance: i32 = self.get_armor().iter().map(|a| a.encumbrance()).sum();
-        return max(
+        max(
             0,
             armor_encumbrance - self.get_base_attribute(&Attribute::Strength)
                 + self.calc_total_modifier(ModifierType::Encumbrance),
-        );
+        )
     }
 }
 

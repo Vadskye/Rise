@@ -14,9 +14,9 @@ impl UsageTime {
             UsageTime::Minor => r"Minor action",
             UsageTime::Triggered => r"Triggered",
         };
-        return format!(
+        format!(
             "\\par \\noindent Usage: {}.",
             specific_text,
-        );
+        )
     }
 }

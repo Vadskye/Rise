@@ -19,7 +19,7 @@ pub enum CreatureType {
 
 impl CreatureType {
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Aberration,
             Self::Animal,
             Self::Animate,
@@ -29,7 +29,7 @@ impl CreatureType {
             Self::MonstrousHumanoid,
             Self::Planeforged,
             Self::Undead,
-        ];
+        ]
     }
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
@@ -90,7 +90,7 @@ impl CreatureType {
     }
 
     pub fn latex_section_header(&self) -> String {
-        return latex_formatting::latexify(format!(
+        latex_formatting::latexify(format!(
             "
                 \\newpage
                 \\section<{plural_name_title}>
@@ -104,17 +104,17 @@ impl CreatureType {
             plural_name_title = titlecase(self.plural_name().as_str()),
             plural_name = self.plural_name(),
             defenses = self.latex_defenses(),
-        ));
+        ))
     }
 
     fn latex_defenses(&self) -> String {
-        return format!(
+        format!(
             "\\textbf<Defenses:> {armor} Armor, {fort} Fortitude, {ref} Reflex, {ment} Mental",
             armor=latex_formatting::modifier(self.defense_bonus(&Defense::Armor)),
             fort=latex_formatting::modifier(self.defense_bonus(&Defense::Fortitude)),
             ref=latex_formatting::modifier(self.defense_bonus(&Defense::Reflex)),
             ment=latex_formatting::modifier(self.defense_bonus(&Defense::Mental)),
-        );
+        )
     }
 
     pub fn stock_base_attributes(&self, level: i32) -> Vec<i32> {
@@ -129,10 +129,10 @@ impl CreatureType {
             Self::Planeforged => vec![2, 2, 2, 2, 2, 2],
             Self::Undead => vec![2, 1, 3, 0, 0, 3],
         };
-        return at_level_1
+        at_level_1
             .into_iter()
             .map(|a| a + max(0, (a * level) / 16))
-            .collect();
+            .collect()
     }
 }
 

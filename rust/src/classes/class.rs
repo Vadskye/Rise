@@ -38,7 +38,7 @@ pub enum Class {
 
 impl Class {
     pub fn all() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Barbarian,
             Self::Cleric,
             Self::Druid,
@@ -54,11 +54,11 @@ impl Class {
             Self::Dragon,
             Self::Harpy,
             Self::Oozeborn,
-        ];
+        ]
     }
 
     pub fn core_classes() -> Vec<Self> {
-        return vec![
+        vec![
             Self::Barbarian,
             Self::Cleric,
             Self::Druid,
@@ -70,7 +70,7 @@ impl Class {
             Self::Sorcerer,
             Self::Warlock,
             Self::Wizard,
-        ];
+        ]
     }
 
     pub fn validate_points() {
@@ -89,16 +89,8 @@ impl Class {
     }
 
     fn calculate_point_total(&self) -> i32 {
-        let custom_modifier = match self {
-            // Druids have a couple of weird proficiencies that don't map easily but which are
-            // collectively worth a point? But then it feels like they have too many trained skills,
-            // and it's hard to get the numbers to add up
-            // Self::Druid => 1,
-            _ => 0,
-        };
-        return
-            // 5 points per attunement point
-            self.attunement_points() * 5
+        let custom_modifier = 0;
+        self.attunement_points() * 5
             + hp_dr_points(self.damage_resistance())
             // 3 points to get an Armor defense
             + self.defense_bonus(&Defense::Armor) * 3
@@ -116,7 +108,7 @@ impl Class {
             // 1 extra point for a specific weapon group
             + if self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
             // Arbitrary class-specific modifiers
-            + custom_modifier;
+            + custom_modifier
     }
 
     pub fn attunement_points(&self) -> i32 {
@@ -139,16 +131,14 @@ impl Class {
     }
 
     pub fn archetypes(&self) -> Vec<ClassArchetype> {
-        return ClassArchetype::all()
+        ClassArchetype::all()
             .into_iter()
             .filter(|a| a.class().name() == self.name())
-            .collect();
+            .collect()
     }
 
     pub fn alignment(&self) -> &str {
-        match self {
-            _ => "Any",
-        }
+        "Any"
     }
 
     pub fn class_skills(&self) -> Vec<Skill> {
@@ -1087,7 +1077,7 @@ impl Class {
     pub fn latex_section(&self) -> String {
         let archetypes = self.archetypes();
         let archetype_names: Vec<&str> = archetypes.iter().map(|a| a.name()).collect();
-        return latex_formatting::latexify(format!(
+        latex_formatting::latexify(format!(
             "
                 \\newpage
                 \\section<{class_name_title}>\\label<{class_name_title}>
@@ -1128,12 +1118,12 @@ impl Class {
             class_name_lower = self.name(),
             class_alignment = self.alignment(),
             suffix = self.latex_suffix(),
-        ));
+        ))
     }
 
     fn latex_archetype_table(&self) -> String {
         let archetypes = self.archetypes();
-        return format!(
+        format!(
             "
                 \\begin<dtable!*>
                     \\lcaption<{class_name} Progression>
@@ -1156,7 +1146,7 @@ impl Class {
                 .join(" & "),
             class_name = titlecase(self.name()),
             rank_rows = self.latex_archetype_rank_table_rows(),
-        );
+        )
     }
 
     fn latex_archetype_rank_table_rows(&self) -> String {
@@ -1197,7 +1187,7 @@ impl Class {
                     latex_formatting::uppercase_first_letter(
                         &abilities_at_rank
                             .iter()
-                            .map(|a| a.name.replace("+", r"\plus"))
+                            .map(|a| a.name.replace('+', r"\plus"))
                             .collect::<Vec<String>>()
                             .join(", ")
                             .to_lowercase(),
@@ -1209,7 +1199,7 @@ impl Class {
         for rank in 0..abilities_by_rank_and_archetype.len() {
             abilities_by_rank.push(abilities_by_rank_and_archetype[rank].join(" & "));
         }
-        return abilities_by_rank;
+        abilities_by_rank
     }
 
     fn latex_special_class_abilities(&self) -> &str {
@@ -1675,8 +1665,8 @@ impl Class {
 // Going above +3 HP or DR costs an extra point per value
 fn hp_dr_points(value: i32) -> i32 {
     if value < 4 {
-        return value;
+        value
     } else {
-        return 3 + (value - 3) * 2;
+        3 + (value - 3) * 2
     }
 }

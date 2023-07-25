@@ -10,11 +10,11 @@ pub struct AbilityExtraContext {
 
 impl AbilityExtraContext {
     pub fn empty() -> Self {
-        return Self {
+        Self {
             cooldown: None,
             movement: None,
             suffix: None,
-        };
+        }
     }
 }
 
@@ -49,10 +49,10 @@ impl Cooldown {
                     it
                 ),
             };
-            return latex_formatting::latexify(format!(
+            latex_formatting::latexify(format!(
                 "After you use this ability, you {until}.",
                 until = until,
-            ));
+            ))
         } else {
             let until = match self {
                 Self::Brief(_) => format!("\\glossterm<briefly> cannot use {} again", it),
@@ -65,10 +65,10 @@ impl Cooldown {
                     it
                 ),
             };
-            return latex_formatting::latexify(format!(
+            latex_formatting::latexify(format!(
                 "After the $name uses this ability, it {until}.",
                 until = until,
-            ));
+            ))
         }
     }
 }

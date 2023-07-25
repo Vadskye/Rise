@@ -5,7 +5,7 @@ use crate::creatures::Modifier;
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Instant Recovery",
             is_magical: false,
@@ -120,11 +120,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Rage",
             is_magical: false,
@@ -225,11 +225,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             // TODO: fully represent an increased size category
             modifiers: Some(vec![Modifier::BaseSpeed(10)]),
         },
-    ];
+    ]
 }
 
 pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Savage Precision",
             is_magical: false,
@@ -316,7 +316,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
+    ]
 }
 
 pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
@@ -425,11 +425,11 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_maneuver_modifiers(&mut abilities);
-    return abilities;
+    abilities
 }
 
 pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
-    return vec![
+    vec![
         RankAbility {
             name: "Totem Animal",
             is_magical: false,
@@ -557,5 +557,5 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },
-    ];
+    ]
 }

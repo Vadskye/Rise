@@ -124,14 +124,14 @@ impl MovementSpeed {
     }
 
     pub fn new(mode: MovementMode, speed: SpeedCategory) -> Self {
-        return Self { mode, speed };
+        Self { mode, speed }
     }
 
     pub fn slower(&self) -> Self {
-        return Self {
+        Self {
             speed: self.speed.slower(),
             mode: self.mode.clone(),
-        };
+        }
     }
 
     pub fn description(&self, size: &Size) -> String {
@@ -151,10 +151,10 @@ impl MovementSpeed {
 fn calc_speed(speed_category: &SpeedCategory, size: &Size) -> i32 {
     let speed = speed_category.speed_multiplier() * (size.base_speed() as f64);
     // Floor to 10-foot increments
-    return max(
+    max(
         5,
         ((speed / 10.0).floor() * 10.0) as i32 + speed_category.speed_modifier(),
-    );
+    )
 }
 
 #[cfg(test)]

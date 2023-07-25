@@ -40,7 +40,7 @@ pub enum CreatureCategory {
 
 impl Creature {
     pub fn new(level: i32, category: CreatureCategory) -> Creature {
-        return Creature {
+        Creature {
             anonymous_modifiers: vec![],
             armor: vec![],
             base_attributes: HashMap::<Attribute, i32>::new(),
@@ -58,7 +58,7 @@ impl Creature {
             special_attacks: None,
             vital_wounds: vec![],
             weapons: vec![],
-        };
+        }
     }
 
     pub fn add_sense(&mut self, sense: Sense) {
@@ -76,15 +76,11 @@ impl Creature {
                 _ => {}
             };
         }
-        return passive_abilities;
+        passive_abilities
     }
 
     pub fn lowercase_name(&self) -> Option<String> {
-        if let Some(n) = &self.name {
-            return Some(n.to_lowercase());
-        } else {
-            return None;
-        }
+        self.name.as_ref().map(|n| n.to_lowercase())
     }
 
     pub fn set_movement_speeds(&mut self, movement_speeds: Vec<MovementSpeed>) {
@@ -96,7 +92,7 @@ impl Creature {
     }
 
     pub fn to_latex(&self) -> String {
-        return latex::format_creature(self);
+        latex::format_creature(self)
     }
 
     pub fn is_character(&self) -> bool {
@@ -138,10 +134,10 @@ impl Creature {
                 active_abilities.push(a.clone());
             }
         }
-        return active_abilities;
+        active_abilities
     }
 }
 
 pub fn calculate_standard_rank(level: i32) -> i32 {
-    return max(0, (level + 2) / 3);
+    max(0, (level + 2) / 3)
 }

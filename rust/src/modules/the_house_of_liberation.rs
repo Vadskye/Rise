@@ -2,7 +2,7 @@ use crate::modules::Module;
 use crate::monsters::latex_by_name;
 
 pub fn generate_module() -> Module {
-    return Module {
+    Module {
         introduction: r"
             This module is designed for level 1 characters, and it's a good module to start a campaign with.
             The characters start out trapped together in the middle of nowhere with no idea how they got there.
@@ -214,5 +214,5 @@ orc_butcher=latex_by_name("Orc Butcher"),
 human_cleric=latex_by_name("Town Healer"),
 human_warrior=latex_by_name("Town Guard"),
         ),
-    };
+    }
 }

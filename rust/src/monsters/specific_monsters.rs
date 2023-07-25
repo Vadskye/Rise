@@ -12,7 +12,7 @@ use super::monster_entry::MonsterEntry;
 use aberrations::aberrations;
 use animals::animals;
 use animates::animates;
-use dragons::dragons;
+
 use humanoids::humanoids;
 use magical_beasts::magical_beasts;
 use monstrous_humanoids::monstrous_humanoids;
@@ -20,7 +20,7 @@ use planeforged::planeforgeds;
 use undead::undeads;
 
 pub fn all_specific_monster_functions() -> Vec<fn() -> Vec<MonsterEntry>> {
-    return vec![
+    vec![
         aberrations,
         animals,
         animates,
@@ -30,5 +30,5 @@ pub fn all_specific_monster_functions() -> Vec<fn() -> Vec<MonsterEntry>> {
         monstrous_humanoids,
         planeforgeds,
         undeads,
-    ];
+    ]
 }

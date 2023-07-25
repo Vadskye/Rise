@@ -45,9 +45,9 @@ impl Size {
     pub fn reach(&self, is_long: bool) -> i32 {
         let tall_reach = self.space().floor() as i32;
         if is_long && tall_reach >= 10 {
-            return tall_reach / 2;
+            tall_reach / 2
         } else {
-            return tall_reach;
+            tall_reach
         }
     }
 
@@ -90,6 +90,6 @@ impl HasSize for Creature {
         self.size = size;
     }
     fn get_size(&self) -> &Size {
-        return &self.size;
+        &self.size
     }
 }

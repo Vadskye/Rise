@@ -209,7 +209,7 @@ mod statistics {
             vec![4, 2, 2, 2, 2, 4],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -267,7 +267,7 @@ mod statistics {
             vec![6, 2, 2, 2, 2, 6],
             Attribute::all()
                 .iter()
-                .map(|a| creature.get_base_attribute(&a))
+                .map(|a| creature.get_base_attribute(a))
                 .collect::<Vec<i32>>(),
             "Attributes",
         );
@@ -316,7 +316,7 @@ mod statistics {
                 None,
                 None,
             );
-            return creature;
+            creature
         }
 
         fn firebolt_description(creature: Creature) -> String {
@@ -324,7 +324,7 @@ mod statistics {
                 .calc_all_attacks()
                 .into_iter()
                 .find(|a| a.name.contains("Firebolt"));
-            return firebolt.unwrap().shorthand_description(&creature);
+            firebolt.unwrap().shorthand_description(&creature)
         }
 
         #[test]

@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    ActiveAbility, StrikeAbility,
 };
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
@@ -19,7 +19,7 @@ use crate::monsters::{
 use crate::skills::Skill;
 
 fn magical_beast(def: MonsterDef) -> Monster {
-    return def.monster(CreatureType::MagicalBeast);
+    def.monster(CreatureType::MagicalBeast)
 }
 
 pub fn magical_beasts() -> Vec<MonsterEntry> {
@@ -455,7 +455,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 DamageType::Fire,
             )));
             modifiers.push(Modifier::Immune(SpecialDefenseType::CriticalHits));
-            return magical_beast(MonsterDef {
+            magical_beast(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     modifiers,
@@ -478,7 +478,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     size: self.size,
                 },
                 name: self.name,
-            });
+            })
         }
     }
 
@@ -576,5 +576,5 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ],
     }));
 
-    return monsters;
+    monsters
 }

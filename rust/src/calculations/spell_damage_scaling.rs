@@ -12,12 +12,12 @@ fn ideal_damage(rank: i32, damage_type: &DamageType, high_attribute: bool) -> f6
         _ => panic!("Invalid rank {}", rank),
     };
     let with_attribute = if high_attribute { base * 1.6 } else { base };
-    let with_damage_type = if matches!(damage_type, DamageType::Area) {
+    
+    if matches!(damage_type, DamageType::Area) {
         with_attribute * 0.6
     } else {
         with_attribute
-    };
-    return with_damage_type;
+    }
 }
 
 fn power_at_rank(rank: i32, high_attribute: bool) -> f64 {
@@ -82,7 +82,7 @@ fn power_at_rank(rank: i32, high_attribute: bool) -> f64 {
     //     7 => [19, 26],
     //     _ => panic!("Invalid rank {}", rank),
     // };
-    return if high_attribute { p[1] } else { p[0] };
+    if high_attribute { p[1] } else { p[0] }
 }
 
 #[derive(Clone, Copy)]
@@ -93,10 +93,10 @@ pub enum DamageType {
 
 impl DamageType {
     pub fn name(&self) -> &str {
-        return match self {
+        match self {
             Self::Area => "area",
             Self::SingleTarget => "single target",
-        };
+        }
     }
 }
 
@@ -127,13 +127,13 @@ fn calc_damage_individual_parameters(
     if power_per_d10 > 0 {
         damage_per_power += 5.5 / power_per_d10 as f64;
     }
-    return flat_damage + damage_per_power * power;
+    flat_damage + damage_per_power * power
 }
 
 fn calc_damage(power: f64, ps: &ParameterSet) -> f64 {
-    return calc_damage_individual_parameters(
+    calc_damage_individual_parameters(
         power, ps[0], ps[1], ps[2], ps[3], ps[4], ps[5], ps[6], ps[7],
-    );
+    )
 }
 
 struct SolutionAnalysis {
@@ -150,13 +150,13 @@ struct SolutionAnalysis {
 
 impl SolutionAnalysis {
     fn is_valid(&self) -> bool {
-        return self.is_right_scaling || self.is_slow_scaling || self.is_fast_scaling;
+        self.is_right_scaling || self.is_slow_scaling || self.is_fast_scaling
         // return is_right_scaling || is_fast_scaling;
         // return is_right_scaling;
     }
 
     fn validity_type(&self) -> &str {
-        return if self.is_right_scaling {
+        if self.is_right_scaling {
             "R"
         } else if self.is_slow_scaling {
             "L"
@@ -164,7 +164,7 @@ impl SolutionAnalysis {
             "H"
         } else {
             ""
-        };
+        }
     }
 
     fn explain(&self) -> String {
@@ -176,7 +176,7 @@ impl SolutionAnalysis {
         let high_ideal_damage = ideal_damage(self.rank, &self.damage_type, true);
         let high_actual_damage = calc_damage(high_power, &self.parameter_set);
 
-        return format!(
+        format!(
             "ps {}: low {} vs {} @{}, high {} vs {} @{}; slow {}, fast {}",
             explain_parameter_set(&self.parameter_set),
             low_actual_damage,
@@ -187,7 +187,7 @@ impl SolutionAnalysis {
             high_power,
             self.is_slow_scaling,
             self.is_fast_scaling,
-        );
+        )
     }
 }
 
@@ -216,7 +216,7 @@ fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> S
         && low_ideal_damage > low_actual_damage
         && high_ideal_damage < high_actual_damage;
 
-    return SolutionAnalysis {
+    SolutionAnalysis {
         damage_type: *damage_type,
         is_right_scaling,
         is_slow_scaling,
@@ -226,21 +226,21 @@ fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> S
         matches_sum,
         parameter_set: *ps,
         rank,
-    };
+    }
 }
 
 fn is_close(expected: f64, actual: f64) -> bool {
-    return is_approximately_equal(expected, actual, 0.1);
+    is_approximately_equal(expected, actual, 0.1)
 }
 
 fn is_kinda_close(expected: f64, actual: f64) -> bool {
-    return is_approximately_equal(expected, actual, 0.3);
+    is_approximately_equal(expected, actual, 0.3)
 }
 
 fn is_approximately_equal(expected: f64, actual: f64, approximation_factor: f64) -> bool {
     // Solutions are considered valid if they are no more than X% off from the target values.
-    return expected * (1.0 + approximation_factor) >= actual
-        && expected * (1.0 - approximation_factor) <= actual;
+    expected * (1.0 + approximation_factor) >= actual
+        && expected * (1.0 - approximation_factor) <= actual
 }
 
 type ParameterSet = [i32; 8];
@@ -257,7 +257,7 @@ pub fn calc_valid_scaling_options(rank: i32, damage_type: &DamageType) -> Vec<Pa
         0,
     );
 
-    return valid_solutions;
+    valid_solutions
 }
 
 pub fn explain_parameter_set(ps: &ParameterSet) -> String {
@@ -286,7 +286,7 @@ pub fn explain_parameter_set(ps: &ParameterSet) -> String {
     if ps[7] > 0 {
         components.push(format!("p{}d10", ps[7]));
     }
-    return components.join(" + ");
+    components.join(" + ")
 }
 
 pub fn explain_solutions(
@@ -295,27 +295,27 @@ pub fn explain_solutions(
     solutions: Vec<ParameterSet>,
 ) -> String {
     let prefix = "\n  * ";
-    return format!(
+    format!(
         "{}{}",
         prefix,
         solutions
             .iter()
-            .map(|s| explain_solution(rank, damage_type, &s))
+            .map(|s| explain_solution(rank, damage_type, s))
             .collect::<Vec<String>>()
             .join(prefix)
-    );
+    )
 }
 
 pub fn explain_solution(rank: i32, damage_type: &DamageType, solution: &ParameterSet) -> String {
-    return format!(
+    format!(
         "{} {}; low {:.1} vs {:.1}, high {:.1} vs {:.1}",
         analyze_solution(rank, damage_type, solution).validity_type(),
-        explain_parameter_set(&solution),
+        explain_parameter_set(solution),
         calc_damage(power_at_rank(rank, false), solution),
         ideal_damage(rank, damage_type, false),
         calc_damage(power_at_rank(rank, true), solution),
         ideal_damage(rank, damage_type, true),
-    );
+    )
 }
 
 fn calc_valid_scaling_options_recursive(
@@ -326,11 +326,11 @@ fn calc_valid_scaling_options_recursive(
     parameter_index: usize,
 ) {
     if analyze_solution(rank, damage_type, &parameter_set).is_valid() {
-        valid_solutions.push(parameter_set.clone());
+        valid_solutions.push(parameter_set);
     }
     for i in parameter_index..parameter_set.len() {
-        let mut new_set = parameter_set.clone();
-        new_set[i] = new_set[i] + 1;
+        let mut new_set = parameter_set;
+        new_set[i] += 1;
         if new_set[i] <= limit_for_parameter_index(i, rank, parameter_set) {
             calc_valid_scaling_options_recursive(rank, damage_type, valid_solutions, new_set, i)
         }
@@ -349,9 +349,9 @@ fn limit_for_parameter_index(i: usize, rank: i32, ps: ParameterSet) -> i32 {
     // Don't want to use many 1d4s
     if i == 0 {
         if rank > 3 {
-            return 0;
+            0
         } else {
-            return 2;
+            2
         }
     } else if i == 4 {
         // If we have other scaling per power, we don't care about +d scaling.
