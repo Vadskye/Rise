@@ -45,6 +45,14 @@ impl ActiveAbility {
             Self::Strike(_) => false,
         }
     }
+
+    pub fn plus_accuracy(mut self, modifier: i32) -> Self {
+        match &mut self {
+            Self::Custom(c) => c.plus_accuracy(modifier),
+            Self::Strike(s) => s.plus_accuracy(modifier),
+        };
+        return self;
+    }
 }
 
 #[derive(Clone, Debug)]
@@ -76,6 +84,10 @@ impl CustomAbility {
             self.name,
             Some(self.usage_time),
         );
+    }
+
+    fn plus_accuracy(&mut self, modifier: i32) {
+        self.effect = add_accuracy_to_effect(modifier, &self.effect, &self.name);
     }
 
     pub fn battle_command(rank: i32) -> Self {
@@ -222,6 +234,10 @@ impl StrikeAbility {
             self.name,
             None,
         );
+    }
+
+    fn plus_accuracy(&mut self, modifier: i32) {
+        self.effect = add_accuracy_to_effect(modifier, &self.effect, &self.name);
     }
 
     pub fn armorcrusher(weapon: Weapon) -> Self {
@@ -1160,4 +1176,57 @@ The $name glows like a torch for a minute.
             );
         }
     }
+}
+
+// TODO: add tests for this function
+fn add_accuracy_to_effect(modifier: i32, effect: &str, name: &str) -> String {
+    let mut replaced_effect = effect.to_string();
+    let mut replaced_accuracy = false;
+
+    let accuracy_pattern = Regex::new(r"\$accuracy([+-])?(\d+)?\b").unwrap();
+    for (_, [modifier_sign, existing_modifier]) in
+        accuracy_pattern.captures_iter(effect).map(|c| c.extract())
+    {
+        let existing_modifier_abs = existing_modifier.parse::<i32>().unwrap_or(0);
+        let existing_modifier_value = if modifier_sign == "-" {
+            -existing_modifier_abs
+        } else {
+            existing_modifier_abs
+        };
+
+        let new_modifier_value = existing_modifier_value + modifier;
+        let new_modifier_sign = if new_modifier_value > 0 { "+" } else { "" };
+        let new_modifier_text = if new_modifier_value == 0 {
+            "".to_string()
+        } else {
+            new_modifier_value.to_string()
+        };
+
+        replaced_effect = accuracy_pattern.replacen(
+            &replaced_effect,
+            1,
+            format!(
+                "$accuracy{sign}{value}",
+                sign = new_modifier_sign,
+                value = new_modifier_text,
+            ),
+        ).to_string();
+
+        if replaced_accuracy {
+            panic!(
+                "Cannot add accuracy to ability {}: more than one $accuracy present",
+                name
+            );
+        } else {
+            replaced_accuracy = true;
+        }
+    }
+    // If there was no accuracy to replace, something has gone wrong.
+    if !replaced_accuracy {
+        panic!(
+            "Cannot add accuracy to ability {}: no $accuracy to replace",
+            name
+        );
+    }
+    return replaced_effect;
 }
