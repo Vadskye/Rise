@@ -252,7 +252,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
                     Weapon::ram(),
                 ))],
-                vec![0, 3, 0, -8, 0, 0],
+                vec![2, 3, 0, -8, 0, 0],
                 false,
                 1,
                 "Small Object",
@@ -262,7 +262,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown(
                     Weapon::ram(),
                 ))],
-                vec![2, 2, 2, -8, 0, 0],
+                vec![4, 2, 2, -8, 0, 0],
                 false,
                 2,
                 "Medium Object",
@@ -272,7 +272,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown(
                     Weapon::ram(),
                 ))],
-                vec![3, 1, 3, -8, 0, 0],
+                vec![5, 1, 3, -8, 0, 0],
                 false,
                 4,
                 "Large Object",
@@ -282,7 +282,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
                     Weapon::ram(),
                 ))],
-                vec![4, 0, 4, -8, 0, 0],
+                vec![6, 0, 4, -8, 0, 0],
                 false,
                 7,
                 "Huge Object",
@@ -292,7 +292,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
                     Weapon::ram(),
                 ))],
-                vec![5, -1, 5, -8, 0, 0],
+                vec![7, -1, 5, -8, 0, 0],
                 false,
                 9,
                 "Gargantuan Object",
@@ -302,7 +302,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
                     Weapon::ram(),
                 ))],
-                vec![6, -2, 6, -8, 0, 0],
+                vec![8, -2, 6, -8, 0, 0],
                 false,
                 11,
                 "Colossal Object",

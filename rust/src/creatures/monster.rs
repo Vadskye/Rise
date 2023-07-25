@@ -42,7 +42,7 @@ impl Monster {
             None,
         );
         let accuracy_modifier = if level >= 18 {
-            1
+            2
         } else if level >= 6 {
             1
         } else {
@@ -54,7 +54,7 @@ impl Monster {
             None,
         );
 
-        return Monster {
+        Monster {
             alignment: None,
             art: false,
             challenge_rating,
@@ -63,7 +63,7 @@ impl Monster {
             description: None,
             knowledge: None,
             role,
-        };
+        }
     }
 
     // TODO: store `elite` instead of `challenge_rating`

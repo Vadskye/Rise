@@ -224,6 +224,9 @@ impl Modifier {
     pub fn buckler() -> Self {
         return Self::Defense(Defense::Armor, 1);
     }
+    pub fn reptile() -> Self {
+        return Self::vulnerable_damage(DamageType::Cold);
+    }
     pub fn shield() -> Self {
         return Self::Defense(Defense::Armor, 2);
     }
