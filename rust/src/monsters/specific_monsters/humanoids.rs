@@ -53,7 +53,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![2, 2, 2, 0, 0, 0],
+                    attributes: vec![2, 2, 2, 0, 1, 0],
                     elite: false,
                     level: 1,
                     role: Role::Skirmisher,
@@ -310,7 +310,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             Weapon::spear(),
                         )),
                     ],
-                    modifiers: vec![],
+                    modifiers: vec![Modifier::buckler()],
                     movement_speeds: None,
                     senses: vec![],
                     trained_skills: vec![Skill::Ride],
@@ -494,8 +494,13 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                         ActiveAbility::Strike(StrikeAbility::defensive_strike(StandardWeapon::Spear.weapon())),
                         ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
                     ],
-                    modifiers: vec![],
-                    trained_skills: vec![],
+                    modifiers: vec![
+                        Modifier::reptile(),
+                        Modifier::shield(),
+                    ],
+                    trained_skills: vec![
+                        Skill::Swim,
+                    ],
                 },
                 MonsterStatistics {
                     attributes: vec![2, 2, 5, -1, 1, 0],
@@ -513,8 +518,13 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                         ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
                         ActiveAbility::Strike(StrikeAbility::redeeming_followup(StandardWeapon::Spear.weapon())),
                     ],
-                    modifiers: vec![],
-                    trained_skills: vec![],
+                    modifiers: vec![
+                        Modifier::reptile(),
+                        Modifier::shield(),
+                    ],
+                    trained_skills: vec![
+                        Skill::Swim,
+                    ],
                 },
                 MonsterStatistics {
                     attributes: vec![3, 3, 6, 0, 2, 1],
@@ -740,7 +750,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![5, 1, 2, -1, 2, 4],
+                    attributes: vec![5, 1, 1, -1, 2, 4],
                     elite: false,
                     level: 2,
                     role: Role::Leader,
