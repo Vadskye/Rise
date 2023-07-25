@@ -77,7 +77,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually chaotic evil".to_string(),
                     description: None,
-                    art: true,
+                    art: false,
                     knowledge: None,
                 }),
                 statistics: MonsterStatistics {
@@ -138,7 +138,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually neutral evil".to_string(),
                     description: None,
-                    art: true,
+                    art: false,
                     knowledge: None,
                 }),
                 statistics: MonsterStatistics {
