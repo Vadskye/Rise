@@ -72,17 +72,6 @@ impl PureDamage {
             }
         }
 
-        // Maneuvers scale flat damage, non-maneuvers scale damage dice
-        let mut damage_dice_modifier = 0;
-        let mut flat_damage_modifier = 0;
-        if spendable_ranks >= 2 {
-            if self.is_maneuver {
-                flat_damage_modifier = 2_i32.pow((spendable_ranks / 2) as u32);
-            } else {
-                damage_dice_modifier = spendable_ranks / 2;
-            }
-        }
-
         SpentRankResults {
             accuracy_modifier: spendable_ranks,
             maybe_range,

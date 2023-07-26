@@ -137,15 +137,9 @@ fn calc_damage(power: f64, ps: &ParameterSet) -> f64 {
 }
 
 struct SolutionAnalysis {
-    damage_type: DamageType,
     is_right_scaling: bool,
     is_slow_scaling: bool,
     is_fast_scaling: bool,
-    matches_low: bool,
-    matches_high: bool,
-    matches_sum: bool,
-    parameter_set: ParameterSet,
-    rank: i32,
 }
 
 impl SolutionAnalysis {
@@ -165,29 +159,6 @@ impl SolutionAnalysis {
         } else {
             ""
         }
-    }
-
-    fn explain(&self) -> String {
-        let low_power = power_at_rank(self.rank, false);
-        let low_ideal_damage = ideal_damage(self.rank, &self.damage_type, false);
-        let low_actual_damage = calc_damage(low_power, &self.parameter_set);
-
-        let high_power = power_at_rank(self.rank, true);
-        let high_ideal_damage = ideal_damage(self.rank, &self.damage_type, true);
-        let high_actual_damage = calc_damage(high_power, &self.parameter_set);
-
-        format!(
-            "ps {}: low {} vs {} @{}, high {} vs {} @{}; slow {}, fast {}",
-            explain_parameter_set(&self.parameter_set),
-            low_actual_damage,
-            low_ideal_damage,
-            low_power,
-            high_actual_damage,
-            high_ideal_damage,
-            high_power,
-            self.is_slow_scaling,
-            self.is_fast_scaling,
-        )
     }
 }
 
@@ -217,15 +188,9 @@ fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> S
         && high_ideal_damage < high_actual_damage;
 
     SolutionAnalysis {
-        damage_type: *damage_type,
         is_right_scaling,
         is_slow_scaling,
         is_fast_scaling,
-        matches_low,
-        matches_high,
-        matches_sum,
-        parameter_set: *ps,
-        rank,
     }
 }
 
