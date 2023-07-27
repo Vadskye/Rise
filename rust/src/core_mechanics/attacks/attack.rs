@@ -168,10 +168,8 @@ impl Attack {
     }
 
     fn latex_effect(&self, creature: &Creature) -> String {
-        let mut context = &AbilityExtraContext::empty();
-        if let Some(ref c) = self.extra_context {
-            context = c;
-        }
+        let empty_context = &AbilityExtraContext::empty();
+        let context = self.extra_context.as_ref().unwrap_or(empty_context);
         format!(
             "
                 {targeting}
@@ -179,6 +177,7 @@ impl Attack {
                 {suffix}
                 \\hit {hit}
                 {critical}
+                {massive_miss}
             ",
             cooldown = if let Some(ref cooldown) = context.cooldown {
                 cooldown.description(false)
@@ -207,6 +206,9 @@ impl Attack {
             } else {
                 "".to_string()
             },
+            massive_miss = if self.is_strike && creature.size.is_massive() {
+                r"\miss \glossterm{Glancing blow}."
+            } else { "" },
             suffix = if let Some(ref s) = context.suffix {
                 s.trim()
             } else {
