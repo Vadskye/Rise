@@ -211,7 +211,7 @@ pub struct StrikeAbility {
 }
 
 impl StrikeAbility {
-    pub fn latex_ability_block(self, creature: &Creature) -> String {
+    pub fn latex_ability_block(mut self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
         let mut latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
         // Add the tags from the weapon
@@ -220,9 +220,22 @@ impl StrikeAbility {
                 latex_tags.push(tag.latex());
             }
         }
+        // If the creature is massive, add the appropriate tag and add a "glance on miss"
+        // effect.
+        if let Some(tag) = creature.size.massive_weapon_tag() {
+            // TODO: remove Sweeping if it exists
+            latex_tags.push(tag.latex());
+            if !self.effect.contains(r"\miss") {
+                self.effect.push_str(r"
+                    \miss \glossterm{Glancing blow}.
+                ");
+            }
+        }
+
         // TODO: does this sort by the visible tag name, or does it put all \\abilitytag
         // entries before all \\weapontag entries?
         latex_tags.sort();
+        
 
         // This function is used by both ActiveAbility and Attack, which explains the odd
         // duplication.
