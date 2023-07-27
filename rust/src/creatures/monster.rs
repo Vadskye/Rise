@@ -281,16 +281,17 @@ impl Monster {
         let latex = latex_formatting::latexify(format!(
             "
                 {pagebreak}
-                \\begin<{section_name}><{name}><{level} {role}>{elite}
+                \\begin<minipage><\\columnwidth>
+                    \\{section_name}<{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
                     {art}
-                    {description}
-                    {knowledge}
-                    {content_buffer}
+                \\end<minipage>
+                {description}
+                {knowledge}
+                {content_buffer}
 
-                    \\par \\RaggedRight
-                    {content}
-                \\end<{section_name}>
+                \\par \\RaggedRight
+                {content}
                 \\monsterabilitiesheader<$Name>
                 {abilities}
             ",
