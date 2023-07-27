@@ -1,4 +1,5 @@
 use crate::creatures::Creature;
+use crate::equipment::WeaponTag;
 
 #[derive(Clone, Debug)]
 pub enum Size {
@@ -42,15 +43,6 @@ impl Size {
         }
     }
 
-    pub fn reach(&self, is_long: bool) -> i32 {
-        let tall_reach = self.space().floor() as i32;
-        if is_long && tall_reach >= 10 {
-            tall_reach / 2
-        } else {
-            tall_reach
-        }
-    }
-
     pub fn reflex_modifier(&self) -> i32 {
         match self {
             Size::Fine => 4,
@@ -76,6 +68,24 @@ impl Size {
             Size::Huge => 20.0,
             Size::Gargantuan => 40.0,
             Size::Colossal => 80.0,
+        }
+    }
+
+    pub fn is_massive(&self) -> bool {
+        match self {
+            Size::Huge => true,
+            Size::Gargantuan => true,
+            Size::Colossal => true,
+            _ => false,
+        }
+    }
+
+    pub fn massive_weapon_tag(&self) -> Option<WeaponTag> {
+        match self {
+            Size::Huge => Some(WeaponTag::Massive(10)),
+            Size::Gargantuan => Some(WeaponTag::Massive(15)),
+            Size::Colossal => Some(WeaponTag::Massive(20)),
+            _ => None,
         }
     }
 }
