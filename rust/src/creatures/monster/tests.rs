@@ -12,10 +12,13 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::One, 1, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{1 Leader}
+                \newpage
+                \begin{minipage}{\columnwidth}
+                    \monsubsection{Standard Monster}{1 Leader}
                     \monstersize{Medium planeforged}
-                    \RaggedRight
-                    \begin{monsterstatistics}
+                \end{minipage}
+                \par \RaggedRight
+                \begin{monsterstatistics}
                 \pari \textbf{HP} 10
                     \monsep \textbf{DR} 4
                 \pari \textbf{Defenses}
@@ -28,13 +31,12 @@ mod to_section {
                     \pari \textbf{Power} 4\sparkle \monsep 4
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
                 \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 2d6 physical damage.
+                \hit 1d6\plus1d8 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
@@ -43,7 +45,7 @@ mod to_section {
                 The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
                 \hit 1d8 slashing damage.
             \end{activeability}
-",
+            ",
             monster.to_section(None),
         );
     }
@@ -53,10 +55,13 @@ mod to_section {
         let monster = Monster::standard_monster(ChallengeRating::Four, 10, None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10 Leader}[Elite]
+                \newpage
+                \begin{minipage}{\columnwidth}
+                    \monsubsection{Standard Monster}{10 Leader}[Elite]
                     \monstersize{Medium planeforged}
-                    \RaggedRight
-                    \begin{monsterstatistics}
+                \end{minipage}
+                \par \RaggedRight
+                \begin{monsterstatistics}
                 \pari \textbf{HP} 128
                     \monsep \textbf{DR} 96
                 \pari \textbf{Defenses}
@@ -69,17 +74,16 @@ mod to_section {
                     \pari \textbf{Power} 13\sparkle \monsep 13
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
-                \parhead{Condition Removal} At the end of each round, if the standard monster has four or more \glossterm{conditions}, it removes its oldest condition.
+                \parhead{Condition Removal} The standard monster can remove conditions at the end of each round (see \pcref{Monster Conditions}).
             \par
-                \parhead{Multiple Actions} The standard monster can take two standard actions each round. It cannot use the same ability or weapon twice in the same round.
+                \parhead{Elite Actions} The standard monster can use an additional \abilitytag{Elite} ability each round.
             \par
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit 6d6\plus2d8 physical damage.
+                \hit 6d6\plus2d10 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claws}
@@ -101,7 +105,7 @@ mod to_section {
             .weapons
             .push(StandardWeapon::Greatsword.weapon());
         monster.creature.add_modifier(
-            Modifier::Maneuver(Maneuver::StripTheFlesh),
+            Modifier::Maneuver(Maneuver::Whirlwind),
             None,
             None,
         );
@@ -110,10 +114,13 @@ mod to_section {
             .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_multiline_eq(
             r"
-                \begin{monsubsection}{Standard Monster}{10 Leader}
+                \newpage
+                \begin{minipage}{\columnwidth}
+                    \monsubsection{Standard Monster}{10 Leader}
                     \monstersize{Medium planeforged}
-                    \RaggedRight
-                    \begin{monsterstatistics}
+                \end{minipage}
+                \par \RaggedRight
+                \begin{monsterstatistics}
                 \pari \textbf{HP} 32
                     \monsep \textbf{DR} 24
                 \pari \textbf{Defenses}
@@ -126,33 +133,32 @@ mod to_section {
                     \pari \textbf{Power} 11\sparkle \monsep 11
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \end{monsubsection}
                 \monsterabilitiesheader{Standard Monster}
                 \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 2d6\plus1d10 physical damage.
+                \hit 4d6 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit 2d6\plus1d10 (w) physical damage.
+                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
+                \hit 4d6 (w) physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claws}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus15 \glossterm{strike} vs. Armor.
                 \hit 1d6\plus1d8 (w) slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus10 \glossterm{strike} vs. Armor.
+                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
                 \hit 4d6 (w) slashing damage.
             \end{activeability}
         \par
@@ -170,13 +176,27 @@ mod to_section {
                 \hit 4d6 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Strip the Flesh -- Greatsword}
+            \begin{activeability}*{Whirlwind -- Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                \hit 4d6 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Whirlwind -- Claws}
+                \weapontag{Light}
+                \rankline
+                The standard monster makes a \plus12 attack vs. Armor against enemies in a \tinyarea radius.
+                \hit 1d6\plus1d8 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Whirlwind -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 8d6 slashing damage.
-                 Each creature that loses \glossterm{hit points} from this attack is \vulnerable to all damage as a \glossterm{condition}.
+                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                \hit 4d6 slashing damage.
             \end{activeability}
+
 ",
             monster.to_section(None),
         );
