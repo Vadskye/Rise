@@ -372,11 +372,7 @@ impl AttackEffect {
                 text.clone()
             }
             Self::Damage(effect) => {
-                format!(
-                    "{the_subject} takes {damage}",
-                    damage = effect.description(attacker, is_magical, is_strike),
-                    the_subject = the_subject,
-                )
+                effect.description(attacker, is_magical, is_strike)
             }
             Self::DamageOverTime(effect) => {
                 format!(
