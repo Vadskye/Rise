@@ -31,7 +31,7 @@ impl PassiveAbility {
 pub enum StandardPassiveAbility {
     Amphibious,
     Animated,
-    ConditionRemoval(i32),
+    ConditionRemoval,
     EliteActions,
     Sightless,
     Undead,
@@ -53,14 +53,10 @@ impl StandardPassiveAbility {
                 is_magical: false,
                 name: "Animated".to_string(),
             },
-            Self::ConditionRemoval(count) => {
-                // This count handling is stupid
-                let conditions = if *count == 3 {r"three or more \glossterm{conditions}" } else { r"four or more \glossterm{conditions}" };
-                PassiveAbility {
-                    description: format!("At the end of each round, if the $name has {}, it removes its oldest condition.", conditions),
-                    is_magical: false,
-                    name: "Condition Removal".to_string(),
-                }
+            Self::ConditionRemoval => PassiveAbility {
+                description: r"The $name can remove conditions at the end of each round (see \pcref{Monster Conditions}).".to_string(),
+                is_magical: false,
+                name: "Condition Removal".to_string(),
             },
             Self::EliteActions => PassiveAbility {
                 description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),
