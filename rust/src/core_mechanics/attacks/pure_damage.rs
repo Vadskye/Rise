@@ -106,9 +106,7 @@ mod tests {
                     .latex_ability_block(&get_basic_creature()),
             )
         } else {
-            standardize_indentation(
-                &config.attack().latex_ability_block(&get_basic_creature()),
-            )
+            standardize_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
         }
     }
 

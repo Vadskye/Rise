@@ -1,7 +1,8 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{
-    Attribute, DamageDice, DamageType, Debuff, Defense, MovementMode, PassiveAbility, Resource, SpecialDefenseType,
+    Attribute, DamageDice, DamageType, Debuff, Defense, MovementMode, PassiveAbility, Resource,
+    SpecialDefenseType,
 };
 use crate::skills::Skill;
 
@@ -367,6 +368,9 @@ impl HasModifiers for Creature {
 
 fn assert_modifier_is_valid(creature: &Creature, modifier: &Modifier) {
     if let Modifier::Maneuver(maneuver) = modifier {
-        maneuver.assert_meets_rank_requirement(creature.name.as_ref().unwrap_or(&"???".to_string()), creature.rank())
+        maneuver.assert_meets_rank_requirement(
+            creature.name.as_ref().unwrap_or(&"???".to_string()),
+            creature.rank(),
+        )
     }
 }

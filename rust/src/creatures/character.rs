@@ -355,9 +355,7 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
                 Armor::ScaleMail(None)
             }
         }
-        ArmorUsageClass::Light => {
-            Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank)))
-        }
+        ArmorUsageClass::Light => Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank))),
     }
 }
 

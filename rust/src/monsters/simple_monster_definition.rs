@@ -1,6 +1,7 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::{
-    Attribute, HasAttributes, MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpeedCategory,
+    Attribute, HasAttributes, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    SpeedCategory,
 };
 use crate::creatures::{Creature, Monster};
 use crate::creatures::{HasModifiers, Modifier};

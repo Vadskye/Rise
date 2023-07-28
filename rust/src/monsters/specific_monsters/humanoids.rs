@@ -303,12 +303,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 "Goblin Wolf Rider",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(
-                            Weapon::lance(),
-                        )),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(
-                            Weapon::spear(),
-                        )),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::lance())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
                     ],
                     modifiers: vec![Modifier::buckler()],
                     movement_speeds: None,

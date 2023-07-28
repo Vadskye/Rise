@@ -1,6 +1,4 @@
-use crate::core_mechanics::abilities::{
-    ActiveAbility, StrikeAbility,
-};
+use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility};
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
@@ -11,11 +9,9 @@ use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
-use crate::monsters::monster_group::MonsterGroup;
 use crate::monsters::monster_entry::MonsterEntry;
-use crate::monsters::{
-    MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::monster_group::MonsterGroup;
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn magical_beast(def: MonsterDef) -> Monster {

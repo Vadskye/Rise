@@ -322,7 +322,7 @@ impl Monster {
             titlecase(self.creature.name.as_deref().unwrap_or("")).as_str(),
         );
 
-        // Now that we have replaced "$name", there should be no more dollar signs 
+        // Now that we have replaced "$name", there should be no more dollar signs
         let dollar_sign_pattern = Regex::new(r"\$").unwrap();
         if dollar_sign_pattern.is_match(&latex) {
             eprintln!("Monster {} contains a '$'", self.name());

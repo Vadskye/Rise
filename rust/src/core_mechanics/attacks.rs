@@ -1,10 +1,10 @@
 mod attack;
 pub mod attack_effect;
 mod damage_and_debuff;
+mod damage_scaling;
 mod maneuver;
 mod pure_damage;
 mod simple_damage_effect;
-mod damage_scaling;
 mod standard_attack;
 
 pub use attack::{Attack, HasAttacks, SimpleSpell};

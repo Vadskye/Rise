@@ -4,8 +4,8 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed,
-    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
+    Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};

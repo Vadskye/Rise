@@ -226,16 +226,17 @@ impl StrikeAbility {
             // TODO: remove Sweeping if it exists
             latex_tags.push(tag.latex());
             if !self.effect.contains(r"\miss") {
-                self.effect.push_str(r"
+                self.effect.push_str(
+                    r"
                     \miss \glossterm{Glancing blow}.
-                ");
+                ",
+                );
             }
         }
 
         // TODO: does this sort by the visible tag name, or does it put all \\abilitytag
         // entries before all \\weapontag entries?
         latex_tags.sort();
-        
 
         // This function is used by both ActiveAbility and Attack, which explains the odd
         // duplication.
@@ -1215,15 +1216,17 @@ fn add_accuracy_to_effect(modifier: i32, effect: &str, name: &str) -> String {
             new_modifier_value.to_string()
         };
 
-        replaced_effect = accuracy_pattern.replacen(
-            &replaced_effect,
-            1,
-            format!(
-                "$accuracy{sign}{value}",
-                sign = new_modifier_sign,
-                value = new_modifier_text,
-            ),
-        ).to_string();
+        replaced_effect = accuracy_pattern
+            .replacen(
+                &replaced_effect,
+                1,
+                format!(
+                    "$accuracy{sign}{value}",
+                    sign = new_modifier_sign,
+                    value = new_modifier_text,
+                ),
+            )
+            .to_string();
 
         if replaced_accuracy {
             panic!(

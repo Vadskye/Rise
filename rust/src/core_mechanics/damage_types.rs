@@ -1,5 +1,5 @@
-use std::fmt;
 use crate::latex_formatting;
+use std::fmt;
 
 #[derive(Clone, Copy, Debug)]
 pub enum DamageType {

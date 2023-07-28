@@ -359,6 +359,9 @@ mod tests {
     #[test]
     fn stringifies_maximized_dice() {
         assert_eq!("6", DicePool::d6().maximize().to_string());
-        assert_eq!("12", DicePool::d6().add_increments(3).maximize().to_string());
+        assert_eq!(
+            "12",
+            DicePool::d6().add_increments(3).maximize().to_string()
+        );
     }
 }

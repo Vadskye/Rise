@@ -115,10 +115,7 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
     }
 }
 
-pub fn calc_rank_abilities(
-    level: i32,
-    archetypes: &[ClassArchetype; 3],
-) -> Vec<RankAbility<'_>> {
+pub fn calc_rank_abilities(level: i32, archetypes: &[ClassArchetype; 3]) -> Vec<RankAbility<'_>> {
     let mut rank_abilities: Vec<RankAbility> = vec![];
     for i in 0..level {
         rank_abilities.append(

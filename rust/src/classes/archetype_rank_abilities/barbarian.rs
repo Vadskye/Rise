@@ -23,9 +23,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
             ",
-            modifiers: Some(vec![
-                Modifier::HitPoints(6),
-            ]),
+            modifiers: Some(vec![Modifier::HitPoints(6)]),
         },
         RankAbility {
             name: "Battle-Scarred+",

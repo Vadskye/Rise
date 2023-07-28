@@ -12,7 +12,7 @@ fn ideal_damage(rank: i32, damage_type: &DamageType, high_attribute: bool) -> f6
         _ => panic!("Invalid rank {}", rank),
     };
     let with_attribute = if high_attribute { base * 1.6 } else { base };
-    
+
     if matches!(damage_type, DamageType::Area) {
         with_attribute * 0.6
     } else {
@@ -82,7 +82,11 @@ fn power_at_rank(rank: i32, high_attribute: bool) -> f64 {
     //     7 => [19, 26],
     //     _ => panic!("Invalid rank {}", rank),
     // };
-    if high_attribute { p[1] } else { p[0] }
+    if high_attribute {
+        p[1]
+    } else {
+        p[0]
+    }
 }
 
 #[derive(Clone, Copy)]
