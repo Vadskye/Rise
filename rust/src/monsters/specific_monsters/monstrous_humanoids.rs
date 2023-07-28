@@ -1,14 +1,12 @@
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
-use crate::core_mechanics::{Size};
+use crate::core_mechanics::Size;
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{
-    MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn monstrous_humanoid(def: MonsterDef) -> Monster {

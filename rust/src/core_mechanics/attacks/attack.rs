@@ -1,4 +1,6 @@
-use crate::core_mechanics::abilities::{AbilityExtraContext, latex_ability_block, Targeting, UsageTime};
+use crate::core_mechanics::abilities::{
+    latex_ability_block, AbilityExtraContext, Targeting, UsageTime,
+};
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
@@ -31,8 +33,7 @@ pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
     fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
-        self
-            .calc_all_attacks()
+        self.calc_all_attacks()
             .into_iter()
             .find(|a| a.name.contains(name))
     }
@@ -76,7 +77,10 @@ impl Attack {
     // This is a particularly common replacement for elite monsters, and managing the imports is
     // annoying without this function.
     pub fn except_elite(&self) -> Attack {
-        eprintln!("Error: unable to support elite attacks. Convert {} into an ActiveAbility.", self.name);
+        eprintln!(
+            "Error: unable to support elite attacks. Convert {} into an ActiveAbility.",
+            self.name
+        );
         self.clone()
     }
 
@@ -113,7 +117,7 @@ impl Attack {
     // other values, like healing, once that is supported.
     pub fn calc_dice_pool(&self, creature: &Creature) -> Option<DicePool> {
         if let Some(damage_effect) = self.damage_effect() {
-            return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike))
+            return Some(damage_effect.calc_damage_dice(creature, self.is_magical, self.is_strike));
         }
         None
     }
@@ -208,7 +212,9 @@ impl Attack {
             },
             massive_miss = if self.is_strike && creature.size.is_massive() {
                 r"\miss \glossterm{Glancing blow}."
-            } else { "" },
+            } else {
+                ""
+            },
             suffix = if let Some(ref s) = context.suffix {
                 s.trim()
             } else {

@@ -8,7 +8,7 @@ use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
 };
 use crate::equipment::Weapon;
-use std::cmp::{max,min};
+use std::cmp::{max, min};
 use titlecase::titlecase;
 
 use super::Attack;

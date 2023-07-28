@@ -11,7 +11,7 @@ mod maneuver_tests {
     fn it_calculates_attack_counts() {
         let mut creature = Creature::new(1, CreatureCategory::Character);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
-        creature.add_modifier( Modifier::Maneuver(Maneuver::CertainStrike), None, None);
+        creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             2,
             creature.calc_all_attacks().len(),
@@ -71,15 +71,16 @@ mod maneuver_tests {
             .weapons
             .push(StandardWeapon::Broadsword.weapon());
         assert_eq!(
-        vec![
-            "Elemental Broadsword +5 (2d6+8 bludgeoning, fire, and slashing damage.)",
-            "Broadsword +5 (2d6+6 slashing damage.)"
-        ],
-        druid
-            .creature.calc_all_attacks()
-            .iter()
-            .map(|a| a.shorthand_description(&druid.creature))
-            .collect::<Vec<String>>(),
-    );
+            vec![
+                "Elemental Broadsword +5 (2d6+8 bludgeoning, fire, and slashing damage.)",
+                "Broadsword +5 (2d6+6 slashing damage.)"
+            ],
+            druid
+                .creature
+                .calc_all_attacks()
+                .iter()
+                .map(|a| a.shorthand_description(&druid.creature))
+                .collect::<Vec<String>>(),
+        );
     }
 }

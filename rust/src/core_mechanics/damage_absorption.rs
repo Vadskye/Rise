@@ -13,11 +13,7 @@ where
     Creature: HasAttributes + HasModifiers + HasArmor,
 {
     fn calc_damage_resistance(&self) -> i32 {
-        let mut levelish = calc_levelish(
-            self,
-            0,
-            ModifierType::DamageResistanceFromLevel,
-        );
+        let mut levelish = calc_levelish(self, 0, ModifierType::DamageResistanceFromLevel);
         let mut dr_from_level = 0;
         if levelish > 0 {
             if levelish > 21 {
@@ -122,7 +118,5 @@ where
 }
 
 fn calc_levelish(creature: &Creature, attribute_modifier: i32, mt: ModifierType) -> i32 {
-    creature.level
-        + attribute_modifier
-        + creature.calc_total_modifier(mt)
+    creature.level + attribute_modifier + creature.calc_total_modifier(mt)
 }

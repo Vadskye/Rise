@@ -1,10 +1,14 @@
-use rise::monsters::{ChallengeRating,CreatureType, Role};
-use rise::creatures::Monster;
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
+use rise::creatures::Monster;
 use rise::latex_formatting;
+use rise::monsters::{ChallengeRating, CreatureType, Role};
 
 fn main() {
-    let role_headers = Role::all().iter().map(|r| format!("\\tb<{role_name}>", role_name = r.name())).collect::<Vec<String>>().join(" & ");
+    let role_headers = Role::all()
+        .iter()
+        .map(|r| format!("\\tb<{role_name}>", role_name = r.name()))
+        .collect::<Vec<String>>()
+        .join(" & ");
     let mut level_rows: Vec<String> = vec![];
     for level in 1..22 {
         level_rows.push(calc_row(level));
@@ -39,6 +43,14 @@ fn calc_cell(role: Role, level: i32) -> String {
 }
 
 fn calc_row(level: i32) -> String {
-    let role_cells = Role::all().into_iter().map(|r| calc_cell(r, level)).collect::<Vec<String>>().join(" & ");
-    format!("\\nth<{level}> & {role_cells} \\\\", level = level, role_cells = role_cells)
+    let role_cells = Role::all()
+        .into_iter()
+        .map(|r| calc_cell(r, level))
+        .collect::<Vec<String>>()
+        .join(" & ");
+    format!(
+        "\\nth<{level}> & {role_cells} \\\\",
+        level = level,
+        role_cells = role_cells
+    )
 }

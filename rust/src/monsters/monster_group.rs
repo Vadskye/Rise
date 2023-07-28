@@ -44,7 +44,9 @@ impl MonsterGroup {
             },
             monster_spacing_buffer = if self.description.is_some() || self.knowledge.is_some() {
                 r"\vspace{0.5em}"
-            } else { "" },
+            } else {
+                ""
+            },
             monsters = monsters
                 .iter()
                 .map(|m| m.to_section(Some(self.name.clone())))

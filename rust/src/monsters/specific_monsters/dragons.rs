@@ -13,9 +13,7 @@ use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
-use crate::monsters::{
-    MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role,
-};
+use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 
 enum AgeCategory {
     Wyrmling,
@@ -468,9 +466,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
     } else {
         age_category.breath_weapon_cone()
     };
-    let damage_rank = damage_rank(
-        age_category.level() + dragon_type.level_modifier(),
-    );
+    let damage_rank = damage_rank(age_category.level() + dragon_type.level_modifier());
     // TODO: this should be an elite ActiveAbility
     Attack {
         accuracy: 0,
@@ -549,7 +545,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
             size: age_category.size(),
         },
         name: format!("{} {} Dragon", age_category.name(), dragon_type.name()),
-    }.monster(CreatureType::Dragon);
+    }
+    .monster(CreatureType::Dragon);
 }
 
 pub fn dragons() -> Vec<MonsterEntry> {

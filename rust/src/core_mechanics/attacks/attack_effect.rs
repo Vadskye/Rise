@@ -49,7 +49,12 @@ impl DamageEffect {
         AbilityType::Normal
     }
 
-    pub fn calc_damage_dice(&self, attacker: &Creature, is_magical: bool, is_strike: bool) -> DicePool {
+    pub fn calc_damage_dice(
+        &self,
+        attacker: &Creature,
+        is_magical: bool,
+        is_strike: bool,
+    ) -> DicePool {
         let mut dice_pool = self
             .base_dice
             .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
@@ -119,7 +124,9 @@ impl DamageEffect {
                 {dice_pool} {damage_types} damage.
                 {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
-            dice_pool = self.calc_damage_dice(attacker, is_magical, is_strike).to_string(),
+            dice_pool = self
+                .calc_damage_dice(attacker, is_magical, is_strike)
+                .to_string(),
             damage_types =
                 latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
             extra_defense_effect = extra_defense_effect.trim(),
@@ -365,15 +372,9 @@ impl AttackEffect {
         the_subject: &str,
     ) -> String {
         match self {
-            Self::BriefDurationInstead => {
-                r"The effect lasts \glossterm{briefly}.".to_string()
-            }
-            Self::Custom(_, text) => {
-                text.clone()
-            }
-            Self::Damage(effect) => {
-                effect.description(attacker, is_magical, is_strike)
-            }
+            Self::BriefDurationInstead => r"The effect lasts \glossterm{briefly}.".to_string(),
+            Self::Custom(_, text) => text.clone(),
+            Self::Damage(effect) => effect.description(attacker, is_magical, is_strike),
             Self::DamageOverTime(effect) => {
                 format!(
                     "{the_subject} {damage}",
@@ -395,9 +396,7 @@ impl AttackEffect {
                     the_subject = the_subject,
                 )
             }
-            Self::HalfDamage => {
-                "Half damage.".to_string()
-            }
+            Self::HalfDamage => "Half damage.".to_string(),
             Self::Healing(effect) => {
                 format!(
                     "{the_subject} {heals}",
@@ -414,11 +413,10 @@ impl AttackEffect {
                     feet = feet,
                 )
             }
-            Self::MustRemoveTwice => {
-                "
+            Self::MustRemoveTwice => "
                         The condition must be removed twice before the effect ends.
-                    ".to_string()
-            }
+                    "
+            .to_string(),
             Self::Poison(effect) => {
                 format!(
                     "

@@ -482,9 +482,12 @@ pub trait HasArmor {
     fn calc_encumbrance(&self) -> i32;
     // Find the lowest dex multiplier among all the armor components being worn
     fn minimum_dex_modifier(&self) -> Option<f64> {
-        self.get_armor().iter().min_by(|x, y| {
-            ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
-        }).map(|lowest_armor| lowest_armor.dex_multiplier())
+        self.get_armor()
+            .iter()
+            .min_by(|x, y| {
+                ((x.dex_multiplier() * 2.0) as i32).cmp(&((y.dex_multiplier() * 2.0) as i32))
+            })
+            .map(|lowest_armor| lowest_armor.dex_multiplier())
     }
 }
 
