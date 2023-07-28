@@ -104,11 +104,9 @@ mod to_section {
             .creature
             .weapons
             .push(StandardWeapon::Greatsword.weapon());
-        monster.creature.add_modifier(
-            Modifier::Maneuver(Maneuver::Whirlwind),
-            None,
-            None,
-        );
+        monster
+            .creature
+            .add_modifier(Modifier::Maneuver(Maneuver::Whirlwind), None, None);
         monster
             .creature
             .add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
@@ -213,16 +211,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(1, creature.calc_accuracy(), "Accuracy: 1 per",);
-        assert_eq!(
-            4,
-            creature.calc_magical_power(),
-            "Magical power: 0lvl+4wil",
-        );
-        assert_eq!(
-            4,
-            creature.calc_mundane_power(),
-            "Mundane power: 0lvl+4str",
-        );
+        assert_eq!(4, creature.calc_magical_power(), "Magical power: 0lvl+4wil",);
+        assert_eq!(4, creature.calc_mundane_power(), "Mundane power: 0lvl+4str",);
 
         // HasAttributes
         assert_eq!(
@@ -257,7 +247,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(10, creature.calc_hit_points(), "HP: (1 level + 1 con + 2 leader)",);
+        assert_eq!(
+            10,
+            creature.calc_hit_points(),
+            "HP: (1 level + 1 con + 2 leader)",
+        );
         assert_eq!(
             4,
             creature.calc_damage_resistance(),
@@ -271,16 +265,8 @@ mod statistics {
 
         // HasAttacks
         assert_eq!(3, creature.calc_accuracy(), "Accuracy: 1 per + 2 cr",);
-        assert_eq!(
-            6,
-            creature.calc_magical_power(),
-            "Magical power: 0lvl+6wil",
-        );
-        assert_eq!(
-            6,
-            creature.calc_mundane_power(),
-            "Mundane power: 0lvl+6str",
-        );
+        assert_eq!(6, creature.calc_magical_power(), "Magical power: 0lvl+6wil",);
+        assert_eq!(6, creature.calc_mundane_power(), "Mundane power: 0lvl+6str",);
 
         // HasAttributes
         assert_eq!(
@@ -315,7 +301,11 @@ mod statistics {
         );
 
         // HasDamageAbsorption
-        assert_eq!(40, creature.calc_hit_points(), "HP: (1 level + 2 con + 2 leader)",);
+        assert_eq!(
+            40,
+            creature.calc_hit_points(),
+            "HP: (1 level + 2 con + 2 leader)",
+        );
         assert_eq!(
             16,
             creature.calc_damage_resistance(),

@@ -35,14 +35,16 @@ mod calculate_attack_outcome {
 
     #[test]
     fn extreme_hit_probability() {
-        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16);
+        let outcome =
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16);
         assert_eq!(
             "0.050 single, 0.005 crit",
             outcome.short_description(),
             "Should be around 5% with +0 vs 16",
         );
 
-        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6);
+        let outcome =
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6);
         assert_eq!(
             "1.000 single, 0.555 crit",
             outcome.short_description(),

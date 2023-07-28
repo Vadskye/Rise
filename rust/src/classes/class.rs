@@ -1661,7 +1661,6 @@ impl Class {
     }
 }
 
-
 // Going above +3 HP or DR costs an extra point per value
 fn hp_dr_points(value: i32) -> i32 {
     if value < 4 {

@@ -91,7 +91,7 @@ fn generate_latex_defenses(class: &Class) -> String {
             )
         }
     } else if class.damage_resistance() > 0 {
-            hp_dr_text = format!(
+        hp_dr_text = format!(
                 "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
                 class.damage_resistance(),
             )
@@ -180,8 +180,14 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
             if specific_weapon_groups.len() == 1 {
                 components.push(specific_weapon_groups[0].name_plural().to_string());
             } else {
-                let specific_groups_text = specific_weapon_groups.iter().map(|g| g.name_plural().to_string()).collect::<Vec<String>>();
-                components.push(format!("any one of {}", latex_formatting::join_string_list(&specific_groups_text).unwrap()));
+                let specific_groups_text = specific_weapon_groups
+                    .iter()
+                    .map(|g| g.name_plural().to_string())
+                    .collect::<Vec<String>>();
+                components.push(format!(
+                    "any one of {}",
+                    latex_formatting::join_string_list(&specific_groups_text).unwrap()
+                ));
             }
         }
         if weapon_proficiencies.custom_weapon_groups > 0 {

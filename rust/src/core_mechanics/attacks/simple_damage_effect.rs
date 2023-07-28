@@ -1,10 +1,5 @@
-
 use crate::core_mechanics::attacks::DamageEffect;
 use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
-
-
-
-
 
 #[derive(Clone, Debug)]
 pub struct SimpleDamageEffect {

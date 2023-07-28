@@ -5,7 +5,7 @@ use crate::core_mechanics::{
     MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
-use crate::equipment::{StandardWeapon};
+use crate::equipment::StandardWeapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -360,10 +360,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
 }
 
 fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
-    let skeletons = generate_corpses()
-        .iter()
-        .map(convert_to_skeleton)
-        .collect();
+    let skeletons = generate_corpses().iter().map(convert_to_skeleton).collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Skeletons".to_string(),
@@ -557,10 +554,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
 }
 
 fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
-    let zombies = generate_corpses()
-        .iter()
-        .map(convert_to_zombie)
-        .collect();
+    let zombies = generate_corpses().iter().map(convert_to_zombie).collect();
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Zombies".to_string(),
