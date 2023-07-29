@@ -281,6 +281,7 @@ impl Monster {
         let latex = latex_formatting::latexify(format!(
             "
                 {pagebreak}
+                \\par\\noindent
                 \\begin<minipage><\\columnwidth>
                     \\{section_name}<{name}><{level} {role}>{elite}
                     \\monstersize{size_star}<{size} {type}>
