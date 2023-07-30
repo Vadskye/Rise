@@ -92,17 +92,6 @@ class MagicItem(object):
                 if not is_valid_tag(tag):
                     logger.log(WARNING, f"Magic item {self.name} has invalid tag {tag}")
 
-    def latex_ability(self):
-        if self.effects or self.targeting:
-            return f"""
-                \\begin<spellcontent>
-                    {self.targeting or ""}
-                    {self.effects or ""}
-                \\end<spellcontent>
-            """
-        else:
-            return None
-
     def upgrades_text(self):
         if self.upgrades is None:
             return None
@@ -178,7 +167,6 @@ class MagicItem(object):
                 \\spelltwocol<{type_text}><{rank_text}>
                 {self.description}
             """,
-            self.latex_ability(),
             self.upgrades_text(),
         )
 

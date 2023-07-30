@@ -300,7 +300,7 @@ export const fabrication: MysticSphere = {
         hit: `\\damagerankone{piercing}.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-          Whenever a creature moves into any of the squares, unless the creature moves at one quarter speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
+          Whenever a creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
           You cannot make this attack against the same creature more than once per \\glossterm{phase}.
           Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
           Caltrops may not be effective against creatures with an unusual anatomy.
