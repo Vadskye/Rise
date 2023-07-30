@@ -142,6 +142,7 @@ pub fn calculate_standard_rank(level: i32) -> i32 {
 
 pub fn calculate_minimum_level(rank: i32) -> i32 {
     match rank {
+        -1 => 0,
         0 => 0,
         1 => 1,
         2 => 4,

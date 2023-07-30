@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{replace_attack_terms, AbilityTag};
-use crate::equipment::{item_creature, item_price, rank_and_price_text, ItemUpgrade};
+use crate::equipment::{item_creature, rank_and_price_text, ItemUpgrade};
 use crate::latex_formatting::latexify;
 mod alchemical_items;
 mod kits;
@@ -39,7 +39,7 @@ impl Tool {
         tags.sort();
 
         let is_attuned = self.tags.iter().any(|t| matches!(t, AbilityTag::Attune(_)));
-        let price = rank_and_price_text(self.rank, self.category.is_consumable());
+        let rank_and_price = rank_and_price_text(self.rank, self.category.is_consumable());
 
         latexify(format!(
             "
@@ -61,9 +61,9 @@ impl Tool {
             // attuneability uses {} for the last argument, but activeability uses [] for the last
             // argument.
             braced_price = if is_attuned {
-                format!("<{}>", price)
+                format!("<Rank {}>", rank_and_price)
             } else {
-                format!("[{}]", price)
+                format!("[Rank {}]", rank_and_price)
             },
             crafting = self.category.crafting_latex(),
             tags = tags.join(", "),
@@ -92,14 +92,13 @@ impl Tool {
                 let upgrade_tier = i + 1;
                 format!(
                     "
-                        \\upgraderank<{name}{plus_suffix}><{rank} ({price} gp)> {description}
+                        \\upgraderank<{name}{plus_suffix}><{rank_and_price}> {description}
                     ",
                     name = self.name,
                     plus_suffix = "+".repeat(upgrade_tier),
-                    // Note that `\upgraderank` provides "Rank" text, so we can't use
-                    // `rank_and_price_text`.
-                    rank = upgrade.rank,
-                    price = item_price(upgrade.rank, self.category.is_consumable()),
+                    // Note that `\upgraderank` provides "Rank" text, so we don't prefix
+                    // this with "Rank".
+                    rank_and_price = rank_and_price_text(upgrade.rank, self.category.is_consumable()),
                     description = replace_attack_terms(
                         &upgrade.description,
                         &item_creature(upgrade.rank),
@@ -128,7 +127,7 @@ pub enum ToolCategory {
 impl ToolCategory {
     fn crafting_latex(&self) -> String {
         match self {
-            Self::Alchemical => String::from("Alchemical -- Craft (alchemy)"),
+            Self::Alchemical => String::from("Craft (alchemy)"),
             Self::Creature => String::from(""),
             Self::Permanent(c) => format!("Craft ({})", c),
             Self::Poison => String::from("Poison -- Craft (poison)"),

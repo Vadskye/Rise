@@ -18,6 +18,7 @@ pub fn item_creature(rank: i32) -> Creature {
     let perception = 1 + ((level + 3) / 6);
 
     let power_attribute = match rank {
+        -1 => 0,
         0 => 0,
         1 => 2,  // target: 2
         2 => 2,  // target: 4
