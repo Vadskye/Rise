@@ -76,6 +76,25 @@ pub fn potions() -> Vec<Tool> {
     });
 
     potions.push(Tool {
+        name: "Antitoxin Elixir".to_string(),
+        rank: 1,
+        short_description: "Grants +4 defenses against poison".to_string(),
+        description: "
+            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 bonus to your defenses against poisons.
+            The effects expire after 10 minutes.
+        ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(3, "Grants +8 defenses against poison", r"
+                The defense bonus increases to +8.
+            "),
+            ItemUpgrade::new(5, "Grants poison immunity", r"
+                You become immune to poison instead of gaining a defense bonus.
+            "),
+        ],
+        ..elixir()
+    });
+
+    potions.push(Tool {
         name: "Elixir of Resilience".to_string(),
         rank: 1,
         short_description: "Grants +4 damage resistance".to_string(),
@@ -111,6 +130,25 @@ pub fn potions() -> Vec<Tool> {
             "),
             ItemUpgrade::new(6, "Grants +4 vital rolls", r"
                 The bonus increases to +4.
+            "),
+        ],
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Elixir of Strength".to_string(),
+        rank: 1,
+        short_description: "Grants +1 bonus for weight limits".to_string(),
+        description: "
+            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+            The effects expire after 10 minutes.
+        ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(3, "Grants +2 bonus for weight limits", r"
+                The bonus increases to +2.
+            "),
+            ItemUpgrade::new(5, "Grants +3 bonus for weight limits", r"
+                The bonus increases to +3.
             "),
         ],
         ..elixir()

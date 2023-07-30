@@ -1,5 +1,6 @@
 pub fn item_price(rank: i32, consumable: bool) -> i32 {
     let mut value = match rank {
+        -1 => 5,
         0 => 10,
         1 => 40,
         2 => 200,
@@ -18,8 +19,11 @@ pub fn item_price(rank: i32, consumable: bool) -> i32 {
 }
 
 pub fn rank_and_price_text(rank: i32, consumable: bool) -> String {
+    if rank < 0 {
+        return format!("\\tdash ({price} sp)", price = item_price(rank, consumable));
+    }
     format!(
-        "Rank {rank} ({price} gp)",
+        "{rank} ({price} gp)",
         rank = rank,
         price = item_price(rank, consumable)
     )
