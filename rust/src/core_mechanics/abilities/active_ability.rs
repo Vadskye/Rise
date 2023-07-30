@@ -542,7 +542,7 @@ fn strike_prefix(prefix: &str, weapon: &Weapon) -> String {
     format!("{} {}", prefix, weapon.name)
 }
 
-fn replace_attack_terms(
+pub fn replace_attack_terms(
     effect: &str,
     creature: &Creature,
     is_magical: bool,

@@ -9,6 +9,7 @@ pub fn format_creature(creature: &Creature) -> String {
             AD {armor}, Fort {fortitude}, Ref {reflex}, Ment {mental}
             {attacks}
             Attr: {attributes}
+            Power: {magical_power}✨/{mundane_power}
         ",
         attacks = creature
             .calc_all_attacks()
@@ -23,6 +24,8 @@ pub fn format_creature(creature: &Creature) -> String {
         hit_points = creature.calc_hit_points(),
         mental = creature.calc_defense(&Defense::Mental),
         reflex = creature.calc_defense(&Defense::Reflex),
+        magical_power = creature.calc_power(true),
+        mundane_power = creature.calc_power(false),
     )
 }
 
