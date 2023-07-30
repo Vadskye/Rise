@@ -23,7 +23,7 @@ pub enum AbilityTag {
 impl AbilityTag {
     pub fn description(&self) -> String {
         match self {
-            Self::Attune(attune_type) => format!("Attune ({})", attune_type.description()),
+            Self::Attune(attune_type) => format!("Attune{}", attune_type.parentheses_suffix()),
             Self::Auditory => r"Auditory".to_string(),
             Self::Compulsion => r"Compulsion".to_string(),
             Self::Creation => r"Creation".to_string(),
@@ -45,7 +45,7 @@ impl AbilityTag {
     pub fn latex(&self) -> String {
         match self {
             Self::Attune(attune_type) => {
-                format!("\\abilitytag{{Attune}} ({})", attune_type.description())
+                format!("\\abilitytag{{Attune}}{}", attune_type.parentheses_suffix())
             }
             Self::Auditory => r"\abilitytag{Auditory}".to_string(),
             Self::Compulsion => r"\abilitytag{Compulsion}".to_string(),
@@ -74,11 +74,11 @@ pub enum AttuneType {
 }
 
 impl AttuneType {
-    pub fn description(&self) -> &str {
+    pub fn parentheses_suffix(&self) -> &str {
         match self {
-            Self::Ritual => "ritual",
-            Self::Personal => "self",
-            Self::Target => "target",
+            Self::Ritual => " (ritual)",
+            Self::Personal => "",
+            Self::Target => " (target)",
         }
     }
 }

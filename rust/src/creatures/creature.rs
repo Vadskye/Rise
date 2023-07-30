@@ -139,3 +139,18 @@ impl Creature {
 pub fn calculate_standard_rank(level: i32) -> i32 {
     max(0, (level + 2) / 3)
 }
+
+pub fn calculate_minimum_level(rank: i32) -> i32 {
+    match rank {
+        0 => 0,
+        1 => 1,
+        2 => 4,
+        3 => 7,
+        4 => 10,
+        5 => 13,
+        6 => 16,
+        7 => 19,
+        8 => 21,
+        _ => panic!("Unsupported rank {}", rank),
+    }
+}
