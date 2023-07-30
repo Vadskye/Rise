@@ -170,7 +170,7 @@ export const mobileAssault: CombatStyle = {
         If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
         % TODO: wording
         Your final destination cannot be more distant from your starting location than half your \\glossterm{land speed}.
-        If this attack succeeds, you can make a melee \\glossterm{strike} from any location you occupy during the leap.
+        If this attack succeeds, you can make a \\glossterm{strike} against the target from any location you occupy during the leap.
       `,
       rank: 1,
     },
