@@ -12,13 +12,14 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You carry materials necessary to refine low-grade alchemical items wherever you are.
+                This includes any item created using Craft (alchemy), such as potions, elixirs, and alchemist's fire.
                 Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
                 The items are just as effective when used as items created normally.
                 However, they are less durable, since they are partially sustained by your magic.
                 Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
 
                 You can use this ability to create alchemical items with a rank up to your rank in this archetype (see \pcref{Item Ranks}).
-                Creating an item in this way functions in the same way as crafting alchemical items normally, with the following changes.
+                Creating an item in this way functions in the same way as crafting items normally, with the following changes.
                 First, you do not require any raw materials or an alchemist's lab.
                 Second, you can create up to three items with this ability with 5 minutes of work.
                 Third, you can only maintain the existence of three items with this ability at once.
@@ -50,14 +51,14 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
                     \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements.
-                    % TODO: wording
-                    \parhead{Enduring Construction} The duration of any alchemical item you create is doubled.
+                    % TODO: wording, and does this even matter? Affects sunrods...
+                    \parhead{Enduring Construction} The duration of alchemical items you create is doubled.
                     In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
-                    \parhead{Expansive Construction} The area affected by any alchemical item you create is doubled.
-                    \parhead{Overcharged Construction} Whenever you create an alchemical item that deals damage, you can double the number of damage dice.
-                    However, an item created this way is unwieldy and dangerous to handle.
-                    Attacks with it take a -2 accuracy penalty.
-                    In addition, if the attacker rolls a 1 on the attack roll, ignoring \glossterm{explosions}, they suffer a \glossterm{glancing blow} from the attack.
+                    \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
+                    \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
+                    Attacks with it \glossterm{explode} on a 8 or higher.
+                    This does not affect bonus dice rolled for exploding attacks.
+                    However, if the attacker rolls a 1 on the attack roll, ignoring explosions, they suffer a \glossterm{glancing blow} from the attack.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
