@@ -9,9 +9,9 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Lock"),
         rank: 0,
         short_description: String::from("Devices 12 to unlock"),
-        description: String::from("
+        description: String::from(r"
             This is a lock.
-            Opening the lock without the appropriate key requires a \\glossterm<difficulty value> 12 Devices check (see \\pcref<Devices>).
+            Opening the lock without the appropriate key requires a \glossterm<difficulty value> 12 Devices check (see \pcref<Devices>).
         "),
         upgrades: vec![
             ItemUpgrade::new(1, "Devices 15 to unlock", "
@@ -29,9 +29,9 @@ pub fn objects() -> Vec<Tool> {
         rank: 4,
         magical: true,
         short_description: String::from("Devices 12 to unlock"),
-        description: String::from("
+        description: String::from(r"
             This is a magical lock.
-            Opening the lock without the appropriate key requires a \\glossterm<difficulty value> 25 Devices check (see \\pcref<Devices>).
+            Opening the lock without the appropriate key requires a \glossterm<difficulty value> 25 Devices check (see \pcref<Devices>).
         "),
         ..Tool::permanent("metal")
     });
@@ -40,9 +40,9 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Manacles"),
         rank: 0,
         short_description: String::from("Flexibility 12 to escape"),
-        description: String::from("
+        description: String::from(r"
             This is a set of manacles designed for Medium humanoid creatures.
-            Escaping the manacles while they are being worn requires a \\glossterm<difficulty value> 12 Flexibility check or a difficulty value 15 Strength check (see \\pcref<Flexibility>).
+            Escaping the manacles while they are being worn requires a \glossterm<difficulty value> 12 Flexibility check or a difficulty value 15 Strength check (see \pcref<Flexibility>).
         "),
         upgrades: vec![
             ItemUpgrade::new(1, "Flexibility 15 to escape", "
@@ -60,9 +60,9 @@ pub fn objects() -> Vec<Tool> {
         rank: 4,
         magical: true,
         short_description: String::from("Flexibility 25 to escape"),
-        description: String::from("
+        description: String::from(r"
             This is a set of magical manacles designed for Medium humanoid creatures.
-            Escaping the manacles while they are being worn requires a \\glossterm<difficulty value> 25 Flexibility check or a difficulty value 20 Strength check (see \\pcref<Flexibility>).
+            Escaping the manacles while they are being worn requires a \glossterm<difficulty value> 25 Flexibility check or a difficulty value 20 Strength check (see \pcref<Flexibility>).
         "),
         ..Tool::permanent("metal")
     });
@@ -138,7 +138,7 @@ pub fn objects() -> Vec<Tool> {
         short_description: "Shrinks items by one size category".to_string(),
         description: r"
             This bag appears to be a common Small cloth sack.
-            However, it reduces the size of any \\glossterm<unattended>, nonmagical objects placed inside of it by one size category.
+            However, it reduces the size of any \glossterm<unattended>, nonmagical objects placed inside of it by one size category.
             This allows it to hold items of up to Medium size as long as they can fit inside the bag's opening, which is two feet in diameter.
             This reduction does not affect the weight of those objects.
 
@@ -149,7 +149,26 @@ pub fn objects() -> Vec<Tool> {
                 The bag reduces the size of contained objects by two size categories instead of one.
             "),
         ],
-        ..Tool::permanent("metal")
+        ..Tool::permanent("textiles")
+    });
+
+    objects.push(Tool {
+        name: "Bag of Holding".to_string(),
+        rank: 4,
+        short_description: "Shrinks items by one size category".to_string(),
+        description: r"
+            This bag appears to be a bulky Medium cloth sack.
+            However, it reduces the size and weight of any \\glossterm<unattended>, nonmagical objects placed inside of it by one size category and weight category.
+            This allows it to hold items of up to Large size as long as they can fit inside the bag's opening, which is five feet in diameter.
+
+            If this bag is destroyed, the items within it return to their original size.
+        ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Shrinks items by two size categories", r"
+                The bag reduces the size and weight of contained objects by two size and weight categories instead of one.
+            "),
+        ],
+        ..Tool::permanent("textiles")
     });
 
     objects
