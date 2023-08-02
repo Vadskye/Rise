@@ -396,8 +396,9 @@ export const photomancy: MysticSphere = {
 
       effect: `
         This spell has no \\glossterm{verbal components}.
+        After you cast it, you \\glossterm{briefly} cannot cast it again.
 
-        You \\glossterm{briefly} become \\trait{invisible} (see \\pcref{Invisible}).
+        You briefly become \\trait{invisible} (see \\pcref{Invisible}).
       `,
       rank: 3,
     },
