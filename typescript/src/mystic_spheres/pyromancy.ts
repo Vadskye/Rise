@@ -5,8 +5,8 @@ export const pyromancy: MysticSphere = {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
   sources: ['arcane', 'domain', 'nature', 'pact'],
-  // Special: this sphere gets +1dr for area attacks, but is bad at everything other than
-  // damage.
+  // Special: this sphere gets +1dr for large area attacks, but is bad at everything other
+  // than damage.
 
   cantrips: [
     {
@@ -227,14 +227,14 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Mighty Burning Hands',
+      name: 'Massive Burning Hands',
 
       // +1dr from sphere
       attack: {
-        hit: `\\damagerankfivehigh{fire}.`,
+        hit: `\\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea cone from you.
+          Make an attack vs. Reflex against everything in a \\hugearea cone from you.
         `,
       },
       rank: 4,
