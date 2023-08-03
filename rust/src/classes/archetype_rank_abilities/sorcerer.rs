@@ -419,37 +419,27 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Absorption",
+            name: "Magic Absorption",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever another creature uses a spell to attack you, if that spell does not have the \abilitytag{Attune} tag, you can choose to absorb its energy.
-                This does not reduce the spell's effect on you, but it grants you the ability to cast the spell.
-                When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
+                Whenever another creature uses a \magical ability to attack you, if that ability does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you can choose to absorb its energy.
+                This does not reduce the ability's effect on you, but it allows you to use that ability as a standard action.
+                When you use the ability, you choose the area and targets affected by it.
+                In all other ways, the ability functions in the same way as when it was used on you, including its \glossterm{accuracy} and \glossterm{power}.
+                You cannot change its effects with your other abilities, including \ability{desperate exertion}.
 
-                Whenever you are attacked by a new spell, if you already have the ability to cast a spell with this ability, you choose whether to absorb the new spell or retain your currently absorbed spell.
-                When you finish a \glossterm{long rest}, you lose the ability to cast any spells you have stored with this ability.
-
+                Whenever you are attacked by a new magical ability, if you already have a stored ability, you choose whether to absorb the new ability or retain your currently absorbed ability.
+                When you finish a \glossterm{long rest}, you lose all stored abilities.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Spell Absorption+",
+            name: "Magic Absorption+",
             is_magical: true,
             rank: 5,
             description: r"
-                You can retain up to three spells with this ability.
-                In addition, whenever you absorb a spell, you gain a +2 \glossterm{accuracy} bonus with that spell during the next round.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Spell Absorption++",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You can absorb and retain any \magical attack with this ability, not just spells.
-                In addition, the accuracy bonus increases to +4.
+                You can store up to three magical abilities.
             ",
             modifiers: None,
         },
@@ -475,6 +465,16 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
+        RankAbility {
+            name: "Magic Absorption++",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                Whenever you absorb an attack with your \textit{magic absorption} ability, if you have no stored abilities, that attack has no effect on you.
+                Whenever you use a stored ability, you gain a +2 accuracy bonus with it for each other ability that you have stored.
+            ",
+            modifiers: None,
+        },
     ]
 }
 
@@ -487,14 +487,14 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
                 When you do, you gain a +2 bonus to your \glossterm{magical power} with the spell.
-                In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wild Magic Effects}.
+                In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wildspell Effects}.
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
                 Any wildspell effects that do not make sense for a particular spell have no effect.
                 The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
 
                 \begin{dtable}
-                    \lcaption{Wild Magic Effects}
+                    \lcaption{Wildspell Effects}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell fails with no effect \\
@@ -528,10 +528,9 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +4.
-                In addition, you replace your normal wild magic effects with the effects from the \trefnp{Epic Wild Magic Effects} table.
+                You replace your normal wild magic effects with the effects from the \trefnp{Epic Wildspell Effects} table.
                 \begin{dtable}
-                    \lcaption{Epic Wild Magic Effects}
+                    \lcaption{Epic Wildspell Effects}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell has its normal effect \\
@@ -547,7 +546,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \end{dtabularx}
                 \end{dtable}
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Chaotic Insight",
