@@ -219,6 +219,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
                 Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
+                Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects.
             ",
             // TODO: fully represent an increased size category
             modifiers: Some(vec![Modifier::BaseSpeed(10)]),
