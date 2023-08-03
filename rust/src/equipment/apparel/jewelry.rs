@@ -1,0 +1,501 @@
+use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
+use crate::equipment::Apparel::{Amulet, Ring};
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+
+pub fn jewelry() -> Vec<Apparel> {
+    let mut apparel = vec![];
+
+    apparel.append(&mut amulets());
+    apparel.append(&mut rings());
+
+    apparel
+}
+
+// Class ability improvements / alterations
+fn amulets() -> Vec<Apparel> {
+    let mut apparel = vec![];
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Undead Control"),
+        rank: 3,
+        short_description: String::from(r"Can control undead with \ability{turn undead}"),
+        description: String::from(r"
+            Whenever you would instantly kill a non-\glossterm{elite} undead creature with the \ability{turn undead} cleric ability, you may activate this amulet.
+            When you do, that creature becomes \dominated by you instead of dying.
+
+            This effect lasts for one hour.
+            You can only control one undead at a time in this way.
+            If you activate this amulet again, the effect ends on any previously dominated undead.
+            % Necessary to prevent reapplying this every 10 minutes to keep a permanent minion
+            Whenever this effect ends for any reason, the previously dominated creature immediately dies.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Can permanently control undead with \ability{turn undead}", r"
+                The effect is permanent.
+                It is still removed if you dominate a different undead. 
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of the Undead Horde"),
+        rank: 5,
+        short_description: String::from(r"Can control undead with \ability{turn undead}"),
+        description: String::from(r"
+            This item functions like a \mitem{amulet of undead control}, except that there is no limit to the number of undead you can control simultaneously.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Controlled Rage"),
+        rank: 3,
+        short_description: String::from(r"Reduces penalties from \ability{rage} with high Willpower"),
+        description: String::from(r"
+            If you have at least 2 Willpower, your penalties to Armor and Reflex defense from using the \ability{rage} barbarian ability are reduced by 1.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Reduces penalties from \ability{rage} with high Willpower", r"
+                The penalty reduction increases to 2 if your Willpower is at least 4.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Controlled Possession"),
+        rank: 3,
+        short_description: String::from(r"Reduces penalties from \ability{possession} with high Willpower"),
+        description: String::from(r"
+            If you have at least 3 Willpower, your penalties to Fortititude and Mental defense from using the \ability{possession} warlock ability are reduced by 1.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Reduces penalties from \ability{possession} with high Willpower", r"
+                The penalty reduction increases to 2 if your Willpower is at least 5.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Divine Healing"),
+        rank: 2,
+        short_description: String::from(r"Grants +2 power with \ability{divine aid} and \ability{lay on hands}"),
+        description: String::from(r"
+            When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +2 \glossterm{magic bonus} to your \\glossterm<power>.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Grants +4 power with \ability{divine aid} and \ability{lay on hands}", r"
+                The power bonus increases to +4.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Revivification"),
+        rank: 7,
+        short_description: String::from(r"Reduces fatigue from \\ability<revivify>"),
+        description: String::from(r"
+            When you use the \\ability<revivify> cleric ability, you only increase your \\glossterm<fatigue level> by three instead of by four.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Shared Discipline"),
+        rank: 4,
+        short_description: String::from(r"Using \\ability<cleansing discipline> also helps an adjacent ally"),
+        description: String::from(r"
+            Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, r"Using \\ability<cleansing discipline> also helps an ally", r"
+                The ally can be within \medrange instead of adjacent.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Distant Protector's Amulet"),
+        rank: 3,
+        short_description: String::from(r"Increases range of \ability{protect}"),
+        description: String::from(r"
+            When you use the \\ability<protect> fighter ability, the ally can be within \shortrange instead of adjacent.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Greatly increases range of \ability{protect}", r"
+                The range increases to \longrange.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Sturdy Companionship"),
+        rank: 2,
+        short_description: String::from(r"Grants +8 damage resistance to animal allies"),
+        description: String::from(r"
+            Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +8 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, r"Grants +16 damage resistance to animal allies", r"
+                The bonus increases to +16.
+            "),
+            ItemUpgrade::new(6, r"Grants +32 damage resistance to animal allies", r"
+                The bonus increases to +32.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Perfect Equality"),
+        rank: 5,
+        short_description: String::from(r"Improves \\ability<perfect body> on your lowest attribute"),
+        description: String::from(r"
+            If you have the \\ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
+            If your two lowest physical attributes are equal, this amulet has no effect.
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Holy Avenger's Amulet"),
+        rank: 3,
+        short_description: String::from(r"Grants +1 accuracy with \\ability<smite> when avenging allies"),
+        description: String::from(r"
+            When you use the \\ability<smite> paladin ability, you gain a +1 \\glossterm<accuracy> bonus against creatures that dealt damage to one of your \\glossterm<allies> during the previous round.
+            This accuracy bonus is doubled if the target caused one of your allies to gain a vital wound during the previous round.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Grants +2 accuracy with \\ability<smite> when avenging allies", r"
+                The accuracy bonus increases to +2.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Twinhunter Amulet"),
+        rank: 3,
+        short_description: String::from(r"Adds an additional target with \\ability<quarry>"),
+        description: String::from(r"
+            When you use the \\ability<quarry> ranger ability, you may target an additional creature.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Swarmhunter Amulet"),
+        rank: 7,
+        short_description: String::from(r"Allows unlimited targets with \\ability<quarry>"),
+        description: String::from(r"
+            When you use the \\ability<quarry> ranger ability, you may target any number of creatures.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Distant Stealth"),
+        rank: 2,
+        short_description: String::from(r"Increases range with \\ability<sneak attack>"),
+        description: String::from(r"
+            When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\medrange instead of \\shortrange.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+                The range increases to \distrange.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Mighty Stealth"),
+        rank: 3,
+        short_description: String::from(r"Can \\ability<sneak attack> with non-Light weapons"),
+        description: String::from(r"
+            You can use the \\ability<sneak attack> rogue ability with any weapon that you use in one hand.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Can \\ability<sneak attack> with any weapon", r"
+                You can \ability{sneak attack} with any weapon, including \weapontag{Heavy} weapons held in two hands.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Distant Blood"),
+        rank: 2,
+        short_description: String::from(r"Increases range with \\ability<sneak attack>"),
+        description: String::from(r"
+            If you have the shark \\textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \\medrange instead of \\shortrange.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+                The range increases to \distrange.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Exemplar's Amulet"),
+        rank: 2,
+        short_description: String::from(r"Increase \\ability<skill exemplar> bonus with untrained skills by 1"),
+        description: String::from(r"
+            If you have the \\ability<skill exemplar> rogue ability, you gain a +1 \\glossterm<magic bonus> to all untrained skills.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+                The bonus increases to +3.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Wild Magic Amulet"),
+        rank: 3,
+        short_description: String::from(r"Increases power and chaos with \ability{wild magic}"),
+        description: String::from(r"
+            You gain a +2 power bonus with spells you cast using the \ability{wildspell} sorcerer ability.
+            However, you take a -2 penalty to your wild magic rolls.
+            If your result is 0 or less, you are the only target of the spell.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Increases power and chaos with \ability{wild magic}", r"
+                The power bonus increases to +3.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Wild Control"),
+        rank: 3,
+        short_description: String::from(r"Reduces power and chaos with \ability{wild magic}"),
+        description: String::from(r"
+            You take a -1 penalty to power with spells you cast using the \ability{wildspell} sorcerer ability.
+            However, you gain a +1 bonus to your wild magic rolls.
+            If your result is 11 or more, the spell deals maximum damage.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Reduces power and chaos with \ability{wild magic}", r"
+                The power penalty increases to -3, but the wild magic roll bonus increases to +2.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of Abyssal Reach"),
+        rank: 3,
+        short_description: String::from(r"Increases range with \ability{abyssal rebuke}"),
+        description: String::from(r"
+            Your range with the \\ability<abyssal rebuke> warlock ability is increased to \\longrange.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Greatly increases range with \ability{abyssal rebuke}", r"
+                The range increases to \distrange.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Amulet of the Frozen Abyss"),
+        rank: 3,
+        short_description: String::from(r"Converts \ability{abyssal rebuke} to cold"),
+        description: String::from(r"
+            When you use the \\ability<abyssal rebuke> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of any other damage types.
+            If you do, you attack the target's Fortitude defense instead of its Armor defense.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, r"Converts \ability{abyssal rebuke} to slowing cold", r"
+                When you make a creature lose \glossterm{hit points} from an abyssal rebuke converted to cold damage in this way, it becomes \slowed as a \glossterm{condition}.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Haranguing Amulet"),
+        rank: 3,
+        short_description: String::from(r"Goad with \ability{denounce the heathens}"),
+        description: String::from(r"
+            You can use the Intimidate skill in place of the Persuasion skill for the \ability{denounce the heathens} cleric ability.
+            When you do, each target is \goaded by you instead of stunned.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel
+}
+
+// Cleansing
+// Magical defenses
+// Magic manipulation
+fn rings() -> Vec<Apparel> {
+    let mut apparel = vec![];
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of Desperate Breath"),
+        rank: 1,
+        short_description: String::from("Can exert to breathe briefly"),
+        description: String::from(r"
+            As a \\glossterm<free action>, you can activate this item.
+            When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
+            This can be used in emergencies to save yourself from drowning or other perils.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of the True Form"),
+        rank: 2,
+        short_description: String::from("Impervious to form-altering attacks"),
+        description: String::from(r"
+            You are \\impervious to attacks from the \\sphere<polymorph> sphere.
+            This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Immune to form-altering attacks", r"
+                You become immune instead of impervious.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem::skill_item(
+        "Liar's Ring",
+        "Deception",
+    )));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of Nourishment"),
+        rank: 2,
+        short_description: String::from("Provides food and water"),
+        description: String::from(r"
+            You continuously gain nourishment, and no longer need to eat or drink.
+            This ring must be worn for 24 hours before it begins to work.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Provides food, water, and sleep", r"
+                You also need only a quarter of your normal amount of sleep (or similar activity, such as elven trance) each day.
+            "),
+        ],
+        tags: vec![AbilityTag::Creation],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Hexward Ring"),
+        rank: 4,
+        short_description: String::from("Grants +1 defenses against targeted spells"),
+        description: String::from(r"
+            You gain a +1 bonus to your defenses against \glossterm{targeted} spells.
+            This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, "Grants +1 defenses against targeted spells", r"
+                The bonus increases to +2.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of Spell Investment"),
+        rank: 3,
+        short_description: String::from("Can invest a spell to gain its effect later"),
+        description: String::from(r"
+            When you or an adjacent \\glossterm<ally> casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
+                you can invest the magic of the spell in the ring.
+            If you do, the spell does not have its normal effect.
+            All decisions about the spell's effect, except for targeting, must be made at the time that the spell is invested in this way.
+            The \\textit<desperate exertion> ability cannot be used to affect the spell, either at the time it is invested or when it is activated.
+            Only one spell can be stored this way.
+
+            You can activate this ring as a standard action.
+            When you do, you cause the effect of the last spell invested in the ring.
+            You choose the area and targets affected by the spell at this time.
+            This does not require \\glossterm<casting components>, even if they would normally be required to cast the spell.
+            The spell's effect is determined based on the \\glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
+            You do not have to have the ability to cast the spell to activate a spell in this way.
+
+            After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
+            Any lingering effects of spells activated through this ring automatically end after ten minutes, and whenever you invest a new spell into the ring.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Can invest spells to gain their effects later", r"
+                You can invest up to two spells in the ring.
+                When you activate the ring, you choose which spell to use.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Cleansing Ring"),
+        rank: 2,
+        short_description: String::from("Can exert to remove a condition"),
+        description: String::from(r"
+            You can activate this ring as a standard action.
+            When you do, you remove one \\glossterm<condition> affecting you.
+
+            After you activate this item, you increase your \\glossterm<fatigue level> by one.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Can remove a condition", r"
+                Activating this item does not increase your fatigue level.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Quickcleanse Ring"),
+        rank: 5,
+        short_description: String::from("Can exert to quickly remove a condition"),
+        description: String::from(r"
+            You can activate this ring as a \glossterm{minor action}.
+            When you do, you remove one \\glossterm<condition> affecting you.
+
+            After you activate this item, you increase your \\glossterm<fatigue level> by two.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, "Can exert to quickly remove a condition", r"
+                Activating this item only increases your fatigue level by one.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of Protection"),
+        rank: 3,
+        short_description: String::from("Grants many small defensive bonuses"),
+        description: String::from(r"
+            You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
+            In addition, you gain a \\plus1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Grants many defensive bonuses", r"
+                The bonuses to hit points and damage resistance increase to +8, and the bonus to vital rolls increases to +2.
+            "),
+            ItemUpgrade::new(7, "Grants many large defensive bonuses", r"
+                The bonuses to hit points and damage resistance increase to +16, and the bonus to vital rolls increases to +3.
+            "),
+        ],
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..Apparel::default()
+    }));
+
+    apparel
+}

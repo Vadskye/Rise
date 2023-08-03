@@ -1,6 +1,5 @@
-use crate::core_mechanics::abilities::{replace_attack_terms, AbilityTag};
-use crate::equipment::{item_creature, rank_and_price_text, ItemUpgrade};
-use crate::latex_formatting::latexify;
+use crate::core_mechanics::abilities::AbilityTag;
+use crate::equipment::{item_latex, StandardItem, ItemUpgrade};
 mod alchemical_items;
 mod kits;
 mod mounts;
@@ -30,86 +29,14 @@ impl Tool {
         };
     }
 
-    pub fn to_latex(&self) -> String {
-        let mut tags = self.tags.clone();
-        // if !tags.iter().any(|t| matches!(t, AbilityTag::Attune(_))) {
-        //     tags.push(AbilityTag::Attune(AttuneType::Personal));
-        // }
-        let mut tags: Vec<String> = tags.iter().map(|t| t.latex()).collect();
-        tags.sort();
-
-        let is_attuned = self.tags.iter().any(|t| matches!(t, AbilityTag::Attune(_)));
-        let rank_and_price = rank_and_price_text(self.rank, self.category.is_consumable());
-
-        latexify(format!(
-            "
-                \\begin<{magical}{abilitytype}><{name}>{braced_price}
-                    \\spelltwocol<{crafting}><{tags}>
-                    \\rankline
-                    {description}
-                    {upgrades_rankline}
-                    {upgrades}
-                \\end<{magical}{abilitytype}>
-            ",
-            magical = if self.magical { "magical" } else { "" },
-            abilitytype = if is_attuned {
-                "attuneability"
-            } else {
-                "activeability"
-            },
-            name = self.name,
-            // attuneability uses {} for the last argument, but activeability uses [] for the last
-            // argument.
-            braced_price = if is_attuned {
-                format!("<Rank {}>", rank_and_price)
-            } else {
-                format!("[Rank {}]", rank_and_price)
-            },
-            crafting = self.category.crafting_latex(),
-            tags = tags.join(", "),
-            description =
-                replace_attack_terms(&self.description, &item_creature(self.rank), false, None),
-            upgrades_rankline = if self.upgrades.len() > 0 {
-                "\\rankline"
-            } else {
-                ""
-            },
-            upgrades = self.latex_upgrades_section(),
-        ))
-    }
-
-    // This is a method of `Tool` instead of `Upgrade` because generating the upgrade text requires
-    // a lot of information about the original item and the number of upgrades.
-    fn latex_upgrades_section(&self) -> String {
-        if self.upgrades.len() == 0 {
-            return String::from("");
-        }
-        let upgrade_latex: Vec<String> = self
-            .upgrades
-            .iter()
-            .enumerate()
-            .map(|(i, upgrade)| {
-                let upgrade_tier = i + 1;
-                format!(
-                    "
-                        \\upgraderank<{name}{plus_suffix}><{rank_and_price}> {description}
-                    ",
-                    name = self.name,
-                    plus_suffix = "+".repeat(upgrade_tier),
-                    // Note that `\upgraderank` provides "Rank" text, so we don't prefix
-                    // this with "Rank".
-                    rank_and_price = rank_and_price_text(upgrade.rank, self.category.is_consumable()),
-                    description = replace_attack_terms(
-                        &upgrade.description,
-                        &item_creature(upgrade.rank),
-                        false,
-                        None,
-                    ),
-                )
-            })
-            .collect();
-
-        upgrade_latex.join("\n")
+    pub fn to_latex(self) -> String {
+        let consumable = self.category.is_consumable();
+        let latex = &self.category.crafting_latex();
+        item_latex(
+            StandardItem::from_tool(self),
+            consumable,
+            latex,
+        )
     }
 }
 
