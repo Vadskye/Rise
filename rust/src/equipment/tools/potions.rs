@@ -77,18 +77,15 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Antitoxin Elixir".to_string(),
-        rank: 1,
-        short_description: "Grants +4 defenses against poison".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 bonus to your defenses against poisons.
+        rank: 2,
+        short_description: "Impervious to poison".to_string(),
+        description: String::from(r"
+            When you drink this \glossterm<potion>, if you \\glossterm<attune> to its effects, you become \glossterm{impervious} to poisons.
             The effects expire after 10 minutes.
-        ".to_string(),
+        "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +8 defenses against poison", r"
-                The defense bonus increases to +8.
-            "),
-            ItemUpgrade::new(5, "Grants poison immunity", r"
-                You become immune to poison instead of gaining a defense bonus.
+            ItemUpgrade::new(5, "Immune to poison", r"
+                You become immune instead of impervious.
             "),
         ],
         ..elixir()

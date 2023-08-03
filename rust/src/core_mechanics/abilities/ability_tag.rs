@@ -68,6 +68,7 @@ impl AbilityTag {
 
 #[derive(Clone, Debug)]
 pub enum AttuneType {
+    Deep,
     Ritual,
     Personal,
     Target,
@@ -76,6 +77,7 @@ pub enum AttuneType {
 impl AttuneType {
     pub fn parentheses_suffix(&self) -> &str {
         match self {
+            Self::Deep => " (deep)",
             Self::Ritual => " (ritual)",
             Self::Personal => "",
             Self::Target => " (target)",
