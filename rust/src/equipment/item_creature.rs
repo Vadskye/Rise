@@ -6,16 +6,16 @@ use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, calcu
 // R1: 2
 // R2: 4
 // R3: 6
-// R4: 8
+// R4: 9 -- this is a weird breakpoint, but 8 is too low for "one per three" power scaling
 // R5: 10
 // R6: 12
 // R7: 14
 pub fn item_creature(rank: i32) -> Creature {
     let level = calculate_minimum_level(rank);
 
-    // Start with a 1 perception and increase it at each attribute scaling level.
+    // Start with a 2 perception and increase it at each attribute scaling level.
     // This is somewhere between minimum and maximum reasonable accuracy.
-    let perception = 1 + ((level + 3) / 6);
+    let perception = 2 + ((level + 3) / 6);
 
     let power_attribute = match rank {
         -1 => 0,
@@ -23,11 +23,11 @@ pub fn item_creature(rank: i32) -> Creature {
         1 => 2,  // target: 2
         2 => 2,  // target: 4
         3 => 3,  // target: 6
-        4 => 3,  // target: 8
+        4 => 4,  // target: 9
         5 => 4,  // target: 10
         6 => 4,  // target: 12
         7 => 5,  // target: 14
-        8 => 6, // target: 16
+        8 => 6,  // target: 16
         _ => panic!("Unsupported rank {}", rank),
     };
 

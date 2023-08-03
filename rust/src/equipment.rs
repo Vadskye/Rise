@@ -1,14 +1,24 @@
+mod apparel;
 mod armor;
+mod implements;
 mod item_creature;
+mod item_latex;
 mod item_price;
 mod item_upgrade;
+mod magic_armor;
+mod magic_weapons;
 pub mod poison;
 mod tools;
 mod weapons;
 
+pub use apparel::{all_apparel, Apparel};
 pub use armor::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor};
+pub use implements::{all_implements, Implement};
+pub use item_creature::item_creature;
+pub use item_latex::{item_latex, StandardItem};
 pub use item_price::{item_price, rank_and_price_text};
 pub use item_upgrade::ItemUpgrade;
-pub use item_creature::item_creature;
+pub use magic_armor::{all_magic_armor, MagicArmor};
+pub use magic_weapons::{all_magic_weapons, MagicWeapon};
 pub use tools::{all_tools, Tool, ToolCategory};
 pub use weapons::{StandardWeapon, Weapon, WeaponGroup, WeaponMaterial, WeaponTag};

@@ -85,7 +85,7 @@ pub fn objects() -> Vec<Tool> {
             This outfit includes fancy, tailored clothes in whatever fashion happens to be the current style in the courts of the nobles.
             It also includes appropriate jewelry.
         "),
-        ..Tool::permanent("jewelry, textiles")
+        ..Tool::permanent("textiles")
     });
     objects.push(Tool {
         name: String::from("Outfit, Noble's"),
@@ -95,7 +95,7 @@ pub fn objects() -> Vec<Tool> {
             This set of clothes is designed specifically to be expensive and to show it.
             Precious metals and gems are worked into the clothing.
         "),
-        ..Tool::permanent("jewelry, textiles")
+        ..Tool::permanent("metal and textiles")
     });
     objects.push(Tool {
         name: String::from("Outfit, Royal"),
@@ -104,7 +104,7 @@ pub fn objects() -> Vec<Tool> {
         description: String::from("
             Royal clothes are ostentatious, with gems, gold, silk, and fur in abundance.
         "),
-        ..Tool::permanent("jewelry, textiles")
+        ..Tool::permanent("leather, metal, and textiles")
     });
 
     objects.push(Tool {
@@ -186,7 +186,7 @@ fn transportation() -> Vec<Tool> {
             In general, two horses (or other beasts of burden) draw it.
             A carriage comes with the harness needed to pull it.
         "),
-        ..Tool::permanent("textiles, wood")
+        ..Tool::permanent("textiles and wood")
     });
 
     objects.push(Tool {
@@ -211,7 +211,7 @@ fn transportation() -> Vec<Tool> {
             Some rare galleys are fitted with a ram and castles with firing platforms fore, aft, and amidships.
             This ship cannot make sea voyages and sticks to the coast. It moves about 4 miles per hour when being rowed or under sail.
         "),
-        ..Tool::permanent("metal, textiles, wood")
+        ..Tool::permanent("metal, textiles, and wood")
     });
 
     objects.push(Tool {
@@ -221,7 +221,7 @@ fn transportation() -> Vec<Tool> {
         description: String::from("
             This 50 to 75 foot long ship is 15 to 20 feet wide and has a few oars to supplement its single mast with a square sail. It requires a total crew of 15 and can carry 40 to 50 tons of cargo or 100 soldiers. It can make sea voyages, as well as sail down rivers (thanks to its flat bottom). It moves about 1 mile per hour.
         "),
-        ..Tool::permanent("metal, textiles, wood")
+        ..Tool::permanent("metal, textiles, and wood")
     });
 
     objects.push(Tool {
@@ -231,7 +231,7 @@ fn transportation() -> Vec<Tool> {
         description: String::from("
             This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 3 miles per hour when being rowed or under sail.
         "),
-        ..Tool::permanent("metal, textiles, wood")
+        ..Tool::permanent("metal, textiles, and wood")
     });
 
     objects.push(Tool {
