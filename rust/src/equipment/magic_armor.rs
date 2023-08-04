@@ -1,5 +1,5 @@
-use crate::equipment::{item_latex, StandardItem};
-use crate::core_mechanics::abilities::{AttuneType, AbilityTag};
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::equipment::{item_latex, latex_table, StandardItem};
 mod body_armor;
 mod shields;
 
@@ -10,7 +10,7 @@ pub enum MagicArmor {
 }
 
 impl MagicArmor {
-    fn item(&self) -> &StandardItem {
+    pub fn item(&self) -> &StandardItem {
         match self {
             Self::Body(item) => item,
             Self::Shield(item) => item,
@@ -22,18 +22,29 @@ impl MagicArmor {
             magical: true,
             tags: vec![AbilityTag::Attune(AttuneType::Personal)],
             ..Default::default()
-        }
+        };
     }
 
     pub fn to_latex(&self) -> String {
-        item_latex(self.item().clone(), false, &self.crafting_latex())
+        item_latex(
+            self.item().clone(),
+            false,
+            &format!("{} -- Craft ({})", self.category(), self.craft_materials()),
+        )
     }
 
-    fn crafting_latex(&self) -> String {
-        String::from(match self {
-            Self::Body(_) => "Body armor (bone, leather, or metal)",
-            Self::Shield(_) => "Shield (bone, metal, or wood)",
-        })
+    fn craft_materials(&self) -> &str {
+        match self {
+            Self::Body(_) => "bone, leather, or metal",
+            Self::Shield(_) => "bone, metal, or wood",
+        }
+    }
+
+    pub fn category(&self) -> &str {
+        match self {
+            Self::Body(_) => "Body armor",
+            Self::Shield(_) => "Shield",
+        }
     }
 }
 
@@ -46,4 +57,27 @@ pub fn all_magic_armor() -> Vec<MagicArmor> {
     armor.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
     armor
+}
+
+fn magic_armor_rows(magic_armor: &MagicArmor) -> Vec<latex_table::TableRow> {
+    latex_table::TableRow::from_item(
+        magic_armor.item(),
+        false,
+        Some(magic_armor.category().to_string()),
+    )
+}
+
+pub fn implements_table() -> String {
+    let with_category = true;
+
+    let mut rows = vec![];
+    for magic_armor in all_magic_armor() {
+        rows.append(&mut magic_armor_rows(&magic_armor));
+    }
+
+    latex_table::longtable(
+        latex_table::table_header("Magic Armor", with_category),
+        rows,
+        with_category,
+    )
 }

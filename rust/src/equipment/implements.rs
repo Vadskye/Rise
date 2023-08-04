@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{item_latex, ItemUpgrade, StandardItem};
-mod staffs;
+use crate::equipment::{item_latex, latex_table, ItemUpgrade, StandardItem};
 mod rods;
+mod staffs;
 mod wands;
 
 #[derive(Clone, Debug)]
@@ -29,15 +29,27 @@ impl Implement {
     }
 
     pub fn to_latex(&self) -> String {
-        item_latex(self.item().clone(), false, &self.crafting_latex())
+        item_latex(
+            self.item().clone(),
+            false,
+            &format!("{} -- {}", self.category(), self.crafting_latex()),
+        )
     }
 
-    fn crafting_latex(&self) -> String {
-        String::from(match self {
-            Self::Staff(_) => "Staff -- Craft (bone or wood)",
-            Self::Rod(_) => "Rod -- Craft (bone, metal, or wood)",
-            Self::Wand(_) => "Staff -- Craft (bone or wood)",
-        })
+    fn crafting_latex(&self) -> &str {
+        match self {
+            Self::Staff(_) => "bone or wood",
+            Self::Rod(_) => "bone, metal, or wood",
+            Self::Wand(_) => "bone or wood",
+        }
+    }
+
+    fn category(&self) -> &str {
+        match self {
+            Self::Staff(_) => "Staff",
+            Self::Rod(_) => "Rod",
+            Self::Wand(_) => "Staff",
+        }
     }
 }
 
@@ -51,4 +63,27 @@ pub fn all_implements() -> Vec<Implement> {
     implements.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
     implements
+}
+
+fn implement_rows(implement: &Implement) -> Vec<latex_table::TableRow> {
+    latex_table::TableRow::from_item(
+        implement.item(),
+        false,
+        Some(String::from(implement.category())),
+    )
+}
+
+pub fn implements_table() -> String {
+    let with_category = true;
+
+    let mut rows = vec![];
+    for implement in all_implements() {
+        rows.append(&mut implement_rows(&implement));
+    }
+
+    latex_table::longtable(
+        latex_table::table_header("Implements", with_category),
+        rows,
+        with_category,
+    )
 }

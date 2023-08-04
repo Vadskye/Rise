@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::AbilityTag;
-use crate::equipment::{item_latex, StandardItem, ItemUpgrade};
+use crate::equipment::{item_latex, latex_table, ItemUpgrade, StandardItem};
 mod alchemical_items;
 mod kits;
 mod mounts;
@@ -32,11 +32,19 @@ impl Tool {
     pub fn to_latex(self) -> String {
         let consumable = self.category.is_consumable();
         let latex = &self.category.crafting_latex();
-        item_latex(
-            StandardItem::from_tool(self),
-            consumable,
-            latex,
-        )
+        item_latex(self.item(), consumable, latex)
+    }
+
+    pub fn item(&self) -> StandardItem {
+        return StandardItem {
+            description: self.description.clone(),
+            short_description: self.short_description.clone(),
+            magical: self.magical,
+            name: self.name.clone(),
+            rank: self.rank,
+            upgrades: self.upgrades.clone(),
+            tags: self.tags.clone(),
+        };
     }
 }
 
@@ -46,6 +54,7 @@ pub enum ToolCategory {
     Creature,
     Permanent(String),
     Poison,
+    Potion,
     // This is a dumb hack to make ToolCategory mandatory
     #[default]
     Unknown,
@@ -58,16 +67,29 @@ impl ToolCategory {
             Self::Creature => String::from(""),
             Self::Permanent(c) => format!("Craft ({})", c),
             Self::Poison => String::from("Poison -- Craft (poison)"),
+            Self::Potion => String::from("Potion -- Craft (alchemy)"),
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
 
-    fn is_consumable(&self) -> bool {
+    pub fn name(&self) -> Option<String> {
+        match self {
+            Self::Alchemical => None,
+            Self::Creature => None,
+            Self::Permanent(_) => None,
+            Self::Poison => Some(String::from("poison")),
+            Self::Potion => Some(String::from("potion")),
+            Self::Unknown => panic!("Unknown tool category"),
+        }
+    }
+
+    pub fn is_consumable(&self) -> bool {
         match self {
             Self::Alchemical => true,
             Self::Creature => false,
             Self::Permanent(_) => false,
             Self::Poison => true,
+            Self::Potion => true,
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
@@ -87,4 +109,50 @@ pub fn all_tools() -> Vec<Tool> {
     tools.sort_by(|a, b| a.name.cmp(&b.name));
 
     tools
+}
+
+fn tool_rows(tool: &Tool) -> Vec<latex_table::TableRow> {
+    latex_table::TableRow::from_item(
+        &tool.item(),
+        tool.category.is_consumable(),
+        tool.category.name(),
+    )
+}
+
+pub fn consumable_tool_table() -> String {
+    let with_category = true;
+
+    let consumable_tools: Vec<Tool> = all_tools()
+        .into_iter()
+        .filter(|t| t.category.is_consumable())
+        .collect();
+    let mut rows = vec![];
+    for tool in consumable_tools {
+        rows.append(&mut tool_rows(&tool));
+    }
+
+    latex_table::longtable(
+        latex_table::table_header("Consumable Tools", with_category),
+        rows,
+        with_category,
+    )
+}
+
+pub fn permanent_tool_table() -> String {
+    let with_category = true;
+
+    let permanent_tools: Vec<Tool> = all_tools()
+        .into_iter()
+        .filter(|t| !t.category.is_consumable())
+        .collect();
+    let mut rows = vec![];
+    for tool in permanent_tools {
+        rows.append(&mut tool_rows(&tool));
+    }
+
+    latex_table::longtable(
+        latex_table::table_header("Permanent Tools, Goods, and Mounts", with_category),
+        rows,
+        with_category,
+    )
 }

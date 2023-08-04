@@ -5,6 +5,7 @@ mod item_creature;
 mod item_latex;
 mod item_price;
 mod item_upgrade;
+mod latex_table;
 mod magic_armor;
 mod magic_weapons;
 pub mod poison;
