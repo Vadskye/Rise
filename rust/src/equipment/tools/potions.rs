@@ -6,7 +6,7 @@ pub fn potions() -> Vec<Tool> {
 
     fn elixir() -> Tool {
         return Tool {
-            category: ToolCategory::Alchemical,
+            category: ToolCategory::Potion,
             magical: true,
             tags: vec![AbilityTag::Attune(AttuneType::Personal)],
             ..Default::default()
@@ -15,7 +15,7 @@ pub fn potions() -> Vec<Tool> {
 
     fn potion() -> Tool {
         return Tool {
-            category: ToolCategory::Alchemical,
+            category: ToolCategory::Potion,
             magical: true,
             ..Default::default()
         };

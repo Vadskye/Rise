@@ -1,6 +1,6 @@
-use crate::core_mechanics::Attribute;
 use crate::core_mechanics::abilities::{replace_attack_terms, AbilityTag, AttuneType};
-use crate::equipment::{item_creature, rank_and_price_text, ItemUpgrade, Tool};
+use crate::core_mechanics::Attribute;
+use crate::equipment::{item_creature, rank_and_price_text, ItemUpgrade};
 use crate::latex_formatting::latexify;
 use regex::Regex;
 
@@ -16,6 +16,7 @@ pub struct StandardItem {
     pub tags: Vec<AbilityTag>,
 }
 
+// Static methods for creating a StandardItem
 impl StandardItem {
     pub fn attribute_item(name: &str, attribute: &Attribute) -> Self {
         Self {
@@ -79,17 +80,30 @@ impl StandardItem {
             tags: vec![AbilityTag::Attune(AttuneType::Personal)],
         }
     }
+}
 
-    pub fn from_tool(item: Tool) -> Self {
-        return Self {
-            description: item.description,
-            short_description: item.short_description,
-            magical: item.magical,
-            name: item.name,
-            rank: item.rank,
-            upgrades: item.upgrades,
-            tags: item.tags,
-        };
+// Methods on a StandardItem
+impl StandardItem {
+    // Convert the briefly defined upgrades into full standard items. This is useful for LaTeX
+    // conversion.
+    pub fn upgrade_items(&self) -> Vec<StandardItem> {
+        self.upgrades
+            .iter()
+            .enumerate()
+            .map(|(i, upgrade)| {
+                let upgrade_tier = i + 1;
+
+                StandardItem {
+                    description: upgrade.description.clone(),
+                    short_description: upgrade.short_description.clone(),
+                    magical: self.magical,
+                    name: format!("{}{}", self.name, "+".repeat(upgrade_tier)),
+                    rank: upgrade.rank,
+                    upgrades: vec![],
+                    tags: self.tags.clone(),
+                }
+            })
+            .collect()
     }
 }
 
@@ -177,23 +191,20 @@ fn latex_upgrades_section(item: StandardItem, consumable: bool) -> String {
         return String::from("");
     }
     let upgrade_latex: Vec<String> = item
-        .upgrades
+        .upgrade_items()
         .iter()
-        .enumerate()
-        .map(|(i, upgrade)| {
-            let upgrade_tier = i + 1;
+        .map(|upgraded_item| {
             format!(
                 "
-                    \\upgraderank<{name}{plus_suffix}><{rank_and_price}> {description}
+                    \\upgraderank<{name}><{rank_and_price}> {description}
                 ",
-                name = item.name,
-                plus_suffix = "+".repeat(upgrade_tier),
+                name = upgraded_item.name,
                 // Note that `\upgraderank` provides "Rank" text, so we don't prefix
                 // this with "Rank".
-                rank_and_price = rank_and_price_text(upgrade.rank, consumable),
+                rank_and_price = rank_and_price_text(upgraded_item.rank, consumable),
                 description = replace_attack_terms(
-                    &upgrade.description,
-                    &item_creature(upgrade.rank),
+                    &upgraded_item.description,
+                    &item_creature(upgraded_item.rank),
                     false,
                     None,
                 ),
