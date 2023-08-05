@@ -59,12 +59,14 @@ fn magic_weapon_rows(magic_weapon: &MagicWeapon) -> Vec<latex_table::TableRow> {
 }
 
 pub fn magic_weapons_table() -> String {
-    let with_category = true;
+    let with_category = false;
 
-    let mut rows = vec![];
-    for magic_weapon in all_magic_weapons() {
-        rows.append(&mut magic_weapon_rows(&magic_weapon));
-    }
+    let mut rows: Vec<latex_table::TableRow> = all_magic_weapons()
+        .iter()
+        .map(|w| magic_weapon_rows(w))
+        .flatten()
+        .collect();
+    latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
         latex_table::table_header("Magic Weapons", with_category),

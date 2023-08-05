@@ -21,7 +21,7 @@ fn belts() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Regain 1d8 hit points while below half hit points"),
         description: String::from(r"
-            At the end of each round, you regain 1d8 \\glossterm{hit points}.
+            At the end of each round, you regain 1d8 \glossterm{hit points}.
             This healing cannot increase your hit points above half your maximum hit points.
         "),
         upgrades: vec![
@@ -40,9 +40,9 @@ fn belts() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from("Automatically exert to remove vital wounds"),
         description: String::from(r"
-            At the end of each round, if your \\glossterm<fatigue level> does not exceed your \\glossterm<fatigue tolerance>, you automatically remove one of your \\glossterm<vital wounds>.
+            At the end of each round, if your \glossterm<fatigue level> does not exceed your \glossterm<fatigue tolerance>, you automatically remove one of your \glossterm<vital wounds>.
             You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
-            When you remove a vital wound in this way, you increase your \\glossterm<fatigue level> by three.
+            When you remove a vital wound in this way, you increase your \glossterm<fatigue level> by three.
         "),
         ..Apparel::default()
     }));
@@ -52,7 +52,7 @@ fn belts() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Impervious to poisons"),
         description: String::from(r"
-            You are \\impervious to \glossterm{poison}.
+            You are \impervious to \glossterm{poison}.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to form-altering attacks", r"
@@ -67,7 +67,7 @@ fn belts() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +4 hit points"),
         description: String::from(r"
-            You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
+            You gain a +4 \glossterm<magic bonus> to your \glossterm<hit points>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +8 hit points", "
@@ -85,7 +85,7 @@ fn belts() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Grants +1 to vital rolls"),
         description: String::from(r"
-            You gain a +1 \\glossterm<magic bonus> to your \\glossterm<vital rolls>.
+            You gain a +1 \glossterm<magic bonus> to your \glossterm<vital rolls>.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Grants +2 to vital rolls", "
@@ -103,8 +103,8 @@ fn belts() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Exert to heal $dr3 hit points"),
         description: String::from(r"
-            As a standard action, you can use this belt to regain $dr3 hit points.
-            When you do, you increase your \\glossterm<fatigue level> by one.
+            You can activate this belt as a standard action.
+            When you do, you regain $dr3 hit points and increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Exert to heal $dr5 hit points", "
@@ -123,13 +123,13 @@ fn belts() -> Vec<Apparel> {
         short_description: String::from("Increases your size"),
         description: String::from(r"
             You can activate this belt as a standard action.
-            When you do, your size increases by one \\glossterm<size category>, to a maximum of Huge.
+            When you do, your size increases by one \glossterm<size category>, to a maximum of Huge.
             This effect lasts until you activate the belt again, which returns you to your original size.
 
-            Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \\glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
-            It also increases your \\glossterm<base speed> (see \\pcref<Size Categories>).
+            Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+            It also increases your \glossterm<base speed> (see \pcref<Size Categories>).
             This item makes you slightly clumsy in your new size.
-            You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
+            You take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
         "),
         ..Apparel::default()
     }));
@@ -140,11 +140,11 @@ fn belts() -> Vec<Apparel> {
         short_description: String::from("Reduces your size"),
         description: String::from(r"
             You can activate this belt as a standard action.
-            When you do, your size decreases by one \\glossterm<size category>, to a minimum of Tiny.
+            When you do, your size decreases by one \glossterm<size category>, to a minimum of Tiny.
             This effect lasts until you activate the belt again, which returns you to your original size.
 
-            Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
-            It also reduces your \\glossterm<base speed> (see \\pcref<Size Categories>).
+            Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
+            It also reduces your \glossterm<base speed> (see \pcref<Size Categories>).
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Greatly reduces your size", "
@@ -198,8 +198,8 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Can exert to save your mount from death"),
         description: String::from(r"
-            Whenever a non-humanoid mount that you are riding would gain one or more \\glossterm<vital wounds>, this cloak automatically activates.
-            When it does, you increase your \\glossterm<fatigue level> by one, and the mount does not make a \\glossterm<vital roll> for the vital wounds.
+            Whenever a non-humanoid mount that you are riding would gain one or more \glossterm<vital wounds>, this cloak automatically activates.
+            When it does, you increase your \glossterm<fatigue level> by one, and the mount does not make a \glossterm<vital roll> for the vital wounds.
             Instead, each vital wound is treated as having a vital roll of 1, which prevents the mount from dying from its wounds.
         "),
         upgrades: vec![
@@ -215,7 +215,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants limited ability to hit incorporeal creatures"),
         description: String::from(r"
-            Creatures that are \\trait<incorporeal> are only \\impervious to physical damage you inflict instead of being immune to it.
+            Creatures that are \trait<incorporeal> are only \impervious to physical damage you inflict instead of being immune to it.
             In addition, you can touch incorporeal creatures, though they are impervious to any attacks you make to touch them.
         "),
         upgrades: vec![
@@ -234,7 +234,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from("Grants +1 accuracy while concealed"),
         description: String::from(r"
-            You gain a +1 \\glossterm<accuracy> bonus against creatures and objects that you have \\glossterm<concealment> from.
+            You gain a +1 \glossterm<accuracy> bonus against creatures and objects that you have \glossterm<concealment> from.
         "),
         ..Apparel::default()
     }));
@@ -255,7 +255,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +1 Armor at low health"),
         description: String::from(r"
-            While you are at or below half your maximum \\glossterm<hit points>, you gain a +1 bonus to your Armor defense.
+            While you are at or below half your maximum \glossterm<hit points>, you gain a +1 bonus to your Armor defense.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants +1 defenses at low health", "
@@ -270,7 +270,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Impervious to magical detection"),
         description: String::from(r"
-            You are \\impervious to attacks with the \\abilitytag<Detection> or \\abilitytag<Scrying> tags.
+            You are \impervious to attacks with the \abilitytag<Detection> or \abilitytag<Scrying> tags.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to magical detection", "
@@ -313,7 +313,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from("Grants flight up to 15 feet high"),
         description: String::from(r"
-            You gain a \\glossterm<fly speed> equal to the \\glossterm<base speed> for your size with a maximum height of 15 feet (see \\pcref<Flight>).
+            You gain a \glossterm<fly speed> equal to the \glossterm<base speed> for your size with a maximum height of 15 feet (see \pcref<Flight>).
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants flight up to 30 feet high", "
@@ -328,7 +328,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants invisibility while inactive"),
         description: String::from(r"
-            At the end of each round, if you took no actions that round, you become \\trait<invisible> (see \\pcref<Invisible>).
+            At the end of each round, if you took no actions that round, you become \trait<invisible> (see \pcref<Invisible>).
             This invisibility ends after you take any action, including \glossterm{movement}.
         "),
         upgrades: vec![
@@ -348,8 +348,8 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Can teleport silently"),
         description: String::from(r"
             You can activate this cloak as a standard action.
-            When you do, you \\glossterm<teleport> to an unoccupied location within \\rngmed range of your original location.
-            As normal for teleportation, you can immediately hide when you reach your destination (see \\pcref<Stealth>).
+            When you do, you \glossterm<teleport> to an unoccupied location within \rngmed range of your original location.
+            As normal for teleportation, you can immediately hide when you reach your destination (see \pcref<Stealth>).
             Unlike most teleportation, this teleportation does not make any noise.
         "),
         upgrades: vec![
@@ -368,11 +368,28 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Increases accuracy penalty on goaded foes by 1"),
         description: String::from(r"
-            Each creature suffering penalties for being \\goaded by you takes an additional -1 \\glossterm<accuracy> penalty against creatures other than you.
+            Each creature suffering penalties for being \goaded by you takes an additional -1 \glossterm<accuracy> penalty against creatures other than you.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Increases accuracy penalty on goaded foes by 2", r"
                 The penalty increases to -2.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Cloak(StandardItem {
+        name: String::from("Cloak of Mist"),
+        rank: 4,
+        short_description: String::from("Fills nearby area with fog"),
+        description: String::from(r"
+            At the end of each round, fog \glossterm<briefly> fills a \smallarea radius zone from you.
+            This fog does not fully block sight, but it provides \glossterm<concealment>.
+            There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Fills a large area with fog", r"
+                The fog's area increases to a \largearea radius.
             "),
         ],
         ..Apparel::default()

@@ -83,7 +83,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from(r"Grants +2 power with \ability{divine aid} and \ability{lay on hands}"),
         description: String::from(r"
-            When you use the \\ability<divine aid> cleric ability or the \\ability<lay on hands> paladin ability, you gain a +2 \glossterm{magic bonus} to your \\glossterm<power>.
+            When you use the \ability<divine aid> cleric ability or the \ability<lay on hands> paladin ability, you gain a +2 \glossterm{magic bonus} to your \glossterm<power>.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Grants +4 power with \ability{divine aid} and \ability{lay on hands}", r"
@@ -96,9 +96,9 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Revivification"),
         rank: 7,
-        short_description: String::from(r"Reduces fatigue from \\ability<revivify>"),
+        short_description: String::from(r"Reduces fatigue from \ability<revivify>"),
         description: String::from(r"
-            When you use the \\ability<revivify> cleric ability, you only increase your \\glossterm<fatigue level> by three instead of by four.
+            When you use the \ability<revivify> cleric ability, you only increase your \glossterm<fatigue level> by three instead of by four.
         "),
         ..Apparel::default()
     }));
@@ -106,12 +106,12 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Shared Discipline"),
         rank: 4,
-        short_description: String::from(r"Using \\ability<cleansing discipline> also helps an adjacent ally"),
+        short_description: String::from(r"Using \ability<cleansing discipline> also helps an adjacent ally"),
         description: String::from(r"
-            Whenever you use the \\ability<cleansing discipline> fighter ability, one \\glossterm<ally> adjacent to you can also remove a \\glossterm<condition>.
+            Whenever you use the \ability<cleansing discipline> fighter ability, one \glossterm<ally> adjacent to you can also remove a \glossterm<condition>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, r"Using \\ability<cleansing discipline> also helps an ally", r"
+            ItemUpgrade::new(7, r"Using \ability<cleansing discipline> also helps an ally", r"
                 The ally can be within \medrange instead of adjacent.
             "),
         ],
@@ -123,7 +123,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Increases range of \ability{protect}"),
         description: String::from(r"
-            When you use the \\ability<protect> fighter ability, the ally can be within \shortrange instead of adjacent.
+            When you use the \ability<protect> fighter ability, the ally can be within \shortrange instead of adjacent.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Greatly increases range of \ability{protect}", r"
@@ -138,7 +138,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from(r"Grants +8 damage resistance to animal allies"),
         description: String::from(r"
-            Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +8 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<magic bonus> to its \glossterm<damage resistance>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, r"Grants +16 damage resistance to animal allies", r"
@@ -154,9 +154,9 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Perfect Equality"),
         rank: 5,
-        short_description: String::from(r"Improves \\ability<perfect body> on your lowest attribute"),
+        short_description: String::from(r"Improves \ability<perfect body> on your lowest attribute"),
         description: String::from(r"
-            If you have the \\ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
+            If you have the \ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
             If your two lowest physical attributes are equal, this amulet has no effect.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
@@ -166,13 +166,13 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Holy Avenger's Amulet"),
         rank: 3,
-        short_description: String::from(r"Grants +1 accuracy with \\ability<smite> when avenging allies"),
+        short_description: String::from(r"Grants +1 accuracy with \ability<smite> when avenging allies"),
         description: String::from(r"
-            When you use the \\ability<smite> paladin ability, you gain a +1 \\glossterm<accuracy> bonus against creatures that dealt damage to one of your \\glossterm<allies> during the previous round.
+            When you use the \ability<smite> paladin ability, you gain a +1 \glossterm<accuracy> bonus against creatures that dealt damage to one of your \glossterm<allies> during the previous round.
             This accuracy bonus is doubled if the target caused one of your allies to gain a vital wound during the previous round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Grants +2 accuracy with \\ability<smite> when avenging allies", r"
+            ItemUpgrade::new(6, r"Grants +2 accuracy with \ability<smite> when avenging allies", r"
                 The accuracy bonus increases to +2.
             "),
         ],
@@ -182,9 +182,9 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Twinhunter Amulet"),
         rank: 3,
-        short_description: String::from(r"Adds an additional target with \\ability<quarry>"),
+        short_description: String::from(r"Adds an additional target with \ability<quarry>"),
         description: String::from(r"
-            When you use the \\ability<quarry> ranger ability, you may target an additional creature.
+            When you use the \ability<quarry> ranger ability, you may target an additional creature.
         "),
         ..Apparel::default()
     }));
@@ -192,9 +192,9 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Swarmhunter Amulet"),
         rank: 7,
-        short_description: String::from(r"Allows unlimited targets with \\ability<quarry>"),
+        short_description: String::from(r"Allows unlimited targets with \ability<quarry>"),
         description: String::from(r"
-            When you use the \\ability<quarry> ranger ability, you may target any number of creatures.
+            When you use the \ability<quarry> ranger ability, you may target any number of creatures.
         "),
         ..Apparel::default()
     }));
@@ -202,12 +202,12 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Distant Stealth"),
         rank: 2,
-        short_description: String::from(r"Increases range with \\ability<sneak attack>"),
+        short_description: String::from(r"Increases range with \ability<sneak attack>"),
         description: String::from(r"
-            When you use the \\ability<sneak attack> rogue ability, you may target a creature within \\medrange instead of \\shortrange.
+            When you use the \ability<sneak attack> rogue ability, you may target a creature within \medrange instead of \shortrange.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+            ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
                 The range increases to \distrange.
             "),
         ],
@@ -217,12 +217,12 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Mighty Stealth"),
         rank: 3,
-        short_description: String::from(r"Can \\ability<sneak attack> with non-Light weapons"),
+        short_description: String::from(r"Can \ability<sneak attack> with non-Light weapons"),
         description: String::from(r"
-            You can use the \\ability<sneak attack> rogue ability with any weapon that you use in one hand.
+            You can use the \ability<sneak attack> rogue ability with any weapon that you use in one hand.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Can \\ability<sneak attack> with any weapon", r"
+            ItemUpgrade::new(6, r"Can \ability<sneak attack> with any weapon", r"
                 You can \ability{sneak attack} with any weapon, including \weapontag{Heavy} weapons held in two hands.
             "),
         ],
@@ -232,12 +232,12 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Distant Blood"),
         rank: 2,
-        short_description: String::from(r"Increases range with \\ability<sneak attack>"),
+        short_description: String::from(r"Increases range with shark \ability<totem animal>"),
         description: String::from(r"
-            If you have the shark \\textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \\medrange instead of \\shortrange.
+            If you have the shark \textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \medrange instead of \shortrange.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+            ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
                 The range increases to \distrange.
             "),
         ],
@@ -247,12 +247,12 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Exemplar's Amulet"),
         rank: 2,
-        short_description: String::from(r"Increase \\ability<skill exemplar> bonus with untrained skills by 1"),
+        short_description: String::from(r"Increase \ability<skill exemplar> bonus with untrained skills by 1"),
         description: String::from(r"
-            If you have the \\ability<skill exemplar> rogue ability, you gain a +1 \\glossterm<magic bonus> to all untrained skills.
+            If you have the \ability<skill exemplar> rogue ability, you gain a +1 \glossterm<magic bonus> to all untrained skills.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases range with \\ability<sneak attack>", r"
+            ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
                 The bonus increases to +3.
             "),
         ],
@@ -298,7 +298,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Increases range with \ability{abyssal rebuke}"),
         description: String::from(r"
-            Your range with the \\ability<abyssal rebuke> warlock ability is increased to \\longrange.
+            Your range with the \ability<abyssal rebuke> warlock ability is increased to \longrange.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Greatly increases range with \ability{abyssal rebuke}", r"
@@ -313,7 +313,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Converts \ability{abyssal rebuke} to cold"),
         description: String::from(r"
-            When you use the \\ability<abyssal rebuke> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of any other damage types.
+            When you use the \ability<abyssal rebuke> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of any other damage types.
             If you do, you attack the target's Fortitude defense instead of its Armor defense.
         "),
         upgrades: vec![
@@ -349,9 +349,20 @@ fn rings() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can exert to breathe briefly"),
         description: String::from(r"
-            As a \\glossterm<free action>, you can activate this item.
-            When you do, you increase your \\glossterm<fatigue level> by one, and you can \\glossterm<briefly> breathe in clean, fresh air regardless of your environment.
+            You can activate this item as a \glossterm<free action>.
+            When you do, you increase your \glossterm<fatigue level> by one, and you can \glossterm<briefly> breathe in clean, fresh air regardless of your environment.
             This can be used in emergencies to save yourself from drowning or other perils.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
+        name: String::from("Ring of Water Breathing"),
+        rank: 3,
+        short_description: String::from("Allows breathing water like air"),
+        description: String::from(r"
+            You can breathe water as easily as a human breathes air.
+            This does not grant you the ability to breathe other liquids.
         "),
         ..Apparel::default()
     }));
@@ -361,7 +372,7 @@ fn rings() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Impervious to form-altering attacks"),
         description: String::from(r"
-            You are \\impervious to attacks from the \\sphere<polymorph> sphere.
+            You are \impervious to attacks from the \sphere<polymorph> sphere.
             This bonus also applies against other attacks that significantly alter your physical form, such as an aboleth's slime.
         "),
         upgrades: vec![
@@ -403,7 +414,7 @@ fn rings() -> Vec<Apparel> {
             This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, "Grants +1 defenses against targeted spells", r"
+            ItemUpgrade::new(7, "Grants +2 defenses against targeted spells", r"
                 The bonus increases to +2.
             "),
         ],
@@ -415,18 +426,18 @@ fn rings() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Can invest a spell to gain its effect later"),
         description: String::from(r"
-            When you or an adjacent \\glossterm<ally> casts a spell that does not have the \\abilitytag<Attune> or \\abilitytag<Sustain> tags,
+            When you or an adjacent \glossterm<ally> casts a spell that does not have the \abilitytag<Attune> or \abilitytag<Sustain> tags,
                 you can invest the magic of the spell in the ring.
             If you do, the spell does not have its normal effect.
             All decisions about the spell's effect, except for targeting, must be made at the time that the spell is invested in this way.
-            The \\textit<desperate exertion> ability cannot be used to affect the spell, either at the time it is invested or when it is activated.
+            The \textit<desperate exertion> ability cannot be used to affect the spell, either at the time it is invested or when it is activated.
             Only one spell can be stored this way.
 
             You can activate this ring as a standard action.
             When you do, you cause the effect of the last spell invested in the ring.
             You choose the area and targets affected by the spell at this time.
-            This does not require \\glossterm<casting components>, even if they would normally be required to cast the spell.
-            The spell's effect is determined based on the \\glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
+            This does not require \glossterm<casting components>, even if they would normally be required to cast the spell.
+            The spell's effect is determined based on the \glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
             You do not have to have the ability to cast the spell to activate a spell in this way.
 
             After you use a spell in this way, the energy in the ring is spent, and you must invest a new spell to activate the ring again.
@@ -447,9 +458,9 @@ fn rings() -> Vec<Apparel> {
         short_description: String::from("Can exert to remove a condition"),
         description: String::from(r"
             You can activate this ring as a standard action.
-            When you do, you remove one \\glossterm<condition> affecting you.
+            When you do, you remove one \glossterm<condition> affecting you.
 
-            After you activate this item, you increase your \\glossterm<fatigue level> by one.
+            After you activate this item, you increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can remove a condition", r"
@@ -465,9 +476,9 @@ fn rings() -> Vec<Apparel> {
         short_description: String::from("Can exert to quickly remove a condition"),
         description: String::from(r"
             You can activate this ring as a \glossterm{minor action}.
-            When you do, you remove one \\glossterm<condition> affecting you.
+            When you do, you remove one \glossterm<condition> affecting you.
 
-            After you activate this item, you increase your \\glossterm<fatigue level> by two.
+            After you activate this item, you increase your \glossterm<fatigue level> by two.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Can exert to quickly remove a condition", r"
@@ -482,8 +493,8 @@ fn rings() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants many small defensive bonuses"),
         description: String::from(r"
-            You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points> and \\glossterm<damage resistance>.
-            In addition, you gain a \\plus1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+            You gain a +4 \glossterm<magic bonus> to your \glossterm<hit points> and \glossterm<damage resistance>.
+            In addition, you gain a \plus1 \glossterm<magic bonus> to \glossterm<vital rolls>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants many defensive bonuses", r"

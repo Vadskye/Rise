@@ -12,17 +12,12 @@ pub enum Apparel {
     Belt(StandardItem),
     Blindfold(StandardItem),
     Boots(StandardItem),
-    Bracer(StandardItem),
     Bracers(StandardItem),
     Circlet(StandardItem),
     Cloak(StandardItem),
     Crown(StandardItem),
-    Gauntlet(StandardItem),
     Gauntlets(StandardItem),
-    Greaves(StandardItem),
-    Glove(StandardItem),
     Gloves(StandardItem),
-    Mask(StandardItem),
     Ring(StandardItem),
 }
 
@@ -33,17 +28,12 @@ impl Apparel {
             Self::Belt(item) => item,
             Self::Blindfold(item) => item,
             Self::Boots(item) => item,
-            Self::Bracer(item) => item,
             Self::Bracers(item) => item,
             Self::Circlet(item) => item,
             Self::Cloak(item) => item,
             Self::Crown(item) => item,
-            Self::Gauntlet(item) => item,
             Self::Gauntlets(item) => item,
-            Self::Glove(item) => item,
             Self::Gloves(item) => item,
-            Self::Greaves(item) => item,
-            Self::Mask(item) => item,
             Self::Ring(item) => item,
         }
     }
@@ -70,17 +60,12 @@ impl Apparel {
             Self::Belt(_) => "leather or textiles",
             Self::Blindfold(_) => "textiles",
             Self::Boots(_) => "bone, leather, or metal",
-            Self::Bracer(_) => "bone, metal, or wood",
             Self::Bracers(_) => "bone, metal, or wood",
             Self::Circlet(_) => "bone or metal",
             Self::Cloak(_) => "leather or textiles",
             Self::Crown(_) => "bone or metal",
-            Self::Gauntlet(_) => "bone, metal, or wood",
             Self::Gauntlets(_) => "bone, metal, or wood",
-            Self::Glove(_) => "leather or textiles",
             Self::Gloves(_) => "leather or textiles",
-            Self::Greaves(_) => "bone or metal",
-            Self::Mask(_) => "textiles",
             Self::Ring(_) => "bone, metal, or wood",
         }
     }
@@ -91,17 +76,12 @@ impl Apparel {
             Self::Belt(_) => "Belt",
             Self::Blindfold(_) => "Blindfold",
             Self::Boots(_) => "Boots",
-            Self::Bracer(_) => "Bracer",
             Self::Bracers(_) => "Bracers",
             Self::Circlet(_) => "Circlet",
             Self::Cloak(_) => "Cloak",
             Self::Crown(_) => "Crown",
-            Self::Gauntlet(_) => "Gauntlet",
             Self::Gauntlets(_) => "Gauntlets",
-            Self::Glove(_) => "Glove",
             Self::Gloves(_) => "Gloves",
-            Self::Greaves(_) => "Greaves",
-            Self::Mask(_) => "Mask",
             Self::Ring(_) => "Ring",
         }
     }
@@ -128,10 +108,12 @@ fn apparel_rows(apparel: &Apparel) -> Vec<latex_table::TableRow> {
 pub fn apparel_table() -> String {
     let with_category = true;
 
-    let mut rows = vec![];
-    for apparel in all_apparel() {
-        rows.append(&mut apparel_rows(&apparel));
-    }
+    let mut rows: Vec<latex_table::TableRow> = all_apparel()
+        .iter()
+        .map(|a| apparel_rows(a))
+        .flatten()
+        .collect();
+    latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
         latex_table::table_header("Magic Apparel", with_category),

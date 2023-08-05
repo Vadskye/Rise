@@ -1,4 +1,6 @@
-pub fn item_price(rank: i32, consumable: bool) -> i32 {
+use num_format::{Locale, ToFormattedString};
+
+pub fn item_price(rank: i32, consumable: bool) -> String {
     let mut value = match rank {
         -1 => 5,
         0 => 10,
@@ -15,7 +17,7 @@ pub fn item_price(rank: i32, consumable: bool) -> i32 {
     if consumable {
         value /= 5;
     }
-    value
+    value.to_formatted_string(&Locale::en)
 }
 
 pub fn rank_and_price_text(rank: i32, consumable: bool) -> String {

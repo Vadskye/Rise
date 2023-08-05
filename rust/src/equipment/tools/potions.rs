@@ -41,8 +41,8 @@ pub fn potions() -> Vec<Tool> {
         name: "Potion of Wound Closure".to_string(),
         rank: 1,
         short_description: "Prevents death from barely lethal vital wounds".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, if you have a \\glossterm<vital wound> with a \\glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \\pcref<Vital Wounds>).
+        description: r"
+            When you drink this \glossterm<potion>, if you have a \glossterm<vital wound> with a \glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \pcref<Vital Wounds>).
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(3, "Prevents death from vital wounds", r"
@@ -62,9 +62,9 @@ pub fn potions() -> Vec<Tool> {
         name: "Potion of Regeneration".to_string(),
         rank: 3,
         short_description: "Remove vital wound after long rest".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, your body's natural healing process is accelerated.
-            The next time you finish a \\glossterm<long rest>, you can remove an additional \\glossterm<vital wound>.
+        description: r"
+            When you drink this \glossterm<potion>, your body's natural healing process is accelerated.
+            The next time you finish a \glossterm<long rest>, you can remove an additional \glossterm<vital wound>.
             If you drink multiple potions of regeneration, their effects do not stack.
         ".to_string(),
         upgrades: vec![
@@ -80,7 +80,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 2,
         short_description: "Impervious to poison".to_string(),
         description: String::from(r"
-            When you drink this \glossterm<potion>, if you \\glossterm<attune> to its effects, you become \glossterm{impervious} to poisons.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \glossterm{impervious} to poisons.
             The effects expire after 10 minutes.
         "),
         upgrades: vec![
@@ -95,8 +95,8 @@ pub fn potions() -> Vec<Tool> {
         name: "Elixir of Resilience".to_string(),
         rank: 1,
         short_description: "Grants +4 damage resistance".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+        description: r"
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +4 \glossterm<magic bonus> to your \glossterm<damage resistance>.
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -117,8 +117,8 @@ pub fn potions() -> Vec<Tool> {
         name: "Elixir of Hardiness".to_string(),
         rank: 2,
         short_description: "Grants +2 to vital rolls".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<vital rolls>.
+        description: r"
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<magic bonus> to your \glossterm<vital rolls>.
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -136,8 +136,8 @@ pub fn potions() -> Vec<Tool> {
         name: "Elixir of Strength".to_string(),
         rank: 1,
         short_description: "Grants +1 bonus for weight limits".to_string(),
-        description: "
-            When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+        description: r"
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +1 \glossterm<magic bonus> to your Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![

@@ -71,8 +71,8 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Battering Ram"),
         rank: 0,
         short_description: String::from("Grants +3 bonus when breaking objects"),
-        description: String::from("
-            If you use this portable battering ram with two hands while trying to break down a door or similar object, you gain a \\plus3 bonus to your Strength check.
+        description: String::from(r"
+            If you use this portable battering ram with two hands while trying to break down a door or similar object, you gain a \plus3 bonus to your Strength check.
         "),
         ..Tool::permanent("wood")
     });
@@ -81,7 +81,7 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Outfit, Courtier's"),
         rank: 1,
         short_description: String::from("Typical attire for courtiers in noble society"),
-        description: String::from("
+        description: String::from(r"
             This outfit includes fancy, tailored clothes in whatever fashion happens to be the current style in the courts of the nobles.
             It also includes appropriate jewelry.
         "),
@@ -91,7 +91,7 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Outfit, Noble's"),
         rank: 2,
         short_description: String::from("Typical attire for nobility"),
-        description: String::from("
+        description: String::from(r"
             This set of clothes is designed specifically to be expensive and to show it.
             Precious metals and gems are worked into the clothing.
         "),
@@ -101,7 +101,7 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Outfit, Royal"),
         rank: 4,
         short_description: String::from("Typical attire for royalty"),
-        description: String::from("
+        description: String::from(r"
             Royal clothes are ostentatious, with gems, gold, silk, and fur in abundance.
         "),
         ..Tool::permanent("leather, metal, and textiles")
@@ -158,7 +158,7 @@ pub fn objects() -> Vec<Tool> {
         short_description: "Shrinks items by one size category".to_string(),
         description: r"
             This bag appears to be a bulky Medium cloth sack.
-            However, it reduces the size and weight of any \\glossterm<unattended>, nonmagical objects placed inside of it by one size category and weight category.
+            However, it reduces the size and weight of any \glossterm<unattended>, nonmagical objects placed inside of it by one size category and weight category.
             This allows it to hold items of up to Large size as long as they can fit inside the bag's opening, which is five feet in diameter.
 
             If this bag is destroyed, the items within it return to their original size.
@@ -181,7 +181,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Carriage"),
         rank: 2,
         short_description: String::from("Fancy carriage that carries up to four people"),
-        description: String::from("
+        description: String::from(r"
             This four-wheeled vehicle can transport as many as four people within an enclosed cab, plus two drivers.
             In general, two horses (or other beasts of burden) draw it.
             A carriage comes with the harness needed to pull it.
@@ -193,7 +193,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Rowboat"),
         rank: 1,
         short_description: String::from("Simple boat for short journeys"),
-        description: String::from("
+        description: String::from(r"
             This 8- to 12 foot long boat holds two or three Medium passengers.
             It moves about one and a half miles per hour.
             A rowboat comes with oars to row it.
@@ -205,7 +205,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Galley"),
         rank: 5,
         short_description: String::from("Massive, fast-moving boat with 200 crew"),
-        description: String::from("
+        description: String::from(r"
             This three-masted ship has seventy oars on either side and requires a total crew of 200.
             A typical galley is 130 feet long and 20 feet wide, and it can carry 150 tons of cargo or 250 soldiers.
             Some rare galleys are fitted with a ram and castles with firing platforms fore, aft, and amidships.
@@ -218,7 +218,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Keelboat"),
         rank: 3,
         short_description: String::from("Slow-moving, seaworthy ship with 15 crew"),
-        description: String::from("
+        description: String::from(r"
             This 50 to 75 foot long ship is 15 to 20 feet wide and has a few oars to supplement its single mast with a square sail. It requires a total crew of 15 and can carry 40 to 50 tons of cargo or 100 soldiers. It can make sea voyages, as well as sail down rivers (thanks to its flat bottom). It moves about 1 mile per hour.
         "),
         ..Tool::permanent("metal, textiles, and wood")
@@ -228,7 +228,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Longship"),
         rank: 4,
         short_description: String::from("Long, seaworthy ship with 50 crew"),
-        description: String::from("
+        description: String::from(r"
             This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 3 miles per hour when being rowed or under sail.
         "),
         ..Tool::permanent("metal, textiles, and wood")
@@ -238,7 +238,7 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Wagon"),
         rank: 1,
         short_description: String::from("Simple wagon for transporting heavy loads"),
-        description: String::from("
+        description: String::from(r"
             This is a four-wheeled, open vehicle for transporting heavy loads. In general, two horses (or other beasts of burden) draw it. A wagon comes with the harness needed to pull it.
         "),
         ..Tool::permanent("wood")

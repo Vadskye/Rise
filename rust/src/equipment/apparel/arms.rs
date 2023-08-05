@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::core_mechanics::Attribute;
-use crate::equipment::Apparel::{Bracer, Bracers, Gauntlet, Gauntlets, Glove, Gloves};
+use crate::equipment::Apparel::{Bracers, Gauntlets, Gloves};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
 // Effects of items worn on the arms:
@@ -47,12 +47,12 @@ fn bracers() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Bracer(StandardItem {
-        name: String::from("Shieldburst Bracer"),
+    apparel.push(Bracers(StandardItem {
+        name: String::from("Shieldburst Bracers"),
         rank: 1,
         short_description: String::from("Can exert to gain instant +2 Armor defense"),
         description: String::from(r"
-            You can activate this bracer as a \glossterm{free action}.
+            You can activate these bracers as a \glossterm{free action}.
             When you do, you increase your \glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
             After you activate this item, you \glossterm{briefly} cannot activate it again.
         "),
@@ -117,7 +117,6 @@ fn bracers() -> Vec<Apparel> {
 }
 
 // Strength-related effects
-// Summoning / creation effects (since gauntlets go over gloves)
 fn gauntlets() -> Vec<Apparel> {
     let mut apparel = vec![];
 
@@ -168,13 +167,13 @@ fn gauntlets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Gauntlet(StandardItem {
-        name: String::from("Slinging Gauntlet"),
+    apparel.push(Gauntlets(StandardItem {
+        name: String::from("Slinging Gauntlets"),
         rank: 2,
-        short_description: String::from("Can deal $dr3 bludgeoning damage"),
+        short_description: String::from("Can deal $dr3 damage"),
         description: String::from(r"
-            You can activate this item as a standard action.
-            When you do, a rock appears in your hand, and you can immediately throw it at anything within \shortrange.
+            You can activate these gauntlets as a standard action.
+            When you do, a rock appears in one \glossterm{free hand}, and you can immediately throw it at anything within \shortrange.
             Make an attack against the target's Armor defense.
             \hit $dr3 bludgeoning damage.
         "),
@@ -201,13 +200,13 @@ fn gauntlets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Gauntlet(StandardItem {
+    apparel.push(Gauntlets(StandardItem {
         name: String::from("Gauntlets of Might"),
         rank: 2,
         short_description: String::from("Grants +1 Strength for specific purposes"),
         description: String::from(r"
-            You gain a +1 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
-            In addition, you reduce your \\glossterm<encumbrance> by 1.
+            You gain a +1 \glossterm<magic bonus> to Strength-based \glossterm<checks>, and you gain a +1 \glossterm<magic bonus> to Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
+            In addition, you reduce your \glossterm<encumbrance> by 1.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +2 Strength for specific purposes", r"
@@ -217,29 +216,10 @@ fn gauntlets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Gauntlet(StandardItem::attribute_item(
+    apparel.push(Gauntlets(StandardItem::attribute_item(
         "Gauntlets of Epic Strength",
         &Attribute::Strength,
     )));
-
-    apparel.push(Gauntlets(StandardItem {
-        name: String::from("Gauntlet of Blades"),
-        rank: 1,
-        short_description: String::from("Can create daggers"),
-        description: String::from(r"
-            You can activate this gauntlet as a \\glossterm<free action>.
-            When you do, a dagger \\glossterm<briefly> appears in one of your free hands.
-            The dagger disappears when this effect ends.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(4, "Can create daggers with special materials", r"
-                The dagger be made from a special material of your choice.
-                You can create an adamantine, pure diamondsteel, mithral, or silvered dagger (see \\pcref<Weapon Special Materials>).
-            "),
-        ],
-        tags: vec![AbilityTag::Manifestation],
-        ..Apparel::default()
-    }));
 
     apparel
 }
@@ -285,38 +265,34 @@ fn gloves() -> Vec<Apparel> {
         "Sleight of Hand",
     )));
 
-    apparel.push(Glove(StandardItem {
-        name: String::from("Thieving Glove"),
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Thieving Gloves"),
         rank: 2,
         short_description: String::from("Can absorb a small item"),
         description: String::from(
             r"
-            You can activate this glove as a standard action.
-            When you do, the glove absorbs one Small or smaller object you are touching with it.
+            You can activate these gloves as a standard action.
+            When you do, they absorbs one Small or smaller object you are touching with either glove.
 
             An absorbed object leaves no trace that it ever existed.
             This weapon can hold no more than three objects at once.
             If you attempt to absorb an object while gloves are full, the attempt fails.
 
-            As a free action, you can retrieve the last item absorbed by the glove.
+            As a free action, you can retrieve the last item absorbed by the gloves.
             The item appears in your hand, or falls to the ground if your hand is occupied.
-            The item similarly reappears if you stop attuning to this glove or take it off.
+            The item similarly reappears if you stop attuning to this gloves or take them off.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
                 4,
                 "Can absorb an item",
-                "
-                The maximum size category that the glove can absorb increases to Medium.
-            ",
+                "The maximum size category increases to Medium.",
             ),
             ItemUpgrade::new(
                 6,
                 "Can absorb a large item",
-                "
-                The maximum size category that the glove can absorb increases to Large.
-            ",
+                "The maximum size category increases to Large.",
             ),
         ],
         ..Apparel::default()
@@ -330,14 +306,14 @@ fn gloves() -> Vec<Apparel> {
 
     // "paralyzed" is r4; double defense and no DR makes that work.
     apparel.push(Gloves(StandardItem {
-        name: String::from("Ghoultouch Glove"),
+        name: String::from("Ghoultouch Gloves"),
         rank: 7,
         short_description: String::from("Grants a paralyzing touch"),
         description: String::from(r"
-            You can activate this glove as a standard action using a \glossterm{free hand}.
-            When you do, make an attack vs. Reflex and Fortitude against a living creature you \glossterm{touch}.
-            Whether the attack hits or misses, the target is immune to this ability until it finishes a \\glossterm<short rest>.
-            \hit If the target has no remaining \\glossterm<damage resistance>, it becomes \\paralyzed as a \\glossterm<condition>.
+            You can activate these gloves as a standard action using a \glossterm{free hand}.
+            When you do, make an attack vs. Reflex and Fortitude against a living creature you \glossterm{touch} with either glove.
+            Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
+            \hit If the target has no remaining \glossterm<damage resistance>, it becomes \paralyzed as a \glossterm<condition>.
         "),
         ..Apparel::default()
     }));
@@ -346,6 +322,25 @@ fn gloves() -> Vec<Apparel> {
         "Gloves of Epic Dexterity",
         &Attribute::Dexterity,
     )));
+
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Bladespawn Gloves"),
+        rank: 1,
+        short_description: String::from("Can create daggers"),
+        description: String::from(r"
+            You can activate these gloves as a \glossterm<free action>.
+            When you do, a dagger \glossterm<briefly> appears in one of your free hands.
+            The dagger disappears when this effect ends.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Can create daggers with special materials", r"
+                The dagger be made from a special material of your choice.
+                You can create an adamantine, pure diamondsteel, mithral, or silvered dagger (see \pcref<Weapon Special Materials>).
+            "),
+        ],
+        tags: vec![AbilityTag::Manifestation],
+        ..Apparel::default()
+    }));
 
     apparel
 }
