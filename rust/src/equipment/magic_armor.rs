@@ -67,13 +67,15 @@ fn magic_armor_rows(magic_armor: &MagicArmor) -> Vec<latex_table::TableRow> {
     )
 }
 
-pub fn implements_table() -> String {
+pub fn magic_armor_table() -> String {
     let with_category = true;
 
-    let mut rows = vec![];
-    for magic_armor in all_magic_armor() {
-        rows.append(&mut magic_armor_rows(&magic_armor));
-    }
+    let mut rows: Vec<latex_table::TableRow> = all_magic_armor()
+        .iter()
+        .map(|a| magic_armor_rows(a))
+        .flatten()
+        .collect();
+    latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
         latex_table::table_header("Magic Armor", with_category),

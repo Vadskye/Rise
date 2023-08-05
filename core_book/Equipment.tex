@@ -383,6 +383,7 @@ Items are divided into five broad categories, described below.
         % All weapons should have two improvements over a ``baseline'' +0a/1d6 weapon with no properties.
         % The Light weapon tag comes with an invisible +1a/-1d modifier, so +1a/1d4 with one extra improvement.
         % The Heavy weapon tag does not cost a tag slot and comes with an invisible +1d modifier, so +0a/1d8 with two extra improvements.
+        \begin{longcolumn}
         \begin{longtablewrapper}
             \tablebookmark{Weapons}{weapons}
             \RaggedRight
@@ -568,6 +569,7 @@ Items are divided into five broad categories, described below.
             1 See \pcref{Item Ranks}. \\
             2 This weapon has special rules. \\
         \end{longtablewrapper}
+        \end{longcolumn}
 
         \begin{dtable!*}
             % Every natural weapon that requires a free hand should be on par with a manufactured weapon.
@@ -719,8 +721,10 @@ Items are divided into five broad categories, described below.
 
         \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
 
-\newpage
+\begin{longcolumn}
 \section{Magic Weapons}
+\begin{longtablepreface}
+
     Magic weapons improve a character's combat abilities.
     They must be wielded to gain their effects.
 
@@ -728,10 +732,13 @@ Items are divided into five broad categories, described below.
 
     \parhead{Craft Skills} The craft skills used to create and repair items are listed in parentheses before the item's description.
     All magic weapons simply use the same materials as the original, nonmagical weapon.
+\end{longtablepreface}
 
-    \input{generated/weapons_table.tex}
+    \input{generated/magic_weapons_table.tex}
 
-    \input{generated/weapons.tex}
+\end{longcolumn}
+
+    \input{generated/magic_weapons.tex}
 
 \newpage
 \section{Armor}\label{Armor}
@@ -973,8 +980,9 @@ Items are divided into five broad categories, described below.
         This effect is \abilitytag{Swift}, like the \ability{recover} ability.
         The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
-\newpage
+\begin{longcolumn}
 \section{Magic Armor}
+\begin{longtablepreface}
     Magic body armor must be worn to gain its effects, while magic shields must be wielded.
     You cannot imbue magic body armor effects on ordinary clothing, even if that clothing is worn on the body instead of armor.
 
@@ -991,14 +999,17 @@ Items are divided into five broad categories, described below.
             \item Rank 6: \mult4
             \item Rank 7: \mult6
         \end{itemize}
+\end{longtablepreface}
 
+    \input{generated/magic_armor_table.tex}
 
-    \input{generated/armor_table.tex}
+\end{longcolumn}
 
-    \input{generated/armor.tex}
+    \input{generated/magic_armor.tex}
 
-\newpage
+\begin{longcolumn}
 \section{Magic Apparel}
+    \begin{longtablepreface}
     \includegraphics[width=\columnwidth]{equipment/magic apparel}
     Magic apparel items must be worn to gain their effects.
 
@@ -1016,81 +1027,79 @@ Items are divided into five broad categories, described below.
             \item Gloves: Up to 1 (separate from gauntlets)
             \item Rings: Up to 5 per hand
         \end{itemize}
+    \end{longtablepreface}
 
     \input{generated/apparel_table.tex}
 
+\end{longcolumn}
+\section{Magic Apparel Descriptions}
+
     \input{generated/apparel.tex}
 
+% This has a lot of text, so we need two columns
 \newpage
 \section{Magic Implements}\label{Implements}
     \includegraphics[width=\columnwidth]{equipment/magic implements}
-    Implements can take many forms: staffs, wands, holy symbols, and more.
+
     Like magic weapons, magic implements must be wielded to gain their effects.
-    However, while weapons are used to deal damage to enemies, implements are used to cast spells.
+    However, while weapons are used to deal damage to enemies, implements are used to grant or enhance magical abilities.
 
-    \parhead{Somatic Components} While wielding an implement, you may gesture with it and channel magic through it.
-    These qualify as somatic components for the purpose of casting spells.
-    This does not remove the possibility of \glossterm{somatic component failure}.
+    There are three types of implements: staffs, rods, and wands.
+    Staffs improve your existing magical abilities.
+    Rods grant new magical abilities, even to those who cannot cast spells.
+    Wands grant spellcasters the knowledge of specific spells.
 
-    \subsection{Implement Types}
+    Staffs are long and thin, with even short staffs measuring no less than four feet long.
+    Rods are about three feet long, but sturdily constructed.
+    Wands are only about a foot long and very thin.
 
-        \subsubsection{Holy Symbols}
+    \parhead{Somatic Components} While wielding an implement, you may gesture with it to perform \glossterm{somatic components}.
+    This means you do not need a separate \glossterm{free hand} to perform those components.
+    However, it does not remove the possibility of \glossterm{somatic component failure}.
 
-            \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
-            Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
+    \parhead{Staff Types}
+        There are two types of staffs that you can find.
+        Long staffs function like a quarterstaff weapon, but they require two hands to wield, even when used to cast spells.
+        Short staffs only require one hand, but they are not suitable for combat.
 
-            \parhead{Special Rules} All holy symbols are implements for divine spells.
-            Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
-            A magical holy symbol grants its magical abilities if it is either worn as an amulet or held in the hand.
-
-        \subsubsection{Staffs}
-
-            \parhead{Physical Description} A typical staff is 3 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds.
-            Most staffs are wood, but a rare few are bone, metal, or even glass.
-            Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
-
-            Staffs are often decorated with carvings or runes.
-            Long staffs are quarterstaffs.
-            They must be held in two hands, and can be used to attack like any other quarterstaff.
-            Short staffs resemble thin clubs.
-            They can be held in one hand, but are not suitable for combat and are treated as \glossterm{improvised weapons} if used to attack.
-            A typical staff has 20 \glossterm{hit points} and a sunder \glossterm{difficulty value} of 10.
-
-        \subsubsection{Wands}
-
-            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and usually weighs no more than 1 ounce.
-            Most wands are wood, but some are bone.
-            A rare few are metal, glass, or even ceramic, but these are quite exotic.
-            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
-            A typical wand has 5 \glossterm{hit points} and a sunder \glossterm{difficulty value} of 5.
-
+    \begin{longcolumn}
     \input{generated/implements_table.tex}
+    \end{longcolumn}
 
     \input{generated/implements.tex}
 
-\newpage
-\section{Tools, Goods, and Mounts}
-    \includegraphics[width=\columnwidth]{equipment/tools goods and mounts}
+\begin{longcolumn}
+\section{Consumables}
 
-    The world of Rise has a wide range of minor items like backpacks, blankets, and ten-foot poles.
-    In general, the cost of those items is so insignificant from the perspective of an adventuring party that it's not worth the effort to track their cost in detail.
-    A subset of particularly expensive items is included in \tref{Consumable Tools} and \tref{Permanent Tools, Goods, and Mounts}.
+\input{generated/consumable_tools_table.tex}
+\end{longcolumn}
 
-    \subsection{Standard Adventuring Kit}
-        % Technically 15.2 gp and 50.5 pounds
-        A standard adventuring kit costs 10 gp, weighs 50 pounds, and contains the following items:
-        \begin{itemize}
-            \item Backpack
-            \item Bedroll
-            \item Flint and steel
-            \item Rations, trail (8 days)
-            \item Rope, hempen (60 ft.)
-            \item Sack (empty)
-            \item Tent
-            \item Torch
-            \item Waterskin
-        \end{itemize}
+\input{generated/consumable_tools.tex}
 
-    \input{generated/tools_table.tex}
+\begin{longcolumn}
+    \section{Tools, Goods, and Mounts}
+        % \includegraphics[width=\columnwidth]{equipment/tools goods and mounts}
 
-    \input{generated/tools.tex}
+        The world of Rise has a wide range of minor items like backpacks, blankets, and ten-foot poles.
+        In general, the cost of those items is so insignificant from the perspective of an adventuring party that it's not worth the effort to track their cost in detail.
+        A subset of particularly expensive items is included in \tref{Permanent Tools, Goods, and Mounts}.
+
+        \subsection{Standard Adventuring Kit}
+            % Technically 15.2 gp and 50.5 pounds
+            A standard adventuring kit costs 10 gp, weighs 50 pounds, and contains the following items:
+            \begin{itemize}
+                \item Backpack
+                \item Bedroll
+                \item Flint and steel
+                \item Rations, trail (8 days)
+                \item Rope, hempen (60 ft.)
+                \item Sack (empty)
+                \item Tent
+                \item Torch
+                \item Waterskin
+            \end{itemize}
+
+        \input{generated/permanent_tools_table.tex}
+
+        \input{generated/permanent_tools.tex}
+\end{longcolumn}

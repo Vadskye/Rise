@@ -18,8 +18,9 @@ pub fn alchemical_items() -> Vec<Tool> {
         rank: 1,
         short_description: "Creates a cloud of smoke".to_string(),
         description: r"
-            As a standard action, you can activate this item and optionally throw it anywhere within \shortrange.
-            When you do, it immediately creates a cloud of smoke in a \medarea radius from its location.
+            You can activate this item as a standard action.
+            As part of that action, you can optionally throw it anywhere within \shortrange.
+            When you activate this item, it immediately creates a cloud of smoke in a \medarea radius from its location.
             The smoke provides \glossterm{concealment} for everything in the area.
 
             This item continues emitting smoke for one minute.
@@ -38,7 +39,7 @@ pub fn alchemical_items() -> Vec<Tool> {
         rank: 0,
         short_description: "Quickly activated flame".to_string(),
         description: r"
-            As a \glossterm<minor action>, you can activate this small, wooden stick by striking it against any hard surface.
+            You can activate this small, wooden stick by striking it against any hard surface as a \glossterm<minor action>.
             When you do, it bursts into flame, allowing you to light other fires with it.
             A tindertwig burns for one minute.
         ".to_string(),
@@ -66,7 +67,7 @@ pub fn alchemical_items() -> Vec<Tool> {
         rank: 1,
         short_description: "Emits bright illumination".to_string(),
         description: r"
-            As a standard action, you can activate this item.
+            You can activate this item as a standard action.
             When you do, it creates \glossterm<bright illumination> in a 60 foot radius for 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -82,7 +83,7 @@ pub fn alchemical_items() -> Vec<Tool> {
         rank: 2,
         short_description: "Emits brilliant illumination".to_string(),
         description: r"
-            As a standard action, you can activate this item.
+            You can activate this item as a standard action.
             When you do, it creates \glossterm<brilliant illumination> in a 60 foot radius for 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -122,21 +123,21 @@ fn thrown_attacks() -> Vec<Tool> {
     tools.push(Tool {
         name: "Alchemist's Fire".to_string(),
         rank: 1,
-        short_description: "Throw to deal $dr2 fire damage".to_string(),
+        short_description: "Throw to deal $dr2 damage".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against anything within \shortrange.
             \hit $dr2 fire damage.
         ".to_string(),
         upgrades: vec![
-            // This "should" be 2d8, but the d10 is much more clear as 2d10
-            ItemUpgrade::new(3, "Throw to deal 2d10 fire damage", r"
+            // This "should" be 2d8, but the pattern is much nicer as 2d10.
+            ItemUpgrade::new(3, "Throw to deal 2d10 damage", r"
                 The damage increases to 2d10.
             "),
-            ItemUpgrade::new(5, "Throw to deal $dr6 fire damage", r"
+            ItemUpgrade::new(5, "Throw to deal $dr6 damage", r"
                 The damage increases to $dr6.
             "),
-            ItemUpgrade::new(7, "Throw to deal $dr8 fire damage", r"
+            ItemUpgrade::new(7, "Throw to deal $dr8 damage", r"
                 The damage increases to $dr8.
             "),
         ],
@@ -147,18 +148,18 @@ fn thrown_attacks() -> Vec<Tool> {
     tools.push(Tool {
         name: "Acid Flask".to_string(),
         rank: 2,
-        short_description: "Throw to deal $dr5 acid damage".to_string(),
+        short_description: "Throw to deal $dr3 damage over time".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex and Fortitude against anything within \shortrange.
-            \hit $dr5 acid damage.
+            \hit $dr3 acid damage immediately, and again during your next action.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(4, "Throw to deal $dr7 acid damage", r"
-                The damage increases to $dr7.
+            ItemUpgrade::new(4, "Throw to deal $dr5 damage over time", r"
+                The damage increases to $dr5.
             "),
-            ItemUpgrade::new(6, "Throw to deal $dr9 acid damage", r"
-                The damage increases to $dr9.
+            ItemUpgrade::new(6, "Throw to deal $dr7 damage over time", r"
+                The damage increases to $dr7.
             "),
         ],
         ..alchemical_item()
@@ -167,20 +168,21 @@ fn thrown_attacks() -> Vec<Tool> {
     tools.push(Tool {
         name: "Firebomb".to_string(),
         rank: 2,
-        short_description: "Throw to deal $dr1 fire damage in an area".to_string(),
+        short_description: "Throw to deal $dr1 damage in an area".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against everything in a \smallarea radius within \shortrange.
+            Your minimum accuracy is $accuracy.
             \hit $dr1 fire damage.
             \miss \glossterm{Glancing blow}.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(4, "Throw to deal $dr3 fire damage in an area", r"
-                The damage increases to $dr3.
+            ItemUpgrade::new(4, "Throw to deal $dr3 damage in an area", r"
+                The minimum accuracy increases to $accuracy, and the damage increases to $dr3.
             "),
             // This area is not quite large enough, but no clear way to improve that
-            ItemUpgrade::new(6, "Throw to deal $dr5 fire damage in an area", r"
-                The damage increases to $dr5.
+            ItemUpgrade::new(6, "Throw to deal $dr5 damage in an area", r"
+                The minimum accuracy increases to $accuracy, and the damage increases to $dr5.
             "),
         ],
         ..alchemical_item()
@@ -188,18 +190,19 @@ fn thrown_attacks() -> Vec<Tool> {
 
     tools.push(Tool {
         name: "Thunderstone".to_string(),
-        rank: 2,
+        rank: 3,
         short_description: "Throw to deal $dr1 damage and deafen in an area".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against everything in a \smallarea radius within \shortrange.
-            \hit $dr1 bludgeoning damage.
+            Your minimum accuracy is $accuracy.
+            \hit $dr2 bludgeoning damage.
             Each creature that loses \glossterm<hit points> is \deafened as a \glossterm<condition>.
             \miss \glossterm{Glancing blow}.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(4, "Throw to deal $dr3 damage and deafen in an area", r"
-                The damage increases to $dr3.
+            ItemUpgrade::new(5, "Throw to deal $dr4 damage and deafen in an area", r"
+                The minimum accuracy increases to $accuracy, and the damage increases to $dr4.
             "),
         ],
         ..alchemical_item()
@@ -207,12 +210,13 @@ fn thrown_attacks() -> Vec<Tool> {
 
     tools.push(Tool {
         name: "Avalanchestone".to_string(),
-        rank: 6,
-        short_description: "Throw to deal $dr5 damage and deafen in an area".to_string(),
+        rank: 7,
+        short_description: "Throw to deal $dr6 damage and deafen in an area".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against everything in a \smallarea radius within \shortrange.
-            \hit $dr5 bludgeoning damage.
+            Your minimum accuracy is $accuracy.
+            \hit $dr6 bludgeoning damage.
             Each creature that takes damage is \deafened as a \glossterm<condition>.
             \miss \glossterm{Glancing blow}.
         ".to_string(),
@@ -223,7 +227,7 @@ fn thrown_attacks() -> Vec<Tool> {
     tools.push(Tool {
         name: "Snowball".to_string(),
         rank: 1,
-        short_description: "Throw to deal $dr2 cold damage and slow".to_string(),
+        short_description: "Throw to deal $dr2 damage and slow".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex and Fortitude against anything within \shortrange.
@@ -241,7 +245,7 @@ fn thrown_attacks() -> Vec<Tool> {
     tools.push(Tool {
         name: "Iceball".to_string(),
         rank: 5,
-        short_description: "Throw to deal $dr6 cold damage and slow".to_string(),
+        short_description: "Throw to deal $dr6 damage and slow".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex and Fortitude against anything within \shortrange.

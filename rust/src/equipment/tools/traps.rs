@@ -10,7 +10,7 @@ pub fn traps() -> Vec<Tool> {
 
     fn ground_deployment(rank: i32) -> String {
         format!("
-            As a standard action, you can deploy this trap on a space on the ground adjacent to you.
+            You can deploy this trap on a space on the ground adjacent to you as a standard action.
             While this trap is deployed, a creature can notice it with a \\glossterm<difficulty value> {} Awareness check.
             A creature that notices the trap can avoid triggering it while moving.
             The first time something enters the trap's space without avoiding the trap, the trap activates.
@@ -61,7 +61,7 @@ pub fn traps() -> Vec<Tool> {
     traps.push(Tool {
         name: String::from("Fireburst Trap"),
         rank: 2,
-        short_description: String::from("Deals $dr3 fire damage in a small area"),
+        short_description: String::from("Deals $dr3 damage in a small area"),
         description: format!("
             {}
 
@@ -84,7 +84,7 @@ pub fn traps() -> Vec<Tool> {
     traps.push(Tool {
         name: String::from("Caltrops"),
         rank: 2,
-        short_description: String::from("Deals $dr3 fire damage in a small area"),
+        short_description: String::from("Deals $dr1 damage when stepped on"),
         description: String::from(r"
             A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest.
             As a standard action, you can scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.

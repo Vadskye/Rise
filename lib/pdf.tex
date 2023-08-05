@@ -160,18 +160,19 @@
 \newcommand{\itempref}[1]{\pageref{item:#1}}
 \newcommand{\featpcref}[1]{#1,~page~\pageref{feat:#1}}
 
-% small text for the feats table
-\newenvironment{longtablewrapper}
+% If starred, skip the onecolumn/twocolumn.
+\DeclareDocumentEnvironment{longtablewrapper}{}
 {
-    \onecolumn
     \small
     \rowcolors{1}{white}{tbrown}
     \renewcommand*{\arraystretch}{1.2}
     \setlength\LTleft{0pt}
     \setlength\LTright{0pt}
 }
-{\twocolumn}
+{}
 
 \DeclareDocumentCommand{\sparklespaceless}{}{\includegraphics[width=0.75\fsize]{emoji/sparkles}}
+\DeclareDocumentCommand{\poisonspaceless}{}{\includegraphics[width=0.8\fsize]{emoji/poison}}
+\DeclareDocumentCommand{\potionspaceless}{}{\includegraphics[width=0.9\fsize]{emoji/potion}}
 
 \ExplSyntaxOff
