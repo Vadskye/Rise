@@ -1,11 +1,10 @@
-use crate::equipment::Apparel::{Boots, Greaves};
+use crate::equipment::Apparel::Boots;
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
 pub fn legs() -> Vec<Apparel> {
     let mut apparel = vec![];
 
     apparel.append(&mut boots());
-    apparel.append(&mut greaves());
 
     apparel
 }
@@ -19,10 +18,10 @@ fn boots() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Deals your falling damage to enemies"),
         description: String::from(r"
-            Whenever you take \\glossterm<falling damage>, make an attack vs. Reflex against everything within a \\areasmall radius from you.
-            \\hit You deal each target bludgeoning damage equal to half the damage you took from falling.
+            Whenever you take \glossterm<falling damage>, make an attack vs. Reflex against everything within a \areasmall radius from you.
+            \hit You deal each target bludgeoning damage equal to half the damage you took from falling.
             If you reduce or avoid the falling damage, that also affects you damage you deal with these boots.
-            \\crit Each target is also knocked \\prone.
+            \crit Each target is also knocked \prone.
             This attack does not deal extra damage on a critical hit.
         "),
         ..Apparel::default()
@@ -33,12 +32,12 @@ fn boots() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Can exert to move through creatures"),
         description: String::from(r"
-            As a \\glossterm<free action>, you can activate these boots.
-            After you activate the boots, you \\glossterm<briefly> cannot do so again.
-            When you do, you increase your \\glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
+            You can activate these boots as a free action.
+            After you activate the boots, you \glossterm<briefly> cannot do so again.
+            When you do, you increase your \glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
             This does not allow you to move through inanimate objects.
-            If you end your movement in spaces occupied by other creatures, both of you are still \\squeezing.
-            If you are not able to move normally, such as if you are \\grappled, these boots do not help you.
+            If you end your movement in spaces occupied by other creatures, both of you are still \squeezing.
+            If you are not able to move normally, such as if you are \grappled, these boots do not help you.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes move through creatures", "
@@ -57,14 +56,14 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Can very briefly walk on air"),
         description: String::from(r"
-            As a \\glossterm<free action>, you can activate these boots.
+            You can activate these boots as a \glossterm<free action>.
             When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
             You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
             These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Can briefly walk on air", "
-                The effect lasts \\glossterm<briefly> instead of only during the current phase.
+            ItemUpgrade::new(6, "Can briefly walk on air", r"
+                The effect lasts \glossterm<briefly> instead of only during the current phase.
             "),
         ],
         ..Apparel::default()
@@ -75,11 +74,11 @@ fn boots() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Grants immunity to common mobility restrictions"),
         description: String::from(r"
-            You are immune to being \\slowed, \\immobilized, and \\paralyzed.
+            You are immune to being \slowed, \immobilized, and \paralyzed.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, "Grants immunity to almost all mobility restrictions", "
-                    You are also unaffected by \\glossterm<difficult terrain> and immune to being \\grappled or knocked \\prone.
+            ItemUpgrade::new(7, "Grants immunity to almost all mobility restrictions", r"
+                    You are also unaffected by \glossterm<difficult terrain> and immune to being \grappled or knocked \prone.
             "),
         ],
         ..Apparel::default()
@@ -90,12 +89,12 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Redirects personal gravity to adjacent objects"),
         description: String::from(r"
-            Once per phase, while you are within 5 feet of an \\glossterm<unattended> object at least one size category larger than you, you can take a \\glossterm<free action> to adjust your personal gravity.
+            Once per phase, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can take a \glossterm<free action> to adjust your personal gravity.
             When you do, gravity pulls you towards that surface instead of in the normal direction.
             This allows you to walk normally on walls or even ceilings.
 
-            Whenever you change the direction that gravity pulls you, you must make a \\glossterm<difficulty value> 10 Balance check to keep your feet.
-            Failure means you fall \\prone and your movement for that phase ends.
+            Whenever you change the direction that gravity pulls you, you must make a \glossterm<difficulty value> 10 Balance check to keep your feet.
+            Failure means you fall \prone and your movement for that phase ends.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Redirects personal gravity to nearby objects", "
@@ -112,7 +111,7 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Increases speed by 10 feet"),
         description: String::from(
             r"
-            You gain a +10 foot \\glossterm<magic bonus> to your land speed.
+            You gain a +10 foot \glossterm<magic bonus> to your land speed.
         ",
         ),
         ..Apparel::default()
@@ -182,8 +181,8 @@ fn boots() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Can exert to teleport seven leagues"),
         description: String::from(r"
-            As a standard action, you can activate these boots.
-            When you do, you increase your \\glossterm<fatigue level> by one and teleport horizontally exactly 25 miles in a direction you specify.
+            You can activate these boots as a standard action.
+            When you do, you increase your \glossterm<fatigue level> by one and teleport horizontally exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         "),
@@ -196,7 +195,9 @@ fn boots() -> Vec<Apparel> {
     )));
 
     apparel.push(Boots(StandardItem::reliable_skill_item(
-        "Boots of Reliable Motion", "Balance, Climb, Jump, or Swim", "movement-based",
+        "Boots of Reliable Motion",
+        "Balance, Climb, Jump, or Swim",
+        "movement-based",
     )));
 
     apparel.push(Boots(StandardItem {
@@ -205,9 +206,9 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Can exert to levitate after jumping"),
         description: String::from(r"
             Whenever you make a Jump check, you can activate these boots.
-            When you do, you increase your \\glossterm<fatigue level> by one.
+            When you do, you increase your \glossterm<fatigue level> by one.
             In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
-            You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
+            You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
             These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
         "),
@@ -242,7 +243,7 @@ fn boots() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can move when you recover"),
         description: String::from(r"
-            When you use the \\ability<recover> ability, you can also make a \glossterm{movement} immediately afterward.
+            When you use the \ability<recover> ability, you can also make a \glossterm{movement} immediately afterward.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sprint when you recover", r"
@@ -252,44 +253,38 @@ fn boots() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel
-}
-
-// Mobility-related defense
-fn greaves() -> Vec<Apparel> {
-    let mut apparel = vec![];
-
-    apparel.push(Greaves(StandardItem {
-        name: String::from("Charging Greaves"),
-        rank: 1,
-        short_description: String::from("Reduces penalties for charging by 1"),
+    apparel.push(Boots(StandardItem {
+        name: String::from("Anchoring Boots"),
+        rank: 2,
+        short_description: String::from("Immune to most forced movement attacks"),
         description: String::from(r"
-            You reduce your defense penalties from using the \\ability<charge> ability by 1.
+            You are immune to \glossterm{teleport}, \glossterm<knockback>, and \glossterm<push> effects from attacks, unless the effects come from an attack that scores a \glossterm<critical hit>.
+            This does not affect movement effects used by your \glossterm<allies>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Removes penalties for charging", "
-                You do not take defense penalties from using the \\ability<charge> ability.
+            ItemUpgrade::new(5, "Immune to most forced relocation attacks", r"
+                You are also immune to knockback, push, and teleportation effects from attacks that are critical hits.
             "),
         ],
         ..Apparel::default()
     }));
 
-    apparel.push(Greaves(StandardItem {
-        name: String::from("Anchoring Greaves"),
-        rank: 2,
-        short_description: String::from("Immune to most forced movement attacks"),
-        description: String::from(r"
-            You are immune to \\glossterm<knockback> or \\glossterm<push> effects from attacks, unless the effects come from an attack that scores a \\glossterm<critical hit>.
-            This does not make you immune to \\glossterm<teleportation>, and does not affect movement effects used by your \\glossterm<allies>.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(4, "Immune to most forced relocation attacks", r"
-                You are also immune to \glossterm{teleport} effects from attacks that are not critical hits.
-            "),
-            ItemUpgrade::new(6, "Immune to most forced relocation attacks", r"
-                You are also immune to knockback, push, and teleportation effects from attacks that are critical hits.
-            "),
-        ],
+    apparel.push(Boots(StandardItem {
+        name: String::from("Charging Boots"),
+        rank: 1,
+        short_description: String::from("Reduces penalties for charging by 1"),
+        description: String::from(
+            r"
+            You reduce your defense penalties from using the \ability<charge> ability by 1.
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            3,
+            "Removes penalties for charging",
+            r"
+                You do not take defense penalties from using the \ability<charge> ability.
+            ",
+        )],
         ..Apparel::default()
     }));
 

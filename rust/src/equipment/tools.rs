@@ -66,8 +66,9 @@ impl ToolCategory {
             Self::Alchemical => String::from("Craft (alchemy)"),
             Self::Creature => String::from(""),
             Self::Permanent(c) => format!("Craft ({})", c),
-            Self::Poison => String::from("Poison -- Craft (poison)"),
-            Self::Potion => String::from("Potion -- Craft (alchemy)"),
+            // Add an extra space after \poison and \potion
+            Self::Poison => String::from(r"Poison\poison {} -- Craft (poison)"),
+            Self::Potion => String::from(r"Potion\potion {} -- Craft (alchemy)"),
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
@@ -77,8 +78,9 @@ impl ToolCategory {
             Self::Alchemical => None,
             Self::Creature => None,
             Self::Permanent(_) => None,
-            Self::Poison => Some(String::from("poison")),
-            Self::Potion => Some(String::from("potion")),
+            // TODO: "Poison" and "Potion" look annoyingly similar. Should differentiate them.
+            Self::Poison => Some(String::from(r"Poison\poison")),
+            Self::Potion => Some(String::from(r"Potion\potion")),
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
@@ -95,7 +97,7 @@ impl ToolCategory {
     }
 }
 
-pub fn all_tools() -> Vec<Tool> {
+pub fn all_tools(consumable: Option<bool>) -> Vec<Tool> {
     let mut tools = vec![];
 
     tools.append(&mut alchemical_items::alchemical_items());
@@ -106,6 +108,13 @@ pub fn all_tools() -> Vec<Tool> {
     tools.append(&mut poisons::poisons());
     tools.append(&mut traps::traps());
 
+    if let Some(c) = consumable {
+        tools = tools
+            .into_iter()
+            .filter(|t| t.category.is_consumable() == c)
+            .collect();
+    }
+
     tools.sort_by(|a, b| a.name.cmp(&b.name));
 
     tools
@@ -115,40 +124,37 @@ fn tool_rows(tool: &Tool) -> Vec<latex_table::TableRow> {
     latex_table::TableRow::from_item(
         &tool.item(),
         tool.category.is_consumable(),
-        tool.category.name(),
+        // The row should always have a category, even if we have no category for that item.
+        Some(tool.category.name().unwrap_or(String::from(""))),
     )
 }
 
-pub fn consumable_tool_table() -> String {
+pub fn consumable_tools_table() -> String {
     let with_category = true;
 
-    let consumable_tools: Vec<Tool> = all_tools()
-        .into_iter()
-        .filter(|t| t.category.is_consumable())
+    let mut rows: Vec<latex_table::TableRow> = all_tools(Some(true))
+        .iter()
+        .map(|t| tool_rows(t))
+        .flatten()
         .collect();
-    let mut rows = vec![];
-    for tool in consumable_tools {
-        rows.append(&mut tool_rows(&tool));
-    }
+    latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Consumable Tools", with_category),
+        latex_table::table_header("Consumables", with_category),
         rows,
         with_category,
     )
 }
 
-pub fn permanent_tool_table() -> String {
+pub fn permanent_tools_table() -> String {
     let with_category = true;
 
-    let permanent_tools: Vec<Tool> = all_tools()
-        .into_iter()
-        .filter(|t| !t.category.is_consumable())
+    let mut rows: Vec<latex_table::TableRow> = all_tools(Some(false))
+        .iter()
+        .map(|t| tool_rows(t))
+        .flatten()
         .collect();
-    let mut rows = vec![];
-    for tool in permanent_tools {
-        rows.append(&mut tool_rows(&tool));
-    }
+    latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
         latex_table::table_header("Permanent Tools, Goods, and Mounts", with_category),

@@ -281,6 +281,27 @@
     \end{feat}
 }
 
+\DeclareDocumentEnvironment{longcolumn}{}
+{\onecolumn}
+{\twocolumn}
+
+% This allows up to a one-column page of text before starting a longtable.
+% It is better than using `longcolumn` when you want to have a bit of preamble,
+% but you don't want to have a full page break before the longtable starts.
+\DeclareDocumentEnvironment{longtablepreface}{}
+{\begin{indentedminipage}{0.49\textwidth}}
+{\end{indentedminipage}}
+
+\DeclareDocumentEnvironment{indentedminipage}{m}
+{
+    \noindent
+    \begin{minipage}{#1}
+        \setlength{\parindent}{\RaggedRightParindent}
+}
+{
+    \end{minipage}
+}
+
 \DeclareDocumentEnvironment{raggeditemize}{}
 {\begin{itemize}\RaggedRight}
 {\end{itemize}}

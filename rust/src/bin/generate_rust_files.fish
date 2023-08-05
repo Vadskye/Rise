@@ -5,8 +5,26 @@ cd "$DIR/../../.."
 mkdir -p core_book/generated
 cd rust
 cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
-cargo run --bin modules_chapter > ../core_book/generated/modules.tex
+# cargo run --bin modules_chapter > ../core_book/generated/modules.tex
 cargo run --bin classes_chapter > ../core_book/generated/classes.tex
+
+cargo run --bin item_latex -- --category 'apparel' --descriptions > ../core_book/generated/apparel.tex
+cargo run --bin item_latex -- --category 'apparel' --table > ../core_book/generated/apparel_table.tex
+
+cargo run --bin item_latex -- --category 'implements' --descriptions > ../core_book/generated/implements.tex
+cargo run --bin item_latex -- --category 'implements' --table > ../core_book/generated/implements_table.tex
+
+cargo run --bin item_latex -- --category 'magic armor' --descriptions > ../core_book/generated/magic_armor.tex
+cargo run --bin item_latex -- --category 'magic armor' --table > ../core_book/generated/magic_armor_table.tex
+
+cargo run --bin item_latex -- --category 'magic weapons' --descriptions > ../core_book/generated/magic_weapons.tex
+cargo run --bin item_latex -- --category 'magic weapons' --table > ../core_book/generated/magic_weapons_table.tex
+
+cargo run --bin item_latex -- --category 'consumable tools' --descriptions > ../core_book/generated/consumable_tools.tex
+cargo run --bin item_latex -- --category 'consumable tools' --table > ../core_book/generated/consumable_tools_table.tex
+
+cargo run --bin item_latex -- --category 'permanent tools' --descriptions > ../core_book/generated/permanent_tools.tex
+cargo run --bin item_latex -- --category 'permanent tools' --table > ../core_book/generated/permanent_tools_table.tex
 
 mkdir -p combat_results
 cd combat_results

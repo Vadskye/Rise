@@ -177,11 +177,11 @@
 \newcommand{\itempref}[1]{\hyperref[item:#1]{here}}
 \newcommand{\featpcref}[1]{\hyperref[feat:#1]{#1}}
 
-% small text for the feats table
-% also, fix the lcaption command which breaks html bookmark generation in bizarre ways
-\newenvironment{longtablewrapper}
+% If starred, skip the onecolumn/twocolumn.
+% Also, fix the lcaption command which breaks html bookmark generation in bizarre ways
+\DeclareDocumentEnvironment{longtablewrapper}{s}
 {
-    \onecolumn
+    \IfValueF{#1}{\onecolumn}
     \small
     \rowcolors{1}{white}{tbrown}
     \renewcommand*{\arraystretch}{1.2}
@@ -189,8 +189,10 @@
     \setlength\LTright{0pt}
     \renewcommand{\lcaption}[1]{\caption{##1}\label{cap:##1}}
 }
-{\twocolumn}
+{\IfValueF{#1}{\twocolumn}}
 
 \DeclareDocumentCommand{\sparklespaceless}{}{sparkleemojiplaceholder}
+\DeclareDocumentCommand{\poisonspaceless}{}{🧪}
+\DeclareDocumentCommand{\potionspaceless}{}{⚗️}
 
 \ExplSyntaxOff

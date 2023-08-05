@@ -30,7 +30,7 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Ingestion,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
                 Its stage 1 effect gives the target a -2 Intelligence penalty, to a minimum of -9.
             ",
@@ -52,9 +52,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Contact,
             Powder,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \\glossterm<briefly> stunned.
+                Its stage 1 effect makes the target \glossterm<briefly> stunned.
                 Its stage 3 effect makes the target stunned while the poison lasts.
             ",
         ),
@@ -68,9 +68,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Contact,
             Powder,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr0 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr0 poison damage per \glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             ",
         ),
@@ -84,9 +84,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Contact,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \\glossterm<briefly> stunned.
+                Its stage 1 effect makes the target \glossterm<briefly> stunned.
                 Its stage 3 effect makes the target stunned while the poison lasts.
             ",
         ),
@@ -101,9 +101,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Contact,
             Powder,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                Its stage 1 effect makes the target \\glossterm<briefly> stunned.
+                Its stage 1 effect makes the target \glossterm<briefly> stunned.
                 Its stage 3 effect makes the target stunned while the poison lasts.
             ",
         ),
@@ -117,9 +117,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Ingestion,
             Powder,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr2 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr2 poison damage per \glossterm<poison stage>.
                 Its stage 3 effect also ends the poison.
             ",
         ),
@@ -133,9 +133,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Ingestion,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr4 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr4 poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -148,10 +148,10 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Ingestion,
             Gas,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \\stunned while the poison lasts.
-                Its stage 3 effect makes the target \\confused while the poison lasts.
+                Its stage 1 effect makes the target \stunned while the poison lasts.
+                Its stage 3 effect makes the target \confused while the poison lasts.
             ",
         ),
         ..poison()
@@ -164,9 +164,9 @@ pub fn poisons() -> Vec<Tool> {
         description: poison_description(
             Contact,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr5 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr5 poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -190,10 +190,10 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                Its stage 1 effect makes the target \\stunned while the poison lasts.
-                Its stage 3 effect makes the target \\blinded while the poison lasts.
+                Its stage 1 effect makes the target \stunned while the poison lasts.
+                Its stage 3 effect makes the target \blinded while the poison lasts.
             ",
         ),
         ..poison()
@@ -206,10 +206,10 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+2.
-                Its stage 1 effect makes the target \\slowed while the poison lasts.
-                Its stage 3 effect makes the target \\immobilized while the poison lasts.
+                Its stage 1 effect makes the target \slowed while the poison lasts.
+                Its stage 3 effect makes the target \immobilized while the poison lasts.
             ",
         ),
         ..poison()
@@ -222,9 +222,9 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr4 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr4 poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -237,9 +237,9 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr5 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr5 poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -252,9 +252,9 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr6 poison damage per \\glossterm<poison stage>.
+                It inflicts $dr6 poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -267,9 +267,9 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+                Its stage 1 effect makes the target \vulnerable to all damage while the poison lasts.
             ",
         ),
         ..poison()
@@ -282,11 +282,11 @@ fn injury_poisons() -> Vec<Tool> {
         description: poison_description(
             Injury,
             Liquid,
-            "
+            r"
                 The poison's accuracy is $accuracy+1.
-                Its stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
+                Its stage 1 effect makes the target \slowed and \stunned while the poison lasts.
                 Its stage 3 effect makes the target petrified while the poison lasts.
-                This makes the target \\paralyzed, except that they remain standing in the form of a statue.
+                This makes the target \paralyzed, except that they remain standing in the form of a statue.
             ",
         ),
         ..poison()

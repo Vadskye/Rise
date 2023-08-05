@@ -597,19 +597,13 @@
     \parhead{Advancement}
 }
 
-\DeclareDocumentCommand{\itemsection}{o m o}
+\DeclareDocumentCommand{\itemname}{o m o}
 {
-    \subsubsection[#2]{
+    {
         \protect
         \hypertargetraised{item:#2}{
             \protect
-            \hyperlink{itemtable:#2}{
-                \IfValueTF{#3}{
-                    \sectiontwocol{#2\IfValueT{#1}{#1}}{\normalsize #3}
-                }{
-                    #2\IfValueT{#1}{#1}
-                }
-            }
+            \hyperlink{itemtable:#2}{#2}
         }
     }
     \label{item:#2}
@@ -622,6 +616,8 @@
 
 % \, is a small non-breaking space
 \DeclareDocumentCommand{\sparkle}{}{\,\sparklespaceless}
+\DeclareDocumentCommand{\poison}{}{\,\poisonspaceless}
+\DeclareDocumentCommand{\potion}{}{\,\potionspaceless}
 
 \DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
 

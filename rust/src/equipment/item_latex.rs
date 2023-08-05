@@ -125,7 +125,7 @@ pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> 
 
     latexify(format!(
         "
-            \\begin<{magical}{abilitytype}><{name}>{braced_price}
+            \\begin<{magical}{abilitytype}><\\itemname<{name}>>{braced_price}
                 \\spelltwocol<{crafting}><{tags}>
                 \\rankline
                 {description}
@@ -178,7 +178,7 @@ fn validate_short_description(item: &StandardItem) {
 
     // This takes up too much space, and is often deducible from the item's name
     let damage_type_pattern = Regex::new(r"\d \w+ damage").unwrap();
-    if damage_type_pattern.is_match(item.description.trim()) {
+    if damage_type_pattern.is_match(item.short_description.trim()) {
         warn("includes a damage type in its short description");
     }
 }
