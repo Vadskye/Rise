@@ -2105,7 +2105,7 @@ def generate_apparel():
             """,
             short_description="Grants a paralyzing touch",
         ),
-    e]
+    ]
 
     # Class ability buffs - all amulets!
 
