@@ -135,12 +135,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a +2 accuracy bonus.
-                        \item If you roll a 9 on an attack roll, it \glossterm{explodes} (see \pcref{Exploding Attacks}).
+                        \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities.
+                        \item If you roll a 9 on an attack roll with a mundane ability, it \glossterm{explodes} (see \pcref{Exploding Attacks}).
                             This does not affect bonus dice rolled for exploding attacks.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
-                        \item You are unable to use any \magical abilities that require a standard action.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
                     \end{itemize}
 
