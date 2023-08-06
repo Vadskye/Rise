@@ -75,6 +75,7 @@ fn bracers() -> Vec<Apparel> {
             Make an attack vs. Fortitude against everything within a \areasmall radius burst from you.
             Your minimum accuracy is $accuracy.
             \hit You \glossterm<knockback> each target up to 15 feet in a straight line directly away from you.
+            \crit The knockback distance is doubled.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can knock nearby creatures back", r"
