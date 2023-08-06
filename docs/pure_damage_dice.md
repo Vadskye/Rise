@@ -329,10 +329,6 @@ This is a little too strong. Dual wielding should have a -1 baseline accuracy pe
 
 This makes dual wielding better at low power and comparable at high power, which seems right. Dual wielding is also better for normal crit-fishing, but worse for desperate exertion crit-fishing. Dual wielding is also top tier for inflicting debuffs, which makes sense.
 
-## Strike Extra Damage
-
-Some maneuvers want to say things like "if your attack result beats X defense, you gain extra damage". How balanced is that?
-
 ## Class Strike Ability Scaling
 
 Ordinary strike maneuver example, accuracy-modified:
