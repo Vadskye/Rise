@@ -56,26 +56,27 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike targets everything supported by that surface in a \\smallarea cone from you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        It targets everything supported by that surface in a \\smallarea cone from you.
+        You take a -1 accuracy penalty with the strike.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
-      rank: 3,
+      rank: 1,
     },
 
     {
       name: 'Ground Slam+',
 
-      // A normal strike at r7 deals 8.2/12.5 damage, and a normal r5 scaling at r7 deals
-      // about 17/27 damage.
+      // Should be a med cone instead of a large cone, but the grounded limitation cancels
+      // that out?
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 power.
         It targets everything supported by that surface in a \\largearea cone from you.
+        You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
         On a miss, you get a \\glossterm{glancing blow}.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -157,7 +158,7 @@ export const bluntForce: CombatStyle = {
       name: 'Ricochet',
 
       effect: `
-        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\shortrange of you.
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to three creatures or objects in a \\smallarea radius within \\medrange of you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,

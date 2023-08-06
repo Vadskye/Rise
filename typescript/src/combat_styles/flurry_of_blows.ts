@@ -62,7 +62,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Whirlwind',
 
       effect: `
-        Make a melee \\glossterm{strike} with a -2 accuracy penalty.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you get a \\glossterm{glancing blow}.
       `,
@@ -107,9 +107,9 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Shrapnel Burst',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
-        The strike targets everything in a \\smallarea cone from you.
-        It costs five projectiles.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
+        The strike costs five projectiles.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 1,
     },
@@ -117,12 +117,14 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Shrapnel Burst+',
 
+      // large cone instead of med cone for projectile cost
       effect: `
-        Make a ranged \\glossterm{strike} with double \\glossterm{weapon damage} using a \\weapontag{Projectile} weapon.
-        The strike targets everything in a \\largearea cone from you.
-        It costs ten projectiles.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
+        You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
+        The strike costs ten projectiles.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -131,8 +133,22 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 3,
+    },
+
+    {
+      name: 'Volley Fire+',
+
+      // Technically t6 area instead of t7, but whatever
+      effect: `
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\medarea radius within \\distrange.
+        The strike deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
+        This strike costs ten projectiles.
+        On a miss, you get a \\glossterm{glancing blow}.
+      `,
+      rank: 7,
     },
 
     {
