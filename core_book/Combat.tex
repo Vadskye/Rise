@@ -133,7 +133,7 @@
             Some attacks deal damage that has multiple damage types.
             Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
 
-    \subsubsection{Special Damage Types}\label{Special Damage Types}
+    \subsection{Special Damage Types}\label{Special Damage Types}
 
         Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
         It is possible for damage to be both environmental damage and subdual damage.
@@ -150,6 +150,33 @@
             If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
             Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
             If you do, you deal half damage with the strike.
+
+        \subsection{Extra Damage}\label{Extra Damage}
+            Some abilities add \glossterm{extra damage} to your damaging attacks.
+            Extra damage applies when damaging attacks hit or get a \glossterm{glancing blow}.
+            Extra damage is halved on a glancing blow and doubled on a critical hit in the same way as the attack's base damage.
+
+            Extra damage is applied equally to all targets that are damaged simultaneously.
+            A \spell{fireball} spell would apply extra damage to all targets, not just one target in the area.
+            Similarly, a \spell{chain lightning} spell would apply the extra damage to the primary target and each secondary target.
+
+            Most sources of extra damage do not have a specific damage type.
+            The extra damage normally has the same damage type as the attack's base damage.
+            If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
+
+            Some damaging abilities affect extra damage differently.
+            For example, the \ability{enraged strike} ability doubles the \glossterm{weapon damage} of the attack, but does not double any extra damage applied to the attack.
+
+            \subsubsection{Multiple Extra Damage Instances}
+                Normally, extra damage only applies once to an individual ability.
+                It is added the first time the ability deals damage.
+                For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
+                Any extra damage would only be added to the immediate damage, and would not be added to the damage next round.
+                Maneuvers like \maneuver{double strike} which make multiple strikes, and any \glossterm{dual wielding} strike, would only apply extra damage once, regardless of how many attacks hit and deal damage.
+
+                \glossterm{Deep attunement} abilities are an exception to this rule.
+                A damaging deep attunement ability applies extra damage whenever it deals damage.
+                For example, the \spell{retributive spikes} spell applies extra damage individually to each reactive attack.
 
 \section{Taking Damage}\label{Taking Damage}
     Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
