@@ -89,6 +89,7 @@ Remove "dazed" and "shaken". New debuff tiers:
   * -3 ranks: debuff is removed if the target takes damage
   * -2 ranks: debuff can be removed with movement (fire Dex check)
   * -2 ranks: debuff only applies if you beat an additional defense
+  * -2 ranks: target is immune after first use whether you hit or miss
   * -2 ranks: target is immune after first successful application until short rest (brief / instant effects)
   * -2 ranks: effect is delayed by one round
   * -1 ranks: target is immune after first successful application until short rest (conditions)
