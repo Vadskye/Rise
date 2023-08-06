@@ -595,6 +595,19 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
     vec![
+        // Barbarian rage grants +2 accuracy. Assuming a base hit rate of 60%, that is about
+        // 33% more "real" post-accuracy damage. This should grant about 33% more damage to a
+        // single-target spell of the same rank, assuming a high power character. Barbarian
+        // gives more "true" damage at high Strength, but Possession is better with AOE and
+        // low Willpower.
+        // Rank: Expected damage, expected extra damage, dice-representable extra damage
+        // * 1: 5.6,   1.9, 2.5
+        // * 2: 8,     2.6, 3.5
+        // * 3: 11.2,  3.7, 4.5
+        // * 4: 16,    5.3, 5.5
+        // * 5: 22.4,  7.5, 7
+        // * 6: 32,   10.6, 10.5
+        // * 7: 44.8, 14.9, 14
         RankAbility {
             name: "Possession",
             is_magical: true,
@@ -605,7 +618,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain 1d4 \glossterm{extra damage} with all damaging \magical abilities.
+                        \item You gain 1d4 \glossterm{extra damage} with \magical abilities.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
                             If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
                             Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
@@ -620,8 +633,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rank{3} The extra damage increases to 1d8.
                     \rank{4} The extra damage increases to 1d10.
                     \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 2d8.
-                    \rank{7} The extra damage increases to 2d10.
+                    \rank{6} The extra damage increases to 3d6.
+                    \rank{7} The extra damage increases to 4d6.
                 \end{magicalsustainability}
             ",
             modifiers: Some(vec![
