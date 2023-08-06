@@ -720,3 +720,81 @@ Conclusion: at rank X, deal dr(X-1) damage, maximized if you beat an extra defen
 ### If Hit With Two Weapons
 
 60% hit rate, so 36% chance of hitting with both weapons. About the same as "must beat two defenses", given the limitations.
+
+
+# Area Strikes
+
+From spells, we know the expected baseline damage at each rank:
+
+* area tier 1, damage rank X
+  * R1: dr1, so 3.5/5.6
+  * R2: dr2, so 5/8
+  * R3: dr3, so 7/11
+  * R4: dr4, so 10/16
+  * R5: dr5, so 14/22
+  * R6: dr6, so 20/32
+  * R7: dr7, so 28/45
+* area tier tX/2, damage rank X-1
+  * R1: at1, dr1, so 3.5/5.6
+  * R2: at1, dr2, so 5/8
+  * R3: at1, dr3, so 7/11
+  * R4: at2, dr3, so 8/13
+  * R5: at2, dr4, so 11.5/17.5
+  * R6: at3, dr5, so 16/26
+  * R7: at3, dr6, so 22.5/36
+* area tier X, damage rank X-2
+  * R1: at1, dr1, so 3.5/5.6
+  * R2: at2, dr1, so 4/7
+  * R3: at3, dr1, so 5/8
+  * R4: at4, dr2, so 7/10
+  * R5: at5, dr3, so 10/15
+  * R6: at6, dr4, so 13/20
+  * R7: at7, dr5, so 18/30
+
+Strikes have different expectations, though. Converting a melee strike into a small cone is a damage upgrade, since it adds half damage on a miss. Converting a Med range spell to a small cone significantly reduces its range, so full damage is reasonable. The melee vs range damage differential with strikes is handled through different base weapon damage, rather than through maneuvers, so you can't just give a tier 1 area as a strike-based maneuver for melee attacks.
+Instead, give melee attacks a damage rank target that is one lower, as if they were using a larger area scaling than they actually are.
+
+This suggests expected modifiers for *ranged* strike-based attacks:
+* at1, full damage
+  * R1: +0a
+  * R3: +2a
+  * R5: double weapon damage
+  * R7: triple weapon damage
+* atX/2, drX-1 
+  * R5 - 6/9 vs 12/18
+    * at2, +4a
+    * at2, -1a, double weapon damage
+    * at2, -1a, d6 per 4p extra damage (12/20 damage)
+  * R7 - 8/13 vs 23/36
+    * at3, +2a, double weapon damage
+    * at3, -1a, triple weapon damage
+    * at3, d6 per 3p extra damage (19/33 damage)
+* atX, drX-2
+  * R3: at3, +0a
+  * R5
+    * at5, +3a
+    * at5, -2a, double weapon damage?
+  * R7 - 8/13 vs 18/30
+    * at7, +1a, double weapon damage
+    * at7, d6 per 4p extra damage (/28 damage)
+    * at5, d6 per 3p extra damage (/33 damage)
+
+And for *melee* strike-based attacks:
+* at1, drX-1
+  * R1: -1a
+  * R3: +2a
+  * R5:
+    * +4a
+    * -1a, double weapon damage
+    * -1a, d6 per 4p extra damage
+  * R7:
+    * +2a, double weapon damage
+    * -1a, triple weapon damage
+    * d6 per 3p extra damage
+* atX/2, drX-2
+  * R5:
+    * at2, +3a
+    * at2, -2a, double weapon damage?
+  * R7
+    * at3, +1a, double weapon damage
+    * at3, d6 per 4p extra damage
