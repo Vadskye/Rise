@@ -463,7 +463,7 @@ fn rings() -> Vec<Apparel> {
             After you activate this item, you increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Can remove a condition", r"
+            ItemUpgrade::new(5, "Can remove a condition", r"
                 Activating this item does not increase your fatigue level.
             "),
         ],
