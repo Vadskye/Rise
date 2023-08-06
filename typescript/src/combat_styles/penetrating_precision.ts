@@ -50,7 +50,8 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Penetrating Shot',
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you using a piercing weapon.
+        Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\medarealong, 5 ft. wide line from you.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
       rank: 1,
     },
@@ -59,10 +60,11 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Penetrating Shot+',
 
       effect: `
-        Make a ranged \\glossterm{strike} with double \\glossterm{weapon damage} using a piercing weapon.
-        The strike targets everything in a \\hugearealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\largearealong, 5 ft. wide line from you.
+        You take a -1 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
+        On a miss, you get a \\glossterm{glancing blow}.
       `,
-      rank: 7,
+      rank: 5,
     },
 
     {
@@ -138,10 +140,10 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike+',
 
       effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage} using a piercing weapon.
-        If the target takes damage and your attack result beats its Reflex defense, it is \\slowed as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a piercing weapon.
+        If the target takes damage, it is \\slowed as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
