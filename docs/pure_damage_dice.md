@@ -189,6 +189,31 @@ Each subsequent damage rank gives about 40% more damage scaling from power.
 * R6: 20/32 base,   12/19.2 modified
 * R7: 28/44.8 base, 16.8/26.9 modified
 
+## Weapon Damage Scaling
+
+Base melee weapon damage at each rank:
+
+* R1: 1d6/1d10 (3.5/5.5)
+* R2: 1d8/2d6 (4.5/7)
+* R3: 1d8/1d8+1d6 (5.5/8)
+* R4: 1d10/1d10+1d6 (5.5/9)
+* R5: 2d6/3d6 (7/10.5)
+* R6: 1d8+1d6/1d8+2d6 (8/11.5)
+* R7: 1d8+1d6/1d10+2d6 (9/12.5)
+
+Weapon damage is just a R1 single-target damage spell: 3.2 + 0.53dpp.
+
+actual damage at each rank (missing damage) (percent of correct damage):
+* R1: 3.5/5.6 (0/0) (100%/100%)
+* R2: 4.3/6.9 (0.7/1.1) (86%/86%)
+* R3: 5.0/7.7 (2/3.5) (71%/69%)
+* R4: 5.9/9.0 (4.1/7) (59%/56%)
+* R5: 6.6/9.8 (7.4/12.6) (47%/44%)
+* R6: 7.4/11.2 (12.6/20.8) (37%/35%)
+* R7: 8.2/12.5 (19.8/32.3) (29%/28%)
+
+Observation: In general, you can offset the damage difference with +1 accuracy per rank above rank 1, at least at first.
+
 ## Lower Rank Spell Scaling
 
 Expected damage at rank 3 (3.5/8.3 power)
@@ -235,31 +260,6 @@ At rank 7, base damage is 28/44.8, power is 9.5/17.5:
 * Using dr8: 22  + 1.833dpp = 39.0/55.8 (139%/126%)
 * Using dr9: 22  + 2.750dpp = 48.1/70.1 (172%/157%)
 
-## Weapon Damage Scaling
-
-Base melee weapon damage at each rank:
-
-* R1: 1d6/1d10 (3.5/5.5)
-* R2: 1d8/2d6 (4.5/7)
-* R3: 1d8/1d8+1d6 (5.5/8)
-* R4: 1d10/1d10+1d6 (5.5/9)
-* R5: 2d6/3d6 (7/10.5)
-* R6: 1d8+1d6/1d8+2d6 (8/11.5)
-* R7: 1d8+1d6/1d10+2d6 (9/12.5)
-
-Weapon damage is just a R1 single-target damage spell: 3.2 + 0.53dpp.
-
-actual damage at each rank (missing damage) (percent of correct damage):
-* R1: 3.5/5.6 (0/0) (100%/100%)
-* R2: 4.3/6.9 (0.7/1.1) (86%/86%)
-* R3: 5.0/7.7 (2/3.5) (71%/69%)
-* R4: 5.9/9.0 (4.1/7) (59%/56%)
-* R5: 6.6/9.8 (7.4/12.6) (47%/44%)
-* R6: 7.4/11.2 (12.6/20.8) (37%/35%)
-* R7: 8.2/12.5 (19.8/32.3) (29%/28%)
-
-Observation: In general, you can offset the damage difference with +1 accuracy per rank above rank 1, at least at first.
-
 ## Standard Maneuvers
 
 For debuffs, see "Rebalanced Debuffs"
@@ -275,7 +275,6 @@ For debuffs, see "Rebalanced Debuffs"
     * dr3 vs all adjacent
     * Strike in small cone
     * Thrown strike vs 3 in Small radius in Short range
-    * Strike, deal same damage next round if beat extra defense (143%/138%)
     * Strike, 1d6 extra damage per 4 power (minimum 1d6) if beat extra defense
       * At R4, 1d6/2d6 extra damage and +1 accuracy from scaling: (6.6/11.2) vs (6/9.6) post-accuracy
       * At R7, 2d6/4d6 extra damage and +4 accuracy from scaling: (15.2/26.5) vs (16.8/26.9) post-accuracy
@@ -328,6 +327,28 @@ Accuracy-adjusted damage per round is simple - just the normal 3.2 + 0.53dpp. He
 This is a little too strong. Dual wielding should have a -1 baseline accuracy penalty, removed eventually - dex 4?
 
 This makes dual wielding better at low power and comparable at high power, which seems right. Dual wielding is also better for normal crit-fishing, but worse for desperate exertion crit-fishing. Dual wielding is also top tier for inflicting debuffs, which makes sense.
+
+## Extra Defense Damage
+
+Some maneuvers grant bonus damage if you beat an extra defense.
+
+* R3
+  * 1d6 per 4 power - (3/7.4) extra, (8/15.1) total, (114%/135%)
+  * maximized, assuming 75% more - (3.75/5.8) extra, (8.8/13.5) total, (126%/120%)
+  * -1a and double weapon damage - (3.3/5.1) extra, (8.3/12.8) total, (119%/114%)
+    * Lower average than the other two, but higher damage potential
+* R4
+  * 1d6 per 3 power - (/12.8) extra, (/21.8) total, (/136%)
+* R5
+  * 1d8 per 3 power - (9.8/18.8) extra, (16.4/28.6) total, (117/128%)
+  * -1a and triple weapon damage - (9.8/14.7) extra
+* R6
+  * 1d10 per 3 power - (/27.5) extra, (/38.7) total, (/121%)
+  * Maximized double weapon damage - (/28) extra, (/39.2) total, (/123%)
+* R7
+  * 1d10 per 2 power - (26.1/48) extra, (34.3/60.6) total, (123%/135%)
+  * -1a and maximized triple weapon damage - (/42) extra, (/54.5) total, (/122%)
+
 
 ## Class Strike Ability Scaling
 
@@ -679,11 +700,22 @@ R3 spell with +1 accuracy per rank
 
 ## Magic item bonuses
 
-At rank 3, a +1d weapon provides (120%/113%) damage.
-At rank 6, a +2d weapon provides (127%/118%) damage.
+At rank 3, a magic item with a significant restriction (high non-offensive attribute) should provide a 25% damage bonus to a single-target attack used by a high power character.
+At rank 4, a magic item with no restriction should provide a 25% damage bonus to a single-target attack used by a low power character.
+Treat +1d as +1.17 damage, since we can't predict the 1d10->2d6 upgrade consistently.
 
+At rank 1, a +1d weapon provides (133%/121%) damage.
+At rank 2, a +1d weapon provides (127%/117%) damage.
+At rank 3, a +1d weapon provides (123%/115%) damage.
+At rank 4, a +2d weapon provides (139%/125%) damage.
+At rank 7, a +2d weapon provides (128%/118%) damage.
+At rank 7, a +3d weapon provides (142%/128%) damage.
+
+At rank 3, a +1d4 staff provides (136%/122%) damage.
 At rank 4, a +1d4 staff provides (125%/116%) damage.
-At rank 6, a +1d8 staff provides (123%/114%) damage.
+At rank 5, a +1d10 staff provides (139%/125%) damage.
+At rank 6, a +1d10 staff provides (128%/117%) damage.
+At rank 7, a +2d10 staff provides (139%/124%) damage.
 
 ## Keen
 The simple baseline for a weapon improvement is about 17% more damage (0.6 accuracy -> 0.7 accuracy).
@@ -779,7 +811,7 @@ This suggests expected modifiers for *ranged* strike-based attacks:
     * at7, d6 per 4p extra damage (/28 damage)
     * at5, d6 per 3p extra damage (/33 damage)
 
-And for *melee* strike-based attacks:
+And for melee/unrestricted strike-based attacks:
 * at1, drX-1
   * R1: -1a
   * R3: +2a
