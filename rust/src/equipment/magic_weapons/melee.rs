@@ -1,5 +1,6 @@
-use crate::equipment::{MagicWeapon, ItemUpgrade, StandardItem};
 use crate::equipment::MagicWeapon::Melee;
+use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
+use crate::core_mechanics::abilities::AbilityTag;
 
 pub fn melee() -> Vec<MagicWeapon> {
     let mut weapons = vec![];
@@ -12,17 +13,71 @@ pub fn melee() -> Vec<MagicWeapon> {
         ),
         description: String::from(
             r"
-                You gain a +1 accuracy bonus against creatures adjacent to you.
-                However, you also take a -1 penalty to all defenses against creatures adjacent to you.
-            ",
+            You gain a +1 accuracy bonus against creatures adjacent to you.
+            However, you also take a -1 penalty to all defenses against creatures adjacent to you.
+        ",
         ),
         upgrades: vec![ItemUpgrade::new(
             6,
             "Grants +2 accuracy and -2 defenses against adjacent creatures",
-            "
-                The bonus and penalty both increase to +2.
-            ",
+            "The bonus and penalty both increase to +2.",
         )],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Melee(StandardItem {
+        name: String::from("Blade Barrage"),
+        rank: 2,
+        short_description: String::from(r"Can deal damage in a cone"),
+        description: String::from(r"
+            You can activate this weapon as a standard action.
+            When you do, you make a melee \glossterm<strike> using this weapon that spawns a swarm of blades.
+            The strike targets all creatures in a \smallarea cone from you.
+            For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+            On a miss, you get a \glossterm<glancing blow>.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Can deal escalating damage in a cone", r"
+                If you used this ability during the previous round, the strike deals double \glossterm<weapon damage>.
+            "),
+            ItemUpgrade::new(6, "Can deal escalating damage in a cone", r"
+                The strike always deals double \glossterm<weapon damage>.
+            "),
+        ],
+        tags: vec![AbilityTag::Manifestation],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Melee(StandardItem {
+        name: String::from("Iridescent"),
+        rank: 1,
+        short_description: String::from(r"Can dazzle"),
+        description: String::from(r"
+            This weapon shimmers with a chaotic pattern of colors, shedding multicolored \glossterm{bright illumination} in a \smallarea radius.
+            As a standard action, you can make a flashy melee \glossterm{strike} using this weapon that accentuates its bewildering effect.
+            If your attack result beats the target's Reflex defense, it is \dazzled as a \glossterm{condition}.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(3, "Can dazzle in an area", r"
+                When you make the strike, you also make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius of the strike's target.
+                Your minimum accuracy is $accuracy.
+                \hit Each target is \dazzled as a \glossterm{condition}.
+            "),
+        ],
+        tags: vec![AbilityTag::Visual],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Melee(StandardItem {
+        name: String::from("Vorpal"),
+        rank: 7,
+        short_description: String::from(r"Can decapitate foes"),
+        description: String::from(r"
+            As a standard action, you can make a melee \glossterm<strike> using this weapon that can decapitate enemies.
+            The strike deals triple \glossterm<weapon damage>.
+            If you get a critical hit against a creature and it loses hit points, it immediately dies.
+            Creatures that do not have a head are immune to this death effect.
+        "),
         ..MagicWeapon::default()
     }));
 

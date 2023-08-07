@@ -112,16 +112,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Bloodfrenzy Staff"),
         rank: 1,
-        short_description: String::from(r"Grants +1 accuracy when you deal hit point damage"),
+        short_description: String::from(r"Grants +1 accuracy against injured foes"),
         description: String::from(r"
             Whenever you cause a creature to lose \glossterm{hit points} with a \magical ability, you \glossterm{briefly} gain a +1 accuracy bonus against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +2 accuracy when you deal hit point damage", r"
+            ItemUpgrade::new(3, "Grants +2 accuracy against injured foes", r"
                 The accuracy bonus increases to +2.
             "),
-            ItemUpgrade::new(7, "Grants +3 accuracy when you deal hit point damage", r"
+            ItemUpgrade::new(5, "Grants +3 accuracy against injured foes", r"
                 The accuracy bonus increases to +3.
             "),
         ],
@@ -354,16 +354,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Baneswallow Staff"),
         rank: 2,
-        short_description: String::from(r"Can exert and remove a condition to gain accuracy"),
+        short_description: String::from(r"Can exert and remove a condition to gain +2 accuracy"),
         description: String::from(r"
             You can activate this staff as a standard action.
             When you do, you remove one \glossterm<condition> affecting you.
-            If you remove a condition in this way, you \glossterm<briefly> gain a +2 accuracy bonus.
+            If you remove a condition in this way, you \glossterm<briefly> gain a +2 accuracy bonus with \magical abilities.
 
             After you activate this item, you increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can remove a condition to gain accuracy", r"
+            ItemUpgrade::new(5, "Can remove a condition to gain +2 accuracy", r"
                 Activating this item does not increase your fatigue level.
             "),
         ],
