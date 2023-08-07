@@ -66,7 +66,7 @@ pub fn table_header(caption: &str, with_category: bool) -> String {
         ",
         category_separator = if with_category { "&" } else { "" },
         // TODO: are there other reasonable category column names?
-        category_column_name = r"\tb{Type}",
+        category_column_name = if with_category { r"\tb{Type}" } else {""},
     )
 }
 
