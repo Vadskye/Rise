@@ -1,4 +1,4 @@
-use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
+use crate::equipment::{Tool, ToolCategory};
 
 // How many details should creatures provide for their statistics? Currently just HP and DR.
 // TODO: define pony statistics
