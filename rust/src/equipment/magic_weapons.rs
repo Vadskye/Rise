@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{item_latex, latex_table, ItemUpgrade, StandardItem};
+use crate::equipment::{item_latex, latex_table, StandardItem};
 mod melee;
 mod ranged;
 mod unrestricted;
