@@ -38,7 +38,7 @@ fn main() {
     println!("{}", latex);
 }
 
-fn latexify_items(category: String, descriptions: bool) -> Vec<String> {
+fn latexify_items(category: String, _descriptions: bool) -> Vec<String> {
     match category.to_lowercase().as_str() {
         "apparel" => equipment::all_apparel().into_iter().map(|x| x.to_latex()).collect(),
         "implements" => equipment::all_implements().into_iter().map(|x| x.to_latex()).collect(),
