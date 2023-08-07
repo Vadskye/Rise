@@ -148,8 +148,8 @@ export const ripAndTear: CombatStyle = {
       name: 'Ricochet+',
 
       effect: `
-        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to four creatures or objects within \\medrange of you.
-        You can choose the same target multiple times, but not twice in a row.
+        Make a thrown \\glossterm{strike} using a slashing or bludgeoning weapon against up to five creatures or objects within \\medrange of you.
+        You can choose the same target multiple times, but not twice in a row, and no more than twice total.
         If you choose the same target twice, it takes double damage from the attack.
 
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
