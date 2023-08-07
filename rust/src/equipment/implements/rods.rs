@@ -59,7 +59,7 @@ pub fn rods() -> Vec<Implement> {
     implements.push(Rod(StandardItem {
         name: String::from("Radiant Rod"),
         rank: 2,
-        short_description: String::from("Can deal $dr2 energy damage"),
+        short_description: String::from("Can deal $dr2 damage"),
         description: String::from(r"
             This rod sheds \glossterm{bright illumination} in a \smallarea radius.
             You can activate it as a standard action.
@@ -71,10 +71,10 @@ pub fn rods() -> Vec<Implement> {
             If this attack beats the target's Fortitude defense, it deals maximum damage.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Can deal $dr4 energy damage", r"
+            ItemUpgrade::new(4, "Can deal $dr4 damage", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr4.
             "),
-            ItemUpgrade::new(6, "Can deal $dr6 energy damage", r"
+            ItemUpgrade::new(6, "Can deal $dr6 damage", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr6.
             "),
         ],
