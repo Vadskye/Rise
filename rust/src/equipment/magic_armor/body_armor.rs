@@ -25,7 +25,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants +6 damage resistance"),
         description: String::from(r"
-            You gain a +6 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+            You gain a +6 \glossterm<magic bonus> to your \glossterm<damage resistance>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants +12 damage resistance", "
@@ -43,7 +43,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 1,
         short_description: String::from("Reduces encumbrance by 1"),
         description: String::from(r"
-            This armor's \\glossterm<encumbrance> is reduced by 1.
+            This armor's \glossterm<encumbrance> is reduced by 1.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Reduces encumbrance by 2", "
@@ -61,7 +61,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Reduces critical hits from strikes"),
         description: String::from(r"
-            You gain a +4 \glossterm{magic bonus} to your defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
+            You gain a +4 \glossterm{magic bonus} to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Reduces critical hits from strikes", "
@@ -96,7 +96,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants +12 damage resistance, but slower and heavier"),
         description: String::from(r"
-            You gain a +12 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+            You gain a +12 \glossterm<magic bonus> to your \glossterm<damage resistance>.
             However, you take a -10 foot penalty to your speed with all movement modes.
             In addition, this armor's \glossterm{encumbrance} is increased by 2.
         "),
@@ -116,7 +116,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 4,
         short_description: String::from("Grants +1 AD if you have 3 Dex"),
         description: String::from(r"
-            If your Dexterity is at least 3, you gain a +1 \\glossterm<magic bonus> to your Armor defense.
+            If your Dexterity is at least 3, you gain a +1 \glossterm<magic bonus> to your Armor defense.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants +2 AD if you have 5 Dex", "
@@ -131,8 +131,8 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +16 damage resistance, but -8 hit points"),
         description: String::from(r"
-            You gain a +16 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
-            However, you take a -8 penalty to your \\glossterm<hit points>.
+            You gain a +16 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            However, you take a -8 penalty to your \glossterm<hit points>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +32 damage resistance, but -16 hit points", "
@@ -150,7 +150,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +12 damage resistance, but -2 power"),
         description: String::from(r"
-            You gain a +12 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
+            You gain a +12 \glossterm<magic bonus> to your \glossterm<damage resistance>.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
         "),
         upgrades: vec![
@@ -169,7 +169,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 5,
         short_description: String::from("Removes armor speed penalty"),
         description: String::from(r"
-            This armor does not penalize your movement speed for being heavy (see \\pcref<Armor Usage Classes>).
+            This armor does not penalize your movement speed for being heavy (see \pcref<Armor Usage Classes>).
             If the armor is not heavy armor, this has no effect.
         "),
         ..MagicArmor::default()
@@ -180,8 +180,8 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Reduces physical damage from two attacks by 10"),
         description: String::from(r"
-            Whenever you would take \\glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 10.
-            After damage is reduced twice in this way, this has no effect until you finish a \\glossterm<short rest>.
+            Whenever you would take \glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 10.
+            After damage is reduced twice in this way, this has no effect until you finish a \glossterm<short rest>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Reduces physical damage from two attacks by 20", "
@@ -200,8 +200,8 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 5,
         short_description: String::from("Immune to conditions, but hit points are halved"),
         description: String::from(r"
-            Your maximum \\glossterm<hit points> are halved.
-            However, you are immune to \\glossterm<conditions>.
+            Your maximum \glossterm<hit points> are halved.
+            However, you are immune to \glossterm<conditions>.
         "),
         ..MagicArmor::default()
     }));
