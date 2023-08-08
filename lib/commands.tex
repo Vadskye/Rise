@@ -44,11 +44,17 @@
 \newcommand{\rnglong}{Long \reminder{90 ft.}\xspace}
 \newcommand{\rngdist}{Distant \reminder{120 ft.}\xspace}
 
-\newcommand{\shortrange}{Short \reminder{30 ft.} range\xspace}
-\newcommand{\medrange}{Medium \reminder{60 ft.} range\xspace}
-\newcommand{\longrange}{Long \reminder{90 ft.} range\xspace}
-\newcommand{\distrange}{Distant \reminder{120 ft.} range\xspace}
-\newcommand{\extrange}{Extreme \reminder{180 ft.} range\xspace}
+\newcommand{\shortrange}{\shortrangeless range\xspace}
+\newcommand{\medrange}{\medrangeless range\xspace}
+\newcommand{\longrange}{\longrangeless range\xspace}
+\newcommand{\distrange}{\distrangeless range\xspace}
+\newcommand{\extrange}{\extrangeless range\xspace}
+
+\newcommand{\shortrangeless}{Short \reminder{30 ft.}\xspace}
+\newcommand{\medrangeless}{Medium \reminder{60 ft.}\xspace}
+\newcommand{\longrangeless}{Long \reminder{90 ft.}\xspace}
+\newcommand{\distrangeless}{Distant \reminder{120 ft.}\xspace}
+\newcommand{\extrangeless}{Extreme \reminder{180 ft.}\xspace}
 
 \newcommand{\areatiny}{Tiny \reminder{5 ft.}\xspace}
 \newcommand{\areasmall}{Small \reminder{15 ft.}\xspace}
@@ -626,6 +632,7 @@
     }{
         #3
     }
+    \label{item:#2}
 }
 
 \DeclareDocumentCommand{\upgraderank}{m m}
