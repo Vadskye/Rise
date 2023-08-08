@@ -1,7 +1,14 @@
-use crate::equipment::{Tool, ItemUpgrade};
+use crate::equipment::{Tool, ToolCategory, ItemUpgrade};
 
 pub fn kits() -> Vec<Tool> {
     let mut kits = vec![];
+
+    fn kit(crafting: &str) -> Tool {
+        return Tool {
+            category: ToolCategory::Kit(String::from(crafting)),
+            ..Default::default()
+        };
+    }
 
     kits.push(Tool {
         name: String::from("Artisan's Tools"),
@@ -16,7 +23,7 @@ pub fn kits() -> Vec<Tool> {
                 The tools are incredibly versatile, making them suitable for any Craft skill other than Craft (alchemy).
             "),
         ],
-        ..Tool::permanent("metal")
+        ..kit("metal")
     });
 
     kits.push(Tool {
@@ -27,7 +34,7 @@ pub fn kits() -> Vec<Tool> {
             This is a Medium workstation that contains a wide variety of compounds and reagents.
             It is very difficult to create items using the Craft (alchemy) skill without this item (see \pcref<Craft>).
         "),
-        ..Tool::permanent("alchemy")
+        ..kit("alchemy")
     });
 
     kits.push(Tool {
@@ -38,7 +45,7 @@ pub fn kits() -> Vec<Tool> {
             This is a Small kit that contains a wide variety of fabrics, makeup, and other useful tools for disguising your appearance.
             It is very difficult to create disguises using the Disguise skill without this item (see \pcref<Disguise>).
         "),
-        ..Tool::permanent("alchemy, textiles")
+        ..kit("alchemy, textiles")
     });
 
     kits.push(Tool {
@@ -49,7 +56,7 @@ pub fn kits() -> Vec<Tool> {
             This is a Small kit that contains a wide variety of bandages, salves, and other useful tools for treating wounds.
             It is very difficult to treat wounds using the Medicine skill without this item (see \pcref<Medicine>).
         "),
-        ..Tool::permanent("textiles")
+        ..kit("textiles")
     });
 
     kits.push(Tool {
@@ -60,7 +67,7 @@ pub fn kits() -> Vec<Tool> {
             This is a Small kit that contains a wide variety of lockpicks and device-manipulation tools.
             It is very difficult to manipulate devices using the Devices skill without this item (see \pcref<Devices>).
         "),
-        ..Tool::permanent("metal, textiles")
+        ..kit("metal, textiles")
     });
 
     kits

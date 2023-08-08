@@ -5,9 +5,9 @@ use crate::equipment::{Tool, ToolCategory};
 pub fn mounts() -> Vec<Tool> {
     let mut mounts = vec![];
 
-    fn creature() -> Tool {
+    fn mount() -> Tool {
         return Tool {
-            category: ToolCategory::Creature,
+            category: ToolCategory::Mount,
             ..Default::default()
         };
     }
@@ -20,7 +20,7 @@ pub fn mounts() -> Vec<Tool> {
             This is a Medium dog that knows the Guard and Heel tricks (see \pcref<Creature Handling>).
             It is trained to be effective in battle, and is a suitable mount for creatures with the \textit<short stature> ability, such as gnomes and halflings.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts.push(Tool {
@@ -32,7 +32,7 @@ pub fn mounts() -> Vec<Tool> {
             It is not trained to be effectively ridden in battle.
             It has 9 hit points and 6 damage resistance.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts.push(Tool {
@@ -44,7 +44,7 @@ pub fn mounts() -> Vec<Tool> {
             It is not trained to be effectively ridden in battle.
             It has 16 hit points and 2 damage resistance.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts.push(Tool {
@@ -56,7 +56,7 @@ pub fn mounts() -> Vec<Tool> {
             It is trained to be effectively ridden in battle.
             It has 12 hit points and 8 damage resistance.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts.push(Tool {
@@ -68,7 +68,7 @@ pub fn mounts() -> Vec<Tool> {
             It is not trained to be effectively ridden in battle.
             However, it is an appropriate mount outside of battle for creatures with the \textit<short stature> ability, such as gnomes and halflings.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts.push(Tool {
@@ -79,7 +79,7 @@ pub fn mounts() -> Vec<Tool> {
             This is a Medium horse.
             It is trained to be effectively ridden in battle, and it is an appropriate mount for creatures with the \textit<short stature> ability, such as gnomes and halflings.
         "),
-        ..creature()
+        ..mount()
     });
 
     mounts

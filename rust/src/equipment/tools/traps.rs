@@ -1,11 +1,18 @@
 use crate::creatures::calculate_minimum_level;
-use crate::equipment::{ItemUpgrade, Tool};
+use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 
 pub fn traps() -> Vec<Tool> {
     let mut traps = vec![];
 
     fn awareness_dv(rank: i32) -> i32 {
         9 + calculate_minimum_level(rank)
+    }
+
+    fn trap(crafting: &str) -> Tool {
+        return Tool {
+            category: ToolCategory::Trap(String::from(crafting)),
+            ..Default::default()
+        };
     }
 
     fn ground_deployment(rank: i32) -> String {
@@ -30,11 +37,11 @@ pub fn traps() -> Vec<Tool> {
             Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
         ", ground_deployment(1)),
         upgrades: vec![
-            ItemUpgrade::new(3, "", &format!("
+            ItemUpgrade::new(3, "Temporarily immobilizes", &format!("
                 The accuracy increases to $accuracy, and the Awareness DV increases to {}.
             ", awareness_dv(3))),
         ],
-        ..Tool::permanent("metal")
+        ..trap("metal")
     });
 
     traps.push(Tool {
@@ -51,11 +58,11 @@ pub fn traps() -> Vec<Tool> {
             Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
         ", ground_deployment(2)),
         upgrades: vec![
-            ItemUpgrade::new(4, "", &format!("
-                The accuracy increases to $accuracy, and the Awareness DV increases to {}.
+            ItemUpgrade::new(4, "Deals $dr6 damage and immobilizes", &format!("
+                The accuracy increases to $accuracy, the Awareness DV increases to {}, and the damage increases to $dr6.
             ", awareness_dv(4))),
         ],
-        ..Tool::permanent("metal")
+        ..trap("metal")
     });
 
     traps.push(Tool {
@@ -70,14 +77,15 @@ pub fn traps() -> Vec<Tool> {
             \\hit $dr3 fire damage.
         ", ground_deployment(2), awareness_dv(2)),
         upgrades: vec![
-            ItemUpgrade::new(4, "", &format!("
+            // Increase to +2dr instead of +1dr because the area size does not scale
+            ItemUpgrade::new(4, "Deals $dr6 damage in a small area", &format!("
                 The accuracy increases to $accuracy, the damage increases to $dr6, and the Awareness and Devices DVs each increase to {}.
             ", awareness_dv(4))),
-            ItemUpgrade::new(6, "", &format!("
+            ItemUpgrade::new(6, "Deals $dr8 damage in a small area", &format!("
                 The accuracy increases to $accuracy, the damage increases to $dr8, and the Awareness and Devices DVs each increase to {}.
             ", awareness_dv(6))),
         ],
-        ..Tool::permanent("alchemy, metal")
+        ..trap("alchemy, metal")
     });
 
 
@@ -96,7 +104,7 @@ pub fn traps() -> Vec<Tool> {
             Caltrops may not be effective against creatures with an unusual anatomy.
             Multiple applications of caltrops in the same area have no additional effect.
         "),
-        ..Tool::permanent("alchemy, metal")
+        ..trap("alchemy, metal")
     });
 
     traps
