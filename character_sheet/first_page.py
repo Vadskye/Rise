@@ -90,14 +90,6 @@ def paper_ability():
 
 def roll20_abilities():
     return [
-        div({"class": "section-header"}, "Damaging Attacks"),
-        flex_row(
-            {"class": "active-ability-group"},
-            fieldset(
-                {"class": f"repeating_otherdamagingattacks"},
-                other_damaging_attack(),
-            ),
-        ),
         div({"class": "section-header"}, "Weapon-Based Strikes"),
         flex_row(
             {"class": "active-ability-group"},
@@ -106,7 +98,15 @@ def roll20_abilities():
                 strike_based_attack(),
             ),
         ),
-        div({"class": "section-header"}, "Non-Damaging Attacks"),
+        div({"class": "section-header"}, "Other Damaging Attacks"),
+        flex_row(
+            {"class": "active-ability-group"},
+            fieldset(
+                {"class": f"repeating_otherdamagingattacks"},
+                other_damaging_attack(),
+            ),
+        ),
+        div({"class": "section-header"}, "Debuffs"),
         flex_row(
             {"class": "active-ability-group"},
             fieldset(
