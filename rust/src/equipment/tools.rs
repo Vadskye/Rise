@@ -51,10 +51,12 @@ impl Tool {
 #[derive(Clone, Debug, Default)]
 pub enum ToolCategory {
     Alchemical,
-    Creature,
+    Kit(String),
+    Mount,
     Permanent(String),
     Poison,
     Potion,
+    Trap(String),
     // This is a dumb hack to make ToolCategory mandatory
     #[default]
     Unknown,
@@ -64,11 +66,13 @@ impl ToolCategory {
     fn crafting_latex(&self) -> String {
         match self {
             Self::Alchemical => String::from("Craft (alchemy)"),
-            Self::Creature => String::from(""),
+            Self::Kit(c) => format!("Kit -- Craft ({})", c),
+            Self::Mount => String::from("Mount"),
             Self::Permanent(c) => format!("Craft ({})", c),
             // Add an extra space after \poison and \potion
             Self::Poison => String::from(r"Poison\poison {} -- Craft (poison)"),
             Self::Potion => String::from(r"Potion\potion {} -- Craft (alchemy)"),
+            Self::Trap(c) => format!("Trap -- Craft ({})", c),
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
@@ -76,11 +80,13 @@ impl ToolCategory {
     pub fn name(&self) -> Option<String> {
         match self {
             Self::Alchemical => None,
-            Self::Creature => None,
+            Self::Kit(_) => Some(String::from(r"Kit")),
+            Self::Mount => Some(String::from(r"Mount")),
             Self::Permanent(_) => None,
             // TODO: "Poison" and "Potion" look annoyingly similar. Should differentiate them.
             Self::Poison => Some(String::from(r"Poison\poison")),
             Self::Potion => Some(String::from(r"Potion\potion")),
+            Self::Trap(_) => Some(String::from(r"Trap")),
             Self::Unknown => panic!("Unknown tool category"),
         }
     }
@@ -88,10 +94,12 @@ impl ToolCategory {
     pub fn is_consumable(&self) -> bool {
         match self {
             Self::Alchemical => true,
-            Self::Creature => false,
+            Self::Kit(_) => false,
+            Self::Mount => false,
             Self::Permanent(_) => false,
             Self::Poison => true,
             Self::Potion => true,
+            Self::Trap(_) => false,
             Self::Unknown => panic!("Unknown tool category"),
         }
     }

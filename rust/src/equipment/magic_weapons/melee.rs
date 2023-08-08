@@ -81,5 +81,26 @@ pub fn melee() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    weapons.push(Melee(StandardItem {
+        name: String::from("Ambushing"),
+        rank: 3,
+        short_description: String::from(r"Can silently teleport and strike"),
+        description: String::from(r"
+            You can activate this weapon as a standard action.
+            When you do, you \glossterm{teleport} horizontally to a location within \shortrange.
+            Then, you can make a melee \glossterm{strike} at your destination.
+            Unlike most teleportation effects, both your departure and arrival with this effect are silent.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Can silently teleport and strike", r"
+                The strike deals double \glossterm{weapon damage} against creatures that are at least \partiallyunaware.
+            "),
+            ItemUpgrade::new(7, "Can silently teleport and strike", r"
+                The damage multiplier increases to triple weapon damage.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
     weapons
 }
