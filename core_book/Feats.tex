@@ -40,7 +40,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \subsubsection{Uncommon Species}
             If you are using uncommon species, the feat lists for each uncommon species are given below.
-            Note that uncommon species are normally ineligible for any Bloodline feats.
+            Note that uncommon species are normally ineligible for any Ancestry feats.
 
             \parhead{Animal Hybrid} Any feat strongly associated with the chosen animal. For example, a hybrid shark might choose from Awareness Specialization, Survival Specialization, Swiftrunner, or Swim Specialization. A hybrid wolf might choose from Awareness Specialization, Rapid Reaction, Stealth Specialization, Survival Specialization, or Swiftrunner.
 
@@ -50,7 +50,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \parhead{Dragon} Iron Will, Toughness, or any Casting feat (see \pcref{Casting Feats}).
 
-            \parhead{Drakkenfel} Draconic Heritage. The type of dragon chosen for the drakkenfel's \textit{draconic ancestry} must match its \textit{draconic essence}.
+            \parhead{Drakkenfel} Draconic Ancestry. The type of dragon chosen for the drakkenfel's \textit{draconic ancestry} must match its \textit{draconic essence}.
 
             \parhead{Dryaidi} Herbalist, Mental Magic, Regenerator, Sphere Focus: Toxicology, Sphere Focus: Verdamancy, or Toughness.
 
@@ -100,10 +100,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \parhead{Skill} Skill feats improve your skills.
         They can make you more likely to succeed with skill checks and grant you new abilities based on your skills.
 
-        \parhead{Bloodline Feats} Some characters have traces of monstrous blood running in their veins.
+        \parhead{Ancestry Feats} Some characters have traces of monstrous blood running in their veins.
         Most of those will never understand the full potential of their unusual heritage.
-        Bloodline feats allow characters to explore those posibilities by gaining abilites related to their ancestry.
-        You can only have one Bloodline feat.
+        Ancestry feats allow characters to explore those posibilities by gaining abilites related to their ancestry.
+        You can only have one Ancestry feat.
 
         \parhead{Magical Feats}
         All abilities granted by feats with the Magical type are \magical in nature.
@@ -116,10 +116,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{longtable}{>{\lcol}p{13em} >{\lcol}p{10em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Barbaric Heritage}         & Str \add Dex \add Con is 3 & Gain aid from barbarian ancestors     & Bloodline          & \featpref{Barbaric Heritage}  \\
-        \magicalfeatref{Celestial Heritage} & Non-evil                   & Gain aspects of celestial beings      & Bloodline, Magical & \featpref{Celestial Heritage} \\
+        \featref{Barbaric Ancestry}         & Str \add Dex \add Con is 3 & Gain aid from barbarian ancestors     & Ancestry          & \featpref{Barbaric Ancestry}  \\
+        \magicalfeatref{Celestial Ancestry} & Non-evil                   & Gain aspects of celestial beings      & Ancestry, Magical & \featpref{Celestial Ancestry} \\
         \featref{Chameleon}                 & Trained Disguise, Int 2    & Adapt your archetypes and abilities   & \tdash             & \featpref{Chameleon}          \\
-        \featref{Draconic Heritage}         & \tdash                     & Gain aspects of draconic power        & Bloodline          & \featpref{Draconic Heritage}  \\
+        \featref{Draconic Ancestry}         & \tdash                     & Gain aspects of draconic power        & Ancestry          & \featpref{Draconic Ancestry}  \\
         \magicalfeatref{Entropist}          & Wil 2                      & Master chaos and entropy              & Magical            & \featpref{Entropist}          \\
         \featref{Herbalist}                 & Trained Knowledge (nature) & Brew potions with natural ingredients & \tdash             & \featpref{Herbalist}          \\
         \featref{Iron Will}                 & Wil 2                      & Increase mental resilience            & \tdash             & \featpref{Iron Will}          \\
@@ -256,9 +256,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The \glossterm{difficulty value} increases by 5 for each consecutive round that you spend moving in this way.
     \end{feat}
 
-    \begin{magicalfeat}{Barbaric Heritage}{Bloodline, Magical}
+    \begin{magicalfeat}{Barbaric Ancestry}{Ancestry, Magical}
         \featpre Strength, Dexterity, and Constitution sum to at least 3
-        \parhead{Special} You can only have one Bloodline feat.
+        \parhead{Special} You can only have one Ancestry feat.
 
         % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
         \magicalff[1]{Ancestral Battlecry} You can use the \ability{ancestral battlecry} ability as a standard action.
@@ -387,9 +387,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[18]{Grapple Supremacy} When you grapple a target with the \textit{grapple} ability, you do not become \grappled by that target.
     \end{feat}
 
-    \begin{magicalfeat}{Celestial Heritage}{Bloodline, Magical}
+    \begin{magicalfeat}{Celestial Ancestry}{Ancestry, Magical}
         \featpre Non-evil alignment.
-        \parhead{Special} You can only have one Bloodline feat.
+        \parhead{Special} You can only have one Ancestry feat.
 
         \magicalff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
         \begin{magicalactiveability}{Rebuke Evil}
@@ -600,8 +600,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[18]{Quick Change} You can create disguises with the \textit{disguise creature}, \textit{emulate creature}, and \textit{versatile disguise} abilities as a single standard action, regardless of the complexity of the disguise.
     \end{feat}
 
-    \begin{feat}{Draconic Heritage}{Bloodline}
-        \parhead{Special} You can only have one Bloodline feat.
+    \begin{feat}{Draconic Ancestry}{Ancestry}
+        \parhead{Special} You can only have one Ancestry feat.
 
         \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
         You have the blood of that type of dragon in your veins.
