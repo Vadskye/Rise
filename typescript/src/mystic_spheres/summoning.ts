@@ -34,7 +34,7 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement}).
+          \\item Its \\glossterm{hit points} and \\glossterm{damage resistance} are equal to the standard value for your your level (see \\tref{Character Advancement and Gaining Levels}).
           \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
           \\item Its \\glossterm{land speed} is 30 feet.
@@ -211,7 +211,7 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Character Advancement}).
+          \\item Its \\glossterm{hit points} are equal to the standard value for your your level (see \\tref{Character Advancement and Gaining Levels}).
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception, plus any accuracy modifier for the chosen weapon.
