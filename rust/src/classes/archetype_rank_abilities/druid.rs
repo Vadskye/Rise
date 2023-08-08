@@ -257,7 +257,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You can only choose spells with a rank no higher than your rank in this archetype.
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 {
-                    \parhead{Distant Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: Short, Medium, Long, Distant, or Extreme.
+                    \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
@@ -271,7 +271,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                         In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Widened Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: Small, Medium, Large, Huge, or Gargantuan.
+                    \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
