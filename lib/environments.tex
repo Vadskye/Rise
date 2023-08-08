@@ -195,7 +195,7 @@
 }
 
 
-\DeclareDocumentEnvironment{magicalattuneability}{s m m}
+\DeclareDocumentEnvironment{magicalattuneability}{s m m o}
 {
     \IfValueTF{#1}{
         \begin{attuneability}*[\sparkle]{#2}{#3}
@@ -206,6 +206,36 @@
 {
     \end{attuneability}
 }
+
+\DeclareDocumentEnvironment{attuneitem}{s m m}
+{
+    \begin{attuneabilitymdframed}
+    \IfValueTF{#1}{
+        \itemabilityheader*{#2}{#3}
+    }{
+        \itemabilityheader{#2}{#3}
+    }
+}
+{ \end{attuneabilitymdframed} }
+
+\DeclareDocumentEnvironment{magicalattuneitem}{m m}
+{ \begin{attuneitem}*{#1}{#2} }
+{ \end{attuneitem} }
+
+\DeclareDocumentEnvironment{passiveitem}{s m m}
+{
+    \begin{activeabilitymdframed}
+    \IfValueTF{#1}{
+        \itemabilityheader*{#2}{#3}
+    }{
+        \itemabilityheader{#2}{#3}
+    }
+}
+{ \end{activeabilitymdframed} }
+
+\DeclareDocumentEnvironment{magicalpassiveitem}{m m}
+{ \begin{passiveitem}*{#1}{#2} }
+{ \end{passiveitem} }
 
 \DeclareDocumentEnvironment{dtabularx}{m m}
 {
@@ -280,17 +310,6 @@
 {
     \end{feat}
 }
-
-\DeclareDocumentEnvironment{longcolumn}{}
-{\onecolumn}
-{\twocolumn}
-
-% This allows up to a one-column page of text before starting a longtable.
-% It is better than using `longcolumn` when you want to have a bit of preamble,
-% but you don't want to have a full page break before the longtable starts.
-\DeclareDocumentEnvironment{longtablepreface}{}
-{\begin{indentedminipage}{0.49\textwidth}}
-{\end{indentedminipage}}
 
 \DeclareDocumentEnvironment{indentedminipage}{m}
 {
