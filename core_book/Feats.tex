@@ -116,6 +116,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{longtable}{>{\lcol}p{13em} >{\lcol}p{10em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Barbaric Heritage}         & Str \add Dex \add Con is 3 & Gain aid from barbarian ancestors     & Bloodline          & \featpref{Barbaric Heritage}  \\
         \magicalfeatref{Celestial Heritage} & Non-evil                   & Gain aspects of celestial beings      & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Chameleon}                 & Trained Disguise, Int 2    & Adapt your archetypes and abilities   & \tdash             & \featpref{Chameleon}          \\
         \featref{Draconic Heritage}         & \tdash                     & Gain aspects of draconic power        & Bloodline          & \featpref{Draconic Heritage}  \\
@@ -242,7 +243,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
         % Modifier at 18: 3 dex + 6 spec + 9 level + 3 train = 21.
-        \magicalff[18]{Air Dancer} You can attempt to move on surfaces that cannot support your weight, as described below.
+        \ff[18]{Air Dancer} You can attempt to move on surfaces that cannot support your weight, as described below.
         \begin{itemize}
             \item Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are \glossterm{difficulty value} 15.
             \item Surfaces that can support at least a tenth of your weight, such as water, are \glossterm{difficulty value} 20.
@@ -254,6 +255,40 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Failure means you fall through the surface, and you cannot use this ability again during the current phase.
         The \glossterm{difficulty value} increases by 5 for each consecutive round that you spend moving in this way.
     \end{feat}
+
+    \begin{magicalfeat}{Barbaric Heritage}{Bloodline, Magical}
+        \featpre Strength, Dexterity, and Constitution sum to at least 3
+        \parhead{Special} You can only have one Bloodline feat.
+
+        % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
+        \magicalff[1]{Ancestral Battlecry} You can use the \ability{ancestral battlecry} ability as a standard action.
+        \begin{magicalactiveability}{Ancestral Battlecry}
+            Three ghostly spirits of your ancestors appear around you.
+            They cannot be attacked or interacted with.
+            Whenever you make a melee \glossterm{strike}, each spirit mimics you.
+            For each spirit that mimics you, the strike can affect an additional secondary target of your choice within 15 foot \glossterm{range} of you, even if you are not adjacent to it.
+
+            At the end of each subsequent round after you use this ability, one of the spirits disappears.
+        \end{magicalactiveability}
+
+        \magicalff[6]{Ancestral Totem} You can use the \ability{ancestral totem} ability as a standard action.
+        \begin{magicalsustainability}{Ancestral Totem}{\abilitytag{Manifestation}, \abilitytag{Sustain} (minor)}
+            Choose an unoccupied location on solid ground within \shortrange of you.
+            A Medium totem representing your ancestors appears in that location.
+            The totem is a creature that cannot take actions of any kind, including \glossterm{movement}.
+            Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your level (see \tref{Character Advancement}).
+            Each of its defenses is equal to 5 \add half your level.
+
+            While you are within a \medarea radius \glossterm{emanation} from the totem, you gain a \plus2 accuracy bonus with melee strikes.
+        \end{magicalsustainability}
+
+        \magicalff[12]{Ancestral Protectors} While you have ghostly spirits active from your \ability{ancestral battlecry} ability, you gain a \plus1 bonus to your Armor defense.
+        In addition, you create four spirits when you use that ability rather than three.
+
+        \magicalff[18]{Ancestral Warchief} The range of secondary strikes from your \ability{ancestral battlecry} ability increases to \shortrange.
+        In addition, you can use your \ability{ancestral battlecry} and \ability{ancestral totem} abilities as a \glossterm{minor action}.
+        When you use either ability as minor action in this way, you increase your \glossterm{fatigue level} by one.
+    \end{magicalfeat}
 
     \begin{feat}{Battle Armory}{Combat}
         \featpre Strength 1, Dexterity 2.
@@ -290,30 +325,30 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Blood Magic}{Casting, Magical}
         \featpre Access to a \glossterm{mystic sphere}, Constitution 2.
 
-        \ff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
+        \magicalff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
         When you do, you lose \glossterm{hit points} equal to your maximum spell rank.
         In exchange, you gain a \plus2 power bonus with the spell, and the spell does not require \glossterm{casting components}.
 
-        \ff[6]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
+        \magicalff[6]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
         While the target is bound, you are always considered to have \glossterm{line of sight} to it.
         You can see it through all forms of \glossterm{concealment} and \glossterm{cover}, even if it is \trait{invisible} or fully behind a solid object.
         This binding lasts until you finish a \glossterm{long rest}.
 
-        \ff[12]{Blood-Sworn Allegiance} You can swear a blood oath to your allies.
+        \magicalff[12]{Blood-Sworn Allegiance} You can swear a blood oath to your allies.
         You automatically fail any attack rolls you make against a creature that you have sworn this blood oath with.
         In addition, those creatures automatically fail any attack rolls they make against you.
         This allows you to safely use area spells that include your allies as targets, since they will suffer no ill effect from the attack.
 
-        \ff[18]{Bloodbind+} You are always considered to have \glossterm{line of effect} with \magical abilities to a creature bound by your \textit{bloodbind} ability, regardless of intervening obstacles.
+        \magicalff[18]{Bloodbind+} You are always considered to have \glossterm{line of effect} with \magical abilities to a creature bound by your \textit{bloodbind} ability, regardless of intervening obstacles.
         This allows you to cast spells on them through solid walls.
 
-        \ff[18]{Bloodspell+} The power bonus from your \textit{bloodspell} ability increases to \plus4.
+        \magicalff[18]{Bloodspell+} The power bonus from your \textit{bloodspell} ability increases to \plus4.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Boongiver}{Casting, Magical}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Share Boon} When you cast a spell with the \abilitytag{Attune} tag, you can use the \textit{share boon} ability.
+        \magicalff[1]{Share Boon} When you cast a spell with the \abilitytag{Attune} tag, you can use the \textit{share boon} ability.
         \begin{magicalactiveability}{Share Boon}
             \rankline
             The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
@@ -324,14 +359,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If you use it again, the original ally's attunement to the old spell ends.
         \end{magicalactiveability}
 
-        \ff[6]{Sustain Attunement} Whenever you cast an \abilitytag{Attune} spell that is not a \glossterm{deep attunement}, you can choose to replace its \abilitytag{Attune} tag with the \abilitytag{Sustain (minor)} tag.
+        \magicalff[6]{Sustain Attunement} Whenever you cast an \abilitytag{Attune} spell that is not a \glossterm{deep attunement}, you can choose to replace its \abilitytag{Attune} tag with the \abilitytag{Sustain (minor)} tag.
 
-        \ff[12]{Versatile Boon Lore} You learn additional \glossterm{spell}.
+        \magicalff[12]{Versatile Boon Lore} You learn additional \glossterm{spell}.
         The spell must have the \abilitytag{Attune} tag, but you do not need to have access to the \glossterm{mystic sphere} it is from.
         The mystic sphere it is from must still be part of your \glossterm{magic source}.
         As normal, you can exchange this spell for other spells as you gain access to new spell ranks, but the spell must always have the \abilitytag{Attune} tag.
 
-        \ff[18]{Share Boon+} You can use your \textit{share boon} ability on up to three different spells at once.
+        \magicalff[18]{Share Boon+} You can use your \textit{share boon} ability on up to three different spells at once.
         If you use the ability while it already affects another spell, you choose which spells are affected by the ability.
     \end{magicalfeat}
 
@@ -356,7 +391,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Bloodline feat.
 
-        \ff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
+        \magicalff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
         \begin{magicalactiveability}{Rebuke Evil}
             \rankline
             Make an attack vs. Mental against one creature or object within \rngmed range.
@@ -374,19 +409,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
             % \featlevel{21} The base damage increases to 5d6.
         \end{magicalactiveability}
 
-        \ff[6]{Healing Radiance} When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
+        \magicalff[6]{Healing Radiance} When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
         % TODO: unclear scaling
         At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
 
-        \ff[12]{Angel Wings} You gain feathery wings that sprout from your back.
+        \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
         The wings themselves are \glossterm{mundane}, but the ability to fly with them is \magical.
 
-        \ff[18]{Angel Wings+} Your \glossterm{maneuverability} with the fly speed from your \textit{angelic flight} ability increases to perfect (see \pcref{Flying Maneuverability}).
+        \magicalff[18]{Angel Wings+} Your \glossterm{maneuverability} with the fly speed from your \textit{angelic flight} ability increases to perfect (see \pcref{Flying Maneuverability}).
 
         % TODO: unclear scaling
-        \ff[18]{Healing Radiance+} The healing provided by your \textit{healing light} ability increases to twice your power.
+        \magicalff[18]{Healing Radiance+} The healing provided by your \textit{healing light} ability increases to twice your power.
     \end{magicalfeat}
 
     \begin{feat}{Chameleon}{General}
@@ -689,7 +724,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Entropist}{General, Magical}
         \featpre Willpower 2.
 
-        \ff[1]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
+        \magicalff[1]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
         \begin{magicalactiveability}{Sudden Entropy}
             \rankline
             Make an attack vs. Fortitude against one creature or object within \shortrange.
@@ -709,14 +744,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             % \featlevel{21} The base damage increases to 6d10.
         \end{magicalactiveability}
 
-        \ff[6]{Friend of Chaos} Whenever you roll to determine a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
+        \magicalff[6]{Friend of Chaos} Whenever you roll to determine a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
         This includes random effects for that do not explicitly tell you to roll, such as your behavior while \confused.
         However, the damage type of your \ability{sudden entropy} ability is unaffected by this ability.
 
-        \ff[12]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 50\% chance that the attack is treated as a regular hit against you instead of a critical hit.
+        \magicalff[12]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 50\% chance that the attack is treated as a regular hit against you instead of a critical hit.
         This is not affected by your \textit{friend of chaos} ability, since the attacker rolls this chance instead of you.
 
-        \ff[18]{Master of Chaos} Whenever you roll to determine a random effect, you can use this ability.
+        \magicalff[18]{Master of Chaos} Whenever you roll to determine a random effect, you can use this ability.
         When you do, you increase your \glossterm{fatigue level} by two, and you may freely choose the random result.
     \end{magicalfeat}
 
@@ -770,16 +805,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Ghostblade}{Combat, Magical}
         \featpre Dexterity 1, Willpower 2.
 
-        \ff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} for the duration of the movement (see \pcref{Invisible}, and \pcref{Sprint}).
+        \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} for the duration of the movement (see \pcref{Invisible}, and \pcref{Sprint}).
         This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
         This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
 
-        \ff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
+        \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
         If you chose a weapon, all damage dealt with it is cold damage in addition to its other types.
         If you chose body armor or a shield, you are \trait{impervious} to cold damage.
 
         % as rank 3 maneuver, except for hitting Reflex defense
-        \ff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
+        \magicalff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
         \begin{magicalactiveability}{Spectral Strike}
             \rankline
             Make a melee \glossterm{strike}.
@@ -794,10 +829,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{18} The extra damage increases to 2d8 plus 1d8 per 4 \glossterm{power}.
         \end{magicalactiveability}
 
-        \ff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
+        \magicalff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
         This grants you the defensive benefits of being incorporeal during the current phase.
 
-        \ff[18]{Spectral Armament+} The effect of your \glossterm{legacy item} improves.
+        \magicalff[18]{Spectral Armament+} The effect of your \glossterm{legacy item} improves.
         If you chose a weapon, whenever you make a melee \glossterm{strike}, you can make the strike against each target's Reflex defense in place of its Armor defense.
         This has no effect on strikes that are not made against Armor defense.
         If you chose body armor or a shield, you may use your Armor defense in place of your Reflex defense against all attacks.
@@ -1089,35 +1124,35 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Mental Magic}{Casting, Magical}
         \featpre Spellcasting ability, Willpower 3.
 
-        \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
+        \magicalff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
         None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
         However, you cannot use magic implements such as staffs to affect spells you cast.
 
-        \ff[6]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
+        \magicalff[6]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
 
-        \ff[12]{Potent Mind} You gain a \plus1 bonus to your \glossterm{magical power}.
+        \magicalff[12]{Potent Mind} You gain a \plus1 bonus to your \glossterm{magical power}.
 
-        \ff[18]{Fractured Mind+} You can also use your \textit{fractured mind} ability to sustain abilities with the \abilitytag{Sustain} (standard) tag.
+        \magicalff[18]{Fractured Mind+} You can also use your \textit{fractured mind} ability to sustain abilities with the \abilitytag{Sustain} (standard) tag.
         Whenever you sustain a Sustain (standard) ability in this way, you increase your \glossterm{fatigue level} by one.
 
-        \ff[18]{Potent Mind+} The magical power bonus from your \textit{potent mind} ability increases to \plus2.
+        \magicalff[18]{Potent Mind+} The magical power bonus from your \textit{potent mind} ability increases to \plus2.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Metacaster}{Casting, Magical}
         \featpre \ability{Metamagic} ability, Intelligence 2.
 
-        \ff[1]{Sphere Access} You gain access to an additional \glossterm{mystic sphere}.
+        \magicalff[1]{Sphere Access} You gain access to an additional \glossterm{mystic sphere}.
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
         You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
         % TODO: wording
         If you have multiple \glossterm{magic sources}, you can cast spells from that sphere with any magic source that the mystic sphere belongs to.
 
-        \ff[6]{Adaptive Metamagic} Choose one spell you know.
+        \magicalff[6]{Adaptive Metamagic} Choose one spell you know.
         Whenever you cast that spell, you may apply one \textit{metamagic} ability of your choice to that spell.
         You can choose any of the metamagic abilities offered by your class which are valid for that spell.
         This does not allow you to exceed the normal maximum of two metamagic abilities on a single spell.
 
-        \ff[12]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
+        \magicalff[12]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Spell Fusion}
             \rankline
             Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
@@ -1131,17 +1166,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
             After you use this ability, you are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
         \end{magicalactiveability}
 
-        \ff[18]{Adaptive Metamagic+} You can choose an additional spell you know with your \textit{adaptive metamagic} ability.
+        \magicalff[18]{Adaptive Metamagic+} You can choose an additional spell you know with your \textit{adaptive metamagic} ability.
         In addition, you can apply two metamagic abilities to your chosen spells, rather than only one.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Mystic Archer}{Casting, Magical}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Magical Projectiles} Whenever you make a ranged \glossterm{strike} with a \weapontag{Projectile} weapon, you can choose to treat that as a \magical ability.
+        \magicalff[1]{Magical Projectiles} Whenever you make a ranged \glossterm{strike} with a \weapontag{Projectile} weapon, you can choose to treat that as a \magical ability.
         When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
-        \ff[1]{Imbue Projectile} You can use the \textit{imbue projectile} ability as a standard action.
+        \magicalff[1]{Imbue Projectile} You can use the \textit{imbue projectile} ability as a standard action.
         \begin{magicalattuneability}{Imbue Projectile}{\abilitytag{Attune}}
             \rankline
             Choose a spell you know that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
@@ -1161,13 +1196,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If you fire multiple projectiles imbued with this ability at once, one of the spells takes effect and the others do not.
         \end{magicalattuneability}
 
-        \ff[6]{Guided Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore all \glossterm{miss chances}, such as from \glossterm{concealment}.
+        \magicalff[6]{Guided Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore all \glossterm{miss chances}, such as from \glossterm{concealment}.
         This does not prevent your attacks from failing for other reasons.
 
-        \ff[12]{Imbue Projectile+} Each time you attune to your \textit{imbue projectile} ability, you can imbue two different projectiles with two different spells.
+        \magicalff[12]{Imbue Projectile+} Each time you attune to your \textit{imbue projectile} ability, you can imbue two different projectiles with two different spells.
         Your attunement to the ability ends when either spell takes effect.
 
-        \ff[18]{Phasing Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore \glossterm{cover}.
+        \magicalff[18]{Phasing Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons ignore \glossterm{cover}.
         In addition, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through creatures or solid walls, though it does not grant you the ability to see through a wall.
     \end{magicalfeat}
@@ -1178,10 +1213,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Mundane Resilience} You gain a bonus to your \glossterm{hit points} and \glossterm{damage resistance} equal to your level.
 
         \ff[1]{Nullify Magic} You gain a \plus4 bonus to your \glossterm{defenses} against \magical abilities.
-        In exchange, you lose the benefits of all \magical abilities you possess.
-        You are unable to \glossterm{attune} to any \magical abilities, such as magic items or spells cast by other creatures.
+        In exchange, you lose the benefits of all magical abilities you possess.
+        You are unable to \glossterm{attune} to any magical abilities, such as magic items or spells cast by other creatures.
         You cannot use \glossterm{potions} or other similar magic items or abilities that affect you personally, even if they do not require attunement.
-        In addition, you are never considered an \glossterm{ally} for a \magical ability, even while \unconscious.
+        In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
 
         % Much stronger than Spellbreaker because this is a huge part of the whole Null thing
         \ff[6]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
@@ -1293,7 +1328,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Prepared Spellcasting}{Magical, Spell}
         \featpre Access to a \glossterm{mystic sphere}, Intelligence 3.
 
-        \ff[1]{Spellbook} Choose up to three spells you do not know from among \glossterm{mystic spheres} you have access to.
+        \magicalff[1]{Spellbook} Choose up to three spells you do not know from among \glossterm{mystic spheres} you have access to.
         The spells must be of a rank that you know how to cast.
         Whenever you gain access to a new spell rank, you may change the spells in your spellbook for any other spells you can cast.
         You inscribe the knowledge of those spells into a book you carry with you.
@@ -1302,16 +1337,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Whenever you finish a \glossterm{long rest}, you may choose one of the spells in your spellbook.
         You learn how to cast that spell until you choose a different spell with this ability.
 
-        \ff[6]{Ritual Book} You gain the ability to perform rituals to create unique magical effects (see \pcref{Rituals}).
+        \magicalff[6]{Ritual Book} You gain the ability to perform rituals to create unique magical effects (see \pcref{Rituals}).
         In addition, you automatically learn one free ritual of each rank you have access to, including new ranks as you gain access to them.
 
-        \ff[12]{Study of Magic} You gain a \plus1 bonus to your \glossterm{magical power}.
+        \magicalff[12]{Study of Magic} You gain a \plus1 bonus to your \glossterm{magical power}.
 
-        \ff[18]{Spellbook+} You can choose up to six spells to be in your spellbook instead of only three.
+        \magicalff[18]{Spellbook+} You can choose up to six spells to be in your spellbook instead of only three.
         In addition, whenever you finish a \glossterm{long rest}, you may choose two spells in your spellbook with your \textit{spellbook} ability instead of one.
         You learn how to cast both spells until you choose a different pair of spells in this way.
 
-        \ff[18]{Study of Magic+} The bonus from your \textit{study of magic} ability increases to \plus2.
+        \magicalff[18]{Study of Magic+} The bonus from your \textit{study of magic} ability increases to \plus2.
     \end{magicalfeat}
 
     \begin{feat}{Rapid Reaction}{General}
@@ -1413,7 +1448,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \magicalff[18]{Extradimensional Concealment} When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
+        \magicalff[18]{Extradimensional Pocket} When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
         \begin{magicalattuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
@@ -1472,13 +1507,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Spellsword}{Magical, Spell}
         \featpre Access to a \glossterm{mystic sphere}.
 
-        \ff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
+        \magicalff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
         When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
-        \ff[1]{Energized Weaponry} Whenever you deal damage with a spell, your melee \glossterm{strikes} \glossterm{briefly} deal damage of that type in addition to their normal damage types.
+        \magicalff[1]{Energized Weaponry} Whenever you deal damage with a spell, your melee \glossterm{strikes} \glossterm{briefly} deal damage of that type in addition to their normal damage types.
         In addition, you can cast spells using a non-\weapontag{Projectile} weapon as if it were an implement (see \pcref{Implements}).
 
-        \ff[6]{Spellstrike} You can use the \ability{spellstrike} ability as a standard action.
+        \magicalff[6]{Spellstrike} You can use the \ability{spellstrike} ability as a standard action.
         \begin{magicalactiveability}{Spellstrike}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one, and you \glossterm{briefly} cannot use it again.
@@ -1495,18 +1530,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{18} The strike deals double \glossterm{weapon damage}.
         \end{magicalactiveability}
 
-        \ff[12]{Spellsword Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus2 accuracy bonus with spells against each damaged creature.
+        \magicalff[12]{Spellsword Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus2 accuracy bonus with spells against each damaged creature.
 
-        \ff[18]{Energized Weaponry+} You can also make a single damage type permanent with this ability.
+        \magicalff[18]{Energized Weaponry+} You can also make a single damage type permanent with this ability.
         Whenever you deal damage with a spell, you can replace the permanent damage type.
 
-        \ff[18]{Spellsword Conduit+} The accuracy bonus increases to \plus4.
+        \magicalff[18]{Spellsword Conduit+} The accuracy bonus increases to \plus4.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Spellwarped}{General, Magical}
         \featpre Willpower 2.
 
-        \ff[1]{Mystic Sphere} You gain the ability to use arcane magic.
+        \magicalff[1]{Mystic Sphere} You gain the ability to use arcane magic.
         You gain access to one arcane \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Arcane Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
         You automatically learn all \glossterm{cantrips} from the mystic sphere you have access to.
@@ -1514,7 +1549,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You require both \glossterm{verbal components} and \glossterm{somatic components} to cast spells from your chosen sphere.
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \ff[3]{Spell Rank} You become a rank 1 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[3]{Spell Rank} You become a rank 1 spellcaster in your chosen \glossterm{mystic sphere}.
         You learn one spell from that mystic sphere.
         In addition, you can spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
@@ -1523,28 +1558,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
             you can exchange any number of spells you know for other spells,
             including spells of the higher rank.
 
-        \ff[6]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
+        \magicalff[6]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
 
-        \ff[6]{Spell Rank} You become a rank 2 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[6]{Spell Rank} You become a rank 2 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 2.
 
-        \ff[9]{Spell Rank} You become a rank 3 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[9]{Spell Rank} You become a rank 3 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 3 and can improve the effectiveness of your existing spells.
 
-        \ff[12]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
+        \magicalff[12]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
 
-        \ff[12]{Spell Rank} You become a rank 4 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[12]{Spell Rank} You become a rank 4 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 4 and can improve the effectiveness of your existing spells.
 
-        \ff[15]{Spell Rank} You become a rank 5 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[15]{Spell Rank} You become a rank 5 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 5 and can improve the effectiveness of your existing spells.
 
-        \ff[18]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
+        \magicalff[18]{Spell Knowledge} You learn one spell from your \glossterm{mystic sphere}.
 
-        \ff[18]{Spell Rank} You become a rank 6 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[18]{Spell Rank} You become a rank 6 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 6 and can improve the effectiveness of your existing spells.
 
-        \ff[21]{Spell Rank} You become a rank 7 spellcaster in your chosen \glossterm{mystic sphere}.
+        \magicalff[21]{Spell Rank} You become a rank 7 spellcaster in your chosen \glossterm{mystic sphere}.
         This gives you access to spells that require a minimum rank of 7 and can improve the effectiveness of your existing spells.
     \end{magicalfeat}
 
@@ -1552,71 +1587,71 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \includegraphics[width=\columnwidth]{feats/sphere focus aeromancy}
         \featpre Access to the \sphere{Aeromancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Distant Winds} You gain a \plus15 foot bonus to your range with abilities from the \sphere{Aeromancy} \glossterm{mystic sphere}.
+        \magicalff[1]{Distant Winds} You gain a \plus15 foot bonus to your range with abilities from the \sphere{Aeromancy} \glossterm{mystic sphere}.
 
-        \ff[6]{Intrinsic Aeromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Aeromancy} mystic sphere.
+        \magicalff[6]{Intrinsic Aeromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Aeromancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Airborne} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
+        \magicalff[12]{Airborne} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-        \ff[18]{Distant Winds+} The range bonus from your \textit{distant winds} ability increases to \plus60 feet.
+        \magicalff[18]{Distant Winds+} The range bonus from your \textit{distant winds} ability increases to \plus60 feet.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Aquamancy}{Casting, Magical}
         \featpre Access to the \sphere{Aquamancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Aquatic Propulsion} Once per round, when you make an attack with a spell from the \sphere{Aquamancy} \glossterm{mystic sphere}, you can \glossterm{push} yourself up to 10 feet.
+        \magicalff[1]{Aquatic Propulsion} Once per round, when you make an attack with a spell from the \sphere{Aquamancy} \glossterm{mystic sphere}, you can \glossterm{push} yourself up to 10 feet.
         You can use this ability with \glossterm{strikes} using natural weapons from that sphere, such as from the \spell{aqueous tentacle} spell.
         The attack does not have to hit for you to use this ability.
 
-        \ff[6]{Intrinsic Aquamancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Aquamancy} mystic sphere.
+        \magicalff[6]{Intrinsic Aquamancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Aquamancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Partially Liquid} You gain a \plus4 bonus to the Flexibility skill.
+        \magicalff[12]{Partially Liquid} You gain a \plus4 bonus to the Flexibility skill.
         In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
-        \ff[18]{Partially Liquid+} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
+        \magicalff[18]{Partially Liquid+} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Astromancy}{Casting, Magical}
         \featpre Access to the \sphere{Astromancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Astral Spell Transit} You gain a \plus15 foot bonus to your range with abilities from the \sphere{Astromancy} \glossterm{mystic sphere}.
+        \magicalff[1]{Astral Spell Transit} You gain a \plus15 foot bonus to your range with abilities from the \sphere{Astromancy} \glossterm{mystic sphere}.
 
-        \ff[6]{Intrinsic Astromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Astromancy} mystic sphere.
+        \magicalff[6]{Intrinsic Astromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Astromancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Efficient Transit} You learn how to transport creatures and objects more smoothly between planes.
+        \magicalff[12]{Efficient Transit} You learn how to transport creatures and objects more smoothly between planes.
         The \glossterm{difficulty value} to hear noise caused by creatures and objects you \glossterm{teleport} increases by 10 (see \pcref{Teleportation Noise}).
         In addition, whenever you fail to teleport a creature or object due to specifying an invalid destination, you may immediately specify a different destination for that ability.
         If that second destination is also invalid, the ability fails normally.
 
-        \ff[18]{Astral Spell Transit+} The range increase from your \textit{astral spell transit} ability increases to \plus30 feet.
+        \magicalff[18]{Astral Spell Transit+} The range increase from your \textit{astral spell transit} ability increases to \plus30 feet.
         In addition, you gain a \plus15 foot bonus to your range with all \magical abilities that are not from the Astromancy mystic sphere.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Channel Divinity}{Casting, Magical}
         \featpre Access to the \sphere{Channel Divinity} \glossterm{mystic sphere}.
 
-        \ff[1]{Aspect of Divinity} You gain a \glossterm{magic bonus} equal to your level to your \glossterm{hit points} and \glossterm{damage resistance}.
+        \magicalff[1]{Aspect of Divinity} You gain a \glossterm{magic bonus} equal to your level to your \glossterm{hit points} and \glossterm{damage resistance}.
 
-        \ff[6]{Intrinsic Channeling} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Channel Divinity} mystic sphere.
+        \magicalff[6]{Intrinsic Channeling} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Channel Divinity} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Font of Divinity} Choose a spell with the \abilitytag{Attune} tag from the \sphere{channel divinity} mystic sphere that is not a \glossterm{deep attunement}.
+        \magicalff[12]{Font of Divinity} Choose a spell with the \abilitytag{Attune} tag from the \sphere{channel divinity} mystic sphere that is not a \glossterm{deep attunement}.
         When you attune to that spell, you may also choose one \glossterm{ally} within \medrange.
         That ally can also choose to attune to the spell, and you both gain its benefits.
         When you stop attuning to that spell, your ally is also forced to stop attuning to the spell.
@@ -1624,27 +1659,27 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Since you cannot attune to the same spell more than once, you cannot share the effects of the spell with more than one ally at a time in this way.
         You can change which spell you choose with this ability whenever you learn a new spell or gain access to a new spell rank.
 
-        \ff[18]{Greater Aspect of Divinity} The bonus from your \textit{aspect of divinity} ability increases to twice your level.
+        \magicalff[18]{Greater Aspect of Divinity} The bonus from your \textit{aspect of divinity} ability increases to twice your level.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Chronomancy}{Casting, Magical}
         \featpre Access to the \sphere{Chronomancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Accelerated Mind} You can perform primarily mental tasks more quickly as normal.
+        \magicalff[1]{Accelerated Mind} You can perform primarily mental tasks more quickly as normal.
         \glossterm{Mundane} mental actions that would normally take a \glossterm{standard action} instead take a \glossterm{minor action}.
         Long-term activities can be done twice as quickly as normal.
         This includes reading books, searching areas, and other similar activities.
         It does not affect spellcasting, performing rituals, or other similar magical abilities.
 
-        \ff[6]{Intrinsic Chronomancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Chronomancy} mystic sphere.
+        \magicalff[6]{Intrinsic Chronomancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Chronomancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Thief of Time} Whenever you cast a spell from the \sphere{Chronomancy} mystic sphere that deals damage to another creature or causes another creature to be \slowed, you \glossterm{briefly} gain a \plus20 foot bonus to your land speed.
+        \magicalff[12]{Thief of Time} Whenever you cast a spell from the \sphere{Chronomancy} mystic sphere that deals damage to another creature or causes another creature to be \slowed, you \glossterm{briefly} gain a \plus20 foot bonus to your land speed.
 
-        \ff[18]{Accelerated Mind+} Once per round, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
+        \magicalff[18]{Accelerated Mind+} Once per round, you can perform a purely mental action that would normally require a \glossterm{minor action} as a \glossterm{free action}.
         This can be used to sustain spells or perform other magical feats.
         However, you cannot use the same ability twice in the same round.
         In addition, the speed increase for long-term tasks from your \textit{accelerated mind} ability increases to five times normal speed.
@@ -1653,103 +1688,103 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Sphere Focus: Cryomancy}{Casting, Magical}
         \featpre Access to the \sphere{Cryomancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Frozen Blood} You are \glossterm{impervious} to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
+        \magicalff[1]{Frozen Blood} You are \glossterm{impervious} to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
 
-        \ff[6]{Icy Carapace} You learn the \spell{icy shell} spell, or another spell from the \sphere{Cryomancy} mystic sphere if you already know that spell.
+        \magicalff[6]{Icy Carapace} You learn the \spell{icy shell} spell, or another spell from the \sphere{Cryomancy} mystic sphere if you already know that spell.
         In addition, the number of layers you can create with \spell{icy shell} increases by one.
 
-        \ff[12]{Frozen Blood+} You are immune to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
+        \magicalff[12]{Frozen Blood+} You are immune to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
 
-        \ff[18]{Icy Carapace+} The number of bonus layers you gain from your \textit{icy carapace} ability increases to two.
+        \magicalff[18]{Icy Carapace+} The number of bonus layers you gain from your \textit{icy carapace} ability increases to two.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Electromancy}{Casting, Magical}
         \featpre Access to the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Electricity Tolerance} You are \trait{impervious} to electricity damage.
+        \magicalff[1]{Electricity Tolerance} You are \trait{impervious} to electricity damage.
 
-        \ff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} is increased to 30 feet instead of 15 feet.
+        \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} is increased to 30 feet instead of 15 feet.
 
-        \ff[6]{Intrinsic Electromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Electromancy} mystic sphere.
+        \magicalff[6]{Intrinsic Electromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Electromancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Electricity Immunity} You are \trait{immune} to electricity damage.
+        \magicalff[12]{Electricity Immunity} You are \trait{immune} to electricity damage.
 
-        \ff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus2 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
+        \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus2 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
         This bonus disappears if not used before the end of the next round.
 
-        \ff[18]{Extra Chain} All of your \glossterm{targeted} spells from the \sphere{electromancy} mystic sphere \glossterm{chain} one additional time, even if they did not originally chain.
+        \magicalff[18]{Extra Chain} All of your \glossterm{targeted} spells from the \sphere{electromancy} mystic sphere \glossterm{chain} one additional time, even if they did not originally chain.
         This does not affect spells with the \abilitytag{Attune} tag.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Enchantment}{Casting, Magical}
         \featpre Access to the \sphere{Enchantment} \glossterm{mystic sphere}.
 
-        \ff[1]{Hidden Influence} You gain a \plus4 accuracy bonus with spells from the Enchantment mystic sphere against \unaware creatures.
+        \magicalff[1]{Hidden Influence} You gain a \plus4 accuracy bonus with spells from the Enchantment mystic sphere against \unaware creatures.
         In addition, the \glossterm{difficulty value} to observe the effects of your \abilitytag{Emotion} abilities with the Awareness and Social Insight skills increases by 10 (see \pcref{Notice Subtle Effect}, and \pcref{Discern Enchantment}).
 
-        \ff[6]{Mind Fragments} When you use \abilitytag{Compulsion} and \abilitytag{Emotion} abilities, you can affect creatures that are immune to those abilities due to not having a mind.
+        \magicalff[6]{Mind Fragments} When you use \abilitytag{Compulsion} and \abilitytag{Emotion} abilities, you can affect creatures that are immune to those abilities due to not having a mind.
         You treat them as being \impervious instead of immune.
         This does not allow you to affect creatures who are immune to those abilities for other reasons.
 
         % There are no rank 5 attunements
-        \ff[12]{Intrinsic Enchantment} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Enchantment} mystic sphere.
+        \magicalff[12]{Intrinsic Enchantment} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Enchantment} mystic sphere.
         The spell can be up to rank 5, even if you do not have access to rank 5 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[18]{Hidden Influence+} The accuracy bonus from your \textit{subtle influence} ability also applies against \partiallyunaware creatures.
+        \magicalff[18]{Hidden Influence+} The accuracy bonus from your \textit{subtle influence} ability also applies against \partiallyunaware creatures.
         In addition, the \glossterm{difficulty value} increase from that ability increases to \plus20.
 
-        \ff[18]{Mind Fragments+} You no longer treat those creatures as being impervious.
+        \magicalff[18]{Mind Fragments+} You no longer treat those creatures as being impervious.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Fabrication}{Casting, Magical}
         \featpre Access to the \sphere{Fabrication} \glossterm{mystic sphere}.
 
-        \ff[1]{Fabricate Trinket+} The maximum size of the trinket you can create with your \textit{fabricate trinket} cantrip increases by one size category.
+        \magicalff[1]{Fabricate Trinket+} The maximum size of the trinket you can create with your \textit{fabricate trinket} cantrip increases by one size category.
         You can also cast it with the \abilitytag{Sustain} (minor) tag.
         If you do, it lasts as long as you sustain it, and does not remove any previous trinkets you created with that cantrip.
 
-        \ff[1]{Mighty Creator} You can use your \glossterm{power} in place of your Craft skill to create items with spells from the \sphere{Fabrication} mystic sphere.
+        \magicalff[1]{Mighty Creator} You can use your \glossterm{power} in place of your Craft skill to create items with spells from the \sphere{Fabrication} mystic sphere.
 
-        \ff[6]{Fabricated Armaments} You gain a \plus1 accuracy bonus with \glossterm{strikes} using weapons you created with spells from the Fabrication mystic sphere.
+        \magicalff[6]{Fabricated Armaments} You gain a \plus1 accuracy bonus with \glossterm{strikes} using weapons you created with spells from the Fabrication mystic sphere.
         In addition, you gain a \plus1 bonus to the Armor defense provided by body armor from the Fabrication mystic sphere.
 
-        \ff[12]{Intrinsic Fabrication} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Fabrication} mystic sphere.
+        \magicalff[12]{Intrinsic Fabrication} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Fabrication} mystic sphere.
         The spell can be up to rank 5, even if you do not have access to rank 5 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[18]{Fabricate Trinket+} The size increase from your \textit{fabricate trinket+} ability increases to two size categories.
+        \magicalff[18]{Fabricate Trinket+} The size increase from your \textit{fabricate trinket+} ability increases to two size categories.
 
-        \ff[18]{Fabricated Armaments+} The accuracy bonus from your \textit{fabricated armaments} ability increases to \plus2.
+        \magicalff[18]{Fabricated Armaments+} The accuracy bonus from your \textit{fabricated armaments} ability increases to \plus2.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Photomancy}{Casting, Magical}
         \featpre Access to the \sphere{Photomancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Scour Vision} Whenever you cause a creature to become \dazzled with a spell from the \sphere{Photomancy} \glossterm{mystic sphere}, you \glossterm{briefly} become \trait{invisible} to that creature.
+        \magicalff[1]{Scour Vision} Whenever you cause a creature to become \dazzled with a spell from the \sphere{Photomancy} \glossterm{mystic sphere}, you \glossterm{briefly} become \trait{invisible} to that creature.
         This works even if the creature was already dazzled.
         The creature can still see everything other than you normally.
 
-        \ff[6]{Intrinsic Photomancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Photomancy} mystic sphere.
+        \magicalff[6]{Intrinsic Photomancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Photomancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Solar Beacon} Whenever you make a creature lose \glossterm{hit points} with a spell from the \sphere{Photomancy} mystic sphere, that creature suffers consequences as if it had been struck by a beam of natural sunlight.
+        \magicalff[12]{Solar Beacon} Whenever you make a creature lose \glossterm{hit points} with a spell from the \sphere{Photomancy} mystic sphere, that creature suffers consequences as if it had been struck by a beam of natural sunlight.
         This can be deadly for some creatures.
 
-        \ff[12]{Unwavering Sight} You are immune to being \dazzled and \blinded.
+        \magicalff[12]{Unwavering Sight} You are immune to being \dazzled and \blinded.
 
-        \ff[18]{Piercing Sight} You can see through solid objects and spell effects up to one inch thick.
+        \magicalff[18]{Piercing Sight} You can see through solid objects and spell effects up to one inch thick.
         You can perceive the existence of obstacles thinner than that, but they do not inhibit your sight.
         This does not grant you \glossterm{line of effect} to anything you see in this way, since the obstacle still exists.
     \end{magicalfeat}
@@ -1757,90 +1792,90 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Sphere Focus: Polymorph}{Casting, Magical}
         \featpre Access to the \sphere{Polymorph} \glossterm{mystic sphere}.
 
-        \ff[1]{Augmented Body} You can use the \textit{augmented body} ability whenever you finish a \glossterm{short rest}.
+        \magicalff[1]{Augmented Body} You can use the \textit{augmented body} ability whenever you finish a \glossterm{short rest}.
         \begin{magicalattuneability}{Augmented Body}{\abilitytag{Attune} (deep)}
             Choose a physical attribute: Strength, Dexterity, or Constitution.
             You gain a \plus1 \glossterm{magic bonus} to that attribute.
         \end{magicalattuneability}
 
-        \ff[6]{Intrinsic Polymorph} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Polymorph} mystic sphere.
+        \magicalff[6]{Intrinsic Polymorph} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Polymorph} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Malleable Flesh} You gain a \plus4 bonus to the Flexibility skill.
+        \magicalff[12]{Malleable Flesh} You gain a \plus4 bonus to the Flexibility skill.
         In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
-        \ff[18]{Augmented Body+} The bonus from your \textit{augmented body} increases to \plus2.
+        \magicalff[18]{Augmented Body+} The bonus from your \textit{augmented body} increases to \plus2.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Prayer}{Casting, Magical}
         \featpre Access to the \sphere{Prayer} \glossterm{mystic sphere}.
 
-        \ff[1]{Shared Boon} When you cast a targeted spell from the \sphere{Prayer} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags on a single \glossterm{ally}, you can target an additional ally within range.
+        \magicalff[1]{Shared Boon} When you cast a targeted spell from the \sphere{Prayer} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags on a single \glossterm{ally}, you can target an additional ally within range.
 
-        \ff[6]{Sustained Blessing} Whenever you cast a spell from the \sphere{Prayer} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
+        \magicalff[6]{Sustained Blessing} Whenever you cast a spell from the \sphere{Prayer} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
         When you do, you must cast the spell as a \glossterm{standard action}, even if it could normally be cast as a \glossterm{minor action}.
         You can only apply this ability to one spell at a time.
 
-        \ff[12]{Sustained Blessing+} When you used your \textit{sustained blessing} ability, you can replace the tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
+        \magicalff[12]{Sustained Blessing+} When you used your \textit{sustained blessing} ability, you can replace the tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
         You can still only sustain one spell in this way at a time.
 
-        \ff[18]{Shared Boon+} When you use your \textit{shared boon} ability, you can also target yourself or a third ally within range.
+        \magicalff[18]{Shared Boon+} When you use your \textit{shared boon} ability, you can also target yourself or a third ally within range.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Pyromancy}{Casting, Magical}
         \featpre Access to the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Spreading Flame} Whenever you cast a spell from the \sphere{Pyromancy} \glossterm{mystic sphere}, you can double its area.
+        \magicalff[1]{Spreading Flame} Whenever you cast a spell from the \sphere{Pyromancy} \glossterm{mystic sphere}, you can double its area.
         If you do, you cannot get a \glossterm{glancing blow} with that spell.
 
-        \ff[1]{Fire Tolerance} You are \trait{impervious} to fire damage.
+        \magicalff[1]{Fire Tolerance} You are \trait{impervious} to fire damage.
 
-        \ff[6]{Intrinsic Pyromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Pyromancy} mystic sphere.
+        \magicalff[6]{Intrinsic Pyromancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Pyromancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage.
+        \magicalff[12]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage.
 
-        \ff[12]{Fire Immunity} You are \trait{immune} to fire damage.
+        \magicalff[12]{Fire Immunity} You are \trait{immune} to fire damage.
 
-        \ff[18]{Spreading Flame+} When you use your \textit{spreading flame} ability, you can still get a glancing blow with the spell.
+        \magicalff[18]{Spreading Flame+} When you use your \textit{spreading flame} ability, you can still get a glancing blow with the spell.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Revelation}{Casting, Magical}
         \featpre Access to the \sphere{Revelation} \glossterm{mystic sphere}.
 
-        \ff[1]{Oracle} Once per \glossterm{long rest}, you can gain the benefit of the \ritual{augury} ritual as a standard action.
+        \magicalff[1]{Oracle} Once per \glossterm{long rest}, you can gain the benefit of the \ritual{augury} ritual as a standard action.
         Using this ability does not increase your \glossterm{fatigue level}.
 
-        \ff[6]{Intrinsic Revelation} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Revelation} mystic sphere.
+        \magicalff[6]{Intrinsic Revelation} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Revelation} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Blind Seer} You gain \trait{blindsense} with a 90 foot range (see \pcref{Blindsense}).
+        \magicalff[12]{Blind Seer} You gain \trait{blindsense} with a 90 foot range (see \pcref{Blindsense}).
         If you already have blindsense, you increase its range by 90 feet.
         In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
         If you already have blindsight, the range of your blindsight increases by 30 feet.
 
-        \ff[18]{Oracle+} You can use your \textit{oracle} ability once per \glossterm{short rest} instead of once per long rest.
+        \magicalff[18]{Oracle+} You can use your \textit{oracle} ability once per \glossterm{short rest} instead of once per long rest.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Summoning}{Casting, Magical}
         \featpre Access to the \sphere{Summoning} \glossterm{mystic sphere}.
 
-        \ff[1]{Empower Summon} You can use the \textit{empower summon} ability as a \glossterm{minor action}.
+        \magicalff[1]{Empower Summon} You can use the \textit{empower summon} ability as a \glossterm{minor action}.
         \begin{magicalactiveability}{Empower Summon}[\abilitytag{Swift}]
             Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
             That creature gains a \plus2 bonus to its \glossterm{accuracy} and \glossterm{defenses} this round.
         \end{magicalactiveability}
 
-        \ff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
+        \magicalff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Resummon}
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by one.
@@ -1851,23 +1886,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Those creatures do not act until the next round.
         \end{magicalactiveability}
 
-        \ff[12]{Generosity} Whenever you \glossterm{attune} to an item or spell that is not a \glossterm{deep attunement}, you may use this ability.
+        \magicalff[12]{Generosity} Whenever you \glossterm{attune} to an item or spell that is not a \glossterm{deep attunement}, you may use this ability.
         If you do, all creatures you create with the \sphere{Summoning} mystic sphere gain the benefit of all \glossterm{magic bonuses} from the chosen item or spell.
         It still affects you normally.
         You may only choose one attunement with this ability at a time.
 
-        \ff[12]{Resummon+} You can use your \textit{resummon} ability as a \glossterm{minor action}.
+        \magicalff[12]{Resummon+} You can use your \textit{resummon} ability as a \glossterm{minor action}.
 
-        \ff[18]{Empower Summon+} The bonuses from your \textit{empower summon} ability increase to \plus4.
+        \magicalff[18]{Empower Summon+} The bonuses from your \textit{empower summon} ability increase to \plus4.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Telekinesis}{Casting, Magical}
         \featpre Access to the \sphere{Telekinesis} \glossterm{mystic sphere}.
 
-        \ff[1]{Efficient Hand} You can cast the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
+        \magicalff[1]{Efficient Hand} You can cast the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
         In addition, the distance you can move the object increases to 30 feet, as if you had that spell's rank 4 upgrade.
 
-        \ff[6]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
+        \magicalff[6]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
         \begin{magicalactiveability}{Telekinetic Strike}
             \rankline
             Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
@@ -1883,13 +1918,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{18} The accuracy bonus increases to \plus4.
         \end{magicalactiveability}
 
-        \ff[12]{Intrinsic Telekinesis} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Telekinesis} mystic sphere.
+        \magicalff[12]{Intrinsic Telekinesis} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Telekinesis} mystic sphere.
         The spell can be up to rank 5, even if you do not have access to rank 5 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[18]{Multiple Hands} When you use the \spell{distant hand} cantrip, you can create two hands instead of one.
+        \magicalff[18]{Multiple Hands} When you use the \spell{distant hand} cantrip, you can create two hands instead of one.
         This can allow you to hold multiple objects simultaneously, though you must still take separate actions to manipulate those objects in any way more complicated than simple movement.
         Alternately, you can hold a single object with two hands instead of one.
         This gives you a \plus1 bonus to your Willpower for the purpose of determining your \glossterm{weight limits}, and allows you to make two-handed attacks with \weapontag{Heavy} and \weapontag{Versatile Grip} weapons using your \ability{telekinetic strike} ability.
@@ -1898,28 +1933,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Sphere Focus: Terramancy}{Casting, Magical}
         \featpre Access to the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Earthen Alloys} You may treat iron, steel, and worked stone as if they were unworked stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+        \magicalff[1]{Earthen Alloys} You may treat iron, steel, and worked stone as if they were unworked stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-        \ff[6]{Rocky Carapace} You learn the \spell{rocky shell} spell, or another spell from the \sphere{Terramancy} mystic sphere if you already know that spell.
+        \magicalff[6]{Rocky Carapace} You learn the \spell{rocky shell} spell, or another spell from the \sphere{Terramancy} mystic sphere if you already know that spell.
         In addition, the number of layers you can create with that spell increases by one.
 
-        \ff[12]{Earthen Alloys+} You may treat dirt, sand, glass, and all kinds of metal except for cold iron as if they were stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+        \magicalff[12]{Earthen Alloys+} You may treat dirt, sand, glass, and all kinds of metal except for cold iron as if they were stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-        \ff[18]{Rocky Carapace+} The number of bonus layers you gain from your \textit{rocky carapace} ability increases to two.
+        \magicalff[18]{Rocky Carapace+} The number of bonus layers you gain from your \textit{rocky carapace} ability increases to two.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Thaumaturgy}{Casting, Magical}
         \featpre Access to the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
 
-        \ff[1]{Mystic Power} You gain a \plus1 bonus to your \glossterm{magical power}.
+        \magicalff[1]{Mystic Power} You gain a \plus1 bonus to your \glossterm{magical power}.
 
-        \ff[6]{Intrinsic Thaumaturgy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Thaumaturgy} mystic sphere.
+        \magicalff[6]{Intrinsic Thaumaturgy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Thaumaturgy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Countermagic} You can use the \textit{countermagic} ability as a standard action.
+        \magicalff[12]{Countermagic} You can use the \textit{countermagic} ability as a standard action.
         \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
             \rankline
             Choose a creature within \rngmed range of you.
@@ -1931,13 +1966,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             This is common for \glossterm{elite} monsters.
         \end{magicalactiveability}
 
-        \ff[18]{Mystic Power+} The bonus from your \textit{mystic power} ability increases to \plus2.
+        \magicalff[18]{Mystic Power+} The bonus from your \textit{mystic power} ability increases to \plus2.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Toxicology}{Casting, Magical}
         \featpre Access to the \sphere{Toxicology} \glossterm{mystic sphere}.
 
-        \ff[1]{Poisonous Blood} Whenever you become poisoned by a contact or ingestion poison, such as by drinking poison or from an enemy's attack, your body naturally repurposes the poison.
+        \magicalff[1]{Poisonous Blood} Whenever you become poisoned by a contact or ingestion poison, such as by drinking poison or from an enemy's attack, your body naturally repurposes the poison.
         The poison has no effect on you, but your body gains a dose of natural poison.
         This has no effect on injury-based poisons, which affect you normally without being absorbed.
 
@@ -1947,74 +1982,74 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Poisons that you carry in your body with this ability automatically decay after 24 hours, regardless of the normal duration of the poison.
         You can store up to 3 doses in your body with this ability at a time.
 
-        \ff[6]{Intrinsic Toxicology} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Toxicology} mystic sphere.
+        \magicalff[6]{Intrinsic Toxicology} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Toxicology} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Poisonous Venom} You can also inflict the poison you store with your \textit{poisonous blood} ability on other creatures with attacks.
+        \magicalff[12]{Poisonous Venom} You can also inflict the poison you store with your \textit{poisonous blood} ability on other creatures with attacks.
         Once per round, when you make a creature lose \glossterm{hit points} with a \glossterm{natural weapon} or a spell from the \sphere{toxicology} mystic sphere, you can cause the creature to become poisoned with your choice of one of the poisons you store.
         This expends the dose of that poison.
 
-        \ff[18]{Poisonous Blood+} You can store up to 10 poison doses with your \textit{poisonous blood} ability.
+        \magicalff[18]{Poisonous Blood+} You can store up to 10 poison doses with your \textit{poisonous blood} ability.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Umbramancy}{Casting, Magical}
         \featpre Access to the \sphere{Umbramancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Lightbane} You can cast the \spell{suppress light} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
+        \magicalff[1]{Lightbane} You can cast the \spell{suppress light} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
 
-        \ff[6]{Intrinsic Umbramancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Umbramancy} mystic sphere.
+        \magicalff[6]{Intrinsic Umbramancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Umbramancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Shadow Jumper} While you are \glossterm{shadowed}, the distance you can teleport with spells from the \sphere{Umbramancy} mystic sphere is doubled.
+        \magicalff[12]{Shadow Jumper} While you are \glossterm{shadowed}, the distance you can teleport with spells from the \sphere{Umbramancy} mystic sphere is doubled.
 
-        \ff[18]{Lightbane+} When you cast your \textit{suppress light} cantrip, you can choose to completely block all light in the area instead of dimming it to be \glossterm{shadowy illumination}.
+        \magicalff[18]{Lightbane+} When you cast your \textit{suppress light} cantrip, you can choose to completely block all light in the area instead of dimming it to be \glossterm{shadowy illumination}.
         If you do, the maximum area is reduced to a \medarea radius, and you \glossterm{briefly} cannot cast it in this way again.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Verdamancy}{Casting, Magical}
         \featpre Access to the \sphere{Verdamancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Verdant Allies} Your speed is not reduced when moving in heavy \glossterm{undergrowth}.
+        \magicalff[1]{Verdant Allies} Your speed is not reduced when moving in heavy \glossterm{undergrowth}.
         In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
         This prevents you from suffering a miss chance on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
-        \ff[6]{Residual Undergrowth} Whenever you cast a spell from the \textit{verdamancy} sphere, you may create either \glossterm{light undergrowth} or \glossterm{heavy undergrowth} in the area of the spell.
+        \magicalff[6]{Residual Undergrowth} Whenever you cast a spell from the \textit{verdamancy} sphere, you may create either \glossterm{light undergrowth} or \glossterm{heavy undergrowth} in the area of the spell.
         The undergrowth persists \glossterm{briefly}.
         It appears on the ground within the area for area spells, or on the ground in all spaces occupied by each target of the spell for targeted spells.
 
-        \ff[12]{Intrinsic Verdamancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Verdamancy} mystic sphere.
+        \magicalff[12]{Intrinsic Verdamancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Verdamancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[18]{Verdant Army} Your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you also gain the benefit of your \textit{verdant allies} ability.
+        \magicalff[18]{Verdant Army} Your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you also gain the benefit of your \textit{verdant allies} ability.
     \end{magicalfeat}
 
     \begin{magicalfeat}{Sphere Focus: Vivimancy}{Casting, Magical}
         \featpre Access to the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
         % Should this be more specific, like "animates"?
-        \ff[1]{Hidden Life} You can treat nonliving creatures other than undead as if they were living creatures for the purpose of your abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
+        \magicalff[1]{Hidden Life} You can treat nonliving creatures other than undead as if they were living creatures for the purpose of your abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
-        \ff[1]{Personal Vitality} You gain a bonus equal to your level to your \glossterm{hit points}.
+        \magicalff[1]{Personal Vitality} You gain a bonus equal to your level to your \glossterm{hit points}.
 
-        \ff[6]{Intrinsic Vivimancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Vivimancy} mystic sphere.
+        \magicalff[6]{Intrinsic Vivimancy} You learn an additional spell with the \abilitytag{Attune} tag from the \sphere{Vivimancy} mystic sphere.
         The spell can be up to rank 3, even if you do not have access to rank 3 spells.
         If that spell is a \glossterm{deep attunement}, you only need to spend one \glossterm{attunement point} to attune to it.
         Otherwise, you can attune to it without spending an \glossterm{attunement point}.
         When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-        \ff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
+        \magicalff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
         This means that attacks which only affect living creatures have no effect against you.
 
-        \ff[18]{Personal Vitality+} The hit point bonus increases to twice your level.
+        \magicalff[18]{Personal Vitality+} The hit point bonus increases to twice your level.
     \end{magicalfeat}
 
     \begin{feat}{Stealth Specialization}{Skill}
@@ -2080,10 +2115,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Telepath}{General, Magical}
         \featpre Intelligence and Willpower sum to at least 3
 
-        \ff[1]{Telepathy} You gain \glossterm{telepathy} with a 120 foot range (see \pcref{Telepathy}).
+        \magicalff[1]{Telepathy} You gain \glossterm{telepathy} with a 120 foot range (see \pcref{Telepathy}).
         If you already have telepathy, the range of your telepathy increases by 120 feet.
 
-        \ff[6]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
+        \magicalff[6]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
         \begin{magicalactiveability}{Mental Assault}[\abilitytag{Compulsion}]
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
@@ -2102,7 +2137,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{18} The target is \confused instead of stunned.
         \end{magicalactiveability}
 
-        \ff[12]{Read Mind} You can use the \textit{read mind} ability as a standard action.
+        \magicalff[12]{Read Mind} You can use the \textit{read mind} ability as a standard action.
         \begin{magicalsustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
@@ -2122,13 +2157,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             You gain a \plus2 accuracy bonus for every 3 levels beyond 12.
         \end{magicalsustainability}
 
-        \ff[12]{Telepathy+} You can maintain mental channels with up to 5 creatures at once with your telepathy.
+        \magicalff[12]{Telepathy+} You can maintain mental channels with up to 5 creatures at once with your telepathy.
         You can send separate thoughts to each creature.
 
-        \ff[18]{Mindsight} You can perfectly see intelligent creatures within the maximum range of your telepathy.
+        \magicalff[18]{Mindsight} You can perfectly see intelligent creatures within the maximum range of your telepathy.
         This functions like \trait{blindsight}, except that it only allows you to see creatures with an Intelligence of 0 or higher.
 
-        \ff[18]{Telepathy++} The range of your telepathy increases by 120 feet.
+        \magicalff[18]{Telepathy++} The range of your telepathy increases by 120 feet.
     \end{magicalfeat}
 
     \begin{feat}{Toughness}{General}
@@ -2150,14 +2185,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Twinhand Spellcaster}{Casting, Magical}
         \featpre Dexterity 2.
 
-        \ff[1]{Twinhand Precision} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Casting Components}).
+        \magicalff[1]{Twinhand Precision} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Casting Components}).
         As long as you have two \glossterm{free hands}, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
 
-        \ff[6]{Freehand Implement} You can gain the benefits of up to two magical implements, such as staves or wands, without having to hold them in your hands.
+        \magicalff[6]{Freehand Implement} You can gain the benefits of up to two magical implements, such as staves or wands, without having to hold them in your hands.
         You must still have them on your person, such as in a pocket or strapped to your back, and you must still be attuned to them to gain their benefits.
         In addition, if your legacy item is an apparel item, you may choose both apparel and implement magic item effects for it.
 
-        \ff[12]{Twinspell} You can use the \textit{twinspell} ability as a \glossterm{standard action}.
+        \magicalff[12]{Twinspell} You can use the \textit{twinspell} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Twinspell}
             \rankline
             You can only use this ability if you have two \glossterm{free hands}.
@@ -2170,20 +2205,20 @@ Feats also make the system more mechanically complex, so they are not necessaril
             You cannot use the \ability{desperate exertion} ability to affect either spell.
         \end{magicalactiveability}
 
-        \ff[18]{Twinhand Precision+} The bonus from your \textit{twinhand precision} ability increases to \plus2.
+        \magicalff[18]{Twinhand Precision+} The bonus from your \textit{twinhand precision} ability increases to \plus2.
     \end{magicalfeat}
 
     \begin{feat}{Twin-Weapon Fighting}{Combat}
         \featpre Dexterity 2.
 
-        \ff[1]{Twin-Wielding} You are considered to be twin-wielding while two of your hands are each wielding an identical weapon that you are proficient with.
+        \magicalff[1]{Twin-Wielding} You are considered to be twin-wielding while two of your hands are each wielding an identical weapon that you are proficient with.
         Each hand must hold a different weapon, rather than simply holding a heavy weapon in two hands.
         You can use \glossterm{natural weapons} to meet this condition, such as claws, as long as your hand is exclusively dedicated to using the natural weapon and not holding or being used for anything else.
         Several abilities from this feat only function while you are twin-wielding.
 
-        \ff[1]{Paired Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} while twin-wielding.
+        \magicalff[1]{Paired Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} while twin-wielding.
 
-        \ff[6]{Twin-Weapon Stance} At the start of each round, you can enter one of the stances below or change which stance you are in.
+        \magicalff[6]{Twin-Weapon Stance} At the start of each round, you can enter one of the stances below or change which stance you are in.
         You can maintain that stance as long as you are twin-wielding.
         % TODO: do fancy balance math
         \begin{itemize}
@@ -2200,27 +2235,27 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[12]{Paired Imbuement} While you are twin-wielding, both of your weapons share all \magical properties from either weapon.
 
-        \ff[18]{Paired Precision+} The accuracy bonus increases to \plus2.
+        \magicalff[18]{Paired Precision+} The accuracy bonus increases to \plus2.
     \end{feat}
 
     \begin{magicalfeat}{Wardweaver}{Casting, Magical}
         \featpre Knowledge of a spell with the \abilitytag{Barrier} tag.
 
-        \ff[1]{Hardened Barriers} Objects you create using abilities with the \abilitytag{Barrier} \glossterm{ability tag} gain a bonus equal to your \glossterm{power} to their \glossterm{damage resistance}.
+        \magicalff[1]{Hardened Barriers} Objects you create using abilities with the \abilitytag{Barrier} \glossterm{ability tag} gain a bonus equal to your \glossterm{power} to their \glossterm{damage resistance}.
         In addition, they treat all damage as being \glossterm{environmental damage}, so their damage resistance is never reduced (see \pcref{Environmental Damage}).
         For objects with multiple separate hit point values, such as walls, this bonus applies independently to each section.
 
-        \ff[6]{Defensive Barriers} You gain a \plus1 bonus to your Armor defense.
+        \magicalff[6]{Defensive Barriers} You gain a \plus1 bonus to your Armor defense.
         In addition, objects you create with \abilitytag{Barrier} abilities have minimum defenses equal to 5 \add half your level.
         If the object already has specific defenses listed, it gains a \plus2 bonus to those defenses.
 
-        \ff[12]{Barrier Spell} You learn a spell with the \abilitytag{Barrier} ability tag from any \glossterm{mystic sphere} that your \glossterm{magic source} gives access to, even if you do not have access to that mystic sphere.
+        \magicalff[12]{Barrier Spell} You learn a spell with the \abilitytag{Barrier} ability tag from any \glossterm{mystic sphere} that your \glossterm{magic source} gives access to, even if you do not have access to that mystic sphere.
         When you gain access to new spell ranks, you can change which Barrier spell you know.
 
-        \ff[18]{Defensive Barriers+} Your Armor defense bonus from your \textit{defensive barriers} ability increases to \plus2.
+        \magicalff[18]{Defensive Barriers+} Your Armor defense bonus from your \textit{defensive barriers} ability increases to \plus2.
         In addition, objects you create with \abilitytag{Barrier} abilities gain an additional \plus2 bonus to their defenses.
 
-        \ff[18]{Hardened Barriers+} The damage resistance bonus from your \textit{hardened barriers} ability increases to twice your \glossterm{power}.
+        \magicalff[18]{Hardened Barriers+} The damage resistance bonus from your \textit{hardened barriers} ability increases to twice your \glossterm{power}.
     \end{magicalfeat}
 
     \begin{feat}{Weapon Focus}{Combat}
