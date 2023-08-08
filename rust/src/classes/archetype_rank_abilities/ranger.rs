@@ -22,7 +22,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     It follows your directions to the best of its ability.
 
                     Your magical connection to the animal improves its resilience and strength in combat.
-                    If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
+                    Its combat statistics are replaced with the values below.
                     All other aspects of the animal, such as its speed and natural weapons, are unchanged.
                     Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
                     Generally, your animal companion acts immediately before or after your action in combat, though the GM may decide that it acts separately in specific circumstances.
