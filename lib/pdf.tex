@@ -160,7 +160,10 @@
 \newcommand{\itempref}[1]{\pageref{item:#1}}
 \newcommand{\featpcref}[1]{#1,~page~\pageref{feat:#1}}
 
-% If starred, skip the onecolumn/twocolumn.
+\DeclareDocumentEnvironment{longcolumn}{}
+{\onecolumn}
+{\twocolumn}
+
 \DeclareDocumentEnvironment{longtablewrapper}{}
 {
     \small
@@ -170,6 +173,13 @@
     \setlength\LTright{0pt}
 }
 {}
+
+% This allows up to a one-column page of text before starting a longtable.
+% It is better than using `longcolumn` when you want to have a bit of preamble,
+% but you don't want to have a full page break before the longtable starts.
+\DeclareDocumentEnvironment{longtablepreface}{}
+{\begin{indentedminipage}{0.49\textwidth}}
+{\end{indentedminipage}}
 
 \DeclareDocumentCommand{\sparklespaceless}{}{\includegraphics[width=0.75\fsize]{emoji/sparkles}}
 \DeclareDocumentCommand{\poisonspaceless}{}{\includegraphics[width=0.8\fsize]{emoji/poison}}

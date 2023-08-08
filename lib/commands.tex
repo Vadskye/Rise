@@ -617,6 +617,17 @@
     \label{item:#2}
 }
 
+\DeclareDocumentCommand{\itemabilityheader}{s m m}{
+    \RaggedRight
+    \hypertargetraised{item:#2}{}
+    \spelltwocol{
+        {\normalsize \textbf{\hyperlink{itemtable:#2}{#2}}}
+        \IfValueT{#1}{\sparkle}
+    }{
+        #3
+    }
+}
+
 \DeclareDocumentCommand{\upgraderank}{m m}
 {
     \rank{\hypertargetraised{item:#1}{#2\label{item:#1}}}

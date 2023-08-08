@@ -121,11 +121,10 @@ pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> 
     tags.sort();
 
     let is_attuned = item.tags.iter().any(|t| matches!(t, AbilityTag::Attune(_)));
-    let rank_and_price = rank_and_price_text(item.rank, consumable);
 
     latexify(format!(
         "
-            \\begin<{magical}{abilitytype}><\\itemname<{name}>>{braced_price}
+            \\begin<{magical}{abilitytype}><{name}><Rank {rank_and_price}>
                 \\spelltwocol<{crafting}><{tags}>
                 \\rankline
                 {description}
@@ -135,18 +134,14 @@ pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> 
         ",
         magical = if item.magical { "magical" } else { "" },
         abilitytype = if is_attuned {
-            "attuneability"
+            "attuneitem"
         } else {
-            "activeability"
+            "passiveitem"
         },
         name = item.name.clone(),
         // attuneability uses {} for the last argument, but activeability uses [] for the last
         // argument.
-        braced_price = if is_attuned {
-            format!("<Rank {}>", rank_and_price)
-        } else {
-            format!("[Rank {}]", rank_and_price)
-        },
+        rank_and_price = rank_and_price_text(item.rank, consumable),
         crafting = crafting_text,
         tags = tags.join(", "),
         description =
