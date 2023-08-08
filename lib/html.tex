@@ -177,11 +177,13 @@
 \newcommand{\itempref}[1]{\hyperref[item:#1]{here}}
 \newcommand{\featpcref}[1]{\hyperref[feat:#1]{#1}}
 
-% If starred, skip the onecolumn/twocolumn.
-% Also, fix the lcaption command which breaks html bookmark generation in bizarre ways
-\DeclareDocumentEnvironment{longtablewrapper}{s}
+\DeclareDocumentEnvironment{longcolumn}{}{}{}
+
+% This allows up to a one-column page of text before starting a longtable.
+% It is better than using `longcolumn` when you want to have a bit of preamble,
+% but you don't want to have a full page break before the longtable starts.
+\DeclareDocumentEnvironment{longtablewrapper}{}
 {
-    \IfValueF{#1}{\onecolumn}
     \small
     \rowcolors{1}{white}{tbrown}
     \renewcommand*{\arraystretch}{1.2}
@@ -189,10 +191,11 @@
     \setlength\LTright{0pt}
     \renewcommand{\lcaption}[1]{\caption{##1}\label{cap:##1}}
 }
-{\IfValueF{#1}{\twocolumn}}
+{}
+\DeclareDocumentEnvironment{longtablepreface}{}{}{}
 
 \DeclareDocumentCommand{\sparklespaceless}{}{sparkleemojiplaceholder}
-\DeclareDocumentCommand{\poisonspaceless}{}{🧪}
-\DeclareDocumentCommand{\potionspaceless}{}{⚗️}
+\DeclareDocumentCommand{\poisonspaceless}{}{poisonemojiplaceholder}
+\DeclareDocumentCommand{\potionspaceless}{}{potionemojiplaceholder}
 
 \ExplSyntaxOff
