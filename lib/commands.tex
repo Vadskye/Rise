@@ -263,18 +263,26 @@
 %   suffix
 \DeclareDocumentCommand{\ff}{o m o}
 {
+    \par
     \IfValueTF{#1}
     {
         { \nth{#1}~--~\textbf{#2}\IfValueT{#3}{#3}: }
     }
     {
-        { \parhead{#2\IfValueT{#3}{#3}}}
+        { \textbf{#2\IfValueT{#3}{#3}}: }
     }
 }
 
 \DeclareDocumentCommand{\magicalff}{o m}
 {
-    \ff[#1]{#2}[\sparkle]
+    \setlength{\parindent}{0.8\parindent}\par
+    \IfValueTF{#1}
+    {
+        { \nth{#1}~--\sparkle \, \textbf{#2}: }
+    }
+    {
+        { \textbf{#2}: }
+    }
 }
 
 \DeclareDocumentCommand{\itemhead}{s m o}
