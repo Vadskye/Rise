@@ -28,13 +28,15 @@ impl RankAbility<'_> {
     pub fn latex_class_feature(&self, class_shorthand: &str) -> String {
         format!(
             "
-                \\{magical}cf<{class_shorthand}>[{rank}]<{ability_name}>
+                \\cf<{class_shorthand}>[{rank}]<{ability_name}>{magical}
                 {ability_description}
             ",
             ability_description = self.description,
             ability_name = titlecase(self.name),
             class_shorthand = class_shorthand,
-            magical = if self.is_magical {"magical"} else {""},
+            // We have to manually provide the sparkle instead of using `magicalcf`
+            // because we sort this by simple text, oops.
+            magical = if self.is_magical { "[\\sparkle]" } else { "" },
             rank = self.rank,
         )
     }
