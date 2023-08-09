@@ -11,6 +11,7 @@ pub enum ModifierBundle {
     Mindless,
     MindlessConstruct,
     Multipedal,
+    Undead,
 }
 
 impl ModifierBundle {
@@ -62,11 +63,16 @@ impl ModifierBundle {
                 }),
             ],
             Self::MindlessConstruct => Self::Mindless.plus_modifiers(vec![
-                Modifier::PassiveAbility(PassiveAbility::construct())
+                Modifier::PassiveAbility(PassiveAbility::construct()),
+                Modifier::Immune(SpecialDefenseType::Poison),
             ]),
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
+            ],
+            Self::Undead => vec![
+                Modifier::PassiveAbility(PassiveAbility::undead()),
+                Modifier::Immune(SpecialDefenseType::Poison),
             ],
         }
     }

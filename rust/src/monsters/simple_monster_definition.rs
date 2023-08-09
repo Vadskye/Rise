@@ -1,10 +1,9 @@
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::{
-    Attribute, HasAttributes, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
-    SpeedCategory,
+    Attribute, HasAttributes, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
 };
 use crate::creatures::{Creature, Monster};
-use crate::creatures::{HasModifiers, Modifier};
+use crate::creatures::{HasModifiers, Modifier, ModifierBundle};
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill};
 
@@ -141,9 +140,7 @@ impl MonsterDef {
         self.monster(CreatureType::Planeforged)
     }
     pub fn undead(mut self) -> Monster {
-        self.abilities
-            .modifiers
-            .push(Modifier::PassiveAbility(PassiveAbility::undead()));
+        self.abilities.modifiers = ModifierBundle::Undead.plus_modifiers(self.abilities.modifiers);
         self.monster(CreatureType::Undead)
     }
 }

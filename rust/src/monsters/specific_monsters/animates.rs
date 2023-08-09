@@ -322,7 +322,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     }
 
     impl TreantDefinition {
-        fn monster(self) -> Monster {
+        fn monster(mut self) -> Monster {
             self.modifiers.push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
             animate(MonsterDef {
                 abilities: MonsterAbilities {
