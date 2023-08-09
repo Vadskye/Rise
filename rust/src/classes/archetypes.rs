@@ -429,12 +429,11 @@ impl ClassArchetype {
 // LaTeX generation
 impl ClassArchetype {
     pub fn latex_description(&self, class_shorthand: &str) -> String {
-        let all_magical = self.is_magical();
         let mut rank_ability_descriptions = archetype_rank_abilities(self)
             .iter()
             .filter(|a| a.description.trim() != "")
             .map(|a| {
-                a.latex_class_feature(class_shorthand, !all_magical)
+                a.latex_class_feature(class_shorthand)
                     .trim()
                     .to_string()
             })
