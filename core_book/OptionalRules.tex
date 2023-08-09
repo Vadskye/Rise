@@ -128,6 +128,7 @@
             You can perceive the presence of obstacles just as well as you can see what lies behind them.
 
             \parhead{Rank 3 -- Reach Through the Weave} When you use any of your abilities, you can treat yourself as being up to 60 feet away from your true location.
+            You do not need \glossterm{line of effect} to your chosen location.
             For example, this allows you to make melee attacks against creatures up to 60 feet away.
             This changes your \glossterm{line of effect}, but does not change your \glossterm{line of sight}.
 
@@ -410,6 +411,60 @@
                     A hybrid wolf's bite deals 1d6 damage.
                 \itemhead{Low-light Vision} A hybrid wolf has \trait{low-light vision}, allowing it to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
             \end{itemize}
+
+        \subsubsection{Sample Animal Hybrids}
+
+            \parhead{Hybrid Bee}
+
+            \subparhead{Special Abilities}
+            \parhead{Attribute} \plus1 Dexterity, \minus1 Constitution.
+            \begin{itemize}
+                \itemhead{Low-light Vision} A hybrid bee has \trait{low-light vision}, allowing it to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                \itemhead{Stinger} A hybrid bee has a stinger natural weapon (see \pcref{Natural Weapons}).
+                    Whenever it causes a creature to lose \glossterm{hit points} with that natural weapon, the struck creature is poisoned by giant wasp venom (see \pcref{Poison}).
+                    Its stage 1 effect makes the target \slowed while the poison lasts.
+                    Its stage 3 effect makes the target \immobilized while the poison lasts.
+                \itemhead{Winged Agility} A hybrid bee has wings that are not strong enough to help it fly.
+                    However, the wings still help it stabilize its movements.
+                    It gains a \plus3 bonus to the Balance and Jump skills.
+            \end{itemize}
+
+            \parhead{Hybrid Shark}
+
+            \subparhead{Special Abilities}
+            \begin{itemize}
+                \itemhead{Bloodscent} A hybrid shark has the scent ability (see \pcref{Scent}).
+                    In addition, it gains a \plus10 bonus to Awareness checks to detect blood.
+                \itemhead{Bite} A hybrid shark's mouth is elongated, which it can use as a bite attack (see \pcref{Natural Weapons}).
+                    A hybrid shark's bite deals 1d6 damage.
+                \itemhead{Gills} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+                \itemhead{Swim Speed} A hybrid shark has a swim speed equal to the base speed for its size.
+            \end{itemize}
+
+            \parhead{Hybrid Wolf}
+
+            \subparhead{Special Abilities}
+            \begin{itemize}
+                \itemhead{Scent} A hybrid wolf has the scent ability (see \pcref{Scent}).
+                \itemhead{Bite} A hybrid wolf's mouth is elongated, which it can use as a bite attack (see \pcref{Natural Weapons}).
+                    A hybrid wolf's bite deals 1d6 damage.
+                \itemhead{Low-light Vision} A hybrid wolf has \trait{low-light vision}, allowing it to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+            \end{itemize}
+
+    \subsection{Automaton}
+        An automaton appears to be a humanoid construct, like a golem.
+        However, its artificial body is inhabited by a true soul, making it an indwelt (see \pcref{Indwelt}).
+
+        \parhead{Size} Medium.
+        \parhead{Attributes} \plus1 Constitution or Intelligence, \minus1 Dexterity.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Artificial Life} Automatons are not alive. They ignore abilities which only affect living creatures, including poisons and most healing abilities.
+            \itemhead{Manual Repair} The Medicine skill has no effect on an automaton. Instead, a Craft skill relevant to the automaton's body can be used to achieve the same effects that a Medicine skill would have on a living creature.
+            \itemhead{Mechanical Body} Automatons are considered both objects and creatures, and are affected by abilities which affect either.
+                They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+            \itemhead{Mechanical Intuition} Automatons gain a \plus2 bonus to the Devices skill and one Craft skill of their choice.
+        \end{itemize}
 
     \subsection{Awakened Animal}
 
@@ -1078,14 +1133,13 @@
                         \rankline
                         \noindent
 
-                        Make an attack vs. Mental against one creature within \medrange.
+                        Make an attack vs. Mental against a humanoid creature within \medrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                         \vspace{0.25em}
                         \hit The target is \charmed by you.
                         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                         Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
                         An observant target may interpret overt threats to its allies as a threat to itself.
-                        \crit Actions which threaten the charmed person without harming them do not break the effect.
 
                         \rankline
 
@@ -1105,15 +1159,15 @@
                     In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
                 \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                     In addition, you can use the \ability{dominating temptation} ability as a standard action.
-                    \begin{magicalactiveability}{Dominating Temptation}
+                    \begin{magicalactiveability}{Dominating Temptation}{\abilitytag{Emotion}}
                         \rankline
                         \noindent
-                        Make an attack vs. Mental against one creature within \shortrange.%
+                        Make an attack vs. Mental against a humanoid creature within \shortrange.%
                         \vspace{0.25em}
                         \hit The target is \stunned as a \glossterm{condition}.
                         \crit The target is \confused instead of stunned.
-                        In addition, if the target is humanoid and was already confused from a previous casting of this spell, you may \glossterm{attune} to this ability.
-                        If you do, it becomes \dominated by you for the duration of that attunement.
+                        In addition, if the target is humanoid and was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
+                        When you do, the target becomes \dominated by you for the duration of that attunement.
 
                         \rankline
                         \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
@@ -1173,6 +1227,112 @@
         %         \item \subparhead{Perception} Awareness, Social Insight.
         %         \item \subparhead{Other} Deception, Intimidate, Perform, Persuasion.
         %     \end{itemize}
+
+    \subsection{Vampire}
+        A vampire is an undead creature that must drink the blood of living creatures to survive.
+        Unlike most undead creatures, vampires appear to be alive and human, allowing them to act normally in society.
+        Vampires have great power, but also many dangerous weaknesses.
+
+        \parhead{Size} Medium.
+        \parhead{Attributes} \plus1 Strength and Dexterity, \minus1 Constitution.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Climb Speed} Vampires have a \glossterm{climb speed} 10 feet slower than their \glossterm{base speed}.
+            \itemhead{Fangs} Vampires have a bite natural weapon (see \tref{Natural Weapons}).
+            \itemhead{Undead} Vampires are \trait{undead} instead of \glossterm{living}, and they take damage from most healing effects (see \pcref{Undead})).
+            \itemhead{Unnatural Charm} Vampires gain a \plus3 bonus to the Persuasion skill.
+            \itemhead{Vampire Archetype} Vampires only gain two class archetypes instead of three.
+                Instead, they treat the Vampire archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
+        \end{itemize}
+
+        \parhead{Special Weaknesses}
+            Vampires have a number of specific weaknesses.
+        \begin{itemize}
+            \itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting the blood of a living creature, its maximum hit points are reduced by 20.
+            If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
+            This penalty is removed as soon as the vampire drinks blood.
+            A vampire can can enter a torpor to survive indefinitely without blood.
+            While in a torpor, it is unconscious until it smells blood nearby.
+            \itemhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and becomes \frightened by any creatures bearing garlic as a condition.
+            This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
+            \itemhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
+            \itemhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
+            It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
+            This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
+            \itemhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
+            \itemhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \blinded as a condition.
+            If it loses hit points from this damage, it immediately dies and dissolves into a pile of ash.
+            This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
+            \itemhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
+            This can allow careful observers to identify vampires.
+            \itemhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
+            The vampire becomes \paralyzed until the stake is removed.
+            A wooden stake is a light improvised weapon that deals 1d4 piercing damage.
+        \end{itemize}
+
+        \subsubsection{Vampire Archetype}
+
+            \cf{Vmp}[1]{Blood Drain} Whenever a creature loses hit points from a \glossterm{strike} using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
+            When you do, you regain \glossterm{damage resistance} and \glossterm{hit points} equal to the hit points the target lost from the attack, ignoring any extra damage from critical hits.
+            This recovery does not have the \abilitytag{Swift} tag, so it applies after attacks during the current phase.
+
+            \magicalcf{Vmp}[2]{Reviving Coffin} You can designate a coffin as your home by resting in it for 24 consecutive hours.
+            When you take a \glossterm{long rest} in your home coffin, you recover two \glossterm{vital wounds} instead of one.
+
+            When you die, if your corpse is placed in your home coffin, you can be resurrected after 24 hours.
+            You can only be resurrected in this way if you were killed by a vital wound with a \glossterm{vital roll} of \minus3 or higher.
+            If you were killed by a more severe vital wound, or by some other effect, even your home coffin cannot save you.
+
+            \magicalcf{Vmp}[3]{Charming Gaze} You can use the \ability{charming gaze} ability as a standard action.
+            \begin{magicalsustainability}{Charming Gaze}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}}
+                \rankline
+                Make an attack vs. Mental against all humanoid creatures in a \largearea cone from you.
+                You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+                \hit The target is \charmed by you.
+                Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
+                Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
+                An observant target may interpret overt threats to its allies as a threat to itself.
+
+                \rankline
+
+                \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 3.
+            \end{magicalsustainability}
+
+            \magicalcf{Vmp}[4]{Creature of the Night} You can use the \ability{creature of the night} ability as a standard action.
+            \begin{magicalattuneability}{Creature of the Night}{\abilitytag{Attune}}
+                \rankline
+                You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
+                While in your bat form, you gain \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
+                While in your mist form, you become \trait{incorporeal} and gain a 20 foot fly speed with a 30 ft. height limit and perfect maneuverability.
+
+                In either non-humanoid form, you are unable to take any standard action other than \glossterm{movement}.
+                You cannot use this ability while \paralyzed.
+            \end{magicalattuneability}
+
+            \magicalcf{Vmp}[4]{Reviving Coffin+} You can designate up to three home coffins, rather than only one.
+            This can allow you to travel with one coffin while keeping others safe for emergencies.
+
+            \cf{Vmp}[5]{Unholy Perfection} Choose any two attributes other than Constitution.
+            You gain a \plus1 bonus to those two attributes.
+
+            \magicalcf{Vmp}[6]{Dominating Gaze} You can use the \ability{dominating gaze} ability as a standard action.
+            \begin{magicalactiveability}{Dominating Gaze}{\abilitytag{Emotion}, \abilitytag{Visual}}
+                \rankline
+                Make an attack vs. Mental against a humanoid creature within \shortrange.
+                \hit The target is \stunned as a \glossterm{condition}.
+                While it has no remaining \glossterm{damage resistance}, it is \confused instead of stunned.
+                \crit If the target is humanoid and was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
+                When you do, the target becomes \dominated by you for the duration of that attunement.
+
+                \rankline
+                The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 6.
+            \end{magicalactiveability}
+
+            \magicalcf{Vmp}[7]{Blood Drain+} Using your \ability{blood drain} ability does not increase your fatigue level.
+
+            \magicalcf{Vmp}[7]{Eternal Undeath} Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
+            As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
+            Only the destruction of all of your home coffins or the total annihilation of your corpse can prevent your return.
 
 \section{Classes}
     \subsection{Bard}
