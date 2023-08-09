@@ -1371,7 +1371,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \parhead{Mastery} You gain a \plus4 bonus to your \glossterm{power} with all abilities.
+                        \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{power} with all abilities.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1516,7 +1516,7 @@ impl Class {
 
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power}.
+                        \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power} with \magical abilities.
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus2.
 
                     \subsubsection{Protection Domain}
