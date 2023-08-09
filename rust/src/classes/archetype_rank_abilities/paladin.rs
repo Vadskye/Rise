@@ -65,7 +65,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Evil} The penalty increases to \minus2.
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus10.
                 % 1a per ally (0.4+0.3+0.2+0.1)
-                \subparhead{Law} The effect triggers on rolling either a 1 2.
+                \subparhead{Law} The effect triggers on rolling anything less than a 5.
+                In addition, it affects bonus dice rolled for exploding attacks.
             ",
             // Another awkward approximation
             modifiers: Some(vec![Modifier::Accuracy(1)]),
