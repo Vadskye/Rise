@@ -1212,7 +1212,7 @@ impl Class {
                     You must worship a specific deity to be a cleric.
                     For details, see \tref{Deities}.
 
-                    \cf{Clr}{Seek Guidance}[\sparkle]
+                    \magicalcf{Clr}{Seek Guidance}
                     You can ask your deity for guidance about how best to serve your deity's interests.
                     This requires a ritual or prayer lasting ten minutes, with the details depending on the deity.
                     By the end, you will have received a vision, emotional instinct, or other guidance.
@@ -1239,7 +1239,7 @@ impl Class {
                 r"
                     \subsection{Special Class Abilities}
 
-                    \cf{War}{Soul Pact}
+                    \magicalcf{War}{Soul Pact}
                     To become a warlock, you must make a pact with a creature capable of sharing its power with you.
                     Such a creature must be 21st level, and must be a planeforged from a plane other than your own.
                     You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
@@ -1263,7 +1263,7 @@ impl Class {
                     Of course, soulkeepers generally try to accelerate this process as much as possible with various forms of torture.
                     Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
 
-                    \cf{War}{Whispers of the Lost}[\sparkle]
+                    \magicalcf{War}{Whispers of the Lost}[\sparkle]
                     You hear the voices of souls that inhabit your soulkeeper's plane, linked to you through your soulkeeper.
                     Choose one of the following types of whispers that you hear.
                     {
