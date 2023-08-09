@@ -210,16 +210,18 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
                     Vampires have a number of specific weaknesses.
-                    \parhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting the blood of a living creature, its maximum hit points are reduced by 50.
+                    \parhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting the blood of a living creature, its maximum hit points are reduced by 20.
                     If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
                     This penalty is removed as soon as the vampire drinks blood.
                     A vampire can can enter a torpor to survive indefinitely without blood.
+                    While in a torpor, it is unconscious until it smells blood nearby.
                     \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and becomes \frightened by any creatures bearing garlic as a condition.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
                     \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
                     \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
                     It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
+                    \parhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
                     \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \blinded as a condition.
                     If it loses hit points from this damage, it immediately dies and dissolves into a pile of ash.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
@@ -299,7 +301,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
         ])),
         monsters: vec![
             Vampire {
-                attributes: vec![3, 4, 2, 3, 2, 3],
+                attributes: vec![3, 4, 1, 3, 3, 3],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Fledgling vampires are the weakest form of vampire.
@@ -320,7 +322,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ],
             }.monster(),
             Vampire {
-                attributes: vec![4, 5, 2, 4, 3, 4],
+                attributes: vec![4, 5, 1, 4, 4, 4],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         True vampires have fully awakened their vampiric potential.
@@ -338,7 +340,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 ],
             }.monster(),
             Vampire {
-                attributes: vec![4, 6, 3, 5, 4, 5],
+                attributes: vec![4, 6, 2, 5, 5, 5],
                 knowledge: Some(Knowledge::new(vec![
                     (0, "
                         Vampire lords are one of the most powerful types of undead.

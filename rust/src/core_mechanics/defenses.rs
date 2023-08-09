@@ -68,6 +68,7 @@ pub enum SpecialDefenseType {
     Damage(DamageType),
     Debuff(Debuff),
     CriticalHits,
+    Poison,
     WeaponMaterial(WeaponMaterial),
 }
 
@@ -95,6 +96,7 @@ impl SpecialDefenseType {
             Self::Damage(damage_type) => format!("{} damage", damage_type.name()),
             Self::Debuff(debuff) => debuff.name().to_string(),
             Self::CriticalHits => "critical hits".to_string(),
+            Self::Poison => "poison".to_string(),
             Self::WeaponMaterial(material) => format!("{} weapons", material.name()),
         }
     }
