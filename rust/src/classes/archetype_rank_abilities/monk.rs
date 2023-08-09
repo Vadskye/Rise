@@ -230,35 +230,35 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
+            modifiers: Some(vec![Modifier::DamageResistance(9)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 4,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(16)]),
+            modifiers: Some(vec![Modifier::DamageResistance(12)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 5,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
+            modifiers: Some(vec![Modifier::DamageResistance(25)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 6,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(36)]),
+            modifiers: Some(vec![Modifier::DamageResistance(30)]),
         },
         RankAbility {
             name: "Ki Barrier",
             is_magical: true,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(42)]),
+            modifiers: Some(vec![Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Ki Manifestations",
@@ -460,7 +460,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
                 This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
+                It also provides a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -470,7 +470,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // the system won't know not to stack the effects
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(8),
+                Modifier::DamageResistance(3),
             ]),
         },
         RankAbility {
@@ -487,7 +487,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The damage resistance bonus increases to six times your rank in this archetype, and the defense bonus from the body armor increases to \plus4.
+                The damage resistance bonus increases to five times your rank in this archetype, and the defense bonus from the body armor increases to \plus4.
             ",
             // Rank 4: 16. Rank 5: 30.
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
