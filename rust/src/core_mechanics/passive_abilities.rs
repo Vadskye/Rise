@@ -57,7 +57,7 @@ impl StandardPassiveAbility {
             },
             Self::Construct => PassiveAbility {
                 description: r"
-                  The $name is both an object and a creature.
+                  The $name is both an object and a non-living creature.
                   For details, see \pcref{Constructs}.
                 ".to_string(),
                 is_magical: false,
@@ -75,7 +75,7 @@ impl StandardPassiveAbility {
             },
             Self::Indwelt => PassiveAbility {
                 description: r"
-                  The $name is both an object and a creature.
+                  The $name is both an object and a living creature.
                   For details, see \pcref{Indwelt}.
                 ".to_string(),
                 is_magical: false,
