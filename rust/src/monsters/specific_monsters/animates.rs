@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, FlightManeuverability, MovementMode, MovementSpeed,
@@ -49,10 +49,10 @@ pub fn animates() -> Vec<MonsterEntry> {
                     usage_time: UsageTime::Elite,
                 }),
             ],
-            modifiers: vec![
+            modifiers: ModifierBundle::MindlessConstruct.plus_modifiers(vec![
                 Modifier::immune_damage(DamageType::Cold),
                 Modifier::immune_debuff(Debuff::Prone),
-            ],
+            ]),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
             ]),
@@ -199,10 +199,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         animate(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities,
-                modifiers: vec![
-                    Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
-                    Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
-                ],
+                modifiers: ModifierBundle::MindlessConstruct.modifiers(),
                 movement_speeds: None,
                 senses: vec![Sense::Darkvision(60)],
                 trained_skills: vec![],
@@ -326,6 +323,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
 
     impl TreantDefinition {
         fn monster(self) -> Monster {
+            self.modifiers.push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
             animate(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: self.active_abilities,

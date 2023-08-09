@@ -19,9 +19,18 @@ impl PassiveAbility {
         )
     }
 
+    pub fn construct() -> Self {
+        StandardPassiveAbility::Construct.ability()
+    }
+
+    pub fn indwelt() -> Self {
+        StandardPassiveAbility::Indwelt.ability()
+    }
+
     pub fn sightless() -> Self {
         StandardPassiveAbility::Sightless.ability()
     }
+
     pub fn undead() -> Self {
         StandardPassiveAbility::Undead.ability()
     }
@@ -30,9 +39,10 @@ impl PassiveAbility {
 // TODO: replace this system with static functions on PassiveAbility
 pub enum StandardPassiveAbility {
     Amphibious,
-    Animated,
+    Construct,
     ConditionRemoval,
     EliteActions,
+    Indwelt,
     Sightless,
     Undead,
 }
@@ -45,13 +55,13 @@ impl StandardPassiveAbility {
                 is_magical: false,
                 name: "Amphibious".to_string(),
             },
-            Self::Animated => PassiveAbility {
+            Self::Construct => PassiveAbility {
                 description: r"
                   The $name is both an object and a creature.
-                  It is always considered to be \glossterm{attended} by itself.
+                  For details, see \pcref{Constructs}.
                 ".to_string(),
                 is_magical: false,
-                name: "Animated".to_string(),
+                name: "Construct".to_string(),
             },
             Self::ConditionRemoval => PassiveAbility {
                 description: r"The $name can remove conditions at the end of each round (see \pcref{Monster Conditions}).".to_string(),
@@ -62,6 +72,14 @@ impl StandardPassiveAbility {
                 description: r"The $name can use an additional \abilitytag{Elite} ability each round.".to_string(),
                 is_magical: false,
                 name: "Elite Actions".to_string(),
+            },
+            Self::Indwelt => PassiveAbility {
+                description: r"
+                  The $name is both an object and a creature.
+                  For details, see \pcref{Indwelt}.
+                ".to_string(),
+                is_magical: false,
+                name: "Indwelt".to_string(),
             },
             Self::Sightless => PassiveAbility {
                 description: r"The $name cannot see normally. If it has no relevant special vision abilities, it is \blinded.".to_string(),

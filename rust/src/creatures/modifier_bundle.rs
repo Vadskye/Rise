@@ -9,6 +9,7 @@ pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
     Mindless,
+    MindlessConstruct,
     Multipedal,
 }
 
@@ -60,6 +61,9 @@ impl ModifierBundle {
                     name: "Mindless".to_string(),
                 }),
             ],
+            Self::MindlessConstruct => Self::Mindless.plus_modifiers(vec![
+                Modifier::PassiveAbility(PassiveAbility::construct())
+            ]),
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
