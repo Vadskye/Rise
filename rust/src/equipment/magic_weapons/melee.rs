@@ -90,6 +90,8 @@ pub fn melee() -> Vec<MagicWeapon> {
             When you do, you \glossterm{teleport} horizontally to a location within \shortrange.
             Then, you can make a melee \glossterm{strike} at your destination.
             Unlike most teleportation effects, both your departure and arrival with this effect are silent.
+
+            After you activate this item, you \glossterm{briefly} cannot activate it again.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can silently teleport and strike", r"
