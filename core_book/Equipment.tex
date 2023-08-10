@@ -875,38 +875,38 @@ Items are divided into five broad categories, described below.
 
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
-            \begin{dtabularx}{\textwidth}{l l l >{\ccol}X l l}
-    \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} & \tb{Item Rank}              \tableheaderrule
-    % metal high resistance, encum
-    \tind Adamantine           & \mult4                 & \plus2           & \tdash                             & Metal         & \plus3  \\
-    \tind Adamantine, pure     & \mult8                 & \plus2           & \tdash                             & Metal         & \plus5 \\
-    % magic defense                                                          
-    \tind Cold iron            & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal         & \plus2  \\
-    \tind Cold iron, pure      & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal         & \plus4 \\
-    % metal resistance                                                       
-    \tind Deepforged           & \mult2                 & \tdash           & \tdash                             & Metal         & \plus2  \\
-    \tind Deepforged, pure     & \mult4                 & \tdash           & \tdash                             & Metal         & \plus4 \\
-    % metal crit resistance                                                  
-    \tind Diamondsteel         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal         & \plus2  \\
-    \tind Diamondsteel, pure   & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal         & \plus4 \\
-    % offset leather resistance, energy defense bonus                        
-    \tind Dragonhide           & \mult3                 & \tdash           & Impervious to specific energy type & Leather       & \plus3  \\
-    \tind Dragonhide, ancient  & \mult6                 & \tdash           & Immune to specific damage type     & Leather       & \plus5 \\
-    % offset metal resistance, energy defense bonus                          
-    \tind Dragonscale          & \mult3                 & \tdash           & Impervious to specific energy type & Metal         & \plus3  \\
-    \tind Dragonscale, ancient & \mult6                 & \tdash           & Immune to specific energy type     & Metal         & \plus5 \\
-    % leather resistance                                                     
-    \tind Elvenweave           & \mult2                 & \tdash           & \tdash                             & Leather       & \plus2  \\
-    \tind Elvenweave, pure     & \mult4                 & \tdash           & \tdash                             & Leather       & \plus4 \\
-    % idk                                                                    
-    \tind Ironwood             & \tdash                 & \tdash           & \tdash                             & Metal         & \plus1  \\
-    % metal encumbrance reduction                                            
-    \tind Mithral              & \tdash                 & \minus2          & \tdash                             & Metal         & \plus2  \\
-    \tind Mithral, pure        & \mult2                 & \minus3          & Improve Dex multiplier                 & Metal         & \plus4 \\
-    % metal resistance, recovery, encumbrance penalty                        
-    \tind Starmetal            & \mult2                 & \plus2           & Recover damage resistance                & Metal         & \plus2  \\
-    \tind Starmetal, pure      & \mult4                 & \plus2           & Recover damage resistance                & Metal         & \plus4 \\
-\end{dtabularx}
+            \begin{dtabularx}{\textwidth}{l l l l >{\ccol}X l}
+                \tb{Material}        & \tb{Item Rank} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} \tableheaderrule
+                % metal high resistance, encum
+                Adamantine           & \plus3         & \mult4                 & \plus2           & \tdash                             & Metal   \\
+                Adamantine, pure     & \plus5         & \mult8                 & \plus2           & \tdash                             & Metal   \\
+                % magic defense                                                                  
+                Cold iron            & \plus2         & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal   \\
+                Cold iron, pure      & \plus4         & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal   \\
+                % metal resistance                                                               
+                Deepforged           & \plus2         & \mult2                 & \tdash           & \tdash                             & Metal   \\
+                Deepforged, pure     & \plus4         & \mult4                 & \tdash           & \tdash                             & Metal   \\
+                % metal crit resistance                                                  
+                Diamondsteel         & \plus2         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal   \\
+                Diamondsteel, pure   & \plus4         & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal   \\
+                % offset leather resistance, energy defense bonus                        
+                Dragonhide           & \plus3         & \mult3                 & \tdash           & Impervious to specific energy type & Leather \\
+                Dragonhide, ancient  & \plus5         & \mult6                 & \tdash           & Immune to specific damage type     & Leather \\
+                % offset metal resistance, energy defense bonus                          
+                Dragonscale          & \plus3         & \mult3                 & \tdash           & Impervious to specific energy type & Metal   \\
+                Dragonscale, ancient & \plus5         & \mult6                 & \tdash           & Immune to specific energy type     & Metal   \\
+                % leather resistance                                                             
+                Elvenweave           & \plus2         & \mult2                 & \tdash           & \tdash                             & Leather \\
+                Elvenweave, pure     & \plus4         & \mult4                 & \tdash           & \tdash                             & Leather \\
+                % idk                                                                            
+                Ironwood             & \plus1         & \tdash                 & \tdash           & \tdash                             & Metal   \\
+                % metal encumbrance reduction                                            
+                Mithral              & \plus2         & \tdash                 & \minus2          & \tdash                             & Metal   \\
+                Mithral, pure        & \plus4         & \mult2                 & \minus3          & Improve Dex multiplier             & Metal   \\
+                % metal resistance, recovery, encumbrance penalty                        
+                Starmetal            & \plus2         & \mult2                 & \plus2           & Recover damage resistance          & Metal   \\
+                Starmetal, pure      & \plus4         & \mult4                 & \plus2           & Recover damage resistance          & Metal   \\
+            \end{dtabularx}
         \end{dtable!*}
 
         \parhead{Adamantine} Adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{damage resistance} provided by the armor by 4.
