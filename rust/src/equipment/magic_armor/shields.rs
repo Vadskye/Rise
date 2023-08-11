@@ -97,7 +97,7 @@ pub fn shields() -> Vec<MagicArmor> {
             This does not prevent any other effects of the attack.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Grants 50% chance to avoid conditions", r"
+            ItemUpgrade::new(6, r"Grants 50\% chance to avoid conditions", r"
                 The chance increases to 50\%.
             "),
         ],
