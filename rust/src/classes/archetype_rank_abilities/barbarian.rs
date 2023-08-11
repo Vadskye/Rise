@@ -261,7 +261,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Forceful, Grappling, or Tripping.
-                You may treat all weapons you wield as if they had the chosen weapon tag.
+                You may treat all weapons you use as if they had the chosen weapon tag.
             ",
             modifiers: None,
         },
