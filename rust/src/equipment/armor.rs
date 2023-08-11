@@ -39,7 +39,6 @@ pub enum ArmorMaterial {
     AncientDragonscale(String),
     Elvenweave,
     PureElvenweave,
-    Ironwood,
     Magic(i32),
     Mithral,
     PureMithral,
@@ -159,12 +158,6 @@ impl ArmorMaterial {
                 encumbrance_modifier: 0,
                 name: "pure elvenweave".to_string(),
                 item_rank_modifier: 4,
-            },
-            Self::Ironwood => ArmorMaterialDefinition {
-                dr_multiplier: 1.0,
-                encumbrance_modifier: 0,
-                name: "ironwood".to_string(),
-                item_rank_modifier: 1,
             },
             Self::Mithral => ArmorMaterialDefinition {
                 dr_multiplier: 1.0,
