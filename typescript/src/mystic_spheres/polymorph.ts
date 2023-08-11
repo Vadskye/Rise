@@ -1011,18 +1011,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Ironwood',
-
-      castingTime: '24 hours',
-      effect: `
-        One Medium or smaller \\glossterm{unattended}, nonmagical wooden object within \\shortrange is transformed into ironwood.
-        While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
-        Metallic armor and weapons, such as full plate, can be crafted from ironwood.
-      `,
-      rank: 4,
-    },
-
-    {
       name: 'Purify Sustenance',
 
       castingTime: 'one hour',
