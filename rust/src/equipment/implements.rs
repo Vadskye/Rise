@@ -48,7 +48,7 @@ impl Implement {
         match self {
             Self::Staff(_) => "Staff",
             Self::Rod(_) => "Rod",
-            Self::Wand(_) => "Staff",
+            Self::Wand(_) => "Wand",
         }
     }
 }
