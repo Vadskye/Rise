@@ -37,6 +37,14 @@ impl MagicWeapon {
         )
     }
 
+    pub fn category(&self) -> &str {
+        match self {
+            Self::Melee(_) => "Melee",
+            Self::Ranged(_) => "Ranged",
+            Self::Unrestricted(_) => "",
+        }
+    }
+
     fn craft_materials(&self) -> &str {
         "as base weapon"
     }
@@ -55,7 +63,12 @@ pub fn all_magic_weapons() -> Vec<MagicWeapon> {
 }
 
 fn magic_weapon_rows(magic_weapon: &MagicWeapon) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(magic_weapon.item(), false, None)
+    latex_table::TableRow::from_item(
+        magic_weapon.item(),
+        false,
+        // The categories are not useful enough to include
+        None,
+    )
 }
 
 pub fn magic_weapons_table() -> String {
