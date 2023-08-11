@@ -163,6 +163,21 @@ fn crowns() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    apparel.push(Crown(StandardItem {
+        name: String::from("Challenger's Crown"),
+        rank: 3,
+        short_description: String::from("Increases accuracy penalty on goaded foes by 1"),
+        description: String::from(r"
+            Each creature suffering penalties for being \goaded by you takes an additional -1 \glossterm<accuracy> penalty against creatures other than you.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Increases accuracy penalty on goaded foes by 2", r"
+                The penalty increases to -2.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
     apparel
 }
 
