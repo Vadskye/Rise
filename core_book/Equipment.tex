@@ -672,26 +672,31 @@ Items are divided into five broad categories, described below.
         Any individual weapon can only ever gain the combat benefits of a single special material, even if it contains multiple special materials in its construction.
         That special material is chosen at the time the weapon is crafted and cannot be altered without recrafting it.
 
+        \subsubsection{Weapon Special Material Prices}
+            Weapon special materials are listed as having a single rank and price in \trefnp{Armor Special Materials}.
+            This is the price for an amount of the special material sufficient to forge a non-\weapontag{Heavy} weapon, when combined with other normal weaponsmithing materials.
+            Heavy weapons require twice as much of the special material.
+
         \begin{dtable!*}
             \lcaption{Weapon Special Materials}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
-                \tb{Material}             & \tb{Special Effect}                       & \tb{Item Rank}              \tableheaderrule
+                \tb{Material}             & \tb{Special Effect}                       & \tb{Item Rank (Cost)}              \tableheaderrule
                 % object damage
-                \tind Adamantine          & \plus1d, double damage to objects         & \plus4 \\
-                \tind Adamantine, pure    & \plus2d, double damage to objects         & \plus6 \\
+                \tind Adamantine          & \plus1d, double damage to objects         & 4 (5,000 gp)   \\
+                \tind Adamantine, pure    & \plus2d, double damage to objects         & 6 (125,000 gp) \\
                 % just vulnerabilities
-                \tind Cold iron           & Common vulnerabilities                    & \plus2 \\
+                \tind Cold iron           & Common vulnerabilities                    & 2 (200 gp)     \\
                 % crit accuracy
-                \tind Diamondsteel        & \plus2 accuracy with critical hits        & \plus2 \\
-                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits        & \plus4 \\
+                \tind Diamondsteel        & \plus2 accuracy with critical hits        & 3 (1,000 gp)   \\
+                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits        & 5 (25,000 gp)  \\
                 % energy damage
-                \tind Dragonfang          & Deals energy damage                       & \plus3 \\
-                \tind Dragonfang, ancient & Deals energy damage, grants breath attack & \plus5 \\
+                \tind Dragonfang          & Deals energy damage                       & 3 (1,000 gp)   \\
+                \tind Dragonfang, ancient & Deals energy damage, grants breath attack & 5 (25,000 gp)  \\
                 % trade damage for accuracy
-                \tind Mithral             & \plus1 accuracy, \minus1d damage          & \plus4 \\
-                \tind Mithral, pure       & \plus2 accuracy, \minus2d damage          & \plus6 \\
+                \tind Mithral             & Lighter, \minus1d damage                  & 3 (1,000 gp)   \\
+                \tind Mithral, pure       & \plus1 accuracy, lighter, \minus2d damage & 5 (25,000 gp)  \\
                 % just vulnerabilities  
-                \tind Silvered            & Common vulnerabilities                    & \plus2 \\
+                \tind Silvered            & Common vulnerabilities                    & 2 (200 gp)         \\
             \end{dtabularx}
         \end{dtable!*}
 
@@ -715,9 +720,14 @@ Items are divided into five broad categories, described below.
         Otherwise, the strike targets everything in a \areamed cone from you.
         After you use this ability, you \glossterm{briefly} cannot use it again.
 
-        \parhead{Mithral} A mithral weapon has a \plus1 accuracy bonus and a \minus1d penalty to its damage dice.
+        \parhead{Mithral} A non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
+        A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.
+        However, mithral weapons have a \minus1d penalty to their \glossterm{weapon damage}.
 
-        \parhead{Mithral, Pure} A pure mithral weapon has a \plus2 accuracy bonus and a \minus2d penalty to its damage dice.
+        \parhead{Mithral, Pure} A pure mithral weapon has a \plus1 accuracy bonus.
+        In addition, a non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
+        A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.
+        However, pure mithral weapons have a \minus2d penalty to their \glossterm{weapon damage}.
 
         \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
 
@@ -822,13 +832,13 @@ Items are divided into five broad categories, described below.
                 \tind Chain shirt     & \plus2       & \plus3                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
                 \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood & 0 (10 gp)    \\
                 Medium armor          &              &                        &                  &              &                &               &              \\
-                \tind Hide            & \plus3       & \plus3                 & \plus3           & \tdash  & \mult1/2       & Leather       & 1 (40 gp)    \\
-                \tind Scale mail      & \plus3       & \plus4                 & \plus5           & \tdash  & \mult1/2       & Metal         & 1 (40 gp)    \\
-                \tind Breastplate     & \plus3       & \plus5                 & \plus4           & \tdash  & \mult1/2       & Metal         & 2 (200 gp)   \\
+                \tind Hide            & \plus3       & \plus3                 & \plus3           & \tdash       & \mult1/2       & Leather       & 1 (40 gp)    \\
+                \tind Scale mail      & \plus3       & \plus4                 & \plus5           & \tdash       & \mult1/2       & Metal         & 1 (40 gp)    \\
+                \tind Breastplate     & \plus3       & \plus5                 & \plus4           & \tdash       & \mult1/2       & Metal         & 2 (200 gp)   \\
                 \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 0 (10 gp)    \\
                 Heavy armor           &              &                        &                  &              &                &               &              \\
                 \tind Layered hide    & \plus4       & \plus6                 & \plus5           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
-                \tind Plated mail     & \plus4       & \plus8                & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
+                \tind Plated mail     & \plus4       & \plus8                 & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
                 \tind Full plate      & \plus4       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal         & 3 (1,000 gp) \\
                 \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood & 1 (40 gp)    \\
                 Extras                &              &                        &                  &              &                &               &              \\
@@ -840,13 +850,13 @@ Items are divided into five broad categories, described below.
 
     \subsection{Individual Armor Descriptions}
         Any special benefits or accessories to the types of armor found on \trefnp{Armor and Shields} are described below.
-        \parhead{Breastplate} It comes with a helmet and greaves.
         \parhead{Buckler} This small metal shield is worn strapped to your forearm.
         You can treat the hand using a buckler as a \glossterm{free hand}.
         However, if you wield weapons or otherwise take actions using the arm bearing the buckler, you do not gain the buckler's defensive bonus during that phase.
         \par You can't bash someone with a buckler.
-        \parhead{Chain Shirt} A chain shirt comes with a steel cap.
-        \parhead{Full Plate} The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check. The new owner must still be of the same size category as the size category that the suit was designed for.
+        \parhead{Full Plate} Each suit of full plate must be individually fitted to its owner by an armorsmith.
+        A captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check.
+        The new owner must still be of the same size category as the size category and general body shape, such as humanoid, that the suit was originally designed for.
         \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand.
         A standard shield is so cumbersome that you can't use your shield hand for anything else.
         You can use a standard shield as a weapon (see \tref{Weapons}).
@@ -868,121 +878,112 @@ Items are divided into five broad categories, described below.
         \includegraphics[width=\columnwidth]{equipment/armor special materials}
         Nonmagical body armor can be made from special materials that can alter the properties of the item.
         These special materials are described in \trefnp{Armor Special Materials}.
-        The benefits here only apply to body armor that is fully made from the given special material.
-        If you combine multiple special materials in any way, such as by wearing deepforged gauntlets with a mithral breastplate, you do not gain any benefits for having special materials.
+
+        The benefits of special materials only apply to body armor that is fully made from the given special material.
+        If you combine multiple special materials in any way, such as by wearing deepforged leggings with a mithral breastplate, you do not gain any benefits for having special materials.
 
         Body armor that is made from a special material cannot have any magic item properties, and cannot be chosen as a \glossterm{legacy item}.
+        However, you can combine magic items that are not body armor with any set of body armor.
+        For example, a set of full plate armor typically comes with gauntlets and heavy boots.
+        However, you could wear magic boots and magic gauntlets without sacrificing the benefits of the body armor.
 
+        \subsubsection{Armor Special Material Prices}
+            Armor special materials are listed as having a single price in \trefnp{Armor Special Materials}.
+            This is the price for an amount of the special material sufficient to forge light armor, when combined with other normal armorsmithing materials.
+            Medium body armor requires twice as much of the special material, and heavy body armor requires three times as much of the special material.
+
+        % The baseline value for magic armor multiplier for (light/medium/heavy):
+        % * R1-3: (3/5/10)
+        % * R4: (6/10/20)
+        % * R5: (9/15/30)
+        % * R6: (12/20/40)
+        % * R7: (18/30/60)
+        % Using optimal deepforged/elvenweave/dragonhide:
+        % * R3: (6/8/12)
+        % * R4: (9/12/18)
+        % * R5: (12/16/24)
+        % * R6: (18/24/32)
+        % * R7: (18/30/48)
+
+        % Alternate special material calcs
+        % * R3: (6/10/20)
+        % * R4: (9/15/30)
+        % * R5: (12/20/40)
+        % * R6: (18/30/60)
+        % * R7: (18/30/60)
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
             \begin{dtabularx}{\textwidth}{l l l l >{\ccol}X l}
-                \tb{Material}        & \tb{Item Rank} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                & \tb{Material} \tableheaderrule
-                % metal high resistance, encum
-                Adamantine           & \plus3         & \mult4                 & \plus2           & \tdash                             & Metal   \\
-                Adamantine, pure     & \plus5         & \mult8                 & \plus2           & \tdash                             & Metal   \\
-                % magic defense                                                                  
-                Cold iron            & \plus2         & \mult1/2               & \tdash           & \plus1 defense vs magic            & Metal   \\
-                Cold iron, pure      & \plus4         & \mult1/2               & \tdash           & \plus2 defense vs magic            & Metal   \\
-                % metal resistance                                                               
-                Deepforged           & \plus2         & \mult2                 & \tdash           & \tdash                             & Metal   \\
-                Deepforged, pure     & \plus4         & \mult4                 & \tdash           & \tdash                             & Metal   \\
+                \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                    & \tb{Material} & \tb{Item Rank (Cost)} \tableheaderrule
+                % metal high resistance, encumbrance
+                Adamantine                 & \mult4                 & \plus2           & \tdash                                 & Metal         & 4 (5,000 gp)   \\
+                Adamantine, pure           & \mult8                 & \plus2           & \tdash                                 & Metal         & 6 (125,000 gp) \\
+                % magic defense                                                                                                                  
+                Cold iron\fn{1}            & \tdash                 & \tdash           & \minus1 Armor, \plus1 defense vs magic & Metal         & 2 (200 gp)     \\
+                Cold iron, pure\fn{1}      & \mult2                 & \tdash           & \minus1 Armor, \plus2 defense vs magic & Metal         & 4 (5,000 gp)   \\
+                % metal resistance                                                                                                               
+                Deepforged                 & \mult2                 & \tdash           & \tdash                                 & Metal         & 3 (1,000 gp)   \\
+                Deepforged, pure           & \mult4                 & \tdash           & \tdash                                 & Metal         & 5 (25,000 gp)  \\
                 % metal crit resistance                                                  
-                Diamondsteel         & \plus2         & \tdash                 & \tdash           & \plus4 defense vs strike crits     & Metal   \\
-                Diamondsteel, pure   & \plus4         & \mult2                 & \tdash           & \plus4 defense vs crits            & Metal   \\
+                Diamondsteel\fn{1}         & \tdash                 & \tdash           & \plus4 defense vs strike crits         & Metal         & 3 (1,000 gp)   \\
+                Diamondsteel, pure\fn{1}   & \mult2                 & \tdash           & \plus4 defense vs crits                & Metal         & 5 (25,000 gp)  \\
                 % offset leather resistance, energy defense bonus                        
-                Dragonhide           & \plus3         & \mult3                 & \tdash           & Impervious to specific energy type & Leather \\
-                Dragonhide, ancient  & \plus5         & \mult6                 & \tdash           & Immune to specific damage type     & Leather \\
+                Dragonhide\fn{1}           & \mult3                 & \tdash           & Impervious to specific energy type     & Leather       & 4 (5,000 gp)   \\
+                Dragonhide, ancient\fn{1}  & \mult6                 & \tdash           & Immune to specific damage type         & Leather       & 6 (125,000 gp) \\
                 % offset metal resistance, energy defense bonus                          
-                Dragonscale          & \plus3         & \mult3                 & \tdash           & Impervious to specific energy type & Metal   \\
-                Dragonscale, ancient & \plus5         & \mult6                 & \tdash           & Immune to specific energy type     & Metal   \\
+                Dragonscale\fn{1}          & \mult3                 & \tdash           & Impervious to specific energy type     & Metal         & 4 (5,000 gp)   \\
+                Dragonscale, ancient\fn{1} & \mult6                 & \tdash           & Immune to specific energy type         & Metal         & 4 (5,000 gp)   \\
                 % leather resistance                                                             
-                Elvenweave           & \plus2         & \mult2                 & \tdash           & \tdash                             & Leather \\
-                Elvenweave, pure     & \plus4         & \mult4                 & \tdash           & \tdash                             & Leather \\
-                % idk                                                                            
-                Ironwood             & \plus1         & \tdash                 & \tdash           & \tdash                             & Metal   \\
+                Elvenweave                 & \mult2                 & \tdash           & \tdash                                 & Leather       & 3 (1,000 gp)   \\
+                Elvenweave, pure           & \mult4                 & \tdash           & \tdash                                 & Leather       & 5 (25,000 gp)  \\
                 % metal encumbrance reduction                                            
-                Mithral              & \plus2         & \tdash                 & \minus2          & \tdash                             & Metal   \\
-                Mithral, pure        & \plus4         & \mult2                 & \minus3          & Improve Dex multiplier             & Metal   \\
+                Mithral                    & \tdash                 & \minus2          & \tdash                                 & Metal         & 3 (1,000 gp)   \\
+                Mithral, pure\fn{1}        & \mult2                 & \minus2          & Improve Dex multiplier                 & Metal         & 5 (25,000 gp)  \\
                 % metal resistance, recovery, encumbrance penalty                        
-                Starmetal            & \plus2         & \mult2                 & \plus2           & Recover damage resistance          & Metal   \\
-                Starmetal, pure      & \plus4         & \mult4                 & \plus2           & Recover damage resistance          & Metal   \\
+                Starmetal\fn{1}            & \mult2                 & \plus2           & Recover damage resistance              & Metal         & 3 (1,000 gp)   \\
+                Starmetal, pure\fn{1}      & \mult4                 & \plus2           & Recover damage resistance              & Metal         & 5 (25,000 gp)  \\
             \end{dtabularx}
+            1. This armor has special rules explained below. \\
         \end{dtable!*}
 
-        \parhead{Adamantine} Adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{damage resistance} provided by the armor by 4.
-        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        \parhead{Cold Iron} Cold iron armor grants you a \plus1 bonus to your defenses against \magical abilities.
+        However, the bonus that it provides to your Armor defense is reduced by 1.
 
-        \parhead{Adamantine, Pure} Pure adamantine armor increases the \glossterm{encumbrance} of the armor by 2, but it multiplies the \glossterm{damage resistance} provided by the armor by 8.
-        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Cold Iron} Cold iron armor provides half the normal \glossterm{damage resistance}.
-        In exchange, it grants a \plus1 bonus to your defenses against \magical abilities.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Cold Iron, Pure} Pure cold iron armor provides half the normal \glossterm{damage resistance}.
-        In exchange, it grants a \plus2 bonus to your defenses against \magical abilities.
-        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Deepforged} Deepforged body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Deepforged, Pure} Pure deepforged body armor multiplies the \glossterm{damage resistance} provided by the armor by 4.
-        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        \parhead{Cold Iron, Pure} Pure cold iron armor grants you a \plus2 bonus to your defenses against \magical abilities, and provides \mult2 damage resistance.
+        However, the bonus that it provides to your Armor defense is reduced by 1.
 
         \parhead{Diamondsteel} Diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
 
         \parhead{Diamondsteel, Pure} Pure diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether any attack gets a \glossterm{critical hit} against you instead of a normal hit.
-        In addition, it multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult2 \glossterm{damage resistance}.
 
-        \parhead{Dragonhide} Dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
-        In addition, each dragonhide body armor is made from the hide of a particular type of dragon.
+        \parhead{Dragonhide} Each dragonhide body armor is made from the hide of a particular type of dragon.
         You are \trait{impervious} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
-        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult3 \glossterm{damage resistance}.
 
-        \parhead{Dragonhide, Ancient} Ancient dragonhide body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
-        In addition, each ancient dragonhide body armor is made from the hide of a particular type of dragon.
+        \parhead{Dragonhide, Ancient} Each ancient dragonhide body armor is made from the hide of a particular type of dragon.
         You are \trait{immune} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
-        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult6 \glossterm{damage resistance}.
 
-        \parhead{Dragonscale} Dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 3.
-        It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
-        In addition, each dragonscale body armor is made from the scales of a particular type of dragon.
+        \parhead{Dragonscale} Each dragonscale body armor is made from the scales of a particular type of dragon.
         You are \trait{impervious} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
-        The armor's item rank is increased by 3, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult3 \glossterm{damage resistance} and is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
-        \parhead{Dragonscale, Ancient} Ancient dragonscale body armor multiplies the \glossterm{damage resistance} provided by the armor by 6.
-        It is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
-        In addition, each ancient dragonscale body armor is made from the scales of a particular type of dragon.
+        \parhead{Dragonscale, Ancient} Each ancient dragonscale body armor is made from the scales of a particular type of dragon.
         You are \trait{immune} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
-        The armor's item rank is increased by 5, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult6 \glossterm{damage resistance} and is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
-        \parhead{Elvenweave} Elvenweave body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Ironwood} The most common special material is ironwood, which is made from wood magically treated using the \spell{ironwood} ritual to be as strong as steel. Ironwood armor functions exactly like armor of the same type, except that it is made of wood.
-        The armor's item rank is increased by 1, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Mithral} Mithral body armor reduces the \glossterm{encumbrance} of the armor by 2.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
-
-        \parhead{Mithral, Pure} Pure mithral body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        In addition, it reduces the \glossterm{encumbrance} of the armor by 3, and it increases the contribution of your Dexterity to your Armor defense relative to the normal limit for that type of armor.
+        \parhead{Mithral, Pure} Pure mithral body armor increases the contribution of your Dexterity to your Armor defense relative to the normal limit for that type of armor.
         A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
-        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        Ina ddition, it provides \mult2 \glossterm{damage resistance} and reduces the \glossterm{encumbrance} of the armor by 2.
 
-        \parhead{Starmetal} Starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 2.
-        In addition, it increases the \glossterm{encumbrance} of the armor by 2.
-        When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        \parhead{Starmetal} When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
         This effect is \abilitytag{Swift}, like the \ability{recover} ability.
-        The armor's item rank is increased by 2, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult2 \glossterm{damage resistance} and increases the \glossterm{encumbrance} of the armor by 2.
 
-        \parhead{Starmetal, Pure} Pure starmetal body armor multiplies the \glossterm{damage resistance} provided by the armor by 4.
-        In addition, it increases the \glossterm{encumbrance} of the armor by 2.
-        When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
+        \parhead{Starmetal, Pure} When you use the \ability{recover} ability while wearing pure starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
         This effect is \abilitytag{Swift}, like the \ability{recover} ability.
-        The armor's item rank is increased by 4, which increases the typical cost to buy the item (see \pcref{Item Ranks}).
+        In addition, it provides \mult4 \glossterm{damage resistance} and increases the \glossterm{encumbrance} of the armor by 2.
 
 % Magic armor is a highly limited slot.
 % They have the same power level as self-attune spells.
@@ -992,7 +993,7 @@ Items are divided into five broad categories, described below.
     Magic body armor must be worn to gain its effects, while magic shields must be wielded.
     You cannot imbue magic body armor effects on ordinary clothing, even if that clothing is worn on the body instead of armor.
 
-    \subsection{Magic Armor and Damage Resistance}
+    \subsection{Magic Armor Damage Resistance}\label{Magic Armor Damage Resistance}
         While you are attuned to magical body armor, that armor gains a multiplier to the damage resistance it provides.
         This multiplier does not apply to any special properties the armor might have, such as a magic bonus to your damage resistance.
         It only applies to the normal damage resistance normally provided by body armor of that type.
