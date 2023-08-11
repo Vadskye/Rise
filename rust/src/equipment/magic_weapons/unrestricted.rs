@@ -368,6 +368,22 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Grounded"),
+        rank: 2,
+        short_description: String::from(r"Grants +1 accuracy while stationary"),
+        description: String::from(r"
+            At the start of each \glossterm{action phase}, if you are in the same location you were in at the start of the round, you gain a \plus1 accuracy bonus during that round.
+            You immediately lose this accuracy bonus if you leave that location.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Grants +2 accuracy while stationary", r"
+                The accuracy bonus increases to +2.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
     weapons
 }
 
