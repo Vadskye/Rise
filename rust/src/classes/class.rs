@@ -20,6 +20,7 @@ pub struct WeaponProficiencies {
 }
 
 pub enum Class {
+    Automaton,
     Barbarian,
     Cleric,
     Dragon,
@@ -34,6 +35,7 @@ pub enum Class {
     Sorcerer,
     Warlock,
     Wizard,
+    Vampire,
 }
 
 impl Class {
@@ -51,9 +53,11 @@ impl Class {
             Self::Warlock,
             Self::Wizard,
             // Optional classes
+            Self::Automaton,
             Self::Dragon,
             Self::Harpy,
             Self::Oozeborn,
+            Self::Vampire,
         ]
     }
 
@@ -113,6 +117,7 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
+            Self::Automaton => 3,
             Self::Barbarian => 2,
             Self::Cleric => 3,
             Self::Dragon => 2,
@@ -127,6 +132,7 @@ impl Class {
             Self::Sorcerer => 4,
             Self::Warlock => 3,
             Self::Wizard => 4,
+            Self::Vampire => 3,
         }
     }
 
@@ -143,11 +149,21 @@ impl Class {
 
     pub fn class_skills(&self) -> Vec<Skill> {
         match self {
-            Self::Barbarian => vec![
+            Self::Automaton => vec![
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
                 Skill::Craft,
+                Skill::Deduction,
+                Skill::Devices,
+                Skill::Disguise,
+                Skill::Endurance,
+                Skill::Flexibility,
+            ],
+            Self::Barbarian => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Endurance,
@@ -162,7 +178,6 @@ impl Class {
             ],
             Self::Cleric => vec![
                 Skill::Awareness,
-                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Intimidate,
@@ -181,7 +196,6 @@ impl Class {
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
-                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Endurance,
@@ -237,7 +251,6 @@ impl Class {
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
-                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Deduction,
@@ -258,7 +271,6 @@ impl Class {
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
-                Skill::Craft,
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
@@ -333,7 +345,6 @@ impl Class {
             ],
             Self::Sorcerer => vec![
                 Skill::Awareness,
-                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Intimidate,
@@ -343,7 +354,6 @@ impl Class {
             ],
             Self::Warlock => vec![
                 Skill::Awareness,
-                Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
                 Skill::Disguise,
@@ -368,11 +378,31 @@ impl Class {
                 Skill::Linguistics,
                 Skill::Persuasion,
             ],
+            Self::Vampire => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
+                Skill::CreatureHandling,
+                Skill::Deception,
+                Skill::Deduction,
+                Skill::Disguise,
+                Skill::Intimidate,
+                Skill::Jump,
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Religion,
+                ]),
+                Skill::Linguistics,
+                Skill::Persuasion,
+                Skill::SocialInsight,
+                Skill::Stealth,
+            ],
         }
     }
 
     pub fn damage_resistance(&self) -> i32 {
         match self {
+            Self::Automaton => 3,
             Self::Barbarian => 0,
             Self::Cleric => 2,
             Self::Dragon => 2,
@@ -387,11 +417,18 @@ impl Class {
             Self::Sorcerer => 4,
             Self::Warlock => 4,
             Self::Wizard => 3,
+            Self::Vampire => 2,
         }
     }
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
+            Self::Automaton => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 7,
+                Defense::Reflex => 3,
+                Defense::Mental => 5,
+            },
             Self::Barbarian => match defense {
                 Defense::Armor => 0,
                 Defense::Fortitude => 7,
@@ -476,11 +513,18 @@ impl Class {
                 Defense::Reflex => 5,
                 Defense::Mental => 7,
             },
+            Self::Vampire => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 3,
+                Defense::Reflex => 6,
+                Defense::Mental => 6,
+            },
         }
     }
 
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
+            Self::Automaton => 4,
             Self::Barbarian => 5,
             Self::Cleric => 3,
             Self::Dragon => 3,
@@ -495,6 +539,7 @@ impl Class {
             Self::Sorcerer => 2,
             Self::Warlock => 3,
             Self::Wizard => 1,
+            Self::Vampire => 4,
         }
     }
 
@@ -503,6 +548,7 @@ impl Class {
     // +4 is about 60% more HP
     pub fn hit_points(&self) -> i32 {
         match self {
+            Self::Automaton => 3,
             Self::Barbarian => 5,
             Self::Cleric => 2,
             Self::Dragon => 4,
@@ -517,11 +563,13 @@ impl Class {
             Self::Sorcerer => 0,
             Self::Warlock => 2,
             Self::Wizard => 0,
+            Self::Vampire => 2,
         }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
+            Self::Automaton => 1,
             Self::Barbarian => 0,
             Self::Cleric => 2,
             Self::Dragon => 1,
@@ -536,11 +584,13 @@ impl Class {
             Self::Sorcerer => 1,
             Self::Warlock => 1,
             Self::Wizard => 3,
+            Self::Vampire => 1,
         }
     }
 
     pub fn name(&self) -> &str {
         match self {
+            Self::Automaton => "automaton",
             Self::Barbarian => "barbarian",
             Self::Cleric => "cleric",
             Self::Dragon => "dragon",
@@ -555,6 +605,7 @@ impl Class {
             Self::Sorcerer => "sorcerer",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
+            Self::Vampire => "vampire",
         }
     }
 
@@ -569,6 +620,7 @@ impl Class {
 
     pub fn shorthand_name(&self) -> &str {
         match self {
+            Self::Automaton => "Aut",
             Self::Barbarian => "Bbn",
             Self::Cleric => "Clr",
             Self::Dragon => "Drg",
@@ -583,11 +635,13 @@ impl Class {
             Self::Sorcerer => "Sor",
             Self::Warlock => "War",
             Self::Wizard => "Wiz",
+            Self::Vampire => "Vmp",
         }
     }
 
     pub fn trained_skills(&self) -> i32 {
         match self {
+            Self::Automaton => 3,
             Self::Barbarian => 4,
             Self::Cleric => 4,
             Self::Dragon => 3,
@@ -602,11 +656,16 @@ impl Class {
             Self::Sorcerer => 3,
             Self::Warlock => 4,
             Self::Wizard => 3,
+            Self::Vampire => 5,
         }
     }
 
     pub fn armor_proficiencies(&self) -> ArmorProficiencies {
         match self {
+            Self::Automaton => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![],
+            },
             Self::Barbarian => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
@@ -663,11 +722,16 @@ impl Class {
                 specific_armors: None,
                 usage_classes: vec![],
             },
+            Self::Vampire => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
         }
     }
 
     pub fn narrative_text(&self) -> String {
         match self {
+            Self::Automaton => String::from(""),
             Self::Barbarian => r"
                 Barbarians are primal warriors that draw power from their physical prowess and unfettered emotions.
                 They fight with a raw, untamed aggression that draws inspiration from more primitive times.
@@ -966,11 +1030,18 @@ impl Class {
                 However, sorcerers lack the ability to perform complex arcane rituals that do not allow any simple shortcuts.
                 Many older wizards regard this as a crippling weakness.
             ".to_string(),
+            Self::Vampire => String::from(""),
         }
     }
 
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
+            Self::Automaton => WeaponProficiencies {
+                custom_weapon_groups: 1,
+                specific_weapon_groups: None,
+                specific_weapons: None,
+                simple_weapons: true,
+            },
             Self::Barbarian => WeaponProficiencies {
                 custom_weapon_groups: 2,
                 specific_weapon_groups: None,
@@ -1058,6 +1129,12 @@ impl Class {
             },
             Self::Wizard => WeaponProficiencies {
                 custom_weapon_groups: 0,
+                specific_weapon_groups: None,
+                specific_weapons: None,
+                simple_weapons: true,
+            },
+            Self::Vampire => WeaponProficiencies {
+                custom_weapon_groups: 1,
                 specific_weapon_groups: None,
                 specific_weapons: None,
                 simple_weapons: true,

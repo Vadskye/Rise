@@ -453,18 +453,131 @@
 
     \subsection{Automaton}
         An automaton appears to be a humanoid construct, like a golem.
+        Its body is made from some combination of stone, wood, and metal.
         However, its artificial body is inhabited by a true soul, making it an indwelt (see \pcref{Indwelt}).
 
         \parhead{Size} Medium.
         \parhead{Attributes} \plus1 Constitution or Intelligence, \minus1 Dexterity.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Artificial Life} Automatons are not alive. They ignore abilities which only affect living creatures, including poisons and most healing abilities.
-            \itemhead{Manual Repair} The Medicine skill has no effect on an automaton. Instead, a Craft skill relevant to the automaton's body can be used to achieve the same effects that a Medicine skill would have on a living creature.
+            \itemhead{Artificial Life} Automatons are not alive. They ignore abilities which only affect living creatures, including poisons and most healing abilities. In addition, they do not need to eat, drink, or sleep.
+            \itemhead{Automaton Archetype} Automatons only gain two class archetypes instead of three.
+                Instead, they treat the Automaton archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
+            \itemhead{Manual Repair} A Craft skill relevant to the automaton's body can be used to achieve the same effects that the Medicine skill would have on a living creature.
             \itemhead{Mechanical Body} Automatons are considered both objects and creatures, and are affected by abilities which affect either.
                 They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
             \itemhead{Mechanical Intuition} Automatons gain a \plus2 bonus to the Devices skill and one Craft skill of their choice.
         \end{itemize}
+
+        \subsubsection{Automaton Archetype}
+
+            \cf{Aut}[1]{Modular Carapace} You can adjust the density and layering of your hardened exterior to augment your defenses.
+            Changing your configuration in this way requires 10 minutes of work, and spare armor parts that you generally keep with you.
+            You can choose to treat your carapace as being light, medium, or heavy armor.
+            The benefits from this ability are considered to come from body armor, and do not stack with actual body armor.
+
+            \begin{itemize}
+                \item Light armor: You gain a \plus3 bonus to your Armor defense, and a damage resistance bonus equal to three times your rank in this archetype.
+                    You can wear body armor on top of this carapace.
+                    Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and damage resistance bonus from either armor.
+                \item Medium armor: You gain a gives you a \plus4 bonus to your Armor defense, and a damage resistance bonus equal to four times your rank in this archetype.
+                    However, your Dexterity bonus to your Armor defense is halved, and you cannot wear body armor.
+                \item Heavy armor: You gain a \plus5 bonus to your Armor defense, and a damage resistance bonus equal to five times your rank in this archetype.
+                    However, your Dexterity bonus to your Armor defense is removed, you take a \minus10 foot penalty to your speed with all movement modes, and you cannot wear body armor.
+            \end{itemize}
+
+            If you lose your original armor parts, you can create or buy new parts that are suited to your body.
+            These parts are considered a Rank 1 (40 gp) item.
+
+            \cf{Aut}[2]{Modular Weaponry} You can customize your arms to augment your combat prowess.
+            Changing your configuration in this way requires 10 minutes of work, and spare arm and weapon parts that you generally keep with you.
+            \begin{itemize}
+                % Two improvements over baseline
+                \item Blade: You convert one of your arms into a blade natural weapon.
+                    It has a \plus1 accuracy bonus, deals 1d8 slashing damage, and has the \weapontag{Keen} and \weapontag{Sweeping} (1) weapon tags (see \pcref{Weapon Tags}).
+                    However, that arm no longer has a \glossterm{free hand}.
+                % Two improvements over baseline
+                \item Bulk: You convert one of your arms into a bulky, overburdened slam natural weapon.
+                    It has a \minus1 accuracy penalty, deals 1d10 bludgeoning damage, and has the \weapontag{Forceful} and \weapontag{Impact} weapon tags.
+                    However, that arm no longer has a \glossterm{free hand}.
+                \item Fortified: You add additional protective plating to your arms.
+                    You gain a \plus1 bonus to your Armor defense.
+                    This does not require a \glossterm{free hand}, but it is still considered to come from a shield, and it does not stack with the benefit from using a shield.
+                \item Slim: You trim away the excess protection from your arms to make their movements more precise.
+                    You gain a \plus1 accuracy bonus with any attack that uses your hands, including \glossterm{strikes} and abilities like \ability{grapple}.
+                    This does not apply to spells that simply have \glossterm{somatic components}, though it does apply to touch spells like \spell{freezing grasp}.
+                    However, you take a \minus1 penalty to your Armor defense.
+            \end{itemize}
+
+            If you lose your original arm and weapon parts, you can create or buy new parts that are suited to your body.
+            These parts are considered a Rank 1 (40 gp) item.
+
+            \magicalcf{Aut}[3]{Imbued Carapace} When you gain this ability, choose one magic body armor property for each of your three \ability{modular carapace} types (see \tref{Magic Armor}).
+            The property must be rank 3 or lower.
+            Whenever you use a carapace type, you can gain the benefit of its magic armor property, though you must still \glossterm{attune} to the property.
+            Each carapace can have a unique property, or you can choose the same property for multiple carapace types.
+            If you are using a light carapace, you can gain the benefit of its magic armor property in addition to any magic armor you wear on top of the carapace.
+
+            Whenever you gain a rank in this archetype, you can choose a new property for each of your carapace types.
+            Each property's rank must be no higher than your rank in this archetype.
+            Magic armor of rank 4 or higher does not multiply the damage resistance provided by your carapace, as magic armor normally does (see \pcref{Magic Armor Damage Resistance}).
+
+            \magicalcf{Aut}[4]{Embedded Armory} Whenever you use your \ability{modular weaponry} ability to change your configuration, you can also embed one magic weapon, implement, glove, gauntlet, or bracer into one of your arms.
+            You can attune to that item without having it physically present on your arm.
+            If you attune to a weapon embedded this way, you apply its magical properties to any nonmagical weapons you use with that arm, including natural weapons and weapons made from special materials.
+            You cannot embed a \glossterm{legacy item} in this way.
+
+            \cf{Aut}[5]{Reassembly} You can recover from vital wounds more easily by simply replacing broken parts.
+            You can remove a vital wound with ten minutes of work.
+            This increases your \glossterm{fatigue level} by three, and it requires replacement parts that you generally keep with you.
+            The parts are considered a consumable Rank 3 (200 gp) item.
+
+            This can even save you from death, though that is more difficult and requires more advanced parts.
+            A creature can spend eight hours replacing broken parts of your corpse to \glossterm{resurrect} you (see \pcref{Resurrection}).
+            % Baseline trained bonus at rank 5 is +9.
+            This requires a \glossterm{difficulty value} 15 Craft check appropriate to the composition of your body.
+            The parts required to perform this feat are considered a consumable Rank 5 (5,000 gp) item.
+
+            \cf{Aut}[6]{Artificial Mind} You become immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+
+            \cf{Aut}[7]{Hypercognition} You can take an additional \glossterm{minor action} each round, as long as that minor action is purely mental.
+            As normal, you cannot use the same ability twice in the same round.
+
+            Alternately, you can take an additional purely mental standard action instead of a minor action.
+            When you do, you increase your \glossterm{fatigue level} by one and you \glossterm{briefly} cannot take any additional actions with this ability.
+
+        \subsubsection{Basic Class Abilities}
+            If you choose automaton as your base class, you gain the following abilities.
+
+            \cf{Aut}{Defenses}
+            You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
+            In addition, you gain a \plus3 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}), and a \plus3 bonus to your level when determining your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+
+            \cf{Aut}{Resources} You have the following \glossterm{resources}:
+            \begin{itemize}
+                \item Three \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
+                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
+                \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
+                    You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
+                \item Three \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
+            \end{itemize}
+
+            \cf{Aut}{Weapon Proficiencies} 
+            You are proficient with simple weapons and one weapon group of your choice.
+
+            \cf{Aut}{Armor Proficiencies} 
+            You are not proficient with armor.
+
+            \cf{Aut}{Skills}
+            You have the following \glossterm{class skills}:
+            \begin{itemize}
+                \itemhead{Strength} Climb.
+                \itemhead{Dexterity} Balance, Flexibility.
+                \itemhead{Constitution} Endurance.
+                \itemhead{Intelligence} Craft (any), Deduction, Devices, Disguise.
+                \itemhead{Perception} Awareness.
+            \end{itemize}
 
     \subsection{Awakened Animal}
 
@@ -1239,6 +1352,7 @@
         \begin{itemize}
             \itemhead{Climb Speed} Vampires have a \glossterm{climb speed} 10 feet slower than their \glossterm{base speed}.
             \itemhead{Fangs} Vampires have a bite natural weapon (see \tref{Natural Weapons}).
+                These fangs retract when not in use, so vampires cannot be identified as non-human by their fangs unless they choose to expose them.
             \itemhead{Undead} Vampires are \trait{undead} instead of \glossterm{living}, and they take damage from most healing effects (see \pcref{Undead})).
             \itemhead{Unnatural Charm} Vampires gain a \plus3 bonus to the Persuasion skill.
             \itemhead{Vampire Archetype} Vampires only gain two class archetypes instead of three.
@@ -1257,6 +1371,7 @@
             This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
             \itemhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
             \itemhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
+            This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
             It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
             This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
             \itemhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
@@ -1278,6 +1393,7 @@
 
             \magicalcf{Vmp}[2]{Reviving Coffin} You can designate a coffin as your home by resting in it for 24 consecutive hours.
             When you take a \glossterm{long rest} in your home coffin, you recover two \glossterm{vital wounds} instead of one.
+            In addition, you can cross running water without penalty while in your home coffin.
 
             When you die, if your corpse is placed in your home coffin, you can be resurrected after 24 hours.
             You can only be resurrected in this way if you were killed by a vital wound with a \glossterm{vital roll} of \minus3 or higher.
@@ -1333,6 +1449,39 @@
             \magicalcf{Vmp}[7]{Eternal Undeath} Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
             As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
             Only the destruction of all of your home coffins or the total annihilation of your corpse can prevent your return.
+
+        \subsubsection{Basic Class Abilities}
+            If you choose vampire as your base class, you gain the following abilities.
+
+            \cf{Vmp}{Defenses}
+            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus6 Reflex, \plus6 Mental.
+            In addition, you gain a \plus2 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}), and a \plus2 bonus to your level when determining your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+
+            \cf{Vmp}{Resources} You have the following \glossterm{resources}:
+            \begin{itemize}
+                \item Three \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
+                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
+                \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
+                    You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
+                \item Five \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
+            \end{itemize}
+
+            \cf{Vmp}{Weapon Proficiencies} 
+            You are proficient with simple weapons and one weapon group of your choice.
+
+            \cf{Vmp}{Armor Proficiencies} 
+            You are proficient with light armor.
+
+            \cf{Vmp}{Skills}
+            You have the following \glossterm{class skills}:
+            \begin{itemize}
+                \itemhead{Strength} Climb, Jump.
+                \itemhead{Dexterity} Balance, Stealth.
+                \itemhead{Intelligence} Deduction, Disguise, Knowledge (dungeoneering and religion), Linguistics.
+                \itemhead{Perception} Awareness, Creature Handling, Deception, Persuasion, Social Insight.
+                \itemhead{Other} Intimidate, Persuasion
+            \end{itemize}
 
 \section{Classes}
     \subsection{Bard}
