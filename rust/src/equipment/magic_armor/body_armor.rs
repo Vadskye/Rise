@@ -206,6 +206,24 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
+    armor.push(Body(StandardItem {
+        name: String::from("Grafted Armor"),
+        rank: 2,
+        short_description: String::from("Grants HP instead of damage resistance"),
+        description: String::from(r"
+            This armor does not increase your damage resistance.
+            Instead, you gain a bonus to your hit points equal to the damage resistance the armor would normally provide.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants bonus HP instead of damage resistance", r"
+                The armor also grants you a +8 \glossterm{magic bonus} to your hit points.
+            "),
+            ItemUpgrade::new(6, "Grants bonus HP instead of damage resistance", r"
+                The hit point bonus increases to +16.
+            "),
+        ],
+        ..MagicArmor::default()
+    }));
     
     armor
 }
