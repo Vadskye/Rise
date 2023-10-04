@@ -45,6 +45,7 @@ impl Die {
 #[derive(Clone, Debug)]
 pub struct DicePool {
     pub dice: Vec<Die>,
+    pub flat_modifier: i32,
     // A maximized dice pool deals more `.average_damage()` and is noted in
     // `.to_string()`.
     pub maximized: bool,
@@ -59,6 +60,7 @@ impl DicePool {
     pub fn new_die(die: Die) -> Self {
         Self {
             dice: vec![die],
+            flat_modifier: 0,
             maximized: false,
             multiplier: 1,
             weak: false,
@@ -87,6 +89,7 @@ impl DicePool {
     pub fn new(dice: Vec<Die>) -> DicePool {
         Self {
             dice,
+            flat_modifier: 0,
             maximized: false,
             multiplier: 1,
             weak: false,
@@ -96,10 +99,11 @@ impl DicePool {
     // It's legal to have a DicePool with an empty `dice`.
     // This is useful for defining attacks with a high power scaling, where all of their
     // damage comes from the power scaling.
-    // However, you can't add +1d to an empty DicePool.
+    // However, you can't add flat modifiers to an empty DicePool.
     pub fn empty() -> DicePool {
         Self {
             dice: vec![],
+            flat_modifier: 0,
             maximized: false,
             multiplier: 1,
             weak: false,
@@ -122,6 +126,7 @@ impl DicePool {
         new_dice.sort_by_key(|d| d.size);
         DicePool {
             dice: new_dice,
+            flat_modifier: self.flat_modifier,
             maximized: self.maximized,
             multiplier: self.multiplier,
             weak: self.weak,
@@ -132,31 +137,10 @@ impl DicePool {
         self.add_dice(vec![die])
     }
 
-    // Add +1d increments. Each +1d increment increases the single largest die in the pool by
-    // one die size (1d4->1d6->1d8->1d10).
-    // 1d10 splits into 2d6, which is why we do the awkward pop -> append dance.
-    pub fn add_increments(&self, increments: i32) -> DicePool {
-        if self.dice.is_empty() {
-            panic!("Can't increment empty dice pool");
-        }
-
-        let mut dice = self.dice.clone();
-        let mut increments = increments;
-        while increments > 0 {
-            // Technically, this can fail if you try to add +1d to a dice pool that starts
-            // with 2d8 or more. In practice, this should never happen because the system never
-            // creates dice pools larger than 2d8 that can be incremented in this way.
-            let largest_die = dice.pop().unwrap();
-            let mut incremented_dice = largest_die.add_increment();
-            dice.append(&mut incremented_dice);
-            increments -= 1;
-        }
-        DicePool {
-            dice,
-            maximized: self.maximized,
-            multiplier: self.multiplier,
-            weak: self.weak,
-        }
+    pub fn add_modifier(&self, flat_modifier: i32) -> DicePool {
+        let mut new_dice = self.clone();
+        new_dice.flat_modifier += flat_modifier;
+        new_dice
     }
 
     // Construct a standard "1d8" or "2d8+1d10" string.
@@ -181,12 +165,16 @@ impl DicePool {
             for size in contained_sizes {
                 sum += size * counts[size]
             }
+            sum += self.flat_modifier;
             sum.to_string()
         } else {
-            let dice_texts: Vec<String> = contained_sizes
+            let mut dice_texts: Vec<String> = contained_sizes
                 .iter()
                 .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
                 .collect();
+            if self.flat_modifier != 0 {
+                dice_texts.push(self.flat_modifier.to_string());
+            }
             let joined = dice_texts.join("+");
             if self.maximized {
                 format!("{} (m)", joined)
@@ -220,6 +208,7 @@ impl DicePool {
     pub fn multiply(&self, multiplier: i32) -> DicePool {
         DicePool {
             dice: self.dice.clone(),
+            flat_modifier: self.flat_modifier,
             maximized: self.maximized,
             multiplier,
             weak: self.weak,
@@ -242,10 +231,10 @@ impl DicePool {
 
     pub fn calc_scaled_pool(&self, power_scalings: &Vec<PowerScaling>, power: i32) -> DicePool {
         let mut combined_pool = self.clone();
-        // Add increments before adding extra dice
+        // Add flat modifier
         for scaling in power_scalings.iter() {
-            if scaling.power_per_increment > 0 {
-                combined_pool = combined_pool.add_increments(power / scaling.power_per_increment)
+            if scaling.power_per_plus1_modifier > 0 {
+                combined_pool.flat_modifier += power / scaling.power_per_plus1_modifier
             }
         }
         // Now add extra dice
@@ -267,7 +256,7 @@ impl DicePool {
 pub struct PowerScaling {
     pub dice: Option<DicePool>,
     pub power_per_dice: i32,
-    pub power_per_increment: i32,
+    pub power_per_plus1_modifier: i32,
 }
 
 impl PowerScaling {
@@ -277,7 +266,7 @@ impl PowerScaling {
         Self {
             dice: None,
             power_per_dice: 0,
-            power_per_increment: 2,
+            power_per_plus1_modifier: 2,
         }
     }
 
@@ -289,7 +278,7 @@ impl PowerScaling {
             Self {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 3,
+                power_per_plus1_modifier: 3,
             },
         ]
     }
@@ -310,32 +299,11 @@ mod tests {
     }
 
     #[test]
-    fn increasing_single_die_size() {
-        // Start with 1d1
-        let pool = DicePool::new_die(Die::new(1));
-        assert_eq!("1d2", pool.add_increments(1).to_string());
-        assert_eq!("1d3", pool.add_increments(2).to_string());
-        assert_eq!("1d4", pool.add_increments(3).to_string());
-        assert_eq!("1d6", pool.add_increments(4).to_string());
-        assert_eq!("1d8", pool.add_increments(5).to_string());
-        assert_eq!("1d10", pool.add_increments(6).to_string());
-    }
-
-    #[test]
-    fn increasing_dice_with_splitting() {
-        let pool = DicePool::d10();
-        assert_eq!("2d6", pool.add_increments(1).to_string());
-        assert_eq!("1d6+1d8", pool.add_increments(2).to_string());
-        assert_eq!("1d6+1d10", pool.add_increments(3).to_string());
-        assert_eq!("3d6", pool.add_increments(4).to_string());
-    }
-
-    #[test]
     fn calculates_average_damage() {
         assert_eq!(3.5, DicePool::d6().average_damage());
         assert_eq!(4.5, DicePool::d8().average_damage());
         assert_eq!(5.5, DicePool::d10().average_damage());
-        assert_eq!(7.0, DicePool::d10().add_increments(1).average_damage());
+        assert_eq!(6.5, DicePool::d10().add_modifier(1).average_damage());
 
         assert_eq!(13.5, DicePool::xdy(3, 8).average_damage());
     }
@@ -349,7 +317,7 @@ mod tests {
             12.0,
             DicePool::d10()
                 .maximize()
-                .add_increments(1)
+                .add_modifier(2)
                 .average_damage()
         );
 
@@ -360,8 +328,8 @@ mod tests {
     fn stringifies_maximized_dice() {
         assert_eq!("6", DicePool::d6().maximize().to_string());
         assert_eq!(
-            "12",
-            DicePool::d6().add_increments(3).maximize().to_string()
+            "9",
+            DicePool::d6().add_modifier(3).maximize().to_string()
         );
     }
 }

@@ -289,7 +289,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
-                    The target regains 1d6 \glossterm{hit points} +1d per 2 \glossterm{power}.
+                    The target regains 1d6 \glossterm{hit points} +1 per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
