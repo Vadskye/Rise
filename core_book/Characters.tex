@@ -73,7 +73,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Constitution tend to have strong defensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Constitution to your level to determine your \glossterm{hit points} (see \pcref{Hit Points}).
+                \item Your Constitution increases your \glossterm{hit points}, as defined by your class (see \pcref{Classes}).
                 \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
                 \item You add your Constitution to your Fortitude defense.
                 \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
@@ -166,6 +166,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             If you reduce an attribute by a total of \minus1, you gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
             If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             You cannot gain these benefits from reducing more than two attributes below 0 in this way.
+            In addition, you can never reduce an attribute below \minus2 in this way, including any attribute modifiers from your species.
 
 \section{Skills Overview}
     Skills represent the myriad of talents that people can have, such as cooking or swimming.
@@ -717,13 +718,9 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
         For details about how damage resistance is used, see \pcref{Taking Damage}.
 
-        The amount of damage resistance you have is defined in \tref{Character Advancement and Gaining Levels}.
-        You use your level to find the corresponding base value.
-        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed amount of additional damage resistance.
-        Body armor also provides a significant bonus to damage resistance.
-
-        If this value exceeds 21, you gain 5 hit points for every value beyond 21.
-        For example, a level 21 sorcerer would have 55 damage resistance.
+        You do not intrinsically have any damage resistance.
+        Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
+        In addition, some class abilities and magic items can also increase it.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
@@ -756,14 +753,8 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
         For details about how hit points are used, see \pcref{Taking Damage}.
 
-        The amount of hit points you have is defined in \tref{Character Advancement and Gaining Levels}.
-        You add your level and your Constitution to find your effective level for the purpose of determining your hit points.
-        For example, a level 3 character with 2 Constitution would have 10 hit points, as would a level 5 character with 0 Constitution.
-        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed number of additional hit points.
-
-        If the sum of your level and Constitution is negative, your hit points are equal to 6 \add half that negative value.
-        If the sum exceeds 21, you gain 10 hit points for every value beyond 21.
-        For example, a level 21 creature with a 4 Constitution would have 110 hit points.
+        The way you calculate your hit points is defined by your class (see \pcref{Classes}).
+        Increasing your level and Constitution will increase your hit points.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -771,18 +762,18 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Power}\label{Power}
         Your \glossterm{power} is a general representation of how strong your abilities are.
-        You have two types of power: your \glossterm{magical power} affects your \magical abilities, and your \glossterm{mundane power} affects your \glossterm{mundane} abilities.
+        You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities.
         If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
 
         Your mundane power is equal to your Strength \add half your level.
         Similarly, your magical power is equal to your Willpower \add half your level.
         If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
-        For example, a strike with a broadsword would normally deal 1d6 damage \plus1d per 2 power.
+        For example, a strike with a broadsword would normally deal 1d6 damage \plus1 per 2 power.
         A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
         % TODO: weapon damage wording
-        For example, you gain a \plus1d bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
+        For example, you gain a \plus1 bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
 
 \section{Resources}\label{Resources}
 

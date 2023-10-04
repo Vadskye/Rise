@@ -70,46 +70,87 @@ fn generate_latex_resources(class: &Class) -> String {
 }
 
 fn generate_latex_defenses(class: &Class) -> String {
-    let armor_defense_bonus = class.defense_bonus(&Defense::Armor);
-    let armor_text = if armor_defense_bonus > 0 {
-        format!("\\plus<{}> Armor,", armor_defense_bonus)
-    } else {
-        "".to_string()
-    };
-    let mut hp_dr_text = "".to_string();
-    if class.hit_points() > 0 {
-        if class.damage_resistance() > 0 {
-            hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
-                class.hit_points(),
-                class.damage_resistance(),
-            )
-        } else {
-            hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
-                class.hit_points(),
-            )
-        }
-    } else if class.damage_resistance() > 0 {
-        hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
-                class.damage_resistance(),
-            )
-    }
-
     latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
-            You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            {hp_dr_text}
+            You gain the following bonuses to your \\glossterm<defenses>: \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
+
+            \\cf<{shorthand_name}><Hit Points>
+            {hp_text}
         ",
-        armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        hp_dr_text=hp_dr_text,
+        hp_text=hit_points_progression_text(class.hit_points()),
     ))
+}
+
+fn hit_points_progression_text(class_points: i32) -> String {
+    let progression = match class_points {
+        0 => [
+            [6, 1],
+            [14, 2],
+            [30, 4],
+            [60, 8],
+        ],
+        3 => [
+            [8, 1],
+            [18, 2],
+            [35, 5],
+            [70, 10],
+        ],
+        6 => [
+            [8, 2],
+            [20, 3],
+            [40, 6],
+            [80, 12],
+        ],
+        9 => [
+            [10, 2],
+            [24, 4],
+            [50, 8],
+            [100, 15],
+        ],
+        _ => panic!("Unsupported class points spent: {}", class_points),
+    };
+
+    format!(
+        "
+            {level_one}
+            This increases as your level increases, as indicated below.
+            \\begin<itemize>
+                \\itemhead<Level 7> {level_seven}
+                \\itemhead<Level 13> {level_thirteen}
+                \\itemhead<Level 19> {level_nineteen}
+            \\end<itemize>
+        ",
+        level_one = hit_points_at_level_text(progression[0][0], progression[0][1], 1),
+        level_seven = hit_points_at_level_text(progression[1][0], progression[1][1], 7),
+        level_thirteen = hit_points_at_level_text(progression[2][0], progression[2][1], 13),
+        level_nineteen = hit_points_at_level_text(progression[3][0], progression[3][1], 19),
+    )
+}
+
+fn hit_points_at_level_text(base: i32, per_level: i32, past_level: i32) -> String {
+    let constitution_multiplier_text = match per_level {
+        1 => "",
+        2 => "twice",
+        3 => "three times",
+        4 => "four times",
+        5 => "five times",
+        6 => "six times",
+        8 => "eight times",
+        10 => "ten times",
+        12 => "twelve times",
+        15 => "fifteen times",
+        _ => panic!("Unsupported constitution multiplier {}", per_level),
+    };
+    return format!("You have {} hit points, plus {} hit points per level beyond {}. You also add {} your Constitution to your hit points.",
+    base,
+    per_level,
+    past_level,
+    constitution_multiplier_text);
 }
 
 fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
