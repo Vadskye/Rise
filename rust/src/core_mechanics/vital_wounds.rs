@@ -99,7 +99,7 @@ where
             CreatureCategory::Character => {
                 self.calc_total_modifier(ModifierType::VitalRoll) - self.vital_wounds.len() as i32
             }
-            CreatureCategory::Monster(_) => 0,
+            CreatureCategory::Monster(..) => 0,
         }
     }
 
@@ -114,7 +114,7 @@ where
                     VitalWound::Zero
                 }
             }
-            CreatureCategory::Monster(_) => VitalWound::Zero,
+            CreatureCategory::Monster(..) => VitalWound::Zero,
         }
     }
 

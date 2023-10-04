@@ -170,7 +170,7 @@
         You gain an additional vital wound for each increment of half your maximum hit points that you reach in negative hit points.
         Avoid rounding if possible - for example, if your negative hit points exactly equal your maximum hit points, you gain three vital wounds.
 
-        If you would recover \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
+        If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
         In addition, your hit points are reset to 0 at the end of the round if they are still negative.
         This is checked after applying all healing and damage that takes place at the end of the round.
         This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
@@ -738,7 +738,7 @@
                 Dirty Trick              & Fort or Ref\fn{2}  & Impose penalty on a foe              \\
                 Grapple                  & Fort and Ref\fn{2} & Wrestle with a foe                   \\
                 Overrun\fn{1}            & Fort\fn{2}         & Move through foe's space             \\
-                Recover\fn{1}            & \tdash             & Regain hit points, remove conditions \\
+                Recover\fn{1}            & \tdash             & Regain HP and DR, remove conditions \\
                 Shove                    & Fort\fn{2}         & Move a foe                           \\
                 Sprint\fn{1}             & \tdash             & Move at double speed                 \\
                 Total Defense            & \tdash             & Gain \plus2 to defenses              \\
@@ -824,7 +824,7 @@
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you finish a short rest.
 
-            You regain all of your \glossterm{hit points}.
+            You regain all of your \glossterm{damage resistance} and half of your total \glossterm{hit points}.
             In addition, you remove any number of \glossterm{conditions} affecting you.
             Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
         \end{activeability}

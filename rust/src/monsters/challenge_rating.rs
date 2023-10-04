@@ -97,11 +97,14 @@ impl ChallengeRating {
         }
     }
 
+    // PCs have effectively 2x their base DR because of the Recover mechanic.
+    // Normal monsters don't factor this in, so their DR relative to HP is lower than PCs.
+    // Elite monsters have a multiplier to compensate for this.
     pub fn dr_multiplier(&self) -> f64 {
         match self {
             Self::Half => 0.0,
-            Self::One => 2.0,
-            Self::Four => 8.0,
+            Self::One => 1.0,
+            Self::Four => 1.5,
         }
     }
 

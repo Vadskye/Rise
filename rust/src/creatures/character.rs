@@ -6,7 +6,7 @@ use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, Standard
 
 pub struct Character {
     // archetypes: [ClassArchetype; 3],
-    class: Class,
+    pub class: Class,
     pub creature: creature::Creature,
 }
 
@@ -37,13 +37,6 @@ impl Character {
         for resource in Resource::all() {
             creature.add_modifier(
                 Modifier::Resource(resource, class.resource_bonus(&resource)),
-                Some(class.name()),
-                None,
-            );
-        }
-        if class.hit_points() > 0 {
-            creature.add_modifier(
-                Modifier::HitPointsFromLevel(class.hit_points()),
                 Some(class.name()),
                 None,
             );
