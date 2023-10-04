@@ -39,7 +39,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus increases to +20 feet.
+                The speed bonus increases to +20 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
@@ -225,41 +225,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
     vec![
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(35)]),
-        },
         RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
@@ -459,8 +424,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -469,28 +434,36 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(3),
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::DamageResistance(4),
             ]),
-        },
-        RankAbility {
-            name: "Ki Manifestation",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional \textit{ki manifestation}.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Ki Barrier+",
             is_magical: true,
+            rank: 4,
+            description: r"
+                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Barrier++",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The damage resistance bonus increases to seven times your rank in this archetype.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Manifestation+",
+            is_magical: true,
             rank: 5,
             description: r"
-                The damage resistance bonus increases to five times your rank in this archetype, and the defense bonus from the body armor increases to \plus4.
+                You learn an additional \textit{ki manifestation}.
             ",
-            // Rank 4: 16. Rank 5: 30.
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Ki Power",
@@ -573,7 +546,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                The bonus increases to +2.
+                The defense bonuses increase to +2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -585,7 +558,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The bonus increases to +3.
+                The defense bonuses increase to +3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
@@ -650,9 +623,29 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Transcend Uncertainty",
+            name: "Transcend Frailty",
             is_magical: false,
             rank: 2,
+            description: r"
+                You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+            ",
+            // TODO: represent DR
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Frailty+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The damage resistance bonus increases to four times your rank in this archetype.
+            ",
+            // TODO: represent DR
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 3,
             description: r"
                 You are immune to being \stunned and \confused.
             ",
@@ -660,27 +653,9 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Diamond Soul",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You gain a \plus1 bonus to your Willpower.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Feel the Flow of Life+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Transcend Emotion",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
                 In addition, you are immune to being \frightened and \panicked.
@@ -690,12 +665,21 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Transcend Mortality",
             is_magical: true,
-            rank: 6,
+            rank: 5,
             description: r"
                 You are no longer considered a living creature for the purpose of attacks against you.
                 This means that attacks which only affect living creatures have no effect against you.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Feel the Flow of Life+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
             ",
             modifiers: None,
         },
