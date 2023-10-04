@@ -260,7 +260,7 @@ pub struct PowerScaling {
 }
 
 impl PowerScaling {
-    // Normally, weapons gain +1d per 2 power. Low-level spells also tend to use this
+    // Normally, weapons gain +1 damage per 2 power. Low-level spells also tend to use this
     // scaling.
     pub fn standard_weapon_scaling() -> Self {
         Self {
@@ -271,7 +271,7 @@ impl PowerScaling {
     }
 
     pub fn heavy_weapon_scalings() -> Vec<Self> {
-        // Two scalings: one that gives +1d per 2 power, and one that gives +1d per 3
+        // Two scalings: one that gives +1 damage per 2 power, and one that gives +1 per 3
         // power.
         vec![
             Self::standard_weapon_scaling(),

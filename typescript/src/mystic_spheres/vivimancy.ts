@@ -46,7 +46,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankthree{energy}.
           If the target loses \\glossterm{hit points}, you can increase your \\glossterm{fatigue level} by one. 
           % dr1
-          When you do, you regain 1d6 hit points +1d per 2 power.
+          When you do, you regain 1d6 hit points +1 per 2 power.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
@@ -82,7 +82,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankone{energy}.
           If the target loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           % dr2
-          When you do, you regain 1d8 hit points +1d per 2 power.
+          When you do, you regain 1d8 hit points +1 per 2 power.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
@@ -112,10 +112,10 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr1
-        The target regains 1d6 \\glossterm{hit points} +1d per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d6 \\glossterm{hit points} +1 per 2 power and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 1.' },
+      scaling: { special: 'The healing increases by +1 for each rank beyond 1.' },
       tags: ['Swift'],
     },
 
@@ -150,7 +150,7 @@ export const vivimancy: MysticSphere = {
       // TODO: unclear rank
       effect: `
         You create a zone of life energy in a \\medarea radius around your location.
-        When you cast this spell, and during each of your subsequent actions, each creature in the area regains 1d6 hit points +1d per 2 power.
+        When you cast this spell, and during each of your subsequent actions, each creature in the area regains 1d6 hit points +1 per 2 power.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 4,
