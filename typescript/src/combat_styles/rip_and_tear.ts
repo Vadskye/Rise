@@ -68,12 +68,12 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Two-Weapon Rend',
 
-      // 1d6 +1d per 2 power is about the same damage as an extra strike, so about 50%
+      // 1d6 +1 per 2 power is about the same damage as an extra strike, so about 50%
       // more damage compared to hitting with two weapons.
       effect: `
         Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
         If the target takes damage from both weapons, it bleeds.
-        A bleeding creature takes 1d6 slashing damage +1d per two \\glossterm{power} during your next action.
+        A bleeding creature takes 1d6 slashing damage +1 per two \\glossterm{power} during your next action.
       `,
       rank: 1,
     },
@@ -219,7 +219,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d8 +1d per two power \\glossterm{extra damage}.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d8 +1 per two power \\glossterm{extra damage}.
       `,
       // narrative: '',
       rank: 3,
