@@ -307,7 +307,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                This bonus increases to five times your rank in this archetype.
+                This bonus increases to four times your rank in this archetype.
             ",
             modifiers: None,
         },

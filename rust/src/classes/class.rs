@@ -95,14 +95,11 @@ impl Class {
     fn calculate_point_total(&self) -> i32 {
         let custom_modifier = 0;
         self.attunement_points() * 5
-            + hp_dr_points(self.damage_resistance())
-            // 3 points to get an Armor defense
-            + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            + hp_dr_points(self.hit_points())
+            + self.hit_points()
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per armor proficiency
@@ -124,7 +121,7 @@ impl Class {
             Self::Druid => 3,
             Self::Fighter => 2,
             Self::Harpy => 2,
-            Self::Monk => 2,
+            Self::Monk => 3,
             Self::Oozeborn => 2,
             Self::Paladin => 2,
             Self::Ranger => 2,
@@ -531,7 +528,7 @@ impl Class {
             Self::Druid => 3,
             Self::Fighter => 4,
             Self::Harpy => 4,
-            Self::Monk => 3,
+            Self::Monk => 4,
             Self::Oozeborn => 5,
             Self::Paladin => 4,
             Self::Ranger => 4,
@@ -543,27 +540,28 @@ impl Class {
         }
     }
 
-    // Each +1 level to hit points is about 10% more HP
-    // +3 is about 40% more HP
-    // +4 is about 60% more HP
+    // 0 points for baseline
+    // 3 points for 25% more HP
+    // 6 points for 42% more HP
+    // 9 points for 75% more HP
     pub fn hit_points(&self) -> i32 {
         match self {
-            Self::Automaton => 3,
-            Self::Barbarian => 5,
-            Self::Cleric => 2,
-            Self::Dragon => 4,
-            Self::Druid => 2,
-            Self::Fighter => 3,
-            Self::Harpy => 2,
-            Self::Monk => 2,
-            Self::Oozeborn => 5,
-            Self::Paladin => 3,
-            Self::Ranger => 3,
-            Self::Rogue => 1,
+            Self::Automaton => 6,
+            Self::Barbarian => 9,
+            Self::Cleric => 3,
+            Self::Dragon => 6,
+            Self::Druid => 3,
+            Self::Fighter => 6,
+            Self::Harpy => 3,
+            Self::Monk => 3,
+            Self::Oozeborn => 9,
+            Self::Paladin => 6,
+            Self::Ranger => 6,
+            Self::Rogue => 3,
             Self::Sorcerer => 0,
-            Self::Warlock => 2,
+            Self::Warlock => 3,
             Self::Wizard => 0,
-            Self::Vampire => 2,
+            Self::Vampire => 3,
         }
     }
 
@@ -1597,7 +1595,7 @@ impl Class {
                         \parhead{Mastery} The power bonus from this domain's essence increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \parhead{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
@@ -1608,8 +1606,9 @@ impl Class {
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
                         \end{magicalactiveability}
-                        \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
+                        \parhead{Essence} The bonus from this domain's gift increases to three times your rank in the Domain Mastery archetype.
                         \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
+                        In addition, the bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
@@ -1735,14 +1734,5 @@ impl Class {
             }
             _ => "",
         }
-    }
-}
-
-// Going above +3 HP or DR costs an extra point per value
-fn hp_dr_points(value: i32) -> i32 {
-    if value < 4 {
-        value
-    } else {
-        3 + (value - 3) * 2
     }
 }

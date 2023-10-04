@@ -199,7 +199,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to \glossterm{damage resistance} equal to your rank in this archetype.
+                    It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -220,7 +220,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"        
-                The damage resistance bonus increases to twice your rank in this archetype.
+                The damage resistance bonus increases to four times your rank in this archetype.
             ",
             // Rank 2: 4. Rank 3: 9.
             modifiers: None,
@@ -230,7 +230,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to three times your rank in this archetype.
+                The damage resistance bonus increases to five times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
@@ -519,7 +519,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-                    In addition, you gain a \plus1 bonus to your Armor defense.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -552,6 +551,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen school improves.
                 {
                     \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
+                    In addition, you gain a \plus1 bonus to your Armor defense.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
