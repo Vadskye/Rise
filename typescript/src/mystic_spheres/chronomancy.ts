@@ -526,11 +526,11 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1d per 2 power, and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per 2 power, and increases its \\glossterm{fatigue level} by one.
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
+      scaling: { special: 'The recovery increases by +1 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 

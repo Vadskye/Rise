@@ -503,7 +503,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus2 accuracy bonus and a \plus1d damage bonus with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
+                You gain a +2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
                 In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to dual-wield with it more easily (see \pcref{Dual Wielding}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
@@ -515,7 +515,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                The damage bonus increases to \plus2d.
+                Your punch/kick damage increases to 1d6.
             ",
             modifiers: None,
         },
@@ -524,7 +524,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The damage bonus increases to \plus3d.
+                Your punch/kick damage increases to 1d8.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
