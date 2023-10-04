@@ -71,9 +71,9 @@ def generate_weapons():
                 Upgrade(
                     rank=4,
                     description="""
-                        The weapon also deals +1d damage.
+                        The weapon also deals +1 damage.
                     """,
-                    short_description="Deals +1d bludgeoning damage",
+                    short_description="Deals +1 bludgeoning damage",
                 ),
                 Upgrade(
                     rank=7,
@@ -189,9 +189,9 @@ def generate_weapons():
             name="Mighty",
             rank=3,
             description="""
-                If your Strength is at least 3, you gain a +1d damage bonus with strikes using this weapon.
+                If your Strength is at least 3, you gain a +1 damage bonus with strikes using this weapon.
             """,
-            short_description="Grants +1d damage if you have 3 Str",
+            short_description="Grants +1 damage if you have 3 Str",
             upgrades=[
                 Upgrade(
                     rank=6,
@@ -249,9 +249,9 @@ def generate_weapons():
             name="Infused",
             rank=3,
             description="""
-                If your Willpower is at least 3, you gain a +1d damage bonus with strikes using this weapon.
+                If your Willpower is at least 3, you gain a +1 damage bonus with strikes using this weapon.
             """,
-            short_description="Grants +1d damage if you have 3 Wil",
+            short_description="Grants +1 damage if you have 3 Wil",
             upgrades=[
                 Upgrade(
                     rank=6,

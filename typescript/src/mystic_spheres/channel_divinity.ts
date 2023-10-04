@@ -61,7 +61,7 @@ export const channelDivinity: MysticSphere = {
         Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 4,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 4.' },
+      scaling: { special: 'The healing increases by +1 for each rank beyond 4.' },
       tags: [],
     },
 

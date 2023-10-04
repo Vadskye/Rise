@@ -255,7 +255,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
-                    The target regains 1d6 \glossterm{hit points} +1d per 2 power.
+                    The target regains 1d6 \glossterm{hit points} +1 per 2 power.
                     In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
@@ -409,7 +409,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     If the target has your devoted alignment, this becomes a \glossterm{weak strike} instead.
 
                     \rankline
-                    \rank{3} You no longer gain the normal weapon damage bonus of +1d per two power.
+                    \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
                     Instead, you gain 1d6 extra damage per 4 power (minimum 1d6).
                     \rank{4} The extra damage increases to 1d6 per 3 power.
                     \rank{5} The extra damage increases to 1d8 per 3 power.
