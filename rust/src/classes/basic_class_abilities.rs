@@ -82,75 +82,8 @@ fn generate_latex_defenses(class: &Class) -> String {
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        hp_text=hit_points_progression_text(class.hit_points()),
+        hp_text=class.hit_point_progression().to_class_text(),
     ))
-}
-
-fn hit_points_progression_text(class_points: i32) -> String {
-    let progression = match class_points {
-        0 => [
-            [6, 1],
-            [14, 2],
-            [30, 4],
-            [60, 8],
-        ],
-        3 => [
-            [8, 1],
-            [18, 2],
-            [35, 5],
-            [70, 10],
-        ],
-        6 => [
-            [8, 2],
-            [20, 3],
-            [40, 6],
-            [80, 12],
-        ],
-        9 => [
-            [10, 2],
-            [24, 4],
-            [50, 8],
-            [100, 15],
-        ],
-        _ => panic!("Unsupported class points spent: {}", class_points),
-    };
-
-    format!(
-        "
-            {level_one}
-            This increases as your level increases, as indicated below.
-            \\begin<itemize>
-                \\itemhead<Level 7> {level_seven}
-                \\itemhead<Level 13> {level_thirteen}
-                \\itemhead<Level 19> {level_nineteen}
-            \\end<itemize>
-        ",
-        level_one = hit_points_at_level_text(progression[0][0], progression[0][1], 1),
-        level_seven = hit_points_at_level_text(progression[1][0], progression[1][1], 7),
-        level_thirteen = hit_points_at_level_text(progression[2][0], progression[2][1], 13),
-        level_nineteen = hit_points_at_level_text(progression[3][0], progression[3][1], 19),
-    )
-}
-
-fn hit_points_at_level_text(base: i32, per_level: i32, past_level: i32) -> String {
-    let constitution_multiplier_text = match per_level {
-        1 => "",
-        2 => "twice",
-        3 => "three times",
-        4 => "four times",
-        5 => "five times",
-        6 => "six times",
-        8 => "eight times",
-        10 => "ten times",
-        12 => "twelve times",
-        15 => "fifteen times",
-        _ => panic!("Unsupported constitution multiplier {}", per_level),
-    };
-    return format!("You have {} hit points, plus {} hit points per level beyond {}. You also add {} your Constitution to your hit points.",
-    base,
-    per_level,
-    past_level,
-    constitution_multiplier_text);
 }
 
 fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {

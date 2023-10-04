@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{HitPointProgression, Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -99,7 +99,7 @@ impl Class {
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            + self.hit_points()
+            + self.hit_point_progression().creation_point_cost()
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per armor proficiency
@@ -540,28 +540,24 @@ impl Class {
         }
     }
 
-    // 0 points for baseline
-    // 3 points for 25% more HP
-    // 6 points for 42% more HP
-    // 9 points for 75% more HP
-    pub fn hit_points(&self) -> i32 {
+    pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Self::Automaton => 6,
-            Self::Barbarian => 9,
-            Self::Cleric => 3,
-            Self::Dragon => 6,
-            Self::Druid => 3,
-            Self::Fighter => 6,
-            Self::Harpy => 3,
-            Self::Monk => 3,
-            Self::Oozeborn => 9,
-            Self::Paladin => 6,
-            Self::Ranger => 6,
-            Self::Rogue => 3,
-            Self::Sorcerer => 0,
-            Self::Warlock => 3,
-            Self::Wizard => 0,
-            Self::Vampire => 3,
+            Self::Automaton => HitPointProgression::High,
+            Self::Barbarian => HitPointProgression::VeryHigh,
+            Self::Cleric => HitPointProgression::Medium,
+            Self::Dragon => HitPointProgression::High,
+            Self::Druid => HitPointProgression::Medium,
+            Self::Fighter => HitPointProgression::High,
+            Self::Harpy => HitPointProgression::Medium,
+            Self::Monk => HitPointProgression::Medium,
+            Self::Oozeborn => HitPointProgression::VeryHigh,
+            Self::Paladin => HitPointProgression::High,
+            Self::Ranger => HitPointProgression::High,
+            Self::Rogue => HitPointProgression::Medium,
+            Self::Sorcerer => HitPointProgression::Low,
+            Self::Warlock => HitPointProgression::Medium,
+            Self::Wizard => HitPointProgression::Low,
+            Self::Vampire => HitPointProgression::Medium,
         }
     }
 
