@@ -21,7 +21,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Most brutes charge directly at the enemy and fight in melee, though some prefer to use a few ranged attacks before entering the fray.
 
             \parhead{Defenses} \plus4 Armor, \plus4 Fortitude, \plus4 Reflex, \plus4 Mental
-            \parhead{Survival} \plus4 level for hit points
+            \parhead{Hit Points} Very high, as barbarian
+            \parhead{Damage Resistance} One quarter of total hit points
 
         \subsubsection{Skirmisher}
             A typical skirmisher uses its high mobility to fight only when it is advantageous to do so.
@@ -30,7 +31,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Instead, they ambush the vulnerable back lines if possible.
 
             \parhead{Defenses} \plus4 Armor, \plus4 Fortitude, \plus6 Reflex, \plus4 Mental
-            \parhead{Survival} \plus2 level for damage resistance
+            \parhead{Hit Points} Medium, as rogue
+            \parhead{Damage Resistance} Half of total hit points
 
         \subsubsection{Warrior}
             A typical warrior forms a defensive front line to protect any vulnerable allies.
@@ -38,21 +40,24 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             However, they tend to lack offensive power and mobility, so they risk being outflanked and irrelevant.
 
             \parhead{Defenses} \plus6 Armor, \plus4 Fortitude, \plus4 Reflex, \plus4 Mental
-            \parhead{Survival} \plus2 level for hit points, \plus4 level for damage resistance
+            \parhead{Hit Points} High, as fighter
+            \parhead{Damage Resistance} Equal to total hit points
 
         \subsubsection{Sniper}
             A typical sniper uses ranged attacks while staying as far away from combat as possible.
             Snipers tend to be fragile, so they can be quickly dispatched by creatures that are able to close the distance.
 
             \parhead{Defenses} \plus3 Armor, \plus4 Fortitude, \plus4 Reflex, \plus4 Mental
-            \parhead{Survival} No bonuses
+            \parhead{Hit Points} Medium, as rogue
+            \parhead{Damage Resistance} Half of total hit points
 
         \subsubsection{Mystic}
             A typical mystic uses exclusively magical abilities, and their offensive capabilities can be highly varied.
             Mystics try to avoid melee combat because their physical defenses are low, but magical protections mean they can resist attacks effectively.
 
             \parhead{Defenses} \plus2 Armor, \plus4 Fortitude, \plus4 Reflex, \plus6 Mental
-            \parhead{Survival} \plus4 level for damage resistance
+            \parhead{Hit Points} Low, as wizard
+            \parhead{Damage Resistance} Equal to total hit points
 
         \subsubsection{Leader}
             A typical leader commands their allies from behind the front lines, but is willing to enter the fray to protect more vulnerable allies.
@@ -60,7 +65,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             Instead, they tend to be more effective when aiding or commanding their allies.
 
             \parhead{Defenses} \plus4 Armor, \plus4 Fortitude, \plus4 Reflex, \plus4 Mental
-            \parhead{Survival} \plus2 level for hit points, \plus2 level for damage resistance
+            \parhead{Hit Points} High, as fighter
+            \parhead{Damage Resistance} Half of total hit points
 
     \subsection{Level Scaling}
         Each monster has a level that indicates its approximate strength.
@@ -71,7 +77,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         They have the following specific changes.
         \begin{itemize}
             \item Monsters do not gain insight points, attunement points, or legacy items.
-            \item Monsters have twice the base damage resistance of a player character.
+            \item Monsters primarily calculate their damage resistance based on their hit points and role rather than armor.
             \item Monsters gain a \plus1 bonus to \glossterm{accuracy} at 6th level and 18th level.
             \item Monsters gain a \plus1 bonus to all defenses at 12th level.
         \end{itemize}
@@ -110,7 +116,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
         They have a number of benefits and modifiers to make them more appropriate as a solo encounter than simply using a very high level ordinary monster:
         \begin{itemize}
             \item Elite monsters gain a \plus2 bonus to their \glossterm{accuracy} and all \glossterm{defenses}.
-            \item Elite monsters have four times the \glossterm{hit points} and \glossterm{damage resistance} of standard monsters.
+            \item Elite monsters have four times the \glossterm{hit points} of standard monsters.
+            \item Elite monsters have 50\% more \glossterm{damage resistance} than standard monsters. This is applied after the bonus they get from having higher hit points, since monster damage resistance is based on their hit points.
             \item Elite monsters can have a maximum attribute of 6 (see \pcref{Monster Attributes}).
             \item Elite monsters double their damage and healing with all abilities. This stacks multiplicatively with any other modifiers, so an elite monster using a double damage attack would deal four times the damage of a normal monster's attack.
             \item Elite monsters can take an additional \glossterm{elite action} each round (see \pcref{Elite Actions}).
