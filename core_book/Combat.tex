@@ -63,50 +63,23 @@
             For example, 2d6 means you roll two six-sided dice.
             You always sum the roll of all dice rolled in a dice pool to determine the total result.
 
-            Some modifiers add \glossterm{die increments} to increase the value of a dice pool.
-            Increasing by one die increment is written as adding \plus1d to the dice pool.
-            Each die increment increases the size of the largest die in the dice pool by one increment.
-            If that die is a d10, it splits into 2d6.
-            The dice sizes are listed below in order of size.
-            Dice smaller than 1d4 are rarely used in dice pools.
-            \begin{itemize}
-                \item 1 damage (minimum)
-                \item 1d2
-                \item 1d3
-                \item 1d4
-                \item 1d6
-                \item 1d8
-                \item 1d10
-                \item 2d6
-                \item 1d8\plus1d6
-                \item 1d10\plus1d6
-                \item 3d6
-                \item 1d8\plus2d6
-                \item 1d10\plus2d6
-                \item 4d6
-            \end{itemize}
-
-            For example, assume you have an ability that deals 2d6 damage normally.
-            If you gained a \plus1d damage bonus, you would deal 1d10 \add 1d6 damage.
-            An additional \plus1d damage bonus, for a total of \plus2d, would mean you deal 3d6 damage.
-
-            If you have a large number of +1d modifiers, this process can be cumbersome.
-            Instead, for every +3d, you can simply add 1d6 to the dice pool without changing any of the original dice.
-            You can only use this replacement if your dice pool already rolls at least 1d6.
+            Some dice pools also have fixed numeric modifiers.
+            For example, a normal weapon strike rolls dice based on the weapon used, and adds a fixed damage modifier based on your \glossterm{mundane power}.
+            You sum the die roll with the extra modifier to determine the total.
 
     \subsection{Weapon Damage}\label{Weapon Damage}
         Some abilities deal damage based on the weapon you use the ability with.
         Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
 
         Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-        You gain a \plus1d bonus to your weapon damage for every 2 \glossterm{power} you have (see \pcref{Power}).
+        You gain a bonus to your weapon damage equal to half your \glossterm{power} see (see \pcref{Power}).
         Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
         However, you might use your \glossterm{magical power} instead for \magical strikes.
 
         \subsubsection{Weak Strikes}
             Some abilities make weak strikes, which deal less damage than normal strikes.
-            When you make a weak strike, you roll your \glossterm{weapon damage} twice and take the lower result.
-            You do not reroll any \glossterm{extra damage} that the strike deals.
+            When you make a weak strike, you ignore all flat damage modifiers, such as from your \glossterm{power}.
+            You only roll dice to determine your damage.
 
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}

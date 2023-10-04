@@ -30,7 +30,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 3,
+                power_per_plus1_modifier: 3,
             }],
         }
     }
@@ -41,7 +41,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 2,
+                power_per_plus1_modifier: 2,
             }],
         }
     }
@@ -52,7 +52,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 2,
+                power_per_plus1_modifier: 2,
             }],
         }
     }
@@ -63,7 +63,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -74,7 +74,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -85,7 +85,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -96,7 +96,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -107,7 +107,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -118,7 +118,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -129,7 +129,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 2,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -164,7 +164,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -175,7 +175,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -186,7 +186,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -197,7 +197,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -208,7 +208,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 2,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -219,7 +219,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 2,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -230,7 +230,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 2,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -242,12 +242,12 @@ impl DamageScaling {
                 PowerScaling {
                     dice: Some(DicePool::d10()),
                     power_per_dice: 2,
-                    power_per_increment: 0,
+                    power_per_plus1_modifier: 0,
                 },
                 PowerScaling {
                     dice: Some(DicePool::d6()),
                     power_per_dice: 2,
-                    power_per_increment: 0,
+                    power_per_plus1_modifier: 0,
                 },
             ],
         }
@@ -277,7 +277,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 2,
+                power_per_plus1_modifier: 2,
             }],
         }
     }
@@ -288,7 +288,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_increment: 2,
+                power_per_plus1_modifier: 2,
             }],
         }
     }
@@ -299,7 +299,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -310,7 +310,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -321,7 +321,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -332,7 +332,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 4,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -343,7 +343,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -354,7 +354,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }
@@ -365,7 +365,7 @@ impl DamageScaling {
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 3,
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
     }

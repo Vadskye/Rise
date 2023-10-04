@@ -329,7 +329,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d6 \glossterm{damage resistance} +1d per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d6 \glossterm{damage resistance} +1 per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline

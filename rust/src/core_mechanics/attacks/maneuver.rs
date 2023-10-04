@@ -92,22 +92,22 @@ impl Maneuver {
                     4 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d4()),
                         power_per_dice: 4,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     5 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d6()),
                         power_per_dice: 4,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     6 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d6()),
                         power_per_dice: 3,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     7 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d10()),
                         power_per_dice: 3,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     _ => {},
                 }),
@@ -120,17 +120,17 @@ impl Maneuver {
                     5 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d4()),
                         power_per_dice: 4,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     6 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d6()),
                         power_per_dice: 4,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     7 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d6()),
                         power_per_dice: 3,
-                        power_per_increment: 0,
+                        power_per_plus1_modifier: 0,
                     }),
                     _ => {},
                 }),

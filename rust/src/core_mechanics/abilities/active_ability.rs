@@ -669,7 +669,7 @@ fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: boo
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::xdy(1, die_size.parse::<i32>().unwrap())),
                 power_per_dice: per_power.parse::<i32>().unwrap(),
-                power_per_increment: 0,
+                power_per_plus1_modifier: 0,
             }],
         }
         .damage_effect();
@@ -886,7 +886,7 @@ The $name glows like a torch for a minute.
         }
     }
 
-    // Note that the default creature has 5 power, so +2d normally or +3d for a heavy weapon.
+    // Note that the default creature has 5 power, so +2 normally or +3 for a heavy weapon.
     mod replace_damage_terms {
         use super::*;
         use crate::equipment::StandardWeapon;
@@ -907,8 +907,7 @@ The $name glows like a torch for a minute.
         #[test]
         fn replaces_broadsword_damage() {
             assert_eq!(
-                // 1d6+2d = 1d10
-                "Deals 1d10 electricity damage",
+                "Deals 1d6+2 electricity damage",
                 replace_damage_terms(
                     "Deals $damage electricity damage",
                     &sample_creature(),
@@ -934,8 +933,7 @@ The $name glows like a torch for a minute.
         #[test]
         fn replaces_greatsword_damage() {
             assert_eq!(
-                // 1d8+3d = 1d8+1d6. TODO: standardize dice order?
-                "Deals 1d6+1d8 electricity damage",
+                "Deals 1d8+3 electricity damage",
                 replace_damage_terms(
                     "Deals $damage electricity damage",
                     &sample_creature(),
@@ -985,10 +983,9 @@ The $name glows like a torch for a minute.
 
         #[test]
         fn replaces_regular_scaling() {
-            // dr2 is 1d8 +1d per 2 power
+            // dr2 is 1d8 +1 per 2 power
             assert_eq!(
-                // +2d from 5 power
-                "Deals 2d6 electricity damage",
+                "Deals 1d8+2 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr2 electricity damage",
                     &dr_sample_creature(),
@@ -996,8 +993,7 @@ The $name glows like a torch for a minute.
                 ),
             );
             assert_eq!(
-                // +5d from 10 power
-                "Deals 3d6 electricity damage",
+                "Deals 1d8+5 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr2 electricity damage",
                     &dr_sample_creature(),
