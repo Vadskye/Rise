@@ -439,7 +439,7 @@ impl Class {
                 Defense::Mental => 7,
             },
             Self::Dragon => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
@@ -451,19 +451,19 @@ impl Class {
                 Defense::Mental => 6,
             },
             Self::Fighter => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
             Self::Harpy => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 7,
                 Defense::Mental => 5,
             },
             Self::Monk => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 7,
                 Defense::Mental => 5,
@@ -475,13 +475,13 @@ impl Class {
                 Defense::Mental => 5,
             },
             Self::Paladin => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 6,
                 Defense::Reflex => 3,
                 Defense::Mental => 6,
             },
             Self::Ranger => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 6,
                 Defense::Mental => 4,
