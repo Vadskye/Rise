@@ -29,8 +29,6 @@ pub enum ArmorMaterial {
     PureAdamantine,
     ColdIron,
     PureColdIron,
-    Deepforged,
-    PureDeepforged,
     Diamondsteel,
     PureDiamondsteel,
     Dragonhide(String),
@@ -50,7 +48,7 @@ pub enum ArmorMaterial {
 struct ArmorMaterialDefinition {
     dr_multiplier: f64,
     encumbrance_modifier: i32,
-    item_rank_modifier: i32,
+    item_rank: i32,
     name: String,
 }
 
@@ -61,129 +59,117 @@ impl ArmorMaterial {
                 dr_multiplier: 1.0,
                 encumbrance_modifier: 0,
                 name: "normal".to_string(),
-                item_rank_modifier: 0,
+                item_rank: 0,
             },
             Self::Magic(rank) => ArmorMaterialDefinition {
                 dr_multiplier: match rank {
-                    4 => 2.0,
-                    5 => 3.0,
-                    6 => 4.0,
-                    7 => 6.0,
+                    3 => 2.0,
+                    4 => 3.0,
+                    5 => 4.0,
+                    6 => 6.0,
+                    7 => 8.0,
+                    8 => 12.0,
                     _ => 1.0,
                 },
                 encumbrance_modifier: 0,
                 name: "magic".to_string(),
-                item_rank_modifier: 0,
+                item_rank: 0,
             },
             Self::Adamantine => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
+                dr_multiplier: 6.0,
                 encumbrance_modifier: 2,
                 name: "adamantine".to_string(),
-                item_rank_modifier: 3,
+                item_rank: 5,
             },
             Self::PureAdamantine => ArmorMaterialDefinition {
-                dr_multiplier: 8.0,
+                dr_multiplier: 12.0,
                 encumbrance_modifier: 2,
                 name: "pure adamantine".to_string(),
-                item_rank_modifier: 5,
+                item_rank: 7,
             },
             Self::ColdIron => ArmorMaterialDefinition {
-                dr_multiplier: 0.5,
-                encumbrance_modifier: 0,
-                name: "cold iron".to_string(),
-                item_rank_modifier: 2,
-            },
-            Self::PureColdIron => ArmorMaterialDefinition {
-                dr_multiplier: 0.5,
-                encumbrance_modifier: 0,
-                name: "pure cold iron".to_string(),
-                item_rank_modifier: 4,
-            },
-            Self::Deepforged => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
-                encumbrance_modifier: 0,
-                name: "deepforged".to_string(),
-                item_rank_modifier: 2,
-            },
-            Self::PureDeepforged => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
-                encumbrance_modifier: 0,
-                name: "pure deepforged".to_string(),
-                item_rank_modifier: 4,
-            },
-            Self::Diamondsteel => ArmorMaterialDefinition {
                 dr_multiplier: 1.0,
                 encumbrance_modifier: 0,
-                name: "diamondsteel".to_string(),
-                item_rank_modifier: 2,
+                name: "cold iron".to_string(),
+                item_rank: 2,
             },
-            Self::PureDiamondsteel => ArmorMaterialDefinition {
+            Self::PureColdIron => ArmorMaterialDefinition {
                 dr_multiplier: 2.0,
                 encumbrance_modifier: 0,
+                name: "pure cold iron".to_string(),
+                item_rank: 4,
+            },
+            Self::Diamondsteel => ArmorMaterialDefinition {
+                dr_multiplier: 2.0,
+                encumbrance_modifier: 0,
+                name: "diamondsteel".to_string(),
+                item_rank: 3,
+            },
+            Self::PureDiamondsteel => ArmorMaterialDefinition {
+                dr_multiplier: 4.0,
+                encumbrance_modifier: 0,
                 name: "pure diamondsteel".to_string(),
-                item_rank_modifier: 4,
+                item_rank: 5,
             },
             Self::Dragonhide(t) => ArmorMaterialDefinition {
                 dr_multiplier: 3.0,
                 encumbrance_modifier: 0,
                 name: format!("{} dragonhide", t),
-                item_rank_modifier: 3,
+                item_rank: 4,
             },
             Self::AncientDragonhide(t) => ArmorMaterialDefinition {
                 dr_multiplier: 6.0,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonhide", t),
-                item_rank_modifier: 5,
+                item_rank: 6,
             },
             Self::Dragonscale(t) => ArmorMaterialDefinition {
                 dr_multiplier: 3.0,
                 encumbrance_modifier: 0,
                 name: format!("{} dragonscale", t),
-                item_rank_modifier: 3,
+                item_rank: 4,
             },
             Self::AncientDragonscale(t) => ArmorMaterialDefinition {
                 dr_multiplier: 6.0,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonscale", t),
-                item_rank_modifier: 5,
+                item_rank: 6,
             },
             Self::Elvenweave => ArmorMaterialDefinition {
                 dr_multiplier: 2.0,
-                encumbrance_modifier: 0,
+                encumbrance_modifier: -1,
                 name: "elvenweave".to_string(),
-                item_rank_modifier: 2,
+                item_rank: 3,
             },
             Self::PureElvenweave => ArmorMaterialDefinition {
                 dr_multiplier: 4.0,
-                encumbrance_modifier: 0,
+                encumbrance_modifier: -2,
                 name: "pure elvenweave".to_string(),
-                item_rank_modifier: 4,
+                item_rank: 5,
             },
             Self::Mithral => ArmorMaterialDefinition {
-                dr_multiplier: 1.0,
-                encumbrance_modifier: -2,
-                name: "mithral".to_string(),
-                item_rank_modifier: 2,
-            },
-            // The dex multiplier is handled inside the Armor definition since it's weirdly
-            // complicated
-            Self::PureMithral => ArmorMaterialDefinition {
                 dr_multiplier: 2.0,
-                encumbrance_modifier: -3,
+                encumbrance_modifier: -1,
+                name: "mithral".to_string(),
+                item_rank: 3,
+            },
+            Self::PureMithral => ArmorMaterialDefinition {
+                dr_multiplier: 4.0,
+                encumbrance_modifier: -2,
                 name: "pure mithral".to_string(),
-                item_rank_modifier: 4,
+                item_rank: 5,
             },
             Self::Starmetal => ArmorMaterialDefinition {
                 dr_multiplier: 2.0,
                 encumbrance_modifier: 2,
                 name: "starmetal".to_string(),
-                item_rank_modifier: 2,
+                item_rank: 2,
             },
             Self::PureStarmetal => ArmorMaterialDefinition {
                 dr_multiplier: 4.0,
                 encumbrance_modifier: 2,
                 name: "pure starmetal".to_string(),
-                item_rank_modifier: 4,
+                item_rank: 4,
             },
         }
     }
@@ -196,8 +182,8 @@ impl ArmorMaterial {
         self.definition().encumbrance_modifier
     }
 
-    fn item_rank_modifier(&self) -> i32 {
-        self.definition().item_rank_modifier
+    fn item_rank(&self) -> i32 {
+        self.definition().item_rank
     }
 
     fn name(&self) -> String {
@@ -384,16 +370,7 @@ impl Armor {
     }
 
     pub fn dex_multiplier(&self) -> f64 {
-        let multiplier = self.definition().dex_multiplier;
-        if multiplier < 1.0 && self.material().is_some() {
-            let material = self.material().as_ref().unwrap();
-            match material {
-                ArmorMaterial::PureMithral => multiplier + 0.5,
-                _ => multiplier,
-            }
-        } else {
-            multiplier
-        }
+        self.definition().dex_multiplier
     }
 
     pub fn defense(&self) -> i32 {
@@ -410,7 +387,7 @@ impl Armor {
 
     pub fn item_rank(&self) -> i32 {
         if let Some(m) = self.material() {
-            self.definition().item_rank + m.item_rank_modifier()
+            max(self.definition().item_rank, m.item_rank())
         } else {
             self.definition().item_rank
         }
@@ -525,12 +502,12 @@ mod tests {
         assert_eq!(
             10,
             Armor::FullPlate(None).damage_resistance(),
-            "Should be 12 with no material"
+            "Should be 10 with no material"
         );
         assert_eq!(
             20,
-            Armor::FullPlate(Some(ArmorMaterial::Deepforged)).damage_resistance(),
-            "Should be 2x with deepforged"
+            Armor::FullPlate(Some(ArmorMaterial::Starmetal)).damage_resistance(),
+            "Should be 2x with starmetal"
         );
         assert_eq!(
             30,
@@ -539,14 +516,9 @@ mod tests {
             "Should be 3x with dragonhide"
         );
         assert_eq!(
-            40,
+            60,
             Armor::FullPlate(Some(ArmorMaterial::Adamantine)).damage_resistance(),
-            "Should be 4x with adamantine"
-        );
-        assert_eq!(
-            40,
-            Armor::FullPlate(Some(ArmorMaterial::PureDeepforged)).damage_resistance(),
-            "Should be 4x with pure deepforged"
+            "Should be 6x with pure adamantine"
         );
     }
 }
