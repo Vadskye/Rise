@@ -52,7 +52,7 @@ pub struct DicePool {
     // Useful for things like "double weapon damage". This is used in two places:
     // `.average_damage()` and `.to_string()`.
     pub multiplier: i32,
-    // A weak dice pool is rolled twice, keeping the lower result.
+    // A weak dice pool ignores flat modifiers
     pub weak: bool,
 }
 
@@ -172,14 +172,12 @@ impl DicePool {
                 .iter()
                 .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
                 .collect();
-            if self.flat_modifier != 0 {
+            if self.flat_modifier != 0 && !self.weak {
                 dice_texts.push(self.flat_modifier.to_string());
             }
             let joined = dice_texts.join("+");
             if self.maximized {
                 format!("{} (m)", joined)
-            } else if self.weak {
-                return format!("{} (w)", joined);
             } else {
                 return joined;
             }
@@ -195,10 +193,8 @@ impl DicePool {
                 sum += (die.size + 1) as f64 / 2.0;
             }
         }
-        // Not worth doing a more correct version of "weak", since it's surprisingly
-        // complicated.
-        if self.weak && !self.maximized {
-            sum *= 0.75;
+        if !self.weak {
+            sum += self.flat_modifier as f64;
         }
         sum *= self.multiplier as f64;
         sum
