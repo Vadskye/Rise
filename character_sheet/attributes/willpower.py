@@ -29,7 +29,7 @@ def calc_magical_power():
     return flex_row(
         {"class": "magical-power"},
         [
-            div({"class": "calc-header"}, "Magical Power"),
+            div({"class": "calc-header"}, "Magical power"),
             equation(
                 [
                     underlabel(

@@ -62,7 +62,7 @@ def calc_weight_limits():
     return flex_row(
         {"class": "weight-limits"},
         [
-            div({"class": "calc-header"}, "Weight Limits"),
+            div({"class": "calc-header"}, "Weight limits"),
             labeled_text_input(
                 "Carrying",
                 input_attributes={
@@ -83,7 +83,7 @@ def calc_mundane_power():
     return flex_row(
         {"class": "mundane-power"},
         [
-            div({"class": "calc-header"}, "Mundane Power"),
+            div({"class": "calc-header"}, "Mundane power"),
             equation(
                 [
                     underlabel(
@@ -123,7 +123,7 @@ def calc_jump_distance():
     return flex_row(
         {"class": "jump-distance"},
         [
-            div({"class": "calc-header"}, "Jump Distance"),
+            div({"class": "calc-header"}, "Jump distance"),
             equation(
                 [
                     underlabel(
