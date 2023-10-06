@@ -44,37 +44,30 @@ def create_page(destination):
                     Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
                 """,
             ),
+            flex_col(
+                {"class": "header"},
+                [
+                    calc_non_attribute(),
+                ],
+            ),
             flex_row(
                 [
                     flex_col(
                         {"class": "sidebar"},
                         [
-                            div({"class": "section-header"}, "Strength"),
                             calc_strength_based(),
-                            div({"class": "section-header"}, "Dexterity"),
                             calc_dexterity_based(),
-                            div({"class": "section-header"}, "Constitution"),
                             calc_constitution_based(),
                         ],
                     ),
                     flex_col(
                         {"class": "main-body"},
                         [
-                            div({"class": "section-header"}, "Intelligence"),
                             calc_intelligence_based(),
-                            div({"class": "section-header"}, "Perception"),
                             calc_perception_based(),
-                            div({"class": "section-header"}, "Willpower"),
                             calc_willpower_based(),
                         ],
                     ),
-                ],
-            ),
-            flex_col(
-                {"class": "footer"},
-                [
-                    div({"class": "section-header"}, "Other Statistics"),
-                    calc_non_attribute(),
                 ],
             ),
         ],
@@ -87,7 +80,7 @@ def calc_attribute(attribute_name):
             flex_row(
                 {"class": "attribute-calc"},
                 [
-                    div({"class": "calc-header"}, attribute_name),
+                    div({"class": "section-header"}, attribute_name),
                     equation(
                         [
                             underlabel(

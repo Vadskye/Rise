@@ -21,8 +21,13 @@
     font-size: 0.9em;
 }
 
-.calc-header {
+.calc-header, .section-header {
     width: 110px;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
+.calc-header {
     font-weight: normal;
 }
 
@@ -47,5 +52,17 @@
 .paper {
     .page-explanation {
         display: none;
+    }
+}
+
+// .calc-dexterity-based, .calc-constitution-based, .calc-perception-based, .calc-willpower-based {
+.attribute-calc {
+    margin-top: 1em;
+    // Same color as .section-header
+    // border-top: 2px solid #FFF0C8;
+
+    .section-header {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
