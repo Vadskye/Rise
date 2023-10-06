@@ -11,8 +11,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                When you move with a Jump check, your maximum height is equal to your Jump check result, rather than half your Jump check result (see \pcref{Jump}).
-                This does not affect the forward distance you can reach with your jumps.
+                Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
             ",
             modifiers: None,
         },
@@ -21,7 +20,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Your maximum height increases to twice your Jump check result.
+                Your maximum jumping height increases to twice your maximum horizontal jump distance.
             ",
             modifiers: None,
         },
@@ -48,7 +47,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                When you move with a Jump check, you can land in midair as if it was solid ground.
+                When you jump, you can land in midair as if it was solid ground.
                 Your landing location has a \glossterm{height limit} of 30 feet, like a fly speed (see \pcref{Flight}).
                 You cannot walk in the air, but you can continue jumping or remain in place.
                 The air holds you until the end of the current round, at which point you fall normally.
@@ -80,14 +79,13 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             name: "Aerial Strike",
             is_magical: false,
             rank: 3,
-            // Expected jump skill at rank 3: 6 plus attribute, so about 8
-            // Expected jump height: 8 from skill + 5.5 from roll, so can reliably jump completely
+            // Expected jump height: 15 from speed, so can reliably jump completely
             // over Medium creatures.
             description: r"
                 As a standard action, you can use the \textit{aerial strike} ability.
                 \begin{activeability}{Aerial Strike}
                     \rankline
-                    Make a Jump check and move that far, up to a maximum distance equal to your \glossterm{base speed}.
+                    You jump and move as normal for the jump (see \\pcref{Jumping}).
                     In addition, you can make a \glossterm{strike} with +1d4 \glossterm{extra damage} at any point during that jump.
                     % TODO: is Jump clear enough about how to be directly above a creature?
                     This extra damage is doubled against each creature that you are directly above when you make the strike.
@@ -327,11 +325,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Leap of the Heavens}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
+                        You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+                        This increases your maximum vertical jump distance normally.
 
                         \rankline
-                        \rank{4} The bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus20 feet.
+                        \rank{6} The bonus increases to \plus30 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}

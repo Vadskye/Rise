@@ -364,7 +364,7 @@ export const terramancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
-          It is unable to use any fly speed or glide speed, and it takes a -4 penalty to Jump checks.
+          It is unable to use any fly speed or glide speed, and its jump distance is halved.
           All \\glossterm{falling damage} that it takes is doubled.
         `,
         targeting: `

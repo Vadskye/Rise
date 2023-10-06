@@ -16,7 +16,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
                 \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
                 Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-                Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
                 Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
@@ -30,7 +29,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
                 Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
                 Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
                 Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
-                Linguistics       & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & C        & C        & C        & Int          \\
                 Medicine          & C        & C        & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
                 Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
                 Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
@@ -64,6 +62,10 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         This description is followed by a series of specific ways in which the skills can be used.
         These tasks are simply examples, and do not list everything the skill can be used for.
         You should be creative with your skills, rather than only using the tasks explicitly listed.
+
+    \subsection{Learning Languages}
+        You can replace skill training from your class or Intelligence with learning languages.
+        For each trained skill you forgo, you learn two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
 
 \newpage
 \skill{Awareness}{Per}
@@ -485,39 +487,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         \end{activeability}
 
 \newpage
-\skill{Jump}{Str}
-    The Jump skill represents your ability to jump.
-    All Jump checks are made as part of movement, so they take no special action to perform.
-
-    \subsection{Jumping and Movement}
-    Distance moved with Jump checks is considered to be part of your land speed.
-    The maximum distance that you can cover with a Jump check is equal to your remaining land speed during the current phase.
-    This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-    For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward, or fifteen feet and five feet vertically, and so on.
-    If your Jump skill is extremely high and your land speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
-
-    \subsection{Common Jump Tasks}
-        \parhead{Leap} As part of movement, you can make a Jump check to leap into the air.
-        Choose a destination square where your jump ends.
-        The jump's maximum height is equal to half of your Jump check result, and its maximum forward distance is equal to your Jump check result.
-        If you have a running start of at least ten feet before jumping, you can add a quarter of your land sped to your maximum horizontal jump distance.
-
-        If your destination square is in midair, you begin falling at the end of the round.
-        This allows you to jump during the movement phase and act in midair during the action phase.
-        Narratively, this represents you timing your jump so you can take a useful action while jumping.
-        You don't just hover in midair.
-        \parhead{Mitigate Fall} As you hit the ground after a fall, you can make an Jump check to reduce falling damage.
-        A \glossterm{difficulty value} 5 check allows you to treat a fall as if it were 10 feet shorter.
-        For every 5 points by which you beat that \glossterm{difficulty value}, you can reduce the falling damage by 10 additional feet.
-        \parhead{Share Impact} As a standard action, you can make a precise leap to land on an enemy, forcing them to share your falling damage.
-        This functions like the \textit{leap} task, except that you also make a Jump vs. Reflex attack against one creature in a space at the end of your motion, including both your initial jump and your fall afterwards (if any).
-        On a hit, you deal the target half of the \glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
-        This does not reduce the falling damage you take, and you cannot combine this ability with the \textit{mitigate fall} ability to reduce your falling damage.
-
-    \subsection{Common Jump Modifiers}
-        If you jump off of an unstable surface that you cannot stand on normally, such as a wall, you take a \minus5 penalty to your Jump check.
-
-\newpage
 \skill{Knowledge}{Int}
     The Knowledge skills represent your understanding of particular aspects of the world.
     Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of separate skills.
@@ -555,24 +524,6 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
         Arcane effects require Knowledge (arcana), divine effects require Knowledge (nature), nature effects require Knowledge (nature), and pact effects require Knowledge (planes).
         In some circumstances, other Knowledge skills could be used if they are directly relevant to the magical effect.
         For example, Knowledge (dungeoneering) could be used to identify many spells from the \sphere{terramancy} \glossterm{mystic sphere}.
-
-\newpage
-\skill{Linguistics}{Int}
-        The Linguistics skill represents your mastery of spoken and written languages (see \pcref{Languages}).
-        Normally, you don't make Linguistics checks to speak or understand languages.
-        You either know a language or you don't.
-        However, training in Linguistics causes you to learn additional languages, and you can use Linguistics to attempt to decipher unfamiliar languages.
-
-        \parhead{Automatic Languages}
-        If you are trained in Linguistics, you learn either two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
-
-    \subsection{Common Linguistics Tasks}
-
-        \parhead{Identify Language} You make a \glossterm{difficulty value} 10 Linguistics check to identify the language used in speech or writing, even if you can't understand the language.
-        \parhead{Translate} You can make a \glossterm{difficulty value} 20 Linguistics check to understand a spoken or written message in a \glossterm{common language} that you don't know.
-        Simple messages can be easier to translate, while unusually complex or formal messages can be more difficult.
-        Translating a message in this way generally takes twice as long as understanding it normally.
-        This does not allow you to speak or write in the language, and it does not allow you to understand messages from \glossterm{rare languages}.
 
 \newpage
 \skill{Medicine}{Int}

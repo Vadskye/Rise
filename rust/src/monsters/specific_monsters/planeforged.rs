@@ -894,7 +894,6 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                         Skill::Awareness,
                         Skill::Climb,
                         Skill::Endurance,
-                        Skill::Jump,
                     ],
                 },
                 narrative: Some(MonsterNarrative {

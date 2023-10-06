@@ -409,7 +409,6 @@ def trained_skill():
                     option({"value": "Endurance"}, "Endurance"),
                     option({"value": "Flexibility"}, "Flexibility"),
                     option({"value": "Intimidate"}, "Intimidate"),
-                    option({"value": "Jump"}, "Jump"),
                     option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
                     option(
                         {"value": "Knowledge (dungeoneering)"},
@@ -423,7 +422,6 @@ def trained_skill():
                     option({"value": "Knowledge (nature)"}, "Knowledge (nature)"),
                     option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
                     option({"value": "Knowledge (religion)"}, "Knowledge (religion)"),
-                    option({"value": "Linguistics"}, "Linguistics"),
                     option({"value": "Medicine"}, "Medicine"),
                     option({"value": "Perform"}, "Perform"),
                     option({"value": "Persuasion"}, "Persuasion"),

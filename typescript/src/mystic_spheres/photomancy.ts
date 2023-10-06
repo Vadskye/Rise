@@ -203,7 +203,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone{energy}.
-          If this attack beats the target's Fortitude defense, it deals maximum damage.
+          If this attack beats a creature's Fortitude defense, it deals maximum damage.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.
@@ -222,7 +222,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfivelow{energy}.
-          If this attack beats the target's Fortitude defense, it deals maximum damage.
+          If this attack beats a creature's Fortitude defense, it deals maximum damage.
           If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
         `,

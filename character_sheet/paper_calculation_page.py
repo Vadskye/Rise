@@ -44,10 +44,8 @@ def create_page(destination):
                         {"class": "sidebar"},
                         [
                             div({"class": "section-header"}, "Core Statistics"),
-                            calc_land_speed(),
                             calc_unknown_statistic(),
                             div({"class": "section-header"}, "Resources"),
-                            calc_attunement_points(),
                         ],
                     ),
                     flex_col(
@@ -60,12 +58,10 @@ def create_page(destination):
                                         {"class": "section-header"},
                                         "Defenses",
                                     ),
-                                    calc_defenses(),
                                     div(
                                         {"class": "section-header"},
                                         "Survival Statistics",
                                     ),
-                                    calc_survival(),
                                     div(
                                         {"class": "section-header"},
                                         "Offensive Statistics",
@@ -113,74 +109,6 @@ def abilities(name_prefix):
     )
 
 
-def calc_damage_resistance():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "DR"),
-            equation(
-                {
-                    "class": "large-number-equation",
-                },
-                [
-                    underlabel(
-                        "Base",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "damage_resistance_base",
-                                "value": "(@{damage_resistance_from_level})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Armor",
-                        number_input(
-                            {
-                                "name": "damage_resistance_armor",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("damage_resistance", 4),
-                ],
-                result_attributes={
-                    "disabled": "true",
-                    "name": "damage_resistance_display",
-                    "value": "(@{damage_resistance_maximum})",
-                },
-            ),
-        ],
-    )
-
-
-def calc_attunement_points():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Attune Points"),
-            equation(
-                [
-                    underlabel(
-                        "Class",
-                        number_input(
-                            {
-                                "name": "attunement_points_from_class",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("attunement_points", 3),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "attunement_points_display",
-                    "value": "@{attunement_points_maximum}",
-                },
-            ),
-        ]
-    )
-
-
 def calc_damage_resistance_level():
     return flex_row(
         [
@@ -225,42 +153,6 @@ def calc_power(power_type):
     )
 
 
-def calc_vital_rolls():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Vital Rolls"),
-            equation(
-                [
-                    underlabel(
-                        "Class",
-                        number_input(
-                            {
-                                "name": "vital_roll_class",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("vital_rolls", 2),
-                    minus(),
-                    underlabel(
-                        "Wounds",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "vital_wound_count_display",
-                                "value": "@{vital_wound_count}*2",
-                            }
-                        ),
-                    ),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "vital_rolls_display",
-                    "value": "@{vital_rolls}",
-                },
-            ),
-        ]
-    )
 
 
 def calc_weapon_damage_dice():
@@ -302,27 +194,6 @@ def calc_unknown_statistic():
     )
 
 
-def calc_land_speed():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Land Speed"),
-            equation(
-                [
-                    # These are never actually used in sheet_worker
-                    underlabel("Size", number_input({"name": "speed_size"})),
-                    minus(),
-                    underlabel("Armor", number_input({"name": "speed_armor"})),
-                    plus(),
-                    equation_misc_repeat("speed", 2),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "land_speed_display",
-                    "value": "@{land_speed}",
-                },
-            ),
-        ]
-    )
 
 
 # def calc_strike_damage():
@@ -371,25 +242,6 @@ def calc_land_speed():
 #             },
 #         ),
 #     ])
-
-
-def calc_defenses():
-    return div(
-        {"class": "defenses"},
-        [
-            calc_mental(),
-        ],
-    )
-
-def calc_survival():
-    return div(
-        {"class": "survival"},
-        [
-            calc_damage_resistance_level(),
-            calc_damage_resistance(),
-            calc_vital_rolls(),
-        ],
-    )
 
 
 def base_10():

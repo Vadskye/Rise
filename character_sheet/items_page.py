@@ -45,7 +45,6 @@ def create_page(destination):
                 This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """,
             ),
-            # TODO: add weight limits here?
             *(proficiencies() if destination == "roll20" else []),
             div({"class": "section-header"}, "Armor"),
             armor(destination, "Body armor"),
@@ -58,6 +57,12 @@ def create_page(destination):
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
+            # Maximum number of attunement points: 
+            # 4 from sorcerer
+            # 2 from level progression
+            # 2 from two archetypes that each grant an attunement point
+            # Anyone with eight attunement points would almost certainly have at
+            # least two deep attunements, right? Hopefully?
             div(
                 {"class": "attunement-abilities"},
                 [
@@ -68,9 +73,10 @@ def create_page(destination):
                     ),
                 ]
                 if destination == "roll20"
-                else [attunement() for _ in range(8)],
+                else [attunement() for _ in range(6)],
             ),
             div({"class": "section-header"}, "Inventory"),
+            wealth_items(),
             textarea({"class": "inventory", "name": "inventory"}),
         ],
     )
@@ -257,7 +263,7 @@ def armor(destination, armor_type):
 
 
 def weapons():
-    return [weapon(i) for i in range(3)]
+    return [weapon(i) for i in range(4)]
 
 
 def weapon(i):
@@ -288,3 +294,24 @@ def weapon(i):
             ),
         ],
     )
+
+def wealth_items():
+    return flex_row(
+        {"class": "wealth-items"},
+        [
+            span("Wealth Items"),
+            *[wealth_item_of_rank(i) for i in range(1, 8)],
+            labeled_text_input(
+                "Currency",
+                {"class": "currency"},
+                {"name": "currency"},
+            ),
+        ],
+    )
+
+def wealth_item_of_rank(rank):
+        return labeled_number_input(
+            f"Rank {rank}",
+            {"class": "wealth-item"},
+            {"name": f"wealth_item_rank_{rank}"},
+        )

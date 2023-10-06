@@ -196,7 +196,7 @@ fn boots() -> Vec<Apparel> {
 
     apparel.push(Boots(StandardItem::reliable_skill_item(
         "Boots of Reliable Motion",
-        "Balance, Climb, Jump, or Swim",
+        "Balance, Climb, or Swim",
         "movement-based",
     )));
 
@@ -205,9 +205,9 @@ fn boots() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Can exert to levitate after jumping"),
         description: String::from(r"
-            Whenever you make a Jump check, you can activate these boots.
+            Whenever you jump, you can activate these boots (see \pcref{Jumping}).
             When you do, you increase your \glossterm<fatigue level> by one.
-            In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
+            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this round.
             You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
             These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.

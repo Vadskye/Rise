@@ -413,7 +413,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Hawk}
                         \rankline
                         You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                        In addition, you gain a \plus3 bonus to the Awareness and Jump skills.
+                        In addition, you gain a \plus3 bonus to the Awareness skill.
 
                         \rankline
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
