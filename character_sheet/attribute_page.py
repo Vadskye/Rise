@@ -24,17 +24,17 @@ from sheet_data import (
     SUBSKILLS,
 )
 from sheet_worker import standard_damage_at_power
-from paper_attributes.strength import calc_encumbrance, calc_weight_limits
-from paper_attributes.dexterity import calc_armor, calc_ref
-from paper_attributes.constitution import calc_fatigue_tolerance, calc_fort, calc_hit_points, calc_hit_points_level
-from paper_attributes.intelligence import calc_insight_points, calc_trained_skills
-from paper_attributes.perception import calc_accuracy, calc_blank_accuracy
-from paper_attributes.willpower import calc_magical_power, calc_mental
+from attributes.strength import calc_encumbrance, calc_mundane_power, calc_weight_limits
+from attributes.dexterity import calc_armor, calc_reflex
+from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_hit_points_level
+from attributes.intelligence import calc_insight_points, calc_trained_skills
+from attributes.perception import calc_accuracy, calc_blank_accuracy
+from attributes.willpower import calc_magical_power, calc_mental
 import re
 
 def create_page(destination):
     return flex_col(
-        {"class": "page paper-attribute-page"},
+        {"class": "page attribute-page"},
         [
             div(
                 {"class": "page-explanation"},
@@ -61,13 +61,20 @@ def create_page(destination):
                         {"class": "main-body"},
                         [
                             div({"class": "section-header"}, "Intelligence"),
-                            # calc_intelligence_based(),
+                            calc_intelligence_based(),
                             div({"class": "section-header"}, "Perception"),
-                            # calc_perception_based(),
+                            calc_perception_based(),
                             div({"class": "section-header"}, "Willpower"),
-                            # calc_willpower_based(),
+                            calc_willpower_based(),
                         ],
                     ),
+                ],
+            ),
+            flex_col(
+                {"class": "footer"},
+                [
+                    div({"class": "section-header"}, "Other Statistics"),
+                    calc_non_attribute(),
                 ],
             ),
         ],
@@ -92,7 +99,7 @@ def calc_attribute(attribute_name):
                                 ),
                             ),
                             plus(),
-                            equation_misc_repeat(attribute_lower, 3),
+                            equation_misc_repeat(attribute_lower, 2),
                         ],
                         result_attributes={
                             "disabled": "true",
@@ -107,7 +114,7 @@ def calc_attribute(attribute_name):
     )
 
 def calc_skill(skill_name, attribute=None):
-    visible_skill_name = re.sub("\\d", "", skill_name).title()
+    visible_skill_name = re.sub("\\d", "", skill_name).title().replace(" Of", " of")
     skill_parsable = skill_name.lower().replace(" ", "_")
     attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None
 
@@ -129,7 +136,7 @@ def calc_skill(skill_name, attribute=None):
                 },
             ),
             flex_row(
-                {"class": "skill-points-row"},
+                {"class": "class-skill-container"},
                 [
                     underlabel(
                         "Class?",
@@ -188,7 +195,7 @@ def calc_skill_equation_components(skill_parsable, attribute):
 
 
 def display_skills_for_attribute(attribute, display_function):
-    return "".join(
+    return div({"class": "trained-skills"},
         [
             display_function(skill_name, attribute.lower())
             for skill_name in ATTRIBUTE_SKILLS[attribute.lower()]
@@ -248,7 +255,7 @@ def calc_perception_based():
         [
             calc_attribute("Perception"),
             calc_accuracy(),
-            calc_blank_accuracy(),
+            # calc_blank_accuracy(),
             display_skills_for_attribute("Perception", calc_skill),
         ],
     )
@@ -262,4 +269,132 @@ def calc_willpower_based():
             calc_mental(),
             # display_skills_for_attribute("Willpower", calc_skill),
         ],
+    )
+
+def calc_non_attribute():
+    return flex_row(
+        {"class": "calc-non-attribute"},
+        [
+            flex_col(
+                {"class": "sidebar"},
+                [
+            calc_attunement_points(),
+            calc_damage_resistance(),
+                    calc_vital_rolls(),
+            # calc_land_speed(),
+                ],
+            ),
+            flex_col(
+                {"class": "main-body"},
+                [
+                    display_skills_for_attribute("Other", calc_skill),
+                ],
+            )
+        ]
+    )
+
+def calc_damage_resistance():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "DR"),
+            equation(
+                {
+                    "class": "large-number-equation",
+                },
+                [
+                    underlabel(
+                        "Armor",
+                        number_input(
+                            {
+                                "name": "damage_resistance_armor",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("damage_resistance", 4),
+                ],
+                result_attributes={
+                    "disabled": "true",
+                    "name": "damage_resistance_display",
+                    "value": "(@{damage_resistance_maximum})",
+                },
+            ),
+        ],
+    )
+
+
+def calc_attunement_points():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Attune Points"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(
+                            {
+                                "name": "attunement_points_from_class",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("attunement_points", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "attunement_points_display",
+                    "value": "@{attunement_points_maximum}",
+                },
+            ),
+        ]
+    )
+
+
+def calc_vital_rolls():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Vital Rolls"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(
+                            {
+                                "name": "vital_roll_class",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("vital_rolls", 2),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "vital_rolls_display",
+                    "value": "@{vital_rolls}",
+                },
+            ),
+        ]
+    )
+
+
+def calc_land_speed():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Land Speed"),
+            equation(
+                [
+                    # These are never actually used in sheet_worker
+                    underlabel("Size", number_input({"name": "speed_size"})),
+                    minus(),
+                    underlabel("Armor", number_input({"name": "speed_armor"})),
+                    plus(),
+                    equation_misc_repeat("speed", 2),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "land_speed_display",
+                    "value": "@{land_speed}",
+                },
+            ),
+        ]
     )

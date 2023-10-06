@@ -27,7 +27,7 @@ from sheet_data import (
 def calc_fortitude():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Fort"),
+            div({"class": "calc-header"}, "Fortitude"),
             equation(
                 [
                     underlabel(

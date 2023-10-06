@@ -333,8 +333,9 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
-        The target's weight is reduced by one \\glossterm{weight category}.
-        This gives it a +4 \\glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
+        The target's weight is reduced by one \\glossterm{weight category}, which makes it easier to lift and move.
+        It also gains a \plus10 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
+        This increases the target's maximum vertical jump distance normally.
       `,
       rank: 1,
       type: 'Sustain (attuneable, minor)',
@@ -345,8 +346,9 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{unattended} object within \\medrange.
-        The target's weight is reduced by two \\glossterm{weight categories}.
-        This gives it a +8 \\glossterm{magic bonus} to the Jump skill, if applicable, and makes it easier to lift and move.
+        The target's weight is reduced by two \\glossterm{weight categories}, which makes it much easier to lift and move.
+        It also gains a \plus20 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
+        This increases the target's maximum vertical jump distance normally.
       `,
       rank: 4,
       type: 'Sustain (standard)',

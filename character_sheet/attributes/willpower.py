@@ -69,7 +69,7 @@ def calc_magical_power():
 def calc_mental():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Ment"),
+            div({"class": "calc-header"}, "Mental"),
             equation(
                 [
                     underlabel(
@@ -98,7 +98,7 @@ def calc_mental():
                         "Class", number_input({"name": "mental_class", "value": "5"})
                     ),
                     plus(),
-                    equation_misc_repeat("mental", 3),
+                    equation_misc_repeat("mental", 2),
                 ],
                 result_attributes={
                     "disabled": "true",

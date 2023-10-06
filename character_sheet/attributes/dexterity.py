@@ -70,7 +70,7 @@ def calc_armor():
 def calc_reflex():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Ref"),
+            div({"class": "calc-header"}, "Reflex"),
             equation(
                 [
                     underlabel(

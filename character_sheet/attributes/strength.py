@@ -60,9 +60,9 @@ def calc_encumbrance():
 
 def calc_weight_limits():
     return flex_row(
-        {"class": "weight-limits"},
         [
             div({"class": "calc-header"}, "Weight Limits"),
+            flex_row({"class": "weight-limits"}, [
             labeled_text_input(
                 "Carrying",
                 input_attributes={
@@ -75,6 +75,7 @@ def calc_weight_limits():
                     "name": "push_drag_display",
                 },
             ),
+            ]),
         ],
     )
 

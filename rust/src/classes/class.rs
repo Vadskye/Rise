@@ -166,7 +166,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -184,7 +183,6 @@ impl Class {
                     KnowledgeSubskill::Religion,
                     KnowledgeSubskill::Planes,
                 ]),
-                Skill::Linguistics,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::SocialInsight,
@@ -199,7 +197,6 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana]),
-                Skill::Jump,
                 Skill::Persuasion,
                 Skill::SocialInsight,
                 Skill::Stealth,
@@ -216,7 +213,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Endurance,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -237,7 +233,6 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Medicine,
-                Skill::Jump,
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::Swim,
@@ -254,7 +249,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Medicine,
                 Skill::Perform,
                 Skill::Persuasion,
@@ -271,7 +265,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![KnowledgeSubskill::Dungeoneering]),
                 Skill::SleightOfHand,
                 Skill::Stealth,
@@ -301,7 +294,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -324,14 +316,12 @@ impl Class {
                 Skill::Disguise,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Engineering,
                     KnowledgeSubskill::Items,
                     KnowledgeSubskill::Local,
                 ]),
-                Skill::Linguistics,
                 Skill::Perform,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -346,7 +336,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Planes]),
-                Skill::Linguistics,
                 Skill::Persuasion,
             ],
             Self::Warlock => vec![
@@ -360,7 +349,6 @@ impl Class {
                     KnowledgeSubskill::Planes,
                     KnowledgeSubskill::Religion,
                 ]),
-                Skill::Linguistics,
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::SocialInsight,
@@ -372,7 +360,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Intimidate,
                 Skill::Knowledge(KnowledgeSubskill::all()),
-                Skill::Linguistics,
                 Skill::Persuasion,
             ],
             Self::Vampire => vec![
@@ -384,12 +371,10 @@ impl Class {
                 Skill::Deduction,
                 Skill::Disguise,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Religion,
                 ]),
-                Skill::Linguistics,
                 Skill::Persuasion,
                 Skill::SocialInsight,
                 Skill::Stealth,
@@ -1367,9 +1352,9 @@ impl Class {
 
                     \subsubsection{Air Domain}
                         If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Jump skill to your \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus4 bonus to the Jump skill (see \pcref{Jump}).
+                        \parhead{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
+                        This increases your maximum vertical jump distance normally.
                         In addition, you take half damage from \glossterm{falling damage}.
                         \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
@@ -1607,7 +1592,7 @@ impl Class {
                         In addition, the bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Strength Domain}
-                        If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
+                        If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.

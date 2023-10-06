@@ -601,7 +601,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 1),
                 Modifier::Skill(Skill::Flexibility, 1),
                 Modifier::Skill(Skill::Intimidate, 1),
-                Modifier::Skill(Skill::Jump, 1),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -615,7 +614,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     1,
                 ),
-                Modifier::Skill(Skill::Linguistics, 1),
                 Modifier::Skill(Skill::Medicine, 1),
                 Modifier::Skill(Skill::Perform, 1),
                 Modifier::Skill(Skill::Persuasion, 1),
@@ -649,7 +647,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 2),
                 Modifier::Skill(Skill::Flexibility, 2),
                 Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(Skill::Jump, 2),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -663,7 +660,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     2,
                 ),
-                Modifier::Skill(Skill::Linguistics, 2),
                 Modifier::Skill(Skill::Medicine, 2),
                 Modifier::Skill(Skill::Perform, 2),
                 Modifier::Skill(Skill::Persuasion, 2),
@@ -698,7 +694,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 2),
                 Modifier::Skill(Skill::Flexibility, 2),
                 Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(Skill::Jump, 2),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -712,7 +707,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     2,
                 ),
-                Modifier::Skill(Skill::Linguistics, 2),
                 Modifier::Skill(Skill::Medicine, 2),
                 Modifier::Skill(Skill::Perform, 2),
                 Modifier::Skill(Skill::Persuasion, 2),

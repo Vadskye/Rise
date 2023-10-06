@@ -141,7 +141,7 @@ export const mobileAssault: CombatStyle = {
       name: 'Leaping Strike',
 
       effect: `
-        You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
+        You jump and move as normal for the jump (see \\pcref{Jumping}).
         You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
       `,
       rank: 3,
@@ -151,28 +151,12 @@ export const mobileAssault: CombatStyle = {
       name: 'Leaping Impact Strike',
 
       effect: `
-        You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
-        You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
+        You jump and move as normal for the jump (see \\pcref{Jumping}).
+        You can make a melee \\glossterm{strike} from any location you occupy during the jump.
         Your \\glossterm{weapon damage} with the strike is doubled.
         If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 7,
-    },
-
-    {
-      name: 'Vault Over',
-
-      effect: `
-        Make an attack vs. Reflex against one creature you \\glossterm{touch}.
-        Your \\glossterm{accuracy} with this attack is equal to your Jump skill.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-
-        If you hit, you leap up over the target's body, using its body as a springboard if necessary, and land in any space adjacent to it.
-        % TODO: wording
-        Your final destination cannot be more distant from your starting location than half your \\glossterm{land speed}.
-        If this attack succeeds, you can make a melee \\glossterm{strike} from any location you occupy during the leap.
-      `,
-      rank: 1,
     },
 
     {
