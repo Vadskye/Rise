@@ -27,7 +27,7 @@ from sheet_data import (
 def calc_trained_skills():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Trained Skills"),
+            div({"class": "calc-header"}, "Trained skills"),
             equation(
                 [
                     underlabel(
@@ -65,7 +65,7 @@ def calc_trained_skills():
 def calc_insight_points():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Insight Points"),
+            div({"class": "calc-header"}, "Insight points"),
             equation(
                 [
                     underlabel(
