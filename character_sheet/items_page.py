@@ -299,7 +299,7 @@ def wealth_items():
     return flex_row(
         {"class": "wealth-items"},
         [
-            span("Wealth Items"),
+            span({"class": "wealth-items-label"}, "Wealth Items"),
             *[wealth_item_of_rank(i) for i in range(1, 8)],
             labeled_text_input(
                 "Currency",
