@@ -60,9 +60,9 @@ def calc_encumbrance():
 
 def calc_weight_limits():
     return flex_row(
+        {"class": "weight-limits"},
         [
             div({"class": "calc-header"}, "Weight Limits"),
-            flex_row({"class": "weight-limits"}, [
             labeled_text_input(
                 "Carrying",
                 input_attributes={
@@ -75,7 +75,6 @@ def calc_weight_limits():
                     "name": "push_drag_display",
                 },
             ),
-            ]),
         ],
     )
 
@@ -115,6 +114,44 @@ def calc_mundane_power():
                     "disabled": True,
                     "name": "mundane_power_display",
                     "value": "@{mundane_power}",
+                },
+            ),
+        ],
+    )
+
+def calc_jump_distance():
+    return flex_row(
+        {"class": "jump-distance"},
+        [
+            div({"class": "calc-header"}, "Jump Distance"),
+            equation(
+                [
+                    underlabel(
+                        "Spd/4",
+                        number_input(
+                            {
+                                "name": "jump_distance_speed",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "5*Str",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "jump_distance_strength",
+                                "value": "(5*@{strength})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("jump_distance", 2),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "jump_distance_display",
+                    "value": "@{jump_distance}",
                 },
             ),
         ],
