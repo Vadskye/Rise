@@ -71,7 +71,7 @@ def calc_fortitude():
 def calc_fatigue_tolerance():
     return flex_row(
         [
-            div({"class": "calc-header fatigue-tolerance"}, "Fatigue Tolerance"),
+            div({"class": "calc-header fatigue-tolerance"}, "Fatigue tolerance"),
             equation(
                 [
                     underlabel(
@@ -106,36 +106,10 @@ def calc_fatigue_tolerance():
     )
 
 
-def calc_hit_points_level():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "HP Level"),
-            equation(
-                {
-                    "class": "large-number-equation",
-                },
-                [
-                    underlabel(
-                        "Level",
-                        number_input(),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Class",
-                        number_input(),
-                    ),
-                    plus(),
-                    equation_misc_repeat("hit_points_level", 4),
-                ],
-            ),
-        ]
-    )
-
-
 def calc_hit_points():
     return flex_row(
         [
-            div({"class": "calc-header"}, "HP"),
+            div({"class": "calc-header"}, "Hit points"),
             equation(
                 {
                     "class": "large-number-equation",

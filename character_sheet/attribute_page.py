@@ -26,7 +26,7 @@ from sheet_data import (
 from sheet_worker import standard_damage_at_power
 from attributes.strength import calc_encumbrance, calc_mundane_power, calc_jump_distance, calc_weight_limits
 from attributes.dexterity import calc_armor, calc_reflex
-from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_hit_points_level
+from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
 from attributes.intelligence import calc_insight_points, calc_trained_skills
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
@@ -80,7 +80,8 @@ def calc_attribute(attribute_name):
             flex_row(
                 {"class": "attribute-calc"},
                 [
-                    div({"class": "section-header"}, attribute_name),
+                    div({"class": "attribute-divider"}, ""),
+                    div({"class": "attribute-header"}, attribute_name),
                     equation(
                         [
                             underlabel(
@@ -107,7 +108,7 @@ def calc_attribute(attribute_name):
     )
 
 def calc_skill(skill_name, attribute=None):
-    visible_skill_name = re.sub("\\d", "", skill_name).title().replace(" Of", " of")
+    visible_skill_name = re.sub("\\d", "", skill_name).capitalize()
     skill_parsable = skill_name.lower().replace(" ", "_")
     attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None
 
@@ -274,7 +275,7 @@ def calc_non_attribute():
                 [
             calc_attunement_points(),
             calc_damage_resistance(),
-                    calc_vital_rolls(),
+            calc_vital_rolls(),
             # calc_land_speed(),
                 ],
             ),
@@ -290,7 +291,7 @@ def calc_non_attribute():
 def calc_damage_resistance():
     return flex_row(
         [
-            div({"class": "calc-header"}, "DR"),
+            div({"class": "calc-header"}, "Damage resist"),
             equation(
                 {
                     "class": "large-number-equation",
@@ -305,7 +306,7 @@ def calc_damage_resistance():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("damage_resistance", 4),
+                    equation_misc_repeat("damage_resistance", 3),
                 ],
                 result_attributes={
                     "disabled": "true",
@@ -320,7 +321,7 @@ def calc_damage_resistance():
 def calc_attunement_points():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Attune Points"),
+            div({"class": "calc-header"}, "Attune points"),
             equation(
                 [
                     underlabel(
@@ -347,19 +348,10 @@ def calc_attunement_points():
 def calc_vital_rolls():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Vital Rolls"),
+            div({"class": "calc-header"}, "Vital rolls"),
             equation(
                 [
-                    underlabel(
-                        "Class",
-                        number_input(
-                            {
-                                "name": "vital_roll_class",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("vital_rolls", 2),
+                    equation_misc_repeat("vital_rolls", 3),
                 ],
                 result_attributes={
                     "disabled": True,
@@ -374,7 +366,7 @@ def calc_vital_rolls():
 def calc_land_speed():
     return flex_row(
         [
-            div({"class": "calc-header"}, "Land Speed"),
+            div({"class": "calc-header"}, "Land speed"),
             equation(
                 [
                     # These are never actually used in sheet_worker
