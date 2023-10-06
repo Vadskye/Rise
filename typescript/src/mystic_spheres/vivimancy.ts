@@ -191,7 +191,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'inflict wound',
-        exceptThat: 'the damage increases to \\damagerankfivehigh{energ}.',
+        exceptThat: 'the damage increases to \\damagerankfivehigh{energy}.',
       },
       rank: 5,
       scaling: 'accuracy',

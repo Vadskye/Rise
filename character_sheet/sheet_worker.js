@@ -406,7 +406,6 @@ const SKILLS_BY_ATTRIBUTE = {
     "knowledge_planes",
     "knowledge_religion",
     "knowledge_untrained",
-    "linguistics",
     "medicine",
   ],
   perception: [

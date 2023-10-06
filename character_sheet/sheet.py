@@ -7,7 +7,7 @@ import active_abilities_page
 import rolltemplate
 import re
 import identity_page
-import paper_attribute_page
+import attribute_page
 import paper_calculation_page
 import paper_creation_page
 import creation_page
@@ -43,7 +43,7 @@ def main(destination):
                 ["paper_creation_page", paper_creation_page],
                 ["items_page", items_page],
                 ["paper_calculation_page", paper_calculation_page],
-                ["paper_attribute_page", paper_attribute_page],
+                ["attribute_page", attribute_page],
             ]
         ):
             page = i + 1

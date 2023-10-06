@@ -136,7 +136,7 @@ export const bluntForce: CombatStyle = {
         hit: `\\damageranktwohigh{bludgeoning}.`,
         missGlance: true,
         targeting: `
-          You make a long jump or high jump and move as normal for the jump (see \\pcref{Jump}).
+          You jump and move as normal for the jump (see \\pcref{Jumping}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
           If you do, make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
         `,
@@ -265,7 +265,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        If your attack result beats the target's Fortitude defense, the strike deals maximum damage.
+        If your attack result beats a creature's Fortitude defense, the strike deals maximum damage.
       `,
       rank: 3,
     },
