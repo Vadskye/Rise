@@ -757,22 +757,22 @@
 
         \begin{dtable}
             \lcaption{Special Combat Abilities}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
-                \tb{activeAbility}             & \tb{Defense}       & \tb{Brief Description} \tableheaderrule
-                Charge                   & Armor              & Move and attack                      \\
-                Desperate Exertion\fn{1} & \tdash             & Gain a bonus on a single roll        \\
-                Dirty Trick              & Fort or Ref\fn{2}  & Impose penalty on a foe              \\
-                Grapple                  & Fort and Ref\fn{2} & Wrestle with a foe                   \\
-                Overrun\fn{1}            & Fort\fn{2}         & Move through foe's space             \\
-                Recover\fn{1}            & \tdash             & Regain HP and DR, remove conditions \\
-                Shove                    & Fort\fn{2}         & Move a foe                           \\
-                Sprint\fn{1}             & \tdash             & Move at double speed                 \\
-                Total Defense            & \tdash             & Gain \plus2 to defenses              \\
-                Throw                    & \tdash             & Throw a held object                  \\
-                Trip                     & Fort and Ref\fn{2} & Trip a foe                           \\
+            \begin{dtabularx}{\columnwidth}{p{5.5em} l X}
+                \tb{Ability}             & \tb{Tags}                                      & \tb{Brief Description} \tableheaderrule
+                Charge                   & \tdash                                         & Move and attack                     \\
+                Desperate {} {} Exertion & \abilitytag{Exertion}                          & Reroll with a \plus2 bonus          \\
+                Dirty Trick              & \abilitytag{Size-Based}                        & Impose penalty on a foe             \\
+                Escape Grapple           & \abilitytag{Brawling}                          & Stop being grappled                 \\
+                Grapple                  & \abilitytag{Brawling}, \abilitytag{Size-Based} & Start grappling with a foe          \\
+                Maintain Grapple         & \abilitytag{Brawling}, \abilitytag{Swift}      & Continue grappling with a foe       \\
+                Overrun                  & \abilitytag{Brawling}, \abilitytag{Size-Based} & Move through foe's space            \\
+                Recover                  & \abilitytag{Exertion}, \abilitytag{Swift}      & Regain HP and DR, remove conditions \\
+                Shove                    & \abilitytag{Brawling}, \abilitytag{Size-Based} & Move a foe                          \\
+                Sprint                   & \abilitytag{Exertion}                          & Move at double speed                \\
+                Total Defense            & \abilitytag{Swift}                             & Gain \plus2 to defenses             \\
+                Throw                    & \tdash                                         & Throw a held object                 \\
+                Trip                     & \abilitytag{Size-Based}                        & Trip a foe                          \\
             \end{dtabularx}
-            1. This ability increases your \glossterm{fatigue level} when used. \\
-            2. This ability is \abilitytag{Size-Based} (see \pcref{Size-Based}). \\
         \end{dtable}
 
         \parhead{Charge}\label{Charge} You can use the \textit{charge} ability as a standard action.
@@ -792,7 +792,7 @@
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before using any other abilities or ending your turn.
 
-        \begin{activeability}{Desperate Exertion}
+        \begin{activeability}{Desperate Exertion}[\abilitytag{Exertion}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
@@ -816,19 +816,45 @@
             You choose the defense, which must be appropriate for the action you described.
         \end{activeability}
 
+        \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
+        This ability has no effect if you are not currently grappled.
+
+        \begin{activeability}{Escape Grapple}[\abilitytag{Brawling}]
+            \rankline
+            Make an attack against any number of creatures that you are grappled by.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+            You can also entirely replace your normal accuracy with the Flexibility skill (see \pcref{Flexibility}).
+
+            The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
+            For each size category by which a creature is larger than you, it gains a \plus4 bonus to its defense against this attack.
+            % TODO: awkward wording
+            For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+        \end{activeability}
+
         \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{activeability}{Grapple}[\abilitytag{Size-Based}]
+        \begin{activeability}{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
             Make an attack with a free hand against the Fortitude and Reflex defenses of one creature you \glossterm{touch}.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
         \end{activeability}
 
+        \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
+        If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
+        \begin{activeability}{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
+            \rankline
+            Make an attack using a \glossterm{free hand}.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+            This attack has no immediate effect.
+            The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+        \end{activeability}
+
         \parhead{Overrun}\label{Overrun} As a \glossterm{movement}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{activeability}{Overrun}[\abilitytag{Size-Based}]
+        \begin{activeability}{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
             When you use this ability during the \glossterm{movement phase}, you increase your \glossterm{fatigue level} by one.
             Overrunning during the \glossterm{action phase} does not increase your fatigue.
@@ -837,7 +863,7 @@
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            You use your full Strength in place of half your Perception to determine your \glossterm{accuracy} with this attack.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
 
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
@@ -846,7 +872,7 @@
         \end{activeability}
 
         \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{activeability}{Recover}[\abilitytag{Swift}]
+        \begin{activeability}{Recover}[\abilitytag{Exertion}, \abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you finish a short rest.
 
@@ -856,15 +882,16 @@
         \end{activeability}
 
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
+        If you are grappling, you can use this ability as a \glossterm{movement}, but it only affects creatures you are grappling with (see \pcref{Grappling}).
 
-        \begin{activeability}{Shove}[\abilitytag{Size-Based}]
+        \begin{activeability}{Shove}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
-            Choose either one creature adjacent to you or all creatures grappling you (see \pcref{Grappling}).
+            Choose either one creature adjacent to you, or all creatures grappling or grappled by you (see \pcref{Grappling}).
 
             Make an attack with a free hand against the Fortitude defense of each target.
-            You use your full Strength in place of half your Perception to determine your \glossterm{accuracy} with this attack.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
             You must be able to \glossterm{touch} each target, but unlike normal for touch abilities, you don't have to beat their Reflex defense.
-            If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+            If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
             On a hit, you can move up to half your movement speed in a straight line.
             You automatically \glossterm{push} each target as you move.
@@ -874,7 +901,7 @@
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint}\label{Sprint} As a \glossterm{movement}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{activeability}{Sprint}
+        \begin{activeability}{Sprint}[\abilitytag{Exertion}]
             \rankline
             When you use this ability during the \glossterm{movement phase}, you increase your \glossterm{fatigue level} by one.
             Sprinting during the \glossterm{action phase} does not increase your fatigue.
@@ -887,26 +914,29 @@
         If you sprint during both the movement phase and the action phase, you can move at up to four times your normal speed.
         Since monsters can't increase their fatigue level, they typically can only move at triple speed with a full round of movement.
 
-        \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object.
-        You can use the ability as a standard action.
-        Alternately, you can use it as a \glossterm{movement}.
-        If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
+        \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object or creature.
+        You can use the ability as either a standard action or a \glossterm{minor action}.
+        When you use it as a minor action, your throwing distance is halved, your maximum \glossterm{weight category} is one category lighter than normal, and you cannot make an attack roll to hit with the thrown object.
+        Many consumable items, such as \magicitem{firebombs}, must specifically be thrown as a standard action to have their intended effects.
 
-        As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
-        Instead, you can simply use the listed \glossterm{range limits} for those weapons.
-
-        \begin{activeability}{Throw}
+        \begin{activeability}{Throw}[\abilitytag{Brawling}]
             \rankline
-            Make a Strength check to throw an object you hold in at least one hand.
-            The base \glossterm{difficulty value} of this check is 0.
-            For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check, to a maximum bonus of \plus20.
-            You cannot throw an object whose weight exceeds your maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
+            You throw an object or creature you hold in at least one hand.
+            Your normal throwing distance for an arbitrary object is equal to 15 feet plus 5 feet per 2 Strength.
+            If the target's \glossterm{weight category} is equal to the maximum weight category you can lift normally, your throwing distance is halved (see \pcref{Weight Categories}).
+            You cannot throw objects too heavy for you to lift normally, even if you can push or drag them.
 
-            If you succeed, you throw the object five feet.
-            For every 5 points by which you succeed, you double the distance you throw the object.
-            Unlike normal, this doubling uses real-world doubling rules: ten feet, then twenty feet, then forty feet, and so on.
-            If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object, as the \textit{thrown strike} ability.
-            That attack roll is rolled separately from the Strength check you make to use this ability.
+            In order to throw an unwilling creature, it must already be \grappled by you, and you must make an attack against its Fortitude defense.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+
+            Some objects are much easier or harder to throw than others.
+            Weapons with the \weapontag{Thrown} weapon tag can be thrown up to their range limits.
+            If an object is easy to throw, such as a small dense sphere, you can throw it up to quadruple your normal throwing distance.
+            Likewise, a feather or extremely fragile object may be difficult to throw more than a few feet.
+            The GM can provide guidance about throwing unusual objects.
+
+            If you throw the target at a creature or object, you can make an attack roll to hit with it, as the \textit{thrown strike} ability.
+            That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
         \end{activeability}
 
         \parhead{Total Defense}\label{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
@@ -936,39 +966,16 @@
         While grappled, you suffer certain penalties and restrictions, as described below.
 
         \subsubsection{Being In A Grapple}
-            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
+            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally.
             \begin{itemize}
                 \item One of your hands cannot be used for any purposes other than grappling.
                     This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
                     This does not affect creatures without hands.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
-                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
+                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
+                    However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{movement} instead of as a standard action.
+                \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
             \end{itemize}
-
-        \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can use two special abilities to try to affect the grapple.
-
-            \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
-
-            \begin{activeability}{Escape Grapple}
-                \rankline
-                Make an attack against any number of creatures that you are grappled by.
-                You may use either the Flexibility skill or half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
-                The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
-                For each size category by which a creature is larger than you, it gains a \plus4 bonus to its defense against this attack.
-                % TODO: awkward wording
-                For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-            \end{activeability}
-
-            \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
-            If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{activeability}{Maintain Grapple}[\abilitytag{Swift}]
-                \rankline
-                Make an attack using a \glossterm{free hand}.
-                You may use half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack.
-                This attack has no immediate effect.
-                The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
-            \end{activeability}
 
         \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
             Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.

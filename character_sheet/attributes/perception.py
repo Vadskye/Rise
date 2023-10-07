@@ -67,7 +67,7 @@ def calc_accuracy():
 def calc_blank_accuracy():
     return flex_row(
         [
-            div({"class": "calc-header"}, text_input({"class": "accuracy_type"}) + " Accuracy"),
+            div({"class": "calc-header"}, text_input({"class": "accuracy_type"}) + " accuracy"),
             equation(
                 [
                     underlabel(
