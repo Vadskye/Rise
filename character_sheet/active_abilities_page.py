@@ -13,6 +13,7 @@ from cgi_simple import (
     labeled_textarea,
     labeled_text_input,
     number_input,
+    number_reminder,
     option,
     select,
     sidelabel,
@@ -665,6 +666,14 @@ def universal_abilities():
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort and Ref", "tags": ["Brawling", "Size-Based"]},
+            ),
+            universal_ability_button(
+                "Jump",
+                f"""
+                    As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
+                    This distance assumes you have a running start of at least 10 feet. If you do not, your jumping distance is halved.
+                    You cannot jump farther than your land speed.
+                """,
             ),
             universal_ability_button(
                 "Maintain Grapple",
