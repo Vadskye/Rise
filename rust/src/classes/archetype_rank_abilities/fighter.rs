@@ -414,7 +414,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (minor)}
                         \rankline
-                        Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
+                        Each target gains a \plus2 bonus to \glossterm{accuracy} with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Special Combat Abilities}).
 
                         \rankline
                         \rank{3} The bonus increases to \plus3.

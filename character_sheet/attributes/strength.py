@@ -24,6 +24,46 @@ from sheet_data import (
     SUBSKILLS,
 )
 
+
+def calc_brawling_accuracy():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Brawl accuracy"),
+            equation(
+                [
+                    underlabel(
+                        "Lvl/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "brawling_accuracy_scaling_display",
+                                "value": "(floor(@{level}/2))",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Str/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "brawling_accuracy_strength_display",
+                                "value": "(floor(@{strength} / 2))",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("accuracy", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "brawling_accuracy_display",
+                    "value": "@{brawling_accuracy}",
+                },
+            ),
+        ]
+    )
+
 def calc_encumbrance():
     return flex_row(
         [

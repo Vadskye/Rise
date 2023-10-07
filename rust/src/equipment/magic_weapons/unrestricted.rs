@@ -186,9 +186,10 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can remove a condition to gain +2 accuracy", r"
-                Activating this item does not increase your fatigue level.
+                Activating this weapon does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..MagicWeapon::default()
     }));
 
@@ -350,6 +351,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
                 The extra damage increases to 5d10, and the healing increases to $dr7.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..MagicWeapon::default()
     }));
 

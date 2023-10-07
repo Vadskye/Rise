@@ -609,7 +609,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{magicalsustainability}{Possession}{\abilitytag{Exertion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -689,7 +689,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 You can use the \textit{exchange soul fragment} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
+                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Exertion}, \abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -721,7 +721,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 You can use the \textit{exchange vitality} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Vitality}
+                \begin{magicalactiveability}{Exchange Vitality}[abilitytag{Exertion}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
 
