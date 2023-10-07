@@ -183,7 +183,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can cast spells without verbal components", r"
-                The staff no longer needs to be activated, and it no longer has the \\abilitytag{Exertion} tag.
+                The staff no longer needs to be activated, and it no longer has the \abilitytag{Exertion} tag.
                 You can passively cast spells without using \glossterm<verbal components>.
             "),
         ],
@@ -202,7 +202,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can cast spells without verbal components", r"
-                The staff no longer needs to be activated, and it no longer has the \\abilitytag{Exertion} tag.
+                The staff no longer needs to be activated, and it no longer has the \abilitytag{Exertion} tag.
                 You can passively cast spells without using \glossterm<somatic components>.
             "),
         ],
@@ -237,7 +237,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes use abilities from a short distance away", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
             ItemUpgrade::new(7, "Can use abilities from a short distance away", r"
                 The staff no longer has a brief cooldown after being activated.
@@ -258,7 +258,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes double range", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
@@ -277,7 +277,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes double area", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
@@ -295,7 +295,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes add an extra target", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
@@ -372,7 +372,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can remove a condition to gain +2 accuracy", r"
-                Activating this staff does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating this staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
