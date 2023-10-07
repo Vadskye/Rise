@@ -130,7 +130,7 @@
 
         % TODO: remove \mbox before making major releases;
         % it fixes bizarre page break errors but makes text uglier
-        \hyperlink{#3:#1}{\textbf{\mbox{#2}}}
+        \hyperlink{#3:#1}{\mbox{#2}}
     }
     {
         % Enable this to test for missing glossary definitions
@@ -138,7 +138,7 @@
         % Enable this to test for unnecessary glossary entries
         % \label{#2}
 
-        \hyperlink{#3:#2}{\textbf{\mbox{#2}}}
+        \hyperlink{#3:#2}{\mbox{#2}}
     }
 }
 
