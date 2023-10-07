@@ -519,3 +519,12 @@ def equation_misc(name, i=0):
 
 def equation_misc_repeat(name, count=1, joiner=plus):
     return joiner().join([equation_misc(name, i) for i in range(count)])
+
+def number_reminder(name):
+    return text_input(
+        {"class": "inline-number reminder", "readonly": True, "name": name}
+    )
+def text_reminder(name):
+    return span(
+        {"class": "reminder", "name": name}
+    )

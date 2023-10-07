@@ -12,6 +12,7 @@ from cgi_simple import (
     labeled_text_input,
     labeled_textarea,
     number_input,
+    number_reminder,
     option,
     plus,
     select,
@@ -27,15 +28,6 @@ from status_page import custom_modifier
 
 
 def create_page(destination):
-    def number_reminder(name):
-        return text_input(
-            {"class": "inline-number reminder", "readonly": True, "name": name}
-        )
-    def text_reminder(name):
-        return span(
-            {"class": "reminder", "name": name}
-        )
-
     return flex_col(
         {"class": "page items-page"},
         [
@@ -51,7 +43,7 @@ def create_page(destination):
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
             div({"class": "weapons-explanation"}, f"""
-                As a reminder, your magical✨ power is {number_reminder("magical_power")} ({text_reminder("magical_weapon_plusd")}) and your mundane power is {number_reminder("mundane_power")} ({text_reminder("mundane_weapon_plusd")}).
+                As a reminder, your magical✨ power is {number_reminder("magical_power")}and your mundane power is {number_reminder("mundane_power")}.
             """),
             *weapons(),
             div({"class": "section-header"}, "Legacy Item"),
