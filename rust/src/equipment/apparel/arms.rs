@@ -62,6 +62,7 @@ fn bracers() -> Vec<Apparel> {
                 The defense bonus increases to +4.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 

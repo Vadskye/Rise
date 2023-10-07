@@ -2,11 +2,13 @@
 pub enum AbilityTag {
     Attune(AttuneType),
     Auditory,
+    Brawling,
     Compulsion,
     Creation,
     Curse,
     Detection,
     Emotion,
+    Exertion,
     Manifestation,
     // Ritual,
     Scrying,
@@ -25,11 +27,13 @@ impl AbilityTag {
         match self {
             Self::Attune(attune_type) => format!("Attune{}", attune_type.parentheses_suffix()),
             Self::Auditory => r"Auditory".to_string(),
+            Self::Brawling => r"Brawling".to_string(),
             Self::Compulsion => r"Compulsion".to_string(),
             Self::Creation => r"Creation".to_string(),
             Self::Curse => r"Curse".to_string(),
             Self::Detection => r"Detection".to_string(),
             Self::Emotion => r"Emotion".to_string(),
+            Self::Exertion => r"Exertion".to_string(),
             Self::Manifestation => r"Manifestation".to_string(),
             Self::Scrying => r"Scrying".to_string(),
             Self::SizeBased => r"Size-Based".to_string(),
@@ -47,21 +51,8 @@ impl AbilityTag {
             Self::Attune(attune_type) => {
                 format!("\\abilitytag{{Attune}}{}", attune_type.parentheses_suffix())
             }
-            Self::Auditory => r"\abilitytag{Auditory}".to_string(),
-            Self::Compulsion => r"\abilitytag{Compulsion}".to_string(),
-            Self::Creation => r"\abilitytag{Creation}".to_string(),
-            Self::Curse => r"\abilitytag{Curse}".to_string(),
-            Self::Detection => r"\abilitytag{Detection}".to_string(),
-            Self::Emotion => r"\abilitytag{Emotion}".to_string(),
-            Self::Manifestation => r"\abilitytag{Manifestation}".to_string(),
-            Self::Scrying => r"\abilitytag{Scrying}".to_string(),
-            Self::SizeBased => r"\abilitytag{Size-Based}".to_string(),
-            Self::Speech => r"\abilitytag{Speech}".to_string(),
-            Self::Spell => r"\abilitytag{Spell}".to_string(),
-            Self::Subtle => r"\abilitytag{Subtle}".to_string(),
             Self::Sustain(action) => format!("\\abilitytag{{Sustain}} ({})", action.description()),
-            Self::Swift => r"\abilitytag{Swift}".to_string(),
-            Self::Visual => r"\abilitytag{Visual}".to_string(),
+            _ => format!("\\abilitytag<{}>", self.description()),
         }
     }
 }

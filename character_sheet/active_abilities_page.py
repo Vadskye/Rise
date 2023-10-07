@@ -636,19 +636,12 @@ def universal_abilities():
                 """,
             ),
             universal_ability_button(
-                "Escape Grapple",
-                """
-                    Make an attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
-                    For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-                """,
-                attack={"accuracy": "@{escape_grapple_accuracy}", "defense": "Special"},
-            ),
-            universal_ability_button(
                 "Desperate Exertion",
                 """
-                    After you use this ability, you increase your fatigue level by two.
                     You reroll any attack or check you just made and gain a +2 bonus.
+                    After you use this ability, you increase your fatigue level by two.
                 """,
+                tags=["Exertion"],
             ),
             universal_ability_button(
                 "Dirty Trick",
@@ -658,72 +651,85 @@ def universal_abilities():
                 attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
             ),
             universal_ability_button(
+                "Escape Grapple",
+                """
+                    Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
+                    For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+                """,
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "Special", "tags": ["Brawling"]},
+            ),
+            universal_ability_button(
                 "Grapple",
                 """
-                    Make a melee attack with a free hand against the Fortitude and Reflex defenses of an adjacent creature.
+                    Make a brawling attack with a free hand against the Fortitude and Reflex defenses of an adjacent creature.
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort and Ref", "tags": ["Size-Based"]},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort and Ref", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
                 "Maintain Grapple",
                 """
-                    Make an attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
+                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
                 """,
-                attack={"accuracy": "@{maintain_grapple_accuracy}", "defense": "None"},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling", "Swift"]},
             ),
             universal_ability_button(
                 "Overrun",
                 """
                     After you use this ability, you increase your fatigue level by one.
-                    Move up to your movement speed in a straight line, even through creatures. Make an attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
+                    Move up to your movement speed in a straight line, even through creatures. Make a brawling attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
                     On a hit, you move through each creature's space. On a miss, you end your movement immediately.
                  """,
-                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
                 "Recover",
                 """
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
-                    You regain hit points equal to your maximum hit points. In addition, you remove all conditions affecting you.
+                    You regain half your maximum hit points and all of your damage resistance. In addition, you remove all conditions affecting you.
                 """,
-                tags=["Swift"],
+                tags=["Exertion", "Swift"],
             ),
             universal_ability_button(
                 "Shove",
                 """
-                    Choose either one adjacent creature or all creatures grappling you. Make a melee attack with a free hand against each target. Your accuracy with this attack is equal to half your level \\add your Strength. If you are not able to use any of your movement speeds, you automatically fail when you try to use this ability.
+                    Choose either one adjacent creature or all creatures grappling you. Make a brawling attack with a free hand against each target.
                     On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move.
                  """,
-                attack={"accuracy": "@{accuracy}-floor(@{perception}/2)+@{strength}", "defense": "Fort", "tags": ["Size-Based"]},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
                 "Sprint",
                 """
-                    After you use this ability, you increase your fatigue level by one.
                     You move up to double your normal land speed.
+                    After you use this ability during the movement phase, you increase your fatigue level by one.
+                    Using this ability during the action phase is free.
                 """,
-            ),
-            universal_ability_button(
-                "Throw",
-                """
-                    Make a Strength check to throw an object you hold in at least one hand. The base difficulty value of this check is 0. For each size category larger or smaller than the target that you are, you gain a +10 bonus or penalty to the check. You cannot throw an object whose weight exceeds your maximum \\glossterm<carrying capacity> (see \\pcref<Weight Limits>).
-                    If you succeed, you throw the object five feet. For every 5 points by which you succeed, you double the distance you throw the object: ten feet, twenty feet, and so on. If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object. That attack roll is rolled separately from the Strength check you make to use this ability.
-                """,
-            ),
-            universal_ability_button(
-                "Trip",
-                """
-                    Make a melee attack with a free hand.
-                    On a hit, the target becomes prone.
-                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
+                tags=["Exertion"],
             ),
             universal_ability_button(
                 "Total Defense",
                 """
                     You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
                 """,
+                tags=["Swift"],
+            ),
+            universal_ability_button(
+                "Throw",
+                """
+                    You throw a creature or object 15 feet plus 5 feet per 2 Strength.
+                    If the object's weight matches your maximum weight category, this distance is halved.
+                    To throw an unwilling creature, it must already be \grappled by you, and you must make a grappling attack vs. its Fortitude defense.
+                """,
+            ),
+            universal_ability_button(
+                "Trip",
+                """
+                    Make a melee attack with a free hand or a Tripping weapon against a creature's Fortitude and Reflex defenses.
+                    On a hit, the target becomes prone.
+                    If you used a Tripping weapon and beat the target's Armor defense, it also takes damage from the weapon.
+                 """,
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
             ),
         ],
     )

@@ -585,7 +585,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to all skills.
-                In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one point.
+                In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 1),

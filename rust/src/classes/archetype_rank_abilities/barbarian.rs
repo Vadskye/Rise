@@ -131,7 +131,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{rage} ability as a \glossterm{free action}.
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Exertion}, \abilitytag{Sustain} (free)}
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -233,7 +233,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use your full Strength or Dexterity in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
+                You have exceptional skill with the \textit{dirty trick} and \textit{trip} abilities, as well as with all \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
+                Instead of adding half your Perception to determine your \glossterm{accuracy} with those abilities, you can add your full Strength or Dexterity.
             ",
             modifiers: None,
         },
@@ -242,7 +243,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus2 \glossterm{accuracy} bonus with those abilities and with the \textit{shove} ability.
+                You gain a \plus2 \glossterm{accuracy} bonus with those abilities.
             ",
             modifiers: None,
         },
