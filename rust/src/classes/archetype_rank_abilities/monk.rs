@@ -85,7 +85,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \textit{aerial strike} ability.
                 \begin{activeability}{Aerial Strike}
                     \rankline
-                    You jump and move as normal for the jump (see \\pcref{Jumping}).
+                    You jump and move as normal for the jump (see \pcref{Jumping}).
                     In addition, you can make a \glossterm{strike} with +1d4 \glossterm{extra damage} at any point during that jump.
                     % TODO: is Jump clear enough about how to be directly above a creature?
                     This extra damage is doubled against each creature that you are directly above when you make the strike.
