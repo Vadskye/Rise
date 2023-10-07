@@ -371,7 +371,7 @@ function boolifySheetValue(val) {
 }
 
 const SKILLS_BY_ATTRIBUTE = {
-  strength: ["climb", "jump", "swim"],
+  strength: ["climb", "swim"],
   dexterity: [
     "balance",
     "flexibility",
@@ -465,6 +465,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "hit_points",
     "insight_points",
     "intelligence",
+    "jump_distance",
     "mental",
     "nonclass_skill_count",
     "perception",
@@ -582,6 +583,7 @@ function handleCoreStatistics() {
   handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
+  handleJumpDistance();
   handleLandSpeed();
   handleMagicalPower();
   handleMundanePower();
@@ -1689,6 +1691,29 @@ function handleInsightPoints() {
           v.miscExplanation,
           [{ name: "Int", value: v.intelligence }, { name: "level", value: fromLevel }]
         ),
+      });
+    }
+  );
+}
+
+function handleJumpDistance() {
+  onGet(
+    {
+      miscName: "jump_distance",
+      numeric: ["base_speed", "strength"],
+    },
+    (v) => {
+      // In case people don't bother to set their size to Medium explicitly
+      const base_speed = v.base_speed || 30;
+      const base_speed_modifier = Math.floor((base_speed / 4) / 5) * 5;
+      const strength_modifier = v.strength * 5;
+      const totalValue = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
+      setAttrs({
+        jump_distance: totalValue,
+        jump_distance_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "base speed / 4", value: base_speed_modifier },
+          { name: "strength * 5", value: strength_modifier },
+        ]),
       });
     }
   );
