@@ -78,7 +78,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 34;
+        let expected_points = 32;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -117,7 +117,7 @@ impl Class {
             Self::Automaton => 3,
             Self::Barbarian => 2,
             Self::Cleric => 3,
-            Self::Dragon => 2,
+            Self::Dragon => 3,
             Self::Druid => 3,
             Self::Fighter => 2,
             Self::Harpy => 2,
@@ -382,27 +382,6 @@ impl Class {
         }
     }
 
-    pub fn damage_resistance(&self) -> i32 {
-        match self {
-            Self::Automaton => 3,
-            Self::Barbarian => 0,
-            Self::Cleric => 2,
-            Self::Dragon => 2,
-            Self::Druid => 1,
-            Self::Fighter => 0,
-            Self::Harpy => 0,
-            Self::Monk => 4,
-            Self::Oozeborn => 0,
-            Self::Paladin => 3,
-            Self::Ranger => 0,
-            Self::Rogue => 0,
-            Self::Sorcerer => 4,
-            Self::Warlock => 4,
-            Self::Wizard => 3,
-            Self::Vampire => 2,
-        }
-    }
-
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
             Self::Automaton => match defense {
@@ -507,21 +486,21 @@ impl Class {
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
             Self::Automaton => 4,
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 3,
             Self::Dragon => 3,
             Self::Druid => 3,
             Self::Fighter => 4,
             Self::Harpy => 4,
             Self::Monk => 4,
-            Self::Oozeborn => 5,
+            Self::Oozeborn => 4,
             Self::Paladin => 4,
             Self::Ranger => 4,
-            Self::Rogue => 3,
+            Self::Rogue => 2,
             Self::Sorcerer => 2,
             Self::Warlock => 3,
             Self::Wizard => 1,
-            Self::Vampire => 4,
+            Self::Vampire => 3,
         }
     }
 
@@ -560,8 +539,8 @@ impl Class {
             Self::Paladin => 1,
             Self::Ranger => 1,
             Self::Rogue => 2,
-            Self::Sorcerer => 1,
-            Self::Warlock => 1,
+            Self::Sorcerer => 2,
+            Self::Warlock => 2,
             Self::Wizard => 3,
             Self::Vampire => 1,
         }
@@ -626,12 +605,12 @@ impl Class {
             Self::Dragon => 3,
             Self::Druid => 5,
             Self::Fighter => 3,
-            Self::Harpy => 6,
+            Self::Harpy => 5,
             Self::Monk => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 5,
-            Self::Rogue => 7,
+            Self::Rogue => 6,
             Self::Sorcerer => 3,
             Self::Warlock => 4,
             Self::Wizard => 3,
@@ -718,7 +697,7 @@ impl Class {
                 Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
                 Of course, becoming a barbarian is no secret rite.
                 The only thing that is required is a willingness to fully experience one's emotions and channel them into physical betterment.
-                This path evokes an ancient memory of more primitive times, before the complexity of civilized warfare, where physical supremacy was sufficient for victory.
+                This path evokes an ancient memory of times before the complexity of organized warfare, where physical supremacy was sufficient for victory.
                 Anyone can discover that path for themselves.
 
                 Barbarians are famous for their furious battle-rage.
@@ -1058,7 +1037,7 @@ impl Class {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
                 specific_weapons: None,
-                simple_weapons: false,
+                simple_weapons: true,
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapon_groups: 0,
