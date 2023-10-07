@@ -187,7 +187,7 @@ impl HitPointProgression {
             _ => panic!("Unsupported constitution multiplier {}", incremental_hp),
         };
         return format!(
-            "You have {} hit points, plus {} hit points per level beyond {}. You also add {} your Constitution to your hit points.",
+            "You have {} hit points, plus {} hit points per level beyond {}, plus {} your Constitution.",
             base_hp,
             incremental_hp,
             level,
