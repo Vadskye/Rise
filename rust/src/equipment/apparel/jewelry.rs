@@ -465,7 +465,7 @@ fn rings() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can remove a condition", r"
-                Activating this item does not increase your fatigue level, and it no longer has the \\abilitytag{Exertion} tag.
+                Activating this item does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
