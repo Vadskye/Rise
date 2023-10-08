@@ -376,7 +376,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Bull}
                         \rankline
-                        You can move your full movement speed when you push a creature with the \ability{shove} ability even if you do not get a critical hit (see \pcref{Shove}).
+                        You can move your full movement speed when you push a creature with the \ability{shove} ability.
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
@@ -530,8 +530,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You gain a \plus1 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
-                        \rank{5} All \glossterm{light undergrowth} within a \largearea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
-                        \rank{7} The bonus to your Armor and Reflex defenses increases to \plus2.
+                        \rank{5} All \glossterm{light undergrowth} within a \medarea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
+                        \rank{7} The radius of difficult terrain increases to \largearea.
                     \end{magicalactiveability}
                 }
             ",
