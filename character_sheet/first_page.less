@@ -94,17 +94,27 @@
     }
 }
 .movement {
-    column-gap: 1em;
-    justify-content: space-between;
-    align-items: baseline;
-
-    .freeform-number-input {
-        flex-grow: 1;
+    .standard-movements {
+        margin-right: 0.5em;
+        input {
+            width: 2em;
+        }
     }
 
-    .movement-speed-name {
+    .blank-movements {
         flex-grow: 1;
-        width: 5em;
+        column-gap: 1em;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .freeform-number-input {
+            flex-grow: 1;
+        }
+
+        .movement-speed-name {
+            flex-grow: 1;
+            width: 5em;
+        }
     }
 }
 .paper .defenses .defenses-row .special-defenses {
