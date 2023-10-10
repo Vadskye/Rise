@@ -882,7 +882,8 @@
         \end{activeability}
 
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
-        If you are grappling, you can use this ability as a \glossterm{movement}, but it only affects creatures you are grappling with (see \pcref{Grappling}).
+        If you are grappling, you can use this ability as a \glossterm{movement}.
+        When you do, it only affects creatures you are grappling with (see \pcref{Grappling}).
 
         \begin{activeability}{Shove}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
@@ -893,8 +894,11 @@
             You must be able to \glossterm{touch} each target, but unlike normal for touch abilities, you don't have to beat their Reflex defense.
             If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
+            % Critical hit shove should be equivalent to moving without any limitation.
+            % This represents 
             On a hit, you can move up to half your movement speed.
-            You automatically \glossterm{push} each target as you move.
+            During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
+            If you push a target so it stops being adjacent to you, you stop being able to push it further.
             On a critical hit, your movement speed is not halved.
         \end{activeability}
 
@@ -974,6 +978,7 @@
                     This does not affect creatures without hands.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
                 \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
+                    In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
                     However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{movement} instead of as a standard action.
                 \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
             \end{itemize}
