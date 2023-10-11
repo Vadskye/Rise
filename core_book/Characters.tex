@@ -49,6 +49,8 @@ You can either skim past terms you don't yet understand or look them up as you g
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
                 \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
+                \item You add your Strength to your level to determine your \glossterm{accuracy} with \abilitytag{Brawling} attacks (see \pcref{Brawling Accuracy}).
+                \item A very high Strength can allow you to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
                 \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
                 \item You add your Strength to Strength-based \glossterm{skills}: Climb and Swim (see \pcref{Skills}).
             \end{raggeditemize}
@@ -102,7 +104,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Perception tend to have strong offensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Perception to your level to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item You add your Perception to your level to determine your \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
                 \item You add your Perception to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
             \end{raggeditemize}
         }
@@ -712,6 +714,11 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
         Your accuracy is equal to half the sum of your level and Perception.
         Many abilities can also modify your accuracy.
+
+        \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
+            Some abilities have the \abilitytag{Brawling} tag.
+            Your accuracy with those abilities is equal to half the sum of your level and Strength.
+            Most Brawling abilities are listed at \pcref{Special Combat Abilities}.
 
     \subsection{Damage Resistance}\label{Damage Resistance}
         Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
@@ -1476,29 +1483,29 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \begin{dtable!*}
         \lcaption{Character Advancement and Gaining Levels}
-        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
-            \tb{Level}\fn{1} & \tb{HP} & \tb{DR} & \tb{Max Rank}\fn{2} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
-            1st              & 6       & 0       & 1                   & \tdash                                 & 0       & \tdash                              \\
-            2nd              & 7       & 1       & \tdash              & \plus1                                 & 10      & \tdash                              \\ % +10 xp
-            3rd              & 8       & 2       & \tdash              & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
-            4th              & 9       & 3       & 2                   & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
-            5th              & 10      & 4       & \tdash              & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
-            6th              & 12      & 5       & \tdash              & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
-            7th              & 14      & 6       & 3                   & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
-            8th              & 16      & 7       & \tdash              & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
-            9th              & 18      & 8       & \tdash              & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
-            10th             & 20      & 9       & 4                   & \plus5                                 & 450     & \tdash                              \\ % +150 xp
-            11th             & 22      & 10      & \tdash              & \plus5                                 & 700     & \tdash                              \\ % +250 xp
-            12th             & 25      & 12      & \tdash              & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
-            13th             & 28      & 14      & 5                   & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
-            14th             & 32      & 16      & \tdash              & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
-            15th             & 36      & 18      & \tdash              & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
-            16th             & 40      & 20      & 6                   & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
-            17th             & 45      & 22      & \tdash              & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
-            18th             & 50      & 25      & \tdash              & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
-            19th             & 56      & 28      & 7                   & \plus9                                 & 14,000  & \tdash                              \\
-            20th             & 63      & 31      & \tdash              & \plus10                                & 20,000  & \tdash                              \\
-            21st             & 70      & 35      & \tdash              & \plus10                                & 30,000  & \plus1 to two attributes            \\
+        \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
+            \tb{Level}\fn{1} & \tb{Max Rank}\fn{2} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
+            1st              & 1                   & \tdash                                 & 0       & \tdash                              \\
+            2nd              & \tdash              & \plus1                                 & 10      & \tdash                              \\ % +10 xp
+            3rd              & \tdash              & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
+            4th              & 2                   & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
+            5th              & \tdash              & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
+            6th              & \tdash              & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
+            7th              & 3                   & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
+            8th              & \tdash              & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
+            9th              & \tdash              & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
+            10th             & 4                   & \plus5                                 & 450     & \tdash                              \\ % +150 xp
+            11th             & \tdash              & \plus5                                 & 700     & \tdash                              \\ % +250 xp
+            12th             & \tdash              & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
+            13th             & 5                   & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
+            14th             & \tdash              & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
+            15th             & \tdash              & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
+            16th             & 6                   & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
+            17th             & \tdash              & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
+            18th             & \tdash              & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
+            19th             & 7                   & \plus9                                 & 14,000  & \tdash                              \\
+            20th             & \tdash              & \plus10                                & 20,000  & \tdash                              \\
+            21st             & \tdash              & \plus10                                & 30,000  & \plus1 to two attributes            \\
         \end{dtabularx}
         1. For some statistics, like your \glossterm{hit points}, you add your attributes to your level when calculating the total. If this total is more than 21 or less than 1, see the relevant section below this table to calculate your value. \\
         2. See \pcref{Archetype Ranks}. \\
