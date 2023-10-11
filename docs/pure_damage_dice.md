@@ -668,7 +668,7 @@ Standard for all ranks:
     * dX-2 in tX area
     * dX in t1 area
     * dX-1 in t(0.5X) area?
-    * dX-2 in tX-2 area, Sustain (minor), no enemies-only
+    * dX-2 in t(0.5X) zone, Sustain (minor), no enemies-only
     * dX-2 in t(0.5X) zone, repeat next round so enemies can escape, no enemies-only
     * dX+1 in tX zone with a 1-round delay so creatures can escape, no enemies-only
     * dX-1 in tX self-based area (radius/cone/etc) with a 1-round delay, area chosen in second round
