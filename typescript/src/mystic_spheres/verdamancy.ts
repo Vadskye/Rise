@@ -230,6 +230,40 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Erupting Spikefruit',
+
+      // -1dr from undergrowth effect
+      attack: {
+        hit: `
+          \\damageranktwo{piercing}.
+        `,
+        missGlance: true,
+        targeting: `
+          You create a patch of growing fruit in a \smallarea radius \\glossterm{zone} within \shortrange.
+          The patch becomes \\glossterm{light undergrowth} if there was no undergrowth there, and any existing light undergrowth becomes \\glossterm{heavy undergrowth}.
+          During your next action, the fruits explode, and you make an attack vs. Armor against all creatures in the area.
+          When the fruits explode, the undergrowth disappears.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Massive Erupting Spikefruit',
+
+      // -1dr from undergrowth effect
+      functionsLike: {
+        name: "erupting spikefruit",
+        exceptThat: "the damage increases to \\damagerankfive{piercing}, and the area increases to a \\medarea radius within \\longrange.",
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
       name: 'Poison -- Sassone Leaf',
 
       effect: `
@@ -418,11 +452,11 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
-          the damage increases to \\damagerankfivelow{piercing}.
+          the damage increases to \\damagerankfourlow{piercing}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',

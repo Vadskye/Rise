@@ -96,6 +96,32 @@ export const aquamancy: MysticSphere = {
       rank: 6,
       scaling: 'accuracy',
     },
+    {
+      name: 'Aquarium',
+
+      // Don't use a standard area since this scales in scary ways with area
+      // doubling.
+      effect: `
+        You create a self-contained pool of water in a 10 foot radius cylinder-shaped \\glossterm{zone} within \\shortrange.
+        Everything inside the area is underwater (see \pcref{Fighting While Swimming}).
+      `,
+      rank: 2,
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
+    },
+
+    {
+      name: 'Massive Aquarium',
+
+      effect: `
+        You create a self-contained body of water in a \\medarea radius cylinder-shaped \\glossterm{zone} within \\medrange.
+        Everything inside the area is underwater (see \pcref{Fighting While Swimming}).
+      `,
+      rank: 7,
+      tags: ['Manifestation'],
+      type: 'Sustain (minor)',
+    },
+
     // swimming is r2.5
     {
       name: 'Constraining Bubble',
