@@ -450,6 +450,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "all_skills",
     "armor_defense",
     "attunement_points",
+    "brawling_accuracy",
     "constitution",
     "damage_resistance",
     "dexterity",
@@ -499,6 +500,7 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "accuracy",
   "armor_defense",
+  "brawling_accuracy",
   "fortitude",
   "reflex",
   "mental",
@@ -508,7 +510,12 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
 // because they are multipliers instead of modifiers.
 const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "accuracy",
+  "brawling_accuracy",
   "all_defenses",
+  "fatigue_tolerance",
+  "fortitude",
+  "reflex",
+  "mental",
   "speed",
 ]);
 
@@ -535,9 +542,6 @@ function generateMiscVariables(name) {
   if (VARIABLES_WITH_VITAL_WOUND_MODIFIERS.has(name)) {
     explanationVariables.push(`${name}_vital_wound_explanation`);
     numericVariables.push(`${name}_vital_wound_modifier`);
-  }
-  if (name === "accuracy") {
-    console.log("explanationVariables", explanationVariables);
   }
   return { explanationVariables, numericVariables };
 }
@@ -571,6 +575,7 @@ function handleEverything() {
 function handleCoreStatistics() {
   handleAccuracy();
   handleAccuracyWithStrikes();
+  handleBrawlingAccuracy();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
@@ -772,6 +777,35 @@ function handleAccuracyWithStrikes() {
       setAttrs({
         accuracy_with_strikes: v.misc,
         accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
+      });
+    }
+  );
+}
+
+function handleBrawlingAccuracy() {
+  onGet(
+    {
+      miscName: "brawling_accuracy",
+      numeric: ["challenge_rating", "level", "strength", "fatigue_penalty"],
+    },
+    (v) => {
+      const levelModifier = v.level / 2;
+      const strengthModifier = v.strength / 2;
+      const levelishModifier = Math.floor(levelModifier + strengthModifier);
+      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
+      const brawling_accuracy =
+        v.misc +
+        levelishModifier +
+        crModifier -
+        v.fatigue_penalty;
+      setAttrs({
+        brawling_accuracy,
+        brawling_accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "level", value: levelModifier },
+          { name: "Str", value: strengthModifier },
+          { name: "fatigue", value: -v.fatigue_penalty },
+          { name: "CR", value: crModifier },
+        ]),
       });
     }
   );
@@ -2472,15 +2506,15 @@ function handleVitalWounds() {
     }
     return {
       0: "Unconscious, die after a minute",
-      1: "Unconscious below max HP",
-      2: "-10 foot speed",
+      1: "Unconscious below half HP",
+      2: "-1 accuracy",
       3: "-5 foot speed",
-      4: "-2 defenses",
-      5: "-1 defenses",
-      6: "Max DR is 0",
-      7: "Half max DR",
-      8: "-2 accuracy",
-      9: "-1 accuracy",
+      4: "Half max DR",
+      5: "-2 fatigue tolerance",
+      6: "-1 all defenses",
+      7: "-2 Fortitude",
+      8: "-2 Reflex",
+      9: "-2 Mental",
     }[roll];
   }
 
@@ -2497,32 +2531,69 @@ function handleVitalWounds() {
         );
         getAttrs(vitalWoundRollIds, (values) => {
           let rolls = Object.values(values);
-          let accuracy_penalty =
-            -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
-          let defense_penalty =
-            -countRolls(rolls, 4) * 2 - countRolls(rolls, 5);
-          let speed_penalty =
-            countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
-          let resistance_multiplier =
-            countRolls(rolls, 6) > 0
-              ? // dumb hack since we use || and I'm too lazy to fix it
-                -1
-              : 0.5 ** countRolls(rolls, 7);
+          let accuracy_penalty = -countRolls(rolls, 2);
+          let speed_penalty = countRolls(rolls, 3) * -5;
+          let resistance_multiplier = 0.5 ** countRolls(rolls, 4);
+          let fatigue_tolerance_penalty = -countRolls(rolls, 5) * 2;
+          let all_defenses_penalty = -countRolls(rolls, 6);
+          let fortitude_penalty = -countRolls(rolls, 7) * 2;
+          let mental_penalty = -countRolls(rolls, 8) * 2;
+          let reflex_penalty = -countRolls(rolls, 9) * 2;
+
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
+            // accuracy - applies to both regular and brawling accuracy
             accuracy_vital_wound_explanation: formatNamedModifierExplanation({
               name: "vital",
               value: accuracy_penalty,
             }),
             accuracy_vital_wound_modifier: accuracy_penalty,
-            // No vital explanation here because all_defenses requires special handling
-            all_defenses_vital_wound_modifier: defense_penalty,
+            brawling_accuracy_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: accuracy_penalty,
+            }),
+            brawling_accuracy_vital_wound_modifier: accuracy_penalty,
+
+            // all defenses - no vital explanation here because all_defenses requires special handling
+            all_defenses_vital_wound_modifier: all_defenses_penalty,
+
+            // fatigue_tolerance
+            fatigue_tolerance_vital_wound_modifier: fatigue_tolerance_penalty,
+            fatigue_tolerance_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: fatigue_tolerance_penalty,
+            }),
+
+            // fortitude
+            fortitude_vital_wound_modifier: fortitude_penalty,
+            fortitude_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: fortitude_penalty,
+            }),
+
+            // mental
+            mental_vital_wound_modifier: mental_penalty,
+            mental_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: mental_penalty,
+            }),
+
+            // reflex
+            reflex_vital_wound_modifier: reflex_penalty,
+            reflex_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: reflex_penalty,
+            }),
+
+            // speed
+            speed_vital_wound_modifier: speed_penalty,
             speed_vital_wound_explanation: formatNamedModifierExplanation({
               name: "vital",
               value: speed_penalty,
             }),
-            speed_vital_wound_modifier: speed_penalty,
+
+            // DR - no explanation
             damage_resistance_vital_wound_multiplier:
               resistance_multiplier,
           };
