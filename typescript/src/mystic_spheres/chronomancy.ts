@@ -195,6 +195,28 @@ export const chronomancy: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    {
+      name: 'Slowtime Field',
+
+      effect: `
+        You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
+        All creatures with no remaining \\glossterm{damage resistance} are \slowed while they are in the area.
+      `,
+      rank: 2,
+      type: 'Sustain (minor)',
+    },
+
+    {
+      name: 'Efficient Slowtime Field',
+
+      effect: `
+        You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
+        All creatures are \slowed while they are in the area.
+      `,
+      rank: 6,
+      type: 'Sustain (minor)',
+    },
+
     // -2 levels for 50% chance of activation
     {
       name: 'Stutterstop',
