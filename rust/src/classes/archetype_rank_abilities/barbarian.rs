@@ -441,7 +441,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a \plus1 bonus to your Fortitude defense.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
-                This ability has no effect on creatures that are two or more size categories larger than you.
+                This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
 
                 \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
@@ -467,6 +467,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 In addition, the Fortitude bonus increases to \plus2.
 
                 \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
+                This is a \abilitytag{Size-Based} ability.
 
                 % TODO: The narrative connection here is loose
                 \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.
