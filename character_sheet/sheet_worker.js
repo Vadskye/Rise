@@ -9,48 +9,48 @@ const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
     armor_defense: 4,
-    damage_resistance: 0,
-    hit_points: 4,
+    damage_resistance: 0.25,
+    hit_points: 'very high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   skirmisher: {
     armor_defense: 4,
-    damage_resistance: 2,
-    hit_points: 0,
+    damage_resistance: 0.5,
+    hit_points: 'medium',
     fortitude: 4,
     reflex: 6,
     mental: 4,
   },
   warrior: {
     armor_defense: 6,
-    damage_resistance: 4,
-    hit_points: 2,
+    damage_resistance: 1.0,
+    hit_points: 'high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   sniper: {
     armor_defense: 3,
-    damage_resistance: 0,
-    hit_points: 0,
+    damage_resistance: 0.5,
+    hit_points: 'medium',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   mystic: {
     armor_defense: 2,
-    damage_resistance: 4,
-    hit_points: 0,
+    damage_resistance: 1.0,
+    hit_points: 'low',
     fortitude: 4,
     reflex: 4,
     mental: 6,
   },
   leader: {
     armor_defense: 4,
-    damage_resistance: 2,
-    hit_points: 2,
+    damage_resistance: 0.5,
+    hit_points: 'high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
@@ -58,25 +58,21 @@ const BASE_CLASS_MODIFIERS = {
 
   // CLASSES
   barbarian: {
-    armor_defense: 0,
     fortitude: 7,
     reflex: 5,
     mental: 3,
-    hit_points: 5,
-    damage_resistance: 0,
+    hit_points: 'very high',
     attunement_points: 2,
-    fatigue_tolerance: 5,
+    fatigue_tolerance: 4,
     insight_points: 0,
     class_skill_count: 4,
     proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    hit_points: 2,
-    damage_resistance: 2,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -84,12 +80,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light and medium armor",
   },
   druid: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 4,
     mental: 6,
-    hit_points: 2,
-    damage_resistance: 1,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -97,12 +91,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
   },
   fighter: {
-    armor_defense: 1,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 3,
-    damage_resistance: 0,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -110,25 +102,21 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor, two weapon groups",
   },
   monk: {
-    armor_defense: 1,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 2,
-    damage_resistance: 4,
+    hit_points: 'medium',
     attunement_points: 3,
-    fatigue_tolerance: 3,
+    fatigue_tolerance: 4,
     insight_points: 1,
-    class_skill_count: 6,
+    class_skill_count: 5,
     proficiencies: "Light armor, monk weapons",
   },
   paladin: {
-    armor_defense: 1,
     fortitude: 6,
     reflex: 3,
     mental: 6,
-    hit_points: 3,
-    damage_resistance: 3,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -136,12 +124,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor, two weapon groups",
   },
   ranger: {
-    armor_defense: 1,
     fortitude: 5,
     reflex: 6,
     mental: 4,
-    hit_points: 3,
-    damage_resistance: 0,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -150,51 +136,43 @@ const BASE_CLASS_MODIFIERS = {
       "Light armor, hide armor, one weapon group, and one ranged weapon group",
   },
   rogue: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 1,
-    damage_resistance: 0,
+    hit_points: 'medium',
     attunement_points: 3,
-    fatigue_tolerance: 3,
+    fatigue_tolerance: 2,
     insight_points: 2,
-    class_skill_count: 7,
+    class_skill_count: 6,
     proficiencies: "Light armor, one weapon group, and saps",
   },
   sorcerer: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    hit_points: 0,
-    damage_resistance: 4,
+    hit_points: 'low',
     attunement_points: 4,
-    fatigue_tolerance: 3,
-    insight_points: 1,
+    fatigue_tolerance: 2,
+    insight_points: 2,
     class_skill_count: 3,
     proficiencies: "None",
   },
   warlock: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    hit_points: 2,
-    damage_resistance: 4,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 1,
+    insight_points: 2,
     class_skill_count: 4,
     proficiencies: "Light armor",
   },
   wizard: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    hit_points: 0,
-    damage_resistance: 3,
+    hit_points: 'low',
     attunement_points: 4,
     fatigue_tolerance: 1,
     insight_points: 3,
@@ -203,43 +181,59 @@ const BASE_CLASS_MODIFIERS = {
   },
 
   // OPTIONAL CLASSES
-  dragon: {
-    armor_defense: 1,
+  automaton: {
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 4,
-    damage_resistance: 2,
-    attunement_points: 2,
+    hit_points: 'high',
+    attunement_points: 3,
+    fatigue_tolerance: 4,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "None",
+  },
+  dragon: {
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    hit_points: 'high',
+    attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: "Light and medium armor",
   },
   harpy: {
-    armor_defense: 1,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 2,
-    damage_resistance: 0,
+    hit_points: 'medium',
     attunement_points: 2,
-    fatigue_tolerance: 3,
-    insight_points: 1,
-    class_skill_count: 6,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 5,
     proficiencies: "Light armor",
   },
   oozeborn: {
-    armor_defense: 0,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 5,
-    damage_resistance: 0,
+    hit_points: 'very high',
     attunement_points: 2,
-    fatigue_tolerance: 5,
-    insight_points: 0,
+    fatigue_tolerance: 4,
+    insight_points: 1,
     class_skill_count: 4,
+    proficiencies: "Light armor",
+  },
+  vampire: {
+    fortitude: 3,
+    reflex: 6,
+    mental: 6,
+    hit_points: 'medium',
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 1,
+    class_skill_count: 5,
     proficiencies: "Light armor",
   },
 };
@@ -1254,6 +1248,7 @@ function handleDamageResistance() {
     {
       miscName: "damage_resistance",
       numeric: [
+        "hit_points_maximum",
         "level",
         "challenge_rating",
         "body_armor_damage_resistance",
@@ -1267,17 +1262,16 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].damage_resistance : 0;
-      const effectiveLevel = v.level + classModifier;
-      const baseDr = calcBaseDamageResistance(effectiveLevel);
+      const playerTotalDr = v.body_armor_damage_resistance + v.misc;
+
+      const hpDrMultiplier = (v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance) || 0;
+      const withHpModifier = playerTotalDr + v.hit_points_maximum * hpDrMultiplier;
 
       var crMultiplier = {
-        1: 2,
-        4: 8,
+        1: 1,
+        4: 1.5,
       }[v.challenge_rating] || 1;
-      const playerTotalDr =
-        baseDr + v.body_armor_damage_resistance + v.misc;
-      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
+      const crMultipliedValue = Math.floor(withHpModifier * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
       const monsterTotalDr = Math.floor(
@@ -1286,17 +1280,12 @@ function handleDamageResistance() {
       );
 
       let attrs = {
-        base_damage_resistance_level: effectiveLevel,
-        base_damage_resistance_level_explanation: formatCombinedExplanation(null, [
-          { name: "level", value: v.level },
-          { name: "class", value: classModifier  },
-        ]),
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
-            { name: "base", value: baseDr },
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "CR", value: crMultipliedValue - playerTotalDr },
+            { name: "HP", value: withHpModifier - playerTotalDr },
+            { name: "CR", value: crMultipliedValue - withHpModifier },
             { name: "vital", value: monsterTotalDr - crMultipliedValue },
           ]
         ),
@@ -1581,11 +1570,9 @@ function handleHitPoints() {
     {
       miscName: "hit_points",
       numeric: [
-        "challenge_rating",
         "level",
         "constitution",
         "challenge_rating",
-        "hit_points_from_level",
       ],
       string: ["base_class"],
     },
@@ -1595,28 +1582,29 @@ function handleHitPoints() {
       },
     },
     (v) => {
-      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
-      const effectiveLevel = v.level + v.constitution + classModifier;
-      const baseHp = calcBaseHitPoints(effectiveLevel);
+      const progressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
+      const {baseHp, incrementalHp} = calcHpComponents(progressionName, v.level, v.constitution);
+
+      // This is the number of levels since the last breakpoint jump. Each breakpoint jump
+      // increases base HP and incremental level count ("X HP per level above 7th").
+      const incrementalLevel = (v.level - 1) % 6;
+
+      const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
+      const hpFromConstitution = incrementalHp * v.constitution;
 
       let crMultiplier = {
         1: 1,
         4: 4,
       }[v.challenge_rating] || 1;
 
-      const playerTotalHp = baseHp + v.misc;
+      const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
       const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       let attrs = {
-        base_hit_points_level: effectiveLevel,
-        base_hit_points_level_explanation: formatCombinedExplanation(null, [
-          { name: "level", value: v.level },
-          { name: "Con", value: v.constitution },
-          { name: "class", value: classModifier  },
-        ]),
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "base", value: baseHp },
+          { name: "level", value: hpFromLevel },
+          { name: "Con", value: hpFromConstitution },
           { name: "CR", value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1634,41 +1622,16 @@ function handleHitPoints() {
   );
 }
 
-function calcBaseHitPoints(levelish) {
-  let baseHp = 0;
-  if (levelish > 0) {
-    if (levelish > 21) {
-      // +10 HP per levelish over 21
-      baseHp = 10 * (levelish - 21);
-      levelish = 21;
-    }
-    baseHp += {
-      1: 6,
-      2: 7,
-      3: 8,
-      4: 9,
-      5: 10,
-      6: 12,
-      7: 14,
-      8: 16,
-      9: 18,
-      10:20,
-      11:22,
-      12:25,
-      13:28,
-      14:32,
-      15:36,
-      16:40,
-      17:45,
-      18:50,
-      19:56,
-      20:63,
-      21:70,
-    }[levelish];
-  } else {
-    baseHp = 6 + Math.floor(levelish / 2);
-  }
-  return baseHp;
+function calcHpComponents(progressionName, level) {
+  const progressionIndex = Math.max(0, Math.floor((level - 1) / 6));
+  const [baseHp, incrementalHp] = {
+    low: [[6, 1], [14, 2], [30, 4], [60, 8]],
+    medium: [[8, 1], [18, 2], [35, 5], [70, 10]],
+    high: [[8, 2], [20, 3], [40, 6], [80, 12]],
+    ['very high']: [[10, 2], [24, 4], [50, 8], [100, 15]],
+  }[progressionName][progressionIndex];
+
+  return {baseHp, incrementalHp}
 }
 
 function handleInsightPoints() {
