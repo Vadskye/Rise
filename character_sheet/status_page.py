@@ -301,6 +301,7 @@ def custom_statistic(i):
                         {"value": "bardic_performances_known"}, "Bardic performances"
                     ),
                     option({"value": "battle_tactics_known"}, "Battle tactics"),
+                    option({"value": "brawling_accuracy"}, "Brawling accuracy"),
                     option({"value": "climb"}, "Climb"),
                     option({"value": "combat_styles_known"}, "Combat styles"),
                     option({"value": "constitution"}, "Constitution"),
