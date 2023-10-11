@@ -114,7 +114,7 @@ impl HitPointProgression {
 
         // This is the number of levels since the last breakpoint jump. Each breakpoint jump
         // increases base HP and incremental level count ("X HP per level above 7th").
-        let incremental_level = (level + 1) % 6;
+        let incremental_level = (level - 1) % 6;
 
         base_hp + incremental_hp * (incremental_level + con)
     }
