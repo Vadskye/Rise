@@ -153,6 +153,7 @@ def proficiencies():
         flex_row(
             {"class": "proficiencies"},
             [
+                flex_col({"class": "class-proficiencies"}, [
                 labeled_text_input(
                     "Base class",
                     input_attributes={"readonly": True, "name": "base_class_proficiencies"},
@@ -160,7 +161,8 @@ def proficiencies():
                 labeled_text_input(
                     "Weapon groups", input_attributes={"name": "weapon_groups"}
                 ),
-                labeled_text_input(
+                ]),
+                labeled_textarea(
                     "Other proficiencies", input_attributes={"name": "other_proficiencies"}
                 ),
             ],

@@ -106,9 +106,7 @@ def defensive_statistics():
         [
             div({"class": "section-header"}, "Defensive Statistics"),
             stat_row("hit_points", "HP"),
-            stat_row("base_hit_points_level", "Level for base HP"),
             stat_row("damage_resistance", "DR"),
-            stat_row("base_damage_resistance_level", "Level for base DR"),
             stat_row("Armor defense"),
             stat_row("Fortitude"),
             stat_row("Reflex"),
