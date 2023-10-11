@@ -39,8 +39,9 @@
 
             All damaging attacks roll double damage dice on a critical hit unless otherwise stated.
             This includes any damage dice from \glossterm{extra damage}.
+            Any flat modifiers to damage are also doubled.
             If this would cause you to roll an unreasonably large number of dice, you can just multiply the result from your normal damage dice instead at the GM's discretion.
-            This is a separate damage multiplier from all others.
+            This is a separate damage multiplier from all others, so getting a critical hit with an attack that already deals double damage would deal four times normal damage.
 
             For every additional increment of 10 by which you beat the target's defense, the effect of a critical hit is repeated, if applicable.
             For example, if you get a double critical with attack that has a critical hit effect of ``The condition must be removed an additional time.'', the condition must be removed two additional times.
@@ -199,18 +200,18 @@
             \begin{dtabularx}{\textwidth}{l X}
                 \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
                 \minus6 or less  & You immediately die                                                    \\
-                \minus1--\minus5 & You are unconscious, and you die at the end of the next round          \\
-                0                & You are unconscious, and you die after one minute                      \\
-                1                & You are unconscious while you have less than full hit points           \\
-                2                & You have a \minus10 foot penalty to your speed with all movement modes \\
-                3                & You have a \minus5 foot penalty to your speed with all movement modes  \\
-                4                & You take a \minus2 penalty to all \glossterm{defenses}                 \\
-                5                & You take a \minus1 penalty to all \glossterm{defenses}                 \\
-                6                & Your maximum \glossterm{damage resistance} is 0                        \\
-                7                & Your maximum \glossterm{damage resistance} is halved                   \\
-                8                & You take a \minus2 penalty to \glossterm{accuracy}                     \\
-                9                & You take a \minus1 penalty to \glossterm{accuracy}                     \\
-                10 or more       & No extra vital wound effect                                            \\
+                \minus1--\minus5 & You are unconscious, and you die at the end of the next round         \\
+                0                & You are unconscious, and you die after one minute                     \\
+                1                & You are unconscious while you have less than half hit points          \\
+                2                & You take a \minus1 penalty to \glossterm{accuracy}                    \\
+                3                & You have a \minus5 foot penalty to your speed with all movement modes \\
+                4                & Your maximum \glossterm{damage resistance} is halved                  \\
+                5                & You take a \minus2 penalty to your \glossterm{fatigue tolerance}      \\
+                6                & You take a \minus1 penalty to all \glossterm{defenses}                \\
+                7                & You take a \minus2 penalty to your Fortitude defense                  \\
+                8                & You take a \minus2 penalty to your Reflex defense                     \\
+                9                & You take a \minus2 penalty to your Mental defense                     \\
+                10 or more       & No extra vital wound effect                                           \\
             \end{dtabularx}
         \end{dtable}
 
