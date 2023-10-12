@@ -11,8 +11,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                When you move with a Jump check, your maximum height is equal to your Jump check result, rather than half your Jump check result (see \pcref{Jump}).
-                This does not affect the forward distance you can reach with your jumps.
+                Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
             ",
             modifiers: None,
         },
@@ -21,7 +20,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Your maximum height increases to twice your Jump check result.
+                Your maximum jumping height increases to twice your maximum horizontal jump distance.
             ",
             modifiers: None,
         },
@@ -39,7 +38,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus increases to +20 feet.
+                The speed bonus increases to +20 feet.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
@@ -48,7 +47,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                When you move with a Jump check, you can land in midair as if it was solid ground.
+                When you jump, you can land in midair as if it was solid ground.
                 Your landing location has a \glossterm{height limit} of 30 feet, like a fly speed (see \pcref{Flight}).
                 You cannot walk in the air, but you can continue jumping or remain in place.
                 The air holds you until the end of the current round, at which point you fall normally.
@@ -80,14 +79,13 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             name: "Aerial Strike",
             is_magical: false,
             rank: 3,
-            // Expected jump skill at rank 3: 6 plus attribute, so about 8
-            // Expected jump height: 8 from skill + 5.5 from roll, so can reliably jump completely
+            // Expected jump height: 15 from speed, so can reliably jump completely
             // over Medium creatures.
             description: r"
                 As a standard action, you can use the \textit{aerial strike} ability.
                 \begin{activeability}{Aerial Strike}
                     \rankline
-                    Make a Jump check and move that far, up to a maximum distance equal to your \glossterm{base speed}.
+                    You jump and move as normal for the jump (see \pcref{Jumping}).
                     In addition, you can make a \glossterm{strike} with +1d4 \glossterm{extra damage} at any point during that jump.
                     % TODO: is Jump clear enough about how to be directly above a creature?
                     This extra damage is doubled against each creature that you are directly above when you make the strike.
@@ -226,41 +224,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(35)]),
-        },
-        RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
             rank: 2,
@@ -362,11 +325,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Leap of the Heavens}
                         \rankline
                         You can use this ability as a \glossterm{free action}.
-                        You gain a \plus4 bonus to the Jump skill this round (see \pcref{Jump}).
+                        You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+                        This increases your maximum vertical jump distance normally.
 
                         \rankline
-                        \rank{4} The bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus20 feet.
+                        \rank{6} The bonus increases to \plus30 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}
@@ -459,8 +423,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -469,28 +433,36 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(3),
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::DamageResistance(4),
             ]),
-        },
-        RankAbility {
-            name: "Ki Manifestation",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional \textit{ki manifestation}.
-            ",
-            modifiers: None,
         },
         RankAbility {
             name: "Ki Barrier+",
             is_magical: true,
+            rank: 4,
+            description: r"
+                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Barrier++",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The damage resistance bonus increases to seven times your rank in this archetype.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Manifestation+",
+            is_magical: true,
             rank: 5,
             description: r"
-                The damage resistance bonus increases to five times your rank in this archetype, and the defense bonus from the body armor increases to \plus4.
+                You learn an additional \textit{ki manifestation}.
             ",
-            // Rank 4: 16. Rank 5: 30.
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Ki Power",
@@ -530,7 +502,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus2 accuracy bonus and a \plus1d damage bonus with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
+                You gain a +2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
                 In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to dual-wield with it more easily (see \pcref{Dual Wielding}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
@@ -542,7 +514,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                The damage bonus increases to \plus2d.
+                Your punch/kick damage increases to 1d6.
             ",
             modifiers: None,
         },
@@ -551,7 +523,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The damage bonus increases to \plus3d.
+                Your punch/kick damage increases to 1d8.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
@@ -573,7 +545,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                The bonus increases to +2.
+                The defense bonuses increase to +2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -585,7 +557,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The bonus increases to +3.
+                The defense bonuses increase to +3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
@@ -650,9 +622,29 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Transcend Uncertainty",
+            name: "Transcend Frailty",
             is_magical: false,
             rank: 2,
+            description: r"
+                You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+            ",
+            // TODO: represent DR
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Frailty+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The damage resistance bonus increases to four times your rank in this archetype.
+            ",
+            // TODO: represent DR
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Transcend Uncertainty",
+            is_magical: false,
+            rank: 3,
             description: r"
                 You are immune to being \stunned and \confused.
             ",
@@ -660,27 +652,9 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Diamond Soul",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You gain a \plus1 bonus to your Willpower.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Feel the Flow of Life+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Transcend Emotion",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
                 You are immune to \abilitytag{Emotion} attacks.
                 In addition, you are immune to being \frightened and \panicked.
@@ -690,12 +664,21 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Transcend Mortality",
             is_magical: true,
-            rank: 6,
+            rank: 5,
             description: r"
                 You are no longer considered a living creature for the purpose of attacks against you.
                 This means that attacks which only affect living creatures have no effect against you.
                 In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
                 You still die of old age when your time is up.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Feel the Flow of Life+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                The range of your lifesense increases by 240 feet, and the range of your lifesight increases by 60 feet.
             ",
             modifiers: None,
         },

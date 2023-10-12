@@ -32,10 +32,13 @@ def create_page(_destination):
         {"class": "page calculation-page"},
         [
             abilities_known(),
-            core_statistics(),
-            defensive_statistics(),
-            offensive_statistics(),
-            resources(),
+            non_attribute(),
+            strength_based(),
+            dexterity_based(),
+            constitution_based(),
+            intelligence_based(),
+            perception_based(),
+            willpower_based(),
         ],
     )
 
@@ -90,51 +93,71 @@ def abilities_known():
         ]
     )
 
-def core_statistics():
+def non_attribute():
     return div(
         [
-            div({"class": "section-header"}, "Core Statistics"),
-            stat_row("Encumbrance"),
+            div({"class": "section-header"}, "Non-Attribute Statistics"),
+            stat_row("Attunement points"),
+            stat_row("Damage resistance"),
             stat_row("Land speed"),
-        ]
-    )
-
-
-def defensive_statistics():
-    return div(
-        [
-            div({"class": "section-header"}, "Defensive Statistics"),
-            stat_row("hit_points", "HP"),
-            stat_row("base_hit_points_level", "Level for base HP"),
-            stat_row("damage_resistance", "DR"),
-            stat_row("base_damage_resistance_level", "Level for base DR"),
-            stat_row("Armor defense"),
-            stat_row("Fortitude"),
-            stat_row("Reflex"),
-            stat_row("Mental"),
             stat_row("Vital rolls"),
         ]
     )
 
-
-def offensive_statistics():
+def strength_based():
     return div(
         [
-            div({"class": "section-header"}, "Offensive Statistics"),
-            stat_row("Accuracy"),
-            stat_row("accuracy_with_strikes", "Bonus accuracy with strikes"),
-            stat_row("Magical power"),
+            div({"class": "section-header"}, "Strength-Based"),
+            stat_row("Brawling accuracy"),
+            stat_row("Encumbrance"),
             stat_row("Mundane power"),
+            stat_row("Jump distance"),
         ]
     )
 
-def resources():
+def dexterity_based():
     return div(
         [
-            div({"class": "section-header"}, "Resources"),
-            stat_row("Attunement points"),
+            div({"class": "section-header"}, "Dexterity-Based"),
+            stat_row("Armor defense"),
+            stat_row("Reflex"),
+        ]
+    )
+
+def constitution_based():
+    return div(
+        [
+            div({"class": "section-header"}, "Intelligence-Based"),
             stat_row("Fatigue tolerance"),
+            stat_row("Fortitude"),
+            stat_row("Hit points"),
+        ]
+    )
+
+def intelligence_based():
+    return div(
+        [
+            div({"class": "section-header"}, "Intelligence-Based"),
             stat_row("Insight points"),
             stat_row("Trained skills"),
+        ]
+    )
+
+def perception_based():
+    return div(
+        [
+            div({"class": "section-header"}, "Perception-Based"),
+            stat_row("Accuracy"),
+            stat_row("accuracy_with_strikes", "Bonus accuracy with strikes"),
+        ]
+    )
+
+
+def willpower_based():
+    return div(
+        [
+            div({"class": "section-header"}, "Willpower-Based"),
+            stat_row("Mental"),
+            stat_row("Magical power"),
         ]
     )

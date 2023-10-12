@@ -132,11 +132,11 @@
             For example, this allows you to make melee attacks against creatures up to 60 feet away.
             This changes your \glossterm{line of effect}, but does not change your \glossterm{line of sight}.
 
+            % Does this need to have an explicit Recover reminder? Seems like that just works as intended
             \parhead{Rank 4 -- Become Energy} You become permanently \trait{incorporeal}, along with any equipment you carry.
             The fly speed from your \textit{energetic soul} ability also becomes permanent.
             In addition, you no longer age and no longer have hit points.
-            Instead, you gain a bonus to your \glossterm{damage resistance} equal to the number of hit points you would normally have from your level and Constitution (see \tref{Character Advancement}).
-            When you use the \ability{recover} ability, you regain all of your damage resistance instead of your hit points.
+            Instead, you gain a bonus to your \glossterm{damage resistance} equal to the number of hit points you would normally have from your level and Constitution (see \tref{Classes}).
             Other effects that would increase or decrease your maximum hit points have no effect on you.
             You gain vital wounds based on taking damage in excess of your damage resistance rather than in excess of your hit points, including the extra vital wounds for taking massive damage.
 
@@ -387,7 +387,8 @@
                     Its stage 3 effect makes the target \immobilized while the poison lasts.
                 \itemhead{Winged Agility} A hybrid bee has wings that are not strong enough to help it fly.
                     However, the wings still help it stabilize its movements.
-                    It gains a \plus3 bonus to the Balance and Jump skills.
+                    It gains a \plus3 bonus to the Balance skill, and it gains a \plus5 foot bonus to its maximum horizontal jump distance (see \pcref{Jumping}).
+                    This increases its maximum vertical jump distance normally.
             \end{itemize}
 
             \parhead{Hybrid Shark}
@@ -512,7 +513,16 @@
 
             \cf{Aut}{Defenses}
             You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
-            In addition, you gain a \plus3 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}), and a \plus3 bonus to your level when determining your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+
+            \cf{Aut}{Hit Points}
+            
+                You have 8 hit points, plus 2 hit points per level beyond 1. You also add twice your Constitution to your hit points.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} You have 20 hit points, plus 3 hit points per level beyond 7, plus three times your Constitution.
+                    \itemhead{Level 13} You have 40 hit points, plus 6 hit points per level beyond 13, plus six times your Constitution.
+                    \itemhead{Level 19} You have 80 hit points, plus 12 hit points per level beyond 19, plus twelve times your Constitution.
+                \end{itemize}
 
             \cf{Aut}{Resources} You have the following \glossterm{resources}:
             \begin{itemize}
@@ -677,12 +687,21 @@
             If you choose dragon as your base class, you gain the following abilities.
 
             \cf{Drg}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus1 Armor, \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
-            In addition, you gain a \plus4 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}), and a \plus2 bonus to your level when determining your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+            You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
+
+            \cf{Drg}{Hit Points}
+            
+                You have 8 hit points, plus 2 hit points per level beyond 1. You also add twice your Constitution to your hit points.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} You have 20 hit points, plus 3 hit points per level beyond 7, plus three times your Constitution.
+                    \itemhead{Level 13} You have 40 hit points, plus 6 hit points per level beyond 13, plus six times your Constitution.
+                    \itemhead{Level 19} You have 80 hit points, plus 12 hit points per level beyond 19, plus twelve times your Constitution.
+                \end{itemize}
 
             \cf{Drg}{Resources} You have the following \glossterm{resources}:
             \begin{itemize}
-                \item Two \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+                \item Three \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
                 \item A \glossterm{fatigue tolerance} equal to 3 \add your Constitution.
                     Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
                 \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
@@ -701,7 +720,7 @@
             \cf{Drg}{Skills}
             You have the following \glossterm{class skills}:
             \begin{itemize}
-                \item \subparhead{Strength} Climb, Jump, Swim.
+                \item \subparhead{Strength} Climb, Swim.
                 \item \subparhead{Dexterity} Balance, Stealth.
                 \item \subparhead{Constitution} Endurance.
                 \item \subparhead{Intelligence} Craft, Deduction, Knowledge (arcana), Medicine.
@@ -838,7 +857,9 @@
         
         \subsubsection{Harpy Archetype}
 
-            \cf{Hrp}[1]{Winged Agility} You gain a \plus4 bonus to the Balance and Jump skills as long as you can use your wings to help you.
+            \cf{Hrp}[1]{Winged Agility} You gain a \plus4 bonus to the Balance skill as long as you can use your wings to help you.
+            In addition, you gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+            This increases your maximum vertical jump distance normally.
 
             \cf{Hrp}[1]{Winged Combat} As a \glossterm{free action}, you can make a short hop off of solid ground to hover in your space using your wings.
             This allows you to use both of your feet without standing on them during that phase, so you can attack with both talons at once.
@@ -866,7 +887,7 @@
             As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
             \cf{Hrp}[4]{Greater Winged Agility} You can use your wings to help you maneuver on the ground more effectively, such as by briefly hovering or gliding over obstacles.
-            The Balance and Jump bonuses from your \textit{winged agility} ability increase to \plus8.
+            The Balance bonus from your \textit{winged agility} ability increases to \plus8.
             In addition, you ignore \glossterm{difficult terrain}.
 
             \cf{Hrp}[4]{Greater Winged Combat} You can use your \textit{winged combat} any number of times in the same round.
@@ -893,22 +914,30 @@
             If you choose harpy as your base class, you gain the following abilities.
 
             \cf{Hrp}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus1 Armor, \plus3 Fortitude, \plus7 Reflex, \plus5 Mental.
-            In addition, you gain a \plus2 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}).
+            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus7 Reflex, \plus5 Mental.
+
+            \cf{Hrp}{Hit Points}
+            
+                You have 8 hit points, plus 1 hit points per level beyond 1, plus  your Constitution.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} You have 18 hit points, plus 2 hit points per level beyond 7, plus twice your Constitution.
+                    \itemhead{Level 13} You have 35 hit points, plus 5 hit points per level beyond 13, plus five times your Constitution.
+                    \itemhead{Level 19} You have 70 hit points, plus 10 hit points per level beyond 19, plus ten times your Constitution.
+                \end{itemize}
 
             \cf{Hrp}{Resources} You have the following \glossterm{resources}:
             \begin{itemize}
                 \item Two \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
-                \item A \glossterm{fatigue tolerance} equal to 3 \add your Constitution.
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
                     Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
-                \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
+                \item A number of \glossterm{insight points} equal to 2 \add your Intelligence.
                     You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
-                \item Six \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
+                \item Five \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
             \end{itemize}
 
             \cf{Hrp}{Weapon Proficiencies} 
-            You are not proficient with any weapon groups, even simple weapons.
-            You are still proficient with your natural weapons.
+            You are proficient with simple weapons.
 
             \cf{Hrp}{Armor Proficiencies} 
             You are proficient with light armor.
@@ -916,7 +945,7 @@
             \cf{Hrp}{Skills}
             You have the following \glossterm{class skills}:
             \begin{itemize}
-                \item \subparhead{Strength} Climb, Jump.
+                \item \subparhead{Strength} Climb.
                 \item \subparhead{Dexterity} Balance, Flexibility, Perform, Stealth.
                 \item \subparhead{Perception} Awareness, Creature Handling, Deception, Persuasion, Survival.
                 \item \subparhead{Other} Intimidate.
@@ -1089,14 +1118,23 @@
 
             \cf{Ooz}{Defenses}
             You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
-            In addition, you gain a \plus5 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}).
+
+            \cf{Ooz}{Hit Points}
+            
+                You have 10 hit points, plus 2 hit points per level beyond 1, plus twice your Constitution.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} You have 24 hit points, plus 4 hit points per level beyond 7, plus four times your Constitution.
+                    \itemhead{Level 13} You have 50 hit points, plus 8 hit points per level beyond 13, plus eight times your Constitution.
+                    \itemhead{Level 19} You have 100 hit points, plus 15 hit points per level beyond 19, plus fifteen times your Constitution.
+                \end{itemize}
 
             \cf{Ooz}{Resources} You have the following \glossterm{resources}:
             \begin{itemize}
                 \item Two \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
-                \item A \glossterm{fatigue tolerance} equal to 5 \add your Constitution.
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
                     Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
-                \item A number of \glossterm{insight points} equal to your Intelligence.
+                \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
                     You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
                 \item Four \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
             \end{itemize}
@@ -1111,7 +1149,7 @@
             \cf{Ooz}{Skills}
             You have the following \glossterm{class skills}:
             \begin{itemize}
-                \item \subparhead{Strength} Climb, Jump, Swim.
+                \item \subparhead{Strength} Climb, Swim.
                 \item \subparhead{Dexterity} Balance, Flexibility, Sleight of Hand, Stealth.
                 \item \subparhead{Constitution} Endurance.
                 \item \subparhead{Intelligence} Craft, Knowledge (dungeoneering).
@@ -1172,7 +1210,7 @@
 
                 \rankline
                 % Stay at 1 rank lower than par
-                \rank{2} The damage bonus from your power increases to \plus1d per 2 power.
+                \rank{2} The damage bonus from your power increases to \plus1 per 2 power.
                 \rank{3} The base damage increases to 1d8.
                 \rank{4} The damage bonus increases to 1d6 per 4 power (minimum 1d6).
                 \rank{5} The base damage increases to 2d6.
@@ -1295,9 +1333,9 @@
         %     \cf{Tif}{Skills}
         %     You have the following \glossterm{class skills}:
         %     \begin{itemize}
-        %         \item \subparhead{Strength} Climb, Jump.
+        %         \item \subparhead{Strength} Climb.
         %         \item \subparhead{Dexterity} Balance, Sleight of Hand, Stealth.
-        %         \item \subparhead{Intelligence} Craft, Disguise, Knowledge (arcana, planes), Linguistics
+        %         \item \subparhead{Intelligence} Craft, Disguise, Knowledge (arcana, planes)
         %         \item \subparhead{Perception} Awareness, Social Insight.
         %         \item \subparhead{Other} Deception, Intimidate, Perform, Persuasion.
         %     \end{itemize}
@@ -1416,12 +1454,21 @@
 
             \cf{Vmp}{Defenses}
             You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus6 Reflex, \plus6 Mental.
-            In addition, you gain a \plus2 bonus to your level when determining your maximum \glossterm{hit points} (see \pcref{Hit Points}), and a \plus2 bonus to your level when determining your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+
+            \cf{Vmp}{Hit Points}
+            
+                You have 8 hit points, plus 1 hit points per level beyond 1, plus  your Constitution.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} You have 18 hit points, plus 2 hit points per level beyond 7, plus twice your Constitution.
+                    \itemhead{Level 13} You have 35 hit points, plus 5 hit points per level beyond 13, plus five times your Constitution.
+                    \itemhead{Level 19} You have 70 hit points, plus 10 hit points per level beyond 19, plus ten times your Constitution.
+                \end{itemize}
 
             \cf{Vmp}{Resources} You have the following \glossterm{resources}:
             \begin{itemize}
                 \item Three \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
-                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
+                \item A \glossterm{fatigue tolerance} equal to 3 \add your Constitution.
                     Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
                 \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
                     You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
@@ -1437,9 +1484,9 @@
             \cf{Vmp}{Skills}
             You have the following \glossterm{class skills}:
             \begin{itemize}
-                \itemhead{Strength} Climb, Jump.
+                \itemhead{Strength} Climb.
                 \itemhead{Dexterity} Balance, Stealth.
-                \itemhead{Intelligence} Deduction, Disguise, Knowledge (dungeoneering and religion), Linguistics.
+                \itemhead{Intelligence} Deduction, Disguise, Knowledge (dungeoneering and religion)
                 \itemhead{Perception} Awareness, Creature Handling, Deception, Persuasion, Social Insight.
                 \itemhead{Other} Intimidate, Persuasion
             \end{itemize}

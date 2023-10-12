@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::core_mechanics::Attribute;
 use crate::equipment::Apparel::{Belt, Cloak};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
@@ -44,6 +45,7 @@ fn belts() -> Vec<Apparel> {
             You can choose to stop this regeneration if you are conscious, but it happens automatically if you are unconscious due to vital wounds.
             When you remove a vital wound in this way, you increase your \glossterm<fatigue level> by three.
         "),
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -114,6 +116,7 @@ fn belts() -> Vec<Apparel> {
                 The healing increases to $dr7.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -204,9 +207,10 @@ fn cloaks() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can save your mount from death", "
-                This cloak does not increase your fatigue level when it activates.
+                This cloak does not increase your fatigue level when it activates, and it no longer has the \\abilitytag{Exertion} tag.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 

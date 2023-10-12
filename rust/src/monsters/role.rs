@@ -1,4 +1,4 @@
-use crate::core_mechanics::Defense;
+use crate::core_mechanics::{Defense, HitPointProgression};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Hash)]
@@ -33,11 +33,7 @@ impl Role {
         for defense in Defense::all() {
             self.add_modifier(creature, Modifier::Defense(defense, self.defense(&defense)))
         }
-        self.add_modifier(
-            creature,
-            Modifier::DamageResistanceFromLevel(self.damage_resistance()),
-        );
-        self.add_modifier(creature, Modifier::HitPointsFromLevel(self.hit_points()));
+        creature.hit_point_progression = self.hit_point_progression()
     }
 
     pub fn defense(&self, defense: &Defense) -> i32 {
@@ -60,25 +56,27 @@ impl Role {
         defenses[i]
     }
 
-    pub fn damage_resistance(&self) -> i32 {
+    // Multiply HP by this value to determine the monster's total DR.
+    // Monsters follow the same baseline as PCs that DR should normally be 50% of HP.
+    pub fn hp_dr_multiplier(&self) -> f64 {
         match self {
-            Role::Brute => 0,
-            Role::Skirmisher => 2,
-            Role::Warrior => 4,
-            Role::Sniper => 0,
-            Role::Mystic => 4,
-            Role::Leader => 2,
+            Role::Brute => 0.25,
+            Role::Skirmisher => 0.5,
+            Role::Warrior => 1.0,
+            Role::Sniper => 0.5,
+            Role::Mystic => 1.0,
+            Role::Leader => 0.5,
         }
     }
 
-    pub fn hit_points(&self) -> i32 {
+    pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Role::Brute => 4,
-            Role::Skirmisher => 0,
-            Role::Warrior => 2,
-            Role::Sniper => 0,
-            Role::Mystic => 0,
-            Role::Leader => 2,
+            Role::Brute => HitPointProgression::VeryHigh,
+            Role::Skirmisher => HitPointProgression::Medium,
+            Role::Warrior => HitPointProgression::High,
+            Role::Sniper => HitPointProgression::Medium,
+            Role::Mystic => HitPointProgression::Low,
+            Role::Leader => HitPointProgression::High,
         }
     }
 

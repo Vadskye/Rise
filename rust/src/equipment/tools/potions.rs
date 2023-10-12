@@ -34,6 +34,7 @@ pub fn potions() -> Vec<Tool> {
                 You increase your fatigue level by one for each condition that you remove in this way.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..potion()
     });
 

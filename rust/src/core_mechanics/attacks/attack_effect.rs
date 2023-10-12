@@ -59,12 +59,12 @@ impl DamageEffect {
             .base_dice
             .calc_scaled_pool(&self.power_scalings, attacker.calc_power(is_magical));
         if is_strike {
-            dice_pool.add_increments(attacker.calc_total_modifier(ModifierType::StrikeDamageDice));
+            dice_pool.add_modifier(attacker.calc_total_modifier(ModifierType::StrikeDamageDice));
         }
         if attacker.is_elite() {
             // We don't use `multiplier`, because this is separate from any
             // attack-specific damage multipliers.
-            dice_pool = dice_pool.add_dice(dice_pool.dice.clone());
+            dice_pool = dice_pool.elite_double();
         }
         dice_pool
     }

@@ -6,6 +6,7 @@ pub trait HasDamageAbsorption {
     fn calc_damage_resistance(&self) -> i32;
     fn calc_hit_points(&self) -> i32;
     fn calc_effective_combat_hit_points(&self) -> i32;
+    fn explain_damage_absorption(&self) -> String;
 }
 
 impl HasDamageAbsorption for Creature
@@ -13,110 +14,184 @@ where
     Creature: HasAttributes + HasModifiers + HasArmor,
 {
     fn calc_damage_resistance(&self) -> i32 {
-        let mut levelish = calc_levelish(self, 0, ModifierType::DamageResistanceFromLevel);
-        let mut dr_from_level = 0;
-        if levelish > 0 {
-            if levelish > 21 {
-                // +5 DR for each point beyond 21
-                dr_from_level = (levelish - 21) * 5;
-                levelish = 21;
-            }
-            dr_from_level += match levelish {
-                1 => 0,
-                2 => 1,
-                3 => 2,
-                4 => 3,
-                5 => 4,
-                6 => 5,
-                7 => 6,
-                8 => 7,
-                9 => 8,
-                10 => 9,
-                11 => 10,
-                12 => 12,
-                13 => 14,
-                14 => 16,
-                15 => 18,
-                16 => 20,
-                17 => 22,
-                18 => 25,
-                19 => 28,
-                20 => 31,
-                21 => 35,
-                _ => panic!("Invalid levelish {}", levelish),
-            };
-        }
-
         let dr_from_armor: i32 = self.get_armor().iter().map(|a| a.damage_resistance()).sum();
 
-        let dr = dr_from_level
-            + dr_from_armor
-            + self.calc_total_modifier(ModifierType::DamageResistance);
+        let mut dr = dr_from_armor + self.calc_total_modifier(ModifierType::DamageResistance);
 
         match self.category {
             CreatureCategory::Character => dr,
-            CreatureCategory::Monster(cr) => (dr as f64 * cr.dr_multiplier()) as i32,
+            CreatureCategory::Monster(cr, role) => {
+                dr += (self.calc_hit_points() as f64 * role.hp_dr_multiplier()) as i32;
+                (dr as f64 * cr.dr_multiplier()) as i32
+            }
         }
     }
 
     fn calc_hit_points(&self) -> i32 {
-        let mut levelish = calc_levelish(
-            self,
+        let hp_from_level = self.hit_point_progression.calc_hit_points(
+            self.level,
             self.get_base_attribute(&Attribute::Constitution),
-            ModifierType::HitPointsFromLevel,
         );
-        let mut hp_from_level = 0;
-        if levelish > 0 {
-            if levelish > 21 {
-                // +10 HP for each point beyond 21
-                hp_from_level = (levelish - 21) * 10;
-                levelish = 21;
-            }
-            hp_from_level += match levelish {
-                1 => 6,
-                2 => 7,
-                3 => 8,
-                4 => 9,
-                5 => 10,
-                6 => 12,  // +2
-                7 => 14,  // +2
-                8 => 16,  // +2
-                9 => 18,  // +2
-                10 => 20, // +3
-                11 => 22, // +3
-                12 => 25, // +4
-                13 => 28, // +4
-                14 => 32, // +4
-                15 => 36, // +4
-                16 => 40, // +6
-                17 => 45, // +6
-                18 => 50, // +8
-                19 => 56, // +8
-                20 => 63, // +8
-                21 => 70, // +10
-                _ => panic!("Invalid levelish {}", levelish),
-            }
-        } else {
-            hp_from_level = 5 + (levelish / 2);
-        }
 
         let hp = hp_from_level + self.calc_total_modifier(ModifierType::HitPoints);
 
         match self.category {
             CreatureCategory::Character => hp,
-            CreatureCategory::Monster(cr) => (hp as f64 * cr.hp_multiplier()) as i32,
+            CreatureCategory::Monster(cr, _) => (hp as f64 * cr.hp_multiplier()) as i32,
         }
     }
 
     fn calc_effective_combat_hit_points(&self) -> i32 {
         if self.can_recover() {
-            ((self.calc_hit_points() as f64) * 1.25).floor() as i32
+            ((self.calc_hit_points() as f64) * 1.5).floor() as i32
         } else {
             self.calc_hit_points()
         }
     }
+
+    fn explain_damage_absorption(&self) -> String {
+        let hp_multiplier = match self.category {
+            CreatureCategory::Character => 0.0,
+            CreatureCategory::Monster(cr, _) => cr.hp_multiplier(),
+        };
+        let dr_from_hp = match self.category {
+            CreatureCategory::Character => 0,
+            CreatureCategory::Monster(_, role) => {
+                (self.calc_hit_points() as f64 * role.hp_dr_multiplier()) as i32
+            }
+        };
+        let dr_multiplier = match self.category {
+            CreatureCategory::Character => 0.0,
+            CreatureCategory::Monster(cr, _) => cr.dr_multiplier(),
+        };
+
+        format!(
+            "
+HP: {hp_total} = ({hp_level} <{hp_progression} progression> + {hp_modifier} <modifier>) * {hp_multiplier} <elite multiplier>
+DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_from_hp} <monster hp>) * {dr_multiplier} <elite multiplier>
+            ",
+            hp_total = self.calc_hit_points(),
+            hp_level = self.hit_point_progression.calc_hit_points(
+                self.level,
+                self.get_base_attribute(&Attribute::Constitution),
+            ),
+            hp_progression = self.hit_point_progression.name(),
+            hp_modifier = self.calc_total_modifier(ModifierType::HitPoints),
+            hp_multiplier = hp_multiplier,
+            dr_total = self.calc_damage_resistance(),
+            dr_armor = self.get_armor().iter().map(|a| a.damage_resistance()).sum::<i32>(),
+            dr_modifier = self.calc_total_modifier(ModifierType::DamageResistance),
+            dr_from_hp = dr_from_hp,
+            dr_multiplier = dr_multiplier,
+        )
+    }
 }
 
-fn calc_levelish(creature: &Creature, attribute_modifier: i32, mt: ModifierType) -> i32 {
-    creature.level + attribute_modifier + creature.calc_total_modifier(mt)
+#[derive(Clone, Debug)]
+pub enum HitPointProgression {
+    VeryHigh, // Barbarian
+    High,     // Fighter
+    Medium,   // Cleric
+    Low,      // Sorcerer
+}
+
+impl HitPointProgression {
+    // 0 points for baseline
+    // 2 points for 25% more HP
+    // 4 points for 42% more HP
+    // 7 points for 75% more HP
+    pub fn creation_point_cost(&self) -> i32 {
+        match self {
+            Self::Low => 0,
+            Self::Medium => 2,
+            Self::High => 4,
+            Self::VeryHigh => 7,
+        }
+    }
+
+    fn calc_hit_points(&self, level: i32, con: i32) -> i32 {
+        let [base_hp, incremental_hp] = self.progression_at_level(level);
+
+        // This is the number of levels since the last breakpoint jump. Each breakpoint jump
+        // increases base HP and incremental level count ("X HP per level above 7th").
+        let incremental_level = (level - 1) % 6;
+
+        base_hp + incremental_hp * (incremental_level + con)
+    }
+
+    fn complete_progression(&self) -> [[i32; 2]; 4] {
+        match self {
+            Self::Low => [[6, 1], [14, 2], [30, 4], [60, 8]],
+            Self::Medium => [[8, 1], [18, 2], [35, 5], [70, 10]],
+            Self::High => [[8, 2], [20, 3], [40, 6], [80, 12]],
+            Self::VeryHigh => [[10, 2], [24, 4], [50, 8], [100, 15]],
+        }
+    }
+
+    fn name(&self) -> &str {
+        match self {
+            Self::VeryHigh => "Very High",
+            Self::High => "High",
+            Self::Medium => "Medium",
+            Self::Low => "Low",
+        }
+    }
+
+    // Return [base_hp, incremental_hp]
+    fn progression_at_level(&self, level: i32) -> [i32; 2] {
+        // We have to use this awkward `if` structure instead of `%` so Rust recognizes
+        // that we are within the bounds of the array.
+        let i = if level <= 6 {
+            0
+        } else if level <= 12 {
+            1
+        } else if level <= 18 {
+            2
+        } else {
+            3
+        };
+        self.complete_progression()[i]
+    }
+
+    pub fn to_class_text(&self) -> String {
+        format!(
+            "
+                {level_one}
+                This increases as your level increases, as indicated below.
+                \\begin<itemize>
+                    \\itemhead<Level 7> {level_seven}
+                    \\itemhead<Level 13> {level_thirteen}
+                    \\itemhead<Level 19> {level_nineteen}
+                \\end<itemize>
+            ",
+            level_one = self.hit_points_at_level_text(1),
+            level_seven = self.hit_points_at_level_text(7),
+            level_thirteen = self.hit_points_at_level_text(13),
+            level_nineteen = self.hit_points_at_level_text(19),
+        )
+    }
+
+    fn hit_points_at_level_text(&self, level: i32) -> String {
+        let [base_hp, incremental_hp] = self.progression_at_level(level);
+        let constitution_multiplier_text = match incremental_hp {
+            1 => "",
+            2 => "twice",
+            3 => "three times",
+            4 => "four times",
+            5 => "five times",
+            6 => "six times",
+            8 => "eight times",
+            10 => "ten times",
+            12 => "twelve times",
+            15 => "fifteen times",
+            _ => panic!("Unsupported constitution multiplier {}", incremental_hp),
+        };
+        return format!(
+            "You have {} hit points, plus {} hit points per level beyond {}, plus {} your Constitution.",
+            base_hp,
+            incremental_hp,
+            level,
+            constitution_multiplier_text,
+        );
+    }
 }

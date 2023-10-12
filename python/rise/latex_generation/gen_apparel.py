@@ -1668,7 +1668,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you roll a 1 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                Whenever you roll a 1 on an attack or check using the Balance, Climb, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
             """,
             short_description="Can reroll 1s with movement-based skills",
@@ -1679,7 +1679,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you roll a 1 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                Whenever you roll a 1 on an attack or check using the Balance, Climb, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
                 In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
@@ -1691,7 +1691,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you roll a 1 or 2 on an attack or check using the Balance, Climb, Jump, or Swim skills, you may reroll and take the higher result.
+                Whenever you roll a 1 or 2 on an attack or check using the Balance, Climb, or Swim skills, you may reroll and take the higher result.
                 You can only reroll any individual roll once in this way.
                 In addition, using the \\textit<desperate exertion> ability to affect those skills only causes you to increase your \\glossterm<fatigue level> by one instead of two (see \\pcref<Desperate Exertion>).
             """,
@@ -1776,7 +1776,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                Whenever you make a Jump check, you can activate these boots.
+                Whenever you jump, you can activate these boots.
                 When you do, you increase your \\glossterm<fatigue level> by one.
                 In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
                 You can \\glossterm<briefly> levitate in that location as if you were standing on solid ground.
