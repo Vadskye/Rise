@@ -299,7 +299,7 @@ where
     fn calc_damage_per_round_multiplier(&self) -> f64 {
         match self.category {
             CreatureCategory::Character => 1.0,
-            CreatureCategory::Monster(cr) => cr.damage_per_round_multiplier(),
+            CreatureCategory::Monster(cr, _) => cr.damage_per_round_multiplier(),
         }
     }
 

@@ -24,24 +24,42 @@ fn bracers() -> Vec<Apparel> {
 
     apparel.push(Bracers(StandardItem {
         name: String::from("Bracers of Armor"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Grants encumbrance-free medium armor"),
         description: String::from(r"
             You have a translucent suit of magical armor on your body and over your hands.
             This functions like body armor that provides a +3 bonus to Armor defense and has no \glossterm<encumbrance>.
             It also provides a +5 bonus to your \glossterm{damage resistance}.
 
-            As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
-            This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
-
-            The armor and shield provided from this ability are dismissed if you have other body armor of any kind.
+            The armor provided by this ability is dismissed if you have other body armor of any kind.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants encumbrance-free medium armor", "
+            ItemUpgrade::new(3, "Grants encumbrance-free medium armor", "
                 The damage resistance bonus increases to +10.
             "),
-            ItemUpgrade::new(6, "Grants encumbrance-free medium armor", "
+            ItemUpgrade::new(5, "Grants encumbrance-free medium armor", "
                 The damage resistance bonus increases to +20.
+            "),
+            ItemUpgrade::new(7, "Grants encumbrance-free medium armor", "
+                The damage resistance bonus increases to +40.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Bracers(StandardItem {
+        name: String::from("Bracers of Resistance"),
+        rank: 2,
+        short_description: String::from("Grants +4 damage resistance"),
+        description: String::from(r"
+            You gain a +4 \glossterm{magic bonus} to your \glossterm{damage resistance}.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants +8 damage resistance", "
+                The damage resistance bonus increases to +8.
+            "),
+            ItemUpgrade::new(6, "Grants +16 damage resistance", "
+                The damage resistance bonus increases to +16.
             "),
         ],
         ..Apparel::default()
@@ -56,7 +74,7 @@ fn bracers() -> Vec<Apparel> {
             When you do, you increase your \glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
             After you activate this item, you \glossterm{briefly} cannot activate it again.
         "),
-        tags: vec![AbilityTag::Swift],
+        tags: vec![AbilityTag::Exertion, AbilityTag::Swift],
         upgrades: vec![
             ItemUpgrade::new(4, "Can exert to gain instant +4 Armor defense", "
                 The defense bonus increases to +4.

@@ -213,10 +213,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
                     This functions like body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-                    However, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
+                    It also provides a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
+                    However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
-                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1d per three \glossterm{power}.
+                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1 per three \glossterm{power}.
                     This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
@@ -241,7 +241,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of your chosen secret improves.
                 {
-                    \subcf{Secret of Bloodforging} The bonus to damage resistance from the armor increases to five times your rank in this archetype.
+                    \subcf{Secret of Bloodforging} The bonus to damage resistance from the armor increases to six times your rank in this archetype.
 
                     \subcf{Secret of Bloodsharing} The healing increases to 1d6 plus 1d6 per four \glossterm{power}.
 
@@ -257,7 +257,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen secret reaches its full potential.
                 {
-                    \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
+                    \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
                     In addition, the defense bonus increases to \plus5.
 
                     \parhead{Secret of Bloodsharing} The healing increases to 2d6 plus 1d6 per 3 power.
@@ -265,7 +265,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Eldritch Secret",
@@ -332,8 +332,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, -2),
                 Modifier::Skill(Skill::Flexibility, -2),
                 Modifier::Skill(Skill::Intimidate, -2),
-                Modifier::Skill(Skill::Jump, -2),
-                Modifier::Skill(Skill::Linguistics, -2),
                 Modifier::Skill(Skill::Medicine, -2),
                 Modifier::Skill(Skill::Perform, -2),
                 Modifier::Skill(Skill::Persuasion, -2),
@@ -367,8 +365,6 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, -2),
                 Modifier::Skill(Skill::Flexibility, -2),
                 Modifier::Skill(Skill::Intimidate, -2),
-                Modifier::Skill(Skill::Jump, -2),
-                Modifier::Skill(Skill::Linguistics, -2),
                 Modifier::Skill(Skill::Medicine, -2),
                 Modifier::Skill(Skill::Perform, -2),
                 Modifier::Skill(Skill::Persuasion, -2),
@@ -506,7 +502,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
-                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
 
                 Some metamagic abilities affect specific spells.
                 You can only choose spells with a rank no higher than your rank in this archetype.
@@ -555,11 +550,15 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Desperate Power",
+            name: "Desperate Pact",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you double your \glossterm{power} with that attack.
+                You can use the \textit{desperate exertion} ability without increasing your fatigue level.
+                When you do, you suffer no immediate negative consequences.
+                After 10 minutes, your maximum \glossterm{hit points} will be reduced by a quarter until you complete a \glossterm{long rest}.
+                Each time this penalty takes effect, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
+                If your hit points are reduced below 0 in this way, you die.
             ",
             modifiers: None,
         },
@@ -614,7 +613,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{magicalsustainability}{Possession}{\abilitytag{Exertion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -694,7 +693,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 You can use the \textit{exchange soul fragment} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
+                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Exertion}, \abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
@@ -726,7 +725,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 You can use the \textit{exchange vitality} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Vitality}
+                \begin{magicalactiveability}{Exchange Vitality}[abilitytag{Exertion}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
 

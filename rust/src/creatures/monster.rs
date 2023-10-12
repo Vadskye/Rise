@@ -30,7 +30,7 @@ impl Monster {
         role: Role,
         level: i32,
     ) -> Monster {
-        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating));
+        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating, role));
         role.set_core_statistics(&mut creature);
         challenge_rating.add_modifiers(&mut creature);
 
@@ -143,7 +143,7 @@ impl Monster {
         self.validate_skills();
     }
 
-    fn name(&self) -> String {
+    pub fn name(&self) -> String {
         return self
             .creature
             .name
@@ -262,6 +262,24 @@ impl Monster {
                 self.name(),
             );
         }
+    }
+
+    pub fn explain_statistics(&self) -> String {
+        format!(
+            "
+*Modifiers*:
+{modifiers}
+
+*Damage Absorption*:
+{damage_absorption}
+
+*Attacks*:
+{attacks}
+            ",
+            modifiers = self.creature.explain_modifiers().join("\n").trim(),
+            damage_absorption = self.creature.explain_damage_absorption().trim(),
+            attacks = self.creature.explain_attacks().join("\n").trim(),
+        )
     }
 }
 

@@ -71,7 +71,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
-                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
 
                 Some metamagic abilities affect specific spells.
                 You can only choose spells with a rank no higher than your rank in this archetype.
@@ -243,16 +242,18 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You can request a miracle as a standard action.
-                You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
-                At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
-                After you use this ability, you increase your \glossterm{fatigue level} by three, and you cannot request another miracle for a week.
+                You can request a \textit{miracle} as a standard action.
+                \begin{magicalactiveability}{Miracle}[\abilitytag{Exertion})]
+                    You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
+                    At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
+                    After you use this ability, you increase your \glossterm{fatigue level} by three, and you cannot request another miracle for a week.
 
-                Miracles are most effective when your request is directly related to your deity's domains and general purview.
-                They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
-                If the deity has a direct interest in your situation, the miracle may be of even greater power.
+                    Miracles are most effective when your request is directly related to your deity's domains and general purview.
+                    They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
+                    If the deity has a direct interest in your situation, the miracle may be of even greater power.
 
-                If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
+                    If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
+                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -261,7 +262,8 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                Using your \textit{miracle} ability does not increase your fatigue level, and you can perform two miracles per week instead of only one.
+                Your \ability{miracle} ability loses the \abilitytag{Exertion} tag and does not increase your fatigue level.
+                In addition, you can perform two miracles per week instead of only one.
             ",
             modifiers: None,
         },
@@ -289,7 +291,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
-                    The target regains 1d6 \glossterm{hit points} +1d per 2 \glossterm{power}.
+                    The target regains 1d6 \glossterm{hit points} +1 per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
@@ -336,7 +338,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{vital restoration} ability as a standard action.
-                \begin{magicalactiveability}{Vital Restoration}
+                \begin{magicalactiveability}{Vital Restoration}[\abilitytag{Exertion}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
 
@@ -377,7 +379,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{revivify} ability as a standard action.
-                \begin{magicalactiveability}{Revivify}
+                \begin{magicalactiveability}{Revivify}[\abilitytag{Exertion}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
 
@@ -435,7 +437,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{activeability}{Bless the Worthy}[\abilitytag{Swift}]
+                \begin{activeability}{Bless the Worthy}[\abilitytag{Exertion}, \abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 

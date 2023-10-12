@@ -70,45 +70,19 @@ fn generate_latex_resources(class: &Class) -> String {
 }
 
 fn generate_latex_defenses(class: &Class) -> String {
-    let armor_defense_bonus = class.defense_bonus(&Defense::Armor);
-    let armor_text = if armor_defense_bonus > 0 {
-        format!("\\plus<{}> Armor,", armor_defense_bonus)
-    } else {
-        "".to_string()
-    };
-    let mut hp_dr_text = "".to_string();
-    if class.hit_points() > 0 {
-        if class.damage_resistance() > 0 {
-            hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>), and a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
-                class.hit_points(),
-                class.damage_resistance(),
-            )
-        } else {
-            hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<hit points> (see \\pcref<Hit Points>).",
-                class.hit_points(),
-            )
-        }
-    } else if class.damage_resistance() > 0 {
-        hp_dr_text = format!(
-                "In addition, you gain a \\plus{} bonus to your level when determining your maximum \\glossterm<damage resistance> (see \\pcref<Damage Resistance>).",
-                class.damage_resistance(),
-            )
-    }
-
     latex_formatting::latexify(format!(
         "
             \\cf<{shorthand_name}><Defenses>
-            You gain the following bonuses to your \\glossterm<defenses>: {armor} \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
-            {hp_dr_text}
+            You gain the following bonuses to your \\glossterm<defenses>: \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
+
+            \\cf<{shorthand_name}><Hit Points>
+            {hp_text}
         ",
-        armor=armor_text,
         fortitude=class.defense_bonus(&Defense::Fortitude),
         reflex=class.defense_bonus(&Defense::Reflex),
         mental=class.defense_bonus(&Defense::Mental),
         shorthand_name=class.shorthand_name(),
-        hp_dr_text=hp_dr_text,
+        hp_text=class.hit_point_progression().to_class_text(),
     ))
 }
 

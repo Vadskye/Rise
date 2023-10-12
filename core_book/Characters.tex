@@ -49,8 +49,10 @@ You can either skim past terms you don't yet understand or look them up as you g
                 \item Strength determines how much you can carry (see \tref{Weight Limits by Strength}).
                     You generally need a Strength of at least 1 to wear heavy body armor.
                 \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
+                \item You add your Strength to your level to determine your \glossterm{accuracy} with \abilitytag{Brawling} attacks (see \pcref{Brawling Accuracy}).
+                \item A very high Strength can allow you to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
                 \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
-                \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
+                \item You add your Strength to Strength-based \glossterm{skills}: Climb and Swim (see \pcref{Skills}).
             \end{raggeditemize}
         }
 
@@ -73,7 +75,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Constitution tend to have strong defensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Constitution to your level to determine your \glossterm{hit points} (see \pcref{Hit Points}).
+                \item Your Constitution increases your \glossterm{hit points}, as defined by your class (see \pcref{Classes}).
                 \item You add your Constitution to your \glossterm{fatigue tolerance} (see \pcref{Fatigue}).
                 \item You add your Constitution to your Fortitude defense.
                 \item You add your Constitution to the Constitution-based \glossterm{skill}: Endurance (see \pcref{Skills}).
@@ -89,7 +91,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             \begin{raggeditemize}
                 \item If your Intelligence is positive, you gain a number of \glossterm{trained skills} equal to your Intelligence (see \pcref{Trained Skills}).
                 \item You add your Intelligence to the number of \glossterm{insight points} you gain (see \pcref{Insight Points}).
-                \item You add your Intelligence to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, Linguistics, and Medicine (see \pcref{Skills}).
+                \item You add your Intelligence to Intelligence-based \glossterm{skills}: Craft, Deduction, Disguise, Knowledge, and Medicine (see \pcref{Skills}).
             \end{raggeditemize}
 
             \par Non-sentient creatures like animals have an Intelligence of \minus6 or lower.
@@ -102,7 +104,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             Characters with a high Perception tend to have strong offensive capabilities.
             It has the following effects:
             \begin{raggeditemize}
-                \item You add your Perception to your level to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+                \item You add your Perception to your level to determine your \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
                 \item You add your Perception to Perception-based \glossterm{skills}: Awareness, Creature Handling, Social Insight, and Survival (see \pcref{Skills}).
             \end{raggeditemize}
         }
@@ -166,6 +168,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             If you reduce an attribute by a total of \minus1, you gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
             If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             You cannot gain these benefits from reducing more than two attributes below 0 in this way.
+            In addition, you can never reduce an attribute below \minus2 in this way, including any attribute modifiers from your species.
 
 \section{Skills Overview}
     Skills represent the myriad of talents that people can have, such as cooking or swimming.
@@ -189,9 +192,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item The Endurance skill represents your ability to persevere through physical trials.
         \item The Flexibility skill represents your ability to escape bindings and move through small areas by contorting your body.
         \item The Intimidate skill represents your ability to intimidate and coerce people into doing what you want.
-        \item The Jump skill represents your ability to jump.
         \item The Knowledge skills represent your understanding of particular aspects of the world.
-        \item The Linguistics skill represents your mastery of spoken and written languages.
         \item The Medicine skill represents your practical understanding of how to tend to the wounds of living creatures.
         \item The Perform skills represent your ability to create particular forms of entertainment.
         \item The Persuasion skill represents your ability to convince people to think what you want them to.
@@ -297,7 +298,7 @@ You can either skim past terms you don't yet understand or look them up as you g
             \itemhead{Elven Serenity} Elves gain a \plus1 bonus to Mental defense.
             \itemhead{Keen Senses} Elves gain a \plus2 bonus to the Awareness skill (see \pcref{Awareness}).
             \itemhead{Low-light Vision} Elves have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-            \itemhead{Sure-Footed} Elves gain a \plus2 bonus to the Balance skill (see \pcref{Balance}).
+            \itemhead{Sure-Footed} Elves gain a \plus2 bonus to the Balance and Stealth skills (see \pcref{Balance}, and \pcref{Stealth}).
             \itemhead{Trance} Elves do not sleep, and are immune to \magical effects that would cause them to sleep.
                 Instead of sleeping, elves can trance for 4 hours.
                 An elf in trance may make Perception-based checks at a \minus5 penalty.
@@ -332,8 +333,8 @@ You can either skim past terms you don't yet understand or look them up as you g
                 \end{activeability}
             \itemhead{Magic Affinity} Gnomes gain an additional \glossterm{insight point}.
                 They can only spend this insight point to learn \magical abilities, such as spells.
-            \itemhead{Short Stature} Gnomes gain a \plus2 bonus to the Stealth skill.
-            \itemhead{Tinkerer} Gnomes gain a \plus2 bonus to two Craft skills of their choice (see \pcref{Craft}).
+            \itemhead{Short Stature} Gnomes gain a \plus3 bonus to the Stealth skill.
+            \itemhead{Tinkerer} Gnomes gain a \plus2 bonus to one Craft skill of their choice (see \pcref{Craft}).
         \end{raggeditemize}
         \parhead{Automatic Languages} Common, Gnome, either Sylvan or any one \glossterm{common language} (see \tref{Common Languages}).
 
@@ -349,6 +350,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \parhead{Special Abilities}
         \begin{raggeditemize}
             \itemhead{Diplomatic} Half-elves gain a \plus2 bonus to the Persuasion skill.
+            \itemhead{Keen Senses} Half-elves gain a \plus2 bonus to the Awareness skill (see \pcref{Awareness}).
             \itemhead{Low-light Vision} Half-elves have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
             \itemhead{Versatile} Half-elves only need to spend one \glossterm{insight point} to gain access to an additional class (see \pcref{Multiclass Characters}).
         \end{raggeditemize}
@@ -384,7 +386,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \parhead{Special Abilities}
         \begin{raggeditemize}
             \itemhead{Nimble Combatant} Halflings gain a \plus1 bonus to Reflex defense.
-            \itemhead{Short Stature} Halflings gain a \plus2 bonus to the Stealth skill.
+            \itemhead{Short Stature} Halflings gain a \plus3 bonus to the Stealth skill.
             \itemhead{Stout-Hearted} Halflings gain a \plus1 bonus to Mental defense.
             \itemhead{Sure-Footed} Halflings gain a \plus2 bonus to the Balance skill (see \pcref{Balance}).
         \end{raggeditemize}
@@ -713,17 +715,18 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your accuracy is equal to half the sum of your level and Perception.
         Many abilities can also modify your accuracy.
 
+        \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
+            Some abilities have the \abilitytag{Brawling} tag.
+            Your accuracy with those abilities is equal to half the sum of your level and Strength.
+            Most Brawling abilities are listed at \pcref{Special Combat Abilities}.
+
     \subsection{Damage Resistance}\label{Damage Resistance}
         Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
         For details about how damage resistance is used, see \pcref{Taking Damage}.
 
-        The amount of damage resistance you have is defined in \tref{Character Advancement and Gaining Levels}.
-        You use your level to find the corresponding base value.
-        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed amount of additional damage resistance.
-        Body armor also provides a significant bonus to damage resistance.
-
-        If this value exceeds 21, you gain 5 hit points for every value beyond 21.
-        For example, a level 21 sorcerer would have 55 damage resistance.
+        You do not intrinsically have any damage resistance.
+        Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
+        In addition, some class abilities and magic items can also increase it.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
@@ -756,14 +759,8 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
         For details about how hit points are used, see \pcref{Taking Damage}.
 
-        The amount of hit points you have is defined in \tref{Character Advancement and Gaining Levels}.
-        You add your level and your Constitution to find your effective level for the purpose of determining your hit points.
-        For example, a level 3 character with 2 Constitution would have 10 hit points, as would a level 5 character with 0 Constitution.
-        Some special abilities can increase your level for the purpose of this calculation, or simply give you a fixed number of additional hit points.
-
-        If the sum of your level and Constitution is negative, your hit points are equal to 6 \add half that negative value.
-        If the sum exceeds 21, you gain 10 hit points for every value beyond 21.
-        For example, a level 21 creature with a 4 Constitution would have 110 hit points.
+        The way you calculate your hit points is defined by your class (see \pcref{Classes}).
+        Increasing your level and Constitution will increase your hit points.
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
         When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
@@ -771,18 +768,18 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Power}\label{Power}
         Your \glossterm{power} is a general representation of how strong your abilities are.
-        You have two types of power: your \glossterm{magical power} affects your \magical abilities, and your \glossterm{mundane power} affects your \glossterm{mundane} abilities.
+        You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities.
         If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
 
         Your mundane power is equal to your Strength \add half your level.
         Similarly, your magical power is equal to your Willpower \add half your level.
         If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
-        For example, a strike with a broadsword would normally deal 1d6 damage \plus1d per 2 power.
+        For example, a strike with a broadsword would normally deal 1d6 damage \plus1 per 2 power.
         A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
 
         Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
         % TODO: weapon damage wording
-        For example, you gain a \plus1d bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
+        For example, you gain a \plus1 bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
 
 \section{Resources}\label{Resources}
 
@@ -862,7 +859,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Barbarian.
 %             \parhead{Archetypes} Battlerager first, Primal Warrior second, Totemist (lion totem) third.
 %             \parhead{Insight Points} None.
-%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
+%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate.
 %             \parhead{Weapon Groups} Crossbows, headed weapons.
 %             \parhead{Equipment} Greatmace, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
 %             \parhead{Legacy Item} Weapon.
@@ -883,7 +880,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Barbarian.
 %             \parhead{Archetypes} Outland Savage first, Primal Warrior second, Totemist (wolf totem) third.
 %             \parhead{Insight Points} 1 point for proficiency with exotic armor weapons.
-%             \parhead{Skills} Awareness, Climb, Endurance, Jump, Stealth, Survival.
+%             \parhead{Skills} Awareness, Climb, Endurance, Stealth, Survival.
 %             \parhead{Weapon Groups} Armor weapons, flexible weapons.
 %             \parhead{Languages} Common, Orcish.
 %             \parhead{Equipment} Flail, standard shield, scale mail. As you gain levels, use the best light armor you can afford. When you can, get spikes and a spiked knee crafted onto your armor.
@@ -906,7 +903,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Barbarian.
 %             \parhead{Archetypes} Primal Warrior first, Battleforged Resilience second, Outland Savage third.
 %             \parhead{Insight Points} 1 point for an additional combat style, 1 point for an additional maneuver.
-%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate, Jump.
+%             \parhead{Skills} Awareness, Climb, Endurance, Intimidate.
 %             \parhead{Weapon Groups} Axes, crossbows.
 %             \parhead{Languages} Common, Dwarven, Orcish.
 %             \parhead{Equipment} Greataxe, scale mail. As you gain levels, buy a heavy crossbow and use the best medium armor you can afford.
@@ -933,7 +930,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Barbarian.
 %             \parhead{Archetypes} Totemist (eagle totem) first, Primal Warrior second, Outland Savage third.
 %             \parhead{Insight Points} 1 point for proficiency with exotic bows.
-%             \parhead{Skills} Awareness, Balance, Climb, Creature Handling, Jump, Survival.
+%             \parhead{Skills} Awareness, Balance, Climb, Creature Handling, Survival.
 %             \parhead{Weapon Groups} Crossbows, bows, thrown weapons.
 %             \parhead{Languages} Common, Elven, Giantish.
 %             \parhead{Equipment} Longbow, leather body armor. As you gain levels, buy a flatbow and use the best light armor you can afford.
@@ -1029,7 +1026,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Cleric.
 %             \parhead{Archetypes} Preacher first, Divine Magic second, Divine Spell Mastery third.
 %             \parhead{Insight Points} 2 points for metamagic (including an extra mystic sphere), 3 points for additional spells known
-%             \parhead{Skills} Awareness, Knowledge (local, religion), Linguistics, Medicine, Persuasion, Social Insight
+%             \parhead{Skills} Awareness, Knowledge (local, religion), Medicine, Persuasion, Social Insight
 %             \parhead{Languages} Common, Dwarven, Elven.
 %             \parhead{Equipment} Club, standard shield, scale mail. As you gain levels, use the best medium armor you can afford.
 %             \parhead{Legacy Item} Apparel.
@@ -1050,7 +1047,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Druid.
 %             \parhead{Archetypes} Nature Magic first, Elementalist second, Nature Spell Mastery third.
 %             \parhead{Insight Points} 2 points for a mystic sphere, 1 point for metamagic (choosing an extra mystic sphere), 3 points for spells
-%             \parhead{Skills} Awareness, Balance, Jump, Knowledge (dungeoneering, nature), Survival, Swim
+%             \parhead{Skills} Awareness, Balance, Knowledge (dungeoneering, nature), Survival, Swim
 %             \parhead{Languages} Common, Sylvan
 %             \parhead{Equipment} Sickle, buckler, hide armor. As you gain levels, keep using hide armor.
 %             You may want to keep leather armor around in case you need to do a lot of jumping or swimming - or at high levels, flying.
@@ -1097,7 +1094,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Druid.
 %             \parhead{Archetypes} Shifter first, Nature Magic second, Wildspeaker third.
 %             \parhead{Insight Points} 1 point for a wild aspect, 3 points for spells
-%             \parhead{Skills} Awareness, Balance, Climb, Jump, Stealth, Survival
+%             \parhead{Skills} Awareness, Balance, Climb, Stealth, Survival
 %             \parhead{Languages} Common, Sylvan
 %             \parhead{Equipment} Natural weapon, buckler, chain shirt. As you gain levels, use the best light armor you can afford.
 %             \parhead{Legacy Item} Armor.
@@ -1145,7 +1142,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Fighter.
 %             \parhead{Archetypes} Combat Discipline first, Martial Mastery second, Sentinel third.
 %             \parhead{Insight Points} 3 points for maneuvers.
-%             \parhead{Skills} Climb, Endurance, Jump, Swim
+%             \parhead{Skills} Climb, Endurance, Swim
 %             \parhead{Weapon Groups} Axes, crossbows
 %             \parhead{Languages} Common, Dwarven, Orcish.
 %             \parhead{Equipment} Battleaxe, standard shield, scale mail. As you gain levels, buy a heavy crossbow and use the best heavy armor you can afford.
@@ -1190,7 +1187,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Fighter.
 %             \parhead{Archetypes} Martial Mastery first, Combat Discipline second, Tactician third.
 %             \parhead{Insight Points} 1 point for an additional combat style, 3 points for maneuvers.
-%             \parhead{Skills} Awareness, Climb, Endurance, Jump, Swim
+%             \parhead{Skills} Awareness, Climb, Endurance, Swim
 %             \parhead{Weapon Groups} Blades, thrown weapons.
 %             \parhead{Languages} Common, Giantish, Orcish.
 %             \parhead{Equipment} Broadsword, standard shield, scale mail. As you gain levels, buy throwing axes and use the best heavy armor you can afford.
@@ -1261,7 +1258,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Monk.
 %             \parhead{Archetypes} Airdancer first, Esoteric Warrior second, Ki third.
 %             \parhead{Insight Points} 1 point for a ki manifestation, 1 point for a maneuver.
-%             \parhead{Skills} Balance, Climb, Flexibility, Jump, Stealth, Swim
+%             \parhead{Skills} Balance, Climb, Flexibility, Stealth, Swim
 %             \parhead{Weapon Groups} Monk weapons
 %             \parhead{Languages} Common, Elven, Halfling
 %             \parhead{Equipment} Two jitte. Use your \textit{ki barrier} for your body armor.
@@ -1270,9 +1267,9 @@ You can either skim past terms you don't yet understand or look them up as you g
 %                 At level 9, choose \mitem{greater boots of levitation} and \mitem{greater boots of reliable motion}.
 %                 At level 15, choose \mitem{supreme boots of levitation} and \mitem{supreme boots of reliable motion}.
 %             \parhead{Combat Styles} Mobile Assault, Penetrating Precision
-%             \parhead{Suggested Feats} Jump Specialization, Balance Specialization, Swiftrunner, Two-Weapon Fighting
+%             \parhead{Suggested Feats} Balance Specialization, Swiftrunner, Two-Weapon Fighting
 %             \parhead{Combat Tactics} You are highly acrobatic in combat, leaping around your opponents with ease.
-%             Once your Jump check result is high enough to jump over enemies, you can start ignoring attempts to block your movement.
+%             Once you can jump over enemies, you can start ignoring attempts to block your movement.
 %             The Leap of the Heavens \textit{ki manifestation} can help you reach that point quickly.
 %             You are highly accurate, and your high Dexterity helps both your defenses and your skills.
 %             If you are in physical danger, you can sheathe one of your kamas and use your \textit{ki barrier} as a shield to further increase your Armor defense.
@@ -1285,7 +1282,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Monk.
 %             \parhead{Archetypes} Esoteric Warrior first, Perfected Form second, Transcendent Sage third.
 %             \parhead{Insight Points} 4 points for maneuvers.
-%             \parhead{Skills} Awareness, Balance, Climb, Flexibility, Endurance, Medicine, Jump, Stealth
+%             \parhead{Skills} Awareness, Balance, Climb, Flexibility, Endurance, Medicine, Stealth
 %             \parhead{Weapon Groups} Monk weapons
 %             \parhead{Languages} Common, Draconic, Elven
 %             \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
@@ -1331,7 +1328,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 %             \parhead{Class} Monk.
 %             \parhead{Archetypes} Perfected Form first, Esoteric Warrior second, Airdancer third.
 %             \parhead{Insight Points} 1 point for a trained skill, 2 points for maneuvers.
-%             \parhead{Skills} Balance, Climb, Flexibility, Endurance, Jump, Stealth, Swim
+%             \parhead{Skills} Balance, Climb, Flexibility, Endurance, Stealth, Swim
 %             \parhead{Weapon Groups} Monk weapons
 %             \parhead{Languages} Common, Giantish, Orcish
 %             \parhead{Equipment} Two kunai, chain shirt. As you gain levels, buy spare kunai, and use the best light armor you can afford.
@@ -1486,29 +1483,29 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \begin{dtable!*}
         \lcaption{Character Advancement and Gaining Levels}
-        \begin{dtabularx}{\textwidth}{l l l l l l >{\lcol}X}
-            \tb{Level}\fn{1} & \tb{HP} & \tb{DR} & \tb{Max Rank}\fn{2} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
-            1st              & 6       & 0       & 1                   & \tdash                                 & 0       & \tdash                              \\
-            2nd              & 7       & 1       & \tdash              & \plus1                                 & 10      & \tdash                              \\ % +10 xp
-            3rd              & 8       & 2       & \tdash              & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
-            4th              & 9       & 3       & 2                   & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
-            5th              & 10      & 4       & \tdash              & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
-            6th              & 12      & 5       & \tdash              & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
-            7th              & 14      & 6       & 3                   & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
-            8th              & 16      & 7       & \tdash              & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
-            9th              & 18      & 8       & \tdash              & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
-            10th             & 20      & 9       & 4                   & \plus5                                 & 450     & \tdash                              \\ % +150 xp
-            11th             & 22      & 10      & \tdash              & \plus5                                 & 700     & \tdash                              \\ % +250 xp
-            12th             & 25      & 12      & \tdash              & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
-            13th             & 28      & 14      & 5                   & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
-            14th             & 32      & 16      & \tdash              & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
-            15th             & 36      & 18      & \tdash              & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
-            16th             & 40      & 20      & 6                   & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
-            17th             & 45      & 22      & \tdash              & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
-            18th             & 50      & 25      & \tdash              & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
-            19th             & 56      & 28      & 7                   & \plus9                                 & 14,000  & \tdash                              \\
-            20th             & 63      & 31      & \tdash              & \plus10                                & 20,000  & \tdash                              \\
-            21st             & 70      & 35      & \tdash              & \plus10                                & 30,000  & \plus1 to two attributes            \\
+        \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
+            \tb{Level}\fn{1} & \tb{Max Rank}\fn{2} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
+            1st              & 1                   & \tdash                                 & 0       & \tdash                              \\
+            2nd              & \tdash              & \plus1                                 & 10      & \tdash                              \\ % +10 xp
+            3rd              & \tdash              & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
+            4th              & 2                   & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
+            5th              & \tdash              & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
+            6th              & \tdash              & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
+            7th              & 3                   & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
+            8th              & \tdash              & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
+            9th              & \tdash              & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
+            10th             & 4                   & \plus5                                 & 450     & \tdash                              \\ % +150 xp
+            11th             & \tdash              & \plus5                                 & 700     & \tdash                              \\ % +250 xp
+            12th             & \tdash              & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
+            13th             & 5                   & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
+            14th             & \tdash              & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
+            15th             & \tdash              & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
+            16th             & 6                   & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
+            17th             & \tdash              & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
+            18th             & \tdash              & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
+            19th             & 7                   & \plus9                                 & 14,000  & \tdash                              \\
+            20th             & \tdash              & \plus10                                & 20,000  & \tdash                              \\
+            21st             & \tdash              & \plus10                                & 30,000  & \plus1 to two attributes            \\
         \end{dtabularx}
         1. For some statistics, like your \glossterm{hit points}, you add your attributes to your level when calculating the total. If this total is more than 21 or less than 1, see the relevant section below this table to calculate your value. \\
         2. See \pcref{Archetype Ranks}. \\

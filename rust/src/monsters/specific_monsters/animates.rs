@@ -551,7 +551,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Boneshattering Treeclub",
                     r"
                         The $name makes a $accuracy+1 strike vs. Armor with its treeclub.
-                        If the attack result beats the target's Fortitude defense, the strike deals maximum damage.
+                        If the attack result beats a creature's Fortitude defense, the strike deals maximum damage.
                         \hit $fullweapondamage.
                     ",
                 ),

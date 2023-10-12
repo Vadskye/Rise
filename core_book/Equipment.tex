@@ -203,7 +203,7 @@ Items are divided into five broad categories, described below.
     Each weapon has a \glossterm{weapon group} and any number of \glossterm{weapon tags}.
     In addition, each weapon has a particular \glossterm{accuracy} modifier and defines a base \glossterm{dice pool} for attacks using that weapon.
     This section explains each of those concepts and defines the statistics for weapons in Rise.
-    You gain a \plus1d bonus to your \glossterm{weapon damage} per 2 power (see \pcref{Weapon Damage}).
+    You gain a bonus to your \glossterm{weapon damage} equal to half your \glossterm{power} (see \pcref{Weapon Damage}).
 
     Unless otherwise specified, a weapon must be held in a single \glossterm{free hand}.
     You can use two hands to hold a weapon if you want, but that provides no special benefit unless that weapon has the \weapontag{Versatile Grip} tag (see \pcref{Weapon Tags}).
@@ -305,7 +305,9 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
         You normally need two hands to use a Heavy weapon.
         If you have a Strength of 3 or higher, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
-        While holding a Heavy weapon in two hands, you gain a \plus1d bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
+        If your Strength is 6 or higher, this accuracy penalty is removed.
+
+        While holding a Heavy weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
         This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
         % 20% chance of +5.5a is slightly better than +1a, but only for getting critical hits
         \weapontagdef{Impact} If you roll an 8 or 9 on an attack roll with this weapon, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
@@ -353,7 +355,7 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
         This allows you to deal damage with the weapon if you successfully trip the target.
         \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
-        While holding this weapon in two hands, you gain a \plus1d damage bonus to your \glossterm{weapon damage} with it, plus \plus1d per 3 \glossterm{power}.
+        While holding this weapon in two hands, you gain a \plus1 damage bonus to your \glossterm{weapon damage} with it, plus \plus1 per 3 \glossterm{power}.
         This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
 
     \subsection{Weapon Table}
@@ -674,37 +676,38 @@ Items are divided into five broad categories, described below.
 
         \subsubsection{Weapon Special Material Prices}
             Weapon special materials are listed as having a single rank and price in \trefnp{Armor Special Materials}.
-            This is the price for an amount of the special material sufficient to forge a non-\weapontag{Heavy} weapon, when combined with other normal weaponsmithing materials.
-            Heavy weapons require twice as much of the special material.
+            This is the price for an amount of the special material sufficient to forge a weapon of the appropriate type, when combined with other normal weaponsmithing materials.
 
         \begin{dtable!*}
             \lcaption{Weapon Special Materials}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
-                \tb{Material}             & \tb{Special Effect}                       & \tb{Item Rank (Cost)}              \tableheaderrule
+                \tb{Material}             & \tb{Special Effect}                           & \tb{Item Rank (Cost)}              \tableheaderrule
                 % object damage
-                \tind Adamantine          & \plus1d, double damage to objects         & 4 (5,000 gp)   \\
-                \tind Adamantine, pure    & \plus2d, double damage to objects         & 6 (125,000 gp) \\
+                \tind Adamantine          & \plus2 damage, double damage to objects, extra weight & 5 (25,000 gp)   \\
+                \tind Adamantine, pure    & \plus1d8 damage, double damage to objects, extra weight & 7 (625,000 gp) \\
                 % just vulnerabilities
-                \tind Cold iron           & Common vulnerabilities                    & 2 (200 gp)     \\
+                \tind Cold iron           & Common vulnerabilities                        & 2 (200 gp)     \\
                 % crit accuracy
-                \tind Diamondsteel        & \plus2 accuracy with critical hits        & 3 (1,000 gp)   \\
-                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits        & 5 (25,000 gp)  \\
+                \tind Diamondsteel        & \plus2 accuracy with critical hits            & 3 (1,000 gp)   \\
+                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits            & 5 (25,000 gp)  \\
                 % energy damage
-                \tind Dragonfang          & Deals energy damage                       & 3 (1,000 gp)   \\
-                \tind Dragonfang, ancient & Deals energy damage, grants breath attack & 5 (25,000 gp)  \\
+                \tind Dragonfang          & Deals energy damage                           & 3 (1,000 gp)   \\
+                \tind Dragonfang, ancient & Deals energy damage, grants breath attack     & 5 (25,000 gp)  \\
                 % trade damage for accuracy
-                \tind Mithral             & Lighter, \minus1d damage                  & 3 (1,000 gp)   \\
-                \tind Mithral, pure       & \plus1 accuracy, lighter, \minus2d damage & 5 (25,000 gp)  \\
+                \tind Mithral             & Lighter, \minus1 damage                      & 3 (1,000 gp)   \\
+                \tind Mithral, pure       & \plus1 accuracy, lighter, \minus2 damage     & 5 (25,000 gp)  \\
                 % just vulnerabilities  
-                \tind Silvered            & Common vulnerabilities                    & 2 (200 gp)         \\
+                \tind Silvered            & Common vulnerabilities                        & 2 (200 gp)     \\
             \end{dtabularx}
         \end{dtable!*}
 
-        \parhead{Adamantine} An adamantine weapon has a \plus1d bonus to its damage dice.
+        \parhead{Adamantine} An adamantine weapon deals \plus2 \glossterm{weapon damage}.
         In addition, \glossterm{strikes} with it deal double damage to objects that are not made of pure or ordinary adamantine.
+        Unlike other weapons, adamantine weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
 
-        \parhead{Adamantine, Pure} A pure adamantine weapon has a \plus2d bonus to its damage dice.
+        \parhead{Adamantine, Pure} A pure adamantine weapon deals \plus1d8 \glossterm{weapon damage}.
         In addition, \glossterm{strikes} with it deal double damage to objects that are not made of pure adamantine.
+        Unlike other weapons, adamantine weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
 
         \parhead{Cold Iron} Many fey creatures and some demons are \glossterm{vulnerable} to cold iron weapons.
 
@@ -722,12 +725,12 @@ Items are divided into five broad categories, described below.
 
         \parhead{Mithral} A non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
         A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.
-        However, mithral weapons have a \minus1d penalty to their \glossterm{weapon damage}.
+        However, mithral weapons deal \minus1 \glossterm{weapon damage}.
 
         \parhead{Mithral, Pure} A pure mithral weapon has a \plus1 accuracy bonus.
         In addition, a non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
         A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.
-        However, pure mithral weapons have a \minus2d penalty to their \glossterm{weapon damage}.
+        However, pure mithral weapons deal \minus2 \glossterm{weapon damage}.
 
         \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
 
@@ -772,7 +775,7 @@ Items are divided into five broad categories, described below.
             Proficiency with armor is defined by the armor's usage class.
             If you wear or use armor you are not proficient with, it provides half its normal defense bonus.
             In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy}.
-            Since standard shields have no \glossterm{encumbrance}, you can use them without penalizing your attacks.
+            Since standard shields and leather body armor have no \glossterm{encumbrance}, you can use them without penalizing your attacks.
 
         \subsubsection{Getting Into And Out Of Armor}
             The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning and removing body armor and shields takes both hands.
@@ -827,18 +830,18 @@ Items are divided into five broad categories, described below.
             \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
                 \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material} & \tb{Item Rank (Cost)}  \tableheaderrule
                 Light armor           &              &                        &                  &              &                &               &              \\
-                \tind Leather         & \plus2       & \plus2                 & \tdash           & \tdash       & \tdash         & Leather       & 0 (10 gp)    \\
-                \tind Studded leather & \plus2       & \plus3                 & \plus1           & \tdash       & \tdash         & Leather       & 1 (40 gp)    \\
-                \tind Chain shirt     & \plus2       & \plus3                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
+                \tind Padded          & \plus2       & \plus3                 & \tdash           & \tdash       & \tdash         & Leather       & 0 (10 gp)    \\
+                \tind Buff leather    & \plus2       & \plus4                 & \plus1           & \tdash       & \tdash         & Leather       & 1 (40 gp)    \\
+                \tind Mail shirt      & \plus2       & \plus4                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
                 \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood & 0 (10 gp)    \\
                 Medium armor          &              &                        &                  &              &                &               &              \\
-                \tind Hide            & \plus3       & \plus4                 & \plus3           & \tdash       & \mult1/2       & Leather       & 1 (40 gp)    \\
-                \tind Scale mail      & \plus3       & \plus5                 & \plus5           & \tdash       & \mult1/2       & Metal         & 1 (40 gp)    \\
-                \tind Breastplate     & \plus3       & \plus6                 & \plus4           & \tdash       & \mult1/2       & Metal         & 2 (200 gp)   \\
+                \tind Rawhide         & \plus3       & \plus4                 & \plus2           & \tdash       & \mult1/2       & Leather       & 1 (40 gp)    \\
+                \tind Scale           & \plus3       & \plus5                 & \plus4           & \tdash       & \mult1/2       & Metal         & 1 (40 gp)    \\
+                \tind Brigandine      & \plus3       & \plus6                 & \plus4           & \tdash       & \mult1/2       & Metal         & 2 (200 gp)   \\
                 \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 0 (10 gp)    \\
                 Heavy armor           &              &                        &                  &              &                &               &              \\
-                \tind Layered hide    & \plus4       & \plus6                 & \plus5           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
-                \tind Plated mail     & \plus4       & \plus8                 & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
+                \tind Layered hide    & \plus4       & \plus6                 & \plus4           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
+                \tind Half plate      & \plus4       & \plus8                 & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
                 \tind Full plate      & \plus4       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal         & 3 (1,000 gp) \\
                 \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood & 1 (40 gp)    \\
                 Extras                &              &                        &                  &              &                &               &              \\
@@ -869,7 +872,7 @@ Items are divided into five broad categories, described below.
 
         While wielding a tower shield, you take a \minus1 penalty to \glossterm{accuracy} because of the shield's unwieldy nature.
         \parhead{Shield Spikes} These spikes improve the effectiveness of a standard shield or tower shield when used as a weapon.
-        You gain a \plus1d damage bonus with attacks using a spiked shield, and damage dealt by the strike is piercing damage in addition to any other damage types.
+        For details, see \tref{Weapons}.
         You can't put spikes on a buckler.
         \parhead{Studded Leather} The studs on studded leather are made of metal, but this amount of metal is not generally enough to make the item count as being made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
@@ -889,62 +892,49 @@ Items are divided into five broad categories, described below.
 
         \subsubsection{Armor Special Material Prices}
             Armor special materials are listed as having a single price in \trefnp{Armor Special Materials}.
-            This is the price for an amount of the special material sufficient to forge light armor, when combined with other normal armorsmithing materials.
-            Medium body armor requires twice as much of the special material, and heavy body armor requires three times as much of the special material.
+            This is the price for an amount of the special material sufficient to forge light or medium armor, when combined with other normal armorsmithing materials.
+            Heavy armor requires twice as much of the special material.
 
-        % The baseline value for magic armor multiplier for (light/medium/heavy):
-        % * R1-3: (3/5/10)
-        % * R4: (6/10/20)
-        % * R5: (9/15/30)
-        % * R6: (12/20/40)
-        % * R7: (18/30/60)
-        % Using optimal deepforged/elvenweave/dragonhide:
-        % * R3: (6/8/12)
-        % * R4: (9/12/18)
-        % * R5: (12/16/24)
-        % * R6: (18/24/32)
-        % * R7: (18/30/48)
-
-        % Alternate special material calcs
-        % * R3: (6/10/20)
-        % * R4: (9/15/30)
-        % * R5: (12/20/40)
-        % * R6: (18/30/60)
-        % * R7: (18/30/60)
         \begin{dtable!*}
             \lcaption{Armor Special Materials}
             \begin{dtabularx}{\textwidth}{l l l l >{\ccol}X l}
                 \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                    & \tb{Material} & \tb{Item Rank (Cost)} \tableheaderrule
                 % metal high resistance, encumbrance
-                Adamantine                 & \mult4                 & \plus2           & \tdash                                 & Metal         & 4 (5,000 gp)   \\
-                Adamantine, pure           & \mult8                 & \plus2           & \tdash                                 & Metal         & 6 (125,000 gp) \\
+                Adamantine\fn{1}           & \mult6                 & \plus2           & Very heavy                             & Metal         & 5 (25,000 gp)  \\
+                Adamantine, pure\fn{1}     & \mult12                & \plus2           & Very heavy                             & Metal         & 7 (625,000 gp) \\
                 % magic defense                                                                                                                  
                 Cold iron\fn{1}            & \tdash                 & \tdash           & \minus1 Armor, \plus1 defense vs magic & Metal         & 2 (200 gp)     \\
                 Cold iron, pure\fn{1}      & \mult2                 & \tdash           & \minus1 Armor, \plus2 defense vs magic & Metal         & 4 (5,000 gp)   \\
-                % metal resistance                                                                                                               
-                Deepforged                 & \mult2                 & \tdash           & \tdash                                 & Metal         & 3 (1,000 gp)   \\
-                Deepforged, pure           & \mult4                 & \tdash           & \tdash                                 & Metal         & 5 (25,000 gp)  \\
                 % metal crit resistance                                                  
-                Diamondsteel\fn{1}         & \tdash                 & \tdash           & \plus4 defense vs strike crits         & Metal         & 3 (1,000 gp)   \\
-                Diamondsteel, pure\fn{1}   & \mult2                 & \tdash           & \plus4 defense vs crits                & Metal         & 5 (25,000 gp)  \\
+                Diamondsteel\fn{1}         & \mult2                 & \tdash           & \plus2 defenses vs strike crits        & Metal         & 3 (1,000 gp)   \\
+                Diamondsteel, pure\fn{1}   & \mult4                 & \tdash           & \plus2 defenses vs crits               & Metal         & 5 (25,000 gp)  \\
                 % offset leather resistance, energy defense bonus                        
                 Dragonhide\fn{1}           & \mult3                 & \tdash           & Impervious to specific energy type     & Leather       & 4 (5,000 gp)   \\
                 Dragonhide, ancient\fn{1}  & \mult6                 & \tdash           & Immune to specific damage type         & Leather       & 6 (125,000 gp) \\
                 % offset metal resistance, energy defense bonus                          
                 Dragonscale\fn{1}          & \mult3                 & \tdash           & Impervious to specific energy type     & Metal         & 4 (5,000 gp)   \\
-                Dragonscale, ancient\fn{1} & \mult6                 & \tdash           & Immune to specific energy type         & Metal         & 4 (5,000 gp)   \\
-                % leather resistance                                                             
-                Elvenweave                 & \mult2                 & \tdash           & \tdash                                 & Leather       & 3 (1,000 gp)   \\
-                Elvenweave, pure           & \mult4                 & \tdash           & \tdash                                 & Leather       & 5 (25,000 gp)  \\
+                Dragonscale, ancient\fn{1} & \mult6                 & \tdash           & Immune to specific energy type         & Metal         & 6 (125,000 gp) \\
+                % leather encumbrance reduction                                                             
+                Elvenweave                 & \mult2                 & \minus1          & \tdash                                 & Leather       & 3 (1,000 gp)   \\
+                Elvenweave, pure           & \mult4                 & \minus2          & \tdash                                 & Leather       & 5 (25,000 gp)  \\
                 % metal encumbrance reduction                                            
-                Mithral                    & \tdash                 & \minus2          & \tdash                                 & Metal         & 3 (1,000 gp)   \\
-                Mithral, pure\fn{1}        & \mult2                 & \minus2          & Improve Dex multiplier                 & Metal         & 5 (25,000 gp)  \\
-                % metal resistance, recovery, encumbrance penalty                        
-                Starmetal\fn{1}            & \mult2                 & \plus2           & Recover damage resistance              & Metal         & 3 (1,000 gp)   \\
-                Starmetal, pure\fn{1}      & \mult4                 & \plus2           & Recover damage resistance              & Metal         & 5 (25,000 gp)  \\
+                Mithral                    & \mult2                 & \minus1          & \tdash                                 & Metal         & 3 (1,000 gp)   \\
+                Mithral, pure              & \mult4                 & \minus2          & \tdash                                 & Metal         & 5 (25,000 gp)  \\
+                % early metal resistance, encumbrance                                                                                                               
+                Starmetal\fn{1}            & \mult2                 & \plus2           & Very heavy                             & Metal         & 2 (200 gp)     \\
+                Starmetal, pure\fn{1}      & \mult4                 & \plus2           & Very heavy                             & Metal         & 4 (5,000 gp)   \\
             \end{dtabularx}
             1. This armor has special rules explained below. \\
         \end{dtable!*}
+
+        \parhead{Adamantine} Adamantine body armor is heavier than other armor.
+        Light and medium body armor weighs as much as a normal item of its size category.
+        Heavy body armor is a \glossterm{heavyweight} item of its size category.
+        For Medium creatures, light and medium adamantine armor requires a minimum Strength of 1 to wear, and heavy adamantine requires a minimum Strength of 4.
+        In addition, it provides \mult6 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+
+        \parhead{Adamantine, Pure} Pure adamantine body armor is heavier than other armor, as described by adamantine armor.
+        In addition, it provides \mult12 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
         \parhead{Cold Iron} Cold iron armor grants you a \plus1 bonus to your defenses against \magical abilities.
         However, the bonus that it provides to your Armor defense is reduced by 1.
@@ -952,10 +942,11 @@ Items are divided into five broad categories, described below.
         \parhead{Cold Iron, Pure} Pure cold iron armor grants you a \plus2 bonus to your defenses against \magical abilities, and provides \mult2 damage resistance.
         However, the bonus that it provides to your Armor defense is reduced by 1.
 
-        \parhead{Diamondsteel} Diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
-
-        \parhead{Diamondsteel, Pure} Pure diamondsteel body armor grants you a \plus4 bonus to your defenses when determining whether any attack gets a \glossterm{critical hit} against you instead of a normal hit.
+        \parhead{Diamondsteel} Diamondsteel body armor grants you a \plus2 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
         In addition, it provides \mult2 \glossterm{damage resistance}.
+
+        \parhead{Diamondsteel, Pure} Pure diamondsteel body armor grants you a \plus2 bonus to your defenses when determining whether any attack gets a \glossterm{critical hit} against you instead of a normal hit.
+        In addition, it provides \mult4 \glossterm{damage resistance}.
 
         \parhead{Dragonhide} Each dragonhide body armor is made from the hide of a particular type of dragon.
         You are \trait{impervious} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
@@ -973,17 +964,11 @@ Items are divided into five broad categories, described below.
         You are \trait{immune} to damage of the type dealt by that dragon's breath weapon (see \tref{Dragon Types}).
         In addition, it provides \mult6 \glossterm{damage resistance} and is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
-        \parhead{Mithral, Pure} Pure mithral body armor increases the contribution of your Dexterity to your Armor defense relative to the normal limit for that type of armor.
-        A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
-        Ina ddition, it provides \mult2 \glossterm{damage resistance} and reduces the \glossterm{encumbrance} of the armor by 2.
+        \parhead{Starmetal} Starmetal body armor is heavier than other armor, as described by adamantine armor.
+        In addition, it provides \mult2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
-        \parhead{Starmetal} When you use the \ability{recover} ability while wearing starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
-        This effect is \abilitytag{Swift}, like the \ability{recover} ability.
-        In addition, it provides \mult2 \glossterm{damage resistance} and increases the \glossterm{encumbrance} of the armor by 2.
-
-        \parhead{Starmetal, Pure} When you use the \ability{recover} ability while wearing pure starmetal body armor, you also regain an amount of \glossterm{damage resistance} equal to half the damage resistance provided by the armor.
-        This effect is \abilitytag{Swift}, like the \ability{recover} ability.
-        In addition, it provides \mult4 \glossterm{damage resistance} and increases the \glossterm{encumbrance} of the armor by 2.
+        \parhead{Starmetal, Pure} Pure starmetal body armor is heavier than other armor, as described by adamantine armor.
+        In addition, it provides \mult4 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
 % Magic armor is a highly limited slot.
 % They have the same power level as self-attune spells.
@@ -1000,11 +985,12 @@ Items are divided into five broad categories, described below.
         The magnitude of the multiplier is based on the magic item's rank, as listed below.
 
         \begin{itemize}
-            \item Rank 0--3: \mult1
-            \item Rank 4: \mult2
-            \item Rank 5: \mult3
-            \item Rank 6: \mult4
-            \item Rank 7: \mult6
+            \item Rank 0--4: \mult1
+            \item Rank 3: \mult2
+            \item Rank 4: \mult3
+            \item Rank 5: \mult4
+            \item Rank 6: \mult6
+            \item Rank 7: \mult8
         \end{itemize}
 \end{longtablepreface}
 

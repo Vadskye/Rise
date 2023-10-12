@@ -329,7 +329,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d6 \glossterm{damage resistance} +1d per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d6 \glossterm{damage resistance} +1 per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
@@ -585,7 +585,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to all skills.
-                In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one point.
+                In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one.
             ",
             modifiers: Some(vec![
                 Modifier::Resource(Resource::TrainedSkill, 1),
@@ -601,7 +601,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 1),
                 Modifier::Skill(Skill::Flexibility, 1),
                 Modifier::Skill(Skill::Intimidate, 1),
-                Modifier::Skill(Skill::Jump, 1),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -615,7 +614,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     1,
                 ),
-                Modifier::Skill(Skill::Linguistics, 1),
                 Modifier::Skill(Skill::Medicine, 1),
                 Modifier::Skill(Skill::Perform, 1),
                 Modifier::Skill(Skill::Persuasion, 1),
@@ -649,7 +647,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 2),
                 Modifier::Skill(Skill::Flexibility, 2),
                 Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(Skill::Jump, 2),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -663,7 +660,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     2,
                 ),
-                Modifier::Skill(Skill::Linguistics, 2),
                 Modifier::Skill(Skill::Medicine, 2),
                 Modifier::Skill(Skill::Perform, 2),
                 Modifier::Skill(Skill::Persuasion, 2),
@@ -698,7 +694,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Endurance, 2),
                 Modifier::Skill(Skill::Flexibility, 2),
                 Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(Skill::Jump, 2),
                 Modifier::Skill(
                     Skill::Knowledge(vec![
                         KnowledgeSubskill::Arcana,
@@ -712,7 +707,6 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
                     ]),
                     2,
                 ),
-                Modifier::Skill(Skill::Linguistics, 2),
                 Modifier::Skill(Skill::Medicine, 2),
                 Modifier::Skill(Skill::Perform, 2),
                 Modifier::Skill(Skill::Persuasion, 2),

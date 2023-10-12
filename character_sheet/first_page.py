@@ -438,18 +438,28 @@ def movement(destination):
     return flex_row(
         {"class": "movement"},
         [
-            sidelabeled_number_input(
-                "Land",
-                input_attributes={
-                    "disabled": True,
-                    "name": f"land_speed_display",
-                    "value": "@{land_speed}",
-                },
-            ),
-            *[
+            flex_row({"class": "standard-movements"}, [
+                sidelabeled_number_input(
+                    "Land",
+                    input_attributes={
+                        "disabled": True,
+                        "name": f"land_speed_display",
+                        "value": "@{land_speed}",
+                    },
+                ),
+                sidelabeled_number_input(
+                    "Jump",
+                    input_attributes={
+                        "disabled": True,
+                        "name": f"jump_distance_display",
+                        "value": "@{jump_distance}",
+                    },
+                ),
+            ]),
+            flex_row({"class": "blank-movements"}, [
                 text_input({"class": "movement-speed-name", "name": f"movement_speed_{i}_name"})
                 for i in range(4)
-            ],
+            ]),
         ],
     )
 

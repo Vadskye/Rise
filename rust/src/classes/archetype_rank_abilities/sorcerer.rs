@@ -71,7 +71,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to \glossterm{damage resistance} equal to your rank in this archetype.
+                    It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -92,7 +92,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"        
-                The damage resistance bonus increases to twice your rank in this archetype.
+                The damage resistance bonus increases to four times your rank in this archetype.
             ",
             // Rank 2: 4. Rank 3: 9.
             modifiers: None,
@@ -102,7 +102,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to three times your rank in this archetype.
+                The damage resistance bonus increases to five times your rank in this archetype.
                 In addition, the defense bonus from the body armor increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
@@ -163,7 +163,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
-                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
 
                 Some metamagic abilities affect specific spells.
                 You can only choose spells with a rank no higher than your rank in this archetype.
@@ -209,18 +208,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Desperate Improvization",
+            name: "Desperate Devastation",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \ability{desperate exertion} ability to affect an attack roll from a spell you cast during the current phase, you can change which spell you cast before rerolling.
-                The new spell must still make an attack.
-                You can make different choices for how you resolve the new spell, such as choosing different targets.
-                However, the new spell must still have all of the same choices about how it was cast, including the use of the \textit{wildspell} ability.
-                This does not cause you to reroll the wild magic roll.
-
-                When you use this ability to change your spell, you must take the result of the second roll, even if it is worse.
-                The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
+                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you also roll all damage dice for the attack twice and keep the higher result.
+                If you use that ability to affect an attack that already hit, and the reroll also hits, your damage dice are maximized instead.
             ",
             modifiers: None,
         },

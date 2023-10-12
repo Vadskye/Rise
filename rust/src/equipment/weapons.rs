@@ -133,10 +133,10 @@ impl WeaponTag {
             // The bonus here is assumed wherever it is used
             Self::Mounted => false,
             Self::Parrying => true,
-            Self::Projectile(_, _) => true,
+            Self::Projectile(..) => true,
             Self::Sweeping(_) => true,
             Self::Subdual => true,
-            Self::Thrown(_, _) => true,
+            Self::Thrown(..) => true,
             Self::Tripping => true,
             // TODO: monsters should somehow take this into account in the listed damage values?
             Self::VersatileGrip => false,

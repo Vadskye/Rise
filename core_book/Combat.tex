@@ -39,8 +39,9 @@
 
             All damaging attacks roll double damage dice on a critical hit unless otherwise stated.
             This includes any damage dice from \glossterm{extra damage}.
+            Any flat modifiers to damage are also doubled.
             If this would cause you to roll an unreasonably large number of dice, you can just multiply the result from your normal damage dice instead at the GM's discretion.
-            This is a separate damage multiplier from all others.
+            This is a separate damage multiplier from all others, so getting a critical hit with an attack that already deals double damage would deal four times normal damage.
 
             For every additional increment of 10 by which you beat the target's defense, the effect of a critical hit is repeated, if applicable.
             For example, if you get a double critical with attack that has a critical hit effect of ``The condition must be removed an additional time.'', the condition must be removed two additional times.
@@ -63,50 +64,23 @@
             For example, 2d6 means you roll two six-sided dice.
             You always sum the roll of all dice rolled in a dice pool to determine the total result.
 
-            Some modifiers add \glossterm{die increments} to increase the value of a dice pool.
-            Increasing by one die increment is written as adding \plus1d to the dice pool.
-            Each die increment increases the size of the largest die in the dice pool by one increment.
-            If that die is a d10, it splits into 2d6.
-            The dice sizes are listed below in order of size.
-            Dice smaller than 1d4 are rarely used in dice pools.
-            \begin{itemize}
-                \item 1 damage (minimum)
-                \item 1d2
-                \item 1d3
-                \item 1d4
-                \item 1d6
-                \item 1d8
-                \item 1d10
-                \item 2d6
-                \item 1d8\plus1d6
-                \item 1d10\plus1d6
-                \item 3d6
-                \item 1d8\plus2d6
-                \item 1d10\plus2d6
-                \item 4d6
-            \end{itemize}
-
-            For example, assume you have an ability that deals 2d6 damage normally.
-            If you gained a \plus1d damage bonus, you would deal 1d10 \add 1d6 damage.
-            An additional \plus1d damage bonus, for a total of \plus2d, would mean you deal 3d6 damage.
-
-            If you have a large number of +1d modifiers, this process can be cumbersome.
-            Instead, for every +3d, you can simply add 1d6 to the dice pool without changing any of the original dice.
-            You can only use this replacement if your dice pool already rolls at least 1d6.
+            Some dice pools also have fixed numeric modifiers.
+            For example, a normal weapon strike rolls dice based on the weapon used, and adds a fixed damage modifier based on your \glossterm{mundane power}.
+            You sum the die roll with the extra modifier to determine the total.
 
     \subsection{Weapon Damage}\label{Weapon Damage}
         Some abilities deal damage based on the weapon you use the ability with.
         Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
 
         Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-        You gain a \plus1d bonus to your weapon damage for every 2 \glossterm{power} you have (see \pcref{Power}).
+        You gain a bonus to your weapon damage equal to half your \glossterm{power} see (see \pcref{Power}).
         Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
         However, you might use your \glossterm{magical power} instead for \magical strikes.
 
         \subsubsection{Weak Strikes}
             Some abilities make weak strikes, which deal less damage than normal strikes.
-            When you make a weak strike, you roll your \glossterm{weapon damage} twice and take the lower result.
-            You do not reroll any \glossterm{extra damage} that the strike deals.
+            When you make a weak strike, you ignore all flat damage modifiers, such as from your \glossterm{power}.
+            You only roll dice to determine your damage.
 
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
@@ -197,7 +171,7 @@
         You gain an additional vital wound for each increment of half your maximum hit points that you reach in negative hit points.
         Avoid rounding if possible - for example, if your negative hit points exactly equal your maximum hit points, you gain three vital wounds.
 
-        If you would recover \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
+        If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
         In addition, your hit points are reset to 0 at the end of the round if they are still negative.
         This is checked after applying all healing and damage that takes place at the end of the round.
         This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
@@ -226,18 +200,18 @@
             \begin{dtabularx}{\textwidth}{l X}
                 \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
                 \minus6 or less  & You immediately die                                                    \\
-                \minus1--\minus5 & You are unconscious, and you die at the end of the next round          \\
-                0                & You are unconscious, and you die after one minute                      \\
-                1                & You are unconscious while you have less than full hit points           \\
-                2                & You have a \minus10 foot penalty to your speed with all movement modes \\
-                3                & You have a \minus5 foot penalty to your speed with all movement modes  \\
-                4                & You take a \minus2 penalty to all \glossterm{defenses}                 \\
-                5                & You take a \minus1 penalty to all \glossterm{defenses}                 \\
-                6                & Your maximum \glossterm{damage resistance} is 0                        \\
-                7                & Your maximum \glossterm{damage resistance} is halved                   \\
-                8                & You take a \minus2 penalty to \glossterm{accuracy}                     \\
-                9                & You take a \minus1 penalty to \glossterm{accuracy}                     \\
-                10 or more       & No extra vital wound effect                                            \\
+                \minus1--\minus5 & You are unconscious, and you die at the end of the next round         \\
+                0                & You are unconscious, and you die after one minute                     \\
+                1                & You are unconscious while you have less than half hit points          \\
+                2                & You take a \minus1 penalty to \glossterm{accuracy}                    \\
+                3                & You have a \minus5 foot penalty to your speed with all movement modes \\
+                4                & Your maximum \glossterm{damage resistance} is halved                  \\
+                5                & You take a \minus2 penalty to your \glossterm{fatigue tolerance}      \\
+                6                & You take a \minus1 penalty to all \glossterm{defenses}                \\
+                7                & You take a \minus2 penalty to your Fortitude defense                  \\
+                8                & You take a \minus2 penalty to your Reflex defense                     \\
+                9                & You take a \minus2 penalty to your Mental defense                     \\
+                10 or more       & No extra vital wound effect                                           \\
             \end{dtabularx}
         \end{dtable}
 
@@ -424,6 +398,32 @@
 
         You can make one movement during the \glossterm{movement phase} of each round.
         In addition, you can choose to replace your standard action during the action phase with an additional movement.
+
+    \subsection{Jumping}\label{Jumping}
+        Creatures with legs can jump as part of movement.
+        When you jump, choose a destination square where your jump ends.
+
+        % Human with 0 strength jumps 5 feet.
+        % Human with 2 strength jumps 15 feet.
+        % Human with 4 strength jumps 25 feet, which is almost a world record.
+        A jump's maximum horizontal distance with a running start of at least 10 feet is equal to a quarter of your \glossterm{base speed}, plus 5 feet per Strength.
+        If you do not have a running start, your horizontal jump distance is halved.
+        A jump's maximum vertical height is equal to half your forward jump distance.
+
+        Jumping off of terrain that is not solid ground, such as a wall, halves your jump distance.
+        If your jump distance would be less than 5 feet, you normally cannot jump meaningfully at all.
+        The GM can decide whether that makes sense in a particular situation.
+
+        If your destination square is in midair, you begin falling at the end of the round.
+        This allows you to jump during the movement phase and act in midair during the action phase.
+        Narratively, this represents you timing your jump so you can take a useful action while jumping.
+        You don't just hover in midair.
+
+        \subsection{Jumping Speed Limits}
+            The maximum distance that you can travel by jumping is equal to your remaining land speed during the current phase.
+            This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
+            For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
+            If your jump distance is extremely high and your land speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
     \subsection{Movement Modes}\label{Movement Modes}
         A \glossterm{movement mode} is a method of moving from one location to another.
@@ -758,22 +758,22 @@
 
         \begin{dtable}
             \lcaption{Special Combat Abilities}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
-                \tb{activeAbility}             & \tb{Defense}       & \tb{Brief Description} \tableheaderrule
-                Charge                   & Armor              & Move and attack                      \\
-                Desperate Exertion\fn{1} & \tdash             & Gain a bonus on a single roll        \\
-                Dirty Trick              & Fort or Ref\fn{2}  & Impose penalty on a foe              \\
-                Grapple                  & Fort and Ref\fn{2} & Wrestle with a foe                   \\
-                Overrun\fn{1}            & Fort\fn{2}         & Move through foe's space             \\
-                Recover\fn{1}            & \tdash             & Regain hit points, remove conditions \\
-                Shove                    & Fort\fn{2}         & Move a foe                           \\
-                Sprint\fn{1}             & \tdash             & Move at double speed                 \\
-                Total Defense            & \tdash             & Gain \plus2 to defenses              \\
-                Throw                    & \tdash             & Throw a held object                  \\
-                Trip                     & Fort and Ref\fn{2} & Trip a foe                           \\
+            \begin{dtabularx}{\columnwidth}{p{5.5em} l X}
+                \tb{Ability}             & \tb{Tags}                                      & \tb{Brief Description} \tableheaderrule
+                Charge                   & \tdash                                         & Move and attack                     \\
+                Desperate {} {} Exertion & \abilitytag{Exertion}                          & Reroll with a \plus2 bonus          \\
+                Dirty Trick              & \abilitytag{Size-Based}                        & Impose penalty on a foe             \\
+                Escape Grapple           & \abilitytag{Brawling}                          & Stop being grappled                 \\
+                Grapple                  & \abilitytag{Brawling}, \abilitytag{Size-Based} & Start grappling with a foe          \\
+                Maintain Grapple         & \abilitytag{Brawling}, \abilitytag{Swift}      & Continue grappling with a foe       \\
+                Overrun                  & \abilitytag{Brawling}, \abilitytag{Size-Based} & Move through foe's space            \\
+                Recover                  & \abilitytag{Exertion}, \abilitytag{Swift}      & Regain HP and DR, remove conditions \\
+                Shove                    & \abilitytag{Brawling}, \abilitytag{Size-Based} & Move a foe                          \\
+                Sprint                   & \abilitytag{Exertion}                          & Move at double speed                \\
+                Total Defense            & \abilitytag{Swift}                             & Gain \plus2 to defenses             \\
+                Throw                    & \tdash                                         & Throw a held object                 \\
+                Trip                     & \abilitytag{Size-Based}                        & Trip a foe                          \\
             \end{dtabularx}
-            1. This ability increases your \glossterm{fatigue level} when used. \\
-            2. This ability is \abilitytag{Size-Based} (see \pcref{Size-Based}). \\
         \end{dtable}
 
         \parhead{Charge}\label{Charge} You can use the \textit{charge} ability as a standard action.
@@ -793,7 +793,7 @@
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before using any other abilities or ending your turn.
 
-        \begin{activeability}{Desperate Exertion}
+        \begin{activeability}{Desperate Exertion}[\abilitytag{Exertion}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two (see \pcref{Fatigue}).
 
@@ -817,19 +817,45 @@
             You choose the defense, which must be appropriate for the action you described.
         \end{activeability}
 
+        \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
+        This ability has no effect if you are not currently grappled.
+
+        \begin{activeability}{Escape Grapple}[\abilitytag{Brawling}]
+            \rankline
+            Make an attack against any number of creatures that you are grappled by.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+            You can also entirely replace your normal accuracy with the Flexibility skill (see \pcref{Flexibility}).
+
+            The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
+            For each size category by which a creature is larger than you, it gains a \plus4 bonus to its defense against this attack.
+            % TODO: awkward wording
+            For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+        \end{activeability}
+
         \parhead{Grapple}\label{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{activeability}{Grapple}[\abilitytag{Size-Based}]
+        \begin{activeability}{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
             Make an attack with a free hand against the Fortitude and Reflex defenses of one creature you \glossterm{touch}.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
         \end{activeability}
 
+        \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
+        If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
+        \begin{activeability}{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
+            \rankline
+            Make an attack using a \glossterm{free hand}.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+            This attack has no immediate effect.
+            The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+        \end{activeability}
+
         \parhead{Overrun}\label{Overrun} As a \glossterm{movement}, you can use the \textit{overrun} ability to move through creatures in your way.
 
-        \begin{activeability}{Overrun}[\abilitytag{Size-Based}]
+        \begin{activeability}{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
             When you use this ability during the \glossterm{movement phase}, you increase your \glossterm{fatigue level} by one.
             Overrunning during the \glossterm{action phase} does not increase your fatigue.
@@ -838,7 +864,7 @@
             You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            You use your full Strength in place of half your Perception to determine your \glossterm{accuracy} with this attack.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
 
             If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
@@ -847,38 +873,44 @@
         \end{activeability}
 
         \parhead{Recover}\label{Recover} You can use the \textit{recover} ability as a standard action.
-        \begin{activeability}{Recover}[\abilitytag{Swift}]
+        \begin{activeability}{Recover}[\abilitytag{Exertion}, \abilitytag{Swift}]
             \rankline
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you finish a short rest.
 
-            You regain all of your \glossterm{hit points}.
+            You regain all of your \glossterm{damage resistance} and half of your total \glossterm{hit points}.
             In addition, you remove any number of \glossterm{conditions} affecting you.
             Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
         \end{activeability}
 
         \parhead{Shove}\label{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
+        If you are grappling, you can use this ability as a \glossterm{movement}.
+        When you do, it only affects creatures you are grappling with (see \pcref{Grappling}).
 
-        \begin{activeability}{Shove}[\abilitytag{Size-Based}]
+        \begin{activeability}{Shove}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \rankline
-            Choose either one creature adjacent to you or all creatures grappling you (see \pcref{Grappling}).
+            Choose either one creature adjacent to you, or all creatures grappling or grappled by you (see \pcref{Grappling}).
 
             Make an attack with a free hand against the Fortitude defense of each target.
-            You use your full Strength in place of half your Perception to determine your \glossterm{accuracy} with this attack.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
             You must be able to \glossterm{touch} each target, but unlike normal for touch abilities, you don't have to beat their Reflex defense.
-            If you are not able to use any of your movement speeds, such as if you are being carried by a flying creature, you automatically fail when you try to use this ability, and your defense is treated as 0 against this ability.
+            If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
-            On a hit, you can move up to half your movement speed in a straight line.
-            You automatically \glossterm{push} each target as you move.
+            % Critical hit shove should be equivalent to moving without any limitation.
+            % This represents 
+            On a hit, you can move up to half your movement speed.
+            During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
+            If you push a target so it stops being adjacent to you, you stop being able to push it further.
+            On a critical hit, your movement speed is not halved.
         \end{activeability}
 
         % It's important that this can only be used with movements
         % to prevent it from being abused with abilities like Shove.
         \parhead{Sprint}\label{Sprint} As a \glossterm{movement}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{activeability}{Sprint}
+        \begin{activeability}{Sprint}[\abilitytag{Exertion} (see text)]
             \rankline
             When you use this ability during the \glossterm{movement phase}, you increase your \glossterm{fatigue level} by one.
-            Sprinting during the \glossterm{action phase} does not increase your fatigue.
+            Sprinting during the \glossterm{action phase} does not increase your fatigue and does not have the \abilitytag{Exertion} tag.
             You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
 
             You can immediately take another \glossterm{movement}.
@@ -888,26 +920,29 @@
         If you sprint during both the movement phase and the action phase, you can move at up to four times your normal speed.
         Since monsters can't increase their fatigue level, they typically can only move at triple speed with a full round of movement.
 
-        \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object.
-        You can use the ability as a standard action.
-        Alternately, you can use it as a \glossterm{movement}.
-        If you do, you take a \minus20 penalty to the check, and you cannot make an attack roll to hit with the thrown object.
+        \parhead{Throw}\label{Throw} You can use the \textit{throw} ability to throw an object or creature.
+        You can use the ability as either a standard action or a \glossterm{minor action}.
+        When you use it as a minor action, your throwing distance is halved, your maximum \glossterm{weight category} is one category lighter than normal, and you cannot make an attack roll to hit with the thrown object.
+        Many consumable items, such as \magicitem{firebombs}, must specifically be thrown as a standard action to have their intended effects.
 
-        As long as you have a Strength of at least \minus2, you do not have to use this ability to throw weapons that are sized appropriately for you and which are designed to be thrown.
-        Instead, you can simply use the listed \glossterm{range limits} for those weapons.
-
-        \begin{activeability}{Throw}
+        \begin{activeability}{Throw}[\abilitytag{Brawling}]
             \rankline
-            Make a Strength check to throw an object you hold in at least one hand.
-            The base \glossterm{difficulty value} of this check is 0.
-            For each size category larger or smaller than the target that you are, you gain a \plus10 bonus or penalty to the check, to a maximum bonus of \plus20.
-            You cannot throw an object whose weight exceeds your maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
+            You throw an object or creature you hold in at least one hand.
+            Your normal throwing distance for an arbitrary object is equal to 15 feet plus 5 feet per 2 Strength.
+            If the target's \glossterm{weight category} is equal to the maximum weight category you can lift normally, your throwing distance is halved (see \pcref{Weight Categories}).
+            You cannot throw objects too heavy for you to lift normally, even if you can push or drag them.
 
-            If you succeed, you throw the object five feet.
-            For every 5 points by which you succeed, you double the distance you throw the object.
-            Unlike normal, this doubling uses real-world doubling rules: ten feet, then twenty feet, then forty feet, and so on.
-            If you throw the object at a creature or object, you can make an attack roll to hit it with the thrown object, as the \textit{thrown strike} ability.
-            That attack roll is rolled separately from the Strength check you make to use this ability.
+            In order to throw an unwilling creature, it must already be \grappled by you, and you must make an attack against its Fortitude defense.
+            Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+
+            Some objects are much easier or harder to throw than others.
+            Weapons with the \weapontag{Thrown} weapon tag can be thrown up to their range limits.
+            If an object is easy to throw, such as a small dense sphere, you can throw it up to quadruple your normal throwing distance.
+            Likewise, a feather or extremely fragile object may be difficult to throw more than a few feet.
+            The GM can provide guidance about throwing unusual objects.
+
+            If you throw the target at a creature or object, you can make an attack roll to hit with it, as the \textit{thrown strike} ability.
+            That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
         \end{activeability}
 
         \parhead{Total Defense}\label{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
@@ -937,39 +972,17 @@
         While grappled, you suffer certain penalties and restrictions, as described below.
 
         \subsubsection{Being In A Grapple}
-            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
+            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally.
             \begin{itemize}
                 \item One of your hands cannot be used for any purposes other than grappling.
                     This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
                     This does not affect creatures without hands.
                 \item You take a \minus2 penalty to Armor and Reflex defenses.
-                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
+                \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
+                    In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
+                    However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{movement} instead of as a standard action.
+                \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
             \end{itemize}
-
-        \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can use two special abilities to try to affect the grapple.
-
-            \parhead{Escape Grapple}\label{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
-
-            \begin{activeability}{Escape Grapple}
-                \rankline
-                Make an attack against any number of creatures that you are grappled by.
-                You may use either the Flexibility skill or half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack (see \pcref{Flexibility}).
-                The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
-                For each size category by which a creature is larger than you, it gains a \plus4 bonus to its defense against this attack.
-                % TODO: awkward wording
-                For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-            \end{activeability}
-
-            \parhead{Maintain Grapple}\label{Maintain Grapple} As a \glossterm{free action}, you can use the \textit{maintain grapple} ability to maintain a grapple that you are part of.
-            If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-            \begin{activeability}{Maintain Grapple}[\abilitytag{Swift}]
-                \rankline
-                Make an attack using a \glossterm{free hand}.
-                You may use half your level \add your Strength in place of your normal \glossterm{accuracy} with this attack.
-                This attack has no immediate effect.
-                The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
-            \end{activeability}
 
         \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
             Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.

@@ -251,7 +251,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
-                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
 
                 Some metamagic abilities affect specific spells.
                 You can only choose spells with a rank no higher than your rank in this archetype.
@@ -365,13 +364,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \begin{magicalactiveability}{Form of the Bear}
                         \rankline
-                        You gain a \plus2 bonus to your Fortitude defense.
+                        You gain a \plus2 bonus to your Fortitude defense and \glossterm{vital rolls}.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The Fortitude bonus increases to \plus3.
-                        \rank{5} The Fortitude bonus increases to \plus4.
-                        \rank{7} The Fortitude bonus increases to \plus5.
+                        \rank{3} The bonuses increase to \plus3.
+                        \rank{5} The bonuses increase to \plus4.
+                        \rank{7} The bonuses increase to \plus5.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}
@@ -413,7 +412,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Hawk}
                         \rankline
                         You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                        In addition, you gain a \plus3 bonus to the Awareness and Jump skills.
+                        In addition, you gain a \plus3 bonus to the Awareness skill.
 
                         \rankline
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
@@ -530,8 +529,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You gain a \plus1 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
-                        \rank{5} All \glossterm{light undergrowth} within a \largearea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
-                        \rank{7} The bonus to your Armor and Reflex defenses increases to \plus2.
+                        \rank{5} All \glossterm{light undergrowth} within a \medarea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
+                        \rank{7} The radius of difficult terrain increases to \largearea.
                     \end{magicalactiveability}
                 }
             ",
@@ -654,7 +653,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
-                        \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
+                        \item It has no \glossterm{resources}, and it cannot use \abilitytag{Exertion} abilities.
                         \item Its \glossterm{hit points} and \glossterm{damage resistance} are equal to the standard value for your your level (see \tref{Character Advancement and Gaining Levels}).
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.

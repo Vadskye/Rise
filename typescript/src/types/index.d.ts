@@ -25,7 +25,6 @@ declare namespace Creature {
     | "devices"
     | "disguise"
     | "knowledge"
-    | "linguistics"
     | "medicine"
 
     // Perception

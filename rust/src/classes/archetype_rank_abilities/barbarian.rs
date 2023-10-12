@@ -131,7 +131,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{rage} ability as a \glossterm{free action}.
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Exertion}, \abilitytag{Sustain} (free)}
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -233,7 +233,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use your full Strength or Dexterity in place of your Perception to determine your \glossterm{accuracy} with the \textit{dirty trick}, \textit{grapple}, \textit{overrun}, and \textit{trip} abilities, as well as with grapple actions (see \pcref{Special Combat Abilities}, and \pcref{Grapple Actions}).
+                You have exceptional skill with the \textit{dirty trick} and \textit{trip} abilities, as well as with all \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
+                Your \glossterm{accuracy} with those abilities is equal to the higher of your Strength and Dexterity, plus half your level.
             ",
             modifiers: None,
         },
@@ -242,7 +243,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus2 \glossterm{accuracy} bonus with those abilities and with the \textit{shove} ability.
+                You gain a \plus2 \glossterm{accuracy} bonus with those abilities.
             ",
             modifiers: None,
         },
@@ -440,7 +441,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you gain a \plus1 bonus to your Fortitude defense.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
-                This ability has no effect on creatures that are two or more size categories larger than you.
+                This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
 
                 \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
@@ -466,6 +467,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 In addition, the Fortitude bonus increases to \plus2.
 
                 \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
+                This is a \abilitytag{Size-Based} ability.
 
                 % TODO: The narrative connection here is loose
                 \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.

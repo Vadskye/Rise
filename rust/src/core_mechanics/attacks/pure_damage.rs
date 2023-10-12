@@ -53,9 +53,9 @@ impl PureDamage {
     }
 
     // If we have ranks to spend, spend them in the following order:
-    // 1. Increase to Medium range if this isn't a maneuver and doesn't have a set range
-    // 2. Increase to Long range if this isn't a maneuver, doesn't have a set range, and will
-    //    gain at least +1d already.
+    // 1. Increase to Long range if this isn't a maneuver, doesn't have a set range, and will
+    //    gain at least +2 accuracy already.
+    // 2. Increase to Medium range if this isn't a maneuver and doesn't have a set range
     // 3. Accuracy
     fn spend_ranks(&self) -> SpentRankResults {
         let mut spendable_ranks = self.rank - self.calculate_minimum_rank();

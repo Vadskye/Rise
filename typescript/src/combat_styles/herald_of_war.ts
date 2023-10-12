@@ -209,7 +209,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d6 \\glossterm{damage resistance} +1d per 2 power.
+        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d6 \\glossterm{damage resistance} +1 per 2 power.
       `,
       rank: 3,
       tags: ['Emotion', 'Swift'],

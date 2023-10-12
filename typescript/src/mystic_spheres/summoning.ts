@@ -447,7 +447,7 @@ export const summoning: MysticSphere = {
     {
       name: 'Summon Horde -- Bears',
 
-      // +2r for large, +2r for +1d
+      // +2r for large, +2r for +1dr?
       attack: {
         hit: `
           \\damageranksix{physical}.

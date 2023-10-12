@@ -16,7 +16,7 @@ mod tag;
 mod vital_wounds;
 
 pub use attributes::{Attribute, HasAttributes};
-pub use damage_absorption::HasDamageAbsorption;
+pub use damage_absorption::{HasDamageAbsorption, HitPointProgression};
 pub use damage_dice::DamageDice;
 pub use damage_types::{DamageType, DamageTypeEffect};
 pub use debuffs::Debuff;

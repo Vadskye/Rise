@@ -38,6 +38,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 3,
+      tags: ['Brawling'],
     },
 
     {
@@ -52,6 +53,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 1,
+      tags: ['Brawling'],
     },
 
     {
@@ -66,6 +68,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 5,
+      tags: ['Brawling'],
     },
 
     {
@@ -81,6 +84,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 7,
+      tags: ['Brawling'],
     },
 
     {
@@ -96,6 +100,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'shove',
       },
       rank: 1,
+      tags: ['Brawling'],
     },
 
     {
@@ -112,6 +117,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'shove',
       },
       rank: 3,
+      tags: ['Brawling'],
     },
 
     {
@@ -152,6 +158,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'overrun',
       },
       rank: 3,
+      tags: ['Brawling'],
     },
 
     {

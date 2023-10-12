@@ -198,7 +198,7 @@ def creation_guidance():
                 "Base class",
                 """
                     Choose your character's base class.
-                    This automatically modifies all of the appropriate statistics, so you shouldn't need to add any custom modifiers to represent your base class.
+                    This automatically modifies your defenses, hit points, and resources, so you shouldn't need to add any custom modifiers to represent your base class.
                 """,
                 select(
                     {"class": "base-class", "name": "base_class"},
@@ -258,6 +258,8 @@ def creation_guidance():
                     ]
                 ),
             ),
+            insight_points_step(),
+            skills_step(),
             creation_step(
                 "Weapons",
                 """
@@ -265,8 +267,6 @@ def creation_guidance():
                 """,
                 text_input({"name": "weapon_groups"}),
             ),
-            insight_points_step(),
-            skills_step(),
             creation_step(
                 "Items",
                 """
@@ -347,6 +347,8 @@ def insight_points_step():
         f"""
             Spend your character's insight points.
             You can use this section to track what you spent insight points on.
+            You may not have the ability to spend insight points at level 1, depending on your archetype.
+            <br>
             If you spend insight points to learn an additional standard special ability, such as a spell or maneuver, you can record that as a modifer in the <b>Modifiers</b> tab.
             That will keep the number listed in the "Abilities Known" section of the <b>Identity</b> tab accurate for you.
             <br>
@@ -409,7 +411,6 @@ def trained_skill():
                     option({"value": "Endurance"}, "Endurance"),
                     option({"value": "Flexibility"}, "Flexibility"),
                     option({"value": "Intimidate"}, "Intimidate"),
-                    option({"value": "Jump"}, "Jump"),
                     option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
                     option(
                         {"value": "Knowledge (dungeoneering)"},
@@ -423,7 +424,6 @@ def trained_skill():
                     option({"value": "Knowledge (nature)"}, "Knowledge (nature)"),
                     option({"value": "Knowledge (planes)"}, "Knowledge (planes)"),
                     option({"value": "Knowledge (religion)"}, "Knowledge (religion)"),
-                    option({"value": "Linguistics"}, "Linguistics"),
                     option({"value": "Medicine"}, "Medicine"),
                     option({"value": "Perform"}, "Perform"),
                     option({"value": "Persuasion"}, "Persuasion"),
