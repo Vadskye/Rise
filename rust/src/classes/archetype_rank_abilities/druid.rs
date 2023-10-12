@@ -376,7 +376,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Bull}
                         \rankline
-                        You can move your full movement speed when you push a creature with the \ability{shove} ability.
+                        You can move your full movement speed when you push a creature with the \ability{shove} ability even if you do not get a critical hit (see \pcref{Shove}).
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
