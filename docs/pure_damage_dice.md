@@ -830,3 +830,14 @@ And for melee/unrestricted strike-based attacks:
   * R7
     * at3, +1a, double weapon damage
     * at3, d6 per 4p extra damage
+
+# Power vs Accuracy
+
+Format is "(+1a low power/+1a high power) vs +1p", assuming a 60% base hit chance
+
+* R1: (0.35/0.56) vs 0.3
+* R2: (0.5/0.8) vs 0.4
+* R4: (1/1.6) vs 0.6
+* R7: (2.8/4.5) vs 1.3
+
+In general, +1a is worth +2 power
