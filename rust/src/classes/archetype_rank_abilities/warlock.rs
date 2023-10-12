@@ -549,11 +549,13 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Desperate Power",
+            name: "Desperate Pact",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you double your \glossterm{power} with that attack.
+                You can use the \textit{desperate exertion} ability without increasing your fatigue level.
+                When you do, your maximum \glossterm{hit points} are reduced by a quarter until you complete a \glossterm{long rest}.
+                Each time you use this ability, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
             ",
             modifiers: None,
         },
