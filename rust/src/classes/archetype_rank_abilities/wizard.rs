@@ -527,13 +527,12 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
-                    In addition, you gain a \plus1 bonus to your Armor defense.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
-                    If you specialize in this school, you gain a \plus1 bonus to your \glossterm{magical power}.
+                    If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
 
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
@@ -544,11 +543,10 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
-                    In addition, you gain a \plus1 bonus to your Fortitude defense.
             ",
             // Assume evocation
             modifiers: Some(vec![
-                Modifier::Power(1),
+                Modifier::Power(2),
             ]),
         },
         RankAbility {
@@ -562,14 +560,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus2.
+                    \subcf{Evocation} The power bonus increases to \plus3.
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
 
                     \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
-                    In addition, the Fortitude bonus increases to \plus2.
                 }
             ",
             modifiers: Some(vec![Modifier::Power(3)]),
@@ -582,11 +579,10 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen school reaches its full potential.
                 {
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
-                    In addition, the Armor bonus increases to \plus2.
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.
 
-                    \subcf{Evocation} The power bonus increases to \plus3.
+                    \subcf{Evocation} The power bonus increases to \plus4.
 
                     \subcf{Illusion} The accuracy bonus increases to \plus3.
 
@@ -594,17 +590,18 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
 
                     \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
-                    In addition, the Fortitude bonus increases to \plus3.
                 }
             ",
-            modifiers: Some(vec![Modifier::Power(10)]),
+            modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
             name: "School Knowledge",
             is_magical: true,
             rank: 2,
             description: r"
-                You learn an additional arcane spell from your chosen school.
+                You learn an additional spell from any mystic sphere within your chosen school, even if you do not have access to that mystic sphere.
+                If you already know at least one spell from all mystic spheres within your chosen school, you can instead gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
             ",
             modifiers: None,
         },
@@ -613,38 +610,53 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You learn an additional arcane spell from your chosen school.
+                You learn an additional spell from any mystic sphere within your chosen school, even if you do not have access to that mystic sphere.
+                If you already know at least three spells from all mystic spheres within your chosen school, you can instead gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "School Attunement",
+            name: "School Resilience",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
+                You gain a defensive ability based on your chosen school.
+                {
+                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects unless you choose to be affected.
+
+                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
+
+                    \subcf{Evocation} You are \trait{impervious} to your choice of one of the following damage types: cold damage, electricity damage, or fire damage.
+
+                    \subcf{Illusion} You are immune to being \dazzled and \blinded.
+
+                    \subcf{Transmutation} You gain a \plus1 bonus to \glossterm{vital rolls}.
+
+                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with less than half of their maximum hit points remaining.
+                }
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            // TODO: represent this somehow?
+            modifiers: None,
         },
         RankAbility {
-            name: "School Resilience",
+            name: "School Resilience+",
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a defensive ability based on your chosen school.
+                Your defensive ability based on your chosen school improves.
                 {
-                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects, and you cannot be \grappled.
+                    \subcf{Abjuration} You cannot be \grappled.
 
-                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 20\% \glossterm{failure chance}.
+                    \subcf{Conjuration} The failure chance increases to 20\%.
 
                     \subcf{Evocation} You are \trait{impervious} to cold damage, electricity damage, and fire damage.
 
-                    \subcf{Illusion} You are immune to being \dazzled and \blinded, as well as \abilitytag{Emotion} effects.
+                    \subcf{Illusion} You are immune to \abilitytag{Emotion} and \abilitytag{Visual} attacks.
 
-                    \subcf{Transmutation} You are immune to being \slowed, \immobilized, and \paralyzed.
+                    \subcf{Transmutation} The vital roll bonus increases to \plus2.
 
-                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
+                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with any missing hit points and undead creatures.
                 }
             ",
             // TODO: represent this somehow?
