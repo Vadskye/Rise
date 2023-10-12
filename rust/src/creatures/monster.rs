@@ -272,9 +272,13 @@ impl Monster {
 
 *Damage Absorption*:
 {damage_absorption}
+
+*Attacks*:
+{attacks}
             ",
-            modifiers = self.creature.explain_modifiers().join("\n"),
-            damage_absorption = self.creature.explain_damage_absorption(),
+            modifiers = self.creature.explain_modifiers().join("\n").trim(),
+            damage_absorption = self.creature.explain_damage_absorption().trim(),
+            attacks = self.creature.explain_attacks().join("\n").trim(),
         )
     }
 }

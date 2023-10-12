@@ -64,7 +64,7 @@ impl DamageEffect {
         if attacker.is_elite() {
             // We don't use `multiplier`, because this is separate from any
             // attack-specific damage multipliers.
-            dice_pool = dice_pool.add_dice(dice_pool.dice.clone());
+            dice_pool = dice_pool.elite_double();
         }
         dice_pool
     }

@@ -119,6 +119,17 @@ impl DicePool {
         Self::new(dice)
     }
 
+    // This doubles all aspects of dice and flat damage individually, while keeping the original
+    // multiplier. We can't use `multiplier` to double damage for elite monsters because that would
+    // interfere with specific abilities that have their own multiplier.
+    pub fn elite_double(&self) -> DicePool {
+        let mut new_pool = self.clone();
+        new_pool = new_pool.add_dice(self.dice.clone());
+        new_pool.flat_modifier += self.flat_modifier;
+
+        new_pool
+    }
+
     pub fn add_dice(&self, extra_dice: Vec<Die>) -> DicePool {
         let mut new_dice = self.dice.clone();
         // Need to make sure the largest die is at the end
@@ -311,10 +322,7 @@ mod tests {
         assert_eq!(10.0, DicePool::d10().maximize().average_damage());
         assert_eq!(
             12.0,
-            DicePool::d10()
-                .maximize()
-                .add_modifier(2)
-                .average_damage()
+            DicePool::d10().maximize().add_modifier(2).average_damage()
         );
 
         assert_eq!(24.0, DicePool::xdy(3, 8).maximize().average_damage());
@@ -323,9 +331,22 @@ mod tests {
     #[test]
     fn stringifies_maximized_dice() {
         assert_eq!("6", DicePool::d6().maximize().to_string());
+        assert_eq!("9", DicePool::d6().add_modifier(3).maximize().to_string());
+    }
+
+    #[test]
+    fn stringifies_dice_with_flat_modifiers() {
+        assert_eq!("1d6+3", DicePool::d6().add_modifier(3).to_string());
         assert_eq!(
-            "9",
-            DicePool::d6().add_modifier(3).maximize().to_string()
+            "1d6+1d8+3",
+            DicePool::d8()
+                .add_dice(vec![Die::d6()])
+                .add_modifier(3)
+                .to_string()
+        );
+        assert_eq!(
+            "2d6+6",
+            DicePool::d6().add_modifier(3).elite_double().to_string()
         );
     }
 }
