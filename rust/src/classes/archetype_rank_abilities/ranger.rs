@@ -30,7 +30,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
-                        \item It has no \glossterm{resources}, and it cannot use abilities that would cause it to increase its \glossterm{fatigue level}.
+                        \item It has no \glossterm{resources}, and it cannot use \abilitytag{Exertion} abilities.
                         \item Its \glossterm{hit points} are equal to the standard value for your level \add Constitution (see \tref{Character Advancement and Gaining Levels}).
                         \item Its \glossterm{damage resistance} is equal to the standard value for your level \add Willpower.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.

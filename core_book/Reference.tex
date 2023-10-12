@@ -13,6 +13,10 @@
     % TODO: awkward wording
     Any part of a Barrier ability that would extend within 5 feet of an already active Barrier ability is not created, unless the new barrier simply extends an already existing wall along its length.
 
+    \abilitytagdef{Brawling} Brawling abililities rely on brute force in hand to hand combat.
+    Your accuracy with Brawling abilities is equal to half the sum of your level and Strength.
+    Most Brawling abilities are described in \pcref{Special Combat Abilities}.
+
     \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
     They have no effect on objects or creatures without minds.
 
@@ -29,6 +33,10 @@
     \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
     They have no effect on objects or creatures without minds.
 
+    \abilitytagdef{Exertion} Exertion abilities increase your \glossterm{fatigue level}.
+    Most Exertion abilities increase your fatigue when used, but some increase fatigue when they end or have some other timing, as indicated in the ability's description.
+    If an Exertion ability increases your fatigue level when used, that fatigue is applied after you finish using the ability, so you do not suffer a \glossterm{fatigue penalty} from that extra fatigue while using the ability.
+
     \abilitytagdef{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
     Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
     When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
@@ -44,7 +52,7 @@
     You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
 
     \abilitytagdef{Size-Based} Size-Based abilities are limited based on your own size.
-    They have no effect on creatures or objects that are more than one size category larger than you.
+    They have no effect on creatures or objects that are two or more size categories larger than you.
     You can mitigate this limitation with the \ability{creature climb} ability (see \pcref{Creature Climb}), or simply by flying close (see \pcref{Flight}).
 
     \abilitytagdef{Speech} Speech abilities use words to achieve their ends.
@@ -131,14 +139,15 @@
     \debuffdef{grappled} A grappled creature is wrestling or in some other form of hand-to-hand struggle with at least one other creature.
     While grappled, you suffer certain penalties and restrictions, as described below.
     \begin{itemize}
-        \item You are unable to use one of your hands for any purposes other than grappling.
+        \item One of your hands cannot be used for any purposes other than grappling.
             This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
             This does not affect creatures without hands.
         \item You take a \minus2 penalty to Armor and Reflex defenses.
-        \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \textit{shove} ability (see \pcref{Shove}).
+        \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
+            In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
+            However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{movement} instead of as a standard action.
+        \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
     \end{itemize}
-
-    Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. For details, see \pcref{Grapple Actions}.
 
     \debuffdef{helpless} A helpless creature is completely at an opponent's mercy.
     It is considered to be \unaware of all attacks against it, even if it knows they are coming.
@@ -277,7 +286,7 @@
         A limbless creature has no arms or legs.
         Limbless creatures are immune to being \prone.
         In addition, they treat natural weapons that do not require free hands, like a bite, as if they had the \weapontag{Heavy} weapon tag and were being held in two hands.
-        This gives them a weapon damage bonus equal to \plus1d per 3 \glossterm{power}.
+        This gives them a weapon damage bonus equal to \plus1 per 3 \glossterm{power}.
 
     \traitdef{Low-light Vision}{low-light vision}
         A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.

@@ -12,6 +12,7 @@ from cgi_simple import (
     labeled_text_input,
     labeled_textarea,
     number_input,
+    number_reminder,
     option,
     plus,
     select,
@@ -27,15 +28,6 @@ from status_page import custom_modifier
 
 
 def create_page(destination):
-    def number_reminder(name):
-        return text_input(
-            {"class": "inline-number reminder", "readonly": True, "name": name}
-        )
-    def text_reminder(name):
-        return span(
-            {"class": "reminder", "name": name}
-        )
-
     return flex_col(
         {"class": "page items-page"},
         [
@@ -45,19 +37,24 @@ def create_page(destination):
                 This tab is used to track your equipment, inventory, and attunements to both items and spells.
             """,
             ),
-            # TODO: add weight limits here?
             *(proficiencies() if destination == "roll20" else []),
             div({"class": "section-header"}, "Armor"),
             armor(destination, "Body armor"),
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
             div({"class": "weapons-explanation"}, f"""
-                As a reminder, your magical✨ power is {number_reminder("magical_power")} ({text_reminder("magical_weapon_plusd")}) and your mundane power is {number_reminder("mundane_power")} ({text_reminder("mundane_weapon_plusd")}).
+                As a reminder, your magical✨ power is {number_reminder("magical_power")}and your mundane power is {number_reminder("mundane_power")}.
             """),
             *weapons(),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
+            # Maximum number of attunement points: 
+            # 4 from sorcerer
+            # 2 from level progression
+            # 2 from two archetypes that each grant an attunement point
+            # Anyone with eight attunement points would almost certainly have at
+            # least two deep attunements, right? Hopefully?
             div(
                 {"class": "attunement-abilities"},
                 [
@@ -68,9 +65,10 @@ def create_page(destination):
                     ),
                 ]
                 if destination == "roll20"
-                else [attunement() for _ in range(8)],
+                else [attunement() for _ in range(6)],
             ),
             div({"class": "section-header"}, "Inventory"),
+            wealth_items(),
             textarea({"class": "inventory", "name": "inventory"}),
         ],
     )
@@ -155,6 +153,7 @@ def proficiencies():
         flex_row(
             {"class": "proficiencies"},
             [
+                flex_col({"class": "class-proficiencies"}, [
                 labeled_text_input(
                     "Base class",
                     input_attributes={"readonly": True, "name": "base_class_proficiencies"},
@@ -162,7 +161,8 @@ def proficiencies():
                 labeled_text_input(
                     "Weapon groups", input_attributes={"name": "weapon_groups"}
                 ),
-                labeled_text_input(
+                ]),
+                labeled_textarea(
                     "Other proficiencies", input_attributes={"name": "other_proficiencies"}
                 ),
             ],
@@ -257,7 +257,7 @@ def armor(destination, armor_type):
 
 
 def weapons():
-    return [weapon(i) for i in range(3)]
+    return [weapon(i) for i in range(4)]
 
 
 def weapon(i):
@@ -288,3 +288,24 @@ def weapon(i):
             ),
         ],
     )
+
+def wealth_items():
+    return flex_row(
+        {"class": "wealth-items"},
+        [
+            span({"class": "wealth-items-label"}, "Wealth items"),
+            *[wealth_item_of_rank(i) for i in range(1, 8)],
+            labeled_text_input(
+                "Currency",
+                {"class": "currency"},
+                {"name": "currency"},
+            ),
+        ],
+    )
+
+def wealth_item_of_rank(rank):
+        return labeled_number_input(
+            f"Rank {rank}",
+            {"class": "wealth-item"},
+            {"name": f"wealth_item_rank_{rank}"},
+        )

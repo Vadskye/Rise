@@ -668,7 +668,7 @@ Standard for all ranks:
     * dX-2 in tX area
     * dX in t1 area
     * dX-1 in t(0.5X) area?
-    * dX-2 in tX-2 area, Sustain (minor), no enemies-only
+    * dX-2 in t(0.5X) zone, Sustain (minor), no enemies-only
     * dX-2 in t(0.5X) zone, repeat next round so enemies can escape, no enemies-only
     * dX+1 in tX zone with a 1-round delay so creatures can escape, no enemies-only
     * dX-1 in tX self-based area (radius/cone/etc) with a 1-round delay, area chosen in second round
@@ -830,3 +830,14 @@ And for melee/unrestricted strike-based attacks:
   * R7
     * at3, +1a, double weapon damage
     * at3, d6 per 4p extra damage
+
+# Power vs Accuracy
+
+Format is "(+1a low power/+1a high power) vs +1p", assuming a 60% base hit chance
+
+* R1: (0.35/0.56) vs 0.3
+* R2: (0.5/0.8) vs 0.4
+* R4: (1/1.6) vs 0.6
+* R7: (2.8/4.5) vs 1.3
+
+In general, +1a is worth +2 power

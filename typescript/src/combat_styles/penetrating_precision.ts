@@ -182,7 +182,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Full-Body Thrust',
 
       effect: `
-        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} +1d per two \\glossterm{power} using a piercing weapon.
+        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} +1 per two \\glossterm{power} using a piercing weapon.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 3,

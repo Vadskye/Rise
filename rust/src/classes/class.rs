@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{HitPointProgression, Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -78,7 +78,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 34;
+        let expected_points = 32;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             if actual_points != expected_points {
@@ -95,14 +95,11 @@ impl Class {
     fn calculate_point_total(&self) -> i32 {
         let custom_modifier = 0;
         self.attunement_points() * 5
-            + hp_dr_points(self.damage_resistance())
-            // 3 points to get an Armor defense
-            + self.defense_bonus(&Defense::Armor) * 3
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
             // 2 points per insight point
             + self.insight_points() * 2
-            + hp_dr_points(self.hit_points())
+            + self.hit_point_progression().creation_point_cost()
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per armor proficiency
@@ -120,11 +117,11 @@ impl Class {
             Self::Automaton => 3,
             Self::Barbarian => 2,
             Self::Cleric => 3,
-            Self::Dragon => 2,
+            Self::Dragon => 3,
             Self::Druid => 3,
             Self::Fighter => 2,
             Self::Harpy => 2,
-            Self::Monk => 2,
+            Self::Monk => 3,
             Self::Oozeborn => 2,
             Self::Paladin => 2,
             Self::Ranger => 2,
@@ -169,7 +166,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -187,7 +183,6 @@ impl Class {
                     KnowledgeSubskill::Religion,
                     KnowledgeSubskill::Planes,
                 ]),
-                Skill::Linguistics,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::SocialInsight,
@@ -202,7 +197,6 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana]),
-                Skill::Jump,
                 Skill::Persuasion,
                 Skill::SocialInsight,
                 Skill::Stealth,
@@ -219,7 +213,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Endurance,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -240,7 +233,6 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Medicine,
-                Skill::Jump,
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::Swim,
@@ -257,7 +249,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Medicine,
                 Skill::Perform,
                 Skill::Persuasion,
@@ -274,7 +265,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![KnowledgeSubskill::Dungeoneering]),
                 Skill::SleightOfHand,
                 Skill::Stealth,
@@ -304,7 +294,6 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -327,14 +316,12 @@ impl Class {
                 Skill::Disguise,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Engineering,
                     KnowledgeSubskill::Items,
                     KnowledgeSubskill::Local,
                 ]),
-                Skill::Linguistics,
                 Skill::Perform,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -349,7 +336,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Planes]),
-                Skill::Linguistics,
                 Skill::Persuasion,
             ],
             Self::Warlock => vec![
@@ -363,7 +349,6 @@ impl Class {
                     KnowledgeSubskill::Planes,
                     KnowledgeSubskill::Religion,
                 ]),
-                Skill::Linguistics,
                 Skill::Persuasion,
                 Skill::Ride,
                 Skill::SocialInsight,
@@ -375,7 +360,6 @@ impl Class {
                 Skill::Deduction,
                 Skill::Intimidate,
                 Skill::Knowledge(KnowledgeSubskill::all()),
-                Skill::Linguistics,
                 Skill::Persuasion,
             ],
             Self::Vampire => vec![
@@ -387,37 +371,14 @@ impl Class {
                 Skill::Deduction,
                 Skill::Disguise,
                 Skill::Intimidate,
-                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Religion,
                 ]),
-                Skill::Linguistics,
                 Skill::Persuasion,
                 Skill::SocialInsight,
                 Skill::Stealth,
             ],
-        }
-    }
-
-    pub fn damage_resistance(&self) -> i32 {
-        match self {
-            Self::Automaton => 3,
-            Self::Barbarian => 0,
-            Self::Cleric => 2,
-            Self::Dragon => 2,
-            Self::Druid => 1,
-            Self::Fighter => 0,
-            Self::Harpy => 0,
-            Self::Monk => 4,
-            Self::Oozeborn => 0,
-            Self::Paladin => 3,
-            Self::Ranger => 0,
-            Self::Rogue => 0,
-            Self::Sorcerer => 4,
-            Self::Warlock => 4,
-            Self::Wizard => 3,
-            Self::Vampire => 2,
         }
     }
 
@@ -442,7 +403,7 @@ impl Class {
                 Defense::Mental => 7,
             },
             Self::Dragon => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
@@ -454,19 +415,19 @@ impl Class {
                 Defense::Mental => 6,
             },
             Self::Fighter => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 7,
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
             Self::Harpy => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 7,
                 Defense::Mental => 5,
             },
             Self::Monk => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 3,
                 Defense::Reflex => 7,
                 Defense::Mental => 5,
@@ -478,13 +439,13 @@ impl Class {
                 Defense::Mental => 5,
             },
             Self::Paladin => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 6,
                 Defense::Reflex => 3,
                 Defense::Mental => 6,
             },
             Self::Ranger => match defense {
-                Defense::Armor => 1,
+                Defense::Armor => 0,
                 Defense::Fortitude => 5,
                 Defense::Reflex => 6,
                 Defense::Mental => 4,
@@ -525,45 +486,42 @@ impl Class {
     pub fn fatigue_tolerance(&self) -> i32 {
         match self {
             Self::Automaton => 4,
-            Self::Barbarian => 5,
+            Self::Barbarian => 4,
             Self::Cleric => 3,
             Self::Dragon => 3,
             Self::Druid => 3,
             Self::Fighter => 4,
             Self::Harpy => 4,
-            Self::Monk => 3,
-            Self::Oozeborn => 5,
+            Self::Monk => 4,
+            Self::Oozeborn => 4,
             Self::Paladin => 4,
             Self::Ranger => 4,
-            Self::Rogue => 3,
+            Self::Rogue => 2,
             Self::Sorcerer => 2,
             Self::Warlock => 3,
             Self::Wizard => 1,
-            Self::Vampire => 4,
+            Self::Vampire => 3,
         }
     }
 
-    // Each +1 level to hit points is about 10% more HP
-    // +3 is about 40% more HP
-    // +4 is about 60% more HP
-    pub fn hit_points(&self) -> i32 {
+    pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Self::Automaton => 3,
-            Self::Barbarian => 5,
-            Self::Cleric => 2,
-            Self::Dragon => 4,
-            Self::Druid => 2,
-            Self::Fighter => 3,
-            Self::Harpy => 2,
-            Self::Monk => 2,
-            Self::Oozeborn => 5,
-            Self::Paladin => 3,
-            Self::Ranger => 3,
-            Self::Rogue => 1,
-            Self::Sorcerer => 0,
-            Self::Warlock => 2,
-            Self::Wizard => 0,
-            Self::Vampire => 2,
+            Self::Automaton => HitPointProgression::High,
+            Self::Barbarian => HitPointProgression::VeryHigh,
+            Self::Cleric => HitPointProgression::Medium,
+            Self::Dragon => HitPointProgression::High,
+            Self::Druid => HitPointProgression::Medium,
+            Self::Fighter => HitPointProgression::High,
+            Self::Harpy => HitPointProgression::Medium,
+            Self::Monk => HitPointProgression::Medium,
+            Self::Oozeborn => HitPointProgression::VeryHigh,
+            Self::Paladin => HitPointProgression::High,
+            Self::Ranger => HitPointProgression::High,
+            Self::Rogue => HitPointProgression::Medium,
+            Self::Sorcerer => HitPointProgression::Low,
+            Self::Warlock => HitPointProgression::Medium,
+            Self::Wizard => HitPointProgression::Low,
+            Self::Vampire => HitPointProgression::Medium,
         }
     }
 
@@ -581,8 +539,8 @@ impl Class {
             Self::Paladin => 1,
             Self::Ranger => 1,
             Self::Rogue => 2,
-            Self::Sorcerer => 1,
-            Self::Warlock => 1,
+            Self::Sorcerer => 2,
+            Self::Warlock => 2,
             Self::Wizard => 3,
             Self::Vampire => 1,
         }
@@ -647,12 +605,12 @@ impl Class {
             Self::Dragon => 3,
             Self::Druid => 5,
             Self::Fighter => 3,
-            Self::Harpy => 6,
+            Self::Harpy => 5,
             Self::Monk => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 5,
-            Self::Rogue => 7,
+            Self::Rogue => 6,
             Self::Sorcerer => 3,
             Self::Warlock => 4,
             Self::Wizard => 3,
@@ -739,7 +697,7 @@ impl Class {
                 Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
                 Of course, becoming a barbarian is no secret rite.
                 The only thing that is required is a willingness to fully experience one's emotions and channel them into physical betterment.
-                This path evokes an ancient memory of more primitive times, before the complexity of civilized warfare, where physical supremacy was sufficient for victory.
+                This path evokes an ancient memory of times before the complexity of organized warfare, where physical supremacy was sufficient for victory.
                 Anyone can discover that path for themselves.
 
                 Barbarians are famous for their furious battle-rage.
@@ -1079,7 +1037,7 @@ impl Class {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
                 specific_weapons: None,
-                simple_weapons: false,
+                simple_weapons: true,
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapon_groups: 0,
@@ -1373,13 +1331,13 @@ impl Class {
 
                     \subsubsection{Air Domain}
                         If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Jump skill to your \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus4 bonus to the Jump skill (see \pcref{Jump}).
+                        \parhead{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
+                        This increases your maximum vertical jump distance normally.
                         In addition, you take half damage from \glossterm{falling damage}.
                         \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
                         \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
-                        \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune} (deep)}
+                        \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
                             You can ask the air simple questions and understand its responses.
@@ -1395,9 +1353,9 @@ impl Class {
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
-                        \parhead{Gift} You are immune to \abilitytag{Compulsion} attacks.
-                        \parhead{Aspect} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+                        \parhead{Gift} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
                         This does not affect bonus dice rolled for exploding attacks.
+                        \parhead{Aspect} You are immune to \abilitytag{Compulsion} attacks.
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{magicalactiveability}{Twist of Fate}
                             \rankline
@@ -1425,12 +1383,13 @@ impl Class {
                         \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \parhead{Gift} Your abilities deal double damage to objects.
+                        \parhead{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
                         \parhead{Aspect} You can use the \textit{destructive strike} ability as a standard action.
                         \begin{magicalactiveability}{Destructive Strike}
                             \rankline
                             Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
                             You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
+                            This strike deals double damage to objects.
 
                             \rankline
                             \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
@@ -1448,13 +1407,13 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                        \parhead{Mastery} The bonus from this domain's gift increases to \plus2.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \parhead{Gift} You gain a \plus2 bonus to your Fortitude defense.
-                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
+                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance}.
                         \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \rankline
@@ -1466,7 +1425,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \parhead{Mastery} The bonus from this domain's gift increases to \plus3, and the number of hit points you gain from its aspect increases to four times your rank in the Domain Mastery archetype.
+                        \parhead{Mastery} The defense bonus increases to \plus3, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
                         % intentionally adjacent rather than touch
@@ -1542,7 +1501,7 @@ impl Class {
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
+                        \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
                         \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{magicalactiveability}{Share Knowledge}
                             \rankline
@@ -1559,10 +1518,9 @@ impl Class {
                         In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
                     \subsubsection{Law Domain}
-                        \parhead{Gift} You gain a \plus2 bonus to Mental defense.
-                        % Clarify - does this apply to exploding dice?
-                        \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        \parhead{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
+                        \parhead{Aspect} You gain a \plus2 bonus to your Mental defense.
                         \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \rankline
@@ -1581,11 +1539,11 @@ impl Class {
                         \parhead{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
-                        \parhead{Gift} You gain a \plus3 bonus to the Medicine skill (see \pcref{Medicine}).
-                        \parhead{Aspect} You gain a bonus to your \glossterm{hit points} equal to three times your rank in the Domain Influence archetype.
+                        \parhead{Gift} You gain a \plus1 bonus to \glossterm{vital rolls}.
+                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{hit points}.
                         \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
-                        \parhead{Mastery} You gain a \plus1 bonus to your Constitution.
+                        \parhead{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1594,10 +1552,10 @@ impl Class {
                         \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power} with \magical abilities.
-                        \parhead{Mastery} The power bonus from this domain's essence increases to \plus2.
+                        \parhead{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \parhead{Gift} You gain a bonus equal to twice your rank in this archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \parhead{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
@@ -1608,13 +1566,14 @@ impl Class {
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
                         \end{magicalactiveability}
-                        \parhead{Essence} The bonus from this domain's gift increases to three times your rank in this archetype.
+                        \parhead{Essence} The damage resistance bonus increases to three times your rank in the Domain Mastery archetype.
                         \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
+                        In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Strength Domain}
-                        If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
+                        If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
@@ -1628,7 +1587,8 @@ impl Class {
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                        \parhead{Gift} You gain a \plus10 foot bonus to your \glossterm{land speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
+                        This speed bonus is doubled as normal from sprinting.
                         \parhead{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                         \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{magicalactiveability}{Dimensional Travel}
@@ -1649,8 +1609,10 @@ impl Class {
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
+                        \parhead{Gift} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
+                        \parhead{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
+                        In addition, \magical \abilitytag{Compulsion} effects cannot affect your speech in any way.
+                        This means you can still talk and lie normally even while \dominated, though you cannot control the rest of your body.
                         \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
                         \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                             \rankline
@@ -1707,8 +1669,8 @@ impl Class {
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        % TODO: clarify whether you can have this and the druid ability
-                        \parhead{Aspect} This ability functions like the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
+                        \parhead{Aspect} You gain the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
+                        If you already have that ability, you simply learn an additional wild aspect.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.
                         \parhead{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
                         When you do, you increase your \glossterm{fatigue level} by two.
@@ -1735,14 +1697,5 @@ impl Class {
             }
             _ => "",
         }
-    }
-}
-
-// Going above +3 HP or DR costs an extra point per value
-fn hp_dr_points(value: i32) -> i32 {
-    if value < 4 {
-        value
-    } else {
-        3 + (value - 3) * 2
     }
 }

@@ -161,7 +161,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         The strike targets all adjacent \glossterm{enemies}.
                         \hit $fullweapondamage.
                     ".to_string(),
-                    is_magical: true,
+                    is_magical: false,
                     name: "Swarm of Mouths".to_string(),
                     tags: vec![],
                     weapon: Weapon::bite(),
@@ -198,7 +198,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 2, 6, -6, 1, 3],
+            attributes: vec![4, 3, 6, -6, 2, -2],
             elite: true,
             level: 5,
             role: Role::Brute,

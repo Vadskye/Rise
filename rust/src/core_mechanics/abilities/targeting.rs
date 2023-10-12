@@ -239,15 +239,15 @@ impl Targeting {
             Self::CausedDamage(_) => "Each target",
             Self::CausedHpLoss(_) => "Each target",
             Self::Creature(_) => "The target",
-            Self::Cone(_, _) => "Each target",
-            Self::Line(_, _, _) => "Each target",
+            Self::Cone(..) => "Each target",
+            Self::Line(..) => "Each target",
             Self::MadeMeleeAttack => "Each target",
             Self::MovementPath => "Each target",
-            Self::Radius(_, _, _) => "Each target",
+            Self::Radius(..) => "Each target",
             Self::SharingSpace => "Each target",
             // TODO: handle Sweeping
             Self::Strike => "The target",
-            Self::Strikes(__) => "Each target",
+            Self::Strikes(_) => "Each target",
         }
     }
 }

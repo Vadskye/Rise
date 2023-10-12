@@ -9,48 +9,48 @@ const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
     armor_defense: 4,
-    damage_resistance: 0,
-    hit_points: 4,
+    damage_resistance: 0.25,
+    hit_points: 'very high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   skirmisher: {
     armor_defense: 4,
-    damage_resistance: 2,
-    hit_points: 0,
+    damage_resistance: 0.5,
+    hit_points: 'medium',
     fortitude: 4,
     reflex: 6,
     mental: 4,
   },
   warrior: {
     armor_defense: 6,
-    damage_resistance: 4,
-    hit_points: 2,
+    damage_resistance: 1.0,
+    hit_points: 'high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   sniper: {
     armor_defense: 3,
-    damage_resistance: 0,
-    hit_points: 0,
+    damage_resistance: 0.5,
+    hit_points: 'medium',
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
   mystic: {
     armor_defense: 2,
-    damage_resistance: 4,
-    hit_points: 0,
+    damage_resistance: 1.0,
+    hit_points: 'low',
     fortitude: 4,
     reflex: 4,
     mental: 6,
   },
   leader: {
     armor_defense: 4,
-    damage_resistance: 2,
-    hit_points: 2,
+    damage_resistance: 0.5,
+    hit_points: 'high',
     fortitude: 4,
     reflex: 4,
     mental: 4,
@@ -58,25 +58,21 @@ const BASE_CLASS_MODIFIERS = {
 
   // CLASSES
   barbarian: {
-    armor_defense: 0,
     fortitude: 7,
     reflex: 5,
     mental: 3,
-    hit_points: 5,
-    damage_resistance: 0,
+    hit_points: 'very high',
     attunement_points: 2,
-    fatigue_tolerance: 5,
+    fatigue_tolerance: 4,
     insight_points: 0,
     class_skill_count: 4,
     proficiencies: "Light and medium armor, two weapon groups",
   },
   cleric: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    hit_points: 2,
-    damage_resistance: 2,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -84,12 +80,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light and medium armor",
   },
   druid: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 4,
     mental: 6,
-    hit_points: 2,
-    damage_resistance: 1,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 2,
@@ -97,12 +91,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor, hide armor, scimitars, and sickles",
   },
   fighter: {
-    armor_defense: 1,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 3,
-    damage_resistance: 0,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -110,25 +102,21 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor, two weapon groups",
   },
   monk: {
-    armor_defense: 1,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 2,
-    damage_resistance: 4,
+    hit_points: 'medium',
     attunement_points: 3,
-    fatigue_tolerance: 3,
+    fatigue_tolerance: 4,
     insight_points: 1,
-    class_skill_count: 6,
+    class_skill_count: 5,
     proficiencies: "Light armor, monk weapons",
   },
   paladin: {
-    armor_defense: 1,
     fortitude: 6,
     reflex: 3,
     mental: 6,
-    hit_points: 3,
-    damage_resistance: 3,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -136,12 +124,10 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor, two weapon groups",
   },
   ranger: {
-    armor_defense: 1,
     fortitude: 5,
     reflex: 6,
     mental: 4,
-    hit_points: 3,
-    damage_resistance: 0,
+    hit_points: 'high',
     attunement_points: 2,
     fatigue_tolerance: 4,
     insight_points: 1,
@@ -150,51 +136,43 @@ const BASE_CLASS_MODIFIERS = {
       "Light armor, hide armor, one weapon group, and one ranged weapon group",
   },
   rogue: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 1,
-    damage_resistance: 0,
+    hit_points: 'medium',
     attunement_points: 3,
-    fatigue_tolerance: 3,
+    fatigue_tolerance: 2,
     insight_points: 2,
-    class_skill_count: 7,
+    class_skill_count: 6,
     proficiencies: "Light armor, one weapon group, and saps",
   },
   sorcerer: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    hit_points: 0,
-    damage_resistance: 4,
+    hit_points: 'low',
     attunement_points: 4,
-    fatigue_tolerance: 3,
-    insight_points: 1,
+    fatigue_tolerance: 2,
+    insight_points: 2,
     class_skill_count: 3,
     proficiencies: "None",
   },
   warlock: {
-    armor_defense: 0,
     fortitude: 5,
     reflex: 3,
     mental: 7,
-    hit_points: 2,
-    damage_resistance: 4,
+    hit_points: 'medium',
     attunement_points: 3,
     fatigue_tolerance: 3,
-    insight_points: 1,
+    insight_points: 2,
     class_skill_count: 4,
     proficiencies: "Light armor",
   },
   wizard: {
-    armor_defense: 0,
     fortitude: 3,
     reflex: 5,
     mental: 7,
-    hit_points: 0,
-    damage_resistance: 3,
+    hit_points: 'low',
     attunement_points: 4,
     fatigue_tolerance: 1,
     insight_points: 3,
@@ -203,43 +181,59 @@ const BASE_CLASS_MODIFIERS = {
   },
 
   // OPTIONAL CLASSES
-  dragon: {
-    armor_defense: 1,
+  automaton: {
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 4,
-    damage_resistance: 2,
-    attunement_points: 2,
+    hit_points: 'high',
+    attunement_points: 3,
+    fatigue_tolerance: 4,
+    insight_points: 1,
+    class_skill_count: 3,
+    proficiencies: "None",
+  },
+  dragon: {
+    fortitude: 7,
+    reflex: 3,
+    mental: 5,
+    hit_points: 'high',
+    attunement_points: 3,
     fatigue_tolerance: 3,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: "Light and medium armor",
   },
   harpy: {
-    armor_defense: 1,
     fortitude: 3,
     reflex: 7,
     mental: 5,
-    hit_points: 2,
-    damage_resistance: 0,
+    hit_points: 'medium',
     attunement_points: 2,
-    fatigue_tolerance: 3,
-    insight_points: 1,
-    class_skill_count: 6,
+    fatigue_tolerance: 4,
+    insight_points: 2,
+    class_skill_count: 5,
     proficiencies: "Light armor",
   },
   oozeborn: {
-    armor_defense: 0,
     fortitude: 7,
     reflex: 3,
     mental: 5,
-    hit_points: 5,
-    damage_resistance: 0,
+    hit_points: 'very high',
     attunement_points: 2,
-    fatigue_tolerance: 5,
-    insight_points: 0,
+    fatigue_tolerance: 4,
+    insight_points: 1,
     class_skill_count: 4,
+    proficiencies: "Light armor",
+  },
+  vampire: {
+    fortitude: 3,
+    reflex: 6,
+    mental: 6,
+    hit_points: 'medium',
+    attunement_points: 3,
+    fatigue_tolerance: 3,
+    insight_points: 1,
+    class_skill_count: 5,
     proficiencies: "Light armor",
   },
 };
@@ -371,7 +365,7 @@ function boolifySheetValue(val) {
 }
 
 const SKILLS_BY_ATTRIBUTE = {
-  strength: ["climb", "jump", "swim"],
+  strength: ["climb", "swim"],
   dexterity: [
     "balance",
     "flexibility",
@@ -406,7 +400,6 @@ const SKILLS_BY_ATTRIBUTE = {
     "knowledge_planes",
     "knowledge_religion",
     "knowledge_untrained",
-    "linguistics",
     "medicine",
   ],
   perception: [
@@ -457,6 +450,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "all_skills",
     "armor_defense",
     "attunement_points",
+    "brawling_accuracy",
     "constitution",
     "damage_resistance",
     "dexterity",
@@ -466,6 +460,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "hit_points",
     "insight_points",
     "intelligence",
+    "jump_distance",
     "mental",
     "nonclass_skill_count",
     "perception",
@@ -505,6 +500,7 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   "accuracy",
   "armor_defense",
+  "brawling_accuracy",
   "fortitude",
   "reflex",
   "mental",
@@ -514,7 +510,12 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
 // because they are multipliers instead of modifiers.
 const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "accuracy",
+  "brawling_accuracy",
   "all_defenses",
+  "fatigue_tolerance",
+  "fortitude",
+  "reflex",
+  "mental",
   "speed",
 ]);
 
@@ -541,9 +542,6 @@ function generateMiscVariables(name) {
   if (VARIABLES_WITH_VITAL_WOUND_MODIFIERS.has(name)) {
     explanationVariables.push(`${name}_vital_wound_explanation`);
     numericVariables.push(`${name}_vital_wound_modifier`);
-  }
-  if (name === "accuracy") {
-    console.log("explanationVariables", explanationVariables);
   }
   return { explanationVariables, numericVariables };
 }
@@ -577,12 +575,14 @@ function handleEverything() {
 function handleCoreStatistics() {
   handleAccuracy();
   handleAccuracyWithStrikes();
+  handleBrawlingAccuracy();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
   handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
+  handleJumpDistance();
   handleLandSpeed();
   handleMagicalPower();
   handleMundanePower();
@@ -777,6 +777,35 @@ function handleAccuracyWithStrikes() {
       setAttrs({
         accuracy_with_strikes: v.misc,
         accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
+      });
+    }
+  );
+}
+
+function handleBrawlingAccuracy() {
+  onGet(
+    {
+      miscName: "brawling_accuracy",
+      numeric: ["challenge_rating", "level", "strength", "fatigue_penalty"],
+    },
+    (v) => {
+      const levelModifier = v.level / 2;
+      const strengthModifier = v.strength / 2;
+      const levelishModifier = Math.floor(levelModifier + strengthModifier);
+      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
+      const brawling_accuracy =
+        v.misc +
+        levelishModifier +
+        crModifier -
+        v.fatigue_penalty;
+      setAttrs({
+        brawling_accuracy,
+        brawling_accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "level", value: levelModifier },
+          { name: "Str", value: strengthModifier },
+          { name: "fatigue", value: -v.fatigue_penalty },
+          { name: "CR", value: crModifier },
+        ]),
       });
     }
   );
@@ -1253,6 +1282,7 @@ function handleDamageResistance() {
     {
       miscName: "damage_resistance",
       numeric: [
+        "hit_points_maximum",
         "level",
         "challenge_rating",
         "body_armor_damage_resistance",
@@ -1266,17 +1296,16 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].damage_resistance : 0;
-      const effectiveLevel = v.level + classModifier;
-      const baseDr = calcBaseDamageResistance(effectiveLevel);
+      const playerTotalDr = v.body_armor_damage_resistance + v.misc;
+
+      const hpDrMultiplier = (v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance) || 0;
+      const withHpModifier = playerTotalDr + v.hit_points_maximum * hpDrMultiplier;
 
       var crMultiplier = {
-        1: 2,
-        4: 8,
+        1: 1,
+        4: 1.5,
       }[v.challenge_rating] || 1;
-      const playerTotalDr =
-        baseDr + v.body_armor_damage_resistance + v.misc;
-      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
+      const crMultipliedValue = Math.floor(withHpModifier * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
       const monsterTotalDr = Math.floor(
@@ -1285,17 +1314,12 @@ function handleDamageResistance() {
       );
 
       let attrs = {
-        base_damage_resistance_level: effectiveLevel,
-        base_damage_resistance_level_explanation: formatCombinedExplanation(null, [
-          { name: "level", value: v.level },
-          { name: "class", value: classModifier  },
-        ]),
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
-            { name: "base", value: baseDr },
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "CR", value: crMultipliedValue - playerTotalDr },
+            { name: "HP", value: withHpModifier - playerTotalDr },
+            { name: "CR", value: crMultipliedValue - withHpModifier },
             { name: "vital", value: monsterTotalDr - crMultipliedValue },
           ]
         ),
@@ -1580,11 +1604,9 @@ function handleHitPoints() {
     {
       miscName: "hit_points",
       numeric: [
-        "challenge_rating",
         "level",
         "constitution",
         "challenge_rating",
-        "hit_points_from_level",
       ],
       string: ["base_class"],
     },
@@ -1594,28 +1616,29 @@ function handleHitPoints() {
       },
     },
     (v) => {
-      const classModifier = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 0;
-      const effectiveLevel = v.level + v.constitution + classModifier;
-      const baseHp = calcBaseHitPoints(effectiveLevel);
+      const progressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
+      const {baseHp, incrementalHp} = calcHpComponents(progressionName, v.level, v.constitution);
+
+      // This is the number of levels since the last breakpoint jump. Each breakpoint jump
+      // increases base HP and incremental level count ("X HP per level above 7th").
+      const incrementalLevel = (v.level - 1) % 6;
+
+      const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
+      const hpFromConstitution = incrementalHp * v.constitution;
 
       let crMultiplier = {
         1: 1,
         4: 4,
       }[v.challenge_rating] || 1;
 
-      const playerTotalHp = baseHp + v.misc;
+      const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
       const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       let attrs = {
-        base_hit_points_level: effectiveLevel,
-        base_hit_points_level_explanation: formatCombinedExplanation(null, [
-          { name: "level", value: v.level },
-          { name: "Con", value: v.constitution },
-          { name: "class", value: classModifier  },
-        ]),
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: "base", value: baseHp },
+          { name: "level", value: hpFromLevel },
+          { name: "Con", value: hpFromConstitution },
           { name: "CR", value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1633,41 +1656,16 @@ function handleHitPoints() {
   );
 }
 
-function calcBaseHitPoints(levelish) {
-  let baseHp = 0;
-  if (levelish > 0) {
-    if (levelish > 21) {
-      // +10 HP per levelish over 21
-      baseHp = 10 * (levelish - 21);
-      levelish = 21;
-    }
-    baseHp += {
-      1: 6,
-      2: 7,
-      3: 8,
-      4: 9,
-      5: 10,
-      6: 12,
-      7: 14,
-      8: 16,
-      9: 18,
-      10:20,
-      11:22,
-      12:25,
-      13:28,
-      14:32,
-      15:36,
-      16:40,
-      17:45,
-      18:50,
-      19:56,
-      20:63,
-      21:70,
-    }[levelish];
-  } else {
-    baseHp = 6 + Math.floor(levelish / 2);
-  }
-  return baseHp;
+function calcHpComponents(progressionName, level) {
+  const progressionIndex = Math.max(0, Math.floor((level - 1) / 6));
+  const [baseHp, incrementalHp] = {
+    low: [[6, 1], [14, 2], [30, 4], [60, 8]],
+    medium: [[8, 1], [18, 2], [35, 5], [70, 10]],
+    high: [[8, 2], [20, 3], [40, 6], [80, 12]],
+    ['very high']: [[10, 2], [24, 4], [50, 8], [100, 15]],
+  }[progressionName][progressionIndex];
+
+  return {baseHp, incrementalHp}
 }
 
 function handleInsightPoints() {
@@ -1690,6 +1688,29 @@ function handleInsightPoints() {
           v.miscExplanation,
           [{ name: "Int", value: v.intelligence }, { name: "level", value: fromLevel }]
         ),
+      });
+    }
+  );
+}
+
+function handleJumpDistance() {
+  onGet(
+    {
+      miscName: "jump_distance",
+      numeric: ["base_speed", "strength"],
+    },
+    (v) => {
+      // In case people don't bother to set their size to Medium explicitly
+      const base_speed = v.base_speed || 30;
+      const base_speed_modifier = Math.floor((base_speed / 4) / 5) * 5;
+      const strength_modifier = v.strength * 5;
+      const totalValue = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
+      setAttrs({
+        jump_distance: totalValue,
+        jump_distance_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "base speed / 4", value: base_speed_modifier },
+          { name: "strength * 5", value: strength_modifier },
+        ]),
       });
     }
   );
@@ -2485,15 +2506,15 @@ function handleVitalWounds() {
     }
     return {
       0: "Unconscious, die after a minute",
-      1: "Unconscious below max HP",
-      2: "-10 foot speed",
+      1: "Unconscious below half HP",
+      2: "-1 accuracy",
       3: "-5 foot speed",
-      4: "-2 defenses",
-      5: "-1 defenses",
-      6: "Max DR is 0",
-      7: "Half max DR",
-      8: "-2 accuracy",
-      9: "-1 accuracy",
+      4: "Half max DR",
+      5: "-2 fatigue tolerance",
+      6: "-1 all defenses",
+      7: "-2 Fortitude",
+      8: "-2 Reflex",
+      9: "-2 Mental",
     }[roll];
   }
 
@@ -2510,32 +2531,69 @@ function handleVitalWounds() {
         );
         getAttrs(vitalWoundRollIds, (values) => {
           let rolls = Object.values(values);
-          let accuracy_penalty =
-            -countRolls(rolls, 8) * 2 - countRolls(rolls, 9);
-          let defense_penalty =
-            -countRolls(rolls, 4) * 2 - countRolls(rolls, 5);
-          let speed_penalty =
-            countRolls(rolls, 2) * -10 + countRolls(rolls, 3) * -5;
-          let resistance_multiplier =
-            countRolls(rolls, 6) > 0
-              ? // dumb hack since we use || and I'm too lazy to fix it
-                -1
-              : 0.5 ** countRolls(rolls, 7);
+          let accuracy_penalty = -countRolls(rolls, 2);
+          let speed_penalty = countRolls(rolls, 3) * -5;
+          let resistance_multiplier = 0.5 ** countRolls(rolls, 4);
+          let fatigue_tolerance_penalty = -countRolls(rolls, 5) * 2;
+          let all_defenses_penalty = -countRolls(rolls, 6);
+          let fortitude_penalty = -countRolls(rolls, 7) * 2;
+          let mental_penalty = -countRolls(rolls, 8) * 2;
+          let reflex_penalty = -countRolls(rolls, 9) * 2;
+
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
+            // accuracy - applies to both regular and brawling accuracy
             accuracy_vital_wound_explanation: formatNamedModifierExplanation({
               name: "vital",
               value: accuracy_penalty,
             }),
             accuracy_vital_wound_modifier: accuracy_penalty,
-            // No vital explanation here because all_defenses requires special handling
-            all_defenses_vital_wound_modifier: defense_penalty,
+            brawling_accuracy_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: accuracy_penalty,
+            }),
+            brawling_accuracy_vital_wound_modifier: accuracy_penalty,
+
+            // all defenses - no vital explanation here because all_defenses requires special handling
+            all_defenses_vital_wound_modifier: all_defenses_penalty,
+
+            // fatigue_tolerance
+            fatigue_tolerance_vital_wound_modifier: fatigue_tolerance_penalty,
+            fatigue_tolerance_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: fatigue_tolerance_penalty,
+            }),
+
+            // fortitude
+            fortitude_vital_wound_modifier: fortitude_penalty,
+            fortitude_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: fortitude_penalty,
+            }),
+
+            // mental
+            mental_vital_wound_modifier: mental_penalty,
+            mental_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: mental_penalty,
+            }),
+
+            // reflex
+            reflex_vital_wound_modifier: reflex_penalty,
+            reflex_vital_wound_explanation: formatNamedModifierExplanation({
+              name: "vital",
+              value: reflex_penalty,
+            }),
+
+            // speed
+            speed_vital_wound_modifier: speed_penalty,
             speed_vital_wound_explanation: formatNamedModifierExplanation({
               name: "vital",
               value: speed_penalty,
             }),
-            speed_vital_wound_modifier: speed_penalty,
+
+            // DR - no explanation
             damage_resistance_vital_wound_multiplier:
               resistance_multiplier,
           };

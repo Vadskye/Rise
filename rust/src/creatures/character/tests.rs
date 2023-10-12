@@ -45,7 +45,6 @@ fn it_calculates_rank_abilities() {
             "Enhanced Maneuvers",
             "Enhanced Maneuvers+",
             "Equipment Efficiency",
-            "Maneuvers",
             // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
             "Maneuvers",

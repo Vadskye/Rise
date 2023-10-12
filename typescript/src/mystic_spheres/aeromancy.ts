@@ -11,7 +11,8 @@ export const aeromancy: MysticSphere = {
       name: 'Airborne Leap',
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Jump skill.
+        You gain a \plus5 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+        This increases your maximum vertical jump distance normally.
       `,
       narrative: `
         The air rises beneath you and pushes you up, propelling you farther when you leap.
@@ -22,7 +23,7 @@ export const aeromancy: MysticSphere = {
           If you already have a glide speed, you gain a +10 foot \\glossterm{magic bonus} to your glide speed.
         `,
         4: 'You also become immune to \\glossterm{falling damage}.',
-        6: 'The Jump bonus increases to +6.',
+        6: 'The jump distance bonus increases to \plus10 feet.',
       },
       type: 'Attune',
     },

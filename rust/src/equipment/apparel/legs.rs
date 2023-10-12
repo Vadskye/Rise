@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::Apparel::Boots;
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
@@ -41,13 +42,14 @@ fn boots() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes move through creatures", "
-                Activating the effect does not increase your fatigue level.
+                Activating the effect does not increase your fatigue level, and the boots no longer have the \\abilitytag{Exertion} tag.
             "),
             ItemUpgrade::new(6, "Allows moving through creatures", "
                 The boots do not require activation.
                 Instead, the effect is constantly active.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -186,6 +188,7 @@ fn boots() -> Vec<Apparel> {
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 energy damage.
         "),
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -196,7 +199,7 @@ fn boots() -> Vec<Apparel> {
 
     apparel.push(Boots(StandardItem::reliable_skill_item(
         "Boots of Reliable Motion",
-        "Balance, Climb, Jump, or Swim",
+        "Balance, Climb, or Swim",
         "movement-based",
     )));
 
@@ -205,18 +208,19 @@ fn boots() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Can exert to levitate after jumping"),
         description: String::from(r"
-            Whenever you make a Jump check, you can activate these boots.
+            Whenever you jump, you can activate these boots (see \pcref{Jumping}).
             When you do, you increase your \glossterm<fatigue level> by one.
-            In exchange, your maximum jump height is equal to your Jump check result, and you can land in midair at any point during your jump this round.
+            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this round.
             You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
             These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can levitate after jumping", "
-                Activating these boots does not increase your fatigue level.
+                Activating these boots does not increase your fatigue level, and they no longer have the \\abilitytag{Exertion} tag.
             "),
         ],
+        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 

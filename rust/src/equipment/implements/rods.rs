@@ -68,7 +68,7 @@ pub fn rods() -> Vec<Implement> {
             Your minimum accuracy is $accuracy.
             Whether you hit or miss, \glossterm{bright illumination} \glossterm{briefly} fills a 30 foot radius around a 5 ft. wide straight line between you and the target.
             \hit $dr2 energy damage.
-            If this attack beats the target's Fortitude defense, it deals maximum damage.
+            If this attack beats a creature's Fortitude defense, it deals maximum damage.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can deal $dr4 damage", r"

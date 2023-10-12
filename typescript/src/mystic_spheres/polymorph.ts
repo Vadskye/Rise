@@ -441,11 +441,11 @@ export const polymorph: MysticSphere = {
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
         % d2
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1d per 2 \\glossterm{power} if it is a creature, or that many hit points if it is an object.
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per 2 \\glossterm{power} if it is a creature, or that many hit points if it is an object.
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by +1d for each rank beyond 2.' },
+      scaling: { special: 'The recovery increases by +1 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -467,11 +467,11 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
         % d1
-        The target \\glossterm{briefly} regains 1d6 \\glossterm{hit points} +1d per 2 \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains 1d6 \\glossterm{hit points} +1 per 2 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 3,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 3.' },
+      scaling: { special: 'The healing increases by +1 for each rank beyond 3.' },
     },
 
     {
@@ -512,7 +512,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 2,
-      scaling: { special: 'The healing increases by +1d for each rank beyond 2.' },
+      scaling: { special: 'The healing increases by +1 for each rank beyond 2.' },
       type: 'Attune',
     },
 

@@ -344,6 +344,40 @@ export const fabrication: MysticSphere = {
     },
 
     {
+      name: 'Dagger Cloud',
+
+      attack: {
+        hit: `\\damagerankone{piercing}.`,
+        targeting: `
+          When you cast this spell, a cloud of flying daggers appears in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
+          Whenever anything passes through the cloud, you make a \\glossterm{reactive attack} vs. Armor against it.
+          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Armor against each creature in the area.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Blade Cloud',
+
+      attack: {
+        hit: `\\damagerankfour{slashing}.`,
+        targeting: `
+          When you cast this spell, a cloud of flying swords appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
+          Whenever anything passes through the cloud, you make a \\glossterm{reactive attack} vs. Armor against it.
+          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Armor against each creature in the area.
+          You can only attack a given target with this spell once per \\glossterm{phase}.
+        `,
+      },
+      rank: 6,
+      scaling: 'accuracy',
+      type: 'Sustain (minor)',
+      tags: ['Manifestation'],
+    },
+    {
       name: 'Daggerswarm',
 
       attack: {

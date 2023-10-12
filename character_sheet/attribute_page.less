@@ -1,0 +1,101 @@
+// Need extra specificity to override default
+div.full-sheet .attribute-page .equation {
+    margin-bottom: 1px;
+}
+
+.trained-skills {
+    margin-top: 0.25em;
+
+    .subskills-trained {
+        padding-left: 4em;
+        padding-right: 2em;
+    }
+
+    // Necessary because the edge of "Class?" sticks out past the edge of the
+    // box.
+    .class-skill-container {
+        padding-right: 0.5em;
+    }
+}
+
+.calc-non-attribute .trained-skills {
+    margin-top: 0;
+}
+
+.fatigue-tolerance, .calc-perception-based .trained-skills .skill-row:nth-child(2) .calc-header {
+    font-size: 0.9em;
+}
+
+.calc-header {
+    width: 110px;
+}
+
+// Same as .calc-header, plus 8 px for the missing margins
+.attribute-header {
+    width: 118px;
+}
+
+.calc-header {
+    font-weight: normal;
+}
+
+.sidebar {
+    width: 49.5%;
+    margin-right: 1%;
+}
+
+.main-body {
+    width: 49.5%;
+}
+
+.weight-limits {
+    input[type="text"] {
+      width: 9.5em;
+    }
+    >:nth-child(2) {
+        margin-right: 1.5em;
+    }
+}
+
+.paper {
+    .page-explanation {
+        display: none;
+    }
+}
+
+// .calc-dexterity-based, .calc-constitution-based, .calc-perception-based, .calc-willpower-based {
+.attribute-calc {
+    .attribute-divider {
+        margin-top: 0.2em;
+        // Same color as .section-header
+        background-color: #FFF0C8;
+        height: 10px;
+        width: 100%;
+        border-top-right-radius: 10px;
+        // border-bottom-right-radius: 5px;
+        // Same as section-header
+        border-top-left-radius: 0.5em;
+    }
+
+    .attribute-header {
+        background-color: #FFF0C8;
+        border-bottom-left-radius: 0.5em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.25em;
+        padding-bottom: 2px;
+        // Line up with edge of first Total box
+        border-bottom-right-radius: 4px;
+    }
+
+    .section-header {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.calc-strength-based, .calc-intelligence-based {
+    .attribute-calc .attribute-divider {
+        margin-top: 0.1em;
+    }
+}

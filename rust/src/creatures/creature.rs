@@ -2,10 +2,10 @@ use std::cmp::max;
 
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::Attack;
-use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
+use crate::core_mechanics::{Attribute, HitPointProgression, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
 use crate::creatures::{latex, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
-use crate::monsters::ChallengeRating;
+use crate::monsters::{ChallengeRating, Role};
 use crate::skills::Skill;
 use std::collections::HashMap;
 
@@ -18,6 +18,7 @@ pub struct Creature {
     pub base_attributes: HashMap<Attribute, i32>,
     pub category: CreatureCategory,
     pub damage_resistance_lost: i32,
+    pub hit_point_progression: HitPointProgression,
     pub hit_points_lost: i32,
     pub identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
@@ -35,7 +36,7 @@ pub struct Creature {
 #[derive(Clone, Debug)]
 pub enum CreatureCategory {
     Character,
-    Monster(ChallengeRating),
+    Monster(ChallengeRating, Role),
 }
 
 impl Creature {
@@ -46,6 +47,7 @@ impl Creature {
             base_attributes: HashMap::<Attribute, i32>::new(),
             category,
             damage_resistance_lost: 0,
+            hit_point_progression: HitPointProgression::Low,
             hit_points_lost: 0,
             identified_modifiers: vec![],
             level,
@@ -98,31 +100,26 @@ impl Creature {
     pub fn is_character(&self) -> bool {
         match self.category {
             CreatureCategory::Character => true,
-            CreatureCategory::Monster(_) => false,
+            CreatureCategory::Monster(..) => false,
         }
     }
 
     pub fn is_elite(&self) -> bool {
         match self.category {
             CreatureCategory::Character => false,
-            CreatureCategory::Monster(cr) => cr == ChallengeRating::Four,
+            CreatureCategory::Monster(cr, _) => cr == ChallengeRating::Four,
         }
     }
 
     pub fn can_recover(&self) -> bool {
         match self.category {
             CreatureCategory::Character => true,
-            CreatureCategory::Monster(_) => false,
+            CreatureCategory::Monster(..) => false,
         }
     }
 
     pub fn rank(&self) -> i32 {
-        match self.category {
-            CreatureCategory::Character => calculate_standard_rank(self.level),
-            CreatureCategory::Monster(cr) => {
-                calculate_standard_rank(self.level) + cr.rank_modifier()
-            }
-        }
+        calculate_standard_rank(self.level)
     }
 
     pub fn active_abilities(&self) -> Vec<ActiveAbility> {

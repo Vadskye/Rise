@@ -33,7 +33,6 @@ def create_page(_destination):
             flex_row(
                 {"class": "reference-row"},
                 [
-                    standard_damage(),
                     flex_col(
                         [
                             skill_modifiers(),
@@ -41,30 +40,6 @@ def create_page(_destination):
                         ]
                     ),
                     common_concepts(),
-                ],
-            ),
-        ],
-    )
-
-
-def standard_damage():
-    return flex_col(
-        {"class": "standard-damage"},
-        [
-            div({"class": "section-header"}, "Dice Pools"),
-            flex_row(
-                {"class": "damage-chart"},
-                [
-                    flex_col(
-                        [
-                            "".join(
-                                [
-                                    div(standard_damage_at_power(i))
-                                    for i in range(-4, 25, 2)
-                                ]
-                            ),
-                        ]
-                    )
                 ],
             ),
         ],
@@ -106,15 +81,15 @@ def vital_roll_effect(roll):
     return {
         -1: "Unconscious, die next round",
         0: "Unconscious, die after a minute",
-        1: "Unconscious below max HP",
-        2: "-10 foot speed",
+        1: "Unconscious below half HP",
+        2: "-1 accuracy",
         3: "-5 foot speed",
-        4: "-2 defenses",
-        5: "-1 defenses",
-        6: "Max DR is 0",
-        7: "Half max DR",
-        8: "-2 accuracy",
-        9: "-1 accuracy",
+        4: "Half max DR",
+        5: "-2 fatigue tolerance",
+        6: "-1 all defenses",
+        7: "-2 Fortitude",
+        8: "-2 Reflex",
+        9: "-2 Mental",
         "10+": "No extra effect",
     }[roll]
 
