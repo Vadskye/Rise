@@ -28,5 +28,6 @@ fn main() {
             _ => panic!("Searched for a monster but found a group"),
         }
     };
+
     println!("{}", monster.explain_statistics());
 }
