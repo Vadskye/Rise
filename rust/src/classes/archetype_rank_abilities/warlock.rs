@@ -258,6 +258,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen secret reaches its full potential.
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
+                    In addition, the defense bonus increases to \plus5.
 
                     \parhead{Secret of Bloodsharing} The healing increases to 2d6 plus 1d6 per 3 power.
 
