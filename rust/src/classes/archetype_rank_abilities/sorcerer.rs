@@ -208,18 +208,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Desperate Improvisation",
+            name: "Desperate Devastation",
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you use the \ability{desperate exertion} ability to affect an attack roll from a spell you cast during the current phase, you can change which spell you cast before rerolling.
-                The new spell must still make an attack.
-                You can make different choices for how you resolve the new spell, such as choosing different targets.
-                However, the new spell must still have all of the same choices about how it was cast, including the use of the \textit{wildspell} ability.
-                This does not cause you to reroll the wild magic roll.
-
-                When you use this ability to change your spell, you must take the result of the second roll, even if it is worse.
-                The new spell takes its full effect as if you had cast it originally, and the original spell has no effect of any kind.
+                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you also roll all damage dice for the attack twice and keep the higher result.
+                If you use that ability to affect an attack that already hit, and the reroll also hits, your damage dice are maximized instead.
             ",
             modifiers: None,
         },
