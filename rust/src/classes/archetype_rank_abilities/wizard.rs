@@ -416,7 +416,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
-                You can also spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
 
                 Some metamagic abilities affect specific spells.
                 You can only choose spells with a rank no higher than your rank in this archetype.
@@ -468,9 +467,18 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
-                If you do, you gain a \plus1 accuracy bonus with the spell.
+                If you do, you gain a \plus1 accuracy bonus with the spell this round.
                 However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
                 This defense penalty is \abilitytag{Swift}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            name: "Expert Metamage",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                You can spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
             ",
             modifiers: None,
         },
@@ -490,7 +498,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The accuracy bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -515,10 +523,11 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Choose one of the following schools of magic.
                 You are a specialist in your chosen school.
                 You cannot gain access to any arcane mystic spheres outside of your specialized school, and you cannot learn spells or rituals from those spheres by any means.
-                In exchange, you gain an additional \glossterm{insight point}, and you gain a benefit based on your specialized school.
+                In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                    In addition, you gain a \plus1 bonus to your Armor defense.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -540,7 +549,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             // Assume evocation
             modifiers: Some(vec![
                 Modifier::Power(1),
-                Modifier::Resource(Resource::InsightPoint, 1),
             ]),
         },
         RankAbility {
@@ -551,15 +559,12 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen school improves.
                 {
                     \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
-                    In addition, you gain a \plus1 bonus to your Armor defense.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
                     \subcf{Evocation} The power bonus increases to \plus2.
 
-                    \subcf{Illusion} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                    In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
-                    If you already have that ability, you increase its range by 60 feet.
+                    \subcf{Illusion} The accuracy bonus increases to \plus2.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
 
@@ -583,7 +588,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Evocation} The power bonus increases to \plus3.
 
-                    \subcf{Illusion} The accuracy bonus increases to \plus2.
+                    \subcf{Illusion} The accuracy bonus increases to \plus3.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                     In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
@@ -629,16 +634,15 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a defensive ability based on your chosen school.
                 {
-                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects.
-                    In addition, your spells cannot be \glossterm{suppressed} or \glossterm{dismissed} by \magical effects other than your own.
+                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects, and you cannot be \grappled.
 
-                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
+                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 20\% \glossterm{failure chance}.
 
                     \subcf{Evocation} You are \trait{impervious} to cold damage, electricity damage, and fire damage.
 
-                    \subcf{Illusion} You are immune to being \dazzled and \blinded.
+                    \subcf{Illusion} You are immune to being \dazzled and \blinded, as well as \abilitytag{Emotion} effects.
 
-                    \subcf{Transmutation} You are immune to being \slowed and \immobilized.
+                    \subcf{Transmutation} You are immune to being \slowed, \immobilized, and \paralyzed.
 
                     \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with less than half of their maximum hit points remaining and undead creatures.
                 }
