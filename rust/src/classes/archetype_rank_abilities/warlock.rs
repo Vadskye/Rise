@@ -554,8 +554,10 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can use the \textit{desperate exertion} ability without increasing your fatigue level.
-                When you do, your maximum \glossterm{hit points} are reduced by a quarter until you complete a \glossterm{long rest}.
-                Each time you use this ability, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
+                When you do, you suffer no immediate negative consequences.
+                After 10 minutes, your maximum \glossterm{hit points} will be reduced by a quarter until you complete a \glossterm{long rest}.
+                Each time this penalty takes effect, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
+                If your hit points are reduced below 0 in this way, you die.
             ",
             modifiers: None,
         },
