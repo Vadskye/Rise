@@ -1462,7 +1462,6 @@ You can either skim past terms you don't yet understand or look them up as you g
     When you gain a level, the following things happen:
     \begin{raggeditemize}
         \item Your \glossterm{hit points} increase (see \pcref{Hit Points}).
-        \item Your \glossterm{damage resistance} increases (see \pcref{Damage Resistance}).
         \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes}).
         \item Your \glossterm{accuracy} may increase (see \pcref{Accuracy}).
         \item At even levels, \glossterm{magical power} and \glossterm{mundane power} each increase by 1 (see \pcref{Power}).
@@ -1479,37 +1478,37 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item At 6th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
     \end{raggeditemize}
 
-    These effects are summarized in \trefnp{Character Advancement and Gaining Levels}.
+    These effects are summarized in \trefnp{Character Advancement and Gaining Levels}, which also defines the experience required to gain each level.
 
-    \begin{dtable!*}
+    \begin{dtable}
         \lcaption{Character Advancement and Gaining Levels}
-        \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
-            \tb{Level}\fn{1} & \tb{Max Rank}\fn{2} & \tb{Accuracy, Defenses, Skills, Power} & \tb{XP} & \tb{Special}                        \tableheaderrule
-            1st              & 1                   & \tdash                                 & 0       & \tdash                              \\
-            2nd              & \tdash              & \plus1                                 & 10      & \tdash                              \\ % +10 xp
-            3rd              & \tdash              & \plus1                                 & 25      & \plus1 to two attributes            \\ % +15 xp
-            4th              & 2                   & \plus2                                 & 45      & \plus1 \glossterm{insight point}    \\ % +20 xp
-            5th              & \tdash              & \plus2                                 & 70      & \plus1 \glossterm{attunement point} \\ % +25 xp
-            6th              & \tdash              & \plus3                                 & 100     & Legacy item: rank 3                 \\ % +30 xp
-            7th              & 3                   & \plus3                                 & 140     & \plus1 \glossterm{insight point}    \\ % +40 xp
-            8th              & \tdash              & \plus4                                 & 200     & \plus1 \glossterm{attunement point} \\ % +60 xp
-            9th              & \tdash              & \plus4                                 & 300     & \plus1 to two attributes            \\ % +100 xp
-            10th             & 4                   & \plus5                                 & 450     & \tdash                              \\ % +150 xp
-            11th             & \tdash              & \plus5                                 & 700     & \tdash                              \\ % +250 xp
-            12th             & \tdash              & \plus6                                 & 1,000   & Legacy item: ranks 5 and 3          \\ % +300 xp
-            13th             & 5                   & \plus6                                 & 1,400   & \tdash                              \\ % +400 xp
-            14th             & \tdash              & \plus7                                 & 2,000   & \tdash                              \\ % +600 xp
-            15th             & \tdash              & \plus7                                 & 3,000   & \plus1 to two attributes            \\ % +1000 xp
-            16th             & 6                   & \plus8                                 & 4,500   & \tdash                              \\ % +1,500 xp
-            17th             & \tdash              & \plus8                                 & 7,000   & \tdash                              \\ % +2,500 xp
-            18th             & \tdash              & \plus9                                 & 10,000  & Legacy item: ranks 7 and 5          \\ % +3,000 xp
-            19th             & 7                   & \plus9                                 & 14,000  & \tdash                              \\
-            20th             & \tdash              & \plus10                                & 20,000  & \tdash                              \\
-            21st             & \tdash              & \plus10                                & 30,000  & \plus1 to two attributes            \\
+        \begin{dtabularx}{\columnwidth}{l l l X l}
+            \tb{Level} & \tb{Max Rank}\fn{1}\hspace{-0.75em} & \tb{Bonus}\fn{2}\hspace{-0.75em} & \tb{Special}                        & \tb{XP} \tableheaderrule
+            1st        & 1                   & \tdash     & \tdash                              & 0      \\
+            2nd        & \tdash              & \plus1     & \tdash                              & 10     \\ % +10 xp
+            3rd        & \tdash              & \plus1     & \plus1 to two attributes            & 25     \\ % +15 xp
+            4th        & 2                   & \plus2     & \plus1 \glossterm{insight point}    & 45     \\ % +20 xp
+            5th        & \tdash              & \plus2     & \plus1 \glossterm{attunement point} & 70     \\ % +25 xp
+            6th        & \tdash              & \plus3     & Legacy item: rank 3                 & 100    \\ % +30 xp
+            7th        & 3                   & \plus3     & \plus1 \glossterm{insight point}    & 140    \\ % +40 xp
+            8th        & \tdash              & \plus4     & \plus1 \glossterm{attunement point} & 200    \\ % +60 xp
+            9th        & \tdash              & \plus4     & \plus1 to two attributes            & 300    \\ % +100 xp
+            10th       & 4                   & \plus5     & \tdash                              & 450    \\ % +150 xp
+            11th       & \tdash              & \plus5     & \tdash                              & 700    \\ % +250 xp
+            12th       & \tdash              & \plus6     & Legacy item: ranks 5 and 3          & 1,000  \\ % +300 xp
+            13th       & 5                   & \plus6     & \tdash                              & 1,400  \\ % +400 xp
+            14th       & \tdash              & \plus7     & \tdash                              & 2,000  \\ % +600 xp
+            15th       & \tdash              & \plus7     & \plus1 to two attributes            & 3,000  \\ % +1000 xp
+            16th       & 6                   & \plus8     & \tdash                              & 4,500  \\ % +1,500 xp
+            17th       & \tdash              & \plus8     & \tdash                              & 7,000  \\ % +2,500 xp
+            18th       & \tdash              & \plus9     & Legacy item: ranks 7 and 5          & 10,000 \\ % +3,000 xp
+            19th       & 7                   & \plus9     & \tdash                              & 14,000 \\
+            20th       & \tdash              & \plus10    & \tdash                              & 20,000 \\
+            21st       & \tdash              & \plus10    & \plus1 to two attributes            & 30,000 \\
         \end{dtabularx}
-        1. For some statistics, like your \glossterm{hit points}, you add your attributes to your level when calculating the total. If this total is more than 21 or less than 1, see the relevant section below this table to calculate your value. \\
-        2. See \pcref{Archetype Ranks}. \\
-    \end{dtable!*}
+        1. See \pcref{Archetype Ranks}. \\
+        2. This bonus applies to your \magical power, mundane power, trained skills, and defenses. \\
+    \end{dtable}
 
     At your GM's discretion, you may also change some of the choices you have made about your character when you level up.
     For example, you could change one of your trained skills for a different skill, change which weapon groups you are proficient with, or change the \glossterm{mystic spheres} you have access to (and corresponding spells).
