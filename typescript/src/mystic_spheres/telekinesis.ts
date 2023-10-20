@@ -423,7 +423,7 @@ export const telekinesis: MysticSphere = {
       name: 'Animated Weapon',
 
       effect: `
-        Make a \\glossterm{strike} using a weapon you hold in a single hand.
+        Make a melee \\glossterm{strike} using a weapon you hold in a single hand.
         The weapon gains the \\abilitytag{Long} tag for this strike, allowing you to attack more distant targets.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
         The weapon flies back into your hand after making the strike.
