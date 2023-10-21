@@ -40,8 +40,7 @@ impl TableRow {
     fn to_latex(&self) -> String {
         let latex = format!(
             "
-                \\itemref<{name}>{sparkle}
-                {category_separator} {category}
+                \\itemref<{name}>{sparkle} {category_separator} {category}
                 & {short_description}
                 & {rank_and_price}
                 & \\itempref<{name}>
@@ -52,9 +51,9 @@ impl TableRow {
             category_separator = if self.category.is_some() { "&" } else { "" },
             category = self.category.clone().unwrap_or(String::from("")),
             rank_and_price = rank_and_price_text(self.rank, self.consumable),
-            short_description = self.short_description,
+            short_description = self.short_description.trim(),
         );
-        replace_attack_terms(&latex, &item_creature(self.rank), false, None)
+        replace_attack_terms(latex.trim(), &item_creature(self.rank), false, None)
     }
 }
 
