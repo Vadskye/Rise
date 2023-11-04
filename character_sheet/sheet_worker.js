@@ -663,7 +663,7 @@ function calcAccuracyCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 21 ? 2 : level >= 12 ? 1 : 0;
+    levelScaling += level >= 18 ? 2 : level >= 6 ? 1 : 0;
   }
   if (challengeRating === 4) {
     levelScaling += 2;
