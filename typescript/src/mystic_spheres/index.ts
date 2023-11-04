@@ -107,6 +107,7 @@ export interface StandardAttack {
   crit?: string;
   hit: string;
   missGlance?: boolean;
+  miss?: string;
   targeting: string;
 }
 
