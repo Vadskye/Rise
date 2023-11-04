@@ -394,12 +394,13 @@ export const terramancy: MysticSphere = {
 
       // TODO: define correct rank
       effect: `
-        % TODO: wording to allow it to affect smaller parts of larger objects
-        % TODO: define maximum resistance
         Choose a \\smallarea radius \\glossterm{zone} within \\medrange.
         All earth and stone in the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
         The area becomes \\glossterm{difficult terrain}.
+
         This does not affect objects under structural stress, such as walls and support columns.
+        Affected objects retain their own fundamental structural integrity and do not blend with other objects.
+        When the spell ends, affected objects regain their original shape, suffering no damage from their time spent softened.
       `,
       rank: 4,
       scaling: {
