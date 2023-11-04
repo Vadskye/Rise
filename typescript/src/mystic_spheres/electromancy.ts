@@ -68,13 +68,14 @@ export const electromancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, becomes is \\vulnerable to lightning damage as a \\glossterm{condition}.
+          The target becomes a lightning rod as a \\glossterm{condition}.
+          While it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to lightning damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
     },
 
@@ -85,7 +86,7 @@ export const electromancy: MysticSphere = {
         name: 'lightning rod',
         exceptThat: 'the attack \\glossterm{chains} five times.',
       },
-      rank: 4,
+      rank: 3,
       scaling: 'accuracy',
     },
 
@@ -98,10 +99,10 @@ export const electromancy: MysticSphere = {
           The target is \\vulnerable to lightning damage as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
     },
 
