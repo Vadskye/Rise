@@ -74,6 +74,7 @@ export function spellEffect(
         \\hit ${spell.attack.hit.trim()}
         ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ""}
         ${spell.attack.missGlance ? "\\miss \\glossterm{Glancing blow}." : ""}
+        ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ""}
       `;
     } else if (spell.effect) {
       return fatiguePointsText
