@@ -321,6 +321,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         size: Size,
     }
 
+    // TODO: make movement slow
     impl TreantDefinition {
         fn monster(mut self) -> Monster {
             self.modifiers.push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
