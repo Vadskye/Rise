@@ -19,6 +19,7 @@ export const cryomancy: MysticSphere = {
 
     Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
     When a Large or smaller creature takes physical damage while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
+    Any individual creature only has to make his check once per \\glossterm{phase}.
     At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
 
     If an area of icy terrain takes any fire damage, it is destroyed and becomes normal ground or water again.
@@ -304,7 +305,9 @@ export const cryomancy: MysticSphere = {
           \\damagerankthree{bludgeoning and cold}.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
-        missGlance: true,
+        miss: `
+          \\glossterm{Glancing blow}, and the target is not knocked prone.
+        `,
         targeting: `
           Make an attack vs. Armor and Fortitude against everything in a \\smallarea radius within \\medrange.
         `,
@@ -322,7 +325,9 @@ export const cryomancy: MysticSphere = {
           \\damageranksix{bludgeoning and cold}.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
-        missGlance: true,
+        miss: `
+          \\glossterm{Glancing blow}, and the target is not knocked prone.
+        `,
         targeting: `
           Make an attack vs. Armor and Fortitude against everything in a \\largearea radius within \\longrange.
         `,
