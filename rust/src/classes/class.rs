@@ -213,6 +213,7 @@ impl Class {
                 Skill::Deduction,
                 Skill::Endurance,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -232,6 +233,7 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -249,6 +251,7 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Medicine,
                 Skill::Perform,
                 Skill::Persuasion,
@@ -294,6 +297,7 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Nature,
@@ -316,6 +320,7 @@ impl Class {
                 Skill::Disguise,
                 Skill::Flexibility,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Engineering,
@@ -371,6 +376,7 @@ impl Class {
                 Skill::Deduction,
                 Skill::Disguise,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
                     KnowledgeSubskill::Religion,

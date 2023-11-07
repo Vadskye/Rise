@@ -442,7 +442,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
           When it returns, it you deal it \\damagerankfour{bludgeoning}.
-          If it is a creature unable to breathe water and your attack result beats its Reflex defense, this attack deals maximum damage.
+          If it is a creature that breathes air and not water, and your attack result beats its Reflex defense, this attack deals maximum damage.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
