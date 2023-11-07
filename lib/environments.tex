@@ -227,7 +227,7 @@
 \DeclareDocumentEnvironment{passiveitem}{s m m}
 {
     \begin{activeabilitymdframed}
-    \IfValueTF{#1}{
+    \IfBooleanTF{#1}{
         \itemabilityheader*{#2}{#3}
     }{
         \itemabilityheader{#2}{#3}
