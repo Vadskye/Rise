@@ -322,6 +322,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     }
 
     // TODO: make movement slow
+    // TODO: add "Unhurried and Unfaltering" from dryaidi?
     impl TreantDefinition {
         fn monster(mut self) -> Monster {
             self.modifiers.push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
