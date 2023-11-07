@@ -1,7 +1,7 @@
 use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::HasArmor;
-use std::cmp::PartialEq;
+use std::cmp::{max, PartialEq};
 use std::collections::HashMap;
 use std::fmt;
 use titlecase::titlecase;
@@ -283,6 +283,7 @@ pub trait HasSkills {
     fn is_skill_trained(&self, skill: &Skill) -> bool;
     fn set_skill_trained(&mut self, skill: Skill, is_trained: bool);
     fn calc_skill_modifier(&self, skill: &Skill) -> i32;
+    fn calc_jump_distance(&self) -> i32;
 }
 
 impl HasSkills for Creature
@@ -328,5 +329,19 @@ where
 
         attribute_modifier + training_modifier - encumbrance_modifier
             + self.calc_total_modifier(ModifierType::Skill(skill.clone()))
+    }
+
+    // TODO: handle custom jump distance modifiers
+    fn calc_jump_distance(&self) -> i32 {
+        // Round down to the next 5 foot increment
+        let base_speed_modifier = ((self.size.base_speed() / 4) / 5) * 5;
+
+        let strength_modifier = if self.is_skill_trained(&Skill::Jump) {
+            max(5, self.get_base_attribute(&Attribute::Strength) * 5)
+        } else {
+            (self.get_base_attribute(&Attribute::Strength) / 2) * 5
+        };
+
+        return max(0, base_speed_modifier + strength_modifier);
     }
 }
