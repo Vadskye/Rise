@@ -277,7 +277,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         \hit $damage $damagetypes damage.
                         Each creature that loses hit points from this damage is poisoned by giant wasp venom.
 
-                        \par Giant wasp venom is an injury-based liquid poison (see \pcref{Poison}).
+                        \par Giant wasp venom is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+1.
                         Its stage 1 effect makes the target \slowed while the poison lasts.
                         Its stage 3 effect makes the target \immobilized while the poison lasts.

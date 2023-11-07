@@ -39,6 +39,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
                         \hit $dr2 psychic damage.
                         Each creature that loses hit points from this damage is \stunned as a condition.
+                        \miss \glossterm{Glancing blow}.
                     ".to_string(),
                     is_magical: true,
                     name: "Psionic Blast".to_string(),
@@ -65,7 +66,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         \hit $dr2l poison damage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
-                        \par Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
+                        \par Aboleth slime is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+2.
                         Its stage 1 effect makes the target \slowed while the poison lasts.
                         Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
@@ -198,7 +199,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 3, 6, -6, 2, -2],
+            attributes: vec![4, 3, 6, -6, 2, 0],
             elite: true,
             level: 5,
             role: Role::Brute,

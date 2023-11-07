@@ -321,7 +321,7 @@ mod statistics {
             let mut creature = Monster::standard_monster(cr, level, None, None).creature;
             creature.add_modifier(
                 Modifier::Attack(
-                    StandardAttack::Firebolt((level + 2) / 3 + cr.rank_modifier()).attack(),
+                    StandardAttack::Firebolt((level + 2) / 3).attack(),
                 ),
                 None,
                 None,
