@@ -74,6 +74,7 @@ export const electromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
+          You gain a +2 accuracy bonus with this attack if the target is at least one size category larger than all other creatures and objects within 15 feet of it.
         `,
       },
       rank: 2,
