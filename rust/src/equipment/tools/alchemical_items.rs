@@ -174,7 +174,7 @@ fn thrown_attacks() -> Vec<Tool> {
             When you do, make an attack vs. Reflex against everything in a \smallarea radius within \shortrange.
             Your minimum accuracy is $accuracy.
             \hit $dr1 fire damage.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(4, "Throw to deal $dr3 damage in an area", r"
@@ -198,7 +198,7 @@ fn thrown_attacks() -> Vec<Tool> {
             Your minimum accuracy is $accuracy.
             \hit $dr2 bludgeoning damage.
             Each creature that loses \glossterm<hit points> is \deafened as a \glossterm<condition>.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(5, "Throw to deal $dr4 damage and deafen in an area", r"
@@ -218,7 +218,7 @@ fn thrown_attacks() -> Vec<Tool> {
             Your minimum accuracy is $accuracy.
             \hit $dr6 bludgeoning damage.
             Each creature that takes damage is \deafened as a \glossterm<condition>.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         ".to_string(),
         ..alchemical_item()
     });

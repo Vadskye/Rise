@@ -704,7 +704,7 @@ export const pyromancy: MysticSphere = {
         Your accuracy with this attack is equal to half the sum of your level and Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
         \\hit \\damagerankthree{fire}.
-        \\miss \\glossterm{Glancing blow}.
+        \\miss Half damage.
       `,
       rank: 4,
       scaling: {

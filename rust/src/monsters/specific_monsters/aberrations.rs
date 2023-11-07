@@ -39,7 +39,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
                         \hit $dr2 psychic damage.
                         Each creature that loses hit points from this damage is \stunned as a condition.
-                        \miss \glossterm{Glancing blow}.
+                        \miss Half damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Psionic Blast".to_string(),
@@ -51,7 +51,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
                         \hit $dr4 psychic damage.
-                        Each creature that loses hit points from this damage is \stunned as a condition.
+                        If the target loses hit points from this damage, it is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
                     name: "Mind Crush".to_string(),

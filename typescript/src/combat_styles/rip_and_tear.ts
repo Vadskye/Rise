@@ -166,7 +166,7 @@ export const ripAndTear: CombatStyle = {
 
         Make a melee \\glossterm{strike} using a slashing weapon.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
         Each creature that loses \\glossterm{hit points} takes damage from the strike again during your next action.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
@@ -199,7 +199,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a slashing weapon.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 3,
     },
