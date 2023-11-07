@@ -500,7 +500,7 @@ export const prayer: MysticSphere = {
         The target gains a +10 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
         If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
-        `,
+      `,
       rank: 1,
       type: 'Attune',
     },
@@ -519,7 +519,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Enduring Empowered Blessing of Fortification',
+      name: 'Enduring Blessing of Immutability',
 
       castingTime: '24 hours',
       functionsLike: {
@@ -532,7 +532,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Empowered Blessing of Fortification',
+      name: 'Blessing of Immutability',
 
       castingTime: 'one hour',
       functionsLike: {
