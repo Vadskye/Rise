@@ -211,7 +211,7 @@ impl Attack {
                 "".to_string()
             },
             massive_miss = if self.is_strike && creature.size.is_massive() {
-                r"\miss \glossterm{Glancing blow}."
+                r"\miss Half damage."
             } else {
                 ""
             },

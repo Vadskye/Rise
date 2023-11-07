@@ -64,7 +64,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -75,7 +75,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
         Each damaged creature falls \\prone if your attack result beats its Fortitude defense.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -88,7 +88,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make two melee \\glossterm{strikes}.
         The strikes target all \\glossterm{enemies} adjacent to you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 7,
     },
@@ -109,7 +109,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
         The strike costs five projectiles.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -122,7 +122,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
         The strike costs ten projectiles.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 5,
     },
@@ -133,7 +133,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 3,
     },
@@ -146,7 +146,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\medarea radius within \\distrange.
         The strike deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
         This strike costs ten projectiles.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 7,
     },

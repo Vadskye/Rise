@@ -102,7 +102,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything in its space.
                         \hit $dr2 acid damage.
-                        \miss \glossterm{Glancing blow}.
+                        \miss Half damage.
                     ".to_string(),
                     is_magical: false,
                     name: "Dissolve".to_string(),
@@ -440,7 +440,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         The strike targets all adjacent enemies.
                         \hit $fullweapondamage.
-                        \miss \glossterm{Glancing blow}.
+                        \miss Half damage.
                     ",
                 ),
                 treeclub_strike(

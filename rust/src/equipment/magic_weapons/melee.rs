@@ -25,6 +25,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // Half damage on miss means this may be too strong?
     weapons.push(Melee(StandardItem {
         name: String::from("Blade Barrage"),
         rank: 2,
@@ -34,7 +35,7 @@ pub fn melee() -> Vec<MagicWeapon> {
             When you do, you make a melee \glossterm<strike> using this weapon that spawns a swarm of blades.
             The strike targets all creatures in a \smallarea cone from you.
             For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
-            On a miss, you get a \glossterm<glancing blow>.
+            On a miss, you deal half damage.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can deal escalating damage in a cone", r"

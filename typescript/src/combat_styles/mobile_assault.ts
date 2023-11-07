@@ -12,7 +12,7 @@ export const mobileAssault: CombatStyle = {
         Move up to half your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 3,
     },
@@ -24,7 +24,7 @@ export const mobileAssault: CombatStyle = {
         Move up to your movement speed in a straight line.
         You can make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
         The strike deals double \\glossterm{weapon damage}, and it targets all \\glossterm{enemies} adjacent to you at any point during your movement.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 7,
     },
@@ -107,7 +107,7 @@ export const mobileAssault: CombatStyle = {
       effect: `
         You \\glossterm{teleport} horizontally to a location within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} that targets all \\glossterm{enemies} within a 5 ft.\\ wide line between your starting location and your ending location.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,

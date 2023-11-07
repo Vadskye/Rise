@@ -245,7 +245,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit \damagerankone{bludgeoning}.
-                        \miss \glossterm{Glancing blow}.
+                        \miss Half damage.
 
                         \rankline
                         \rank{2} The damage increases to \damageranktwo{bludgeoning}.

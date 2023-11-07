@@ -228,7 +228,7 @@ impl StrikeAbility {
             if !self.effect.contains(r"\miss") {
                 self.effect.push_str(
                     r"
-                    \miss \glossterm{Glancing blow}.
+                    \miss Half damage.
                 ",
                 );
             }

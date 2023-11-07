@@ -13,7 +13,7 @@ pub fn rods() -> Vec<Implement> {
             When you do, make an attack vs. Reflex against everything within a \medarea cone.
             Your minimum accuracy is $accuracy.
             \hit $dr1 fire damage.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Deals $dr3 damage in a cone", r"
@@ -32,7 +32,7 @@ pub fn rods() -> Vec<Implement> {
             When you do, make an attack vs. Reflex against everything within a \largearea cone.
             Your minimum accuracy is $accuracy.
             \hit $dr5 fire damage.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         "),
         ..Implement::default()
     }));

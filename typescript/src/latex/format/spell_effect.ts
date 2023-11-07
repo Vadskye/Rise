@@ -73,7 +73,7 @@ export function spellEffect(
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
         ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ""}
-        ${spell.attack.missGlance ? "\\miss \\glossterm{Glancing blow}." : ""}
+        ${spell.attack.missGlance ? "\\miss Half damage." : ""}
         ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ""}
       `;
     } else if (spell.effect) {
