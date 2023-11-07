@@ -198,7 +198,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Mage Armor}
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
-                    This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                    This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
                     It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
@@ -231,7 +231,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus3.
+                In addition, the defense bonus from the body armor increases to \plus4.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },

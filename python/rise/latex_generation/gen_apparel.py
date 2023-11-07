@@ -90,8 +90,8 @@ def generate_apparel():
             tags=[],
             description="""
                 You have a translucent suit of magical armor on your body and over your hands.
-                This functions like body armor that provides a +3 bonus to Armor defense and has no \\glossterm<encumbrance>.
-                It also provides a +5 bonus to your \\glossterm{damage resistance}.
+                This functions like body armor that provides a +4 bonus to Armor defense and has no \\glossterm<encumbrance>.
+                It also provides a +8 bonus to your \\glossterm{damage resistance}.
 
                 As long as you have a free hand, the barrier also manifests as a shield that provides a +1 bonus to Armor defense.
                 This bonus is considered to come from a shield, and does not stack with the benefits of using any other shield.
@@ -101,12 +101,12 @@ def generate_apparel():
             short_description="Grants encumbrance-free medium armor",
             upgrades=[
                 Upgrade(
-                    description="The damage resistance bonus increases to +10.",
+                    description="The damage resistance bonus increases to +16.",
                     rank=4,
                     short_description="Grants encumbrance-free medium armor",
                 ),
                 Upgrade(
-                    description="The damage resistance bonus increases to +20.",
+                    description="The damage resistance bonus increases to +32.",
                     rank=6,
                     short_description="Grants encumbrance-free medium armor",
                 ),

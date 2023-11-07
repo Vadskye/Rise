@@ -28,20 +28,20 @@ fn bracers() -> Vec<Apparel> {
         short_description: String::from("Grants encumbrance-free medium armor"),
         description: String::from(r"
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a +3 bonus to Armor defense and has no \glossterm<encumbrance>.
-            It also provides a +5 bonus to your \glossterm{damage resistance}.
+            This functions like body armor that provides a +4 bonus to Armor defense and has no \glossterm<encumbrance>.
+            It also provides a +6 bonus to your \glossterm{damage resistance}.
 
             The armor provided by this ability is dismissed if you have other body armor of any kind.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +10.
+                The damage resistance bonus increases to +12.
             "),
             ItemUpgrade::new(5, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +20.
+                The damage resistance bonus increases to +24.
             "),
             ItemUpgrade::new(7, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +40.
+                The damage resistance bonus increases to +48.
             "),
         ],
         ..Apparel::default()
