@@ -662,8 +662,8 @@ function calcAccuracyCrScaling(level, challengeRating) {
     return 0;
   }
   let levelScaling = 0;
-  if (challengeRating > 0) {
-    levelScaling += level >= 18 ? 2 : level >= 6 ? 1 : 0;
+  if (challengeRating > 0 && level >= 11) {
+    levelScaling += 1;
   }
   if (challengeRating === 4) {
     levelScaling += 2;
@@ -677,7 +677,11 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    levelScaling += level >= 12 ? 1 : 0;
+    if (level >= 17) {
+      levelScaling += 2;
+    } else if (level >= 5) {
+      levelScaling += 1;
+    }
   }
   if (challengeRating === 4) {
     levelScaling += 2;
@@ -1846,7 +1850,8 @@ function handleMagicalPower() {
       ],
     },
     (v) => {
-      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc;
+      const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
+      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + eliteModifier;
 
       setAttrs({
         magical_power: totalValue,
@@ -1859,6 +1864,10 @@ function handleMagicalPower() {
           {
             name: `Wil`,
             value: v.willpower,
+          },
+          {
+            name: `Elite`,
+            value: eliteModifier,
           },
         ]),
       });
@@ -1877,7 +1886,8 @@ function handleMundanePower() {
       ],
     },
     (v) => {
-      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc;
+      const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
+      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + eliteModifier;
 
       setAttrs({
         mundane_power: totalValue,
@@ -1890,6 +1900,10 @@ function handleMundanePower() {
           {
             name: `Str`,
             value: v.strength,
+          },
+          {
+            name: `Elite`,
+            value: eliteModifier,
           },
         ]),
       });
