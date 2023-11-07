@@ -823,8 +823,8 @@ function handleActiveAbilityDice() {
   // Local change
   on(
     "change:repeating_abilities:dice_pool" +
-      " change:repeating_abilities:is_magical",
-    function () {
+    " change:repeating_abilities:is_magical",
+    function() {
       const keyPrefix = "repeating_abilities";
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
         const diceText = parsed.dicePool
@@ -861,8 +861,8 @@ function handleArmorDefense() {
           ? "heavy"
           : v.body_armor_usage_class === "medium" ||
             v.shield_usage_class === "medium"
-          ? "medium"
-          : "light";
+            ? "medium"
+            : "light";
       if (worstUsageClass === "medium") {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
@@ -1009,7 +1009,7 @@ function handleAttributes() {
 function handleAttunedEffects() {
   on(
     "change:repeating_attunedmodifiers remove:repeating_attunedmodifiers",
-    function () {
+    function() {
       getSectionIDs("repeating_attunedmodifiers", (repeatingSectionIds) => {
         const isActiveIds = repeatingSectionIds.map(
           (id) => `repeating_attunedmodifiers_${id}_is_active`
@@ -1111,7 +1111,7 @@ function handleCustomModifiers() {
   for (const modifierType of CUSTOM_MODIFIER_TYPES) {
     on(
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
-      function () {
+      function() {
         const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id, i) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
@@ -1310,7 +1310,7 @@ function handleDamageResistance() {
       // don't || into 1"
       const monsterTotalDr = Math.floor(
         crMultipliedValue *
-          Math.max(0, v.damage_resistance_vital_wound_multiplier || 1)
+        Math.max(0, v.damage_resistance_vital_wound_multiplier || 1)
       );
 
       let attrs = {
@@ -1349,7 +1349,7 @@ function calcBaseDamageResistance(levelish) {
     }
     baseDr +=
       {
-        1: 0, 
+        1: 0,
         2: 1,
         3: 2,
         4: 3,
@@ -1358,18 +1358,18 @@ function calcBaseDamageResistance(levelish) {
         7: 6,
         8: 7,
         9: 8,
-        10:9,
-        11:10,
-        12:12,
-        13:14,
-        14:16,
-        15:18,
-        16:20,
-        17:22,
-        18:25,
-        19:28,
-        20:31,
-        21:35,
+        10: 9,
+        11: 10,
+        12: 12,
+        13: 14,
+        14: 16,
+        15: 18,
+        16: 20,
+        17: 22,
+        18: 25,
+        19: 28,
+        20: 31,
+        21: 35,
       }[levelish];
   } else {
     baseDr = levelish;
@@ -1545,9 +1545,9 @@ function handleEncumbrance() {
       const totalValue = Math.max(
         0,
         v.body_armor_encumbrance +
-          v.shield_encumbrance -
-          strengthModifier +
-          v.misc
+        v.shield_encumbrance -
+        strengthModifier +
+        v.misc
       );
       setAttrs({
         encumbrance: totalValue,
@@ -1617,7 +1617,7 @@ function handleHitPoints() {
     },
     (v) => {
       const progressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
-      const {baseHp, incrementalHp} = calcHpComponents(progressionName, v.level, v.constitution);
+      const { baseHp, incrementalHp } = calcHpComponents(progressionName, v.level, v.constitution);
 
       // This is the number of levels since the last breakpoint jump. Each breakpoint jump
       // increases base HP and incremental level count ("X HP per level above 7th").
@@ -1665,7 +1665,7 @@ function calcHpComponents(progressionName, level) {
     ['very high']: [[10, 2], [24, 4], [50, 8], [100, 15]],
   }[progressionName][progressionIndex];
 
-  return {baseHp, incrementalHp}
+  return { baseHp, incrementalHp }
 }
 
 function handleInsightPoints() {
@@ -1697,19 +1697,19 @@ function handleJumpDistance() {
   onGet(
     {
       miscName: "jump_distance",
-      numeric: ["base_speed", "strength"],
+      numeric: ["base_speed", "strength", "jump_level"],
     },
     (v) => {
       // In case people don't bother to set their size to Medium explicitly
       const base_speed = v.base_speed || 30;
       const base_speed_modifier = Math.floor((base_speed / 4) / 5) * 5;
-      const strength_modifier = v.strength * 5;
+      const strength_modifier = v.jump_level > 0 ? Math.max(5, v.strength * 5) : Math.floor(v.strength / 2) * 5;
       const totalValue = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
       setAttrs({
         jump_distance: totalValue,
         jump_distance_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "base speed / 4", value: base_speed_modifier },
-          { name: "strength * 5", value: strength_modifier },
+          { name: "strength", value: strength_modifier },
         ]),
       });
     }
@@ -2040,7 +2040,7 @@ function handleSkillPoints() {
 }
 
 function handleTrainedSkills() {
-  on(`change:repeating_trainedskills`, function (eventInfo) {
+  on(`change:repeating_trainedskills`, function(eventInfo) {
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
@@ -2096,7 +2096,7 @@ function handleTrainedSkills() {
     }
   });
 
-  on(`remove:repeating_trainedskills`, function (eventInfo) {
+  on(`remove:repeating_trainedskills`, function(eventInfo) {
     const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
       k.endsWith("trained_skill")
     );
@@ -2228,7 +2228,7 @@ function getDicePoolAttrs(
       dicePoolKey,
       isMagicalKey,
     ],
-    function (v) {
+    function(v) {
       callback(
         calculateDicePoolModifier({
           dicePool: v[dicePoolKey],
@@ -2272,8 +2272,8 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     "change:repeating_otherdamagingattacks:attack_damage_dice" +
-      " change:repeating_otherdamagingattacks:is_magical",
-    function () {
+    " change:repeating_otherdamagingattacks:is_magical",
+    function() {
       getOdaDamageDiceAttrs("repeating_otherdamagingattacks", (parsed) => {
         setCalculatedDicePool("repeating_otherdamagingattacks", parsed);
       });
@@ -2283,7 +2283,7 @@ function handleOtherDamagingAttacks() {
   // Global other damaging attack change
   on(
     "change:magical_power change:mundane_power change:level",
-    function () {
+    function() {
       getSectionIDs("repeating_otherdamagingattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
           getOdaDamageDiceAttrs(
@@ -2322,7 +2322,7 @@ function handleStrikeAttacks() {
         "magical_power",
         "mundane_power",
       ],
-      function (v) {
+      function(v) {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
 
         const weaponDice = [];
@@ -2409,7 +2409,7 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage",
-    function () {
+    function() {
       getStrikeAttrs("", (parsed) => {
         setStrikeTotalDamage("", parsed);
       });
@@ -2419,9 +2419,9 @@ function handleStrikeAttacks() {
   // Global strike attack change
   on(
     "change:weapon_0_magical_damage_dice change:weapon_1_magical_damage_dice change:weapon_2_magical_damage_dice" +
-      "change:weapon_0_mundane_damage_dice change:weapon_1_mundane_damage_dice change:weapon_2_mundane_damage_dice" +
-      " change:level change:magical_power change:mundane_power",
-    function () {
+    "change:weapon_0_mundane_damage_dice change:weapon_1_mundane_damage_dice change:weapon_2_mundane_damage_dice" +
+    " change:level change:magical_power change:mundane_power",
+    function() {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
           getStrikeAttrs(sectionId, (parsed) => {
@@ -2524,7 +2524,7 @@ function handleVitalWounds() {
 
   on(
     "change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds",
-    function (eventInfo) {
+    function(eventInfo) {
       getSectionIDs("repeating_vitalwounds", (repeatingSectionIds) => {
         const vitalWoundRollIds = repeatingSectionIds.map(
           (id) => `repeating_vitalwounds_${id}_vital_wound_roll`
