@@ -365,7 +365,7 @@ function boolifySheetValue(val) {
 }
 
 const SKILLS_BY_ATTRIBUTE = {
-  strength: ["climb", "swim"],
+  strength: ["climb", "jump", "swim"],
   dexterity: [
     "balance",
     "flexibility",

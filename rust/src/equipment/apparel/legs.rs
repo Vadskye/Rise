@@ -199,7 +199,7 @@ fn boots() -> Vec<Apparel> {
 
     apparel.push(Boots(StandardItem::reliable_skill_item(
         "Boots of Reliable Motion",
-        "Balance, Climb, or Swim",
+        "Balance, Climb, Jump, or Swim",
         "movement-based",
     )));
 

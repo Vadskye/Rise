@@ -15,6 +15,7 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
                 \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
                 Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+                Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
                 Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
                 Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
@@ -484,6 +485,23 @@ If it feels relevant to the skill, it's generally fine to allow a check to make 
             % TODO: this is a little weird as a universal ability. It's r-1 power level.
             \hit If the target has no remaining \glossterm{damage resistance}, it is \frightened by you as a \glossterm{condition}.
         \end{activeability}
+
+\newpage
+\skill{Jump}{Str}
+    The Jump skill represents your ability to jump.
+    If you are trained in the Jump skill, you can jump farther than normal (see \pcref{Jumping}).
+
+    You do not make a Jump check to determine how far you can jump.
+    Instead, you make Jump checks if you need to jump precisely, or in unusual circumstances.
+
+    \subsection{Common Jump Tasks}
+        \parhead{Shortened Running Start} You can make a \glossterm{difficulty value} 15 Jump check when you jump after a 5 foot running start.
+        Success means you treat your jump as if you had a 15 foot running start, which increases your maximum jumping distance.
+        \parhead{Wall Jump} You can make a \glossterm{difficulty value} 10 Jump check as part of movement to jump off of a wall you are adjacent to.
+        This difficulty value increases by 5 for each time you have used this ability since landing on solid ground.
+        Success means you can jump off of the wall.
+        Failure means your jump fails, and your movement ends.
+        Critical success means that you are treated as having a running start with the jump.
 
 \newpage
 \skill{Knowledge}{Int}
