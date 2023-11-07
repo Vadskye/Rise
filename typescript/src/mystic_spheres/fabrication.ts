@@ -288,7 +288,10 @@ export const fabrication: MysticSphere = {
         The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
       `,
       rank: 3,
-      scaling: 'accuracy',
+      scaling: {
+        5: "The web's hit points increase to four times your power.",
+        7: "The web's hit points increase to five times your power.",
+      },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },

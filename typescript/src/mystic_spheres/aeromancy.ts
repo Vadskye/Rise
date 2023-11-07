@@ -11,7 +11,7 @@ export const aeromancy: MysticSphere = {
       name: 'Airborne Leap',
 
       effect: `
-        You gain a \plus5 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+        You gain a +5 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
         This increases your maximum vertical jump distance normally.
       `,
       narrative: `
