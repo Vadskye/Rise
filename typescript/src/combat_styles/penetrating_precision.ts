@@ -51,7 +51,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\medarealong, 5 ft. wide line from you.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -62,7 +62,7 @@ export const penetratingPrecision: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\largearealong, 5 ft. wide line from you.
         You take a -1 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 5,
     },

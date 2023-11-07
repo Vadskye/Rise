@@ -306,7 +306,7 @@ export const cryomancy: MysticSphere = {
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
-          \\glossterm{Glancing blow}, and the target is not knocked prone.
+          Half damage, and the target is not knocked prone.
         `,
         targeting: `
           Make an attack vs. Armor and Fortitude against everything in a \\smallarea radius within \\medrange.
@@ -326,7 +326,7 @@ export const cryomancy: MysticSphere = {
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
-          \\glossterm{Glancing blow}, and the target is not knocked prone.
+          Half damage, and the target is not knocked prone.
         `,
         targeting: `
           Make an attack vs. Armor and Fortitude against everything in a \\largearea radius within \\longrange.

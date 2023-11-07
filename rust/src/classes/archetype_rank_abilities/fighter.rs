@@ -65,7 +65,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
                     You cannot get a \glossterm{critical hit} with this strike.
-                    \miss \glossterm{Glancing blow}.
+                    \miss Half damage.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d8.

@@ -137,7 +137,7 @@ fn crowns() -> Vec<Apparel> {
             Make an attack vs. Reflex against everything in a \smallarea radius from you.
             Your minimum accuracy is $accuracy.
             \hit $dr3 fire damage.
-            \miss \glossterm{Glancing blow}.
+            \miss Half damage.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can deal $dr5 damage around you", r"

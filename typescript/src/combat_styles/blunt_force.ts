@@ -59,7 +59,7 @@ export const bluntForce: CombatStyle = {
         It targets everything supported by that surface in a \\smallarea cone from you.
         You take a -1 accuracy penalty with the strike.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -73,7 +73,7 @@ export const bluntForce: CombatStyle = {
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
         It targets everything supported by that surface in a \\largearea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
-        On a miss, you get a \\glossterm{glancing blow}.
+        On a miss, you still deal half damage.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
       rank: 5,
@@ -338,7 +338,7 @@ export const bluntForce: CombatStyle = {
         You cannot get a \\glossterm{critical hit} with this strike.
         If you deal damage with the strike to a creature that is Small or larger, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\smallarea radius of the target of your strike.
         You deal each struck secondary target damage equal to the damage you dealt with the strike.
-        On a miss against a secondary target, you get a \\glossterm{glancing blow}.
+        On a miss against a secondary target, you still deal half damage.
       `,
       rank: 3,
     },
