@@ -447,7 +447,8 @@ impl Monster {
     fn latex_skill_modifiers_from_category(&self, skill_category: &SkillCategory) -> Vec<String> {
         let mut skills = Skill::all_from_skill_category(skill_category)
             .iter()
-            .filter(|s| self.creature.is_skill_trained(s))
+            // Jump has special handling
+            .filter(|s| self.creature.is_skill_trained(s) && s != &&Skill::Jump)
             .map(|s| {
                 format!(
                     "{}~{}",
@@ -467,6 +468,18 @@ impl Monster {
             .iter()
             .map(|m| m.description(&self.creature.size))
             .collect::<Vec<String>>();
+
+        if self.creature.is_skill_trained(&Skill::Jump) {
+            movement_components.push(format!(
+                "{} ft. (+{})",
+                self.creature.calc_jump_distance(),
+                self.creature.calc_skill_modifier(&Skill::Jump),
+            ));
+        }
+
+        // We want to sort the foot-based components before adding skill modifiers
+        movement_components.sort();
+
         movement_components
             .extend(self.latex_skill_modifiers_from_category(&SkillCategory::Movement));
         if !movement_components.is_empty() {
