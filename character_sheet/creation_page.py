@@ -411,6 +411,7 @@ def trained_skill():
                     option({"value": "Endurance"}, "Endurance"),
                     option({"value": "Flexibility"}, "Flexibility"),
                     option({"value": "Intimidate"}, "Intimidate"),
+                    option({"value": "Jump"}, "Jump"),
                     option({"value": "Knowledge (arcana)"}, "Knowledge (arcana)"),
                     option(
                         {"value": "Knowledge (dungeoneering)"},
