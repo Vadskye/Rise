@@ -364,13 +364,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \begin{magicalactiveability}{Form of the Bear}
                         \rankline
-                        You gain a \plus2 bonus to your Fortitude defense and \glossterm{vital rolls}.
+                        You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your vital rolls.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The bonuses increase to \plus3.
-                        \rank{5} The bonuses increase to \plus4.
-                        \rank{7} The bonuses increase to \plus5.
+                        \rank{3} The Fortitude defense bonus increases to \plus3.
+                        \rank{5} The vital roll bonus increases to \plus2.
+                        \rank{7} The Fortitude defense bonus increases to \plus4.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}
