@@ -1675,8 +1675,10 @@ impl Class {
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You gain the \textit{wild aspect} druid ability from the Shifter archetype (see \pcref{Shifter}), except that you cannot spend \glossterm{insight points} to learn additional wild aspects.
-                        If you already have that ability, you simply learn an additional wild aspect.
+                        \parhead{Aspect} You gain one \textit{wild aspect}, as the druid ability from the Shifter archetype (see \pcref{Shifter}).
+                        You cannot spend \glossterm{insight points} to learn additional wild aspects.
+                        The aspect's effect improves based on your rank in the Domain Mastery archetype.
+                        If you already have that ability, you simply learn an additional wild aspect, and the aspect's effect continues to scale with your Shifter archetype rank.
                         \parhead{Essence} You learn an additional \textit{wild aspect}.
                         \parhead{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
                         When you do, you increase your \glossterm{fatigue level} by two.
