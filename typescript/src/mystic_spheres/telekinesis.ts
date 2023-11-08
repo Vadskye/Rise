@@ -334,7 +334,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
         The target's weight is reduced by one \\glossterm{weight category}, which makes it easier to lift and move.
-        It also gains a \plus10 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
+        It also gains a \\plus10 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
         This increases the target's maximum vertical jump distance normally.
       `,
       rank: 1,
@@ -347,7 +347,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose yourself or one Large or smaller \\glossterm{unattended} object within \\medrange.
         The target's weight is reduced by two \\glossterm{weight categories}, which makes it much easier to lift and move.
-        It also gains a \plus20 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
+        It also gains a \\plus20 foot bonus to its maximum horizontal jump distance, if applicable (see \pcref{Jumping}).
         This increases the target's maximum vertical jump distance normally.
       `,
       rank: 4,
@@ -436,7 +436,7 @@ export const telekinesis: MysticSphere = {
       name: 'Mind Arrow',
 
       effect: `
-        You can make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
+        Make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
         You do not have to be proficient with bows, and you do not have to manually draw the arrow.
         It must be easily accessible on your person, such as in a quiver.
         As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
