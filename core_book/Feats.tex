@@ -197,7 +197,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Executioner}              & Per 2               & Kill weakened foes more easily             & \tdash  & \featpref{Executioner}              \\
         \featref{Greatweapon Warrior}      & Str 3               & Fight better with two-handed weapons       & \tdash  & \featpref{Greatweapon Warrior}      \\
         \magicalfeatref{Ghostblade}        & Dex 1, Wil 2        & Tap into ghostly powers in combat          & Magical & \featpref{Ghostblade}               \\
-        \featref{Juggernaut}               & Str 2, Con 1        & Shove and overrun foes to deal damage      & \tdash  & \featpref{Juggernaut}               \\
+        \featref{Juggernaut}               & Str 1, Con 2        & Shove and overrun foes to deal damage      & \tdash  & \featpref{Juggernaut}               \\
         \featref{Leadership}               & Int 2 or Wil 2      & Inspire nearby allies                      & \tdash  & \featpref{Leadership}               \\
         \featref{Maneuverist}              & Int 2               & Gain limited maneuver access               & \tdash  & \featpref{Maneuverist}              \\
         \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash  & \featpref{Martial Training}         \\
@@ -772,29 +772,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Your lifesense functions like \trait{lifesight} against creatures who are \textit{marked for execution}, allowing you to see them perfectly.
         You can also automatically identify which creatures within the range of your lifesense are \textit{marked for execution}, even if you can already see them normally.
 
-        % This ability is melee-only because it makes some of the questions around ``is this creature marked''
-        % less narratively awkward since you can automatically detect them with blood sense.
-        \ff[6]{Execution} You can use the \textit{execution} ability as a standard action.
-        \begin{activeability}{Execution}
-            \rankline
-            Make a melee \glossterm{strike}.
-            If the target is \textit{marked for execution}, the strike deals double \glossterm{weapon damage}.
-
-            \rankline
-            \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
-            \featlevel{12} The accuracy bonus increases to \plus2.
-            \featlevel{15} The damage increases to triple weapon damage.
-            \featlevel{18} The accuracy bonus increases to \plus3.
-            % \featlevel{21} The damage increases to quadruple weapon damage.
-        \end{activeability}
-
-        \ff[12]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \textit{marked for execution}.
+        \ff[6]{Purge the Weak} You gain a \plus1 accuracy bonus against creatures that are \textit{marked for execution}.
         In addition, your attack rolls against creatures that are \textit{marked for execution} \glossterm{explode} on a 9 in addition to the normal explosion on a 10.
         This does not affect additional rolls with exploding dice.
 
-        \magicalff[18]{Blood Sense+} The range of the lifesense from your \textit{blood sense} ability increases by 120 feet.
+        \magicalff[12]{Blood Sense+} The lifesense range increases by 120 feet.
         In addition, you no longer need \glossterm{line of sight} or \glossterm{line of effect} to see creatures that are \textit{marked for execution}.
         This allows you to see them through solid objects, but grants you no special ability to attack through solid objects, so your attacks are still affected normally by \glossterm{cover}.
+
+        \ff[18]{Purge the Weak+} The accuracy bonus increases to \plus2, and you also explode on an 8.
     \end{feat}
 
     \begin{feat}{Flexibility Specialization}{Skill}
@@ -815,6 +801,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} for the duration of the movement (see \pcref{Invisible}, and \pcref{Sprint}).
         This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
         This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+        After using this ability, you \glossterm{briefly} cannot use it again.
 
         \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
         If you chose a weapon, all damage dealt with it is cold damage in addition to its other types.
@@ -837,7 +824,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{magicalactiveability}
 
         \magicalff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
-        This grants you the defensive benefits of being incorporeal during the current phase.
+        This ability has the \abilitytag{Swift} tag, so it grants you the defensive benefits of being incorporeal during the current phase.
+        % TODO: wording
+        If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
 
         \magicalff[18]{Spectral Armament+} The effect of your \glossterm{legacy item} improves.
         If you chose a weapon, whenever you make a melee \glossterm{strike}, you can make the strike against each target's Reflex defense in place of its Armor defense.
@@ -932,11 +921,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Juggernaut}{Combat}
         \featpre Strength 1, Constitution 2.
 
-        \ff[1]{Unstoppable} You are immune to being \slowed and \immobilized.
+        \ff[1]{Unstoppable} You are immune to being \slowed, \immobilized, and \paralyzed.
         In addition, you are unaffected by \glossterm{difficult terrain}.
 
+        \ff[6]{Brute Force} You gain a \plus1 bonus to your \glossterm{mundane power}.
+
         \ff[6]{Trample} You can use the \textit{trample} ability as a standard action.
-        \begin{ability}{Trample}
+        \begin{activeability}{Trample}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
+            \rankline
             This ability functions like the \textit{overrun} ability, except that creatures may not choose to avoid you.
             In addition, if you move through a creature's space, it takes \damageranktwo{bludgeoning}.
 
@@ -945,14 +937,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{12} The base damage increases to 2d6.
             \featlevel{15} The damage bonus increases to 1d6 per 3 power.
             \featlevel{18} The damage bonus increases to 1d10 per 3 power.
-        \end{ability}
+        \end{activeability}
 
-        \ff[12]{Brute Force} You gain a \plus2 accuracy bonus with the \ability{overrun} ability and all related abilities, such as \ability{trample}.
-        In addition, you gain a \plus1 bonus to your \glossterm{mundane power}.
+        \ff[12]{Unblockable} Your attacks deal double damage to walls, doors, and similar vertical obstructions that block passage.
+        This does not affect your damage to other objects.
+        Whenever you touch a wall created by a \abilitytag{Barrier} ability, it is immediately destroyed unless its \glossterm{rank} exceeds your maximum rank.
 
-        \ff[18]{Brute Force+} The accuracy bonus from your \textit{brute force} ability increases to \plus3, and the mundane power bonus increases to \plus2.
+        \ff[18]{Brute Force+} The mundane power bonus increases to \plus2.
 
-        \ff[18]{Unblockable} You can move through spaces occupied by enemies as if they were unoccupied.
+        \ff[18]{Unstoppable+} You are immune to \glossterm{teleport}, \glossterm{knockback}, and \glossterm{push} effects from attacks.
+        This does not affect movement effects used by your \glossterm{allies}.
     \end{feat}
 
     \begin{feat}{Jump Specialization}{Skill}
@@ -1313,7 +1307,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{magicalfeat}{Prepared Spellcasting}{Magical, Spell}
         \featpre Access to a \glossterm{mystic sphere}, Intelligence 3.
 
-        \magicalff[1]{Spellbook} Choose up to three spells you do not know from among \glossterm{mystic spheres} you have access to.
+        \magicalff[1]{Spellbook} Choose up to four spells you do not know from among \glossterm{mystic spheres} you have access to.
         The spells must be of a rank that you know how to cast.
         Whenever you gain access to a new spell rank, you may change the spells in your spellbook for any other spells you can cast.
         You inscribe the knowledge of those spells into a book you carry with you.
@@ -1327,7 +1321,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[12]{Study of Magic} You gain a \plus1 bonus to your \glossterm{magical power}.
 
-        \magicalff[18]{Spellbook+} You can choose up to six spells to be in your spellbook instead of only three.
+        \magicalff[18]{Spellbook+} You can choose up to six spells to be in your spellbook instead of only four.
         In addition, whenever you finish a \glossterm{long rest}, you may choose two spells in your spellbook with your \textit{spellbook} ability instead of one.
         You learn how to cast both spells until you choose a different pair of spells in this way.
 
