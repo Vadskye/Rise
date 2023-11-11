@@ -523,7 +523,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Your punch/kick damage increases to 1d8.
+                Your punch/kick damage increases to 1d10.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
@@ -541,23 +541,20 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Unhindered Agility+",
+            name: "Unhindered Freedom",
             is_magical: false,
             rank: 4,
             description: r"
-                The defense bonuses increase to +2.
+                While you have no \glossterm{encumbrance}, you are immune to being \slowed, \immobilized, and \paralyzed.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Reflex, 1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Unhindered Agility+",
             is_magical: false,
             rank: 7,
             description: r"
-                The defense bonuses increase to +3.
+                The defense bonuses increase to +2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
