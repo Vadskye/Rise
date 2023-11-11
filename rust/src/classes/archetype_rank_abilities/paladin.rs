@@ -406,7 +406,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     You add your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
-                    If the target has your devoted alignment, this becomes a \glossterm{weak strike} instead.
+                    If the target has your devoted alignment, your \glossterm{power} is instead treated as 0.
 
                     \rankline
                     \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
