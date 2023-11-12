@@ -297,7 +297,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            name: "Unstoppable",
+            name: "Endless Rush",
             is_magical: false,
             rank: 6,
             description: r"
