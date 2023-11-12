@@ -262,8 +262,8 @@ fn boots() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Immune to most forced movement attacks"),
         description: String::from(r"
-            You are immune to \glossterm{teleport}, \glossterm<knockback>, and \glossterm<push> effects from attacks, unless the effects come from an attack that scores a \glossterm<critical hit>.
-            This does not affect movement effects used by your \glossterm<allies>.
+            You are immune to \glossterm{teleport}, \glossterm{knockback}, and \glossterm{push} effects from attacks, unless the effects come from an attack that scores a \glossterm{critical hit}.
+            This does not affect movement effects used by your \glossterm{allies}.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Immune to most forced relocation attacks", r"
@@ -279,8 +279,8 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Reduces penalties for charging by 1"),
         description: String::from(
             r"
-            You reduce your defense penalties from using the \ability<charge> ability by 1.
-        ",
+                You reduce your defense penalties from using the \ability<charge> ability by 1.
+            ",
         ),
         upgrades: vec![ItemUpgrade::new(
             3,
