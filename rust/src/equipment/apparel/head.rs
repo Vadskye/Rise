@@ -68,6 +68,22 @@ fn circlets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    apparel.push(Circlet(StandardItem {
+        name: String::from("Circlet of Desperate Visions"),
+        rank: 2,
+        short_description: String::from("Grants lingering benefits from \\ability{desperate exertion}"),
+        description: String::from(r"
+            Whenever you use the \ability{desperate exertion} ability, you can \glossterm{briefly} roll all attacks and checks twice and keep the higher result.
+            This does not affect the initial roll that you used \ability{desperate exertion} to change.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants lingering benefits from \\ability{desperate exertion}", r"
+                You also \glossterm{briefly} gain a +2 bonus to \glossterm{accuracy} and checks.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
     apparel.push(Circlet(StandardItem::reliable_skill_item(
         "Circlet of Reliable Observation", "Awareness, Social Insight, or Survival", "observation-based",
     )));
