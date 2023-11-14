@@ -1444,7 +1444,7 @@ impl Class {
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
-                            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+                            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to good, are immune to this ability.
                             \hit The target takes an evil action as soon as it can.
                             Once it takes the evil action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
@@ -1491,7 +1491,7 @@ impl Class {
                         \begin{magicalactiveability}{Compel Good}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
-                            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+                            Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to evil, are immune to this ability.
                             \hit The target takes a good action as soon as it can.
                             Once it takes the good action, this effect ends.
                             You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.

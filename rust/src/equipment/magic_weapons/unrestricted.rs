@@ -336,7 +336,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vampiric"),
         rank: 3,
-        short_description: String::from(r"Can attack with +1d8 damage to steal HP"),
+        short_description: String::from(r"Can attack with +1d4 damage to steal HP"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> using this weapon with 1d4 \glossterm<extra damage>.
             Damage dealt by the strike is energy damage in addition to its other types.
