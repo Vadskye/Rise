@@ -526,7 +526,7 @@ export const prayer: MysticSphere = {
         exceptThat: `
           the effect lasts for one hundred years.
         `,
-        name: 'empowered fortification',
+        name: 'blessing of immutability',
       },
       rank: 6,
     },
