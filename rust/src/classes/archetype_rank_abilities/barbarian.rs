@@ -301,7 +301,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You can move through spaces occupied by enemies as if they were unoccupied.
+                You gain a \plus10 foot bonus to your \glossterm{land speed}.
             ",
             modifiers: None,
         },
