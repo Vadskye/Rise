@@ -86,6 +86,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Giant Wasp Venom',
 
+      // TODO: why does this have a +1 accuracy bonus?
       effect: `
         Choose one living creature within \\medrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
