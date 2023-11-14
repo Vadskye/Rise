@@ -116,11 +116,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{longtable}{>{\lcol}p{13em} >{\lcol}p{10em} l >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Ascetic}                   & Wil 1                      & Cannot use items, gain extra archetype  & \tdash          & \featpref{Ascetic}  \\
         \featref{Barbaric Ancestry}         & Str \add Dex \add Con is 3 & Gain aid from barbarian ancestors     & Ancestry          & \featpref{Barbaric Ancestry}  \\
         \magicalfeatref{Celestial Ancestry} & Non-evil                   & Gain aspects of celestial beings      & Ancestry, Magical & \featpref{Celestial Ancestry} \\
         \featref{Chameleon}                 & Trained Disguise, Int 2    & Adapt your archetypes and abilities   & \tdash             & \featpref{Chameleon}          \\
         \featref{Draconic Ancestry}         & \tdash                     & Gain aspects of draconic power        & Ancestry          & \featpref{Draconic Ancestry}  \\
         \magicalfeatref{Entropist}          & Wil 2                      & Master chaos and entropy              & Magical            & \featpref{Entropist}          \\
+        \featref{Fateweaver}                & Per 2                      & Ensure success for you and allies     & \tdash          & \featpref{Fateweaver}  \\
         \featref{Herbalist}                 & Trained Knowledge (nature) & Brew potions with natural ingredients & \tdash             & \featpref{Herbalist}          \\
         \featref{Iron Will}                 & Wil 2                      & Increase mental resilience            & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}                      & Wil 2                      & Become immune to magic                & \tdash             & \featpref{Null}               \\
@@ -215,6 +217,36 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Some feats also have specific requirements that a character must meet before taking the feat.
         These are listed under a \textbf{Prerequisites} heading.
         If a character loses the prerequisites for a feat, they lose all benefits of the feat until they meet the prerequisites again.
+
+    \begin{feat}{Ascetic}{General}
+        \featpre Willpower 1.
+
+        \ff[1]{Deny Wealth} You cannot knowingly own, consume, or use any item that is individually worth more than 1gp.
+        If you do, you lose all benefits of this feat, and you suffer a \minus2 penalty to all attacks, checks, and defenses.
+        These penalties last until you spend a month following this restriction again.
+        You are allowed to carry valuable items as long as you gain no direct benefit from them, so you can hold items for your allies or carry gold until you can find an appropriate place to donate it.
+
+        \ff[1]{Open Mind} You gain an additional \glossterm{insight point}.
+
+        \magicalff[1]{Sanctified Garb} Any clothing you wear provides a \plus4 bonus to your Armor defense.
+        This defense bonus does not stack with the benefits of body armor.
+        However, you are not considered to be wearing body armor, so you can still gain damage reduction from effects like \ability{mage armor}.
+
+        \magicalff[6]{Ascetic Archetype} Choose one archetype from your \glossterm{base class} that you do not already have any
+        ranks in.
+        You are rank 1 in that archetype, and gain the appropriate abilities.
+        Your rank in that archetype increases by 1 at 9th level, and every 3 levels thereafter.
+
+        \magicalff[6]{Renounce Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
+        Instead, you gain a \plus1 bonus to all \glossterm{defenses}.
+        This bonus increases to \plus2 at level 12 and to \plus3 at level 18.
+
+        \ff[12]{Open Mind+} You gain an additional insight point.
+
+        \magicalff[12]{Sanctified Garb+} The Armor defense bonus increases to \plus5.
+
+        \ff[18]{Open Mind++} You gain two additional insight points.
+    \end{feat}
 
     \begin{feat}{Awareness Specialization}{Skill}
         \featpre Awareness as a trained skill.
@@ -783,6 +815,47 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[18]{Purge the Weak+} The accuracy bonus increases to \plus2, and you also explode on an 8.
     \end{feat}
 
+    \begin{feat}{Fateweaver}{General, Magical}
+        \featpre Perception 2.
+
+        \magicalff[1]{Inevitable Attack} Whenever you would make an attack roll, you can instead choose to treat the result of your roll as a 5.
+        You must use this ability before rolling.
+        If this result does not cause you to hit the target, you roll the attack roll normally.
+
+        % Average of +1.5 accuracy, so worse than a typical "-2 defenses" condition. A typical t1.5 debuff would be r3, requiring 9th level.
+        % If this gets a one rank discount for being a feat ability, this is reasonably balanced.
+        \magicalff[6]{Fateseal} You can use the \textit{fateseal} ability as a standard action.
+        \begin{magicalactiveability}{Fateseal}
+            Make an attack vs. Mental against one creature within \medrange of you.
+            \hit The target is fatesealed as a \glossterm{condition}.
+            Whenever you or one of your \glossterm{allies} make an attack roll against it, the result of the roll cannot be less than a 6.
+            This does not affect extra dice from exploding attacks.
+            \crit The minimum roll is instead 8.
+
+            \rankline
+            You gain a \plus2 accuracy bonus for every 3 levels beyond 6.
+        \end{magicalactiveability}
+
+        \magicalff[12]{Inevitable Success} Whenever you would make a \glossterm{check}, you can instead choose to treat the result of your roll as a 5.
+        You must use this ability before rolling.
+        If this result does not cause you to succeed at the check, you roll the check normally.
+
+        \magicalff[18]{Fated Victory} The fixed results from your \textit{inevitable attack} and \textit{inevitable check} abilities each increase to 7.
+    \end{feat}
+
+    % \begin{feat}{Fatesealed}{General}
+    %     \featpre None.
+
+    %     \ff[1]{Certain Doom} You are fated to die at a particular time.
+    %     Until that time, you cannot die.
+    %     Your minimum \glossterm{vital roll} result is 1.
+    %     In addition, circumstances always intervene to make your survival seem plausible.
+    %     Monsters may decide they don't like how you taste, intelligent foes may decide you are more useful as a hostage or messenger than dead, and so on.
+    %     You may still suffer serious non-lethal consequences for defeat and failure.
+
+    %     Each time you avoid death with this ability, your certain doom draws nearer.
+    % \end{feat}
+
     \begin{feat}{Flexibility Specialization}{Skill}
         \featpre Flexibility as a trained skill.
 
@@ -945,8 +1018,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[18]{Brute Force+} The mundane power bonus increases to \plus2.
 
-        \ff[18]{Unstoppable+} You are immune to \glossterm{teleport}, \glossterm{knockback}, and \glossterm{push} effects from attacks.
+        \ff[18]{Unstoppable+} You are immune to \glossterm{teleport}, \glossterm{knockback}, \glossterm{push} effects from attacks.
         This does not affect movement effects used by your \glossterm{allies}.
+        You are also immune to being \grappled.
     \end{feat}
 
     \begin{feat}{Jump Specialization}{Skill}
