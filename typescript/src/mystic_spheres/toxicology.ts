@@ -39,7 +39,7 @@ export const toxicology: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Corrosive Grasp',
+      name: 'Caustic Grasp',
 
       // baseline for grasp is dX+1. +2dr from extra defense, -2dr from next round damage
       attack: {
@@ -59,10 +59,10 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Mighty Corrosive Grasp',
+      name: 'Mighty Caustic Grasp',
 
       functionsLike: {
-        name: 'corrosive grasp',
+        name: 'caustic grasp',
         exceptThat: 'the damage increases to \\damagerankfive{acid}.',
       },
       rank: 4,
