@@ -403,7 +403,6 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
             All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
-            This can allow you to use maneuvers from the \textit<blunt force> combat style (see \pcref<Blunt Force>).
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Deals 1d4 bludgeoning extra damage", r"
