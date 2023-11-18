@@ -728,7 +728,7 @@ def universal_abilities():
                 """
                     You throw a creature or object 15 feet plus 5 feet per 2 Strength.
                     If the object's weight matches your maximum weight category, this distance is halved.
-                    To throw an unwilling creature, it must already be grappled by you, and you must make a grappling attack vs. its Fortitude defense.
+                    To throw an unwilling creature, it must already be grappled by you, and you must make a brawling attack vs. its Fortitude defense.
                 """,
             ),
             universal_ability_button(
