@@ -127,7 +127,7 @@ def dexterity_based():
 def constitution_based():
     return div(
         [
-            div({"class": "section-header"}, "Intelligence-Based"),
+            div({"class": "section-header"}, "Constitution-Based"),
             stat_row("Fatigue tolerance"),
             stat_row("Fortitude"),
             stat_row("Hit points"),

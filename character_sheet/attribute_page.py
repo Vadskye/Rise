@@ -24,7 +24,7 @@ from sheet_data import (
     SUBSKILLS,
 )
 from sheet_worker import standard_damage_at_power
-from attributes.strength import calc_brawling_accuracy, calc_encumbrance, calc_mundane_power, calc_jump_distance, calc_weight_limits
+from attributes.strength import calc_brawling_accuracy, calc_encumbrance, calc_mundane_power, calc_jump_distance
 from attributes.dexterity import calc_armor, calc_reflex
 from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
 from attributes.intelligence import calc_insight_points, calc_trained_skills
@@ -205,7 +205,6 @@ def calc_strength_based():
             calc_encumbrance(),
             calc_mundane_power(),
             calc_jump_distance(),
-            calc_weight_limits(),
             display_skills_for_attribute("Strength", calc_skill),
         ],
     )
