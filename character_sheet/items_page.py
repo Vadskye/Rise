@@ -293,6 +293,7 @@ def wealth_items():
     return flex_row(
         {"class": "wealth-items"},
         [
+            calc_weight_limits(),
             span({"class": "wealth-items-label"}, "Wealth items"),
             *[wealth_item_of_rank(i) for i in range(1, 8)],
             labeled_text_input(
@@ -309,3 +310,22 @@ def wealth_item_of_rank(rank):
             {"class": "wealth-item"},
             {"name": f"wealth_item_rank_{rank}"},
         )
+
+def calc_weight_limits():
+    return flex_row(
+        {"class": "weight-limits"},
+        [
+            labeled_text_input(
+                "Carrying Weight Limit",
+                input_attributes={
+                    "name": "carrying_capacity_display",
+                },
+            ),
+            labeled_text_input(
+                "Push/Drag Weight Limit",
+                input_attributes={
+                    "name": "push_drag_display",
+                },
+            ),
+        ],
+    )
