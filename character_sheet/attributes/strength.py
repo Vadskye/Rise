@@ -98,27 +98,6 @@ def calc_encumbrance():
         ]
     )
 
-def calc_weight_limits():
-    return flex_row(
-        {"class": "weight-limits"},
-        [
-            div({"class": "calc-header"}, "Weight limits"),
-            labeled_text_input(
-                "Carrying",
-                input_attributes={
-                    "name": "carrying_capacity_display",
-                },
-            ),
-            labeled_text_input(
-                "Push/Drag",
-                input_attributes={
-                    "name": "push_drag_display",
-                },
-            ),
-        ],
-    )
-
-
 def calc_mundane_power():
     return flex_row(
         {"class": "mundane-power"},
