@@ -166,6 +166,7 @@ impl Class {
                 Skill::Endurance,
                 Skill::Flexibility,
                 Skill::Intimidate,
+                Skill::Jump,
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::Ride,
