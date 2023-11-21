@@ -28,7 +28,7 @@ pub struct FullMonsterDefinition {
 impl FullMonsterDefinition {
     pub fn monster(self) -> Monster {
         let mut monster = Monster::new(
-            self.challenge_rating,
+            self.challenge_rating.elite(),
             self.creature_type,
             self.role,
             self.level,

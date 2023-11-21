@@ -9,8 +9,8 @@ mod statistics {
     mod firebolt_scaling {
         use super::*;
 
-        fn generate_creature(cr: ChallengeRating, level: i32) -> Creature {
-            let mut creature = Monster::standard_monster(cr, level, None, None).creature;
+        fn generate_creature(elite: bool, level: i32) -> Creature {
+            let mut creature = Monster::example_monster(elite, level, None, None).creature;
             creature.add_modifier(
                 Modifier::Attack(
                     StandardAttack::Firebolt((level + 2) / 3).attack(),
@@ -33,8 +33,8 @@ mod statistics {
         fn level_1() {
             let level = 1;
             let actual = [
-                firebolt_description(generate_creature(ChallengeRating::One, level)),
-                firebolt_description(generate_creature(ChallengeRating::Four, level)),
+                firebolt_description(generate_creature(false, level)),
+                firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
                 "Firebolt +1 (1d6+2 fire damage.)", // Normal
@@ -47,8 +47,8 @@ mod statistics {
         fn level_8() {
             let level = 8;
             let actual = [
-                firebolt_description(generate_creature(ChallengeRating::One, level)),
-                firebolt_description(generate_creature(ChallengeRating::Four, level)),
+                firebolt_description(generate_creature(false, level)),
+                firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
                 "Firebolt +6 (1d6+2d8 fire damage.)", // Normal
@@ -61,8 +61,8 @@ mod statistics {
         fn level_16() {
             let level = 16;
             let actual = [
-                firebolt_description(generate_creature(ChallengeRating::One, level)),
-                firebolt_description(generate_creature(ChallengeRating::Four, level)),
+                firebolt_description(generate_creature(false, level)),
+                firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
                 "Firebolt +10 (7d8 fire damage.)",
@@ -75,8 +75,8 @@ mod statistics {
         fn level_21() {
             let level = 21;
             let actual = [
-                firebolt_description(generate_creature(ChallengeRating::One, level)),
-                firebolt_description(generate_creature(ChallengeRating::Four, level)),
+                firebolt_description(generate_creature(false, level)),
+                firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
                 "Firebolt +13 (9d10 fire damage.)",

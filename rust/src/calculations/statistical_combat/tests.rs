@@ -91,13 +91,13 @@ mod calculate_attack_outcome {
             "0.400 single, 0.044 crit",
             "0.300 single, 0.033 crit",
         ];
-        let actual_hit_probability: Vec<String> = ChallengeRating::all()
+        let actual_hit_probability: Vec<String> = [false, true]
             .into_iter()
-            .map(|cr| {
+            .map(|elite| {
                 calculate_attack_outcome(
                     &attack,
                     attacker.calc_accuracy(),
-                    Monster::standard_monster(cr, level, None, None)
+                    Monster::example_monster(*elite, level, None, None)
                         .creature
                         .calc_defense(&Defense::Armor),
                 )
@@ -121,13 +121,13 @@ mod calculate_attack_outcome {
             "0.300 single, 0.033 crit",
             "0.200 single, 0.022 crit",
         ];
-        let actual_hit_probability: Vec<String> = ChallengeRating::all()
+        let actual_hit_probability: Vec<String> = [false, true]
             .into_iter()
-            .map(|cr| {
+            .map(|elite| {
                 calculate_attack_outcome(
                     &attack,
                     attacker.calc_accuracy(),
-                    Monster::standard_monster(cr, level, None, None)
+                    Monster::example_monster(*elite, level, None, None)
                         .creature
                         .calc_defense(&Defense::Armor),
                 )
@@ -140,7 +140,7 @@ mod calculate_attack_outcome {
     #[test]
     fn monster_vs_standard_character_level_1() {
         let level = 1;
-        let attacker = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
             "0.600 single, 0.066 crit",
@@ -158,7 +158,7 @@ mod calculate_attack_outcome {
     #[test]
     fn monster_vs_standard_character_level_20() {
         let level = 20;
-        let attacker = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
             "0.600 single, 0.066 crit",
@@ -275,7 +275,7 @@ mod calc_individual_dpr {
     fn standard_character_vs_monster_level_1() {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let defender = Monster::standard_example_monster(level).creature;
         assert_eq!(
             "5.173",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
@@ -286,7 +286,7 @@ mod calc_individual_dpr {
     fn standard_character_vs_monster_level_20() {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let defender = Monster::standard_example_monster(level).creature;
         assert_eq!(
             "33.978",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
@@ -299,11 +299,11 @@ mod calc_individual_dpr {
         let defender = Character::standard_character(level, true).creature;
 
         let expected_combat_results = vec!["5.462", "7.594", "10.593", "20.652", "31.536"];
-        let actual_combat_results: Vec<f64> = ChallengeRating::all()
+        let actual_combat_results: Vec<f64> = [false, true]
             .into_iter()
-            .map(|cr| {
+            .map(|elite| {
                 calc_individual_dpr(
-                    &Monster::standard_monster(cr, level, None, None).creature,
+                    &Monster::example_monster(*elite, level, None, None).creature,
                     &defender,
                 )
             })
@@ -339,11 +339,11 @@ mod calc_individual_dpr {
         let defender = Character::standard_character(level, true).creature;
 
         let expected_combat_results = vec!["24.715", "40.041", "61.304", "105.692", "172.923"];
-        let actual_combat_results: Vec<f64> = ChallengeRating::all()
+        let actual_combat_results: Vec<f64> = [false, true]
             .into_iter()
-            .map(|cr| {
+            .map(|elite| {
                 calc_individual_dpr(
-                    &Monster::standard_monster(cr, level, None, None).creature,
+                    &Monster::example_monster(*elite, level, None, None).creature,
                     &defender,
                 )
             })
@@ -483,9 +483,9 @@ mod calc_rounds_to_live {
         let expected_results = vec![3.25, 8.25, 13.75, 24.5];
 
         let mut actual_results = vec![];
-        let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let defender = Monster::standard_example_monster(level).creature;
         actual_results.push(calc_individual_rounds_to_live(&attacker, &defender));
-        let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
+        let defender = Monster::elite_example_monster(level).creature;
         actual_results.push(calc_individual_rounds_to_live(&attacker, &defender));
 
         assert_eq!(expected_results, actual_results, "CR 1, CR 4",);
@@ -499,9 +499,9 @@ mod calc_rounds_to_live {
         let expected_results = vec![5.0, 12.75, 21.5, 36.25];
 
         let mut actual_results = vec![];
-        let defender = Monster::standard_monster(ChallengeRating::One, level, None, None).creature;
+        let defender = Monster::standard_example_monster(level).creature;
         actual_results.push(calc_individual_rounds_to_live(&attacker, &defender));
-        let defender = Monster::standard_monster(ChallengeRating::Four, level, None, None).creature;
+        let defender = Monster::elite_example_monster(level).creature;
         actual_results.push(calc_individual_rounds_to_live(&attacker, &defender));
 
         assert_eq!(expected_results, actual_results, "CR 1, CR 4",);

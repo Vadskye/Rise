@@ -25,14 +25,19 @@ pub struct Monster {
 
 impl Monster {
     pub fn new(
-        challenge_rating: ChallengeRating,
+        elite: bool,
         creature_type: CreatureType,
         role: Role,
         level: i32,
     ) -> Monster {
-        let mut creature = Creature::new(level, CreatureCategory::Monster(challenge_rating, role));
+        let cr = if elite {
+            ChallengeRating::Four
+        } else {
+            ChallengeRating::One
+        };
+        let mut creature = Creature::new(level, CreatureCategory::Monster(cr, role));
         role.set_core_statistics(&mut creature);
-        challenge_rating.add_modifiers(&mut creature);
+        cr.add_modifiers(&mut creature);
 
         // Level modifiers
         let defense_modifier = if level >= 12 { 1 } else { 0 };
@@ -57,7 +62,7 @@ impl Monster {
         Monster {
             alignment: None,
             art: false,
-            challenge_rating,
+            challenge_rating: cr,
             creature_type,
             creature,
             description: None,
@@ -71,14 +76,28 @@ impl Monster {
         self.challenge_rating == ChallengeRating::Four
     }
 
-    pub fn standard_monster(
-        challenge_rating: ChallengeRating,
+    pub fn standard_example_monster(level: i32) -> Monster {
+        Self::example_monster(false, level, None, None)
+    }
+
+    pub fn elite_example_monster(level: i32) -> Monster {
+        Self::example_monster(true, level, None, None)
+    }
+
+    pub fn example_monster(
+        elite: bool,
         level: i32,
         role: Option<Role>,
         starting_attribute: Option<i32>,
     ) -> Monster {
+        let cr = if elite {
+            ChallengeRating::Four
+        } else {
+            ChallengeRating::One
+        };
         let role = if let Some(r) = role { r } else { Role::Leader };
-        let mut monster = Monster::new(challenge_rating, CreatureType::Planeforged, role, level);
+
+        let mut monster = Monster::new(elite, CreatureType::Planeforged, role, level);
         monster
             .creature
             .weapons
@@ -103,10 +122,10 @@ impl Monster {
         }
         monster
             .creature
-            .set_base_attribute(Strength, challenge_rating.max_base_attribute());
+            .set_base_attribute(Strength, cr.max_base_attribute());
         monster
             .creature
-            .set_base_attribute(Willpower, challenge_rating.max_base_attribute());
+            .set_base_attribute(Willpower, cr.max_base_attribute());
 
         monster
             .creature
