@@ -7,7 +7,7 @@
 
 use rise::calculations::statistical_combat::{explain_monster_adpr, explain_standard_adpr, find_best_attack};
 use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
-use rise::monsters::ChallengeRating;
+
 use rise::equipment::Weapon;
 use rise::creatures::{Character, Creature, Monster, HasModifiers, Modifier};
 use std::{fs, io};

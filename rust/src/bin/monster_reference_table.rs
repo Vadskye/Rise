@@ -1,7 +1,7 @@
 use rise::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
 use rise::creatures::Monster;
 use rise::latex_formatting;
-use rise::monsters::{ChallengeRating, CreatureType, Role};
+use rise::monsters::{CreatureType, Role};
 
 fn main() {
     let role_headers = Role::all()
