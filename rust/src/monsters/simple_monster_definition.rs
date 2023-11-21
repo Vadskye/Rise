@@ -4,7 +4,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Creature, Monster};
 use crate::creatures::{HasModifiers, Modifier, ModifierBundle};
-use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
+use crate::monsters::{CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill};
 
 pub struct MonsterDef {
