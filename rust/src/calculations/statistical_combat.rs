@@ -187,7 +187,7 @@ fn calc_best_attack_accuracy(attacker: &Creature, defender: &Creature) -> f64 {
     }
 }
 
-fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> {
+pub fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Attack> {
     let attacks = attacker.calc_all_attacks();
     let mut best_damage_per_round = 0.0;
     let mut best_attack: Option<Attack> = None;
@@ -363,7 +363,7 @@ pub fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<Str
 pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
     let certain_strike = attacker.get_attack_by_substring("Certain").unwrap();
     let generic_strike = attacker.get_attack_by_substring("Generic Scaling").unwrap();
-    let mighty_strike = attacker.get_attack_by_substring("Mighty").unwrap();
+    let mighty_strike = attacker.get_attack_by_substring("Power").unwrap();
     let normal_strike = attacker
         .get_attack_by_name(&attacker.weapons[0].name)
         .unwrap();
