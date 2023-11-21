@@ -44,10 +44,9 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                             \hit $damage bludgeoning and fire damage.
                         "
                     .to_string(),
-                    is_magical: false,
                     name: "Flaming Flurry".to_string(),
-                    tags: vec![],
                     weapon: Weapon::fist(),
+                    ..Default::default()
                 })],
                 modifiers: vec![Modifier::vulnerable_damage(DamageType::Cold)],
                 movement_speeds: None,

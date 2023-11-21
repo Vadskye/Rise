@@ -282,10 +282,9 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Its stage 1 effect makes the target \slowed while the poison lasts.
                         Its stage 3 effect makes the target \immobilized while the poison lasts.
                     ".to_string(),
-                    is_magical: false,
                     name: "Venomous Stinger".to_string(),
-                    tags: vec![],
                     weapon: StandardWeapon::MultipedalStinger.weapon(),
+                    ..Default::default()
                 }),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),

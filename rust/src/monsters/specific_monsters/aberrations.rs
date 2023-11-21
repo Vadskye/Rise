@@ -84,13 +84,12 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy melee strike with a tentacle.
-                        \hit $damage bludgeoning damage.
+                        \hit $fullweapondamage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime, as the aboleth's \ability{slime-covered body} ability.
                     ".to_string(),
-                    is_magical: true,
                     name: "Slimy Tentacle".to_string(),
-                    tags: vec![],
                     weapon: Weapon::tentacle(),
+                    ..Default::default()
                 }),
             ],
             modifiers: vec![Modifier::Defense(Defense::Armor, 4)],
@@ -162,10 +161,9 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         The strike targets all adjacent \glossterm{enemies}.
                         \hit $fullweapondamage.
                     ".to_string(),
-                    is_magical: false,
                     name: "Swarm of Mouths".to_string(),
-                    tags: vec![],
                     weapon: Weapon::bite(),
+                    ..Default::default()
                 }),
             ],
             // TODO: make attacks sweeping

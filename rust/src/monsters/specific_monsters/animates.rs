@@ -360,9 +360,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     fn treeclub_strike(name: &str, effect: &str) -> ActiveAbility {
         ActiveAbility::Strike(StrikeAbility {
             effect: effect.to_string(),
-            is_magical: false,
             name: name.to_string(),
-            tags: vec![],
             weapon: Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d10(),
@@ -370,6 +368,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 name: "Treeclub".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
             },
+            ..Default::default()
         })
     }
 
