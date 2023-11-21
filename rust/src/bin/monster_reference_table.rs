@@ -30,7 +30,7 @@ fn main() {
 }
 
 fn calc_cell(role: Role, level: i32) -> String {
-    let monster = Monster::new(ChallengeRating::One, CreatureType::Planeforged, role, level);
+    let monster = Monster::new(false, CreatureType::Planeforged, role, level);
     format!(
         "{hp}/{dr}; {armor}/{fort}/{ment}/{ref}",
         hp = monster.creature.calc_hit_points(),

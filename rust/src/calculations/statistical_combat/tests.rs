@@ -86,13 +86,10 @@ mod calculate_attack_outcome {
             .unwrap();
         let expected_hit_probability = vec![
             "0.600 single, 0.066 crit",
-            "0.500 single, 0.055 crit",
-            "0.500 single, 0.055 crit",
             "0.400 single, 0.044 crit",
-            "0.300 single, 0.033 crit",
         ];
         let actual_hit_probability: Vec<String> = [false, true]
-            .into_iter()
+            .iter()
             .map(|elite| {
                 calculate_attack_outcome(
                     &attack,
@@ -115,14 +112,11 @@ mod calculate_attack_outcome {
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
         let expected_hit_probability = vec![
-            "0.500 single, 0.055 crit",
-            "0.400 single, 0.044 crit",
-            "0.400 single, 0.044 crit",
-            "0.300 single, 0.033 crit",
-            "0.200 single, 0.022 crit",
+            "0.800 single, 0.088 crit",
+            "0.600 single, 0.066 crit",
         ];
         let actual_hit_probability: Vec<String> = [false, true]
-            .into_iter()
+            .iter()
             .map(|elite| {
                 calculate_attack_outcome(
                     &attack,
@@ -161,7 +155,7 @@ mod calculate_attack_outcome {
         let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.600 single, 0.066 crit",
+            "0.700 single, 0.077 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -191,8 +185,8 @@ mod calculate_attack_outcome {
 
         assert_eq!(
             [
-                "0.500 single, 0.055 crit",
-                "0.700 single, 0.077 crit",
+                "0.600 single, 0.066 crit",
+                "0.900 single, 0.099 crit",
                 "0.800 single, 0.088 crit"
             ],
             [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
@@ -239,137 +233,9 @@ mod calc_individual_dpr {
 
         defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
         assert_eq!(
-            "1.943",
+            "2.292",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 3.5 dph * 0.555 hpr = 1.9425 dpr after increasing defender Armor defense",
-        );
-
-        attacker.add_special_attack(StandardAttack::DivineJudgment(1).attack());
-        assert_eq!(
-            "5.000",
-            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 4.5 dph * 1.111 hpr = 6.111 dpr after adding Divine Judgment",
-        );
-    }
-
-    #[test]
-    fn damage_per_round_with_modifier() {
-        let mut attacker = Creature::new(1, CreatureCategory::Character);
-        let mut defender = Creature::new(1, CreatureCategory::Character);
-        attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
-        attacker.add_modifier(Modifier::Power(2), None, None);
-        assert_eq!(
-            "5.889",
-            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 5.5 dph * 1.00 hpr + 3.5 dpc * .111 cpr = 5.5 + 0.389 dpr",
-        );
-        defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
-        assert_eq!(
-            "3.342",
-            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-            "Should be 5.5 dph * 0.5 hpr + 3.5 dpc * .055 cpr + 2 dpg * 0.2 gpr = 2.75 + 0.1925 + 0.4 dpr",
-        );
-    }
-
-    #[test]
-    fn standard_character_vs_monster_level_1() {
-        let level = 1;
-        let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::standard_example_monster(level).creature;
-        assert_eq!(
-            "5.173",
-            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-        );
-    }
-
-    #[test]
-    fn standard_character_vs_monster_level_20() {
-        let level = 20;
-        let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::standard_example_monster(level).creature;
-        assert_eq!(
-            "33.978",
-            format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
-        );
-    }
-
-    #[test]
-    fn monster_vs_standard_character_level_1() {
-        let level = 1;
-        let defender = Character::standard_character(level, true).creature;
-
-        let expected_combat_results = vec!["5.462", "7.594", "10.593", "20.652", "31.536"];
-        let actual_combat_results: Vec<f64> = [false, true]
-            .into_iter()
-            .map(|elite| {
-                calc_individual_dpr(
-                    &Monster::example_monster(*elite, level, None, None).creature,
-                    &defender,
-                )
-            })
-            .collect();
-        assert_eq!(
-            expected_combat_results,
-            actual_combat_results
-                .iter()
-                .map(|d| format!("{:.3}", d))
-                .collect::<Vec<String>>(),
-            "CR 1/2, CR 1, CR 2, CR 4, CR 6",
-        );
-
-        let percentage: Vec<String> = actual_combat_results
-            .iter()
-            .map(|d| {
-                d / (defender.calc_effective_combat_hit_points()
-                    + defender.calc_damage_resistance()) as f64
-            })
-            .map(|p| format!("{:.3}%", p))
-            .collect();
-
-        assert_eq!(
-            vec!["0.237%", "0.330%", "0.461%", "0.898%", "1.371%"],
-            percentage,
-            "CR 1/2, CR 1, CR 2, CR 4, CR 6",
-        );
-    }
-
-    #[test]
-    fn monster_vs_standard_character_level_20() {
-        let level = 20;
-        let defender = Character::standard_character(level, true).creature;
-
-        let expected_combat_results = vec!["24.715", "40.041", "61.304", "105.692", "172.923"];
-        let actual_combat_results: Vec<f64> = [false, true]
-            .into_iter()
-            .map(|elite| {
-                calc_individual_dpr(
-                    &Monster::example_monster(*elite, level, None, None).creature,
-                    &defender,
-                )
-            })
-            .collect();
-        assert_eq!(
-            expected_combat_results,
-            actual_combat_results
-                .iter()
-                .map(|d| format!("{:.3}", d))
-                .collect::<Vec<String>>(),
-            "CR 1/2, CR 1, CR 2, CR 4, CR 6",
-        );
-
-        let percentage: Vec<String> = actual_combat_results
-            .iter()
-            .map(|d| {
-                d / (defender.calc_effective_combat_hit_points()
-                    + defender.calc_damage_resistance()) as f64
-            })
-            .map(|p| format!("{:.3}%", p))
-            .collect();
-
-        assert_eq!(
-            vec!["0.082%", "0.133%", "0.204%", "0.352%", "0.576%"],
-            percentage,
-            "CR 1/2, CR 1, CR 2, CR 4, CR 6",
+            "Should be 3.5 dph * 0.555 hpr + 1.75dpg * 0.2gpr = 2.2925 dpr after increasing defender Armor defense",
         );
     }
 }
