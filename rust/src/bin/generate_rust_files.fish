@@ -28,7 +28,7 @@ cargo run --bin item_latex -- --category 'permanent tools' --table > ../core_boo
 
 mkdir -p combat_results
 cargo run --bin generate_combat_results
-cp difficult_encounter.csv (p utransfer)
-cp standard_encounter.csv (p utransfer)
+cp combat_results/difficult_encounter.csv (p utransfer)
+cp combat_results/standard_encounter.csv (p utransfer)
 
 cargo run --bin generate_golden_files
