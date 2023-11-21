@@ -33,9 +33,18 @@ pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
     fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
-        self.calc_all_attacks()
+        let matching_attacks = self.calc_all_attacks()
             .into_iter()
-            .find(|a| a.name.contains(name))
+            .filter(|a| a.name.contains(name))
+            .collect::<Vec<Attack>>();
+
+        // Prefer upgraded versions of attacks if possible
+        let upgraded_attack = matching_attacks.iter().find(|a| a.name.contains("+"));
+        if upgraded_attack.is_some() {
+            upgraded_attack.cloned()
+        } else {
+            matching_attacks.first().cloned()
+        }
     }
     fn get_attack_by_name(&self, name: &str) -> Option<Attack> {
         self.calc_all_attacks().into_iter().find(|a| a.name == name)
