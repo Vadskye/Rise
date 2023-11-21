@@ -57,6 +57,13 @@ impl ChallengeRating {
         }
     }
 
+    pub fn elite(&self) -> bool {
+        match self {
+            Self::One => false,
+            Self::Four => true,
+        }
+    }
+
     pub fn accuracy_bonus(&self) -> i32 {
         match self {
             Self::One => 0,
@@ -111,124 +118,136 @@ impl ChallengeRating {
     }
 
     pub fn difficult_encounter(level: i32, count: i32) -> Vec<Creature> {
-        fn sm(cr: ChallengeRating, l: i32) -> Creature {
-            let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
+        fn standard(l: i32) -> Creature {
+            let mut monster = Monster::standard_example_monster(max(l, 1));
+            monster.add_magical_attack();
+            monster.creature
+        }
+
+        fn elite(l: i32) -> Creature {
+            let mut monster = Monster::elite_example_monster(max(l, 1));
             monster.add_magical_attack();
             monster.creature
         }
 
         match count {
-            1 => vec![sm(ChallengeRating::Four, level + 3)],
+            1 => vec![elite(level + 3)],
             2 => vec![
-                sm(ChallengeRating::Four, level),
-                sm(ChallengeRating::One, level + 3),
+                elite(level),
+                standard(level + 3),
             ],
             3 => vec![
-                sm(ChallengeRating::Four, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                elite(level),
+                standard(level),
+                standard(level),
             ],
             4 => vec![
-                sm(ChallengeRating::One, level + 3),
-                sm(ChallengeRating::One, level + 3),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                standard(level + 3),
+                standard(level + 3),
+                standard(level),
+                standard(level),
             ],
             5 => vec![
-                sm(ChallengeRating::One, level + 3),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                standard(level + 3),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
             ],
             6 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
             ],
             7 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level - 3),
+                standard(level - 3),
             ],
             8 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
             ],
             _ => panic!("Invalid monster count {}", count),
         }
     }
 
     pub fn standard_encounter(level: i32, count: i32) -> Vec<Creature> {
-        fn sm(cr: ChallengeRating, l: i32) -> Creature {
-            let mut monster = Monster::standard_monster(cr, max(l, 1), None, None);
+        fn standard(l: i32) -> Creature {
+            let mut monster = Monster::standard_example_monster(max(l, 1));
+            monster.add_magical_attack();
+            monster.creature
+        }
+
+        fn elite(l: i32) -> Creature {
+            let mut monster = Monster::elite_example_monster(max(l, 1));
             monster.add_magical_attack();
             monster.creature
         }
 
         match count {
-            1 => vec![sm(ChallengeRating::Four, level)],
+            1 => vec![elite(level)],
             2 => vec![
-                sm(ChallengeRating::One, level + 3),
-                sm(ChallengeRating::One, level + 3),
+                standard(level + 3),
+                standard(level + 3),
             ],
             3 => vec![
-                sm(ChallengeRating::One, level + 3),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                standard(level + 3),
+                standard(level),
+                standard(level),
             ],
             4 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level),
             ],
             5 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level),
+                standard(level),
+                standard(level),
+                standard(level - 3),
+                standard(level - 3),
             ],
             6 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level),
+                standard(level),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
             ],
             7 => vec![
-                sm(ChallengeRating::One, level),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
             ],
             8 => vec![
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
-                sm(ChallengeRating::One, level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
+                standard(level - 3),
             ],
             _ => panic!("Invalid monster count {}", count),
         }

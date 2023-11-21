@@ -31,13 +31,8 @@ fn write_character_goldens() -> io::Result<()> {
 
 fn write_character_attacks_golden() -> io::Result<()> {
     fn explain_character_attacks(level: i32, elite: bool) -> String {
-        let cr = if elite {
-            ChallengeRating::Four
-        } else {
-            ChallengeRating::One
-        };
         let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::standard_monster(cr, level, None, None).creature;
+        let defender = Monster::example_monster(elite, level, None, None).creature;
 
         format!(
             "### Attacks
@@ -102,12 +97,7 @@ fn write_monster_goldens() -> io::Result<()> {
 
 fn write_monster_attacks_golden() -> io::Result<()> {
     fn explain_monster_attacks(level: i32, elite: bool) -> String {
-        let cr = if elite {
-            ChallengeRating::Four
-        } else {
-            ChallengeRating::One
-        };
-        let attacker = Monster::standard_monster(cr, level, None, None).creature;
+        let attacker = Monster::example_monster(elite, level, None, None).creature;
         let defender = Character::standard_character(level, true).creature;
 
         format!(
@@ -152,12 +142,7 @@ fn write_monster_attacks_golden() -> io::Result<()> {
 
 fn write_monster_to_section_golden() -> io::Result<()> {
     fn create_monster_section(level: i32, elite: bool) -> String {
-        let cr = if elite {
-            ChallengeRating::Four
-        } else {
-            ChallengeRating::One
-        };
-        let mut monster = Monster::standard_monster(cr, level, None, None);
+        let mut monster = Monster::example_monster(elite, level, None, None);
         // Add some stock maneuvers so we can see how the maneuvers are used
         // TODO: convert this to the ability syntax
         monster.creature.weapons.push(Weapon::greatsword());
