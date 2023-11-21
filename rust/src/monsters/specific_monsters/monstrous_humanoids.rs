@@ -1,7 +1,10 @@
+use crate::core_mechanics::abilities::{
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::Size;
 use crate::creatures::{Modifier, Monster};
-use crate::equipment::{StandardWeapon, WeaponTag};
+use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -18,8 +21,19 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(monstrous_humanoid(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            // TODO: add shove and horns attack
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy+1 melee strike with a greataxe.
+                        \hit $fullweapondamage.
+                    ".to_string(),
+                    name: "Sweeping Slash".to_string(),
+                    weapon: Weapon::greataxe().add_tag(WeaponTag::Sweeping(2)),
+                    ..Default::default()
+                }),
+                ActiveAbility::Strike(StrikeAbility::power_strike(Weapon::horns()).except_elite().plus_accuracy(1)),
+                ActiveAbility::Custom(CustomAbility::shove().plus_accuracy(1).except_elite()),
+            ],
             modifiers: vec![],
             movement_speeds: None,
             senses: vec![],

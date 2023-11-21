@@ -4,6 +4,7 @@ use crate::core_mechanics::attacks::{DamageEffect, HasAttacks, SimpleDamageEffec
 use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
+use std::cmp::max;
 use regex::Match;
 use regex::Regex;
 
@@ -47,15 +48,14 @@ impl ActiveAbility {
     }
 
     pub fn plus_accuracy(mut self, modifier: i32) -> Self {
-        match &mut self {
-            Self::Custom(c) => c.plus_accuracy(modifier),
-            Self::Strike(s) => s.plus_accuracy(modifier),
-        };
-        self
+        match self {
+            Self::Custom(c) => Self::Custom(c.plus_accuracy(modifier)),
+            Self::Strike(s) => Self::Strike(s.plus_accuracy(modifier)),
+        }
     }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub struct CustomAbility {
     pub ability_type: AbilityType,
     // This supports a standard list of automatic replacements to make it easier to write ability
@@ -70,6 +70,18 @@ pub struct CustomAbility {
 }
 
 impl CustomAbility {
+    pub fn set_usage_time(mut self, usage_time: UsageTime) -> Self {
+        self.usage_time = usage_time;
+
+        self
+    }
+
+    pub fn except_elite(mut self ) -> Self {
+        self.usage_time = UsageTime::Elite;
+
+        self
+    }
+
     pub fn latex_ability_block(self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
         let latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
@@ -86,8 +98,10 @@ impl CustomAbility {
         )
     }
 
-    fn plus_accuracy(&mut self, modifier: i32) {
+    pub fn plus_accuracy(mut self, modifier: i32) -> Self {
         self.effect = add_accuracy_to_effect(modifier, &self.effect, &self.name);
+
+        self
     }
 
     pub fn battle_command(rank: i32) -> Self {
@@ -182,6 +196,19 @@ impl CustomAbility {
         }
     }
 
+    pub fn shove() -> Self {
+        Self {
+            effect: format!(
+                "
+                    The $name makes a $brawlingaccuracy attack to shove foes.
+                    For details, see \\pcref<Shove>.
+                ",
+            ),
+            name: "Shove".to_string(),
+            ..Default::default()
+        }
+    }
+
     pub fn true_strike(rank: i32) -> Self {
         Self {
             ability_type: AbilityType::Normal,
@@ -201,16 +228,24 @@ impl CustomAbility {
     }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub struct StrikeAbility {
     pub effect: String,
     pub is_magical: bool,
     pub name: String,
     pub tags: Vec<AbilityTag>,
+    pub usage_time: UsageTime,
     pub weapon: Weapon,
 }
 
 impl StrikeAbility {
+    // Some monsters take standard maneuvers and use them as elite actions.
+    pub fn except_elite(mut self) -> Self {
+        self.usage_time = UsageTime::Elite;
+
+        self
+    }
+
     pub fn latex_ability_block(mut self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
         let mut latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
@@ -250,8 +285,10 @@ impl StrikeAbility {
         )
     }
 
-    fn plus_accuracy(&mut self, modifier: i32) {
+    pub fn plus_accuracy(mut self, modifier: i32) -> Self {
         self.effect = add_accuracy_to_effect(modifier, &self.effect, &self.name);
+
+        self
     }
 
     pub fn armorcrusher(weapon: Weapon) -> Self {
@@ -261,10 +298,9 @@ impl StrikeAbility {
                 \hit $fullweapondamage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Armorcrushing", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -275,10 +311,9 @@ impl StrikeAbility {
                 \hit $fullweapondamage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Armorpiercing", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -291,10 +326,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Bloodletting", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -310,8 +344,8 @@ impl StrikeAbility {
             ),
             is_magical: true,
             name: strike_prefix("Consecrated", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -322,10 +356,9 @@ impl StrikeAbility {
                 In addition, it gains a +1 bonus to its Armor and Reflex defenses as a \abilitytag<Swift> effect.
                 \hit $damage $damagetypes damage.
             ".to_string(),
-            is_magical: true,
             name: strike_prefix("Defensive", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -337,10 +370,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             "
             .to_string(),
-            is_magical: true,
             name: strike_prefix("Distant", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -352,10 +384,9 @@ impl StrikeAbility {
                 For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
                 \hit $damage $damagetypes damage.
             ".to_string(),
-            is_magical: true,
             name: strike_prefix("Frenzied", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -367,10 +398,9 @@ impl StrikeAbility {
                 Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
                 \hit $damage $damagetypes damage.
             ".to_string(),
-            is_magical: true,
             name: strike_prefix("Guardbreaking", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -381,10 +411,9 @@ impl StrikeAbility {
                 Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
                 \hit $damage $damagetypes damage.
             ".to_string(),
-            is_magical: true,
             name: strike_prefix("Hamstring --", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -396,10 +425,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
                 \glance No effect.
             ".to_string(),
-            is_magical: false,
             name: strike_prefix("Heartpiercing", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -410,10 +438,9 @@ impl StrikeAbility {
                 \hit $damage*2 $damagetypes damage.
             "
             .to_string(),
-            is_magical: true,
             name: strike_prefix("Power", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -425,10 +452,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes damage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Reckless", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -439,10 +465,9 @@ impl StrikeAbility {
                 It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
                 \hit $damage $damagetypes damage.
             ".to_string(),
-            is_magical: false,
             name: strike_prefix("Redeeming", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -454,10 +479,9 @@ impl StrikeAbility {
                 \hit $fullweapondamage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Rushed", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -469,10 +493,9 @@ impl StrikeAbility {
                 \hit $fullweapondamage.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Rushed", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -483,10 +506,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes.
             "
             .to_string(),
-            is_magical: false,
             name: weapon.name.clone(),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -498,10 +520,9 @@ impl StrikeAbility {
                 \hit $damage $damagetypes.
             "
             .to_string(),
-            is_magical: false,
             name: weapon.name.clone(),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -514,10 +535,9 @@ impl StrikeAbility {
                 This is a \abilitytag{Size-Based} effect.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Knockdown --", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 
@@ -530,10 +550,9 @@ impl StrikeAbility {
                 This is a \abilitytag{Size-Based} effect.
             "
             .to_string(),
-            is_magical: false,
             name: strike_prefix("Knockdown --", &weapon),
-            tags: vec![],
             weapon,
+            ..Default::default()
         }
     }
 }
@@ -555,6 +574,7 @@ pub fn replace_attack_terms(
     // special weapon effects.
     replaced_effect = replace_full_weapon_damage_terms(&replaced_effect);
     replaced_effect = replace_accuracy_terms(&replaced_effect, creature, weapon);
+    replaced_effect = replace_brawling_accuracy_terms(&replaced_effect, creature);
     replaced_effect = replace_damage_terms(&replaced_effect, creature, is_magical, weapon);
     replaced_effect = replace_damage_rank_terms(&replaced_effect, creature, is_magical);
     replaced_effect = replace_damage_type_terms(&replaced_effect, weapon);
@@ -579,6 +599,21 @@ fn replace_accuracy_terms(effect: &str, creature: &Creature, weapon: Option<&Wea
     let accuracy_pattern = Regex::new(r"(\$accuracy[+-]?\d*)\b").unwrap();
     for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
         let parsed_text = parse_accuracy_match(accuracy_match, creature, weapon);
+        replaced_effect = accuracy_pattern
+            .replacen(&replaced_effect, 1, parsed_text)
+            .to_string();
+    }
+    replaced_effect
+}
+
+fn replace_brawling_accuracy_terms(effect: &str, creature: &Creature) -> String {
+    let mut replaced_effect = effect.to_string();
+    // Find each block of "$brawlingaccuracy", including any local accuracy modifiers. We'll split up those
+    // modifiers in a separate step. Doing this as a two-step process makes it easier to associate
+    // local modifiers with the right accuracy text.
+    let accuracy_pattern = Regex::new(r"(\$brawlingaccuracy[+-]?\d*)\b").unwrap();
+    for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
+        let parsed_text = parse_brawling_accuracy_match(accuracy_match, creature);
         replaced_effect = accuracy_pattern
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();
@@ -716,6 +751,36 @@ fn parse_accuracy_match(
 
     let accuracy_sign = if accuracy >= 0 { "+" } else { "-" };
     format!("{}{}", accuracy_sign, accuracy)
+}
+
+// For a given brawling accuracy block, such as "$brawlingaccuracy" or "$brawlingaccuracy+2", return the specific text that
+// should replace it, such as "+5".
+fn parse_brawling_accuracy_match(
+    brawling_accuracy_match: Match,
+    creature: &Creature,
+) -> String {
+    let mut brawling_accuracy = creature.calc_brawling_accuracy();
+
+    // Handle local accuracy modifiers
+    let split_brawling_accuracy_pattern = Regex::new(r"\$brawlingaccuracy([+-])?(\d+)?\b").unwrap();
+    // We can unwrap here because this should definitely have the right pattern - it was originally
+    // found by the regex in `find_all_accuracy_matches`.
+    let split_captures = split_brawling_accuracy_pattern
+        .captures(brawling_accuracy_match.as_str())
+        .unwrap();
+    // If we find this group, there's a modifier on the accuracy
+    if let Some(modifier) = split_captures.get(2) {
+        let modifier: i32 = modifier.as_str().parse::<i32>().unwrap();
+        let accuracy_modifier_sign = split_captures.get(1).unwrap();
+        if accuracy_modifier_sign.as_str() == "+" {
+            brawling_accuracy += modifier;
+        } else {
+            brawling_accuracy -= modifier;
+        }
+    }
+
+    let accuracy_sign = if brawling_accuracy >= 0 { "+" } else { "-" };
+    format!("{}{}", accuracy_sign, brawling_accuracy)
 }
 
 fn calc_weapon_damage(
@@ -920,7 +985,7 @@ The $name glows like a torch for a minute.
         #[test]
         fn replaces_doubled_broadsword_damage() {
             assert_eq!(
-                "Deals 2d10 electricity damage",
+                "Deals 2d6+4 electricity damage",
                 replace_damage_terms(
                     "Deals $damage*2 electricity damage",
                     &sample_creature(),

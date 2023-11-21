@@ -1,5 +1,6 @@
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub enum UsageTime {
+    #[default]
     Standard,
     Elite,
     Minor,

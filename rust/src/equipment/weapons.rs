@@ -2,6 +2,7 @@ use crate::core_mechanics::abilities::Targeting;
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{DamageType, Defense, DicePool, PowerScaling, Tag};
 use std::fmt;
+use std::mem::discriminant;
 use titlecase::titlecase;
 
 #[derive(Clone, Debug)]
@@ -13,7 +14,31 @@ pub struct Weapon {
     pub tags: Vec<WeaponTag>,
 }
 
+impl Default for Weapon {
+    fn default() -> Self {
+        return Self {
+            accuracy: 0,
+            damage_dice: DicePool::d6(),
+            damage_types: vec![],
+            name: "NO DEFAULT WEAPON MAKES SENSE".to_string(),
+            tags: vec![],
+        }
+    }
+}
+
 impl Weapon {
+    // Assume that explicitly added tags override any existing tags of the same type.
+    // In theory, we could use the better of the two, but that is probably more surprising
+    // behavior.
+    pub fn add_tag(mut self, tag: WeaponTag) -> Self {
+        // Remove any existing tags of the same enum type
+        self.tags.retain(|t| discriminant(t) != discriminant(&tag));
+        // Add the new tag
+        self.tags.push(tag);
+        
+        self
+    }
+
     pub fn power_scalings(&self) -> Vec<PowerScaling> {
         // TODO: handle versatile grip
         if self.tags.contains(&WeaponTag::Heavy) {
@@ -32,6 +57,18 @@ impl Weapon {
             w.damage_types = vec![DamageType::Bludgeoning];
             w.name = "Fist".to_string();
         })
+    }
+
+    pub fn greataxe() -> Self {
+        StandardWeapon::Greataxe.weapon()
+    }
+
+    pub fn horn() -> Self {
+        StandardWeapon::MonsterHorn.weapon()
+    }
+
+    pub fn horns() -> Self {
+        StandardWeapon::MonsterHorns.weapon()
     }
 
     pub fn lance() -> Self {
@@ -163,8 +200,8 @@ pub enum StandardWeapon {
     MorningStar,
     MonsterTentacle,
     MultipedalBite,
-    MultipedalHorn,
-    MultipedalHorns,
+    MonsterHorn,
+    MonsterHorns,
     MultipedalRam,
     MultipedalStinger,
     Sap,
@@ -288,6 +325,20 @@ impl StandardWeapon {
                 name: "Morning star".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
             },
+            Self::MonsterHorn => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d6().add_modifier(1),
+                damage_types: vec![DamageType::Piercing],
+                name: "Horn".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
+            },
+            Self::MonsterHorns => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d6().add_modifier(1),
+                damage_types: vec![DamageType::Piercing],
+                name: "Horns".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
+            },
             Self::MonsterTentacle => Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d8(),
@@ -301,20 +352,6 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Physical],
                 name: "Bite".to_string(),
                 tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
-            },
-            Self::MultipedalHorn => Weapon {
-                accuracy: 0,
-                damage_dice: DicePool::d8(),
-                damage_types: vec![DamageType::Piercing],
-                name: "Horn".to_string(),
-                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
-            },
-            Self::MultipedalHorns => Weapon {
-                accuracy: 0,
-                damage_dice: DicePool::d8(),
-                damage_types: vec![DamageType::Piercing],
-                name: "Horns".to_string(),
-                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::MultipedalRam => Weapon {
                 accuracy: 0,

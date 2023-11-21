@@ -1,5 +1,6 @@
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, Default, PartialEq)]
 pub enum AbilityType {
+    #[default]
     Normal,
     Sustain(String),
     Attune(Option<String>),
