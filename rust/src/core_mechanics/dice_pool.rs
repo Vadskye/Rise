@@ -148,10 +148,9 @@ impl DicePool {
         self.add_dice(vec![die])
     }
 
-    pub fn add_modifier(&self, flat_modifier: i32) -> DicePool {
-        let mut new_dice = self.clone();
-        new_dice.flat_modifier += flat_modifier;
-        new_dice
+    pub fn add_modifier(mut self, flat_modifier: i32) -> DicePool {
+        self.flat_modifier += flat_modifier;
+        self
     }
 
     // Construct a standard "1d8" or "2d8+1d10" string.
@@ -177,6 +176,8 @@ impl DicePool {
                 sum += size * counts[size]
             }
             sum += self.flat_modifier;
+            sum *= self.multiplier;
+
             sum.to_string()
         } else {
             let mut dice_texts: Vec<String> = contained_sizes
@@ -184,14 +185,10 @@ impl DicePool {
                 .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
                 .collect();
             if self.flat_modifier != 0 && !self.weak {
-                dice_texts.push(self.flat_modifier.to_string());
+                dice_texts.push((self.flat_modifier * self.multiplier).to_string());
             }
-            let joined = dice_texts.join("+");
-            if self.maximized {
-                format!("{} (m)", joined)
-            } else {
-                return joined;
-            }
+
+            dice_texts.join("+")
         }
     }
 
@@ -332,6 +329,7 @@ mod tests {
     fn stringifies_maximized_dice() {
         assert_eq!("6", DicePool::d6().maximize().to_string());
         assert_eq!("9", DicePool::d6().add_modifier(3).maximize().to_string());
+        assert_eq!("18", DicePool::d6().add_modifier(3).maximize().multiply(2).to_string());
     }
 
     #[test]
@@ -348,5 +346,12 @@ mod tests {
             "2d6+6",
             DicePool::d6().add_modifier(3).elite_double().to_string()
         );
+    }
+
+    #[test]
+    fn stringifies_multiplied_dice() {
+        assert_eq!("1d6+2", DicePool::d6().add_modifier(2).to_string());
+        assert_eq!("2d6+4", DicePool::d6().add_modifier(2).multiply(2).to_string());
+        assert_eq!("3d6+6", DicePool::d6().add_modifier(2).multiply(3).to_string());
     }
 }

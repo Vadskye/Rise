@@ -41,6 +41,7 @@ pub trait HasAttacks {
         self.calc_all_attacks().into_iter().find(|a| a.name == name)
     }
     fn calc_accuracy(&self) -> i32;
+    fn calc_brawling_accuracy(&self) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
     fn calc_magical_power(&self) -> i32;
     fn calc_mundane_power(&self) -> i32;
@@ -308,6 +309,17 @@ where
         // note implicit floor due to integer storage
         accuracy_from_armor
             + (self.level + self.get_base_attribute(&Attribute::Perception)) / 2
+            + self.calc_total_modifier(ModifierType::Accuracy)
+    }
+
+    fn calc_brawling_accuracy(&self) -> i32 {
+        let accuracy_from_armor: i32 = self.get_armor().iter().map(|a| a.accuracy_modifier()).sum();
+        // note implicit floor due to integer storage
+        accuracy_from_armor
+            + (self.level + self.get_base_attribute(&Attribute::Strength)) / 2
+            // TODO: add separate "brawling accuracy" modifier.
+            // All modifiers to accuracy should affect brawling accuracy, but not all modifiers to
+            // brawling accuracy should affect accuracy.
             + self.calc_total_modifier(ModifierType::Accuracy)
     }
 
