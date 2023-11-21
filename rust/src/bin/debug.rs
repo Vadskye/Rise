@@ -1,6 +1,5 @@
 use rise::{
     creatures::{Character, Monster},
-    monsters::ChallengeRating,
 };
 
 fn compare_classes() {
