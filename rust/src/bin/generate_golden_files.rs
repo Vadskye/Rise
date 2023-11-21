@@ -5,20 +5,78 @@
 // Golden files use markdown formatting to make them easier to read.
 // The file paths used here assume that this is being run from the Rise/rust directory.
 
-use rise::core_mechanics::attacks::Maneuver;
+use rise::calculations::statistical_combat::explain_monster_adpr;
+use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
 use rise::monsters::ChallengeRating;
 use rise::equipment::Weapon;
-use rise::creatures::{Monster, HasModifiers, Modifier};
+use rise::creatures::{Character, Monster, HasModifiers, Modifier};
 use std::{fs, io};
 
 fn main() -> io::Result<()> {
-    // TODO: figure out how to combine results
-    write_monster_goldens()
+    write_monster_goldens().expect("Should write monster goldens");
+
+    Result::Ok(())
+}
+
+fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
+    fs::write(format!("test_goldens/{}.md", subpath), data.trim())
 }
 
 fn write_monster_goldens() -> io::Result<()> {
-    // TODO: figure out how to combine results
-    write_monster_to_section_golden()
+    write_monster_attacks_golden().expect("Should write monster attacks");
+    write_monster_to_section_golden().expect("Should write to_section");
+
+    Result::Ok(())
+}
+
+fn write_monster_attacks_golden() -> io::Result<()> {
+    fn explain_monster_attacks(level: i32, elite: bool) -> String {
+        let cr = if elite {
+            ChallengeRating::Four
+        } else {
+            ChallengeRating::One
+        };
+        let attacker = Monster::standard_monster(cr, level, None, None).creature;
+        let defender = Character::standard_character(level, true).creature;
+
+        format!(
+            "### Attacks
+{attacks}
+
+### Results
+{results}",
+            attacks = attacker.explain_attacks().join(", "),
+            results = explain_monster_adpr(&attacker, &defender).join("\n"),
+        )
+    }
+
+    let golden = format!(
+        "
+# Monster Attack DPR
+
+## Level 1 Normal
+
+{level_1_normal}
+
+## Level 1 Elite
+
+{level_1_elite}
+
+## Level 10 Normal
+
+{level_10_normal}
+
+## Level 10 Elite
+
+{level_10_elite}
+        ",
+        level_1_normal = explain_monster_attacks(1, false),
+        level_1_elite = explain_monster_attacks(1, true),
+        level_10_normal = explain_monster_attacks(10, false),
+        level_10_elite = explain_monster_attacks(10, true),
+    );
+
+    write_golden_file("monster_attack_dpr", golden)
 }
 
 fn write_monster_to_section_golden() -> io::Result<()> {
@@ -65,8 +123,4 @@ fn write_monster_to_section_golden() -> io::Result<()> {
     );
 
     write_golden_file("monster_to_section", golden)
-}
-
-fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
-    fs::write(format!("test_goldens/{}.md", subpath), data.trim())
 }
