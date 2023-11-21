@@ -69,7 +69,7 @@ fn sorcerer_scaling() {
 }
 
 fn main() {
-    let standard_monster = Monster::standard_monster(ChallengeRating::One, 20, None, None);
+    let standard_monster = Monster::standard_example_monster(20);
     println!("standard monster {}", standard_monster.to_section(None));
 
     // compare_classes();

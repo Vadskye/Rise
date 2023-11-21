@@ -79,11 +79,7 @@ pub struct MonsterStatistics {
 impl MonsterStatistics {
     fn monster(self, creature_type: CreatureType) -> Monster {
         let mut monster = Monster::new(
-            if self.elite {
-                ChallengeRating::Four
-            } else {
-                ChallengeRating::One
-            },
+            self.elite,
             creature_type,
             self.role,
             self.level,
