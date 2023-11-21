@@ -4,7 +4,6 @@ use crate::core_mechanics::attacks::{DamageEffect, HasAttacks, SimpleDamageEffec
 use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
-use std::cmp::max;
 use regex::Match;
 use regex::Regex;
 
@@ -47,7 +46,7 @@ impl ActiveAbility {
         }
     }
 
-    pub fn plus_accuracy(mut self, modifier: i32) -> Self {
+    pub fn plus_accuracy(self, modifier: i32) -> Self {
         match self {
             Self::Custom(c) => Self::Custom(c.plus_accuracy(modifier)),
             Self::Strike(s) => Self::Strike(s.plus_accuracy(modifier)),

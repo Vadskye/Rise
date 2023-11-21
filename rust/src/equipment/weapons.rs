@@ -63,6 +63,10 @@ impl Weapon {
         StandardWeapon::Greataxe.weapon()
     }
 
+    pub fn greatsword() -> Self {
+        StandardWeapon::Greatsword.weapon()
+    }
+
     pub fn horn() -> Self {
         StandardWeapon::MonsterHorn.weapon()
     }
