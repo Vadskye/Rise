@@ -377,6 +377,3 @@ pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<St
 
 #[cfg(test)]
 mod tests;
-
-#[cfg(test)]
-mod calc_attack_damage_per_round_tests;

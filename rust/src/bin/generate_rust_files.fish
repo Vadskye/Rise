@@ -31,4 +31,6 @@ cargo run --bin generate_combat_results
 cp combat_results/difficult_encounter.csv (p utransfer)
 cp combat_results/standard_encounter.csv (p utransfer)
 
+mkdir -p test_goldens
+rm test_goldens/*
 cargo run --bin generate_golden_files

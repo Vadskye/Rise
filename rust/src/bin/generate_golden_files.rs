@@ -9,7 +9,7 @@ use rise::calculations::statistical_combat::{explain_monster_adpr, explain_stand
 use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
 use rise::monsters::ChallengeRating;
 use rise::equipment::Weapon;
-use rise::creatures::{Character, Monster, HasModifiers, Modifier};
+use rise::creatures::{Character, Creature, Monster, HasModifiers, Modifier};
 use std::{fs, io};
 
 fn main() -> io::Result<()> {
@@ -24,16 +24,13 @@ fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
 }
 
 fn write_character_goldens() -> io::Result<()> {
-    write_character_attacks_golden().expect("Should write character attacks");
+    write_standard_character_attacks_golden().expect("Should write standard character attacks");
+    write_perception_greataxe_attacks_golden().expect("Should write perception greataxe attacks");
 
     Result::Ok(())
 }
 
-fn write_character_attacks_golden() -> io::Result<()> {
-    fn explain_character_attacks(level: i32, elite: bool) -> String {
-        let attacker = Character::standard_character(level, true).creature;
-        let defender = Monster::example_monster(elite, level, None, None).creature;
-
+fn format_character_attacks(attacker: Creature, defender: Creature) -> String {
         format!(
             "### Attacks
 {attacks}
@@ -47,11 +44,11 @@ fn write_character_attacks_golden() -> io::Result<()> {
             results = explain_standard_adpr(&attacker, &defender).join("\n"),
             best = find_best_attack(&attacker, &defender).unwrap().name,
         )
-    }
+}
 
-    let golden = format!(
-        "
-# Character Attack DPR
+fn format_character_dpr_vs_monster(explainer: &dyn Fn(i32, bool) -> String) -> String {
+    format!(
+        "# Character Attack DPR
 
 ## Level 1 vs Normal Monster
 
@@ -75,17 +72,36 @@ fn write_character_attacks_golden() -> io::Result<()> {
 
 ## Level 20 vs Elite Monster
 
-{level_20_elite}
-        ",
-        level_1_normal = explain_character_attacks(1, false),
-        level_1_elite = explain_character_attacks(1, true),
-        level_10_normal = explain_character_attacks(10, false),
-        level_10_elite = explain_character_attacks(10, true),
-        level_20_normal = explain_character_attacks(20, false),
-        level_20_elite = explain_character_attacks(20, true),
-    );
+{level_20_elite}",
+        level_1_normal = explainer(1, false),
+        level_1_elite = explainer(1, true),
+        level_10_normal = explainer(10, false),
+        level_10_elite = explainer(10, true),
+        level_20_normal = explainer(20, false),
+        level_20_elite = explainer(20, true),
+    )
+}
 
-    write_golden_file("character_attack_dpr", golden)
+fn write_standard_character_attacks_golden() -> io::Result<()> {
+    fn explain_character_attacks(level: i32, elite: bool) -> String {
+        let attacker = Character::standard_character(level, true).creature;
+        let defender = Monster::example_monster(elite, level, None, None).creature;
+
+        format_character_attacks(attacker, defender)
+    }
+
+    write_golden_file("standard_character_attack_dpr", format_character_dpr_vs_monster(&explain_character_attacks))
+}
+
+fn write_perception_greataxe_attacks_golden() -> io::Result<()> {
+    fn explain_character_attacks(level: i32, elite: bool) -> String {
+        let attacker = Character::perception_greataxe(level).creature;
+        let defender = Monster::example_monster(elite, level, None, None).creature;
+
+        format_character_attacks(attacker, defender)
+    }
+
+    write_golden_file("perception_greataxe_attack_dpr", format_character_dpr_vs_monster(&explain_character_attacks))
 }
 
 fn write_monster_goldens() -> io::Result<()> {
@@ -144,7 +160,6 @@ fn write_monster_to_section_golden() -> io::Result<()> {
     fn create_monster_section(level: i32, elite: bool) -> String {
         let mut monster = Monster::example_monster(elite, level, None, None);
         // Add some stock maneuvers so we can see how the maneuvers are used
-        // TODO: convert this to the ability syntax
         monster.creature.weapons.push(Weapon::greatsword());
         monster
             .creature
