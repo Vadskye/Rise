@@ -1,8 +1,7 @@
+# Standard Monster to_section()
 
-            # Standard Monster To Section
+## Level 1 Normal
 
-            ## Level 1 Normal
-            
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
@@ -88,8 +87,8 @@
             \end{activeability}
 
 
-            ## Level 1 Elite
-            
+## Level 1 Elite
+
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
@@ -179,8 +178,8 @@
             \end{activeability}
 
 
-            ## Level 10 Normal
-            
+## Level 10 Normal
+
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
@@ -266,8 +265,8 @@
             \end{activeability}
 
 
-            ## Level 10 Elite
-            
+## Level 10 Elite
+
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
@@ -355,5 +354,3 @@
                 The standard monster makes a \plus12 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus12 slashing damage.
             \end{activeability}
-
-        

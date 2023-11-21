@@ -44,19 +44,19 @@ fn write_monster_to_section_golden() -> io::Result<()> {
 
     let golden = format!(
         "
-            # Standard Monster To Section
+# Standard Monster to_section()
 
-            ## Level 1 Normal
-            {level_1_normal}
+## Level 1 Normal
+{level_1_normal}
 
-            ## Level 1 Elite
-            {level_1_elite}
+## Level 1 Elite
+{level_1_elite}
 
-            ## Level 10 Normal
-            {level_10_normal}
+## Level 10 Normal
+{level_10_normal}
 
-            ## Level 10 Elite
-            {level_10_elite}
+## Level 10 Elite
+{level_10_elite}
         ",
         level_1_normal = create_monster_section(1, false),
         level_1_elite = create_monster_section(1, true),
@@ -68,5 +68,5 @@ fn write_monster_to_section_golden() -> io::Result<()> {
 }
 
 fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
-    fs::write(format!("test_goldens/{}.md", subpath), data)
+    fs::write(format!("test_goldens/{}.md", subpath), data.trim())
 }
