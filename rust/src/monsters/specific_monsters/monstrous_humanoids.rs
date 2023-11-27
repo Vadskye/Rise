@@ -1,8 +1,6 @@
-use crate::core_mechanics::abilities::{
-    ActiveAbility, CustomAbility, StrikeAbility,
-};
+use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
-use crate::core_mechanics::Size;
+use crate::core_mechanics::{Sense, Size};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
@@ -96,6 +94,10 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         },
         name: "Choker".to_string(),
     })));
+
+    add_bugbears(&mut monsters);
+
+    add_kobolds(&mut monsters);
 
     // This uses a new struct, so it's cleaner to split it into a separate function
     add_ogres(&mut monsters);
@@ -212,6 +214,127 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
     monsters
 }
 
+fn add_bugbears(monsters: &mut Vec<MonsterEntry>) {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Bugbears".to_string(),
+        art: false,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Bugbears are Medium humanoid creatures with burly, hairy bodies and ugly goblin faces.
+                They are brutish and chaotic, and enjoy bullying their goblin kin.
+            "),
+            (5, "
+                Although bugbears have only ordinary physical strength, they are remarkably durable.
+                Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears.
+                It also references their seemingly supernatural ability to infuriate their enemies.
+            "),
+            (10, "
+                Bugbears tend not to work together in organized tribes.
+                Instead, they travel in small packs that rarely have more than a dozen members.
+            "),
+        ])),
+        monsters: vec![
+            monstrous_humanoid(MonsterDef {
+                name: "Bugbear Raider".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::enraging_strike(Weapon::flail())),
+                        ActiveAbility::Strike(StrikeAbility::enraging_strike(Weapon::sling())),
+                        ActiveAbility::Strike(StrikeAbility::trip(Weapon::flail())),
+                    ],
+                    senses: vec![Sense::Scent],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Chaotic evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![2, 0, 5, -2, 0, 2],
+                    elite: false,
+                    level: 3,
+                    role: Role::Warrior,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Bugbear Shaman".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::flail())),
+                        ActiveAbility::Custom(CustomAbility::enrage(1)),
+                        ActiveAbility::Custom(CustomAbility::mind_blank(1)),
+                        ActiveAbility::Custom(CustomAbility::mind_blast(1)),
+                    ],
+                    senses: vec![Sense::Scent],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Neutral evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 0, 5, -2, 2, 4],
+                    elite: false,
+                    level: 3,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
+            }),
+        ],
+    }));
+}
+
+fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
+    monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
+        name: "Kobolds".to_string(),
+        art: false,
+        description: None,
+        knowledge: Some(Knowledge::new(vec![
+            (0, "
+                Kobolds are Medium humanoid creatures that are covered in scales.
+                They are short, typically standing three feet tall.
+                Although kobolds are individually cowardly, they are crafty and work effectively in groups.
+            "),
+            (5, "
+                Most kobolds fight using ranged weapons.
+                They try to lure their foes into prepared traps when possible.
+                Kobolds revere dragons, and claim to be descended from them.
+            "),
+            // TODO: clarify how kobolds bond with dragons
+            (10, "
+                The dream of every kobold tribe is to find a worthy dragon to serve.
+                Kobolds have latent draconic powers that can be awakened through sworn service to dragons.
+                Some dragons enjoy having such eager servants, while others resent being pestered by kobolds and reject all entreaties.
+            "),
+        ])),
+        monsters: vec![
+            monstrous_humanoid(MonsterDef {
+                name: "Kobold Snapper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::sling())),
+                    ],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![-1, 4, 1, 1, 3, -2],
+                    elite: false,
+                    level: 1,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            }),
+        ],
+    }));
+}
+
 fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Ogres".to_string(),
@@ -228,18 +351,19 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
               Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.
             "),
             (10, "
-              Ogres are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as unorganized individuals.
+              Ogres are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as disorganized individuals.
               They use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
             "),
         ])),
         monsters: vec![
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    modifiers: vec![],
-                    movement_speeds: None,
-                    senses: vec![],
-                    trained_skills: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::greatclub()).plus_accuracy(1)),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(Weapon::greatclub())),
+                    ],
+                    // TODO: add attack
+                    ..Default::default()
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually chaotic evil".to_string(),
