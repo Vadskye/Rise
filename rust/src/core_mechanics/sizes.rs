@@ -1,12 +1,13 @@
 use crate::creatures::Creature;
 use crate::equipment::WeaponTag;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub enum Size {
     Fine,
     Diminuitive,
     Tiny,
     Small,
+    #[default]
     Medium,
     Large,
     Huge,

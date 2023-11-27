@@ -141,7 +141,7 @@ fn calc_damage_per_round(attackers: &Vec<&Creature>, defender: &Creature) -> f64
         .sum();
 }
 
-fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -> f64 {
+pub fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature>) -> f64 {
     let mut damage_per_round = 0.0;
     let mut damage_absorption = 0;
     for defender in defenders {

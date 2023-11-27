@@ -59,12 +59,24 @@ impl Weapon {
         })
     }
 
+    pub fn flail() -> Self {
+        StandardWeapon::Flail.weapon()
+    }
+
     pub fn greataxe() -> Self {
         StandardWeapon::Greataxe.weapon()
     }
 
+    pub fn greatclub() -> Self {
+        StandardWeapon::Greatclub.weapon()
+    }
+
     pub fn greatsword() -> Self {
         StandardWeapon::Greatsword.weapon()
+    }
+
+    pub fn heavy_flail() -> Self {
+        StandardWeapon::HeavyFlail.weapon()
     }
 
     pub fn horn() -> Self {
@@ -85,6 +97,10 @@ impl Weapon {
 
     pub fn ram() -> Self {
         StandardWeapon::MultipedalRam.weapon()
+    }
+
+    pub fn sling() -> Self {
+        StandardWeapon::Sling.weapon()
     }
 
     pub fn spear() -> Self {
@@ -195,7 +211,9 @@ pub enum StandardWeapon {
     Club,
     GiantBoulder,
     Greataxe,
+    Greatclub,
     Greatsword,
+    Flail,
     HeavyCrossbow,
     HeavyFlail,
     Javelin,
@@ -212,6 +230,7 @@ pub enum StandardWeapon {
     Scimitar,
     Sickle,
     Sledgehammer,
+    Sling,
     Spear,
     Talon,
     Totokia,
@@ -264,6 +283,13 @@ impl StandardWeapon {
                 name: "Club".to_string(),
                 tags: vec![],
             },
+            Self::Flail => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d6(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Heavy flail".to_string(),
+                tags: vec![WeaponTag::Tripping],
+            },
             Self::GiantBoulder => Weapon {
                 // Individual giants can customize these range limits
                 accuracy: 0,
@@ -278,6 +304,14 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Slashing],
                 name: "Greataxe".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Sweeping(1)],
+            },
+            // Same as greatmace, but for monsters where a mace feels overly industrial
+            Self::Greatclub => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Greatclub".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::Greatsword => Weapon {
                 accuracy: 0,
@@ -398,6 +432,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Sledgehammer".to_string(),
                 tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
+            },
+            Self::Sling => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d4(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Sling".to_string(),
+                tags: vec![WeaponTag::Projectile(60, 120), WeaponTag::Compact],
             },
             Self::Spear => Weapon {
                 accuracy: 0,

@@ -1,13 +1,14 @@
 use crate::core_mechanics::{Defense, HitPointProgression};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
-#[derive(Copy, Clone, Debug, Hash)]
+#[derive(Copy, Clone, Debug, Default, Hash)]
 pub enum Role {
     Brute,      // +str, melee HP-heavy damage sponge, like barbarian or any heavy weapon user
     Skirmisher, // +dex, high mobility mixed range, like rogue/monk/ranger
     Warrior, // +con, melee or short range defense tank, like a typical sword and board fighter/paladin
     Sniper,  // +per, low mobility long range, like an archer
     Mystic,  // +wil, low HP, high DR, typically a caster
+    #[default]
     Leader,  // average in all respects
 }
 

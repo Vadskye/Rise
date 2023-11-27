@@ -7,6 +7,7 @@ use crate::creatures::{HasModifiers, Modifier, ModifierBundle};
 use crate::monsters::{CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill};
 
+#[derive(Clone, Debug)]
 pub struct MonsterDef {
     pub abilities: MonsterAbilities,
     pub narrative: Option<MonsterNarrative>,
@@ -16,7 +17,7 @@ pub struct MonsterDef {
     pub statistics: MonsterStatistics,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub struct MonsterAbilities {
     pub active_abilities: Vec<ActiveAbility>,
     pub modifiers: Vec<Modifier>,
@@ -49,7 +50,7 @@ impl MonsterAbilities {
 }
 
 // These help define a monster's place in the narrative universe.
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Default)]
 pub struct MonsterNarrative {
     pub alignment: String,
     pub art: bool,

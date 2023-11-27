@@ -75,7 +75,7 @@ impl CustomAbility {
         self
     }
 
-    pub fn except_elite(mut self ) -> Self {
+    pub fn except_elite(mut self) -> Self {
         self.usage_time = UsageTime::Elite;
 
         self
@@ -139,6 +139,25 @@ impl CustomAbility {
         }
     }
 
+    pub fn enrage(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
+                    \\hit The target is \\debuff<enraged> as a \\glossterm<condition>.
+                    Every round, it must spend a \\glossterm<standard action> to make an attack.
+                ",
+                // +2 base modifier, plus normal rank scaling
+                accuracy_modifier = 2 + (rank - 1),
+            ),
+            is_magical: true,
+            name: "Enrage".to_string(),
+            tags: vec![AbilityTag::Emotion],
+            usage_time: UsageTime::Standard,
+        }
+    }
+
     pub fn heed_the_dark_call(rank: i32) -> Self {
         Self {
             ability_type: AbilityType::Normal,
@@ -173,6 +192,42 @@ impl CustomAbility {
             ),
             is_magical: true,
             name: "Inflict Wound".to_string(),
+            tags: vec![],
+            usage_time: UsageTime::Standard,
+        }
+    }
+
+    pub fn mind_blank(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
+                    \\hit If the target has no remaining \\glossterm<damage resistance>, it is compelled to spend its next \\glossterm<standard action> doing nothing at all.
+                    After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
+                ",
+                accuracy_modifier = rank - 1,
+            ),
+            is_magical: true,
+            name: "Mind Blank".to_string(),
+            tags: vec![AbilityTag::Compulsion],
+            usage_time: UsageTime::Standard,
+        }
+    }
+
+    // The Enchantment version of Mystic Bolt
+    pub fn mind_blast(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
+                    \\hit The target takes $dr1 psychic \\glossterm<subdual damage>.
+                ",
+                accuracy_modifier = rank - 1,
+            ),
+            is_magical: true,
+            name: "Mind Blast".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
         }
@@ -280,7 +335,7 @@ impl StrikeAbility {
             latex_tags,
             self.is_magical,
             self.name,
-            None,
+            Some(self.usage_time),
         )
     }
 
@@ -370,6 +425,21 @@ impl StrikeAbility {
             "
             .to_string(),
             name: strike_prefix("Distant", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
+    pub fn enraging_strike(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $damage $damagetypes.
+                If the target loses hit points, it is \debuff{enraged} as a \glossterm{condition}.
+                Every round, it must spend a \glossterm{standard action} to make an attack.
+            "
+            .to_string(),
+            name: strike_prefix("Enraging", &weapon),
             weapon,
             ..Default::default()
         }
@@ -550,6 +620,23 @@ impl StrikeAbility {
             "
             .to_string(),
             name: strike_prefix("Knockdown --", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
+    // If you're treating trip as a strike ability, it's because you're using it with a weapon.
+    // Non-weapon trips are under CustomAbility.
+    pub fn trip(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy melee attack vs. Fortitude and Reflex with its $weapon.
+                \hit The target becomes \prone.
+                If the attack also beat the target's Armor defense, the $name deals it $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Trip --", &weapon),
+            tags: vec![AbilityTag::SizeBased],
             weapon,
             ..Default::default()
         }
@@ -754,10 +841,7 @@ fn parse_accuracy_match(
 
 // For a given brawling accuracy block, such as "$brawlingaccuracy" or "$brawlingaccuracy+2", return the specific text that
 // should replace it, such as "+5".
-fn parse_brawling_accuracy_match(
-    brawling_accuracy_match: Match,
-    creature: &Creature,
-) -> String {
+fn parse_brawling_accuracy_match(brawling_accuracy_match: Match, creature: &Creature) -> String {
     let mut brawling_accuracy = creature.calc_brawling_accuracy();
 
     // Handle local accuracy modifiers
@@ -801,6 +885,61 @@ fn calc_weapon_damage(
     let mut damage_dice = damage_effect.calc_damage_dice(creature, is_magical, true);
     damage_dice.multiplier = multiplier;
     damage_dice.to_string()
+}
+
+fn add_accuracy_to_effect(modifier: i32, effect: &str, name: &str) -> String {
+    let mut replaced_effect = effect.to_string();
+    let mut replaced_accuracy = false;
+
+    let accuracy_pattern = Regex::new(r"\$(brawlingaccuracy|accuracy)([+-]?)(\d*)\b").unwrap();
+    for (_, [accuracy_type, modifier_sign, existing_modifier]) in
+        accuracy_pattern.captures_iter(effect).map(|c| c.extract())
+    {
+        let existing_modifier_abs = existing_modifier.parse::<i32>().unwrap_or(0);
+        let existing_modifier_value = if modifier_sign == "-" {
+            -existing_modifier_abs
+        } else {
+            existing_modifier_abs
+        };
+
+        let new_modifier_value = existing_modifier_value + modifier;
+        let new_modifier_sign = if new_modifier_value > 0 { "+" } else { "" };
+        let new_modifier_text = if new_modifier_value == 0 {
+            "".to_string()
+        } else {
+            new_modifier_value.to_string()
+        };
+
+        replaced_effect = accuracy_pattern
+            .replacen(
+                &replaced_effect,
+                1,
+                format!(
+                    "$${accuracy_type}{sign}{value}",
+                    accuracy_type = accuracy_type,
+                    sign = new_modifier_sign,
+                    value = new_modifier_text,
+                ),
+            )
+            .to_string();
+
+        if replaced_accuracy {
+            panic!(
+                "Cannot add accuracy to ability {}: more than one $accuracy present",
+                name
+            );
+        } else {
+            replaced_accuracy = true;
+        }
+    }
+    // If there was no accuracy to replace, something has gone wrong.
+    if !replaced_accuracy {
+        panic!(
+            "Cannot add accuracy to ability {}: no $accuracy to replace",
+            name
+        );
+    }
+    replaced_effect
 }
 
 #[cfg(test)]
@@ -1250,59 +1389,48 @@ The $name glows like a torch for a minute.
             );
         }
     }
-}
 
-// TODO: add tests for this function
-fn add_accuracy_to_effect(modifier: i32, effect: &str, name: &str) -> String {
-    let mut replaced_effect = effect.to_string();
-    let mut replaced_accuracy = false;
+    mod add_accuracy_to_effect {
+        use super::*;
 
-    let accuracy_pattern = Regex::new(r"\$accuracy([+-])?(\d+)?\b").unwrap();
-    for (_, [modifier_sign, existing_modifier]) in
-        accuracy_pattern.captures_iter(effect).map(|c| c.extract())
-    {
-        let existing_modifier_abs = existing_modifier.parse::<i32>().unwrap_or(0);
-        let existing_modifier_value = if modifier_sign == "-" {
-            -existing_modifier_abs
-        } else {
-            existing_modifier_abs
-        };
-
-        let new_modifier_value = existing_modifier_value + modifier;
-        let new_modifier_sign = if new_modifier_value > 0 { "+" } else { "" };
-        let new_modifier_text = if new_modifier_value == 0 {
-            "".to_string()
-        } else {
-            new_modifier_value.to_string()
-        };
-
-        replaced_effect = accuracy_pattern
-            .replacen(
-                &replaced_effect,
-                1,
-                format!(
-                    "$accuracy{sign}{value}",
-                    sign = new_modifier_sign,
-                    value = new_modifier_text,
-                ),
-            )
-            .to_string();
-
-        if replaced_accuracy {
-            panic!(
-                "Cannot add accuracy to ability {}: more than one $accuracy present",
-                name
+        #[test]
+        fn can_add_new_modifier() {
+            assert_eq!(
+                "Attack with $accuracy+1 accuracy",
+                add_accuracy_to_effect(1, "Attack with $accuracy accuracy", "arbitrary name")
             );
-        } else {
-            replaced_accuracy = true;
+        }
+
+        #[test]
+        fn can_increase_existing_modifier() {
+            assert_eq!(
+                "Attack with $accuracy+3 accuracy",
+                add_accuracy_to_effect(2, "Attack with $accuracy+1 accuracy", "arbitrary name")
+            );
+        }
+
+        #[test]
+        fn can_decrease_existing_modifier() {
+            assert_eq!(
+                "Attack with $accuracy+1 accuracy",
+                add_accuracy_to_effect(-2, "Attack with $accuracy+3 accuracy", "arbitrary name")
+            );
+        }
+
+        #[test]
+        fn can_flip_existing_modifier_sign() {
+            assert_eq!(
+                "Attack with $accuracy-2 accuracy",
+                add_accuracy_to_effect(-4, "Attack with $accuracy+2 accuracy", "arbitrary name")
+            );
+        }
+
+        #[test]
+        fn can_add_new_modifier_to_brawling() {
+            assert_eq!(
+                "Attack with $brawlingaccuracy+1 accuracy",
+                add_accuracy_to_effect(1, "Attack with $brawlingaccuracy accuracy", "arbitrary name")
+            );
         }
     }
-    // If there was no accuracy to replace, something has gone wrong.
-    if !replaced_accuracy {
-        panic!(
-            "Cannot add accuracy to ability {}: no $accuracy to replace",
-            name
-        );
-    }
-    replaced_effect
 }
