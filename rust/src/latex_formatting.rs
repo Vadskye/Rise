@@ -14,6 +14,15 @@ pub fn latexify(text: String) -> String {
         )
     }
 
+    // TODO: verify that this actually works
+    let pcref = Regex::new(r"[^\\]pcref").unwrap();
+    if pcref.is_match(&text) {
+        eprintln!(
+            "Problem latexifying text: contains a pcref ({})",
+            short_text
+        )
+    }
+
     let midline_double_backslash = Regex::new(r"\\\\.").unwrap();
     if midline_double_backslash.is_match(&text) {
         eprintln!(

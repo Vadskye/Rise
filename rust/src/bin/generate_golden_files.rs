@@ -5,11 +5,13 @@
 // Golden files use markdown formatting to make them easier to read.
 // The file paths used here assume that this is being run from the Rise/rust directory.
 
-use rise::calculations::statistical_combat::{explain_monster_adpr, explain_standard_adpr, find_best_attack};
+use rise::calculations::statistical_combat::{
+    calc_rounds_to_live, explain_monster_adpr, explain_standard_adpr, find_best_attack,
+};
 use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
 
+use rise::creatures::{Character, Creature, HasModifiers, Modifier, Monster};
 use rise::equipment::Weapon;
-use rise::creatures::{Character, Creature, Monster, HasModifiers, Modifier};
 use std::{fs, io};
 
 fn main() -> io::Result<()> {
@@ -26,13 +28,14 @@ fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
 fn write_character_goldens() -> io::Result<()> {
     write_standard_character_attacks_golden().expect("Should write standard character attacks");
     write_perception_greataxe_attacks_golden().expect("Should write perception greataxe attacks");
+    write_character_rounds_to_live_golden().expect("Should write rounds to live golden");
 
     Result::Ok(())
 }
 
 fn format_character_attacks(attacker: Creature, defender: Creature) -> String {
-        format!(
-            "### Attacks
+    format!(
+        "### Attacks
 {attacks}
 
 ### Results
@@ -40,10 +43,10 @@ fn format_character_attacks(attacker: Creature, defender: Creature) -> String {
 
 ### Best attack
 {best}",
-            attacks = attacker.explain_attacks().join("\n"),
-            results = explain_standard_adpr(&attacker, &defender).join("\n"),
-            best = find_best_attack(&attacker, &defender).unwrap().name,
-        )
+        attacks = attacker.explain_attacks().join("\n"),
+        results = explain_standard_adpr(&attacker, &defender).join("\n"),
+        best = find_best_attack(&attacker, &defender).unwrap().name,
+    )
 }
 
 fn format_character_dpr_vs_monster(explainer: &dyn Fn(i32, bool) -> String) -> String {
@@ -90,7 +93,10 @@ fn write_standard_character_attacks_golden() -> io::Result<()> {
         format_character_attacks(attacker, defender)
     }
 
-    write_golden_file("standard_character_attack_dpr", format_character_dpr_vs_monster(&explain_character_attacks))
+    write_golden_file(
+        "standard_character_attack_dpr",
+        format_character_dpr_vs_monster(&explain_character_attacks),
+    )
 }
 
 fn write_perception_greataxe_attacks_golden() -> io::Result<()> {
@@ -101,7 +107,77 @@ fn write_perception_greataxe_attacks_golden() -> io::Result<()> {
         format_character_attacks(attacker, defender)
     }
 
-    write_golden_file("perception_greataxe_attack_dpr", format_character_dpr_vs_monster(&explain_character_attacks))
+    write_golden_file(
+        "perception_greataxe_attack_dpr",
+        format_character_dpr_vs_monster(&explain_character_attacks),
+    )
+}
+
+fn write_character_rounds_to_live_golden() -> io::Result<()> {
+    fn rtl_by_level(
+        attacker_gen: &dyn Fn(i32) -> Creature,
+        defender_gen: &dyn Fn(i32) -> Creature,
+    ) -> String {
+        vec![1, 5, 10, 15, 20]
+            .into_iter()
+            .map(|level| {
+                let attacker = attacker_gen(level);
+                let defender = defender_gen(level);
+
+                format!(
+                    "Level {}: {}",
+                    level,
+                    calc_rounds_to_live(&vec![&attacker], &vec![&defender])
+                )
+            })
+            .collect::<Vec<String>>()
+            .join("\n")
+    }
+
+    let barb = |level: i32| Character::standard_barbarian(level, true).creature;
+    let fighter = |level: i32| Character::standard_character(level, true).creature;
+    let greataxe = |level: i32| Character::perception_greataxe(level).creature;
+    let sorc = |level: i32| Character::standard_sorcerer(level, true).creature;
+    let standard_monster = |level: i32| Monster::standard_example_monster(level).creature;
+    let elite_monster = |level: i32| Monster::elite_example_monster(level).creature;
+
+    let golden = format!(
+        "# Character Rounds to Live
+
+## Barbarian vs Barbarian
+{barb_vs_barb}
+
+## Fighter vs Fighter
+{fighter_vs_fighter}
+
+## Fighter vs Greataxe Perception Fighter
+{fighter_vs_greataxe}
+
+## Fighter vs Standard Monster
+{fighter_vs_standard}
+
+## Fighter vs Elite Monster
+{fighter_vs_elite}
+
+## Fighter vs Sorcerer
+{fighter_vs_sorc}
+
+## Greataxe Perception vs Greataxe Perception
+{greataxe_vs_greataxe}
+
+## Sorcerer vs Sorcerer
+{sorc_vs_sorc}",
+        barb_vs_barb = rtl_by_level(&barb, &barb),
+        fighter_vs_fighter = rtl_by_level(&fighter, &fighter),
+        fighter_vs_greataxe = rtl_by_level(&fighter, &greataxe),
+        fighter_vs_standard = rtl_by_level(&fighter, &standard_monster),
+        fighter_vs_elite = rtl_by_level(&fighter, &elite_monster),
+        fighter_vs_sorc = rtl_by_level(&fighter, &sorc),
+        greataxe_vs_greataxe = rtl_by_level(&greataxe, &greataxe),
+        sorc_vs_sorc = rtl_by_level(&sorc, &sorc),
+    );
+
+    write_golden_file("character_rounds_to_live", golden)
 }
 
 fn write_monster_goldens() -> io::Result<()> {
