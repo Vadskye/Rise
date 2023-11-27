@@ -186,8 +186,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalsustainability}{Ballad of Belligerence}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
-                        For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+                        \hit For the duration of your performance, the target is \debuff{enraged}.
+                        Every round, it must spend a \glossterm{standard action} to make an attack.
 
                         \rankline
                         The attack gains a \plus2 accuracy bonus for each rank beyond 1.
