@@ -103,7 +103,7 @@ export const aquamancy: MysticSphere = {
       // doubling.
       effect: `
         You create a self-contained pool of water in a 10 foot radius cylinder-shaped \\glossterm{zone} within \\shortrange.
-        Everything inside the area is underwater (see \pcref{Fighting While Swimming}).
+        Everything inside the area is underwater (see \\pcref{Fighting While Swimming}).
       `,
       rank: 2,
       tags: ['Manifestation'],
@@ -248,7 +248,7 @@ export const aquamancy: MysticSphere = {
 
       // targeting: None,
       effect: `
-          You create a \\smallarealong \\glossterm{wall} of water within \\medrange.
+          You create a \\medarealong \\glossterm{wall} of water within \\medrange.
           The wall is four inches thick.
           Sight through the wall is possible, though distorted.
           The wall provides both \\glossterm{cover} and \\glossterm{concealment} to targets on the opposite side of the wall (see \\pcref{Obstacles and Cover}).
@@ -260,9 +260,9 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You can increase the area to a \\medarealong wall.`,
-        5: `You can increase the area to a \\largearealong wall.`,
-        7: `You can increase the area to a \\hugearealong wall.`,
+        3: `You can increase the area to a \\largearealong wall.`,
+        5: `You can increase the area to a \\hugearealong wall.`,
+        7: `The range increases to \\longrange.`,
       },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
