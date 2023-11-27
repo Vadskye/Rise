@@ -276,8 +276,8 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is enraged as a \\glossterm{condition}.
-          It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          Each target is \\debuff{enraged} as a \\glossterm{condition}.
+          Every round, it must spend a \\glossterm{standard action} to make an attack.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -294,8 +294,8 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is enraged as a \\glossterm{condition}.
-          It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
+          Each target is \\debuff{enraged} as a \\glossterm{condition}.
+          Every round, it must spend a \\glossterm{standard action} to make an attack.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
@@ -440,8 +440,8 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
-          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+          The target is \\debuff{enraged} as a \\glossterm{condition}.
+          Every round, it must spend a \\glossterm{standard action} to make an attack.
         `,
         targeting: `
           Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.

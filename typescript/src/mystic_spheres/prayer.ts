@@ -357,24 +357,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Curse of Rage',
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `
-          The target is enraged until it finishes a \\glossterm{short rest}.
-          It is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
-          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-      tags: ['Curse', 'Emotion'],
-    },
-    {
       name: 'Curse of Poor Eyesight',
 
       attack: {

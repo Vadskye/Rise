@@ -539,8 +539,8 @@ export const electromancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is unable to take any \\glossterm{standard actions} that do not cause it to make an attack.
-          For example, it could make a \\glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
+          Each target is \\debuff{enraged} as a \\glossterm{condition}.
+          Every round, it must spend a \\glossterm{standard action} to make an attack.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
