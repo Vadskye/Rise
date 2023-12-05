@@ -644,7 +644,7 @@ export const enchantment: MysticSphere = {
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 3.' },
+      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
