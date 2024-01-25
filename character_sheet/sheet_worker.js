@@ -795,13 +795,13 @@ function handleBrawlingAccuracy() {
     (v) => {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
-      const levelishModifier = Math.floor(levelModifier + strengthModifier);
+      const levelishModifier = levelModifier + strengthModifier;
       const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
-      const brawling_accuracy =
+      const brawling_accuracy = Math.floor(
         v.misc +
         levelishModifier +
         crModifier -
-        v.fatigue_penalty;
+        v.fatigue_penalty);
       setAttrs({
         brawling_accuracy,
         brawling_accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
@@ -2551,8 +2551,8 @@ function handleVitalWounds() {
           let fatigue_tolerance_penalty = -countRolls(rolls, 5) * 2;
           let all_defenses_penalty = -countRolls(rolls, 6);
           let fortitude_penalty = -countRolls(rolls, 7) * 2;
-          let mental_penalty = -countRolls(rolls, 8) * 2;
-          let reflex_penalty = -countRolls(rolls, 9) * 2;
+          let reflex_penalty = -countRolls(rolls, 8) * 2;
+          let mental_penalty = -countRolls(rolls, 9) * 2;
 
           let attrs = {
             vital_wound_count: repeatingSectionIds.length,
