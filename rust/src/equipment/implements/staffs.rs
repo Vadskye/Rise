@@ -416,14 +416,14 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Blinding Staff"),
         rank: 3,
-        short_description: String::from(r"Briefly blinds you and dazzled creatures"),
+        short_description: String::from(r"Briefly blinds you and dazzled creature"),
         description: String::from(r"
             Whenever you cause a creature to become \dazzled as a \glossterm<condition>, you may activate this staff.
             If you do, you and that creature are each \glossterm<briefly> \blinded.
             After you activate this staff, you briefly cannot activate it again.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Briefly blinds dazzled creatures", r"
+            ItemUpgrade::new(6, "Briefly blinds dazzled creature", r"
                 Activating this staff no longer blinds you.
             "),
         ],
