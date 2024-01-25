@@ -92,10 +92,10 @@ It includes some context for the narrative universe of Rise, mechanics for monst
     \subsection{Standard Travel Days}
         Characters covering long distances cross-country use overland movement.
         Overland movement is measured in miles per hour or miles per day.
-        A day normally represents 10 hours of actual travel time.
+        A day normally represents 8 hours of actual travel time.
         However, sailing ships and other methods of travel that keep moving without requiring a rest are listed with a full 24 hours of travel time.
 
-        Creatures can make an Endurance check to push beyond a standard 10-hour travel day.
+        Creatures can make an Endurance check to push beyond a standard 8-hour travel day.
         In addition, they can make an Endurance check to travel faster within a normal travel day.
         For details, see \pcref{Endurance}.
 
@@ -105,14 +105,14 @@ It includes some context for the narrative universe of Rise, mechanics for monst
     \begin{dtable}
         \lcaption{Travel Distance By Movement Speed}
         \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c c}
-            & \multicolumn{4}{c}{\tdash\tdash\tdash Speed \tdash\tdash\tdash} \tableheaderrule
-                                 & 15 feet     & 20 feet  & 30 feet     & 40 feet  \\
-            One Hour (Overland)  &             &          &             &          \\
-            Walk                 & 3/4 mile    & 1 mile   & 1-1/2 miles & 2 miles  \\
-            Hustle               & 1-1/2 miles & 2 miles  & 3 miles     & 4 miles  \\
-            One Day (Overland)   &             &          &             &          \\
-            Walk                 & 7-1/2 miles & 10 miles & 15 miles    & 20 miles \\
-            Hustle               & \tdash      & \tdash   & \tdash      & \tdash   \\
+                                & \multicolumn{4}{c}{\tdash\tdash\tdash Speed \tdash\tdash\tdash} \tableheaderrule
+                                & 15 feet    & 20 feet  & 30 feet  & 40 feet  \\
+            One Hour (Overland) &            &          &          &          \\
+            Walk                & 1-1/2 mile & 2 miles  & 3 miles  & 4 miles  \\
+            Hustle (Exertion)   & 3 miles    & 4 miles  & 6 miles  & 8 miles  \\
+            One Day (Overland)  &            &          &          &          \\
+            Walk                & 12 miles   & 16 miles & 24 miles & 30 miles \\
+            Hustle (Exertion)   & \tdash     & \tdash   & \tdash   & \tdash   \\
         \end{dtabularx}
     \end{dtable}
 
@@ -120,30 +120,21 @@ It includes some context for the narrative universe of Rise, mechanics for monst
         \lcaption{Mounts and Vehicles}
         \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
             \tb{Mount/Vehicle}                         & \tb{Per Hour} & \tb{Per Day} \tableheaderrule
-            Mount (carrying load)                      &               &          \\
-            \tind Light horse or light warhorse        & 6 miles       & 60 miles \\
-            \tind Light horse                          & 4 miles       & 40 miles \\
-            \tind Light warhorse                       & 4 miles       & 40 miles \\
-            \tind Heavy horse or heavy warhorse        & 5 miles       & 50 miles \\
-            \tind Heavy horse                          & 3-1/2 miles   & 35 miles \\
-            \tind Heavy warhorse                       & 3-1/2 miles   & 35 miles \\
-            \tind Pony or warpony                      & 4 miles       & 40 miles \\
-            \tind Pony                                 & 3 miles       & 30 miles \\
-            \tind Warpony                              & 3 miles       & 30 miles \\
-            \tind Donkey or mule                       & 3 miles       & 30 miles \\
-            \tind Donkey                               & 2 miles       & 20 miles \\
-            \tind Mule                                 & 2 miles       & 20 miles \\
-            \tind Dog, riding                          & 4 miles       & 40 miles \\
-            \tind Dog, riding                          & 3 miles       & 30 miles \\
-            \tind Cart or wagon                        & 2 miles       & 20 miles \\
-            \tb{Ship}                                  &               &          \\
-            \tind Raft or barge (poled or towed)\fn{1} & 1/2 mile      & 5 miles  \\
-            \tind Keelboat (rowed)\fn{1}               & 1 mile        & 10 miles \\
-            \tind Rowboat (rowed)\fn{1}                & 1-1/2 miles   & 15 miles \\
-            \tind Sailing ship (sailed)                & 2 miles       & 48 miles \\
-            \tind Warship (sailed and rowed)           & 2-1/2 miles   & 60 miles \\
-            \tind Longship (sailed and rowed)          & 3 miles       & 72 miles \\
-            \tind Galley (rowed and sailed)            & 4 miles       & 96 miles \\
+            Mount (carrying load)                      &             &          \\
+            \tind Light horse or warhorse              & 5 miles     & 40 miles \\
+            \tind Draft horse                          & 4 miles     & 32 miles \\
+            \tind Pony or warpony                      & 4 miles     & 32 miles \\
+            \tind Donkey or mule                       & 3 miles     & 24 miles \\
+            \tind Dog, riding                          & 4 miles     & 32 miles \\
+            \tind Cart or wagon                        & 2 miles     & 16 miles \\
+            \tb{Ship}                                  &             &          \\
+            \tind Raft or barge (poled or towed)\fn{1} & 1/2 mile    & 4 miles  \\
+            \tind Keelboat (rowed)\fn{1}               & 1 mile      & 8 miles \\
+            \tind Rowboat (rowed)\fn{1}                & 1-1/2 miles & 12 miles \\
+            \tind Sailing ship (sailed)                & 2 miles     & 48 miles \\
+            \tind Warship (sailed and rowed)           & 2-1/2 miles & 60 miles \\
+            \tind Longship (sailed and rowed)          & 3 miles     & 72 miles \\
+            \tind Galley (rowed and sailed)            & 4 miles     & 96 miles \\
         \end{dtabularx}
         1 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
         If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
