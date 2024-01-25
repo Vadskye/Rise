@@ -294,10 +294,14 @@ impl Monster {
 
 *Attacks*:
 {attacks}
+
+*Movement*:
+{movement}
             ",
             modifiers = self.creature.explain_modifiers().join("\n").trim(),
             damage_absorption = self.creature.explain_damage_absorption().trim(),
             attacks = self.creature.explain_attacks().join("\n").trim(),
+            movement = self.latex_movement(),
         )
     }
 }
