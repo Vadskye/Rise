@@ -98,7 +98,7 @@ impl ChallengeRating {
     pub fn hp_multiplier(&self) -> f64 {
         match self {
             Self::One => 1.0,
-            Self::Four => 4.0,
+            Self::Four => 3.0,
         }
     }
 
