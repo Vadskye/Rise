@@ -1632,7 +1632,7 @@ function handleHitPoints() {
 
       let crMultiplier = {
         1: 1,
-        4: 4,
+        4: 3,
       }[v.challenge_rating] || 1;
 
       const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
