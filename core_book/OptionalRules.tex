@@ -515,7 +515,7 @@
             If you choose automaton as your base class, you gain the following abilities.
 
             \cf{Aut}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
+            You gain the following bonuses to your \glossterm{defenses}: \plus5 Fortitude, \plus3 Reflex, \plus4 Mental.
 
             \cf{Aut}{Hit Points}
             
@@ -596,7 +596,7 @@
         Ancient dragons are magical creatures of immense power and wisdom, and are far more powerful than any ordinary character of the same level.
         However, young dragons can be played as characters, though their unique abilities do pose unique challenges.
 
-        \parhead{Creature Type} Unlike most other playable species, dragons are considered magical beasts instead of humanoids.
+        \parhead{Creature Type} Unlike most other playable species, dragons are magical beasts instead of humanoids.
         \parhead{Size} Small. This gives a dragon a 20 foot \glossterm{base speed} and a \plus5 bonus to the Stealth skill, among other effects (see \pcref{Size Categories}).
         \parhead{Attributes} \minus2 Strength, \plus1 Dexterity.
         \parhead{Special Abilities}
@@ -605,6 +605,7 @@
                 Instead, they treat the Dragon archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
             \itemhead{Draconic Senses} Dragons have \trait{darkvision} with a 60 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
                 In addition, dragons gain \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+            \itemhead{Draconic Scales} Dragons gain a \plus2 bonus to their Armor defense.
             \itemhead{Draconic Weapons} Dragons have a bite natural weapon and two claw natural weapons.
                 For details, see \pcref{Natural Weapons}.
             \itemhead{Draconic Wings} Dragons have scaly wings that sprout from their backs.
@@ -613,8 +614,7 @@
             \itemhead{Dragon Type} Each dragon has a single type from among the dragon types on \trefnp{Dragon Types}.
                 They are immune to the damage type dealt by their type's breath weapon.
             \itemhead{Limited Equipment} A dragon's claws are not able to effectively wield shields or manufactured weapons.
-                They can wear armor, but it is treated as barding instead of normal armor, increasing its cost.
-                In general, dragon-fitted barding is rare or nonexistent even in large cities, so a dragon's armor must usually be created specifically for them.
+                They can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
         \end{itemize}
         \parhead{Automatic Languages} Common, Draconic, any one \glossterm{common language}.
 
@@ -670,7 +670,7 @@
             As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
             \cf{Dgn}[4]{Draconic Bulk} Your size category increases to Medium.
-            This increases the \glossterm{base speed} for your size.
+            This increases your \glossterm{base speed} to 30 feet.
             You reduce your Dexterity by 1 and increase your Strength by 2.
             In addition, you gain a \plus1 bonus to your \glossterm{power} with all abilities.
 
@@ -680,7 +680,8 @@
             In addition, you gain a \plus10 foot bonus to your fly speed with that ability.
 
             \cf{Dgn}[7]{Draconic Bulk+} Your size category increases to Large.
-            The speed bonus from your \textit{draconic bulk} ability increases to \plus20 feet, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
+            This increases your \glossterm{base speed} to 40 feet.
+            In addition, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
             % Natural dragons treat their tail slam as heavy, but that may not work for a PC? They also treat their Bite as heavy, which these dragons don't do.
             You also gain a tail slam \glossterm{natural weapon}.
             It deals 1d10 bludgeoning damage and has the \weapontag{Forceful} weapon tag (see \pcref{Weapon Tags}).
@@ -691,7 +692,7 @@
             If you choose dragon as your base class, you gain the following abilities.
 
             \cf{Drg}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
+            You gain the following bonuses to your \glossterm{defenses}: \plus5 Fortitude, \plus3 Reflex, \plus4 Mental.
 
             \cf{Drg}{Hit Points}
             
@@ -773,29 +774,19 @@
         \end{itemize}
         \parhead{Automatic Languages} Common, Elven, Undercommon
 
-    \subsection{Dryaidi}
+    % \subsection{Dryaidi}
 
-        Dryaidi are humanoid creatures that resemble plants. They are descended from dryads.
+    %     Dryaidi are humanoid creatures with plantlike characteristics.
+    %     These might include having leaves instead of hair, a green skin tone, or rough, barky skin.
+    %     They are descended from dryads, and share some fey heritage and an affinity for trees.
 
-        \parhead{Size} Medium.
-        \parhead{Attributes} \plus1 Constitution, \minus1 Dexterity.
-        \parhead{Special Abilities}
-        \begin{itemize}
-            \itemhead{Ingrain} A dryaidi use the \textit{ingrain} ability as a standard action.
-                \begin{activeability}{Ingrain}
-                    \rankline
-                    The dryaidi's land speed becomes 5 feet, regardless of any modifiers that normally apply.
-                    It gains a \plus4 bonus to Fortitude defense and a \plus1 bonus to Armor defense.
-                    If the dryaidi finishes a \glossterm{long rest} with this ability active for the duration of the rest, it acquires nutrients sufficient to replace a day's worth of food and water.
-
-                    This ability lasts until the dryaidi ends it as a standard action.
-                \end{activeability}
-            \itemhead{Plant Nature} A dryaidi is considered both a creature and a plant.
-            \itemhead{Unhurried and Unfaltering} Dryaidi have a \minus10 penalty to speed with all \glossterm{movement modes}.
-                However, a dryaidi's land speed cannot be reduced below 20 feet.
-                In addition, dryaidi ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-        \end{itemize}
-        \parhead{Automatic Languages} Common, Sylvan.
+    %     \parhead{Size} Medium.
+    %     \parhead{Attributes} No change.
+    %     \parhead{Special Abilities}
+    %     \begin{itemize}
+    %         \itemhead{Enchanting Appearance} A dryaidi gains a \plus2 bonus to the Creature Handling, Perform, and Persuasion skills.
+    %     \end{itemize}
+    %     \parhead{Automatic Languages} Common, Sylvan.
 
     \subsection{Eladrin}
 
@@ -842,27 +833,28 @@
 
     \subsection{Harpy}
         Harpies are winged creatures with the upper body of a humanoid and the lower body of a bird.
-        The vast majority of harpies are female, but male harpies do exist.
+        Most harpies are female, but male harpies do exist.
 
-        \parhead{Creature Type} Unlike most other playable species, harpies are considered monstrous humanoids instead of humanoids.
+        \parhead{Creature Type} Unlike most other playable species, harpies are monstrous humanoids instead of humanoids.
         \parhead{Size} Medium.
         \parhead{Attributes} \minus1 Intelligence, \plus1 Dexterity.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Prehensile Talons} Harpies have a talon natural weapon on each foot (see \pcref{Natural Weapons}).
-                In addition, they can use their feet as \glossterm{free hands}.
-                However, their talons are not able to effectively wield shields or manufactured weapons.
-            \itemhead{Wings} Harpies have a feathered wings that sprout from their shoulders in place of arms.
-                These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
-            \itemhead{Armless} Harpies do not have arms or hands.
             \itemhead{Harpy Archetype} Harpies only gain two class archetypes instead of three.
                 Instead, they treat the Harpy archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
+            \itemhead{Limited Equipment} Harpies can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
+                Harpy talons are not able to effectively wield shields or manufactured weapons.
+            \itemhead{Prehensile Talons} Harpies have a talon natural weapon on each foot (see \pcref{Natural Weapons}).
+                In addition, they can use their feet as \glossterm{free hands}.
+            \itemhead{Wings} Harpies have a feathered wings that sprout from their shoulders.
+                These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
+                However, they have no arms or hands.
         \end{itemize}
         \parhead{Automatic Languages} Common.
         
         \subsubsection{Harpy Archetype}
 
-            \cf{Hrp}[1]{Winged Agility} You gain a \plus4 bonus to the Balance and Jump skills as long as you can use your wings to help you.
+            \cf{Hrp}[1]{Winged Agility} While you are able to use your wings, you gain a \plus2 bonus to Armor defense and a \plus4 bonus to the Balance and Jump skills.
             In addition, you gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
             This increases your maximum vertical jump distance normally.
 
@@ -919,7 +911,7 @@
             If you choose harpy as your base class, you gain the following abilities.
 
             \cf{Hrp}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus7 Reflex, \plus5 Mental.
+            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus5 Reflex, \plus4 Mental.
 
             \cf{Hrp}{Hit Points}
             
@@ -1042,7 +1034,7 @@
         Adventuring oozeborn typically assume a bipedal shape for both practical and social convenience, but their natural shape is a loosely spherical blob.
         Unconscious oozeborn revert to their default state automatically, though some learn to maintain a semblance of cohesion while asleep.
 
-        \parhead{Creature Type} Unlike most other playable species, oozeborn are considered animates instead of humanoids.
+        \parhead{Creature Type} Unlike most other playable species, oozeborn are animates instead of humanoids.
         \parhead{Size} Medium.
         \parhead{Attributes} \minus1 Intelligence, \plus1 Constitution.
         \parhead{Special Abilities}
@@ -1062,6 +1054,7 @@
                     If you add at least two legs, you gain a \plus10 foot bonus to your land speed.
                     % TODO: awkwardly worded
                     This speed bonus does not stack with the bonus for becoming \trait{multipedal}, so the only benefit you gain from creating three or more legs is a \plus5 bonus to the Balance skill.
+                    If you give yourself a standard humanoid shape, you can wear armor designed for humanoids without suffering the normal penalties for \glossterm{barding} (see \pcref{Barding}).
 
                     You can sustain this ability for any length of time without mental strain, ignoring the normal 5 minute limit.
                 \end{sustainability}
@@ -1122,7 +1115,7 @@
             If you choose oozeborn as your base class, you gain the following abilities.
 
             \cf{Ooz}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus7 Fortitude, \plus3 Reflex, \plus5 Mental.
+            You gain the following bonuses to your \glossterm{defenses}: \plus5 Fortitude, \plus3 Reflex, \plus4 Mental.
 
             \cf{Ooz}{Hit Points}
             
@@ -1178,6 +1171,135 @@
             \itemhead{Powerful} You gain a \plus1 bonus to your \glossterm{mundane power}.
         \end{itemize}
         \parhead{Automatic Languages} Common, Orc.
+
+    \subsection{Sapling}
+
+        Saplings are young treants that have left their forest home in search of adventure.
+        They tend to be slow to think and act, but resilient once they have made up their mind.
+
+        \parhead{Creature Type} Unlike most other playable species, saplings are considered animates instead of humanoids.
+        \parhead{Size} Medium.
+        \parhead{Attributes} \plus1 Constitution, \plus1 Willpower, \minus1 Dexterity, \minus1 Intelligence
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Barkskin} A sapling gains a \plus2 bonus to Armor defense.
+            \itemhead{Ingrain} A sapling can use the \textit{ingrain} ability as a \glossterm{minor action} while it is \glossterm{grounded}.
+                \begin{activeability}{Ingrain}
+                    \rankline
+                    The sapling's land speed becomes 5 feet, regardless of any modifiers that normally apply.
+                    It cannot voluntarily stop being \glossterm{grounded} while this ability lasts.
+                    It gains a \plus4 bonus to Fortitude defense and a \plus2 bonus to Armor defense.
+
+                    If the sapling finishes a \glossterm{long rest} with this ability active for the duration of the rest, it acquires nutrients sufficient to replace a day's worth of food and water.
+                    This ability lasts until the sapling ends it as a standard action, or until it stops being \glossterm{grounded}.
+                \end{activeability}
+            \itemhead{Limited Equipment} Saplings can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
+            \itemhead{Made of Wood} Saplings are \vulnerable to fire damage. In addition, they are both creatures and plants.
+            \itemhead{Treant Archetype} Saplings only gain two class archetypes instead of three.
+                Instead, they treat the Treant archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
+            \itemhead{Tree Appearance} When a sapling stays perfectly still, observers must make a DV 15 Awareness check to recognize that it is not an ordinary tree.
+            Careful observers may still notice that the ordinary tree has appeared where no tree used to be, so they may be suspicious of a sapling even if they do not pass this check.
+            \itemhead{Unhurried and Unfaltering} Saplings have a \minus10 penalty to speed with all \glossterm{movement modes}.
+                However, saplings ignore all penalties to their land speed, such as from wearing heavy armor.
+                Those penalties still apply to any other movement modes normally.
+                This also does not change effects that completely replace the sapling's land speed, such as the \ability{ingrain} ability.
+                In addition, saplings ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
+        \end{itemize}
+        \parhead{Automatic Languages} Common, Sylvan.
+
+        \subsubsection{Treant Archetype}
+            % Nourishing Ingrain:
+            % * R1, 2 HP - 25% of fighter base HP (8)
+            % * R2, 4 HP - 28.5% of fighter base HP (14)
+            % * R3, 6 HP - 30% of fighter base HP (20)
+            % * R4, 8 HP - 27.5% (29)
+            % * R5, 15 HP - 37.5% (40)
+            % * R6, 18 HP - 31% (58)
+            % * R7, 21 HP - 26% (80)
+
+            % This intentionally can bring you above half max
+            \cf{Tre}[1]{Nourishing Ingrain} At the end of each round while you are \ability{ingrained}, you regain hit points equal to twice your rank in this archetype, and you may choose to remove a \glossterm{condition}.
+            If you do, you increase your \glossterm{fatigue level} by one.
+
+            \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
+
+            \cf{Tre}[3]{Animate Plants} You can use the \textit{animate plants} ability as a standard action.
+            \begin{activeability}{Animate Plants}
+                \spelltwocol{}{\abilitytag{Manifestation}}
+                \rankline
+                Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
+                You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
+
+                \hit The target is \slowed as a \glossterm{condition}.
+                In addition, it takes 1d8 bludgeoning damage immediately, and during each of your subsequent actions while this condition lasts.
+
+                This condition can be removed if the target makes a \glossterm{difficulty value} 10 Strength check as a \glossterm{movement} to break the plants.
+                If the target makes this check as a standard action, it gains a \plus5 bonus.
+                In addition, this condition is removed if the target takes fire damage.
+                \crit The condition must be removed an additional time before the effect ends.
+                \rankline
+                For each rank beyond 3, the attack's \glossterm{accuracy} increases by \plus2 and the \glossterm{difficulty value} to break the plants increases by 2.
+                In addition, the damage increases at each rank as described below.
+                \rank{4} 1d10 bludgeoning damage.
+                \rank{5} 2d6 bludgeoning damage.
+                \rank{6} 2d8 bludgeoning damage.
+                \rank{7} 2d10 bludgeoning damage.
+            \end{activeability}
+
+            \cf{Tre}[4]{Tall as the Noble Pine} Your size category increases to Large.
+            This would normally increase your \glossterm{base speed} to 40 feet.
+            However, you take a \minus10 foot penalty to your base speed, so it is still 30 feet.
+            You also gain a \plus1 bonus to your Strength, and a \minus1 penalty to your Dexterity.
+
+            \cf{Tre}[5]{Nourishing Ingrain+} The healing from your \textit{nourishing ingrain} ability increases to three times your rank in this archetype.
+            In addition, removing a condition with that ability no longer increases your fatigue level.
+
+            \cf{Tre}[6]{Sturdy as the Mighty Oak+} The hit point bonus increases to four times your rank in this archetype.
+
+            \cf{Tre}[7]{Tall as the Noble Pine+} Your size category increases to Huge.
+            This increases your \glossterm{base speed} to 40 feet.
+            The modifiers to Strength and Dexterity increase to \plus2 and \minus2, respectively.
+
+        \subsubsection{Basic Class Abilities}
+            If you choose treant as your base class, you gain the following abilities.
+
+            \cf{Tre}{Defenses}
+            You gain the following bonuses to your \glossterm{defenses}: \plus5 Fortitude, \plus3 Reflex, \plus4 Mental.
+
+            \cf{Tre}{Hit Points}
+                You have 8 hit points \add twice your Constitution, plus 2 hit points per level beyond 1.
+                This increases as your level increases, as indicated below.
+                \begin{itemize}
+                    \itemhead{Level 7} 20 hit points \add three times your Constitution, plus 3 hit points per level beyond 7.
+                    \itemhead{Level 13} 40 hit points \add six times your Constitution, plus 6 hit points per level beyond 13.
+                    \itemhead{Level 19} 80 hit points \add twelve times your Constitution, plus 12 hit points per level beyond 19.
+                \end{itemize}
+
+            \cf{Tre}{Resources} You have the following \glossterm{resources}:
+            \begin{itemize}
+                \item Two \glossterm{attunement points}, which you can use to attune to items and abilities that affect you (see \pcref{Attunement Points}).
+                \item A \glossterm{fatigue tolerance} equal to 4 \add your Constitution.
+                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \pcref{Fatigue}).
+                \item A number of \glossterm{insight points} equal to 1 \add your Intelligence.
+                    You can spend insight points to gain additional abilities (see \pcref{Insight Points}).
+                \item Three \glossterm{trained skills} from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence (see \pcref{Skills}).
+            \end{itemize}
+
+            \cf{Tre}{Weapon Proficiencies} 
+            You are proficient with simple weapons and club-like weapons.
+
+            \cf{Tre}{Armor Proficiencies} 
+            You are proficient with light, medium, and heavy armor.
+
+            \cf{Tre}{Skills}
+            You have the following \glossterm{class skills}:
+            \begin{itemize}
+                \item \subparhead{Dexterity} Balance.
+                \item \subparhead{Constitution} Endurance.
+                \item \subparhead{Intelligence} Knowledge (nature).
+                \item \subparhead{Perception} Awareness, Creature Handling, Survival.
+                \item \subparhead{Other} Intimidate.
+            \end{itemize}
 
     \subsection{Tiefling}
         \includegraphics[width=\columnwidth]{optional rules/tiefling}
@@ -1350,11 +1472,13 @@
         Unlike most undead creatures, vampires appear to be alive and human, allowing them to act normally in society.
         Vampires have great power, but also many dangerous weaknesses.
 
+        \parhead{Creature Type} Unlike most other playable species, vampires are undead instead of humanoids.
         \parhead{Size} Medium.
         \parhead{Attributes} \plus1 Strength and Dexterity, \minus1 Constitution.
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Climb Speed} Vampires have a \glossterm{climb speed} 10 feet slower than their \glossterm{base speed}.
+            \itemhead{Darkvision} Vampires have \trait{darkvision} with a 60 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
             \itemhead{Fangs} Vampires have a bite natural weapon (see \tref{Natural Weapons}).
                 These fangs retract when not in use, so vampires cannot be identified as non-human by their fangs unless they choose to expose them.
             \itemhead{Undead} Vampires are \trait{undead} instead of \glossterm{living}, and they take damage from most healing effects (see \pcref{Undead})).
@@ -1458,7 +1582,7 @@
             If you choose vampire as your base class, you gain the following abilities.
 
             \cf{Vmp}{Defenses}
-            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus6 Reflex, \plus6 Mental.
+            You gain the following bonuses to your \glossterm{defenses}: \plus3 Fortitude, \plus4 Reflex, \plus5 Mental.
 
             \cf{Vmp}{Hit Points}
             

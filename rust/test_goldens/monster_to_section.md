@@ -97,8 +97,8 @@
                 \end{minipage}
                 \par \RaggedRight
                 \begin{monsterstatistics}
-                \pari \textbf{HP} 48
-                    \monsep \textbf{DR} 36
+                \pari \textbf{HP} 36
+                    \monsep \textbf{DR} 27
                 \pari \textbf{Defenses}
                     Armor 8
                     \monsep Fort 8
@@ -275,8 +275,8 @@
                 \end{minipage}
                 \par \RaggedRight
                 \begin{monsterstatistics}
-                \pari \textbf{HP} 140
-                    \monsep \textbf{DR} 105
+                \pari \textbf{HP} 105
+                    \monsep \textbf{DR} 78
                 \pari \textbf{Defenses}
                     Armor 13
                     \monsep Fort 13

@@ -557,7 +557,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     ",
                 ),
             ],
-            alignment: "Usually neutral good".to_string(),
+            alignment: "Usually true neutral".to_string(),
             attributes: vec![5, -2, 7, 0, 0, 6],
             knowledge: Knowledge::new(vec![(0, "
                 Oak treants tend to be the most stubborn treants.
