@@ -29,11 +29,11 @@ Level 15: 5
 Level 20: 5.75
 
 ## Fighter vs Elite Monster
-Level 1: 27.75
-Level 5: 25.25
-Level 10: 20
-Level 15: 30
-Level 20: 34.25
+Level 1: 21
+Level 5: 19
+Level 10: 15
+Level 15: 22.5
+Level 20: 25.75
 
 ## Fighter vs Sorcerer
 Level 1: 2.75

@@ -156,7 +156,7 @@ impl HitPointProgression {
     pub fn to_class_text(&self) -> String {
         format!(
             "
-                {level_one}
+                You have {level_one}
                 This increases as your level increases, as indicated below.
                 \\begin<itemize>
                     \\itemhead<Level 7> {level_seven}
@@ -187,11 +187,11 @@ impl HitPointProgression {
             _ => panic!("Unsupported constitution multiplier {}", incremental_hp),
         };
         return format!(
-            "You have {} hit points, plus {} hit points per level beyond {}, plus {} your Constitution.",
+            "{} hit points \\add {} your Constitution, plus {} hit points per level beyond {}.",
             base_hp,
+            constitution_multiplier_text,
             incremental_hp,
             level,
-            constitution_multiplier_text,
         );
     }
 }

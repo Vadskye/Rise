@@ -33,6 +33,7 @@ pub enum Class {
     Ranger,
     Rogue,
     Sorcerer,
+    Treant,
     Warlock,
     Wizard,
     Vampire,
@@ -57,6 +58,7 @@ impl Class {
             Self::Dragon,
             Self::Harpy,
             Self::Oozeborn,
+            Self::Treant,
             Self::Vampire,
         ]
     }
@@ -127,6 +129,7 @@ impl Class {
             Self::Ranger => 2,
             Self::Rogue => 3,
             Self::Sorcerer => 4,
+            Self::Treant => 2,
             Self::Warlock => 3,
             Self::Wizard => 4,
             Self::Vampire => 3,
@@ -344,6 +347,15 @@ impl Class {
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Planes]),
                 Skill::Persuasion,
             ],
+            Self::Treant => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::CreatureHandling,
+                Skill::Endurance,
+                Skill::Intimidate,
+                Skill::Knowledge(vec![KnowledgeSubskill::Nature]),
+                Skill::Survival,
+            ],
             Self::Warlock => vec![
                 Skill::Awareness,
                 Skill::Deception,
@@ -469,6 +481,12 @@ impl Class {
                 Defense::Reflex => 4,
                 Defense::Mental => 5,
             },
+            Self::Treant => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 5,
+                Defense::Reflex => 3,
+                Defense::Mental => 4,
+            },
             Self::Warlock => match defense {
                 Defense::Armor => 0,
                 Defense::Fortitude => 4,
@@ -505,6 +523,7 @@ impl Class {
             Self::Ranger => 4,
             Self::Rogue => 2,
             Self::Sorcerer => 2,
+            Self::Treant => 4,
             Self::Warlock => 3,
             Self::Wizard => 1,
             Self::Vampire => 3,
@@ -526,6 +545,7 @@ impl Class {
             Self::Ranger => HitPointProgression::High,
             Self::Rogue => HitPointProgression::Medium,
             Self::Sorcerer => HitPointProgression::Low,
+            Self::Treant => HitPointProgression::High,
             Self::Warlock => HitPointProgression::Medium,
             Self::Wizard => HitPointProgression::Low,
             Self::Vampire => HitPointProgression::Medium,
@@ -547,6 +567,7 @@ impl Class {
             Self::Ranger => 1,
             Self::Rogue => 2,
             Self::Sorcerer => 2,
+            Self::Treant => 1,
             Self::Warlock => 2,
             Self::Wizard => 3,
             Self::Vampire => 1,
@@ -568,6 +589,7 @@ impl Class {
             Self::Ranger => "ranger",
             Self::Rogue => "rogue",
             Self::Sorcerer => "sorcerer",
+            Self::Treant => "treant",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
             Self::Vampire => "vampire",
@@ -598,6 +620,7 @@ impl Class {
             Self::Ranger => "Rgr",
             Self::Rogue => "Rog",
             Self::Sorcerer => "Sor",
+            Self::Treant => "Tre",
             Self::Warlock => "War",
             Self::Wizard => "Wiz",
             Self::Vampire => "Vmp",
@@ -619,6 +642,7 @@ impl Class {
             Self::Ranger => 5,
             Self::Rogue => 6,
             Self::Sorcerer => 3,
+            Self::Treant => 3,
             Self::Warlock => 4,
             Self::Wizard => 3,
             Self::Vampire => 5,
@@ -678,6 +702,10 @@ impl Class {
             Self::Sorcerer => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![],
+            },
+            Self::Treant => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: ArmorUsageClass::all(),
             },
             Self::Warlock => ArmorProficiencies {
                 specific_armors: None,
@@ -940,6 +968,7 @@ impl Class {
                 However, celestial or infernal heritage is also not unheard of, and even stranger ancestry is possible.
                 In addition, sorcerers seem to be more common in areas that have been affected by powerful magic.
             ".to_string(),
+            Self::Treant => String::from(""),
             Self::Warlock => r"
                 Warlocks are pact spellcasters who draw their power from a sinister deal made with infernal creatures.
                 Their soulkeeper grants them access to great magical power.
@@ -1083,6 +1112,14 @@ impl Class {
             Self::Sorcerer => WeaponProficiencies {
                 custom_weapon_groups: 0,
                 specific_weapon_groups: None,
+                specific_weapons: None,
+                simple_weapons: true,
+            },
+            Self::Treant => WeaponProficiencies {
+                custom_weapon_groups: 0,
+                specific_weapon_groups: Some(vec![
+                    WeaponGroup::Clublike,
+                ]),
                 specific_weapons: None,
                 simple_weapons: true,
             },
