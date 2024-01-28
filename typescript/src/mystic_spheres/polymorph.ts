@@ -152,7 +152,7 @@ export const polymorph: MysticSphere = {
           They cannot speak and have no \\glossterm{free hands}.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against one Huge or smaller creature within \\medrange.
+          Make an attack vs. Fortitude and Mental against one Huge or smaller creature within \\shortrange.
         `,
       },
       rank: 5,
