@@ -654,7 +654,7 @@ def universal_abilities():
             universal_ability_button(
                 "Escape Grapple",
                 """
-                    Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability, +4 for each size category by which it is larger than you. If a creature did not use that ability during the current round, its defense against this ability is 0.
+                    Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.
                     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
                 """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Special", "tags": ["Brawling"]},
