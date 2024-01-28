@@ -185,7 +185,7 @@ Each debuff rank is +4 spell ranks over its predecessor
   * Conditions: confused, blinded, panicked, vulnerable to all damage
   * Instant effects: knockback 45', push 60', teleport 60'
 * Rank 3.5
-  * Conditions: immobilized
+  * Conditions: immobilized, liquified
 * Rank 4
   * Generally cause complete action denial
   * List: Asleep, paralyzed
@@ -196,8 +196,11 @@ Note that these are used for determining the levels of new effects, not rank upg
 have their own logic which may differ significantly from this.
 
 * Both strike-based and non-strike-based:
+  * -5 ranks: debuff requires beating an extra defense AND only works if no remaining DR / below max HP / loses HP from attack
   * -4 ranks: debuff only applies when the target loses HP from the attack
-  * -2 ranks: debuff only applies if you beat an additional defense
+  * -4 ranks: debuff only applies when the target has no remaining DR / is below max HP
+  * -2 ranks: debuff only applies if you beat an additional defense, assuming it is NOT "missing DR only"
+    * Missing dr / hp damage debuffs are typically fight-ending, 
   * +0 rank: add specific crit effect to non-damaging effect; standard crit effects:
     * +1 rank debuff that replaces existing debuff
     * +0 rank debuff in addition to existing debuff, removed at the same time
