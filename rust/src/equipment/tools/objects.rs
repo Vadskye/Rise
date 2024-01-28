@@ -155,7 +155,7 @@ pub fn objects() -> Vec<Tool> {
     objects.push(Tool {
         name: "Bag of Holding".to_string(),
         rank: 4,
-        short_description: "Shrinks items by one size category".to_string(),
+        short_description: "Shrinks items by one size and weight category".to_string(),
         description: r"
             This bag appears to be a bulky Medium cloth sack.
             However, it reduces the size and weight of any \glossterm<unattended>, nonmagical objects placed inside of it by one size category and weight category.
@@ -164,7 +164,7 @@ pub fn objects() -> Vec<Tool> {
             If this bag is destroyed, the items within it return to their original size.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(6, "Shrinks items by two size categories", r"
+            ItemUpgrade::new(6, "Shrinks items by two size and weight categories", r"
                 The bag reduces the size and weight of contained objects by two size and weight categories instead of one.
             "),
         ],
