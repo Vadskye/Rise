@@ -86,7 +86,8 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        Light within or passing through an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} within or passing through an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Brilliant illumination} is undimmed.
         You can choose the spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
@@ -95,6 +96,21 @@ export const umbramancy: MysticSphere = {
         3: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
         5: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
+      },
+      tags: [],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Deep Darklantern',
+
+      functionsLike: {
+        name: 'darklantern',
+        exceptThat: 'it also dims \\glossterm{brilliant illumination}.',
+      },
+      rank: 4,
+      scaling: {
+        6: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
       },
       tags: [],
       type: 'Attune',
