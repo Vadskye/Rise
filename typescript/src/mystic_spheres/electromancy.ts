@@ -245,6 +245,24 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: 'Multiarc',
+
+      // short range for one chain
+      attack: {
+        hit: `
+          \\damageranktwohigh{electricity}.
+        `,
+        missGlance: false,
+        targeting: `
+          Make an attack vs. Fortitude against anything within \\shortrange.
+          This attack \\glossterm{chains} twice.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
       name: 'Mighty Arc',
 
       // short range for one chain
