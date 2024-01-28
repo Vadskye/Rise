@@ -144,8 +144,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can spend 4 HP for double damage"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> using this weapon that uses your own blood to fuel its power.
+            When you do, you lose 4 \glossterm<hit points>.
             The strike deals double weapon damage.
-            However, you lose 4 \glossterm<hit points>.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can spend 8 HP for triple damage", r"
