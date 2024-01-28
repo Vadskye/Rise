@@ -31,7 +31,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use \abilitytag{Exertion} abilities.
-                        \item Its \glossterm{hit points} are equal to the standard value for your level, base class, and Constitution (see Basic Class Abilities, above).
+                        \item Its \glossterm{hit points} are equal to the standard value for your level, base class, and Constitution (see Base Class Abilities, above).
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{magic bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.

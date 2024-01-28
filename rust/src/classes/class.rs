@@ -25,6 +25,7 @@ pub enum Class {
     Cleric,
     Dragon,
     Druid,
+    Dryaidi,
     Fighter,
     Harpy,
     Monk,
@@ -56,6 +57,7 @@ impl Class {
             // Optional classes
             Self::Automaton,
             Self::Dragon,
+            Self::Dryaidi,
             Self::Harpy,
             Self::Oozeborn,
             Self::Treant,
@@ -121,6 +123,7 @@ impl Class {
             Self::Cleric => 3,
             Self::Dragon => 3,
             Self::Druid => 3,
+            Self::Dryaidi => 3,
             Self::Fighter => 2,
             Self::Harpy => 2,
             Self::Monk => 3,
@@ -224,6 +227,29 @@ impl Class {
                 ]),
                 Skill::Persuasion,
                 Skill::Ride,
+                Skill::Stealth,
+                Skill::Survival,
+                Skill::Swim,
+            ],
+            Self::Dryaidi => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
+                Skill::Craft,
+                Skill::CreatureHandling,
+                Skill::Deception,
+                Skill::Disguise,
+                Skill::Flexibility,
+                Skill::Intimidate,
+                Skill::Jump,
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Nature,
+                ]),
+                Skill::Medicine,
+                Skill::Perform,
+                Skill::Persuasion,
+                Skill::SocialInsight,
                 Skill::Stealth,
                 Skill::Survival,
                 Skill::Swim,
@@ -433,6 +459,12 @@ impl Class {
                 Defense::Reflex => 3,
                 Defense::Mental => 5,
             },
+            Self::Dryaidi => match defense {
+                Defense::Armor => 0,
+                Defense::Fortitude => 3,
+                Defense::Reflex => 4,
+                Defense::Mental => 5,
+            },
             Self::Fighter => match defense {
                 Defense::Armor => 0,
                 Defense::Fortitude => 5,
@@ -515,6 +547,7 @@ impl Class {
             Self::Cleric => 3,
             Self::Dragon => 3,
             Self::Druid => 3,
+            Self::Dryaidi => 3,
             Self::Fighter => 4,
             Self::Harpy => 4,
             Self::Monk => 4,
@@ -537,6 +570,7 @@ impl Class {
             Self::Cleric => HitPointProgression::Medium,
             Self::Dragon => HitPointProgression::High,
             Self::Druid => HitPointProgression::Medium,
+            Self::Dryaidi => HitPointProgression::Medium,
             Self::Fighter => HitPointProgression::High,
             Self::Harpy => HitPointProgression::Medium,
             Self::Monk => HitPointProgression::Medium,
@@ -559,6 +593,7 @@ impl Class {
             Self::Cleric => 2,
             Self::Dragon => 1,
             Self::Druid => 2,
+            Self::Dryaidi => 1,
             Self::Fighter => 1,
             Self::Harpy => 2,
             Self::Monk => 1,
@@ -581,6 +616,7 @@ impl Class {
             Self::Cleric => "cleric",
             Self::Dragon => "dragon",
             Self::Druid => "druid",
+            Self::Dryaidi => "dryaidi",
             Self::Fighter => "fighter",
             Self::Harpy => "harpy",
             Self::Monk => "monk",
@@ -612,6 +648,7 @@ impl Class {
             Self::Cleric => "Clr",
             Self::Dragon => "Drg",
             Self::Druid => "Drd",
+            Self::Dryaidi => "Dry",
             Self::Fighter => "Ftr",
             Self::Harpy => "Hrp",
             Self::Monk => "Mnk",
@@ -634,6 +671,7 @@ impl Class {
             Self::Cleric => 4,
             Self::Dragon => 3,
             Self::Druid => 5,
+            Self::Dryaidi => 5,
             Self::Fighter => 3,
             Self::Harpy => 5,
             Self::Monk => 5,
@@ -669,6 +707,10 @@ impl Class {
             },
             Self::Druid => ArmorProficiencies {
                 specific_armors: Some(vec![Armor::Hide(None)]),
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Dryaidi => ArmorProficiencies {
+                specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Fighter => ArmorProficiencies {
@@ -819,6 +861,7 @@ impl Class {
                 Their wisdom must be kept alive between generations through oral traditions.
                 Druidic circles provide a place for this knowledge transfer to occur, and offer a path to welcoming new druids into the fold.
             ".to_string(),
+            Self::Dryaidi => r"".to_string(),
             Self::Fighter => r"
                 Fighters are highly disciplined warriors who excel in physical combat of any kind.
                 They have a deep mastery of the implements and strategies of battle thanks to their extensive training.
@@ -1061,6 +1104,12 @@ impl Class {
                     StandardWeapon::Scimitar.weapon(),
                     StandardWeapon::Sickle.weapon(),
                 ]),
+                simple_weapons: true,
+            },
+            Self::Dryaidi => WeaponProficiencies {
+                custom_weapon_groups: 0,
+                specific_weapon_groups: Some(vec![WeaponGroup::Bows]),
+                specific_weapons: None,
                 simple_weapons: true,
             },
             Self::Fighter => WeaponProficiencies {
