@@ -228,6 +228,7 @@ def creation_guidance():
                         option({"value": "naiadi"}, "(Naiadi)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
                         option({"value": "orc"}, "(Orc)"),
+                        option({"value": "sapling"}, "(Sapling)"),
                         option({"value": "tiefling"}, "(Tiefling)"),
                         option({"value": "vampire"}, "(Vampire)"),
                         option({"value": "brute"}, "(Monster - Brute)"),
