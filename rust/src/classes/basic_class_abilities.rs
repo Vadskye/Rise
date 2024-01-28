@@ -3,12 +3,12 @@ use crate::core_mechanics::{Attribute, Defense};
 use crate::latex_formatting;
 use numerics::Numerics;
 
-// Generate the whole "Basic Class Abilities" subsection used to explain a class in the
+// Generate the whole "Base Class Abilities" subsection used to explain a class in the
 // Classes chapter.
 pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
     format!(
         "
-            \\subsection<Basic Class Abilities>
+            \\subsection<Base Class Abilities>
             If you are a {name}, you gain the following abilities.
 
             {defenses}
