@@ -77,7 +77,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subtle'],
     },
 
     {
