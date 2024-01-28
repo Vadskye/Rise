@@ -438,6 +438,7 @@ export const verdamancy: MysticSphere = {
           The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
+        missGlance: true,
       },
 
       rank: 1,
