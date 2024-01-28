@@ -725,7 +725,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 You can use the \textit{exchange vitality} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Vitality}[abilitytag{Exertion}]
+                \begin{magicalactiveability}{Exchange Vitality}[\abilitytag{Exertion}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by three.
 
