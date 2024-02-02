@@ -66,7 +66,7 @@ def vital_wound_chart():
                             "".join(
                                 [
                                     div(vital_roll_effect(i))
-                                    for i in [*range(-1, 10), "10+"]
+                                    for i in [*range(0, 10), "10+"]
                                 ]
                             ),
                         ]
@@ -79,7 +79,6 @@ def vital_wound_chart():
 
 def vital_roll_effect(roll):
     return {
-        -1: "Unconscious, die next round",
         0: "Unconscious, die after a minute",
         1: "Unconscious below half HP",
         2: "-1 accuracy",
