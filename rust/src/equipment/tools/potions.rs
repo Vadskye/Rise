@@ -83,7 +83,7 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Potion of Regeneration".to_string(),
-        rank: 3,
+        rank: 2,
         short_description: "Remove vital wound after long rest".to_string(),
         description: r"
             When you drink this \glossterm<potion>, your body's natural healing process is accelerated.
@@ -91,7 +91,7 @@ pub fn potions() -> Vec<Tool> {
             If you drink multiple potions of regeneration, their effects do not stack.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(6, "Removes two vital wounds after a long rest", r"
+            ItemUpgrade::new(5, "Removes two vital wounds after a long rest", r"
                 You remove two additional vital wounds instead of only one.
             "),
         ],
@@ -100,14 +100,14 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Antitoxin Elixir".to_string(),
-        rank: 2,
+        rank: 1,
         short_description: "Impervious to poison".to_string(),
         description: String::from(r"
             When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \glossterm{impervious} to poisons.
             The effects expire after 10 minutes.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Immune to poison", r"
+            ItemUpgrade::new(4, "Immune to poison", r"
                 You become immune instead of impervious.
             "),
         ],
