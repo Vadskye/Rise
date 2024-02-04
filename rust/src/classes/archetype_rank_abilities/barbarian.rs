@@ -136,8 +136,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
                         \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities.
-                        \item If you roll a 9 on an attack roll with a mundane ability, it \glossterm{explodes} (see \pcref{Exploding Attacks}).
-                            This does not affect bonus dice rolled for exploding attacks.
+                        \item You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
@@ -515,12 +514,15 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a melee \glossterm{strike}.
                     % 50% chance of +5.5 accuracy, so almost +3 accuracy
-                    This attack roll \glossterm{explodes} on a 5 or higher on the first roll.
+                    You reduce your \glossterm{explosion target} by 5 (see \pcref{Exploding Attacks}).
+
+                    If you reduce your explosion target below 1 with this attack, your second attack roll benefits from the excess reduction.
+                    For example, if you reduce your explosion target by 10, your first attack roll would always explode and your second attack roll would explode on a 9 or 10.
 
                     \rankline
-                    \rank{4} The first roll explodes on a 3 or higher.
-                    \rank{5} The first roll explodes regardless of your roll.
-                    \rank{6} Subsequent rolls also explode on an 8 or higher.
+                    \rank{4} The explosion target reduction increases to 7.
+                    \rank{5} The explosion target reduction increases to 9.
+                    \rank{6} The explosion target reduction increases to 11.
                     \rank{7} Your \glossterm{weapon damage} with the attack is doubled.
                 \end{activeability}
             ",
@@ -535,7 +537,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             // Executioner, and of course +2 accuracy with Feral Strike specifically.
             description: r"
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
-                This bonus stacks with itself if you explode multiple times with the same attack roll.
+                As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
             ",
             // TODO: figure out how to represent this
             modifiers: None,

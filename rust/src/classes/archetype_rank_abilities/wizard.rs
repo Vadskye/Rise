@@ -56,8 +56,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
                     \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
-                    Attacks with it \glossterm{explode} on a 8 or higher.
-                    This does not affect bonus dice rolled for exploding attacks.
+                    Attacks with the item reduce their \glossterm{explosion target} by 2 (see \pcref{Exploding Attacks}).
                     However, if the attacker rolls a 1 on the attack roll, ignoring explosions, they suffer a \glossterm{glancing blow} from the attack.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.

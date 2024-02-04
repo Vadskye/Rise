@@ -1446,8 +1446,7 @@ impl Class {
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
-                        \parhead{Gift} If you roll a 9 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
-                        This does not affect bonus dice rolled for exploding attacks.
+                        \parhead{Gift} You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \parhead{Aspect} You are immune to \abilitytag{Compulsion} attacks.
                         \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{magicalactiveability}{Twist of Fate}
@@ -1457,8 +1456,7 @@ impl Class {
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
-                        \parhead{Mastery} Whenever you \glossterm{explode} with an attack roll, you gain a \plus4 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
-                        As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
+                        \parhead{Mastery} The reduction from this domain's gift increases to 3.
 
                     \subsubsection{Death Domain}
                         \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
