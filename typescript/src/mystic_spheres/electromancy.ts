@@ -396,7 +396,7 @@ export const electromancy: MysticSphere = {
       name: 'Lightning Speed',
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your land speed.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
       `,
       rank: 4,
       type: 'Attune',

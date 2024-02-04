@@ -395,8 +395,8 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain a \glossterm{magic bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
-                Because this is a magic bonus, it does not stack with other magic bonuses (see \pcref{Stacking Rules}).
+                You gain an \glossterm{enhancement bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
+                Because this is an enhancement bonus, it does not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -407,7 +407,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The magic bonuses increase to three times your rank in this archetype.
+                The enhancement bonuses increase to three times your rank in this archetype.
             ",
             modifiers: None,
         },

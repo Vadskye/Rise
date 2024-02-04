@@ -52,7 +52,7 @@ fn bracers() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +4 damage resistance"),
         description: String::from(r"
-            You gain a +4 \glossterm{magic bonus} to your \glossterm{damage resistance}.
+            You gain a +4 \glossterm{enhancement bonus} to your \glossterm{damage resistance}.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants +8 damage resistance", "
@@ -224,7 +224,7 @@ fn gauntlets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +1 Strength for specific purposes"),
         description: String::from(r"
-            You gain a +1 \glossterm<magic bonus> to Strength-based \glossterm<checks>, and you gain a +1 \glossterm<magic bonus> to Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
+            You gain a +1 \glossterm<enhancement bonus> to Strength-based \glossterm<checks>, and you gain a +1 \enhancement<magic bonus> to Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
             In addition, you reduce your \glossterm<encumbrance> by 1.
         "),
         upgrades: vec![

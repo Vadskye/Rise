@@ -299,7 +299,7 @@ def generate_apparel():
             rank=1,
             material_type="Circlet",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
+                You gain a +2 \\glossterm<enhancement bonus> to the Persuasion skill (see \\pcref<Persuasion>).
             """,
             short_description="Grants +2 Persuasion",
             upgrades=[
@@ -543,7 +543,7 @@ def generate_apparel():
             material_type="Boots",
             tags=[],
             description="""
-                You gain a +10 foot \\glossterm<magic bonus> to your land speed.
+                You gain a +10 foot \\glossterm<enhancement bonus> to your land speed.
             """,
             short_description="Increases speed by 10 feet",
         ),
@@ -806,7 +806,7 @@ def generate_apparel():
             rank=1,
             material_type="Boots",
             description="""
-                You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
+                You gain a +2 \\glossterm<enhancement bonus> to the Stealth skill (see \\pcref<Stealth>).
             """,
             short_description="Grants +2 Stealth",
             upgrades=[
@@ -912,7 +912,7 @@ def generate_apparel():
             material_type="Ring",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to the Deception, Intimidate and Persuasion skills.
+                You gain a +2 \\glossterm<enhancement bonus> to the Deception, Intimidate and Persuasion skills.
             """,
             short_description="Grants +2 to social skills",
             upgrades=[
@@ -1038,7 +1038,7 @@ def generate_apparel():
             rank=2,
             material_type="Belt",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
+                You gain a +4 \\glossterm<enhancement bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +4 hit points",
             upgrades=[
@@ -1496,7 +1496,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+                You gain a +1 \\glossterm<enhancement bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants +1 bonus to vital rolls",
             upgrades=[
@@ -1598,7 +1598,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +1 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +1 \\glossterm<enhancement bonus> to Strength-based \\glossterm<checks>, and you gain a +1 \\enhancement<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 1.
             """,
             short_description="Grants +1 Strength for specific purposes",
@@ -1609,7 +1609,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +2 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +2 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +2 \\glossterm<enhancement bonus> to Strength-based \\glossterm<checks>, and you gain a +2 \\enhancement<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 2.
             """,
             short_description="Grants +2 Strength for specific purposes",
@@ -1620,7 +1620,7 @@ def generate_apparel():
             material_type="Belt",
             tags=[],
             description="""
-                You gain a +3 \\glossterm<magic bonus> to Strength-based \\glossterm<checks>, and you gain a +3 \\glossterm<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                You gain a +3 \\glossterm<enhancement bonus> to Strength-based \\glossterm<checks>, and you gain a +3 \\enhancement<magic bonus> to Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 In addition, you reduce your \\glossterm<encumbrance> by 3.
             """,
             short_description="Grants +3 Strength for specific purposes",
@@ -1967,8 +1967,8 @@ def generate_apparel():
             material_type="Ring",
             tags=["Attune (deep)"],
             description="""
-                You gain a +6 \\glossterm<magic bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
-                In addition, you gain a \\plus1 \\glossterm<magic bonus> to \\glossterm<vital rolls>.
+                You gain a +6 \\glossterm<enhancement bonus> to \\glossterm<hit points> and \\glossterm<damage resistance>.
+                In addition, you gain a \\plus1 \\glossterm<enhancement bonus> to \\glossterm<vital rolls>.
             """,
             short_description="Grants many small bonuses",
             upgrades=[
@@ -1993,7 +1993,7 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +4 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
+                You gain a +4 \\glossterm<enhancement bonus> to \\glossterm<damage resistance>.
             """,
             short_description="Grants +4 damage resistance",
         ),
@@ -2003,7 +2003,7 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +8 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
+                You gain a +8 \\glossterm<enhancement bonus> to \\glossterm<damage resistance>.
             """,
             short_description="Grants +8 damage resistance",
         ),
@@ -2013,7 +2013,7 @@ def generate_apparel():
             tags=[],
             material_type="Ring",
             description="""
-                You gain a +16 \\glossterm<magic bonus> to \\glossterm<damage resistance>.
+                You gain a +16 \\glossterm<enhancement bonus> to \\glossterm<damage resistance>.
             """,
             short_description="Grants +16 damage resistance",
         ),
@@ -2302,7 +2302,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +8 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +8 \\glossterm<enhancement bonus> to its \\glossterm<damage resistance>.
             """,
             short_description="Grants +8 damage resistance to animal allies",
         ),
@@ -2312,7 +2312,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +16 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +16 \\glossterm<enhancement bonus> to its \\glossterm<damage resistance>.
             """,
             short_description="Grants +16 damage resistance to animal allies",
         ),
@@ -2322,7 +2322,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +32 \\glossterm<magic bonus> to its \\glossterm<damage resistance>.
+                Each creature you command with the \\ability<natural servant> druid ability or the \\ability<animal companion> ranger ability gains a +32 \\glossterm<enhancement bonus> to its \\glossterm<damage resistance>.
             """,
             short_description="Grants +32 damage resistance to animal allies",
         ),
@@ -2348,7 +2348,7 @@ def generate_apparel():
             material_type="Belt",
             tags=["Attune (deep)"],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to your Constitution.
+                You gain a +1 \\glossterm<enhancement bonus> to your Constitution.
             """,
             short_description="Grants +1 Constitution",
         ),
@@ -2361,7 +2361,7 @@ def generate_apparel():
             material_type="Cloak",
             tags=["Attune (deep)"],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to your Dexterity.
+                You gain a +1 \\glossterm<enhancement bonus> to your Dexterity.
             """,
             short_description="Grants +1 Dexterity",
         ),
@@ -2374,7 +2374,7 @@ def generate_apparel():
             material_type="Bracers",
             tags=["Attune (deep)"],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to your Strength.
+                You gain a +1 \\glossterm<enhancement bonus> to your Strength.
             """,
             short_description="Grants +1 Strength",
         ),
@@ -2387,7 +2387,7 @@ def generate_apparel():
             material_type="Glasses",
             tags=["Attune (deep)"],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to your Perception.
+                You gain a +1 \\glossterm<enhancement bonus> to your Perception.
             """,
             short_description="Grants +1 Perception",
         ),
@@ -2400,7 +2400,7 @@ def generate_apparel():
             material_type="Circlet",
             tags=["Attune (deep)"],
             description="""
-                You gain a +1 \\glossterm<magic bonus> to your Willpower.
+                You gain a +1 \\glossterm<enhancement bonus> to your Willpower.
             """,
             short_description="Grants +1 Willpower",
         ),
@@ -2558,7 +2558,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<magic bonus> to all untrained skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +1 \\glossterm<enhancement bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 1",
         ),
@@ -2568,7 +2568,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<magic bonus> to all untrained skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +2 \\glossterm<enhancement bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 2",
         ),
@@ -2578,7 +2578,7 @@ def generate_apparel():
             material_type="Amulet",
             tags=[],
             description="""
-                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<magic bonus> to all untrained skills.
+                If you have the \\ability<skill exemplar> ability, you gain a +3 \\glossterm<enhancement bonus> to all untrained skills.
             """,
             short_description="Increase bonus from \\ability<skill exemplar> to untrained skills by 3",
         ),

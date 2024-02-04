@@ -19,7 +19,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
-        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to the Stealth skill.
+        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
       `,
       scaling: {
         2: `The bonus increases to +4.`,
@@ -369,7 +369,7 @@ export const umbramancy: MysticSphere = {
       name: 'Conceal',
 
       effect: `
-        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -503,7 +503,7 @@ export const umbramancy: MysticSphere = {
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size, and you can climb without using any hands.
           \\item You are always treated as being \\prone, though your movement speed is not reduced.
-          \\item You gain a +4 \\glossterm{magic bonus} to the Stealth skill.
+          \\item You gain a +4 \\glossterm{enhancement bonus} to the Stealth skill.
         \\end{itemize}
 
         At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.

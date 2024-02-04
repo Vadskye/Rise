@@ -83,7 +83,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from(r"Grants +2 power with \ability{divine aid} and \ability{lay on hands}"),
         description: String::from(r"
-            When you use the \ability<divine aid> cleric ability or the \ability<lay on hands> paladin ability, you gain a +2 \glossterm{magic bonus} to your \glossterm<power>.
+            When you use the \ability<divine aid> cleric ability or the \ability<lay on hands> paladin ability, you gain a +2 \glossterm{enhancement bonus} to your \glossterm<power>.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Grants +4 power with \ability{divine aid} and \ability{lay on hands}", r"
@@ -138,7 +138,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from(r"Grants +8 damage resistance to animal allies"),
         description: String::from(r"
-            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<magic bonus> to its \glossterm<damage resistance>.
+            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<damage resistance>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, r"Grants +16 damage resistance to animal allies", r"
@@ -249,7 +249,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from(r"Increase \ability<skill exemplar> bonus with untrained skills by 1"),
         description: String::from(r"
-            If you have the \ability<skill exemplar> rogue ability, you gain a +1 \glossterm<magic bonus> to all untrained skills.
+            If you have the \ability<skill exemplar> rogue ability, you gain a +1 \glossterm<enhancement bonus> to all untrained skills.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
@@ -496,8 +496,8 @@ fn rings() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants many small defensive bonuses"),
         description: String::from(r"
-            You gain a +4 \glossterm<magic bonus> to your \glossterm<hit points> and \glossterm<damage resistance>.
-            In addition, you gain a \plus1 \glossterm<magic bonus> to \glossterm<vital rolls>.
+            You gain a +4 \glossterm<enhancement bonus> to your \glossterm<hit points> and \glossterm<damage resistance>.
+            In addition, you gain a \plus1 \glossterm<enhancement bonus> to \glossterm<vital rolls>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants many defensive bonuses", r"

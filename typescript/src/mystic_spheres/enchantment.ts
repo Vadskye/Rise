@@ -476,7 +476,7 @@ export const enchantment: MysticSphere = {
       name: 'Ominous Presence',
 
       effect: `
-        If you have Intimidate as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Intimidate as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -492,7 +492,7 @@ export const enchantment: MysticSphere = {
       name: 'Alluring Presence',
 
       effect: `
-        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -530,7 +530,7 @@ export const enchantment: MysticSphere = {
       name: 'Friend to Animals',
 
       effect: `
-        If you have Creature Handling as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Creature Handling as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,

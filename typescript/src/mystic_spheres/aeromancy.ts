@@ -20,7 +20,7 @@ export const aeromancy: MysticSphere = {
       scaling: {
         2: `
           You also gain a 30 foot \\glossterm{glide speed}.
-          If you already have a glide speed, you gain a +10 foot \\glossterm{magic bonus} to your glide speed.
+          If you already have a glide speed, you gain a +10 foot \\glossterm{enhancement bonus} to your glide speed.
         `,
         4: 'You also become immune to \\glossterm{falling damage}.',
         6: 'The jump distance bonus increases to \plus10 feet.',
