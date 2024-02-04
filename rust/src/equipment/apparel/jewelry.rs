@@ -123,7 +123,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Increases range of \ability{protect}"),
         description: String::from(r"
-            When you use the \ability<protect> fighter ability, the ally can be within \shortrange instead of adjacent.
+            When you use the \ability<protect> fighter ability or the \ability{divine protection} cleric ability, the ally can be within \shortrange instead of adjacent.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Greatly increases range of \ability{protect}", r"
