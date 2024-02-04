@@ -1630,7 +1630,7 @@ impl Class {
                         \parhead{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
-                        \parhead{Gift} You gain a \plus1 bonus to \glossterm{vital rolls}.
+                        \parhead{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
                         \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{hit points}.
                         \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
