@@ -33,17 +33,17 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfrenzy"),
         rank: 1,
-        short_description: String::from(r"Grants +1 accuracy against injured foes"),
+        short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +1 accuracy bonus against that creature.
+            Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +2 accuracy against injured foes", r"
-                The accuracy bonus increases to +2.
+            ItemUpgrade::new(4, "Grants +4 accuracy when you injure a foe", r"
+                The accuracy bonus increases to +4.
             "),
-            ItemUpgrade::new(5, "Grants +3 accuracy against injured foes", r"
-                The accuracy bonus increases to +3.
+            ItemUpgrade::new(7, "Grants +6 accuracy when you injure a foe", r"
+                The accuracy bonus increases to +6.
             "),
         ],
         ..MagicWeapon::default()
@@ -77,6 +77,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals +1 damage if you have 3 Int"),
         description: String::from(r"
             If your Intelligence is at least 3, this weapon deals +1 damage.
+            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Deals +2 damage if you have 4 Int", r"
@@ -112,7 +113,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You reduce your \glossterm<fatigue penalty> by 2 when determining your \glossterm<accuracy> with \glossterm<strikes> using this weapon.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Ignore fatigue with strikes", r"
+            ItemUpgrade::new(4, "Ignore fatigue with strikes", r"
                 You ignore your \glossterm<fatigue penalty> when determining your \glossterm<accuracy> with \glossterm<strikes> using this weapon.
             "),
         ],
@@ -127,12 +128,11 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"-1 accuracy, but explode on 8 and 9"),
         description: String::from(r"
             You take a -1 \glossterm<accuracy> penalty to strikes using this weapon.
-            However, your attack rolls with strikes using this weapon \glossterm<explode> on an 8 and 9.
-            This does not affect bonus dice rolled for exploding attacks (see \pcref<Exploding Attacks>).
+            However, you reduce your \glossterm{explosion target} with strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "-2 accuracy, but explode on 6 or higher", r"
-                The accuracy penalty increases to -2, but the expanded explosion range also affects 6 and 7.
+                The accuracy penalty increases to -2, but the explosion target reduction increases to 4.
             "),
         ],
         ..MagicWeapon::default()
