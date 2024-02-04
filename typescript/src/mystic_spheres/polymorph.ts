@@ -200,7 +200,7 @@ export const polymorph: MysticSphere = {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
       `,
 
       rank: 1,
@@ -299,7 +299,7 @@ export const polymorph: MysticSphere = {
         This has the following effects:
         \\begin{itemize}
           \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
-          \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
+          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
         \\end{itemize}
 
@@ -399,7 +399,7 @@ export const polymorph: MysticSphere = {
       name: 'Camouflage',
 
       effect: `
-        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -546,8 +546,8 @@ export const polymorph: MysticSphere = {
 
       effect: `
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
-        You gain a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, you gain a +1 \\glossterm{magic bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
+        You gain a +2 \\glossterm{enhancement bonus} to checks using the chosen attribute.
+        In addition, if you choose Strength, you gain a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
@@ -642,7 +642,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
+        If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
       `,
       rank: 3,
       type: 'Attune',
@@ -653,7 +653,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a climb speed, you gain a +10 foot \\glossterm{magic bonus} to your climb speed.
+        If you already have a climb speed, you gain a +10 foot \\glossterm{enhancement bonus} to your climb speed.
       `,
       rank: 3,
       type: 'Attune',
@@ -663,7 +663,7 @@ export const polymorph: MysticSphere = {
       name: 'Runner',
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your \\glossterm{land speed}.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{land speed}.
       `,
       rank: 4,
       type: 'Attune',
@@ -815,7 +815,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         For each creature, you choose one of the following effects.
-        \\parhead{Awareness} The target gains a +3 \\glossterm{magic bonus} to the Awareness skill.
+        \\parhead{Awareness} The target gains a +3 \\glossterm{enhancement bonus} to the Awareness skill.
         \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
         If it already has darkvision, the range of that ability increases by 60 feet instead.
         \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
@@ -960,7 +960,7 @@ export const polymorph: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The target gains a +10 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{damage resistance}.
         If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
       `,

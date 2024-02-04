@@ -1668,7 +1668,7 @@ impl Class {
                         \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
-                            You gain a \plus1 \glossterm{magic bonus} to your Strength.
+                            You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                         \end{magicalattuneability}
                         \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
                         \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} tag.

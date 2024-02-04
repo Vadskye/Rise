@@ -26,7 +26,7 @@ pub fn shields() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants +2 defenses vs ranged strikes"),
         description: String::from(r"
-            You gain a +2 \glossterm{magic bonus} to your defenses against ranged \glossterm<strikes>.
+            You gain a +2 \glossterm{enhancement bonus} to your defenses against ranged \glossterm<strikes>.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Grants +4 defenses vs ranged strikes", "
@@ -83,7 +83,7 @@ pub fn shields() -> Vec<MagicArmor> {
         rank: 5,
         short_description: String::from("Grants +1 Armor defense"),
         description: String::from(r"
-            You gain a +1 \glossterm<magic bonus> to your Armor defense.
+            You gain a +1 \glossterm<enhancement bonus> to your Armor defense.
         "),
         ..MagicArmor::default()
     }));

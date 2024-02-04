@@ -11,7 +11,7 @@ export const revelation: MysticSphere = {
       name: 'Reveal Sensation',
 
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{magic bonus} to Awareness checks.
+        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
       `,
       scaling: {
         2: `The bonus increases to +4.`,
@@ -28,7 +28,7 @@ export const revelation: MysticSphere = {
         You can only cast this spell once per hour.
       `,
       scaling: {
-        2: `You also gain a +2 \\glossterm{magic bonus} to the Knowledge check.`,
+        2: `You also gain a +2 \\glossterm{enhancement bonus} to the Knowledge check.`,
         4: `The bonus increases to +3.`,
         6: `The bonus increases to +4.`,
       },
@@ -172,7 +172,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Defense',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -225,7 +225,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Competence',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to all skills.
+        You gain a +2 \\glossterm{enhancement bonus} to all skills.
       `,
       rank: 3,
       scaling: { 5: `The bonus increases to +3.`, 7: `The bonus increases to +4.` },
@@ -236,7 +236,7 @@ export const revelation: MysticSphere = {
       name: 'Gift of Knowledge',
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to all Knowledge skills (see \\pcref{Knowledge}).
+        You gain a +3 \\glossterm{enhancement bonus} to all Knowledge skills (see \\pcref{Knowledge}).
         In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
       `,
       rank: 4,
@@ -523,7 +523,7 @@ export const revelation: MysticSphere = {
       name: 'Enhanced Senses',
 
       effect: `
-        If you have Awareness as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Awareness as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -539,7 +539,7 @@ export const revelation: MysticSphere = {
       name: 'Social Intuition',
 
       effect: `
-        If you have Social Insight as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Social Insight as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,

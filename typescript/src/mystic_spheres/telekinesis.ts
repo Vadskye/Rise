@@ -476,7 +476,7 @@ export const telekinesis: MysticSphere = {
       name: 'Kinetic Shield',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -506,7 +506,7 @@ export const telekinesis: MysticSphere = {
       name: 'Retributive Kinetic Shield',
 
       effect: `
-        You gain a +16 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        You gain a +16 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
         In addition, whenever you resist damage, the attacker takes bludgeoning damage equal to half the damage resisted this way.
         If the attacker is beyond \\shortrange of you, this reflection fails.
         Any effect which increases this spell's range increases the range of this effect by the same amount.

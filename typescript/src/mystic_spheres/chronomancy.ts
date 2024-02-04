@@ -240,7 +240,7 @@ export const chronomancy: MysticSphere = {
       name: 'Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to your land speed.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
       `,
       rank: 3,
       type: 'Attune',
@@ -250,7 +250,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{magic bonus} to speed with all movement modes.
+        You gain a +10 foot \\glossterm{enhancement bonus} to speed with all movement modes.
         In addition, you can take two \\glossterm{minor actions} each round instead of one.
         As normal, you cannot use the same ability twice in the same round.
       `,
@@ -528,7 +528,7 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Legerdemain',
 
       effect: `
-        If you have Sleight of Hand as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Sleight of Hand as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -695,7 +695,7 @@ export const chronomancy: MysticSphere = {
       // smooth ground depending on party composition and size.
       effect: `
         Choose up to six ritual participants.
-        Each target gains a +30 foot \\glossterm{magic bonus} to its land speed.
+        Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
         If it takes any action other than movement or is dealt damage, this effect ends.
       `,
       tags: [],

@@ -85,7 +85,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Authority',
 
       effect: `
-        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Persuasion as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -101,8 +101,8 @@ export const channelDivinity: MysticSphere = {
       name: 'Agent of the Divine',
 
       effect: `
-        You gain a +8 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, you gain a +2 \\glossterm{magic bonus} to your \\glossterm{vital rolls}.
+        You gain a +8 \\glossterm{enhancement bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, you gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 3,
       scaling: {
@@ -252,7 +252,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Mantle of Faith',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -316,7 +316,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Faithful Endurance',
 
       effect: `
-        You gain a +2 \\glossterm{magic bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
+        You gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
@@ -346,7 +346,7 @@ export const channelDivinity: MysticSphere = {
       castingTime: 'minor action',
       effect: `
         When you cast this spell, you gain a \\glossterm{vital wound} that has no vital wound effect.
-        In exchange, you gain a +4 \\glossterm{magic bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
+        In exchange, you gain a +4 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
       `,
       rank: 6,
       type: 'Sustain (free)',
