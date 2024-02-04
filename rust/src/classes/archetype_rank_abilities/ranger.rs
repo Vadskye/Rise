@@ -106,20 +106,22 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Beast Affinity",
+            name: "Beast Bond",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus3 bonus to the Creature Handling skill.
+                In addition, you gain a \plus1 bonus to \glossterm{vital rolls}, and your \textit{animal companion} can remain conscious after suffering a single vital wound (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
         RankAbility {
-            name: "Beast Affinity+",
+            name: "Beast Bond+",
             is_magical: false,
             rank: 5,
             description: r"
                 The Creature Handling bonus increases to \plus6.
+                In addition, your animal companion can remain conscious after suffering two vital wounds, and it does not die until it has five vital wounds.
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },

@@ -22,6 +22,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
+                In addition, you gain a +1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::HitPoints(6)]),
         },
@@ -548,6 +549,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus2 bonus to your Reflex defense.
+                In addition, you gain a +1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
         },

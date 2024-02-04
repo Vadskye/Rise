@@ -364,11 +364,10 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your Armor and Fortitude defenses.
+                You gain a \plus1 bonus to your Armor defense, and a \plus1 bonus to vital rolls.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
-                Modifier::Defense(Defense::Fortitude, 1),
             ]),
         },
         RankAbility {
