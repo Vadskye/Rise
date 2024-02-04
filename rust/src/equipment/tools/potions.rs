@@ -41,41 +41,21 @@ pub fn potions() -> Vec<Tool> {
     potions.push(Tool {
         name: "Potion of Healing".to_string(),
         rank: 1,
-        short_description: "Restores $dr2 hit points".to_string(),
+        short_description: "Restores $dr2 hit points and mitigates vital wounds".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you regain $dr2 hit points.
             This cannot increase your hit points above half your maximum hit points.
+            In addition, if you have a \glossterm{vital wound} gith a \glossterm{vital roll} of 0 or -1, you treat that vital roll as a 1 instead (see \pcref{Vital Wounds}).
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(3, "Restores $dr4 hit points", r"
-                The healing increases to $dr4.
+            ItemUpgrade::new(3, "Restores $dr4 hit points and mitigates vital wounds", r"
+                The healing increases to $dr4, and the minimum vital roll affected improves to -2.
             "),
-            ItemUpgrade::new(5, "Restores $dr6 hit points", r"
-                The healing increases to $dr6.
+            ItemUpgrade::new(5, "Restores $dr6 hit points and mitigates vital wounds", r"
+                The healing increases to $dr6, and the minimum vital roll affected improves to -3.
             "),
-            ItemUpgrade::new(7, "Restores $dr8 hit points", r"
-                The healing increases to $dr8.
-            "),
-        ],
-        ..potion()
-    });
-
-    potions.push(Tool {
-        name: "Potion of Wound Closure".to_string(),
-        rank: 0,
-        short_description: "Prevents death from barely lethal vital wounds".to_string(),
-        description: r"
-            When you drink this \glossterm<potion>, if you have a \glossterm<vital wound> with a \glossterm<vital roll> of 0, you treat that vital roll as a 1 instead (see \pcref<Vital Wounds>).
-        ".to_string(),
-        upgrades: vec![
-            ItemUpgrade::new(2, "Prevents death from vital wounds", r"
-                The potion can also affect vital wounds with a vital roll of -1.
-            "),
-            ItemUpgrade::new(4, "Prevents death from major vital wounds", r"
-                The potion can also affect vital wounds with a vital roll of -1 or -2.
-            "),
-            ItemUpgrade::new(6, "Prevents death from almost any vital wound", r"
-                The potion can also affect vital wounds with a vital roll of -1, -2, or -3.
+            ItemUpgrade::new(7, "Restores $dr8 hit points and mitigates vital wounds", r"
+                The healing increases to $dr8, and the minimum vital roll affected improves to -4.
             "),
         ],
         ..potion()
