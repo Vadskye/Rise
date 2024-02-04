@@ -210,7 +210,7 @@ fn gauntlets() -> Vec<Apparel> {
     apparel.push(Gauntlets(StandardItem {
         name: String::from("Gauntlets of Mighty Fists"),
         rank: 4,
-        short_description: String::from("Knocks back punched enemies"),
+        short_description: String::from(r"Grants \weapontag{Impact} to natural weapons"),
         description: String::from(r"
             Your \glossterm{natural weapons} gain the \weapontag{Impact} \glossterm{weapon tag}.
             This reduces your \glossterm{explosion target} with strikes using that weapon by 2 (see \pcref{Exploding Attacks}).
