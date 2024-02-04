@@ -465,22 +465,38 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Ki Power",
+            name: "Ki-Blocking Strike",
             is_magical: true,
             rank: 3,
+            description: r"
+                You can use the \textit{ki-blocking strike} ability as a standard action.
+                \begin{magicalactiveability}{Ki-Blocking Strike}
+                    \rankline
+                    Make a melee or thrown \glossterm{strike}.
+                    You cannot use a \weapontag{Heavy} weapon with this strike.
+
+                    If the target is dealt damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
+                    A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
+                    Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
+                    This strike deals double damage if the target already has four instances of this condition on it.
+
+                    \rankline
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{6} The strike deals double \glossterm{weapon damage}.
+                    \rank{7} The accuracy bonus increases to +4.
+                \end{magicalactiveability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Power",
+            is_magical: true,
+            rank: 6,
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
-        },
-        RankAbility {
-            name: "Ki Power+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The power bonus increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "Endless Ki",
@@ -624,6 +640,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+                In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             // TODO: represent DR
             modifiers: None,
