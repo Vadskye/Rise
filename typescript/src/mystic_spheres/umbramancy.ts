@@ -34,7 +34,8 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        Light within or passing through the one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} within or passing through the one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Brilliant illumination} is undimmed.
         You can choose this spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
