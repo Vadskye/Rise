@@ -213,7 +213,7 @@ fn gauntlets() -> Vec<Apparel> {
         short_description: String::from("Knocks back punched enemies"),
         description: String::from(r"
             Your \glossterm{natural weapons} gain the \weapontag{Impact} \glossterm{weapon tag}.
-            If you roll an 8 or 9 on an attack roll with a natural weapon, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
+            This reduces your \glossterm{explosion target} with strikes using that weapon by 2 (see \pcref{Exploding Attacks}).
             If the natural weapon already has the Impact weapon tag, this has no effect.
         "),
         ..Apparel::default()
