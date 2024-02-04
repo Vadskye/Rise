@@ -60,7 +60,7 @@ export const astromancy: MysticSphere = {
       name: 'Astral Ease',
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Knowledge (planes) skill.
+        You gain a +3 \\glossterm{enhancement bonus} to the Knowledge (planes) skill.
       `,
       scaling: {
         2: `
@@ -697,7 +697,7 @@ export const astromancy: MysticSphere = {
       name: 'Distant Spells',
 
       effect: `
-        You gain a +15 foot \\glossterm{magic bonus} to the \\glossterm{range} of all of your ranged spells.
+        You gain a +15 foot \\glossterm{enhancement bonus} to the \\glossterm{range} of all of your ranged spells.
         This does not affect spells that do not have a range listed in feet.
       `,
       narrative: `
@@ -710,7 +710,7 @@ export const astromancy: MysticSphere = {
       name: 'Empowered Distant Spells',
 
       effect: `
-        You gain a +60 foot \\glossterm{magic bonus} to the \\glossterm{range} of all of your ranged spells.
+        You gain a +60 foot \\glossterm{enhancement bonus} to the \\glossterm{range} of all of your ranged spells.
         This does not affect spells that do not have a range listed in feet.
       `,
       rank: 6,

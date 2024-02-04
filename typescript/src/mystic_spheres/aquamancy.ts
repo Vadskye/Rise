@@ -48,12 +48,12 @@ export const aquamancy: MysticSphere = {
       name: 'Aquatic Freedom',
 
       effect: `
-        You gain a +3 \\glossterm{magic bonus} to the Swim skill.
+        You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
       `,
       scaling: {
         2: `
           You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-          If you already have a swim speed, you gain a +10 foot \\glossterm{magic bonus} to your swim speed.
+          If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
         `,
         4: `
           You also gain the ability to breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
@@ -426,8 +426,8 @@ export const aquamancy: MysticSphere = {
         \\begin{itemize}
           \\par
           \\item You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-            If you already have a swim speed, you gain a \\plus10 foot \\glossterm{magic bonus} to your swim speed.
-          \\item You gain a +8 \\glossterm{magic bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
+            If you already have a swim speed, you gain a \\plus10 foot \\glossterm{enhancement bonus} to your swim speed.
+          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
         \\end{itemize}
@@ -541,7 +541,7 @@ export const aquamancy: MysticSphere = {
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
-          \\item You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+          \\item You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
@@ -561,7 +561,7 @@ export const aquamancy: MysticSphere = {
       name: 'Waterward',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
       `,
 
       rank: 1,
@@ -576,7 +576,7 @@ export const aquamancy: MysticSphere = {
       name: 'Slippery Escapist',
 
       effect: `
-        If you have Flexibility as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Flexibility as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,

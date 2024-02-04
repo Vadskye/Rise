@@ -25,7 +25,7 @@ impl StandardItem {
             short_description: format!("Grants +1 {}", attribute.name()),
             description: format!(
                 "
-                    You gain a +1 \\glossterm<magic bonus> to your {}
+                    You gain a +1 \\glossterm<enhancement bonus> to your {}
                 ",
                 attribute.name(),
             ),
@@ -35,7 +35,7 @@ impl StandardItem {
         }
     }
 
-    // +3, then +5 magic bonus
+    // +3, then +5 enhancement bonus
     pub fn skill_item(name: &str, skill: &str) -> Self {
         Self {
             name: String::from(name),
@@ -43,7 +43,7 @@ impl StandardItem {
             short_description: format!("Grants +3 {}", skill),
             description: format!(
                 "
-                    You gain a +3 \\glossterm<magic bonus> to the {skill} skill (see \\pcref<{skill}>).
+                    You gain a +3 \\glossterm<enhancement bonus> to the {skill} skill (see \\pcref<{skill}>).
                 ",
                 skill = skill
             ),

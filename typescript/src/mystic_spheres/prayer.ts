@@ -198,8 +198,8 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
-        Each target gains a +2 \\glossterm{magic bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, each target gains a +1 \\glossterm{magic bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+        Each target gains a +2 \\glossterm{enhancement bonus} to checks using the chosen attribute.
+        In addition, if you choose Strength, each target gains a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 3,
       scaling: {
@@ -214,7 +214,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{magic bonus} to its maximum \\glossterm{hit points}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
         In addition, it immediately gains that many hit points.
         When this ability ends, each target loses \\glossterm{hit points} equal to the number of hit points it gained this way.
       `,
@@ -254,8 +254,8 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{magic bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +1 \\glossterm{magic bonus} to \\glossterm{vital rolls}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        In addition, each target gains a +1 \\glossterm{enhancement bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
       scaling: {
@@ -276,7 +276,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to its \\glossterm{damage resistance}.
       `,
       rank: 2,
       scaling: {
@@ -479,7 +479,7 @@ export const prayer: MysticSphere = {
         Unlike most abilities, this ritual can affect individual parts of a whole object.
 
         % How should this affect Strength break difficulty value?
-        The target gains a +10 \\glossterm{magic bonus} to its \\glossterm{damage resistance}.
+        The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{damage resistance}.
         If the target is moved, this effect ends.
         Otherwise, it lasts for one year.
       `,

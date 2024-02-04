@@ -25,7 +25,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants +6 damage resistance"),
         description: String::from(r"
-            You gain a +6 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            You gain a +6 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants +12 damage resistance", "
@@ -61,7 +61,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Reduces critical hits from strikes"),
         description: String::from(r"
-            You gain a +4 \glossterm{magic bonus} to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
+            You gain a +4 \glossterm{enhancement bonus} to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Reduces critical hits from strikes", "
@@ -96,7 +96,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants +12 damage resistance, but slower and heavier"),
         description: String::from(r"
-            You gain a +12 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             However, you take a -10 foot penalty to your speed with all movement modes.
             In addition, this armor's \glossterm{encumbrance} is increased by 2.
         "),
@@ -116,7 +116,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 4,
         short_description: String::from("Grants +1 AD if you have 3 Dex"),
         description: String::from(r"
-            If your Dexterity is at least 3, you gain a +1 \glossterm<magic bonus> to your Armor defense.
+            If your Dexterity is at least 3, you gain a +1 \glossterm<enhancement bonus> to your Armor defense.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants +2 AD if you have 5 Dex", "
@@ -131,7 +131,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +16 damage resistance, but -8 hit points"),
         description: String::from(r"
-            You gain a +16 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            You gain a +16 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             However, you take a -8 penalty to your \glossterm<hit points>.
         "),
         upgrades: vec![
@@ -150,7 +150,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +12 damage resistance, but -2 power"),
         description: String::from(r"
-            You gain a +12 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
         "),
         upgrades: vec![
@@ -216,7 +216,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants bonus HP instead of damage resistance", r"
-                The armor also grants you a +8 \glossterm{magic bonus} to your hit points.
+                The armor also grants you a +8 \glossterm{enhancement bonus} to your hit points.
             "),
             ItemUpgrade::new(6, "Grants bonus HP instead of damage resistance", r"
                 The hit point bonus increases to +16.

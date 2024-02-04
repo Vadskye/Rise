@@ -267,7 +267,7 @@ export const vivimancy: MysticSphere = {
       name: 'Lifegift',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to your maximum \\glossterm{hit points}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
         In addition, you immediately gain that many hit points.
         When this ability ends, you lose \\glossterm{hit points} equal to the number of hit points you gained this way.
       `,
@@ -423,7 +423,7 @@ export const vivimancy: MysticSphere = {
       name: "Healer's Intuition",
 
       effect: `
-        If you have Medicine as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Medicine as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,

@@ -99,7 +99,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 1,
         short_description: "Grants +4 damage resistance".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +4 \glossterm<magic bonus> to your \glossterm<damage resistance>.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +4 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -121,7 +121,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 2,
         short_description: "Grants +2 to vital rolls".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<magic bonus> to your \glossterm<vital rolls>.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<enhancement bonus> to your \glossterm<vital rolls>.
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![
@@ -140,7 +140,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 1,
         short_description: "Grants +1 bonus for weight limits".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +1 \glossterm<magic bonus> to your Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +1 \glossterm<enhancement bonus> to your Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
             The effects expire after 10 minutes.
         ".to_string(),
         upgrades: vec![

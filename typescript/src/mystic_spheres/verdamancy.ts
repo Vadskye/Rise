@@ -324,7 +324,7 @@ export const verdamancy: MysticSphere = {
       name: 'Barkskin',
 
       effect: `
-        You gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -531,7 +531,7 @@ export const verdamancy: MysticSphere = {
       name: 'Survivalist',
 
       effect: `
-        If you have Survival as a \\glossterm{trained skill}, you gain a +3 \\glossterm{magic bonus} to it.
+        If you have Survival as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
@@ -606,7 +606,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +4 \\glossterm{magic bonus} to \\glossterm{damage resistance}.`,
+        3: `You also gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.`,
         5: `The damage resistance bonus increases to +8.`,
         7: `The damage resistance bonus increases to +16.`,
       },
