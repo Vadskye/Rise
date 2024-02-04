@@ -15,8 +15,9 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
-                % 10% chance of +2a, so 0.2a per ally, but 0.4a per ally with explosion synergy
-                \subcf{Chaos} Whenever a target \glossterm{explodes} on an attack roll, it gains a +2 accuracy bonus with the attack (see \pcref{Exploding Attacks}.
+                % 20% chance of +5.5a, 70% chance of -1a, so 1.1a - 0.7a = 0.4a per ally
+                \subcf{Chaos} Each target reduces its \glossterm{explosion target} by 2 (see \pcref{Exploding Attacks}).
+                However, each target also suffers a \minus1 accuracy penalty on attacks that do not explode.
 
                 \subcf{Evil} Each target suffers a \minus1 penalty to its Armor defense as long as it is affected by at least one \glossterm{condition}.
 
@@ -25,7 +26,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                 The target suffers any other effects of the attack normally.
 
-                % 10% chance of +4a, so 0.4a per ally, but it might still miss
+                % 10% chance of +4a, so 0.4a per ally
                 \subcf{Law} Whenever a target rolls a 1 on an attack roll, the attack roll is treated as a 5.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             ",
@@ -41,8 +42,8 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The effect of your \textit{aligned aura} becomes stronger, as described below.
                 In addition, the area increases to a \largearea radius \glossterm{emanation} from you.
 
-                % 0.4a per ally
-                \subcf{Chaos} The accuracy bonus increases to +4.
+                % 
+                \subcf{Chaos} The accuracy penalty is removed.
                 \subcf{Evil} The penalty applies to all defenses.
                 \subcf{Good} When a targeted \glossterm{ally} would lose \glossterm{hit points}, you may lose those hit points instead.
                 This causes you to suffer any special effects of the attack that trigger on taking damage or losing hit points, while the target does not.
@@ -381,7 +382,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You can use the \textit{detect anathema} ability as a standard action.
+                You can use the \textit{detect anathema} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
                     \rankline
                     You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
@@ -390,8 +391,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} You also learn the location of all creatures with that alignment.
-                    \rank{5} The area increases to a \hugearea cone.
-                    \rank{7} You can use this ability as a \glossterm{minor action}.
+                    \rank{5} The area increases to a \largearea radius.
+                    \rank{7} The area increases to a \gargarea radius.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -406,9 +407,10 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     You add your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
-                    If the target has your devoted alignment, your \glossterm{power} is instead treated as 0.
+                    If the target has your devoted alignment, this attack deals no damage, and you take energy damage equal to your power with it.
 
                     \rankline
+                    \rank{2} The attack deals full damage even if the target has your devoted alignment.
                     \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
                     Instead, you gain 1d6 extra damage per 4 power (minimum 1d6).
                     \rank{4} The extra damage increases to 1d6 per 3 power.
