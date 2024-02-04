@@ -277,7 +277,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Seeking"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Reduces miss chances"),
         description: String::from(r"
             This weapon automatically veers towards its intended target.
@@ -285,7 +285,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             A 50\% miss chance is reduced to a 20\% miss chance, and a 20\% miss chance is removed entirely.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Removes miss chances", r"
+            ItemUpgrade::new(5, "Removes miss chances", r"
                 Any \glossterm<miss chance> the strike would normally have is removed completely instead of only being reduced.
             "),
         ],
