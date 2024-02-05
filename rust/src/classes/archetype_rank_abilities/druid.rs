@@ -209,8 +209,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                     you can forget any number of spells you know to learn that many new spells in exchange,
                     including spells of the higher rank.
 
-                \advancement At ranks 2, 4, and 7, you learn an additional nature spell.
-                The maximum rank of nature spells that you can learn is equal to your rank in this archetype.
+                \advancement The maximum rank of nature spells that you can learn is equal to your rank in this archetype.
                 Nature spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
