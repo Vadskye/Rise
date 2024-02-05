@@ -62,7 +62,7 @@ def generate_armor():
             rank=2,
             material_type="Body armor",
             description="""
-                You gain a +4 \\glossterm<enhancement bonus> to your \\glossterm<hit points>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<hit points>.
             """,
             short_description="Grants +4 hit points",
             upgrades=[
@@ -308,7 +308,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +4 \\glossterm<enhancement bonus> to your \\glossterm<damage resistance>.
+                You gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
             """,
             short_description="Grants +4 damage resistance",
             upgrades=[
@@ -337,7 +337,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +1 \\glossterm<enhancement bonus> to your Armor defense.
+                You gain a +1 \\glossterm<magic bonus> to your Armor defense.
                 However, you take a -10 foot penalty to your speed with all movement modes.
             """,
             short_description="Grants +1 AD, but -10 speed",
@@ -360,7 +360,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                If your Dexterity is at least 3, you gain a +1 \\glossterm<enhancement bonus> to your Armor defense.
+                If your Dexterity is at least 3, you gain a +1 \\glossterm<magic bonus> to your Armor defense.
             """,
             short_description="Grants +1 AD if you have 3 Dex",
             upgrades=[
@@ -405,7 +405,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +8 \\glossterm<enhancement bonus> to your \\glossterm<damage resistance>.
+                You gain a +8 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 However, you take a -4 penalty to your \\glossterm<hit points>.
             """,
             short_description="Grants +8 damage resistance, but -4 hit points",
@@ -435,7 +435,7 @@ def generate_armor():
             tags=[],
             material_type="Body armor",
             description="""
-                You gain a +6 \\glossterm<enhancement bonus> to your \\glossterm<damage resistance>.
+                You gain a +6 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 However, you take a -2 penalty to your \\glossterm<power> with all abilities.
             """,
             short_description="Grants +6 damage resistance, but -2 power",
@@ -532,7 +532,7 @@ def generate_armor():
             tags=[],
             material_type="Shield",
             description="""
-                You gain a +1 \\glossterm<enhancement bonus> to your Armor defense.
+                You gain a +1 \\glossterm<magic bonus> to your Armor defense.
             """,
             short_description="Grants +1 Armor defense",
         ),
