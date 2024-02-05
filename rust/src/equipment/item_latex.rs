@@ -21,7 +21,7 @@ impl StandardItem {
     pub fn attribute_item(name: &str, attribute: &Attribute) -> Self {
         Self {
             name: String::from(name),
-            rank: 6,
+            rank: 5,
             short_description: format!("Grants +1 {}", attribute.name()),
             description: format!(
                 "

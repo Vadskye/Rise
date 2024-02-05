@@ -236,7 +236,7 @@ fn gauntlets() -> Vec<Apparel> {
     }));
 
     apparel.push(Gauntlets(StandardItem::attribute_item(
-        "Gauntlets of Epic Strength",
+        "Gauntlets of Strength",
         &Attribute::Strength,
     )));
 
@@ -338,7 +338,7 @@ fn gloves() -> Vec<Apparel> {
     }));
 
     apparel.push(Gloves(StandardItem::attribute_item(
-        "Gloves of Epic Dexterity",
+        "Gloves of Dexterity",
         &Attribute::Dexterity,
     )));
 
