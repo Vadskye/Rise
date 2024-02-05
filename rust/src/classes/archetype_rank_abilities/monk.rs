@@ -465,26 +465,27 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Ki-Blocking Strike",
+            name: "Invested Strike",
             is_magical: true,
             rank: 3,
             description: r"
-                You can use the \textit{ki-blocking strike} ability as a standard action.
-                \begin{magicalactiveability}{Ki-Blocking Strike}
+                You can use the \textit{invested strike} ability as a standard action.
+                \begin{magicalactiveability}{Invested Strike}[\abilitytag{Exertion}]
                     \rankline
-                    Make a melee or thrown \glossterm{strike}.
-                    You cannot use a \weapontag{Heavy} weapon to make the strike.
+                    When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    If the target is dealt damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
-                    If it loses hit points, it gains two instances of this condition instead of one.
-                    A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
-                    Any individual creature can only gain a maximum of two instances of this condition per round, even if multiple creatures use this ability on it.
-                    The strike deals double damage if the target already has four instances of this condition on it.
+                    Make a \glossterm{strike} that deals double \glossterm{weapon damage}.
+                    The strike must target a single creature within \shortrange, with no secondary targets.
+
+                    Whether or not the target takes damage, it becomes invested with your ki.
+                    This does not cause it any ill effects.
+                    If it dies or falls unconscious, or you take a \glossterm{short rest}, your ki returns to you.
+                    When it does, you reduce your \glossterm{fatigue level} by one.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The strike deals triple \glossterm{weapon damage} instead of double weapon damage.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{magicalactiveability}
             ",
