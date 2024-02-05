@@ -473,12 +473,13 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Ki-Blocking Strike}
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
-                    You cannot use a \weapontag{Heavy} weapon with this strike.
+                    You cannot use a \weapontag{Heavy} weapon to make the strike.
 
                     If the target is dealt damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
+                    If it loses hit points, it gains two instances of this condition instead of one.
                     A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
-                    Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
-                    This strike deals double damage if the target already has four instances of this condition on it.
+                    Any individual creature can only gain a maximum of two instances of this condition per round, even if multiple creatures use this ability on it.
+                    The strike deals double damage if the target already has four instances of this condition on it.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
