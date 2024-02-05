@@ -572,17 +572,17 @@ impl Class {
             Self::Druid => HitPointProgression::Medium,
             Self::Dryaidi => HitPointProgression::Medium,
             Self::Fighter => HitPointProgression::High,
-            Self::Harpy => HitPointProgression::Medium,
+            Self::Harpy => HitPointProgression::High,
             Self::Monk => HitPointProgression::Medium,
             Self::Oozeborn => HitPointProgression::VeryHigh,
             Self::Paladin => HitPointProgression::High,
             Self::Ranger => HitPointProgression::High,
             Self::Rogue => HitPointProgression::Medium,
             Self::Sorcerer => HitPointProgression::Low,
-            Self::Treant => HitPointProgression::High,
+            Self::Treant => HitPointProgression::VeryHigh,
             Self::Warlock => HitPointProgression::Medium,
             Self::Wizard => HitPointProgression::Low,
-            Self::Vampire => HitPointProgression::Medium,
+            Self::Vampire => HitPointProgression::High,
         }
     }
 
@@ -591,9 +591,9 @@ impl Class {
             Self::Automaton => 1,
             Self::Barbarian => 0,
             Self::Cleric => 2,
-            Self::Dragon => 1,
+            Self::Dragon => 2,
             Self::Druid => 2,
-            Self::Dryaidi => 1,
+            Self::Dryaidi => 2,
             Self::Fighter => 1,
             Self::Harpy => 2,
             Self::Monk => 1,
@@ -727,7 +727,7 @@ impl Class {
             },
             Self::Oozeborn => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![ArmorUsageClass::Light],
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Paladin => ArmorProficiencies {
                 specific_armors: None,
