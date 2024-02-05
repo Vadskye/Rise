@@ -256,14 +256,17 @@ fn cloaks() -> Vec<Apparel> {
 
     apparel.push(Cloak(StandardItem {
         name: String::from("Cloak of Death's Door"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Grants +1 Armor at low health"),
         description: String::from(r"
             While you are at or below half your maximum \glossterm<hit points>, you gain a +1 bonus to your Armor defense.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +1 defenses at low health", "
+            ItemUpgrade::new(3, "Grants +1 defenses at low health", "
                 The bonus applies to all defenses.
+            "),
+            ItemUpgrade::new(6, "Grants +2 defenses at low health", "
+                The bonus increases to +2.
             "),
         ],
         ..Apparel::default()
@@ -288,14 +291,14 @@ fn cloaks() -> Vec<Apparel> {
     apparel.push(Cloak(StandardItem {
         name: String::from("Quilled Cloak"),
         rank: 2,
-        short_description: String::from("Deals $dr3 damage when grappled"),
+        short_description: String::from("Deals $dr4 damage when grappled"),
         description: String::from(r"
-            Whenever a creature grapples you, you immediately deal it $dr3 piercing damage.
+            Whenever a creature grapples you, you immediately deal it $dr4 piercing damage.
             This does not affect creatures that you initiate a grapple with.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Deals $dr6 damage when grappled", "
-                The damage increases to $dr6.
+            ItemUpgrade::new(5, "Deals $dr7 damage when grappled", "
+                The damage increases to $dr7.
             "),
         ],
         ..Apparel::default()
