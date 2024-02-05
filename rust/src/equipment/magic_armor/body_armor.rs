@@ -61,7 +61,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Reduces critical hits from strikes"),
         description: String::from(r"
-            You gain a +4 \glossterm{enhancement bonus} to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
+            You gain a +4 bonus to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Reduces critical hits from strikes", "
