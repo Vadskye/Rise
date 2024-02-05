@@ -173,7 +173,7 @@ def generate_tools():
             tags=["Attune"],
             material_type="Alchemical",
             description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<enhancement bonus> to your \\glossterm<damage resistance>.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +4 \\glossterm<magic bonus> to your \\glossterm<damage resistance>.
                 The effects expire after 10 minutes.
             """,
             short_description="Grants +4 damage resistance",
@@ -212,7 +212,7 @@ def generate_tools():
             tags=["Attune"],
             material_type="Alchemical",
             description="""
-                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<enhancement bonus> to your \\glossterm<vital rolls>.
+                When you drink this \\glossterm<potion>, if you \\glossterm<attune> to its effects, you gain a +2 \\glossterm<magic bonus> to your \\glossterm<vital rolls>.
                 The effects expire after 10 minutes.
             """,
             short_description="Grants +2 to vital rolls",
@@ -622,7 +622,7 @@ def generate_tools():
             material_type="Alchemical",
             tags=[],
             description="""
-                When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<enhancement bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
+                When you drink this \\glossterm<potion>, you gain a +1 \\glossterm<magic bonus> to your Strength for the purpose of determining your \\glossterm<weight limits> (see \\pcref<Weight Limits>).
                 This effect lasts for five minutes.
             """,
             short_description="Briefly increases weight limits",
@@ -1425,7 +1425,7 @@ def generate_tools():
                 Upgrade(
                     rank=3,
                     description="""
-                        The tools also grant a +2 \\glossterm<enhancement bonus> to the Craft skill when using this item to create an item.
+                        The tools also grant a +2 \\glossterm<magic bonus> to the Craft skill when using this item to create an item.
                         This provides no benefit when using the Craft skill for other purposes, such as to appraise an item.
                     """,
                     short_description="Use to craft any item with +2 bonus",
@@ -1433,7 +1433,7 @@ def generate_tools():
                 Upgrade(
                     rank=5,
                     description="""
-                        The enhancement bonus increases to +4.
+                        The magic bonus increases to +4.
                     """,
                     short_description="Use to craft any item with +4 bonus",
                 ),
