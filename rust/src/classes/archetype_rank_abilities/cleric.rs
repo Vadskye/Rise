@@ -403,7 +403,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{denounce the heathens} ability as a standard action.
-                \begin{activeability}{Denounce the Heathens}{\abilitytag{Emotion}}
+                \begin{activeability}{Denounce the Heathens}[\abilitytag{Emotion}]
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -481,7 +481,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \textit{condemn the fearful} ability as a standard action.
-                \begin{activeability}{Condemn the Fearful}{\abilitytag{Emotion}}
+                \begin{activeability}{Condemn the Fearful}[\abilitytag{Emotion}]
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \hugearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -499,7 +499,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \textit{convert the irresolute} ability as a standard action.
-                \begin{activeability}{Convert the Irresolute}{\abilitytag{Emotion}}
+                \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
