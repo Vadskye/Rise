@@ -537,52 +537,52 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain the ability to customize your wild maneuvers.
-                For each rank 1 wild maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+                For each rank 1 wild maneuver you know, choose one augment from the list below and apply it to that maneuver.
+                Augments scale in power with your excess rank with that maneuver, which is equal to your rank in this archetype minus the rank of the maneuver.
 
-                Whenever you increase your rank in this archetype, you can change your enhancements.
+                Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 wild maneuvers.
                 {
                     \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
-                    If your enhancement level is at least 4, the range triples instead.
-                    You can only apply this enhancement to maneuvers that have a listed range.
+                    If your excess rank is at least 4, the range triples instead.
+                    You can only apply this augment to maneuvers that have a listed range.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
-                    If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to manuevers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your excess rank but the strike deals double \glossterm{weapon damage}.
+                    If your excess rank is at least 5, this becomes an accuracy bonus.
+                    You can only apply this augment to manuevers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per enhancement level before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
-                    You cannot apply this enhancement to maneuvers that already allow you to move using one of your movement modes.
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
 
-                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
                     \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
-                    If your enhancement level is at least 4, the area triples instead.
-                    You can only apply this enhancement to maneuvers that affect an area.
+                    If your excess rank is at least 4, the area triples instead.
+                    You can only apply this augment to maneuvers that affect an area.
                 }
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers+",
+            name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You can also choose an enhancement for each of your rank 3 wild maneuvers.
+                You can also choose an augment for each of your rank 3 wild maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers+",
+            name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
             description: r"
-                You can also choose an enhancement for each of your rank 5 wild maneuvers.
+                You can also choose an augment for each of your rank 5 wild maneuvers.
             ",
             modifiers: None,
         },
