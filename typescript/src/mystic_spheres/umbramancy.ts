@@ -109,9 +109,9 @@ export const umbramancy: MysticSphere = {
         name: 'darklantern',
         exceptThat: 'it also dims \\glossterm{brilliant illumination}.',
       },
-      rank: 4,
+      rank: 5,
       scaling: {
-        6: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
+        7: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
       },
       tags: [],
       type: 'Attune',
