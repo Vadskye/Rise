@@ -182,7 +182,7 @@ fn belts() -> Vec<Apparel> {
     }));
 
     apparel.push(Belt(StandardItem::attribute_item(
-        "Belt of Epic Constitution",
+        "Belt of Constitution",
         &Attribute::Constitution,
     )));
 

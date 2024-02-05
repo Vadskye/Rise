@@ -93,12 +93,12 @@ fn circlets() -> Vec<Apparel> {
     )));
 
     apparel.push(Circlet(StandardItem::attribute_item(
-        "Circlet of Epic Perception",
+        "Circlet of Perception",
         &Attribute::Perception,
     )));
 
     apparel.push(Circlet(StandardItem::attribute_item(
-        "Circlet of Epic Willpower",
+        "Circlet of Willpower",
         &Attribute::Willpower,
     )));
 
