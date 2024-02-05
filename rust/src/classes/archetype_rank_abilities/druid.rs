@@ -547,7 +547,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalattuneability}{Shift Body}{\abilitytag{Attune}}
                     \rankline
                     When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                    You gain a \plus1 bonus to that attribute.
+                    You gain a \plus1 \glossterm{enhancement bonus} to that attribute.
                 \end{magicalattuneability}
             ",
             modifiers: Some(vec![
