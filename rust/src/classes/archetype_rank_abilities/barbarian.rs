@@ -374,52 +374,52 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers",
+            name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain the ability to customize your primal maneuvers.
-                For each rank 1 primal maneuver you know, choose one enhancement from the list below and apply it to that maneuver.
-                Enhancements scale in power with your enhancement level, which is equal to your rank in this archetype minus the rank of the maneuver.
+                For each rank 1 primal maneuver you know, choose one augment from the list below and apply it to that maneuver.
+                Augments scale in power with your excess rank, which is equal to your rank in this archetype minus the rank of the maneuver.
 
-                Whenever you increase your rank in this archetype, you can change your enhancements.
+                Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your enhancement level against creatures who are at less than their maximum \glossterm{hit points}.
-                    You can only apply this enhancement to maneuvers which cause you to make a melee \glossterm{strike}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
+                    You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your enhancement level, but the strike deals double \glossterm{weapon damage}.
-                    If your enhancement level is at least 5, this becomes an accuracy bonus.
-                    You can only apply this enhancement to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your excess rank but the strike deals double \glossterm{weapon damage}.
+                    If your excess rank is at least 5, this becomes an accuracy bonus.
+                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your enhancement level.
+                    \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
-                    \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your enhancement level.
+                    \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
-                    You can only apply this enhancement to maneuvers which cause you to make a melee \glossterm{strike}.
+                    You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
 
                     \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
-                    If your enhancement level is at least 4, the area triples instead.
-                    You can only apply this enhancement to maneuvers that affect an area.
+                    If your excess rank is at least 4, the area triples instead.
+                    You can only apply this augment to maneuvers that affect an area.
                 }
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers+",
+            name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
             description: r"
-                You can also choose an enhancement for each of your rank 3 primal maneuvers.
+                You can also choose an augment for each of your rank 3 primal maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Enhanced Maneuvers+",
+            name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
             description: r"
-                You can also choose an enhancement for each of your rank 5 primal maneuvers.
+                You can also choose an augment for each of your rank 5 primal maneuvers.
             ",
             modifiers: None,
         },
