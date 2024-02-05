@@ -602,7 +602,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
-                You permanently gain a \plus1 bonus to that attribute.
+                You gain a \plus1 bonus to that attribute.
             ",
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
