@@ -1665,14 +1665,16 @@ impl Class {
                         If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
                         \parhead{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
-                        \parhead{Aspect} You can use the \textit{divine strength} ability as a standard action.
+                        \parhead{Aspect} You can use the \textit{divine strength} ability whenever you finish a \glossterm{long rest}.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
                             You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                         \end{magicalattuneability}
-                        \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of checks and determining your weight limits (see \pcref{Weight Limits}).
-                        \parhead{Mastery} Your \textit{divine strength} ability loses the \abilitytag{Attune} tag.
-                        Instead, it lasts until you use it again.
+                        \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
+                        In addition, when you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
+                        For example, you could pick up an entire house if you had enough Strength, even though a house would normally fall apart under the strain if you tried to pick it up.
+                        \parhead{Mastery} You lose access to the \textit{divine strength} ability.
+                        Instead, you simply gain a \plus1 bonus to your Strength.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
