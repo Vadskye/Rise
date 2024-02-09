@@ -1,11 +1,11 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense};
+use crate::core_mechanics::{Attribute, DamageDice, Defense};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_standard_maneuver_modifiers, add_hp_scaling};
+use super::standard_modifiers::{add_hp_scaling, add_standard_maneuver_modifiers};
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
-     let mut abilities = vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Instant Recovery",
             is_magical: false,
@@ -222,7 +222,13 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
             ",
-            modifiers: None,
+            // This is an abstraction of the effect of exotic weapons being better
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice {
+                count: 1,
+                increments: 0,
+                maximized: false,
+                size: 1,
+            })]),
         },
         RankAbility {
             name: "Versatile Savagery",
