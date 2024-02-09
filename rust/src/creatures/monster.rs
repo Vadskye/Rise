@@ -24,12 +24,7 @@ pub struct Monster {
 }
 
 impl Monster {
-    pub fn new(
-        elite: bool,
-        creature_type: CreatureType,
-        role: Role,
-        level: i32,
-    ) -> Monster {
+    pub fn new(elite: bool, creature_type: CreatureType, role: Role, level: i32) -> Monster {
         let cr = if elite {
             ChallengeRating::Four
         } else {
@@ -213,9 +208,14 @@ impl Monster {
 
         let diff = (actual_attribute_sum - expected_attribute_sum).abs();
 
+        // At low levels, attribute sums are often significantly below the expected sum for
+        // narrative reasons.
+        let weak_and_low_level =
+            self.creature.level <= 2 && actual_attribute_sum <= expected_attribute_sum;
+
         // TODO: tune this threshold
         let threshold = 4;
-        if diff >= threshold {
+        if diff >= threshold && !weak_and_low_level {
             eprintln!(
                 "Monster {} has attribute sum {}, expected {}",
                 self.name(),
