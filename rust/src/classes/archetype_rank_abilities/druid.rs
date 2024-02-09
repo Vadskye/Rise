@@ -405,7 +405,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \rank{5} You gain a \plus10 foot bonus to your swim speed.
                         \rank{7} You are immune to \magical effects that restrict your mobility.
-                        In addition, you are \glossterm{impervious} to the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
+                        In addition, you are \impervious to the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Hawk}
