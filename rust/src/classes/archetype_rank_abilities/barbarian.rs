@@ -104,11 +104,10 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities.
+                        \item You gain a +2 accuracy bonus with melee and thrown \glossterm{strikes}.
                         \item You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
-                        \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
                     \end{itemize}
 
                     When this ability ends for any reason, you increase your \glossterm{fatigue level} by one.
