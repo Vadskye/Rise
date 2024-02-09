@@ -121,11 +121,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Fearless Rage",
+            name: "Fearless Anger",
             is_magical: false,
             rank: 2,
             description: r"
-                You are immune to being \frightened and \panicked during your \ability{rage} ability.
+                You are immune to being \frightened and \panicked.
             ",
             modifiers: None,
         },
@@ -165,7 +165,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You ignore all penalties to your accuracy and movement speed from \glossterm{vital wounds}.
+                You ignore all \glossterm{vital wound} effects except for unconsciousness and death.
+                Each vital wound still causes the normal \minus2 penalty to \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
