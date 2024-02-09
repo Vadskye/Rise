@@ -125,7 +125,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Turn Undead}
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
-                    \hit Each target is \frightened by you as a \glossterm{condition}, even if it would normally be immune to \abilitytag{Emotion} effects.
+                    \hit Each target is turned by you as a \glossterm{condition}.
+                    This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
                     Once this effect ends, the creature becomes immune to this effect until it finishes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
 
