@@ -86,7 +86,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         abilities: MonsterAbilities {
             // TODO: poisonous bite, ice breath, webs
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                StandardWeapon::MultipedalBite.weapon(),
+                StandardWeapon::MonsterBite.weapon(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -108,7 +108,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                StandardWeapon::MultipedalBite.weapon(),
+                StandardWeapon::MonsterBite.weapon(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -227,7 +227,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         name: "Hydra Maggot".to_string(),
     })));
 
-    let stygian_leech_bite = StandardWeapon::MultipedalBite
+    let stygian_leech_bite = StandardWeapon::MonsterBite
         .weapon()
         .except(|w| w.damage_types.push(DamageType::Energy));
 
@@ -338,7 +338,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         abilities: MonsterAbilities {
             active_abilities: vec![],
             // weapons: vec![
-            //     StandardWeapon::MultipedalBite.weapon(),
+            //     StandardWeapon::MonsterBite.weapon(),
             //     StandardWeapon::Claws.weapon(),
             // ],
             modifiers: ModifierBundle::Multipedal.plus_modifiers(vec![
@@ -513,7 +513,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Medium,
                 trained_skills: vec![Skill::Climb, Skill::Endurance, Skill::Swim],
                 // weapons: vec![
-                //     StandardWeapon::MultipedalBite.weapon(),
+                //     StandardWeapon::MonsterBite.weapon(),
                 //     StandardWeapon::Claws.weapon(),
                 // ],
             }
@@ -528,7 +528,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Large,
                 trained_skills: vec![Skill::Climb, Skill::Endurance, Skill::Swim],
                 // weapons: vec![
-                //     StandardWeapon::MultipedalBite.weapon(),
+                //     StandardWeapon::MonsterBite.weapon(),
                 //     StandardWeapon::Claws.weapon(),
                 // ],
             }
@@ -542,7 +542,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             //     role: Role::Skirmisher,
             //     size: Size::Tiny,
             //     trained_skills: vec![Skill::Awareness],
-            //     // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+            //     // weapons: vec![StandardWeapon::MonsterBite.weapon()],
             // }
             // .monster(),
             IchorDefinition {
@@ -555,7 +555,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 size: Size::Gargantuan,
                 trained_skills: vec![Skill::Awareness],
                 // weapons: vec![
-                //     StandardWeapon::MultipedalBite.weapon(),
+                //     StandardWeapon::MonsterBite.weapon(),
                 //     StandardWeapon::Talon.weapon(),
                 // ],
             }
@@ -569,7 +569,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 role: Role::Skirmisher,
                 size: Size::Medium,
                 trained_skills: vec![Skill::Awareness],
-                // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+                // weapons: vec![StandardWeapon::MonsterBite.weapon()],
             }
             .monster(),
         ],

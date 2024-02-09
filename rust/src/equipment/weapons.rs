@@ -49,7 +49,7 @@ impl Weapon {
     }
 
     pub fn bite() -> Self {
-        StandardWeapon::MultipedalBite.weapon()
+        StandardWeapon::MonsterBite.weapon()
     }
 
     pub fn fist() -> Self {
@@ -220,10 +220,10 @@ pub enum StandardWeapon {
     Lance,
     Longbow,
     MorningStar,
-    MonsterTentacle,
-    MultipedalBite,
+    MonsterBite,
     MonsterHorn,
     MonsterHorns,
+    MonsterTentacle,
     MultipedalRam,
     MultipedalStinger,
     Sap,
@@ -377,14 +377,7 @@ impl StandardWeapon {
                 name: "Horns".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
-            Self::MonsterTentacle => Weapon {
-                accuracy: 0,
-                damage_dice: DicePool::d8(),
-                damage_types: vec![DamageType::Bludgeoning],
-                name: "Tentacle".to_string(),
-                tags: vec![WeaponTag::Heavy, WeaponTag::Long],
-            },
-            Self::MultipedalBite => Weapon {
+            Self::MonsterBite => Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Physical],
@@ -397,6 +390,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
+            },
+            Self::MonsterTentacle => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d8(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Tentacle".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Long],
             },
             Self::MultipedalStinger => Weapon {
                 accuracy: 1,

@@ -102,7 +102,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     // weapons: vec![
-                    //     StandardWeapon::MultipedalBite.weapon(),
+                    //     StandardWeapon::MonsterBite.weapon(),
                     //     StandardWeapon::Claws.weapon(),
                     // ],
                     modifiers,
@@ -244,7 +244,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     rank: calculate_standard_rank(self.level),
                     tags: None,
                 }
-                .weapon_attack(&StandardWeapon::MultipedalBite.weapon()),
+                .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
             ));
             modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
@@ -533,7 +533,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         name: format!("Zombie {}", creature.name.as_ref().unwrap()),
         abilities: MonsterAbilities {
             active_abilities: vec![],
-            // weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+            // weapons: vec![StandardWeapon::MonsterBite.weapon()],
             modifiers,
             movement_speeds: Some(movement_speeds),
             senses,
