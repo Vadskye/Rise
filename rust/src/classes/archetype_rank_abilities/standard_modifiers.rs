@@ -147,7 +147,8 @@ pub fn add_hp_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i3
     }
 }
 
-pub fn add_dr_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i32, quadruple_rank: i32) {
+pub fn add_dr_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i32, quadruple_rank: i32, maybe_quintuple_rank: Option<i32>) {
+    let quintuple_rank = maybe_quintuple_rank.unwrap_or(8);
     for rank in triple_rank..quadruple_rank {
         rank_abilities.push(RankAbility {
             name: "Damage Resistance Scaling",
@@ -157,13 +158,22 @@ pub fn add_dr_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i3
             modifiers: Some(vec![Modifier::HitPoints(rank * 3)]),
         });
     }
-    for rank in quadruple_rank..8 {
+    for rank in quadruple_rank..quintuple_rank {
         rank_abilities.push(RankAbility {
             name: "Damage Resistance Scaling",
             is_magical: false,
             rank,
             description: "",
             modifiers: Some(vec![Modifier::HitPoints(rank * 4)]),
+        });
+    }
+    for rank in quintuple_rank..8 {
+        rank_abilities.push(RankAbility {
+            name: "Damage Resistance Scaling",
+            is_magical: false,
+            rank,
+            description: "",
+            modifiers: Some(vec![Modifier::HitPoints(rank * 5)]),
         });
     }
 }

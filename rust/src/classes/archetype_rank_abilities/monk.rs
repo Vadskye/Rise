@@ -707,6 +707,6 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
     ];
-    add_dr_scaling(&mut abilities, 2, 6);
+    add_dr_scaling(&mut abilities, 2, 6, None);
     abilities
 }
