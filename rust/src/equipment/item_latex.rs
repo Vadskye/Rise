@@ -161,7 +161,10 @@ fn validate_description(item: &StandardItem) {
     };
 
     let as_action_pattern = Regex::new(r"^As a.*action.*you can").unwrap();
-    if as_action_pattern.is_match(item.description.trim()) {
+    let starting_strike_pattern = Regex::new(r"^[^.]*strike").unwrap();
+    if as_action_pattern.is_match(item.description.trim())
+        && !starting_strike_pattern.is_match(item.description.trim())
+    {
         warn("starts its description with 'as an action'");
     }
 }
