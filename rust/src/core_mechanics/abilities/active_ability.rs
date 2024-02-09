@@ -459,6 +459,19 @@ impl StrikeAbility {
         }
     }
 
+    pub fn grappling_strike(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If this attack beats the target's Fortitude defense, and the target is smaller than the $name, they are \grappled by each other.
+            ".to_string(),
+            name: strike_prefix("Grappling", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
     pub fn guardbreaker(weapon: Weapon) -> Self {
         Self {
             effect: r"
