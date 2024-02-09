@@ -95,8 +95,10 @@ export const unbreakableDefense: CombatStyle = {
 
         You are \\trait{impervious} to all damage this round.
         Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects attacks against you during the current phase.
+        The strike is not Swift.
       `,
       rank: 5,
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -129,7 +131,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -234,7 +236,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
+        \\hit If the target takes damage and your attack result beats its Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
@@ -246,7 +248,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
-        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        \\hit If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,

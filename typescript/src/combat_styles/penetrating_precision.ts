@@ -41,7 +41,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If the target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+        \\hit If the target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
     },
@@ -93,7 +93,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{weak strike} using a piercing weapon.
-        You \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against the target.
+        After making this strike, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with \\glossterm{strikes} against the target.
       `,
       rank: 1,
     },
@@ -131,7 +131,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a piercing weapon.
-        If the target takes damage and your attack result beats its Reflex defense, it is \\slowed as a \\glossterm{condition}.
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -141,7 +141,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a piercing weapon.
-        If the target takes damage, it is \\slowed as a \\glossterm{condition}.
+        \\hit If the target takes damage, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -203,7 +203,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        If the target is dealt damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
+        \\hit If the target takes damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,
