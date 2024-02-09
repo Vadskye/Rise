@@ -580,7 +580,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     "Bracing Treeclub",
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
-                        In addition, it is \glossterm{impervious} to all damage this round.
+                        In addition, it is \impervious to all damage this round.
                         Because this is a \abilitytag{Swift} ability, it affects attacks against it during the current phase.
                         \hit $fullweapondamage.
                     ",

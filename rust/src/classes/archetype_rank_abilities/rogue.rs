@@ -407,7 +407,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You are \glossterm{impervious} to \abilitytag{Auditory} attacks.
+                You are \impervious to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },

@@ -83,7 +83,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 1,
         short_description: "Impervious to poison".to_string(),
         description: String::from(r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \glossterm{impervious} to poisons.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \impervious to poisons.
             The effects expire after 10 minutes.
         "),
         upgrades: vec![
