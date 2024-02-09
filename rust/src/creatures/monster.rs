@@ -100,7 +100,7 @@ impl Monster {
         monster
             .creature
             .weapons
-            .push(StandardWeapon::MultipedalBite.weapon());
+            .push(StandardWeapon::MonsterBite.weapon());
         monster.creature.name = Some("Standard Monster".to_string());
 
         let starting_attribute = if let Some(a) = starting_attribute {

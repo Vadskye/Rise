@@ -146,7 +146,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MultipedalBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -177,7 +177,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MultipedalBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -236,7 +236,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MultipedalBite.weapon())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -334,7 +334,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             // TODO: Should this inflict a disease?
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MultipedalBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -367,7 +367,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(MonsterDef {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MultipedalBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -524,7 +524,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     level: 9,
     //     name: "Roc".to_string(),
     //     size: Size::Gargantuan,
-    //     weapons: vec![StandardWeapon::MultipedalBite.weapon(), StandardWeapon::Talon.weapon()],
+    //     weapons: vec![StandardWeapon::MonsterBite.weapon(), StandardWeapon::Talon.weapon()],
     //     description: None,
     //     knowledge: Some(Knowledge::new(vec![
     //         (0, "
@@ -552,7 +552,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     level: 6,
     //     name: "Vampire Eel".to_string(),
     //     size: Size::Medium,
-    //     weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+    //     weapons: vec![StandardWeapon::MonsterBite.weapon()],
     //     description: None,
     //     knowledge: Some(Knowledge::new(vec![(
     //         0,
@@ -577,7 +577,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     level: 5,
     //     name: "Dire Wolf".to_string(),
     //     size: Size::Large,
-    //     weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+    //     weapons: vec![StandardWeapon::MonsterBite.weapon()],
     //     description: None,
     //     modifiers: Some(ModifierBundle::Multipedal.modifiers()),
     //     movement_speeds: None,
@@ -612,7 +612,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     level: 7,
     //     name: "Giant Bombardier Beetle".to_string(),
     //     size: Size::Large,
-    //     weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+    //     weapons: vec![StandardWeapon::MonsterBite.weapon()],
     //     description: None,
     //     knowledge: Some(Knowledge::new(vec![
     //         (0, "
@@ -651,7 +651,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     senses: Some(vec![Sense::Scent]),
     //     size: Size::Medium,
     //     trained_skills: Some(vec![Skill::Endurance, Skill::Stealth, Skill::Swim]),
-    //     weapons: vec![StandardWeapon::MultipedalBite.weapon()],
+    //     weapons: vec![StandardWeapon::MonsterBite.weapon()],
     // })));
 
     monsters

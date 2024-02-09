@@ -329,7 +329,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     // weapons: vec![
-                    //     StandardWeapon::MultipedalBite.weapon(),
+                    //     StandardWeapon::MonsterBite.weapon(),
                     //     StandardWeapon::Claws.weapon(),
                     // ],
                     modifiers: vec![
@@ -831,7 +831,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     // weapons: vec![
-                    //     StandardWeapon::MultipedalBite.weapon(),
+                    //     StandardWeapon::MonsterBite.weapon(),
                     // ],
                     modifiers: vec![],
                     movement_speeds: None,
