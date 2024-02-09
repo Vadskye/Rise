@@ -62,7 +62,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
+        \\hit If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
       `,
       rank: 1,
     },
@@ -154,7 +154,7 @@ export const mobileAssault: CombatStyle = {
         You jump and move as normal for the jump (see \\pcref{Jumping}).
         You can make a melee \\glossterm{strike} from any location you occupy during the jump.
         Your \\glossterm{weapon damage} with the strike is doubled.
-        If you hit with the strike, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
+        \\hit The target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 7,
     },
@@ -190,7 +190,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
@@ -202,7 +202,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
+        \\hit If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,

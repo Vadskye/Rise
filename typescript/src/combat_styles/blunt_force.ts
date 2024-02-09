@@ -84,7 +84,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If the target takes damage and your attack result beats its Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
+        If your attack result beats the target's Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
       `,
       rank: 3,
     },
@@ -94,7 +94,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If the target takes damage and your attack result beats its Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
+        If your attack result beats its Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
       `,
       rank: 7,
     },
@@ -104,7 +104,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -114,7 +114,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike} using a bludgeoning weapon.
-        If the target loses \\glossterm{hit points}, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses \\glossterm{hit points}, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -124,7 +124,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a bludgeoning weapon.
-        If the target loses hit points, it is \\confused as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -184,7 +184,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        If the target loses \\glossterm{hit points}, it falls \\prone.
+        \\hit If the target loses \\glossterm{hit points}, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -195,7 +195,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
-        If the target takes damage, it falls \\prone.
+        \\hit If the target takes damage, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -255,7 +255,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike with a -1 accuracy penalty using a bludgeoning weapon.
-        If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target takes damage and your attack result beats its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -265,7 +265,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        If your attack result beats a creature's Fortitude defense, the strike deals maximum damage.
+        If your attack result beats the target's Fortitude defense, the strike deals maximum damage.
       `,
       rank: 3,
     },
@@ -276,7 +276,7 @@ export const bluntForce: CombatStyle = {
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        You and each damaged creature are \\deafened as a \\glossterm{condition}.
+        \\hit You and the target are \\deafened as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -336,8 +336,8 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon.
         You cannot get a \\glossterm{critical hit} with this strike.
-        If you deal damage with the strike to a creature that is Small or larger, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\smallarea radius of the target of your strike.
-        You deal each struck secondary target damage equal to the damage you dealt with the strike.
+        \\hit If you deal damage with the strike to a creature that is Small or larger, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\smallarea radius of the target of your strike.
+        On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
         On a miss against a secondary target, you still deal half damage.
       `,
       rank: 3,

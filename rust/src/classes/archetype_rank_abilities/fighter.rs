@@ -349,8 +349,9 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Guarding Strike}
                     \rankline
                     Make a melee \glossterm{strike}.
-                    Each damaged creature is \goaded by you as a \glossterm{condition}.
+                    \hit Each damaged creature is \goaded by you as a \glossterm{condition}.
                     On a \glossterm{critical hit}, the penalty from the condition increases to -4.
+
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     \rank{5} The accuracy bonus increases to +2.

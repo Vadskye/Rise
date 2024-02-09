@@ -197,7 +197,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
-        Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
+        \\hit If the target takes damage, it takes a -2 penalty to all defenses against that ally's attacks this round.
       `,
       rank: 3,
     },
@@ -217,7 +217,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current phase.
+        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
       `,
       rank: 1,
     },

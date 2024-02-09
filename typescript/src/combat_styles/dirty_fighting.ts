@@ -11,7 +11,7 @@ export const dirtyFighting: CombatStyle = {
       // +2r for condition purposes due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -21,7 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If the target loses hit points, it takes \\damagerankseven{bludgeoning}.
+        \\hit If the target loses hit points, it takes \\damagerankseven{bludgeoning}.
       `,
       rank: 5,
     },
@@ -125,7 +125,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your attack result beats a damaged creature's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+        \\hit If the target takes damage and your attack result beats its Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
       `,
       rank: 5,
       tags: ['Size-Based'],
@@ -200,7 +200,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        If your attack beats the target's Fortitude defense, it falls \\prone.
+        \\hit If your attack beats the target's Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -211,7 +211,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -221,7 +221,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -231,7 +231,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, you may switch spaces with it, as long as this would not result in either of you entering a occupied space.
+        \\hit If the target takes damage, you may switch spaces with it, as long as this would not result in either of you entering a occupied space.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -242,7 +242,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
     },
@@ -252,7 +252,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -262,7 +262,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 5,
     },
