@@ -809,19 +809,27 @@ function handleAccuracyWithStrikes() {
 }
 
 function handleBrawlingAccuracy() {
+  const accuracyMiscVariables = generateMiscVariables("accuracy").numericVariables;
   onGet(
     {
       miscName: "brawling_accuracy",
-      numeric: ["challenge_rating", "level", "strength", "fatigue_penalty"],
+      numeric: ["challenge_rating", "level", "strength", "fatigue_penalty", ...accuracyMiscVariables],
     },
     (v) => {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
       const levelishModifier = levelModifier + strengthModifier;
       const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
+
+      let accuracyMiscModifier = 0;
+      for (const varName of accuracyMiscVariables) {
+        accuracyMiscModifier += v[varName];
+      }
+
       const brawling_accuracy = Math.floor(
         v.misc +
         levelishModifier +
+        accuracyMiscModifier +
         crModifier -
         v.fatigue_penalty);
       setAttrs({
@@ -829,6 +837,7 @@ function handleBrawlingAccuracy() {
         brawling_accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "level", value: levelModifier },
           { name: "Str", value: strengthModifier },
+          { name: "general accuracy", value: accuracyMiscModifier },
           { name: "fatigue", value: -v.fatigue_penalty },
           { name: "CR", value: crModifier },
         ]),
