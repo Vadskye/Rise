@@ -53,10 +53,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![2, 2, 2, 0, 1, 0],
+                    attributes: vec![2, 0, 2, 0, 1, 0],
                     elite: false,
                     level: 1,
-                    role: Role::Skirmisher,
+                    role: Role::Warrior,
                     size: Size::Medium,
                 },
             }),
@@ -67,12 +67,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                         ActiveAbility::Strike(StrikeAbility::armorpiercer(Weapon::longbow())),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::longbow())),
                     ],
-                    modifiers: vec![],
-                    movement_speeds: None,
-                    senses: vec![],
                     trained_skills: vec![
                         Skill::Awareness,
                     ],
+                    ..Default::default()
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually chaotic evil".to_string(),

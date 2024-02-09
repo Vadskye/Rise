@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility};
+use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility, CustomAbility};
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
@@ -22,18 +22,22 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     let mut monsters: Vec<MonsterEntry> = vec![];
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
+        name: "Ankheg".to_string(),
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            // weapons: vec![
-            //     StandardWeapon::MultipedalBite.weapon().except(|w| w.damage_types.push(DamageType::Acid)),
-            // ],
-            modifiers: ModifierBundle::Multipedal.plus_modifiers(vec![
-                Modifier::Attack(
-                    StandardAttack::BreathWeaponLine(2, DamageType::Acid, Defense::Reflex)
-                        .attack()
-                        .except(|a| a.name = "Spit Acid".to_string()),
-                ),
-            ]),
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite().except(|w| w.damage_types.push(DamageType::Acid)))),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes an attack vs. Reflex against everything with a \medarealong, 10 ft. wide line from it.
+                        \hit $dr1 acid damage.
+                        \miss Half damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Spew Acid".to_string(),
+                    ..Default::default()
+                }),
+            ],
+            modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Burrow, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
@@ -70,13 +74,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 5, 1, -8, 2, -2],
+            attributes: vec![5, 4, 2, -8, 2, -2],
             elite: true,
             level: 4,
             role: Role::Skirmisher,
             size: Size::Large,
         },
-        name: "Ankheg".to_string(),
     })));
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
