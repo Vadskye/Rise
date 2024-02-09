@@ -165,7 +165,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                         Modifier::Attack(StandardAttack::Combustion(6).attack()),
                         Modifier::Attack(
                             Maneuver::Tenderize
-                                .attack(StandardWeapon::MultipedalRam.weapon(), 6)
+                                .attack(StandardWeapon::MonsterRam.weapon(), 6)
                                 .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
                         ),
                     ],
@@ -869,10 +869,10 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                 name: "Drone".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
-                    // weapons: vec![StandardWeapon::MultipedalStinger.weapon()],
+                    // weapons: vec![StandardWeapon::MonsterStinger.weapon()],
                     modifiers: vec![
                         Modifier::Attack(
-                            StandardWeapon::MultipedalStinger.weapon().attack()
+                            StandardWeapon::MonsterStinger.weapon().attack()
                             .except_hit_damage(
                                 |d| d.lose_hp_effect = Some(
                                     AttackTriggeredEffect::Poison(PoisonEffect {

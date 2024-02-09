@@ -1397,7 +1397,7 @@ The $name glows like a torch for a minute.
                 ",
                     &sample_creature(),
                     false,
-                    Some(&StandardWeapon::MultipedalRam.weapon()),
+                    Some(&StandardWeapon::MonsterRam.weapon()),
                 ),
             );
         }

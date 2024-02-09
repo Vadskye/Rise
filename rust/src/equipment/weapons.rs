@@ -96,7 +96,7 @@ impl Weapon {
     }
 
     pub fn ram() -> Self {
-        StandardWeapon::MultipedalRam.weapon()
+        StandardWeapon::MonsterRam.weapon()
     }
 
     pub fn sling() -> Self {
@@ -115,7 +115,7 @@ impl Weapon {
     }
 
     pub fn tail_slam() -> Self {
-        StandardWeapon::MultipedalRam.weapon().except(|w| {
+        StandardWeapon::MonsterRam.weapon().except(|w| {
             w.name = "Tail Slam".to_string();
         })
     }
@@ -223,9 +223,9 @@ pub enum StandardWeapon {
     MonsterBite,
     MonsterHorn,
     MonsterHorns,
+    MonsterRam,
+    MonsterStinger,
     MonsterTentacle,
-    MultipedalRam,
-    MultipedalStinger,
     Sap,
     Scimitar,
     Sickle,
@@ -363,6 +363,13 @@ impl StandardWeapon {
                 name: "Morning star".to_string(),
                 tags: vec![WeaponTag::VersatileGrip],
             },
+            Self::MonsterBite => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d8(),
+                damage_types: vec![DamageType::Physical],
+                name: "Bite".to_string(),
+                tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
+            },
             Self::MonsterHorn => Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d6().add_modifier(1),
@@ -377,19 +384,19 @@ impl StandardWeapon {
                 name: "Horns".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
-            Self::MonsterBite => Weapon {
-                accuracy: 0,
-                damage_dice: DicePool::d8(),
-                damage_types: vec![DamageType::Physical],
-                name: "Bite".to_string(),
-                tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
-            },
-            Self::MultipedalRam => Weapon {
+            Self::MonsterRam => Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
+            },
+            Self::MonsterStinger => Weapon {
+                accuracy: 1,
+                damage_dice: DicePool::d8(),
+                damage_types: vec![DamageType::Piercing],
+                name: "Stinger".to_string().to_string(),
+                tags: vec![WeaponTag::Heavy],
             },
             Self::MonsterTentacle => Weapon {
                 accuracy: 0,
@@ -397,13 +404,6 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Tentacle".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Long],
-            },
-            Self::MultipedalStinger => Weapon {
-                accuracy: 1,
-                damage_dice: DicePool::d8(),
-                damage_types: vec![DamageType::Piercing],
-                name: "Stinger".to_string().to_string(),
-                tags: vec![WeaponTag::Heavy],
             },
             Self::Sap => Weapon {
                 accuracy: 1,
