@@ -145,7 +145,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit The target is \\debuff<enraged> as a \\glossterm<condition>.
+                    \\hit The target is \\enraged as a \\glossterm<condition>.
                     Every round, it must spend a \\glossterm<standard action> to make an attack.
                 ",
                 // +2 base modifier, plus normal rank scaling
@@ -435,7 +435,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $damage $damagetypes.
-                If the target loses hit points, it is \debuff{enraged} as a \glossterm{condition}.
+                If the target loses hit points, it is \enraged as a \glossterm{condition}.
                 Every round, it must spend a \glossterm{standard action} to make an attack.
             "
             .to_string(),
