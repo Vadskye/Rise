@@ -2,10 +2,10 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::add_standard_maneuver_modifiers;
+use super::standard_modifiers::{add_standard_maneuver_modifiers, add_hp_scaling};
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+     let mut abilities = vec![
         RankAbility {
             name: "Instant Recovery",
             is_magical: false,
@@ -24,7 +24,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
                 In addition, you gain a +1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::HitPoints(6)]),
+            // HP is handled by add_hp_scaling()
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Battle-Scarred+",
@@ -34,41 +35,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 The hit point bonus increases to four times your rank in this archetype.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Battle-Scarred",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(9)]),
-        },
-        RankAbility {
-            name: "Battle-Scarred",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(12)]),
-        },
-        RankAbility {
-            name: "Battle-Scarred",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(15)]),
-        },
-        RankAbility {
-            name: "Battle-Scarred",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(24)]),
-        },
-        RankAbility {
-            name: "Battle-Scarred",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(28)]),
         },
         RankAbility {
             name: "Resilient Strike",
@@ -119,7 +85,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ]
+    ];
+    add_hp_scaling(&mut abilities, 2, 6);
+    abilities
 }
 
 pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
@@ -139,7 +107,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities.
                         \item You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
-                        \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
+                        \item You are \enraged.
                         \item At the end of each round, if you did not make a \glossterm{mundane} attack during that round, this ability ends.
                     \end{itemize}
 
