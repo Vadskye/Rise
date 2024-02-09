@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, MovementMode};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::add_standard_maneuver_modifiers;
+use super::standard_modifiers::{add_standard_maneuver_modifiers, add_dr_scaling};
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -624,7 +624,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Feel the Flow of Life",
             is_magical: true,
@@ -644,8 +644,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            // TODO: represent DR
-            modifiers: None,
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Transcend Frailty+",
@@ -707,5 +706,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ]
+    ];
+    add_dr_scaling(&mut abilities, 2, 6);
+    abilities
 }

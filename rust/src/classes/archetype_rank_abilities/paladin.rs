@@ -2,6 +2,8 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 
+use super::standard_modifiers::add_dr_scaling;
+
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
@@ -246,7 +248,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Lay on Hands",
             is_magical: true,
@@ -302,7 +304,8 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+            // DR is handled by add_dr_scaling
+            modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
             name: "Stalwart Resilience+",
@@ -312,41 +315,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 This bonus increases to four times your rank in this archetype.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Stalwart Resilience",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            name: "Stalwart Resilience",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
-        },
-        RankAbility {
-            name: "Stalwart Resilience",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
-        },
-        RankAbility {
-            name: "Stalwart Resilience",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            name: "Stalwart Resilience",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Stalwart Defense",
@@ -373,7 +341,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Mental, 1),
             ]),
         },
-    ]
+    ];
+    add_dr_scaling(&mut abilities, 2, 6);
+    abilities
 }
 
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
