@@ -3,7 +3,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::add_standard_spell_modifiers;
+use super::standard_modifiers::{add_standard_spell_modifiers, add_dr_scaling};
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
@@ -84,7 +84,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 3),
-                Modifier::DamageResistance(2),
             ]),
         },
         RankAbility {
@@ -103,54 +102,12 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype.
-                In addition, the defense bonus from the body armor increases to \plus4.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(4)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(15)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(24)]),
-        },
-        RankAbility {
-            name: "Mage Armor",
-            is_magical: true,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(28)]),
+            modifiers: None,
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
+    add_dr_scaling(&mut abilities, 1, 3, Some(6));
     abilities
 }
 

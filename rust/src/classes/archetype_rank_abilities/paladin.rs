@@ -342,7 +342,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
     ];
-    add_dr_scaling(&mut abilities, 2, 6);
+    add_dr_scaling(&mut abilities, 2, 6, None);
     abilities
 }
 
