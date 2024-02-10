@@ -85,14 +85,6 @@ impl Creature {
         self.name.as_ref().map(|n| n.to_lowercase())
     }
 
-    pub fn set_movement_speeds(&mut self, movement_speeds: Vec<MovementSpeed>) {
-        self.movement_speeds = movement_speeds;
-    }
-
-    pub fn set_size(&mut self, size: Size) {
-        self.size = size;
-    }
-
     pub fn to_latex(&self) -> String {
         latex::format_creature(self)
     }
