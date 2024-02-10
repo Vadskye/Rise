@@ -12,6 +12,7 @@ pub enum ModifierBundle {
     Mindless,
     MindlessConstruct,
     Multipedal,
+    Sightless,
     Undead,
 }
 
@@ -75,6 +76,14 @@ impl ModifierBundle {
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
+            ],
+            Self::Sightless => vec![
+                Modifier::PassiveAbility(PassiveAbility {
+                    description: r"The $name cannot see normally. If it has no relevant special vision abilities, it is \blinded.".to_string(),
+                    is_magical: false,
+                    name: "Sightless".to_string(),
+                }),
+                Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Visual)),
             ],
             Self::Undead => vec![
                 Modifier::PassiveAbility(PassiveAbility::undead()),

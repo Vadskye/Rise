@@ -111,9 +111,9 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                Each damaged creature bleeds if this attack beats its Fortitude defense.
+                \hit $fullweapondamage.
+                If the target takes damage and the attack result beats its Fortitude defense, it bleeds.
                 A bleeding creature takes $dr0 slashing damage during the $name's next action.
-                \hit $damage $damagetypes damage.
             "
             .to_string(),
             name: strike_prefix("Bloodletting", &weapon),
@@ -249,6 +249,76 @@ impl StrikeAbility {
         }
     }
 
+    fn ichor_infestation_details() -> String {
+        r"
+            If the target loses hit points, it is infested with ichor as a \glossterm{condition}.
+            While infested with ichor, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
+        ".to_string()
+    }
+
+    pub fn ichor_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} strike vs. Armor with its $weapon.
+                    \\hit $fullweapondamage.
+                    {ichor_infestation_details}
+                ",
+                accuracy_modifier = rank - 1,
+                ichor_infestation_details = Self::ichor_infestation_details(),
+            ),
+            name: strike_prefix("Ichor", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
+    pub fn dual_ichor_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} \\glossterm{{dual strike}} vs. Armor with its $weapons.
+                    \\hit $fullweapondamage.
+                    {ichor_infestation_details}
+                ",
+                accuracy_modifier = rank - 1,
+                ichor_infestation_details = Self::ichor_infestation_details(),
+            ),
+            name: strike_prefix("Ichor", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
+    pub fn pounce(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name can move up to its speed in a single straight line.
+                Then, it makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: "Pounce".to_string(),
+            weapon,
+            ..Default::default()
+        }
+    }
+
+    // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
+    pub fn dual_pounce(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name can move up to its speed in a single straight line.
+                Then, it makes a $accuracy \glossterm{dual strike} vs. Armor with its $weapons.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: "Pounce".to_string(),
+            weapon,
+            ..Default::default()
+        }
+    }
+
     pub fn power_strike(weapon: Weapon) -> Self {
         Self {
             effect: r"
@@ -334,7 +404,7 @@ impl StrikeAbility {
     pub fn dual_strike(weapon: Weapon) -> Self {
         Self {
             effect: r"
-                The $name makes two $accuracy strikes vs. Armor with its $weapons.
+                The $name makes a $accuracy \glossterm{dual strike} vs. Armor with its $weapons.
                 \hit $fullweapondamage.
             "
             .to_string(),
