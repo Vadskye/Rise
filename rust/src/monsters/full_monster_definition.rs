@@ -47,7 +47,7 @@ impl FullMonsterDefinition {
         for weapon in self.weapons {
             creature.weapons.push(weapon);
         }
-        creature.set_size(self.size);
+        creature.size = self.size;
         if let Some(modifiers) = self.modifiers {
             for modifier in modifiers {
                 creature.add_modifier(modifier, Some("FullMonsterDefinition"), None);
