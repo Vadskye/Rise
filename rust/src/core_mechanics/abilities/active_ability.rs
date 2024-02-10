@@ -345,6 +345,7 @@ impl StrikeAbility {
         self
     }
 
+    // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorcrusher(weapon: Weapon) -> Self {
         Self {
             effect: r"
@@ -358,6 +359,7 @@ impl StrikeAbility {
         }
     }
 
+    // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorpiercer(weapon: Weapon) -> Self {
         Self {
             effect: r"
