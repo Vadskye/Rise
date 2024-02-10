@@ -52,7 +52,7 @@ impl AbilityTag {
                 format!("\\abilitytag{{Attune}}{}", attune_type.parentheses_suffix())
             }
             Self::Sustain(action) => format!("\\abilitytag{{Sustain}} ({})", action.description()),
-            _ => format!("\\abilitytag<{}>", self.description()),
+            _ => format!("\\abilitytag{{{}}}", self.description()),
         }
     }
 }
