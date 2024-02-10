@@ -52,6 +52,10 @@ impl Weapon {
         StandardWeapon::MonsterBite.weapon()
     }
 
+    pub fn claw() -> Self {
+        StandardWeapon::Claw.weapon()
+    }
+
     pub fn fist() -> Self {
         StandardWeapon::Claw.weapon().except(|w| {
             w.damage_types = vec![DamageType::Bludgeoning];

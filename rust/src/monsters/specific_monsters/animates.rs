@@ -122,8 +122,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     usage_time: UsageTime::Standard,
                 }),
             ],
-            modifiers: ModifierBundle::Amorphous.plus_modifiers(vec![
-                Modifier::PassiveAbility(PassiveAbility::sightless()),
+            modifiers: ModifierBundle::Amorphous.plus_modifiers(ModifierBundle::Sightless.plus_modifiers(vec![
                 Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Grappled)),
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"
@@ -140,7 +139,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     is_magical: false,
                     name: "Suspension".to_string(),
                 }),
-            ]),
+            ])),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
@@ -174,7 +173,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![6, -4, 8, -9, 0, -2],
+            attributes: vec![6, -4, 8, -9, 0, 0],
             elite: true,
             level: 5,
             role: Role::Brute,
@@ -325,7 +324,8 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
     // TODO: add "Unhurried and Unfaltering" from dryaidi?
     impl TreantDefinition {
         fn monster(mut self) -> Monster {
-            self.modifiers.push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
+            self.modifiers
+                .push(Modifier::PassiveAbility(PassiveAbility::indwelt()));
             animate(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: self.active_abilities,
@@ -486,7 +486,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually neutral evil".to_string(),
-            attributes: vec![5, 0, 5, 1, 2, 2],
+            attributes: vec![5, 0, 5, 1, 1, 2],
             knowledge: Knowledge::new(vec![(0, "
                 Darkroot treants, unlike most other treants, primarily inhabit swamps and other grimy places.
                 Their bark is mottled with fungus, and they tend to have a more sinister demeanor than most treants.
@@ -520,7 +520,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually neutral good".to_string(),
-            attributes: vec![4, -2, 8, 2, 2, 4],
+            attributes: vec![4, -2, 8, 2, 1, 4],
             knowledge: Knowledge::new(vec![(0, "
                 Pine treants tend to be the most steadfast treants.
                 They are strong-willed, like oak trees.
@@ -558,7 +558,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![5, -2, 7, 0, 0, 6],
+            attributes: vec![5, -2, 7, 0, 0, 5],
             knowledge: Knowledge::new(vec![(0, "
                 Oak treants tend to be the most stubborn treants.
                 They brook no guff from wayward adventurers.
@@ -596,7 +596,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 ),
             ],
             alignment: "Usually true neutral".to_string(),
-            attributes: vec![6, -2, 8, 0, 2, 2],
+            attributes: vec![6, -2, 8, 0, 1, 2],
             knowledge: Knowledge::new(vec![(
                 0,
                 "

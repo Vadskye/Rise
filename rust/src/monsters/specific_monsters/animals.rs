@@ -3,7 +3,7 @@ use crate::core_mechanics::{
     FlightManeuverability, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
 };
 use crate::creatures::{ModifierBundle, Monster};
-use crate::equipment::StandardWeapon;
+use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
@@ -146,7 +146,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -165,10 +165,10 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 0, 6, -8, 1, -2],
-                        elite: false,
-                        level: 3,
-                        role: Role::Warrior,
+                        attributes: vec![4, 0, 5, -8, 1, -2],
+                        elite: true,
+                        level: 1,
+                        role: Role::Brute,
                         size: Size::Medium,
                     },
                     name: "Black bear".to_string(),
@@ -177,7 +177,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -195,11 +195,11 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![5, 0, 7, -8, 1, 2],
-                        elite: false,
-                        level: 6,
-                        role: Role::Warrior,
-                        size: Size::Medium,
+                        attributes: vec![5, 1, 6, -8, 1, 1],
+                        elite: true,
+                        level: 3,
+                        role: Role::Brute,
+                        size: Size::Large,
                     },
                     name: "Brown bear".to_string(),
                 }),
@@ -236,7 +236,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::bite())),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,

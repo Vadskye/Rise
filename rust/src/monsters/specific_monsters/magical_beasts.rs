@@ -1,8 +1,8 @@
 use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Defense, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
-    Size, SpecialDefenseType, SpeedCategory,
+    DamageType, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
@@ -410,11 +410,32 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility::dual_pounce(Weapon::claw())),
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes two $accuracy strikes vs. Armor with its $weapons.
+                        \hit $fullweapondamage.
+                        If the target takes damage from both claws, it bleeds.
+                        A bleeding creature takes $dr1 slashing damage during the $name's next action.
+                    ".to_string(),
+                    name: "Bloodletting Claws".to_string(),
+                    weapon: Weapon::claw(),
+                    ..Default::default()
+                }),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::bite()).except_elite()),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes a $accuracy attack vs. Reflex against against one non-adjacent creature within \distrange.
+                        \hit The target becomes marked as a condition.
+                        The $name gains a +2 bonus to accuracy and defenses against all marked targets.
+                        If the $name loses sight of the target for a full round, this effect ends.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Eagle Eye".to_string(),
+                    usage_time: UsageTime::Elite,
+                    ..Default::default()
+                }),
             ],
-            // weapons: vec![
-            //     StandardWeapon::MonsterBite.weapon(),
-            //     StandardWeapon::Claws.weapon(),
-            // ],
             modifiers: ModifierBundle::Multipedal.plus_modifiers(vec![
                 Modifier::Attack(
                     Maneuver::PouncingStrike.attack(StandardWeapon::Claws.weapon(), 2),
@@ -427,6 +448,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             senses: vec![Sense::LowLightVision],
             trained_skills: vec![
                 Skill::Awareness,
+                Skill::Jump,
             ],
         },
         narrative: Some(MonsterNarrative {
@@ -458,18 +480,33 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            modifiers: vec![
-                Modifier::Attack(
-                    StandardAttack::BreathWeaponLine(3, DamageType::Bludgeoning, Defense::Fortitude)
-                        .attack()
-                        .except(|a| a.name = "Sonic Lance".to_string()),
-                ),
+            active_abilities: vec![
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearealong, 5 ft. wide line from it.
+                        \hit $dr2 bludgeoning damage.
+                        \miss Half damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Sonic Lance".to_string(),
+                    usage_time: UsageTime::Elite,
+                    ..Default::default()
+                }),
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite())),
+            ],
+            modifiers: ModifierBundle::Sightless.plus_modifiers(vec![
+                Modifier::PassiveAbility(PassiveAbility {
+                    description: r"
+                        The $name uses its hearing to ``see''.
+                        While it is \deafened, it loses its natural blindsight and blindsense abilities.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Echolocation".to_string(),
+                }),
                 Modifier::Attack(
                     StandardAttack::YrthakThunderingHide.attack(),
                 ),
-                Modifier::Maneuver(Maneuver::PouncingStrike),
-            ],
+            ]),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
@@ -477,6 +514,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             senses: vec![Sense::Blindsight(120), Sense::Blindsense(240)],
             trained_skills: vec![
                 Skill::Awareness,
+                Skill::Stealth,
             ],
         },
         narrative: Some(MonsterNarrative {
@@ -486,15 +524,15 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             knowledge: Some(Knowledge::new(vec![
                 (0, r#"
                   Yrthaks are virtually blind.
-                  They can ``see'' in a short range around them with their blindsight ability, which relies on their incredible hearing.
+                  They can ``see'' around themselves with their blindsight ability, which relies on their incredible hearing.
                   Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by sound.
                 "#),
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 4, 2, -4, 6, -1],
+            attributes: vec![5, 2, 4, -4, 6, 0],
             elite: true,
-            level: 6,
+            level: 7,
             role: Role::Skirmisher,
             size: Size::Huge,
         },
@@ -502,6 +540,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     })));
 
     struct IchorDefinition {
+        active_abilities: Vec<ActiveAbility>,
         attributes: Vec<i32>,
         elite: bool,
         level: i32,
@@ -530,7 +569,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             modifiers.push(Modifier::Immune(SpecialDefenseType::CriticalHits));
             magical_beast(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: self.active_abilities,
                     modifiers,
                     movement_speeds: None,
                     senses: vec![Sense::Darkvision(60)],
@@ -578,33 +617,33 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         ])),
         monsters: vec![
             IchorDefinition {
-                attributes: vec![4, 0, 6, -9, 1, -1],
-                elite: false,
-                level: 5,
+                active_abilities: vec![
+                    ActiveAbility::Strike(StrikeAbility::dual_ichor_strike(1, Weapon::claw())),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(1, Weapon::bite()).except_elite()),
+                ],
+                attributes: vec![5, 1, 6, -8, 2, -1],
+                elite: true,
+                level: 3,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
                 name: "Ichor Black Bear".to_string(),
                 role: Role::Brute,
                 size: Size::Medium,
                 trained_skills: vec![Skill::Climb, Skill::Endurance, Skill::Swim],
-                // weapons: vec![
-                //     StandardWeapon::MonsterBite.weapon(),
-                //     StandardWeapon::Claws.weapon(),
-                // ],
             }
             .monster(),
             IchorDefinition {
-                attributes: vec![5, 0, 7, -9, 1, 2],
-                elite: false,
-                level: 8,
+                active_abilities: vec![
+                    ActiveAbility::Strike(StrikeAbility::dual_ichor_strike(2, Weapon::claw())),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(2, Weapon::bite()).except_elite()),
+                ],
+                attributes: vec![6, 2, 7, -8, 2, 2],
+                elite: true,
+                level: 5,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
                 name: "Ichor Brown Bear".to_string(),
                 role: Role::Brute,
                 size: Size::Large,
                 trained_skills: vec![Skill::Climb, Skill::Endurance, Skill::Swim],
-                // weapons: vec![
-                //     StandardWeapon::MonsterBite.weapon(),
-                //     StandardWeapon::Claws.weapon(),
-                // ],
             }
             .monster(),
             // IchorDefinition {
@@ -619,23 +658,26 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             //     // weapons: vec![StandardWeapon::MonsterBite.weapon()],
             // }
             // .monster(),
+            // IchorDefinition {
+            //     attributes: vec![8, 2, 5, -7, 4, 1],
+            //     elite: true,
+            //     level: 11,
+            //     modifiers: vec![],
+            //     name: "Ichor Roc".to_string(),
+            //     role: Role::Brute,
+            //     size: Size::Gargantuan,
+            //     trained_skills: vec![Skill::Awareness],
+            //     // weapons: vec![
+            //     //     StandardWeapon::MonsterBite.weapon(),
+            //     //     StandardWeapon::Talon.weapon(),
+            //     // ],
+            // }
+            // .monster(),
             IchorDefinition {
-                attributes: vec![8, 2, 5, -7, 4, 1],
-                elite: true,
-                level: 11,
-                modifiers: vec![],
-                name: "Ichor Roc".to_string(),
-                role: Role::Brute,
-                size: Size::Gargantuan,
-                trained_skills: vec![Skill::Awareness],
-                // weapons: vec![
-                //     StandardWeapon::MonsterBite.weapon(),
-                //     StandardWeapon::Talon.weapon(),
-                // ],
-            }
-            .monster(),
-            IchorDefinition {
-                attributes: vec![0, 2, 0, -8, 2, -1],
+                active_abilities: vec![
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(1, Weapon::bite())),
+                ],
+                attributes: vec![1, 2, 1, -7, 3, 0],
                 elite: false,
                 level: 3,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -643,7 +685,6 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 role: Role::Skirmisher,
                 size: Size::Medium,
                 trained_skills: vec![Skill::Awareness],
-                // weapons: vec![StandardWeapon::MonsterBite.weapon()],
             }
             .monster(),
         ],

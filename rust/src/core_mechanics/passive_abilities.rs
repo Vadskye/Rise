@@ -27,10 +27,6 @@ impl PassiveAbility {
         StandardPassiveAbility::Indwelt.ability()
     }
 
-    pub fn sightless() -> Self {
-        StandardPassiveAbility::Sightless.ability()
-    }
-
     pub fn undead() -> Self {
         StandardPassiveAbility::Undead.ability()
     }
@@ -43,7 +39,6 @@ pub enum StandardPassiveAbility {
     ConditionRemoval,
     EliteActions,
     Indwelt,
-    Sightless,
     Undead,
 }
 
@@ -80,11 +75,6 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Indwelt".to_string(),
-            },
-            Self::Sightless => PassiveAbility {
-                description: r"The $name cannot see normally. If it has no relevant special vision abilities, it is \blinded.".to_string(),
-                is_magical: false,
-                name: "Sightless".to_string(),
             },
             Self::Undead => PassiveAbility {
                 description: r"
