@@ -239,12 +239,12 @@ Each creature that loses \\glossterm<hit points> from this attack is \\stunned a
 
         assert_eq!(
             "
-\\begin<ability>*<Strip the Flesh>
+\\begin<activeability>*<Strip the Flesh>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit 1d10 bludgeoning damage.
 Each creature that loses \\glossterm<hit points> from this attack is \\vulnerable to all damage as a \\glossterm{condition}.
-\\end<ability>",
+\\end<activeability>",
             get_standard_ability_block(strip_the_flesh)
         );
     }
@@ -265,12 +265,12 @@ Each creature that loses \\glossterm<hit points> from this attack is \\vulnerabl
 
         assert_eq!(
             "
-\\begin<ability>*<Eye Poke>
+\\begin<activeability>*<Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit 1d10 bludgeoning damage.
 Each damaged creature is \\glossterm{briefly} \\dazzled.
-\\end<ability>",
+\\end<activeability>",
             get_standard_ability_block(eye_poke)
         );
     }
@@ -291,12 +291,12 @@ Each damaged creature is \\glossterm{briefly} \\dazzled.
 
         assert_eq!(
             "
-\\begin<ability>*<Greater Eye Poke>
+\\begin<activeability>*<Greater Eye Poke>
 \\rankline
 The $name makes a +0 \\glossterm{strike} vs. Armor.
 \\hit 1d10 bludgeoning damage.
 Each damaged creature is \\dazzled as a \\glossterm{condition}.
-\\end<ability>",
+\\end<activeability>",
             get_standard_ability_block(eye_poke)
         );
     }
@@ -317,12 +317,12 @@ Each damaged creature is \\dazzled as a \\glossterm{condition}.
 
         assert_eq!(
             "
-\\begin<ability>*<Super Eye Poke>
+\\begin<activeability>*<Super Eye Poke>
 \\rankline
 The $name makes a +2 \\glossterm{strike} vs. Armor.
 \\hit 1d10 bludgeoning damage.
 Each damaged creature is \\dazzled as a \\glossterm{condition}.
-\\end<ability>",
+\\end<activeability>",
             get_standard_ability_block(eye_poke)
         );
     }
