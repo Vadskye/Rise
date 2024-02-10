@@ -58,6 +58,21 @@ impl Size {
         }
     }
 
+    // TODO: use this for stealth calculations
+    pub fn stealth_modifier(&self) -> i32 {
+        match self {
+            Size::Fine => 20,
+            Size::Diminuitive => 15,
+            Size::Tiny => 10,
+            Size::Small => 5,
+            Size::Medium => 0,
+            Size::Large => -5,
+            Size::Huge => -10,
+            Size::Gargantuan => -15,
+            Size::Colossal => -20,
+        }
+    }
+
     pub fn space(&self) -> f64 {
         match self {
             Size::Fine => 0.25,
