@@ -483,7 +483,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![4, 2, 3, -8, 0, -1],
+                        attributes: vec![4, 2, 3, -8, 0, 0],
                         elite: false,
                         level: 3,
                         role: Role::Skirmisher,

@@ -65,8 +65,15 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
                         \hit $dr2l poison damage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime.
-
-                        \par Aboleth slime is an injury-based liquid \glossterm{poison}.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Slime-Covered Body".to_string(),
+                    tags: vec![],
+                    usage_time: UsageTime::Triggered,
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        Aboleth slime is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+2.
                         Its stage 1 effect makes the target \slowed while the poison lasts.
                         Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
@@ -75,17 +82,18 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                         An afflicted creature must be moistened with cool, fresh water at least once every ten minutes
                           or it will increase its \glossterm<fatigue level> by two.
                         This effect lasts until the vital wound is removed.
+                        Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                     ".to_string(),
                     is_magical: true,
-                    name: "Slime-Covered Body".to_string(),
-                    tags: vec![],
+                    name: "Aboleth Slime".to_string(),
                     usage_time: UsageTime::Triggered,
+                    ..Default::default()
                 }),
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy melee strike with a tentacle.
                         \hit $fullweapondamage.
-                        Each creature that loses hit points from this damage is poisoned by aboleth slime, as the aboleth's \ability{slime-covered body} ability.
+                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
                     ".to_string(),
                     name: "Slimy Tentacle".to_string(),
                     weapon: Weapon::tentacle(),

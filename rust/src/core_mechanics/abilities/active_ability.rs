@@ -42,7 +42,7 @@ impl ActiveAbility {
     pub fn is_elite(&self) -> bool {
         match self {
             Self::Custom(c) => c.usage_time == UsageTime::Elite,
-            Self::Strike(_) => false,
+            Self::Strike(s) => s.usage_time == UsageTime::Elite,
         }
     }
 
@@ -50,6 +50,13 @@ impl ActiveAbility {
         match self {
             Self::Custom(c) => Self::Custom(c.plus_accuracy(modifier)),
             Self::Strike(s) => Self::Strike(s.plus_accuracy(modifier)),
+        }
+    }
+
+    pub fn validate(&self) {
+        match self {
+            Self::Custom(c) => c.validate(),
+            Self::Strike(s) => s.validate(),
         }
     }
 }
@@ -69,6 +76,16 @@ pub struct CustomAbility {
 }
 
 impl CustomAbility {
+    pub fn validate(&self) {
+        let warn = |message| {
+            eprintln!("CustomAbility {} {}", self.name, message);
+        };
+
+        if self.name.contains("Breath") && !self.effect.contains("cannot use it again") {
+            warn("should have a cooldown because it is a breath attack");
+        }
+    }
+
     pub fn set_usage_time(mut self, usage_time: UsageTime) -> Self {
         self.usage_time = usage_time;
 
@@ -293,6 +310,18 @@ pub struct StrikeAbility {
 }
 
 impl StrikeAbility {
+    pub fn validate(&self) {
+        let warn = |message| {
+            eprintln!("StrikeAbility {} {}", self.name, message);
+        };
+
+        if !(self.effect.contains("$weapon")
+            || self.effect.contains(&self.weapon.name.to_lowercase()))
+        {
+            warn("should contain the name of the weapon")
+        }
+    }
+
     // Some monsters take standard maneuvers and use them as elite actions.
     pub fn except_elite(mut self) -> Self {
         self.usage_time = UsageTime::Elite;
@@ -504,7 +533,7 @@ impl StrikeAbility {
     pub fn heartpiercer(weapon: Weapon) -> Self {
         Self {
             effect: r"
-                The $name makes a $accuracy strike vs. Armor with its {weapon}.
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
                 \hit $damage $damagetypes damage.
                 \glance No effect.
@@ -1444,7 +1473,11 @@ The $name glows like a torch for a minute.
         fn can_add_new_modifier_to_brawling() {
             assert_eq!(
                 "Attack with $brawlingaccuracy+1 accuracy",
-                add_accuracy_to_effect(1, "Attack with $brawlingaccuracy accuracy", "arbitrary name")
+                add_accuracy_to_effect(
+                    1,
+                    "Attack with $brawlingaccuracy accuracy",
+                    "arbitrary name"
+                )
             );
         }
     }

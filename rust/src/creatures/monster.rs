@@ -275,6 +275,9 @@ impl Monster {
     fn validate_skills(&self) {
         if self.creature.get_base_attribute(&Intelligence) >= 0
             && self.creature.skill_training.is_none()
+            // Low level creatures sometimes have no skills because they are generally bad at
+            // everything
+            && self.creature.level > 1
         {
             eprintln!(
                 "Monster {} has a non-negative intelligence but has no skills",
