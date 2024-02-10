@@ -1,9 +1,8 @@
 use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
-use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageDice, DamageType, Defense, FlightManeuverability, MovementMode, MovementSpeed,
-    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    DamageType, Defense, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
+    Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -121,10 +120,11 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     ..Default::default()
                 }),
             ],
-            // TODO: add "unaffected by icy terrain"
+            // In theory, this could have an ability specifying that it is unaffected by icy
+            // terrain. Since its Balance bonus is so high, this isn't really necessary.
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
-            // TODO: tremorsense on icy terrain specifically?
+            // Should this be tremorsense on icy terrain specifically?
             senses: vec![Sense::Tremorsense(90)],
             trained_skills: vec![Skill::Awareness, Skill::Balance, Skill::Climb],
         },
@@ -142,7 +142,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                StandardWeapon::MonsterBite.weapon(),
+                Weapon::bite(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -151,7 +151,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         },
         narrative: None,
         statistics: MonsterStatistics {
-            attributes: vec![3, 4, 1, -4, 2, -1],
+            attributes: vec![3, 2, 1, -4, 2, -1],
             elite: false,
             level: 2,
             role: Role::Skirmisher,
@@ -162,28 +162,36 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            // TODO: add bite attack
-            modifiers: vec![
-                Modifier::Attack(
-                    StandardAttack::DarkMiasma(3)
-                        .attack()
-                        .except(|a| a.name = "Crawling Darkness".to_string())
-                ),
-                Modifier::Attack(
-                    StandardAttack::DarkGrasp(3)
-                        .attack()
-                        .except(|a| a.name = "Dark Embrace".to_string())
-                ),
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its $weapon.
+                        If the target is \glossterm{shadowed}, this attack deals double damage.
+                        \hit $damage physical and cold damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Umbral Bite".to_string(),
+                    weapon: Weapon::bite(),
+                    ..Default::default()
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes an attack vs. Mental against all \glossterm{shadowed} \glossterm{enemies} in a \medarea radius from it.
+                        \hit $dr3 cold damage.
+                        \miss Half damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Crawling Darkness".to_string(),
+                    ..Default::default()
+                }),
             ],
+            modifiers: vec![],
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
             ]),
             senses: vec![Sense::Darkvision(60), Sense::Blindsense(120)],
-            trained_skills: vec![
-                Skill::Climb,
-            ],
+            trained_skills: vec![Skill::Climb],
         },
         narrative: Some(MonsterNarrative {
             art: true,
@@ -197,18 +205,19 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 "),
                 (5, "
                     A typical nightcrawler is about 9 feet long and weighs about 700 pounds.
-                    They move slowly, but are surprisingly agile in combat.
-                    They can easily contort their body to avoid attacks or wrap around the defenses of foes.
-                    Nightcrawlers have several magical abilities that draw on their umbramantic power to inflict cold damage on nearby foes.
+                    They cover distances slowly, but are surprisingly agile in combat.
+                    They can easily contort their body to avoid attacks.
+                    Nightcrawlers have several magical abilities that draw on their umbramantic power to damage nearby foes.
                 "),
                 (10, "
                     Nightcrawlers hate and fear light.
-                    They can be driven away by light, but if they have no escape, they ferociously attack any sources of light.
+                    They can be driven away by light, and are weaker in its presence.
+                    If they have no escape, they ferociously attack any sources of light.
                 "),
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 4, 1, -8, 0, 3],
+            attributes: vec![3, 4, 2, -8, 0, 3],
             elite: false,
             level: 7,
             role: Role::Brute,
@@ -219,16 +228,20 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            modifiers: vec![
-                Modifier::Attack(
-                    Maneuver::ArmorpiercerPlus
-                        .attack(Weapon::tentacle(), 3)
-                        .except(|a| a.name = "Impaling Tentacles".to_string())
-                        .except_hit_damage(|d| d.damage_types = vec![DamageType::Piercing])
-                ),
-                Modifier::Maneuver(Maneuver::GraspingStrike),
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite())),
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Reflex with its $weapon.
+                        \hit $fullweapondamage.
+                    "
+                    .to_string(),
+                    name: "Impaling Tentacles".to_string(),
+                    weapon: Weapon::bite(),
+                    ..Default::default()
+                })
             ],
+            modifiers: vec![],
             movement_speeds: None,
             senses: vec![Sense::Darkvision(60)],
             trained_skills: vec![
@@ -261,33 +274,29 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         name: "Hydra Maggot".to_string(),
     })));
 
-    let stygian_leech_bite = StandardWeapon::MonsterBite
-        .weapon()
-        .except(|w| w.damage_types.push(DamageType::Energy));
-
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            // TODO: use stygian_leech_bite
-            modifiers: vec![
-                Modifier::Attack(
-                    stygian_leech_bite.attack()
-                        .except(|a| a.name = "Leech Life".to_string())
-                        .except_hit_damage(|d| d.vampiric_healing = Some(HealingEffect {
-                                healing_dice: DamageDice::aoe_damage(3),
-                                is_magical: true,
-                                power_multiplier: 1.0,
-                            }
-                        ))
-                ),
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its $weapon.
+                        \hit $fullweapondamage.
+                        The $name regains hit points equal to the hit points that the target lost from this attack.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Leech Life".to_string(),
+                    weapon: Weapon::bite().except(|w| w.damage_types.push(DamageType::Energy)),
+                    ..Default::default()
+                }),
             ],
+            modifiers: vec![],
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Normal),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             ]),
             senses: vec![Sense::Darkvision(120), Sense::Lifesense(120)],
             trained_skills: vec![
-                Skill::Climb,
+                Skill::Climb, Skill::Stealth,
             ],
         },
         narrative: Some(MonsterNarrative {
@@ -311,18 +320,20 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 4, 1, -6, 2, 3],
+            attributes: vec![5, 2, 4, -6, 2, -2],
             elite: false,
-            level: 7,
+            level: 5,
             role: Role::Brute,
-            size: Size::Large,
+            size: Size::Medium,
         },
         name: "Stygian Leech".to_string(),
     })));
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::tentacle())),
+            ],
             modifiers: vec![
                 Modifier::Maneuver(Maneuver::GraspingStrike),
             ],
