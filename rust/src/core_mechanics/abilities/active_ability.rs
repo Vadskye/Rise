@@ -434,7 +434,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $damage $damagetypes.
+                \hit $fullweapondamage.
                 If the target loses hit points, it is \enraged as a \glossterm{condition}.
                 Every round, it must spend a \glossterm{standard action} to make an attack.
             "
@@ -585,7 +585,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $damage $damagetypes.
+                \hit $fullweapondamage.
             "
             .to_string(),
             name: weapon.name.clone(),
@@ -599,7 +599,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes two $accuracy strikes vs. Armor with its $weapons.
-                \hit $damage $damagetypes.
+                \hit $fullweapondamage.
             "
             .to_string(),
             name: weapon.name.clone(),
@@ -669,7 +669,7 @@ pub fn replace_attack_terms(
     let mut replaced_effect = effect.to_string();
 
     // Generally, $fullweapondamage is the easiest way to indicate strike damage. However, the
-    // individual $damage and $damagetypes terms are avaiable to make it easier to write
+    // individual $damage and $damagetypes terms are available to make it easier to write
     // special weapon effects.
     replaced_effect = replace_full_weapon_damage_terms(&replaced_effect);
     replaced_effect = replace_accuracy_terms(&replaced_effect, creature, weapon);
