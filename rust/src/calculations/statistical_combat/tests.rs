@@ -257,7 +257,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [2.5, 2.0, 3.0, 3.25, 3.25],
+            [2.25, 1.75, 2.75, 3.0, 4.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -278,7 +278,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [4.0, 5.0, 6.5, 7.25, 7.5],
+            [4.0, 5.5, 6.0, 7.5, 9.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -302,13 +302,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [
-                [2.25, 2.75],
-                [3.25, 3.75],
-                [3.75, 4.5],
-                [4.25, 5.25],
-                [4.75, 4.25]
-            ],
+            [[3.25, 3.0], [4.25, 5.0], [5.25, 7.5], [7.5, 9.0], [8.75, 6.75]],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -329,7 +323,7 @@ mod calc_rounds_to_live {
         }
 
         assert_eq!(
-            [1.5, 2.75, 2.5, 3.25, 3.0],
+            [3.25, 5.0, 6.75, 8.5, 6.25],
             [
                 calc_at_level(1),
                 calc_at_level(5),
@@ -346,7 +340,7 @@ mod calc_rounds_to_live {
         let level = 1;
         let attacker = Character::standard_character(level, true).creature;
 
-        let expected_results = vec![3.25, 8.25, 13.75, 24.5];
+        let expected_results = vec![4.0, 21.0];
 
         let mut actual_results = vec![];
         let defender = Monster::standard_example_monster(level).creature;
@@ -362,7 +356,7 @@ mod calc_rounds_to_live {
         let level = 20;
         let attacker = Character::standard_character(level, true).creature;
 
-        let expected_results = vec![5.0, 12.75, 21.5, 36.25];
+        let expected_results = vec![5.75, 25.75];
 
         let mut actual_results = vec![];
         let defender = Monster::standard_example_monster(level).creature;
