@@ -223,12 +223,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
             ",
             // This is an abstraction of the effect of exotic weapons being better
-            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice {
-                count: 1,
-                increments: 0,
-                maximized: false,
-                size: 1,
-            })]),
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             name: "Versatile Savagery",
