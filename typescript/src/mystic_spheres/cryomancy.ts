@@ -13,7 +13,8 @@ export const cryomancy: MysticSphere = {
     Some spells from this mystic sphere can create icy terrain.
     \\spheredef{icy terrain} Icy terrain is covered in ice, making it hard to traverse.
     When an area becomes icy terrain, all water and solid ground in the area becomes covered in a layer of solid ice.
-    This allows creatures to walk on ice-covered water.
+
+    Creatures with a Large or lighter weight category can walk on ice-covered water.
     At the GM's discretion, water-like liquids may also become icy terrain, or they may be unaffected.
     The ice is similar to natural ice, but since it was created recently by a spell, the effects of icy terrain do not have as much variance as natural terrain.
 
@@ -108,7 +109,7 @@ export const cryomancy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
-          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          The area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
         `,
       },
       rank: 2,
@@ -124,7 +125,7 @@ export const cryomancy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-          In addition, all water and ground in the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          The area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
         `,
       },
       rank: 5,
