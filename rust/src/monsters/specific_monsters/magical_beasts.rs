@@ -5,7 +5,7 @@ use crate::core_mechanics::{
     Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
-use crate::equipment::{StandardWeapon, Weapon};
+use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
@@ -27,7 +27,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite().except(|w| w.damage_types.push(DamageType::Acid)))),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes an attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
+                        The $name makes a $accuracy attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
                         \hit $dr1 acid damage.
                         \miss Half damage.
                     ".to_string(),
@@ -73,8 +73,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![5, 4, 2, -8, 2, -2],
-            elite: true,
+            attributes: vec![4, 3, 2, -8, 2, 0],
+            elite: false,
             level: 4,
             role: Role::Skirmisher,
             size: Size::Large,
@@ -87,8 +87,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
-                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \\glossterm{icy terrain}. 
-                        \hit $fullweapondamage and $dr1 cold damage.
+                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
+                        \hit $fullweapondamage physical and cold damage.
                         If the target loses hit points, it becomes poisoned by frostweb spider venom.
                     ".to_string(),
                     is_magical: false,
@@ -98,8 +98,24 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 }),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes an attack vs. Reflex against anything within \medrange.
-                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \\glossterm{icy terrain}. 
+                        Frostweb spider venom is an injury-based liquid \glossterm{poison}.
+                        The poison's accuracy is $accuracy+1.
+                        Its stage 1 effect makes the target \vulnerable to cold damage while the poison lasts.
+                        Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
+                        Instead of making a \glossterm{vital roll} for the \glossterm{vital wound}, the target's blood freezes.
+                        It is \paralyzed while the temperature is below freezing, and \slowed while the temperature is below 100 degrees Fahrenheit.
+                        Whenever it takes fire damage, it can ignore this effect for one minute.
+                        This effect lasts until the vital wound is removed.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Frostweb Spider Venom".to_string(),
+                    usage_time: UsageTime::Triggered,
+                    ..Default::default()
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes a $accuracy attack vs. Reflex against anything within \medrange.
+                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
                         \hit $dr1 cold damage.
                         If the attack result beats the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
                     ".to_string(),
@@ -110,8 +126,9 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 }),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes an attack vs. Fortitude against everything within in a \\largearea cone from it.
-                        In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+                        The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearea cone from it.
+                        In addition, the area \glossterm{briefly} becomes \sphereterm{icy terrain}.
+                        After it uses this ability, it \glossterm{briefly} cannot use it again.
                         \hit $dr3 cold damage.
                         \miss Half damage.
                     ".to_string(),
@@ -185,7 +202,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     ..Default::default()
                 }),
             ],
-            modifiers: vec![],
+            modifiers: ModifierBundle::Legless.modifiers(),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
@@ -237,11 +254,22 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     "
                     .to_string(),
                     name: "Impaling Tentacles".to_string(),
-                    weapon: Weapon::bite(),
+                    weapon: Weapon::tentacle().add_tag(WeaponTag::Sweeping(7)),
+                    usage_time: UsageTime::Elite,
                     ..Default::default()
-                })
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes a $accuracy attack vs. Fortitude against all creatures in a \medarea cone from it.
+                        After it uses this ability, it \glossterm{briefly} cannot use it again.
+                        \hit Each target is \glossterm{briefly} \stunned.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Maggot Breath".to_string(),
+                    ..Default::default()
+                }),
             ],
-            modifiers: vec![],
+            modifiers: ModifierBundle::Legless.modifiers(),
             movement_speeds: None,
             senses: vec![Sense::Darkvision(60)],
             trained_skills: vec![
@@ -381,7 +409,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![],
+            active_abilities: vec![
+            ],
             // weapons: vec![
             //     StandardWeapon::MonsterBite.weapon(),
             //     StandardWeapon::Claws.weapon(),

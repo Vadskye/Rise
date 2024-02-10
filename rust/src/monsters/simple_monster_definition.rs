@@ -29,8 +29,9 @@ pub struct MonsterAbilities {
 impl MonsterAbilities {
     fn update_creature(self, creature: &mut Creature) {
         let mut modifiers = self.modifiers;
-        // TODO: remember concat syntax
         for ability in self.active_abilities {
+            // TODO: is this the right place to warn?
+            ability.validate();
             modifiers.push(Modifier::ActiveAbility(ability));
         }
         for modifier in modifiers {

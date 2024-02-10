@@ -8,6 +8,7 @@ use super::Modifier;
 pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
+    Legless,
     Mindless,
     MindlessConstruct,
     Multipedal,
@@ -48,6 +49,11 @@ impl ModifierBundle {
                     is_magical: false,
                     name: "Incorporeal".to_string(),
                 }),
+            ],
+            Self::Legless => vec![
+                Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
+                // Don't give this a named callout, because "legless" is an awkward name and it
+                // only has one effect.
             ],
             Self::Mindless => vec![
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
