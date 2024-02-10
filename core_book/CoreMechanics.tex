@@ -502,8 +502,10 @@ This chapter describes the core mechanics of Rise.
             When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
             The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
 
-            You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
-            For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+            % This seems like an unnecessary complication, and is easily forgotten.
+            % But it does solve some potentially unintuitive scenarios, like upgraded versions of spells not always being strictly better.
+            % You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
+            % For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
 
             You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
             If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
