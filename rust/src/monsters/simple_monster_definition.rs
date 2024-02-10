@@ -92,7 +92,7 @@ impl MonsterStatistics {
                 .creature
                 .set_base_attribute(*attribute, self.attributes[i]);
         }
-        monster.creature.set_size(self.size);
+        monster.creature.size = self.size;
 
         monster
     }
