@@ -719,15 +719,19 @@
             \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
         \end{activeability}
 
-        \subsubsection{Dual Wielding}\label{Dual Wielding}
+        \subsubsection{Dual Strikes}\label{Dual Strikes}
             If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
-            This is called dual wielding.
-            You need a Dexterity of at least 1 to dual wield.
-            In addition, you cannot use a shield to dual wield, even if you are proficient with using it as a weapon.
+            This is called a \glossterm{dual strike}.
+            You need a Dexterity of at least 1 to make a dual strike.
+            In addition, you cannot use a shield to make dual strikes, even if you are proficient with using it as a weapon.
 
-            When you make a strike with two weapons at once, you make a separate attack with each weapon.
-            % Should they both be required to hit the same primary target?
+            When you make a dual strike, you make a separate attack with each weapon.
             Each attack deals its full \glossterm{weapon damage} if it hits.
+            You make the attacks sequentially, so you can direct the second attack at a different target depending on the results of the first attack.
+
+            Both attacks in a dual strike are still considered part of a single strike.
+            Any special effects from the strike, such as conditions or extra damage, apply equally to all targets of both attacks.
+            Likewise, hitting the same target with both attacks only inflicts a single instance of any conditions.
 
             Dual-wielding has four downsides.
             \begin{itemize}
@@ -739,7 +743,7 @@
                     This penalty increases to \minus2 for each \weapontag{Heavy} weapon.
                 \item Any \glossterm{extra damage} never applies more than once to a single strike.
                     Extra damage applies if you hit with either weapon, but you don't double extra damage if you hit with both weapons.
-                    You can choose which weapon is used to deal extra damage after determining which weapons hit.
+                    If it matters, extra damage always comes from the first weapon you successfully hit a target with.
             \end{itemize}
 
             Some abilities check if you hit or miss with a \glossterm{strike}.
@@ -876,7 +880,7 @@
             After you use this ability, you increase your \glossterm{fatigue level} by two, and you cannot use it again until you finish a short rest.
 
             You regain all of your \glossterm{damage resistance} and half of your total \glossterm{hit points}.
-            In addition, you remove any number of \glossterm{conditions} affecting you.
+            Then, you remove any number of \glossterm{conditions} affecting you.
             Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
         \end{activeability}
 
