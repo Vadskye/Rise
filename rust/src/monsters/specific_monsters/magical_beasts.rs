@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility, CustomAbility};
+use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
 use crate::core_mechanics::attacks::attack_effect::HealingEffect;
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
@@ -28,7 +28,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite().except(|w| w.damage_types.push(DamageType::Acid)))),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes an attack vs. Reflex against everything with a \medarealong, 10 ft. wide line from it.
+                        The $name makes an attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
                         \hit $dr1 acid damage.
                         \miss Half damage.
                     ".to_string(),
@@ -84,19 +84,53 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            // TODO: poisonous bite, ice breath, webs
-            active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                StandardWeapon::MonsterBite.weapon(),
-            ))],
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility {
+                    effect: r"
+                        The $name makes a $accuracy strike vs. Armor with its $weapon.
+                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \\glossterm{icy terrain}. 
+                        \hit $fullweapondamage and $dr1 cold damage.
+                        If the target loses hit points, it becomes poisoned by frostweb spider venom.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Frostbite".to_string(),
+                    weapon: Weapon::bite(),
+                    ..Default::default()
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes an attack vs. Reflex against anything within \medrange.
+                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \\glossterm{icy terrain}. 
+                        \hit $dr1 cold damage.
+                        If the attack result beats the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Iceweb".to_string(),
+                    usage_time: UsageTime::Elite,
+                    ..Default::default()
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    effect: r"
+                        The $name makes an attack vs. Fortitude against everything within in a \\largearea cone from it.
+                        In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+                        \hit $dr3 cold damage.
+                        \miss Half damage.
+                    ".to_string(),
+                    is_magical: true,
+                    name: "Frost Breath".to_string(),
+                    ..Default::default()
+                }),
+            ],
+            // TODO: add "unaffected by icy terrain"
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
-            // TODO: tremorsense on webs ice?
+            // TODO: tremorsense on icy terrain specifically?
             senses: vec![Sense::Tremorsense(90)],
-            trained_skills: vec![Skill::Endurance],
+            trained_skills: vec![Skill::Awareness, Skill::Balance, Skill::Climb],
         },
         narrative: None,
         statistics: MonsterStatistics {
-            attributes: vec![6, 8, 2, 1, 3, 0],
+            attributes: vec![4, 8, 2, 0, 3, 2],
             elite: true,
             level: 12,
             role: Role::Skirmisher,
