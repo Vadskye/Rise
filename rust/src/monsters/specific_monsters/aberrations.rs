@@ -139,7 +139,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![4, 0, 6, 4, 4, 7],
+            attributes: vec![4, 0, 6, 4, 4, 6],
             elite: true,
             level: 12,
             role: Role::Mystic,

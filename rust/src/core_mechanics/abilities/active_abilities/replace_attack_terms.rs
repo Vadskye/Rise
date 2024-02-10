@@ -245,7 +245,6 @@ fn calc_weapon_damage(
     damage_dice.to_string()
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -610,7 +609,6 @@ mod tests {
 
     mod replace_attack_terms {
         use super::*;
-        use crate::equipment::StandardWeapon;
 
         #[test]
         fn replaces_mind_crush() {

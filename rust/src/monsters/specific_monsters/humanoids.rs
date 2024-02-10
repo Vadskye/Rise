@@ -497,7 +497,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                     ],
                 },
                 MonsterStatistics {
-                    attributes: vec![2, 2, 5, -1, 1, 0],
+                    attributes: vec![2, 2, 4, -1, 1, 0],
                     elite: false,
                     level: 3,
                     role: Role::Warrior,
@@ -521,7 +521,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                     ],
                 },
                 MonsterStatistics {
-                    attributes: vec![3, 3, 6, 0, 2, 1],
+                    attributes: vec![3, 3, 5, 0, 1, 1],
                     elite: false,
                     level: 5,
                     role: Role::Warrior,
@@ -616,7 +616,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![5, 0, 1, -2, 0, 0],
+                    attributes: vec![4, 0, 1, -2, 0, 0],
                     elite: false,
                     level: 1,
                     role: Role::Brute,
@@ -639,7 +639,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![6, 0, 2, -2, 0, 0],
+                    attributes: vec![5, 0, 2, -2, 0, 0],
                     elite: false,
                     level: 2,
                     role: Role::Brute,
@@ -663,7 +663,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![6, 1, 2, 0, 0, 0],
+                    attributes: vec![5, 1, 2, 0, 0, 0],
                     elite: false,
                     level: 3,
                     role: Role::Brute,
@@ -688,7 +688,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![7, 0, 3, -2, 1, 1],
+                    attributes: vec![6, 0, 3, -2, 1, 1],
                     elite: false,
                     level: 5,
                     role: Role::Brute,
@@ -715,7 +715,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![7, 0, 4, 0, 2, 3],
+                    attributes: vec![6, 0, 4, 0, 2, 3],
                     elite: true,
                     level: 6,
                     role: Role::Leader,
@@ -744,7 +744,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     trained_skills: vec![],
                 },
                 MonsterStatistics {
-                    attributes: vec![5, 1, 1, -1, 2, 4],
+                    attributes: vec![4, 1, 1, -1, 1, 4],
                     elite: false,
                     level: 2,
                     role: Role::Leader,

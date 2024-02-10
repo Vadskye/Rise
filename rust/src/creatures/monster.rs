@@ -190,12 +190,12 @@ impl Monster {
     fn validate_attribute_sum(&self) {
         // TODO: verify that this sum is reasonable. A baseline level 1 PC has a sum of
         // approximately 10, but that includes Intelligence.
-        let mut expected_attribute_sum = 10;
+        let mut expected_attribute_sum = 8;
 
         // Elite monsters should have higher attributes
         if self.elite() {
             // TODO: validate that this difference is reasonable
-            expected_attribute_sum += 4;
+            expected_attribute_sum += 5;
         }
 
         // Add scaling from level, just like PCs use. Note that the order affects rounding.
