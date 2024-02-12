@@ -1,6 +1,4 @@
-use rise::{
-    creatures::{Character, Monster},
-};
+use rise::creatures::{Character, Monster};
 
 fn compare_classes() {
     let standard_character = Character::standard_character(1, true);
@@ -71,7 +69,11 @@ fn main() {
     let standard_monster = Monster::standard_example_monster(20);
     println!("standard monster {}", standard_monster.to_section(None));
 
-    // compare_classes();
-    // level_scaling();
+    // Using `if false` instead of commenting out unused sections avoid lint errors for unused
+    // code. This file doesn't really matter, but we don't want to get warnings about it.
+    if false {
+        compare_classes();
+        level_scaling();
+    }
     sorcerer_scaling();
 }

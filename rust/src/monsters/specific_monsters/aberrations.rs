@@ -6,13 +6,14 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::Weapon;
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics, Role};
 use crate::skills::Skill;
 
 fn aberration(def: MonsterDef) -> Monster {
-    def.aberration()
+    def.monster(CreatureType::Aberration)
 }
 
 pub fn aberrations() -> Vec<MonsterEntry> {
