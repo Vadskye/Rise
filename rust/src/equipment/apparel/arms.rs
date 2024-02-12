@@ -208,6 +208,23 @@ fn gauntlets() -> Vec<Apparel> {
     }));
 
     apparel.push(Gauntlets(StandardItem {
+        name: String::from("Gauntlets of Brutal Fists"),
+        rank: 2,
+        short_description: String::from(r"Natural weapons deal +1d6-2 damage with 3 Str"),
+        description: String::from(r"
+            If your Strength is at least 3, your \glossterm{natural weapons} deal +1d6 damage, but their damage is also reduced by 2.
+            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
+        "),
+        upgrades: vec![
+            // +2.5 damage
+            ItemUpgrade::new(5, "Natural weapons deal +1d8-2 damage with 4 Str", r"
+                The damage die increases to 1d8 if your Strength is at least 4.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Gauntlets(StandardItem {
         name: String::from("Gauntlets of Mighty Fists"),
         rank: 4,
         short_description: String::from(r"Grants \weapontag{Impact} to natural weapons"),
