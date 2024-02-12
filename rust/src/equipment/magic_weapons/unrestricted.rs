@@ -18,7 +18,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ),
         description: String::from(
             r"
-                Whenever you make a \glossterm<strike>, you \glossterm<briefly> gain a +1 bonus to \glossterm<accuracy> with \glossterm<strikes>.
+                Whenever you make a \glossterm<strike> with this weapon, you \glossterm<briefly> gain a +1 bonus to \glossterm<accuracy> with all \glossterm<strikes>.
                 As normal, this bonus does not stack with itself.
             ",
         ),
