@@ -7,6 +7,7 @@ use crate::core_mechanics::{
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::StandardWeapon;
 use crate::monsters::challenge_rating::ChallengeRating;
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
@@ -17,7 +18,7 @@ use std::cmp::{max, min};
 use super::humanoids::{add_humans, add_orcs};
 
 fn undead(def: MonsterDef) -> Monster {
-    def.undead()
+    def.monster(CreatureType::Undead)
 }
 
 pub fn undeads() -> Vec<MonsterEntry> {

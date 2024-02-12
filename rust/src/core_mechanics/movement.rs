@@ -1,4 +1,6 @@
-use crate::core_mechanics::Size;
+use crate::core_mechanics::{HasSize, Size};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
+use crate::equipment::HasArmor;
 use std::cmp::max;
 
 #[derive(Clone, Debug)]
@@ -7,7 +9,7 @@ pub struct MovementSpeed {
     pub speed: SpeedCategory,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum MovementMode {
     Burrow,
     Climb,
@@ -18,7 +20,7 @@ pub enum MovementMode {
     Swim,
 }
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum FlightManeuverability {
     Poor,
     Normal,
@@ -111,18 +113,6 @@ impl MovementMode {
 }
 
 impl MovementSpeed {
-    pub fn calc_speed(&self, size: &Size) -> i32 {
-        // TODO: figure out syntax to make this less repetitive
-        match self.mode {
-            MovementMode::Burrow => calc_speed(&self.speed, size),
-            MovementMode::Climb => calc_speed(&self.speed, size),
-            MovementMode::Fly(_) => calc_speed(&self.speed, size),
-            MovementMode::Glide => calc_speed(&self.speed, size),
-            MovementMode::Land => calc_speed(&self.speed, size),
-            MovementMode::Swim => calc_speed(&self.speed, size),
-        }
-    }
-
     pub fn new(mode: MovementMode, speed: SpeedCategory) -> Self {
         Self { mode, speed }
     }
@@ -134,21 +124,22 @@ impl MovementSpeed {
         }
     }
 
-    pub fn description(&self, size: &Size) -> String {
-        let speed = self.calc_speed(size);
+    // We have to take speed in feet as an argument because it depends on Modifiers on a
+    // Creature.
+    pub fn description(&self, speed_in_feet: i32) -> String {
         match self.mode {
             MovementMode::Fly(ref maneuverability) => format!(
                 "{}~{}~ft.{}",
                 self.mode.name(),
-                self.calc_speed(size),
+                speed_in_feet,
                 maneuverability.speed_suffix()
             ),
-            _ => format!("{}~{}~ft.", self.mode.name(), speed),
+            _ => format!("{}~{}~ft.", self.mode.name(), speed_in_feet),
         }
     }
 }
 
-fn calc_speed(speed_category: &SpeedCategory, size: &Size) -> i32 {
+fn calc_speed_in_feet(speed_category: &SpeedCategory, size: &Size) -> i32 {
     let speed = speed_category.speed_multiplier() * (size.base_speed() as f64);
     // Floor to 10-foot increments
     max(
@@ -157,111 +148,191 @@ fn calc_speed(speed_category: &SpeedCategory, size: &Size) -> i32 {
     )
 }
 
+// It's not really meaningful to have a "calc all speeds in feet" because that misses important
+// context about things like flight maneuverability.
+pub trait HasMovement {
+    // This includes all movement modes, but not skills.
+    fn calc_movement_mode_descriptions(&self) -> Vec<String>;
+    fn calc_speed_in_feet(&self, movement_mode: &MovementMode) -> Option<i32>;
+    fn get_movement_speed(&self, movement_mode: &MovementMode) -> Option<&MovementSpeed>;
+}
+
+impl HasMovement for Creature
+where
+    Creature: HasModifiers + HasArmor + HasSize,
+{
+    fn calc_movement_mode_descriptions(&self) -> Vec<String> {
+        self.movement_speeds
+            .iter()
+            // We can safely unwrap because we're only calling calc_speed_in_feet for modes that
+            // we know exist. It returns an Option because you could call it for a movement mode
+            // that the creature doesn't have.
+            .map(|m| m.description(self.calc_speed_in_feet(&m.mode).unwrap()))
+            .collect::<Vec<String>>()
+    }
+
+    fn calc_speed_in_feet(&self, movement_mode: &MovementMode) -> Option<i32> {
+        let maybe_movement_speed = self.get_movement_speed(movement_mode);
+        if maybe_movement_speed.is_none() {
+            return None;
+        }
+        let movement_speed = maybe_movement_speed.unwrap();
+        let base_speed_in_feet = calc_speed_in_feet(&movement_speed.speed, &self.size);
+
+        Some(
+            base_speed_in_feet
+                + self.calc_total_modifier(ModifierType::BaseSpeed)
+                + self
+                    .calc_total_modifier(ModifierType::MovementSpeed(movement_speed.mode.clone())),
+        )
+    }
+
+    // If movement_speeds was a hashmap intead of a vec, this wouldn't need to be a function.
+    fn get_movement_speed(&self, movement_mode: &MovementMode) -> Option<&MovementSpeed> {
+        for speed in self.movement_speeds.iter() {
+            if speed.mode == *movement_mode {
+                return Some(speed);
+            }
+        }
+
+        None
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn calculate_large_speeds() {
-        let size = &Size::Large;
-        let mode = || MovementMode::Swim;
-        assert_eq!(
-            20,
-            MovementSpeed::new(mode(), SpeedCategory::Half).calc_speed(size)
-        );
-        assert_eq!(
-            30,
-            MovementSpeed::new(mode(), SpeedCategory::Slow).calc_speed(size)
-        );
-        assert_eq!(
-            40,
-            MovementSpeed::new(mode(), SpeedCategory::Normal).calc_speed(size)
-        );
-        assert_eq!(
-            60,
-            MovementSpeed::new(mode(), SpeedCategory::Fast).calc_speed(size)
-        );
-        assert_eq!(
-            80,
-            MovementSpeed::new(mode(), SpeedCategory::Double).calc_speed(size)
-        );
+    mod calc_speed_in_feet {
+        use super::*;
+
+        #[test]
+        fn calculate_large_speeds() {
+            let size = &Size::Large;
+            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Half, size));
+            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Slow, size));
+            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Normal, size));
+            assert_eq!(60, calc_speed_in_feet(&SpeedCategory::Fast, size));
+            assert_eq!(80, calc_speed_in_feet(&SpeedCategory::Double, size));
+        }
+
+        #[test]
+        fn calculate_medium_speeds() {
+            let size = &Size::Medium;
+            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Half, size));
+            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Slow, size));
+            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Normal, size));
+            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Fast, size));
+            assert_eq!(60, calc_speed_in_feet(&SpeedCategory::Double, size));
+        }
+
+        #[test]
+        fn calculate_small_speeds() {
+            let size = &Size::Small;
+            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Half, size));
+            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Slow, size));
+            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Normal, size));
+            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Fast, size));
+            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Double, size));
+        }
+
+        #[test]
+        fn calculate_diminuitive_speeds() {
+            let size = &Size::Diminuitive;
+            assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Half, size));
+            assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Slow, size));
+            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Normal, size));
+            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Fast, size));
+            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Double, size));
+        }
     }
 
-    #[test]
-    fn calculate_medium_speeds() {
-        let size = &Size::Medium;
-        let mode = || MovementMode::Land;
-        assert_eq!(
-            10,
-            MovementSpeed::new(mode(), SpeedCategory::Half).calc_speed(size)
-        );
-        assert_eq!(
-            20,
-            MovementSpeed::new(mode(), SpeedCategory::Slow).calc_speed(size)
-        );
-        assert_eq!(
-            30,
-            MovementSpeed::new(mode(), SpeedCategory::Normal).calc_speed(size)
-        );
-        assert_eq!(
-            40,
-            MovementSpeed::new(mode(), SpeedCategory::Fast).calc_speed(size)
-        );
-        assert_eq!(
-            60,
-            MovementSpeed::new(mode(), SpeedCategory::Double).calc_speed(size)
-        );
-    }
+    mod has_movement {
+        use super::*;
+        use crate::creatures::Modifier;
 
-    #[test]
-    fn calculate_small_speeds() {
-        let size = &Size::Small;
-        let mode = || MovementMode::Land;
-        assert_eq!(
-            10,
-            MovementSpeed::new(mode(), SpeedCategory::Half).calc_speed(size)
-        );
-        assert_eq!(
-            10,
-            MovementSpeed::new(mode(), SpeedCategory::Slow).calc_speed(size)
-        );
-        assert_eq!(
-            20,
-            MovementSpeed::new(mode(), SpeedCategory::Normal).calc_speed(size)
-        );
-        assert_eq!(
-            30,
-            MovementSpeed::new(mode(), SpeedCategory::Fast).calc_speed(size)
-        );
-        assert_eq!(
-            40,
-            MovementSpeed::new(mode(), SpeedCategory::Double).calc_speed(size)
-        );
-    }
+        fn sample_creature() -> Creature {
+            let mut creature = Creature::new_character(1);
+            // Give the sample character multiple move speeds
+            creature.movement_speeds = vec![
+                MovementSpeed {
+                    mode: MovementMode::Climb,
+                    speed: SpeedCategory::Slow,
+                },
+                MovementSpeed {
+                    mode: MovementMode::Fly(FlightManeuverability::Poor),
+                    speed: SpeedCategory::Fast,
+                },
+                MovementSpeed {
+                    mode: MovementMode::Land,
+                    speed: SpeedCategory::Normal,
+                },
+            ];
 
-    #[test]
-    fn calculate_diminuitive_speeds() {
-        let size = &Size::Diminuitive;
-        let mode = || MovementMode::Climb;
-        assert_eq!(
-            5,
-            MovementSpeed::new(mode(), SpeedCategory::Half).calc_speed(size)
-        );
-        assert_eq!(
-            5,
-            MovementSpeed::new(mode(), SpeedCategory::Slow).calc_speed(size)
-        );
-        assert_eq!(
-            10,
-            MovementSpeed::new(mode(), SpeedCategory::Normal).calc_speed(size)
-        );
-        assert_eq!(
-            10,
-            MovementSpeed::new(mode(), SpeedCategory::Fast).calc_speed(size)
-        );
-        assert_eq!(
-            20,
-            MovementSpeed::new(mode(), SpeedCategory::Double).calc_speed(size)
-        );
+            creature
+        }
+
+        #[test]
+        fn can_calc_default_land_speed() {
+            assert_eq!(
+                sample_creature().calc_speed_in_feet(&MovementMode::Land),
+                Some(30)
+            );
+        }
+
+        #[test]
+        fn can_calc_modified_base_speed() {
+            let mut creature = sample_creature();
+            creature.add_modifier(Modifier::BaseSpeed(10), None, None);
+            assert_eq!(
+                creature.calc_speed_in_feet(&MovementMode::Land),
+                Some(40)
+            );
+        }
+
+        #[test]
+        fn can_calc_modified_local_speed() {
+            let mut creature = sample_creature();
+            creature.add_modifier(Modifier::MovementSpeed(MovementMode::Climb, 30), None, None);
+            assert_eq!(
+                creature.calc_speed_in_feet(&MovementMode::Climb),
+                // 20 base from Slow, then 30 from climb-specific
+                Some(50)
+            );
+        }
+
+        #[test]
+        fn can_calc_double_modified_local_speed() {
+            let mut creature = sample_creature();
+            creature.add_modifier(Modifier::BaseSpeed(20), None, None);
+            creature.add_modifier(Modifier::MovementSpeed(MovementMode::Land, 40), None, None);
+            assert_eq!(
+                creature.calc_speed_in_feet(&MovementMode::Land),
+                // 30 base from Normal, then 20 from Base Speed and 40 from climb-specific
+                Some(90)
+            );
+        }
+
+        #[test]
+        fn can_ignore_irrelevant_speed_modifier() {
+            let mut creature = sample_creature();
+            creature.add_modifier(
+                Modifier::MovementSpeed(MovementMode::Climb, 100),
+                None,
+                None,
+            );
+            assert_eq!(
+                creature.calc_speed_in_feet(&MovementMode::Land),
+                Some(30)
+            );
+        }
+
+        #[test]
+        fn can_calc_missing_speed() {
+            assert_eq!(
+                sample_creature().calc_speed_in_feet(&MovementMode::Burrow),
+                None,
+            );
+        }
     }
 }

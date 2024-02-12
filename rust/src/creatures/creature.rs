@@ -22,6 +22,7 @@ pub struct Creature {
     pub hit_points_lost: i32,
     pub identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
+    // TODO: this should probably be a hashmap between MovementMode and MovementSpeed.
     pub movement_speeds: Vec<MovementSpeed>,
     pub name: Option<String>,
     pub passive_abilities: Vec<PassiveAbility>,
@@ -61,6 +62,11 @@ impl Creature {
             vital_wounds: vec![],
             weapons: vec![],
         }
+    }
+
+    // This can save a slightly annoying import for callers, especially in tests.
+    pub fn new_character(level: i32) -> Creature {
+        Self::new(level, CreatureCategory::Character)
     }
 
     pub fn add_sense(&mut self, sense: Sense) {

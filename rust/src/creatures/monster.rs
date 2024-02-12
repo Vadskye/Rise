@@ -2,7 +2,7 @@ use crate::core_mechanics::attacks::{HasAttacks, PureDamage};
 use crate::core_mechanics::Attribute::{Intelligence, Strength, Willpower};
 use crate::core_mechanics::{
     Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
-    SpecialDefenseType,
+    SpecialDefenseType, HasMovement,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
@@ -488,12 +488,7 @@ impl Monster {
     }
 
     fn latex_movement(&self) -> String {
-        let mut movement_components = self
-            .creature
-            .movement_speeds
-            .iter()
-            .map(|m| m.description(&self.creature.size))
-            .collect::<Vec<String>>();
+        let mut movement_components = self.creature.calc_movement_mode_descriptions();
 
         if self.creature.is_skill_trained(&Skill::Jump) {
             movement_components.push(format!(
