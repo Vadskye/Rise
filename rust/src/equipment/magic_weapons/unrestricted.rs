@@ -65,7 +65,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             "),
             // +4 damage
             ItemUpgrade::new(7, "Deals +2d6-3 damage if you have 5 Str", r"
-                The damage dice increase to 2d6 if your Strength is at least 5, but the damage penalty also increases to 3.
+                If your Strength is at least 5, the damage dice increase to 2d6 and the damage penalty increases to -3.
             "),
         ],
         ..MagicWeapon::default()
