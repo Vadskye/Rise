@@ -7,6 +7,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
@@ -14,7 +15,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn animate(def: MonsterDef) -> Monster {
-    def.animate()
+    def.monster(CreatureType::Animate)
 }
 
 pub fn animates() -> Vec<MonsterEntry> {

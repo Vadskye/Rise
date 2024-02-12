@@ -4,6 +4,7 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
+use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
 use crate::monsters::monster_entry::MonsterEntry;
 use crate::monsters::monster_group::MonsterGroup;
@@ -11,7 +12,7 @@ use crate::monsters::{MonsterAbilities, MonsterDef, MonsterNarrative, MonsterSta
 use crate::skills::Skill;
 
 fn animal(def: MonsterDef) -> Monster {
-    def.animal()
+    def.monster(CreatureType::Animal)
 }
 
 fn empty_narrative() -> Option<MonsterNarrative> {

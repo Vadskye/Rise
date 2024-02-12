@@ -99,7 +99,16 @@ impl MonsterStatistics {
 }
 
 impl MonsterDef {
-    pub fn monster(self, creature_type: CreatureType) -> Monster {
+    pub fn monster(mut self, creature_type: CreatureType) -> Monster {
+        // Some creature types automatically come with extra modifiers.
+        let maybe_bundle = match creature_type {
+            CreatureType::Undead => Some(ModifierBundle::Undead),
+            _ => None,
+        };
+        if let Some(bundle) = maybe_bundle {
+            self.abilities.modifiers.append(&mut bundle.modifiers())
+        }
+
         let mut monster = self.statistics.monster(creature_type);
         monster.creature.name = Some(self.name);
 
@@ -112,33 +121,35 @@ impl MonsterDef {
 
         monster
     }
+}
 
-    pub fn aberration(self) -> Monster {
-        self.monster(CreatureType::Aberration)
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // Useful to have a baseline, since the choices here are mandatory and somewhat arbitrary.
+    fn default_statistics() -> MonsterStatistics {
+        MonsterStatistics {
+            attributes: vec![0, 0, 0, 0, 0, 0],
+            elite: false,
+            level: 1,
+            role: Role::Leader,
+            size: Size::Medium,
+        }
     }
-    pub fn animal(self) -> Monster {
-        self.monster(CreatureType::Animal)
-    }
-    pub fn animate(self) -> Monster {
-        self.monster(CreatureType::Animate)
-    }
-    pub fn dragon(self) -> Monster {
-        self.monster(CreatureType::Dragon)
-    }
-    pub fn humanoid(self) -> Monster {
-        self.monster(CreatureType::Humanoid)
-    }
-    pub fn magical_beast(self) -> Monster {
-        self.monster(CreatureType::MagicalBeast)
-    }
-    pub fn monstrous_humanoid(self) -> Monster {
-        self.monster(CreatureType::MonstrousHumanoid)
-    }
-    pub fn planeforged(self) -> Monster {
-        self.monster(CreatureType::Planeforged)
-    }
-    pub fn undead(mut self) -> Monster {
-        self.abilities.modifiers = ModifierBundle::Undead.plus_modifiers(self.abilities.modifiers);
-        self.monster(CreatureType::Undead)
+
+    // This just asserts that we don't throw an error while trying to create the monster. It's too
+    // complicated to assert equality for monsters right now.
+    #[test]
+    fn can_create_default_humanoid() {
+        let def = MonsterDef {
+            name: "Test Monster".to_string(),
+            abilities: MonsterAbilities {
+                ..Default::default()
+            },
+            narrative: None,
+            statistics: default_statistics(),
+        };
+        def.monster(CreatureType::Humanoid);
     }
 }
