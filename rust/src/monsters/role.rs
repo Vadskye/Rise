@@ -37,6 +37,17 @@ impl Role {
         creature.hit_point_progression = self.hit_point_progression()
     }
 
+    pub fn armor_dex_multiplier(&self) -> f64 {
+        match self {
+            Role::Brute => 1.0,
+            Role::Skirmisher => 1.0,
+            Role::Warrior => 0.5,
+            Role::Sniper => 1.0,
+            Role::Mystic => 1.0,
+            Role::Leader => 0.5,
+        }
+    }
+
     pub fn defense(&self, defense: &Defense) -> i32 {
         // order: Armor, Fort, Ref, Ment
         let defenses = match self {
@@ -45,7 +56,7 @@ impl Role {
             Role::Warrior => [6, 5, 3, 4],
             Role::Sniper => [4, 4, 3, 5],
             Role::Mystic => [3, 3, 4, 5],
-            Role::Leader => [4, 4, 4, 4],
+            Role::Leader => [5, 4, 4, 4],
         };
 
         let i = match defense {

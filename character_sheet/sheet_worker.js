@@ -4,11 +4,14 @@ const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
   "debuff",
   "vital_wound",
 ]);
-// Treat roles as classes too
+// Treat roles as classes too.
+// Most role modifiers are handled automatically in `handleCreationModifiers`.
+// However, armor_usage_class needs custom handling in `handleArmorDefense`.
 const BASE_CLASS_MODIFIERS = {
   // ROLES
   brute: {
     armor_defense: 4,
+    armor_usage_class: "light",
     damage_resistance: 0.25,
     hit_points: 'very high',
     fortitude: 5,
@@ -17,6 +20,7 @@ const BASE_CLASS_MODIFIERS = {
   },
   skirmisher: {
     armor_defense: 4,
+    armor_usage_class: "light",
     damage_resistance: 0.5,
     hit_points: 'medium',
     fortitude: 3,
@@ -33,6 +37,7 @@ const BASE_CLASS_MODIFIERS = {
   },
   sniper: {
     armor_defense: 4,
+    armor_usage_class: "light",
     damage_resistance: 0.5,
     hit_points: 'medium',
     fortitude: 4,
@@ -41,6 +46,7 @@ const BASE_CLASS_MODIFIERS = {
   },
   mystic: {
     armor_defense: 3,
+    armor_usage_class: "light",
     damage_resistance: 1.0,
     hit_points: 'low',
     fortitude: 3,
@@ -48,7 +54,8 @@ const BASE_CLASS_MODIFIERS = {
     mental: 5,
   },
   leader: {
-    armor_defense: 4,
+    armor_defense: 5,
+    armor_usage_class: "medium",
     damage_resistance: 0.5,
     hit_points: 'high',
     fortitude: 4,
@@ -514,9 +521,6 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "speed",
   "strength",
   "willpower",
-  // Monster classes only
-  "magical_power",
-  "mundane_power",
 ]);
 
 const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
@@ -886,18 +890,14 @@ function handleArmorDefense() {
         "challenge_rating",
         "all_defenses_vital_wound_modifier",
       ],
-      string: ["body_armor_usage_class", "shield_usage_class"],
+      string: ["body_armor_usage_class", "shield_usage_class", "base_class"],
     },
     (v) => {
       // calculate attributeModifier
       let attributeModifier = 0;
+      let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class, BASE_CLASS_MODIFIERS[v.base_class].armor_usage_class];
       const worstUsageClass =
-        v.body_armor_usage_class === "heavy" || v.shield_usage_class === "heavy"
-          ? "heavy"
-          : v.body_armor_usage_class === "medium" ||
-            v.shield_usage_class === "medium"
-            ? "medium"
-            : "light";
+        all_usage_classes.find((u) => u === "heavy") || all_usage_classes.find((u) => u === "medium") || "light";
       if (worstUsageClass === "medium") {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
@@ -1029,7 +1029,6 @@ function handleAttributes() {
       {
         miscName: attributeName,
         numeric: [`${attributeName}_at_creation`, `${attributeName}_level_scaling`],
-        string: ["base_class"],
       },
       (v) => {
         const totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
