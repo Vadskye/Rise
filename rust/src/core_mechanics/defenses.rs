@@ -120,7 +120,7 @@ where
                     1.0
                 }
             }
-            CreatureCategory::Monster(..) => 1.0,
+            CreatureCategory::Monster(_, role) => role.armor_dex_multiplier()
         };
         let armor_attribute_modifier =
             (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;
