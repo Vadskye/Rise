@@ -1,6 +1,13 @@
 use regex::Regex;
 use std::fmt::Display;
 
+pub fn remove_indentation(text: &str) -> String {
+    text.lines()
+        .map(|line| line.trim_start())
+        .collect::<Vec<_>>()
+        .join("\n")
+}
+
 pub fn latexify(text: String) -> String {
     let mut short_text = text.clone().trim().to_string();
     short_text.truncate(50);
@@ -110,8 +117,10 @@ pub fn text_number(val: i32) -> String {
     .to_string()
 }
 
-// This is mainly useful for writing tests for long strings in code more easily
-pub fn standardize_indentation(text: &str) -> String {
+// This is mainly useful for writing tests for long strings in code more easily.
+// It doesn't faithfully keep original surrounding whitespace - instead, it always starts the
+// final string with a line break and ends with no line break.
+pub fn non_indented_block(text: &str) -> String {
     let indentation_pattern = Regex::new(r"(?m)^\s+").unwrap();
     let no_indentation = indentation_pattern.replace_all(text.trim(), "").to_string();
     // It's easier to write the strings in code if we have a preceding line break
@@ -123,7 +132,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn standardize_indentation_works() {
+    fn non_indented_block_works() {
         let expected = "
 Start with a line break,
 continue for any number of lines,
@@ -131,12 +140,32 @@ don't     remove extraneous mid-line spacing,
 end with no line break";
         assert_eq!(
             expected,
-            standardize_indentation(
+            non_indented_block(
                 "
                     Start with a line break,
                 continue for any number of lines,
             don't     remove extraneous mid-line spacing,
-        end with no line break
+        end with no line break"
+            ),
+        );
+    }
+
+    #[test]
+    fn remove_indentation_works() {
+        let expected = "
+Start with a line break,
+continue for any number of lines,
+don't     remove extraneous mid-line spacing,
+end with a line break
+";
+        assert_eq!(
+            expected,
+            remove_indentation(
+                "
+                    Start with a line break,
+                continue for any number of lines,
+            don't     remove extraneous mid-line spacing,
+        end with a line break
         "
             ),
         );

@@ -153,7 +153,7 @@ mod tests {
     use crate::core_mechanics::SpecialDefenseType;
     use crate::creatures::{Character, Creature};
     use crate::equipment::StandardWeapon;
-    use crate::latex_formatting::standardize_indentation;
+    use crate::latex_formatting::remove_indentation;
 
     fn get_basic_creature() -> Creature {
         Character::standard_character(1, false).creature
@@ -161,13 +161,13 @@ mod tests {
 
     fn get_standard_ability_block(config: LowDamageAndDebuff) -> String {
         if config.is_maneuver {
-            standardize_indentation(
+            remove_indentation(
                 &config
                     .weapon_attack(&StandardWeapon::Club.weapon())
                     .latex_ability_block(&get_basic_creature()),
             )
         } else {
-            standardize_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
+            remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
         }
     }
 
