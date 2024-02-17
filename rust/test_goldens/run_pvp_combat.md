@@ -1,4 +1,4 @@
-# Run Combat
+# Run Player vs Player Combat
 
 ## Player vs player
 
