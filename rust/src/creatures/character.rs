@@ -15,6 +15,8 @@ impl Character {
     pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
         let mut creature = creature::Creature::new(level, CreatureCategory::Character);
 
+        creature.hit_point_progression = class.hit_point_progression();
+
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {
                 for modifier in rank_modifiers {

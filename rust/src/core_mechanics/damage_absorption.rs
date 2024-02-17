@@ -67,15 +67,13 @@ where
 
         format!(
             "
-HP: {hp_total} = ({hp_level} <{hp_progression} progression> + {hp_modifier} <modifier>) * {hp_multiplier} <elite multiplier>
+HP: {hp_total} = ({hp_progression} progression: {hp_from_level} <level> + {hp_from_con} <con> + {hp_modifier} <modifier>) * {hp_multiplier} <elite multiplier>
 DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_from_hp} <monster hp>) * {dr_multiplier} <elite multiplier>
             ",
             hp_total = self.calc_hit_points(),
-            hp_level = self.hit_point_progression.calc_hit_points(
-                self.level,
-                self.get_base_attribute(&Attribute::Constitution),
-            ),
             hp_progression = self.hit_point_progression.name(),
+            hp_from_level = self.hit_point_progression.hp_from_level(self.level),
+            hp_from_con = self.hit_point_progression.hp_from_con(self.level, self.get_base_attribute(&Attribute::Constitution)),
             hp_modifier = self.calc_total_modifier(ModifierType::HitPoints),
             hp_multiplier = hp_multiplier,
             dr_total = self.calc_damage_resistance(),
@@ -110,13 +108,23 @@ impl HitPointProgression {
     }
 
     fn calc_hit_points(&self, level: i32, con: i32) -> i32 {
+        self.hp_from_level(level) + self.hp_from_con(level, con)
+    }
+
+    fn hp_from_level(&self, level: i32) -> i32 {
         let [base_hp, incremental_hp] = self.progression_at_level(level);
 
         // This is the number of levels since the last breakpoint jump. Each breakpoint jump
         // increases base HP and incremental level count ("X HP per level above 7th").
         let incremental_level = (level - 1) % 6;
 
-        base_hp + incremental_hp * (incremental_level + con)
+        base_hp + incremental_hp * incremental_level
+    }
+
+    fn hp_from_con(&self, level: i32, con: i32) -> i32 {
+        let [_, incremental_hp] = self.progression_at_level(level);
+
+        incremental_hp * con
     }
 
     fn complete_progression(&self) -> [[i32; 2]; 4] {
@@ -188,10 +196,7 @@ impl HitPointProgression {
         };
         return format!(
             "{} hit points \\add {} your Constitution, plus {} hit points per level beyond {}.",
-            base_hp,
-            constitution_multiplier_text,
-            incremental_hp,
-            level,
+            base_hp, constitution_multiplier_text, incremental_hp, level,
         );
     }
 }
