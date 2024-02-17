@@ -4,7 +4,7 @@ use crate::creatures::{Creature, HasDamageTracking};
 use std::cmp::max;
 use std::fmt;
 
-type LeveledPartyGen = dyn Fn(i32) -> Vec<Creature>;
+pub type LeveledPartyGen = dyn Fn(i32) -> Vec<Creature>;
 
 pub struct CombatResult {
     pub blue_accuracy: f64,
