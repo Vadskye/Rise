@@ -543,7 +543,7 @@ mod tests {
         );
 
         assert_eq!(
-            vec!["Combat Style Rank (2)", "Martial Force"],
+            vec!["Augmented Maneuvers"],
             ClassArchetype::MartialMastery
                 .abilities_at_rank(2)
                 .iter()
