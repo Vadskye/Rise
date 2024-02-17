@@ -8,8 +8,9 @@
 use rise::calculations::statistical_combat::{
     calc_rounds_to_live, explain_monster_adpr, explain_standard_adpr, find_best_attack,
 };
+use rise::core_mechanics::HasDamageAbsorption;
 use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
-
+use rise::latex_formatting::remove_indentation;
 use rise::creatures::{Character, Creature, HasModifiers, Modifier, Monster};
 use rise::equipment::Weapon;
 use std::{fs, io};
@@ -29,6 +30,8 @@ fn write_character_goldens() -> io::Result<()> {
     write_standard_character_attacks_golden().expect("Should write standard character attacks");
     write_perception_greataxe_attacks_golden().expect("Should write perception greataxe attacks");
     write_character_rounds_to_live_golden().expect("Should write rounds to live golden");
+    write_standard_character_statistics_golden()
+        .expect("Should write standard character statistics golden");
 
     Result::Ok(())
 }
@@ -270,4 +273,45 @@ fn write_monster_to_section_golden() -> io::Result<()> {
     );
 
     write_golden_file("monster_to_section", golden)
+}
+
+fn write_standard_character_statistics_golden() -> io::Result<()> {
+    fn character_statistics(level: i32) -> String {
+        let character = Character::standard_character(level, true);
+        format!(
+            "
+## Level {level}
+
+### Damage Absorption
+{damage_absorption}
+
+### Description
+{description}
+
+### Modifiers
+{modifiers}
+            ",
+            level = level,
+            damage_absorption = character.creature.explain_damage_absorption().trim(),
+            description = remove_indentation(character.description().trim()),
+            modifiers = character.creature.explain_modifiers().join("\n").trim(),
+        )
+    }
+
+    let golden = format!(
+        "
+# Standard Character Statistics
+
+{level_1}
+
+{level_10}
+
+{level_20}
+        ",
+        level_1 = character_statistics(1).trim(),
+        level_10 = character_statistics(10).trim(),
+        level_20 = character_statistics(20).trim(),
+    );
+
+    write_golden_file("standard_character_statistics", golden)
 }
