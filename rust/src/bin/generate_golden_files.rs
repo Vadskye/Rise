@@ -7,12 +7,13 @@
 
 use rise::calculations::statistical_combat::{
     calc_rounds_to_live, explain_monster_adpr, explain_standard_adpr, find_best_attack,
+    run_combat_at_standard_levels, CombatResult,
 };
-use rise::core_mechanics::HasDamageAbsorption;
 use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
-use rise::latex_formatting::remove_indentation;
+use rise::core_mechanics::HasDamageAbsorption;
 use rise::creatures::{Character, Creature, HasModifiers, Modifier, Monster};
 use rise::equipment::Weapon;
+use rise::latex_formatting::remove_indentation;
 use std::{fs, io};
 
 fn main() -> io::Result<()> {
@@ -32,6 +33,7 @@ fn write_character_goldens() -> io::Result<()> {
     write_character_rounds_to_live_golden().expect("Should write rounds to live golden");
     write_standard_character_statistics_golden()
         .expect("Should write standard character statistics golden");
+    write_run_pvp_combat_golden().expect("Should write PVP combat golden");
 
     Result::Ok(())
 }
@@ -314,4 +316,67 @@ fn write_standard_character_statistics_golden() -> io::Result<()> {
     );
 
     write_golden_file("standard_character_statistics", golden)
+}
+
+fn four_stack(creature: Creature) -> Vec<Creature> {
+    vec![
+        creature.clone(),
+        creature.clone(),
+        creature.clone(),
+        creature.clone(),
+    ]
+}
+
+fn barbarian_party(level: i32) -> Vec<Creature> {
+    four_stack(Character::standard_barbarian(level, true).creature)
+}
+
+fn standard_character_party(level: i32) -> Vec<Creature> {
+    four_stack(Character::standard_character(level, true).creature)
+}
+
+fn standard_greataxe_party(level: i32) -> Vec<Creature> {
+    four_stack(Character::standard_greataxe(level, true).creature)
+}
+
+fn format_results(results: Vec<CombatResult>) -> String {
+    results
+        .into_iter()
+        .map(|r| format!("{}", r))
+        .collect::<Vec<String>>()
+        .join("\n")
+}
+
+fn write_run_pvp_combat_golden() -> io::Result<()> {
+    let barbarian_vs_barbarian = format_results(run_combat_at_standard_levels(
+        &barbarian_party,
+        &barbarian_party,
+    ));
+    let standard_vs_greataxe = format_results(run_combat_at_standard_levels(
+        &standard_character_party,
+        &standard_greataxe_party,
+    ));
+    let standard_vs_standard = format_results(run_combat_at_standard_levels(
+        &standard_character_party,
+        &standard_character_party,
+    ));
+
+    let golden = format!(
+        "
+# Run Combat
+
+## Player vs player
+
+### Barbarian vs barbarian
+{barbarian_vs_barbarian}
+
+### Standard character vs standard greataxe
+{standard_vs_greataxe}
+
+### Standard character vs standard character
+{standard_vs_standard}
+        ",
+    );
+
+    write_golden_file("run_pvp_combat", golden)
 }
