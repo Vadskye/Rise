@@ -23,7 +23,7 @@ pub fn item_creature(rank: i32) -> Creature {
         1 => 2,  // target: 2
         2 => 2,  // target: 4
         3 => 3,  // target: 6
-        4 => 4,  // target: 9
+        4 => 3,  // target: 8
         5 => 4,  // target: 10
         6 => 4,  // target: 12
         7 => 5,  // target: 14

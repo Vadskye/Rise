@@ -38,11 +38,11 @@ fn it_calculates_rank_abilities() {
     assert_eq!(
         vec![
             "Armor Expertise",
+            "Augmented Maneuvers",
+            "Augmented Maneuvers+",
             "Cleansing Discipline",
             "Disciplined Strike",
             "Enduring Discipline",
-            "Enhanced Maneuvers",
-            "Enhanced Maneuvers+",
             "Equipment Efficiency",
             // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
@@ -72,7 +72,7 @@ fn it_calculates_level_21_fighter_defenses() {
     // Note that this fighter doesn't have any items, so armor defense is lower than the standard
     // chaaracter.
     assert_eq!(
-        "Armor b10 f11",
+        "Armor b10 f10",
         format!(
             "Armor b{} f{}",
             baseline.calc_defense(&Defense::Armor),
@@ -80,13 +80,13 @@ fn it_calculates_level_21_fighter_defenses() {
         ),
     );
     assert_eq!(
-        "Fort b10 f17",
+        "Fort b10 f15",
         format!(
             "Fort b{} f{}",
             baseline.calc_defense(&Defense::Fortitude),
             fighter.calc_defense(&Defense::Fortitude)
         ),
-        "10 level scaling + 7 class",
+        "10 level scaling + 5 class",
     );
     assert_eq!(
         "Ref b10 f13",
@@ -98,13 +98,13 @@ fn it_calculates_level_21_fighter_defenses() {
         "10 level scaling + 3 class",
     );
     assert_eq!(
-        "Ment b10 f17",
+        "Ment b10 f16",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 5 class + 1 CD1 + 1 CD5",
+        "10 level scaling + 4 class + 1 CD1 + 1 CD5",
     );
 }
 
@@ -122,13 +122,13 @@ fn it_calculates_level_21_fighter_attacks() {
     )
     .creature;
     assert_eq!(
-        "Accuracy b10 f13",
+        "Accuracy b10 f11",
         format!(
             "Accuracy b{} f{}",
             baseline.calc_accuracy(),
             fighter.calc_accuracy(),
         ),
-        "10 level scaling + 1 equipment training + 2 martial mastery",
+        "10 level scaling + 1 equipment training",
     );
     assert_eq!(
         0,
@@ -138,10 +138,12 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Battleaxe +17 (1d6+1d10 (w) slashing damage.)",
-            "Powerful Battleaxe +11 (2d6+2d10 slashing damage.)",
-            "Generic Scaling Battleaxe +16 (4d6+1d10 slashing damage.)",
-            "Battleaxe +14 (1d6+1d10 slashing damage.)"
+            "Certain Battleaxe +21 (1d6 slashing damage.)",
+            "Powerful Battleaxe +15 (2d6+10 slashing damage.)",
+            "Power Strike+ -- Battleaxe +12 (3d6+15 slashing damage.)",
+            "Certain Strike+ -- Battleaxe +19 (1d6+5 slashing damage.)",
+            "Generic Scaling Battleaxe +14 (4d6+5 slashing damage.)",
+            "Battleaxe +12 (1d6+5 slashing damage.)"
         ],
         fighter
             .calc_all_attacks()

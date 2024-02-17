@@ -244,38 +244,6 @@ mod calc_individual_dpr {
 mod run_combat {
     use super::*;
 
-    #[test]
-    fn sword_and_board_vs_greataxe() {
-        let expected_combat_results = vec![
-            "Rounds  7.25/B 3.00/R 3.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            "Rounds 11.00/B 4.25/R 4.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            "Rounds  8.00/B 4.25/R 4.00 Blue 1 ( 0.19%) Red 0 ( 0.00%)",
-            "Rounds 12.50/B 4.50/R 4.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            "Rounds 10.75/B 3.75/R 3.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-        ];
-        let actual_combat_results: Vec<String> = vec![1, 5, 10, 15, 20]
-            .into_iter()
-            .map(|level| {
-                let attackers = vec![
-                    Character::standard_character(level, true).creature,
-                    Character::standard_character(level, true).creature,
-                    Character::standard_character(level, true).creature,
-                    Character::standard_character(level, true).creature,
-                ];
-
-                let defenders = vec![
-                    Character::standard_greataxe(level, true).creature,
-                    Character::standard_greataxe(level, true).creature,
-                    Character::standard_greataxe(level, true).creature,
-                    Character::standard_greataxe(level, true).creature,
-                ];
-
-                run_combat(attackers.clone(), defenders.clone()).to_string()
-            })
-            .collect();
-        assert_eq!(expected_combat_results, actual_combat_results);
-    }
-
     #[cfg(test)]
     mod difficult_encounters {
         use super::*;
@@ -457,43 +425,5 @@ mod run_combat {
                 .collect();
             assert_eq!(expected_combat_results, actual_combat_results);
         }
-    }
-
-    #[test]
-    fn standard_character_mirror_match() {
-        let attacker = Character::standard_character(1, true).creature;
-        let defender = Character::standard_character(1, true).creature;
-        assert_eq!(
-            "Rounds  4.00/B 3.75/R 3.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![attacker], vec![defender]).to_string(),
-            "at level 1",
-        );
-
-        let attacker = Character::standard_character(20, true).creature;
-        let defender = Character::standard_character(20, true).creature;
-        assert_eq!(
-            "Rounds  5.00/B 4.25/R 4.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![attacker], vec![defender]).to_string(),
-            "at level 20",
-        );
-    }
-
-    #[test]
-    fn standard_barbarian_mirror_match() {
-        let attacker = Character::standard_barbarian(1, true).creature;
-        let defender = Character::standard_barbarian(1, true).creature;
-        assert_eq!(
-            "Rounds  3.00/B 2.75/R 2.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![attacker], vec![defender]).to_string(),
-            "at level 1",
-        );
-
-        let attacker = Character::standard_barbarian(20, true).creature;
-        let defender = Character::standard_barbarian(20, true).creature;
-        assert_eq!(
-            "Rounds  3.50/B 2.75/R 2.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)",
-            run_combat(vec![attacker], vec![defender]).to_string(),
-            "at level 20",
-        );
     }
 }

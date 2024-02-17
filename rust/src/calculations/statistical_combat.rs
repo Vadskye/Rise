@@ -4,6 +4,8 @@ use crate::creatures::{Creature, HasDamageTracking};
 use std::cmp::max;
 use std::fmt;
 
+type LeveledPartyGen = dyn Fn(i32) -> Vec<Creature>;
+
 pub struct CombatResult {
     pub blue_accuracy: f64,
     pub blue_damage_per_round: i32,
@@ -120,6 +122,16 @@ pub fn run_combat(blue: Vec<Creature>, red: Vec<Creature>) -> CombatResult {
             panic!("Trapped in an endless fight");
         }
     }
+}
+
+pub fn run_combat_at_standard_levels(
+    blue_gen: &LeveledPartyGen,
+    red_gen: &LeveledPartyGen,
+) -> Vec<CombatResult> {
+    vec![1, 5, 10, 15, 20]
+        .into_iter()
+        .map(|level| run_combat(blue_gen(level), red_gen(level)))
+        .collect()
 }
 
 fn survival_percent(creatures: &Vec<Creature>) -> f64 {
