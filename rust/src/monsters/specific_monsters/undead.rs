@@ -1,11 +1,11 @@
-use crate::core_mechanics::abilities::AbilityTag;
-use crate::core_mechanics::attacks::{LowDamageAndDebuff, StandardAttack};
+use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility, StrikeAbility};
+use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    Attribute, DamageType, Debuff, Defense, FlightManeuverability, HasAttributes, MovementMode,
-    MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, MovementSpeed,
+    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
-use crate::equipment::StandardWeapon;
+use crate::equipment::Weapon;
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
@@ -89,9 +89,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
     impl Ghoul {
         fn monster(self) -> Monster {
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
-            modifiers.push(Modifier::Attack(
-                StandardAttack::GhoulBite(calculate_standard_rank(self.level)).attack(),
-            ));
+            let rank = calculate_standard_rank(self.level);
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                 AbilityTag::Compulsion,
             )));
@@ -101,7 +99,18 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
             undead(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility {
+                            effect: r"
+                                The $name makes a $accuracy melee strike with its bite.
+                                \hit $fullweapondamage.
+                                If the target loses hit points and the attack result beats its Fortitude defense, the target becomes \vulnerable to all damage as a condition.
+                            ".to_string(),
+                            name: "Flesh-Rending Bite".to_string(),
+                            weapon: Weapon::bite(),
+                            ..Default::default()
+                        }.plus_accuracy(rank - 1)),
+                    ],
                     // weapons: vec![
                     //     StandardWeapon::MonsterBite.weapon(),
                     //     StandardWeapon::Claws.weapon(),
@@ -234,27 +243,24 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 name: "Unholy Creature of the Night".to_string(),
             }));
             modifiers.push(Modifier::Attack(
-                LowDamageAndDebuff {
-                    damage_types: vec![],
-                    debuff: Debuff::Stunned,
-                    defense: Defense::Armor,
-                    must_lose_hp: true,
-                    is_magical: true,
-                    is_maneuver: true,
-                    name: "Drink Blood".to_string(),
-                    rank: calculate_standard_rank(self.level),
-                    tags: None,
-                }
-                .weapon_attack(&StandardWeapon::MonsterBite.weapon()),
-            ));
-            modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
             ));
 
             undead(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility {
+                            effect: r"
+                                The $name makes a $accuracy melee strike with its bite.
+                                \hit $fullweapondamage.
+                                If the target loses hit points, the $name regains hit points and damage resistance equal to the hit points the target lost from the attack, ignoring any extra damage from critical hits.
+                            ".to_string(),
+                            name: "Blood Drain".to_string(),
+                            weapon: Weapon::bite(),
+                            ..Default::default()
+                        }),
+                    ],
                     modifiers,
                     movement_speeds: None,
                     senses: vec![Sense::Darkvision(120)],
