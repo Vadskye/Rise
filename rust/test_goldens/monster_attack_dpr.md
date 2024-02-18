@@ -3,7 +3,7 @@
 ## Level 1 Normal
 
 ### Attacks
-Claws +3 (1d4+2 slashing damage.), Bite +1 (1d8+3 physical damage.)
+Claw +3 (1d4+2 slashing damage.), Bite +1 (1d8+3 physical damage.)
 
 ### Results
 3.95 = (4.5 dph * 0.70 hpr) + (4.5 dpc * 0.08 cpr) + (2.2 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 0.45 gdpr
@@ -12,7 +12,7 @@ Claws +3 (1d4+2 slashing damage.), Bite +1 (1d8+3 physical damage.)
 ## Level 1 Elite
 
 ### Attacks
-Claws +5 (1d4+4 slashing damage.), Bite +3 (1d8+6 physical damage.)
+Claw +5 (1d4+4 slashing damage.), Bite +3 (1d8+6 physical damage.)
 
 ### Results
 6.82 = (6.5 dph * 0.90 hpr) + (6.5 dpc * 0.10 cpr) + (3.2 dpg * 0.10 gpr) = 5.85 hdpr + 0.64 cdpr + 0.32 gdpr
@@ -21,7 +21,7 @@ Claws +5 (1d4+4 slashing damage.), Bite +3 (1d8+6 physical damage.)
 ## Level 10 Normal
 
 ### Attacks
-Claws +9 (1d4+5 slashing damage.), Bite +7 (1d8+8 physical damage.)
+Claw +9 (1d4+5 slashing damage.), Bite +7 (1d8+8 physical damage.)
 
 ### Results
 7.41 = (7.5 dph * 0.80 hpr) + (7.5 dpc * 0.09 cpr) + (3.8 dpg * 0.20 gpr) = 6.00 hdpr + 0.66 cdpr + 0.75 gdpr
@@ -30,7 +30,7 @@ Claws +9 (1d4+5 slashing damage.), Bite +7 (1d8+8 physical damage.)
 ## Level 10 Elite
 
 ### Attacks
-Claws +11 (1d4+7 slashing damage.), Bite +9 (1d8+12 physical damage.)
+Claw +11 (1d4+7 slashing damage.), Bite +9 (1d8+12 physical damage.)
 
 ### Results
 10.54 = (9.5 dph * 1.00 hpr) + (9.5 dpc * 0.11 cpr) + (4.8 dpg * 0.00 gpr) = 9.50 hdpr + 1.05 cdpr + 0.00 gdpr

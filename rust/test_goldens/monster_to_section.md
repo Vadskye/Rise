@@ -37,7 +37,7 @@
                 \hit 1d8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claws}
+            \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
@@ -51,7 +51,7 @@
                 \hit 1d8 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claws}
+            \begin{activeability}*{Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
@@ -72,7 +72,7 @@
                 \hit 1d8\plus3 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Whirlwind -- Claws}
+            \begin{activeability}*{Whirlwind -- Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus3 attack vs. Armor against enemies in a \tinyarea radius.
@@ -128,7 +128,7 @@
                 \hit 1d8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claws}
+            \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus8 \glossterm{strike} vs. Armor.
@@ -142,7 +142,7 @@
                 \hit 1d8 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claws}
+            \begin{activeability}*{Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus5 \glossterm{strike} vs. Armor.
@@ -163,7 +163,7 @@
                 \hit 1d8\plus6 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Whirlwind -- Claws}
+            \begin{activeability}*{Whirlwind -- Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus5 attack vs. Armor against enemies in a \tinyarea radius.
@@ -215,7 +215,7 @@
                 \hit 1d8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claws}
+            \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus15 \glossterm{strike} vs. Armor.
@@ -229,7 +229,7 @@
                 \hit 1d8 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claws}
+            \begin{activeability}*{Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
@@ -250,7 +250,7 @@
                 \hit 1d8\plus8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Whirlwind -- Claws}
+            \begin{activeability}*{Whirlwind -- Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus12 attack vs. Armor against enemies in a \tinyarea radius.
@@ -306,7 +306,7 @@
                 \hit 1d8 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claws}
+            \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus17 \glossterm{strike} vs. Armor.
@@ -320,7 +320,7 @@
                 \hit 1d8 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claws}
+            \begin{activeability}*{Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus11 \glossterm{strike} vs. Armor.
@@ -341,7 +341,7 @@
                 \hit 1d8\plus12 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Whirlwind -- Claws}
+            \begin{activeability}*{Whirlwind -- Claw}
                 \weapontag{Light}
                 \rankline
                 The standard monster makes a \plus14 attack vs. Armor against enemies in a \tinyarea radius.

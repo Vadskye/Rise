@@ -115,11 +115,8 @@ impl Weapon {
         StandardWeapon::Spear.weapon()
     }
 
-    pub fn spikes() -> Self {
-        StandardWeapon::Claws.weapon().except(|w| {
-            w.damage_types = vec![DamageType::Piercing];
-            w.name = "Claws".to_string();
-        })
+    pub fn stinger() -> Self {
+        StandardWeapon::MonsterStinger.weapon()
     }
 
     pub fn tail_slam() -> Self {
@@ -215,7 +212,6 @@ pub enum StandardWeapon {
     Bite,
     Broadsword,
     Claw,
-    Claws,
     Club,
     GiantBoulder,
     Greataxe,
@@ -274,14 +270,6 @@ impl StandardWeapon {
                 damage_dice: DicePool::d4(),
                 damage_types: vec![DamageType::Slashing],
                 name: "Claw".to_string(),
-                tags: vec![WeaponTag::Light],
-            },
-            // TODO: define dual-wielding
-            Self::Claws => Weapon {
-                accuracy: 2,
-                damage_dice: DicePool::d4(),
-                damage_types: vec![DamageType::Slashing],
-                name: "Claws".to_string(),
                 tags: vec![WeaponTag::Light],
             },
             Self::Club => Weapon {
@@ -394,14 +382,14 @@ impl StandardWeapon {
             },
             Self::MonsterRam => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d8(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
             },
             Self::MonsterStinger => Weapon {
                 accuracy: 1,
-                damage_dice: DicePool::d8(),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Stinger".to_string().to_string(),
                 tags: vec![WeaponTag::Heavy],
