@@ -52,6 +52,7 @@ pub trait HasAttacks {
     fn calc_accuracy(&self) -> i32;
     fn calc_brawling_accuracy(&self) -> i32;
     fn calc_damage_per_round_multiplier(&self) -> f64;
+    fn calc_explosion_target(&self) -> i32;
     fn calc_magical_power(&self) -> i32;
     fn calc_mundane_power(&self) -> i32;
     fn calc_power(&self, is_magical: bool) -> i32;
@@ -330,6 +331,10 @@ where
             // All modifiers to accuracy should affect brawling accuracy, but not all modifiers to
             // brawling accuracy should affect accuracy.
             + self.calc_total_modifier(ModifierType::Accuracy)
+    }
+
+    fn calc_explosion_target(&self) -> i32 {
+        10 + self.calc_total_modifier(ModifierType::ExplosionTarget)
     }
 
     fn calc_magical_power(&self) -> i32 {

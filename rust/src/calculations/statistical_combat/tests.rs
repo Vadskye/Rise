@@ -4,27 +4,170 @@ use crate::core_mechanics::Defense;
 use crate::creatures::{Character, Creature, CreatureCategory, HasModifiers, Modifier, Monster};
 use crate::equipment::StandardWeapon;
 
+fn assert_float_eq(expected: f64, actual: f64, message: &str) {
+    assert_eq!(
+        format!("{expected:.2}"),
+        format!("{actual:.2}"),
+        "{message}",
+    )
+}
+
+#[cfg(test)]
+mod calc_accuracy_bonus_from_explosions {
+    use super::*;
+
+    #[test]
+    fn no_explosion() {
+        assert_float_eq(
+            0.0,
+            calc_accuracy_bonus_from_explosions(100, 0),
+            "Target 100",
+        );
+
+        assert_float_eq(
+            0.0,
+            calc_accuracy_bonus_from_explosions(-100, 0),
+            "Target -100",
+        );
+    }
+
+    #[test]
+    fn single_explosion() {
+        assert_float_eq(
+            10.0,
+            calc_accuracy_bonus_from_explosions(10, 1),
+            "Target 10",
+        );
+
+        assert_float_eq(
+            9.0,
+            calc_accuracy_bonus_from_explosions(8, 1),
+            "Target 8",
+        );
+
+        assert_float_eq(
+            5.5,
+            calc_accuracy_bonus_from_explosions(1, 1),
+            "Target 1",
+        );
+
+        assert_float_eq(
+            5.5,
+            calc_accuracy_bonus_from_explosions(-100, 1),
+            "Target -100",
+        );
+    }
+}
+
+#[cfg(test)]
+mod calc_probability_of_explosions {
+    use super::*;
+
+    #[test]
+    fn no_explosion() {
+        assert_float_eq(
+            1.0,
+            calc_probability_of_explosions(100, 0),
+            "Target 100",
+        );
+
+        assert_float_eq(
+            1.0,
+            calc_probability_of_explosions(-100, 0),
+            "Target -100",
+        );
+    }
+
+    #[test]
+    fn single_explosion() {
+        assert_float_eq(
+            0.1,
+            calc_probability_of_explosions(100, 1),
+            "Target 100",
+        );
+
+        assert_float_eq(
+            0.1,
+            calc_probability_of_explosions(10, 1),
+            "Target 10",
+        );
+
+        assert_float_eq(
+            0.2,
+            calc_probability_of_explosions(9, 1),
+            "Target 9",
+        );
+
+        assert_float_eq(
+            0.9,
+            calc_probability_of_explosions(2, 1),
+            "Target 2",
+        );
+
+        assert_float_eq(
+            1.0,
+            calc_probability_of_explosions(-100, 1),
+            "Target -100",
+        );
+    }
+
+    #[test]
+    fn double_explosion() {
+        assert_float_eq(
+            0.01,
+            calc_probability_of_explosions(100, 2),
+            "Target 100",
+        );
+
+        assert_float_eq(
+            0.01,
+            calc_probability_of_explosions(10, 2),
+            "Target 10",
+        );
+
+        assert_float_eq(
+            0.02,
+            calc_probability_of_explosions(9, 2),
+            "Target 9",
+        );
+
+        assert_float_eq(
+            0.1,
+            calc_probability_of_explosions(1, 2),
+            "Target 1",
+        );
+
+        assert_float_eq(
+            1.0,
+            calc_probability_of_explosions(-100, 2),
+            "Target -100",
+        );
+    }
+}
+
 #[cfg(test)]
 mod calculate_attack_outcome {
     use super::*;
 
     #[test]
     fn simple_hit_probability() {
-        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 6);
+        let outcome =
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 6, 10);
         assert_eq!(
             "0.500 single, 0.055 crit",
             outcome.short_description(),
             "Should be around 50% with +0 vs 6",
         );
 
-        let outcome = calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 0);
+        let outcome =
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 0, 10);
         assert_eq!(
             "1.000 single, 0.111 crit",
             outcome.short_description(),
             "Should be around 100% with +0 vs 0",
         );
 
-        let outcome = calculate_attack_outcome(&StandardWeapon::Claw.weapon().attack(), 1, 10);
+        let outcome = calculate_attack_outcome(&StandardWeapon::Claw.weapon().attack(), 1, 10, 10);
         assert_eq!(
             "0.400 single, 0.044 crit",
             outcome.short_description(),
@@ -35,7 +178,7 @@ mod calculate_attack_outcome {
     #[test]
     fn extreme_hit_probability() {
         let outcome =
-            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16);
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16, 10);
         assert_eq!(
             "0.050 single, 0.005 crit",
             outcome.short_description(),
@@ -43,7 +186,7 @@ mod calculate_attack_outcome {
         );
 
         let outcome =
-            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6);
+            calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6, 10);
         assert_eq!(
             "1.000 single, 0.555 crit",
             outcome.short_description(),
@@ -56,22 +199,22 @@ mod calculate_attack_outcome {
         let attack = &StandardWeapon::Broadsword.weapon().attack();
         assert_eq!(
             "0.200",
-            format!("{:.3}", calculate_glance_probability(attack, 0, 6)),
+            format!("{:.3}", calculate_glance_probability(attack, 0, 6, 10)),
             "Should be 20% with +0 vs 6",
         );
         assert_eq!(
             "0.000",
-            format!("{:.3}", calculate_glance_probability(attack, 0, 0)),
+            format!("{:.3}", calculate_glance_probability(attack, 0, 0, 10)),
             "Should be 0% with +0 vs 0",
         );
         assert_eq!(
             "0.100",
-            format!("{:.3}", calculate_glance_probability(attack, 0, 11)),
+            format!("{:.3}", calculate_glance_probability(attack, 0, 11, 10)),
             "Should be 10% with +0 vs 11",
         );
         assert_eq!(
             "0.010",
-            format!("{:.3}", calculate_glance_probability(attack, 0, 12)),
+            format!("{:.3}", calculate_glance_probability(attack, 0, 12, 10)),
             "Should be 1% with +0 vs 12",
         );
     }
@@ -83,10 +226,7 @@ mod calculate_attack_outcome {
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
-        let expected_hit_probability = vec![
-            "0.600 single, 0.066 crit",
-            "0.400 single, 0.044 crit",
-        ];
+        let expected_hit_probability = vec!["0.600 single, 0.066 crit", "0.400 single, 0.044 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
             .iter()
             .map(|elite| {
@@ -96,6 +236,7 @@ mod calculate_attack_outcome {
                     Monster::example_monster(*elite, level, None, None)
                         .creature
                         .calc_defense(&Defense::Armor),
+                    attacker.calc_explosion_target(),
                 )
                 .short_description()
             })
@@ -110,10 +251,7 @@ mod calculate_attack_outcome {
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
-        let expected_hit_probability = vec![
-            "0.800 single, 0.088 crit",
-            "0.600 single, 0.066 crit",
-        ];
+        let expected_hit_probability = vec!["0.800 single, 0.088 crit", "0.600 single, 0.066 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
             .iter()
             .map(|elite| {
@@ -123,6 +261,7 @@ mod calculate_attack_outcome {
                     Monster::example_monster(*elite, level, None, None)
                         .creature
                         .calc_defense(&Defense::Armor),
+                    attacker.calc_explosion_target(),
                 )
                 .short_description()
             })
@@ -142,7 +281,8 @@ mod calculate_attack_outcome {
                 attacker.calc_accuracy(),
                 Character::standard_character(level, true)
                     .creature
-                    .calc_defense(&Defense::Armor)
+                    .calc_defense(&Defense::Armor),
+                attacker.calc_explosion_target(),
             )
             .short_description(),
         );
@@ -160,7 +300,8 @@ mod calculate_attack_outcome {
                 attacker.calc_accuracy(),
                 Character::standard_character(level, true)
                     .creature
-                    .calc_defense(&Defense::Armor)
+                    .calc_defense(&Defense::Armor),
+                attacker.calc_explosion_target(),
             )
             .short_description(),
         );
@@ -178,6 +319,7 @@ mod calculate_attack_outcome {
                 &attack,
                 attacker.calc_accuracy(),
                 defender.calc_defense(&Defense::Armor),
+                attacker.calc_explosion_target(),
             )
             .short_description()
         }
