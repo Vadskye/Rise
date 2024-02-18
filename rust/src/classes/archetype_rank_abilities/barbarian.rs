@@ -115,6 +115,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![
                 Modifier::Accuracy(2),
+                Modifier::ExplosionTarget(-1),
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
             ]),

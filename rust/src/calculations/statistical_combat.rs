@@ -192,6 +192,7 @@ fn calc_best_attack_accuracy(attacker: &Creature, defender: &Creature) -> f64 {
             a,
             attacker.calc_accuracy(),
             defender.calc_defense(&a.defense),
+            attacker.calc_explosion_target(),
         )
         .hit_probability
     } else {
@@ -258,6 +259,7 @@ pub fn calc_attack_damage_per_round(
         attack,
         attacker.calc_accuracy(),
         defender.calc_defense(&attack.defense),
+        attacker.calc_explosion_target(),
     );
 
     let mut damage_per_crit = 0.0;
@@ -277,6 +279,7 @@ pub fn calc_attack_damage_per_round(
             attack,
             attacker.calc_accuracy(),
             defender.calc_defense(&attack.defense),
+            attacker.calc_explosion_target(),
         ),
         hit_probability: attack_outcome_probability.hit_probability,
         damage_per_crit,
@@ -300,34 +303,88 @@ impl AttackOutcomeProbability {
     }
 }
 
+fn cap_range_float(val: f64, min: f64, max: f64) -> f64 {
+    if min > max {
+        panic!("Flipped min and max");
+    }
+    return if val < min {
+        min
+    } else if val > max {
+        max
+    } else {
+        val
+    };
+}
+
+fn cap_range_int(val: i32, min: i32, max: i32) -> i32 {
+    if min > max {
+        panic!("Flipped min and max");
+    }
+    return if val < min {
+        min
+    } else if val > max {
+        max
+    } else {
+        val
+    };
+}
+
+// Assuming that we exploded, what was the average accuracy bonus from all explosions so far?
+// If explosion target is lower, we are more likely to explode, but get less benefit from
+// explosions on average.
+fn calc_accuracy_bonus_from_explosions(
+    explosion_target: i32,
+    successful_explosion_count: i32,
+) -> f64 {
+    let mut sum = 0.0;
+    for e in 0..successful_explosion_count {
+        // A character who reduces their target down to 0 cascades that to the next roll. They
+        // would always explode on the first roll, and they explode on a 9+ on the second roll.
+        let current_explosion_target = cap_range_int(explosion_target + 9 * e, 1, 10);
+        sum += ((current_explosion_target as f64) + 10.0) / 2.0;
+    }
+
+    sum
+}
+
+// What is the probability (0.0-1.0) that we get the given number of explosions? The lower the
+// explosion target, the more likely we are to explode.
+fn calc_probability_of_explosions(explosion_target: i32, successful_explosion_count: i32) -> f64 {
+    let mut probability = 1.0;
+    for e in 0..successful_explosion_count {
+        let current_explosion_target = cap_range_int(explosion_target + 9 * e, 1, 10);
+        // With an explosion target of 10, there is a 10% chance.
+        // With an explosion target of 1, there is a 100% chance.
+        probability *= (11 - current_explosion_target) as f64 / 10.0;
+    }
+
+    probability
+}
+
 fn calculate_attack_outcome(
     attack: &Attack,
     accuracy: i32,
     defense: i32,
+    // The number required to explode. With no special modifiers, this should be 10. This can go
+    // to 0 or below, which cascades into additional rolls.
+    explosion_target: i32,
 ) -> AttackOutcomeProbability {
     // hardcoded
-    let max_explosion_depth = 2.0;
+    let max_explosion_depth = 2;
 
     let mut single_hit_probability = 0.0;
     let mut crit_probability = 0.0;
     let mut crit_count = 0.0;
-    let mut explosion_count = 0.0;
+    let mut successful_explosion_count = 0;
     loop {
         let hit_probability: f64 = ((attack.accuracy + accuracy) as f64 + 11.0 - crit_count * 10.0
-            + explosion_count * 10.0
+            + calc_accuracy_bonus_from_explosions(explosion_target, successful_explosion_count)
             - (defense as f64))
             / 10.0;
-        let hit_probability = if hit_probability > 1.0 {
-            1.0
-        } else {
-            hit_probability
-        };
-        let hit_probability = if hit_probability < 0.0 {
-            0.0
-        } else {
-            hit_probability
-        };
-        let hit_probability = hit_probability * f64::powf(0.1, explosion_count);
+
+        let hit_probability = cap_range_float(hit_probability, 0.0, 1.0);
+        let hit_probability = hit_probability
+            * calc_probability_of_explosions(explosion_target, successful_explosion_count);
         if hit_probability > 0.0 {
             if single_hit_probability == 0.0 {
                 single_hit_probability = hit_probability;
@@ -335,8 +392,8 @@ fn calculate_attack_outcome(
                 crit_probability += hit_probability;
             }
             crit_count += 1.0;
-        } else if explosion_count < max_explosion_depth {
-            explosion_count += 1.0;
+        } else if successful_explosion_count < max_explosion_depth {
+            successful_explosion_count += 1;
         } else {
             return AttackOutcomeProbability {
                 crit_probability,
@@ -347,9 +404,14 @@ fn calculate_attack_outcome(
 }
 
 // TODO: handle dual-wielding, which should set this to 0.
-fn calculate_glance_probability(attack: &Attack, accuracy: i32, defense: i32) -> f64 {
-    calculate_attack_outcome(attack, accuracy + 2, defense).hit_probability
-        - calculate_attack_outcome(attack, accuracy, defense).hit_probability
+fn calculate_glance_probability(
+    attack: &Attack,
+    accuracy: i32,
+    defense: i32,
+    explosion_target: i32,
+) -> f64 {
+    calculate_attack_outcome(attack, accuracy + 2, defense, explosion_target).hit_probability
+        - calculate_attack_outcome(attack, accuracy, defense, explosion_target).hit_probability
 }
 
 // Format to one decimal place
