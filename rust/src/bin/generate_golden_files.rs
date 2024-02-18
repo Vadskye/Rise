@@ -25,7 +25,7 @@ fn main() -> io::Result<()> {
 }
 
 fn write_golden_file(subpath: &str, data: String) -> io::Result<()> {
-    fs::write(format!("test_goldens/{}.md", subpath), data.trim())
+    fs::write(format!("test_goldens/{}.md", subpath), format!("{}\n", data.trim()))
 }
 
 fn write_character_goldens() -> io::Result<()> {
