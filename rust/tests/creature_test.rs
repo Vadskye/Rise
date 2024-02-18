@@ -26,11 +26,11 @@ mod creature_tests {
             "Should have 0 Devices"
         );
 
-        creature.add_armor(Armor::Breastplate(None));
+        creature.add_armor(Armor::Brigandine(None));
         assert_eq!(
-            3,
+            4,
             creature.calc_defense(&Defense::Armor),
-            "Should have 3 AD"
+            "Should have 4 AD"
         );
         assert_eq!(
             -4,
@@ -77,7 +77,7 @@ mod creature_tests {
             creature.calc_defense(&Defense::Fortitude),
             "Should have 0 Fort"
         );
-        assert_eq!(4, creature.calc_damage_resistance(), "Should have 4 DR");
+        assert_eq!(3, creature.calc_damage_resistance(), "Should have 3 DR");
     }
 
     #[test]

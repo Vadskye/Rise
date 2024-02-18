@@ -338,19 +338,19 @@ fn standard_armor_by_level(level: i32, max_usage_class: ArmorUsageClass) -> Armo
             if level >= 7 {
                 Armor::FullPlate(Some(ArmorMaterial::Magic(magic_item_rank)))
             } else if level >= 4 {
-                return Armor::PlatedMail(None);
+                return Armor::HalfPlate(None);
             } else {
-                return Armor::ScaleMail(None);
+                return Armor::LayeredHide(None);
             }
         }
         ArmorUsageClass::Medium => {
             if level >= 4 {
-                Armor::Breastplate(Some(ArmorMaterial::Magic(magic_item_rank)))
+                Armor::Brigandine(Some(ArmorMaterial::Magic(magic_item_rank)))
             } else {
-                Armor::ScaleMail(None)
+                Armor::Scale(None)
             }
         }
-        ArmorUsageClass::Light => Armor::ChainShirt(Some(ArmorMaterial::Magic(magic_item_rank))),
+        ArmorUsageClass::Light => Armor::MailShirt(Some(ArmorMaterial::Magic(magic_item_rank))),
     }
 }
 

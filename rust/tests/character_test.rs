@@ -44,14 +44,13 @@ mod character_tests {
             vec![
                 "attack Abyssal Rebuke",
                 "defense armor by 0",
-                "defense fortitude by 5",
-                "defense mental by 7",
+                "defense fortitude by 4",
+                "defense mental by 5",
                 "defense reflex by 3",
-                "power 3",
-                "resource attunement point by 4",
-                "resource fatigue tolerance by 4",
-                "resource insight point by 1",
-                "resource trained skill by 3"
+                "resource attunement point by 3",
+                "resource fatigue tolerance by 3",
+                "resource insight point by 2",
+                "resource trained skill by 4"
             ],
             modifier_descriptions,
             "Should match expected names"
@@ -64,9 +63,11 @@ mod character_tests {
             Class::Warlock,
             20,
             [
+                // If we take pact magic, we get the extra standard spell attacks which are not helpful
+                // here.
                 ClassArchetype::BlessingsOfTheAbyss,
-                ClassArchetype::PactMagic,
-                ClassArchetype::PactSpellMastery,
+                ClassArchetype::KeeperOfForbiddenKnowledge,
+                ClassArchetype::SoulkeepersChosen,
             ],
         );
 
@@ -74,7 +75,7 @@ mod character_tests {
         assert_eq!(1, attacks.len(), "Should have one attack");
         let abyssal_blast = &attacks[0];
         assert_eq!(
-            "Abyssal Rebuke +10 (6d10+35 fire damage.)",
+            "Abyssal Rebuke +10 (11d10 fire damage.)",
             abyssal_blast.shorthand_description(&warlock.creature),
             "Should have correct description"
         );

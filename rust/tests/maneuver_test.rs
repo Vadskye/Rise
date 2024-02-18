@@ -27,9 +27,9 @@ mod maneuver_tests {
         );
         creature.weapons.push(StandardWeapon::Battleaxe.weapon());
         assert_eq!(
-            4,
+            5,
             creature.calc_all_attacks().len(),
-            "Should have 4 attacks, since weapons without maneuvers can still be used to attack"
+            "Should have 5 attacks, since the battleaxe can be used alone or with a maneuver"
         );
     }
 
@@ -42,8 +42,8 @@ mod maneuver_tests {
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             vec![
-                "Certain Broadsword +2 (1d8 slashing damage.)",
-                "Broadsword +0 (1d8 slashing damage.)"
+                "Certain Broadsword +3 (1d6 slashing damage.)",
+                "Broadsword +0 (1d6+1 slashing damage.)"
             ],
             creature
                 .calc_all_attacks()
@@ -72,8 +72,8 @@ mod maneuver_tests {
             .push(StandardWeapon::Broadsword.weapon());
         assert_eq!(
             vec![
-                "Elemental Broadsword +5 (2d6+8 bludgeoning, fire, and slashing damage.)",
-                "Broadsword +5 (2d6+6 slashing damage.)"
+                "Elemental Broadsword +6 (1d4+1d6+4 bludgeoning, fire, and slashing damage.)",
+                "Broadsword +5 (1d6+4 slashing damage.)"
             ],
             druid
                 .creature
