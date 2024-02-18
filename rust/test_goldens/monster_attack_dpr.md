@@ -6,8 +6,8 @@
 Claws +3 (1d4+2 slashing damage.), Bite +1 (1d8+3 physical damage.)
 
 ### Results
-4.45 = (4.5 dph * 0.80 hpr) + (4.5 dpc * 0.09 cpr) + (2.2 dpg * 0.20 gpr) = 3.60 hdpr + 0.40 cdpr + 0.45 gdpr
-5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+3.95 = (4.5 dph * 0.70 hpr) + (4.5 dpc * 0.08 cpr) + (2.2 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 0.45 gdpr
+4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
 
 ## Level 1 Elite
 
@@ -15,8 +15,8 @@ Claws +3 (1d4+2 slashing damage.), Bite +1 (1d8+3 physical damage.)
 Claws +5 (1d4+4 slashing damage.), Bite +3 (1d8+6 physical damage.)
 
 ### Results
-7.21 = (6.5 dph * 1.00 hpr) + (6.5 dpc * 0.11 cpr) + (3.2 dpg * 0.00 gpr) = 6.50 hdpr + 0.72 cdpr + 0.00 gdpr
-10.37 = (10.5 dph * 0.80 hpr) + (10.5 dpc * 0.09 cpr) + (5.2 dpg * 0.20 gpr) = 8.40 hdpr + 0.92 cdpr + 1.05 gdpr
+6.82 = (6.5 dph * 0.90 hpr) + (6.5 dpc * 0.10 cpr) + (3.2 dpg * 0.10 gpr) = 5.85 hdpr + 0.64 cdpr + 0.32 gdpr
+9.21 = (10.5 dph * 0.70 hpr) + (10.5 dpc * 0.08 cpr) + (5.2 dpg * 0.20 gpr) = 7.35 hdpr + 0.81 cdpr + 1.05 gdpr
 
 ## Level 10 Normal
 

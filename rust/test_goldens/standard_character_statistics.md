@@ -4,11 +4,11 @@
 
 ### Damage Absorption
 HP: 12 = (High progression: 8 <level> + 4 <con> + 0 <modifier>) * 0 <elite multiplier>
-DR: 5 = (5 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
+DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
-HP 12, DR 5
-AD 6, Fort 7, Ref 3, Ment 4
+HP 12, DR 6
+AD 7, Fort 7, Ref 3, Ment 4
 Certain Broadsword +4 (1d6 slashing damage.); Generic Scaling Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -2 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
 Attr: Str 4, Dex 0, Con 2, Int 0, Per 2, Wil 0
 Power: 0✨/4
