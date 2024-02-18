@@ -2,20 +2,20 @@
 
 ## Barbarian vs Barbarian
 Level 1: 3.25
-Level 5: 2.75
-Level 10: 4
-Level 15: 4.5
-Level 20: 6.25
+Level 5: 2.5
+Level 10: 3.75
+Level 15: 4
+Level 20: 6
 
 ## Fighter vs Fighter
-Level 1: 5.25
+Level 1: 7
 Level 5: 7.5
 Level 10: 7.5
 Level 15: 9.25
 Level 20: 11.25
 
 ## Fighter vs Greataxe Perception Fighter
-Level 1: 3.5
+Level 1: 4.25
 Level 5: 5.25
 Level 10: 5.75
 Level 15: 7
@@ -43,7 +43,7 @@ Level 15: 7.5
 Level 20: 8.75
 
 ## Greataxe Perception vs Greataxe Perception
-Level 1: 2.5
+Level 1: 3
 Level 5: 3.5
 Level 10: 4.75
 Level 15: 4.5
