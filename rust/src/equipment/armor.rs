@@ -5,20 +5,20 @@ use std::{cmp::max, fmt};
 #[derive(Clone, Debug)]
 pub enum Armor {
     // Light armor
-    Leather(Option<ArmorMaterial>),
-    StuddedLeather(Option<ArmorMaterial>),
-    ChainShirt(Option<ArmorMaterial>),
+    Padded(Option<ArmorMaterial>),
+    BuffLeather(Option<ArmorMaterial>),
+    MailShirt(Option<ArmorMaterial>),
     Buckler,
 
     // Medium armor
-    Hide(Option<ArmorMaterial>),
-    ScaleMail(Option<ArmorMaterial>),
-    Breastplate(Option<ArmorMaterial>),
+    Rawhide(Option<ArmorMaterial>),
+    Scale(Option<ArmorMaterial>),
+    Brigandine(Option<ArmorMaterial>),
     StandardShield,
 
     // Heavy armor
     LayeredHide(Option<ArmorMaterial>),
-    PlatedMail(Option<ArmorMaterial>),
+    HalfPlate(Option<ArmorMaterial>),
     FullPlate(Option<ArmorMaterial>),
     TowerShield,
 }
@@ -207,32 +207,32 @@ impl Armor {
     fn definition(&self) -> ArmorDefinition {
         match self {
             // Light armor
-            Self::Leather(m) => ArmorDefinition {
+            Self::Padded(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(3, m),
                 defense: 3,
                 dex_multiplier: 1.0,
                 encumbrance: 0,
                 item_rank: 1,
-                name: "leather".to_string(),
+                name: "Padded".to_string(),
                 speed_modifier: 0,
             },
-            Self::StuddedLeather(m) => ArmorDefinition {
+            Self::BuffLeather(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
                 defense: 3,
                 dex_multiplier: 1.0,
-                encumbrance: 2,
+                encumbrance: 1,
                 item_rank: 1,
-                name: "studded leather".to_string(),
+                name: "buff leather".to_string(),
                 speed_modifier: 0,
             },
-            Self::ChainShirt(m) => ArmorDefinition {
+            Self::MailShirt(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
                 defense: 3,
                 dex_multiplier: 1.0,
-                encumbrance: 2,
+                encumbrance: 1,
                 item_rank: 1,
                 name: "chain shirt".to_string(),
                 speed_modifier: 0,
@@ -249,34 +249,34 @@ impl Armor {
             },
 
             // Medium armor
-            Self::Hide(m) => ArmorDefinition {
+            Self::Rawhide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 2,
                 item_rank: 1,
-                name: "hide armor".to_string(),
+                name: "rawhide".to_string(),
                 speed_modifier: 0,
             },
-            Self::ScaleMail(m) => ArmorDefinition {
+            Self::Scale(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(5, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
                 item_rank: 1,
-                name: "scale mail".to_string(),
+                name: "scale".to_string(),
                 speed_modifier: 0,
             },
-            Self::Breastplate(m) => ArmorDefinition {
+            Self::Brigandine(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(6, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
                 item_rank: 1,
-                name: "breastplate".to_string(),
+                name: "brigandine".to_string(),
                 speed_modifier: 0,
             },
             Self::StandardShield => ArmorDefinition {
@@ -301,14 +301,14 @@ impl Armor {
                 name: "layered hide".to_string(),
                 speed_modifier: -10,
             },
-            Self::PlatedMail(m) => ArmorDefinition {
+            Self::HalfPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(8, m),
                 defense: 5,
                 dex_multiplier: 0.0,
                 encumbrance: 6,
                 item_rank: 2,
-                name: "plated mail".to_string(),
+                name: "half plate".to_string(),
                 speed_modifier: -10,
             },
             Self::FullPlate(m) => ArmorDefinition {
@@ -342,20 +342,20 @@ impl Armor {
     fn material(&self) -> &Option<ArmorMaterial> {
         match self {
             // Light armor
-            Self::Leather(m) => m,
-            Self::StuddedLeather(m) => m,
-            Self::ChainShirt(m) => m,
+            Self::Padded(m) => m,
+            Self::BuffLeather(m) => m,
+            Self::MailShirt(m) => m,
             Self::Buckler => &None,
 
             // Medium armor
-            Self::Hide(m) => m,
-            Self::ScaleMail(m) => m,
-            Self::Breastplate(m) => m,
+            Self::Rawhide(m) => m,
+            Self::Scale(m) => m,
+            Self::Brigandine(m) => m,
             Self::StandardShield => &None,
 
             // Heavy armor
             Self::LayeredHide(m) => m,
-            Self::PlatedMail(m) => m,
+            Self::HalfPlate(m) => m,
             Self::FullPlate(m) => m,
             Self::TowerShield => &None,
         }

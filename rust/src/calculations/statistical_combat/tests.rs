@@ -136,7 +136,7 @@ mod calculate_attack_outcome {
         let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.600 single, 0.066 crit",
+            "0.500 single, 0.055 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -184,7 +184,7 @@ mod calculate_attack_outcome {
 
         assert_eq!(
             [
-                "0.600 single, 0.066 crit",
+                "0.500 single, 0.055 crit",
                 "0.900 single, 0.099 crit",
                 "0.800 single, 0.088 crit"
             ],
