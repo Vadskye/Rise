@@ -380,14 +380,14 @@ impl StandardWeapon {
             },
             Self::MonsterHorn => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6().add_modifier(1),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Horn".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::MonsterHorns => Weapon {
                 accuracy: 0,
-                damage_dice: DicePool::d6().add_modifier(1),
+                damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Piercing],
                 name: "Horns".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
