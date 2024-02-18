@@ -374,14 +374,21 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
             planeforged(MonsterDef {
                 name: "Painborn Demon".to_string(),
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![Weapon::spikes()],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::claw()).except_dual_strike()),
+                        ActiveAbility::Custom(CustomAbility {
+                            effect: r"
+                                Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.
+                                The $name makes an $accuracy \glossterm{reactive attack} vs. Armor against the creature that attacked it.
+                                \hit $dr1 piercing damage.
+                            ".to_string(),
+                            is_magical: false,
+                            name: "Spiked Body".to_string(),
+                            usage_time: UsageTime::Triggered,
+                            ..Default::default()
+                        }),
+                    ],
                     modifiers: vec![
-                        Modifier::Attack(
-                            Maneuver::GraspingStrike.attack(StandardWeapon::Claws.weapon(), 2)
-                            .except(|a| a.name = "Impale".to_string())
-                        ),
-                        Modifier::Attack(StandardAttack::MonsterSpikes(2).attack()),
                         Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                             AbilityTag::Compulsion,
                         )),

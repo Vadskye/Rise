@@ -34,6 +34,38 @@ impl StrikeAbility {
         self
     }
 
+    // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
+    // TODO: accept an argument so it can calculate the accuracy penalty, if any.
+    pub fn except_dual_strike(mut self) -> Self {
+        if self.effect.contains("dual strike") {
+            panic!(
+                "Cannot convert StrikeAbility {} to a dual strike: it is already a dual strike",
+                self.name
+            );
+        }
+
+        if self.effect.contains("strike") {
+            // We use a preceding space to make sure we don't match \glossterm{strike}, which would
+            // create confusing nested glossterms.
+            self.effect = self.effect.replace(" strike", r" \glossterm{dual strike}");
+        } else {
+            panic!(
+                "Cannot convert StrikeAbility {} to a dual strike: no strike",
+                self.name
+            );
+        }
+        if self.effect.contains("$weapon") {
+            self.effect = self.effect.replace("$weapon", "$weapons");
+        } else {
+            panic!(
+                "Cannot convert StrikeAbility {} to a dual strike: no weapon",
+                self.name
+            );
+        }
+
+        self
+    }
+
     pub fn latex_ability_block(mut self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
         let mut latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
@@ -273,43 +305,11 @@ impl StrikeAbility {
         }
     }
 
-    pub fn dual_ichor_strike(rank: i32, weapon: Weapon) -> Self {
-        Self {
-            effect: format!(
-                "
-                    The $name makes a $accuracy+{accuracy_modifier} \\glossterm{{dual strike}} vs. Armor with its $weapons.
-                    \\hit $fullweapondamage.
-                    {ichor_infestation_details}
-                ",
-                accuracy_modifier = rank - 1,
-                ichor_infestation_details = Self::ichor_infestation_details(),
-            ),
-            name: strike_prefix("Ichor", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
     pub fn pounce(weapon: Weapon) -> Self {
         Self {
             effect: r"
                 The $name can move up to its speed in a single straight line.
                 Then, it makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: "Pounce".to_string(),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
-    pub fn dual_pounce(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name can move up to its speed in a single straight line.
-                Then, it makes a $accuracy \glossterm{dual strike} vs. Armor with its $weapons.
                 \hit $fullweapondamage.
             "
             .to_string(),
@@ -400,18 +400,8 @@ impl StrikeAbility {
         }
     }
 
-    // Note that this ignores any accuracy penalty from non-Light weapons or a low Dex.
     pub fn dual_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{dual strike} vs. Armor with its $weapons.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: weapon.name.clone(),
-            weapon,
-            ..Default::default()
-        }
+        Self::normal_strike(weapon).except_dual_strike()
     }
 
     pub fn knockdown(weapon: Weapon) -> Self {

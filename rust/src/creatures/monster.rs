@@ -96,7 +96,7 @@ impl Monster {
         monster
             .creature
             .weapons
-            .push(StandardWeapon::Claws.weapon());
+            .push(StandardWeapon::Claw.weapon());
         monster
             .creature
             .weapons
