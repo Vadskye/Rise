@@ -10,6 +10,6 @@ pub use attack::{Attack, HasAttacks, SimpleSpell};
 pub use attack_effect::{AttackEffect, DamageEffect};
 pub use damage_scaling::DamageScaling;
 pub use maneuver::Maneuver;
-pub use pure_damage::PureDamage;
+pub use pure_damage::{PureDamageAbility, PureDamageManeuver};
 pub use simple_damage_effect::SimpleDamageEffect;
 pub use standard_attack::StandardAttack;

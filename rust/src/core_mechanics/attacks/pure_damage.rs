@@ -3,25 +3,30 @@ use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{DamageType, Defense};
 use crate::equipment::Weapon;
 
-pub struct PureDamage {
+// TODO: what is the generic name for "non-strike attack"?
+pub struct PureDamageAbility {
     pub damage_types: Vec<DamageType>,
     pub defense: Defense,
     pub is_magical: bool,
-    pub is_maneuver: bool,
     pub name: String,
-    pub range: Option<Range>,
     pub rank: i32,
+}
+
+pub struct PureDamageManeuver {
+    pub defense: Defense,
+    pub is_magical: bool,
+    pub name: String,
+    pub rank: i32,
+    pub weapon: Weapon,
 }
 
 struct SpentRankResults {
     accuracy_modifier: i32,
-    maybe_range: Option<Range>,
+    weapon_damage_multiplier: i32,
 }
 
-impl PureDamage {
+impl PureDamageAbility {
     pub fn attack(&self) -> Attack {
-        let spent_rank_results = self.spend_ranks();
-
         Attack {
             accuracy: 0,
             crit: None,
@@ -33,14 +38,16 @@ impl PureDamage {
             name: self.name.clone(),
             replaces_weapon: None,
             tags: None,
-            targeting: Targeting::Creature(spent_rank_results.maybe_range.unwrap()),
+            targeting: Targeting::Anything(Range::Medium),
         }
     }
+}
 
-    pub fn weapon_attack(&self, weapon: &Weapon) -> Attack {
+impl PureDamageManeuver {
+    pub fn attack(&self) -> Attack {
         let spent_rank_results = self.spend_ranks();
 
-        weapon
+        self.weapon
             .attack()
             .except(|a| {
                 a.accuracy += spent_rank_results.accuracy_modifier;
@@ -48,41 +55,28 @@ impl PureDamage {
                 a.defense = self.defense;
             })
             .except_hit_damage(|d| {
-                d.damage_types.append(&mut self.damage_types.clone());
+                d.base_dice.multiplier = spent_rank_results.weapon_damage_multiplier;
             })
     }
 
     // If we have ranks to spend, spend them in the following order:
-    // 1. Increase to Long range if this isn't a maneuver, doesn't have a set range, and will
-    //    gain at least +2 accuracy already.
-    // 2. Increase to Medium range if this isn't a maneuver and doesn't have a set range
+    // 1. Triple weapon damage for 6 ranks
+    // 2. Double weapon damge for 4 ranks
     // 3. Accuracy
     fn spend_ranks(&self) -> SpentRankResults {
-        let mut spendable_ranks = self.rank - self.calculate_minimum_rank();
-        let mut maybe_range = self.range.clone();
-        if !self.is_maneuver && self.range.is_none() {
-            if spendable_ranks >= 4 {
-                maybe_range = Some(Range::Long);
-                spendable_ranks -= 2;
-            } else if spendable_ranks >= 1 {
-                maybe_range = Some(Range::Medium);
-                spendable_ranks -= 1;
-            } else {
-                maybe_range = Some(Range::Short);
-            }
+        let mut spendable_ranks = self.rank - 1;
+        let mut weapon_damage_multiplier = 1;
+        if spendable_ranks >= 6 {
+            weapon_damage_multiplier = 3;
+            spendable_ranks -= 6;
+        } else if spendable_ranks >= 4 {
+            weapon_damage_multiplier = 2;
+            spendable_ranks -= 4;
         }
 
         SpentRankResults {
             accuracy_modifier: spendable_ranks,
-            maybe_range,
-        }
-    }
-
-    fn calculate_minimum_rank(&self) -> i32 {
-        if let Some(ref r) = self.range {
-            r.minimum_rank()
-        } else {
-            0
+            weapon_damage_multiplier,
         }
     }
 }
@@ -91,88 +85,209 @@ impl PureDamage {
 mod tests {
     use super::*;
     use crate::creatures::{Character, Creature};
-    use crate::equipment::StandardWeapon;
     use crate::latex_formatting::remove_indentation;
+    use crate::testing::assert_multiline_eq;
 
     fn get_basic_creature() -> Creature {
         Character::standard_character(1, false).creature
     }
 
-    fn get_standard_ability_block(config: PureDamage) -> String {
-        if config.is_maneuver {
-            remove_indentation(
-                &config
-                    .weapon_attack(&StandardWeapon::Club.weapon())
-                    .latex_ability_block(&get_basic_creature()),
-            )
-        } else {
-            remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
+    fn get_ability_latex(config: PureDamageAbility) -> String {
+        remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
+    }
+
+    fn get_maneuver_latex(config: PureDamageManeuver) -> String {
+        remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
+    }
+
+    mod pure_damage_ability {
+        use super::*;
+
+        #[test]
+        fn it_generates_pyromancy_mystic_bolt() {
+            // PureDamage doesn't support changing the text for "creatures" vs "creatures and objects",
+            // but it's still useful to think about the specific variants of mystic bolt for different
+            // defense and damage values.
+            let mystic_bolt = PureDamageAbility {
+                damage_types: vec![DamageType::Fire],
+                defense: Defense::Fortitude,
+                is_magical: true,
+                name: "Mystic Bolt".to_string(),
+                rank: 1,
+            };
+
+            assert_multiline_eq(
+                "
+\\begin<magicalactiveability>*<Mystic Bolt>
+
+
+\\rankline
+
+The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
+
+
+\\hit 1d6 fire damage.
+
+
+
+\\end<magicalactiveability>
+",
+                get_ability_latex(mystic_bolt),
+            );
+        }
+
+        #[test]
+        fn it_generates_channel_divinity_mighty_mystic_bolt() {
+            let mystic_bolt = PureDamageAbility {
+                damage_types: vec![DamageType::Energy],
+                defense: Defense::Mental,
+                is_magical: true,
+                name: "Mighty Mystic Bolt".to_string(),
+                rank: 4,
+            };
+
+            assert_multiline_eq(
+                "
+\\begin<magicalactiveability>*<Mighty Mystic Bolt>
+
+
+\\rankline
+
+The $name makes a +0 attack vs. Mental against anything within \\medrange.
+
+
+\\hit 1d8 energy damage.
+
+
+
+\\end<magicalactiveability>
+",
+                get_ability_latex(mystic_bolt),
+            );
         }
     }
 
-    #[test]
-    fn it_generates_mystic_bolt() {
-        let mystic_bolt = PureDamage {
-            damage_types: vec![DamageType::Energy],
-            defense: Defense::Armor,
-            is_magical: true,
-            is_maneuver: false,
-            name: "Mystic Bolt".to_string(),
-            range: None,
-            rank: 1,
-        };
+    mod pure_damage_maneuver {
+        use super::*;
 
-        assert_eq!(
-            "\\begin<magicalactiveability>*<Mystic Bolt>
-\\rankline
-The $name makes a +0 attack vs. Armor against one creature within \\medrange.
-\\hit 1d8+2 energy damage.
-\\end<magicalactiveability>",
-            get_standard_ability_block(mystic_bolt)
-        );
-    }
+        #[test]
+        fn it_generates_basic_strike() {
+            let basic_strike = PureDamageManeuver {
+                defense: Defense::Armor,
+                is_magical: false,
+                name: "Basic Strike".to_string(),
+                rank: 1,
+                weapon: Weapon::broadsword(),
+            };
 
-    #[test]
-    fn it_generates_greater_mystic_bolt() {
-        let mystic_bolt = PureDamage {
-            damage_types: vec![DamageType::Energy],
-            defense: Defense::Armor,
-            is_magical: true,
-            is_maneuver: false,
-            name: "Greater Mystic Bolt".to_string(),
-            range: None,
-            rank: 3,
-        };
+            assert_multiline_eq(
+                r"
+\begin<activeability>*<Basic Strike>
+\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
 
-        assert_eq!(
-            "\\begin<magicalactiveability>*<Greater Mystic Bolt>
-\\rankline
-The $name makes a +0 attack vs. Armor against one creature within \\medrange.
-\\hit 2d8+2 energy damage.
-\\end<magicalactiveability>",
-            get_standard_ability_block(mystic_bolt)
-        );
-    }
+\rankline
 
-    #[test]
-    fn it_generates_supreme_mystic_bolt() {
-        let mystic_bolt = PureDamage {
-            damage_types: vec![DamageType::Energy],
-            defense: Defense::Armor,
-            is_magical: true,
-            is_maneuver: false,
-            name: "Supreme Mystic Bolt".to_string(),
-            range: None,
-            rank: 6,
-        };
+The $name makes a +0 \glossterm{strike} vs. Armor.
 
-        assert_eq!(
-            "\\begin<magicalactiveability>*<Supreme Mystic Bolt>
-\\rankline
-The $name makes a +0 attack vs. Armor against one creature within \\longrange.
-\\hit 4d10+2 energy damage.
-\\end<magicalactiveability>",
-            get_standard_ability_block(mystic_bolt)
-        );
+
+\hit 1d6 slashing damage.
+
+
+
+\end<activeability>
+",
+                get_maneuver_latex(basic_strike),
+            );
+        }
+
+        #[test]
+        fn it_scales_accuracy() {
+            let basic_strike = PureDamageManeuver {
+                defense: Defense::Reflex,
+                is_magical: false,
+                name: "+3 Accuracy".to_string(),
+                rank: 4,
+                weapon: Weapon::broadsword(),
+            };
+
+            assert_multiline_eq(
+                r"
+\begin<activeability>*<+3 Accuracy>
+\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
+
+\rankline
+
+The $name makes a +3 \glossterm{strike} vs. Reflex.
+
+
+\hit 1d6 slashing damage.
+
+
+
+\end<activeability>
+",
+                get_maneuver_latex(basic_strike),
+            );
+        }
+
+        #[test]
+        fn it_doubles_weapon_damage() {
+            let basic_strike = PureDamageManeuver {
+                defense: Defense::Armor,
+                is_magical: false,
+                name: "Double Damage".to_string(),
+                rank: 5,
+                weapon: Weapon::broadsword(),
+            };
+
+            assert_multiline_eq(
+                r"
+\begin<activeability>*<Double Damage>
+\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
+
+\rankline
+
+The $name makes a +0 \glossterm{strike} vs. Armor.
+
+
+\hit 2d6 slashing damage.
+
+
+
+\end<activeability>
+",
+                get_maneuver_latex(basic_strike),
+            );
+        }
+
+        #[test]
+        fn it_triples_weapon_damage() {
+            let basic_strike = PureDamageManeuver {
+                defense: Defense::Armor,
+                is_magical: false,
+                name: "Triple Damage".to_string(),
+                rank: 7,
+                weapon: Weapon::broadsword(),
+            };
+
+            assert_multiline_eq(
+                r"
+\begin<activeability>*<Triple Damage>
+\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
+
+\rankline
+
+The $name makes a +0 \glossterm{strike} vs. Armor.
+
+
+\hit 3d6 slashing damage.
+
+
+
+\end<activeability>
+",
+                get_maneuver_latex(basic_strike),
+            );
+        }
     }
 }

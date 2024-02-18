@@ -52,6 +52,10 @@ impl Weapon {
         StandardWeapon::MonsterBite.weapon()
     }
 
+    pub fn broadsword() -> Self {
+        StandardWeapon::Broadsword.weapon()
+    }
+
     pub fn claw() -> Self {
         StandardWeapon::Claw.weapon()
     }
