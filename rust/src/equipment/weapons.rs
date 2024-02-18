@@ -1,6 +1,7 @@
 use crate::core_mechanics::abilities::Targeting;
 use crate::core_mechanics::attacks::{Attack, AttackEffect};
 use crate::core_mechanics::{DamageType, Defense, DicePool, PowerScaling, Tag};
+use crate::creatures::Modifier;
 use std::fmt;
 use std::mem::discriminant;
 use titlecase::titlecase;
@@ -77,6 +78,10 @@ impl Weapon {
 
     pub fn greatclub() -> Self {
         StandardWeapon::Greatclub.weapon()
+    }
+
+    pub fn greatmace() -> Self {
+        StandardWeapon::Greatmace.weapon()
     }
 
     pub fn greatsword() -> Self {
@@ -178,6 +183,14 @@ impl WeaponTag {
         }
     }
 
+    pub fn modifier(&self) -> Option<Modifier> {
+        // TODO: add support for Keen modifier
+        match self {
+            Self::Impact => Some(Modifier::ExplosionTarget(-2)),
+            _ => None,
+        }
+    }
+
     // True if the tag should be visible in monster attacks. Purely statistical tags, like Heavy,
     // should be omitted so tags only appear if they are meaningful to a GM.
     pub fn visible_in_monster_tags(&self) -> bool {
@@ -216,6 +229,7 @@ pub enum StandardWeapon {
     GiantBoulder,
     Greataxe,
     Greatclub,
+    Greatmace,
     Greatsword,
     Flail,
     HeavyCrossbow,
@@ -307,6 +321,13 @@ impl StandardWeapon {
                 damage_dice: DicePool::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Greatclub".to_string(),
+                tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
+            },
+            Self::Greatmace => Weapon {
+                accuracy: 0,
+                damage_dice: DicePool::d10(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Greatmace".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
             },
             Self::Greatsword => Weapon {
