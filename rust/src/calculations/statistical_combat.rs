@@ -366,7 +366,8 @@ fn calculate_attack_outcome(
     accuracy: i32,
     defense: i32,
     // The number required to explode. With no special modifiers, this should be 10. This can go
-    // to 0 or below, which cascades into additional rolls.
+    // to 0 or below, which cascades into additional rolls. Note that this is the explosion target
+    // for the creature, and the Attack may have additional local explosion target scaling.
     explosion_target: i32,
 ) -> AttackOutcomeProbability {
     // hardcoded

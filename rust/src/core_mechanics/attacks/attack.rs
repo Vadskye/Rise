@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    latex_ability_block, AbilityExtraContext, Targeting, UsageTime,
+    latex_ability_block, AbilityExtraContext, Range, Targeting, UsageTime,
 };
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
@@ -26,6 +26,24 @@ pub struct Attack {
     pub targeting: Targeting,
 }
 
+impl Default for Attack {
+    fn default() -> Self {
+        return Self {
+            accuracy: 0,
+            crit: None,
+            defense: Defense::Armor,
+            extra_context: None,
+            hit: AttackEffect::BriefDurationInstead,
+            is_magical: false,
+            is_strike: false,
+            name: "Default Attack Name".to_string(),
+            replaces_weapon: None,
+            tags: None,
+            targeting: Targeting::Anything(Range::Medium),
+        };
+    }
+}
+
 // This is implemented by creatures, and includes a lot of the calculations necessary to figure out
 // how attacks work. It's possible that "power" should be calculated separately, since it's also
 // useful for healing and some passive abilities.
@@ -33,7 +51,8 @@ pub trait HasAttacks {
     fn add_special_attack(&mut self, attack: Attack);
     fn calc_all_attacks(&self) -> Vec<Attack>;
     fn get_attack_by_substring(&self, name: &str) -> Option<Attack> {
-        let matching_attacks = self.calc_all_attacks()
+        let matching_attacks = self
+            .calc_all_attacks()
             .into_iter()
             .filter(|a| a.name.contains(name))
             .collect::<Vec<Attack>>();
@@ -93,6 +112,27 @@ impl Attack {
             self.name
         );
         self.clone()
+    }
+
+    // Currently, the only attack-specific explosion target modifier is the Impact weapon tag.
+    // In the future, it would be possible to add support for special attacks like Feral Strike.
+    pub fn calc_explosion_target_modifier(&self) -> i32 {
+        let mut explosion_target_modifier = 0;
+
+        for tag in self.tags.as_ref().unwrap_or(&vec![]) {
+            match tag {
+                Tag::Weapon(t) => {
+                    if let Some(m) = t.modifier() {
+                        if m.modifier_type() == ModifierType::ExplosionTarget {
+                            explosion_target_modifier += m.value();
+                        }
+                    }
+                }
+                _ => {}
+            }
+        }
+
+        explosion_target_modifier
     }
 
     pub fn generate_modified_name(
@@ -396,6 +436,29 @@ impl SimpleSpell {
             is_magical: true,
             is_strike: false,
             replaces_weapon: None,
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    mod calc_explosion_target_modifier {
+        use super::*;
+
+        #[test]
+        fn calculates_for_normal_weapon() {
+            let attack = Weapon::broadsword().attack();
+
+            assert_eq!(0, attack.calc_explosion_target_modifier());
+        }
+
+        #[test]
+        fn calculates_for_impact_weapon() {
+            let attack = Weapon::greatmace().attack();
+
+            assert_eq!(-2, attack.calc_explosion_target_modifier());
         }
     }
 }
