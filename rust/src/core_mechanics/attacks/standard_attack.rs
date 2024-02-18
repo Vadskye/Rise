@@ -6,9 +6,9 @@ use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect, PoisonEffect,
 };
 use crate::core_mechanics::attacks::{
-    Attack, AttackEffect, LowDamageAndDebuff, SimpleDamageEffect,
+    Attack, AttackEffect, SimpleDamageEffect,
 };
-use crate::core_mechanics::{DamageType, Debuff, Defense, SpecialDefenseType, SpeedCategory, Tag};
+use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
@@ -17,7 +17,6 @@ use super::attack::SimpleSpell;
 pub enum StandardAttack {
     // Monster abilities
     AnkhegDrag,
-    GhoulBite(i32),
     GibberingMoutherGibber,
     FrostwebSpiderBite,
     MonsterSpikes(i32),
@@ -80,19 +79,6 @@ impl StandardAttack {
                 }
                 frostweb_spider_bite
             }
-            Self::GhoulBite(rank) => LowDamageAndDebuff {
-                damage_types: vec![],
-                debuff: Debuff::Vulnerable(Box::new(
-                    SpecialDefenseType::AllDamage,
-                )),
-                defense: Defense::Armor,
-                must_lose_hp: true,
-                is_magical: false,
-                is_maneuver: true,
-                name: "Flesh-Rending Bite".to_string(),
-                rank: *rank,
-                tags: None,
-            }.weapon_attack(&StandardWeapon::MonsterBite.weapon()),
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {
