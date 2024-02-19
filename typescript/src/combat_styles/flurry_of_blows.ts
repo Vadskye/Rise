@@ -120,7 +120,7 @@ export const flurryOfBlows: CombatStyle = {
       // large cone instead of med cone for projectile cost
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
-        You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
+        You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
         The strike costs ten projectiles.
         On a miss, you still deal half damage.
       `,
@@ -144,7 +144,7 @@ export const flurryOfBlows: CombatStyle = {
       // Technically t6 area instead of t7, but whatever
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\medarea radius within \\distrange.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
+        The strike deals \\glossterm{extra damage} equal to your power.
         This strike costs ten projectiles.
         On a miss, you still deal half damage.
       `,

@@ -623,7 +623,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           % damagerankfive
-          2d6 psychic \\glossterm{subdual damage} plus 1d6 per 3 power.
+          1d8 psychic \\glossterm{subdual damage} plus 1d8 per 3 power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -640,7 +640,7 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 4 power, and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d6 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
@@ -653,11 +653,11 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 3 power, and increases its \\glossterm{fatigue level} by one.
+        The target regains 5d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 6,
-      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
+      scaling: { special: 'The recovery increases by 2d10 for each rank beyond 6.' },
       tags: ['Swift'],
     },
   ],

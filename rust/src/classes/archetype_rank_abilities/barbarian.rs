@@ -49,7 +49,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} The extra damage increases to 1d8.
-                    \rank{5} The extra damage increases to 2d8.
+                    \rank{5} The extra damage increases to 3d6.
                     \rank{6} The extra damage increases to 3d10.
                     \rank{7} The extra damage increases to 5d10.
                 \end{activeability}
@@ -250,10 +250,11 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     At the end of this movement, you may make a melee \glossterm{strike}.
 
                     \rankline
-                    \rank{4} You gain 1d4 \glossterm{extra damage} with the strike per 4 power.
-                    \rank{5} The extra damage increases to 1d6 per 4 power.
-                    \rank{6} The extra damage increases to 1d6 per 3 power.
-                    \rank{7} The extra damage increases to 1d10 per 3 power.
+                    \rank{4} You can make a second melee strike at any point during your movement.
+                    You cannot include the same creature or object as a target of both strikes.
+                    \rank{5} Your \glossterm{weapon damage} with both strikes is doubled.
+                    \rank{6} You gain a \plus1 accuracy bonus with both strikes.
+                    \rank{7} Your weapon damage with both strikes is tripled.
                 \end{activeability}
             ",
             modifiers: None,

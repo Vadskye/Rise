@@ -25,6 +25,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // Like Smite, but only adds half Str instead of full Str and has extra damage types
         RankAbility {
             name: "Elemental Strike",
             is_magical: true,
@@ -36,14 +37,15 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
-                    You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
 
                     \rankline
-                    \rank{3} You gain 1d4 \glossterm{extra damage} with the strike.
-                    \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
-                    \rank{5} The extra damage increases to 1d6 per 4 power.
-                    \rank{6} The extra damage increases to 1d6 per 3 power.
-                    \rank{7} The extra damage increases to 1d10 per 3 power.
+                    \rank{2} You add half your Strength to your \glossterm{magical power} to determine your total power with this strike.
+                    \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
+                    Instead, you gain 1d4 extra damage per 3 power (minimum 1d4).
+                    \rank{4} The extra damage increases to 1d6 per 3 power.
+                    \rank{5} The \glossterm{weapon damage} is doubled.
+                    \rank{6} The extra damage increases to 1d8 per 3 power.
+                    \rank{7} The extra damage increases to 1d8 per 2 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),

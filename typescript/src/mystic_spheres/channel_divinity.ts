@@ -54,14 +54,14 @@ export const channelDivinity: MysticSphere = {
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
         % d3
-        First, you heal 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power}.
+        First, you heal 1d8 \\glossterm{hit points} \plus1 per \\glossterm{power}.
         This healing cannot increase your hit points above half your maximum hit points.
         Second, you may remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
         Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 4,
-      scaling: { special: 'The healing increases by +1 for each rank beyond 4.' },
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
       tags: [],
     },
 

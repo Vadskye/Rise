@@ -482,9 +482,9 @@ mod tests {
 
         #[test]
         fn replaces_high_scaling() {
-            // dr3h is 1d6 + (1d8 per 4 power)
+            // dr3h is 1d6 + (1d6 per 3 power)
             assert_eq!(
-                "Deals 1d6+1d8 electricity damage",
+                "Deals 2d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr3h electricity damage",
                     &dr_sample_creature(),
@@ -492,7 +492,7 @@ mod tests {
                 ),
             );
             assert_eq!(
-                "Deals 1d6+2d8 electricity damage",
+                "Deals 3d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr3h electricity damage",
                     &dr_sample_creature(),
@@ -503,9 +503,9 @@ mod tests {
 
         #[test]
         fn replaces_low_scaling() {
-            // dr4l is d10 + (1d6 per 4 power)
+            // dr4l is 4d6
             assert_eq!(
-                "Deals 1d6+1d10 electricity damage",
+                "Deals 4d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr4l electricity damage",
                     &dr_sample_creature(),
@@ -513,7 +513,7 @@ mod tests {
                 ),
             );
             assert_eq!(
-                "Deals 2d6+1d10 electricity damage",
+                "Deals 4d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr4l electricity damage",
                     &dr_sample_creature(),
@@ -613,10 +613,10 @@ mod tests {
         #[test]
         fn replaces_mind_crush() {
             assert_multiline_eq(
-                // dr4 is 1d8 + (1d8 per 4 power)
+                // dr4 is 1d10 + (1d6 per 3 power)
                 r"
                     The $name makes a +5 attack vs. Mental against one creature within \medrange.
-                    \hit 2d8 psychic damage.
+                    \hit 1d10+1d6 psychic damage.
                     Each creature that loses hit points from this damage is \stunned as a condition.
                 ",
                 replace_attack_terms(

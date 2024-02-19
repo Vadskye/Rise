@@ -6,7 +6,7 @@ use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, calcu
 // R1: 2
 // R2: 4
 // R3: 6
-// R4: 9 -- this is a weird breakpoint, but 8 is too low for "one per three" power scaling
+// R4: 8
 // R5: 10
 // R6: 12
 // R7: 14

@@ -20,7 +20,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) if the target is not wearing metal body armor.
+        The strike deals 1d6 \\glossterm{extra damage} \plus1 per 2 power if the target is not wearing metal body armor.
       `,
       rank: 3,
     },
@@ -29,8 +29,8 @@ export const ripAndTear: CombatStyle = {
       name: 'Rend the Hide+',
 
       effect: `
-        Make a \\glossterm{strike} using a slashing weapon.
-        The strike deals 1d10 \\glossterm{extra damage} per 3 power if the target is not wearing metal body armor.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
+        The strike deals 1d8 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
       `,
       rank: 7,
     },
@@ -85,7 +85,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
         \\hit Each target that takes damage from both weapons bleeds.
-        A bleeding creature takes 1d6 slashing damage per 3 \\glossterm{power} during your next action.
+        A bleeding creature takes 1d6 slashing damage per 2 \\glossterm{power} during your next action.
       `,
       rank: 5,
     },
@@ -96,7 +96,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        \\hit If the target takes damage and your attack result beats its Reflex defense, it takes 1d6 fire damage per 4 power (minimum 1d6) during your next action.
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it takes fire damage equal to your power during your next action.
       `,
       rank: 3,
     },
@@ -107,7 +107,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike with double \\glossterm{weapon damage} using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        \\hit If your attack result beats a target's Reflex defense, the target takes 1d10 fire damage per 3 power during your next action.
+        \\hit If the target takes damage and your attack result beats its Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
       `,
       rank: 7,
     },
@@ -219,7 +219,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d8 +1 per two power \\glossterm{extra damage}.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals double \\glossterm{weapon damage}.
       `,
       // narrative: '',
       rank: 3,
@@ -230,10 +230,10 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals 1d10 \\glossterm{extra damage} per 3 power.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals triple \\glossterm{weapon damage}.
       `,
       // narrative: '',
-      rank: 7,
+      rank: 5,
     },
   ],
 };

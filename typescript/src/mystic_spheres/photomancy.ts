@@ -203,7 +203,7 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           1d10 energy damage.
-          If this attack beats a creature's Fortitude defense, it deals 1d6 \\glossterm{extra damage} per 4 power.
+          If this attack beats a creature's Fortitude defense, you deal it \\glossterm{extra damage} equal to your power.
         `,
         targeting: `
           Make an attack vs. Reflex against anything within \\shortrange.

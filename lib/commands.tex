@@ -663,7 +663,7 @@
 
 \newcommand{\pari}{\par\noindent}
 
-
+% See Damage Scaling Calculations spreadsheet
 \newcommand{\damagerankzero}[1]
 {1d4 #1 damage \plus1 per 3 power}
 
@@ -672,63 +672,62 @@
 \newcommand{\damagerankonehigh}[1]
 {1d6 #1 damage \plus1 per 2 power} % Same as d1, unfortunately
 \newcommand{\damagerankonelow}[1]
-{1d8 #1 damage \plus1 per 3 power}
+{1d10 #1 damage}
 
 \newcommand{\damageranktwo}[1]
 {1d8 #1 damage \plus1 per 2 power}
 \newcommand{\damageranktwohigh}[1]
-{1d6 #1 damage plus 1d6 per 4 power}
+{1d6 per 3 power #1 damage}
 \newcommand{\damageranktwolow}[1]
-{1d10 #1 damage \plus1 per 3 power}
+{2d6 #1 damage}
 
 \newcommand{\damagerankthree}[1]
-{1d8 #1 damage plus 1d6 per 4 power}
-% This is a little higher than it should be
+{1d8 #1 damage \plus1 per power}
 \newcommand{\damagerankthreehigh}[1]
-{1d6 #1 damage plus 1d8 per 4 power}
+{1d6 #1 damage plus 1d6 per 3 power}
 \newcommand{\damagerankthreelow}[1]
-{1d8 #1 damage plus 1d6 per 4 power} % Same as d3, unfortunately
+{2d10 #1 damage}
 
 \newcommand{\damagerankfour}[1]
-{1d8 #1 damage plus 1d8 per 4 power}
+{1d10 #1 damage plus 1d6 per 3 power}
 \newcommand{\damagerankfourhigh}[1]
-{1d8 per 3 power #1 damage} % Or could use 1d6 + d6 per 3 power
+{1d8 per 3 power #1 damage}
 \newcommand{\damagerankfourlow}[1]
-{1d10 #1 damage plus 1d6 per 4 power}
+{4d6 #1 damage}
 
 \newcommand{\damagerankfive}[1]
-{2d6 #1 damage plus 1d6 per 3 power}
+{1d8 #1 damage plus 1d8 per 3 power}
 \newcommand{\damagerankfivehigh}[1]
-{1d10 per 3 power #1 damage} % Or could use d6 per 2 power, but that's weaker
+{1d6 #1 damage plus 1d6 per 2 power}
 \newcommand{\damagerankfivelow}[1]
-{2d8 #1 damage plus 1d6 per 4 power}
+{6d6 #1 damage}
 
 \newcommand{\damageranksix}[1]
-{1d10 #1 damage plus 1d10 per 3 power}
+{2d8 #1 damage plus 1d8 per 3 power}
 \newcommand{\damageranksixhigh}[1]
 {1d8 per 2 power #1 damage}
 \newcommand{\damageranksixlow}[1]
-{4d6 #1 damage plus 1d6 per 4 power} % many options
+{5d10 #1 damage} % many options
 
 \newcommand{\damagerankseven}[1]
-{2d10 #1 damage plus 1d10 per 3 power}
+{2d8 #1 damage plus 1d8 per 2 power}
 \newcommand{\damageranksevenhigh}[1]
-{1d10 per 2 power #1 damage}
+{1d10 #1 damage plus 1d10 per 2 power}
 \newcommand{\damageranksevenlow}[1]
-{6d6 #1 damage plus 1d6 per 3 power} % many options
+{7d10 #1 damage}
 
 \newcommand{\damagerankeight}[1]
-{4d10 #1 damage plus 1d10 per 3 power}
+{4d8 #1 damage plus 1d8 per 2 power}
 \newcommand{\damagerankeighthigh}[1]
-{2d10 #1 damage plus 1d10 per 2 power}
+{1d6 per power #1 damage}
 \newcommand{\damagerankeightlow}[1]
-{7d8 #1 damage plus 1d8 per 3 power} % many options
+{10d10 #1 damage}
 
 \newcommand{\damageranknine}[1]
-{4d10 #1 damage plus 1d10 per 2 power}
+{5d6 #1 damage plus 1d6 per power}
 \newcommand{\damagerankninehigh}[1]
-{1d6\plus1d10 per 2 power #1 damage}
+{1d8 per power #1 damage}
 \newcommand{\damagerankninelow}[1]
-{8d10 #1 damage plus 1d10 per 3 power} % many options
+{14d10 #1 damage}
 
 \newcommand{\critcondition}{\crit The condition must be removed an additional time before the effect ends.}

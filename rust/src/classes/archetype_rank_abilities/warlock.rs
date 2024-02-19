@@ -17,16 +17,17 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Abyssal Rebuke}
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
-                    You gain a \plus2 accuracy bonus with this attack against any creature that damaged you during the previous round.
+                    You gain a \plus2 accuracy bonus with this attack against any creature that attacked you during the previous round.
+                    If you suffered a vital wound from that attack, this bonus increases to \plus5.
                     \hit \damagerankone{fire}.
 
                     \rankline
-                    \rank{2} You gain a +1 accuracy bonus with the attack.
-                    \rank{3} The damage bonus from your \glossterm{power} increases to 1d6 per 4 power (minimum 1d6).
-                    \rank{4} The accuracy bonus increases to +2.
-                    \rank{5} The damage bonus from your power increases to 1d6 per 3 power.
-                    \rank{6} The base damage increases to 2d6.
-                    \rank{7} The damage bonus from your power increases to 1d6 per 2 power.
+                    \rank{2} The base damage increases to 1d8.
+                    \rank{3} The damage bonus from your \glossterm{power} increases to be equal to your power.
+                    \rank{4} You can choose an additional target within range.
+                    \rank{5} The damage bonus from your power increases to 1d8 per 3 power.
+                    \rank{6} The base damage increases to 2d8.
+                    \rank{7} The damage bonus from your power increases to 1d8 per 2 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(
@@ -216,7 +217,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
-                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1 per three \glossterm{power}.
+                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1 per two \glossterm{power}.
                     This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
@@ -243,7 +244,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Secret of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
 
-                    \subcf{Secret of Bloodsharing} The healing increases to 1d6 plus 1d6 per four \glossterm{power}.
+                    \subcf{Secret of Bloodsharing} The healing increases to 1d6 +1 per \glossterm{power}.
 
                     \subcf{Secret of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -260,7 +261,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
                     In addition, the defense bonus increases to \plus6.
 
-                    \parhead{Secret of Bloodsharing} The healing increases to 2d6 plus 1d6 per 3 power.
+                    \parhead{Secret of Bloodsharing} The healing increases to 1d8 plus 1d8 per 3 power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
@@ -697,14 +698,14 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You regain 1d6 \glossterm{damage resistance} plus 1d6 per 4 \glossterm{power}.
+                    You regain 1d8 \glossterm{damage resistance} \plus1 per \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
-                    \rank{4} The bonus recovery increases to 1d6 per 3 power.
-                    \rank{5} The base recovery increases to 2d6.
-                    \rank{6} The bonus recovery increases to 1d6 per 2 power.
-                    \rank{7} The base recovery increases to 4d6.
+                    \rank{4} The base recovery increases to 1d10.
+                    \rank{5} The bonus recovery increases to 1d8 per 3 power.
+                    \rank{6} The base recovery increases to 2d8.
+                    \rank{7} The bonus recovery increases to 1d8 per 2 power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
