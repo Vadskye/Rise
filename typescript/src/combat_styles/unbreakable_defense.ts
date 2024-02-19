@@ -176,7 +176,7 @@ export const unbreakableDefense: CombatStyle = {
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         Make a strike.
-        In addition, you regain 1d6 hit points plus 1d6 per 4 \\glossterm{power}.
+        In addition, you regain 1d6 hit points per 3 power (minimum 1d6).
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       rank: 3,
@@ -188,8 +188,8 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike}.
-        In addition, you regain 3d6 hit points plus 1d10 per 3 power.
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        In addition, you regain 1d8 hit points per 2 power.
         This ability does not have the \\abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
       `,
       rank: 7,

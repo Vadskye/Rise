@@ -272,7 +272,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your attack result beats a target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
+        If your attack result beats the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to your power.
       `,
       rank: 3,
     },
@@ -281,8 +281,8 @@ export const dirtyFighting: CombatStyle = {
       name: 'Fake-Out Assault+',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If your attack result beats a target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
+        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        If your attack result beats the target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 2 power.
       `,
       rank: 7,
     },

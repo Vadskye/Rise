@@ -428,23 +428,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Ancestry feat.
 
-        \magicalff[1]{Rebuke Evil} You can use the \textit{rebuke evil} ability as a standard action.
-        \begin{magicalactiveability}{Rebuke Evil}
-            \rankline
-            Make an attack vs. Mental against one creature or object within \rngmed range.
-            You gain a \plus2 accuracy bonus to this attack against evil creatures, and against any creature that damaged any of your \glossterm{allies} during the previous round.
-            \hit \damagerankone{energy}.
-
-            \rankline
-            \featlevel{3} You gain a +1 accuracy bonus with the attack.
-            \featlevel{6} The damage bonus from your \glossterm{power} increases to 1d6 per 4 power (minimum 1d6).
-            \featlevel{9} The accuracy bonus increases to +2.
-            \featlevel{12} The damage bonus from your power increases to 1d6 per 3 power.
-            \featlevel{15} The base damage increases to 2d6.
-            \featlevel{18} The damage bonus from your power increases to 1d6 per 2 power.
-            % Not obviously the correct scaling
-            % \featlevel{21} The base damage increases to 5d6.
-        \end{magicalactiveability}
+        \magicalff[1]{Celestial Benevolence} When you cause an \glossterm{ally} to regain hit points, you can choose to lose any number of hit points, to a minimum of 0 remaining hit points.
+        If you do, that ally regains that many hit points, up to their normal maximum.
+        When you cause an ally to regain damage resistance, you can transfer your own damage resistance to them in the same way.
+        You can only use this ability once per round.
+        If this ability is triggered by a \abilitytag{Swift} effect, the transfer is also Swift.
 
         \magicalff[6]{Healing Radiance} When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
         % TODO: unclear scaling
@@ -779,13 +767,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
             % Prefer d10s for high variance
             \rankline
             \featlevel{3} The base damage increases to 1d10.
-            \featlevel{6} The damage bonus from your \glossterm{power} increases to 1d10 per 5 power (minimum 1d10).
-            \featlevel{9} The damage bonus increases to 1d10 per 4 power.
-            \featlevel{12} The base damage increases to 2d10.
-            \featlevel{15} The damage bonus increases to 1d10 per 3 power.
-            \featlevel{18} The base damage increases to 4d10.
-            % unclear scaling
-            % \featlevel{21} The base damage increases to 6d10.
+            \featlevel{6} The damage bonus from your \glossterm{power} increases to 1d6 per 3 power.
+            \featlevel{9} The base damage increases to 2d6.
+            \featlevel{12} The damage bonus from your \glossterm{power} increases to 1d10 per 3 power.
+            \featlevel{15} The base damage increases to 2d10.
+            \featlevel{18} The damage bonus from your \glossterm{power} increases to 1d10 per 2 power.
         \end{magicalactiveability}
 
         \magicalff[6]{Friend of Chaos} Whenever you roll to determine a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
@@ -892,13 +878,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Make a melee \glossterm{strike}.
             The attack is made against the target's Reflex defense instead of its Armor defense.
             You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
-            If the target takes damage and your attack result beats its Fortitude defense, it is \slowed as a \glossterm{condition}.
+            \hit If the target takes damage and your attack result beats its Fortitude defense, it is \slowed as a \glossterm{condition}.
 
             \rankline
             \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
-            \featlevel{12} The extra damage increases to 2d6.
-            \featlevel{15} The extra damage increases to 2d6 plus 1d6 per 4 \glossterm{power}.
-            \featlevel{18} The extra damage increases to 2d8 plus 1d8 per 4 \glossterm{power}.
+            \featlevel{12} The extra damage increases to 1d6 \plus1 per 2 power.
+            \featlevel{15} The extra damage increases to 2d8 \plus1 per 2 power.
+            \featlevel{18} The extra damage increases to 2d8 \add 1d8 per 3 power.
         \end{magicalactiveability}
 
         \magicalff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
@@ -921,11 +907,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Each secondary target must still be adjacent to you unless you are using a \weapontag{Long} weapon (see \pcref{Weapon Tags}).
 
         \ff[6]{Power Attack} Once per round, when you make a \glossterm{melee} strike with a weapon that you use with two hands, you may take a \minus2 accuracy penalty.
-        If you do, the strike deals 1d6 \glossterm{extra damage} per 4 \glossterm{power} (minimum 1d6).
+        If you do, the strike deals \glossterm{extra damage} equal to your power.
+        After using this ability, you \glossterm{briefly} suffer a \minus1 penalty to your Armor and Reflex defenses.
 
         \ff[12]{Cleave+} You instead gain the Sweeping (2) tag, or you increase the existing tag's value by 2.
 
         \ff[18]{Power Attack+} The damage from your \textit{power attack} ability increases to 1d6 per 3 \glossterm{power}.
+        In addition, the defense penalty is removed.
     \end{feat}
 
     \begin{feat}{Herbalist}{General}
@@ -1011,10 +999,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
             In addition, if you move through a creature's space, it takes \damageranktwo{bludgeoning}.
 
             \rankline
-            \featlevel{9} The damage bonus from your \glossterm{power} increases to 1d6 per 4 power (minimum 1d6).
-            \featlevel{12} The base damage increases to 2d6.
-            \featlevel{15} The damage bonus increases to 1d6 per 3 power.
-            \featlevel{18} The damage bonus increases to 1d10 per 3 power.
+            \featlevel{9} The damage bonus from your \glossterm{power} increases to be equal to your power.
+            \featlevel{12} The base damage increases to 1d10.
+            \featlevel{15} The damage bonus increases to 1d8 per 3 power.
+            \featlevel{18} The base damage increases to 2d8.
         \end{activeability}
 
         \ff[12]{Unblockable} Your attacks deal double damage to walls, doors, and similar vertical obstructions that block passage.
@@ -2226,19 +2214,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{magicalactiveability}{Mental Assault}[\abilitytag{Compulsion}]
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
-            You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
+            You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
             \hit \damagerankone{psychic}.
             If the target loses \glossterm{hit points} from this damage, it becomes \stunned as a \glossterm{condition}.
 
             \rankline
-            % increase to d3l
-            \featlevel{9} The damage bonus from your \glossterm{power} increases to 1d6 per 4 power (minimum 1d6).
-            % increase to d4l
-            \featlevel{12} The base damage increases to 1d10.
-            % increase to d5ish
-            \featlevel{15} The damage bonus increases to 1d6 per 3 power.
+            % increase to d2
+            \featlevel{9} The base damage increases to 1d8.
+            % increase to d3
+            \featlevel{12} The damage bonus from your power increases to be equal to your power.
+            % increase to d4ish
+            \featlevel{15} The base damage increases to 2d6.
             % at r7, can upgrade condition
-            \featlevel{18} The target is \confused instead of stunned.
+            \featlevel{18} The target becomes \confused instead of stunned.
         \end{magicalactiveability}
 
         \magicalff[12]{Read Mind} You can use the \textit{read mind} ability as a standard action.
@@ -2391,10 +2379,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \miss Half damage.
 
             \rankline
-            \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
-            \featlevel{12} The strike deals 1d6 \glossterm{extra damage}.
-            \featlevel{15} The extra damage increases to 1d6 per 4 \glossterm{power}.
-            \featlevel{18} The extra damage increases to 1d6 per 3 \glossterm{power}.
+            \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
+            \featlevel{12} The extra damage increases to 1d6 per 3 power (minimum 1d6).
+            \featlevel{15} The extra damage increases to 1d8 per 3 power.
+            \featlevel{18} The strike deals double \glossterm{weapon damage}.
         \end{sustainability}
 
         \ff[12]{Eye of the Storm} You take no penalties for \squeezing with other creatures.

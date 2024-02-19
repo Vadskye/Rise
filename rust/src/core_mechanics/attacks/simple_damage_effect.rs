@@ -73,7 +73,7 @@ impl SimpleDamageEffect {
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_plus1_modifier: 2,
+                power_per_plus1_modifier: 3,
             }],
         }
         .damage_effect()
@@ -110,9 +110,9 @@ impl SimpleDamageEffect {
             base_dice: DicePool::d8(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 4,
-                power_per_plus1_modifier: 0,
+                dice: None,
+                power_per_dice: 0,
+                power_per_plus1_modifier: 1,
             }],
         }
         .damage_effect()
@@ -120,11 +120,11 @@ impl SimpleDamageEffect {
 
     pub fn dr4(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d8(),
+            base_dice: DicePool::d10(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d8()),
-                power_per_dice: 4,
+                dice: Some(DicePool::d6()),
+                power_per_dice: 3,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -133,10 +133,10 @@ impl SimpleDamageEffect {
 
     pub fn dr5(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(2, 6),
+            base_dice: DicePool::d8(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
+                dice: Some(DicePool::d8()),
                 power_per_dice: 3,
                 power_per_plus1_modifier: 0,
             }],
@@ -146,10 +146,10 @@ impl SimpleDamageEffect {
 
     pub fn dr6(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(1, 10),
+            base_dice: DicePool::xdy(2, 8),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
+                dice: Some(DicePool::d8()),
                 power_per_dice: 3,
                 power_per_plus1_modifier: 0,
             }],
@@ -159,11 +159,11 @@ impl SimpleDamageEffect {
 
     pub fn dr7(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(2, 10),
+            base_dice: DicePool::xdy(2, 8),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 3,
+                dice: Some(DicePool::d8()),
+                power_per_dice: 2,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -172,11 +172,11 @@ impl SimpleDamageEffect {
 
     pub fn dr8(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(4, 10),
+            base_dice: DicePool::xdy(4, 8),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 3,
+                dice: Some(DicePool::d8()),
+                power_per_dice: 2,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -185,11 +185,11 @@ impl SimpleDamageEffect {
 
     pub fn dr9(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(4, 10),
+            base_dice: DicePool::xdy(5, 6),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 2,
+                dice: Some(DicePool::d6()),
+                power_per_dice: 1,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -222,11 +222,11 @@ impl SimpleDamageEffect {
 
     pub fn dr2h(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d6(),
+            base_dice: DicePool::empty(),
             damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
-                power_per_dice: 4,
+                power_per_dice: 3,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -238,8 +238,8 @@ impl SimpleDamageEffect {
             base_dice: DicePool::d6(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d8()),
-                power_per_dice: 4,
+                dice: Some(DicePool::d6()),
+                power_per_dice: 3,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -261,11 +261,11 @@ impl SimpleDamageEffect {
 
     pub fn dr5h(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::empty(),
+            base_dice: DicePool::d6(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 3,
+                dice: Some(DicePool::d6()),
+                power_per_dice: 2,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -287,7 +287,7 @@ impl SimpleDamageEffect {
 
     pub fn dr7h(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::empty(),
+            base_dice: DicePool::d10(),
             damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
@@ -300,11 +300,11 @@ impl SimpleDamageEffect {
 
     pub fn dr8h(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(2, 10),
+            base_dice: DicePool::empty(),
             damage_types,
             power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 2,
+                dice: Some(DicePool::d6()),
+                power_per_dice: 1,
                 power_per_plus1_modifier: 0,
             }],
         }
@@ -317,13 +317,8 @@ impl SimpleDamageEffect {
             damage_types,
             power_scalings: vec![
                 PowerScaling {
-                    dice: Some(DicePool::d10()),
-                    power_per_dice: 2,
-                    power_per_plus1_modifier: 0,
-                },
-                PowerScaling {
-                    dice: Some(DicePool::d6()),
-                    power_per_dice: 2,
+                    dice: Some(DicePool::d8()),
+                    power_per_dice: 1,
                     power_per_plus1_modifier: 0,
                 },
             ],
@@ -351,117 +346,81 @@ impl SimpleDamageEffect {
 impl SimpleDamageEffect {
     pub fn dr1l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d8(),
+            base_dice: DicePool::d10(),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: None,
-                power_per_dice: 0,
-                power_per_plus1_modifier: 2,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr2l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d10(),
+            base_dice: DicePool::xdy(2, 6),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: None,
-                power_per_dice: 0,
-                power_per_plus1_modifier: 2,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr3l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d8(),
+            base_dice: DicePool::xdy(2, 10),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 4,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr4l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::d10(),
+            base_dice: DicePool::xdy(4, 6),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 4,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr5l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(2, 8),
+            base_dice: DicePool::xdy(6, 6),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 4,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr6l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(4, 6),
+            base_dice: DicePool::xdy(5, 10),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 4,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr7l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(6, 6),
+            base_dice: DicePool::xdy(7, 10),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d6()),
-                power_per_dice: 3,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr8l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(7, 8),
+            base_dice: DicePool::xdy(10, 10),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d8()),
-                power_per_dice: 3,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }
 
     pub fn dr9l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
-            base_dice: DicePool::xdy(8, 10),
+            base_dice: DicePool::xdy(14, 10),
             damage_types,
-            power_scalings: vec![PowerScaling {
-                dice: Some(DicePool::d10()),
-                power_per_dice: 3,
-                power_per_plus1_modifier: 0,
-            }],
+            power_scalings: vec![],
         }
         .damage_effect()
     }

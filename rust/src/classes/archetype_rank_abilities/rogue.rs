@@ -273,15 +273,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit \damagerankone{psychic}.
+                        \hit 1d10 psychic damage.
 
                         \rankline
-                        \rank{2} The base damage increases to 1d8.
-                        \rank{3} The base damage increases to 2d6.
-                        \rank{4} The base damage increases to 2d10.
-                        \rank{5} The damage bonus from your power increases to 1d6 per 4 power.
-                        \rank{6} The base damage increases to 4d8.
-                        \rank{7} The base damage increases to 5d10.
+                        \rank{2} The damage increases to 2d6.
+                        \rank{3} The damage increases to 2d10.
+                        \rank{4} The damage increases to 4d6.
+                        \rank{5} The damage increases to 6d6.
+                        \rank{6} The damage increases to 5d10.
+                        \rank{7} The damage increases to 7d10.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
@@ -329,16 +329,16 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d6 \glossterm{damage resistance} +1 per two \glossterm{power} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d10 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
-                        \rank{2} The base recovery increases to 1d8.
-                        \rank{3} The base recovery increases to 2d6.
-                        \rank{4} The base recovery increases to 2d10.
-                        \rank{5} The bonus recovery increases to 1d6 per 4 power.
-                        \rank{6} The base recovery increases to 4d8.
-                        \rank{7} The base recovery increases to 5d10.
+                        \rank{2} The recovery increases to 2d6.
+                        \rank{3} The recovery increases to 2d10.
+                        \rank{4} The recovery increases to 4d6.
+                        \rank{5} The recovery increases to 6d6.
+                        \rank{6} The recovery increases to 5d10.
+                        \rank{7} The recovery increases to 7d10.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Partita of Provocation}[\abilitytag{Auditory}, \abilitytag{Emotion}]

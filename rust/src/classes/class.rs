@@ -1478,15 +1478,17 @@ impl Class {
                         \parhead{Aspect} You can use the \textit{destructive strike} ability as a standard action.
                         \begin{magicalactiveability}{Destructive Strike}
                             \rankline
-                            Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                            Make a \glossterm{strike}.
+                            You do not gain the normal weapon damage bonus of +1 per two power.
+                            Instead, you gain \glossterm{extra damage} equal to 1d4 per 3 power (minimum 1d4).
                             You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
                             This strike deals double damage to objects.
 
                             \rankline
-                            \rank{4} The extra damage increases to 1d4 per 4 \glossterm{power} (minimum 1d4).
-                            \rank{5} The extra damage increases to 1d6 per 4 power.
-                            \rank{6} The extra damage increases to 1d6 per 3 power.
-                            \rank{7} The extra damage increases to 1d10 per 3 power.
+                            \rank{4} The extra damage increases to 1d6 per 3 power (minimum 1d6).
+                            \rank{5} Your \glossterm{weapon damage} is doubled.
+                            \rank{6} The extra damage increases to 1d8 per 3 power.
+                            \rank{7} The extra damage increases to 1d8 per 2 power.
                         \end{magicalactiveability}
                         \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
                         \begin{magicalactiveability}{Lay Waste}
