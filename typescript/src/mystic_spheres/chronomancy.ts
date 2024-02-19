@@ -561,10 +561,10 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'rewind damage',
-        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
+        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
       },
       rank: 5,
-      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
+      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 

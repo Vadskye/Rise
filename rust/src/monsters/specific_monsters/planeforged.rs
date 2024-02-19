@@ -242,7 +242,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                             Once, a group of thugs and murderers broke through a magic seal guarding an ancient wizard's tower, intending to loot everything inside.
                             They were shocked when a justicar suddenly appeared in front of them, and prepared to fight for their lives.
                             However, the justicar ignored them.
-                            Instead, it murdered the ancient wizard of the tower and disappeared, leaving the spoils to the evildoers who broke the seal.
+                            Instead, it killed the ancient wizard of the tower and disappeared, leaving the spoils to the evildoers who broke the seal.
 
                             This is the morality of a justicar.
                             They consider only truly immense evils to be worthy of their attention, and ignore all lesser sins.

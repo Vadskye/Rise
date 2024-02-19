@@ -454,10 +454,10 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 2d6 plus 1d6 per 3 power.',
+        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
       },
       rank: 5,
-      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 5.' },
+      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
@@ -480,7 +480,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
         % d3
-        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} plus 1d6 per 4 \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d8 plus your \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,

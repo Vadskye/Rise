@@ -362,9 +362,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             active_abilities: vec![
                 ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::tentacle())),
             ],
-            modifiers: vec![
-                Modifier::Maneuver(Maneuver::GraspingStrike),
-            ],
+            modifiers: vec![],
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),

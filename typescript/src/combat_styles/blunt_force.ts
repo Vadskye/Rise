@@ -72,7 +72,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
         It targets everything supported by that surface in a \\largearea cone from you.
-        You take a -1 accuracy penalty with the strike, but it deals 1d6 \\glossterm{extra damage} per 4 \\glossterm{power}.
+        You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
         On a miss, you still deal half damage.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
       `,
@@ -84,7 +84,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats the target's Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against that target.
+        If your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your power.
       `,
       rank: 3,
     },
@@ -94,7 +94,7 @@ export const bluntForce: CombatStyle = {
 
       effect: `
         Make a strike using a bludgeoning weapon.
-        If your attack result beats its Fortitude defense, the strike deals 1d10 \\glossterm{extra damage} per 3 power against that target.
+        If your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your power.
       `,
       rank: 7,
     },
@@ -231,7 +231,7 @@ export const bluntForce: CombatStyle = {
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
         Make a \\glossterm{strike} using a bludgeoning weapon.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6).
+        The strike deals \\glossterm{extra damage} equal to your power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
@@ -243,8 +243,8 @@ export const bluntForce: CombatStyle = {
       effect: `
         After you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        Make a \\glossterm{strike} using a bludgeoning weapon.
-        The strike deals 1d10 \\glossterm{extra damage} per 3 power.
+        Make a \\glossterm{strike} using a bludgeoning weapon with double \\glossterm{weapon damage}.
+        The strike deals 1d8 \\glossterm{extra damage} per 3 power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 5,

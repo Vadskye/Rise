@@ -59,7 +59,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        The strike deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6) against each creature that you dealt damage to with a \\glossterm{strike} last round.
+        The strike deals \\glossterm{extra damage} equal to your power against each creature that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
     },
@@ -101,7 +101,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals 1d6 \\glossterm{extra damage} per 4 power (minimum 1d6).
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
         After using this maneuver, you \\glossterm{briefly} cannot use it again.
       `,
       rank: 3,

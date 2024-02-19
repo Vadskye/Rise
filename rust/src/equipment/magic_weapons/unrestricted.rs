@@ -145,11 +145,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> using this weapon that uses your own blood to fuel its power.
             When you do, you lose 4 \glossterm<hit points>.
+            The strike's minimum accuracy is $accuracy.
             The strike deals double weapon damage.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can spend 8 HP for triple damage", r"
                 Your weapon damage is tripled instead of doubled, but the hit point loss increases to 8.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -201,6 +203,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can briefly teleport next to struck creature"),
         description: String::from(r"
             As a standard action, you can make a \glossterm{strike} using this weapon.
+            The strike's minimum accuracy is $accuracy.
             If the target takes damage, you can apply a dimensional trace on it that lasts \glossterm{briefly}.
             While the dimensional trace lasts, you can activate this weapon as a \glossterm{minor action}.
             When you do, you \glossterm{teleport} into the closest unoccupied square adjacent to that creature, if such a space exists within \medrange.
@@ -338,17 +341,20 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Can attack with +1d4 damage to steal HP"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon with 1d4 \glossterm<extra damage>.
-            Damage dealt by the strike is energy damage in addition to its other types.
+            As a standard action, you can make a \glossterm<strike> using this weapon.
+            The strike's minimum accuracy is $accuracy.
+            The strike deals 1d4 \glossterm{extra damage}, and damage dealt by the strike is energy damage in addition to its other types.
             If a living creature loses \glossterm{hit points} from this strike, you can increase your \glossterm{fatigue level} by one.
             When you do, you regain $dr3 hit points.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can attack with +2d8 damage to steal HP", r"
                 The extra damage increases to 2d8, and the healing increases to $dr5.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             ItemUpgrade::new(7, "Can attack with +5d10 damage to steal HP", r"
                 The extra damage increases to 5d10, and the healing increases to $dr7.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         tags: vec![AbilityTag::Exertion],
@@ -361,13 +367,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can attack with +3 accuracy"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> with a +3 accuracy bonus using this weapon.
-            Your minimum accuracy with the strike is is $accuracy+3.
+            Your minimum accuracy with the strike is $accuracy+3.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can attack with +6 accuracy", r"
                 The accuracy bonus increases to +6, and the minimum accuracy increases to $accuracy+6.
             "),
-            ItemUpgrade::new(7, "Can attack with +10 damage" , r"
+            ItemUpgrade::new(7, "Can attack with +10 accuracy" , r"
                 The accuracy bonus increases to +10, and the minimum accuracy increases to $accuracy+10.
             "),
         ],
@@ -415,9 +421,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // A normal maneuver can deal 1d6 per 4 power if you beat an extra defense.
-    // A rank 3 item would deal 1d6 damage with that scaling.
-    // Assuming +2 power from delayed damage, that increases to 2d6.
+    // Target is 125% of High power scaling damage without significant power investment, but with
+    // hitting an extra defense, damage delay, and item slot.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Flaming"),
         rank: 3,
@@ -428,17 +433,18 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             All damage dealt with it is fire damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with fiery energy.
+            The strike's minimum accuracy is $accuracy.
             Each damaged creature burns if your attack result beats its Reflex defense.
             A burning creature takes 2d6 fire damage during your next action.
         "),
         upgrades: vec![
-            // Standard is 1d8 per 3 power, or 3d8. With +2 power from delayed damage, 4d8.
             ItemUpgrade::new(5, "Deals fire damage and can ignite", r"
-                The burning damage increases to 4d8 fire damage.
+                The burning damage increases to 4d10 fire damage.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
-            // Standard is 1d10 per 2 power, or 7d10. With +2 power from delayed damage, 8d10.
             ItemUpgrade::new(7, "Deals fire damage and can ignite", r"
-                The burning damage increases to 8d10 fire damage.
+                The burning damage increases to 9d10 fire damage.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -454,7 +460,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             All damage dealt with it is electricity damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with electrical energy.
-            The strike \glossterm<chains> once.
+            The strike's minimum accuracy is $accuracy.
+            It \glossterm<chains> once.
             Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
         "),
         // The baseline r3 strike deals (71%/69%) single-target damage.
@@ -465,10 +472,12 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             // 2d6 extra gives (13.6/16.8) damage, or (97%/75%)
             ItemUpgrade::new(5, "Deals electricity damage and can chain", r"
                 The chaining strike also deals 2d6 \glossterm{extra damage}.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             // 4d10 extra gives (30.2/34.5) damage, or (108%/77%)
             ItemUpgrade::new(7, "Deals electricity damage and can chain", r"
                 The chaining strike's \glossterm{extra damage} increases to 4d10.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -483,6 +492,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             All damage dealt with it is cold damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with frigid energy.
+            The strike's minimum accuracy is $accuracy.
             % TODO: wording? Creatures immune to cold damage should not be slowed.
             If the target loses hit points from cold damage, it is \slowed as a \glossterm{condition}.
         "),
@@ -490,11 +500,13 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             // At this point, the strike deals (59%/56%) damage.
             ItemUpgrade::new(4, "Deals cold damage and can slow", r"
                 The target of the strike is slowed if it takes cold damage, even if it does not lose hit points.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             // With 2d10, it deals (92%/69%) damage, which is about on par with "double weapon
             // damage".
-            ItemUpgrade::new(6, "Deals electricity damage and can chain", r"
+            ItemUpgrade::new(6, "Deals cold damage and can slow", r"
                 The frigid strike also deals 2d10 \glossterm{extra damage}.
+                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         ..MagicWeapon::default()

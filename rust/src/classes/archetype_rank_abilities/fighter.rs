@@ -63,15 +63,15 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \textit{disciplined strike} ability.
                 \begin{activeability}{Disciplined Strike}
                     \rankline
-                    Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                    Make a \glossterm{strike} with 1d6 \glossterm{extra damage}.
                     You cannot get a \glossterm{critical hit} with this strike.
                     \miss Half damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d8.
-                    \rank{5} The extra damage increases to 2d8.
-                    \rank{6} The extra damage increases to 3d10.
-                    \rank{7} The extra damage increases to 5d10.
+                    \rank{4} The extra damage increases to 1d10.
+                    \rank{5} The \glossterm{weapon damage} is doubled.
+                    \rank{6} The extra damage increases to 2d10.
+                    \rank{7} The \glossterm{weapon damage} is tripled.
                 \end{activeability}
             ",
             modifiers: None,

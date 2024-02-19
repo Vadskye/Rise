@@ -259,19 +259,18 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
                     The target regains 1d6 \glossterm{hit points} +1 per 2 power.
-                    In addition, it can remove one poison or disease affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
+                    In addition, it removes all poisons and diseases affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
-                    % TODO: define when you can make this decision - after learning all damage and healing? don't want to waste fatigue
 
                     \rankline
                     \rank{2} The base healing increases to 1d8.
-                    \rank{3} The bonus healing increases to 1d6 per 4 power.
-                    \rank{4} The base healing increases to 2d6.
-                    \rank{5} The bonus healing increases to 1d10 per 4 power.
-                    \rank{6} The base healing increases to 2d10.
-                    \rank{7} The bonus healing increases to 1d10 per 3 power.
+                    \rank{3} The bonus healing increases to \plus1 per power.
+                    \rank{4} The base healing increases to 1d10.
+                    \rank{5} The bonus healing increases to 1d8 per 3 power.
+                    \rank{6} The base healing increases to 2d8.
+                    \rank{7} The bonus healing increases to 1d8 per 2 power.
                 \end{magicalactiveability}
 
             ",
@@ -377,17 +376,17 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Smite}
                     \rankline
                     Make a \glossterm{strike}.
-                    You add your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
-                    If the target has your devoted alignment, this attack deals no damage, and you take energy damage equal to your power with it.
+                    You add half your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
+                    If the target has your devoted alignment, you take energy damage equal to your power with this strike.
 
                     \rankline
-                    \rank{2} The attack deals full damage even if the target has your devoted alignment.
+                    \rank{2} You add your full Strength instead of half your Strength.
                     \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
-                    Instead, you gain 1d6 extra damage per 4 power (minimum 1d6).
+                    Instead, you gain 1d4 extra damage per 3 power (minimum 1d4).
                     \rank{4} The extra damage increases to 1d6 per 3 power.
-                    \rank{5} The extra damage increases to 1d8 per 3 power.
-                    \rank{6} You gain a +2 accuracy bonus with the strike.
-                    \rank{7} The extra damage increases to 1d10 per 3 power.
+                    \rank{5} The \glossterm{weapon damage} is doubled.
+                    \rank{6} The extra damage increases to 1d8 per 3 power.
+                    \rank{7} The extra damage increases to 1d8 per 2 power.
                 \end{magicalactiveability}
             ",
             // TODO: represent special attacks

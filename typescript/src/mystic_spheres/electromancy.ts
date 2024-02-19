@@ -204,8 +204,8 @@ export const electromancy: MysticSphere = {
       name: 'Energize',
 
       effect: `
-        Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 4 power, and increases its \\glossterm{fatigue level} by one.
+        Chose yourself or one \\glossterm{ally} within \\shortrange.
+        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 3 power, and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 3,
@@ -217,12 +217,12 @@ export const electromancy: MysticSphere = {
       name: 'Empowered Energize',
 
       effect: `
-        Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 3 power, and increases its \\glossterm{fatigue level} by one.
+        Chose yourself or one \\glossterm{ally} within \\shortrange.
+        The target regains 1d8 per 2 power \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,
-      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
+      scaling: { special: 'The recovery increases by 2d8 for each rank beyond 6.' },
       tags: ['Swift'],
     },
 

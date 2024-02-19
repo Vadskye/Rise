@@ -22,7 +22,7 @@ pub enum Maneuver {
     CertainStrike,
     CertainStrikePlus,
     ElementalStrike(i32),
-    GenericScalingStrike(i32),
+    GenericExtraDamage(i32),
     GraspingStrike,
     GraspingStrikePlus,
     Hamstring,
@@ -111,7 +111,7 @@ impl Maneuver {
                     }),
                     _ => {},
                 }),
-            Self::GenericScalingStrike(rank) => weapon
+            Self::GenericExtraDamage(rank) => weapon
                 .attack()
                 // +1a at rank 2 and rank 3
                 .except(|a| a.accuracy += max(0, min(2, rank - 1)))
@@ -293,7 +293,7 @@ impl Maneuver {
             Self::CertainStrike => with_prefix("Certain", weapon_name),
             Self::DoubleStrike => with_prefix("Double", weapon_name),
             Self::ElementalStrike(_) => with_prefix("Elemental", weapon_name),
-            Self::GenericScalingStrike(_) => with_prefix("Generic Scaling", weapon_name),
+            Self::GenericExtraDamage(_) => with_prefix("Generic Scaling", weapon_name),
             Self::GraspingStrike => with_prefix("Grasping", weapon_name),
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
             Self::PowerStrike => with_prefix("Powerful", weapon_name),
@@ -313,7 +313,7 @@ impl Maneuver {
             Self::CertainStrike => "Certain Strike",
             Self::CertainStrikePlus => "Certain Strike+",
             Self::ElementalStrike(_) => "Elemental Strike",
-            Self::GenericScalingStrike(_) => "Generic Scaling Strike",
+            Self::GenericExtraDamage(_) => "Generic Scaling Strike",
             Self::GraspingStrike => "Grasping Strike",
             Self::GraspingStrikePlus => "Grasping StrikePlus",
             Self::Hamstring => "Hamstring",
@@ -340,7 +340,7 @@ impl Maneuver {
             Self::CertainStrike => 1,
             Self::CertainStrikePlus => 5,
             Self::ElementalStrike(r) => *r,
-            Self::GenericScalingStrike(r) => *r,
+            Self::GenericExtraDamage(r) => *r,
             Self::GraspingStrike => 1,
             Self::GraspingStrikePlus => 5,
             Self::Hamstring => 3,

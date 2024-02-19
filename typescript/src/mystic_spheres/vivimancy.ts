@@ -66,7 +66,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal grasp',
         // healing is dr4h
-        exceptThat: 'the damage increases to \\damageranksixhigh{energy}, and the healing increases to 1d8 per 3 power.',
+        exceptThat: 'the damage increases to \\damageranksix{energy}, and the healing increases to 1d8 per 3 power.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -138,7 +138,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr7h
-        The target regains 1d10 \\glossterm{hit points} per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 \\glossterm{hit points} plus 1d10 per 2 power and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
       tags: ['Swift'],

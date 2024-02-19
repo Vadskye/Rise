@@ -556,21 +556,36 @@ export const cryomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike}.
+        Make a melee or thrown \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Damage dealt by the strike is cold damage in addition to its normal damage types.
-        If your attack result beats a target's Fortitude defense, the strike deals 1d6 \\glossterm{extra damage} per four \\glossterm{power} (minimum 1d6).
       `,
-      rank: 3,
+      rank: 1,
       scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Cryostrike+',
+      name: 'Mighty Cryostrike',
 
       functionsLike: {
-        name: 'cryostrike',
-        exceptThat: 'the extra damage increases to 1d8 per 2 power.',
+        name: "cryostrike",
+        exceptThat: `
+          if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your \\glossterm{power}.
+        `,
+      },
+      rank: 4,
+      scaling: 'accuracy',
+      tags: [],
+    },
+    {
+      name: 'Mighty Cryostrike+',
+
+      functionsLike: {
+        name: "cryostrike",
+        exceptThat: `
+          the strike deals double \\glossterm{weapon damage}.
+          In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d10 per 2 power.
+        `,
       },
       rank: 7,
       // scaling: 'accuracy',
