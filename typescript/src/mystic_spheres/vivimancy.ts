@@ -501,7 +501,7 @@ export const vivimancy: MysticSphere = {
         hit: `\\damagerankone{energy}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of death within \\medrange.
-          Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
+          Whenever a living creature passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Fortitude against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
