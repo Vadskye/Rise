@@ -94,7 +94,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             description: "",
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::CertainStrike),
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(1)),
+                Modifier::Maneuver(Maneuver::GenericExtraDamage(1)),
                 Modifier::Maneuver(Maneuver::PowerStrike),
             ]),
         },
@@ -103,7 +103,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             is_magical: false,
             rank: 3,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericScalingStrike(3))]),
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericExtraDamage(3))]),
         },
         RankAbility {
             name: "Maneuvers",
@@ -111,7 +111,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             rank: 5,
             description: "",
             modifiers: Some(vec![
-                Modifier::Maneuver(Maneuver::GenericScalingStrike(5)),
+                Modifier::Maneuver(Maneuver::GenericExtraDamage(5)),
                 Modifier::Maneuver(Maneuver::PowerStrikePlus),
                 Modifier::Maneuver(Maneuver::CertainStrikePlus),
             ]),
@@ -121,7 +121,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericScalingStrike(7))]),
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericExtraDamage(7))]),
         },
     ]);
 }
