@@ -244,15 +244,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Crashing Cacaphony}[\abilitytag{Auditory}]
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit \damagerankone{bludgeoning}.
+                        \hit \damagerankonelow{bludgeoning}.
                         \miss Half damage.
 
                         \rankline
-                        \rank{2} The damage increases to \damageranktwo{bludgeoning}.
+                        \rank{2} The damage increases to \damageranktwolow{bludgeoning}.
                         \rank{3} The area increases to a \smallarea radius.
-                        \rank{4} The damage increases to \damagerankthree{bludgeoning}.
+                        \rank{4} The damage increases to \damagerankthreelow{bludgeoning}.
                         \rank{5} The area increases to a \medarea radius.
-                        \rank{6} The damage increases to \damagerankfive{bludgeoning}.
+                        \rank{6} The damage increases to \damagerankfivelow{bludgeoning}.
                         \rank{7} The area increases to a \largearea radius.
                     \end{magicalactiveability}
 
