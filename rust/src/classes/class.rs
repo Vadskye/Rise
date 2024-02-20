@@ -1485,7 +1485,7 @@ impl Class {
                             This strike deals double damage to objects.
 
                             \rankline
-                            \rank{4} The extra damage increases to 1d6 per 3 power (minimum 1d6).
+                            \rank{4} The extra damage increases to 1d6 per 3 power.
                             \rank{5} Your \glossterm{weapon damage} is doubled.
                             \rank{6} The extra damage increases to 1d8 per 3 power.
                             \rank{7} The extra damage increases to 1d8 per 2 power.
