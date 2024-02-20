@@ -15,8 +15,8 @@ const BASE_CLASS_MODIFIERS = {
     damage_resistance: 0.25,
     hit_points: 'very high',
     fortitude: 5,
-    reflex: 3,
-    mental: 4,
+    reflex: 4,
+    mental: 3,
   },
   skirmisher: {
     armor_defense: 4,
