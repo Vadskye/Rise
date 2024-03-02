@@ -499,6 +499,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damagerankone{energy}.`,
+        missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of death within \\medrange.
           Whenever a living creature passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
