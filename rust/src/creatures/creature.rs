@@ -129,6 +129,10 @@ impl Creature {
         }
         active_abilities
     }
+
+    pub fn set_name(&mut self, name: &str) {
+        self.name = Some(name.to_string());
+    }
 }
 
 pub fn calculate_standard_rank(level: i32) -> i32 {
