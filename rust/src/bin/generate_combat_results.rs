@@ -35,8 +35,8 @@ struct StandardCombatResult {
     level: i32,
     monster_count: i32,
     // All fields from CombatResult
-    blue_accuracy: f64,
-    red_accuracy: f64,
+    blue_hit_probability: f64,
+    red_hit_probability: f64,
     blue_damage_per_round: i32,
     blue_living_count: usize,
     blue_rounds_to_live: f64,
@@ -60,8 +60,8 @@ fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult 
     return StandardCombatResult {
         level,
         monster_count,
-        blue_accuracy: combat_result.blue_accuracy,
-        red_accuracy: combat_result.red_accuracy,
+        blue_hit_probability: combat_result.blue_hit_probability,
+        red_hit_probability: combat_result.red_hit_probability,
         blue_damage_per_round: combat_result.blue_damage_per_round,
         blue_living_count: combat_result.blue_living_count,
         blue_rounds_to_live: combat_result.blue_rounds_to_live,
@@ -86,8 +86,8 @@ fn run_standard_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     return StandardCombatResult {
         level,
         monster_count,
-        blue_accuracy: combat_result.blue_accuracy,
-        red_accuracy: combat_result.red_accuracy,
+        blue_hit_probability: combat_result.blue_hit_probability,
+        red_hit_probability: combat_result.red_hit_probability,
         blue_damage_per_round: combat_result.blue_damage_per_round,
         blue_living_count: combat_result.blue_living_count,
         blue_rounds_to_live: combat_result.blue_rounds_to_live,
