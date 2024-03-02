@@ -13,7 +13,7 @@
                 \pari \textbf{HP} 12
                     \monsep \textbf{DR} 6
                 \pari \textbf{Defenses}
-                    Armor 6
+                    Armor 5
                     \monsep Fort 6
                     \monsep Ref 6
                     \monsep Ment 8
@@ -100,7 +100,7 @@
                 \pari \textbf{HP} 36
                     \monsep \textbf{DR} 27
                 \pari \textbf{Defenses}
-                    Armor 8
+                    Armor 7
                     \monsep Fort 8
                     \monsep Ref 8
                     \monsep Ment 12
@@ -191,7 +191,7 @@
                 \pari \textbf{HP} 35
                     \monsep \textbf{DR} 17
                 \pari \textbf{Defenses}
-                    Armor 11
+                    Armor 10
                     \monsep Fort 11
                     \monsep Ref 11
                     \monsep Ment 15
@@ -278,7 +278,7 @@
                 \pari \textbf{HP} 105
                     \monsep \textbf{DR} 78
                 \pari \textbf{Defenses}
-                    Armor 13
+                    Armor 12
                     \monsep Fort 13
                     \monsep Ref 13
                     \monsep Ment 19
