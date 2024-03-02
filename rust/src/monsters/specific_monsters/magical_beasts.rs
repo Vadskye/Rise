@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
-use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
+use crate::core_mechanics::attacks::{StandardAttack};
 use crate::core_mechanics::{
     DamageType, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
     SpecialDefenseType, SpeedCategory,
