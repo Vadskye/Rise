@@ -14,6 +14,7 @@ fn main() -> io::Result<()> {
 
     golden_file_generation::write_run_pve_combat_golden().expect("Should write PVE combat golden");
     golden_file_generation::write_run_pvp_combat_golden().expect("Should write PVP combat golden");
+    golden_file_generation::write_pve_accuracy_golden().expect("Should write PVE accuracy golden");
 
     Result::Ok(())
 }

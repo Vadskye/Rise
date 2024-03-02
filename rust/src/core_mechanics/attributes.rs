@@ -67,6 +67,7 @@ pub trait HasAttributes {
     fn get_base_attribute(&self, attribute: &Attribute) -> i32;
     fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]);
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
+    fn set_base_attributes(&mut self, attributes: [i32; 6]);
 }
 
 impl HasAttributes for Creature
@@ -101,5 +102,14 @@ where
         } else {
             self.base_attributes.insert(attribute, value);
         }
+    }
+
+    fn set_base_attributes(&mut self, attributes: [i32; 6]) {
+        self.set_base_attribute(Attribute::Strength, attributes[0]);
+        self.set_base_attribute(Attribute::Dexterity, attributes[1]);
+        self.set_base_attribute(Attribute::Constitution, attributes[2]);
+        self.set_base_attribute(Attribute::Intelligence, attributes[3]);
+        self.set_base_attribute(Attribute::Perception, attributes[4]);
+        self.set_base_attribute(Attribute::Willpower, attributes[5]);
     }
 }

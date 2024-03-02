@@ -74,24 +74,7 @@ impl Character {
         character.creature.name = Some("Standard Character".to_string());
 
         if use_point_buy {
-            character
-                .creature
-                .set_base_attribute(Attribute::Strength, 4);
-            character
-                .creature
-                .set_base_attribute(Attribute::Dexterity, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Constitution, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Intelligence, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Perception, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Willpower, 0);
+            character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
             character
                 .creature
                 .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
@@ -118,24 +101,7 @@ impl Character {
 
     pub fn standard_perception_character(level: i32) -> Self {
         let mut character = Self::standard_character(level, false);
-        character
-            .creature
-            .set_base_attribute(Attribute::Strength, 2);
-        character
-            .creature
-            .set_base_attribute(Attribute::Dexterity, 0);
-        character
-            .creature
-            .set_base_attribute(Attribute::Constitution, 2);
-        character
-            .creature
-            .set_base_attribute(Attribute::Intelligence, 0);
-        character
-            .creature
-            .set_base_attribute(Attribute::Perception, 4);
-        character
-            .creature
-            .set_base_attribute(Attribute::Willpower, 0);
+        character.creature.set_base_attributes([2, 0, 2, 0, 4, 0]);
         character
             .creature
             .set_attribute_scaling(level, [Attribute::Perception, Attribute::Constitution]);
@@ -175,24 +141,7 @@ impl Character {
         character.creature.name = Some("Standard Barbarian".to_string());
 
         if use_point_buy {
-            character
-                .creature
-                .set_base_attribute(Attribute::Strength, 3);
-            character
-                .creature
-                .set_base_attribute(Attribute::Dexterity, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Constitution, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Intelligence, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Perception, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Willpower, 0);
+            character.creature.set_base_attributes([3, 2, 2, 0, 2, 0]);
             character
                 .creature
                 .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
@@ -219,24 +168,7 @@ impl Character {
         character.creature.name = Some("Standard Sorcerer".to_string());
 
         if use_point_buy {
-            character
-                .creature
-                .set_base_attribute(Attribute::Strength, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Dexterity, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Constitution, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Intelligence, 0);
-            character
-                .creature
-                .set_base_attribute(Attribute::Perception, 2);
-            character
-                .creature
-                .set_base_attribute(Attribute::Willpower, 4);
+            character.creature.set_base_attributes([0, 2, 0, 0, 2, 4]);
             character
                 .creature
                 .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Willpower]);
