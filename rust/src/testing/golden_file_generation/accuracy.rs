@@ -1,14 +1,10 @@
 use crate::calculations::statistical_combat;
-use crate::calculations::statistical_combat::{explain_standard_adpr, find_best_attack};
-use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
+use crate::classes::{Class, ClassArchetype};
 use crate::core_mechanics::attacks::{Attack, HasAttacks};
-use crate::core_mechanics::{
-    Attribute, Defense, HasAttributes, HasDefenses, HasResources, Resource,
-};
-use crate::creatures::{creature, latex, HasModifiers, Modifier};
+use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDefenses};
 use crate::creatures::{Character, Creature, CreatureCategory, Monster};
-use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, StandardWeapon};
-use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
+use crate::monsters::{CreatureType, Role};
+
 use std::io;
 
 use super::write_golden_file;
@@ -100,7 +96,7 @@ fn standard_defenders(level: i32) -> [Creature; 4] {
     let mut brute = Monster::new(false, CreatureType::Planeforged, Role::Brute, level).creature;
     brute.set_base_attribute(Attribute::Dexterity, 2);
 
-    let mut warrior = Monster::new(false, CreatureType::Planeforged, Role::Warrior, level).creature;
+    let warrior = Monster::new(false, CreatureType::Planeforged, Role::Warrior, level).creature;
 
     let mut skirmisher =
         Monster::new(false, CreatureType::Planeforged, Role::Skirmisher, level).creature;
