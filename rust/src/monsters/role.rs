@@ -39,11 +39,11 @@ impl Role {
 
     pub fn armor_dex_multiplier(&self) -> f64 {
         match self {
-            Role::Brute => 1.0,
-            Role::Skirmisher => 1.0,
-            Role::Warrior => 0.5,
-            Role::Sniper => 1.0,
-            Role::Mystic => 1.0,
+            Role::Brute => 0.5,
+            Role::Skirmisher => 0.5,
+            Role::Warrior => 0.0,
+            Role::Sniper => 0.5,
+            Role::Mystic => 0.5,
             Role::Leader => 0.5,
         }
     }
@@ -54,9 +54,9 @@ impl Role {
             Role::Brute => [4, 5, 4, 3],
             Role::Skirmisher => [4, 3, 5, 4],
             Role::Warrior => [6, 5, 3, 4],
-            Role::Sniper => [4, 4, 3, 5],
+            Role::Sniper => [3, 4, 3, 5],
             Role::Mystic => [3, 3, 4, 5],
-            Role::Leader => [5, 4, 4, 4],
+            Role::Leader => [4, 4, 4, 4],
         };
 
         let i = match defense {
