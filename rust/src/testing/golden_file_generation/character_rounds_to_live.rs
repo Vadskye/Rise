@@ -5,68 +5,82 @@ use std::io;
 use super::write_golden_file;
 
 pub fn write_character_rounds_to_live_golden() -> io::Result<()> {
-    fn rtl_by_level(
-        attacker_gen: &dyn Fn(i32) -> Creature,
-        defender_gen: &dyn Fn(i32) -> Creature,
-    ) -> String {
+    fn rtl_by_level(attacker_gen: &dyn Fn(i32) -> Creature) -> String {
         vec![1, 5, 10, 15, 20]
             .into_iter()
             .map(|level| {
                 let attacker = attacker_gen(level);
-                let defender = defender_gen(level);
+
+                let mut defenders: Vec<Creature> = Character::standard_set(level)
+                    .into_iter()
+                    .map(|c| c.creature)
+                    .collect();
+                defenders.append(
+                    &mut Monster::standard_set(level)
+                        .into_iter()
+                        .map(|c| c.creature)
+                        .collect(),
+                );
 
                 format!(
-                    "Level {}: {}",
+                    "### Level {}
+
+{}",
                     level,
-                    calc_rounds_to_live(&vec![&attacker], &vec![&defender])
+                    defenders
+                        .iter()
+                        .map(|c| format!(
+                            "{: <20}: {:.2}",
+                            c.name.as_ref().unwrap(),
+                            calc_rounds_to_live(&vec![&attacker], &vec![&c])
+                        ))
+                        .collect::<Vec<String>>()
+                        .join("\n"),
                 )
             })
             .collect::<Vec<String>>()
-            .join("\n")
+            .join("\n\n")
     }
 
-    let barb = |level: i32| Character::barbarian_greatmace(level).creature;
-    let fighter = |level: i32| Character::fighter_shield(level).creature;
+    let barbarian_greatmace = |level: i32| Character::barbarian_greatmace(level).creature;
+    let fighter_shield = |level: i32| Character::fighter_shield(level).creature;
     let fighter_greatmace = |level: i32| Character::fighter_greatmace(level).creature;
-    let fighter_perception = |level: i32| Character::fighter_perception_greataxe(level).creature;
-    let sorc = |level: i32| Character::sorcerer_dexterity(level).creature;
-    let standard_monster = |level: i32| Monster::standard_example_monster(level).creature;
-    let elite_monster = |level: i32| Monster::elite_example_monster(level).creature;
+    let rogue_smallsword = |level: i32| Character::rogue_smallsword(level).creature;
+    let sorcerer_dexterity = |level: i32| Character::sorcerer_dexterity(level).creature;
+    let wizard_perception = |level: i32| Character::wizard_perception(level).creature;
 
     let golden = format!(
         "# Character Rounds to Live
 
-## Barbarian vs Barbarian
-{barb_vs_barb}
+## Barbarian Greatmace
 
-## Fighter vs Fighter
-{fighter_vs_fighter}
+{barbarian_greatmace_rtl}
 
-## Fighter vs Greataxe Perception Fighter
-{fighter_vs_greataxe}
+## Fighter Greatmace
 
-## Fighter vs Standard Monster
-{fighter_vs_standard}
+{fighter_greatmace_rtl}
 
-## Fighter vs Elite Monster
-{fighter_vs_elite}
+## Fighter Shield
 
-## Fighter vs Sorcerer
-{fighter_vs_sorc}
+{fighter_shield_rtl}
 
-## Greatmace Fighter vs Greatmace Fighter
-{greatmace_vs_greatmace}
+## Rogue Smallsword
 
-## Sorcerer vs Sorcerer
-{sorc_vs_sorc}",
-        barb_vs_barb = rtl_by_level(&barb, &barb),
-        fighter_vs_fighter = rtl_by_level(&fighter, &fighter),
-        fighter_vs_greataxe = rtl_by_level(&fighter, &fighter_perception),
-        fighter_vs_standard = rtl_by_level(&fighter, &standard_monster),
-        fighter_vs_elite = rtl_by_level(&fighter, &elite_monster),
-        fighter_vs_sorc = rtl_by_level(&fighter, &sorc),
-        greatmace_vs_greatmace = rtl_by_level(&fighter_greatmace, &fighter_greatmace),
-        sorc_vs_sorc = rtl_by_level(&sorc, &sorc),
+{rogue_smallsword_rtl}
+
+## Sorcerer Dexterity
+
+{sorcerer_dexterity_rtl}
+
+## Wizard Perception
+
+{wizard_perception_rtl}",
+        barbarian_greatmace_rtl = rtl_by_level(&barbarian_greatmace),
+        fighter_greatmace_rtl = rtl_by_level(&fighter_greatmace),
+        fighter_shield_rtl = rtl_by_level(&fighter_shield),
+        rogue_smallsword_rtl = rtl_by_level(&rogue_smallsword),
+        sorcerer_dexterity_rtl = rtl_by_level(&sorcerer_dexterity),
+        wizard_perception_rtl = rtl_by_level(&wizard_perception),
     );
 
     write_golden_file("character_rounds_to_live", golden)
