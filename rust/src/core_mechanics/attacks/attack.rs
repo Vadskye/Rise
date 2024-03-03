@@ -57,10 +57,12 @@ pub trait HasAttacks {
             .filter(|a| a.name.contains(name))
             .collect::<Vec<Attack>>();
 
-        // Prefer upgraded versions of attacks if possible
-        let upgraded_attack = matching_attacks.iter().find(|a| a.name.contains("+"));
-        if upgraded_attack.is_some() {
-            upgraded_attack.cloned()
+        // Prefer non-upgraded versions of attacks if possible, since upgraded versions are
+        // easier to specify unambiguously. This is hacky and we should find a better
+        // solution.
+        let non_upgraded_attack = matching_attacks.iter().find(|a| !a.name.contains("+"));
+        if non_upgraded_attack.is_some() {
+            non_upgraded_attack.cloned()
         } else {
             matching_attacks.first().cloned()
         }

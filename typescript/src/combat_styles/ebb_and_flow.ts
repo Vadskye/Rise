@@ -129,7 +129,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Power Strike',
 
       effect: `
-        Make a \\glossterm{strike} with a -3 accuracy penalty.
+        Make a \\glossterm{strike} with a -4 accuracy penalty.
         The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 1,
