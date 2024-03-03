@@ -260,6 +260,17 @@ impl Monster {
 
 // Static generators
 impl Monster {
+    pub fn standard_set(level: i32) -> Vec<Self> {
+        vec![
+            Self::standard_brute(level),
+            Self::standard_leader(level),
+            Self::standard_mystic(level),
+            Self::standard_skirmisher(level),
+            Self::standard_sniper(level),
+            Self::standard_warrior(level),
+        ]
+    }
+
     pub fn standard_brute(level: i32) -> Self {
         let mut monster = Self::new(false, CreatureType::Planeforged, Role::Brute, level);
         monster.creature.set_base_attributes([4, 2, 2, 0, 0, 0]);
@@ -267,6 +278,18 @@ impl Monster {
             .creature
             .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
         monster.creature.set_name("Brute");
+
+        monster
+    }
+
+    // Hard to generalize
+    pub fn standard_leader(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Leader, level);
+        monster.creature.set_base_attributes([2, 2, 2, 2, 2, 2]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Constitution, Attribute::Perception]);
+        monster.creature.set_name("Leader");
 
         monster
     }

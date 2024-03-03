@@ -50,8 +50,8 @@ Level 15: 3.25
 Level 20: 5
 
 ## Sorcerer vs Sorcerer
-Level 1: 3.25
+Level 1: 3
 Level 5: 5
-Level 10: 6.75
+Level 10: 6.25
 Level 15: 7
 Level 20: 5
