@@ -226,7 +226,7 @@ mod calculate_attack_outcome {
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
-        let expected_hit_probability = vec!["0.600 single, 0.066 crit", "0.400 single, 0.044 crit"];
+        let expected_hit_probability = vec!["0.700 single, 0.077 crit", "0.500 single, 0.055 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
             .iter()
             .map(|elite| {
@@ -251,7 +251,7 @@ mod calculate_attack_outcome {
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
-        let expected_hit_probability = vec!["0.800 single, 0.088 crit", "0.600 single, 0.066 crit"];
+        let expected_hit_probability = vec!["0.900 single, 0.099 crit", "0.700 single, 0.077 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
             .iter()
             .map(|elite| {

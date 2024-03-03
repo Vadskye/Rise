@@ -51,8 +51,8 @@ mod statistics {
                 firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
-                "Firebolt +6 (1d6+2d8 fire damage.)", // Normal
-                "Firebolt +8 (1d6+3d8 fire damage.)", // Elite
+                "Firebolt +6 (4d6 fire damage.)", // Normal
+                "Firebolt +8 (5d6 fire damage.)", // Elite
             ];
             assert_eq!(expected, actual, "Normal, Elite");
         }
@@ -79,8 +79,8 @@ mod statistics {
                 firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
-                "Firebolt +13 (9d10 fire damage.)",
-                "Firebolt +15 (11d10 fire damage.)",
+                "Firebolt +13 (10d10 fire damage.)",
+                "Firebolt +15 (12d10 fire damage.)",
             ];
             assert_eq!(expected, actual, "Normal, Elite",);
         }

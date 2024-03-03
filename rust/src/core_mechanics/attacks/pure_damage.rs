@@ -84,12 +84,12 @@ impl PureDamageManeuver {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::creatures::{Character, Creature};
+    use crate::creatures::{Creature, CreatureCategory};
     use crate::latex_formatting::remove_indentation;
     use crate::testing::assert_multiline_eq;
 
     fn get_basic_creature() -> Creature {
-        Character::fighter_shield(1).creature
+        Creature::new(1, CreatureCategory::Character)
     }
 
     fn get_ability_latex(config: PureDamageAbility) -> String {
@@ -156,7 +156,7 @@ The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
 The $name makes a +0 attack vs. Mental against anything within \\medrange.
 
 
-\\hit 1d8 energy damage.
+\\hit 1d10 energy damage.
 
 
 
