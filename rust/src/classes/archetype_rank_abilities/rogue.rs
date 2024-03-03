@@ -1,11 +1,12 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::Resource;
+use crate::core_mechanics::attacks::Maneuver;
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
 
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Sneak Attack",
             is_magical: false,
@@ -116,7 +117,22 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ]
+    ];
+    add_sneak_attack(&mut abilities);
+    abilities
+}
+
+fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
+    for rank in 1..8 {
+        abilities.append(&mut vec![
+            RankAbility {
+                name: "Sneak Attack Scaling",
+                rank,
+                modifiers: Some(vec![Modifier::Maneuver(Maneuver::SneakAttack(rank))]),
+                ..Default::default()
+            },
+        ]);
+    }
 }
 
 pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {

@@ -89,7 +89,7 @@ mod tests {
     use crate::testing::assert_multiline_eq;
 
     fn get_basic_creature() -> Creature {
-        Character::standard_character(1, false).creature
+        Character::fighter_shield(1).creature
     }
 
     fn get_ability_latex(config: PureDamageAbility) -> String {

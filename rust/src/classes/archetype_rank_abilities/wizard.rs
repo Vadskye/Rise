@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_standard_spell_modifiers, add_dr_scaling};
+use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -428,7 +428,11 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
                 This defense penalty is \abilitytag{Swift}.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Armor, -2),
+                Modifier::Defense(Defense::Reflex, -2),
+            ]),
         },
         RankAbility {
             name: "Expert Metamage",
@@ -502,9 +506,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
             ",
             // Assume evocation
-            modifiers: Some(vec![
-                Modifier::Power(2),
-            ]),
+            modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
             name: "School Specialization+",

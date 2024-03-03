@@ -34,6 +34,7 @@ pub enum Maneuver {
     PouncingStrike,
     PouncingStrikePlus,
     RecklessStrike,
+    SneakAttack(i32),
     StripTheFlesh,
     Tenderize,
     Whirlwind,
@@ -230,6 +231,17 @@ impl Maneuver {
                         ),
                     });
                 }),
+            Self::SneakAttack(rank) => weapon.attack()
+                .except_hit_damage(|d| match rank {
+                   1 => d.base_dice = d.base_dice.add_die(Die::d4()),
+                   2 => d.base_dice = d.base_dice.add_die(Die::d4()),
+                   3 => d.base_dice = d.base_dice.add_die(Die::d8()),
+                   4 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(2, 8).dice),
+                   5 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(4, 6).dice),
+                   6 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(4, 10).dice),
+                   7 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(6, 10).dice),
+                    _ => panic!("Unsupported rank for Sneak Attack"),
+                }),
             Self::StripTheFlesh => {
                 weapon
                     .attack()
@@ -325,6 +337,7 @@ impl Maneuver {
             Self::PouncingStrike => "Pouncing Strike",
             Self::PouncingStrikePlus => "Pouncing Strike+",
             Self::RecklessStrike => "Reckless Strike",
+            Self::SneakAttack(_) => "Sneak Attack",
             Self::StripTheFlesh => "Strip the Flesh",
             Self::Tenderize => "Tenderize",
             Self::Whirlwind => "Whirlwind",
@@ -352,6 +365,7 @@ impl Maneuver {
             Self::PouncingStrike => 1,
             Self::PouncingStrikePlus => 3,
             Self::RecklessStrike => 1,
+            Self::SneakAttack(r) => *r,
             Self::StripTheFlesh => 7,
             Self::Tenderize => 5,
             Self::Whirlwind => 1,

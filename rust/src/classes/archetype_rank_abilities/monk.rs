@@ -222,7 +222,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
@@ -433,8 +433,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::DamageResistance(4),
+                Modifier::Defense(Defense::Armor, 3),
             ]),
         },
         RankAbility {
@@ -444,7 +443,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus4.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+            ]),
         },
         RankAbility {
             name: "Ki Barrier++",
@@ -498,7 +499,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power}.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
+            modifiers: Some(vec![Modifier::MagicalPower(1)]),
         },
         RankAbility {
             name: "Endless Ki",
@@ -510,7 +511,47 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ]
+    ];
+    add_ki_barrier(&mut abilities);
+    abilities
+}
+
+fn add_ki_barrier(abilities: &mut Vec<RankAbility<'_>>) {
+    // 4x rank
+    for rank in 1..4 {
+        abilities.append(&mut vec![
+            RankAbility {
+                name: "Ki Barrier Scaling",
+                rank,
+                modifiers: Some(vec![Modifier::DamageResistance(rank * 4)]),
+                ..Default::default()
+            },
+        ]);
+    }
+
+    // 5x rank
+    for rank in 4..7 {
+        abilities.append(&mut vec![
+            RankAbility {
+                name: "Ki Barrier Scaling",
+                rank,
+                modifiers: Some(vec![Modifier::DamageResistance(rank * 5)]),
+                ..Default::default()
+            },
+        ]);
+    }
+
+    // 7x rank
+    for rank in 7..8 {
+        abilities.append(&mut vec![
+            RankAbility {
+                name: "Ki Barrier Scaling",
+                rank,
+                modifiers: Some(vec![Modifier::DamageResistance(rank * 7)]),
+                ..Default::default()
+            },
+        ]);
+    }
 }
 
 pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
@@ -606,7 +647,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                 You gain a \plus1 bonus to that attribute.
             ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             name: "Perfect Body+",
@@ -617,7 +658,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![
                 Modifier::Attribute(Attribute::Strength, 1),
-                Modifier::Attribute(Attribute::Dexterity, 1),
+                Modifier::Attribute(Attribute::Constitution, 1),
             ]),
         },
     ]

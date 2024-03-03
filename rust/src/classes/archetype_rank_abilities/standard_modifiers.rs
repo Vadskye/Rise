@@ -1,6 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::attacks::Maneuver;
-use crate::core_mechanics::attacks::StandardAttack;
+use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::creatures::Modifier;
 
 pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
@@ -126,7 +125,11 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
     ]);
 }
 
-pub fn add_hp_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i32, quadruple_rank: i32) {
+pub fn add_hp_scaling(
+    rank_abilities: &mut Vec<RankAbility<'_>>,
+    triple_rank: i32,
+    quadruple_rank: i32,
+) {
     for rank in triple_rank..quadruple_rank {
         rank_abilities.push(RankAbility {
             name: "Hit Point Scaling",
@@ -147,7 +150,12 @@ pub fn add_hp_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i3
     }
 }
 
-pub fn add_dr_scaling(rank_abilities: &mut Vec<RankAbility<'_>>, triple_rank: i32, quadruple_rank: i32, maybe_quintuple_rank: Option<i32>) {
+pub fn add_dr_scaling(
+    rank_abilities: &mut Vec<RankAbility<'_>>,
+    triple_rank: i32,
+    quadruple_rank: i32,
+    maybe_quintuple_rank: Option<i32>,
+) {
     let quintuple_rank = maybe_quintuple_rank.unwrap_or(8);
     for rank in triple_rank..quadruple_rank {
         rank_abilities.push(RankAbility {

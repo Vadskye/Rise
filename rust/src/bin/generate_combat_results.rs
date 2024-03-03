@@ -50,10 +50,10 @@ struct StandardCombatResult {
 
 fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
-        Character::standard_character(level, true).creature,
-        Character::standard_greataxe(level, true).creature,
-        Character::standard_barbarian(level, true).creature,
-        Character::standard_sorcerer(level, true).creature,
+        Character::fighter_shield(level).creature,
+        Character::fighter_greataxe(level).creature,
+        Character::barbarian_greataxe(level).creature,
+        Character::sorcerer_dexterity(level).creature,
     ];
     let monsters = ChallengeRating::difficult_encounter(level, monster_count);
     let combat_result = run_combat(pcs, monsters);
@@ -76,10 +76,10 @@ fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult 
 
 fn run_standard_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
-        Character::standard_character(level, true).creature,
-        Character::standard_greataxe(level, true).creature,
-        Character::standard_barbarian(level, true).creature,
-        Character::standard_sorcerer(level, true).creature,
+        Character::fighter_shield(level).creature,
+        Character::fighter_greataxe(level).creature,
+        Character::barbarian_greataxe(level).creature,
+        Character::sorcerer_dexterity(level).creature,
     ];
     let monsters = ChallengeRating::standard_encounter(level, monster_count);
     let combat_result = run_combat(pcs, monsters);

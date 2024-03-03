@@ -13,10 +13,10 @@ fn main() {
         ] {
             // PCs
             let blue = vec![
-                Character::standard_character(level, true).creature,
-                Character::standard_character(level, true).creature,
-                Character::standard_character(level, true).creature,
-                Character::standard_character(level, true).creature,
+                Character::fighter_shield(level).creature,
+                Character::fighter_shield(level).creature,
+                Character::fighter_shield(level).creature,
+                Character::fighter_shield(level).creature,
             ];
             let blue_damage_absorption: i32 = blue
                 .iter()

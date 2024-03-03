@@ -15,6 +15,7 @@ mod standard_modifiers;
 mod warlock;
 mod wizard;
 
+#[derive(Default)]
 pub struct RankAbility<'a> {
     pub description: &'a str,
     pub is_magical: bool,

@@ -217,6 +217,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // Should this be a universal accuracy bonus instead of only spells?
         RankAbility {
             name: "Experienced Spellcaster",
             is_magical: true,

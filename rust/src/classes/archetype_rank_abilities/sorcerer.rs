@@ -205,7 +205,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
-    vec![
+    let mut abilities = vec![
         RankAbility {
             name: "Draconic Bloodline",
             is_magical: false,
@@ -251,7 +251,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
             ",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Draconic Hide+",
@@ -261,41 +261,6 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 The damage resistance bonus increases to four times your rank in this archetype.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Draconic Hide",
-            is_magical: false,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            name: "Draconic Hide",
-            is_magical: false,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(12)]),
-        },
-        RankAbility {
-            name: "Draconic Hide",
-            is_magical: false,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(15)]),
-        },
-        RankAbility {
-            name: "Draconic Hide",
-            is_magical: false,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            name: "Draconic Hide",
-            is_magical: false,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(35)]),
         },
         RankAbility {
             name: "Draconic Scales",
@@ -333,7 +298,9 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ]
+    ];
+    add_dr_scaling(&mut abilities, 2, 6, None);
+    abilities
 }
 
 pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {

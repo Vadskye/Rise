@@ -38,15 +38,15 @@ Powerful Greataxe
 
 ### Attacks
 Certain Greataxe +16 (1d8 slashing damage.)
-Powerful Greataxe +10 (2d8+12 slashing damage.)
-Generic Scaling Greataxe +13 (1d8+6 slashing damage.)
-Greataxe +10 (1d8+6 slashing damage.)
+Powerful Greataxe +10 (2d8+18 slashing damage.)
+Generic Scaling Greataxe +13 (1d8+9 slashing damage.)
+Greataxe +10 (1d8+9 slashing damage.)
 
 ### Results
 8.00 = (4.5 dph * 1.00 hpr) + (4.5 dpc * 0.78 cpr) + (2.2 dpg * 0.00 gpr) = 4.50 hdpr + 3.50 cdpr + 0.00 gdpr
-15.16 = (10.5 dph * 1.00 hpr) + (10.5 dpc * 0.44 cpr) + (5.2 dpg * 0.00 gpr) = 10.50 hdpr + 4.66 cdpr + 0.00 gdpr
-23.33 = (21.0 dph * 1.00 hpr) + (21.0 dpc * 0.11 cpr) + (10.5 dpg * 0.00 gpr) = 21.00 hdpr + 2.33 cdpr + 0.00 gdpr
-11.67 = (10.5 dph * 1.00 hpr) + (10.5 dpc * 0.11 cpr) + (5.2 dpg * 0.00 gpr) = 10.50 hdpr + 1.17 cdpr + 0.00 gdpr
+19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 5.99 cdpr + 0.00 gdpr
+30.00 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.11 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 3.00 cdpr + 0.00 gdpr
+15.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.50 cdpr + 0.00 gdpr
 
 ### Best attack
 Powerful Greataxe
@@ -55,15 +55,15 @@ Powerful Greataxe
 
 ### Attacks
 Certain Greataxe +16 (1d8 slashing damage.)
-Powerful Greataxe +10 (2d8+12 slashing damage.)
-Generic Scaling Greataxe +13 (1d8+6 slashing damage.)
-Greataxe +10 (1d8+6 slashing damage.)
+Powerful Greataxe +10 (2d8+18 slashing damage.)
+Generic Scaling Greataxe +13 (1d8+9 slashing damage.)
+Greataxe +10 (1d8+9 slashing damage.)
 
 ### Results
 7.00 = (4.5 dph * 1.00 hpr) + (4.5 dpc * 0.56 cpr) + (2.2 dpg * 0.00 gpr) = 4.50 hdpr + 2.50 cdpr + 0.00 gdpr
-12.83 = (10.5 dph * 1.00 hpr) + (10.5 dpc * 0.22 cpr) + (5.2 dpg * 0.00 gpr) = 10.50 hdpr + 2.33 cdpr + 0.00 gdpr
-22.03 = (21.0 dph * 0.90 hpr) + (21.0 dpc * 0.10 cpr) + (10.5 dpg * 0.10 gpr) = 18.90 hdpr + 2.08 cdpr + 1.05 gdpr
-11.01 = (10.5 dph * 0.90 hpr) + (10.5 dpc * 0.10 cpr) + (5.2 dpg * 0.10 gpr) = 9.45 hdpr + 1.04 cdpr + 0.52 gdpr
+16.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.22 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 3.00 cdpr + 0.00 gdpr
+28.32 = (27.0 dph * 0.90 hpr) + (27.0 dpc * 0.10 cpr) + (13.5 dpg * 0.10 gpr) = 24.30 hdpr + 2.67 cdpr + 1.35 gdpr
+14.16 = (13.5 dph * 0.90 hpr) + (13.5 dpc * 0.10 cpr) + (6.8 dpg * 0.10 gpr) = 12.15 hdpr + 1.34 cdpr + 0.67 gdpr
 
 ### Best attack
 Powerful Greataxe
@@ -72,17 +72,17 @@ Powerful Greataxe
 
 ### Attacks
 Certain Greataxe +24 (1d8 slashing damage.)
-Powerful Greataxe +18 (2d8+24 slashing damage.)
-Power Strike+ -- Greataxe +15 (3d8+36 slashing damage.)
-Certain Strike+ -- Greataxe +22 (1d8+12 slashing damage.)
-Generic Scaling Greataxe +17 (4d6+1d8+12 slashing damage.)
-Greataxe +15 (1d8+12 slashing damage.)
+Powerful Greataxe +18 (2d8+34 slashing damage.)
+Power Strike+ -- Greataxe +15 (3d8+51 slashing damage.)
+Certain Strike+ -- Greataxe +22 (1d8+17 slashing damage.)
+Generic Scaling Greataxe +17 (6d6+1d8+17 slashing damage.)
+Greataxe +15 (1d8+17 slashing damage.)
 
 ### Results
-29.32 = (16.5 dph * 1.00 hpr) + (16.5 dpc * 0.78 cpr) + (8.2 dpg * 0.00 gpr) = 16.50 hdpr + 12.82 cdpr + 0.00 gdpr
-37.27 = (30.5 dph * 1.00 hpr) + (30.5 dpc * 0.22 cpr) + (15.2 dpg * 0.00 gpr) = 30.50 hdpr + 6.77 cdpr + 0.00 gdpr
-54.95 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.11 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 5.45 cdpr + 0.00 gdpr
-18.32 = (16.5 dph * 1.00 hpr) + (16.5 dpc * 0.11 cpr) + (8.2 dpg * 0.00 gpr) = 16.50 hdpr + 1.82 cdpr + 0.00 gdpr
+38.21 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.78 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 16.71 cdpr + 0.00 gdpr
+51.94 = (42.5 dph * 1.00 hpr) + (42.5 dpc * 0.22 cpr) + (21.2 dpg * 0.00 gpr) = 42.50 hdpr + 9.44 cdpr + 0.00 gdpr
+71.59 = (64.5 dph * 1.00 hpr) + (64.5 dpc * 0.11 cpr) + (32.2 dpg * 0.00 gpr) = 64.50 hdpr + 7.10 cdpr + 0.00 gdpr
+23.87 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.11 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 2.37 cdpr + 0.00 gdpr
 
 ### Best attack
 Power Strike+ -- Greataxe
@@ -91,17 +91,17 @@ Power Strike+ -- Greataxe
 
 ### Attacks
 Certain Greataxe +24 (1d8 slashing damage.)
-Powerful Greataxe +18 (2d8+24 slashing damage.)
-Power Strike+ -- Greataxe +15 (3d8+36 slashing damage.)
-Certain Strike+ -- Greataxe +22 (1d8+12 slashing damage.)
-Generic Scaling Greataxe +17 (4d6+1d8+12 slashing damage.)
-Greataxe +15 (1d8+12 slashing damage.)
+Powerful Greataxe +18 (2d8+34 slashing damage.)
+Power Strike+ -- Greataxe +15 (3d8+51 slashing damage.)
+Certain Strike+ -- Greataxe +22 (1d8+17 slashing damage.)
+Generic Scaling Greataxe +17 (6d6+1d8+17 slashing damage.)
+Greataxe +15 (1d8+17 slashing damage.)
 
 ### Results
-25.66 = (16.5 dph * 1.00 hpr) + (16.5 dpc * 0.56 cpr) + (8.2 dpg * 0.00 gpr) = 16.50 hdpr + 9.16 cdpr + 0.00 gdpr
-33.86 = (30.5 dph * 1.00 hpr) + (30.5 dpc * 0.11 cpr) + (15.2 dpg * 0.00 gpr) = 30.50 hdpr + 3.36 cdpr + 0.00 gdpr
-48.91 = (49.5 dph * 0.80 hpr) + (49.5 dpc * 0.09 cpr) + (24.8 dpg * 0.20 gpr) = 39.60 hdpr + 4.36 cdpr + 4.95 gdpr
-16.30 = (16.5 dph * 0.80 hpr) + (16.5 dpc * 0.09 cpr) + (8.2 dpg * 0.20 gpr) = 13.20 hdpr + 1.45 cdpr + 1.65 gdpr
+33.43 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.56 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 11.93 cdpr + 0.00 gdpr
+47.17 = (42.5 dph * 1.00 hpr) + (42.5 dpc * 0.11 cpr) + (21.2 dpg * 0.00 gpr) = 42.50 hdpr + 4.68 cdpr + 0.00 gdpr
+63.73 = (64.5 dph * 0.80 hpr) + (64.5 dpc * 0.09 cpr) + (32.2 dpg * 0.20 gpr) = 51.60 hdpr + 5.68 cdpr + 6.45 gdpr
+21.24 = (21.5 dph * 0.80 hpr) + (21.5 dpc * 0.09 cpr) + (10.8 dpg * 0.20 gpr) = 17.20 hdpr + 1.89 cdpr + 2.15 gdpr
 
 ### Best attack
 Power Strike+ -- Greataxe
