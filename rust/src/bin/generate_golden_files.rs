@@ -35,6 +35,7 @@ fn write_character_goldens() -> io::Result<()> {
 fn write_monster_goldens() -> io::Result<()> {
     golden_file_generation::write_monster_attacks_golden().expect("Should write monster attacks");
     golden_file_generation::write_monster_to_section_golden().expect("Should write to_section");
+    golden_file_generation::write_monster_defenses_golden().expect("Should write monster defenses");
 
     Result::Ok(())
 }
