@@ -28,24 +28,24 @@ HP/DR/Total: 12 / 10 / 22
 Points / Self-hit: 30 / 40%
 
 ### Ranger Longbow
-A/F/R/M: 6 / 6 / 8 / 3
+A/F/R/M: 5 / 6 / 8 / 3
 HP/DR/Total: 12 / 4 / 16
-Points / Self-hit: 29 / 70%
+Points / Self-hit: 27 / 80%
 
 ### Rogue Smallsword
-A/F/R/M: 7 / 3 / 9 / 4
+A/F/R/M: 6 / 3 / 9 / 4
 HP/DR/Total: 8 / 4 / 12
-Points / Self-hit: 30 / 70%
+Points / Self-hit: 28 / 80%
 
 ### Sorcerer Dexterity
-A/F/R/M: 5 / 3 / 6 / 9
+A/F/R/M: 4 / 3 / 6 / 9
 HP/DR/Total: 9 / 4 / 13
-Points / Self-hit: 28 / 70%
+Points / Self-hit: 26 / 80%
 
 ### Wizard Perception
-A/F/R/M: 5 / 3 / 6 / 9
+A/F/R/M: 4 / 3 / 6 / 9
 HP/DR/Total: 9 / 6 / 15
-Points / Self-hit: 28 / 70%
+Points / Self-hit: 26 / 80%
 
 ## Level 5
 
@@ -65,9 +65,9 @@ HP/DR/Total: 26 / 12 / 38
 Points / Self-hit: 40 / 60%
 
 ### Monk Kama
-A/F/R/M: 11 / 7 / 13 / 6
+A/F/R/M: 10 / 7 / 13 / 6
 HP/DR/Total: 18 / 8 / 26
-Points / Self-hit: 48 / 40%
+Points / Self-hit: 46 / 50%
 
 ### Paladin Shield
 A/F/R/M: 9 / 10 / 5 / 8
@@ -75,24 +75,24 @@ HP/DR/Total: 26 / 12 / 38
 Points / Self-hit: 41 / 40%
 
 ### Ranger Longbow
-A/F/R/M: 9 / 8 / 11 / 5
+A/F/R/M: 8 / 8 / 11 / 5
 HP/DR/Total: 24 / 8 / 32
-Points / Self-hit: 42 / 70%
+Points / Self-hit: 40 / 80%
 
 ### Rogue Smallsword
-A/F/R/M: 10 / 5 / 12 / 6
+A/F/R/M: 9 / 5 / 12 / 6
 HP/DR/Total: 16 / 8 / 24
-Points / Self-hit: 43 / 60%
+Points / Self-hit: 41 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 8 / 5 / 9 / 12
+A/F/R/M: 7 / 5 / 9 / 12
 HP/DR/Total: 20 / 4 / 24
-Points / Self-hit: 42 / 60%
+Points / Self-hit: 40 / 70%
 
 ### Wizard Perception
-A/F/R/M: 5 / 5 / 6 / 12
+A/F/R/M: 4 / 5 / 6 / 12
 HP/DR/Total: 20 / 6 / 26
-Points / Self-hit: 33 / 100%
+Points / Self-hit: 31 / 100%
 
 ## Level 10
 
@@ -112,9 +112,9 @@ HP/DR/Total: 45 / 38 / 83
 Points / Self-hit: 56 / 60%
 
 ### Monk Kama
-A/F/R/M: 16 / 10 / 18 / 9
+A/F/R/M: 15 / 10 / 18 / 9
 HP/DR/Total: 32 / 20 / 52
-Points / Self-hit: 69 / 20%
+Points / Self-hit: 67 / 30%
 
 ### Paladin Shield
 A/F/R/M: 12 / 14 / 8 / 11
@@ -122,24 +122,24 @@ HP/DR/Total: 49 / 38 / 87
 Points / Self-hit: 57 / 50%
 
 ### Ranger Longbow
-A/F/R/M: 13 / 11 / 15 / 8
+A/F/R/M: 12 / 11 / 15 / 8
 HP/DR/Total: 39 / 20 / 59
-Points / Self-hit: 60 / 60%
+Points / Self-hit: 58 / 70%
 
 ### Rogue Smallsword
-A/F/R/M: 14 / 8 / 16 / 9
+A/F/R/M: 13 / 8 / 16 / 9
 HP/DR/Total: 28 / 20 / 48
-Points / Self-hit: 61 / 60%
+Points / Self-hit: 59 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 13 / 8 / 13 / 16
+A/F/R/M: 12 / 8 / 13 / 16
 HP/DR/Total: 44 / 8 / 52
-Points / Self-hit: 63 / 50%
+Points / Self-hit: 61 / 60%
 
 ### Wizard Perception
-A/F/R/M: 8 / 8 / 9 / 16
+A/F/R/M: 7 / 8 / 9 / 16
 HP/DR/Total: 44 / 10 / 54
-Points / Self-hit: 49 / 100%
+Points / Self-hit: 47 / 100%
 
 ## Level 15
 
@@ -159,9 +159,9 @@ HP/DR/Total: 90 / 48 / 138
 Points / Self-hit: 68 / 60%
 
 ### Monk Kama
-A/F/R/M: 20 / 12 / 21 / 11
+A/F/R/M: 19 / 12 / 21 / 11
 HP/DR/Total: 63 / 33 / 96
-Points / Self-hit: 84 / 10%
+Points / Self-hit: 82 / 20%
 
 ### Paladin Shield
 A/F/R/M: 14 / 17 / 10 / 13
@@ -169,24 +169,24 @@ HP/DR/Total: 98 / 56 / 154
 Points / Self-hit: 68 / 50%
 
 ### Ranger Longbow
-A/F/R/M: 16 / 13 / 18 / 10
+A/F/R/M: 15 / 13 / 18 / 10
 HP/DR/Total: 72 / 24 / 96
-Points / Self-hit: 73 / 60%
+Points / Self-hit: 71 / 70%
 
 ### Rogue Smallsword
-A/F/R/M: 17 / 10 / 19 / 11
+A/F/R/M: 16 / 10 / 19 / 11
 HP/DR/Total: 53 / 24 / 77
-Points / Self-hit: 74 / 60%
+Points / Self-hit: 72 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 16 / 10 / 16 / 19
+A/F/R/M: 15 / 10 / 16 / 19
 HP/DR/Total: 89 / 16 / 105
-Points / Self-hit: 77 / 50%
+Points / Self-hit: 75 / 60%
 
 ### Wizard Perception
-A/F/R/M: 10 / 10 / 11 / 19
+A/F/R/M: 9 / 10 / 11 / 19
 HP/DR/Total: 74 / 18 / 92
-Points / Self-hit: 60 / 100%
+Points / Self-hit: 58 / 100%
 
 ## Level 20
 
@@ -206,9 +206,9 @@ HP/DR/Total: 168 / 96 / 264
 Points / Self-hit: 83 / 60%
 
 ### Monk Kama
-A/F/R/M: 25 / 16 / 26 / 14
+A/F/R/M: 24 / 16 / 26 / 14
 HP/DR/Total: 126 / 46 / 172
-Points / Self-hit: 106 / 9%
+Points / Self-hit: 104 / 10%
 
 ### Paladin Shield
 A/F/R/M: 17 / 20 / 13 / 16
@@ -216,21 +216,21 @@ HP/DR/Total: 184 / 112 / 296
 Points / Self-hit: 83 / 80%
 
 ### Ranger Longbow
-A/F/R/M: 19 / 16 / 21 / 13
+A/F/R/M: 18 / 16 / 21 / 13
 HP/DR/Total: 132 / 48 / 180
-Points / Self-hit: 88 / 70%
+Points / Self-hit: 86 / 80%
 
 ### Rogue Smallsword
-A/F/R/M: 20 / 13 / 22 / 14
+A/F/R/M: 19 / 13 / 22 / 14
 HP/DR/Total: 96 / 48 / 144
-Points / Self-hit: 89 / 70%
+Points / Self-hit: 87 / 80%
 
 ### Sorcerer Dexterity
-A/F/R/M: 19 / 13 / 19 / 22
+A/F/R/M: 18 / 13 / 19 / 22
 HP/DR/Total: 135 / 32 / 167
-Points / Self-hit: 92 / 70%
+Points / Self-hit: 90 / 80%
 
 ### Wizard Perception
-A/F/R/M: 14 / 13 / 14 / 22
+A/F/R/M: 13 / 13 / 14 / 22
 HP/DR/Total: 135 / 34 / 169
-Points / Self-hit: 77 / 100%
+Points / Self-hit: 75 / 100%

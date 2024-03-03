@@ -162,8 +162,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The encumbrance reduction increases to 2.
-                You also always apply your full Dexterity to your Armor defense, regardless of the armor you use.
-                In addition, armor no longer penalizes your movement speed.
+                In addition, heavy armor no longer penalizes your movement speed.
             ",
             modifiers: Some(vec![Modifier::Encumbrance(-1)]),
         },

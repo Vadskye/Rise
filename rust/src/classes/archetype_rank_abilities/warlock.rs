@@ -213,7 +213,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Each secret grants great power at a cost.
                 {
                     \subcf{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
-                    This functions like light body armor that provides a \plus5 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                    This functions like light body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
                     It also provides a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
