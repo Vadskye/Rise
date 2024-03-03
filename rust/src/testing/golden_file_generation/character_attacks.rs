@@ -59,7 +59,7 @@ fn format_character_dpr_vs_monster(explainer: &dyn Fn(i32, bool) -> String) -> S
 
 pub fn write_standard_character_attacks_golden() -> io::Result<()> {
     fn explain_character_attacks(level: i32, elite: bool) -> String {
-        let attacker = Character::standard_character(level, true).creature;
+        let attacker = Character::fighter_shield(level).creature;
         let defender = Monster::example_monster(elite, level, None, None).creature;
 
         format_character_attacks(attacker, defender)
@@ -73,7 +73,7 @@ pub fn write_standard_character_attacks_golden() -> io::Result<()> {
 
 pub fn write_perception_greataxe_attacks_golden() -> io::Result<()> {
     fn explain_character_attacks(level: i32, elite: bool) -> String {
-        let attacker = Character::perception_greataxe(level).creature;
+        let attacker = Character::fighter_perception_greataxe(level).creature;
         let defender = Monster::example_monster(elite, level, None, None).creature;
 
         format_character_attacks(attacker, defender)

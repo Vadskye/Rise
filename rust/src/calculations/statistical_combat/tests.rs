@@ -222,7 +222,7 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_vs_monsters_level_1() {
         let level = 1;
-        let attacker = Character::standard_character(level, true).creature;
+        let attacker = Character::fighter_shield(level).creature;
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
@@ -247,7 +247,7 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_vs_monsters_level_20() {
         let level = 20;
-        let attacker = Character::standard_character(level, true).creature;
+        let attacker = Character::fighter_shield(level).creature;
         let attack = attacker
             .get_attack_by_name("Generic Scaling Broadsword")
             .unwrap();
@@ -279,7 +279,7 @@ mod calculate_attack_outcome {
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
-                Character::standard_character(level, true)
+                Character::fighter_shield(level)
                     .creature
                     .calc_defense(&Defense::Armor),
                 attacker.calc_explosion_target(),
@@ -298,7 +298,7 @@ mod calculate_attack_outcome {
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
-                Character::standard_character(level, true)
+                Character::fighter_shield(level)
                     .creature
                     .calc_defense(&Defense::Armor),
                 attacker.calc_explosion_target(),
@@ -310,11 +310,11 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_mirror_match() {
         fn calc_at_level(level: i32) -> String {
-            let attacker = Character::standard_character(level, true).creature;
+            let attacker = Character::fighter_shield(level).creature;
             let attack = attacker
                 .get_attack_by_name("Generic Scaling Broadsword")
                 .unwrap();
-            let defender = Character::standard_character(level, true).creature;
+            let defender = Character::fighter_shield(level).creature;
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),

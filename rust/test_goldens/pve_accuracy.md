@@ -53,4 +53,4 @@ Mystic/Brute/Warrior/Skirmisher: 0.7 / 0.5 / 0.4 / 0.3
 Mystic/Brute/Warrior/Skirmisher: 1 / 0.8 / 0.7 / 0.6
 
 ### High accuracy
-Mystic/Brute/Warrior/Skirmisher: 1 / 1 / 1 / 1
+Mystic/Brute/Warrior/Skirmisher: 1 / 1 / 1 / 0.9

@@ -1,14 +1,9 @@
 use crate::calculations::statistical_combat::{
     run_combat_at_standard_levels, CombatResult, LeveledPartyGen,
 };
-
-
 use crate::creatures::{Character, Creature};
-
-
 use crate::monsters::ChallengeRating;
-
-use std::{io};
+use std::io;
 
 use super::write_golden_file;
 
@@ -22,24 +17,24 @@ fn four_stack(creature: Creature) -> Vec<Creature> {
 }
 
 fn barbarian_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::standard_barbarian(level, true).creature)
+    four_stack(Character::barbarian_greataxe(level).creature)
 }
 
 fn standard_character_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::standard_character(level, true).creature)
+    four_stack(Character::fighter_shield(level).creature)
 }
 
 fn mixed_character_party(level: i32) -> Vec<Creature> {
     vec![
-        Character::standard_character(level, true).creature,
-        Character::perception_greataxe(level).creature,
-        Character::standard_barbarian(level, true).creature,
-        Character::standard_sorcerer(level, true).creature,
+        Character::fighter_shield(level).creature,
+        Character::fighter_perception_greataxe(level).creature,
+        Character::barbarian_greataxe(level).creature,
+        Character::sorcerer_dexterity(level).creature,
     ]
 }
 
 fn standard_greataxe_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::standard_greataxe(level, true).creature)
+    four_stack(Character::fighter_greataxe(level).creature)
 }
 
 fn format_results(results: Vec<CombatResult>) -> String {
@@ -131,15 +126,13 @@ pub fn write_run_pvp_combat_golden() -> io::Result<()> {
         "
 # Run Player vs Player Combat
 
-## Player vs player
-
-### Barbarian vs barbarian
+## Barbarian greataxe vs barbarian greataxe
 {barbarian_vs_barbarian}
 
-### Standard character vs standard greataxe
+## Fighter shield vs fighter greataxe
 {standard_vs_greataxe}
 
-### Standard character vs standard character
+### Fighter shield vs fighter shield
 {standard_vs_standard}
         ",
     );

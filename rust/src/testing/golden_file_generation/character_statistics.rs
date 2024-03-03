@@ -12,7 +12,7 @@ use super::write_golden_file;
 
 pub fn write_standard_character_statistics_golden() -> io::Result<()> {
     fn character_statistics(level: i32) -> String {
-        let character = Character::standard_character(level, true);
+        let character = Character::fighter_shield(level);
         format!(
             "
 ## Level {level}

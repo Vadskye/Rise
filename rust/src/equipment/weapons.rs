@@ -100,6 +100,10 @@ impl Weapon {
         StandardWeapon::MonsterHorns.weapon()
     }
 
+    pub fn kama() -> Self {
+        StandardWeapon::Kama.weapon()
+    }
+
     pub fn lance() -> Self {
         StandardWeapon::Lance.weapon()
     }
@@ -114,6 +118,10 @@ impl Weapon {
 
     pub fn sling() -> Self {
         StandardWeapon::Sling.weapon()
+    }
+
+    pub fn smallsword() -> Self {
+        StandardWeapon::Smallsword.weapon()
     }
 
     pub fn spear() -> Self {
@@ -235,6 +243,7 @@ pub enum StandardWeapon {
     HeavyCrossbow,
     HeavyFlail,
     Javelin,
+    Kama,
     Lance,
     Longbow,
     MorningStar,
@@ -249,6 +258,7 @@ pub enum StandardWeapon {
     Sickle,
     Sledgehammer,
     Sling,
+    Smallsword,
     Spear,
     Talon,
     Totokia,
@@ -358,6 +368,13 @@ impl StandardWeapon {
                 name: "Javelin".to_string(),
                 tags: vec![WeaponTag::Thrown(60, 120)],
             },
+            Self::Kama => Weapon {
+                accuracy: 1,
+                damage_dice: DicePool::d4(),
+                damage_types: vec![DamageType::Slashing],
+                name: "Kama".to_string(),
+                tags: vec![WeaponTag::Light, WeaponTag::Sweeping(1)],
+            },
             Self::Lance => Weapon {
                 // Add the bonus from the Mounted tag
                 accuracy: 2,
@@ -456,6 +473,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Sling".to_string(),
                 tags: vec![WeaponTag::Projectile(60, 120), WeaponTag::Compact],
+            },
+            Self::Smallsword => Weapon {
+                accuracy: 1,
+                damage_dice: DicePool::d4(),
+                damage_types: vec![DamageType::Piercing],
+                name: "Smallsword".to_string(),
+                tags: vec![WeaponTag::Keen, WeaponTag::Light],
             },
             Self::Spear => Weapon {
                 accuracy: 0,
