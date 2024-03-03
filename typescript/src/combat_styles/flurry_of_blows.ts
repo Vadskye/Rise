@@ -97,7 +97,8 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Barrage',
 
       effect: `
-        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon with a -4 accuracy penalty.
+        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon.
+        You take a -4 accuracy penalty with both strikes, and any \\glossterm{longshot penalty} that applies to the strikes is doubled.
         For each previous consecutive round that you used this ability in the same location, you reduce this accuracy penalty by 1.
       `,
       rank: 1,
@@ -156,7 +157,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any non-\\weapontag{Heavy} weapons you wield, then draw one or two non-\\weapontag{Heavy} weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike} with a -2 accuracy penalty.
+        Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
       `,
       rank: 1,
     },
@@ -166,7 +167,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any weapons you wield, then draw one or two weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike} with a -2 accuracy penalty.
+        Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
       `,
       rank: 3,
     },
