@@ -423,7 +423,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus3 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
                 It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
@@ -433,7 +433,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 3),
+                Modifier::Defense(Defense::Armor, 2),
             ]),
         },
         RankAbility {
@@ -441,7 +441,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus4.
+                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),

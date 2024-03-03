@@ -36,11 +36,11 @@ Level 15: 19.25
 Level 20: 22.5
 
 ## Fighter vs Sorcerer
-Level 1: 3.25
-Level 5: 4.25
-Level 10: 6.25
-Level 15: 10
-Level 20: 10
+Level 1: 2.5
+Level 5: 3.75
+Level 10: 5.25
+Level 15: 8.75
+Level 20: 8.75
 
 ## Greataxe Perception vs Greataxe Perception
 Level 1: 3
@@ -53,5 +53,5 @@ Level 20: 5
 Level 1: 3.25
 Level 5: 5
 Level 10: 6.75
-Level 15: 8.25
-Level 20: 5.5
+Level 15: 7
+Level 20: 5
