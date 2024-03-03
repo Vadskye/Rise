@@ -14,9 +14,9 @@
                     \monsep \textbf{DR} 6
                 \pari \textbf{Defenses}
                     Armor 5
-                    \monsep Fort 6
-                    \monsep Ref 6
-                    \monsep Ment 8
+                    \monsep Fort 5
+                    \monsep Ref 5
+                    \monsep Ment 7
                     \rankline
                     \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
                     \pari \textbf{Power} 4\sparkle \monsep 4
@@ -101,9 +101,9 @@
                     \monsep \textbf{DR} 27
                 \pari \textbf{Defenses}
                     Armor 7
-                    \monsep Fort 8
-                    \monsep Ref 8
-                    \monsep Ment 12
+                    \monsep Fort 7
+                    \monsep Ref 7
+                    \monsep Ment 11
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 8\sparkle \monsep 8
@@ -192,9 +192,9 @@
                     \monsep \textbf{DR} 17
                 \pari \textbf{Defenses}
                     Armor 10
-                    \monsep Fort 11
-                    \monsep Ref 11
-                    \monsep Ment 15
+                    \monsep Fort 10
+                    \monsep Ref 10
+                    \monsep Ment 14
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 11\sparkle \monsep 11
@@ -279,9 +279,9 @@
                     \monsep \textbf{DR} 78
                 \pari \textbf{Defenses}
                     Armor 12
-                    \monsep Fort 13
-                    \monsep Ref 13
-                    \monsep Ment 19
+                    \monsep Fort 12
+                    \monsep Ref 12
+                    \monsep Ment 18
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 15\sparkle \monsep 15

@@ -71,6 +71,7 @@ fn format_characters_at_level(level: i32) -> String {
 fn format_monsters_at_level(level: i32) -> String {
     let monsters = vec![
         Monster::standard_brute(level),
+        Monster::standard_leader(level),
         Monster::standard_mystic(level),
         Monster::standard_skirmisher(level),
         Monster::standard_sniper(level),

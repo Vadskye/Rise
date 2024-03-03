@@ -8,7 +8,7 @@ DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
 HP 12, DR 6
-AD 7, Fort 7, Ref 3, Ment 4
+AD 7, Fort 6, Ref 2, Ment 3
 Certain Broadsword +4 (1d6 slashing damage.); Generic Scaling Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -2 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
 Attr: Str 4, Dex 0, Con 2, Int 0, Per 2, Wil 0
 Power: 0✨/4
@@ -21,9 +21,9 @@ Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Generic Scaling Strike
 Maneuvers: maneuver Power Strike
 fighter: defense armor by 0
-fighter: defense fortitude by 5
-fighter: defense mental by 4
-fighter: defense reflex by 3
+fighter: defense fortitude by 4
+fighter: defense mental by 3
+fighter: defense reflex by 2
 fighter: resource attunement point by 2
 fighter: resource fatigue tolerance by 4
 fighter: resource insight point by 1
@@ -37,7 +37,7 @@ DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
 HP 45, DR 38
-AD 12, Fort 14, Ref 8, Ment 10
+AD 12, Fort 13, Ref 7, Ment 9
 Certain Broadsword +13 (1d6 slashing damage.); Powerful Broadsword +7 (2d6+12 slashing damage.); Generic Scaling Broadsword +10 (1d6+6 slashing damage.); Broadsword +7 (1d6+6 slashing damage.)
 Attr: Str 6, Dex 0, Con 4, Int 0, Per 2, Wil 0
 Power: 5✨/11
@@ -56,9 +56,9 @@ Equipment Efficiency: resource attunement point by 1
 Maneuvers: maneuver Generic Scaling Strike
 Armor Expertise: encumbrance -1
 fighter: defense armor by 0
-fighter: defense fortitude by 5
-fighter: defense mental by 4
-fighter: defense reflex by 3
+fighter: defense fortitude by 4
+fighter: defense mental by 3
+fighter: defense reflex by 2
 fighter: resource attunement point by 2
 fighter: resource fatigue tolerance by 4
 fighter: resource insight point by 1
@@ -77,7 +77,7 @@ DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
 HP 168, DR 96
-AD 17, Fort 20, Ref 13, Ment 16
+AD 17, Fort 19, Ref 12, Ment 15
 Certain Broadsword +21 (1d6 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Certain Strike+ -- Broadsword +19 (1d6+10 slashing damage.); Generic Scaling Broadsword +14 (6d6+10 slashing damage.); Broadsword +12 (1d6+10 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 10✨/17
@@ -102,9 +102,9 @@ Enduring Discipline+: resource fatigue tolerance by 1
 Armor Expertise+: encumbrance -1
 Maneuvers: maneuver Generic Scaling Strike
 fighter: defense armor by 0
-fighter: defense fortitude by 5
-fighter: defense mental by 4
-fighter: defense reflex by 3
+fighter: defense fortitude by 4
+fighter: defense mental by 3
+fighter: defense reflex by 2
 fighter: resource attunement point by 2
 fighter: resource fatigue tolerance by 4
 fighter: resource insight point by 1
