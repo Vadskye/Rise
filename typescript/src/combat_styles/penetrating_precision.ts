@@ -61,7 +61,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\largearealong, 5 ft. wide line from you.
-        You take a -1 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
+        You take a -2 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
         On a miss, you still deal half damage.
       `,
       rank: 5,
@@ -192,7 +192,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Full-Body Thrust+',
 
       effect: `
-        Make a melee \\glossterm{strike} with \\damagerankfive{} extra damage using a piercing weapon.
+        Make a melee \\glossterm{strike} with \\damagerankseven{} extra damage using a piercing weapon.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 7,
