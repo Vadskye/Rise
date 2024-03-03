@@ -1,9 +1,9 @@
 use crate::calculations::statistical_combat::generic_attack_outcome;
-use crate::classes::{Class, ClassArchetype};
-use crate::core_mechanics::attacks::{Attack, HasAttacks};
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses};
-use crate::creatures::{Character, Creature, CreatureCategory, Monster};
-use crate::monsters::{CreatureType, Role};
+
+
+use crate::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
+use crate::creatures::{Character, Creature, Monster};
+
 
 use std::io;
 
