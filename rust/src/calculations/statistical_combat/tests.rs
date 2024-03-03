@@ -224,7 +224,7 @@ mod calculate_attack_outcome {
         let level = 1;
         let attacker = Character::fighter_shield(level).creature;
         let attack = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
+            .get_attack_by_name("Extra Damage Broadsword")
             .unwrap();
         let expected_hit_probability = vec!["0.700 single, 0.077 crit", "0.500 single, 0.055 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
@@ -249,7 +249,7 @@ mod calculate_attack_outcome {
         let level = 20;
         let attacker = Character::fighter_shield(level).creature;
         let attack = attacker
-            .get_attack_by_name("Generic Scaling Broadsword")
+            .get_attack_by_name("Extra Damage Broadsword")
             .unwrap();
         let expected_hit_probability = vec!["0.900 single, 0.099 crit", "0.700 single, 0.077 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
@@ -312,7 +312,7 @@ mod calculate_attack_outcome {
         fn calc_at_level(level: i32) -> String {
             let attacker = Character::fighter_shield(level).creature;
             let attack = attacker
-                .get_attack_by_name("Generic Scaling Broadsword")
+                .get_attack_by_name("Extra Damage Broadsword")
                 .unwrap();
             let defender = Character::fighter_shield(level).creature;
             calculate_attack_outcome(
