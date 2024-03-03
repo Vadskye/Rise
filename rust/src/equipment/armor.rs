@@ -210,7 +210,7 @@ impl Armor {
             Self::Padded(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(3, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 0,
                 item_rank: 1,
@@ -220,7 +220,7 @@ impl Armor {
             Self::BuffLeather(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 1,
                 item_rank: 1,
@@ -230,7 +230,7 @@ impl Armor {
             Self::MailShirt(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
-                defense: 3,
+                defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 1,
                 item_rank: 1,
