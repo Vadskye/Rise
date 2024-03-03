@@ -15,6 +15,7 @@ fn main() -> io::Result<()> {
     golden_file_generation::write_run_pve_combat_golden().expect("Should write PVE combat golden");
     golden_file_generation::write_run_pvp_combat_golden().expect("Should write PVP combat golden");
     golden_file_generation::write_pve_accuracy_golden().expect("Should write PVE accuracy golden");
+    golden_file_generation::write_pvp_accuracy_golden().expect("Should write PVP accuracy golden");
 
     Result::Ok(())
 }
@@ -25,7 +26,9 @@ fn write_character_goldens() -> io::Result<()> {
     golden_file_generation::write_perception_greataxe_attacks_golden()
         .expect("Should write perception greataxe attacks");
     golden_file_generation::write_character_rounds_to_live_golden()
-        .expect("Should write rounds to live golden");
+        .expect("Should write character rounds to live golden");
+    golden_file_generation::write_character_defenses_golden()
+        .expect("Should write character defenses golden");
     golden_file_generation::write_standard_character_statistics_golden()
         .expect("Should write standard character statistics golden");
 

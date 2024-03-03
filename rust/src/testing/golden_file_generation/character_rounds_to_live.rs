@@ -25,10 +25,10 @@ pub fn write_character_rounds_to_live_golden() -> io::Result<()> {
             .join("\n")
     }
 
-    let barb = |level: i32| Character::standard_barbarian(level, true).creature;
-    let fighter = |level: i32| Character::standard_character(level, true).creature;
-    let greataxe = |level: i32| Character::perception_greataxe(level).creature;
-    let sorc = |level: i32| Character::standard_sorcerer(level, true).creature;
+    let barb = |level: i32| Character::barbarian_greataxe(level).creature;
+    let fighter = |level: i32| Character::fighter_shield(level).creature;
+    let greataxe = |level: i32| Character::fighter_perception_greataxe(level).creature;
+    let sorc = |level: i32| Character::sorcerer_dexterity(level).creature;
     let standard_monster = |level: i32| Monster::standard_example_monster(level).creature;
     let elite_monster = |level: i32| Monster::elite_example_monster(level).creature;
 

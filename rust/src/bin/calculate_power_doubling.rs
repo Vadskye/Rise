@@ -3,11 +3,11 @@ use rise::creatures::Character;
 
 fn main() {
     for level in vec![4, 7, 10, 13, 16, 19] {
-        let blue = vec![Character::standard_character(level, true).creature];
+        let blue = vec![Character::fighter_shield(level).creature];
         let level_difference = 3;
         let red = vec![
-            Character::standard_character(level - level_difference, true).creature,
-            Character::standard_character(level - level_difference, true).creature,
+            Character::fighter_shield(level , true).creature,
+            Character::fighter_shield(level , true).creature,
         ];
         let results = run_combat(blue, red);
         println!("L{}: {}", level, results);

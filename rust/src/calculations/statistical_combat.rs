@@ -450,9 +450,22 @@ pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<St
     ]
 }
 
-pub fn generic_attack_outcome(attacker: &Creature, defender: &Creature) -> AttackOutcomeProbability {
+pub fn generic_attack_outcome(
+    attacker: &Creature,
+    defender: &Creature,
+) -> AttackOutcomeProbability {
+    // If the attacker has a specific weapon listed, use its accuracy. But we're fine using a
+    // generic accuracy.
+    let weapon_accuracy = if let Some(weapon) = attacker.weapons.get(0) {
+        weapon.accuracy
+    } else {
+        0
+    };
     calculate_attack_outcome(
-        &Attack::default(),
+        &Attack {
+            accuracy: weapon_accuracy,
+            ..Default::default()
+        },
         attacker.calc_accuracy(),
         defender.calc_defense(&Defense::Armor),
         attacker.calc_explosion_target(),
