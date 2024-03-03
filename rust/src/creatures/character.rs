@@ -53,10 +53,11 @@ impl Character {
 
     // Not every individual predefined character is represented here, but it includes a good
     // variety of classes
-    pub fn standard_character_set(level: i32) -> Vec<Character> {
+    pub fn standard_set(level: i32) -> Vec<Character> {
         vec![
             Character::barbarian_glass(level),
             Character::barbarian_shield(level),
+            Character::fighter_greatmace(level),
             Character::fighter_shield(level),
             Character::monk_kama(level),
             Character::paladin_shield(level),
@@ -137,15 +138,16 @@ impl Character {
         character
     }
 
-    pub fn fighter_greataxe(level: i32) -> Self {
+    pub fn fighter_greatmace(level: i32) -> Self {
         let mut character = Self::fighter_shield(level);
         character.creature.remove_armor(Armor::StandardShield);
-        // Replace existing weapons with a greataxe
+        // Replace existing weapons with a greatmace
         character.creature.weapons.retain(|_| false);
         character
             .creature
             .weapons
-            .push(StandardWeapon::Greataxe.weapon());
+            .push(Weapon::greatmace());
+        character.creature.set_name("Fighter Greatmace");
         character
     }
 
@@ -155,6 +157,7 @@ impl Character {
         character
             .creature
             .set_attribute_scaling(level, [Attribute::Perception, Attribute::Strength]);
+        character.creature.set_name("Fighter Perception");
         character
     }
 
@@ -167,10 +170,11 @@ impl Character {
             .creature
             .weapons
             .push(StandardWeapon::Greataxe.weapon());
+        character.creature.set_name("Fighter Perception Greataxe");
         character
     }
 
-    pub fn barbarian_greataxe(level: i32) -> Self {
+    pub fn barbarian_greatmace(level: i32) -> Self {
         let mut character = Self::new(
             Class::Barbarian,
             level,
@@ -184,11 +188,11 @@ impl Character {
         character
             .creature
             .weapons
-            .push(StandardWeapon::Greataxe.weapon());
+            .push(Weapon::greatmace());
         character
             .creature
             .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Medium));
-        character.creature.name = Some("Barbarian Greataxe".to_string());
+        character.creature.name = Some("Barbarian Greatmace".to_string());
 
         character.creature.set_base_attributes([3, 2, 2, 0, 2, 0]);
         character
@@ -250,7 +254,7 @@ impl Character {
         character
             .creature
             .weapons
-            .push(StandardWeapon::Greataxe.weapon());
+            .push(Weapon::greatmace());
         character
             .creature
             .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Medium));

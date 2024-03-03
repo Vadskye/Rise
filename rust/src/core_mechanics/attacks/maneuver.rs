@@ -8,7 +8,6 @@ use crate::core_mechanics::{
     DamageType, Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
 };
 use crate::equipment::Weapon;
-use std::cmp::{max, min};
 use titlecase::titlecase;
 
 use super::Attack;
@@ -22,6 +21,7 @@ pub enum Maneuver {
     CertainStrike,
     CertainStrikePlus,
     ElementalStrike(i32),
+    GenericAccuracy,
     GenericExtraDamage(i32),
     GraspingStrike,
     GraspingStrikePlus,
@@ -114,23 +114,31 @@ impl Maneuver {
                 }),
             Self::GenericExtraDamage(rank) => weapon
                 .attack()
-                // +1a at rank 2 and rank 3
-                .except(|a| a.accuracy += max(0, min(2, rank - 1)))
                 .except_hit_damage(|d| match rank {
-                    4 => d.base_dice = d.base_dice.add_die(Die::d4()),
-                    5 => d.power_scalings.push(PowerScaling {
+                    2 => d.base_dice = d.base_dice.add_modifier(1),
+                    3 => d.power_scalings.push(PowerScaling {
+                        dice: None,
+                        power_per_dice: 0,
+                        power_per_plus1_modifier: 2,
+                    }),
+                    4 => d.power_scalings.push(PowerScaling {
                         dice: Some(DicePool::d4()),
-                        power_per_dice: 4,
+                        power_per_dice: 3,
+                        power_per_plus1_modifier: 0,
+                    }),
+                    5 => d.power_scalings.push(PowerScaling {
+                        dice: Some(DicePool::d6()),
+                        power_per_dice: 3,
                         power_per_plus1_modifier: 0,
                     }),
                     6 => d.power_scalings.push(PowerScaling {
-                        dice: Some(DicePool::d6()),
-                        power_per_dice: 4,
+                        dice: Some(DicePool::d8()),
+                        power_per_dice: 3,
                         power_per_plus1_modifier: 0,
                     }),
                     7 => d.power_scalings.push(PowerScaling {
-                        dice: Some(DicePool::d6()),
-                        power_per_dice: 3,
+                        dice: Some(DicePool::d8()),
+                        power_per_dice: 2,
                         power_per_plus1_modifier: 0,
                     }),
                     _ => {},
@@ -182,13 +190,15 @@ impl Maneuver {
                         immune_after_effect_ends: false,
                     }));
                 }),
+            Self::GenericAccuracy => weapon
+                .attack(),
             Self::PowerStrike => weapon
                 .attack()
-                .except(|a| a.accuracy -= 3)
+                .except(|a| a.accuracy -= 4)
                 .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(2)),
             Self::PowerStrikePlus => weapon
                 .attack()
-                .except(|a| a.accuracy -= 2)
+                .except(|a| a.accuracy -= 3)
                 .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(3)),
             Self::PouncingStrike => weapon
                 .attack()
@@ -305,6 +315,7 @@ impl Maneuver {
             Self::CertainStrike => with_prefix("Certain", weapon_name),
             Self::DoubleStrike => with_prefix("Double", weapon_name),
             Self::ElementalStrike(_) => with_prefix("Elemental", weapon_name),
+            Self::GenericAccuracy => with_prefix("Generic Accuracy", weapon_name),
             Self::GenericExtraDamage(_) => with_prefix("Generic Scaling", weapon_name),
             Self::GraspingStrike => with_prefix("Grasping", weapon_name),
             Self::GraspingStrikePlus => with_prefix("Grasping+", weapon_name),
@@ -325,6 +336,7 @@ impl Maneuver {
             Self::CertainStrike => "Certain Strike",
             Self::CertainStrikePlus => "Certain Strike+",
             Self::ElementalStrike(_) => "Elemental Strike",
+            Self::GenericAccuracy => "Generic Accuracy",
             Self::GenericExtraDamage(_) => "Generic Scaling Strike",
             Self::GraspingStrike => "Grasping Strike",
             Self::GraspingStrikePlus => "Grasping StrikePlus",
@@ -353,6 +365,7 @@ impl Maneuver {
             Self::CertainStrike => 1,
             Self::CertainStrikePlus => 5,
             Self::ElementalStrike(r) => *r,
+            Self::GenericAccuracy => 1,
             Self::GenericExtraDamage(r) => *r,
             Self::GraspingStrike => 1,
             Self::GraspingStrikePlus => 5,

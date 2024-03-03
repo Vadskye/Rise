@@ -218,24 +218,24 @@ pub fn find_best_attack(attacker: &Creature, defender: &Creature) -> Option<Atta
 
 // This only makes sense in the context of a specific defender.
 pub struct AttackDamagePerRound {
-    hit_probability: f64,
-    glance_probability: f64,
-    crit_probability: f64,
-    damage_per_glance: f64,
-    damage_per_hit: f64,
-    damage_per_crit: f64,
+    pub hit_probability: f64,
+    pub glance_probability: f64,
+    pub crit_probability: f64,
+    pub damage_per_glance: f64,
+    pub damage_per_hit: f64,
+    pub damage_per_crit: f64,
 }
 
 impl AttackDamagePerRound {
-    fn total(&self) -> f64 {
+    pub fn total(&self) -> f64 {
         self.hit_probability * self.damage_per_hit
             + self.glance_probability * self.damage_per_glance
             + self.crit_probability * self.damage_per_crit
     }
 
-    pub fn explain(&self) -> String {
+    pub fn explain(&self, attack_name: &str) -> String {
         format!(
-            "{total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
+            "{attack_name: <7}: {total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
             total=dec2(self.total()),
             damage_per_hit=dec1(self.damage_per_hit),
             hit_probability=dec2(self.hit_probability),
@@ -430,23 +430,21 @@ pub fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<Str
     // TODO: this used to be a slam, so all of the damage values are wrong
     let bite = attacker.get_attack_by_substring("Bite").unwrap();
     vec![
-        calc_attack_damage_per_round(&claws, attacker, defender).explain(),
-        calc_attack_damage_per_round(&bite, attacker, defender).explain(),
+        calc_attack_damage_per_round(&claws, attacker, defender).explain("Claws"),
+        calc_attack_damage_per_round(&bite, attacker, defender).explain("Bite"),
     ]
 }
 
 pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
+    let normal_strike = attacker.get_attack_by_substring("Generic Accuracy").unwrap();
     let certain_strike = attacker.get_attack_by_substring("Certain").unwrap();
     let generic_strike = attacker.get_attack_by_substring("Generic Scaling").unwrap();
-    let mighty_strike = attacker.get_attack_by_substring("Power").unwrap();
-    let normal_strike = attacker
-        .get_attack_by_name(&attacker.weapons[0].name)
-        .unwrap();
+    let power_strike = attacker.get_attack_by_substring("Power").unwrap();
     vec![
-        calc_attack_damage_per_round(&certain_strike, attacker, defender).explain(),
-        calc_attack_damage_per_round(&generic_strike, attacker, defender).explain(),
-        calc_attack_damage_per_round(&mighty_strike, attacker, defender).explain(),
-        calc_attack_damage_per_round(&normal_strike, attacker, defender).explain(),
+        calc_attack_damage_per_round(&normal_strike, attacker, defender).explain("Accuracy"),
+        calc_attack_damage_per_round(&certain_strike, attacker, defender).explain("Certain"),
+        calc_attack_damage_per_round(&generic_strike, attacker, defender).explain("Extra"),
+        calc_attack_damage_per_round(&power_strike, attacker, defender).explain("Power"),
     ]
 }
 

@@ -56,7 +56,7 @@ pub fn write_monster_defenses_golden() -> io::Result<()> {
 }
 
 fn format_characters_at_level(level: i32) -> String {
-    let formatted = Character::standard_character_set(level)
+    let formatted = Character::standard_set(level)
         .iter()
         .map(|c| format_defenses(&c.creature))
         .collect::<Vec<String>>()

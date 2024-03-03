@@ -51,7 +51,7 @@ struct StandardCombatResult {
 fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
         Character::fighter_shield(level).creature,
-        Character::fighter_greataxe(level).creature,
+        Character::fighter_greatmace(level).creature,
         Character::barbarian_greataxe(level).creature,
         Character::sorcerer_dexterity(level).creature,
     ];
@@ -77,7 +77,7 @@ fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult 
 fn run_standard_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
         Character::fighter_shield(level).creature,
-        Character::fighter_greataxe(level).creature,
+        Character::fighter_greatmace(level).creature,
         Character::barbarian_greataxe(level).creature,
         Character::sorcerer_dexterity(level).creature,
     ];

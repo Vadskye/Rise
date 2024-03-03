@@ -17,7 +17,7 @@ fn four_stack(creature: Creature) -> Vec<Creature> {
 }
 
 fn barbarian_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::barbarian_greataxe(level).creature)
+    four_stack(Character::barbarian_greatmace(level).creature)
 }
 
 fn standard_character_party(level: i32) -> Vec<Creature> {
@@ -28,13 +28,13 @@ fn mixed_character_party(level: i32) -> Vec<Creature> {
     vec![
         Character::fighter_shield(level).creature,
         Character::fighter_perception_greataxe(level).creature,
-        Character::barbarian_greataxe(level).creature,
+        Character::barbarian_greatmace(level).creature,
         Character::sorcerer_dexterity(level).creature,
     ]
 }
 
 fn standard_greataxe_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::fighter_greataxe(level).creature)
+    four_stack(Character::fighter_greatmace(level).creature)
 }
 
 fn format_results(results: Vec<CombatResult>) -> String {

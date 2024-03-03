@@ -12,6 +12,11 @@ A/F/R/M: 7 / 6 / 5 / 2
 HP/DR/Total: 14 / 5 / 19
 Points / Self-hit: 27 / 50%
 
+### Fighter Greatmace
+A/F/R/M: 5 / 6 / 2 / 3
+HP/DR/Total: 12 / 6 / 18
+Points / Self-hit: 21 / 70%
+
 ### Fighter Shield
 A/F/R/M: 7 / 6 / 2 / 3
 HP/DR/Total: 12 / 6 / 18
@@ -58,6 +63,11 @@ Points / Self-hit: 23 / 100%
 A/F/R/M: 9 / 9 / 9 / 4
 HP/DR/Total: 28 / 10 / 38
 Points / Self-hit: 40 / 60%
+
+### Fighter Greatmace
+A/F/R/M: 7 / 9 / 4 / 6
+HP/DR/Total: 26 / 12 / 38
+Points / Self-hit: 33 / 80%
 
 ### Fighter Shield
 A/F/R/M: 9 / 9 / 4 / 6
@@ -106,6 +116,11 @@ A/F/R/M: 12 / 13 / 12 / 7
 HP/DR/Total: 65 / 26 / 91
 Points / Self-hit: 56 / 60%
 
+### Fighter Greatmace
+A/F/R/M: 10 / 13 / 7 / 9
+HP/DR/Total: 45 / 38 / 83
+Points / Self-hit: 49 / 80%
+
 ### Fighter Shield
 A/F/R/M: 12 / 13 / 7 / 9
 HP/DR/Total: 45 / 38 / 83
@@ -152,6 +167,11 @@ Points / Self-hit: 50 / 100%
 A/F/R/M: 14 / 17 / 14 / 9
 HP/DR/Total: 137 / 32 / 169
 Points / Self-hit: 68 / 60%
+
+### Fighter Greatmace
+A/F/R/M: 12 / 16 / 9 / 12
+HP/DR/Total: 90 / 48 / 138
+Points / Self-hit: 61 / 80%
 
 ### Fighter Shield
 A/F/R/M: 14 / 16 / 9 / 12
@@ -200,15 +220,20 @@ A/F/R/M: 17 / 20 / 19 / 12
 HP/DR/Total: 245 / 64 / 309
 Points / Self-hit: 85 / 70%
 
+### Fighter Greatmace
+A/F/R/M: 15 / 19 / 12 / 15
+HP/DR/Total: 168 / 96 / 264
+Points / Self-hit: 76 / 80%
+
 ### Fighter Shield
 A/F/R/M: 17 / 19 / 12 / 15
 HP/DR/Total: 168 / 96 / 264
 Points / Self-hit: 80 / 60%
 
 ### Monk Kama
-A/F/R/M: 24 / 15 / 25 / 13
+A/F/R/M: 23 / 15 / 24 / 13
 HP/DR/Total: 126 / 46 / 172
-Points / Self-hit: 101 / 10%
+Points / Self-hit: 98 / 10%
 
 ### Paladin Shield
 A/F/R/M: 17 / 19 / 12 / 15
