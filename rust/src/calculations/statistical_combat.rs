@@ -235,7 +235,7 @@ impl AttackDamagePerRound {
 
     pub fn explain(&self, attack_name: &str) -> String {
         format!(
-            "{attack_name: <7}: {total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
+            "{attack_name: <8}: {total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
             total=dec2(self.total()),
             damage_per_hit=dec1(self.damage_per_hit),
             hit_probability=dec2(self.hit_probability),
@@ -438,14 +438,22 @@ pub fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<Str
 pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
     let normal_strike = attacker.get_attack_by_substring("Generic Accuracy").unwrap();
     let certain_strike = attacker.get_attack_by_substring("Certain").unwrap();
-    let generic_strike = attacker.get_attack_by_substring("Generic Scaling").unwrap();
+    let generic_strike = attacker.get_attack_by_substring("Extra Damage").unwrap();
     let power_strike = attacker.get_attack_by_substring("Power").unwrap();
-    vec![
+    let mut attacks = vec![
         calc_attack_damage_per_round(&normal_strike, attacker, defender).explain("Accuracy"),
         calc_attack_damage_per_round(&certain_strike, attacker, defender).explain("Certain"),
         calc_attack_damage_per_round(&generic_strike, attacker, defender).explain("Extra"),
         calc_attack_damage_per_round(&power_strike, attacker, defender).explain("Power"),
-    ]
+    ];
+    if let Some(certain_plus) = attacker.get_attack_by_substring("Certain Strike+") {
+        attacks.push(calc_attack_damage_per_round(&certain_plus, attacker, defender).explain("Certain+"));
+    }
+    if let Some(power_plus) = attacker.get_attack_by_substring("Power Strike+") {
+        attacks.push(calc_attack_damage_per_round(&power_plus, attacker, defender).explain("Power+"));
+    }
+
+    attacks
 }
 
 pub fn generic_attack_outcome(

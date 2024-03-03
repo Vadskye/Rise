@@ -142,7 +142,7 @@ fn it_calculates_level_21_fighter_attacks() {
             "Powerful Battleaxe +15 (2d6+10 slashing damage.)",
             "Power Strike+ -- Battleaxe +12 (3d6+15 slashing damage.)",
             "Certain Strike+ -- Battleaxe +19 (1d6+5 slashing damage.)",
-            "Generic Scaling Battleaxe +14 (4d6+5 slashing damage.)",
+            "Extra Damage Battleaxe +14 (4d6+5 slashing damage.)",
             "Battleaxe +12 (1d6+5 slashing damage.)"
         ],
         fighter
