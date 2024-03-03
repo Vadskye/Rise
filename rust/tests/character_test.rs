@@ -44,9 +44,9 @@ mod character_tests {
             vec![
                 "attack Abyssal Rebuke",
                 "defense armor by 0",
-                "defense fortitude by 4",
-                "defense mental by 5",
-                "defense reflex by 3",
+                "defense fortitude by 3",
+                "defense mental by 4",
+                "defense reflex by 2",
                 "resource attunement point by 3",
                 "resource fatigue tolerance by 3",
                 "resource insight point by 2",
@@ -75,7 +75,7 @@ mod character_tests {
         assert_eq!(1, attacks.len(), "Should have one attack");
         let abyssal_blast = &attacks[0];
         assert_eq!(
-            "Abyssal Rebuke +10 (11d10 fire damage.)",
+            "Abyssal Rebuke +10 (12d10 fire damage.)",
             abyssal_blast.shorthand_description(&warlock.creature),
             "Should have correct description"
         );

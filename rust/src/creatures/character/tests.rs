@@ -80,31 +80,31 @@ fn it_calculates_level_21_fighter_defenses() {
         ),
     );
     assert_eq!(
-        "Fort b10 f15",
+        "Fort b10 f14",
         format!(
             "Fort b{} f{}",
             baseline.calc_defense(&Defense::Fortitude),
             fighter.calc_defense(&Defense::Fortitude)
         ),
-        "10 level scaling + 5 class",
+        "10 level scaling + 4 class",
     );
     assert_eq!(
-        "Ref b10 f13",
+        "Ref b10 f12",
         format!(
             "Ref b{} f{}",
             baseline.calc_defense(&Defense::Reflex),
             fighter.calc_defense(&Defense::Reflex)
         ),
-        "10 level scaling + 3 class",
+        "10 level scaling + 2 class",
     );
     assert_eq!(
-        "Ment b10 f16",
+        "Ment b10 f15",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 4 class + 1 CD1 + 1 CD5",
+        "10 level scaling + 3 class + 1 CD1 + 1 CD5",
     );
 }
 
