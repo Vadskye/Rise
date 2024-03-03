@@ -70,8 +70,7 @@ fn format_monster_defenses(monster: Monster) -> String {
         "### {name}
 A/F/R/M: {armor} / {fort} / {reflex} / {ment}
 Avg / Avg non-Armor / Points: {average} / {average_non_armor:.2} / {points}
-Self-hit: {self_hit}%
-",
+Self-hit: {self_hit}%",
         name = creature.name.unwrap(),
     )
 }
