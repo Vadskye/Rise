@@ -6,8 +6,8 @@ fn main() {
         let blue = vec![Character::fighter_shield(level).creature];
         let level_difference = 3;
         let red = vec![
-            Character::fighter_shield(level , true).creature,
-            Character::fighter_shield(level , true).creature,
+            Character::fighter_shield(level).creature,
+            Character::fighter_shield(level).creature,
         ];
         let results = run_combat(blue, red);
         println!("L{}: {}", level, results);
