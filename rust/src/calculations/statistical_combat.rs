@@ -1,5 +1,5 @@
 use crate::core_mechanics::attacks::{Attack, HasAttacks};
-use crate::core_mechanics::{HasDamageAbsorption, HasDefenses, HasVitalWounds};
+use crate::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses, HasVitalWounds};
 use crate::creatures::{Creature, HasDamageTracking};
 use std::cmp::max;
 use std::fmt;
@@ -448,6 +448,15 @@ pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<St
         calc_attack_damage_per_round(&mighty_strike, attacker, defender).explain(),
         calc_attack_damage_per_round(&normal_strike, attacker, defender).explain(),
     ]
+}
+
+pub fn generic_attack_outcome(attacker: &Creature, defender: &Creature) -> AttackOutcomeProbability {
+    calculate_attack_outcome(
+        &Attack::default(),
+        attacker.calc_accuracy(),
+        defender.calc_defense(&Defense::Armor),
+        attacker.calc_explosion_target(),
+    )
 }
 
 #[cfg(test)]
