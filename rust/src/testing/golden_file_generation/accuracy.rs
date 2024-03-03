@@ -93,7 +93,7 @@ fn format_pve_accuracy(level: i32) -> String {
 
 fn format_pvp_accuracy(level: i32) -> String {
     let attackers = standard_attackers(level);
-    let defenders = Character::standard_character_set(level)
+    let defenders = Character::standard_set(level)
         .into_iter()
         .map(|c| c.creature)
         .collect();

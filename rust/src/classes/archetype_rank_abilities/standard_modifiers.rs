@@ -92,6 +92,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             rank: 1,
             description: "",
             modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::GenericAccuracy),
                 Modifier::Maneuver(Maneuver::CertainStrike),
                 Modifier::Maneuver(Maneuver::GenericExtraDamage(1)),
                 Modifier::Maneuver(Maneuver::PowerStrike),

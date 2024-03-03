@@ -148,9 +148,11 @@ impl DicePool {
         self.add_dice(vec![die])
     }
 
-    pub fn add_modifier(mut self, flat_modifier: i32) -> DicePool {
-        self.flat_modifier += flat_modifier;
-        self
+    pub fn add_modifier(&self, flat_modifier: i32) -> DicePool {
+        let mut new_pool = self.clone();
+        new_pool.flat_modifier += flat_modifier;
+
+        new_pool
     }
 
     // Construct a standard "1d8" or "2d8+1d10" string.
@@ -329,7 +331,14 @@ mod tests {
     fn stringifies_maximized_dice() {
         assert_eq!("6", DicePool::d6().maximize().to_string());
         assert_eq!("9", DicePool::d6().add_modifier(3).maximize().to_string());
-        assert_eq!("18", DicePool::d6().add_modifier(3).maximize().multiply(2).to_string());
+        assert_eq!(
+            "18",
+            DicePool::d6()
+                .add_modifier(3)
+                .maximize()
+                .multiply(2)
+                .to_string()
+        );
     }
 
     #[test]
@@ -351,7 +360,13 @@ mod tests {
     #[test]
     fn stringifies_multiplied_dice() {
         assert_eq!("1d6+2", DicePool::d6().add_modifier(2).to_string());
-        assert_eq!("2d6+4", DicePool::d6().add_modifier(2).multiply(2).to_string());
-        assert_eq!("3d6+6", DicePool::d6().add_modifier(2).multiply(3).to_string());
+        assert_eq!(
+            "2d6+4",
+            DicePool::d6().add_modifier(2).multiply(2).to_string()
+        );
+        assert_eq!(
+            "3d6+6",
+            DicePool::d6().add_modifier(2).multiply(3).to_string()
+        );
     }
 }

@@ -10,7 +10,8 @@ mod write_golden_file;
 
 pub use accuracy::{write_pve_accuracy_golden, write_pvp_accuracy_golden};
 pub use character_attacks::{
-    write_perception_greataxe_attacks_golden, write_standard_character_attacks_golden,
+    write_attack_comparison_golden, write_fighter_greatmace_attacks_golden,
+    write_fighter_shield_attacks_golden, write_perception_greataxe_attacks_golden,
 };
 pub use character_rounds_to_live::write_character_rounds_to_live_golden;
 pub use character_statistics::write_standard_character_statistics_golden;
