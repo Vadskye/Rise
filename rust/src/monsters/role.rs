@@ -51,12 +51,12 @@ impl Role {
     pub fn defense(&self, defense: &Defense) -> i32 {
         // order: Armor, Fort, Ref, Ment
         let defenses = match self {
-            Role::Brute => [4, 5, 4, 3],
-            Role::Skirmisher => [4, 3, 5, 4],
-            Role::Warrior => [6, 5, 3, 4],
-            Role::Sniper => [3, 4, 3, 5],
-            Role::Mystic => [3, 3, 4, 5],
-            Role::Leader => [4, 4, 4, 4],
+            Role::Brute => [4, 4, 3, 2],
+            Role::Skirmisher => [4, 2, 4, 3],
+            Role::Warrior => [6, 4, 2, 3],
+            Role::Sniper => [3, 2, 2, 2],
+            Role::Mystic => [3, 2, 3, 4],
+            Role::Leader => [4, 3, 3, 3],
         };
 
         let i = match defense {

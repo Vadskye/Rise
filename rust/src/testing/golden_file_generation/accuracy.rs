@@ -52,24 +52,6 @@ pub fn write_pvp_accuracy_golden() -> io::Result<()> {
     write_golden_file("pvp_accuracy", golden)
 }
 
-fn format_pve_accuracy(level: i32) -> String {
-    let attackers = standard_attackers(level);
-    let defenders = monster_defenders(level);
-
-    format!(
-        "## Level {level}
-
-{low_attacker}
-
-{med_attacker}
-
-{high_attacker}",
-        low_attacker = format_accuracy_vs_monsters(&attackers[0], &defenders),
-        med_attacker = format_accuracy_vs_monsters(&attackers[1], &defenders),
-        high_attacker = format_accuracy_vs_monsters(&attackers[2], &defenders),
-    )
-}
-
 fn standard_attackers(level: i32) -> [Creature; 3] {
     let mut low_accuracy_creature = Creature::new(level, CreatureCategory::Character);
     low_accuracy_creature.set_name("Low accuracy");
@@ -100,21 +82,12 @@ fn monster_defenders(level: i32) -> [Creature; 4] {
     [mystic, brute, warrior, skirmisher]
 }
 
-fn format_accuracy_vs_monsters(attacker: &Creature, defenders: &[Creature; 4]) -> String {
-    format!(
-        "### {name}
-Mystic/Brute/Warrior/Skirmisher: {mystic} / {brute} / {warrior} / {skirmisher}",
-        name = attacker.name.as_ref().unwrap(),
-        mystic = generic_attack_outcome(attacker, &defenders[0]).hit_probability,
-        brute = generic_attack_outcome(attacker, &defenders[1]).hit_probability,
-        warrior = generic_attack_outcome(attacker, &defenders[2]).hit_probability,
-        skirmisher = generic_attack_outcome(attacker, &defenders[3]).hit_probability,
-    )
-}
-
-fn format_pvp_accuracy(level: i32) -> String {
+fn format_pve_accuracy(level: i32) -> String {
     let attackers = standard_attackers(level);
-    let defenders = character_defenders(level);
+    let defenders = Monster::standard_set(level)
+        .into_iter()
+        .map(|m| m.creature)
+        .collect();
 
     format!(
         "## Level {level}
@@ -124,27 +97,41 @@ fn format_pvp_accuracy(level: i32) -> String {
 {med_attacker}
 
 {high_attacker}",
-        low_attacker = format_accuracy_vs_characters(&attackers[0], &defenders),
-        med_attacker = format_accuracy_vs_characters(&attackers[1], &defenders),
-        high_attacker = format_accuracy_vs_characters(&attackers[2], &defenders),
+        low_attacker = format_accuracy(&attackers[0], &defenders),
+        med_attacker = format_accuracy(&attackers[1], &defenders),
+        high_attacker = format_accuracy(&attackers[2], &defenders),
     )
 }
 
-fn character_defenders(level: i32) -> Vec<Creature> {
-    Character::standard_character_set(level)
+fn format_pvp_accuracy(level: i32) -> String {
+    let attackers = standard_attackers(level);
+    let defenders = Character::standard_character_set(level)
         .into_iter()
         .map(|c| c.creature)
-        .collect()
+        .collect();
+
+    format!(
+        "## Level {level}
+
+{low_attacker}
+
+{med_attacker}
+
+{high_attacker}",
+        low_attacker = format_accuracy(&attackers[0], &defenders),
+        med_attacker = format_accuracy(&attackers[1], &defenders),
+        high_attacker = format_accuracy(&attackers[2], &defenders),
+    )
 }
 
-fn format_accuracy_vs_characters(attacker: &Creature, defenders: &Vec<Creature>) -> String {
+fn format_accuracy(attacker: &Creature, defenders: &Vec<Creature>) -> String {
     let components = defenders
         .iter()
         .map(|c| {
             format!(
-                "{}: {:.2} ({})",
+                "{: <18}: {:.0}% ({})",
                 c.name.as_ref().unwrap(),
-                generic_attack_outcome(attacker, c).hit_probability,
+                generic_attack_outcome(attacker, c).hit_probability * 100.0,
                 c.calc_defense(&Defense::Armor),
             )
         })
