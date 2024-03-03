@@ -70,18 +70,6 @@ fn standard_attackers(level: i32) -> [Creature; 3] {
     ]
 }
 
-fn monster_defenders(level: i32) -> [Creature; 4] {
-    let mystic = Monster::standard_mystic(level).creature;
-
-    let brute = Monster::standard_brute(level).creature;
-
-    let warrior = Monster::standard_warrior(level).creature;
-
-    let skirmisher = Monster::standard_skirmisher(level).creature;
-
-    [mystic, brute, warrior, skirmisher]
-}
-
 fn format_pve_accuracy(level: i32) -> String {
     let attackers = standard_attackers(level);
     let defenders = Monster::standard_set(level)
