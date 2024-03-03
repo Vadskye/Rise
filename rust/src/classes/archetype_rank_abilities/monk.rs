@@ -616,8 +616,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 The defense bonuses increase to +2.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-                Modifier::Defense(Defense::Reflex, 2),
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
             ]),
         },
         RankAbility {

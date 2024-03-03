@@ -1,12 +1,7 @@
-
-
 use crate::core_mechanics::HasDamageAbsorption;
 use crate::creatures::{Character, HasModifiers};
-
 use crate::latex_formatting::remove_indentation;
-
-
-use std::{io};
+use std::io;
 
 use super::write_golden_file;
 

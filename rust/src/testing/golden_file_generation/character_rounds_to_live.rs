@@ -25,9 +25,10 @@ pub fn write_character_rounds_to_live_golden() -> io::Result<()> {
             .join("\n")
     }
 
-    let barb = |level: i32| Character::barbarian_greataxe(level).creature;
+    let barb = |level: i32| Character::barbarian_greatmace(level).creature;
     let fighter = |level: i32| Character::fighter_shield(level).creature;
-    let greataxe = |level: i32| Character::fighter_perception_greataxe(level).creature;
+    let fighter_greatmace = |level: i32| Character::fighter_greatmace(level).creature;
+    let fighter_perception = |level: i32| Character::fighter_perception_greataxe(level).creature;
     let sorc = |level: i32| Character::sorcerer_dexterity(level).creature;
     let standard_monster = |level: i32| Monster::standard_example_monster(level).creature;
     let elite_monster = |level: i32| Monster::elite_example_monster(level).creature;
@@ -53,18 +54,18 @@ pub fn write_character_rounds_to_live_golden() -> io::Result<()> {
 ## Fighter vs Sorcerer
 {fighter_vs_sorc}
 
-## Greataxe Perception vs Greataxe Perception
-{greataxe_vs_greataxe}
+## Greatmace Fighter vs Greatmace Fighter
+{greatmace_vs_greatmace}
 
 ## Sorcerer vs Sorcerer
 {sorc_vs_sorc}",
         barb_vs_barb = rtl_by_level(&barb, &barb),
         fighter_vs_fighter = rtl_by_level(&fighter, &fighter),
-        fighter_vs_greataxe = rtl_by_level(&fighter, &greataxe),
+        fighter_vs_greataxe = rtl_by_level(&fighter, &fighter_perception),
         fighter_vs_standard = rtl_by_level(&fighter, &standard_monster),
         fighter_vs_elite = rtl_by_level(&fighter, &elite_monster),
         fighter_vs_sorc = rtl_by_level(&fighter, &sorc),
-        greataxe_vs_greataxe = rtl_by_level(&greataxe, &greataxe),
+        greatmace_vs_greatmace = rtl_by_level(&fighter_greatmace, &fighter_greatmace),
         sorc_vs_sorc = rtl_by_level(&sorc, &sorc),
     );
 

@@ -21,10 +21,15 @@ fn main() -> io::Result<()> {
 }
 
 fn write_character_goldens() -> io::Result<()> {
-    golden_file_generation::write_standard_character_attacks_golden()
-        .expect("Should write standard character attacks");
+    golden_file_generation::write_fighter_greatmace_attacks_golden()
+        .expect("Should write fighter greatmace attacks");
+    golden_file_generation::write_fighter_shield_attacks_golden()
+        .expect("Should write fighter shield attacks");
     golden_file_generation::write_perception_greataxe_attacks_golden()
         .expect("Should write perception greataxe attacks");
+
+    golden_file_generation::write_attack_comparison_golden()
+        .expect("Should write attack comparison");
     golden_file_generation::write_character_rounds_to_live_golden()
         .expect("Should write character rounds to live golden");
     golden_file_generation::write_character_defenses_golden()
