@@ -1,8 +1,8 @@
 use crate::core_mechanics::attacks::{HasAttacks, PureDamageAbility};
 use crate::core_mechanics::Attribute::{Intelligence, Strength, Willpower};
 use crate::core_mechanics::{
-    Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses,
-    SpecialDefenseType, HasMovement,
+    Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasMovement,
+    SpecialDefenseType,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
@@ -23,6 +23,7 @@ pub struct Monster {
     pub role: Role,
 }
 
+// Constructor and methods
 impl Monster {
     pub fn new(elite: bool, creature_type: CreatureType, role: Role, level: i32) -> Monster {
         let cr = if elite {
@@ -77,56 +78,6 @@ impl Monster {
 
     pub fn elite_example_monster(level: i32) -> Monster {
         Self::example_monster(true, level, None, None)
-    }
-
-    pub fn example_monster(
-        elite: bool,
-        level: i32,
-        role: Option<Role>,
-        starting_attribute: Option<i32>,
-    ) -> Monster {
-        let cr = if elite {
-            ChallengeRating::Four
-        } else {
-            ChallengeRating::One
-        };
-        let role = if let Some(r) = role { r } else { Role::Leader };
-
-        let mut monster = Monster::new(elite, CreatureType::Planeforged, role, level);
-        monster
-            .creature
-            .weapons
-            .push(StandardWeapon::Claw.weapon());
-        monster
-            .creature
-            .weapons
-            .push(StandardWeapon::MonsterBite.weapon());
-        monster.creature.name = Some("Standard Monster".to_string());
-
-        let starting_attribute = if let Some(a) = starting_attribute {
-            a
-        } else {
-            2
-        };
-
-        // 2 for most attributes, 4 str, 4 wil
-        for attribute_name in Attribute::all() {
-            monster
-                .creature
-                .set_base_attribute(attribute_name, starting_attribute);
-        }
-        monster
-            .creature
-            .set_base_attribute(Strength, cr.max_base_attribute());
-        monster
-            .creature
-            .set_base_attribute(Willpower, cr.max_base_attribute());
-
-        monster
-            .creature
-            .set_attribute_scaling(level, [Strength, Willpower]);
-
-        monster
     }
 
     pub fn add_magical_attack(&mut self) {
@@ -304,6 +255,126 @@ impl Monster {
             attacks = self.creature.explain_attacks().join("\n").trim(),
             movement = self.latex_movement(),
         )
+    }
+}
+
+// Static generators
+impl Monster {
+    pub fn standard_brute(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Brute, level);
+        monster.creature.set_base_attributes([4, 2, 2, 0, 0, 0]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+        monster.creature.set_name("Brute");
+
+        monster
+    }
+
+    pub fn standard_mystic(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Mystic, level);
+        monster.creature.set_base_attributes([0, 0, 2, 0, 2, 4]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Willpower]);
+        monster.creature.set_name("Mystic");
+
+        monster
+    }
+
+    pub fn standard_skirmisher(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Skirmisher, level);
+        monster.creature.set_base_attributes([2, 4, 0, 0, 2, 0]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+        monster.creature.set_name("Skirmisher");
+
+        monster
+    }
+
+    pub fn standard_warrior(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Warrior, level);
+        monster.creature.set_base_attributes([2, 0, 4, 0, 0, 2]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+        monster.creature.set_name("Warrior");
+
+        monster
+    }
+
+    pub fn standard_sniper(level: i32) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Sniper, level);
+        monster.creature.set_base_attributes([2, 2, 0, 0, 4, 0]);
+        monster
+            .creature
+            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Perception]);
+        monster.creature.set_name("Sniper");
+
+        monster
+    }
+
+    // Useful for comparing the relative power of various attributes
+    fn pure_attribute(level: i32, attribute: Attribute) -> Self {
+        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Leader, level);
+        monster.creature.set_base_attribute(attribute, 4);
+        // We use Intelligence because it doesn't affect any monster statistics
+        monster
+            .creature
+            .set_attribute_scaling(level, [attribute, Attribute::Intelligence]);
+        monster
+            .creature
+            .set_name(&format!("Pure {}", attribute.name()));
+
+        monster
+    }
+
+    pub fn example_monster(
+        elite: bool,
+        level: i32,
+        role: Option<Role>,
+        starting_attribute: Option<i32>,
+    ) -> Monster {
+        let cr = if elite {
+            ChallengeRating::Four
+        } else {
+            ChallengeRating::One
+        };
+        let role = if let Some(r) = role { r } else { Role::Leader };
+
+        let mut monster = Monster::new(elite, CreatureType::Planeforged, role, level);
+        monster.creature.weapons.push(StandardWeapon::Claw.weapon());
+        monster
+            .creature
+            .weapons
+            .push(StandardWeapon::MonsterBite.weapon());
+        monster.creature.name = Some("Standard Monster".to_string());
+
+        let starting_attribute = if let Some(a) = starting_attribute {
+            a
+        } else {
+            2
+        };
+
+        // 2 for most attributes, 4 str, 4 wil
+        for attribute_name in Attribute::all() {
+            monster
+                .creature
+                .set_base_attribute(attribute_name, starting_attribute);
+        }
+        monster
+            .creature
+            .set_base_attribute(Strength, cr.max_base_attribute());
+        monster
+            .creature
+            .set_base_attribute(Willpower, cr.max_base_attribute());
+
+        monster
+            .creature
+            .set_attribute_scaling(level, [Strength, Willpower]);
+
+        monster
     }
 }
 

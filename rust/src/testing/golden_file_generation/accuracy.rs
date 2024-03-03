@@ -1,9 +1,7 @@
-use crate::calculations::statistical_combat;
+use crate::calculations::statistical_combat::generic_attack_outcome;
 use crate::classes::{Class, ClassArchetype};
-use crate::core_mechanics::attacks::{Attack, HasAttacks};
-use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasDefenses};
+use crate::core_mechanics::{Attribute, HasAttributes};
 use crate::creatures::{Character, Creature, CreatureCategory, Monster};
-use crate::monsters::{CreatureType, Role};
 
 use std::io;
 
@@ -91,18 +89,13 @@ fn standard_attackers(level: i32) -> [Creature; 3] {
 }
 
 fn standard_defenders(level: i32) -> [Creature; 4] {
-    let mystic = Monster::new(false, CreatureType::Planeforged, Role::Mystic, level).creature;
+    let mystic = Monster::standard_mystic(level).creature;
 
-    let mut brute = Monster::new(false, CreatureType::Planeforged, Role::Brute, level).creature;
-    brute.set_base_attribute(Attribute::Dexterity, 2);
+    let brute = Monster::standard_brute(level).creature;
 
-    let warrior = Monster::new(false, CreatureType::Planeforged, Role::Warrior, level).creature;
+    let warrior = Monster::standard_warrior(level).creature;
 
-    let mut skirmisher =
-        Monster::new(false, CreatureType::Planeforged, Role::Skirmisher, level).creature;
-    skirmisher.set_base_attribute(Attribute::Dexterity, 4);
-    // Perception is irrelevant here, but we need to provide two attributes for normal scaling
-    skirmisher.set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+    let skirmisher = Monster::standard_skirmisher(level).creature;
 
     [mystic, brute, warrior, skirmisher]
 }
@@ -112,19 +105,9 @@ fn format_attacker_accuracy(attacker: &Creature, defenders: &[Creature; 4]) -> S
         "### {name}
 Mystic/Brute/Warrior/Skirmisher: {mystic} / {brute} / {warrior} / {skirmisher}",
         name = attacker.name.as_ref().unwrap(),
-        mystic = generic_attack_hit_probability(attacker, &defenders[0]),
-        brute = generic_attack_hit_probability(attacker, &defenders[1]),
-        warrior = generic_attack_hit_probability(attacker, &defenders[2]),
-        skirmisher = generic_attack_hit_probability(attacker, &defenders[3]),
+        mystic = generic_attack_outcome(attacker, &defenders[0]).hit_probability,
+        brute = generic_attack_outcome(attacker, &defenders[1]).hit_probability,
+        warrior = generic_attack_outcome(attacker, &defenders[2]).hit_probability,
+        skirmisher = generic_attack_outcome(attacker, &defenders[3]).hit_probability,
     )
-}
-
-fn generic_attack_hit_probability(attacker: &Creature, defender: &Creature) -> f64 {
-    statistical_combat::calculate_attack_outcome(
-        &Attack::default(),
-        attacker.calc_accuracy(),
-        defender.calc_defense(&Defense::Armor),
-        attacker.calc_explosion_target(),
-    )
-    .hit_probability
 }
