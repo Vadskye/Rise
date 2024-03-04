@@ -21,8 +21,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You can use this ability to create alchemical items with a rank up to your rank in this archetype (see \pcref{Item Ranks}).
                 Creating an item in this way functions in the same way as crafting items normally, with the following changes.
                 First, you do not require any raw materials or an alchemist's lab.
-                Second, you can create up to three items with this ability with 5 minutes of work.
-                Third, you can only maintain the existence of three items with this ability at once.
+                Second, you can create up to five items with this ability with 5 minutes of work.
+                Third, you can only maintain the existence of five items with this ability at once.
                 If you try to create a fourth item, you must stop maintaining the existence of another item created.
                 You can do this as a \glossterm{free action} regardless of distance.
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
