@@ -205,11 +205,11 @@ export const electromancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 3 power, and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 per 3 power \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 3,
-      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 3.' },
+      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
       tags: ['Swift'],
     },
 
@@ -218,7 +218,7 @@ export const electromancy: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 per 2 power \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 2 power and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,

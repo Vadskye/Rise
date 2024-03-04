@@ -345,16 +345,16 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Auditory}, \abilitytag{Swift}]
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d10 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        The target regains 2d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
-                        \rank{2} The recovery increases to 2d6.
-                        \rank{3} The recovery increases to 2d10.
-                        \rank{4} The recovery increases to 4d6.
-                        \rank{5} The recovery increases to 6d6.
-                        \rank{6} The recovery increases to 5d10.
-                        \rank{7} The recovery increases to 7d10.
+                        \rank{2} The recovery increases to 2d10.
+                        \rank{3} The recovery increases to 4d6.
+                        \rank{4} The recovery increases to 6d6.
+                        \rank{5} The recovery increases to 5d10.
+                        \rank{6} The recovery increases to 7d10.
+                        \rank{7} The recovery increases to 10d10.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Partita of Provocation}[\abilitytag{Auditory}, \abilitytag{Emotion}]

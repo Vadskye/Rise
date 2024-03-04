@@ -204,7 +204,7 @@ impl CustomAbility {
                     The $name, or one living \\glossterm<ally> within \\shortrange of it, regains $dr{rank} hit points.
                     This cannot increase the target's hit points above half its maximum hit points.
                 ",
-                rank = rank,
+                rank = rank + 1,
             ),
             is_magical: true,
             name: "Stabilize Life".to_string(),
