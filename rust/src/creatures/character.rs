@@ -430,7 +430,7 @@ impl Character {
 
     pub fn wizard_perception(level: i32) -> Self {
         let mut character = Self::new(
-            Class::Sorcerer,
+            Class::Wizard,
             level,
             [
                 ClassArchetype::WizardArcaneMagic,

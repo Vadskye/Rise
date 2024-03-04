@@ -116,7 +116,7 @@ vs Monk Kama           : Inflict Wound        (80% hit chance)
 vs Paladin Shield      : Dark Grasp           (90% hit chance)
 vs Ranger Longbow      : Inflict Wound        (70% hit chance)
 vs Rogue Smallsword    : Inflict Wound        (100% hit chance)
-vs Sorcerer Dexterity  : Inflict Wound        (100% hit chance)
+vs Sorcerer Dexterity  : Inflict Wound        (90% hit chance)
 vs Wizard Perception   : Inflict Wound        (100% hit chance)
 
 ### Attacker: Wizard Perception
@@ -129,7 +129,7 @@ vs Monk Kama           : Inflict Wound        (80% hit chance)
 vs Paladin Shield      : Dark Grasp           (90% hit chance)
 vs Ranger Longbow      : Inflict Wound        (70% hit chance)
 vs Rogue Smallsword    : Inflict Wound        (100% hit chance)
-vs Sorcerer Dexterity  : Inflict Wound        (100% hit chance)
+vs Sorcerer Dexterity  : Inflict Wound        (90% hit chance)
 vs Wizard Perception   : Inflict Wound        (100% hit chance)
 
 ## Level 5

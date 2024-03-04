@@ -43,7 +43,7 @@ HP/DR/Total: 8 / 4 / 12
 Points / Self-hit: 25 / 80%
 
 ### Sorcerer Dexterity
-A/F/R/M: 4 / 2 / 5 / 8
+A/F/R/M: 4 / 3 / 4 / 8
 HP/DR/Total: 9 / 4 / 13
 Points / Self-hit: 23 / 80%
 
@@ -95,7 +95,7 @@ HP/DR/Total: 16 / 8 / 24
 Points / Self-hit: 38 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 7 / 4 / 8 / 11
+A/F/R/M: 7 / 5 / 7 / 11
 HP/DR/Total: 20 / 4 / 24
 Points / Self-hit: 37 / 70%
 
@@ -147,7 +147,7 @@ HP/DR/Total: 28 / 20 / 48
 Points / Self-hit: 56 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 12 / 7 / 12 / 15
+A/F/R/M: 12 / 8 / 11 / 15
 HP/DR/Total: 44 / 8 / 52
 Points / Self-hit: 58 / 60%
 
@@ -199,7 +199,7 @@ HP/DR/Total: 53 / 24 / 77
 Points / Self-hit: 69 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 15 / 9 / 15 / 18
+A/F/R/M: 15 / 10 / 14 / 18
 HP/DR/Total: 89 / 16 / 105
 Points / Self-hit: 72 / 60%
 
@@ -251,7 +251,7 @@ HP/DR/Total: 96 / 48 / 144
 Points / Self-hit: 84 / 80%
 
 ### Sorcerer Dexterity
-A/F/R/M: 18 / 12 / 18 / 21
+A/F/R/M: 18 / 13 / 17 / 21
 HP/DR/Total: 135 / 32 / 167
 Points / Self-hit: 87 / 80%
 
