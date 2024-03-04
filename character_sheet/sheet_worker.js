@@ -689,11 +689,12 @@ function calcAccuracyCrScaling(level, challengeRating) {
     return 0;
   }
   let levelScaling = 0;
-  if (challengeRating > 0 && level >= 11) {
-    levelScaling += 1;
-  }
-  if (challengeRating === 4) {
-    levelScaling += 2;
+  if (challengeRating > 0) {
+    if (level >= 17) {
+      levelScaling += 2;
+    } else if (level >= 5) {
+      levelScaling += 1;
+    }
   }
   return levelScaling;
 }
@@ -704,9 +705,7 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    if (level >= 17) {
-      levelScaling += 2;
-    } else if (level >= 5) {
+    if (level >= 11) {
       levelScaling += 1;
     }
   }

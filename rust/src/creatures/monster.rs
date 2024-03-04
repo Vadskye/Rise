@@ -36,15 +36,15 @@ impl Monster {
         cr.add_modifiers(&mut creature);
 
         // Level modifiers
-        let defense_modifier = if level >= 12 { 1 } else { 0 };
+        let defense_modifier = if level >= 11 { 1 } else { 0 };
         creature.add_modifier(
             Modifier::AllDefenses(defense_modifier),
             Some("level scaling"),
             None,
         );
-        let accuracy_modifier = if level >= 18 {
+        let accuracy_modifier = if level >= 17 {
             2
-        } else if level >= 6 {
+        } else if level >= 5 {
             1
         } else {
             0
