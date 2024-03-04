@@ -150,33 +150,46 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You reduce the \glossterm{encumbrance} of body armor you wear by 1.
-                Your Dexterity also contributes more to your Armor defense than normal for your armor.
-                A multiplier of \mult1/2 becomes \mult1, and a multiplier of \mult0 becomes a \mult1/2.
+                You reduce the \glossterm{encumbrance} of body armor you wear by 1, and you gain a special ability based on the usage class of your body armor.
+                \begin{itemize}
+                    \item Light: You gain a \plus10 foot bonus to your land speed.
+                    \item Medium: You gain a \plus1 bonus to all defenses.
+                    \item Heavy: You add half your Dexterity to your Armor defense.
+                \end{itemize}
             ",
-            // TODO: figure out how to represent dexterity and speed
-            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
+            // Assume medium armor, since it's the easiest to represent
+            modifiers: Some(vec![
+                Modifier::Encumbrance(-1),
+                Modifier::AllDefenses(1),
+            ]),
         },
         RankAbility {
             name: "Armor Expertise+",
             is_magical: false,
-            rank: 6,
-            description: r"
-                The encumbrance reduction increases to 2.
-                In addition, heavy armor no longer penalizes your movement speed.
-            ",
-            modifiers: Some(vec![Modifier::Encumbrance(-1)]),
-        },
-        RankAbility {
-            name: "Equipment Mastery",
-            is_magical: false,
             rank: 7,
             description: r"
-                % TODO: disallow natural weapons? Not really worth the effort.
-                While you are wielding a weapon, you gain a \plus1 bonus to your \glossterm{accuracy}.
-                While you are wearing body armor, you gain a \plus1 bonus to your Armor defense.
+                The encumbrance reduction increases to 2, and you gain an additional special ability based on the usage class of your body armor.
+                \begin{itemize}
+                    \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
+                        This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
+                    \item Medium: The bonus increases to \plus2.
+                    \item Heavy: Your armor's bonus to your damage resistance also applies to your hit points.
+                        This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
+                \end{itemize}
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::AllDefenses(1),
+                Modifier::Encumbrance(-1),
+            ]),
+        },
+        RankAbility {
+            name: "Weapon Expertise",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                While you are wielding a weapon, you gain a \plus1 bonus to your \glossterm{accuracy}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
