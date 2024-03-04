@@ -205,11 +205,12 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry',
 
-      // Use same value as Preacher
+      // We have to use a power scaling here because maneuvers don't have rank scaling, so
+      // this would fall behind quickly otherwise
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each \\glossterm{ally} in a \\medarea radius from you each regain 2d6 \\glossterm{damage resistance}.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d6 per 3 power \\glossterm{damage resistance}.
       `,
       rank: 3,
       tags: ['Emotion', 'Swift'],
@@ -221,7 +222,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each \\glossterm{ally} in a \\medarea radius from you each regain 5d10 \\glossterm{damage resistance}.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
       `,
       rank: 7,
       tags: ['Emotion', 'Swift'],
