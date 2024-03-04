@@ -24,9 +24,9 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rank{2} The extra damage also applies if the target is adjacent to one of your \glossterm{allies}.
                     \rank{3} The extra damage increases to 1d8.
                     \rank{4} The extra damage increases to 2d8.
-                    \rank{5} The extra damage increases to 4d6.
-                    \rank{6} The extra damage increases to 4d10.
-                    \rank{7} The extra damage increases to 6d10.
+                    \rank{5} The extra damage increases to 4d8.
+                    \rank{6} The extra damage increases to 6d8.
+                    \rank{7} The extra damage increases to 8d10.
                 \end{activeability}
             ",
             modifiers: None,
