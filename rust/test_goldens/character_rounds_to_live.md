@@ -400,7 +400,7 @@ Monk Kama           : 3.00
 Paladin Shield      : 4.50
 Ranger Longbow      : 5.00
 Rogue Smallsword    : 3.00
-Sorcerer Dexterity  : 3.00
+Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.50
 Brute               : 3.75
 Leader              : 4.00
@@ -438,7 +438,7 @@ Monk Kama           : 6.75
 Paladin Shield      : 9.00
 Ranger Longbow      : 7.75
 Rogue Smallsword    : 5.25
-Sorcerer Dexterity  : 6.25
+Sorcerer Dexterity  : 6.75
 Wizard Perception   : 5.25
 Brute               : 5.00
 Leader              : 4.75
@@ -497,7 +497,7 @@ Monk Kama           : 3.00
 Paladin Shield      : 4.50
 Ranger Longbow      : 5.00
 Rogue Smallsword    : 3.00
-Sorcerer Dexterity  : 3.00
+Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.50
 Brute               : 3.75
 Leader              : 4.00
