@@ -214,6 +214,7 @@ fn gauntlets() -> Vec<Apparel> {
         description: String::from(r"
             If your Strength is at least 3, your \glossterm{natural weapons} deal +1d6 damage, but their damage is also reduced by 2.
             This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
+            This effect does not stack with the Brutal magic weapon effect.
         "),
         upgrades: vec![
             // +2.5 damage
