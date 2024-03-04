@@ -87,6 +87,7 @@ DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_from_hp} <
 
 #[derive(Clone, Debug)]
 pub enum HitPointProgression {
+    Extreme,  // Brute
     VeryHigh, // Barbarian
     High,     // Fighter
     Medium,   // Cleric
@@ -104,6 +105,7 @@ impl HitPointProgression {
             Self::Medium => 2,
             Self::High => 4,
             Self::VeryHigh => 7,
+            Self::Extreme => panic!("Extreme progression is not valid for characters")
         }
     }
 
@@ -133,11 +135,13 @@ impl HitPointProgression {
             Self::Medium => [[8, 1], [18, 2], [35, 5], [70, 10]],
             Self::High => [[8, 2], [20, 3], [40, 6], [80, 12]],
             Self::VeryHigh => [[10, 2], [24, 4], [50, 8], [100, 15]],
+            Self::Extreme => [[14, 2], [28, 5], [60, 10], [120, 20]],
         }
     }
 
     fn name(&self) -> &str {
         match self {
+            Self::Extreme => "Extreme",
             Self::VeryHigh => "Very High",
             Self::High => "High",
             Self::Medium => "Medium",
