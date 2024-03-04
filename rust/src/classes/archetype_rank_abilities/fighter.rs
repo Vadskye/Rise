@@ -41,6 +41,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Remove one \glossterm{condition} affecting you.
                     Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
+                    In addition, you \glossterm{briefly} cannot gain any new conditions.
                 \end{activeability}
             ",
             modifiers: None,
@@ -511,6 +512,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to one of the following statistics: \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
                 As a \glossterm{minor action}, you can change which of these bonuses you gain.
+                This ability has the \abilitytag{Swift} tag, so changing your stance affects attacks against you during the current phase.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
