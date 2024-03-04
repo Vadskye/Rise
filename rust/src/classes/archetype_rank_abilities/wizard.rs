@@ -29,6 +29,15 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        RankAbility{
+            name: "Alchemical Toxins",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                If you have access to arcane magic, you add the \sphere{toxicology} mystic sphere to your list of arcane mystic spheres (see \pcref{Mystic Spheres}).
+            ",
+            modifiers: None,
+        },
         RankAbility {
             name: "Portable Workshop+",
             is_magical: true,

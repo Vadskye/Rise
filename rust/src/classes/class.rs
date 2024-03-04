@@ -369,6 +369,7 @@ impl Class {
                 Skill::Awareness,
                 Skill::Deception,
                 Skill::Deduction,
+                Skill::Endurance,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Planes]),
                 Skill::Persuasion,
@@ -509,8 +510,8 @@ impl Class {
             },
             Self::Sorcerer => match defense {
                 Defense::Armor => 0,
-                Defense::Fortitude => 2,
-                Defense::Reflex => 3,
+                Defense::Fortitude => 3,
+                Defense::Reflex => 2,
                 Defense::Mental => 4,
             },
             Self::Treant => match defense {
