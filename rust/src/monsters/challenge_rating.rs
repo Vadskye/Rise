@@ -15,11 +15,12 @@ impl ChallengeRating {
     }
 
     pub fn add_modifiers(&self, creature: &mut Creature) {
-        creature.add_modifier(
-            Modifier::Accuracy(self.accuracy_bonus()),
-            Some("challenge rating"),
-            None,
-        );
+        // Elites used to have an intrinsic accuracy bonus. Maybe they should? Needs more testing.
+        // creature.add_modifier(
+        //     Modifier::Accuracy(self.accuracy_bonus()),
+        //     Some("challenge rating"),
+        //     None,
+        // );
         creature.add_modifier(
             Modifier::AllDefenses(self.defense_bonus()),
             Some("challenge rating"),
@@ -61,13 +62,6 @@ impl ChallengeRating {
         match self {
             Self::One => false,
             Self::Four => true,
-        }
-    }
-
-    pub fn accuracy_bonus(&self) -> i32 {
-        match self {
-            Self::One => 0,
-            Self::Four => 2,
         }
     }
 
