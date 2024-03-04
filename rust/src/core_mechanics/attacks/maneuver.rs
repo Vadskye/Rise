@@ -247,9 +247,9 @@ impl Maneuver {
                    2 => d.base_dice = d.base_dice.add_die(Die::d4()),
                    3 => d.base_dice = d.base_dice.add_die(Die::d8()),
                    4 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(2, 8).dice),
-                   5 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(4, 6).dice),
-                   6 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(4, 10).dice),
-                   7 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(6, 10).dice),
+                   5 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(4, 8).dice),
+                   6 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(6, 8).dice),
+                   7 => d.base_dice = d.base_dice.add_dice(DicePool::xdy(8, 10).dice),
                     _ => panic!("Unsupported rank for Sneak Attack"),
                 }),
             Self::StripTheFlesh => {
