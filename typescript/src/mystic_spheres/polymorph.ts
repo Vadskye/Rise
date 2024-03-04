@@ -90,6 +90,19 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Flesh-Rending Claw',
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
+        If the target is living and your attack result beats its Fortitude defense, it bleeds.
+        During your next action, it takes \\glossterm{extra damage} equal to your power.
+      `,
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
       name: 'Twisting Claw',
       effect: `
         This spell has no \\glossterm{somatic components}.
