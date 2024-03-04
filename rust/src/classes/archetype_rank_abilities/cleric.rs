@@ -292,19 +292,19 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
-                    The target regains 1d6 \glossterm{hit points} +1 per 2 \glossterm{power}.
+                    The target regains 1d8 \glossterm{hit points} +1 per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The base healing increases to 1d8.
-                    \rank{3} The bonus healing increases to \plus1 per power.
-                    \rank{4} The base healing increases to 1d10.
-                    \rank{5} The bonus healing increases to 1d8 per 3 power.
-                    \rank{6} The base healing increases to 2d8.
-                    \rank{7} The bonus healing increases to 1d8 per 2 power.
+                    \rank{2} The bonus healing increases to \plus1 per power.
+                    \rank{3} The base healing increases to 1d10.
+                    \rank{4} The bonus healing increases to 1d8 per 3 power.
+                    \rank{5} The base healing increases to 2d8.
+                    \rank{6} The bonus healing increases to 1d8 per 2 power.
+                    \rank{7} The base healing increases to 4d8.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -432,6 +432,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Mental, 1),
             ]),
         },
+        // Assume that it typically affects two people, and anything more than that is a
+        // bonus. Normal healing ability would be dr4, so use half of that (where possible).
         RankAbility {
             name: "Bless the Worthy",
             is_magical: false,
@@ -442,14 +444,13 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You and all \glossterm{allies} within a \medarea radius from you each regain 1d10 \glossterm{damage resistance}.
+                    You and all \glossterm{allies} within a \largearea radius from you each regain 2d6 \glossterm{damage resistance}.
                     In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
 
                     \rankline
-                    \rank{4} The recovery increases to 2d6.
-                    \rank{5} The recovery increases to 2d10.
+                    \rank{4} The recovery increases to 3d6.
                     \rank{5} The recovery increases to 4d6.
-                    \rank{6} The recovery increases to 4d10.
+                    \rank{6} The recovery increases to 4d8.
                     \rank{7} The recovery increases to 5d10.
                 \end{activeability}
             ",

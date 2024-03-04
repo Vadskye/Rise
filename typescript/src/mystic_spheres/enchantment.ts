@@ -640,11 +640,11 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 2d6 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by 1d6 for each rank beyond 2.' },
+      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -653,8 +653,8 @@ export const enchantment: MysticSphere = {
 
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 5d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to its Mental defense this round.
+        The target regains 7d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
+        In addition, it gains a +4 bonus to its Mental defense this round.
       `,
       rank: 6,
       scaling: { special: 'The recovery increases by 2d10 for each rank beyond 6.' },

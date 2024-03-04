@@ -259,19 +259,21 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \rankline
                     Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
-                    The target regains 1d6 \glossterm{hit points} +1 per 2 power.
+                    The target regains 1d8 \glossterm{hit points} +1 per 2 power.
                     In addition, it removes all poisons and diseases affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
+                    % TODO: wording
+                    This immunity and removal can only affect poisons and diseases with a rank no more than two ranks higher than your rank in this archetype.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The base healing increases to 1d8.
-                    \rank{3} The bonus healing increases to \plus1 per power.
-                    \rank{4} The base healing increases to 1d10.
-                    \rank{5} The bonus healing increases to 1d8 per 3 power.
-                    \rank{6} The base healing increases to 2d8.
-                    \rank{7} The bonus healing increases to 1d8 per 2 power.
+                    \rank{2} The bonus healing increases to \plus1 per power.
+                    \rank{3} The base healing increases to 1d10.
+                    \rank{4} The bonus healing increases to 1d8 per 3 power.
+                    \rank{5} The base healing increases to 2d8.
+                    \rank{6} The bonus healing increases to 1d8 per 2 power.
+                    \rank{7} The base healing increases to 4d8.
                 \end{magicalactiveability}
 
             ",
