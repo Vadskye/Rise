@@ -52,7 +52,7 @@ fn run_difficult_combat(level: i32, monster_count: i32) -> StandardCombatResult 
     let pcs = vec![
         Character::fighter_shield(level).creature,
         Character::fighter_greatmace(level).creature,
-        Character::barbarian_greataxe(level).creature,
+        Character::barbarian_greatmace(level).creature,
         Character::sorcerer_dexterity(level).creature,
     ];
     let monsters = ChallengeRating::difficult_encounter(level, monster_count);
@@ -78,7 +78,7 @@ fn run_standard_combat(level: i32, monster_count: i32) -> StandardCombatResult {
     let pcs = vec![
         Character::fighter_shield(level).creature,
         Character::fighter_greatmace(level).creature,
-        Character::barbarian_greataxe(level).creature,
+        Character::barbarian_greatmace(level).creature,
         Character::sorcerer_dexterity(level).creature,
     ];
     let monsters = ChallengeRating::standard_encounter(level, monster_count);

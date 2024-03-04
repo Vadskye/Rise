@@ -13,7 +13,7 @@ fn compare_classes() {
 
     let standard_character = Character::fighter_shield(20);
     println!("standard character {}", standard_character.description());
-    let standard_barbarian = Character::barbarian_greataxe(20);
+    let standard_barbarian = Character::barbarian_greatmace(20);
     println!("standard barbarian {}", standard_barbarian.description());
     let sorcerer_dexterity = Character::sorcerer_dexterity(20);
     println!("standard sorcerer {}", sorcerer_dexterity.description());
