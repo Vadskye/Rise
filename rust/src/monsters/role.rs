@@ -83,12 +83,12 @@ impl Role {
 
     pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Role::Brute => HitPointProgression::VeryHigh,
-            Role::Skirmisher => HitPointProgression::Medium,
-            Role::Warrior => HitPointProgression::Medium,
-            Role::Sniper => HitPointProgression::Medium,
-            Role::Mystic => HitPointProgression::Low,
-            Role::Leader => HitPointProgression::High,
+            Role::Brute => HitPointProgression::Extreme,
+            Role::Skirmisher => HitPointProgression::High,
+            Role::Warrior => HitPointProgression::High,
+            Role::Sniper => HitPointProgression::High,
+            Role::Mystic => HitPointProgression::Medium,
+            Role::Leader => HitPointProgression::Extreme,
         }
     }
 
