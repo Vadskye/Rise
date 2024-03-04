@@ -399,11 +399,11 @@ export const toxicology: MysticSphere = {
     {
       name: 'Healing Salve',
 
-      // dr2l, since it is touch range
+      // Stronger secondary effect due to touch range
       effect: `
         Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
         The target regains 2d6 hit points and increases its \\glossterm{fatigue level} by one.
-        In addition, it gains a +2 bonus to its Fortitude defense this round.
+        In addition, it gains a +2 bonus to its Fortitude defense and \\glossterm{vital rolls} this round.
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d6 for each rank beyond 1.' },
@@ -415,7 +415,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'healing salve',
-        exceptThat: 'the healing increases to 6d6, and the Fortitude bonus increases to +4.',
+        exceptThat: 'the healing increases to 6d6, and the bonuses increase to +4.',
       },
       rank: 5,
       scaling: { special: 'The healing increases by 2d6 for each rank beyond 5.' },

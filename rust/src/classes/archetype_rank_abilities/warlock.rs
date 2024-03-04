@@ -698,14 +698,14 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
-                    You regain 1d8 \glossterm{damage resistance} \plus1 per \glossterm{power}.
+                    You regain 1d10 \glossterm{damage resistance} plus 1d6 per 3 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
-                    \rank{4} The base recovery increases to 1d10.
-                    \rank{5} The bonus recovery increases to 1d8 per 3 power.
-                    \rank{6} The base recovery increases to 2d8.
-                    \rank{7} The bonus recovery increases to 1d8 per 2 power.
+                    \rank{4} The bonus recovery increases to 1d8 per 3 power.
+                    \rank{5} The base recovery increases to 2d8.
+                    \rank{6} The bonus recovery increases to 1d8 per 2 power.
+                    \rank{7} The base recovery increases to 4d8.
                 \end{magicalactiveability}
             ",
             modifiers: None,

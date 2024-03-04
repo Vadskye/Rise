@@ -441,11 +441,11 @@ export const polymorph: MysticSphere = {
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
         % d2
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per 2 \\glossterm{power} if it is a creature, or that many hit points if it is an object.
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per \\glossterm{power} if it is a creature, or that many hit points if it is an object.
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by +1 for each rank beyond 2.' },
+      scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
@@ -464,27 +464,29 @@ export const polymorph: MysticSphere = {
     {
       name: 'Brief Regeneration',
 
+      // At rank 4, expected power is about 9. Normal healing would be dr4, which is
+      // 1d10+3d6 = 16, so 8 per round is good.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        % d1
-        The target \\glossterm{briefly} regains 1d6 \\glossterm{hit points} +1 per 2 \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per 2 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 3,
-      scaling: { special: 'The healing increases by +1 for each rank beyond 3.' },
+      scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
     },
 
     {
       name: 'Empowered Brief Regeneration',
 
+      // At rank 6, expected power is about 12. Normal healing would be dr7, which is
+      // 8d8 = 36, so 18 per round is good.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        % d3
-        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d8 plus your \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d8 per 3 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 6.' },
+      scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
     },
 
     {
@@ -496,11 +498,6 @@ export const polymorph: MysticSphere = {
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
-      scaling: {
-        7: `
-          The target can remove two \\glossterm{vital wounds} instead of one.
-        `,
-      },
       type: 'Attune (target)',
     },
 

@@ -68,7 +68,7 @@ export const prayer: MysticSphere = {
       rank: 5,
       scaling: {
         special: `
-          The healing increases by +1 for each rank beyond 5.
+          The healing increases by 1d6 for each rank beyond 5.
         `,
       },
       type: 'Attune (target)',
@@ -303,11 +303,11 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose an \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} +1 per two \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} +1 per \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by +1 for each rank beyond 2.' },
+      scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 

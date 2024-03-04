@@ -205,11 +205,11 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry',
 
-      // TODO: not sure what the right healing amount is. Using d1.
+      // Use same value as Preacher
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d6 \\glossterm{damage resistance} +1 per 2 power.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain 2d6 \\glossterm{damage resistance}.
       `,
       rank: 3,
       tags: ['Emotion', 'Swift'],
@@ -218,11 +218,10 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry+',
 
-      // Using d5.
       effect: `
         When you use this ability, you increase your \\glossterm{fatigue level} by one.
 
-        You and each living \\glossterm{ally} in a \\medarea radius from you each regain 1d8 \\glossterm{damage resistance} plus 1d8 per 3 power.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain 5d10 \\glossterm{damage resistance}.
       `,
       rank: 7,
       tags: ['Emotion', 'Swift'],
