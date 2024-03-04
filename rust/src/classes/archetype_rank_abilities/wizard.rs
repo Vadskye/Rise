@@ -23,7 +23,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 First, you do not require any raw materials or an alchemist's lab.
                 Second, you can create up to five items with this ability with 5 minutes of work.
                 Third, you can only maintain the existence of five items with this ability at once.
-                If you try to create a fourth item, you must stop maintaining the existence of another item created.
+                If you try to create a sixth item, you must stop maintaining the existence of another item created.
                 You can do this as a \glossterm{free action} regardless of distance.
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
             ",
