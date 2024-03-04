@@ -146,7 +146,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(MonsterDef {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
-                            ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
+                            // TODO: remove this once dual wielding accuracy is autocalculated
+                            ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon()).plus_accuracy(-1)),
                             ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
