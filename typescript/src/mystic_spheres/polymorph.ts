@@ -115,12 +115,13 @@ export const polymorph: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // TODO: nerf once less relevant to campaign
     {
       name: 'Power Claw',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} with a -4 accuracy penalty using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} with a -3 accuracy penalty using a \\glossterm{natural weapon}.
         The strike deals double \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -137,7 +138,7 @@ export const polymorph: MysticSphere = {
         The strike deals triple \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
     },
 
