@@ -28,7 +28,7 @@ fn bracers() -> Vec<Apparel> {
         short_description: String::from("Grants encumbrance-free medium armor"),
         description: String::from(r"
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a +4 bonus to Armor defense and has no \glossterm<encumbrance>.
+            This functions like body armor that provides a +3 bonus to Armor defense and has no \glossterm<encumbrance>.
             It also provides a +6 bonus to your \glossterm{damage resistance}.
 
             The armor provided by this ability is dismissed if you have other body armor of any kind.
