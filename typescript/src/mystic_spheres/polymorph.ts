@@ -97,6 +97,7 @@ export const polymorph: MysticSphere = {
         Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
         If the target is living and your attack result beats its Fortitude defense, it bleeds.
         During your next action, it takes \\glossterm{extra damage} equal to your power.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 3,
       scaling: 'accuracy',
