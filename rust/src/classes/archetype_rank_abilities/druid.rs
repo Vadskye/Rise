@@ -221,6 +221,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
+                You learn an additional nature spell.
             ",
             modifiers: None,
         },
@@ -229,6 +230,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
+                You learn an additional nature spell.
             ",
             modifiers: None,
         },
@@ -237,6 +239,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
+                You learn an additional nature spell.
             ",
             modifiers: None,
         },
