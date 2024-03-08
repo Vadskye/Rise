@@ -41,8 +41,8 @@ impl Weapon {
     }
 
     pub fn power_scalings(&self) -> Vec<PowerScaling> {
-        // TODO: handle versatile grip
-        if self.tags.contains(&WeaponTag::Heavy) {
+        // TODO: disable versatile grip based on whether they also have a shield?
+        if self.tags.contains(&WeaponTag::Heavy) || self.tags.contains(&WeaponTag::VersatileGrip) {
             PowerScaling::heavy_weapon_scalings()
         } else {
             vec![PowerScaling::standard_weapon_scaling()]
@@ -86,6 +86,17 @@ impl Weapon {
 
     pub fn greatsword() -> Self {
         StandardWeapon::Greatsword.weapon()
+    }
+
+    pub fn hand() -> Self {
+        StandardWeapon::Claw.weapon().except(|w| {
+            w.damage_types = vec![DamageType::Bludgeoning];
+            w.name = "Hand".to_string();
+        })
+    }
+
+    pub fn heavy_crossbow() -> Self {
+        StandardWeapon::HeavyCrossbow.weapon()
     }
 
     pub fn heavy_flail() -> Self {

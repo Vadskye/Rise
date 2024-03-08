@@ -1,6 +1,7 @@
 use super::add_accuracy_to_effect::add_accuracy_to_effect;
 use super::replace_attack_terms::replace_attack_terms;
 use crate::core_mechanics::abilities::{latex_ability_block, AbilityTag, AbilityType, UsageTime};
+use crate::core_mechanics::DamageType;
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 
@@ -30,6 +31,12 @@ impl StrikeAbility {
     // Some monsters take standard maneuvers and use them as elite actions.
     pub fn except_elite(mut self) -> Self {
         self.usage_time = UsageTime::Elite;
+
+        self
+    }
+
+    pub fn except_name(mut self, name: &str) -> Self {
+        self.name = name.to_string();
 
         self
     }
@@ -209,6 +216,20 @@ impl StrikeAbility {
             .to_string(),
             name: strike_prefix("Enraging", &weapon),
             weapon,
+            ..Default::default()
+        }
+    }
+
+    pub fn flintspark_strike(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target takes damage and the attack result beats its Reflex defense, it takes $mundanepower fire damage during the $name's next action.
+            "
+            .to_string(),
+            name: weapon.name.clone(),
+            weapon: weapon.except(|w| w.damage_types.push(DamageType::Fire)),
             ..Default::default()
         }
     }
