@@ -22,6 +22,7 @@ pub fn replace_attack_terms(
     replaced_effect = replace_damage_terms(&replaced_effect, creature, is_magical, weapon);
     replaced_effect = replace_damage_rank_terms(&replaced_effect, creature, is_magical);
     replaced_effect = replace_damage_type_terms(&replaced_effect, weapon);
+    replaced_effect = replace_power_terms(&replaced_effect, creature);
     replaced_effect = replace_weapon_name_terms(&replaced_effect, &weapon);
     replaced_effect = replace_extra_damage_terms(&replaced_effect, creature, is_magical);
 
@@ -115,6 +116,18 @@ fn replace_damage_type_terms(effect: &str, weapon: Option<&Weapon>) -> String {
     }
 
     replaced_effect
+}
+
+fn replace_power_terms(effect: &str, creature: &Creature) -> String {
+    let mundane_power_pattern = Regex::new(r"\$mundanepower").unwrap();
+    let replaced_effect =
+        mundane_power_pattern.replace_all(effect, creature.calc_power(false).to_string());
+
+    let magical_power_pattern = Regex::new(r"\$magicalpower").unwrap();
+    let replaced_effect =
+        magical_power_pattern.replace_all(effect, creature.calc_power(false).to_string());
+
+    replaced_effect.to_string()
 }
 
 fn replace_weapon_name_terms(effect: &str, weapon: &Option<&Weapon>) -> String {
