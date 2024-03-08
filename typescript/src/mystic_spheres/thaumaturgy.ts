@@ -45,15 +45,15 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Magic Missile',
 
-      // -1 range and low scaling in exchange for the strong miss effect
+      // -1 range in exchange for the strong miss effect
       attack: {
         hit: `
-          \\damagerankonelow{energy}.
+          \\damagerankone{energy}.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
-          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
+          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
@@ -73,7 +73,7 @@ export const thaumaturgy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\longrange.
-          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
+          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
@@ -86,15 +86,15 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Mighty Magic Missile',
 
-      // -1 range and low scaling for miss effect
+      // -1 range for miss effect and cover/concealment effect
       attack: {
         hit: `
-          \\damagerankfourlow{energy}.
+          \\damagerankfour{energy}.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
-          This attack ignores \\glossterm{cover} and \\glossterm{concealment}.
+          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
@@ -115,7 +115,7 @@ export const thaumaturgy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
-          This attack ignores \\glossterm{cover}.
+          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
@@ -136,7 +136,7 @@ export const thaumaturgy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
-          This attack ignores \\glossterm{cover}.
+          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
@@ -435,7 +435,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         You gain a +2 bonus to all defenses this round.
         In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
-        It cannot choose to reduce its accuracy or damage against itself.
+        The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 3,
       tags: ['Swift'],
