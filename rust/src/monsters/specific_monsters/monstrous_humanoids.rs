@@ -1,6 +1,5 @@
 use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility};
-use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
-use crate::core_mechanics::{Sense, Size};
+use crate::core_mechanics::{DamageType, PassiveAbility, Sense, Size};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
@@ -34,7 +33,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             ],
             modifiers: vec![],
             movement_speeds: None,
-            senses: vec![],
+            senses: vec![Sense::Darkvision(60)],
             trained_skills: vec![
                 Skill::Awareness,
             ],
@@ -52,7 +51,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![7, 0, 4, 0, 2, 1],
+            attributes: vec![7, 0, 4, -2, 2, 1],
             elite: true,
             level: 6,
             role: Role::Brute,
@@ -62,15 +61,18 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
     })));
 
     monsters.push(MonsterEntry::Monster(monstrous_humanoid(MonsterDef {
+        name: "Choker".to_string(),
         abilities: MonsterAbilities {
-            active_abilities: vec![],
-            modifiers: vec![
-                Modifier::Maneuver(Maneuver::GraspingStrike),
+            active_abilities: vec![
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::hand()).except_name("Choke").except_dual_strike()),
             ],
+            modifiers: vec![],
             movement_speeds: None,
             senses: vec![],
             trained_skills: vec![
                 Skill::Awareness,
+                Skill::Climb,
+                Skill::Stealth,
             ],
         },
         narrative: Some(MonsterNarrative {
@@ -89,10 +91,9 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             attributes: vec![5, 5, -1, -5, 0, -1],
             elite: false,
             level: 4,
-            role: Role::Skirmisher,
+            role: Role::Brute,
             size: Size::Medium,
         },
-        name: "Choker".to_string(),
     })));
 
     add_bugbears(&mut monsters);
@@ -290,7 +291,9 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Kobolds".to_string(),
         art: false,
-        description: None,
+        description: Some("
+            
+        ".to_string()),
         knowledge: Some(Knowledge::new(vec![
             (0, "
                 Kobolds are Medium humanoid creatures that are covered in scales.
@@ -311,7 +314,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
         ])),
         monsters: vec![
             monstrous_humanoid(MonsterDef {
-                name: "Kobold Snapper".to_string(),
+                name: "Kobold Nipper".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
@@ -328,6 +331,118 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     elite: false,
                     level: 1,
                     role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Kobold Snipper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::heavy_crossbow())),
+                    ],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![-1, 3, 0, 1, 4, -2],
+                    elite: false,
+                    level: 2,
+                    role: Role::Sniper,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Kobold Yipper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
+                        ActiveAbility::Custom(CustomAbility::burning_hands(1)),
+                        ActiveAbility::Custom(CustomAbility::ignition(1)),
+                    ],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![-2, 3, 0, 1, 2, 3],
+                    elite: false,
+                    level: 3,
+                    role: Role::Mystic,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Dragonsworn Nipper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::spear()).except_name("Dragonflame Spear")),
+                        ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::sling()).except_name("Dragonflame Sling")),
+                    ],
+                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    description: Some("
+                        These statistics represent a kobold who has sworn service to a red or gold dragon.
+                        Kobolds who swear service to dragons with different damage types may have different abilities.
+                    ".to_string()),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 5, 2, 2, 4, -1],
+                    elite: false,
+                    level: 5,
+                    role: Role::Skirmisher,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Dragonsworn Snipper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::longbow()).except_name("Dragonflame Bow")),
+                    ],
+                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![0, 4, 1, 2, 5, -1],
+                    elite: false,
+                    level: 6,
+                    role: Role::Sniper,
+                    size: Size::Medium,
+                },
+            }),
+            monstrous_humanoid(MonsterDef {
+                name: "Dragonsworn Yipper".to_string(),
+                abilities: MonsterAbilities {
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::spear()).except_name("Dragonflame Spear")),
+                        ActiveAbility::Custom(CustomAbility::flame_breath(3)),
+                        ActiveAbility::Custom(CustomAbility::ignition(3)),
+                    ],
+                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    ..Default::default()
+                },
+                narrative: Some(MonsterNarrative {
+                    alignment: "Usually lawful evil".to_string(),
+                    ..Default::default()
+                }),
+                statistics: MonsterStatistics {
+                    attributes: vec![-1, 4, 1, 2, 3, 4],
+                    elite: false,
+                    level: 7,
+                    role: Role::Mystic,
                     size: Size::Medium,
                 },
             }),
@@ -416,12 +531,17 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             }),
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Custom(CustomAbility::magic_missile(1)),
+                        ActiveAbility::Custom(CustomAbility::magic_missile_storm(3)),
+                        ActiveAbility::Custom(CustomAbility::reflect_magic()),
+                    ],
                     modifiers: vec![
-                        // TODO: is pyromancy the right school?
-                        Modifier::Attack(StandardAttack::Firebolt(2).attack()),
-                        Modifier::Attack(StandardAttack::Ignition(2).attack()),
-                        Modifier::Attack(StandardAttack::Pyroclasm(2).attack()),
+                        Modifier::PassiveAbility(PassiveAbility {
+                            description: r"The first spell that the ogre mage casts between short rests deals 1d8 \glossterm{extra damage}.".to_string(),
+                            name: "Enhance Magic -- Might".to_string(),
+                            is_magical: true,
+                        }),
                     ],
                     movement_speeds: None,
                     senses: vec![],

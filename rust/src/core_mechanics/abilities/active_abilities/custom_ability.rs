@@ -88,18 +88,15 @@ impl CustomAbility {
     pub fn divine_judgment(rank: i32) -> Self {
         Self {
             ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit $dr1 energy damage.
-                ",
-                accuracy_modifier = rank - 1,
-            ),
+            effect: "
+                The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
+                \\hit $dr1 energy damage.
+            ".to_string(),
             is_magical: true,
             name: "Divine Judgment".to_string(),
             tags: vec![],
             usage_time: UsageTime::Standard,
-        }
+        }.plus_accuracy(rank - 1)
     }
 
     pub fn enrage(rank: i32) -> Self {
@@ -245,6 +242,114 @@ impl CustomAbility {
     }
 }
 
+// Thaumaturgy
+impl CustomAbility {
+    pub fn magic_missile(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Armor against anything within \\shortrange.
+                This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
+                \\hit $dr1 energy damage.
+                \\miss Half damage.
+            "
+            .to_string(),
+            is_magical: true,
+            name: "Magic Missile".to_string(),
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 1)
+    }
+
+    pub fn magic_missile_storm(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Armor against anything within \\shortrange.
+                This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
+                \\hit $dr1l energy damage.
+                \\miss Half damage.
+            "
+            .to_string(),
+            is_magical: true,
+            name: "Magic Missile Storm".to_string(),
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 3)
+    }
+
+    pub fn reflect_magic() -> Self {
+        Self {
+            effect: "
+                The $name gains a +2 bonus to all defenses this round.
+                In addition, whenever a creature within \\medrange of it misses or \\glossterm{glances} it with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+                The attacker cannot choose to reduce its accuracy or damage against itself.
+            ".to_string(),
+            is_magical: true,
+            name: "Reflect Magic".to_string(),
+            tags: vec![AbilityTag::Swift],
+            ..Default::default()
+        }
+    }
+}
+
+// Pyromancy
+impl CustomAbility {
+    pub fn burning_hands(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea cone from it.
+                \\hit $dr2 fire damage.
+                \\miss Half damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Burning Hands".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn fireball(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+                \\hit $dr2h fire damage.
+                \\miss Half damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Fireball".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
+    }
+
+    pub fn flame_breath(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
+                After it uses this ability, it \\glossterm{briefly} cannot use it again.
+                \\hit $dr3h fire damage.
+                \\miss Half damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Flame Breath".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
+    }
+
+    pub fn ignition(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Fortitude and Reflex against one creature within \\medrange.
+                \\hit The target catches on fire as a \\glossterm{condition}.
+                  It takes $dr1 fire damage immediately and during each of your subsequent actions.
+
+                  The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
+                  Dropping \\prone as part of this action gives a +5 bonus to this check.
+                \\crit All damage from the condition is doubled, not just the initial damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Ignition".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+}
 
 #[cfg(test)]
 mod tests {
