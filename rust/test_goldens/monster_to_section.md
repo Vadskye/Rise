@@ -33,22 +33,22 @@
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus4 \glossterm{strike} vs. Armor.
-                \hit 1d8 physical damage.
+                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus1 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 1d4 slashing damage.
+                The standard monster makes a \plus5 \glossterm{strike} vs. Armor.
+                \hit 1d4\plus1 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus4 \glossterm{strike} vs. Armor.
-                \hit 1d8 slashing damage.
+                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus1 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claw}
@@ -124,22 +124,22 @@
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus4 \glossterm{strike} vs. Armor.
-                \hit 1d8 physical damage.
+                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 1d4 slashing damage.
+                The standard monster makes a \plus5 \glossterm{strike} vs. Armor.
+                \hit 1d4\plus2 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus4 \glossterm{strike} vs. Armor.
-                \hit 1d8 slashing damage.
+                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claw}
@@ -211,22 +211,22 @@
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
-                \hit 1d8 physical damage.
+                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus4 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus15 \glossterm{strike} vs. Armor.
-                \hit 1d4 slashing damage.
+                The standard monster makes a \plus14 \glossterm{strike} vs. Armor.
+                \hit 1d4\plus2 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
-                \hit 1d8 slashing damage.
+                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus4 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claw}
@@ -302,22 +302,22 @@
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
-                \hit 1d8 physical damage.
+                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Claw}
                 \weapontag{Light}
                 \rankline
-                The standard monster makes a \plus15 \glossterm{strike} vs. Armor.
-                \hit 1d4 slashing damage.
+                The standard monster makes a \plus14 \glossterm{strike} vs. Armor.
+                \hit 1d4\plus3 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus13 \glossterm{strike} vs. Armor.
-                \hit 1d8 slashing damage.
+                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Claw}
