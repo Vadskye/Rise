@@ -47,6 +47,7 @@ pub fn potions() -> Vec<Tool> {
             This cannot increase your hit points above half your maximum hit points.
             In addition, if you have a \glossterm{vital wound} gith a \glossterm{vital roll} of 0 or -1, you treat that vital roll as a 1 instead (see \pcref{Vital Wounds}).
         ".to_string(),
+        tags: vec![AbilityTag::Swift],
         upgrades: vec![
             ItemUpgrade::new(3, "Restores $dr4 hit points and mitigates vital wounds", r"
                 The healing increases to $dr4, and the minimum vital roll affected improves to -2.
