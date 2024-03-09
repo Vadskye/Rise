@@ -46,7 +46,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You also take half damage from abilities that affect an area and attack your Armor and Reflex defense.
+                This ability also protects you from area attacks against your Fortitude and Mental defenses.
             ",
             modifiers: None,
         },
