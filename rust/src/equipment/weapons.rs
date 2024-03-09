@@ -50,12 +50,53 @@ impl Weapon {
         }
     }
 
+    pub fn is_melee(&self) -> bool {
+        let non_melee_tag = self.tags.iter().find(|t| match t {
+            WeaponTag::Projectile(_, _) => true,
+            WeaponTag::Thrown(_, _) => true,
+            _ => false,
+        });
+        return non_melee_tag.is_none();
+    }
+
+    // Add Sweeping (steps) if it doesn't exist, or increase the existing tag if it does
+    pub fn increase_sweeping(mut self, steps: i32) -> Self {
+        let mut found_sweeping = false;
+        self.tags = self
+            .tags
+            .into_iter()
+            .map(|t| {
+                match t {
+                    WeaponTag::Sweeping(v) => {
+                        found_sweeping = true;
+                        Some(WeaponTag::Sweeping(v + steps))
+                    }
+                    _ => None,
+                }
+                .unwrap_or(t)
+            })
+            .collect();
+
+        if !found_sweeping {
+            self.tags.push(WeaponTag::Sweeping(steps));
+        }
+
+        self
+    }
+}
+
+// Static constructors
+impl Weapon {
     pub fn bite() -> Self {
         StandardWeapon::MonsterBite.weapon()
     }
 
     pub fn broadsword() -> Self {
         StandardWeapon::Broadsword.weapon()
+    }
+
+    pub fn club() -> Self {
+        StandardWeapon::Club.weapon()
     }
 
     pub fn claw() -> Self {
@@ -71,6 +112,10 @@ impl Weapon {
 
     pub fn flail() -> Self {
         StandardWeapon::Flail.weapon()
+    }
+
+    pub fn giant_boulder() -> Self {
+        StandardWeapon::GiantBoulder.weapon()
     }
 
     pub fn greataxe() -> Self {
@@ -159,7 +204,6 @@ impl Weapon {
 pub enum WeaponTag {
     Ammunition,
     Compact,
-    Forceful,
     Grappling,
     Heavy,
     Impact,
@@ -170,6 +214,7 @@ pub enum WeaponTag {
     Mounted,
     Parrying,
     Projectile(i32, i32),
+    Resonating,
     Sweeping(i32),
     Subdual,
     Thrown(i32, i32),
@@ -182,7 +227,6 @@ impl WeaponTag {
         match self {
             Self::Ammunition => r"\weapontag{Ammunition}".to_string(),
             Self::Compact => r"\weapontag{Compact}".to_string(),
-            Self::Forceful => r"\weapontag{Forceful}".to_string(),
             Self::Grappling => r"\weapontag{Grappling}".to_string(),
             Self::Heavy => r"\weapontag{Heavy}".to_string(),
             Self::Impact => r"\weapontag{Impact}".to_string(),
@@ -195,6 +239,7 @@ impl WeaponTag {
             Self::Projectile(close, long) => {
                 format!("\\weapontag{{Projectile}} ({}/{})", close, long)
             }
+            Self::Resonating => r"\weapontag{Resonating}".to_string(),
             Self::Sweeping(count) => format!("\\weapontag{{Sweeping}} ({})", count),
             Self::Subdual => r"\weapontag{Subdual}".to_string(),
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
@@ -217,7 +262,6 @@ impl WeaponTag {
         match self {
             Self::Ammunition => false,
             Self::Compact => true,
-            Self::Forceful => true,
             Self::Grappling => true,
             Self::Heavy => false,
             Self::Impact => true,
@@ -229,6 +273,7 @@ impl WeaponTag {
             Self::Mounted => false,
             Self::Parrying => true,
             Self::Projectile(..) => true,
+            Self::Resonating => true,
             Self::Sweeping(_) => true,
             Self::Subdual => true,
             Self::Thrown(..) => true,
@@ -328,7 +373,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d8(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Boulder".to_string(),
-                tags: vec![WeaponTag::Forceful, WeaponTag::Thrown(120, 360)],
+                tags: vec![WeaponTag::Impact, WeaponTag::Thrown(120, 360)],
             },
             Self::Greataxe => Weapon {
                 accuracy: 1,
@@ -435,7 +480,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Ram".to_string(),
-                tags: vec![WeaponTag::Heavy, WeaponTag::Forceful],
+                tags: vec![WeaponTag::Heavy, WeaponTag::Resonating],
             },
             Self::MonsterStinger => Weapon {
                 accuracy: 1,
@@ -477,7 +522,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::xdy(2, 6),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Sledgehammer".to_string(),
-                tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
+                tags: vec![WeaponTag::Resonating, WeaponTag::Heavy],
             },
             Self::Sling => Weapon {
                 accuracy: 0,
@@ -519,7 +564,7 @@ impl StandardWeapon {
                 damage_dice: DicePool::d6(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Warhammer".to_string(),
-                tags: vec![WeaponTag::Forceful, WeaponTag::VersatileGrip],
+                tags: vec![WeaponTag::Resonating, WeaponTag::VersatileGrip],
             },
         }
     }
@@ -614,6 +659,31 @@ impl WeaponMaterial {
             Self::AncientDragonfang(color) => format!("{} ancient dragonfang", color),
             Self::Mithral => "mithral".to_string(),
             Self::PureMithral => "pure mithral".to_string(),
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    mod increase_sweeping {
+        use super::*;
+
+        #[test]
+        fn adds_new_tag() {
+            let mut club = Weapon::club();
+            club = club.increase_sweeping(2);
+
+            assert_eq!(club.tags, vec![WeaponTag::Sweeping(2)]);
+        }
+
+        #[test]
+        fn increases_existing_tag() {
+            let mut broadsword = Weapon::broadsword();
+            broadsword = broadsword.increase_sweeping(3);
+
+            assert_eq!(broadsword.tags, vec![WeaponTag::Sweeping(4), WeaponTag::VersatileGrip]);
         }
     }
 }

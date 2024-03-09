@@ -237,6 +237,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                    1, 
                     Weapon::ram(),
                 ))],
                 vec![-4, 4, -4, -8, 0, 0],
@@ -247,6 +248,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                    1,
                     Weapon::ram(),
                 ))],
                 vec![2, 3, 0, -8, 0, 0],
@@ -257,6 +259,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown(
+                    1,
                     Weapon::ram(),
                 ))],
                 vec![4, 2, 2, -8, 0, 0],
@@ -267,6 +270,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown(
+                    2,
                     Weapon::ram(),
                 ))],
                 vec![5, 1, 3, -8, 0, 0],
@@ -277,6 +281,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
+                    3,
                     Weapon::ram(),
                 ))],
                 vec![6, 0, 4, -8, 0, 0],
@@ -287,6 +292,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
+                    3,
                     Weapon::ram(),
                 ))],
                 vec![7, -1, 5, -8, 0, 0],
@@ -297,6 +303,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
             ),
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::knockdown_plus(
+                    4,
                     Weapon::ram(),
                 ))],
                 vec![8, -2, 6, -8, 0, 0],
@@ -367,7 +374,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 damage_dice: DicePool::d10(),
                 damage_types: vec![DamageType::Bludgeoning],
                 name: "Treeclub".to_string(),
-                tags: vec![WeaponTag::Forceful, WeaponTag::Heavy],
+                tags: vec![WeaponTag::Impact, WeaponTag::Heavy],
             },
             ..Default::default()
         })

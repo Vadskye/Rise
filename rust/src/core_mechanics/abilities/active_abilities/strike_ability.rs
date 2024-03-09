@@ -119,20 +119,6 @@ impl StrikeAbility {
     }
 
     // TODO: weak strikes are not correctly handled by $fullweapondamage
-    pub fn armorcrusher(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: strike_prefix("Armorcrushing", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorpiercer(weapon: Weapon) -> Self {
         Self {
             effect: r"
@@ -146,60 +132,18 @@ impl StrikeAbility {
         }
     }
 
-    pub fn bloodletting_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-                If the target takes damage and the attack result beats its Fortitude defense, it bleeds.
-                A bleeding creature takes $dr0 slashing damage during the $name's next action.
-            "
-            .to_string(),
-            name: strike_prefix("Bloodletting", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
     pub fn consecrated_strike(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} strike vs. Armor with its $weapon.
                     In addition, it \\glossterm<briefly> gains a +2 bonus to its Mental defense.
-                    \\hit $damage $damagetypes damage.
+                    \\hit $fullweapondamage.
                 ",
                 accuracy_modifier = rank - 1,
             ),
             is_magical: true,
             name: strike_prefix("Consecrated", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn defensive_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
-                In addition, it gains a +1 bonus to its Armor and Reflex defenses as a \abilitytag<Swift> effect.
-                \hit $damage $damagetypes damage.
-            ".to_string(),
-            name: strike_prefix("Defensive", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn distant_shot(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                It reduces its \glossterm{longshot penalty} with the strike by 4.
-                \hit $damage $damagetypes damage.
-            "
-            .to_string(),
-            name: strike_prefix("Distant", &weapon),
             weapon,
             ..Default::default()
         }
@@ -220,35 +164,8 @@ impl StrikeAbility {
         }
     }
 
-    pub fn flintspark_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-                If the target takes damage and the attack result beats its Reflex defense, it takes $mundanepower fire damage during the $name's next action.
-            "
-            .to_string(),
-            name: weapon.name.clone(),
-            weapon: weapon.except(|w| w.damage_types.push(DamageType::Fire)),
-            ..Default::default()
-        }
-    }
-
-    // Must be melee-only
-    pub fn frenzied_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
-                \hit $damage $damagetypes damage.
-            ".to_string(),
-            name: strike_prefix("Frenzied", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
     pub fn grappling_strike(weapon: Weapon) -> Self {
+        assert_melee("Grappling Strike", &weapon);
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
@@ -256,47 +173,6 @@ impl StrikeAbility {
                 If this attack beats the target's Fortitude defense, and the target is smaller than the $name, they are \grappled by each other.
             ".to_string(),
             name: strike_prefix("Grappling", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn guardbreaker(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                In addition, it chooses one of its allies.
-                Each creature damaged by the strike takes a -2 penalty to all defenses against that ally's attacks this round.
-                \hit $damage $damagetypes damage.
-            ".to_string(),
-            name: strike_prefix("Guardbreaking", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn hamstring(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
-                \hit $damage $damagetypes damage.
-            ".to_string(),
-            name: strike_prefix("Hamstring --", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn heartpiercer(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
-                \hit $damage $damagetypes damage.
-                \glance No effect.
-            ".to_string(),
-            name: strike_prefix("Heartpiercing", &weapon),
             weapon,
             ..Default::default()
         }
@@ -326,89 +202,7 @@ impl StrikeAbility {
         }
     }
 
-    pub fn pounce(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name can move up to its speed in a single straight line.
-                Then, it makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: "Pounce".to_string(),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn power_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy-3 strike vs. Armor with its $weapon.
-                \hit $damage*2 $damagetypes damage.
-            "
-            .to_string(),
-            name: strike_prefix("Power", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn reckless_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy+2 strike vs. Armor with its $weapon.
-                After making the attack, it briefly takes a -4 penalty to all defenses.
-                \hit $damage $damagetypes damage.
-            "
-            .to_string(),
-            name: strike_prefix("Reckless", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn redeeming_followup(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
-                \hit $damage $damagetypes damage.
-            ".to_string(),
-            name: strike_prefix("Redeeming", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn rushed_strike(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy-1 strike vs. Armor with its $weapon.
-                It can also move up to half its speed either before or after making the strike.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: strike_prefix("Rushed", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn rushed_strike_plus(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy-2 strike vs. Armor with its $weapon.
-                It can also move up to its speed either before or after making the strike.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: strike_prefix("Rushed", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn normal_strike(weapon: Weapon) -> Self {
+    pub fn normal_strike(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
@@ -419,40 +213,11 @@ impl StrikeAbility {
             weapon,
             ..Default::default()
         }
+        .plus_accuracy(rank - 1)
     }
 
-    pub fn dual_strike(weapon: Weapon) -> Self {
-        Self::normal_strike(weapon).except_dual_strike()
-    }
-
-    pub fn knockdown(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-                If the target loses hit points, it falls \prone.
-                This is a \abilitytag{Size-Based} effect.
-            "
-            .to_string(),
-            name: strike_prefix("Knockdown --", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
-    pub fn knockdown_plus(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-                If the target takes damage, it falls \prone.
-                This is a \abilitytag{Size-Based} effect.
-            "
-            .to_string(),
-            name: strike_prefix("Knockdown --", &weapon),
-            weapon,
-            ..Default::default()
-        }
+    pub fn dual_strike(rank: i32, weapon: Weapon) -> Self {
+        Self::normal_strike(rank, weapon).except_dual_strike()
     }
 
     // If you're treating trip as a strike ability, it's because you're using it with a weapon.
@@ -470,6 +235,342 @@ impl StrikeAbility {
             weapon,
             ..Default::default()
         }
+    }
+}
+
+// TODO: it may be better to strip the Thrown tag from melee-capable weapons instead of
+// panicking. Right now you can't use a defensive strike with a spear, which is awkward.
+fn assert_melee(strike_name: &str, weapon: &Weapon) {
+    assert!(
+        weapon.is_melee(),
+        "{} requires a melee weapon",
+        strike_name,
+    );
+}
+
+// Blunt Force
+impl StrikeAbility {
+    // TODO: weak strikes are not correctly handled by $fullweapondamage
+    pub fn armorcrusher(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Armorcrushing", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn armorcrusher_plus(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Fortitude with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Armorcrushing", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
+    }
+
+    pub fn forceful_smash(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target takes damage, it is \glossterm{knocked back} 15 feet.
+                This is a \abilitytag{Size-Based} effect.
+            "
+            .to_string(),
+            name: strike_prefix("Forceful", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 3)
+    }
+
+    pub fn forceful_smash_plus(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $damage*2 $damagetypes damage.
+                If the target takes damage, it is \glossterm{knocked back} 15 feet.
+                This is a \abilitytag{Size-Based} effect.
+            "
+            .to_string(),
+            name: strike_prefix("Forceful", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 7)
+    }
+
+    pub fn knockdown(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target loses hit points, it falls \prone.
+                This is a \abilitytag{Size-Based} effect.
+            "
+            .to_string(),
+            name: strike_prefix("Knockdown --", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 1)
+    }
+
+    pub fn knockdown_plus(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target takes damage, it falls \prone.
+                This is a \abilitytag{Size-Based} effect.
+            "
+            .to_string(),
+            name: strike_prefix("Knockdown --", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 3)
+    }
+}
+
+// Ebb and Flow
+impl StrikeAbility {
+    pub fn guardbreaker(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                In addition, it chooses one of its allies.
+                \hit $fullweapondamage.
+                If the target takes damage, it \glossterm{briefly} takes a -2 penalty to all defenses against that ally's attacks.
+            ".to_string(),
+            name: strike_prefix("Guardbreaking", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
+    }
+
+    pub fn power_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy-4 strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Power", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 1)
+    }
+
+    pub fn reckless_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy+1 strike vs. Armor with its $weapon.
+                After making the attack, it briefly takes a -2 penalty to all defenses.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Reckless", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 1)
+    }
+
+    pub fn redeeming_followup(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                It gains a +2 accuracy bonus with this strike against each creature that it missed with a strike last round.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Redeeming", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+}
+
+// Flurry of Blows
+impl StrikeAbility {
+    pub fn frenzied_strike(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Frenzied Strike", &weapon);
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                For each previous consecutive round in which it used this ability, it gains a +2 accuracy bonus with the strike, up to a maximum of +4.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Frenzied", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+}
+
+// Mobile Assault
+impl StrikeAbility {
+    // Considered rank 2, which is unusual for a maneuver-ish effect.
+    pub fn pounce(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Pounce", &weapon);
+        Self {
+            effect: r"
+                The $name can move up to its speed in a single straight line.
+                Then, it makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: "Pounce".to_string(),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 2)
+    }
+
+    pub fn rushed_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy-1 strike vs. Armor with its $weapon.
+                It can also move up to half its speed either before or after making the strike.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Rushed", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 1)
+    }
+
+    pub fn rushed_strike_plus(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy-2 strike vs. Armor with its $weapon.
+                It can also move up to its speed either before or after making the strike.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Rushed", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 2)
+    }
+}
+
+// Penetrating Precision
+impl StrikeAbility {
+    pub fn distant_shot(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                It reduces its \glossterm{longshot penalty} with the strike by 4.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Distant", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn heartpiercer(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
+                \hit $fullweapondamage.
+                \glance No effect.
+            ".to_string(),
+            name: strike_prefix("Heartpiercing", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+}
+
+// Rip and Tear
+impl StrikeAbility {
+    pub fn bloodletting_strike(rank: i32, weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target loses hit points, it takes damage from the strike again during the $name's next action.
+            "
+            .to_string(),
+            name: strike_prefix("Bloodletting", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn flintspark_strike(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+                If the target takes damage and the attack result beats its Reflex defense, it takes $mundanepower fire damage during the $name's next action.
+            "
+            .to_string(),
+            name: weapon.name.clone(),
+            weapon: weapon.except(|w| w.damage_types.push(DamageType::Fire)),
+            ..Default::default()
+        }
+    }
+
+    pub fn hamstring(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Hamstring", &weapon);
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Hamstring --", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn sweeping_strike(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Sweeping Strike", &weapon);
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Sweeping", &weapon),
+            weapon: weapon.increase_sweeping(1),
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
+    }
+}
+
+// Unbreakable Defense
+impl StrikeAbility {
+    pub fn defensive_strike(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Defensive Strike", &weapon);
+        Self {
+            effect: r"
+                The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
+                In addition, it gains a +1 bonus to its Armor and Reflex defenses this round as a \abilitytag<Swift> effect.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Defensive", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
     }
 }
 

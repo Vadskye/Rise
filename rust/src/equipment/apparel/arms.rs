@@ -140,22 +140,6 @@ fn gauntlets() -> Vec<Apparel> {
     let mut apparel = vec![];
 
     apparel.push(Gauntlets(StandardItem {
-        name: String::from("Gauntlets of the Ram"),
-        rank: 2,
-        short_description: String::from("Knocks back punched enemies"),
-        description: String::from(r"
-            Your punch \glossterm{natural weapon} gains the \weapontag{Forceful} weapon tag (see \pcref{Weapon Tags}).
-            This does not affect your kicks.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Knocks back punched enemies", r"
-                The knockback distance increases to 20 feet.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Gauntlets(StandardItem {
         name: String::from("Throwing Gauntlets"),
         rank: 3,
         short_description: String::from("Allows throwing objects up to 60 feet"),

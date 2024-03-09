@@ -6,6 +6,9 @@ use crate::creatures::Creature;
 const CONDITION_CRIT: &str = r"
     \crit The condition must be removed an additional time before the effect ends.
 ";
+const IMMUNITY_CRIT: &str = r"
+    \crit The target does not become immune to this effect.
+";
 
 #[derive(Clone, Debug, Default)]
 pub struct CustomAbility {
@@ -118,45 +121,52 @@ impl CustomAbility {
         }
     }
 
-    pub fn heed_the_dark_call(rank: i32) -> Self {
+    pub fn shove() -> Self {
         Self {
-            ability_type: AbilityType::Normal,
             effect: format!(
                 "
-                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    It gains a +4 accuracy bonus if the target is \\glossterm<shadowed>.
-                    \\hit The target feels the call of darkness as a \\glossterm<condition>.
-                    While it is below its maximum \\glossterm<hit points>, it is \\frightened by the $name.
-                    {condition_crit}
+                    The $name makes a $brawlingaccuracy attack to shove foes.
+                    For details, see \\pcref<Shove>.
                 ",
-                accuracy_modifier = rank - 1,
-                condition_crit = CONDITION_CRIT,
             ),
-            is_magical: false,
-            name: "Heed the Dark Call".to_string(),
-            tags: vec![],
-            usage_time: UsageTime::Standard,
+            name: "Shove".to_string(),
+            ..Default::default()
         }
     }
 
-    pub fn inflict_wound(rank: i32) -> Self {
+    // Like Mind Blank, but slightly different flavor
+    pub fn demand_obeisance(rank: i32) -> Self {
         Self {
-            ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Fortitude against one living creature within \\shortrange.
-                    \\hit $dr1 energy damage.
-                    If the target loses hit points from this damage, it takes the damage again.
-                ",
-                accuracy_modifier = rank - 2,
-            ),
+            effect: format!("
+                The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
+                \\hit If the target has no remaining damage resistance, it is compelled to spend its next standard action doing nothing but groveling before the $name.
+                After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
+                {IMMUNITY_CRIT}
+            "),
             is_magical: true,
-            name: "Inflict Wound".to_string(),
-            tags: vec![],
-            usage_time: UsageTime::Standard,
-        }
+            name: "Demand Obeisance".to_string(),
+            tags: vec![AbilityTag::Compulsion],
+            ..Default::default()
+        }.plus_accuracy(rank - 1)
     }
 
+    pub fn terrifying_shout(rank: i32) -> Self {
+        Self {
+            effect: format!("
+                The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
+                \\hit The target is \\frightened of the $name as a condition.
+                {CONDITION_CRIT}
+            "),
+            is_magical: true,
+            name: "Terrifying Shout".to_string(),
+            tags: vec![AbilityTag::Emotion],
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
+    }
+}
+
+// Enchantment
+impl CustomAbility {
     pub fn mind_blank(rank: i32) -> Self {
         Self {
             ability_type: AbilityType::Normal,
@@ -192,53 +202,57 @@ impl CustomAbility {
             usage_time: UsageTime::Standard,
         }
     }
+}
 
-    pub fn stabilize_life(rank: i32) -> Self {
+// Terramancy
+impl CustomAbility {
+    pub fn earthbind(rank: i32) -> Self {
         Self {
-            ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name, or one living \\glossterm<ally> within \\shortrange of it, regains $dr{rank} hit points.
-                    This cannot increase the target's hit points above half its maximum hit points.
-                ",
-                rank = rank + 1,
-            ),
+            effect: format!("
+                The $name makes a $accuracy attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
+                It gains a +2 \\glossterm<accuracy> bonus if it is \\glossterm<grounded> on stone.
+                \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+                It is unable to use any fly speed or glide speed, and its jump distance is halved.
+                All \\glossterm<falling damage> that it takes is doubled.
+                Standing up while \\prone costs its full speed rather than only half its speed.
+                {CONDITION_CRIT}
+            "),
             is_magical: true,
-            name: "Stabilize Life".to_string(),
-            tags: vec![AbilityTag::Swift],
-            usage_time: UsageTime::Standard,
-        }
+            name: "Earthbind".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
     }
 
-    pub fn shove() -> Self {
+    pub fn quagmire(rank: i32) -> Self {
         Self {
-            effect: format!(
-                "
-                    The $name makes a $brawlingaccuracy attack to shove foes.
-                    For details, see \\pcref<Shove>.
-                ",
-            ),
-            name: "Shove".to_string(),
+            ability_type: AbilityType::Sustain("Minor".to_string()),
+            effect: format!("
+                The $name chooses a \\{areasize} radius \\glossterm<zone> within \\medrange.
+                All earth and stone in the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
+                The area becomes \\glossterm<difficult terrain>.
+
+                This does not affect objects under structural stress, such as walls and support columns.
+                Affected objects retain their own fundamental structural integrity and do not blend with other objects.
+                When the spell ends, affected objects regain their original shape, suffering no damage from their time spent softened.
+            ", areasize = if rank >= 6 { "medarea" } else { "smallarea" }),
+            is_magical: true,
+            name: "Quagmire".to_string(),
             ..Default::default()
         }
     }
 
-    pub fn true_strike(rank: i32) -> Self {
+    pub fn tremor(rank: i32) -> Self {
         Self {
-            ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name chooses an ally within \\medrange.
-                    The first time the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and rolls twice, keeping the higher result.
-                ",
-                // r1: +1, r3: +2, etc.
-                accuracy_modifier = ((rank + 1) / 2),
-            ),
+            effect: "
+                The earth shakes in a \\medarea radius \\glossterm{zone} around the $name.
+                When it uses this ability, and during its next action, it makes a $accuracy attack vs. Reflex against everything in the area that is \\glossterm{grounded}.
+                \\hit $dr1 bludgeoning damage.
+                \\miss Half damage.
+            ".to_string(),
             is_magical: true,
-            name: "True Strike".to_string(),
-            tags: vec![],
-            usage_time: UsageTime::Standard,
-        }
+            name: "Tremor".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 3)
     }
 }
 
@@ -348,6 +362,84 @@ impl CustomAbility {
             name: "Ignition".to_string(),
             ..Default::default()
         }.plus_accuracy(rank - 1)
+    }
+}
+
+// Revelation
+impl CustomAbility {
+    pub fn true_strike(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name chooses an ally within \\medrange.
+                    The first time the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and rolls twice, keeping the higher result.
+                ",
+                // r1: +1, r3: +2, etc.
+                accuracy_modifier = ((rank + 1) / 2),
+            ),
+            is_magical: true,
+            name: "True Strike".to_string(),
+            tags: vec![],
+            usage_time: UsageTime::Standard,
+        }
+    }
+}
+
+// Umbramancy
+impl CustomAbility {
+    pub fn heed_the_dark_call(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
+                    It gains a +4 accuracy bonus if the target is \\glossterm<shadowed>.
+                    \\hit The target feels the call of darkness as a \\glossterm<condition>.
+                    While it is below its maximum \\glossterm<hit points>, it is \\frightened by the $name.
+                    {CONDITION_CRIT}
+                ",
+                accuracy_modifier = rank - 1,
+            ),
+            is_magical: false,
+            name: "Heed the Dark Call".to_string(),
+            tags: vec![],
+            usage_time: UsageTime::Standard,
+        }
+    }
+}
+
+// Vivimancy
+impl CustomAbility {
+    pub fn inflict_wound(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: "
+                The $name makes a $accuracy attack vs. Fortitude against one living creature within \\shortrange.
+                \\hit $dr1 energy damage.
+                If the target loses hit points from this damage, it takes the damage again.
+            ".to_string(),
+            is_magical: true,
+            name: "Inflict Wound".to_string(),
+            tags: vec![],
+            usage_time: UsageTime::Standard,
+        }.plus_accuracy(rank - 1)
+    }
+
+    pub fn restoration(rank: i32) -> Self {
+        Self {
+            ability_type: AbilityType::Normal,
+            effect: format!(
+                "
+                    The $name, or one living \\glossterm<ally> within \\shortrange of it, regains $dr{rank} hit points and increases its fatigue level by one.
+                ",
+                rank = rank + 1,
+            ),
+            is_magical: true,
+            name: "Restoration".to_string(),
+            tags: vec![AbilityTag::Swift],
+            usage_time: UsageTime::Standard,
+        }
     }
 }
 

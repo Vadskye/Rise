@@ -31,8 +31,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Army Deserter".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::HeavyCrossbow.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::HeavyCrossbow.weapon())),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -65,7 +65,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 abilities: MonsterAbilities {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::armorpiercer(Weapon::longbow())),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::longbow())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::longbow())),
                     ],
                     trained_skills: vec![
                         Skill::Awareness,
@@ -170,7 +170,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             tags: vec![AbilityTag::Spell],
                             usage_time: UsageTime::Standard,
                         }),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Sickle.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Sickle.weapon())),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -232,7 +232,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             tags: vec![AbilityTag::Spell],
                             usage_time: UsageTime::Standard,
                         }),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Club.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(2, StandardWeapon::Club.weapon())),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -248,9 +248,9 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 statistics: MonsterStatistics {
                     attributes: vec![0, 2, 0, -1, 2, 5],
                     elite: false,
-                level: 4,
-                role: Role::Mystic,
-                size: Size::Medium,
+                    level: 4,
+                    role: Role::Mystic,
+                    size: Size::Medium,
                 },
                 name: "Pyromaniac".to_string(),
             }),
@@ -281,8 +281,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 "Goblin Warrior",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
-                        ActiveAbility::Strike(StrikeAbility::rushed_strike(Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::rushed_strike(1, Weapon::spear())),
                     ],
                     modifiers: vec![Modifier::buckler()],
                     movement_speeds: None,
@@ -301,8 +301,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 "Goblin Wolf Rider",
                 MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::lance())),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::lance())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::spear())),
                     ],
                     modifiers: vec![Modifier::buckler()],
                     movement_speeds: None,
@@ -362,7 +362,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
             humanoid(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Broadsword.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Broadsword.weapon())),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -392,8 +392,8 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
             humanoid(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Custom(CustomAbility::inflict_wound(2)),
-                        ActiveAbility::Custom(CustomAbility::stabilize_life(2)),
+                        ActiveAbility::Custom(CustomAbility::inflict_wound(1)),
+                        ActiveAbility::Custom(CustomAbility::restoration(1)),
                     ],
                     modifiers: vec![],
                     movement_speeds: None,
@@ -414,7 +414,7 @@ pub fn add_humans(monsters: &mut Vec<MonsterEntry>) {
                 statistics: MonsterStatistics {
                     attributes: vec![0, 0, 0, 0, 3, 3],
                     elite: false,
-                    level: 4,
+                    level: 2,
                     role: Role::Mystic,
                     size: Size::Medium,
                 },
@@ -485,8 +485,8 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                 "Lizardfolk Grunt",
                 LizardfolkAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::defensive_strike(StandardWeapon::Spear.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(1, StandardWeapon::Bite.weapon())),
                     ],
                     modifiers: vec![
                         Modifier::reptile(),
@@ -508,9 +508,9 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
                 "Lizardfolk Champion",
                 LizardfolkAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::defensive_strike(StandardWeapon::Spear.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(StandardWeapon::Bite.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::redeeming_followup(StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(2, StandardWeapon::Spear.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::frenzied_strike(2, StandardWeapon::Bite.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::redeeming_followup(2, StandardWeapon::Spear.weapon())),
                     ],
                     modifiers: vec![
                         Modifier::reptile(),
@@ -610,7 +610,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 OrcAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Greataxe.weapon())),
                     ],
                     modifiers: vec![],
                     trained_skills: vec![],
@@ -632,8 +632,8 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 OrcAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(1, StandardWeapon::Greataxe.weapon())),
                     ],
                     modifiers: vec![],
                     trained_skills: vec![],
@@ -656,8 +656,8 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 OrcAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(cleaver.clone())),
-                        ActiveAbility::Strike(StrikeAbility::bloodletting_strike(cleaver.clone())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, cleaver.clone())),
+                        ActiveAbility::Strike(StrikeAbility::bloodletting_strike(1, cleaver.clone())),
                     ],
                     modifiers: vec![],
                     trained_skills: vec![],
@@ -680,9 +680,9 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 OrcAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Greataxe.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::heartpiercer(StandardWeapon::Longbow.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(2, StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(2, StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::heartpiercer(2, StandardWeapon::Longbow.weapon())),
                     ],
                     modifiers: vec![],
                     trained_skills: vec![],
@@ -705,10 +705,10 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                 ]),
                 OrcAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::distant_shot(StandardWeapon::Longbow.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::guardbreaker(StandardWeapon::Greataxe.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::hamstring(StandardWeapon::Greataxe.weapon())),
-                        ActiveAbility::Strike(StrikeAbility::power_strike(StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::distant_shot(2, StandardWeapon::Longbow.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::guardbreaker(3, StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::hamstring(2, StandardWeapon::Greataxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(2, StandardWeapon::Greataxe.weapon())),
                         ActiveAbility::Custom(chief_battle_command),
                     ],
                     modifiers: vec![],
@@ -738,7 +738,7 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
                     active_abilities: vec![
                         ActiveAbility::Custom(CustomAbility::divine_judgment(1)),
                         ActiveAbility::Custom(CustomAbility::true_strike(1)),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Battleaxe.weapon())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Battleaxe.weapon())),
                     ],
                     modifiers: vec![],
                     trained_skills: vec![],
