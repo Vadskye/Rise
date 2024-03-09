@@ -159,6 +159,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
+                1,
                 Weapon::bite(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -408,7 +409,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::pounce(Weapon::claw()).except_dual_strike()),
+                ActiveAbility::Strike(StrikeAbility::pounce(2, Weapon::claw()).except_dual_strike()),
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes two $accuracy strikes vs. Armor with its $weapons.
@@ -420,7 +421,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     weapon: Weapon::claw(),
                     ..Default::default()
                 }),
-                ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::bite()).except_elite()),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(2, Weapon::bite()).except_elite()),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against against one non-adjacent creature within \distrange.
@@ -612,12 +613,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         monsters: vec![
             IchorDefinition {
                 active_abilities: vec![
-                    ActiveAbility::Strike(StrikeAbility::ichor_strike(1, Weapon::claw()).except_dual_strike()),
-                    ActiveAbility::Strike(StrikeAbility::ichor_strike(1, Weapon::bite()).except_elite()),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(2, Weapon::claw()).except_dual_strike()),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(2, Weapon::bite()).except_elite()),
                 ],
                 attributes: vec![5, 1, 6, -8, 2, -1],
                 elite: true,
-                level: 3,
+                level: 5,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
                 name: "Ichor Black Bear".to_string(),
                 role: Role::Brute,
@@ -627,12 +628,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             .monster(),
             IchorDefinition {
                 active_abilities: vec![
-                    ActiveAbility::Strike(StrikeAbility::ichor_strike(2, Weapon::claw()).except_dual_strike()),
-                    ActiveAbility::Strike(StrikeAbility::ichor_strike(2, Weapon::bite()).except_elite()),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(3, Weapon::claw()).except_dual_strike()),
+                    ActiveAbility::Strike(StrikeAbility::ichor_strike(3, Weapon::bite()).except_elite()),
                 ],
-                attributes: vec![6, 2, 7, -8, 2, 2],
+                attributes: vec![6, 1, 7, -8, 2, 1],
                 elite: true,
-                level: 5,
+                level: 7,
                 modifiers: ModifierBundle::Multipedal.modifiers(),
                 name: "Ichor Brown Bear".to_string(),
                 role: Role::Brute,

@@ -298,9 +298,6 @@ Items are divided into five broad categories, described below.
         It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
         This makes it easier to conceal (see \pcref{Sleight of Hand}).
         In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-        \weapontagdef{Forceful} Whenever you deal damage to a target with a strike using this weapon, you can \glossterm{knockback} the target up to 10 feet.
-        On a critical hit, this knockback distance is doubled.
-        This is a \abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
         \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
         You normally need two hands to use a Heavy weapon.
@@ -339,6 +336,8 @@ Items are divided into five broad categories, described below.
         The time required to reload a projectile weapon is given in the weapon description.
         You take a \minus4 accuracy penalty with Projectile weapons against creatures adjacent to you.
         While riding a moving mount, you take a \minus4 accuracy penalty with Projectile weapons, and your range limits are halved.
+        \weapontagdef{Resonating} Whenever you hit and damage a creature with a strike using this weapon, it \glossterm{briefly} takes a -2 penalty to its Armor defense against your strikes.
+        This is a \abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
         \weapontagdef{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
         % (30/60) is one improvement, (60/120) is two.
         \weapontagdef{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects adjacent to you.
@@ -452,11 +451,11 @@ Items are divided into five broad categories, described below.
 
                 Headed weapons                    &               &             &                          &                             &                                             \\
                 \tind Light hammer                & \plus0        & 1d6         & Bludgeoning              & 0 (10 gp)                   & Light, Thrown (30/60)                       \\
-                \tind Longhammer                  & \plus0        & 1d8         & Bludgeoning              & 0 (10 gp)                   & Forceful, Heavy, Long                       \\
+                \tind Longhammer                  & \plus0        & 1d8         & Bludgeoning              & 0 (10 gp)                   & Heavy, Long, Resonating                       \\
                 \tind Pick                        & \plus0        & 1d6         & Piercing                 & 0 (10 gp)                   & Impact, Versatile Grip                      \\
                 \tind Sickle                      & \plus1        & 1d4         & Slashing                 & 0 (10 gp)                   & Light, Sweeping (1)                         \\
-                \tind Sledgehammer                & \minus1       & 2d6         & Bludgeoning              & 0 (10 gp)                   & Forceful, Heavy                             \\
-                \tind Warhammer                   & \plus0        & 1d6         & Bludgeoning              & 0 (10 gp)                   & Forceful, Versatile Grip                    \\
+                \tind Sledgehammer                & \minus1       & 2d6         & Bludgeoning              & 0 (10 gp)                   & Heavy, Resonating                             \\
+                \tind Warhammer                   & \plus0        & 1d6         & Bludgeoning              & 0 (10 gp)                   & Resonating, Versatile Grip                    \\
 
                 Monk weapons                      &               &             &                          &                             &                                             \\
                 \tind Jitte                       & \plus2        & 1d4         & Piercing                 & 0 (10 gp)                   & Light                                       \\
@@ -472,7 +471,7 @@ Items are divided into five broad categories, described below.
                 \tind Bardiche                    & \plus0        & 1d10        & Slashing                 & 0 (10 gp)                   & Heavy, Sweeping (1)                         \\
                 \tind Glaive                      & \plus0        & 1d8         & Slashing                 & 0 (10 gp)                   & Heavy, Long, Sweeping (1)                   \\
                 \tind Halberd                     & \plus1        & 1d8         & Piercing or slashing     & 0 (10 gp)                   & Heavy, Long                                 \\
-                \tind Longhammer                  & \plus0        & 1d8         & Bludgeoning              & 0 (10 gp)                   & Forceful, Heavy, Long                       \\
+                \tind Longhammer                  & \plus0        & 1d8         & Bludgeoning              & 0 (10 gp)                   & Heavy, Long, Resonating                       \\
                 \tind Poleaxe                     & \plus1        & 1d8         & Piercing or slashing     & 0 (10 gp)                   & Heavy, Tripping                             \\
                 % -1d relative to normal Heavy
                 \tind Quarterstaff                & \plus1        & 1d6         & Bludgeoning              & \tdash                      & Heavy, Long                                 \\
@@ -547,7 +546,7 @@ Items are divided into five broad categories, described below.
                 \tind Meteor hammer               & \plus0        & 1d10        & Bludgeoning              & 1 (40 gp)                   & Heavy, Long, Tripping                       \\
                 \tind Three-section staff         & \plus1        & 1d6         & Bludgeoning              & 1 (40 gp)                   & Heavy, Long, Parrying, Tripping             \\
                 Headed weapons                    &               &             &                          &                             &                                             \\
-                \tind Dwarven longhammer          & \plus0        & 1d10        & Bludgeoning              & 1 (40 gp)                   & Forceful, Heavy, Long                       \\
+                \tind Dwarven longhammer          & \plus0        & 1d10        & Bludgeoning              & 1 (40 gp)                   & Heavy, Long, Resonating                       \\
                 \tind Dwarven shorthammer         & \plus0        & 1d6         & Bludgeoning              & 1 (40 gp)                   & Light, Thrown (60/120)                      \\
                 \tind Heavy pick                  & \plus0        & 1d10        & Piercing                 & 1 (40 gp)                   & Heavy, Keen, Impact                         \\
                 \tind Obuch                       & \plus0        & 1d8         & Bludgeoning              & 1 (40 gp)                   & Long, Tripping                              \\
@@ -588,7 +587,7 @@ Items are divided into five broad categories, described below.
                 Claw\fn{1}              & \plus2        & 1d4         & Slashing         & Light     \\
                 Horn                    & \plus0        & 1d6         & Piercing         & Impact    \\
                 Punch/kick\fn{1} \fn{2} & \plus0        & 1d3         & Bludgeoning      & Subdual   \\
-                Ram                     & \plus0        & 1d6         & Bludgeoning      & Forceful  \\
+                Ram                     & \plus0        & 1d6         & Bludgeoning      & Resonating  \\
                 Stinger                 & \plus1        & 1d6         & Piercing         & \tdash    \\
                 Talon\fn{2}             & \plus2        & 1d4         & Piercing         & Light     \\
                 Tentacle                & \plus0        & 1d6         & Bludgeoning      & Long    \\

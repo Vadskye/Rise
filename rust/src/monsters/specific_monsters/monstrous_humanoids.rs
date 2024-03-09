@@ -28,7 +28,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     weapon: Weapon::greataxe().add_tag(WeaponTag::Sweeping(2)),
                     ..Default::default()
                 }),
-                ActiveAbility::Strike(StrikeAbility::power_strike(Weapon::horns()).except_elite().plus_accuracy(1)),
+                ActiveAbility::Strike(StrikeAbility::power_strike(2, Weapon::horns()).except_elite()),
                 ActiveAbility::Custom(CustomAbility::shove().plus_accuracy(1).except_elite()),
             ],
             modifiers: vec![],
@@ -129,11 +129,11 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
         monsters: vec![
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![
-                    //     StandardWeapon::GiantBoulder.weapon(),
-                    //     giant_club.clone(),
-                    // ],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::forceful_smash(4, Weapon::giant_boulder())),
+                        ActiveAbility::Strike(StrikeAbility::forceful_smash(4, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(4, Weapon::greatclub())),
+                    ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
@@ -162,7 +162,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![8, -2, 4, -2, -2, -2],
+                    attributes: vec![8, -2, 4, -2, 2, -1],
                     elite: false,
                     level: 10,
                     role: Role::Brute,
@@ -172,11 +172,14 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
             }),
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![
-                    //     StandardWeapon::GiantBoulder.weapon(),
-                    //     giant_club.clone(),
-                    // ],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::forceful_smash(4, Weapon::giant_boulder())),
+                        ActiveAbility::Strike(StrikeAbility::forceful_smash(4, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::power_strike(4, Weapon::greatclub())),
+                        ActiveAbility::Custom(CustomAbility::earthbind(4).except_elite()),
+                        ActiveAbility::Custom(CustomAbility::quagmire(4).except_elite()),
+                        ActiveAbility::Custom(CustomAbility::tremor(4).except_elite()),
+                    ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
@@ -189,7 +192,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     knowledge: Some(Knowledge::new(vec![
                         (0, "
                           A stone giant is a Gargantuan giant that is usually found in mountainous regions.
-                          Stone giants fight from a great distance whenever possible, using their ability to hurl stones up to 1,000 feet.
+                          Stone giants fight from a great distance whenever possible, using their ability to hurl stones vast distances and bend the earth to their will.
                           They prefer thick leather garments, dyed in shades of brown and gray to match the stone around them.
                         "),
                         (5, "
@@ -201,7 +204,7 @@ pub fn monstrous_humanoids() -> Vec<MonsterEntry> {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![7, -1, 7, 0, 2, -2],
+                    attributes: vec![7, -2, 7, 0, 2, 4],
                     elite: true,
                     level: 11,
                     role: Role::Warrior,
@@ -231,8 +234,9 @@ fn add_bugbears(monsters: &mut Vec<MonsterEntry>) {
                 It also references their seemingly supernatural ability to infuriate their enemies.
             "),
             (10, "
-                Bugbears tend not to work together in organized tribes.
-                Instead, they travel in small packs that rarely have more than a dozen members.
+                Bugbears are typically found in small packs that rarely have more than a dozen members.
+                However, sometimes they will congregate around a powerful leader for a time.
+                These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers.
             "),
         ])),
         monsters: vec![
@@ -263,7 +267,7 @@ fn add_bugbears(monsters: &mut Vec<MonsterEntry>) {
                 name: "Bugbear Shaman".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::flail())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::flail())),
                         ActiveAbility::Custom(CustomAbility::enrage(1)),
                         ActiveAbility::Custom(CustomAbility::mind_blank(1)),
                         ActiveAbility::Custom(CustomAbility::mind_blast(1)),
@@ -296,7 +300,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
         ".to_string()),
         knowledge: Some(Knowledge::new(vec![
             (0, "
-                Kobolds are Medium humanoid creatures that are covered in scales.
+                Kobolds are Medium bipedal creatures that are covered in scales.
                 They are short, typically standing three feet tall.
                 Although kobolds are individually cowardly, they are crafty and work effectively in groups.
             "),
@@ -317,8 +321,8 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                 name: "Kobold Nipper".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::sling())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::sling())),
                     ],
                     ..Default::default()
                 },
@@ -327,7 +331,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![-1, 4, 1, 1, 3, -2],
+                    attributes: vec![-1, 4, 2, 1, 3, -2],
                     elite: false,
                     level: 1,
                     role: Role::Skirmisher,
@@ -338,7 +342,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                 name: "Kobold Snipper".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::heavy_crossbow())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::heavy_crossbow())),
                     ],
                     ..Default::default()
                 },
@@ -347,7 +351,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![-1, 3, 0, 1, 4, -2],
+                    attributes: vec![-1, 3, 1, 1, 4, -2],
                     elite: false,
                     level: 2,
                     role: Role::Sniper,
@@ -358,7 +362,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                 name: "Kobold Yipper".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::spear())),
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::spear())),
                         ActiveAbility::Custom(CustomAbility::burning_hands(1)),
                         ActiveAbility::Custom(CustomAbility::ignition(1)),
                     ],
@@ -369,7 +373,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![-2, 3, 0, 1, 2, 3],
+                    attributes: vec![-2, 3, 2, 1, 2, 3],
                     elite: false,
                     level: 3,
                     role: Role::Mystic,
@@ -395,7 +399,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![0, 5, 2, 2, 4, -1],
+                    attributes: vec![0, 5, 3, 2, 4, -1],
                     elite: false,
                     level: 5,
                     role: Role::Skirmisher,
@@ -416,7 +420,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![0, 4, 1, 2, 5, -1],
+                    attributes: vec![0, 4, 2, 2, 5, -1],
                     elite: false,
                     level: 6,
                     role: Role::Sniper,
@@ -439,7 +443,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     ..Default::default()
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![-1, 4, 1, 2, 3, 4],
+                    attributes: vec![-1, 4, 3, 2, 3, 4],
                     elite: false,
                     level: 7,
                     role: Role::Mystic,
@@ -474,8 +478,8 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::greatclub()).plus_accuracy(1)),
-                        ActiveAbility::Strike(StrikeAbility::power_strike(Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::knockdown(1, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::sweeping_strike(1, Weapon::greatclub())),
                     ],
                     // TODO: add attack
                     ..Default::default()
@@ -491,19 +495,21 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
                     ])),
                 }),
                 statistics: MonsterStatistics {
-                    attributes: vec![6, -1, 2, -4, 0, -1],
+                    attributes: vec![6, -1, 3, -4, 0, -1],
                     elite: false,
-                    level: 4,
+                    level: 3,
                     role: Role::Brute,
                     size: Size::Large,
                 },
 
                 name: "Ogre Ganger".to_string(),
             }),
-            // TODO: add Sweeping tag or Sweeping Strike maneuver
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::knockdown(2, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::sweeping_strike(2, Weapon::greatclub())),
+                    ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
@@ -571,7 +577,13 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             // TODO: add Sweeping tag or Sweeping Strike maneuver
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::armorcrusher_plus(3, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::knockdown_plus(3, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::sweeping_strike(3, Weapon::greatclub())),
+                        ActiveAbility::Custom(CustomAbility::terrifying_shout(3).except_elite()),
+                        ActiveAbility::Custom(CustomAbility::demand_obeisance(3).except_elite()),
+                    ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],

@@ -212,23 +212,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     }));
 
     weapons.push(Unrestricted(StandardItem {
-        name: String::from("Hefty"),
-        rank: 3,
-        short_description: String::from(r"Can knockback struck foes"),
-        description: String::from(r"
-            This weapon feels heavy in the hand.
-            It gains the \weapontag<Forceful> weapon tag (see \pcref<Weapon Tags>).
-            If it already has that weapon tag, the distance that you can \glossterm<knockback> the target increases by 10 feet.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Can knockback large struck foes", r"
-                The maximum size category that you can affect with this weapon's \glossterm<Forceful> tag also increases by one.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
         name: String::from("Fixating"),
         rank: 3,
         short_description: String::from(r"Grants stacking +1 accuracy bonus"),

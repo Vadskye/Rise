@@ -197,7 +197,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
-        \\hit If the target takes damage, it takes a -2 penalty to all defenses against that ally's attacks this round.
+        \\hit If the target takes damage, it \\glossterm{briefly} takes a -2 penalty to all defenses against that ally's attacks.
       `,
       rank: 3,
     },

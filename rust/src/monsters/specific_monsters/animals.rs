@@ -31,7 +31,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         abilities: MonsterAbilities {
             active_abilities: vec![
                 // Camels use a weak bite.
-                ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Bite.weapon())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Bite.weapon())),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -60,7 +60,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
+                ActiveAbility::Strike(StrikeAbility::dual_strike(1, StandardWeapon::Claw.weapon())),
             ],
             modifiers: vec![],
             movement_speeds: Some(vec![
@@ -98,6 +98,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::dual_strike(
+                1,
                 StandardWeapon::Claw.weapon(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -147,8 +148,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             // TODO: remove this once dual wielding accuracy is autocalculated
-                            ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon()).plus_accuracy(-1)),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon()).except_elite()),
+                            ActiveAbility::Strike(StrikeAbility::dual_strike(1, StandardWeapon::Claw.weapon()).plus_accuracy(-1)),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -178,8 +179,8 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(MonsterDef {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
-                            ActiveAbility::Strike(StrikeAbility::dual_strike(StandardWeapon::Claw.weapon())),
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon()).except_elite()),
+                            ActiveAbility::Strike(StrikeAbility::dual_strike(1, StandardWeapon::Claw.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -197,7 +198,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         ])),
                     }),
                     statistics: MonsterStatistics {
-                        attributes: vec![5, 1, 6, -8, 1, 1],
+                        attributes: vec![5, 0, 6, -8, 1, 0],
                         elite: true,
                         level: 3,
                         role: Role::Brute,
@@ -212,6 +213,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![ActiveAbility::Strike(StrikeAbility::dual_strike(
+                1,
                 StandardWeapon::Claw.weapon(),
             ))],
             modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -238,7 +240,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     monsters.push(MonsterEntry::Monster(animal(MonsterDef {
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::normal_strike(Weapon::bite())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::bite())),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
@@ -336,7 +338,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
                             // TODO: Should this inflict a disease?
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -369,7 +371,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(MonsterDef {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
-                            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::MonsterBite.weapon())),
+                            ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::MonsterBite.weapon())),
                         ],
                         modifiers: ModifierBundle::Multipedal.modifiers(),
                         movement_speeds: None,
@@ -404,7 +406,10 @@ pub fn animals() -> Vec<MonsterEntry> {
     let horse_abilities = MonsterAbilities {
         active_abilities: vec![
             // Horses use a weak bite.
-            ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Bite.weapon())),
+            ActiveAbility::Strike(StrikeAbility::normal_strike(
+                1,
+                StandardWeapon::Bite.weapon(),
+            )),
         ],
         modifiers: ModifierBundle::Multipedal.modifiers(),
         movement_speeds: None,
@@ -501,7 +506,7 @@ pub fn animals() -> Vec<MonsterEntry> {
         abilities: MonsterAbilities {
             active_abilities: vec![
                 // Ponies use a weak bite.
-                ActiveAbility::Strike(StrikeAbility::normal_strike(StandardWeapon::Bite.weapon())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Bite.weapon())),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,

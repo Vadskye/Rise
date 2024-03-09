@@ -125,7 +125,7 @@ fn replace_power_terms(effect: &str, creature: &Creature) -> String {
 
     let magical_power_pattern = Regex::new(r"\$magicalpower").unwrap();
     let replaced_effect =
-        magical_power_pattern.replace_all(effect, creature.calc_power(false).to_string());
+        magical_power_pattern.replace_all(&replaced_effect, creature.calc_power(false).to_string());
 
     replaced_effect.to_string()
 }
