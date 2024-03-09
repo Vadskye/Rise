@@ -118,20 +118,6 @@ impl StrikeAbility {
         self
     }
 
-    // TODO: weak strikes are not correctly handled by $fullweapondamage
-    pub fn armorpiercer(weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: strike_prefix("Armorpiercing", &weapon),
-            weapon,
-            ..Default::default()
-        }
-    }
-
     pub fn consecrated_strike(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: format!(
@@ -149,7 +135,7 @@ impl StrikeAbility {
         }
     }
 
-    pub fn enraging_strike(weapon: Weapon) -> Self {
+    pub fn enraging_strike(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
@@ -162,6 +148,35 @@ impl StrikeAbility {
             weapon,
             ..Default::default()
         }
+        .plus_accuracy(rank - 1)
+    }
+
+    // 2x at rank 5, 3x at rank 7
+    pub fn generic_weapon_damage(rank: i32, weapon: Weapon) -> Self {
+        let damage_multiplier;
+        let accuracy;
+        if rank >= 7 {
+            damage_multiplier = "*3";
+            accuracy = rank - 7;
+        } else if rank >= 5 {
+            damage_multiplier = "*2";
+            accuracy = rank - 5;
+        } else {
+            damage_multiplier = "";
+            accuracy = rank - 1;
+        }
+        Self {
+            effect: format!(
+                "
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                \\hit $damage{damage_multiplier} $damagetypes damage.
+            "
+            ),
+            name: weapon.name.clone(),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(accuracy)
     }
 
     pub fn grappling_strike(weapon: Weapon) -> Self {
@@ -241,11 +256,7 @@ impl StrikeAbility {
 // TODO: it may be better to strip the Thrown tag from melee-capable weapons instead of
 // panicking. Right now you can't use a defensive strike with a spear, which is awkward.
 fn assert_melee(strike_name: &str, weapon: &Weapon) {
-    assert!(
-        weapon.is_melee(),
-        "{} requires a melee weapon",
-        strike_name,
-    );
+    assert!(weapon.is_melee(), "{} requires a melee weapon", strike_name,);
 }
 
 // Blunt Force
@@ -261,7 +272,8 @@ impl StrikeAbility {
             name: strike_prefix("Armorcrushing", &weapon),
             weapon,
             ..Default::default()
-        }.plus_accuracy(rank - 1)
+        }
+        .plus_accuracy(rank - 1)
     }
 
     pub fn armorcrusher_plus(rank: i32, weapon: Weapon) -> Self {
@@ -274,7 +286,8 @@ impl StrikeAbility {
             name: strike_prefix("Armorcrushing", &weapon),
             weapon,
             ..Default::default()
-        }.plus_accuracy(rank - 3)
+        }
+        .plus_accuracy(rank - 3)
     }
 
     pub fn forceful_smash(rank: i32, weapon: Weapon) -> Self {
@@ -403,6 +416,20 @@ impl StrikeAbility {
 
 // Flurry of Blows
 impl StrikeAbility {
+    pub fn frenzied_multistrike(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Frenzied Multistrike", &weapon);
+        Self {
+            effect: r"
+                The $name makes a $accuracy strike vs. Armor with its $weapon.
+                For each previous consecutive round in which it used this ability, it can make an additional strike, up to a maximum of two extra strikes.
+                \hit $fullweapondamage.
+            ".to_string(),
+            name: strike_prefix("Frenzied", &weapon),
+            weapon,
+            ..Default::default()
+        }.plus_accuracy(rank - 5)
+    }
+
     pub fn frenzied_strike(rank: i32, weapon: Weapon) -> Self {
         assert_melee("Frenzied Strike", &weapon);
         Self {
@@ -435,6 +462,42 @@ impl StrikeAbility {
             ..Default::default()
         }
         .plus_accuracy(rank - 2)
+    }
+
+    pub fn reaping_harvest(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Reaping Harvest", &weapon);
+        Self {
+            effect: r"
+                The $name moves up to half its movement speed in a straight line.
+                It can also make a $accuracy strike vs. Armor with its $weapon.
+                The strike targets all \glossterm{enemies} adjacent to it at any point during its movement.
+                \hit $fullweapondamage.
+                \miss Half damage.
+            "
+            .to_string(),
+            name: strike_prefix("Reaping Harvest --", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 3)
+    }
+
+    pub fn reaping_harvest_plus(rank: i32, weapon: Weapon) -> Self {
+        assert_melee("Reaping Harvest+", &weapon);
+        Self {
+            effect: r"
+                The $name moves up to its movement speed in a straight line.
+                It can also make a $accuracy strike vs. Armor with its $weapon.
+                The strike targets all \glossterm{enemies} adjacent to it at any point during its movement.
+                \hit $damage*2 $damagetypes damage.
+                \miss Half damage.
+            "
+            .to_string(),
+            name: strike_prefix("Reaping Harvest --", &weapon),
+            weapon,
+            ..Default::default()
+        }
+        .plus_accuracy(rank - 3)
     }
 
     pub fn rushed_strike(rank: i32, weapon: Weapon) -> Self {
@@ -470,6 +533,20 @@ impl StrikeAbility {
 
 // Penetrating Precision
 impl StrikeAbility {
+    // TODO: weak strikes are not correctly handled by $fullweapondamage
+    pub fn armorpiercer(weapon: Weapon) -> Self {
+        Self {
+            effect: r"
+                The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
+                \hit $fullweapondamage.
+            "
+            .to_string(),
+            name: strike_prefix("Armorpiercing", &weapon),
+            weapon,
+            ..Default::default()
+        }
+    }
+
     pub fn distant_shot(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
@@ -481,7 +558,8 @@ impl StrikeAbility {
             name: strike_prefix("Distant", &weapon),
             weapon,
             ..Default::default()
-        }.plus_accuracy(rank - 1)
+        }
+        .plus_accuracy(rank - 1)
     }
 
     pub fn heartpiercer(rank: i32, weapon: Weapon) -> Self {
@@ -549,11 +627,13 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
-            ".to_string(),
+            "
+            .to_string(),
             name: strike_prefix("Sweeping", &weapon),
             weapon: weapon.increase_sweeping(1),
             ..Default::default()
-        }.plus_accuracy(rank - 1)
+        }
+        .plus_accuracy(rank - 1)
     }
 }
 
