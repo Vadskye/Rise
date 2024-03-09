@@ -52,7 +52,7 @@ pub struct DicePool {
     // Useful for things like "double weapon damage". This is used in two places:
     // `.average_damage()` and `.to_string()`.
     pub multiplier: i32,
-    // A weak dice pool ignores flat modifiers
+    // A weak dice pool halves flat modifiers
     pub weak: bool,
 }
 
@@ -155,6 +155,15 @@ impl DicePool {
         new_pool
     }
 
+    // Takes into account self.weak and self.ultiplier
+    fn calc_flat_modifier(&self) -> f64 {
+        let mut modifier = (self.flat_modifier * self.multiplier) as f64;
+        if self.weak {
+            modifier *= 0.5;
+        }
+        modifier
+    }
+
     // Construct a standard "1d8" or "2d8+1d10" string.
     // The largest dice should be at the end as a natural result of any dice
     // modifications that happen in the normal mutation functions.
@@ -177,8 +186,8 @@ impl DicePool {
             for size in contained_sizes {
                 sum += size * counts[size]
             }
-            sum += self.flat_modifier;
             sum *= self.multiplier;
+            sum += self.calc_flat_modifier() as i32;
 
             sum.to_string()
         } else {
@@ -186,8 +195,9 @@ impl DicePool {
                 .iter()
                 .map(|s| format!("{}d{}", counts[s] * self.multiplier, s))
                 .collect();
-            if self.flat_modifier != 0 && !self.weak {
-                dice_texts.push((self.flat_modifier * self.multiplier).to_string());
+            let modifier = self.calc_flat_modifier() as i32;
+            if modifier != 0 {
+                dice_texts.push(modifier.to_string());
             }
 
             dice_texts.join("+")
@@ -203,10 +213,8 @@ impl DicePool {
                 sum += (die.size + 1) as f64 / 2.0;
             }
         }
-        if !self.weak {
-            sum += self.flat_modifier as f64;
-        }
         sum *= self.multiplier as f64;
+        sum += self.calc_flat_modifier();
         sum
     }
 
