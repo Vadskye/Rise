@@ -205,7 +205,7 @@ impl CustomAbility {
             ),
             is_magical: true,
             name: "Stabilize Life".to_string(),
-            tags: vec![],
+            tags: vec![AbilityTag::Swift],
             usage_time: UsageTime::Standard,
         }
     }

@@ -217,8 +217,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
-                    \subcf{Secret of Bloodsharing} Once per round, when you deal damage to a creature that causes it to lose \glossterm{hit points}, you regain \glossterm{hit points} equal to 1d4 +1 per two \glossterm{power}.
-                    This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
+                    \subcf{Secret of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 +1 per two \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
