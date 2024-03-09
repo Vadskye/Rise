@@ -103,9 +103,9 @@ export const cryomancy: MysticSphere = {
     {
       name: 'Cone of Cold',
 
-      // d1l instead of d1 for icy terrain
+      // This is cheating a bit to get icy terrain
       attack: {
-        hit: `\\damagerankonelow{cold}.`,
+        hit: `\\damagerankone{cold}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.

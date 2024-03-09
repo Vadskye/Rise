@@ -179,7 +179,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d6 for each rank beyond 4.' },
       tags: ['Sustain (standard)'],
     },
 
@@ -235,7 +235,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.'},
     },
 
     {
@@ -254,7 +254,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.'},
       tags: ['Sustain (minor)'],
     },
 

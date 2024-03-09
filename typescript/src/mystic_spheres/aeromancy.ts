@@ -147,7 +147,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfourlow{slashing}.
+          \\damagerankfour{slashing}.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\longrange.
@@ -169,7 +169,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
     },
     {
       name: 'Distant Windsnipe',
@@ -182,7 +182,7 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 6,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d6 for each rank beyond 6.' },
     },
     {
       name: 'Windseal Grasp',

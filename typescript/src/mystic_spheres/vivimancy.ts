@@ -387,7 +387,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
       type: 'Attune (deep)',
     },
 
@@ -395,13 +395,13 @@ export const vivimancy: MysticSphere = {
       name: 'Massive Retributive Lifebond',
 
       attack: {
-        hit: `\\damagerankthreelow{energy}.`,
+        hit: `\\;amagerankthreelow{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against it.
         `,
       },
       rank: 4,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 4.' },
       type: 'Attune (deep)',
     },
 
@@ -409,13 +409,12 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Retributive Lifebond',
 
       attack: {
-        hit: `\\damageranksix{energy}.`,
+        hit: `\\damageranksixlow{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
       },
       rank: 7,
-      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
