@@ -70,7 +70,7 @@ export const universal: MysticSphere = {
       name: 'Mighty Mystic Bolt',
 
       attack: {
-        hit: `\\damagerankfourlow{}.`,
+        hit: `\\damagerankfour{}.`,
         targeting: `
           Make an attack against anything within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
@@ -97,7 +97,7 @@ export const universal: MysticSphere = {
       name: 'Massive Mystic Discharge',
 
       attack: {
-        hit: `\\damagerankfourlow{}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea radius from you.
@@ -114,7 +114,7 @@ export const universal: MysticSphere = {
 
       castingTime: 'one hour',
       attack: {
-        hit: `\\damagerankonelow{}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           When you perform this ritual, choose a point in space within \\shortrange.

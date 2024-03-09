@@ -64,7 +64,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranktwolow{physical}.
+          Its strikes deal \\damageranktwo{physical}.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -81,7 +81,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranksixlow{physical}.
+          Its strikes deal \\damageranksix{physical}.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -277,7 +277,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be an earth elemental.
-        Its attacks deal \\damagerankfourlow{bludgeoning}.
+        Its attacks deal \\damagerankfour{bludgeoning}.
         It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
         `,
         name: 'summon monster',
@@ -294,7 +294,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an water elemental.
-          Its attacks deal \\damagerankonelow{bludgeoning}.
+          Its attacks deal \\damagerankone{bludgeoning}.
           It has a 30 foot \\glossterm{swim speed}.
           However, it is \\glossterm{vulnerable} to electricity damage.
         `,
@@ -312,7 +312,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an air elemental.
-          Its attacks deal \\damagerankthreelow{bludgeoning}.
+          Its attacks deal \\damagerankthree{bludgeoning}.
           It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability} and a 30 foot \\glossterm{height limit}.
         `,
         name: 'summon monster',
@@ -331,7 +331,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal \\damageranktwolow{fire}.
+        Its attacks deal \\damageranktwo{fire}.
         In addition, it is immune to fire damage.
         `,
         name: 'summon monster',
@@ -350,7 +350,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the creature appears to be a Medium bear.
-        Its attacks deal \\damageranktwolow{bludgeoning and slashing}.
+        Its attacks deal \\damageranktwo{bludgeoning and slashing}.
         In addition, it suffers no penalty for attacking in a grapple.
         As a standard action, it can make a \\textit{grapple} attack against a creature adjacent to it.
         While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
@@ -491,7 +491,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be a snake.
-          Its attacks deal \\damagerankthreelow{physical}.
+          Its attacks deal \\damagerankthree{physical}.
           Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
           Its stage 1 effect makes the target \\stunned while the poison lasts.
           Its stage 3 effect makes the target \\blinded while the poison lasts.

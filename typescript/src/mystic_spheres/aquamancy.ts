@@ -291,15 +291,14 @@ export const aquamancy: MysticSphere = {
     {
       name: 'Geyser',
 
+      // -1r for reflex single target area, -1r for sustain minor in tiny area?
       attack: {
-        // This can't be full scaling due to restrictions on Reflex-based single target
-        // attacks
         hit: `
-          \\damagerankonelow{bludgeoning}.
+          \\damagerankone{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
-          You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
+          You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
@@ -311,14 +310,12 @@ export const aquamancy: MysticSphere = {
       name: 'Mighty Geyser',
 
       attack: {
-        // This can't be full scaling due to restrictions on Reflex-based single target
-        // attacks
         hit: `
-          \\damagerankfourlow{bludgeoning}.
+          \\damagerankfour{bludgeoning}.
         `,
         missGlance: true,
         targeting: `
-          You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\medrange.
+          You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },

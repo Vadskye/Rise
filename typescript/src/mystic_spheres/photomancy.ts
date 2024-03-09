@@ -232,7 +232,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d6 for each rank beyond 5.'},
       tags: [],
     },
 
@@ -255,7 +255,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d6 for each rank beyond 4.'},
       tags: [],
     },
 
@@ -440,7 +440,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'chromatic orb',
         exceptThat: `
-          the damage increases to \\damagerankfivelow{energy}, and damaged creatures suffer a condition even if they did not lose hit points.
+          the damage increases to \\damagerankfive{energy}, and damaged creatures suffer a condition even if they did not lose hit points.
         `,
       },
       rank: 7,
@@ -520,7 +520,7 @@ export const photomancy: MysticSphere = {
       name: 'Reflective Lightbeam',
 
       attack: {
-        hit: `\\damagerankone{energy}.`,
+        hit: `\\damagerankonelow{energy}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
@@ -529,7 +529,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by +2 for each rank beyond 3.' },
     },
 
     {
@@ -540,7 +540,7 @@ export const photomancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfivelow{energy}.',
       },
       rank: 6,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 2d6 for each rank beyond 6.'},
     },
   ],
   rituals: [
