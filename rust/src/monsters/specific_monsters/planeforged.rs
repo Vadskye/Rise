@@ -1,7 +1,6 @@
 use crate::core_mechanics::abilities::{
     AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
-use crate::core_mechanics::attacks::attack_effect::{AttackTriggeredEffect, PoisonEffect};
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
     DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
@@ -472,15 +471,36 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
             )));
-            modifiers.push(Modifier::Attack(StandardAttack::Windslash(rank).attack()));
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
+                description: "
+                    The $name gains a +2 bonus to its defenses against ranged strikes.
+                "
+                .to_string(),
+                is_magical: true,
+                name: "Wind Screen".to_string(),
+            }));
+            if rank >= 2 {
+                modifiers.push(Modifier::Attack(StandardAttack::Windslash(rank).attack()));
+            }
             if rank >= 3 {
                 modifiers.push(Modifier::Attack(StandardAttack::Windsnipe(rank).attack()));
             }
+
+            let knockdown_ability = if rank >= 3 {
+                StrikeAbility::knockdown_plus(rank, Weapon::monster_punch()).except_dual_strike()
+            } else {
+                StrikeAbility::knockdown(rank, Weapon::monster_punch()).except_dual_strike()
+            };
             planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![Weapon::ram()],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(knockdown_ability),
+                        ActiveAbility::Strike(
+                            StrikeAbility::generic_weapon_damage(rank, Weapon::monster_punch())
+                                .except_dual_strike(),
+                        ),
+                    ],
                     modifiers,
                     movement_speeds: Some(vec![MovementSpeed::new(
                         MovementMode::Land,
@@ -542,14 +562,14 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             }
             .monster(),
             AirElemental {
-                attributes: vec![4, 8, 2, 1, 5, 1],
+                attributes: vec![4, 8, 1, -2, 4, 0],
                 level: 16,
                 name: "Tornado".to_string(),
                 size: Size::Large,
             }
             .monster(),
             AirElemental {
-                attributes: vec![6, 9, 2, 2, 6, 2],
+                attributes: vec![4, 9, 1, -2, 4, 0],
                 level: 20,
                 name: "Elder".to_string(),
                 size: Size::Huge,
@@ -836,10 +856,9 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             formian(MonsterDef {
                 name: "Worker".to_string(),
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![
-                    //     StandardWeapon::MonsterBite.weapon(),
-                    // ],
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::bite())),
+                    ],
                     modifiers: vec![],
                     movement_speeds: None,
                     senses: vec![],
@@ -875,23 +894,30 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             formian(MonsterDef {
                 name: "Drone".to_string(),
                 abilities: MonsterAbilities {
-                    active_abilities: vec![],
-                    // weapons: vec![StandardWeapon::MonsterStinger.weapon()],
-                    modifiers: vec![
-                        Modifier::Attack(
-                            StandardWeapon::MonsterStinger.weapon().attack()
-                            .except_hit_damage(
-                                |d| d.lose_hp_effect = Some(
-                                    AttackTriggeredEffect::Poison(PoisonEffect {
-                                        // TODO: replace with "briefly stunned"
-                                        stage1: vec![Debuff::Stunned],
-                                        stage3_debuff: Some(vec![Debuff::Stunned]),
-                                        stage3_vital: None,
-                                    })
-                                )
-                            )
-                        ),
+                    active_abilities: vec![
+                        ActiveAbility::Strike(StrikeAbility {
+                            effect: "
+                                The $name makes a $accuracy attack vs. Armor with its $weapon.
+                                \\hit $fullweapondamage.
+                                If the target loses hit points, it is poisoned by drone venom.
+                            ".to_string(),
+                            is_magical: false,
+                            name: "Poisonous Stinger".to_string(),
+                            weapon: Weapon::stinger(),
+                            ..Default::default()
+                        }),
+                        ActiveAbility::Custom(CustomAbility {
+                            effect: r"
+                                Drone venom is an injury-based liquid \glossterm{poison}.
+                                The poison's accuracy is $accuracy.
+                                Its stage 1 effect inflicts 2d8 poison damage per poison stage.
+                            ".to_string(),
+                            name: "Drone Venom".to_string(),
+                            usage_time: UsageTime::Triggered,
+                            ..Default::default()
+                        }),
                     ],
+                    modifiers: vec![],
                     movement_speeds: Some(vec![
                         MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast)
                     ]),

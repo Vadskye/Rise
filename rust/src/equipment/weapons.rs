@@ -169,6 +169,10 @@ impl Weapon {
         StandardWeapon::Longbow.weapon()
     }
 
+    pub fn monster_punch() -> Self {
+        StandardWeapon::MonsterPunch.weapon()
+    }
+
     pub fn ram() -> Self {
         StandardWeapon::MonsterRam.weapon()
     }
@@ -307,6 +311,7 @@ pub enum StandardWeapon {
     MonsterBite,
     MonsterHorn,
     MonsterHorns,
+    MonsterPunch,
     MonsterRam,
     MonsterStinger,
     MonsterTentacle,
@@ -474,6 +479,13 @@ impl StandardWeapon {
                 damage_types: vec![DamageType::Piercing],
                 name: "Horns".to_string(),
                 tags: vec![WeaponTag::Heavy, WeaponTag::Impact],
+            },
+            Self::MonsterPunch => Weapon {
+                accuracy: 2,
+                damage_dice: DicePool::d4(),
+                damage_types: vec![DamageType::Bludgeoning],
+                name: "Punch".to_string(),
+                tags: vec![WeaponTag::Light],
             },
             Self::MonsterRam => Weapon {
                 accuracy: 0,
@@ -683,7 +695,10 @@ mod tests {
             let mut broadsword = Weapon::broadsword();
             broadsword = broadsword.increase_sweeping(3);
 
-            assert_eq!(broadsword.tags, vec![WeaponTag::Sweeping(4), WeaponTag::VersatileGrip]);
+            assert_eq!(
+                broadsword.tags,
+                vec![WeaponTag::Sweeping(4), WeaponTag::VersatileGrip]
+            );
         }
     }
 }
