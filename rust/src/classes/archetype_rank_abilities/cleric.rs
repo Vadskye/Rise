@@ -412,8 +412,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
-                    \rank{5} Each target is stunned as a condition instead of only briefly.
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is also briefly \confused.
+                    \rank{5} The area increases to a \largearea radius.
+                    \rank{7} Each target is stunned as a condition regardless of whether it has remaining damage resistance.
                 \end{activeability}
             ",
             modifiers: None,
