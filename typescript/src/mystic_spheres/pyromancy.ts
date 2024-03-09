@@ -120,50 +120,16 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Pyroclasm',
 
-      // +1dr from sphere
+      // +1dr for full self-targeting
       attack: {
         hit: `
-          \\damageranktwo{fire}.
+          \\damageranktwohigh{fire}.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from you.
-          In addition, you suffer a \\glossterm{glancing blow} from the attack.
-        `,
-      },
-
-      rank: 1,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Massive Pyroclasm',
-
-      // +1dr from sphere
-      attack: {
-        hit: `
-          \\damagerankthreehigh{fire}.
-        `,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearea radius from you.
-          In addition, you suffer a \\glossterm{glancing blow} from the attack.
-        `,
-      },
-
-      rank: 4,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Fireball',
-
-      // +1dr from sphere
-      attack: {
-        hit: `\\damageranktwohigh{fire}.`,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Fire consumes a \\medarea radius \\glossterm{zone} from your location.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area.
+          This typically means you include yourself as a target.
         `,
       },
 
@@ -172,31 +138,79 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Delayed Fireball',
+      name: 'Mighty Pyroclasm',
 
-      // +1dr from sphere
+      // +1dr for full self-targeting
       attack: {
-        hit: `\\damagerankseven{fire}.`,
+        hit: `
+          \\damagerankfivehigh{fire}.
+        `,
         missGlance: true,
         targeting: `
-          When you cast this spell, you create a Fine bead of fire in midair at a location in \\longrange.
+          Fire consumes a \\largearea radius \\glossterm{zone} from your location.
+          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area.
+          This typically means you include yourself as a target.
+        `,
+      },
+
+      rank: 6,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Fireball',
+
+      attack: {
+        hit: `\\damageranktwohigh{fire}.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+        `,
+      },
+
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Massive Fireball',
+
+      attack: {
+        hit: `\\damagerankthreehigh{fire}.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against everything in a \\largearea radius within \\medrange.
+        `,
+      },
+
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Delayed Fireball',
+
+      attack: {
+        hit: `\\damagerankfivehigh{fire}.`,
+        missGlance: true,
+        targeting: `
+          When you cast this spell, you create a Fine bead of fire in midair at a location in \\medrange.
           The bead sheds light like a torch.
           It is immune to most forms of damage, but if it takes cold damage, it is destroyed and this spell has no further effect.
           At the end of the next round, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
     },
 
     {
       name: 'Immolating Fireball',
 
-      // +1dr from sphere
       attack: {
         hit: `
-          \\damageranksevenhigh{fire}.
-          If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
+          \\damageranksixhigh{fire}.
+          If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
         `,
@@ -213,9 +227,8 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Burning Hands',
 
-      // +1dr from sphere
       attack: {
-        hit: `\\damageranktwo{fire}.`,
+        hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -227,14 +240,13 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Massive Burning Hands',
+      name: 'Mighty Burning Hands',
 
-      // +1dr from sphere
       attack: {
         hit: `\\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearea cone from you.
+          Make an attack vs. Reflex against everything in a \\medarea cone from you.
         `,
       },
       rank: 4,
@@ -275,9 +287,8 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Flame Breath',
 
-      // +1dr from sphere
       attack: {
-        hit: `\\damagerankthreehigh{fire}.`,
+        hit: `\\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -296,7 +307,7 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damageranksixhigh{fire}.
+          the damage increases to \\damagerankfivehigh{fire}.
           In addition, the area increases to a \\gargarea cone.
         `,
       },
@@ -358,9 +369,8 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Flame Serpent',
 
-      // +1dr from sphere
       attack: {
-        hit: `\\damagerankfourhigh{fire}.`,
+        hit: `\\damagerankthreehigh{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -468,16 +478,16 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Massive Wall of Fire',
+      name: 'Mighty Wall of Fire',
 
       functionsLike: {
         name: 'wall of fire',
         exceptThat: `
           the damage increases to \\damagerankfourhigh{fire}.
-          In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
@@ -514,13 +524,12 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Kindled Fireburst',
 
-      // -1r for existing fire requirement, +1dr for sphere
       attack: {
         hit: `\\damageranktwohigh{fire}.`,
         missGlance: true,
         targeting: `
-          Choose one Tiny or larger active fire within \\shortrange.
-          Make an attack vs. Reflex against everything within an \\medarea radius from it.
+          Choose one Tiny or larger active fire within \\medrange.
+          Make an attack vs. Reflex against everything within an \\smallarea radius from it.
         `,
       },
       narrative: `
@@ -535,7 +544,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damageranksixhigh{fire}.',
+        exceptThat: 'the damage increases to \\damageranksixhigh{fire}, and the area increases to a \\medarea radius.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
@@ -577,6 +586,9 @@ export const pyromancy: MysticSphere = {
         hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
+          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+          If you do, it becomes \\abilitytag{Swift}.
+
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
@@ -592,6 +604,9 @@ export const pyromancy: MysticSphere = {
         hit: `\\damagerankfour{fire}.`,
         missGlance: true,
         targeting: `
+          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+          If you do, it becomes \\abilitytag{Swift}.
+
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
