@@ -27,7 +27,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Rapid Quaff',
 
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a strike.
         In addition, you can drink a potion.
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
