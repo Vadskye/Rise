@@ -337,7 +337,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea cone from it.
-                \\hit $dr2 fire damage.
+                \\hit $dr1 fire damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
@@ -349,7 +349,7 @@ impl CustomAbility {
     pub fn fireball(rank: i32) -> Self {
         Self {
             effect: "
-                The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+                The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
                 \\hit $dr2h fire damage.
                 \\miss Half damage.
             ".to_string(),
@@ -364,7 +364,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
                 After it uses this ability, it \\glossterm{briefly} cannot use it again.
-                \\hit $dr3h fire damage.
+                \\hit $dr2h fire damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
