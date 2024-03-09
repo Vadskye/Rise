@@ -160,13 +160,16 @@ This chapter describes the rules for monsters, and the combat statistics for a v
             The oldest condition should always be number 1, and the most recent condition should have the highest number on the track.
 
         \subsection{Monster Resources}
-            Unless otherwise noted in their description, monsters have no resources, and their fatigue tolerance is treated as 0.
-            They are unable to use abilities that would cause them to increase their fatigue level, such as the \textit{desperate exertion} ability.
+            Monsters have no resources, and their fatigue tolerance is 0.
+            They are normally unable to use abilities that would cause them to increase their fatigue level, such as the \textit{desperate exertion} ability.
             They can use the \ability{sprint} ability, but only during the \glossterm{action phase}, since that does not increase their fatigue.
 
-            At the GM's discretion, individual monsters may technically be attuned to their abilities or be attuned to magic items they find, but this is not an explicit part of monster definitions.
+            If a monster has an ability that explicitly increases its fatigue level, it can use that ability.
             Similarly, monsters that are allied with player characters may choose to increase their fatigue level to receive healing from the players, such as from the \spell{restoration} spell.
-            Since they do not have a fatigue tolerance, this would immediately cause them to suffer fatigue penalties.
+            This would immediately cause them to suffer fatigue penalties, since their fatigue tolerance is 0.
+
+            At the GM's discretion, individual monsters may technically be attuned to their abilities or be attuned to magic items they find, but this is not an explicit part of monster definitions.
+            This is typically only relevant if one of the players has the Null feat (see \pcref{Feats}).
 
         \subsection{Monster Ability Access}\label{Monster Ability Access}
             Although monsters do not gain archetypes, their special abilities should still be balanced appropriately for their maximum accessible rank.
