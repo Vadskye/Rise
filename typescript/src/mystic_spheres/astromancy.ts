@@ -195,6 +195,9 @@ export const astromancy: MysticSphere = {
       name: 'Translocation',
 
       effect: `
+        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+        If you do, it becomes \\abilitytag{Swift}, and you can only target yourself with it.
+
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium or smaller.
         The target \\glossterm{teleports} into a location within the same range.
@@ -270,6 +273,9 @@ export const astromancy: MysticSphere = {
       name: 'Dimension Door',
 
       effect: `
+        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+        If you do, it becomes \\abilitytag{Swift}.
+
         You teleport to an unoccupied destination on a stable surface within 300 feet of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
         However, you do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your destination.

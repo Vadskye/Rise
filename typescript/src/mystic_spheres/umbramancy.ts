@@ -388,6 +388,8 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         This spell has no \\glossterm{verbal components}.
+        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+        If you do, it becomes \\abilitytag{Swift}.
 
         You teleport into an unoccupied location within \\shortrange on a stable surface that can support your weight.
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
@@ -407,6 +409,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
+          The strike is not \abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
@@ -422,6 +425,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
+          The strike is not \abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
 
