@@ -165,24 +165,50 @@ impl CustomAbility {
     }
 }
 
+// Aeromancy
+impl CustomAbility {
+    pub fn windslash(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Armor against up to two targets within \\medrange.
+                If it chooses two targets, they must be adjacent to each other.
+                \\hit $dr1 slashing damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Windslash".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 2)
+    }
+
+    pub fn windsnipe(rank: i32) -> Self {
+        Self {
+            effect: "
+                The $name makes a $accuracy attack vs. Armor against up to two targets within \\medrange.
+                If it chooses two targets, they must be adjacent to each other.
+                \\hit $dr1 slashing damage.
+            ".to_string(),
+            is_magical: true,
+            name: "Windslash".to_string(),
+            ..Default::default()
+        }.plus_accuracy(rank - 2)
+    }
+}
+
 // Enchantment
 impl CustomAbility {
     pub fn mind_blank(rank: i32) -> Self {
         Self {
             ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit If the target has no remaining \\glossterm<damage resistance>, it is compelled to spend its next \\glossterm<standard action> doing nothing at all.
-                    After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
-                ",
-                accuracy_modifier = rank - 1,
-            ),
+            effect: "
+                The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
+                \\hit If the target has no remaining \\glossterm<damage resistance>, it is compelled to spend its next \\glossterm<standard action> doing nothing at all.
+                After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
+            ".to_string(),
             is_magical: true,
             name: "Mind Blank".to_string(),
             tags: vec![AbilityTag::Compulsion],
             usage_time: UsageTime::Standard,
-        }
+        }.plus_accuracy(rank - 1)
     }
 
     // The Enchantment version of Mystic Bolt

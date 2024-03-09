@@ -244,8 +244,8 @@ fn add_bugbears(monsters: &mut Vec<MonsterEntry>) {
                 name: "Bugbear Raider".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::enraging_strike(Weapon::flail())),
-                        ActiveAbility::Strike(StrikeAbility::enraging_strike(Weapon::sling())),
+                        ActiveAbility::Strike(StrikeAbility::enraging_strike(1, Weapon::flail())),
+                        ActiveAbility::Strike(StrikeAbility::enraging_strike(1, Weapon::sling())),
                         ActiveAbility::Strike(StrikeAbility::trip(Weapon::flail())),
                     ],
                     senses: vec![Sense::Scent],
