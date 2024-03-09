@@ -198,14 +198,6 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
             let mut modifiers = self.modifiers.unwrap_or(vec![]);
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: r"
-                    Whenever a vampire makes a creature lose hit points with its bite attack, it regains that much damage resistance.
-                    This ability does not have the \abilitytag{Swift} tag, so it resolves after incoming attacks during the current phase.
-                ".to_string(),
-                is_magical: true,
-                name: "Vampiric Recovery".to_string(),
-            }));
-            modifiers.push(Modifier::PassiveAbility(PassiveAbility {
-                description: r"
                     As a standard action, a vampire can \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
                     While in its bat form, it gains \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
                     While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit and perfect maneuverability.
@@ -254,7 +246,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                             effect: r"
                                 The $name makes a $accuracy melee strike with its bite.
                                 \hit $fullweapondamage.
-                                If the target loses hit points, the $name regains hit points and damage resistance equal to the hit points the target lost from the attack, ignoring any extra damage from critical hits.
+                                At the end of the round, the $name regains hit points and damage resistance equal to the hit points the target lost from the attack, ignoring any extra damage from critical hits.
                             ".to_string(),
                             name: "Blood Drain".to_string(),
                             weapon: Weapon::bite(),

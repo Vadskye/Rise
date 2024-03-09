@@ -46,7 +46,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankthree{energy}.
           If the target loses \\glossterm{hit points}, you can increase your \\glossterm{fatigue level} by one. 
           % dr1
-          When you do, you regain 1d6 hit points +1 per 2 power.
+          When you do, you regain 1d6 hit points +1 per 2 power at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
@@ -82,7 +82,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankone{energy}.
           If the target loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           % dr2
-          When you do, you regain 1d8 hit points +1 per 2 power.
+          When you do, you regain 1d8 hit points +1 per 2 power at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `

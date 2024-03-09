@@ -116,7 +116,7 @@ fn belts() -> Vec<Apparel> {
                 The healing increases to $dr7.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
+        tags: vec![AbilityTag::Exertion, AbilityTag::Swift],
         ..Apparel::default()
     }));
 

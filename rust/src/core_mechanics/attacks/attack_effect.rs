@@ -251,7 +251,7 @@ pub struct HealingEffect {
 impl HealingEffect {
     fn description(&self, healer: &Creature) -> String {
         format!(
-            "{dice}{modifier} hit points.",
+            "{dice}{modifier} hit points at the end of the round.",
             dice = self
                 .healing_dice
                 // .add(healer.calc_damage_increments(false))

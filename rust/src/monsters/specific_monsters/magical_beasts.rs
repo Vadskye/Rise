@@ -309,7 +309,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
                         \hit $fullweapondamage.
-                        The $name regains hit points equal to the hit points that the target lost from this attack.
+                        At the end of the round, the $name regains hit points equal to the hit points that the target lost from this attack.
                     ".to_string(),
                     is_magical: false,
                     name: "Leech Life".to_string(),
