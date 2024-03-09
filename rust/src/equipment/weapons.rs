@@ -23,7 +23,7 @@ impl Default for Weapon {
             damage_types: vec![],
             name: "NO DEFAULT WEAPON MAKES SENSE".to_string(),
             tags: vec![],
-        }
+        };
     }
 }
 
@@ -36,13 +36,14 @@ impl Weapon {
         self.tags.retain(|t| discriminant(t) != discriminant(&tag));
         // Add the new tag
         self.tags.push(tag);
-        
+
         self
     }
 
     pub fn power_scalings(&self) -> Vec<PowerScaling> {
-        // TODO: disable versatile grip based on whether they also have a shield?
-        if self.tags.contains(&WeaponTag::Heavy) || self.tags.contains(&WeaponTag::VersatileGrip) {
+        // TODO: enable versatile grip based on whether they also have a shield? Or just enable it
+        // for monsters?
+        if self.tags.contains(&WeaponTag::Heavy) {
             PowerScaling::heavy_weapon_scalings()
         } else {
             vec![PowerScaling::standard_weapon_scaling()]

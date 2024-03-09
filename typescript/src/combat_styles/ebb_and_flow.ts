@@ -111,7 +111,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Certain Strike',
 
       effect: `
-        Make a \\glossterm{weak strike} with a +3 accuracy bonus.
+        Make a \\glossterm{weak strike} with a +2 accuracy bonus.
       `,
       rank: 1,
     },
@@ -120,7 +120,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Certain Strike+',
 
       effect: `
-        Make a \\glossterm{strike} with a +5 accuracy bonus.
+        Make a \\glossterm{strike} with a +6 accuracy bonus.
       `,
       rank: 5,
     },

@@ -76,11 +76,11 @@ impl Maneuver {
                 .except(|a| a.defense = Defense::Reflex),
             Self::CertainStrike => weapon
                 .attack()
-                .except(|a| a.accuracy += 3)
+                .except(|a| a.accuracy += 2)
                 .except_hit_damage(|d| d.base_dice = d.base_dice.weak()),
             Self::CertainStrikePlus => weapon
                 .attack()
-                .except(|a| a.accuracy += 5),
+                .except(|a| a.accuracy += 6),
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
                 .attack()

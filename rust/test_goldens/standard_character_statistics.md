@@ -9,7 +9,7 @@ DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 ### Description
 HP 12, DR 6
 AD 7, Fort 6, Ref 2, Ment 3
-Generic Accuracy Broadsword +1 (1d6+2 slashing damage.); Certain Broadsword +4 (1d6 slashing damage.); Extra Damage Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -3 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
+Generic Accuracy Broadsword +1 (1d6+2 slashing damage.); Certain Broadsword +3 (1d6+1 slashing damage.); Extra Damage Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -3 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
 Attr: Str 4, Dex 0, Con 2, Int 0, Per 2, Wil 0
 Power: 0✨/4
 
@@ -39,7 +39,7 @@ DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 ### Description
 HP 45, DR 38
 AD 13, Fort 14, Ref 8, Ment 10
-Generic Accuracy Broadsword +10 (1d6+6 slashing damage.); Certain Broadsword +13 (1d6 slashing damage.); Powerful Broadsword +6 (2d6+12 slashing damage.); Extra Damage Broadsword +8 (1d6+11 slashing damage.); Broadsword +7 (1d6+6 slashing damage.)
+Generic Accuracy Broadsword +10 (1d6+6 slashing damage.); Certain Broadsword +12 (1d6+3 slashing damage.); Powerful Broadsword +6 (2d6+12 slashing damage.); Extra Damage Broadsword +8 (1d6+11 slashing damage.); Broadsword +7 (1d6+6 slashing damage.)
 Attr: Str 6, Dex 0, Con 4, Int 0, Per 2, Wil 0
 Power: 5✨/11
 
@@ -81,7 +81,7 @@ DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 ### Description
 HP 168, DR 96
 AD 19, Fort 21, Ref 14, Ment 17
-Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +22 (1d6 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Certain Strike+ -- Broadsword +20 (1d6+10 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
+Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 10✨/17
 
