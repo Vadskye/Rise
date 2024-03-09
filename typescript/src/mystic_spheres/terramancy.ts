@@ -366,6 +366,7 @@ export const terramancy: MysticSphere = {
           As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is unable to use any fly speed or glide speed, and its jump distance is halved.
           All \\glossterm{falling damage} that it takes is doubled.
+          Standing up from a prone position costs its full speed rather than only half its speed.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
@@ -523,10 +524,10 @@ export const terramancy: MysticSphere = {
     {
       name: 'Stonefist',
 
-      // 1d10 plus Forceful is one upgrade above a normal weapon
+      // 1d10 plus Impact is one upgrade above a normal weapon
       effect: `
         You gain a stonefist \\glossterm{natural weapon}, replacing one of your \\glossterm{free hands}.
-        It deals 1d10 bludgeoning damage and has \\weapontag{Forceful} weapon tag (see \\pcref{Weapon Tags}).
+        It deals 1d10 bludgeoning damage and has \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,

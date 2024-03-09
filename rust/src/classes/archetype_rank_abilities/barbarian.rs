@@ -234,8 +234,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Forceful, Grappling, or Tripping.
-                You may treat all weapons you use as if they had the chosen weapon tag.
+                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Grappling, Mounted, Thrown (30/60), or Tripping.
+                You may treat all non-projectile weapons you use as if they had the chosen weapon tag.
                 Whenever your rank in this archetype increases, you can change which weapon tag you chose with this ability.
             ",
             modifiers: None,

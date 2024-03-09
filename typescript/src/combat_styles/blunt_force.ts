@@ -80,26 +80,6 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: 'Resonating Strike',
-
-      effect: `
-        Make a strike using a bludgeoning weapon.
-        If your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your power.
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Resonating Strike+',
-
-      effect: `
-        Make a strike using a bludgeoning weapon.
-        If your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your power.
-      `,
-      rank: 7,
-    },
-
-    {
       name: 'Tenderize',
 
       effect: `
@@ -180,6 +160,17 @@ export const bluntForce: CombatStyle = {
     },
 
     {
+      name: 'Blasting',
+
+      effect: `
+        Make a melee \\glossterm{strike} using a bludgeoning weapon.
+        \\hit If the target loses \\glossterm{hit points}, it falls \\prone.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 1,
+    },
+
+    {
       name: 'Knockdown',
 
       effect: `
@@ -199,6 +190,28 @@ export const bluntForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
+    },
+
+    {
+      name: 'Forceful Smash',
+
+      effect: `
+        Make a \\glossterm{strike} using a bludgeoning weapon.
+        \\hit If the target takes damage, you \\glossterm{knockback} it 15 feet.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 3,
+    },
+
+    {
+      name: 'Forceful Smash+',
+
+      effect: `
+        Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a bludgeoning weapon.
+        \\hit If the target takes damage, you \\glossterm{knockback} it 30 feet.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 7,
     },
 
     {
