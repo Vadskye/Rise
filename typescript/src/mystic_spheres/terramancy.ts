@@ -122,7 +122,7 @@ export const terramancy: MysticSphere = {
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          \\damagerankonelow{bludgeoning}.
+          \\damagerankone{bludgeoning}.
           If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `

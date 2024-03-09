@@ -377,7 +377,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'embedded growth',
-        exceptThat: 'the damage increases to \\damagerankfourlow{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
@@ -412,7 +412,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankfourlow{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
       },
       rank: 6,
       scaling: 'accuracy',
@@ -453,7 +453,7 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
-          the damage increases to \\damagerankfourlow{piercing}.
+          the damage increases to \\damagerankfour{piercing}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
@@ -508,7 +508,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damagerankfivelow{physical}.',
+        exceptThat: 'the damage increases to \\damagerankfive{physical}.',
       },
       rank: 5,
       scaling: 'accuracy',

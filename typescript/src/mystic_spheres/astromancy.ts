@@ -355,26 +355,6 @@ export const astromancy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Planar Jaunt -- Astral Plane',
-
-      // Low damage for long range?
-      attack: {
-        hit: `
-          The target \\sphereterm{flickers} to the Astral Plane.
-          When it returns, it takes \\damagerankonelow{energy}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
-        `,
-      },
-      narrative: `
-        Your foe disappears for a second into the Astral Plane.
-        Though its destination is peaceful, the rough transit is jarring by itself.
-      `,
-      rank: 1,
-      scaling: 'accuracy',
-    },
-    {
       name: 'Planar Jaunt -- Plane of Fire',
 
       attack: {
@@ -385,11 +365,30 @@ export const astromancy: MysticSphere = {
           If the target loses \\glossterm{hit points}, you deal it this damage again during your next action.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against anything within \\shortrange.
         `,
       },
       narrative: `
         Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
+      `,
+      rank: 1,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Planar Jaunt -- Astral Plane',
+
+      attack: {
+        hit: `
+          The target \\sphereterm{flickers} to the Astral Plane.
+          When it returns, it takes \\damagerankone{energy}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against anything within \\longrange.
+        `,
+      },
+      narrative: `
+        Your foe disappears for a second into the Astral Plane.
+        Though its destination is peaceful, the rough transit is jarring by itself.
       `,
       rank: 2,
       scaling: 'accuracy',
@@ -457,11 +456,11 @@ export const astromancy: MysticSphere = {
     {
       name: 'Planar Jaunt -- Myriad',
 
-      // d6l instead of d6 for all damage types
+      // -1r for damage of all types
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a random assortment of planes.
-          When it returns, it takes \\damageranksixlow{damage} of all types.
+          When it returns, it takes \\damagerankfive{damage} of all types.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
