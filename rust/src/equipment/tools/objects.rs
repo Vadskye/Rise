@@ -28,7 +28,7 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Lock, Mystic"),
         rank: 4,
         magical: true,
-        short_description: String::from("Devices 12 to unlock"),
+        short_description: String::from("Devices 25 to unlock"),
         description: String::from(r"
             This is a magical lock.
             Opening the lock without the appropriate key requires a \glossterm<difficulty value> 25 Devices check (see \pcref<Devices>).
