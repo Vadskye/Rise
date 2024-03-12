@@ -63,6 +63,7 @@ pub fn objects() -> Vec<Tool> {
         description: String::from(r"
             This is a set of magical manacles designed for Medium humanoid creatures.
             Escaping the manacles while they are being worn requires a \glossterm<difficulty value> 25 Flexibility check or a difficulty value 20 Strength check (see \pcref<Flexibility>).
+            In addition, creatures held in the manacles cannot be \glossterm{teleported} by any means.
         "),
         ..Tool::permanent("metal")
     });
