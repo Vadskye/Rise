@@ -42,6 +42,7 @@ pub fn objects() -> Vec<Tool> {
         short_description: String::from("Flexibility 12 to escape"),
         description: String::from(r"
             This is a set of manacles designed for Medium humanoid creatures.
+            Equivalent manacles might exist for creatures of different sizes or shapes.
             Escaping the manacles while they are being worn requires a \glossterm<difficulty value> 12 Flexibility check or a difficulty value 15 Strength check (see \pcref<Flexibility>).
         "),
         upgrades: vec![
@@ -62,6 +63,7 @@ pub fn objects() -> Vec<Tool> {
         short_description: String::from("Flexibility 25 to escape"),
         description: String::from(r"
             This is a set of magical manacles designed for Medium humanoid creatures.
+            Equivalent manacles might exist for creatures of different sizes or shapes.
             Escaping the manacles while they are being worn requires a \glossterm<difficulty value> 25 Flexibility check or a difficulty value 20 Strength check (see \pcref<Flexibility>).
             In addition, creatures held in the manacles cannot be \glossterm{teleported} by any means.
         "),
