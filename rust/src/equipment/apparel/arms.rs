@@ -332,7 +332,7 @@ fn gloves() -> Vec<Apparel> {
         short_description: String::from("Grants a paralyzing touch"),
         description: String::from(r"
             You can activate these gloves as a standard action using a \glossterm{free hand}.
-            When you do, make an attack vs. Reflex and Fortitude against a living creature you \glossterm{touch} with either glove.
+            When you do, make an attack vs. Reflex and Fortitude against a creature you \glossterm{touch} with either glove.
             Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
             \hit If the target has no remaining \glossterm<damage resistance>, it becomes \paralyzed as a \glossterm<condition>.
         "),
