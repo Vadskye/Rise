@@ -254,8 +254,8 @@ export const thaumaturgy: MysticSphere = {
       rank: 1,
       scaling: {
         3: `The extra damage increases to 1d8.`,
-        5: `The extra damage increases to 2d6.`,
-        7: `The extra damage increases to 2d10.`,
+        5: `The extra damage increases to 2d8.`,
+        7: `The extra damage increases to 4d8.`,
       },
       type: 'Attune',
     },
