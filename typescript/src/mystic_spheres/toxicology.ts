@@ -206,6 +206,17 @@ export const toxicology: MysticSphere = {
       rank: 3,
       type: 'Attune',
     },
+    {
+      name: 'Mass Poison Immunity',
+
+      functionsLike: {
+        mass: true,
+        name: 'poison immunity',
+      },
+      // narrative: '',
+      rank: 5,
+      type: 'Attune (target)',
+    },
 
     {
       name: 'Acidic Blood',

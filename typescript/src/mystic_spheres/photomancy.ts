@@ -109,6 +109,17 @@ export const photomancy: MysticSphere = {
     },
 
     {
+      name: 'Mass Blurred Motion',
+
+      functionsLike: {
+        mass: true,
+        name: 'blurred motion',
+      },
+      rank: 5,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Greater Blurred Motion',
 
       effect: `
@@ -582,7 +593,7 @@ export const photomancy: MysticSphere = {
       castingTime: "ten minutes",
       functionsLike: {
         exceptThat: `
-          you can change the nature of the disguise as a \\glossterm{standard action}.
+          you can change the nature of the disguise as a \\glossterm{minor action}.
         `,
         name: 'disguise image',
       },

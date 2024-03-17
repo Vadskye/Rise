@@ -700,7 +700,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {

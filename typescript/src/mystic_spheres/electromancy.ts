@@ -324,6 +324,18 @@ export const electromancy: MysticSphere = {
     },
 
     {
+      name: 'Mass Magnetic Blade',
+
+      functionsLike: {
+        mass: true,
+        name: 'magnetic blade',
+      },
+      // narrative: '',
+      rank: 5,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Chain Lightning',
 
       // not obvious what correct damage scaling would be

@@ -49,7 +49,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Forge',
 
-      // TODO: should this be lower than rank 5?
+      // TODO: unclear rank
       functionsLike: {
         name: 'forge',
         exceptThat: `
@@ -59,7 +59,7 @@ export const fabrication: MysticSphere = {
           Whenever your spellcasting rank with this spell increases, you can choose a new magic property.
         `,
       },
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Attune'],
     },

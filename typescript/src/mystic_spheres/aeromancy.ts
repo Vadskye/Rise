@@ -127,6 +127,17 @@ export const aeromancy: MysticSphere = {
       type: 'Attune',
     },
     {
+      name: 'Mass Wind Screen',
+
+      functionsLike: {
+        mass: true,
+        name: 'wind screen',
+      },
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
+    },
+    {
       name: 'Windslash',
 
       attack: {
@@ -344,6 +355,17 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       type: 'Attune',
+    },
+    {
+      name: 'Mass Windblade',
+
+      functionsLike: {
+        mass: true,
+        name: 'windblade',
+      },
+      // narrative: '',
+      rank: 5,
+      type: 'Attune (target)',
     },
     {
       name: 'Retributive Winds',

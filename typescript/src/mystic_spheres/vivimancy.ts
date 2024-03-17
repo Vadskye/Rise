@@ -309,6 +309,16 @@ export const vivimancy: MysticSphere = {
       rank: 2,
       type: 'Attune',
     },
+    {
+      name: 'Mass Wellspring of Life',
+
+      functionsLike: {
+        mass: true,
+        name: 'wellspring of life',
+      },
+      rank: 4,
+      type: 'Attune (target)',
+    },
 
     {
       name: 'Avasculate',
@@ -426,6 +436,22 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Lifetap Ward',
+
+      effect: `
+        You gain a +8 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
+        However, you take a -4 penalty to your \\glossterm{hit points}.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +16, but the penalty increases to -8.`,
+        5: `The bonus increases to +32, but the penalty increases to -16.`,
+        7: `The bonus increases to +64, but the penalty increases to -32.`,
+      },
+      type: 'Attune',
     },
 
     {
