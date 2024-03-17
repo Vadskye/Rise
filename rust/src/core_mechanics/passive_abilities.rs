@@ -27,6 +27,18 @@ impl PassiveAbility {
         StandardPassiveAbility::Indwelt.ability()
     }
 
+    pub fn planeforged() -> Self {
+        StandardPassiveAbility::Planeforged.ability()
+    }
+
+    pub fn simple_minded() -> Self {
+        StandardPassiveAbility::SimpleMinded.ability()
+    }
+
+    pub fn soulless() -> Self {
+        StandardPassiveAbility::Soulless.ability()
+    }
+
     pub fn undead() -> Self {
         StandardPassiveAbility::Undead.ability()
     }
@@ -39,6 +51,9 @@ pub enum StandardPassiveAbility {
     ConditionRemoval,
     EliteActions,
     Indwelt,
+    Planeforged,
+    SimpleMinded,
+    Soulless,
     Undead,
 }
 
@@ -75,6 +90,31 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Indwelt".to_string(),
+            },
+            Self::Planeforged => PassiveAbility {
+                description: r"
+                  The $name has a body made of concentrated planar essence, and is not alive.
+                ".to_string(),
+                is_magical: false,
+                name: "Planeforged".to_string(),
+            },
+            Self::SimpleMinded => PassiveAbility {
+                description: r"
+                  The $name can follow simple instructions, but is not fully \glossterm{sentient} or capable of complex reasoning.
+                  It has no soul, so if it dies, it cannot be resurrected.
+                  It is immune to \abilitytag{Emotion} abilities and psychic damage.
+                  However, it is \vulnerable to \abilitytag{Compulsion} attacks.
+                ".to_string(),
+                is_magical: false,
+                name: "Simple-Minded".to_string(),
+            },
+            Self::Soulless => PassiveAbility {
+                description: r"
+                  The $name has no soul.
+                  If it dies, it cannot be resurrected.
+                ".to_string(),
+                is_magical: false,
+                name: "Soulless".to_string(),
             },
             Self::Undead => PassiveAbility {
                 description: r"

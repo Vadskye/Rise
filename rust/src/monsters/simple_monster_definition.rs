@@ -102,6 +102,7 @@ impl MonsterDef {
     pub fn monster(mut self, creature_type: CreatureType) -> Monster {
         // Some creature types automatically come with extra modifiers.
         let maybe_bundle = match creature_type {
+            CreatureType::Planeforged => Some(ModifierBundle::Planeforged),
             CreatureType::Undead => Some(ModifierBundle::Undead),
             _ => None,
         };

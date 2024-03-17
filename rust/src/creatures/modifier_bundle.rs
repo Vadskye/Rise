@@ -12,6 +12,7 @@ pub enum ModifierBundle {
     Lifeless,
     Mindless,
     Multipedal,
+    Planeforged,
     Sightless,
     SimpleMinded,
     SimpleMindedConstruct,
@@ -81,6 +82,9 @@ impl ModifierBundle {
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
             ],
+            Self::Planeforged => vec![
+                Modifier::PassiveAbility(PassiveAbility::planeforged()),
+            ],
             Self::Sightless => vec![
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"The $name cannot see normally. If it has no relevant special vision abilities, it is \blinded.".to_string(),
@@ -93,15 +97,7 @@ impl ModifierBundle {
                 Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
                 Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
-                Modifier::PassiveAbility(PassiveAbility {
-                    description: r"
-                      The $name can follow simple instructions, but is not fully \glossterm{sentient} or capable of complex reasoning.
-                      It is immune to \abilitytag{Emotion} abilities and psychic damage.
-                      However, it is \vulnerable to \abilitytag{Compulsion} attacks.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Simple-Minded".to_string(),
-                }),
+                Modifier::PassiveAbility(PassiveAbility::simple_minded()),
             ],
             Self::SimpleMindedConstruct => Self::SimpleMinded.plus_modifiers(vec![
                 Modifier::PassiveAbility(PassiveAbility::construct()),
