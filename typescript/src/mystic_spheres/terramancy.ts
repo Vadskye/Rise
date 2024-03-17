@@ -543,11 +543,11 @@ export const terramancy: MysticSphere = {
       // Three upgrades above a normal weapon. TODO figure out whether this is balanced??
       functionsLike: {
         name: 'stonefist',
-        exceptThat: 'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}). However, you can only target yourself.',
       },
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Attune (target)',
+      type: 'Attune',
     },
 
     {
