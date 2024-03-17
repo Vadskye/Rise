@@ -690,7 +690,7 @@ function calcAccuracyCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    let levels_with_accuracy_bonuses = [9, 21];
+    let levels_with_accuracy_bonuses = [7, 19];
     for (const bonus_level in levels_with_accuracy_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;

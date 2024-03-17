@@ -23,7 +23,6 @@ pub enum Maneuver {
     ElementalStrike(i32),
     GenericAccuracy,
     GenericExtraDamage(i32),
-    // This is equivalent to PowerStrike in most contexts, so we don't usually bother using it.
     GenericDoubleDamage,
     GenericTripleDamage,
     GraspingStrike,
