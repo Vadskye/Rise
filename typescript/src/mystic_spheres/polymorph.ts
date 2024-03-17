@@ -1061,7 +1061,7 @@ export const polymorph: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        One Large or smaller \\glossterm{ally} within \\medrange becomes sentient.
+        One Large or smaller \\glossterm{ally} within \\medrange becomes fully intelligent.
         Its Intelligence becomes 1d6 - 5.
         Its type changes from animal to magical beast.
         It gains the ability to speak and understand one language that you know of your choice.
