@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    abilities::AbilityTag, DamageType, Debuff, MovementMode, PassiveAbility, SpecialDefenseType,
+    abilities::AbilityTag, DamageType, Debuff, MovementMode, PassiveAbility, SpecialDefenseType, Attribute,
 };
 use crate::skills::Skill;
 
@@ -69,14 +69,10 @@ impl ModifierBundle {
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
                 Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
-                Modifier::PassiveAbility(PassiveAbility {
-                    description: r"
-                      The $name has no mind.
-                      It is immune to psychic damage and \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
-                    ".to_string(),
-                    is_magical: false,
-                    name: "Mindless".to_string(),
-                }),
+                Modifier::Attribute(Attribute::Intelligence, -99),
+                Modifier::Attribute(Attribute::Willpower, -99),
+                Modifier::PassiveAbility(PassiveAbility::mindless()),
+                Modifier::Mindless,
             ],
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
