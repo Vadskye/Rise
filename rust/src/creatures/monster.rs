@@ -37,7 +37,7 @@ impl Monster {
         cr.add_modifiers(&mut creature);
 
         // Level modifiers: accuracy and defenses
-        let levels_with_accuracy_bonuses = vec![9, 21];
+        let levels_with_accuracy_bonuses = vec![7, 19];
         let mut accuracy_modifier = 0;
         for &bonus_level in levels_with_accuracy_bonuses.iter() {
             if level >= bonus_level {
