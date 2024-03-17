@@ -27,6 +27,10 @@ impl PassiveAbility {
         StandardPassiveAbility::Indwelt.ability()
     }
 
+    pub fn mindless() -> Self {
+        StandardPassiveAbility::Mindless.ability()
+    }
+
     pub fn planeforged() -> Self {
         StandardPassiveAbility::Planeforged.ability()
     }
@@ -51,6 +55,7 @@ pub enum StandardPassiveAbility {
     ConditionRemoval,
     EliteActions,
     Indwelt,
+    Mindless,
     Planeforged,
     SimpleMinded,
     Soulless,
@@ -90,6 +95,13 @@ impl StandardPassiveAbility {
                 ".to_string(),
                 is_magical: false,
                 name: "Indwelt".to_string(),
+            },
+            Self::Mindless => PassiveAbility {
+                description: r"
+                  The $name is \trait{mindless}.
+                ".to_string(),
+                is_magical: false,
+                name: "Mindless".to_string(),
             },
             Self::Planeforged => PassiveAbility {
                 description: r"

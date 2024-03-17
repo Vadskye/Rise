@@ -123,7 +123,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     usage_time: UsageTime::Standard,
                 }),
             ],
-            modifiers: ModifierBundle::Amorphous.plus_modifiers(ModifierBundle::Sightless.plus_modifiers(vec![
+            modifiers: ModifierBundle::Amorphous.plus_modifiers(ModifierBundle::Sightless.plus_modifiers(ModifierBundle::Mindless.plus_modifiers(vec![
                 Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Grappled)),
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"
@@ -140,7 +140,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     is_magical: false,
                     name: "Suspension".to_string(),
                 }),
-            ])),
+            ]))),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Slow),
                 MovementSpeed::new(MovementMode::Climb, SpeedCategory::Slow),
@@ -174,7 +174,7 @@ pub fn animates() -> Vec<MonsterEntry> {
             ])),
         }),
         statistics: MonsterStatistics {
-            attributes: vec![6, -4, 8, -9, 0, 0],
+            attributes: vec![6, -4, 8, -10, 0, -10],
             elite: true,
             level: 5,
             role: Role::Brute,
@@ -229,7 +229,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         monsters: vec![
             create_animated_object(
                 vec![ActiveAbility::Strike(StrikeAbility::normal_strike(
-                    1, 
+                    1,
                     Weapon::ram(),
                 ))],
                 vec![-4, 4, -4, -8, 0, 0],

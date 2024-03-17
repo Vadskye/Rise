@@ -114,6 +114,10 @@ where
     Creature: HasModifiers + HasArmor + HasAttributes + HasSize,
 {
     fn calc_defense(&self, defense: &Defense) -> i32 {
+        if defense == &Defense::Mental && self.is_mindless() {
+            return self.calc_defense(&Defense::Fortitude);
+        }
+
         let dex_multiplier: f64 = match self.category {
             CreatureCategory::Character => {
                 if let Some(modifier) = self.minimum_dex_modifier() {

@@ -25,6 +25,8 @@ pub enum Modifier {
     MagicalPower(i32),
     // TODO: add this to creature calculations
     Maneuver(Maneuver),
+    // This is a special modifier which has complex handling in various places.
+    Mindless,
     // TODO: add this to creature calculations
     MovementSpeed(MovementMode, i32),
     MundanePower(i32),
@@ -55,6 +57,7 @@ pub enum ModifierType {
     HitPoints,
     MagicalPower,
     Maneuver,
+    Mindless,
     MovementSpeed(MovementMode),
     MundanePower,
     PassiveAbility,
@@ -85,6 +88,7 @@ impl Modifier {
             Self::Immune(t) => format!("{} to {}", self.name(), t.description()),
             Self::Impervious(t) => format!("{} to {}", self.name(), t.description()),
             Self::MagicalPower(v) => format!("{} {}", self.name(), v),
+            Self::Mindless => self.name(),
             Self::Maneuver(_) => self.name(),
             Self::MovementSpeed(_, v) => format!("{} {}", self.name(), v),
             Self::MundanePower(v) => format!("{} {}", self.name(), v),
@@ -116,6 +120,7 @@ impl Modifier {
             Self::Impervious(t) => format!("impervious to {}", t.description()),
             Self::MagicalPower(_) => "magical power".to_string(),
             Self::Maneuver(m) => format!("maneuver {}", m.name()),
+            Self::Mindless => "mindless".to_string(),
             Self::MovementSpeed(m, _) => format!("{} speed", m.name()),
             Self::MundanePower(_) => "mundane power".to_string(),
             Self::PassiveAbility(a) => format!("passive ability {}", a.name),
@@ -146,6 +151,7 @@ impl Modifier {
             Self::Impervious(_) => ModifierType::SpecialDefense,
             Self::MagicalPower(_) => ModifierType::MagicalPower,
             Self::Maneuver(_) => ModifierType::Maneuver,
+            Self::Mindless => ModifierType::Mindless,
             Self::MovementSpeed(m, _) => ModifierType::MovementSpeed(m.clone()),
             Self::MundanePower(_) => ModifierType::MundanePower,
             Self::PassiveAbility(_) => ModifierType::PassiveAbility,
@@ -200,6 +206,7 @@ impl Modifier {
             Self::Impervious(_) => 0,
             Self::MagicalPower(v) => *v,
             Self::Maneuver(_) => 0,
+            Self::Mindless => 0,
             Self::MovementSpeed(_, v) => *v,
             Self::MundanePower(v) => *v,
             Self::PassiveAbility(_) => 0,
@@ -262,11 +269,14 @@ impl IdentifiedModifier {
 pub trait HasModifiers {
     fn add_modifier(&mut self, modifier: Modifier, name: Option<&str>, priority: Option<i32>);
     fn add_magic_modifier(&mut self, modifier: Modifier);
+    fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
     fn get_modifiers(&self) -> Vec<&Modifier>;
     fn get_modifiers_by_source(&self, source: &str) -> Vec<&Modifier>;
     fn get_modifiers_by_type(&self, modifier_type: ModifierType) -> Vec<&Modifier>;
-    fn calc_total_modifier(&self, modifier_type: ModifierType) -> i32;
     fn explain_modifiers(&self) -> Vec<String>;
+    fn is_mindless(&self) -> bool {
+        self.get_modifiers_by_type(ModifierType::Mindless).len() > 0
+    }
 }
 
 impl HasModifiers for Creature {
