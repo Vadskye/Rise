@@ -9,10 +9,12 @@ pub enum ModifierBundle {
     Amorphous,
     Incorporeal,
     Legless,
+    Lifeless,
     Mindless,
-    MindlessConstruct,
     Multipedal,
     Sightless,
+    SimpleMinded,
+    SimpleMindedConstruct,
     Undead,
 }
 
@@ -56,23 +58,25 @@ impl ModifierBundle {
                 // Don't give this a named callout, because "legless" is an awkward name and it
                 // only has one effect.
             ],
+            Self::Lifeless => vec![
+                // No named ability, since this is often used by other abilities which provide a
+                // more explicit reason for being lifeless, such as "undead" or "construct".
+                Modifier::Immune(SpecialDefenseType::Disease),
+                Modifier::Immune(SpecialDefenseType::Poison),
+            ],
             Self::Mindless => vec![
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
+                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"
-                      The $name is not \glossterm{sentient}.
-                      It is immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
-                      Its Intelligence attribute represents its capacity for complex action according to instinct, instructions, or some other source, rather than true intelligence.
+                      The $name has no mind.
+                      It is immune to psychic damage and \abilitytag{Compulsion} and \abilitytag{Emotion} abilities.
                     ".to_string(),
                     is_magical: false,
                     name: "Mindless".to_string(),
                 }),
             ],
-            Self::MindlessConstruct => Self::Mindless.plus_modifiers(vec![
-                Modifier::PassiveAbility(PassiveAbility::construct()),
-                Modifier::Immune(SpecialDefenseType::Poison),
-            ]),
             Self::Multipedal => vec![
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
@@ -85,10 +89,26 @@ impl ModifierBundle {
                 }),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Visual)),
             ],
-            Self::Undead => vec![
-                Modifier::PassiveAbility(PassiveAbility::undead()),
-                Modifier::Immune(SpecialDefenseType::Poison),
+            Self::SimpleMinded => vec![
+                Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
+                Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
+                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
+                Modifier::PassiveAbility(PassiveAbility {
+                    description: r"
+                      The $name can follow simple instructions, but is not fully \glossterm{sentient} or capable of complex reasoning.
+                      It is immune to \abilitytag{Emotion} abilities and psychic damage.
+                      However, it is \vulnerable to \abilitytag{Compulsion} attacks.
+                    ".to_string(),
+                    is_magical: false,
+                    name: "Simple-Minded".to_string(),
+                }),
             ],
+            Self::SimpleMindedConstruct => Self::SimpleMinded.plus_modifiers(vec![
+                Modifier::PassiveAbility(PassiveAbility::construct()),
+            ].into_iter().chain(Self::Lifeless.modifiers()).collect()),
+            Self::Undead => Self::Lifeless.plus_modifiers(vec![
+                Modifier::PassiveAbility(PassiveAbility::undead()),
+            ]),
         }
     }
 }

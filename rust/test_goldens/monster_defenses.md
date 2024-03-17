@@ -133,29 +133,29 @@ Points / Self-hit: 75 / 40%
 ### Brute
 A/F/R/M: 18 / 22 / 18 / 15
 HP/DR/Total: 240 / 60 / 300
-Points / Self-hit: 91 / 40%
+Points / Self-hit: 91 / 50%
 
 ### Leader
 A/F/R/M: 18 / 21 / 18 / 18
 HP/DR/Total: 240 / 120 / 360
-Points / Self-hit: 93 / 60%
+Points / Self-hit: 93 / 70%
 
 ### Mystic
 A/F/R/M: 16 / 17 / 16 / 24
 HP/DR/Total: 100 / 100 / 200
-Points / Self-hit: 89 / 80%
+Points / Self-hit: 89 / 90%
 
 ### Skirmisher
 A/F/R/M: 20 / 15 / 24 / 16
 HP/DR/Total: 92 / 46 / 138
-Points / Self-hit: 95 / 40%
+Points / Self-hit: 95 / 50%
 
 ### Sniper
 A/F/R/M: 17 / 15 / 17 / 15
 HP/DR/Total: 92 / 46 / 138
-Points / Self-hit: 81 / 80%
+Points / Self-hit: 81 / 90%
 
 ### Warrior
 A/F/R/M: 19 / 24 / 15 / 18
 HP/DR/Total: 176 / 176 / 352
-Points / Self-hit: 95 / 30%
+Points / Self-hit: 95 / 40%

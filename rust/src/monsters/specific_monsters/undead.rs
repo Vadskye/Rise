@@ -375,7 +375,7 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
             "),
             (5, r"
                 Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \magical abilities.
-                They retain the ability to wield the same weapons and armor as the original creature, but they are completely mindless.
+                They retain the ability to wield the same weapons and armor as the original creature, but they become simple-minded.
                 In addition, skeletons are always more agile and less strong than the original creature.
                 All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
             "),
@@ -459,7 +459,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         abilities: MonsterAbilities {
             active_abilities: vec![],
             // weapons: creature.weapons.clone(),
-            modifiers: ModifierBundle::Mindless.plus_modifiers(modifiers),
+            modifiers: ModifierBundle::SimpleMinded.plus_modifiers(modifiers),
             movement_speeds: Some(creature.movement_speeds.clone()),
             senses,
             trained_skills: vec![],
