@@ -372,16 +372,16 @@ export const aquamancy: MysticSphere = {
       name: 'Aqueous Tentacle',
 
       effect: `
-        You gain an aqueous \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        It deals 1d8 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
-        Strikes using it are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
+        The target gains an aqueous \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
+        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        The weapon deals 1d8 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
       `,
       rank: 2,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (target)',
     },
     {
       name: 'Mighty Aqueous Tentacle',
@@ -395,7 +395,7 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Attune (deep)',
+      type: 'Attune (target)',
     },
     {
       name: 'Octopus Tentacles',
@@ -568,6 +568,21 @@ export const aquamancy: MysticSphere = {
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
+    },
+    {
+      name: 'Mass Waterward',
+
+      functionsLike: {
+        mass: true,
+        name: 'Waterward',
+      },
+      // narrative: '',
+      rank: 3,
+      scaling: {
+        5: `The bonus increases to +8.`,
+        7: `The bonus increases to +16.`,
+      },
+      type: 'Attune (target)',
     },
     {
       name: 'Slippery Escapist',

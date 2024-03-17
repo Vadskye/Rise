@@ -99,22 +99,33 @@ export const umbramancy: MysticSphere = {
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
       tags: [],
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: 'Deep Darklantern',
+      name: 'Deep Darkness',
 
-      functionsLike: {
-        name: 'darklantern',
-        exceptThat: 'it also dims \\glossterm{brilliant illumination}.',
-      },
-      rank: 5,
-      scaling: {
-        7: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
-      },
+      effect: `
+        You create a void of darkness in a \medarea radius \\glossterm{zone} within \medrange.
+        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        Any object or effect which blocks light also blocks this spell's effect.
+      `,
+      rank: 4,
       tags: [],
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
+    },
+
+    {
+      name: 'Absolute Darkness',
+
+      effect: `
+        You create a void of darkness in a \medarea radius \\glossterm{zone} within \medrange.
+        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are removed, making no light possible in the area.
+        Any object or effect which blocks light also blocks this spell's effect.
+      `,
+      rank: 7,
+      tags: [],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {

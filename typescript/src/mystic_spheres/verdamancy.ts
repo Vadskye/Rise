@@ -180,13 +180,13 @@ export const verdamancy: MysticSphere = {
       name: 'Vine Tentacle',
 
       effect: `
-        You gain an vine \\glossterm{natural weapon}.
-        It deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
+        The target gains a vine \\glossterm{natural weapon}.
+        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        The weapon deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (target)',
     },
 
     {
@@ -198,7 +198,7 @@ export const verdamancy: MysticSphere = {
       },
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (target)',
     },
 
     {
@@ -206,13 +206,13 @@ export const verdamancy: MysticSphere = {
 
       // +2 over normal, but Versatile Grip is more of a sidegrade
       effect: `
-        You gain a vine \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        It deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
+        The target gains a vine \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
+        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 3,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (target)',
     },
 
     {
@@ -517,6 +517,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Shillelagh',
 
+      castingTime: 'minor action',
       effect: `
         Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
         You transform the target into a club, quarterstaff, or sap, as you choose (see \\pcref{Weapons}).
@@ -524,7 +525,7 @@ export const verdamancy: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the weapon (see \\pcref{Power}).
       `,
       rank: 1,
-      type: 'Attune',
+      type: 'Sustain (attuneable, free)',
     },
 
     {
@@ -561,6 +562,17 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Mass Flourishing Grass',
+
+      functionsLike: {
+        mass: true,
+        name: 'flourishing grass',
+      },
+      rank: 3,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Massive Flourishing Grass',
 
       functionsLike: {
@@ -571,7 +583,7 @@ export const verdamancy: MysticSphere = {
         Long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 4,
+      rank: 5,
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
@@ -590,9 +602,9 @@ export const verdamancy: MysticSphere = {
         A great mass of long, thin grass continuously grows and writhes on your body.
         You can extend the grass to surround you at a whim.
       `,
-      rank: 6,
+      rank: 7,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
 
     {

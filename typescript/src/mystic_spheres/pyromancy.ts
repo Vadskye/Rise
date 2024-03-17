@@ -628,7 +628,7 @@ export const pyromancy: MysticSphere = {
         This does not protect the target from fire damage.
       `,
       rank: 1,
-      type: 'Attune',
+      type: 'Attune (target)',
     },
 
     {
@@ -639,6 +639,7 @@ export const pyromancy: MysticSphere = {
         The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location increases rapidly.
         Over the next minute after you finish this ritual, the temperature increases by 40 degrees Fahrenheit, to a maximum of 120 degrees.
         Unlike normal, this effect does not require \\glossterm{line of effect} to you.
+        % TODO: wording
         Instead, it affects all outdoor locations within the area.
         Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
       `,
@@ -647,13 +648,13 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Pyrostorm',
+      name: 'Intense Heat Wave',
 
       castingTime: 'one hour',
 
       functionsLike: {
         exceptThat: `
-          the temperature in the area increases by 60 degrees, to a minimum of 160 degrees.
+          the temperature in the area increases by 60 degrees, to a maximum of 160 degrees.
         `,
         name: 'heat wave',
       },

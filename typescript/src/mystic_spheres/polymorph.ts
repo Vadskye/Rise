@@ -71,7 +71,7 @@ export const polymorph: MysticSphere = {
         name: 'disguise creature',
       },
       rank: 2,
-      tags: ['Attune'],
+      tags: ['Sustain (attuneable, minor)'],
     },
 
     {
@@ -525,7 +525,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       scaling: { special: 'The healing increases by +1 for each rank beyond 2.' },
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -538,7 +538,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -550,7 +550,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -589,6 +589,17 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       type: 'Attune',
+    },
+    {
+      name: 'Mass Scent',
+
+      functionsLike: {
+        mass: true,
+        name: 'scent',
+      },
+      // narrative: '',
+      rank: 5,
+      type: 'Attune (target)',
     },
 
     {
@@ -647,6 +658,17 @@ export const polymorph: MysticSphere = {
         6: `The radius of both senses increases by 30 feet.`,
       },
       type: 'Attune',
+    },
+    {
+      name: 'Mass Draconic Senses',
+
+      functionsLike: {
+        mass: true,
+        name: 'draconic senses',
+      },
+      // narrative: '',
+      rank: 6,
+      type: 'Attune (target)',
     },
 
     {
