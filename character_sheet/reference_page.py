@@ -57,7 +57,7 @@ def vital_wound_chart():
                     flex_col(
                         [
                             div({"class": "header"}, "Roll"),
-                            "".join([div(f"{i}") for i in [*range(-1, 10), "10+"]]),
+                            "".join([div(f"{i}") for i in [*range(0, 10), "10+"]]),
                         ]
                     ),
                     flex_col(
