@@ -628,7 +628,7 @@ export const pyromancy: MysticSphere = {
         This does not protect the target from fire damage.
       `,
       rank: 1,
-      type: 'Attune (target)',
+      type: 'Attune',
     },
 
     {
