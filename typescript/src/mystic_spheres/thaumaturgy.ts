@@ -264,7 +264,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Precision',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to gain a +4 accuracy bonus with it.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to gain a +4 accuracy bonus when you make your first attack with it.
         After you enhance a spell in this way, this effect ends.
       `,
       rank: 3,
