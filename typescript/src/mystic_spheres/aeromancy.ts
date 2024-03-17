@@ -102,6 +102,9 @@ export const aeromancy: MysticSphere = {
       name: 'Propulsion',
 
       effect: `
+        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
+        If you do, it becomes \\abilitytag{Swift}, and you can only target yourself with it.
+
         Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
         The target must have a \\glossterm{weight category} of Medium or less.
 
