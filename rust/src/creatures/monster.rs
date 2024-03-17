@@ -677,6 +677,11 @@ impl Monster {
     }
 
     fn latex_defensive_statistics(&self) -> String {
+        let ment_text = if self.creature.is_mindless() {
+            "".to_string()
+        } else {
+            format!("\\monsep Ment {}", self.creature.calc_defense(&Defense::Mental))
+        };
         format!(
             "
                 \\pari \\textbf<HP> {hp}
@@ -685,14 +690,13 @@ impl Monster {
                     Armor {armor}
                     \\monsep Fort {fort}
                     \\monsep Ref {ref}
-                    \\monsep Ment {ment}
+                    {ment_text}
             ",
             hp = self.creature.calc_hit_points(),
             dr = self.creature.calc_damage_resistance(),
             armor = self.creature.calc_defense(&Defense::Armor),
             fort = self.creature.calc_defense(&Defense::Fortitude),
             ref = self.creature.calc_defense(&Defense::Reflex),
-            ment = self.creature.calc_defense(&Defense::Mental),
         )
     }
 
