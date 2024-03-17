@@ -305,7 +305,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell, you may treat all effects of the spell as if you were located at any Tiny or larger living plant within \medrange instead of in your current location.
+                Whenever you cast a spell, you may treat all effects of the spell as if you were located at any Small or larger living plant within \medrange instead of in your current location.
                 This allows you to measure the spell's range from the plant's location, cone-shaped areas originate from the plant's location instead of your own, and so on.
             ",
             modifiers: None,
