@@ -300,8 +300,8 @@ Generic Accuracy Greatmace +13 (1d10+12 bludgeoning damage.)
 Certain Greatmace +15 (1d10+6 bludgeoning damage.)
 Powerful Greatmace +9 (2d10+24 bludgeoning damage.)
 Extra Damage Greatmace +9 (4d6+1d10+12 bludgeoning damage.)
-Power Strike+ -- Greatmace +6 (3d10+36 bludgeoning damage.)
 Certain Strike+ -- Greatmace +15 (1d10+12 bludgeoning damage.)
+Power Strike+ -- Greatmace +6 (3d10+36 bludgeoning damage.)
 Greatmace +9 (1d10+12 bludgeoning damage.)
 
 ### Defender: Barbarian Glass
@@ -419,13 +419,14 @@ Power+  : 51.87 = (52.5 dph * 0.80 hpr) + (52.5 dpc * 0.09 cpr) + (26.2 dpg * 0.
 Generic Accuracy Greatmace +19 (1d10+15 bludgeoning damage.)
 Certain Greatmace +21 (1d10+7 bludgeoning damage.)
 Powerful Greatmace +15 (2d10+30 bludgeoning damage.)
-Power Strike+ -- Greatmace +12 (3d10+45 bludgeoning damage.)
 Certain Strike+ -- Greatmace +21 (1d10+15 bludgeoning damage.)
+Power Strike+ -- Greatmace +12 (3d10+45 bludgeoning damage.)
 Extra Damage Greatmace +13 (8d8+1d10+15 bludgeoning damage.)
+Generic Triple Damage -- Greatmace +13 (3d10+45 bludgeoning damage.)
 Greatmace +13 (1d10+15 bludgeoning damage.)
 
 ### Defender: Barbarian Glass
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 38.70 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.89 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 18.20 cdpr + 0.00 gdpr
@@ -434,9 +435,10 @@ Extra   : 69.04 = (56.5 dph * 1.00 hpr) + (56.5 dpc * 0.22 cpr) + (28.2 dpg * 0.
 Power   : 59.20 = (41.0 dph * 1.00 hpr) + (41.0 dpc * 0.44 cpr) + (20.5 dpg * 0.00 gpr) = 41.00 hdpr + 18.20 cdpr + 0.00 gdpr
 Certain+: 43.26 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 1.11 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 22.76 cdpr + 0.00 gdpr
 Power+  : 68.33 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.83 cdpr + 0.00 gdpr
+Triple  : 75.15 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.22 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 13.65 cdpr + 0.00 gdpr
 
 ### Defender: Barbarian Shield
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 27.33 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.33 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 6.83 cdpr + 0.00 gdpr
@@ -445,9 +447,10 @@ Extra   : 49.55 = (56.5 dph * 0.70 hpr) + (56.5 dpc * 0.08 cpr) + (28.2 dpg * 0.
 Power   : 43.01 = (41.0 dph * 0.90 hpr) + (41.0 dpc * 0.10 cpr) + (20.5 dpg * 0.10 gpr) = 36.90 hdpr + 4.06 cdpr + 2.05 gdpr
 Certain+: 31.88 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.56 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 11.38 cdpr + 0.00 gdpr
 Power+  : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
+Triple  : 53.94 = (61.5 dph * 0.70 hpr) + (61.5 dpc * 0.08 cpr) + (30.8 dpg * 0.20 gpr) = 43.05 hdpr + 4.74 cdpr + 6.15 gdpr
 
 ### Defender: Fighter Greatmace
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 27.33 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.33 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 6.83 cdpr + 0.00 gdpr
@@ -456,9 +459,10 @@ Extra   : 49.55 = (56.5 dph * 0.70 hpr) + (56.5 dpc * 0.08 cpr) + (28.2 dpg * 0.
 Power   : 43.01 = (41.0 dph * 0.90 hpr) + (41.0 dpc * 0.10 cpr) + (20.5 dpg * 0.10 gpr) = 36.90 hdpr + 4.06 cdpr + 2.05 gdpr
 Certain+: 31.88 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.56 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 11.38 cdpr + 0.00 gdpr
 Power+  : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
+Triple  : 53.94 = (61.5 dph * 0.70 hpr) + (61.5 dpc * 0.08 cpr) + (30.8 dpg * 0.20 gpr) = 43.05 hdpr + 4.74 cdpr + 6.15 gdpr
 
 ### Defender: Fighter Shield
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 22.78 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.11 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 2.28 cdpr + 0.00 gdpr
@@ -467,6 +471,7 @@ Extra   : 37.01 = (56.5 dph * 0.50 hpr) + (56.5 dpc * 0.06 cpr) + (28.2 dpg * 0.
 Power   : 35.96 = (41.0 dph * 0.70 hpr) + (41.0 dpc * 0.08 cpr) + (20.5 dpg * 0.20 gpr) = 28.70 hdpr + 3.16 cdpr + 4.10 gdpr
 Certain+: 27.33 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.33 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 6.83 cdpr + 0.00 gdpr
 Power+  : 33.46 = (61.5 dph * 0.40 hpr) + (61.5 dpc * 0.04 cpr) + (30.8 dpg * 0.20 gpr) = 24.60 hdpr + 2.71 cdpr + 6.15 gdpr
+Triple  : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg * 0.20 gpr) = 30.75 hdpr + 3.38 cdpr + 6.15 gdpr
 
 ### Defender: Monk Kama
 Best attack: Certain Strike+ -- Greatmace
@@ -478,9 +483,10 @@ Extra   : 11.92 = (56.5 dph * 0.10 hpr) + (56.5 dpc * 0.01 cpr) + (28.2 dpg * 0.
 Power   : 17.75 = (41.0 dph * 0.30 hpr) + (41.0 dpc * 0.03 cpr) + (20.5 dpg * 0.20 gpr) = 12.30 hdpr + 1.35 cdpr + 4.10 gdpr
 Certain+: 21.50 = (20.5 dph * 0.90 hpr) + (20.5 dpc * 0.10 cpr) + (10.2 dpg * 0.10 gpr) = 18.45 hdpr + 2.03 cdpr + 1.02 gdpr
 Power+  : 9.84 = (61.5 dph * 0.10 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.10 gpr) = 6.15 hdpr + 0.62 cdpr + 3.08 gdpr
+Triple  : 12.98 = (61.5 dph * 0.10 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.20 gpr) = 6.15 hdpr + 0.68 cdpr + 6.15 gdpr
 
 ### Defender: Paladin Shield
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 27.33 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.33 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 6.83 cdpr + 0.00 gdpr
@@ -489,9 +495,10 @@ Extra   : 49.55 = (56.5 dph * 0.70 hpr) + (56.5 dpc * 0.08 cpr) + (28.2 dpg * 0.
 Power   : 43.01 = (41.0 dph * 0.90 hpr) + (41.0 dpc * 0.10 cpr) + (20.5 dpg * 0.10 gpr) = 36.90 hdpr + 4.06 cdpr + 2.05 gdpr
 Certain+: 31.88 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.56 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 11.38 cdpr + 0.00 gdpr
 Power+  : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
+Triple  : 53.94 = (61.5 dph * 0.70 hpr) + (61.5 dpc * 0.08 cpr) + (30.8 dpg * 0.20 gpr) = 43.05 hdpr + 4.74 cdpr + 6.15 gdpr
 
 ### Defender: Ranger Longbow
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 25.05 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.22 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 4.55 cdpr + 0.00 gdpr
@@ -500,9 +507,10 @@ Extra   : 43.28 = (56.5 dph * 0.60 hpr) + (56.5 dpc * 0.07 cpr) + (28.2 dpg * 0.
 Power   : 40.51 = (41.0 dph * 0.80 hpr) + (41.0 dpc * 0.09 cpr) + (20.5 dpg * 0.20 gpr) = 32.80 hdpr + 3.61 cdpr + 4.10 gdpr
 Certain+: 29.60 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.44 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 9.10 cdpr + 0.00 gdpr
 Power+  : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg * 0.20 gpr) = 30.75 hdpr + 3.38 cdpr + 6.15 gdpr
+Triple  : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
 
 ### Defender: Rogue Smallsword
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 22.78 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.11 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 2.28 cdpr + 0.00 gdpr
@@ -511,9 +519,10 @@ Extra   : 37.01 = (56.5 dph * 0.50 hpr) + (56.5 dpc * 0.06 cpr) + (28.2 dpg * 0.
 Power   : 35.96 = (41.0 dph * 0.70 hpr) + (41.0 dpc * 0.08 cpr) + (20.5 dpg * 0.20 gpr) = 28.70 hdpr + 3.16 cdpr + 4.10 gdpr
 Certain+: 27.33 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.33 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 6.83 cdpr + 0.00 gdpr
 Power+  : 33.46 = (61.5 dph * 0.40 hpr) + (61.5 dpc * 0.04 cpr) + (30.8 dpg * 0.20 gpr) = 24.60 hdpr + 2.71 cdpr + 6.15 gdpr
+Triple  : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg * 0.20 gpr) = 30.75 hdpr + 3.38 cdpr + 6.15 gdpr
 
 ### Defender: Sorcerer Dexterity
-Best attack: Extra Damage Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 25.05 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.22 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 4.55 cdpr + 0.00 gdpr
@@ -522,9 +531,10 @@ Extra   : 43.28 = (56.5 dph * 0.60 hpr) + (56.5 dpc * 0.07 cpr) + (28.2 dpg * 0.
 Power   : 40.51 = (41.0 dph * 0.80 hpr) + (41.0 dpc * 0.09 cpr) + (20.5 dpg * 0.20 gpr) = 32.80 hdpr + 3.61 cdpr + 4.10 gdpr
 Certain+: 29.60 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.44 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 9.10 cdpr + 0.00 gdpr
 Power+  : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg * 0.20 gpr) = 30.75 hdpr + 3.38 cdpr + 6.15 gdpr
+Triple  : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
 
 ### Defender: Wizard Perception
-Best attack: Power Strike+ -- Greatmace
+Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
 Accuracy: 36.43 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.78 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 15.93 cdpr + 0.00 gdpr
@@ -533,3 +543,4 @@ Extra   : 62.77 = (56.5 dph * 1.00 hpr) + (56.5 dpc * 0.11 cpr) + (28.2 dpg * 0.
 Power   : 54.65 = (41.0 dph * 1.00 hpr) + (41.0 dpc * 0.33 cpr) + (20.5 dpg * 0.00 gpr) = 41.00 hdpr + 13.65 cdpr + 0.00 gdpr
 Certain+: 40.98 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 1.00 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 20.48 cdpr + 0.00 gdpr
 Power+  : 68.27 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.77 cdpr + 0.00 gdpr
+Triple  : 68.33 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.83 cdpr + 0.00 gdpr

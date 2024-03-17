@@ -251,7 +251,7 @@ mod calculate_attack_outcome {
         let attack = attacker
             .get_attack_by_name("Extra Damage Broadsword")
             .unwrap();
-        let expected_hit_probability = vec!["0.900 single, 0.099 crit", "0.700 single, 0.077 crit"];
+        let expected_hit_probability = vec!["0.800 single, 0.088 crit", "0.600 single, 0.066 crit"];
         let actual_hit_probability: Vec<String> = [false, true]
             .iter()
             .map(|elite| {
@@ -294,7 +294,7 @@ mod calculate_attack_outcome {
         let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.700 single, 0.077 crit",
+            "0.500 single, 0.055 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),

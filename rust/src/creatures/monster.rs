@@ -11,6 +11,7 @@ use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
+use crate::equipment::Weapon;
 
 pub struct Monster {
     pub alignment: Option<String>,
@@ -35,22 +36,29 @@ impl Monster {
         role.set_core_statistics(&mut creature);
         cr.add_modifiers(&mut creature);
 
-        // Level modifiers
-        let defense_modifier = if level >= 11 { 1 } else { 0 };
+        // Level modifiers: accuracy and defenses
+        let levels_with_accuracy_bonuses = vec![9, 21];
+        let mut accuracy_modifier = 0;
+        for &bonus_level in levels_with_accuracy_bonuses.iter() {
+            if level >= bonus_level {
+                accuracy_modifier += 1;
+            }
+        }
         creature.add_modifier(
-            Modifier::AllDefenses(defense_modifier),
+            Modifier::Accuracy(accuracy_modifier),
             Some("level scaling"),
             None,
         );
-        let accuracy_modifier = if level >= 17 {
-            2
-        } else if level >= 5 {
-            1
-        } else {
-            0
-        };
+
+        let levels_with_defense_bonuses = vec![5, 11, 17];
+        let mut defense_modifier = 0;
+        for &bonus_level in levels_with_defense_bonuses.iter() {
+            if level >= bonus_level {
+                defense_modifier += 1;
+            }
+        }
         creature.add_modifier(
-            Modifier::Accuracy(accuracy_modifier),
+            Modifier::AllDefenses(defense_modifier),
             Some("level scaling"),
             None,
         );
@@ -277,6 +285,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Brute");
 
         monster
@@ -289,6 +299,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Constitution, Attribute::Perception]);
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Leader");
 
         monster
@@ -300,6 +312,9 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Perception, Attribute::Willpower]);
+        // TODO: mystic should use an array of magical attacks instead of maneuvers
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Mystic");
 
         monster
@@ -311,6 +326,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Skirmisher");
 
         monster
@@ -322,6 +339,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Warrior");
 
         monster
@@ -333,6 +352,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Strength, Attribute::Perception]);
+        monster.creature.add_standard_maneuvers();
+        monster.creature.weapons = vec![Weapon::longbow()];
         monster.creature.set_name("Sniper");
 
         monster

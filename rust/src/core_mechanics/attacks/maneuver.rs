@@ -23,6 +23,9 @@ pub enum Maneuver {
     ElementalStrike(i32),
     GenericAccuracy,
     GenericExtraDamage(i32),
+    // This is equivalent to PowerStrike in most contexts, so we don't usually bother using it.
+    GenericDoubleDamage,
+    GenericTripleDamage,
     GraspingStrike,
     GraspingStrikePlus,
     Hamstring,
@@ -112,6 +115,9 @@ impl Maneuver {
                     }),
                     _ => {},
                 }),
+            Self::GenericDoubleDamage => weapon
+                .attack()
+                .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(2)),
             Self::GenericExtraDamage(rank) => weapon
                 .attack()
                 .except_hit_damage(|d| match rank {
@@ -143,6 +149,9 @@ impl Maneuver {
                     }),
                     _ => {},
                 }),
+            Self::GenericTripleDamage => weapon
+                .attack()
+                .except_hit_damage(|d| d.base_dice = d.base_dice.multiply(3)),
             Self::GraspingStrike => weapon
                 .attack()
                 .except_hit_damage(|d| {
@@ -337,7 +346,9 @@ impl Maneuver {
             Self::CertainStrikePlus => "Certain Strike+",
             Self::ElementalStrike(_) => "Elemental Strike",
             Self::GenericAccuracy => "Generic Accuracy",
+            Self::GenericDoubleDamage => "Generic Double Damage",
             Self::GenericExtraDamage(_) => "Extra Damage Strike",
+            Self::GenericTripleDamage => "Generic Triple Damage",
             Self::GraspingStrike => "Grasping Strike",
             Self::GraspingStrikePlus => "Grasping StrikePlus",
             Self::Hamstring => "Hamstring",
@@ -366,6 +377,8 @@ impl Maneuver {
             Self::CertainStrikePlus => 5,
             Self::ElementalStrike(r) => *r,
             Self::GenericAccuracy => 1,
+            Self::GenericDoubleDamage => 5,
+            Self::GenericTripleDamage => 7,
             Self::GenericExtraDamage(r) => *r,
             Self::GraspingStrike => 1,
             Self::GraspingStrikePlus => 5,
