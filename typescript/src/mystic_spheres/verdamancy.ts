@@ -415,11 +415,23 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Fire Seed Swarm',
+
+      functionsLike: {
+        name: 'fire seeds',
+        exceptThat: 'the damage increases to \\damagerankthree{fire}. In addition, you can create up to six seeds at once instead of only three.',
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      type: 'Sustain (attuneable, minor)',
+    },
+
+    {
       name: 'Mighty Fire Seeds',
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfive{fire}.',
       },
       rank: 6,
       scaling: 'accuracy',
