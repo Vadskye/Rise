@@ -434,9 +434,9 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         0,
     ];
 
-    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
-        DamageType::Bludgeoning,
-    ))];
+    let mut modifiers = ModifierBundle::SimpleMinded.plus_modifiers(vec![Modifier::Vulnerable(
+        SpecialDefenseType::Damage(DamageType::Bludgeoning),
+    )]);
     for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
@@ -496,12 +496,12 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         ),
         -7,
         0,
-        -3,
+        0,
     ];
 
-    let mut modifiers = vec![Modifier::Vulnerable(SpecialDefenseType::Damage(
-        DamageType::Slashing,
-    ))];
+    let mut modifiers = ModifierBundle::SimpleMinded.plus_modifiers(vec![Modifier::Vulnerable(
+        SpecialDefenseType::Damage(DamageType::Slashing),
+    )]);
     for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
