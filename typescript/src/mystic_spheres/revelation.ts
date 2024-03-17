@@ -327,6 +327,17 @@ export const revelation: MysticSphere = {
       rank: 5,
       type: 'Attune',
     },
+    {
+      name: 'Mass Foresight',
+
+      functionsLike: {
+        mass: true,
+        name: 'Foresight',
+      },
+      // narrative: '',
+      rank: 7,
+      type: 'Attune (target)',
+    },
 
     {
       name: 'Reveal Weakness',

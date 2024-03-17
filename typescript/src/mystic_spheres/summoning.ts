@@ -556,7 +556,7 @@ export const summoning: MysticSphere = {
       `,
       rank: 2,
       tags: ['Manifestation'],
-      type: 'Attune (target)',
+      type: 'Attune',
     },
   ],
 };
