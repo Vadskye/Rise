@@ -606,7 +606,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 7,
       tags: ['Manifestation'],
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
 
     {
