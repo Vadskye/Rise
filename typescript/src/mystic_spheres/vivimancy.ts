@@ -327,6 +327,108 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: 'Lifetap',
+
+      effect: `
+        You must be alive to cast this spell.
+
+        Whenever you cast a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
+        If you do, the spell deals 1d6 energy \\glossterm{extra damage} when it deals damage for the first time.
+        In addition, the spell can target objects and nonliving creatures as if they were living creatures.
+        However, you also lose 2 hit points.
+        Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+        If you do, you gain a +5 accuracy bonus with the attack.
+
+        After you enhance a spell in this way, this effect ends.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The extra damage increases to 1d10, and the hit point loss increases to 4.`,
+        5: `The extra damage increases to 2d10, and the hit point loss increases to 8.`,
+        7: `The extra damage increases to 4d10, and the hit point loss increases to 16.`,
+      },
+      type: 'Attune',
+    },
+
+    {
+      name: 'Lifetap Slash',
+
+      // +1dr due to self damage
+      attack: {
+        hit: `\\damagerankthreehigh{slashing}.`,
+        targeting: `
+          You must be alive to cast this spell.
+
+          Make an attack vs. Armor against anything within \\medrange.
+          Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
+          Alternately, you can choose to gain a \\glossterm{vital wound} instead.
+          If you do, you gain a +5 accuracy bonus with the attack.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Lifetap Slash',
+
+      // +1dr due to self damage
+      attack: {
+        hit: `\\damageranksixhigh{slashing}.`,
+        targeting: `
+          You must be alive to cast this spell.
+
+          Make an attack vs. Armor against anything within \\medrange.
+          Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
+          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+          If you do, you gain a +5 accuracy bonus with the attack.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Lifetap Blast',
+
+      // +1dr due to self damage
+      attack: {
+        hit: `\\damagerankthreehigh{bludgeoning}.`,
+        missGlance: true,
+        targeting: `
+          You must be alive to cast this spell.
+
+          Make an attack vs. Reflex against everything within a \\medarea cone from you.
+          Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
+          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+          If you do, you gain a +5 accuracy bonus with the attack.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Lifetap Blast',
+
+      // +1dr due to self damage
+      attack: {
+        hit: `\\damageranksixhigh{bludgeoning}.`,
+        missGlance: true,
+        targeting: `
+          You must be alive to cast this spell.
+
+          Make an attack vs. Reflex against everything within a \\largearea cone from you.
+          Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
+          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+          If you do, you gain a +5 accuracy bonus with the attack.
+        `,
+      },
+      rank: 6,
+      scaling: 'accuracy',
+    },
+
+    {
       name: 'Corpse Explosion',
 
       attack: {
@@ -334,7 +436,7 @@ export const vivimancy: MysticSphere = {
         missGlance: true,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
-          Make an attack vs. Reflex against each creature within a \\smallarea radius from the corpse.
+          Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.
           The corpse is also destroyed.
         `,
       },
@@ -366,14 +468,14 @@ export const vivimancy: MysticSphere = {
         crit: CONDITION_CRIT,
         // No relevant glance effect
         hit: `As a \\glossterm{condition}, the target's body withers.
-        It takes a -2 penalty to Fortitude defense.
-        Whenever it loses \\glossterm{hit points}, this penalty increases by 1.
-        This penalty increase stacks up to a maximum of -5, and persists even if the target regains the lost hit points.`,
+        It takes a -2 penalty to its Fortitude defense, and it cannot regain \\glossterm{hit points} or \\glossterm{damage resistance}.
+        Whenever it loses \\glossterm{hit points}, this penalty increases by 2.
+        This stacks up to a maximum total penalty of -10.`,
         targeting: `
-          Make an attack vs. Fortitude with a +3 bonus to \\glossterm{accuracy} against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a +3 accuracy bonus against one creature within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
@@ -395,7 +497,7 @@ export const vivimancy: MysticSphere = {
       name: 'Massive Retributive Lifebond',
 
       attack: {
-        hit: `\\;amagerankthreelow{energy}.`,
+        hit: `\\damagerankthreelow{energy}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against it.
         `,
