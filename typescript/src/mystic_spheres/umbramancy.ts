@@ -164,14 +164,14 @@ export const umbramancy: MysticSphere = {
 
       // -2r for shadowed requirement
       attack: {
-        hit: `\\damagerankone{cold}.`,
+        hit: `\\damagerankonelow{cold}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
     },
 
     {
