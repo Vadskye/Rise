@@ -47,7 +47,10 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                     weapon: Weapon::fist(),
                     ..Default::default()
                 })],
-                modifiers: vec![Modifier::vulnerable_damage(DamageType::Cold)],
+                modifiers: vec![
+                    Modifier::PassiveAbility(PassiveAbility::soulless()),
+                    Modifier::vulnerable_damage(DamageType::Cold),
+                ],
                 movement_speeds: None,
                 senses: vec![],
                 trained_skills: vec![],
@@ -86,6 +89,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
         };
 
         let modifiers = &mut def.abilities.modifiers;
+        modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
         modifiers.push(Modifier::Immune(SpecialDefenseType::Debuff(
             Debuff::Frightened("".to_string()),
         )));
@@ -332,6 +336,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     //     StandardWeapon::Claws.weapon(),
                     // ],
                     modifiers: vec![
+                        Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Attack(StandardAttack::Enrage(2).attack()),
                         Modifier::Maneuver(Maneuver::PowerStrike),
                         Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
@@ -388,6 +393,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         }),
                     ],
                     modifiers: vec![
+                        Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                             AbilityTag::Compulsion,
                         )),
@@ -468,6 +474,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         fn monster(self) -> Monster {
             let rank = calculate_standard_rank(self.level);
             let mut modifiers = vec![];
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
             )));
@@ -589,6 +596,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         fn monster(self) -> Monster {
             let rank = calculate_standard_rank(self.level);
             let mut modifiers = vec![];
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             modifiers.push(Modifier::vulnerable_damage(DamageType::Cold));
             modifiers.push(Modifier::Attack(StandardAttack::Combustion(rank).attack()));
             modifiers.push(Modifier::Attack(StandardAttack::Firebolt(rank).attack()));
@@ -691,6 +699,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     impl MagmaElemental {
         fn monster(mut self) -> Monster {
+            self.modifiers
+                .push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             self.modifiers
                 .push(Modifier::vulnerable_damage(DamageType::Piercing));
             self.modifiers
@@ -823,7 +833,6 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
             DamageType::Fire,
         )));
-        modifiers.append(&mut ModifierBundle::SimpleMinded.modifiers());
         modifiers.append(&mut ModifierBundle::Multipedal.modifiers());
 
         planeforged(def)
@@ -859,7 +868,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::bite())),
                     ],
-                    modifiers: vec![],
+                    modifiers: ModifierBundle::SimpleMinded.modifiers(),
                     movement_speeds: None,
                     senses: vec![],
                     trained_skills: vec![
@@ -917,7 +926,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                             ..Default::default()
                         }),
                     ],
-                    modifiers: vec![],
+                    modifiers: ModifierBundle::SimpleMinded.modifiers(),
                     movement_speeds: Some(vec![
                         MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast)
                     ]),
