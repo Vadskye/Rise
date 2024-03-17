@@ -319,7 +319,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     If you choose yourself, the bonus is \plus1. Otherwise, the bonus is \plus2.
 
                     A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
-                    While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
+                    While this ability is active, you cannot be affected by other creatures using this ability on you.
                 \end{activeability}
             ",
             modifiers: None,
