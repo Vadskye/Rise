@@ -172,25 +172,6 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: 'Earthcraft',
-
-      effect: `
-        This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
-        The body targeted must be at least as large as the largest item you create.
-        You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
-        It is sized appropriately for you, up to a maximum of a Medium size item.
-        The items appear in your hand or on the ground at your feet.
-
-        If you create body armor or a weapon, it can be created from any special material other than cold iron.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
-
-        An item created with this spell functions like a normal item of its type, except that any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
-      `,
-      rank: 1,
-      type: 'Attune',
-    },
-
-    {
       name: 'Earthen Anchor',
 
       effect: `
@@ -431,7 +412,7 @@ export const terramancy: MysticSphere = {
             This makes them more resistant to attack and allows the construction of more complex structures.`,
       },
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -522,20 +503,37 @@ export const terramancy: MysticSphere = {
     },
 
     {
+      name: 'Mass Personal Gravitation',
+
+      functionsLike: {
+        mass: true,
+        name: 'earthen anchor',
+      },
+      rank: 4,
+      scaling: {
+        6: `
+          The maximum distance increases to 15 feet.
+          This can allow the target to pull itself towards distant objects, though it may take falling damage if it falls too far.
+        `,
+      },
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Stonefist',
 
       // 1d10 plus Impact is one upgrade above a normal weapon
       effect: `
-        You gain a stonefist \\glossterm{natural weapon}, replacing one of your \\glossterm{free hands}.
-        It deals 1d10 bludgeoning damage and has \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
+        The target gains a stonefist \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
+        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
       narrative: `
-        You encase one of your arms in a mighty stone bulkward, empowering it to crush your foes with sheer brute force.
+        You encase one of your arms in a mighty stone bulwark, empowering it to crush your foes with sheer brute force.
       `,
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Attune (target)',
     },
 
     {
@@ -548,7 +546,7 @@ export const terramancy: MysticSphere = {
       },
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Attune (deep)',
+      type: 'Attune (target)',
     },
 
     {
@@ -573,5 +571,27 @@ export const terramancy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
   ],
-  rituals: [],
+  rituals: [
+    {
+      name: 'Earthcraft',
+
+      castingTime: "one hour",
+      effect: `
+        Choose yourself or an \\glossterm{ally} within \medrange.
+
+        This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
+        The body targeted must be at least as large as the largest item you create.
+        You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
+        It is sized appropriately for the target, up to a maximum of a Medium size item.
+        The items appear in your hand or on the ground at your feet.
+
+        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+
+        An item created with this spell functions like a normal item of its type.
+      `,
+      rank: 1,
+      type: 'Attune (target)',
+    },
+  ],
 };

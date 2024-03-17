@@ -541,6 +541,16 @@ export const astromancy: MysticSphere = {
       type: 'Attune',
     },
     {
+      name: 'Mass Astral Instability',
+
+      functionsLike: {
+        mass: true,
+        name: 'astral instability',
+      },
+      rank: 5,
+      type: 'Attune (target)',
+    },
+    {
       name: 'Hostile Transposition',
 
       attack: {
@@ -617,6 +627,19 @@ export const astromancy: MysticSphere = {
       type: 'Attune',
     },
     {
+      name: 'Mass Phasing Blade',
+
+      functionsLike: {
+        mass: true,
+        name: 'phasing blade',
+      },
+      rank: 5,
+      scaling: {
+        7: "The target's strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.",
+      },
+      type: 'Attune (target)',
+    },
+    {
       name: 'Phasing Spells',
 
       effect: `
@@ -647,6 +670,16 @@ export const astromancy: MysticSphere = {
       `,
       rank: 1,
       type: 'Attune',
+    },
+    {
+      name: 'Mass Phasestep',
+
+      functionsLike: {
+        mass: true,
+        name: 'phasestep',
+      },
+      rank: 3,
+      type: 'Attune (target)',
     },
 
     {

@@ -44,6 +44,17 @@ export const revelation: MysticSphere = {
       rank: 1,
       type: 'Attune',
     },
+    {
+      name: 'Mass Weapon Proficiency',
+
+      functionsLike: {
+        mass: true,
+        name: 'weapon proficiency',
+      },
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
+    },
 
     {
       name: 'Armor Proficiency',
@@ -53,6 +64,17 @@ export const revelation: MysticSphere = {
       `,
       rank: 1,
       type: 'Attune',
+    },
+    {
+      name: 'Mass Armor Proficiency',
+
+      functionsLike: {
+        mass: true,
+        name: 'armor proficiency',
+      },
+      // narrative: '',
+      rank: 3,
+      type: 'Attune (target)',
     },
 
     {
@@ -77,7 +99,7 @@ export const revelation: MysticSphere = {
         4: 'You can choose to affect a \\hugearea radius instead.',
         6: 'You can choose to affect a \\gargarea radius instead.',
       },
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -110,7 +132,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Offense',
 
       effect: `
-        Whenever you make an attack roll, you can see into the future to change your fate.
+        Whenever you would make an attack roll, you can see into the future to change your fate.
         If you do, you roll the attack roll twice and take the higher result.
         After you change your fate in this way, this effect ends.
       `,
@@ -118,11 +140,6 @@ export const revelation: MysticSphere = {
         You intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
-      scaling: {
-        3: `You also gain a +1 accuracy bonus to the attack roll.`,
-        5: `The bonus increases to +2.`,
-        7: `The bonus increases to +3.`,
-      },
       type: 'Attune',
     },
 
@@ -130,7 +147,7 @@ export const revelation: MysticSphere = {
       name: 'Armorbreak Sight',
 
       effect: `
-        Whenever you make a \\glossterm{strike} that would attack a creature's Armor defense, you may instead attack that creature's Reflex defense.
+        Whenever you would make a \\glossterm{strike} that would attack a creature's Armor defense, you may instead attack that creature's Reflex defense.
         If you do, you \\glossterm{briefly} cannot apply this effect again.
         You must make this choice before rolling the attack roll.
       `,
@@ -161,10 +178,6 @@ export const revelation: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: `The bonus increases to +4.`,
-        7: `The bonus increases to +8.`,
-      },
       type: 'Attune (target)',
     },
 
@@ -172,7 +185,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Defense',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -311,7 +324,7 @@ export const revelation: MysticSphere = {
         You are never \\unaware or \\partiallyunaware.
       `,
 
-      rank: 6,
+      rank: 5,
       type: 'Attune',
     },
 
