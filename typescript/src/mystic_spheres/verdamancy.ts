@@ -405,7 +405,8 @@ export const verdamancy: MysticSphere = {
           As a standard action, you or another creature can throw the acorn up to 30 feet.
           % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
           % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
-          On impact, the acorn detonates, and you make an attack vs. Reflex against everything within a \\smallarea radius of the struck creature or object.
+          When thrown individually in this way, the acorn detonates, and you make an attack vs. Reflex against everything within a \\smallarea radius of the struck creature or object.
+          If the acorn is destroyed in any other way, it has no effect.
         `,
       },
       rank: 3,
