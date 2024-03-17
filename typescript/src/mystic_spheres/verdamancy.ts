@@ -195,11 +195,11 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'vine tentacle',
-        exceptThat: 'the damage dealt by the weapon increases to 1d10.',
+        exceptThat: 'the damage dealt by the weapon increases to 1d10. However, you can only target yourself.',
       },
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Attune (target)',
+      type: 'Attune',
     },
 
     {
