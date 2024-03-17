@@ -388,9 +388,13 @@ where
     }
 
     fn calc_power(&self, is_magical: bool) -> i32 {
-        let attribute = match is_magical {
-            true => &Attribute::Willpower,
-            false => &Attribute::Strength,
+        let attribute = if self.is_mindless() {
+            &Attribute::Strength
+        } else {
+            match is_magical {
+                true => &Attribute::Willpower,
+                false => &Attribute::Strength,
+            }
         };
         let specific_modifier = match is_magical {
             true => self.calc_total_modifier(ModifierType::MagicalPower),

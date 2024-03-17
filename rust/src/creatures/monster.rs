@@ -6,12 +6,12 @@ use crate::core_mechanics::{
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
 use crate::equipment::StandardWeapon;
+use crate::equipment::Weapon;
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
 use crate::skills::{HasSkills, Skill, SkillCategory};
 use regex::Regex;
 use titlecase::titlecase;
-use crate::equipment::Weapon;
 
 pub struct Monster {
     pub alignment: Option<String>,
@@ -160,7 +160,10 @@ impl Monster {
 
         let mut actual_attribute_sum = 0;
         for attribute in Attribute::monster_validation() {
-            actual_attribute_sum += self.creature.get_base_attribute(&attribute);
+            // Willpower shouldn't be considered when determining the power of mindless creatures
+            if !(attribute == Attribute::Willpower && self.creature.is_mindless()) {
+                actual_attribute_sum += self.creature.get_base_attribute(&attribute);
+            }
         }
 
         let diff = (actual_attribute_sum - expected_attribute_sum).abs();
@@ -680,7 +683,10 @@ impl Monster {
         let ment_text = if self.creature.is_mindless() {
             "".to_string()
         } else {
-            format!("\\monsep Ment {}", self.creature.calc_defense(&Defense::Mental))
+            format!(
+                "\\monsep Ment {}",
+                self.creature.calc_defense(&Defense::Mental)
+            )
         };
         format!(
             "
