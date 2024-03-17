@@ -191,10 +191,10 @@
                 \pari \textbf{HP} 53
                     \monsep \textbf{DR} 26
                 \pari \textbf{Defenses}
-                    Armor 10
-                    \monsep Fort 10
-                    \monsep Ref 10
-                    \monsep Ment 14
+                    Armor 11
+                    \monsep Fort 11
+                    \monsep Ref 11
+                    \monsep Ment 15
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 11\sparkle \monsep 11
@@ -278,10 +278,10 @@
                 \pari \textbf{HP} 159
                     \monsep \textbf{DR} 118
                 \pari \textbf{Defenses}
-                    Armor 12
-                    \monsep Fort 12
-                    \monsep Ref 12
-                    \monsep Ment 18
+                    Armor 13
+                    \monsep Fort 13
+                    \monsep Ref 13
+                    \monsep Ment 19
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 15\sparkle \monsep 15

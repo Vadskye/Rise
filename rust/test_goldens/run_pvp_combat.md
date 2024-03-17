@@ -12,7 +12,7 @@ Rounds  7.00/B 4.25/R 5.25 Blue 0 ( 0.00%) Red 2 ( 0.28%)
 Rounds 14.25/B 5.75/R 6.25 Blue 0 ( 0.00%) Red 1 ( 0.00%)
 Rounds 14.75/B 6.75/R 7.50 Blue 0 ( 0.00%) Red 1 ( 0.08%)
 Rounds 20.50/B 8.25/R 8.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 17.25/B 9.50/R 8.25 Blue 1 ( 0.16%) Red 0 ( 0.00%)
+Rounds 19.50/B 8.75/R 8.25 Blue 1 ( 0.03%) Red 0 ( 0.00%)
 
 ### Fighter shield vs fighter shield
 Rounds 15.00/B 6.50/R 6.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)

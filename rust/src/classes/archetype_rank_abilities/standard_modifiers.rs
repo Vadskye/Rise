@@ -112,8 +112,8 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             description: "",
             modifiers: Some(vec![
                 Modifier::Maneuver(Maneuver::GenericExtraDamage(5)),
-                Modifier::Maneuver(Maneuver::PowerStrikePlus),
                 Modifier::Maneuver(Maneuver::CertainStrikePlus),
+                Modifier::Maneuver(Maneuver::PowerStrikePlus),
             ]),
         },
         RankAbility {
@@ -121,7 +121,10 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             is_magical: false,
             rank: 7,
             description: "",
-            modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericExtraDamage(7))]),
+            modifiers: Some(vec![
+                Modifier::Maneuver(Maneuver::GenericExtraDamage(7)),
+                Modifier::Maneuver(Maneuver::GenericTripleDamage),
+            ]),
         },
     ]);
 }
