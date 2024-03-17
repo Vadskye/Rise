@@ -128,7 +128,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \hit Each target is turned by you as a \glossterm{condition}.
                     This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
                     Once this effect ends, the creature becomes immune to this effect until it finishes a \glossterm{short rest}.
-                    \crit As above, and each target with no remaining \glossterm{damage resistance} immediately dies.
+                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes energy damage equal to half its maximum hit points.
+                    After taking this damage, it cannot take this damage again until it finishes a short rest.
 
                     \rankline
                     This attack's accuracy increases by \plus2 for each rank beyond 2.
@@ -440,7 +441,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{activeability}{Bless the Worthy}[\abilitytag{Exertion}, \abilitytag{Swift}]
+                \begin{activeability}{Bless the Worthy}[\abilitytag{Emotion}, \abilitytag{Exertion}, \abilitytag{Swift}]
                     \rankline
                     When you use this ability, you increase your \glossterm{fatigue level} by one.
 
