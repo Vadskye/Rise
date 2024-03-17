@@ -50,7 +50,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     usage_time: UsageTime::Elite,
                 }),
             ],
-            modifiers: ModifierBundle::MindlessConstruct.plus_modifiers(vec![
+            modifiers: ModifierBundle::SimpleMindedConstruct.plus_modifiers(vec![
                 Modifier::immune_damage(DamageType::Cold),
                 Modifier::immune_debuff(Debuff::Prone),
             ]),
@@ -199,7 +199,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
         animate(MonsterDef {
             abilities: MonsterAbilities {
                 active_abilities,
-                modifiers: ModifierBundle::MindlessConstruct.modifiers(),
+                modifiers: ModifierBundle::SimpleMindedConstruct.modifiers(),
                 movement_speeds: None,
                 senses: vec![Sense::Darkvision(60)],
                 trained_skills: vec![],
@@ -223,15 +223,7 @@ fn add_animated_objects(monsters: &mut Vec<MonsterEntry>) {
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         art: true,
-        description: Some(PassiveAbility {
-            description: r"
-                Animated objects are not \glossterm{sentient}.
-                They are immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
-                Their Intelligence attribute represents their capacity for complex action according to the instructions given to them by their creator rather than true intelligence.
-            ".to_string(),
-            is_magical: false,
-            name: "Mindless".to_string(),
-        }.to_latex()),
+        description: None,
         knowledge: None,
         name: "Animated Objects".to_string(),
         monsters: vec![

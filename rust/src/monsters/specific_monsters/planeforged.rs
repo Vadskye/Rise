@@ -823,7 +823,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
         modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
             DamageType::Fire,
         )));
-        modifiers.append(&mut ModifierBundle::Mindless.modifiers());
+        modifiers.append(&mut ModifierBundle::SimpleMinded.modifiers());
         modifiers.append(&mut ModifierBundle::Multipedal.modifiers());
 
         planeforged(def)
@@ -877,7 +877,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                             Its hands are suitable only for manual labor.
                         "),
                         (5, "
-                            Individual workers are mindless, but they are given instructions by the hive mind.
+                            Individual workers are simple-minded, but they are given instructions by the hive mind.
                             Even the smallest formian colony typically has hundreds of workers, and larger colonies can have tens of thousands.
                             Workers are generally given orders by a formian queen in groups of at least five, and it is rare to see an individual worker on its own.
                         "),
