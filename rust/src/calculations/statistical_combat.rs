@@ -175,7 +175,7 @@ pub fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature
 fn calc_individual_dpr(attacker: &Creature, defender: &Creature) -> f64 {
     let best_attack: Option<Attack> = find_best_attack(attacker, defender);
 
-    // println!("Best attack: {}", best_attack.unwrap().name);
+    // println!("Best attack: {}", best_attack.as_ref().unwrap().name);
 
     if let Some(attack) = best_attack {
         calc_attack_damage_per_round(&attack, attacker, defender).total()
@@ -451,6 +451,9 @@ pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<St
     }
     if let Some(power_plus) = attacker.get_attack_by_substring("Power Strike+") {
         attacks.push(calc_attack_damage_per_round(&power_plus, attacker, defender).explain("Power+"));
+    }
+    if let Some(triple_damage) = attacker.get_attack_by_substring("Generic Triple") {
+        attacks.push(calc_attack_damage_per_round(&triple_damage, attacker, defender).explain("Triple"));
     }
 
     attacks

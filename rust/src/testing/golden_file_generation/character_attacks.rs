@@ -2,7 +2,7 @@ use crate::calculations::statistical_combat::{
     calc_attack_damage_per_round, explain_standard_adpr, find_best_attack,
 };
 use crate::core_mechanics::attacks::HasAttacks;
-use crate::creatures::{Character, Creature};
+use crate::creatures::{Character, Creature, Monster};
 use std::io;
 
 use super::write_golden_file;
@@ -43,6 +43,13 @@ fn explain_character_attacks(level: i32, attacker: &Creature) -> String {
         .collect();
 
     format_attacks_at_level(level, attacker, &defenders)
+}
+
+pub fn write_brute_attacks_golden() -> io::Result<()> {
+    write_golden_file(
+        "brute_attacks",
+        format_character_dpr_vs_monster(&|level| Monster::standard_brute(level).creature),
+    )
 }
 
 pub fn write_fighter_shield_attacks_golden() -> io::Result<()> {
@@ -88,13 +95,10 @@ fn format_attacks_at_level(level: i32, attacker: &Creature, defenders: &Vec<Crea
 // best attack for many combinations of attackers and defenders.
 pub fn write_attack_comparison_golden() -> io::Result<()> {
     fn at_level(level: i32) -> String {
-        let defenders = Character::standard_set(level)
-            .into_iter()
-            .map(|c| c.creature)
-            .collect();
-        let formatted_attackers = Character::standard_set(level)
+        let defenders = Creature::standard_set(level);
+        let formatted_attackers = Creature::standard_set(level)
             .iter()
-            .map(|c| format_attacker(&c.creature, &defenders))
+            .map(|c| format_attacker(&c, &defenders))
             .collect::<Vec<String>>()
             .join("\n\n");
 

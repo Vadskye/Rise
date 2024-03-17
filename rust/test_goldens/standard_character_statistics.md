@@ -81,7 +81,7 @@ DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 ### Description
 HP 168, DR 96
 AD 19, Fort 21, Ref 14, Ment 17
-Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
+Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Generic Triple Damage -- Broadsword +13 (3d6+30 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 10✨/17
 
@@ -99,13 +99,14 @@ Enduring Discipline: resource fatigue tolerance by 1
 Equipment Efficiency: resource attunement point by 1
 Armor Expertise: encumbrance -1
 Armor Expertise: all defenses 1
-Maneuvers: maneuver Power Strike+
 Maneuvers: maneuver Certain Strike+
+Maneuvers: maneuver Power Strike+
 Enduring Discipline+: defense mental by 1
 Enduring Discipline+: vital roll 1
 Enduring Discipline+: resource fatigue tolerance by 1
 Weapon Expertise: accuracy 1
 Maneuvers: maneuver Extra Damage Strike
+Maneuvers: maneuver Generic Triple Damage
 Armor Expertise+: all defenses 1
 Armor Expertise+: encumbrance -1
 fighter: defense armor by 0

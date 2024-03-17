@@ -690,12 +690,14 @@ function calcAccuracyCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    if (level >= 17) {
-      levelScaling += 2;
-    } else if (level >= 5) {
-      levelScaling += 1;
+    let levels_with_accuracy_bonuses = [9, 21];
+    for (const bonus_level in levels_with_accuracy_bonuses) {
+      if (level >= bonus_level) {
+        levelScaling += 1;
+      }
     }
   }
+
   return levelScaling;
 }
 
@@ -705,8 +707,11 @@ function calcDefenseCrScaling(level, challengeRating) {
   }
   let levelScaling = 0;
   if (challengeRating > 0) {
-    if (level >= 11) {
-      levelScaling += 1;
+    let levels_with_defense_bonuses = [5, 11, 17];
+    for (const bonus_level in levels_with_defense_bonuses) {
+      if (level >= bonus_level) {
+        levelScaling += 1;
+      }
     }
   }
   if (challengeRating === 4) {
