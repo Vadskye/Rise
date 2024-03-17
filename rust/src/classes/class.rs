@@ -1421,16 +1421,15 @@ impl Class {
                 \newpage
                 \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
-                    All cleric domain abilities are \magical unless otherwise specified.
 
                     \subsubsection{Air Domain}
                         If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
+                        \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
                         This increases your maximum vertical jump distance normally.
                         In addition, you take half damage from \glossterm{falling damage}.
-                        \parhead{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
-                        \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
+                        \magicaldomainability{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
+                        \magicaldomainability{Essence} You can use the \textit{speak with air} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
@@ -1443,13 +1442,13 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \parhead{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flight}).
+                        \magicaldomainability{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
-                        \parhead{Gift} You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
-                        \parhead{Aspect} You are immune to \abilitytag{Compulsion} attacks.
-                        \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
+                        \magicaldomainability{Gift} You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
+                        \domainability{Aspect} You are immune to \abilitytag{Compulsion} attacks.
+                        \magicaldomainability{Essence} You can use the \textit{twist of fate} ability as a standard action.
                         \begin{magicalactiveability}{Twist of Fate}
                             \rankline
                             An improbable event occurs within \distrange.
@@ -1457,12 +1456,13 @@ impl Class {
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
-                        \parhead{Mastery} The reduction from this domain's gift increases to 3.
+                        \magicaldomainability{Mastery} The reduction from this domain's gift increases to 3.
 
                     \subsubsection{Death Domain}
-                        \parhead{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
-                        \parhead{Aspect} The bonus from this domain's gift increases to \plus2.
-                        \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
+                        \domainability{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
+                        You can also automatically identify whether creatures you see are below their maximum hit points.
+                        \domainability{Aspect} The bonus from this domain's gift increases to \plus2.
+                        \magicaldomainability{Essence} You can use the \textit{speak with dead} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Dead}{\abilitytag{Attune}}
                             \rankline
                             Choose a corpse within \rngshort range.
@@ -1472,11 +1472,11 @@ impl Class {
                             The corpse must have an intact mouth to be able to speak.
                             This ability ends if 24 hours have passed since the creature died.
                         \end{magicalattuneability}
-                        \parhead{Mastery} The bonus from this domain's gift increases to \plus3.
+                        \domainability{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \parhead{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
-                        \parhead{Aspect} You can use the \textit{destructive strike} ability as a standard action.
+                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
+                        \magicaldomainability{Aspect} You can use the \textit{destructive strike} ability as a standard action.
                         \begin{magicalactiveability}{Destructive Strike}
                             \rankline
                             Make a \glossterm{strike}.
@@ -1491,7 +1491,7 @@ impl Class {
                             \rank{6} The extra damage increases to 1d8 per 3 power.
                             \rank{7} The extra damage increases to 1d8 per 2 power.
                         \end{magicalactiveability}
-                        \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
+                        \magicaldomainability{Essence} You can use the \textit{lay waste} ability as a standard action.
                         \begin{magicalactiveability}{Lay Waste}
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} objects in a \areamed radius.
@@ -1501,14 +1501,14 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \parhead{Mastery} The bonus from this domain's gift increases to \plus2.
+                        \domainability{Mastery} The bonus from this domain's gift increases to \plus2.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You gain a \plus2 bonus to your Fortitude defense.
-                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance}.
-                        \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
+                        \domainability{Gift} You gain a \plus2 bonus to your Fortitude defense.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance}.
+                        \magicaldomainability{Essence} You can use the \textit{speak with earth} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \rankline
                             You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
@@ -1519,16 +1519,16 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \parhead{Mastery} The defense bonus increases to \plus3, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
+                        \domainability{Mastery} The defense bonus increases to \plus3, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
                         % intentionally adjacent rather than touch
-                        \parhead{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
+                        \magicaldomainability{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
                         Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
                         You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
                         This ability has the \abilitytag{Swift} tag.
-                        \parhead{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
-                        \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
+                        \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
+                        \magicaldomainability{Essence} You can use the \textit{compel evil} ability as a standard action.
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
@@ -1541,15 +1541,15 @@ impl Class {
                             \rankline
                             You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
-                        \parhead{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
+                        \magicaldomainability{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
 
                     \subsubsection{Fire Domain}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \parhead{Gift} You are \trait{impervious} to fire damage.
-                        \parhead{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
-                        \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
+                        \domainability{Gift} You are \trait{impervious} to fire damage.
+                        \magicaldomainability{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
+                        \magicaldomainability{Essence} You can use the \textit{speak with fire} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Fire}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
@@ -1564,18 +1564,18 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \parhead{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
+                        \magicaldomainability{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
                         This can help you deal damage to enemies that are highly resistant to fire damage.
                         Your \glossterm{allies} are still immune to fire damage that you convert in this way.
                         In addition, you become immune to fire damage.
 
                     \subsubsection{Good Domain}
                         % intentionally adjacent rather than touch
-                        \parhead{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
+                        \magicaldomainability{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
-                        \parhead{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
-                        \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
+                        \magicaldomainability{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
+                        \magicaldomainability{Essence} You can use the \textit{compel good} ability as a standard action.
                         \begin{magicalactiveability}{Compel Good}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
@@ -1588,15 +1588,15 @@ impl Class {
                             \rankline
                             You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
-                        \parhead{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
+                        \magicaldomainability{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
 
                     \subsubsection{Knowledge Domain}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
-                        \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
+                        \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                        \domainability{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
+                        \magicaldomainability{Essence} You can use the \textit{share knowledge} ability as a standard action.
                         \begin{magicalactiveability}{Share Knowledge}
                             \rankline
                             Make a Knowledge check of any kind.
@@ -1608,14 +1608,14 @@ impl Class {
                             \rankline
                             \rank{6} You gain a \plus3 bonus to the Knowledge check.
                         \end{magicalactiveability}
-                        \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
+                        \domainability{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
                         In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
                     \subsubsection{Law Domain}
-                        \parhead{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        \magicaldomainability{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
-                        \parhead{Aspect} You gain a \plus2 bonus to your Mental defense.
-                        \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
+                        \domainability{Aspect} You gain a \plus2 bonus to your Mental defense.
+                        \magicaldomainability{Essence} You can use the \textit{compel law} ability as a standard action.
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \rankline
                             Make an attack vs. Mental against all creatures within a \arealarge radius from you.
@@ -1630,27 +1630,26 @@ impl Class {
                             \rankline
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
-                        \parhead{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
+                        \magicaldomainability{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
-                        \parhead{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
-                        \parhead{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{hit points}.
-                        \parhead{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
+                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{hit points}.
+                        \magicaldomainability{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
-                        \parhead{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Mastery archetype.
+                        \domainability{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
-                        \parhead{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
-                        \parhead{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \parhead{Essence} You gain a \plus1 bonus to your \glossterm{power} with \magical abilities.
-                        \parhead{Mastery} The power bonus increases to \plus2.
+                        \domainability{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
+                        \magicaldomainability{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{power} with \magical abilities.
+                        \magicaldomainability{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \parhead{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-                        \parhead{Aspect} You can use the \textit{divine protection} ability as a \glossterm{free action}.
+                        \magicaldomainability{Gift} You can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             % Intentionally adjacent rather than touch
@@ -1658,35 +1657,36 @@ impl Class {
                             It gains a \plus1 bonus to all defenses this round.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
-                            While this ability is active, you cannot gain a defense bonus from this ability, even if another creature with this ability uses it on you.
+                            While this ability is active, you cannot be affected by other creatures using this ability on you.
                         \end{magicalactiveability}
-                        \parhead{Essence} The damage resistance bonus increases to three times your rank in the Domain Mastery archetype.
-                        \parhead{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \magicaldomainability{Essence} The target of your \textit{divine protection} ability also takes no extra damage from \glossterm{critical hits}.
+                        \domainability{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
-                        \parhead{Aspect} You can use the \textit{divine strength} ability whenever you finish a \glossterm{long rest}.
+                        \domainability{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
+                        \magicaldomainability{Aspect} You can use the \textit{divine strength} ability whenever you finish a \glossterm{long rest}.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \rankline
                             You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                         \end{magicalattuneability}
-                        \parhead{Essence} You gain a \plus1 bonus to your Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
                         In addition, when you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
                         For example, you could pick up an entire house if you had enough Strength, even though a house would normally fall apart under the strain if you tried to pick it up.
-                        \parhead{Mastery} You lose access to the \textit{divine strength} ability.
+                        \domainability{Mastery} You lose access to the \textit{divine strength} ability.
                         Instead, you simply gain a \plus1 bonus to your Strength.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus10 foot bonus to your \glossterm{land speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
+                        \domainability{Gift} You gain a \plus10 foot bonus to your \glossterm{land speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
                         This speed bonus is doubled as normal from sprinting.
-                        \parhead{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-                        \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
+                        \magicaldomainability{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
+                        \magicaldomainability{Essence} You can use the \textit{dimensional travel} ability as a standard action.
                         \begin{magicalactiveability}{Dimensional Travel}
                             \rankline
                             You teleport up to 1 mile in any direction.
@@ -1695,7 +1695,7 @@ impl Class {
                             \rankline
                             \rank{6} The maximum distance increases to 5 miles.
                         \end{magicalactiveability}
-                        \parhead{Mastery} When you would move using one of your movement speeds, you can teleport the same distance instead.
+                        \magicaldomainability{Mastery} When you would move using one of your movement speeds, you can teleport the same distance instead.
                         This does not change the total distance you can move, but you can teleport in any direction, including vertically.
                         Being \grappled or otherwise physically constrained does not prevent you from teleporting in this way.
 
@@ -1705,11 +1705,11 @@ impl Class {
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
-                        \parhead{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
+                        \domainability{Gift} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
+                        \magicaldomainability{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
                         In addition, \magical \abilitytag{Compulsion} effects cannot affect your speech in any way.
                         This means you can still talk and lie normally even while \dominated, though you cannot control the rest of your body.
-                        \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
+                        \magicaldomainability{Essence} You can use the \textit{compel belief} ability as a standard action.
                         \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                             \rankline
                             Make an attack vs. Mental against a creature within \rngmed range.
@@ -1725,25 +1725,25 @@ impl Class {
                             You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalsustainability}
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
-                        \parhead{Mastery} You are undetectable to all \magical abilities.
+                        \magicaldomainability{Mastery} You are undetectable to all \magical abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
                         For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \trait{darkvision} would not be able to see you without light.
 
                     \subsubsection{War Domain}
-                        \parhead{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
+                        \domainability{Gift} You gain proficiency with an additional \glossterm{weapon group} of your choice.
                         In addition, you gain proficiency with an additional \glossterm{usage class} of armor.
                         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-                        \parhead{Aspect} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-                        \parhead{Essence} You gain a \plus1 bonus to your Armor defense.
-                        \parhead{Mastery} The bonus from this domain's aspect increases to \plus2.
+                        \domainability{Aspect} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                        \domainability{Essence} You gain a \plus1 bonus to your Armor defense.
+                        \domainability{Mastery} The bonus from this domain's aspect increases to \plus2.
 
                     \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
-                        \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
+                        \domainability{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
+                        \magicaldomainability{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+                        \magicaldomainability{Essence} You can use the \textit{speak with water} ability as a standard action.
                         \begin{magicalattuneability}{Speak with Water}{\abilitytag{Attune}}
                             \rankline
                             You can speak with and command water within a \areahuge \glossterm{zone} from your location.
@@ -1756,7 +1756,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \parhead{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
+                        \magicaldomainability{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
                         The bonuses from this domain's gift increase to \plus10.
                         In addition, you gain a \plus1 bonus to Armor and Reflex defenses.
 
@@ -1764,13 +1764,13 @@ impl Class {
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \parhead{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \parhead{Aspect} You gain one \textit{wild aspect}, as the druid ability from the Shifter archetype (see \pcref{Shifter}).
+                        \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                        \magicaldomainability{Aspect} You gain one \textit{wild aspect}, as the druid ability from the Shifter archetype (see \pcref{Shifter}).
                         You cannot spend \glossterm{insight points} to learn additional wild aspects.
                         The aspect's effect improves based on your rank in the Domain Mastery archetype.
                         If you already have that ability, you simply learn an additional wild aspect, and the aspect's effect continues to scale with your Shifter archetype rank.
-                        \parhead{Essence} You learn an additional \textit{wild aspect}.
-                        \parhead{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
+                        \magicaldomainability{Essence} You learn an additional \textit{wild aspect}.
+                        \magicaldomainability{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
                         When you do, you increase your \glossterm{fatigue level} by two.
                         This hybrid wild aspect only lasts for ten minutes, at which point you choose which single wild aspect remains active.
 

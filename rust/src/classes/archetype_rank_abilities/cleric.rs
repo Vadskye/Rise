@@ -170,7 +170,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             name: "Domain Gifts",
-            is_magical: true,
+            is_magical: false,
             rank: 1,
             description: r"
                 You choose two domains which represent your personal spiritual inclinations.
@@ -209,7 +209,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Aspect",
-            is_magical: true,
+            is_magical: false,
             rank: 2,
             description: r"
                 Each domain has a corresponding \textit{domain aspect}.
@@ -221,7 +221,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Aspect+",
-            is_magical: true,
+            is_magical: false,
             rank: 3,
             description: r"
                 At rank 3, you gain the \textit{domain aspect} for another one of your domains.
@@ -230,7 +230,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Essences",
-            is_magical: true,
+            is_magical: false,
             rank: 4,
             description: r"
                 Each domain has a corresponding \textit{domain essence}.
@@ -270,7 +270,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             name: "Domain Masteries",
-            is_magical: true,
+            is_magical: false,
             rank: 6,
             description: r"
                 Each domain has a corresponding \textit{domain mastery}.
