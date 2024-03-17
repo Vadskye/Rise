@@ -621,7 +621,7 @@ export const pyromancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
+        Choose yourself or an \\glossterm{ally} or unattended object within \\medrange.
         The target suffers no harm from being in a hot environment.
         It can exist comfortably in conditions as high as 140 degrees Fahrenheit.
         Its equipment, if any, is also protected.

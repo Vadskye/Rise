@@ -605,7 +605,7 @@ export const photomancy: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-        Choose either yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
+        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
         The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
       `,
       rank: 1,
