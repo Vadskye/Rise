@@ -261,10 +261,10 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Enhance Magic -- Distance',
+      name: 'Enhance Magic -- Precision',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to triple its range.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to gain a +4 accuracy bonus with it.
         After you enhance a spell in this way, this effect ends.
       `,
       rank: 3,
