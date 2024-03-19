@@ -69,8 +69,9 @@ fn it_calculates_level_21_fighter_defenses() {
         ],
     )
     .creature;
+
     // Note that this fighter doesn't have any items, so armor defense is lower than the standard
-    // chaaracter.
+    // character.
     assert_eq!(
         "Armor b10 f10",
         format!(
@@ -122,13 +123,13 @@ fn it_calculates_level_21_fighter_attacks() {
     )
     .creature;
     assert_eq!(
-        "Accuracy b10 f11",
+        "Accuracy b10 f12",
         format!(
             "Accuracy b{} f{}",
             baseline.calc_accuracy(),
             fighter.calc_accuracy(),
         ),
-        "10 level scaling + 1 equipment training",
+        "10 level scaling + 2 equipment training",
     );
     assert_eq!(
         0,
@@ -138,12 +139,14 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Certain Battleaxe +21 (1d6 slashing damage.)",
+            "Generic Accuracy Battleaxe +19 (1d6+5 slashing damage.)",
+            "Certain Battleaxe +21 (1d6+2 slashing damage.)",
             "Powerful Battleaxe +15 (2d6+10 slashing damage.)",
+            "Certain Strike+ -- Battleaxe +21 (1d6+5 slashing damage.)",
             "Power Strike+ -- Battleaxe +12 (3d6+15 slashing damage.)",
-            "Certain Strike+ -- Battleaxe +19 (1d6+5 slashing damage.)",
-            "Extra Damage Battleaxe +14 (4d6+5 slashing damage.)",
-            "Battleaxe +12 (1d6+5 slashing damage.)"
+            "Extra Damage Battleaxe +13 (1d6+5d8+5 slashing damage.)",
+            "Generic Triple Damage -- Battleaxe +13 (3d6+15 slashing damage.)",
+            "Battleaxe +13 (1d6+5 slashing damage.)"
         ],
         fighter
             .calc_all_attacks()

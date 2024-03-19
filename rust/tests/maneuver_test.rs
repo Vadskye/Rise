@@ -42,7 +42,7 @@ mod maneuver_tests {
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
             vec![
-                "Certain Broadsword +3 (1d6 slashing damage.)",
+                "Certain Broadsword +2 (1d6 slashing damage.)",
                 "Broadsword +0 (1d6+1 slashing damage.)"
             ],
             creature

@@ -157,10 +157,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \item Heavy: You add half your Dexterity to your Armor defense.
                 \end{itemize}
             ",
-            // Assume medium armor, since it's the easiest to represent
+            // Assume light armor, since it's the easiest to represent
             modifiers: Some(vec![
-                Modifier::Encumbrance(-1),
-                Modifier::AllDefenses(1),
+                Modifier::BaseSpeed(10),
             ]),
         },
         RankAbility {
@@ -177,10 +176,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                         This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
                 \end{itemize}
             ",
-            modifiers: Some(vec![
-                Modifier::AllDefenses(1),
-                Modifier::Encumbrance(-1),
-            ]),
+            modifiers: None,
         },
         RankAbility {
             name: "Weapon Expertise",
