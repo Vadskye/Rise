@@ -106,6 +106,10 @@ impl SpecialDefenseType {
 
 pub trait HasDefenses {
     fn calc_defense(&self, defense: &Defense) -> i32;
+    fn calc_defense_modifier_attribute(&self, defense: &Defense) -> i32;
+    fn calc_defense_modifier_armor(&self, defense: &Defense) -> i32;
+    fn calc_defense_modifier_size(&self, defense: &Defense) -> i32;
+    fn explain_defense(&self, defense: &Defense) -> String;
     fn calc_special_defenses(&self) -> SpecialDefenses;
 }
 
@@ -113,11 +117,7 @@ impl HasDefenses for Creature
 where
     Creature: HasModifiers + HasArmor + HasAttributes + HasSize,
 {
-    fn calc_defense(&self, defense: &Defense) -> i32 {
-        if defense == &Defense::Mental && self.is_mindless() {
-            return self.calc_defense(&Defense::Fortitude);
-        }
-
+    fn calc_defense_modifier_attribute(&self, defense: &Defense) -> i32 {
         let dex_multiplier: f64 = match self.category {
             CreatureCategory::Character => {
                 if let Some(modifier) = self.minimum_dex_modifier() {
@@ -126,32 +126,78 @@ where
                     1.0
                 }
             }
-            CreatureCategory::Monster(_, role) => role.armor_dex_multiplier()
+            CreatureCategory::Monster(_, role) => role.armor_dex_multiplier(),
         };
         let armor_attribute_modifier =
             (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;
-        let attribute_bonus = match defense {
+
+        match defense {
             Defense::Armor => armor_attribute_modifier,
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
             Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
-        };
-        let armor_bonus = if defense.include_armor_bonus() {
+        }
+    }
+
+    fn calc_defense_modifier_armor(&self, defense: &Defense) -> i32 {
+        if defense.include_armor_bonus() {
             self.get_armor().iter().map(|a| a.defense()).sum()
         } else {
             0
-        };
-        let size_modifier = if matches!(defense, Defense::Reflex) {
+        }
+    }
+
+    fn calc_defense_modifier_size(&self, defense: &Defense) -> i32 {
+        if matches!(defense, Defense::Reflex) {
             self.get_size().reflex_modifier()
         } else {
             0
-        };
+        }
+    }
+
+    fn calc_defense(&self, defense: &Defense) -> i32 {
+        if defense == &Defense::Mental && self.is_mindless() {
+            return self.calc_defense(&Defense::Fortitude);
+        }
+
         self.level / 2
-            + attribute_bonus
-            + armor_bonus
-            + size_modifier
+            + self.calc_defense_modifier_attribute(defense)
+            + self.calc_defense_modifier_armor(defense)
+            + self.calc_defense_modifier_size(defense)
             + self.calc_total_modifier(ModifierType::Defense(*defense))
             + self.calc_total_modifier(ModifierType::AllDefenses)
+    }
+
+    fn explain_defense(&self, defense: &Defense) -> String {
+        if defense == &Defense::Mental && self.is_mindless() {
+            return self.explain_defense(&Defense::Fortitude);
+        }
+
+        let mut modifiers = self.get_modifiers_by_type(ModifierType::Defense(*defense));
+        modifiers.append(&mut self.get_modifiers_by_type(ModifierType::AllDefenses));
+
+        fn explain_component(val: i32, label: &str) -> String {
+            if val > 0 {
+                format!(" + ({val} {label})")
+            } else {
+                "".to_string()
+            }
+        }
+
+        format!(
+            "{total} = ({level} level){attribute}{armor}{size} + {modifiers}",
+            total = self.calc_defense(defense),
+            level = self.level / 2,
+            attribute =
+                explain_component(self.calc_defense_modifier_attribute(defense), "Attribute"),
+            armor = explain_component(self.calc_defense_modifier_armor(defense), "Armor"),
+            size = explain_component(self.calc_defense_modifier_size(defense), "Size"),
+            modifiers = modifiers
+                .iter()
+                .map(|m| m.description())
+                .collect::<Vec<String>>()
+                .join(" + "),
+        )
     }
 
     fn calc_special_defenses(&self) -> SpecialDefenses {

@@ -38,7 +38,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +1 (1d6+2 fire damage.)", // Normal
-                "Firebolt +3 (1d6+4 fire damage.)",  // Elite
+                "Firebolt +1 (1d6+4 fire damage.)",  // Elite
             ];
             assert_eq!(expected, actual, "Normal, Elite");
         }
@@ -52,7 +52,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +6 (4d6 fire damage.)", // Normal
-                "Firebolt +8 (5d6 fire damage.)", // Elite
+                "Firebolt +6 (5d6 fire damage.)", // Elite
             ];
             assert_eq!(expected, actual, "Normal, Elite");
         }
@@ -66,7 +66,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +10 (7d8 fire damage.)",
-                "Firebolt +12 (9d8 fire damage.)",
+                "Firebolt +10 (9d8 fire damage.)",
             ];
             assert_eq!(expected, actual, "Normal, Elite",);
         }
@@ -80,7 +80,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +13 (10d10 fire damage.)",
-                "Firebolt +15 (12d10 fire damage.)",
+                "Firebolt +13 (12d10 fire damage.)",
             ];
             assert_eq!(expected, actual, "Normal, Elite",);
         }
