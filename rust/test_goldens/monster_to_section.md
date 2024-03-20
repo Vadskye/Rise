@@ -5,7 +5,7 @@
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
-                    \monsubsection{Standard Monster}{1 Leader}
+                    \monsubsection{Example Monster}{1 Leader}
                     \monstersize{Medium planeforged}
                 \end{minipage}
                 \par \RaggedRight
@@ -22,67 +22,114 @@
                     \pari \textbf{Power} 4\sparkle \monsep 4
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \monsterabilitiesheader{Standard Monster}
+                \monsterabilitiesheader{Example Monster}
                 \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus3 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus1 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus5 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus1 slashing damage.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus1 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus1 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus2 slashing damage.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus1 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 slashing damage.
+            \end{activeability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
+                \hit 1d6\plus2 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Fortitude against one creature within \medrange.
+                \hit 1d6\plus2 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Generic Accuracy Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Generic Accuracy Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus3 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \minus3 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus6 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \minus3 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus3 physical damage.
-            \end{activeability}
-        \par
-            \begin{activeability}*{Whirlwind -- Claw}
-                \weapontag{Light}
-                \rankline
-                The standard monster makes a \plus3 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d4\plus2 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus3 slashing damage.
             \end{activeability}
 
@@ -92,7 +139,7 @@
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
-                    \monsubsection{Standard Monster}{1 Leader}[Elite]
+                    \monsubsection{Example Monster}{1 Leader}[Elite]
                     \monstersize{Medium planeforged}
                 \end{minipage}
                 \par \RaggedRight
@@ -109,71 +156,118 @@
                     \pari \textbf{Power} 8\sparkle \monsep 8
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \monsterabilitiesheader{Standard Monster}
-                \parhead{Condition Removal} The standard monster can remove conditions at the end of each round (see \pcref{Monster Conditions}).
+                \monsterabilitiesheader{Example Monster}
+                \parhead{Condition Removal} The example monster can remove conditions at the end of each round (see \pcref{Monster Conditions}).
             \par
-                \parhead{Elite Actions} The standard monster can use an additional \abilitytag{Elite} ability each round.
+                \parhead{Elite Actions} The example monster can use an additional \abilitytag{Elite} ability each round.
             \par
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus6 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus3 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus5 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus2 slashing damage.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus3 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus4 slashing damage.
+                The example monster makes a \plus3 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus3 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 slashing damage.
+            \end{activeability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
+                \hit 1d6\plus4 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Fortitude against one creature within \medrange.
+                \hit 1d6\plus4 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Generic Accuracy Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Generic Accuracy Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus1 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus6 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \minus3 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus12 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \minus3 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus12 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus6 physical damage.
-            \end{activeability}
-        \par
-            \begin{activeability}*{Whirlwind -- Claw}
-                \weapontag{Light}
-                \rankline
-                The standard monster makes a \plus3 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d4\plus4 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus6 slashing damage.
             \end{activeability}
 
@@ -183,7 +277,7 @@
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
-                    \monsubsection{Standard Monster}{10 Leader}
+                    \monsubsection{Example Monster}{10 Leader}
                     \monstersize{Medium planeforged}
                 \end{minipage}
                 \par \RaggedRight
@@ -200,67 +294,126 @@
                     \pari \textbf{Power} 11\sparkle \monsep 11
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \monsterabilitiesheader{Standard Monster}
+                \monsterabilitiesheader{Example Monster}
                 \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus8 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus4 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus14 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus2 slashing damage.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus4 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus4 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus5 slashing damage.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus4 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit 3d4\plus1d8\plus8 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit 3d4\plus1d8\plus8 slashing damage.
+            \end{activeability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
+                \hit 3d8 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
+                \hit 3d6 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
+                \hit 3d8 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
+                \hit 3d6 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Generic Accuracy Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus8 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Generic Accuracy Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus8 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus8 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus16 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus16 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus8 physical damage.
-            \end{activeability}
-        \par
-            \begin{activeability}*{Whirlwind -- Claw}
-                \weapontag{Light}
-                \rankline
-                The standard monster makes a \plus12 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d4\plus5 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus8 slashing damage.
             \end{activeability}
 
@@ -270,7 +423,7 @@
                 \newpage
                 \par\noindent
                 \begin{minipage}{\columnwidth}
-                    \monsubsection{Standard Monster}{10 Leader}[Elite]
+                    \monsubsection{Example Monster}{10 Leader}[Elite]
                     \monstersize{Medium planeforged}
                 \end{minipage}
                 \par \RaggedRight
@@ -287,70 +440,129 @@
                     \pari \textbf{Power} 15\sparkle \monsep 15
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
-                \monsterabilitiesheader{Standard Monster}
-                \parhead{Condition Removal} The standard monster can remove conditions at the end of each round (see \pcref{Monster Conditions}).
+                \monsterabilitiesheader{Example Monster}
+                \parhead{Condition Removal} The example monster can remove conditions at the end of each round (see \pcref{Monster Conditions}).
             \par
-                \parhead{Elite Actions} The standard monster can use an additional \abilitytag{Elite} ability each round.
+                \parhead{Elite Actions} The example monster can use an additional \abilitytag{Elite} ability each round.
             \par
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus12 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus6 physical damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Certain Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus14 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus3 slashing damage.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 physical damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus12 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus6 slashing damage.
             \end{activeability}
         \par
-            \begin{activeability}*{Claw}
-                \weapontag{Light}
+            \begin{activeability}*{Certain Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus9 \glossterm{strike} vs. Armor.
-                \hit 1d4\plus7 slashing damage.
+                The example monster makes a \plus12 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus6 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit 5d4\plus1d8\plus12 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Extra Damage Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
+                \hit 5d4\plus1d8\plus12 slashing damage.
+            \end{activeability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
+                \hit 5d8 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Firebolt}
+                \rankline
+                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
+                \hit 5d6 fire damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
+                \hit 5d8 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Fort Bolt}
+                \rankline
+                The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
+                \hit 5d6 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Generic Accuracy Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus12 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Generic Accuracy Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus10 \glossterm{strike} vs. Armor.
+                \hit 1d8\plus12 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus7 \glossterm{strike} vs. Armor.
+                The example monster makes a \plus7 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus12 slashing damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Bite}
+                \weapontag{Grappling}, \weapontag{Heavy}
+                \rankline
+                The example monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus24 physical damage.
+            \end{activeability}
+        \par
+            \begin{activeability}*{Powerful Greatsword}
+                \weapontag{Heavy}, \weapontag{Sweeping} (2)
+                \rankline
+                The example monster makes a \plus6 \glossterm{strike} vs. Armor.
+                \hit 2d8\plus24 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
-                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus12 physical damage.
-            \end{activeability}
-        \par
-            \begin{activeability}*{Whirlwind -- Claw}
-                \weapontag{Light}
-                \rankline
-                The standard monster makes a \plus12 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d4\plus7 slashing damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
                 \weapontag{Heavy}, \weapontag{Sweeping} (2)
                 \rankline
-                The standard monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
+                The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
                 \hit 1d8\plus12 slashing damage.
             \end{activeability}

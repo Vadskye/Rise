@@ -40,9 +40,9 @@ HP/DR/Total: 28 / 7 / 35
 Points / Self-hit: 39 / 50%
 
 ### Leader
-A/F/R/M: 8 / 9 / 8 / 8
+A/F/R/M: 8 / 9 / 8 / 9
 HP/DR/Total: 28 / 14 / 42
-Points / Self-hit: 41 / 70%
+Points / Self-hit: 42 / 60%
 
 ### Mystic
 A/F/R/M: 6 / 7 / 6 / 12
@@ -72,9 +72,9 @@ HP/DR/Total: 63 / 15 / 78
 Points / Self-hit: 55 / 60%
 
 ### Leader
-A/F/R/M: 11 / 13 / 11 / 11
+A/F/R/M: 11 / 13 / 11 / 13
 HP/DR/Total: 63 / 31 / 94
-Points / Self-hit: 57 / 80%
+Points / Self-hit: 59 / 70%
 
 ### Mystic
 A/F/R/M: 9 / 10 / 9 / 16
@@ -104,9 +104,9 @@ HP/DR/Total: 130 / 32 / 162
 Points / Self-hit: 71 / 50%
 
 ### Leader
-A/F/R/M: 14 / 17 / 14 / 14
+A/F/R/M: 14 / 17 / 14 / 17
 HP/DR/Total: 130 / 65 / 195
-Points / Self-hit: 73 / 80%
+Points / Self-hit: 76 / 60%
 
 ### Mystic
 A/F/R/M: 12 / 13 / 12 / 20
@@ -136,9 +136,9 @@ HP/DR/Total: 240 / 60 / 300
 Points / Self-hit: 91 / 50%
 
 ### Leader
-A/F/R/M: 18 / 21 / 18 / 18
+A/F/R/M: 18 / 21 / 18 / 21
 HP/DR/Total: 240 / 120 / 360
-Points / Self-hit: 93 / 70%
+Points / Self-hit: 96 / 60%
 
 ### Mystic
 A/F/R/M: 16 / 17 / 16 / 24

@@ -233,7 +233,7 @@ mod calculate_attack_outcome {
                 calculate_attack_outcome(
                     &attack,
                     attacker.calc_accuracy(),
-                    Monster::example_monster(*elite, level, None, None)
+                    Monster::example_monster(*elite, level)
                         .creature
                         .calc_defense(&Defense::Armor),
                     attacker.calc_explosion_target(),
@@ -258,7 +258,7 @@ mod calculate_attack_outcome {
                 calculate_attack_outcome(
                     &attack,
                     attacker.calc_accuracy(),
-                    Monster::example_monster(*elite, level, None, None)
+                    Monster::example_monster(*elite, level)
                         .creature
                         .calc_defense(&Defense::Armor),
                     attacker.calc_explosion_target(),

@@ -10,7 +10,7 @@ mod statistics {
         use super::*;
 
         fn generate_creature(elite: bool, level: i32) -> Creature {
-            let mut creature = Monster::example_monster(elite, level, None, None).creature;
+            let mut creature = Monster::example_monster(elite, level).creature;
             creature.add_modifier(
                 Modifier::Attack(
                     StandardAttack::Firebolt((level + 2) / 3).attack(),

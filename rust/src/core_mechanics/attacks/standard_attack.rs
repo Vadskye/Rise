@@ -40,6 +40,7 @@ pub enum StandardAttack {
     Firebolt(i32),
     Ignition(i32),
     InflictWound(i32),
+    MysticBoltFortitude(i32),
     Pyroclasm(i32),
     MindCrush(i32),
     PersonalIgnition(i32),
@@ -370,6 +371,15 @@ impl StandardAttack {
                 name: "Inflict Wound".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Short),
+            }.attack(),
+            Self::MysticBoltFortitude(rank) => SimpleSpell {
+                accuracy: 0,
+                crit: None,
+                defense: Defense::Fortitude,
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Energy])),
+                name: "Fort Bolt".to_string(),
+                tags: None,
+                targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             // TODO: add "and you suffer a glancing blow"
             Self::Pyroclasm(rank) => SimpleSpell {

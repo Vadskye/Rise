@@ -12,7 +12,7 @@ use super::write_golden_file;
 
 pub fn write_monster_to_section_golden() -> io::Result<()> {
     fn create_monster_section(level: i32, elite: bool) -> String {
-        let mut monster = Monster::example_monster(elite, level, None, None);
+        let mut monster = Monster::example_monster(elite, level);
         // Add some stock maneuvers so we can see how the maneuvers are used
         monster.creature.weapons.push(Weapon::greatsword());
         monster
