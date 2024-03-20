@@ -1,20 +1,15 @@
-use crate::calculations::statistical_combat::{
-    explain_monster_adpr,
-};
-use crate::core_mechanics::attacks::{HasAttacks};
+use crate::calculations::statistical_combat::explain_full_adpr;
+use crate::core_mechanics::attacks::HasAttacks;
 
 use crate::creatures::{Character, Monster};
 
-
-
-
-use std::{io};
+use std::io;
 
 use super::write_golden_file;
 
 pub fn write_monster_attacks_golden() -> io::Result<()> {
     fn explain_monster_attacks(level: i32, elite: bool) -> String {
-        let attacker = Monster::example_monster(elite, level, None, None).creature;
+        let attacker = Monster::example_monster(elite, level).creature;
         let defender = Character::fighter_shield(level).creature;
 
         format!(
@@ -24,7 +19,7 @@ pub fn write_monster_attacks_golden() -> io::Result<()> {
 ### Results
 {results}",
             attacks = attacker.explain_attacks().join(", "),
-            results = explain_monster_adpr(&attacker, &defender).join("\n"),
+            results = explain_full_adpr(&attacker, &defender).join("\n"),
         )
     }
 

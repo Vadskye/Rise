@@ -235,7 +235,7 @@ impl AttackDamagePerRound {
 
     pub fn explain(&self, attack_name: &str) -> String {
         format!(
-            "{attack_name: <8}: {total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
+            "{attack_name: <13}: {total} = ({damage_per_hit} dph * {hit_probability} hpr) + ({damage_per_crit} dpc * {crit_probability} cpr) + ({damage_per_glance} dpg * {glance_probability} gpr) = {hdpr} hdpr + {cdpr} cdpr + {gdpr} gdpr",
             total=dec2(self.total()),
             damage_per_hit=dec1(self.damage_per_hit),
             hit_probability=dec2(self.hit_probability),
@@ -425,18 +425,10 @@ fn dec2(val: f64) -> String {
     format!("{:.2}", val)
 }
 
-pub fn explain_monster_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
-    let claws = attacker.get_attack_by_substring("Claw").unwrap();
-    // TODO: this used to be a slam, so all of the damage values are wrong
-    let bite = attacker.get_attack_by_substring("Bite").unwrap();
-    vec![
-        calc_attack_damage_per_round(&claws, attacker, defender).explain("Claws"),
-        calc_attack_damage_per_round(&bite, attacker, defender).explain("Bite"),
-    ]
-}
-
-pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
-    let normal_strike = attacker.get_attack_by_substring("Generic Accuracy").unwrap();
+pub fn explain_maneuver_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
+    let normal_strike = attacker
+        .get_attack_by_substring("Generic Accuracy")
+        .unwrap();
     let certain_strike = attacker.get_attack_by_substring("Certain").unwrap();
     let generic_strike = attacker.get_attack_by_substring("Extra Damage").unwrap();
     let power_strike = attacker.get_attack_by_substring("Power").unwrap();
@@ -447,16 +439,31 @@ pub fn explain_standard_adpr(attacker: &Creature, defender: &Creature) -> Vec<St
         calc_attack_damage_per_round(&power_strike, attacker, defender).explain("Power"),
     ];
     if let Some(certain_plus) = attacker.get_attack_by_substring("Certain Strike+") {
-        attacks.push(calc_attack_damage_per_round(&certain_plus, attacker, defender).explain("Certain+"));
+        attacks.push(
+            calc_attack_damage_per_round(&certain_plus, attacker, defender).explain("Certain+"),
+        );
     }
     if let Some(power_plus) = attacker.get_attack_by_substring("Power Strike+") {
-        attacks.push(calc_attack_damage_per_round(&power_plus, attacker, defender).explain("Power+"));
+        attacks
+            .push(calc_attack_damage_per_round(&power_plus, attacker, defender).explain("Power+"));
     }
     if let Some(triple_damage) = attacker.get_attack_by_substring("Generic Triple") {
-        attacks.push(calc_attack_damage_per_round(&triple_damage, attacker, defender).explain("Triple"));
+        attacks.push(
+            calc_attack_damage_per_round(&triple_damage, attacker, defender).explain("Triple"),
+        );
     }
 
     attacks
+}
+
+pub fn explain_full_adpr(attacker: &Creature, defender: &Creature) -> Vec<String> {
+    attacker
+        .calc_all_attacks()
+        .iter()
+        .map(|attack| {
+            calc_attack_damage_per_round(attack, attacker, defender).explain(&attack.name)
+        })
+        .collect::<Vec<String>>()
 }
 
 pub fn generic_attack_outcome(

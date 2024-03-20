@@ -1,7 +1,7 @@
 use std::cmp::max;
 
 use crate::core_mechanics::abilities::ActiveAbility;
-use crate::core_mechanics::attacks::{Attack, Maneuver};
+use crate::core_mechanics::attacks::{Attack, Maneuver, StandardAttack};
 use crate::core_mechanics::{
     Attribute, HitPointProgression, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
 };
@@ -104,7 +104,7 @@ impl Creature {
         passive_abilities
     }
 
-    // These are useful for testing damage and balancing accuracy. They are the same man
+    // These are useful for testing damage and balancing accuracy.
     pub fn add_standard_maneuvers(&mut self) {
         // This differs slightly from the actual maneuver-granting archetypes because it can
         // grant GenericExtraDamage at ranks 2/4/6. This behavior is preferable when testing
@@ -128,6 +128,32 @@ impl Creature {
                 Some("Standard Maneuvers"),
                 None,
             );
+        }
+    }
+
+    // These are useful for testing damage and balancing accuracy.
+    pub fn add_standard_spells(&mut self) {
+        let mut new_attacks = vec![
+            StandardAttack::Firebolt(self.rank()).attack(),
+            StandardAttack::MysticBoltFortitude(self.rank()).attack(),
+        ];
+
+        // Add lower level, higher accuracy versions for comparison
+        if self.rank() >= 3 {
+            new_attacks.push(
+                StandardAttack::Firebolt(self.rank() - 2)
+                    .attack()
+                    .except(|a| a.accuracy += 2),
+            );
+            new_attacks.push(
+                StandardAttack::MysticBoltFortitude(self.rank() - 2)
+                    .attack()
+                    .except(|a| a.accuracy += 2),
+            );
+        }
+
+        for attack in new_attacks.into_iter() {
+            self.add_modifier(Modifier::Attack(attack), Some("Standard Spells"), None);
         }
     }
 

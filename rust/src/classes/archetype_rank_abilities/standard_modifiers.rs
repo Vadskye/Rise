@@ -10,7 +10,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 1,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(1).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(1).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(1).attack()),
             ]),
@@ -21,7 +20,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 2,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(2).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(2).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(2).attack()),
             ]),
@@ -32,7 +30,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 3,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(3).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(3).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(3).attack()),
             ]),
@@ -43,7 +40,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 4,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(4).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(4).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(4).attack()),
             ]),
@@ -54,7 +50,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 5,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(5).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(5).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(5).attack()),
             ]),
@@ -65,7 +60,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 6,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(6).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(6).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(6).attack()),
             ]),
@@ -76,7 +70,6 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             rank: 7,
             description: "",
             modifiers: Some(vec![
-                Modifier::Attack(StandardAttack::DarkGrasp(7).attack()),
                 Modifier::Attack(StandardAttack::InflictWound(7).attack()),
                 Modifier::Attack(StandardAttack::Firebolt(7).attack()),
             ]),
