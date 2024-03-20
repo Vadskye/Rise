@@ -1,5 +1,5 @@
 use crate::calculations::statistical_combat::{
-    calc_attack_damage_per_round, explain_standard_adpr, find_best_attack,
+    calc_attack_damage_per_round, explain_maneuver_adpr, find_best_attack,
 };
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::creatures::{Character, Creature, Monster};
@@ -16,7 +16,7 @@ Best attack: {best}
 {results}",
         defender_name = defender.name.as_ref().unwrap(),
         best = find_best_attack(attacker, defender).unwrap().name,
-        results = explain_standard_adpr(attacker, defender).join("\n"),
+        results = explain_maneuver_adpr(attacker, defender).join("\n"),
     )
 }
 

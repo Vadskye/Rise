@@ -81,11 +81,11 @@ impl Monster {
     }
 
     pub fn standard_example_monster(level: i32) -> Monster {
-        Self::example_monster(false, level, None, None)
+        Self::example_monster(false, level)
     }
 
     pub fn elite_example_monster(level: i32) -> Monster {
-        Self::example_monster(true, level, None, None)
+        Self::example_monster(true, level)
     }
 
     pub fn add_magical_attack(&mut self) {
@@ -301,8 +301,9 @@ impl Monster {
         monster.creature.set_base_attributes([2, 2, 2, 2, 2, 2]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Constitution, Attribute::Perception]);
+            .set_attribute_scaling(level, [Attribute::Constitution, Attribute::Willpower]);
         monster.creature.add_standard_maneuvers();
+        monster.creature.add_standard_spells();
         monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Leader");
 
@@ -315,9 +316,8 @@ impl Monster {
         monster
             .creature
             .set_attribute_scaling(level, [Attribute::Perception, Attribute::Willpower]);
-        // TODO: mystic should use an array of magical attacks instead of maneuvers
-        monster.creature.add_standard_maneuvers();
-        monster.creature.weapons = vec![Weapon::bite()];
+        monster.creature.add_standard_spells();
+        monster.creature.weapons = vec![];
         monster.creature.set_name("Mystic");
 
         monster
@@ -380,35 +380,24 @@ impl Monster {
     pub fn example_monster(
         elite: bool,
         level: i32,
-        role: Option<Role>,
-        starting_attribute: Option<i32>,
     ) -> Monster {
         let cr = if elite {
             ChallengeRating::Four
         } else {
             ChallengeRating::One
         };
-        let role = if let Some(r) = role { r } else { Role::Leader };
 
-        let mut monster = Monster::new(elite, CreatureType::Planeforged, role, level);
-        monster.creature.weapons.push(StandardWeapon::Claw.weapon());
-        monster
-            .creature
-            .weapons
-            .push(StandardWeapon::MonsterBite.weapon());
-        monster.creature.name = Some("Standard Monster".to_string());
-
-        let starting_attribute = if let Some(a) = starting_attribute {
-            a
-        } else {
-            2
-        };
+        let mut monster = Monster::new(elite, CreatureType::Planeforged, Role::Leader, level);
+        monster.creature.weapons = vec![Weapon::bite()];
+        monster.creature.add_standard_maneuvers();
+        monster.creature.add_standard_spells();
+        monster.creature.name = Some("Example Monster".to_string());
 
         // 2 for most attributes, 4 str, 4 wil
         for attribute_name in Attribute::all() {
             monster
                 .creature
-                .set_base_attribute(attribute_name, starting_attribute);
+                .set_base_attribute(attribute_name, 2);
         }
         monster
             .creature
