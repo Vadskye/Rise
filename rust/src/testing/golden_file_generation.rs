@@ -12,7 +12,7 @@ pub use accuracy::{write_pve_accuracy_golden, write_pvp_accuracy_golden};
 pub use character_attacks::{
     write_attack_comparison_golden, write_brute_attacks_golden,
     write_fighter_greatmace_attacks_golden, write_fighter_shield_attacks_golden,
-    write_perception_greataxe_attacks_golden,
+    write_mystic_attacks_golden, write_perception_greataxe_attacks_golden,
 };
 pub use character_statistics::write_standard_character_statistics_golden;
 pub use defenses::{write_character_defenses_golden, write_monster_defenses_golden};
