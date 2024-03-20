@@ -23,30 +23,34 @@ pub fn write_monster_attacks_golden() -> io::Result<()> {
         )
     }
 
+    fn format_levels(elite: bool) -> String {
+        [1, 5, 10, 15, 20]
+            .iter()
+            .map(|&level| {
+                format!(
+                    "### Level {level}
+
+{attacks}",
+                    attacks = explain_monster_attacks(level, elite)
+                )
+            })
+            .collect::<Vec<String>>()
+            .join("\n\n")
+    }
+
     let golden = format!(
         "
 # Monster Attack DPR
 
-## Level 1 Normal
+## Normal
 
-{level_1_normal}
+{normal}
 
-## Level 1 Elite
+## Elite
 
-{level_1_elite}
-
-## Level 10 Normal
-
-{level_10_normal}
-
-## Level 10 Elite
-
-{level_10_elite}
-        ",
-        level_1_normal = explain_monster_attacks(1, false),
-        level_1_elite = explain_monster_attacks(1, true),
-        level_10_normal = explain_monster_attacks(10, false),
-        level_10_elite = explain_monster_attacks(10, true),
+{elite}",
+        normal = format_levels(false),
+        elite = format_levels(true),
     );
 
     write_golden_file("monster_attack_dpr", golden)

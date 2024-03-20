@@ -1,5 +1,5 @@
 use crate::calculations::statistical_combat::{
-    calc_attack_damage_per_round, explain_maneuver_adpr, find_best_attack,
+    calc_attack_damage_per_round, explain_full_adpr, explain_maneuver_adpr, find_best_attack,
 };
 use crate::core_mechanics::attacks::HasAttacks;
 use crate::creatures::{Character, Creature, Monster};
@@ -16,7 +16,14 @@ Best attack: {best}
 {results}",
         defender_name = defender.name.as_ref().unwrap(),
         best = find_best_attack(attacker, defender).unwrap().name,
-        results = explain_maneuver_adpr(attacker, defender).join("\n"),
+        // This is hacky. `explain_maneuver_adpr` has cleaner formatting for people who only have
+        // maneuvers, but we don't have an easy way to identify that.
+        results = if attacker.get_attack_by_substring("Bolt").is_some() {
+            explain_full_adpr(attacker, defender)
+        } else {
+            explain_maneuver_adpr(attacker, defender)
+        }
+        .join("\n"),
     )
 }
 
@@ -49,6 +56,13 @@ pub fn write_brute_attacks_golden() -> io::Result<()> {
     write_golden_file(
         "brute_attacks",
         format_character_dpr_vs_monster(&|level| Monster::standard_brute(level).creature),
+    )
+}
+
+pub fn write_mystic_attacks_golden() -> io::Result<()> {
+    write_golden_file(
+        "mystic_attacks",
+        format_character_dpr_vs_monster(&|level| Monster::standard_mystic(level).creature),
     )
 }
 

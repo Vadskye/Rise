@@ -23,7 +23,13 @@
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \monsterabilitiesheader{Example Monster}
-                \begin{activeability}*{Bite}
+                \begin{magicalactiveability}*{Armor Bolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
+                \hit 1d6\plus2 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -71,12 +77,6 @@
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus3 slashing damage.
             \end{activeability}
-        \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus2 fire damage.
-            \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
                 \rankline
@@ -161,6 +161,12 @@
             \par
                 \parhead{Elite Actions} The example monster can use an additional \abilitytag{Elite} ability each round.
             \par
+            \begin{magicalactiveability}*{Armor Bolt}
+                \rankline
+                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
+                \hit 1d6\plus4 energy damage.
+            \end{magicalactiveability}
+        \par
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
@@ -209,12 +215,6 @@
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
                 \hit 1d8\plus6 slashing damage.
             \end{activeability}
-        \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus4 fire damage.
-            \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
                 \rankline
@@ -295,7 +295,19 @@
                     \pari \textbf{Alignment}
                 \end{monsterstatistics}
                 \monsterabilitiesheader{Example Monster}
-                \begin{activeability}*{Bite}
+                \begin{magicalactiveability}*{Armor Bolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
+                \hit 3d6\plus1d10 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Armor Bolt-}
+                \rankline
+                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
+                \hit 1d8\plus5 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
@@ -344,28 +356,16 @@
                 \hit 3d4\plus1d8\plus8 slashing damage.
             \end{activeability}
         \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
-                \hit 3d8 fire damage.
-            \end{magicalactiveability}
-        \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 3d6 fire damage.
-            \end{magicalactiveability}
-        \par
             \begin{magicalactiveability}*{Fort Bolt}
                 \rankline
                 The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
-                \hit 3d8 energy damage.
+                \hit 3d6\plus1d10 energy damage.
             \end{magicalactiveability}
         \par
-            \begin{magicalactiveability}*{Fort Bolt}
+            \begin{magicalactiveability}*{Fort Bolt-}
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 3d6 energy damage.
+                \hit 1d8\plus5 energy damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -445,6 +445,18 @@
             \par
                 \parhead{Elite Actions} The example monster can use an additional \abilitytag{Elite} ability each round.
             \par
+            \begin{magicalactiveability}*{Armor Bolt}
+                \rankline
+                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
+                \hit 5d6\plus1d10 energy damage.
+            \end{magicalactiveability}
+        \par
+            \begin{magicalactiveability}*{Armor Bolt-}
+                \rankline
+                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
+                \hit 1d8\plus7 energy damage.
+            \end{magicalactiveability}
+        \par
             \begin{activeability}*{Bite}
                 \weapontag{Grappling}, \weapontag{Heavy}
                 \rankline
@@ -494,28 +506,16 @@
                 \hit 5d4\plus1d8\plus12 slashing damage.
             \end{activeability}
         \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
-                \hit 5d8 fire damage.
-            \end{magicalactiveability}
-        \par
-            \begin{magicalactiveability}*{Firebolt}
-                \rankline
-                The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 5d6 fire damage.
-            \end{magicalactiveability}
-        \par
             \begin{magicalactiveability}*{Fort Bolt}
                 \rankline
                 The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
-                \hit 5d8 energy damage.
+                \hit 5d6\plus1d10 energy damage.
             \end{magicalactiveability}
         \par
-            \begin{magicalactiveability}*{Fort Bolt}
+            \begin{magicalactiveability}*{Fort Bolt-}
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 5d6 energy damage.
+                \hit 1d8\plus7 energy damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}

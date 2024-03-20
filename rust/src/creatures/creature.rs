@@ -134,21 +134,27 @@ impl Creature {
     // These are useful for testing damage and balancing accuracy.
     pub fn add_standard_spells(&mut self) {
         let mut new_attacks = vec![
-            StandardAttack::Firebolt(self.rank()).attack(),
+            StandardAttack::MysticBoltArmor(self.rank()).attack(),
             StandardAttack::MysticBoltFortitude(self.rank()).attack(),
         ];
 
         // Add lower level, higher accuracy versions for comparison
         if self.rank() >= 3 {
             new_attacks.push(
-                StandardAttack::Firebolt(self.rank() - 2)
+                StandardAttack::MysticBoltArmor(self.rank() - 2)
                     .attack()
-                    .except(|a| a.accuracy += 2),
+                    .except(|a| {
+                        a.accuracy += 2;
+                        a.name = format!("{}-", a.name);
+                    }),
             );
             new_attacks.push(
                 StandardAttack::MysticBoltFortitude(self.rank() - 2)
                     .attack()
-                    .except(|a| a.accuracy += 2),
+                    .except(|a| {
+                        a.accuracy += 2;
+                        a.name = format!("{}-", a.name);
+                    }),
             );
         }
 
