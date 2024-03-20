@@ -41,6 +41,8 @@ fn write_character_goldens() -> io::Result<()> {
 }
 
 fn write_monster_goldens() -> io::Result<()> {
+    golden_file_generation::write_mystic_attacks_golden()
+        .expect("Should write mystic attacks");
     golden_file_generation::write_brute_attacks_golden()
         .expect("Should write brute attacks");
     golden_file_generation::write_monster_attacks_golden().expect("Should write monster attacks");
