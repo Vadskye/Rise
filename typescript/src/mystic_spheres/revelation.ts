@@ -430,6 +430,8 @@ export const revelation: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // TODO: should spells be penalized for being sustain (standard) instead of immediate?
+    // This is the same rank as an immediate-only spell.
     {
       name: 'Field of Visions',
 
@@ -437,11 +439,13 @@ export const revelation: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against each \\glossterm{enemy} in a \\medarea radius within \\medrange.
+          You create a field of hallucinatory visions in a \\medarea radius \\glossterm{zone} within \\medrange.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 4,
       scaling: 'accuracy',
+      tags: ['Sustain (attuneable, standard)'],
     },
 
     {
