@@ -691,7 +691,7 @@ function calcAccuracyCrScaling(level, challengeRating) {
   let levelScaling = 0;
   if (challengeRating > 0) {
     let levels_with_accuracy_bonuses = [7, 19];
-    for (const bonus_level in levels_with_accuracy_bonuses) {
+    for (const bonus_level of levels_with_accuracy_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;
       }
@@ -708,7 +708,7 @@ function calcDefenseCrScaling(level, challengeRating) {
   let levelScaling = 0;
   if (challengeRating > 0) {
     let levels_with_defense_bonuses = [5, 11, 17];
-    for (const bonus_level in levels_with_defense_bonuses) {
+    for (const bonus_level of levels_with_defense_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;
       }
