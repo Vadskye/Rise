@@ -203,7 +203,7 @@ export const penetratingPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a piercing weapon.
-        \\hit If the target takes damage, it takes a \minus1 penalty to all defenses as a \glossterm{condition}.
+        \\hit If the target takes damage, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,

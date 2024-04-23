@@ -532,11 +532,11 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Mass Longshot',
+      name: 'Mass Distant Sight',
 
       functionsLike: {
         mass: true,
-        name: 'Longshot',
+        name: 'Distant Sight',
       },
       // narrative: '',
       rank: 4,
