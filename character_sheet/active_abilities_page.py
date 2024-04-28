@@ -47,6 +47,7 @@ def create_page(destination):
                     """
                         This tab is used to track the abilities that you can use.
                         Each ability you add here will appear as a button on the Core page.
+                        Weapon-based strikes will automatically apply accuracy and damage from the weapons you listed in the Items tab.
                     """,
                     div({"class": "power-reminder"}, f"""
                         As a reminder, your magical✨ power is {magical_power} and your mundane power is {mundane_power}.

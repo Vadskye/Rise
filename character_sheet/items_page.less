@@ -10,7 +10,7 @@
     }
 }
 .name {
-    width: 15em;
+    width: 18em;
 }
 .armor-row {
     flex-grow: 1;
@@ -34,14 +34,16 @@
 .attunement-effect, .weapon-effects {
     flex-grow: 1;
 }
-.weapon-name, .weapon-accuracy, .calculated-weapon-damage-dice, .weapon-damage-dice, .weapon-tags {
-    margin-right: 0.5em;
-}
-.weapon-name {
-    flex-grow: 1;
-}
-.weapon-tags {
-    width: 15em;
+.weapon {
+    gap: 0.5em;
+    margin-top: 0.5em;
+
+    .weapon-name {
+        flex-grow: 1;
+    }
+    .weapon-tags {
+        width: 15em;
+    }
 }
 
 .attune-points {
