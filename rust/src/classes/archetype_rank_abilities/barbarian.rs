@@ -48,7 +48,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     You are also \glossterm{briefly} \impervious to all damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d8.
+                    \rank{4} The extra damage increases to 1d10.
                     \rank{5} The extra damage increases to 3d6.
                     \rank{6} The extra damage increases to 3d10.
                     \rank{7} The extra damage increases to 5d10.
