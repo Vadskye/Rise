@@ -148,7 +148,6 @@ def creation_guidance():
                 """
                     Choose your character's attributes, not counting any species modifiers.
                     Changing your attributes here automatically updates most things that are affected by those attributes, including skills and defenses.
-                    If your power increases, or you gain additional insight points, you will need to make the appropriate changes manually.
 
                     As you level up, your attributes increase.
                     You can add those improvements in the second row.
@@ -258,6 +257,7 @@ def creation_guidance():
                 """
                     Choose your character's first class archetype.
                     As you gain new class archetypes, you should record them here.
+                    <br>
                     You will need to add custom modifiers in the <b>Modifiers</b> tab to reflect any numeric effects of your class archetypes.
                     If your archetypes give you special abilities, you should add those in the <b>Abilities</b> tab.
                     <br>

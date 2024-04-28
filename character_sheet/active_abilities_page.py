@@ -47,7 +47,9 @@ def create_page(destination):
                     """
                         This tab is used to track the abilities that you can use.
                         Each ability you add here will appear as a button on the Core page.
-                        Weapon-based strikes will automatically apply accuracy and damage from the weapons you listed in the Items tab.
+                        You can reference character statistics in abilities by embedding inline dice rolls, like: <code>[[d8+@{magical_power}]]</code>.
+                        <br>
+                        Weapon-based strikes will automatically use accuracy and damage values from the weapons you listed in the Items tab.
                     """,
                     div({"class": "power-reminder"}, f"""
                         As a reminder, your magical✨ power is {magical_power} and your mundane power is {mundane_power}.
