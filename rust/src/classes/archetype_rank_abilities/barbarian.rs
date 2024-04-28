@@ -487,7 +487,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \textit{feral strike} ability.
                 \begin{activeability}{Feral Strike}
                     \rankline
-                    Make a melee \glossterm{strike}.
+                    Make a melee or thrown \glossterm{strike}.
                     % 50% chance of +5.5 accuracy, so almost +3 accuracy
                     You reduce your \glossterm{explosion target} by 5 (see \pcref{Exploding Attacks}).
 
