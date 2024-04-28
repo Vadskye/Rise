@@ -37,6 +37,7 @@ def create_page(_destination):
                         [
                             skill_modifiers(),
                             vital_wound_chart(),
+                            weight_limits(),
                         ]
                     ),
                     common_concepts(),
@@ -92,6 +93,74 @@ def vital_roll_effect(roll):
         "10+": "No extra effect",
     }[roll]
 
+
+def weight_limits():
+    min_strength = -2
+    max_strength = 10
+
+    return flex_col(
+        {"class": "weight-limits"},
+        [
+            div({"class": "section-header"}, "Weight Limits"),
+            flex_row(
+                {"class": "weight-limit-chart"},
+                [
+                    flex_col(
+                        [
+                            div({"class": "header"}, "Strength"),
+                            "".join(
+                                [
+                                    div(str(s)) for s in range(min_strength, max_strength)
+                                ]
+                            ),
+                        ]
+                    ),
+                    flex_col(
+                        [
+                            div({"class": "header"}, "Carrying"),
+                            "".join(
+                                [
+                                    div(carrying_capacity(strength))
+                                    for strength in range(min_strength, max_strength)
+                                ]
+                            ),
+                        ]
+                    ),
+                    flex_col(
+                        [
+                            div({"class": "header"}, "Push/Drag"),
+                            "".join(
+                                [
+                                    div(carrying_capacity(strength + 3))
+                                    for strength in range(min_strength, max_strength)
+                                ]
+                            ),
+                        ]
+                    ),
+                ],
+            ),
+        ],
+    )
+
+
+def carrying_capacity(strength):
+    return {
+        -2: "Small x2",
+        -1: "Small x4",
+        0: "Small x8",
+        1: "Medium x2",
+        2: "Medium x4",
+        3: "Medium x8",
+        4: "Large x2",
+        5: "Large x4",
+        6: "Large x8",
+        7: "Huge x2",
+        8: "Huge x4",
+        9: "Huge x8",
+        10: "Garg x2",
+        11: "Garg x4",
+        12: "Garg x8",
+    }[strength]
 
 def skill_modifiers():
     return flex_col(
