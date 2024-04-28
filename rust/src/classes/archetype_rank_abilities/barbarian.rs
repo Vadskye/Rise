@@ -45,7 +45,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Strike}
                     \rankline
                     Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
-                    You are also \glossterm{briefly} \impervious to all damage.
+                    You also \glossterm{briefly} gain a \plus4 bonus to defenses against damaging attacks.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
