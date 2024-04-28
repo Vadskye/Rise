@@ -305,8 +305,10 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell, you may treat all effects of the spell as if you were located at any Small or larger living plant within \medrange instead of in your current location.
-                This allows you to measure the spell's range from the plant's location, cone-shaped areas originate from the plant's location instead of your own, and so on.
+                Whenever you cast a spell, you may choose a Small or larger living plant within \medrange of you.
+                If you do, the spell takes effect as if you were in the plant's location.
+                This affects your \glossterm{line of effect} for the ability, but not your \glossterm{line of sight} (since you still see from your normal location).
+                Since an ability's range is measured from your location, this can allow you to affect targets outside your normal range.
             ",
             modifiers: None,
         },
