@@ -267,7 +267,7 @@ fn amulets() -> Vec<Apparel> {
             If you have the \ability<skill exemplar> rogue ability, you gain a +1 \glossterm<enhancement bonus> to all untrained skills.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
+            ItemUpgrade::new(5, r"Increase \ability<skill exemplar> bonus with untrained skills by 3", r"
                 The bonus increases to +3.
             "),
         ],
