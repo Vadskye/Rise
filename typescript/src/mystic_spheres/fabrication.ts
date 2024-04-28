@@ -180,7 +180,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
           When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
-          This attack does not damage any \\glossterm{walls} in the area.
+          This attack does not damage thin \\glossterm{walls} in the area.
         `,
       },
       rank: 4,
@@ -199,7 +199,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
           When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
-          This attack does not damage any \\glossterm{walls} in the area.
+          This attack does not damage thin \\glossterm{walls} in the area.
         `,
       },
       rank: 7,
