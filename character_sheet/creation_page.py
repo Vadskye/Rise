@@ -287,11 +287,12 @@ def creation_guidance():
             insight_points_step(),
             skills_step(),
             creation_step(
-                "Weapons",
+                "Equipment Proficiencies",
                 """
-                    Choose or record the weapon groups your character can use.
+                    Record the weapon and armor groups your character can use in the <b>Items</b> tab.
+                    It automatically calculates proficiencies from your base class.
                 """,
-                text_input({"name": "weapon_groups"}),
+                "",
             ),
             creation_step(
                 "Items",
