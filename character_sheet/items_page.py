@@ -274,17 +274,27 @@ def weapon(i):
                 {"name": f"weapon_{i}_accuracy"},
             ),
             labeled_text_input(
+                "Base damage",
+                {"class": "weapon-damage-dice"},
+                {"name": f"weapon_{i}_damage_dice"},
+            ),
+            labeled_text_input(
+                "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
+            ),
+            underlabeled_checkbox(
+                "Heavy?",
+                None,
+                {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
+            ),
+            labeled_text_input(
                 "Magical damage",
                 {"class": "weapon-damage-dice"},
-                {"name": f"weapon_{i}_magical_damage_dice"},
+                input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
             ),
             labeled_text_input(
                 "Mundane damage",
                 {"class": "weapon-damage-dice"},
-                {"name": f"weapon_{i}_mundane_damage_dice"},
-            ),
-            labeled_text_input(
-                "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
+                input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
             ),
         ],
     )

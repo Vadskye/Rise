@@ -616,7 +616,7 @@ function handleCoreStatistics() {
   handleVitalRolls();
   handleUniversalAbilities();
   handleUnknownStatistic();
-  // handleWeaponDamageDice();
+  handleWeaponDamageDice();
   handleWeaponSanitization();
 }
 
@@ -1866,15 +1866,6 @@ function handleNonArmorDefense(defense, attribute) {
   );
 }
 
-function formatWeaponDamagePlusd(power) {
-  const plusd = Math.floor(power / 2);
-  const plusd6 = Math.floor(plusd / 3);
-  const plusd6Text = plusd6 > 0 ? `+${plusd6}d6` : '';
-  const plusdOnly = plusd % 3;
-  const plusdOnlyText = plusdOnly > 0 ? `+${plusdOnly}d` : '';
-  return [plusdOnlyText, plusd6Text].filter(Boolean).join(" and ");
-}
-
 function handleMagicalPower() {
   onGet(
     {
@@ -1891,7 +1882,6 @@ function handleMagicalPower() {
 
       setAttrs({
         magical_power: totalValue,
-        magical_weapon_plusd: formatWeaponDamagePlusd(totalValue),
         magical_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
             name: `half level`,
@@ -1927,7 +1917,6 @@ function handleMundanePower() {
 
       setAttrs({
         mundane_power: totalValue,
-        mundane_weapon_plusd: formatWeaponDamagePlusd(totalValue),
         mundane_power_explanation: formatCombinedExplanation(v.miscExplanation, [
           {
             name: `half level`,
@@ -2360,8 +2349,8 @@ function handleStrikeAttacks() {
     const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
     const weapon_keys = [];
     for (let i = 0; i < 3; i++) {
-      weapon_keys.push(`weapon_${i}_magical_damage_dice`);
-      weapon_keys.push(`weapon_${i}_mundane_damage_dice`);
+      weapon_keys.push(`weapon_${i}_magical_damage_total`);
+      weapon_keys.push(`weapon_${i}_mundane_damage_total`);
     }
     getAttrs(
       [
@@ -2377,7 +2366,7 @@ function handleStrikeAttacks() {
 
         const weaponDice = [];
         for (let i = 0; i < 3; i++) {
-          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_dice`]);
+          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_total`]);
         }
         callback({
           extraDamage: v[extra_damage_key],
@@ -2468,8 +2457,8 @@ function handleStrikeAttacks() {
 
   // Global strike attack change
   on(
-    "change:weapon_0_magical_damage_dice change:weapon_1_magical_damage_dice change:weapon_2_magical_damage_dice" +
-    "change:weapon_0_mundane_damage_dice change:weapon_1_mundane_damage_dice change:weapon_2_mundane_damage_dice" +
+    "change:weapon_0_magical_damage_total change:weapon_1_magical_damage_total change:weapon_2_magical_damage_total" +
+    "change:weapon_0_mundane_damage_total change:weapon_1_mundane_damage_total change:weapon_2_mundane_damage_total" +
     " change:level change:magical_power change:mundane_power",
     function() {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
@@ -2661,43 +2650,47 @@ function handleVitalWounds() {
   );
 }
 
-// function handleWeaponDamageDice() {
-//   onGet(
-//     {
-//       miscName: "weapon_damage_dice",
-//       numeric: ["level", "challenge_rating", "strength", "willpower"],
-//     },
-//     (v) => {
-//       const fromCr = v.challenge_rating > 0 ? Math.floor((v.level - 1) / 3) : 0;
-//       const totalValue = fromCr + v.misc;
-//       const magicalValue = totalValue + Math.floor(v.willpower / 2);
-//       const mundaneValue = totalValue + Math.floor(v.strength / 2);
-//       setAttrs({
-//         magical_damage_dice: magicalValue,
-//         magical_damage_dice_explanation: formatCombinedExplanation(
-//           v.miscExplanation,
-//           [
-//             { name: "Wil", value: magicalValue - totalValue },
-//             { name: "CR", value: fromCr },
-//           ]
-//         ),
-//         mundane_damage_dice: mundaneValue,
-//         mundane_damage_dice_explanation: formatCombinedExplanation(
-//           v.miscExplanation,
-//           [
-//             { name: "Str", value: mundaneValue - totalValue },
-//             { name: "CR", value: fromCr },
-//           ]
-//         ),
-//         weapon_damage_dice_explanation: formatCombinedExplanation(
-//           v.miscExplanation,
-//           [{ name: "CR", value: fromCr }]
-//         ),
-//         weapon_damage_dice: totalValue,
-//       });
-//     }
-//   );
-// }
+function handleWeaponDamageDice() {
+  for (const weaponIndex of [0, 1, 2]) {
+    const heavyKey = `weapon_${weaponIndex}_heavy`;
+    const damageDiceKey = `weapon_${weaponIndex}_damage_dice`;
+    const nameKey = `weapon_${weaponIndex}_name`;
+    const magicalTotalKey = `weapon_${weaponIndex}_magical_damage_total`;
+    const mundaneTotalKey = `weapon_${weaponIndex}_mundane_damage_total`;
+
+    onGet(
+      {
+        boolean: [heavyKey],
+        numeric: ["strength", "willpower", "mundane_power", "magical_power"],
+        string: [damageDiceKey, nameKey],
+      },
+      (v) => {
+        if (!v[nameKey]) {
+          setAttrs({
+            [magicalTotalKey]: "",
+            [mundaneTotalKey]: "",
+          });
+
+          return;
+        }
+
+        let magicalPowerBonus = Math.floor(v.magical_power / 2);
+        let mundanePowerBonus = Math.floor(v.mundane_power / 2);
+        if (v[heavyKey]) {
+          magicalPowerBonus += Math.floor(v.magical_power / 3);
+          mundanePowerBonus += Math.floor(v.mundane_power / 3);
+        }
+        const magicalTotal = `${v[damageDiceKey]}+${magicalPowerBonus}`;
+        const mundaneTotal = `${v[damageDiceKey]}+${mundanePowerBonus}`;
+
+        setAttrs({
+          [magicalTotalKey]: magicalTotal,
+          [mundaneTotalKey]: mundaneTotal,
+        });
+      }
+    )
+  }
+}
 
 function handleWeaponSanitization() {
   const keys = [];
