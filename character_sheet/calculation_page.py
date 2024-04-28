@@ -31,6 +31,15 @@ def create_page(_destination):
     return flex_col(
         {"class": "page calculation-page"},
         [
+            div({"class": "explanation"},
+                """
+                This page explains the calculations used for all of your important statistics.
+                You can use it to make sure that the sheet is calculating everything correctly.
+                <br>
+                On the right side, you can see the attribute name for each statistic.
+                You can use those when writing abilities and macros to automatically use the right numbers.
+                """
+            ),
             abilities_known(),
             non_attribute(),
             strength_based(),
