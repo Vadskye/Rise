@@ -486,6 +486,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                 is_magical: true,
                 name: "Wind Screen".to_string(),
             }));
+            // TODO: convert to active abilities
             if rank >= 2 {
                 modifiers.push(Modifier::Attack(StandardAttack::Windslash(rank).attack()));
             }
