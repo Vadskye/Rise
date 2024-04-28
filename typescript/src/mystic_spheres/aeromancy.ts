@@ -667,7 +667,7 @@ export const aeromancy: MysticSphere = {
         This can allow it to breathe underwater and avoid inhalation-based poisons.
       `,
       // narrative: '',
-      rank: 2,
+      rank: 1,
       type: 'Attune (target)',
     },
     {
@@ -680,7 +680,7 @@ export const aeromancy: MysticSphere = {
         This can allow it to breathe underwater and avoid inhalation-based poisons.
       `,
       // narrative: '',
-      rank: 4,
+      rank: 3,
       type: 'Attune (target)',
     },
     {
