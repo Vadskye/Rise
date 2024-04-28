@@ -656,13 +656,13 @@ export const aeromancy: MysticSphere = {
 
   rituals: [
     {
-      name: 'Limited Air Bubble',
+      name: 'Limited Air Supply',
 
       castingTime: 'one minute',
       effect: `
         Choose up to six ritual participants.
         Each target gains a temporary supply of air that it can use to breathe.
-        It can activate the air bubble as a \\glossterm{free action}.
+        It can activate the air supply as a \\glossterm{free action}.
         When it does, it gains the ability to breathe clear, clean air regardless of its surroundings for one minute.
         This can allow it to breathe underwater and avoid inhalation-based poisons.
       `,
@@ -671,7 +671,7 @@ export const aeromancy: MysticSphere = {
       type: 'Attune (target)',
     },
     {
-      name: 'Air Bubble',
+      name: 'Air Supply',
 
       castingTime: 'one minute',
       effect: `
