@@ -29,7 +29,9 @@ def create_page(_destination):
     return flex_col(
         {"class": "page reference-page"},
         [
-            textarea({"class": "rust", "readonly": True, "name": "rust"}),
+            # TODO: add a way to show this only for me, but not other people
+            # using this sheet
+            # textarea({"class": "rust", "readonly": True, "name": "rust"}),
             flex_row(
                 {"class": "reference-row"},
                 [

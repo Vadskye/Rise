@@ -593,7 +593,9 @@ function handleEverything() {
   // handleModifierExplanations();
   handleMonsterChatColor();
   handleResources();
-  handleRust();
+  // TODO: reenable once this actually has value. Disabled for now to avoid performance
+  // penalties.
+  // handleRust();
   handleSize();
   handleSkills();
   handleVitalWounds();
