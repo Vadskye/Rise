@@ -71,6 +71,8 @@ def creation_guidance():
                 "Species",
                 """
                     Choose your character's species.
+                    This does not automatically update any of your statistics.
+                    <br>
                     You should add any numerical changes, such as attribute modifiers, in the <b>Modifiers</b> tab.
                     Non-numeric abilities, such as darkvision, should go in the <b>Abilities</b> tab if you want to be able to push a button to reference them.
                     If you don't care about seeing the abilities that often, you can record them under "Passive Abilities" in the <b>Identity</b> tab.
@@ -115,6 +117,7 @@ def creation_guidance():
                     Set your character's size.
                     Normally, your size is Medium.
                     Some special abilities can increase your size.
+                    <br>
                     Changing your size here automatically updates your base speed, Reflex defense, and Stealth skill.
                 """,
                 select(
@@ -144,9 +147,12 @@ def creation_guidance():
                 "Attributes",
                 """
                     Choose your character's attributes, not counting any species modifiers.
+                    Changing your attributes here automatically updates most things that are affected by those attributes, including skills and defenses.
+                    If your power increases, or you gain additional insight points, you will need to make the appropriate changes manually.
+
                     As you level up, your attributes increase.
                     You can add those improvements in the second row.
-                    If you have special abilities that modify your attributes, you can add those on the <b>Modifiers</b> tab.
+                    If you have special abilities that modify your attributes, such as from your species, you can add those on the <b>Modifiers</b> tab.
                 """,
                 [
                     flex_row(
