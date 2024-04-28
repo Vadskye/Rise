@@ -360,11 +360,8 @@ fn cloaks() -> Vec<Apparel> {
             Unlike most teleportation, this teleportation does not make any noise.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants invisibility while mostly inactive", "
-                Making a movement during the movement phase does not prevent you from becoming invisible.
-            "),
-            ItemUpgrade::new(7, "Grants invisibility while partially inactive", "
-                Free actions and minor actions also do not prevent you from becoming invisible.
+            ItemUpgrade::new(7, "Can teleport a great distance silently", "
+                The range of the teleportation increases to \\distrange.
             "),
         ],
         ..Apparel::default()
