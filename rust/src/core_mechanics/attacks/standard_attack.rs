@@ -458,7 +458,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Armor,
                 hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Slashing])),
-                name: "Windblast".to_string(),
+                name: "Windslash".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
