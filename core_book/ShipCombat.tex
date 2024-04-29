@@ -9,19 +9,6 @@
     It is primarily intended for naval campaigns where the players are important crew members and ship combat is expected to be common.
     These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
 
-    \section{Ships and Gunpowder}
-        In general, Rise avoids the use of guns and gunpowder.
-        Those inventions do not fit into the traditional fantasy setting that Rise is built on, which emphasizes swords and bows and magic.
-        For similar reasons, the ranged weapons of ships can be defined entirely with non-gunpowder weaponry common in the ancient world.
-        These would include ballistas, catapults, scorpions, and similar siege weaponry.
-
-        However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
-        These stories tend to draw inspiration from the Golden Age of Piracy rather than medieval folklore.
-        It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
-        The default names for ship weapons assume that gunpowder is not being used.
-        If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
-        All the GM has to do is change the name of the weapons to match their preferred technology level.
-
     \section{Ship Statistics}
     Ships use the same basic framework for calculating their statistics as characters and monsters.
     A ship has a level that indicates its general power.
@@ -177,7 +164,7 @@
 
             Willpower is the attribute which is most affected by a ship's current crew.
 
-            \subsection{Ship Size}\label{Ship Size}
+\section{Ship Size}\label{Ship Size}
 
         \begin{dtable*}
             \lcaption{Ship Size}
@@ -219,25 +206,25 @@
             \item Colossal: Keelboat, large longship
         \end{raggeditemize}
 
-    \subsection{Ship Armor}
-        Like characters, ships can have varying degrees of armor.
-        Typically, even a heavily armored ship will not be literally covered in metal sheets.
-        Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
+\section{Ship Armor}
+    Like characters, ships can have varying degrees of armor.
+    Typically, even a heavily armored ship will not be literally covered in metal sheets.
+    Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
 
-        There are three types of ship armor.
-        \begin{raggeditemize}
-            \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
-            \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
-                In addition, they have 50\% more damage resistance than a normal ship.
-                However, they add only half their Dexterity bonus to their Armor defense.
-                In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
-                Only Huge and larger ships can have medium armor.
-            \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
-                In addition, they have twice the damage resistance of a normal ship.
-                However, they do not add their Dexterity bonus to their armor defense.
-                In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
-                Only Gargantuan and larger ships can have heavy armor.
-        \end{raggeditemize}
+    There are three types of ship armor.
+    \begin{raggeditemize}
+        \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
+        \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
+            In addition, they have 50\% more damage resistance than a normal ship.
+            However, they add only half their Dexterity bonus to their Armor defense.
+            In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
+            Only Huge and larger ships can have medium armor.
+        \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
+            In addition, they have twice the damage resistance of a normal ship.
+            However, they do not add their Dexterity bonus to their armor defense.
+            In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
+            Only Gargantuan and larger ships can have heavy armor.
+    \end{raggeditemize}
 
 %         \subsubsection{Customized Ship Armor}
 %             Individual ships can have different configurations that change their defenses.
@@ -245,72 +232,85 @@
 %             In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
 %             Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
 
-    \subsection{Ship Weapons}\label{Ship Weapons}
-        Ships depend on having powerful weapons even more than martial characters do.
-        They use weapon upgrades as their primary method of scaling damage rather than maneuvers or other special attacks.
+\section{Ship Weapons}\label{Ship Weapons}
+    Ships depend on having powerful weapons even more than martial characters do.
+    They use weapon upgrades as their primary method of scaling damage rather than maneuvers or other special attacks.
 
-        There are two ways that a GM can choose to use ship weapons.
-        Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
-        In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
-        For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
-        For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
+    There are two ways that a GM can choose to use ship weapons.
+    Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
+    In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
+    For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
+    For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
 
-        \begin{dtable!*}
-            \lcaption{Simplified Ship Weapons}
-            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Name} & \tb{Damage}                            & \tb{Targeting} & \tb{Tags}           & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-                Longbow   & 1d6 piercing \add 1 per 2 power        & One target     & Projectile (90/270) & Medium         & 1 (40 gp)      \\
-                Arbalest  & 1d8 piercing \add 1 per 2 power        & One target     & Projectile (120/360) & Large          & 2 (200 gp)     \\
-                Scorpion  & 1d8 piercing \add 1 per power          & One target     & Projectile (200/600) & Huge           & 3 (1,000 gp)   \\
-                Ballista  & 1d8 piercing per 3 power               & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
-                Catapult  & 1d6 bludgeoning plus 1d6 per 2 power   & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
-                Mangonel  & 1d8 bludgeoning per 2 power            & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
-                Trebuchet & 1d10 bludgeoning plus 1d10 per 2 power & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
-            \end{dtabularx}
-        \end{dtable!*}
+    \begin{dtable!*}
+        \lcaption{Simplified Ship Weapons}
+        \begin{dtabularx}{\textwidth}{l X l l l l}
+            \tb{Name} & \tb{Damage}                            & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+            Longbow   & 1d6 piercing \add 1 per 2 power        & One target     & Projectile (90/270)  & Medium         & 1 (40 gp)      \\
+            Arbalest  & 1d8 piercing \add 1 per 2 power        & One target     & Projectile (120/360) & Large          & 2 (200 gp)     \\
+            Scorpion  & 1d8 piercing \add 1 per power          & One target     & Projectile (200/600) & Huge           & 3 (1,000 gp)   \\
+            Ballista  & 1d8 piercing per 3 power               & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+            Catapult  & 1d6 bludgeoning plus 1d6 per 2 power   & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+            Mangonel  & 1d8 bludgeoning per 2 power            & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+            Trebuchet & 1d10 bludgeoning plus 1d10 per 2 power & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+        \end{dtabularx}
+    \end{dtable!*}
 
-        % Baseline weapon is dr = rank with Projectile (90/270).
-        % Dropping to Projectile (60/180) gives +1dr.
-        % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300.
-        \begin{dtable!*}
-            \lcaption{Realistic Ship Weapons}
-            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
-                \tb{Name}        & \tb{Damage}                      & \tb{Targeting} & \tb{Tags}                             & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-                Longbow          & 1d6 piercing \add 1 per 2 power  & One target     & Projectile (90/270)                   & 1         & Medium         & 1 (40 gp)     \\
-                Rock sling       & 1d8 bludgeoning \add 1 per power & One target     & Projectile (60/180)                   & 1         & Medium         & 2 (200 gp)    \\
-                % +2dr for slow reload, -1dr for longer range
-                Arbalest         & 1d8 piercing \add 1 per power    & One target     & Projectile (120/360), Slow Reload (2) & 1         & Medium         & 2 (200 gp)    \\
-                % +2dr for slow reload, -2dr for range
-                Scorpion         & 1d8 piercing \add 1 per power    & One target     & Projectile (200/600), Slow Reload (2) & 1         & Huge           & 3 (1,000 gp)  \\
-                % +3dr for slow reload, -3dr for range
-                Onager           & 1d8 bludgeoning \add 1 per power & One target     & Projectile (300/900), Slow Reload (3) & 8         & Gargantuan     & 3 (1,000 gp)  \\
-                % +3dr for slow reload, -3dr for range
-                Torsion ballista & 1d8 piercing per 3 power         & One target     & Projectile (300/900), Slow Reload (3) & 3         & Huge           & 4 (5,000 gp)  \\
-                % -1dr for range
-                Polybolos        & 1d8 piercing per 3 power         & One target     & Projectile (120/360)                  & 3         & Huge           & 5 (25,000 gp) \\
-            \end{dtabularx}
-        \end{dtable!*}
+    % Baseline weapon is dr = rank with Projectile (90/270).
+    % Dropping to Projectile (60/180) gives +1dr.
+    % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300.
+    \begin{dtable!*}
+        \lcaption{Realistic Ship Weapons}
+        \begin{dtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+            \tb{Name}        & \tb{Damage}                      & \tb{Targeting} & \tb{Tags}                             & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+            Longbow          & 1d6 piercing \add 1 per 2 power  & One target     & Projectile (90/270)                   & 1         & Medium         & 1 (40 gp)     \\
+            Rock sling       & 1d8 bludgeoning \add 1 per power & One target     & Projectile (60/180)                   & 1         & Medium         & 2 (200 gp)    \\
+            % +2dr for slow reload, -1dr for longer range
+            Arbalest         & 1d8 piercing \add 1 per power    & One target     & Projectile (120/360), Slow Reload (2) & 1         & Medium         & 2 (200 gp)    \\
+            % +2dr for slow reload, -2dr for range
+            Scorpion         & 1d8 piercing \add 1 per power    & One target     & Projectile (200/600), Slow Reload (2) & 1         & Huge           & 3 (1,000 gp)  \\
+            % +3dr for slow reload, -3dr for range
+            Onager           & 1d8 bludgeoning \add 1 per power & One target     & Projectile (300/900), Slow Reload (3) & 8         & Gargantuan     & 3 (1,000 gp)  \\
+            % +3dr for slow reload, -3dr for range
+            Torsion ballista & 1d8 piercing per 3 power         & One target     & Projectile (300/900), Slow Reload (3) & 3         & Huge           & 4 (5,000 gp)  \\
+            % -1dr for range
+            Polybolos        & 1d8 piercing per 3 power         & One target     & Projectile (120/360)                  & 3         & Huge           & 5 (25,000 gp) \\
+        \end{dtabularx}
+    \end{dtable!*}
 
-        \subsubsection{Ship Weapon Tags}
-            Some weapon tags only apply to ship weapons.
+    \subsection{Ship Weapon Tags}
+        Some weapon tags only apply to ship weapons.
 
-            % +1dr per round
-            \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
-            The number of rounds required to finish reloading is indicated in its description.
-            For example, a weapon with Slow Reload (1) could be fired every other round.
-            Only rounds where the weapon is being fully crewed count towards this reload time.
-            The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
+        % +1dr per round
+        \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
+        The number of rounds required to finish reloading is indicated in its description.
+        For example, a weapon with Slow Reload (1) could be fired every other round.
+        Only rounds where the weapon is being fully crewed count towards this reload time.
+        The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
 
-            % +2dr for first round, +1dr for each subsequent round
-            \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
-            The number of rounds required to finish loading before it can be fired is indicated in its description.
-            For example, a weapon with Slow Load (1) could be fired every other round.
-            Only rounds where the weapon is being fully crewed count towards this load time.
-            If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
+        % +2dr for first round, +1dr for each subsequent round
+        \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
+        The number of rounds required to finish loading before it can be fired is indicated in its description.
+        For example, a weapon with Slow Load (1) could be fired every other round.
+        Only rounds where the weapon is being fully crewed count towards this load time.
+        If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
-    \subsection{Ships Fighting Non-Ships}
-        In some cases, ships might enter combat against non-ship foes.
-        Ships take 10x less damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
-        Since ships are not creatures and are not alive, many special attacks have no effect on them.
-        They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
-        When used against non-ship targets, weapons on Huge or larger ships have the \weapontag{Massive} tag, just like attacks from Huge or larger creatures (see \pcref{Very Large Creatures}).
+\section{Ships Fighting Non-Ships}
+    In some cases, ships might enter combat against non-ship foes.
+    Ships take 10x less damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
+    Since ships are not creatures and are not alive, many special attacks have no effect on them.
+    They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
+    When used against non-ship targets, weapons on Huge or larger ships have the \weapontag{Massive} tag, just like attacks from Huge or larger creatures (see \pcref{Very Large Creatures}).
+
+\section{Ships and Gunpowder}
+    In general, Rise avoids the use of guns and gunpowder.
+    Those inventions do not fit into the traditional fantasy setting that Rise is built on, which emphasizes swords and bows and magic.
+    For similar reasons, the ranged weapons of ships can be defined entirely with non-gunpowder weaponry common in the ancient world.
+    These would include ballistas, catapults, scorpions, and similar siege weaponry.
+
+    However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
+    These stories tend to draw inspiration from the Golden Age of Piracy rather than medieval folklore.
+    It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
+    The default names for ship weapons assume that gunpowder is not being used.
+    If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
+    All the GM has to do is change the name of the weapons to match their preferred technology level.
