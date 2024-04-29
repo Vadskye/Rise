@@ -3,11 +3,11 @@ use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Default, Hash)]
 pub enum Role {
-    Brute,      // +str, melee HP-heavy damage sponge, like barbarian or any heavy weapon user
-    Skirmisher, // +dex, high mobility mixed range, like rogue/monk/ranger
-    Warrior, // +con, melee or short range defense tank, like a typical sword and board fighter/paladin
-    Sniper,  // +per, low mobility long range, like an archer
-    Mystic,  // +wil, low HP, high DR, typically a caster
+    Brute,      // melee HP-heavy damage sponge, like barbarian or any heavy weapon user
+    Skirmisher, // high mobility mixed range, like rogue/monk/ranger
+    Warrior, // melee or short range defense tank, like a typical sword and board fighter/paladin
+    Sniper,  // low mobility long range, like an archer
+    Mystic,  // low HP, high DR, typically a caster
     #[default]
     Leader,  // average in all respects
 }
@@ -54,7 +54,7 @@ impl Role {
             Role::Brute => [4, 4, 3, 2],
             Role::Skirmisher => [4, 2, 4, 3],
             Role::Warrior => [6, 4, 2, 3],
-            Role::Sniper => [3, 2, 2, 2],
+            Role::Sniper => [3, 2, 4, 3],
             Role::Mystic => [3, 2, 3, 4],
             Role::Leader => [4, 3, 3, 3],
         };
@@ -86,9 +86,9 @@ impl Role {
             Role::Brute => HitPointProgression::Extreme,
             Role::Skirmisher => HitPointProgression::High,
             Role::Warrior => HitPointProgression::High,
-            Role::Sniper => HitPointProgression::High,
+            Role::Sniper => HitPointProgression::Medium,
             Role::Mystic => HitPointProgression::Medium,
-            Role::Leader => HitPointProgression::Extreme,
+            Role::Leader => HitPointProgression::High,
         }
     }
 
