@@ -1,0 +1,251 @@
+\chapter{Ship Combat}
+    Normally, combat that happens on ships is resolved through local-scale combat rules.
+    These rules work best if boarding actions are common, and if the main threat comes from other characters.
+    If you aren't running a full naval campaign, these rules are generally fine, and most GMs will just handwave the initial exchange of fire between ships before they get in range for boarding actions.
+    However, it can be useful to have more comprehensive rules for ship combat, where ships themselves frequently deal and suffer damage.
+
+    This chapter presents optional rules to govern ship-based combat.
+    They are designed to still emphasize the importance of individual player actions.
+    It is primarily intended for naval campaigns where the players are important crew members and ship combat is expected to be common.
+    These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
+
+    \section{Ships and Gunpowder}
+        In general, Rise avoids the use of guns and gunpowder.
+        Those inventions do not fit into the traditional fantasy setting that Rise is built on, which emphasizes swords and bows and magic.
+        For similar reasons, the ranged weapons of ships can be defined entirely with non-gunpowder weaponry common in the ancient world.
+        These would include ballistas, catapults, scorpions, and similar siege weaponry.
+
+        However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
+        These stories tend to draw inspiration from the Golden Age of Piracy rather than medieval folklore.
+        It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
+        The rules presented in this section avoid being specific about the exact names for weaponry used.
+        GMs should feel free to use whatever technology level is appropriate for their campaign.
+
+    \section{Ship Statistics}
+    Ships use the same basic framework for calculating their statistics as characters and monsters.
+    A ship has a level that indicates its general power.
+    This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
+    A ship's level determines its hit points, damage resistance, accuracy, defenses, and power, as indicated in the table below.
+    These values change based on the ship's attributes, as indicated in \pcref{Ship Attributes}.
+
+    % NOTE: Keep in sync with Monster Advancement in Monsters
+    \begin{dtable}
+        \lcaption{Ship Statistics}
+        \begin{dtabularx}{\columnwidth}{l l l l >{\lcol}X}
+            \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy, Power} \tableheaderrule
+            1st        & 8       & 4       & 3             & \tdash  \\
+            2nd        & 10      & 5       & 4             & \plus1  \\
+            3rd        & 12      & 6       & 4             & \plus1  \\
+            4th        & 14      & 7       & 5             & \plus2  \\
+            5th        & 16      & 8       & 5             & \plus2  \\
+            6th        & 18      & 9       & 6             & \plus3  \\
+            7th        & 20      & 10      & 6             & \plus3  \\
+            8th        & 23      & 11      & 7             & \plus4  \\
+            9th        & 26      & 13      & 7             & \plus4  \\
+            10th       & 29      & 14      & 8             & \plus5  \\
+            11th       & 32      & 16      & 8             & \plus5  \\
+            12th       & 35      & 17      & 9             & \plus6  \\
+            13th       & 40      & 20      & 9             & \plus6  \\
+            14th       & 46      & 23      & 10            & \plus7  \\
+            15th       & 52      & 26      & 10            & \plus7  \\
+            16th       & 58      & 29      & 11            & \plus8  \\
+            17th       & 64      & 32      & 11            & \plus8  \\
+            18th       & 70      & 35      & 12            & \plus9  \\
+            19th       & 80      & 40      & 12            & \plus9  \\
+            20th       & 92      & 46      & 13            & \plus10 \\
+            21st       & 104     & 52      & 13            & \plus10 \\
+        \end{dtabularx} 
+    \end{dtable}
+
+    \begin{dtable}
+        \lcaption{Elite Ship Statistics}
+        \begin{dtabularx}{\columnwidth}{l l l l >{\lcol}X >{\lcol}X}
+            \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} \tableheaderrule
+            1st        & 24      & 12      & 5             & \tdash        & \plus2  \\
+            2nd        & 30      & 15      & 6             & \plus1        & \plus3  \\
+            3rd        & 36      & 18      & 6             & \plus1        & \plus3  \\
+            4th        & 42      & 21      & 7             & \plus2        & \plus4  \\
+            5th        & 48      & 24      & 7             & \plus2        & \plus4  \\
+            6th        & 54      & 27      & 8             & \plus3        & \plus5  \\
+            7th        & 60      & 30      & 8             & \plus3        & \plus5  \\
+            8th        & 69      & 34      & 9             & \plus4        & \plus6  \\
+            9th        & 78      & 39      & 9             & \plus4        & \plus6  \\
+            10th       & 87      & 43      & 10            & \plus5        & \plus7  \\
+            11th       & 96      & 48      & 10            & \plus5        & \plus7  \\
+            12th       & 105     & 52      & 11            & \plus6        & \plus8  \\
+            13th       & 120     & 60      & 11            & \plus6        & \plus8  \\
+            14th       & 138     & 69      & 12            & \plus7        & \plus9  \\
+            15th       & 156     & 78      & 12            & \plus7        & \plus9  \\
+            16th       & 174     & 87      & 13            & \plus8        & \plus10 \\
+            17th       & 192     & 96      & 13            & \plus8        & \plus10 \\
+            18th       & 210     & 105     & 14            & \plus9        & \plus11 \\
+            19th       & 240     & 120     & 14            & \plus9        & \plus11 \\
+            20th       & 276     & 138     & 15            & \plus10       & \plus12 \\
+            21st       & 312     & 156     & 15            & \plus10       & \plus12 \\
+        \end{dtabularx} 
+    \end{dtable}
+
+    \subsection{Ship HP and DR}
+        Ships have hit points and damage resistance, just like characters.
+        A ship's base hit points and damage resistance are based on its level, as listed in \tref{Ship Statistics}.
+        In addition, a ship gains a bonus based on its Constitution, as listed in \pcref{Ship Attributes}.
+        Armor also gives ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
+
+    \subsection{Elite Ships}\label{Elite Ships}
+        Some ships are designated ``elite'' ships.
+        Elite ships are much larger than ordinary ships.
+        Even the smallest elite ship requires no less than 10 crew members to operate correctly.
+
+        Elite ships are approximately four times as strong as an ordinary ships.
+        They have a number of benefits and modifiers which make them superior to ordinary ships:
+        % NOTE: Keep in sync with elite monsters
+        \begin{itemize}
+            \item Elite ships gain a \plus2 bonus to their \glossterm{power} and all \glossterm{defenses}.
+            \item Elite ships have three times the \glossterm{hit points} and \glossterm{damage resistance} of standard ships.
+            % \item Elite ships have 50\% more \glossterm{damage resistance} than standard ships. This is applied after the bonus they get from having higher hit points, since ship damage resistance is based on their hit points.
+            % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
+            % elite actions should be about as strong as regular actions, so 2x more damage
+            \item Elite ships can take an additional \glossterm{elite action} each round (see \pcref{Ship Actions}).
+        \end{itemize}
+
+    \subsection{Ship Attributes}
+        Unlike characters, ships have no Intelligence attribute.
+        However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
+        These represent slightly different narrative concepts than they do for characters.
+        In general, a ship's attributes represent a combination of its physical properties and the effectiveness of its crew.
+        A highly advanced ship may still have low attributes when its crew is inexperienced or incompetent.
+
+        \subsubsection{Strength}
+            Strength measures the power of a ship's physical weapons.
+            Ships with a high Strength have more damaging weapons, and a crew capable of keeping those weapons working effectively.
+            Ships with a low Strength have ineffective weaponry, or a crew that services those weapons poorly.
+            Strength has the following effects on ships:
+            \begin{raggeditemize}
+                \item Ships add their Strength to their \glossterm{mundane power}.
+                \item Some weapons require a minimum ship Strength (see \pcref{Ship Weapons}).
+            \end{raggeditemize}
+
+            Unlike characters, a ship's Strength does not affect its carrying capacity.
+            That is calculated entirely from its physical size and shape.
+
+        \subsubsection{Dexterity}
+            Dexterity measures a ship's agility.
+            Ships with a high Dexterity can turn more sharply to avoid incoming fire and may be faster in short bursts.
+            Ships with a low Dexterity are lumbering and slow to change direction, making them easy targets.
+            Dexterity has the following effects on ships:
+            \begin{raggeditemize}
+                \item Ships add their Dexterity to their Armor defense.
+                    This bonus can be reduced if the ship has medium or heavy armor (see \pcref{Ship Armor}).
+                \item Ships add their Dexterity to their Reflex defense.
+            \end{raggeditemize}
+
+            As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
+
+        \subsubsection{Constitution}
+            Constitution measures a ship's durability.
+            Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
+            Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
+            Constitution has the following effects on ships:
+            \begin{raggeditemize}
+                \item Ships add twice their Constitution to their hit points.
+                    At level 7, this bonus increases to three times the ship's Constitution.
+                    At level 13, this bonus increases to six times the ship's Constitution.
+                    At level 19, this bonus increases to twelve times the ship's Constitution.
+                \item Ships add their Constitution to their Fortitude defense.
+            \end{raggeditemize}
+
+            Constitution is the attribute which is least affected by a ship's current crew, and most affected by its physical properties.
+
+        \subsubsection{Perception}
+            Perception measures a ship's awareness and precision.
+            Ships with a high Perception have effective lookouts, excellent gunners, and weapons which are capable of swiftly repositioning for precise attacks.
+            Ships with a low Perception are either unable to effectively observe their surroundings or unable to react effectively to those observations.
+            Perception has the following effects on ships:
+            \begin{raggeditemize}
+                \item Ships add their Perception to their level to determine their \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
+            \end{raggeditemize}
+
+        \subsubsection{Willpower}
+            Willpower measures the morale and emotional steadiness of a ship's crew.
+            Ships with a high Willpower are better able to resist setbacks and frightening encounters.
+            Ships with a low Willpower may panic and be driven off easily.
+            Willpower has the following effects on ships:
+            \begin{raggeditemize}
+                \item Ships add their Willpower to their Mental defense.
+            \end{raggeditemize}
+
+            Willpower is the attribute which is most affected by a ship's current crew.
+
+    \subsection{Ship Size}
+        A ship's size does not directly affect its statistics.
+        However, it has many effects on the ship's functionality.
+        Larger ships are much more capable than smaller ships.
+
+        Some ships can be larger than most creatures and objects are usually defined.
+        To track ship size beyond the limits of Colossal, additional Galleon and Titan categories are listed below.
+        As usual, each size category represents a doubling of each dimension, and an eightfold increase in weight.
+        Titan ships are unlikely to be present at all in many universes, and they require extensive magical reinforcement to function.
+        The GM can decide whether their world is advanced enough to construct such monstrosities.
+
+        \begin{dtable}
+            \lcaption{Ship Size}
+            \begin{dtabularx}{\columnwidth}{l l l l >{\lcol}X >{\lcol}X}
+                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Space} & \tb{Speed} \tableheaderrule
+                Medium     & 1              & No          & 1               & Light           & 5 ft.      & 30 ft.  \\
+                Large      & 1              & No          & 1---2           & Light           & 10 ft.     & 30 ft.  \\
+                Huge       & 4              & Either      & 1---5           & Light or medium & 20 ft.     & 40 ft.  \\
+                Gargantuan & 7              & Either      & 2---20          & Any             & 40 ft.     & 50 ft.  \\
+                Colossal   & 10             & Yes         & 10---100         & Any             & 80 ft.     & 60 ft.  \\
+                Galleon    & 13             & Yes         & 50---500         & Any             & 160 ft.    & 80 ft.  \\
+                Titan      & 16             & Yes         & 100---1000         & Any             & 320 ft.    & 100 ft. \\
+            \end{dtabularx}
+            1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
+            It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
+            Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion.
+        \end{dtable}
+
+        Some examples of ships of a given size are given below.
+        Since ships are typically named for their function and structure, not their size, this is only a rough guide.
+        \begin{raggeditemize}
+            \item Medium: Single-person kayak
+            \item Large: Canoe, lifeboat
+            \item Huge: Dinghy, outrigger canoe, punt, skiff
+            \item Gargantuan: Felucca, small longship
+            \item Colossal: Keelboat, large longship
+        \end{raggeditemize}
+
+    \subsection{Ship Armor}
+        Like characters, ships can have varying degrees of armor.
+        Typically, even a heavily armored ship will not be literally covered in metal sheets.
+        Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
+
+        There are three types of ship armor.
+        \begin{raggeditemize}
+            \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
+            \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
+                In addition, they have 50\% more damage resistance than a normal ship.
+                However, they add only half their Dexterity bonus to their Armor defense.
+                In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
+                Only Huge and larger ships can have medium armor.
+            \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
+                In addition, they have twice the damage resistance of a normal ship.
+                However, they do not add their Dexterity bonus to their armor defense.
+                In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
+                Only Gargantuan and larger ships can have heavy armor.
+        \end{raggeditemize}
+
+        \subsubsection{Customized Ship Armor}
+            Individual ships can have different configurations that change their defenses.
+            With customization, a ship can gain a \plus1 bonus to Armor defense, a \plus2 bonus to any other defense, or become \impervious to one of the following damage types: acid, cold, electricity, or fire.
+            In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
+            Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
+
+    \subsection{Ship Weapons}
+        
+
+    \subsection{Ships Fighting Non-Ships}
+        In some cases, ships might enter combat against non-ship foes.
+        Ships take 10x less damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
+        Since ships are not creatures and are not alive, many special attacks have no effect on them.
+        They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
+        When used against non-ship targets, weapons on Huge or larger ships have the \weapontag{Massive} tag, just like attacks from Huge or larger creatures (see \pcref{Very Large Creatures}).
