@@ -18,8 +18,9 @@
         However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
         These stories tend to draw inspiration from the Golden Age of Piracy rather than medieval folklore.
         It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
-        The rules presented in this section avoid being specific about the exact names for weaponry used.
-        GMs should feel free to use whatever technology level is appropriate for their campaign.
+        The default names for ship weapons assume that gunpowder is not being used.
+        If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
+        All the GM has to do is change the name of the weapons to match their preferred technology level.
 
     \section{Ship Statistics}
     Ships use the same basic framework for calculating their statistics as characters and monsters.
@@ -89,7 +90,7 @@
         Ships have hit points and damage resistance, just like characters.
         A ship's base hit points and damage resistance are based on its level, as listed in \tref{Ship Statistics}.
         In addition, a ship gains a bonus based on its Constitution, as listed in \pcref{Ship Attributes}.
-        Armor also gives ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
+        Armor can also give ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
 
     \subsection{Elite Ships}\label{Elite Ships}
         Some ships are designated ``elite'' ships.
@@ -176,33 +177,37 @@
 
             Willpower is the attribute which is most affected by a ship's current crew.
 
-    \subsection{Ship Size}
+            \subsection{Ship Size}\label{Ship Size}
+
+        \begin{dtable*}
+            \lcaption{Ship Size}
+            \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X >{\lcol}X >{\lcol}X l}
+                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Space} & \tb{Speed} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
+                Medium     & 1              & No          & 1               & Light           & 5 ft.      & 30 ft.     & Small x2      & \tdash \\
+                Large      & 1              & No          & 1---2           & Light           & 10 ft.     & 30 ft.     & Medium x2     & \tdash \\
+                Huge       & 4              & Either      & 1---5           & Light or medium & 20 ft.     & 40 ft.     & Large x2      & \plus1\fn{2} \\
+                Gargantuan & 7              & Either      & 2---20          & Any             & 40 ft.     & 50 ft.     & Huge x2       & \plus1\fn{2} \\
+                Colossal   & 10             & Yes         & 10---100        & Any             & 80 ft.     & 60 ft.     & Gargantuan x2 & \plus3 \\
+                Galleon    & 13             & Yes         & 50---500        & Any             & 160 ft.    & 80 ft.     & Colossal x2   & \plus3 \\
+                Titan      & 16             & Yes         & 100---1000      & Any             & 320 ft.    & 100 ft.    & Galleon x2    & \plus4 \\
+            \end{dtabularx}
+            1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
+            It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
+            Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion. \\
+            2. If the ship is Elite, increase its item rank by an additional \plus1.
+        \end{dtable*}
+
         A ship's size does not directly affect its statistics.
         However, it has many effects on the ship's functionality.
         Larger ships are much more capable than smaller ships.
+        Some of these effects are listed below in \trefnp{Ship Size}.
+        In addition, advanced ship weapons often require a minimum ship size (see \pcref{Ship Weapons}).
 
         Some ships can be larger than most creatures and objects are usually defined.
         To track ship size beyond the limits of Colossal, additional Galleon and Titan categories are listed below.
         As usual, each size category represents a doubling of each dimension, and an eightfold increase in weight.
         Titan ships are unlikely to be present at all in many universes, and they require extensive magical reinforcement to function.
         The GM can decide whether their world is advanced enough to construct such monstrosities.
-
-        \begin{dtable}
-            \lcaption{Ship Size}
-            \begin{dtabularx}{\columnwidth}{l l l l >{\lcol}X >{\lcol}X}
-                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Space} & \tb{Speed} \tableheaderrule
-                Medium     & 1              & No          & 1               & Light           & 5 ft.      & 30 ft.  \\
-                Large      & 1              & No          & 1---2           & Light           & 10 ft.     & 30 ft.  \\
-                Huge       & 4              & Either      & 1---5           & Light or medium & 20 ft.     & 40 ft.  \\
-                Gargantuan & 7              & Either      & 2---20          & Any             & 40 ft.     & 50 ft.  \\
-                Colossal   & 10             & Yes         & 10---100         & Any             & 80 ft.     & 60 ft.  \\
-                Galleon    & 13             & Yes         & 50---500         & Any             & 160 ft.    & 80 ft.  \\
-                Titan      & 16             & Yes         & 100---1000         & Any             & 320 ft.    & 100 ft. \\
-            \end{dtabularx}
-            1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
-            It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
-            Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion.
-        \end{dtable}
 
         Some examples of ships of a given size are given below.
         Since ships are typically named for their function and structure, not their size, this is only a rough guide.
@@ -234,14 +239,74 @@
                 Only Gargantuan and larger ships can have heavy armor.
         \end{raggeditemize}
 
-        \subsubsection{Customized Ship Armor}
-            Individual ships can have different configurations that change their defenses.
-            With customization, a ship can gain a \plus1 bonus to Armor defense, a \plus2 bonus to any other defense, or become \impervious to one of the following damage types: acid, cold, electricity, or fire.
-            In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
-            Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
+%         \subsubsection{Customized Ship Armor}
+%             Individual ships can have different configurations that change their defenses.
+%             With customization, a ship can gain a \plus1 bonus to Armor defense, a \plus2 bonus to any other defense, or become \impervious to one of the following damage types: acid, cold, electricity, or fire.
+%             In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
+%             Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
 
-    \subsection{Ship Weapons}
-        
+    \subsection{Ship Weapons}\label{Ship Weapons}
+        Ships depend on having powerful weapons even more than martial characters do.
+        They use weapon upgrades as their primary method of scaling damage rather than maneuvers or other special attacks.
+
+        There are two ways that a GM can choose to use ship weapons.
+        Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
+        In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
+        For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
+        For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
+
+        \begin{dtable!*}
+            \lcaption{Simplified Ship Weapons}
+            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
+                \tb{Name} & \tb{Damage}                            & \tb{Targeting} & \tb{Tags}           & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+                Longbow   & 1d6 piercing \add 1 per 2 power        & One target     & Projectile (90/270) & Medium         & 1 (40 gp)      \\
+                Arbalest  & 1d8 piercing \add 1 per 2 power        & One target     & Projectile (120/360) & Large          & 2 (200 gp)     \\
+                Scorpion  & 1d8 piercing \add 1 per power          & One target     & Projectile (200/600) & Huge           & 3 (1,000 gp)   \\
+                Ballista  & 1d8 piercing per 3 power               & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+                Catapult  & 1d6 bludgeoning plus 1d6 per 2 power   & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+                Mangonel  & 1d8 bludgeoning per 2 power            & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+                Trebuchet & 1d10 bludgeoning plus 1d10 per 2 power & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+            \end{dtabularx}
+        \end{dtable!*}
+
+        % Baseline weapon is dr = rank with Projectile (90/270).
+        % Dropping to Projectile (60/180) gives +1dr.
+        % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300.
+        \begin{dtable!*}
+            \lcaption{Realistic Ship Weapons}
+            \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
+                \tb{Name}        & \tb{Damage}                      & \tb{Targeting} & \tb{Tags}                             & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+                Longbow          & 1d6 piercing \add 1 per 2 power  & One target     & Projectile (90/270)                   & 1         & Medium         & 1 (40 gp)     \\
+                Rock sling       & 1d8 bludgeoning \add 1 per power & One target     & Projectile (60/180)                   & 1         & Medium         & 2 (200 gp)    \\
+                % +2dr for slow reload, -1dr for longer range
+                Arbalest         & 1d8 piercing \add 1 per power    & One target     & Projectile (120/360), Slow Reload (2) & 1         & Medium         & 2 (200 gp)    \\
+                % +2dr for slow reload, -2dr for range
+                Scorpion         & 1d8 piercing \add 1 per power    & One target     & Projectile (200/600), Slow Reload (2) & 1         & Huge           & 3 (1,000 gp)  \\
+                % +3dr for slow reload, -3dr for range
+                Onager           & 1d8 bludgeoning \add 1 per power & One target     & Projectile (300/900), Slow Reload (3) & 8         & Gargantuan     & 3 (1,000 gp)  \\
+                % +3dr for slow reload, -3dr for range
+                Torsion ballista & 1d8 piercing per 3 power         & One target     & Projectile (300/900), Slow Reload (3) & 3         & Huge           & 4 (5,000 gp)  \\
+                % -1dr for range
+                Polybolos        & 1d8 piercing per 3 power         & One target     & Projectile (120/360)                  & 3         & Huge           & 5 (25,000 gp) \\
+            \end{dtabularx}
+        \end{dtable!*}
+
+        \subsubsection{Ship Weapon Tags}
+            Some weapon tags only apply to ship weapons.
+
+            % +1dr per round
+            \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
+            The number of rounds required to finish reloading is indicated in its description.
+            For example, a weapon with Slow Reload (1) could be fired every other round.
+            Only rounds where the weapon is being fully crewed count towards this reload time.
+            The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
+
+            % +2dr for first round, +1dr for each subsequent round
+            \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
+            The number of rounds required to finish loading before it can be fired is indicated in its description.
+            For example, a weapon with Slow Load (1) could be fired every other round.
+            Only rounds where the weapon is being fully crewed count towards this load time.
+            If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
     \subsection{Ships Fighting Non-Ships}
         In some cases, ships might enter combat against non-ship foes.
