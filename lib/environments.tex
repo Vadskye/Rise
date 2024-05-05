@@ -248,6 +248,16 @@
 }
 \surroundwithmdframed{dtabularx}
 
+\DeclareDocumentEnvironment{compresseddtabularx}{m m}
+{
+    \setlength{\tabcolsep}{4pt}
+    \tabularx{#1}{#2}%
+}
+{
+    \endtabularx
+}
+\surroundwithmdframed{compresseddtabularx}
+
 \DeclareDocumentEnvironment{spellsection}{o m o}
 {
     \begin{thesamepage}
