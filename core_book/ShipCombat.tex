@@ -174,15 +174,15 @@
 
         \begin{dtable*}
             \lcaption{Ship Size}
-            \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X >{\lcol}X >{\lcol}X l}
-                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Space} & \tb{Speed} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
-                Medium     & 1              & No          & 1               & Light           & 5 ft.      & 30 ft.     & Small x2      & \tdash \\
-                Large      & 1              & No          & 1---2           & Light           & 10 ft.     & 30 ft.     & Medium x2     & \tdash \\
-                Huge       & 4              & Either      & 1---5           & Light or medium & 20 ft.     & 40 ft.     & Large x2      & \plus1\fn{2} \\
-                Gargantuan & 7              & Either      & 2---20          & Any             & 40 ft.     & 50 ft.     & Huge x2       & \plus1\fn{2} \\
-                Colossal   & 10             & Yes         & 10---100        & Any             & 80 ft.     & 60 ft.     & Gargantuan x2 & \plus3 \\
-                Galleon    & 13             & Yes         & 50---500        & Any             & 160 ft.    & 80 ft.     & Colossal x2   & \plus3 \\
-                Titan      & 16             & Yes         & 100---1000      & Any             & 320 ft.    & 100 ft.    & Galleon x2    & \plus4 \\
+            \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X >{\lcol}X l l l}
+                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Space} & \tb{Speed} & \tb{Turning Cost} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
+                Medium     & 1              & No          & 1               & Light           & 5 ft.      & 30 ft.     & 10 ft.         & Small x2      & \tdash       \\
+                Large      & 1              & No          & 1---2           & Light           & 10 ft.     & 30 ft.     & 15 ft.         & Medium x2     & \tdash       \\
+                Huge       & 4              & Either      & 1---5           & Light or medium & 20 ft.     & 40 ft.     & 20 ft.         & Large x2      & \plus1\fn{2} \\
+                Gargantuan & 7              & Either      & 2---20          & Any             & 40 ft.     & 50 ft.     & 25 ft.         & Huge x2       & \plus1\fn{2} \\
+                Colossal   & 10             & Yes         & 10---100        & Any             & 80 ft.     & 60 ft.     & 30 ft.         & Gargantuan x2 & \plus3       \\
+                Galleon    & 13             & Yes         & 50---500        & Any             & 160 ft.    & 80 ft.     & 40 ft.         & Colossal x2   & \plus3       \\
+                Titan      & 16             & Yes         & 100---1000      & Any             & 320 ft.    & 100 ft.    & 50 ft.         & Galleon x2    & \plus4       \\
             \end{dtabularx}
             1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
             It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
@@ -211,6 +211,28 @@
             \item Gargantuan: Felucca, small longship
             \item Colossal: Keelboat, large longship
         \end{raggeditemize}
+
+\section{Ship Movement}
+    This section defines the rules that ships use to move, which are not identical to character movement.
+    Real ships have a great deal of momentum, and their movement speed and direction cannot be quickly adjusted.
+    This is too much of a hassle to represent fully, so Rise uses significantly simplified ship movement mechanics.
+    However, ships still have more movement constraints than characters, including a concept of ship heading.
+
+    \subsection{Ship Heading}
+        A ship's heading always points in one of the eight standard cardinal directions: north, northeast, east, and so on.
+        Forward-moving ships can only move within a 90 degree cone centered on their heading.
+        For example, a ship with a heading of north could travel northwest or northeast, but not west or east.
+        
+        \subsubsection{Turning}
+            A ship can change its heading by turning.
+            Each ship has a turning cost based on its size.
+            That cost is the number of feet that a ship must spend out of its movement to turn by 45 degrees.
+            Most ships have a turning cost equal to half their base speed.
+            A ship can pay its turning cost twice, allowing it to rotate more quickly while typically making little or no forward progress.
+
+    \subsection{Movement Timing}
+        Ships automatically move up to their movement speed during the \glossterm{movement phase}.
+        They cannot move during the \glossterm{action phase}.
 
 \section{Ship Armor}
     Like characters, ships can have varying degrees of armor.
@@ -248,58 +270,65 @@
     For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
     For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
 
+    % Baseline weapon is dr = rank - 1 with Projectile (200/600).
     \begin{dtable!*}
         \lcaption{Simplified Ship Weapons}
         \begin{dtabularx}{\textwidth}{l X l l l l}
-            \tb{Name} & \tb{Damage}                            & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-            Longbow   & 1d6 piercing \add 1 per 2 power        & One target     & Projectile (90/270)  & Medium         & 1 (40 gp)      \\
-            Arbalest  & 1d8 piercing \add 1 per 2 power        & One target     & Projectile (120/360) & Large          & 2 (200 gp)     \\
-            Scorpion  & 1d8 piercing \add 1 per power          & One target     & Projectile (200/600) & Huge           & 3 (1,000 gp)   \\
-            Ballista  & 1d8 piercing per 3 power               & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
-            Catapult  & 1d6 bludgeoning plus 1d6 per 2 power   & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
-            Mangonel  & 1d8 bludgeoning per 2 power            & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
-            Trebuchet & 1d10 bludgeoning plus 1d10 per 2 power & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+            \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+            Rock sling & 1d8 bludgeoning \add 1 per 2 power    & One target     & Projectile (60/180)  & Medium         & 2 (200 gp)     \\
+            Scorpion   & 1d8 piercing \add 1 per 2 power       & One target     & Projectile (200/600) & Huge           & 3 (1,000 gp)   \\
+            Ballista   & 1d8 piercing \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+            Catapult   & 1d10 bludgeoning plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+            Mangonel   & 1d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+            Trebuchet  & 2d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
         \end{dtabularx}
     \end{dtable!*}
 
-    % Baseline weapon is dr = rank with Projectile (90/270).
+    % Baseline weapon is dr = rank with Projectile (90/270) and Slow Reload (1).
+    % Removing Slow Reload (1) is -2dr.
     % Dropping to Projectile (60/180) gives +1dr.
-    % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300.
+    % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
     \begin{dtable!*}
         \lcaption{Realistic Ship Weapons}
-        \begin{dtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-            \tb{Name}        & \tb{Damage}                      & \tb{Targeting} & \tb{Tags}                             & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-            Longbow          & 1d6 piercing \add 1 per 2 power  & One target     & Projectile (90/270)                   & 1         & Medium         & 1 (40 gp)     \\
-            Rock sling       & 1d8 bludgeoning \add 1 per power & One target     & Projectile (60/180)                   & 1         & Medium         & 2 (200 gp)    \\
-            % +2dr for slow reload, -1dr for longer range
-            Arbalest         & 1d8 piercing \add 1 per power    & One target     & Projectile (120/360), Slow Reload (2) & 1         & Medium         & 2 (200 gp)    \\
+        \begin{dtabularx}{\textwidth}{l l >{\lcol}X l l l}
+            \tb{Name}                & \tb{Damage}                          & \tb{Tags}                              & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+            % +1dr for -1 range
+            Rock sling               & 1d8 bludgeoning \add 1 per power     & Projectile (60/180), Slow Reload (1)   & 1         & Medium         & 2 (200 gp)     \\
             % +2dr for slow reload, -2dr for range
-            Scorpion         & 1d8 piercing \add 1 per power    & One target     & Projectile (200/600), Slow Reload (2) & 1         & Huge           & 3 (1,000 gp)  \\
+            Scorpion                 & 1d8 piercing \add 1 per power        & Projectile (200/600), Slow Reload (2)  & 1         & Huge           & 3 (1,000 gp)   \\
             % +3dr for slow reload, -3dr for range
-            Onager           & 1d8 bludgeoning \add 1 per power & One target     & Projectile (300/900), Slow Reload (3) & 8         & Gargantuan     & 3 (1,000 gp)  \\
-            % +3dr for slow reload, -3dr for range
-            Torsion ballista & 1d8 piercing per 3 power         & One target     & Projectile (300/900), Slow Reload (3) & 3         & Huge           & 4 (5,000 gp)  \\
-            % -1dr for range
-            Polybolos        & 1d8 piercing per 3 power         & One target     & Projectile (120/360)                  & 3         & Huge           & 5 (25,000 gp) \\
+            Onager                   & 1d8 bludgeoning \add 1 per power     & Projectile (300/900), Slow Reload (3)  & 8         & Gargantuan     & 3 (1,000 gp)   \\
+            % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
+            Torsion ballista         & 1d8 piercing per 3 power             & Projectile (300/900), Slow Load (2)    & 3         & Huge           & 4 (5,000 gp)   \\
+            % +1dr for reload -> load, -1dr for range
+            Lightning caller\sparkle & 4d6 electricity                      & Projectile (120/360), Slow Load (1)    & 3         & Large          & 4 (5,000 gp)   \\
+            % -2dr for removing reload
+            Polybolos                & 1d8 piercing \add 1 per power        & Projectile (90/270)                    & 3         & Huge           & 5 (25,000 gp)  \\
+            % +2dr for slow reload, -2dr for range
+            Mangonel                 & 1d8 bludgeoning plus 1d8 per 3 power & Projectile (300/900), Slow Reload (2)  & 20        & Gargantuan     & 5 (25,000 gp)  \\
+            % +3dr for slow reload, -4dr for range
+            Trebuchet                & 1d6 bludgeoning plus 1d6 per 2 power & Projectile (400/1200), Slow Reload (3) & 10        & Gargantuan     & 6 (125,000 gp) \\
+            % +1dr for reload -> load, -1dr for range
+            Meteor caller\sparkle    & 7d10 bludgeoning and fire            & Projectile (120/360), Slow Load (1)    & 4         & Huge           & 7 (625,000 gp) \\
         \end{dtabularx}
     \end{dtable!*}
 
     \subsection{Ship Weapon Tags}
         Some weapon tags only apply to ship weapons.
 
-        % +1dr per round
-        \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
-        The number of rounds required to finish reloading is indicated in its description.
-        For example, a weapon with Slow Reload (1) could be fired every other round.
-        Only rounds where the weapon is being fully crewed count towards this reload time.
-        The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
-
-        % +2dr for first round, +1dr for each subsequent round
+        % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent round
         \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
         The number of rounds required to finish loading before it can be fired is indicated in its description.
         For example, a weapon with Slow Load (1) could be fired every other round.
         Only rounds where the weapon is being fully crewed count towards this load time.
         If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
+
+        % +2dr for (1) to (2), then +1dr for each subsequent round
+        \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
+        The number of rounds required to finish reloading is indicated in its description.
+        For example, a weapon with Slow Reload (1) could be fired every other round.
+        Only rounds where the weapon is being fully crewed count towards this reload time.
+        The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
 
 \section{Crew Roles}
     Ships depend on their crew to function.
@@ -324,26 +353,32 @@
     It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
 
     \subsection{Boatswain}
-        This role represents a wide variety of tasks that essentially involve coordinating the ship's crew.
+        This role is responsible for coordinating the ship's crew.
 
     \subsection{Fixer}
-        This role represents a combination of carpentry, caulking, and similar repair jobs.
+        This role is responsible for maintaining the ship's physical infrastructure.
+        It represents a combination of carpentry, caulking, and similar repair jobs.
         In order to take this role on a ship, you must have at least one Craft skill relevant to the ship's construction.
 
     \subsection{Gunner}
-        This role represents the ability to aim and fire ship weaponry effectively.
+        This role is responsible for aiming and firing ship weaponry.
         For complex weapons such as ballistas, they also direct the work of other crew members who are physically loading and aiming the weapons.
+
+    \subsection{Lookout}
+        This role is responsible for observing and reporting the ship's surroundings.
+        It includes watching out for hazardous terrain, enemy ships, and similar dangers or opportunities.
 
     \subsection{Pilot}
         This role is responsible for steering the ship.
         They generally stay at the ship's wheel, but they may also direct the cut of sails or the direction of rowing.
 
     \subsection{Warder}
-        This role represents using magical power to protect a ship.
+        This role is responsible for directly protecting the ship from danger with magic.
+
         In order to take this role on a ship, you must be able to cast spells.
         At the GM's discretion, you may also need to have access to mystic spheres that can plausibly be used to protect the ship.
-        Most mystic spheres that can be used to deal damage to objects can be used to justify this role.
-        However, mystic spheres like \sphere{enchantment}, \sphere{toxicology}, or \sphere{vivimancy} may not be sufficient.
+        Most mystic spheres which have spells that affect objects can be used to justify this role.
+        However, highly specialized mystic spheres like \sphere{enchantment} or \sphere{vivimancy} may not be sufficient.
 
 \section{Ships Fighting Non-Ships}
     In some cases, ships might enter combat against non-ship foes.
