@@ -9,7 +9,7 @@ Points / Self-hit: 23 / 60%
 
 ### Leader
 A/F/R/M: 5 / 5 / 5 / 5
-HP/DR/Total: 18 / 9 / 27
+HP/DR/Total: 12 / 6 / 18
 Points / Self-hit: 25 / 70%
 
 ### Mystic
@@ -23,9 +23,9 @@ HP/DR/Total: 8 / 4 / 12
 Points / Self-hit: 25 / 60%
 
 ### Sniper
-A/F/R/M: 4 / 2 / 4 / 2
+A/F/R/M: 4 / 2 / 6 / 3
 HP/DR/Total: 8 / 4 / 12
-Points / Self-hit: 16 / 90%
+Points / Self-hit: 19 / 90%
 
 ### Warrior
 A/F/R/M: 6 / 8 / 2 / 5
@@ -41,7 +41,7 @@ Points / Self-hit: 39 / 50%
 
 ### Leader
 A/F/R/M: 8 / 9 / 8 / 9
-HP/DR/Total: 28 / 14 / 42
+HP/DR/Total: 22 / 11 / 33
 Points / Self-hit: 42 / 60%
 
 ### Mystic
@@ -55,9 +55,9 @@ HP/DR/Total: 16 / 8 / 24
 Points / Self-hit: 41 / 60%
 
 ### Sniper
-A/F/R/M: 7 / 5 / 7 / 5
-HP/DR/Total: 16 / 8 / 24
-Points / Self-hit: 31 / 90%
+A/F/R/M: 7 / 5 / 9 / 6
+HP/DR/Total: 12 / 6 / 18
+Points / Self-hit: 34 / 90%
 
 ### Warrior
 A/F/R/M: 9 / 12 / 5 / 8
@@ -73,7 +73,7 @@ Points / Self-hit: 55 / 60%
 
 ### Leader
 A/F/R/M: 11 / 13 / 11 / 13
-HP/DR/Total: 63 / 31 / 94
+HP/DR/Total: 41 / 20 / 61
 Points / Self-hit: 59 / 70%
 
 ### Mystic
@@ -87,9 +87,9 @@ HP/DR/Total: 29 / 14 / 43
 Points / Self-hit: 59 / 60%
 
 ### Sniper
-A/F/R/M: 10 / 8 / 10 / 8
-HP/DR/Total: 29 / 14 / 43
-Points / Self-hit: 46 / 100%
+A/F/R/M: 10 / 8 / 12 / 9
+HP/DR/Total: 24 / 12 / 36
+Points / Self-hit: 49 / 100%
 
 ### Warrior
 A/F/R/M: 12 / 16 / 8 / 11
@@ -105,7 +105,7 @@ Points / Self-hit: 71 / 50%
 
 ### Leader
 A/F/R/M: 14 / 17 / 14 / 17
-HP/DR/Total: 130 / 65 / 195
+HP/DR/Total: 82 / 41 / 123
 Points / Self-hit: 76 / 60%
 
 ### Mystic
@@ -119,9 +119,9 @@ HP/DR/Total: 52 / 26 / 78
 Points / Self-hit: 75 / 60%
 
 ### Sniper
-A/F/R/M: 13 / 11 / 13 / 11
-HP/DR/Total: 52 / 26 / 78
-Points / Self-hit: 61 / 100%
+A/F/R/M: 13 / 11 / 15 / 12
+HP/DR/Total: 45 / 22 / 67
+Points / Self-hit: 64 / 100%
 
 ### Warrior
 A/F/R/M: 15 / 20 / 11 / 14
@@ -137,7 +137,7 @@ Points / Self-hit: 91 / 50%
 
 ### Leader
 A/F/R/M: 18 / 21 / 18 / 21
-HP/DR/Total: 240 / 120 / 360
+HP/DR/Total: 152 / 76 / 228
 Points / Self-hit: 96 / 60%
 
 ### Mystic
@@ -151,9 +151,9 @@ HP/DR/Total: 92 / 46 / 138
 Points / Self-hit: 95 / 50%
 
 ### Sniper
-A/F/R/M: 17 / 15 / 17 / 15
-HP/DR/Total: 92 / 46 / 138
-Points / Self-hit: 81 / 90%
+A/F/R/M: 17 / 15 / 19 / 16
+HP/DR/Total: 80 / 40 / 120
+Points / Self-hit: 84 / 90%
 
 ### Warrior
 A/F/R/M: 19 / 24 / 15 / 18
