@@ -2653,8 +2653,11 @@ function handleVitalWounds() {
 }
 
 function handleWeaponDamageDice() {
+
   for (const weaponIndex of [0, 1, 2]) {
     const heavyKey = `weapon_${weaponIndex}_heavy`;
+    const versatileGripKey = `weapon_${weaponIndex}_versatile_grip`;
+    const ignorePowerKey = `weapon_${weaponIndex}_ignore_power`;
     const damageDiceKey = `weapon_${weaponIndex}_damage_dice`;
     const nameKey = `weapon_${weaponIndex}_name`;
     const magicalTotalKey = `weapon_${weaponIndex}_magical_damage_total`;
@@ -2662,7 +2665,7 @@ function handleWeaponDamageDice() {
 
     onGet(
       {
-        boolean: [heavyKey],
+        boolean: [heavyKey, ignorePowerKey, versatileGripKey],
         numeric: ["strength", "willpower", "mundane_power", "magical_power"],
         string: [damageDiceKey, nameKey],
       },
@@ -2678,12 +2681,29 @@ function handleWeaponDamageDice() {
 
         let magicalPowerBonus = Math.floor(v.magical_power / 2);
         let mundanePowerBonus = Math.floor(v.mundane_power / 2);
-        if (v[heavyKey]) {
-          magicalPowerBonus += Math.floor(v.magical_power / 3);
-          mundanePowerBonus += Math.floor(v.mundane_power / 3);
+        if (v[heavyKey] || v[versatileGripKey]) {
+          magicalPowerBonus += Math.max(0, Math.floor(v.magical_power / 3));
+          mundanePowerBonus += Math.max(0, Math.floor(v.mundane_power / 3));
         }
-        const magicalTotal = `${v[damageDiceKey]}+${magicalPowerBonus}`;
-        const mundaneTotal = `${v[damageDiceKey]}+${mundanePowerBonus}`;
+        if (v[versatileGripKey]) {
+          magicalPowerBonus += 1;
+          mundanePowerBonus += 1;
+        }
+
+        let magicalTotal = v[damageDiceKey];
+        let mundaneTotal = v[damageDiceKey];
+        if (!v[ignorePowerKey]) {
+          if (magicalPowerBonus > 0) {
+            magicalTotal += `+${magicalPowerBonus}`;
+          } else if (magicalPowerBonus < 0) {
+            magicalTotal += `${magicalPowerBonus}`;
+          }
+          if (mundanePowerBonus > 0) {
+            mundaneTotal += `+${mundanePowerBonus}`;
+          } else if (mundanePowerBonus < 0) {
+            mundaneTotal += `${mundanePowerBonus}`;
+          }
+        }
 
         setAttrs({
           [magicalTotalKey]: magicalTotal,
