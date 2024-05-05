@@ -315,7 +315,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
 def strike_based_attack():
     return shared_attack_framework(
         [
-            labeled_text_input(
+            labeled_textarea(
                 "+Damage",
                 {"class": "attack-dice"},
                 {"name": "attack_extra_damage"},
@@ -438,7 +438,7 @@ def weapon_template(i):
 def other_damaging_attack():
     return shared_attack_framework(
         [
-            labeled_text_input(
+            labeled_textarea(
                 "Damage",
                 {"class": "attack-dice"},
                 {"name": "attack_damage_dice"},
