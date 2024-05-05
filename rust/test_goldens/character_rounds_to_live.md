@@ -15,7 +15,7 @@ Rogue Smallsword    : 2.75
 Sorcerer Dexterity  : 2.25
 Wizard Perception   : 2.50
 Brute               : 3.50
-Leader              : 4.25
+Leader              : 3.00
 Mystic              : 2.25
 Skirmisher          : 2.25
 Sniper              : 1.75
@@ -34,10 +34,10 @@ Rogue Smallsword    : 2.75
 Sorcerer Dexterity  : 2.25
 Wizard Perception   : 1.75
 Brute               : 2.50
-Leader              : 3.00
+Leader              : 2.50
 Mystic              : 1.50
 Skirmisher          : 2.25
-Sniper              : 1.50
+Sniper              : 1.25
 Warrior             : 4.50
 
 ### Level 10
@@ -53,10 +53,10 @@ Rogue Smallsword    : 3.25
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 2.50
 Brute               : 3.00
-Leader              : 3.50
+Leader              : 2.50
 Mystic              : 1.75
 Skirmisher          : 2.25
-Sniper              : 1.50
+Sniper              : 1.25
 Warrior             : 4.00
 
 ### Level 15
@@ -72,10 +72,10 @@ Rogue Smallsword    : 4.50
 Sorcerer Dexterity  : 5.25
 Wizard Perception   : 2.25
 Brute               : 5.00
-Leader              : 6.00
+Leader              : 4.00
 Mystic              : 2.75
 Skirmisher          : 3.25
-Sniper              : 2.25
+Sniper              : 2.00
 Warrior             : 6.75
 
 ### Level 20
@@ -91,10 +91,10 @@ Rogue Smallsword    : 4.50
 Sorcerer Dexterity  : 4.75
 Wizard Perception   : 3.25
 Brute               : 6.00
-Leader              : 7.25
+Leader              : 4.75
 Mystic              : 3.25
 Skirmisher          : 4.00
-Sniper              : 2.50
+Sniper              : 2.25
 Warrior             : 8.25
 
 ## Fighter Greatmace
@@ -112,7 +112,7 @@ Rogue Smallsword    : 2.50
 Sorcerer Dexterity  : 2.00
 Wizard Perception   : 2.25
 Brute               : 3.25
-Leader              : 4.00
+Leader              : 2.75
 Mystic              : 2.00
 Skirmisher          : 2.00
 Sniper              : 1.50
@@ -131,10 +131,10 @@ Rogue Smallsword    : 3.75
 Sorcerer Dexterity  : 2.75
 Wizard Perception   : 2.00
 Brute               : 3.25
-Leader              : 4.00
+Leader              : 3.00
 Mystic              : 2.00
 Skirmisher          : 2.75
-Sniper              : 2.00
+Sniper              : 1.50
 Warrior             : 6.00
 
 ### Level 10
@@ -150,10 +150,10 @@ Rogue Smallsword    : 4.00
 Sorcerer Dexterity  : 4.00
 Wizard Perception   : 2.50
 Brute               : 3.75
-Leader              : 4.50
+Leader              : 3.00
 Mystic              : 2.00
 Skirmisher          : 3.00
-Sniper              : 1.75
+Sniper              : 1.50
 Warrior             : 5.25
 
 ### Level 15
@@ -169,10 +169,10 @@ Rogue Smallsword    : 5.50
 Sorcerer Dexterity  : 6.75
 Wizard Perception   : 2.75
 Brute               : 6.25
-Leader              : 7.50
+Leader              : 4.75
 Mystic              : 3.25
 Skirmisher          : 4.25
-Sniper              : 2.75
+Sniper              : 2.25
 Warrior             : 8.25
 
 ### Level 20
@@ -188,10 +188,10 @@ Rogue Smallsword    : 5.00
 Sorcerer Dexterity  : 5.00
 Wizard Perception   : 3.50
 Brute               : 6.50
-Leader              : 7.75
+Leader              : 5.00
 Mystic              : 3.50
 Skirmisher          : 4.25
-Sniper              : 2.75
+Sniper              : 2.25
 Warrior             : 9.00
 
 ## Fighter Shield
@@ -209,7 +209,7 @@ Rogue Smallsword    : 4.00
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.50
 Brute               : 5.00
-Leader              : 6.00
+Leader              : 4.00
 Mystic              : 3.00
 Skirmisher          : 3.00
 Sniper              : 2.25
@@ -228,10 +228,10 @@ Rogue Smallsword    : 6.00
 Sorcerer Dexterity  : 4.25
 Wizard Perception   : 3.00
 Brute               : 5.25
-Leader              : 6.25
+Leader              : 5.00
 Mystic              : 3.00
 Skirmisher          : 4.50
-Sniper              : 3.00
+Sniper              : 2.25
 Warrior             : 9.50
 
 ### Level 10
@@ -247,10 +247,10 @@ Rogue Smallsword    : 5.75
 Sorcerer Dexterity  : 6.00
 Wizard Perception   : 3.75
 Brute               : 5.50
-Leader              : 6.75
+Leader              : 4.50
 Mystic              : 3.25
 Skirmisher          : 4.00
-Sniper              : 2.75
+Sniper              : 2.25
 Warrior             : 7.50
 
 ### Level 15
@@ -266,10 +266,10 @@ Rogue Smallsword    : 7.50
 Sorcerer Dexterity  : 9.00
 Wizard Perception   : 4.00
 Brute               : 8.50
-Leader              : 10.25
+Leader              : 6.50
 Mystic              : 4.50
 Skirmisher          : 5.75
-Sniper              : 3.75
+Sniper              : 3.25
 Warrior             : 11.50
 
 ### Level 20
@@ -285,10 +285,10 @@ Rogue Smallsword    : 6.00
 Sorcerer Dexterity  : 6.25
 Wizard Perception   : 4.50
 Brute               : 8.00
-Leader              : 9.75
+Leader              : 6.25
 Mystic              : 4.25
 Skirmisher          : 5.25
-Sniper              : 3.25
+Sniper              : 3.00
 Warrior             : 11.00
 
 ## Rogue Smallsword
@@ -306,7 +306,7 @@ Rogue Smallsword    : 3.50
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.75
 Brute               : 4.50
-Leader              : 5.50
+Leader              : 3.75
 Mystic              : 4.00
 Skirmisher          : 2.75
 Sniper              : 2.50
@@ -325,10 +325,10 @@ Rogue Smallsword    : 6.50
 Sorcerer Dexterity  : 5.75
 Wizard Perception   : 5.25
 Brute               : 6.25
-Leader              : 7.50
+Leader              : 5.75
 Mystic              : 4.50
 Skirmisher          : 5.00
-Sniper              : 4.00
+Sniper              : 3.25
 Warrior             : 10.25
 
 ### Level 10
@@ -344,10 +344,10 @@ Rogue Smallsword    : 5.00
 Sorcerer Dexterity  : 5.25
 Wizard Perception   : 4.00
 Brute               : 5.25
-Leader              : 6.25
+Leader              : 4.25
 Mystic              : 3.75
 Skirmisher          : 3.50
-Sniper              : 2.75
+Sniper              : 2.50
 Warrior             : 6.75
 
 ### Level 15
@@ -363,10 +363,10 @@ Rogue Smallsword    : 5.00
 Sorcerer Dexterity  : 6.25
 Wizard Perception   : 3.75
 Brute               : 6.50
-Leader              : 7.75
+Leader              : 5.00
 Mystic              : 4.25
 Skirmisher          : 3.75
-Sniper              : 3.00
+Sniper              : 2.75
 Warrior             : 8.00
 
 ### Level 20
@@ -382,10 +382,10 @@ Rogue Smallsword    : 3.75
 Sorcerer Dexterity  : 4.25
 Wizard Perception   : 3.25
 Brute               : 5.50
-Leader              : 6.50
+Leader              : 4.25
 Mystic              : 3.50
 Skirmisher          : 3.00
-Sniper              : 2.50
+Sniper              : 2.25
 Warrior             : 6.75
 
 ## Sorcerer Dexterity
@@ -403,7 +403,7 @@ Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.50
 Brute               : 5.00
-Leader              : 6.00
+Leader              : 4.00
 Mystic              : 3.75
 Skirmisher          : 2.25
 Sniper              : 2.25
@@ -422,10 +422,10 @@ Rogue Smallsword    : 4.75
 Sorcerer Dexterity  : 5.00
 Wizard Perception   : 5.00
 Brute               : 6.75
-Leader              : 8.25
+Leader              : 6.50
 Mystic              : 4.25
 Skirmisher          : 3.50
-Sniper              : 3.50
+Sniper              : 2.75
 Warrior             : 11.75
 
 ### Level 10
@@ -441,10 +441,10 @@ Rogue Smallsword    : 5.25
 Sorcerer Dexterity  : 6.75
 Wizard Perception   : 5.25
 Brute               : 6.75
-Leader              : 8.25
+Leader              : 5.25
 Mystic              : 4.25
 Skirmisher          : 4.00
-Sniper              : 3.50
+Sniper              : 3.00
 Warrior             : 9.25
 
 ### Level 15
@@ -460,10 +460,10 @@ Rogue Smallsword    : 5.75
 Sorcerer Dexterity  : 7.00
 Wizard Perception   : 4.00
 Brute               : 6.75
-Leader              : 8.00
+Leader              : 5.25
 Mystic              : 4.00
 Skirmisher          : 4.50
-Sniper              : 3.00
+Sniper              : 2.50
 Warrior             : 9.00
 
 ### Level 20
@@ -479,10 +479,10 @@ Rogue Smallsword    : 4.50
 Sorcerer Dexterity  : 5.00
 Wizard Perception   : 3.75
 Brute               : 6.25
-Leader              : 7.50
+Leader              : 4.75
 Mystic              : 3.75
 Skirmisher          : 3.75
-Sniper              : 2.75
+Sniper              : 2.50
 Warrior             : 8.25
 
 ## Wizard Perception
@@ -500,7 +500,7 @@ Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.50
 Brute               : 5.00
-Leader              : 6.00
+Leader              : 4.00
 Mystic              : 3.75
 Skirmisher          : 2.25
 Sniper              : 2.25
@@ -519,10 +519,10 @@ Rogue Smallsword    : 3.50
 Sorcerer Dexterity  : 3.25
 Wizard Perception   : 3.00
 Brute               : 3.50
-Leader              : 4.25
+Leader              : 3.50
 Mystic              : 2.50
 Skirmisher          : 2.75
-Sniper              : 2.50
+Sniper              : 1.75
 Warrior             : 6.00
 
 ### Level 10
@@ -538,10 +538,10 @@ Rogue Smallsword    : 4.00
 Sorcerer Dexterity  : 4.25
 Wizard Perception   : 3.25
 Brute               : 4.25
-Leader              : 5.25
+Leader              : 3.50
 Mystic              : 3.00
 Skirmisher          : 3.00
-Sniper              : 2.25
+Sniper              : 2.00
 Warrior             : 5.50
 
 ### Level 15
@@ -557,10 +557,10 @@ Rogue Smallsword    : 3.50
 Sorcerer Dexterity  : 4.50
 Wizard Perception   : 2.75
 Brute               : 4.50
-Leader              : 5.50
+Leader              : 3.50
 Mystic              : 3.00
 Skirmisher          : 2.75
-Sniper              : 2.25
+Sniper              : 2.00
 Warrior             : 5.50
 
 ### Level 20
@@ -576,8 +576,8 @@ Rogue Smallsword    : 3.50
 Sorcerer Dexterity  : 3.75
 Wizard Perception   : 2.75
 Brute               : 4.75
-Leader              : 5.75
+Leader              : 3.75
 Mystic              : 2.75
 Skirmisher          : 2.75
-Sniper              : 2.25
+Sniper              : 1.75
 Warrior             : 6.25
