@@ -9,7 +9,7 @@
     It is primarily intended for naval campaigns where the players are important crew members and ship combat is expected to be common.
     These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
 
-    \section{Ship Statistics}
+\section{Ship Statistics}
     Ships use the same basic framework for calculating their statistics as characters and monsters.
     A ship has a level that indicates its general power.
     This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
@@ -93,79 +93,189 @@
             \item Elite ships can take an additional \glossterm{elite action} each round (see \pcref{Ship Actions}).
         \end{itemize}
 
-    \subsection{Ship Attributes}
-        Unlike characters, ships normally have no Intelligence attribute.
-        However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
-        These represent slightly different narrative concepts than they do for characters.
-        In general, a ship's attributes represent a combination of its physical properties and the effectiveness of its crew.
-        A highly advanced ship may still have low attributes when its crew is inexperienced or incompetent.
+\section{Taking Ship Damage}
+    Ships suffer damage and vital wounds much like characters do.
 
-        \subsubsection{Strength}
-            Strength measures the power of a ship's physical weapons.
-            Ships with a high Strength have more damaging weapons, and a crew capable of keeping those weapons working effectively.
-            Ships with a low Strength have ineffective weaponry, or a crew that services those weapons poorly.
-            Strength has the following effects on ships:
+    \subsection{Ship Vital Wounds}
+        Ships gain vital wounds just like characters (see \pcref{Vital Wounds}).
+        However, ships have different vital wound effects.
+
+        \begin{dtable}
+            \lcaption{Ship Vital Wound Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Vital Roll} & \tb{Effect} \tableheaderrule
+                0 or less  & The ship gains a leak (see \pcref{Taking on Water})             \\
+                1          & The ship takes a \minus2 penalty to future vital rolls                    \\
+                2          & The ship's weapons take a \minus1 penalty to \glossterm{accuracy}         \\
+                3          & The ship has a \minus10 foot penalty to its speed with all movement modes \\
+                4          & The ship's turning cost increases by 10 feet                              \\
+                5          & The ship's maximum \glossterm{damage resistance} is halved                \\
+                6          & The ship takes a \minus1 penalty to all \glossterm{defenses}              \\
+                7          & The ship takes a \minus2 penalty to its Fortitude defense                \\
+                8          & The ship takes a \minus2 penalty to its Reflex defense                   \\
+                9          & The ship takes a \minus2 penalty to its Mental defense                   \\
+                10 or more & No extra vital wound effect                                               \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Taking On Water}
+        Damaged ships can begin taking on water through leaks.
+        This will eventually sink the ship without intervention by its crew.
+        However, even a hole in the hull is not necessarily fatal to a ship.
+        With constant effort to remove excess water, a crew can often keep a ship afloat long enough to repair it or reach dry land.
+
+        \subsubsection{Time to Sink}
+            A Medium ship with a leak becomes unusable after one minute.
+            After that point, the crew cannot perform any ship tasks, and the ship is immobile in the water except for natural drifting.
+            It generally takes another minute for the ship to fully sink.
+            For each size category larger than Medium, the time required for the ship to become unusable and sink increases, as described below:
+            \begin{itemize}
+                \item Medium: Ten minutes
+                \item Large: Thirty minutes
+                \item Huge: One hour
+                \item Gargantuan: Two hours
+                \item Colossal: Four hours
+                \item Galleon: Eight hours
+                \item Titan: One day
+            \end{itemize}
+
+            Each additional leak multiplies the rate that the ship sinks.
+            For example, a ship with three leaks would sink three times faster.
+
+        \subsubsection{Bailing the Ship}
+            A ship's crew can remove water from the ship to keep it from sinking.
+            In general, it takes one quarter of the ship's minimum crew, working constantly, to counteract incoming water from one leak.
+            This simply maintains the amount of water currently in the ship.
+            With twice that many crew dedicated to the task of bailing, existing water in the ship can be removed at the same rate that a leak would add water in, allowing the crew to catch up on existing leaks.
+
+\section{Repairing Ships}
+    Unlike characters, ships do not automatically heal over time.
+    Significant ship damage can be both time-consuming and expensive to repair.
+
+    Ships are assumed to have one repair crew that can only perform one repair task a time.
+    For large ships, that repair crew may have many members, but they can still only perform one repair task at a time.
+    A skilled fixer can reduce repair times (see \pcref{Crew Roles}).
+    At the GM's discretion, a relevant Craft skill check by a crew member can also reduce repair times.
+
+    \subsection{Restoring Damage Resistance}
+        A ship's damage resistance is the easiest value to restore.
+        This is called a short repair.
+        The repair crew of a ship can normally fully restore a ship's damage resistance with one hour of work and no significant material cost.
+
+    \subsection{Restoring Hit Points}
+        The repair crew of a ship can normally fully restore a ship's hit points with eight hours of work.
+        This is called a long repair.
+        This costs materials worth one consumable item with a rank that is two ranks lower than the ship's item rank.
+        If you are using gold pieces, this roughly translates to a repair cost equal to one hundredth of the ship's total value.
+        These repair materials must be prepurchased so they are available on the ship when it needs to be repaired.
+
+    \subsection{Repairing Vital Wounds}
+        The repair crew of a ship can normally remove one vital wound with 24 hours of work.
+        This is called a vital repair.
+        This costs materials worth one consumable item with a rank that is one rank lower than the ship's item rank.
+        If you are using gold pieces, this roughly translates to a repair cost equal to one twentieth of the ship's total value.
+        These repair materials must be prepurchased so they are available on the ship when it needs to be repaired.
+
+\section{Ship Attributes}
+    Unlike characters, ships normally have no Intelligence attribute.
+    However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
+    These represent slightly different narrative concepts than they do for characters.
+
+    In general, a ship's attributes represent a combination of its physical properties and the effectiveness of its crew.
+    A highly advanced ship may still have low attributes when its crew is inexperienced or incompetent.
+
+    Extremely rare magical ships may have an animating mind that can control the ship.
+    For details, see \pcref{Intelligent Ships}.
+
+    \subsection{Attribute Descriptions}
+
+    \subsubsection{Strength}
+        Strength measures the power of a ship's physical weapons.
+        Ships with a high Strength have more damaging weapons, and a crew capable of keeping those weapons working effectively.
+        Ships with a low Strength have ineffective weaponry, or a crew that services those weapons poorly.
+        Strength has the following effects on ships:
+        \begin{raggeditemize}
+            \item Ships add their Strength to their \glossterm{mundane power}.
+            \item Some weapons require a minimum ship Strength (see \pcref{Ship Weapons}).
+        \end{raggeditemize}
+
+        Unlike characters, a ship's Strength does not affect its carrying capacity.
+        That is calculated entirely from its physical size and shape.
+
+    \subsubsection{Dexterity}
+        Dexterity measures a ship's agility.
+        Ships with a high Dexterity can turn more sharply to avoid incoming fire and may be faster in short bursts.
+        Ships with a low Dexterity are lumbering and slow to change direction, making them easy targets.
+        Dexterity has the following effects on ships:
+        \begin{raggeditemize}
+            \item Ships add their Dexterity to their Armor defense.
+                This bonus can be reduced if the ship has medium or heavy armor (see \pcref{Ship Armor}).
+            \item Ships add their Dexterity to their Reflex defense.
+        \end{raggeditemize}
+
+        As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
+
+    \subsubsection{Constitution}
+        Constitution measures a ship's durability.
+        Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
+        Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
+        Constitution has the following effects on ships:
+        \begin{raggeditemize}
+            \item Ships add twice their Constitution to their hit points.
+                At level 7, this bonus increases to three times the ship's Constitution.
+                At level 13, this bonus increases to six times the ship's Constitution.
+                At level 19, this bonus increases to twelve times the ship's Constitution.
+            \item Ships add their Constitution to their Fortitude defense.
+        \end{raggeditemize}
+
+    \subsubsection{Perception}
+        Perception measures a ship's awareness and precision.
+        Ships with a high Perception have effective lookouts, excellent gunners, and weapons which are capable of swiftly repositioning for precise attacks.
+        Ships with a low Perception are either unable to effectively observe their surroundings or unable to react effectively to those observations.
+        Perception has the following effects on ships:
+        \begin{raggeditemize}
+            \item Ships add their Perception to their level to determine their \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
+        \end{raggeditemize}
+
+    \subsubsection{Willpower}
+        Willpower measures the morale and emotional steadiness of a ship's crew.
+        Ships with a high Willpower are better able to resist setbacks and frightening encounters.
+        Ships with a low Willpower may panic and be driven off easily.
+        Willpower has the following effects on ships:
+        \begin{raggeditemize}
+            \item Ships add their Willpower to their Mental defense.
+        \end{raggeditemize}
+
+        Willpower is the attribute which is most affected by a ship's current crew.
+
+    \subsection{Determining Ship Attributes}
+        As with characters, ships can use a predefined attribute array or use point buy to calculate attributes.
+        Ships start with 10 attribute points instead of 14 (see \pcref{Attribute Point Buy}).
+        However, a ship's attributes can be increased by crew roles (see \pcref{Crew Roles}).
+
+        \subsubsection{Predefined Attribute Scores}
+            If you don't want to individually allocate a ship's attribute scores, simply one of the following sets of attribute scores and distribute them as you choose among the ship's attributes, ignoring Intelligence:
             \begin{raggeditemize}
-                \item Ships add their Strength to their \glossterm{mundane power}.
-                \item Some weapons require a minimum ship Strength (see \pcref{Ship Weapons}).
+                % 5 + 3 + 1 + 1
+                \item Standard: 3, 2, 1, 1, 0
+                % 8 + 1 + 1
+                \item Specialized: 4, 1, 1, 0, 0
+                % 3 + 3 + 3 + 1 + 0
+                \item Balanced: 2, 2, 2, 1, 0
             \end{raggeditemize}
 
-            Unlike characters, a ship's Strength does not affect its carrying capacity.
-            That is calculated entirely from its physical size and shape.
+    \subsection{Intelligent Ships}
+        Intelligence measures a ship's capability for thought and internal control.
+        Normal ships have no Intelligence, and a ship's crew does not affect its Intelligence.
 
-        \subsubsection{Dexterity}
-            Dexterity measures a ship's agility.
-            Ships with a high Dexterity can turn more sharply to avoid incoming fire and may be faster in short bursts.
-            Ships with a low Dexterity are lumbering and slow to change direction, making them easy targets.
-            Dexterity has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Dexterity to their Armor defense.
-                    This bonus can be reduced if the ship has medium or heavy armor (see \pcref{Ship Armor}).
-                \item Ships add their Dexterity to their Reflex defense.
-            \end{raggeditemize}
+        Intelligent ships have a number of skill points equal to 3 \add their Intelligence.
+        These trained skills apply to any ship-related checks that the ship might make.
+        Ships cannot make skill checks for skills that they are not trained in.
+        For example, a ship that was trained in Awareness could be its own lookout, but a ship without Awareness trained would not be able to independenlty perceive its external surroundings.
 
-            As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
-
-        \subsubsection{Constitution}
-            Constitution measures a ship's durability.
-            Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
-            Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
-            Constitution has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add twice their Constitution to their hit points.
-                    At level 7, this bonus increases to three times the ship's Constitution.
-                    At level 13, this bonus increases to six times the ship's Constitution.
-                    At level 19, this bonus increases to twelve times the ship's Constitution.
-                \item Ships add their Constitution to their Fortitude defense.
-            \end{raggeditemize}
-
-            Constitution is the attribute which is least affected by a ship's current crew, and most affected by its physical properties.
-
-        \subsubsection{Intelligence}
-            Intelligence measures a ship's capability for thought and internal control.
-            Normal ships have no Intelligence, and a ship's crew does not affect its Intelligence.
-            Extremely rare magical ships may have an animating mind that can control the ship.
-            For details, see \pcref{Intelligent Ships}.
-
-        \subsubsection{Perception}
-            Perception measures a ship's awareness and precision.
-            Ships with a high Perception have effective lookouts, excellent gunners, and weapons which are capable of swiftly repositioning for precise attacks.
-            Ships with a low Perception are either unable to effectively observe their surroundings or unable to react effectively to those observations.
-            Perception has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Perception to their level to determine their \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
-            \end{raggeditemize}
-
-        \subsubsection{Willpower}
-            Willpower measures the morale and emotional steadiness of a ship's crew.
-            Ships with a high Willpower are better able to resist setbacks and frightening encounters.
-            Ships with a low Willpower may panic and be driven off easily.
-            Willpower has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Willpower to their Mental defense.
-            \end{raggeditemize}
-
-            Willpower is the attribute which is most affected by a ship's current crew.
+        In addition, each point of intelligence above \minus5 contributes a number of effective crew members to the ship's operation equal to a quarter of the ship's minimum crew requirements.
+        For example, a ship with an Intelligence of 0 would require no crew members to meet its minimum for navigation.
+        A ship with an Intelligence of 4 would have a total automatic crew count equal to twice its minimum crew.
 
 \section{Ship Size}\label{Ship Size}
 
@@ -287,7 +397,7 @@
     % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
     \begin{dtable!*}
         \lcaption{Realistic Ship Weapons}
-        \begin{dtabularx}{\textwidth}{l l >{\lcol}X l l l}
+        \begin{dtabularx}{\textwidth}{l >{\lcol}X l l l l}
             \tb{Name}                & \tb{Damage}                          & \tb{Tags}                              & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
             % +1dr for -1 range
             Rock sling               & 1d8 bludgeoning \add 1 per power     & Projectile (60/180), Slow Reload (1)   & 1         & Medium         & 2 (200 gp)     \\
@@ -371,14 +481,68 @@
     This does not mean that the ship literally has multiple captains or pilots.
     Instead, the ship would have a hierarchy.
     It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
+    Colossal ships can have two people for each crew role, Galleon ships can have three, and Titan ships can have four.
+
+    % TODO: do "ship-related" effects need to be defined in more detail?
 
     \subsection{Boatswain}
         This role is responsible for coordinating the ship's crew.
+
+        \cf{Bsn}[1]{Ensure Competence} Whenever a crew member on the ship makes a ship-related check that you are aware of, you can increase your fatigue level by two.
+        If you do, that creature gains the benefit of the \ability{desperate exertion} ability on that check (see \pcref{Desperate Exertion}).
+        It still cannot apply that ability twice to the same check.
+
+        \cf{Bsn}[2]{Specialized Encouragement} While you are in an appropriate location to encourage relevant crew, you provide one of the following benefits:
+        \begin{raggeditemize}
+            \item Evasion: The ship gains a \plus1 bonus to all defenses.
+            \item Travel: The ship gains a \plus10 foot bonus to its movement speed.
+            \item Weapons: Attacks with the ship's weapons gain a \plus1 accuracy bonus.
+        \end{raggeditemize}
+
+        Changing which benefit you provide with this ability typically takes one standard action, plus one standard action for each size category by which the ship is larger than Large.
+        Specific ships may be easier or more difficult to navigate, at the GM's discretion.
+        You cannot provide more than one benefit with this ability at once, even if you are perfectly located on the ship.
+
+        \cf{Bsn}[3]{Collective Effort} Each other crew member who can see or hear you gains a \plus1 bonus to ship-related checks.
+        If you are trained in a skill that a crew member is using to make a check, they gain a \plus2 bonus from this ability instead of \plus1.
+
+        \cf{Bsn}[4]{Encouraging Presence} Your ship gains a \plus1 bonus to its Willpower.
+
+        \cf{Bsn}[5]{Ensure Competence+} When you use this ability to affect a creature other than yourself, you only increase your fatigue level by one.
+
+        \cf{Bsn}[6]{Specialized Encouragement+} The bonuses you provide from this ability increase:
+        \begin{raggeditemize}
+            \item Evasion: The defense bonus increases to \plus2.
+            \item Travel: The ship's turning cost is reduced by 10 feet, to a minimum of 10 feet.
+            \item Weapons: The accuracy bonus increases to \plus2.
+        \end{raggeditemize}
+
+        \cf{Bsn}[7]{Collective Effort+} The bonus increases to \plus2, or to \plus4 for skills that you are trained in.
 
     \subsection{Fixer}
         This role is responsible for maintaining the ship's physical infrastructure.
         It represents a combination of carpentry, caulking, and similar repair jobs.
         In order to take this role on a ship, you must have at least one Craft skill relevant to the ship's construction.
+
+        \cf{Fix}[1]{Quick Patch} As a standard action, you can attempt to patch the ship's defenses.
+        This requires a Craft check relevant to the ship.
+        The difficulty value is equal to 5 \add 5 for each time that you have used that same Craft skill with this ability since the ship's last short repair.
+        Success means that the ship regains damage resistance equal to three times your rank in this crew role.
+
+        \cf{Fix}[2]{Rapid Repair} When you participate in repairing a ship, the repairs take half the normal time.
+        This affects short repairs, long repairs, and vital repairs.
+
+        \cf{Fix}[3]{Temporary Seal} With a minute of work, you can plug a leak in a ship for one hour without special materials.
+        This does not remove the vital wound, and you can only use this ability to affect one leak on the ship.
+
+        \cf{Fix}[4]{Sturdy Reinforcement} Your ship gains a \plus1 bonus to its Constitution.
+
+        \cf{Fix}[5]{Quick Patch+} The damage resistance regained increases to four times your rank in this crew role.
+
+        \cf{Fix}[6]{Temporary Seal+} You can use this ability to affect two leaks on the ship, rather than only one.
+
+        \cf{Fix}[7]{Efficient Repair} When you participate in repairing a ship, the cost of that repair is reduced by one item rank.
+        If you are using gold pieces, this roughly translates to a repair cost that is one fifth of the normal price.
 
     \subsection{Gunner}
         This role is responsible for aiming and firing ship weaponry.
