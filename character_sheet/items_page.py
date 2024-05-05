@@ -262,41 +262,59 @@ def weapons():
 
 def weapon(i):
     i = str(i)
-    return flex_row(
+    return flex_col(
         {"class": "weapon"},
         [
-            labeled_text_input(
-                "Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}
-            ),
-            labeled_number_input(
-                "Accuracy",
-                {"class": "weapon-accuracy"},
-                {"name": f"weapon_{i}_accuracy"},
-            ),
-            labeled_text_input(
-                "Base damage",
-                {"class": "weapon-damage-dice"},
-                {"name": f"weapon_{i}_damage_dice"},
-            ),
-            labeled_text_input(
-                "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
-            ),
-            underlabeled_checkbox(
-                "Heavy?",
-                None,
-                {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
-            ),
-            labeled_text_input(
-                "Magical damage",
-                {"class": "weapon-damage-dice"},
-                input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
-            ),
-            labeled_text_input(
-                "Mundane damage",
-                {"class": "weapon-damage-dice"},
-                input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
-            ),
-        ],
+            flex_row(
+                {"class": "weapon-input"},
+                [
+                labeled_text_input(
+                    "Name", {"class": "weapon-name"}, {"name": f"weapon_{i}_name"}
+                ),
+                labeled_number_input(
+                    "Accuracy",
+                    {"class": "weapon-accuracy"},
+                    {"name": f"weapon_{i}_accuracy"},
+                ),
+                labeled_text_input(
+                    "Base damage",
+                    {"class": "weapon-damage-dice"},
+                    {"name": f"weapon_{i}_damage_dice"},
+                ),
+                labeled_text_input(
+                    "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
+                ),
+            ]),
+            flex_row(
+                {"class": "weapon-calcs"},
+                [
+                underlabeled_checkbox(
+                    "Two-handed Heavy?",
+                    None,
+                    {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
+                ),
+                underlabeled_checkbox(
+                    "Two-handed Versatile Grip?",
+                    None,
+                    {"class": "is-versatile-grip", "name": f"weapon_{i}_versatile_grip"},
+                ),
+                underlabeled_checkbox(
+                    "Ignore power for damage?",
+                    None,
+                    {"class": "ignore-power", "name": f"weapon_{i}_ignore_power"},
+                ),
+                labeled_text_input(
+                    "Magical damage",
+                    {"class": "weapon-damage-dice"},
+                    input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
+                ),
+                labeled_text_input(
+                    "Mundane damage",
+                    {"class": "weapon-damage-dice"},
+                    input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
+                ),
+            ]),
+        ]
     )
 
 def wealth_items():
