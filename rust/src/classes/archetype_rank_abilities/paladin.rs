@@ -303,7 +303,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             // DR is handled by add_dr_scaling
