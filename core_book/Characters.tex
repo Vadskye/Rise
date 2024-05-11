@@ -368,146 +368,142 @@ You can either skim past terms you don't yet understand or look them up as you g
         \end{raggeditemize}
         \parhead{Automatic Languages} Common, Halfling, any one \glossterm{common language} (see \tref{Common Languages}).
 
-\section{Alignment}\label{Alignment}
-    A creature's general moral and personal attitudes can be represented by its alignment: lawful good, neutral good, chaotic good, lawful neutral, neutral, chaotic neutral, lawful evil, neutral evil, or chaotic evil.
+\section{Character Statistics}\label{Character Statistics}
 
-    Alignment is a tool for developing your character's perspective.
-    It is not a straitjacket to restrict your actions.
-    Each alignment represents a broad range of personality types or personal philosophies, so two characters of the same alignment can still be quite different from each other.
-    In addition, few people are completely consistent.
+    \subsection{Accuracy}\label{Accuracy}
+        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
+        Your accuracy is equal to half the sum of your level and Perception.
+        Many abilities can also modify your accuracy.
 
-    \subsection{Aligned Characters}
-        Alignment is a spectrum, not a binary.
-        Some characters are defined as being ``good'' or ``evil'', but this is a broad definition with a great deal of variation.
-        Only angels and demons are ``pure'' good or evil.
+        \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
+            Some abilities have the \abilitytag{Brawling} tag.
+            Your accuracy with those abilities is equal to half the sum of your level and Strength.
+            Most Brawling abilities are listed at \pcref{Special Combat Abilities}.
 
-        Approximately half of the general population of the world is neutral between good and evil, with a quarter being good and another quarter being evil.
-        This does not mean that a quarter of people are all saintly do-gooders and another quarter are all psychotic murders.
-        It would be more accurate to say ``good'' people are simply the most altruistic quarter of the population.
-        There are a rare few saints, but all good characters have some amount of selfishness in particular contexts.
-        Likewise, evil characters may act altruistically in some situations still having a fundamentally selfish nature.
+    \subsection{Damage Resistance}\label{Damage Resistance}
+        Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
+        For details about how damage resistance is used, see \pcref{Taking Damage}.
 
-        A similar ratio exists for law and chaos.
-        This means that the overall population follows the ratios given in \trefnp{Aligned Population Ratios}.
-        Of course, these populations are not distributed equally in the world.
-        In general, humanoid civilization tends to have more good and lawful characters, and monsters tend to be more chaotic and evil.
-        The GM can give more context about how alignment is used in their specific world.
-        Of course, the GM can also redefine good and evil itself, so talk with them if alignment is important to you or your character.
+        You do not intrinsically have any damage resistance.
+        Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
+        In addition, some class abilities and magic items can also increase it.
 
-        Monsters have their typical alignments listed in their description.
-        Even monsters who are listed as ``always good'' or ``always evil'' are not \textit{maximally} good or evil -- just good or evil enough to fall into that quartile.
-        Many evil monsters can be perfectly reasonable if they are capable of speech, and will uphold bargains that serve their interests.
-        Likewise, good monsters have their own objectives, and will not simply do whatever an adventuring party asks of them.
+    \subsection{Defenses}\label{Defenses}
+        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
+        If the attack roll is at least as high as that defense, the attack hits.
+        The four defenses are described below.
+        \begin{itemize}
+            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
+                It is the most commonly used defense.
+            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
+            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
+            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
+        \end{itemize}
 
-        \begin{dtable}
-            \lcaption{Aligned Population Ratios}
-            \begin{dtabularx}{\textwidth}{X X X X}
-                \tb{Alignment} & \tb{Good} & \tb{Neutral} & \tb{Evil} \tableheaderrule
-                \tb{Lawful}    & 6.25\%    & 12.5\%       & 6.25\% \\
-                \tb{Neutral}   & 12.5\%    & 25\%         & 12.5\% \\
-                \tb{Chaotic}   & 6.25\%    & 12.5\%       & 6.25\% \\
-            \end{dtabularx}
-        \end{dtable}
+        Your defenses are calculated in the following way:
+        \begin{itemize}
+            \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add defense bonuses from equipped body armor and shield
+            \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
+            \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
+            \itemhead{Mental} Half level \add Willpower \add class defense bonus
+        \end{itemize}
+        Each defense may also have various bonuses or penalties applied by special abilities.
 
+    \subsection{Encumbrance}\label{Encumbrance}
+        Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
+        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
+        If your Strength is positive, you reduce your encumbrance by an amount equal to your Strength.
+        This cannot reduce your encumbrance below 0.
 
-    \subsection{Good vs. Evil}
-        Distinguishing good from evil is a deeply complex task.
-        In a universe where angels, demons, and deities exist and interact with the affairs of mortals, being able to clearly define good and evil is important.
-        For the purposes of Rise, good and evil are strictly defined according to the intentions of one's actions, not their eventual outcomes.
-        Good intentions are altruistic, and evil intentions are selfish.
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
+        For details about how hit points are used, see \pcref{Taking Damage}.
 
-        This model for good and evil has limited value as a moral system for the real world, and it neglects several dimensions of morality that people might consider important.
-        It is are intentionally vague about what consistutes ``other beings'', and reasonable characters might disagree about how to consider the needs of non-humanoid living things like plants and animals.
-        However, is a useful way to define alignment as a character trait and roleplaying tool.
-        Good characters have recognizably different behaviors from evil characters, but they are not so intrinsically opposed that they can't coexist in the same group of adventurers.
-        Evil characters may cause you problems if you get in their way, but no civilized area would allow simply killing evil on sight.
+        The way you calculate your hit points is defined by your class (see \pcref{Classes}).
+        Increasing your level and Constitution will increase your hit points.
 
-        \parhead{Good} Good intentions are altruistic.
-        They are based on respect and empathetic consideration for other beings.
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
-        A good character will try to learn what other beings want or need so they can help most effectively.
-        They might try to keep everyone's spirits up with cameraderie and good humor, donate money whenever possible to help those in need, or dedicate their life to punishing criminals and protecting the innocent.
-        Good characters may have significant disagreements about what actions are best, and not all care about some lofty ``greater good''.
-        Some believe that self-sacrifice is noble, while many would say that it does more harm than good to neglect your own needs.
-        There are many interpretations of altruism.
+    \subsection{Power}\label{Power}
+        Your \glossterm{power} is a general representation of how strong your abilities are.
+        You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities.
+        If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
 
-        Even an action with good intentions may have disastrous consequences.
-        Unintentionally causing harm does not make a character evil, but good characters pay attention to the effects their actions have in practice.
-        If a good character caused harm, intentionally or otherwise, they would try to rectify their mistake.
+        Your mundane power is equal to your Strength \add half your level.
+        Similarly, your magical power is equal to your Willpower \add half your level.
+        If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
+        For example, a strike with a broadsword would normally deal 1d6 damage \plus1 per 2 power.
+        A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
 
-        \parhead{Evil} Evil intentions are selfish.
-        They come from prioritizing one's own desires when that conflicts with the knowable needs and desires of other beings.
+        Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
+        % TODO: weapon damage wording
+        For example, you gain a \plus1 bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
 
-        An evil character will generally not care what other beings want or need unless they personally benefit from that knowledge.
-        They might betray allies, break laws or abuse legal loopholes to gain an advantage, or bully other creatures into doing their bidding.
-        Evil characters may take actions that help others and can even work effectively as a team, but their ultimate motivation is to help themselves or make themselves feel better, not to help others.
+\section{Resources}\label{Resources}
 
-        \parhead{Neutral} Characters that are neutral between good and evil are neither consistently altruistic nor consistently selfish.
-        Most neutral characters behave altruistically in some ways and selfishly in other ways -- either at different times, or about different aspects of life.
-        They often have strong bonds to particular individuals who they care about selflessly, but are not altruistic in a general sense.
+    \subsection{Attunement Points}\label{Attunement Points}
+        Many special abilities and magic items only function as long as a creature attunes to them.
+        The number of effects that you can attune to is based on the number of \glossterm{attunement points} that you have.
+        Most effects require only a single attunement point, but some require two.
+        For details, see \pcref{Attunement}.
 
-        Intentions that do not involve other beings are neither good nor evil.
-        Similarly, actions taken to meet one's own mandatory needs are neither good nor evil.
-        Wild animals may act primarily out of self-interest, but since they generally lack the capacity to recognize the needs and desires of other beings, they are considered neutral rather than good or evil.
+        Your \glossterm{class} gives you a certain number of attunement points.
+        You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
+        A small number of abilities can also grant additional \glossterm{attunement points}.
 
-    \subsection{Law vs. Chaos}
-        \parhead{Law} Lawful characters value consistency.
-        They obey rules that guide their actions.
-        Some lawful characters draw their rules from external forces, such as serving a particular master or following the legal laws of the land.
-        Other lawful characters follow rules they make for themselves.
+    \subsection{Fatigue}\label{Fatigue}
+        Thoughout the day, you can become fatigued by your exertions both in and out of combat.
+        While \glossterm{hit points} are easy to restore, reducing your \glossterm{fatigue level} generally requires a \glossterm{long rest}.
+        Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
-        \parhead{Chaos} Chaotic characters value flexibility and freedom.
-        They make decisions based on what they think or feel at the time, even if it is inconsistent with their previous statements or actions.
+        \subsubsection{Fatigue Level}\label{Fatigue Level}
+            Your \glossterm{fatigue level} measures how fatigued you are.
+            A number of abilities and attacks can cause you to increase your fatigue level.
+            The most common abilities that increase your fatigue level are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
+            All of those abilities are described in \pcref{Universal Abilities}.
 
-        \parhead{Neutral} Characters that are neutral between law and chaos are neither exceptionally consistent nor exceptionally inconsistent.
-        They tend to be generally consistent but may change their minds under the right circumstances.
-        Non-sapient beings such as animals are neutral rather than lawful or chaotic.
+            \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
+                Becoming slightly fatigued is not immediately detrimental.
+                Your fatigue level can be as high as your Constitution without suffering any consequences (minimum 0).
+                This value is called your \glossterm{fatigue tolerance}.
+                Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
 
-\section{Personal Appearance}
-    \begin{dtable!*}
-        \lcaption{Typical Ages}
-        \begin{dtabularx}{\textwidth}{l *{5}{>{\ccol}X}}
-            \tb{Species} & \tb{Adulthood} & \tb{Middle Age} & \tb{Old}  & \tb{Venerable} & \tb{Maximum Age} \tableheaderrule
-            Human        & 15 years       & 35 years        & 55 years  & 70 years       & \plus4d10 years \\
-            Dwarf        & 40 years       & 125 years       & 190 years & 250 years      & \plus2d\% years \\
-            Elf          & 110 years      & 175 years       & 250 years & 350 years      & \plus4d\% years \\
-            Gnome        & 10 years       & 25 years        & 40 years  & 55 years       & \plus1d10 years \\
-            Half-elf     & 20 years       & 60 years        & 90 years  & 125 years      & \plus6d10 years \\
-            Half-orc     & 14 years       & 30 years        & 45 years  & 60 years       & \plus2d10 years \\
-            Halfling     & 20 years       & 50 years        & 75 years  & 100 years      & \plus1d\% years \\
-        \end{dtabularx}
-    \end{dtable!*}
+            \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
+                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance} (minimum 0).
+                This penalty is called your \glossterm{fatigue penalty}.
 
-    \begin{dtable}
-        \lcaption{Typical Height and Weight}
-        \begin{dtabularx}{\columnwidth}{l *{2}{>{\lcol}X}}
-            \tb{Species} & \tb{Average Height} & \tb{Average Weight} \tableheaderrule
-            Human        & 5' 5''              & 150 lb. \\
-            Dwarf        & 4' 2''              & 160 lb. \\
-            Elf          & 5' 8''              & 140 lb. \\
-            Gnome        & 3' 4''              & 50 lb.  \\
-            Half-elf     & 5' 6''              & 140 lb. \\
-            Half-orc     & 5' 10''             & 200 lb. \\
-            Halfling     & 3' 1''              & 50 lb.  \\
-        \end{dtabularx}
-    \end{dtable}
+        \subsubsection{Exhaustion}\label{Exhaustion}
+            When your \glossterm{fatigue penalty} reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
+            Generally, this means that you are unconscious for 8 hours.
 
-    \subsection{Age}
-        The typical age for each species is listed in \trefnp{Typical Ages}.
-        If you are old, you take a \minus2 penalty to \glossterm{checks} based on Strength, Dexterity, Constitution, and Perception.
-        However, you gain a \plus2 bonus to \glossterm{checks} based on Intelligence and Willpower.
-        If you are venerable, these modifiers change to \minus4 and \plus4 respectively.
-        In general, player characters should not start as old or venerable age, but the GM can always allow it for specific campaigns if they want.
+        \subsubsection{Recovering From Fatigue}
+            When you finish a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
+            There are no other ways to reduce your fatigue level.
 
-        When you reach venerable age, the GM secretly rolls your maximum age, which is the number from the Venerable column on \trefnp{Typical Ages} plus the result of the dice roll indicated on the Maximum Age column on that table.
-        They record the result.
-        If you reach your maximum age, you die of old age at some time during the following year.
-
-        The maximum ages are for player characters. Most people in the world at large die from pestilence, accidents, infections, or violence before getting to venerable age.
-
-    \subsection{Height and Weight}
-        The typical height and weight for each species is listed in \tref{Typical Height and Weight}.
-        The average man from each species is slightly taller and heavier than the average woman, but this is not a restriction for player characters.
+    \subsection{Insight Points}\label{Insight Points}
+        You can spend \glossterm{insight points} to gain new special abilities.
+        Your \glossterm{class} gives you a certain number of insight points, and you gain a bonus (or penalty) to that number of insight points equal to your Intelligence.
+        You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
+        Some abilities can also grant insight points.
+        
+        You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
+        In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
+        These options are listed below.
+        \begin{itemize}
+            \item Barbarian: Combat styles, exotic weapons, and maneuvers
+            \item Cleric: Mystic spheres and spells
+            \item Druid: Mystic spheres, spells, and wild aspects
+            \item Fighter: Battle tactics, combat styles, and maneuvers
+            \item Fighter: Combat styles, ki manifestations, and maneuvers
+            \item Paladin: Mystic spheres and spells
+            \item Ranger: Combat styles, hunting styles, and maneuvers
+            \item Rogue: Bardic performances, combat styles, maneuvers, and trained skills
+            \item Sorcerer: Mystic spheres and spells
+            \item Warlock: Mystic spheres and spells
+            \item Wizard: Metamagic, mystic spheres, and spells
+        \end{itemize}
 
 \section{Character Creation}\label{Character Creation}
 
@@ -685,142 +681,147 @@ You can either skim past terms you don't yet understand or look them up as you g
         Fancy fantasy-appropriate names like Ayala or Theodolus tend to push the game in a slightly more serious direction, especially if you make the daring choice to include a canonical last name.
         As always, stay in tune with what the GM and the other players are expecting.
 
-\section{Character Statistics}\label{Character Statistics}
+\section{Alignment}\label{Alignment}
+    A creature's general moral and personal attitudes can be represented by its alignment: lawful good, neutral good, chaotic good, lawful neutral, neutral, chaotic neutral, lawful evil, neutral evil, or chaotic evil.
 
-    \subsection{Accuracy}\label{Accuracy}
-        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        Your accuracy is equal to half the sum of your level and Perception.
-        Many abilities can also modify your accuracy.
+    Alignment is a tool for developing your character's perspective.
+    It is not a straitjacket to restrict your actions.
+    Each alignment represents a broad range of personality types or personal philosophies, so two characters of the same alignment can still be quite different from each other.
+    In addition, few people are completely consistent.
 
-        \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
-            Some abilities have the \abilitytag{Brawling} tag.
-            Your accuracy with those abilities is equal to half the sum of your level and Strength.
-            Most Brawling abilities are listed at \pcref{Special Combat Abilities}.
+    \subsection{Aligned Characters}
+        Alignment is a spectrum, not a binary.
+        Some characters are defined as being ``good'' or ``evil'', but this is a broad definition with a great deal of variation.
+        Only angels and demons are ``pure'' good or evil.
 
-    \subsection{Damage Resistance}\label{Damage Resistance}
-        Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
-        For details about how damage resistance is used, see \pcref{Taking Damage}.
+        Approximately half of the general population of the world is neutral between good and evil, with a quarter being good and another quarter being evil.
+        This does not mean that a quarter of people are all saintly do-gooders and another quarter are all psychotic murders.
+        It would be more accurate to say ``good'' people are simply the most altruistic quarter of the population.
+        There are a rare few saints, but all good characters have some amount of selfishness in particular contexts.
+        Likewise, evil characters may act altruistically in some situations still having a fundamentally selfish nature.
 
-        You do not intrinsically have any damage resistance.
-        Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
-        In addition, some class abilities and magic items can also increase it.
+        A similar ratio exists for law and chaos.
+        This means that the overall population follows the ratios given in \trefnp{Aligned Population Ratios}.
+        Of course, these populations are not distributed equally in the world.
+        In general, humanoid civilization tends to have more good and lawful characters, and monsters tend to be more chaotic and evil.
+        The GM can give more context about how alignment is used in their specific world.
+        Of course, the GM can also redefine good and evil itself, so talk with them if alignment is important to you or your character.
 
-    \subsection{Defenses}\label{Defenses}
-        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against one of your four \glossterm{defenses} (see \pcref{Attack Rolls}).
-        If the attack roll is at least as high as that defense, the attack hits.
-        The four defenses are described below.
-        \begin{itemize}
-            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
-                It is the most commonly used defense.
-            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
-            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
-            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
-        \end{itemize}
+        Monsters have their typical alignments listed in their description.
+        Even monsters who are listed as ``always good'' or ``always evil'' are not \textit{maximally} good or evil -- just good or evil enough to fall into that quartile.
+        Many evil monsters can be perfectly reasonable if they are capable of speech, and will uphold bargains that serve their interests.
+        Likewise, good monsters have their own objectives, and will not simply do whatever an adventuring party asks of them.
 
-        Your defenses are calculated in the following way:
-        \begin{itemize}
-            \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add defense bonuses from equipped body armor and shield
-            \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
-            \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
-            \itemhead{Mental} Half level \add Willpower \add class defense bonus
-        \end{itemize}
-        Each defense may also have various bonuses or penalties applied by special abilities.
+        \begin{dtable}
+            \lcaption{Aligned Population Ratios}
+            \begin{dtabularx}{\textwidth}{X X X X}
+                \tb{Alignment} & \tb{Good} & \tb{Neutral} & \tb{Evil} \tableheaderrule
+                \tb{Lawful}    & 6.25\%    & 12.5\%       & 6.25\% \\
+                \tb{Neutral}   & 12.5\%    & 25\%         & 12.5\% \\
+                \tb{Chaotic}   & 6.25\%    & 12.5\%       & 6.25\% \\
+            \end{dtabularx}
+        \end{dtable}
 
-    \subsection{Encumbrance}\label{Encumbrance}
-        Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
-        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
-        If your Strength is positive, you reduce your encumbrance by an amount equal to your Strength.
-        This cannot reduce your encumbrance below 0.
 
-    \subsection{Hit Points}\label{Hit Points}
-        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-        For details about how hit points are used, see \pcref{Taking Damage}.
+    \subsection{Good vs. Evil}
+        Distinguishing good from evil is a deeply complex task.
+        In a universe where angels, demons, and deities exist and interact with the affairs of mortals, being able to clearly define good and evil is important.
+        For the purposes of Rise, good and evil are strictly defined according to the intentions of one's actions, not their eventual outcomes.
+        Good intentions are altruistic, and evil intentions are selfish.
 
-        The way you calculate your hit points is defined by your class (see \pcref{Classes}).
-        Increasing your level and Constitution will increase your hit points.
+        This model for good and evil has limited value as a moral system for the real world, and it neglects several dimensions of morality that people might consider important.
+        It is are intentionally vague about what consistutes ``other beings'', and reasonable characters might disagree about how to consider the needs of non-humanoid living things like plants and animals.
+        However, is a useful way to define alignment as a character trait and roleplaying tool.
+        Good characters have recognizably different behaviors from evil characters, but they are not so intrinsically opposed that they can't coexist in the same group of adventurers.
+        Evil characters may cause you problems if you get in their way, but no civilized area would allow simply killing evil on sight.
 
-        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
-        When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+        \parhead{Good} Good intentions are altruistic.
+        They are based on respect and empathetic consideration for other beings.
 
-    \subsection{Power}\label{Power}
-        Your \glossterm{power} is a general representation of how strong your abilities are.
-        You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities.
-        If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
+        A good character will try to learn what other beings want or need so they can help most effectively.
+        They might try to keep everyone's spirits up with cameraderie and good humor, donate money whenever possible to help those in need, or dedicate their life to punishing criminals and protecting the innocent.
+        Good characters may have significant disagreements about what actions are best, and not all care about some lofty ``greater good''.
+        Some believe that self-sacrifice is noble, while many would say that it does more harm than good to neglect your own needs.
+        There are many interpretations of altruism.
 
-        Your mundane power is equal to your Strength \add half your level.
-        Similarly, your magical power is equal to your Willpower \add half your level.
-        If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
-        For example, a strike with a broadsword would normally deal 1d6 damage \plus1 per 2 power.
-        A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
+        Even an action with good intentions may have disastrous consequences.
+        Unintentionally causing harm does not make a character evil, but good characters pay attention to the effects their actions have in practice.
+        If a good character caused harm, intentionally or otherwise, they would try to rectify their mistake.
 
-        Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
-        % TODO: weapon damage wording
-        For example, you gain a \plus1 bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
+        \parhead{Evil} Evil intentions are selfish.
+        They come from prioritizing one's own desires when that conflicts with the knowable needs and desires of other beings.
 
-\section{Resources}\label{Resources}
+        An evil character will generally not care what other beings want or need unless they personally benefit from that knowledge.
+        They might betray allies, break laws or abuse legal loopholes to gain an advantage, or bully other creatures into doing their bidding.
+        Evil characters may take actions that help others and can even work effectively as a team, but their ultimate motivation is to help themselves or make themselves feel better, not to help others.
 
-    \subsection{Attunement Points}\label{Attunement Points}
-        Many special abilities and magic items only function as long as a creature attunes to them.
-        The number of effects that you can attune to is based on the number of \glossterm{attunement points} that you have.
-        Most effects require only a single attunement point, but some require two.
-        For details, see \pcref{Attunement}.
+        \parhead{Neutral} Characters that are neutral between good and evil are neither consistently altruistic nor consistently selfish.
+        Most neutral characters behave altruistically in some ways and selfishly in other ways -- either at different times, or about different aspects of life.
+        They often have strong bonds to particular individuals who they care about selflessly, but are not altruistic in a general sense.
 
-        Your \glossterm{class} gives you a certain number of attunement points.
-        You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
-        A small number of abilities can also grant additional \glossterm{attunement points}.
+        Intentions that do not involve other beings are neither good nor evil.
+        Similarly, actions taken to meet one's own mandatory needs are neither good nor evil.
+        Wild animals may act primarily out of self-interest, but since they generally lack the capacity to recognize the needs and desires of other beings, they are considered neutral rather than good or evil.
 
-    \subsection{Fatigue}\label{Fatigue}
-        Thoughout the day, you can become fatigued by your exertions both in and out of combat.
-        While \glossterm{hit points} are easy to restore, reducing your \glossterm{fatigue level} generally requires a \glossterm{long rest}.
-        Fatigue is still easier to recover from than \glossterm{vital wounds}.
+    \subsection{Law vs. Chaos}
+        \parhead{Law} Lawful characters value consistency.
+        They obey rules that guide their actions.
+        Some lawful characters draw their rules from external forces, such as serving a particular master or following the legal laws of the land.
+        Other lawful characters follow rules they make for themselves.
 
-        \subsubsection{Fatigue Level}\label{Fatigue Level}
-            Your \glossterm{fatigue level} measures how fatigued you are.
-            A number of abilities and attacks can cause you to increase your fatigue level.
-            The most common abilities that increase your fatigue level are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
-            All of those abilities are described in \pcref{Universal Abilities}.
+        \parhead{Chaos} Chaotic characters value flexibility and freedom.
+        They make decisions based on what they think or feel at the time, even if it is inconsistent with their previous statements or actions.
 
-            \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
-                Becoming slightly fatigued is not immediately detrimental.
-                Your fatigue level can be as high as your Constitution without suffering any consequences (minimum 0).
-                This value is called your \glossterm{fatigue tolerance}.
-                Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
+        \parhead{Neutral} Characters that are neutral between law and chaos are neither exceptionally consistent nor exceptionally inconsistent.
+        They tend to be generally consistent but may change their minds under the right circumstances.
+        Non-sapient beings such as animals are neutral rather than lawful or chaotic.
 
-            \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
-                You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance} (minimum 0).
-                This penalty is called your \glossterm{fatigue penalty}.
+\section{Personal Appearance}
+    \begin{dtable!*}
+        \lcaption{Species Age}
+        \begin{dtabularx}{\textwidth}{l *{5}{>{\ccol}X}}
+            \tb{Species} & \tb{Adulthood} & \tb{Middle Age} & \tb{Old}  & \tb{Venerable} & \tb{Maximum Age} \tableheaderrule
+            Human        & 18 years       & 35 years        & 55 years  & 70 years       & \plus4d10 years \\
+            Dwarf        & 40 years       & 125 years       & 190 years & 250 years      & \plus2d\% years \\
+            Elf          & 110 years      & 175 years       & 250 years & 350 years      & \plus4d\% years \\
+            Gnome        & 14 years       & 30 years        & 50 years  & 80 years       & \plus1d\% years \\
+            Half-elf     & 25 years       & 60 years        & 90 years  & 125 years      & \plus6d10 years \\
+            Half-orc     & 16 years       & 30 years        & 45 years  & 60 years       & \plus2d10 years \\
+            Halfling     & 22 years       & 50 years        & 75 years  & 100 years      & \plus1d\% years \\
+        \end{dtabularx}
+    \end{dtable!*}
 
-        \subsubsection{Exhaustion}\label{Exhaustion}
-            When your \glossterm{fatigue penalty} reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
-            Generally, this means that you are unconscious for 8 hours.
+    \begin{dtable}
+        \lcaption{Typical Height and Weight}
+        \begin{dtabularx}{\columnwidth}{l *{2}{>{\lcol}X}}
+            \tb{Species} & \tb{Average Height} & \tb{Average Weight} \tableheaderrule
+            Human        & 5' 5''              & 150 lb. \\
+            Dwarf        & 4' 2''              & 160 lb. \\
+            Elf          & 5' 8''              & 140 lb. \\
+            Gnome        & 3' 4''              & 50 lb.  \\
+            Half-elf     & 5' 6''              & 140 lb. \\
+            Half-orc     & 5' 10''             & 200 lb. \\
+            Halfling     & 3' 1''              & 50 lb.  \\
+        \end{dtabularx}
+    \end{dtable}
 
-        \subsubsection{Recovering From Fatigue}
-            When you finish a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
-            There are no other ways to reduce your fatigue level.
+    \subsection{Age}
+        The typical age for each species is listed in \trefnp{Typical Ages}.
+        The Adulthood column indicates the minimum age for adulthood.
+        Most adventurers are somewhere between adulthood and middle age.
 
-    \subsection{Insight Points}\label{Insight Points}
-        You can spend \glossterm{insight points} to gain new special abilities.
-        Your \glossterm{class} gives you a certain number of insight points, and you gain a bonus (or penalty) to that number of insight points equal to your Intelligence.
-        You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
-        Some abilities can also grant insight points.
-        
-        You can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
-        In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
-        These options are listed below.
-        \begin{itemize}
-            \item Barbarian: Combat styles, exotic weapons, and maneuvers
-            \item Cleric: Mystic spheres and spells
-            \item Druid: Mystic spheres, spells, and wild aspects
-            \item Fighter: Battle tactics, combat styles, and maneuvers
-            \item Fighter: Combat styles, ki manifestations, and maneuvers
-            \item Paladin: Mystic spheres and spells
-            \item Ranger: Combat styles, hunting styles, and maneuvers
-            \item Rogue: Bardic performances, combat styles, maneuvers, and trained skills
-            \item Sorcerer: Mystic spheres and spells
-            \item Warlock: Mystic spheres and spells
-            \item Wizard: Metamagic, mystic spheres, and spells
-        \end{itemize}
+        If you are old, you take a \minus2 penalty to \glossterm{checks} based on Strength, Dexterity, Constitution, and Perception.
+        However, you gain a \plus2 bonus to \glossterm{checks} based on Intelligence and Willpower.
+        If you are venerable, these modifiers change to \minus4 and \plus4 respectively.
+        In general, player characters should not start as old or venerable age, but the GM can always allow it for specific campaigns if they want.
+
+        When you reach venerable age, the GM secretly rolls your maximum age, which is the number from the Venerable column on \trefnp{Typical Ages} plus the result of the dice roll indicated on the Maximum Age column on that table.
+        They record the result.
+        If you reach your maximum age, you die of age-related illnesses or frailty at some time during that year.
+
+    \subsection{Height and Weight}
+        The typical height and weight for each species is listed in \tref{Typical Height and Weight}.
+        The average man from each species is slightly taller and heavier than the average woman, but this is not a restriction for player characters.
 
 % \section{Sample Characters}
 
