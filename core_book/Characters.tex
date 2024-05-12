@@ -665,19 +665,31 @@ You can either skim past terms you don't yet understand or look them up as you g
 
             \begin{dtable}
                 \lcaption{Weight Categories}
-                \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Weight Category} & \tb{Average Weight} \tableheaderrule
-                    Fine        & 1 oz.       \\
-                    Diminuitive & 1/2 lb.     \\
-                    Tiny        & 2 lb.       \\
-                    Small       & 15 lb.      \\
-                    Medium      & 125 lb.     \\
-                    Large       & 1,000 lb.   \\
-                    Huge        & 8,000 lb.   \\
-                    Gargantuan  & 64,000 lb.  \\
-                    Colossal    & 512,000 lb. \\
+                \begin{dtabularx}{\textwidth}{l l X}
+                    \tb{Weight Category} & \tb{Falling Damage Die}\fn{1} & \tb{Average Weight} \tableheaderrule
+                    Fine                 & \tdash                        & 1 oz.       \\
+                    Diminuitive          & \tdash                        & 1/2 lb.     \\
+                    Tiny                 & 1d2                           & 2 lb.       \\
+                    Small                & 1d6                           & 15 lb.      \\
+                    Medium               & 1d10                          & 125 lb.     \\
+                    Large                & 2d6                           & 1,000 lb.   \\
+                    Huge                 & 2d10                          & 8,000 lb.   \\
+                    Gargantuan           & 3d10                          & 64,000 lb.  \\
+                    Colossal             & 5d10                          & 512,000 lb. \\
                 \end{dtabularx}
+                1. See Falling Damage, below.
             \end{dtable}
+
+    % TODO: clarify that being immune to falling damage doesn't make you immune to damage from being fallen on.
+    \subsection{Falling Damage}\label{Falling Damage}
+        If a creature or object falls at least 10 feet, it and the object it lands on each take bludgeoning damage.
+        This falling damage is based on the weight category of the falling object or creature.
+        Each weight category has an associated falling damage die listed in \tref{Weight Categories}.
+        For every 10 feet of the fall, the falling damage die is rolled once, to a maximum fall distance of 200 feet.
+        For example, a Medium creature falling 50 feet would take 5d10 falling damage.
+
+        If you fall intentionally, you treat your fall as being 10 feet shorter.
+        Creatures and objects with a Fine or Diminuitive weight category have no falling damage dice and cannot cause falling damage.
 
 \section{Calculation Guidelines}
     This explains some general guidelines to follow when calculating character statistics.
