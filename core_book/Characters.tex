@@ -3,7 +3,7 @@
 This chapter describes how individual characters in Rise are defined, including their statistics.
 If you plan on playing a premade character, the information in this chapter will still be useful so you can understand how your character works, but you can skip the Character Creation section at the end.
 For context about how characters act in combat, see \pcref{Combat}.
-For context about how characters act more generally, see \pcref{Playing the Game}.
+For context about how characters act more generally, see \pcref{Adventuring}.
 
 Some of the information in this chapter won't fully make sense until you've read future chapters.
 You can either skim past terms you don't yet understand or look them up as you go along.
@@ -449,13 +449,32 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsection{Attunement Points}\label{Attunement Points}
         Many special abilities and magic items only function as long as a creature attunes to them.
-        The number of effects that you can attune to is based on the number of \glossterm{attunement points} that you have.
-        Most effects require only a single attunement point, but some require two.
-        For details, see \pcref{Attunement}.
+        Attuned abilities have the \abilitytag{Attune} tag.
 
         Your \glossterm{class} gives you a certain number of attunement points.
         You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
         A small number of abilities can also grant additional \glossterm{attunement points}.
+
+        \subsubsection{Attunement}\label{Attunement}
+            Abilities that require attunement to function have the \abilitytag{Attune} tag.
+            Attuning to an ability typically require investing a single \glossterm{attunement point}.
+            You can release your attunement to an effect as a \glossterm{free action}, which typically ends the effect completely.
+            This allows you to use that attunement point to attune to a different effect.
+            You can never attune to the same ability more than once.
+
+            Normally, the creature using the attuned ability must attune to it.
+            In the special case of \glossterm{rituals}, any number of ritual participants can attune to the ability, and the ability lasts as long as any participant is still attuned to it.
+            There are two special subtypes of attunement abilities: deep attunements and targeted attunements.
+
+            \parhead{Deep Attunement} This ability require investing two attunement points instead of only one.
+            In addition, releasing a deep attunement does not immediately return the invested attunement points.
+            Instead, they only return after you finish a \glossterm{short rest}.
+            Deep attunements are identified as \abilitytag{Attune} (deep).
+
+            \parhead{Targeted Attunement} This ability requires attunement from the target instead of the creature using the ability.
+            If it targets multiple creatures, each target must attune to its own version of the effect.
+            When a target releases its attunement, the effect only ends for it, not for any other targets.
+            Targeted attunements are identified as \abilitytag{Attune} (target).
 
     \subsection{Encumbrance}\label{Encumbrance}
         Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
@@ -514,6 +533,8 @@ You can either skim past terms you don't yet understand or look them up as you g
             \item Warlock: Mystic spheres and spells
             \item Wizard: Metamagic, mystic spheres, and spells
         \end{itemize}
+
+\section{Attunement}\label{Attunement}
 
 \section{Size and Weight}\label{Size and Weight}
 
