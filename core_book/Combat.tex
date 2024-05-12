@@ -395,42 +395,13 @@
             The winner would reach the door first, and the loser would stop in the last open space before they reach the door.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
-    This section describes how creatures move and position themselves on a battlefield.
+    This section describes how creatures move and position themselves when time and location are important to measure precisely.
 
     \subsection{Movements}\label{Movements}
-        Abilities that require a movement typically move you around the battlefield, and are usually used in the \glossterm{movement phase}.
-        Making a movement generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+        During each \glossterm{movement phase}, you can make one \glossterm{movement}.
+        You can spend your \glossterm{standard action} during the \glossterm{action phase} to make another movement.
 
-        You can make one movement during the \glossterm{movement phase} of each round.
-        In addition, you can choose to replace your standard action during the action phase with an additional movement.
-
-    \subsection{Jumping}\label{Jumping}
-        Creatures with legs can jump as part of movement.
-        When you jump, choose a destination square where your jump ends.
-        Landing at a precise location within a square may require a check with the Jump skill (see \pcref{Jump}).
-
-        % Human with 0 strength jumps 5 feet.
-        % Human with 2 strength jumps 15 feet.
-        % Human with 4 strength jumps 25 feet, which is almost a world record.
-        A jump's maximum horizontal distance is normally equal to 5 feet per 2 Strength.
-        If you are trained with the Jump skill, the distance is instead equal to 5 feet per Strength, to a minimum of 5 feet.
-        If you have a running start of at least 15 feet, you also add a quarter of your \glossterm{base speed} to that distance.
-        A jump's maximum vertical height is equal to half your maximum horizontal distance.
-
-        Jumping off of terrain that is not solid ground, such as a wall, halves your jump distance and may require a Jump check (see \pcref{Jump}).
-        If your jump distance would be less than 5 feet, you normally cannot jump meaningfully at all.
-        The GM can decide whether that makes sense in a particular situation.
-
-        If your destination square is in midair, you begin falling at the end of the round.
-        This allows you to jump during the movement phase and act in midair during the action phase.
-        Narratively, this represents you timing your jump so you can take a useful action while jumping.
-        You don't just hover in midair.
-
-        \subsection{Jumping Speed Limits}
-            The maximum distance that you can travel by jumping is equal to your remaining land speed during the current phase.
-            This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-            For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
-            If your jump distance is extremely high and your land speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
+        When a creature makes a movement, it travels a distance in feet equal to its \glossterm{speed} with one \glossterm{movement mode}.
 
     \subsection{Movement Modes}\label{Movement Modes}
         A \glossterm{movement mode} is a method of moving from one location to another.
@@ -439,9 +410,8 @@
         In addition, some abilities grant creatures the ability to move in unusual ways.
         These forms of movement are described here.
 
-        Unless otherwise noted, all creatures have a land speed.
-        Bipedal creatures have a land speed equal to the base speed for their size (see \pcref{Size Categories}).
-        Creatures with four or more legs have a land speed 10 feet faster than the base speed for their size.
+        Unless otherwise noted, all creatures have a land speed equal to the base speed for their size (see \pcref{Size Categories}).
+        Creatures that are \trait{multipedal} gain a \plus10 foot bonus to their land speed.
 
         Some creatures have movement modes that are slower than their base speed for various reasons.
         A creature's speed with any given movement mode can never be slower than 5 feet.
@@ -521,6 +491,34 @@
         For example, assume you have a 10 foot climb speed, a 20 foot swim speed, and a 40 foot land speed.
         You could climb 10 feet, swim 20 feet, and move on land for 10 feet all in the same phase.
         However, if you climb 10 feet, but are unable to swim or move on land, such as if you are partway up a cliff, you cannot move any farther.
+
+    \subsection{Jumping}\label{Jumping}
+        Creatures with legs can jump as part of movement.
+        When you jump, choose a destination square where your jump ends.
+        Landing at a precise location within a square may require a check with the Jump skill (see \pcref{Jump}).
+
+        % Human with 0 strength jumps 5 feet.
+        % Human with 2 strength jumps 15 feet.
+        % Human with 4 strength jumps 25 feet, which is almost a world record.
+        A jump's maximum horizontal distance is normally equal to 5 feet per 2 Strength.
+        If you are trained with the Jump skill, the distance is instead equal to 5 feet per Strength, to a minimum of 5 feet.
+        If you have a running start of at least 15 feet, you also add a quarter of your \glossterm{base speed} to that distance.
+        A jump's maximum vertical height is equal to half your maximum horizontal distance.
+
+        Jumping off of terrain that is not solid ground, such as a wall, halves your jump distance and may require a Jump check (see \pcref{Jump}).
+        If your jump distance would be less than 5 feet, you normally cannot jump meaningfully at all.
+        The GM can decide whether that makes sense in a particular situation.
+
+        If your destination square is in midair, you begin falling at the end of the round.
+        This allows you to jump during the movement phase and act in midair during the action phase.
+        Narratively, this represents you timing your jump so you can take a useful action while jumping.
+        You don't just hover in midair.
+
+        \subsection{Jumping Speed Limits}
+            The maximum distance that you can travel by jumping is equal to your remaining land speed during the current phase.
+            This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
+            For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
+            If your jump distance is extremely high and your land speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
     \subsection{Measuring Movement}
 
