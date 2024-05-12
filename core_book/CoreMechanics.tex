@@ -1,4 +1,4 @@
-\chapter{Playing the Game}\label{Playing the Game}
+\chapter{Adventuring}\label{Adventuring}
 
 This chapter describes how to play Rise outside of combat situations.
 It also provides general advice about how Rise games are typically run.
@@ -193,42 +193,6 @@ To run combat scenarios, see \pcref{Combat}.
             Undercommon & Drow                  & Elven
         \end{dtabularx}
     \end{dtable}
-
-\section{Attunement}\label{Attunement}
-    Many special abilities and magic items only function as long as a creature attunes to them.
-    Attuned abilities have the \abilitytag{Attune} tag.
-    Attuning to an ability typically require investing a single \glossterm{attunement point} (see \pcref{Attunement Points}).
-    Some abilities, called deep attunement abilities, require two attunement points instead of one (see \pcref{Deep Attunement}).
-    You can never attune to the same ability more than once.
-
-    As long as you remain attuned to an ability, you cannot recover the attunement points you used to attune to that ability by any means.
-    As a \glossterm{free action}, you can \glossterm{dismiss} any number of effects that you are attuned to, which makes you stop being attuned to them.
-    After you stop being attuned to an ability, you recover that attunement point at the end of the current phase.
-
-    Normally, the creature using the attuned ability must attune to it.
-    If that creature stops attuning to the ability, the ability ends.
-    In the special case of \glossterm{rituals}, any number of ritual participants can attune to the ability, and the ability lasts as long as any participant is still attuned to it.
-
-    There are two special subtypes of attunement abilities: deep attunements and targeted attunements.
-    They are described below.
-
-    \subsection{Deep Attunement}\label{Deep Attunement}
-        Some attuned abilities are more powerful and complicated than others, and require additional investment to take effect.
-        These are called deep attunement abilities.
-        They are identified as \abilitytag{Attune} (deep).
-
-        Deep attunement abilities have two main differences from ordinary attunement abilities.
-        First, they require expending two attunement points instead of only one.
-        Second, the attuning creature can't get back those attunement points by any means until they finish a \glossterm{short rest}, even if they release the attunement.
-
-    \subsection{Targeted Attunement}\label{Targeted Attunement}
-        Some attuned abilities affect specific creatures instead of the caster.
-        These are called targeted attunement abilities.
-        They are identified as \abilitytag{Attune} (target).
-
-        The creature using a targeted attunement ability does not need to attune to the ability unless it targets itself.
-        Instead, each target must attune to its own version of the effect.
-        The effect lasts on that target as long as it stays attuned to it, regardless of whether any other targets stay attuned to the effect.
 
 \section{Ability Mechanics}\label{Ability Mechanics}
 
@@ -450,81 +414,6 @@ To run combat scenarios, see \pcref{Combat}.
 
     Spells and rituals share many common properties, defined here.
 
-    % TODO: description
-    \subsection{Categories of Magic}
-
-    \subsubsection{Magic Sources}
-        There are four \glossterm{magic sources} that characters can use to cast spells and perform rituals: arcane (cast by sorcerers and wizards), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
-        Each magic source has a set of associated \glossterm{mystic spheres} (see Mystic Spheres, below).
-        % TODO: more description
-
-        \parhead{Characters with Multiple Magic Sources}
-            A character can have access to multiple sources of magic through the use of abilities like the Hybrid Training ability (see \pcref{Half-Elves}).
-            The \glossterm{mystic spheres}, spells, and rituals that character knows are tracked separately for each source of magic that character has access to.
-            If you have access to the same spell or ritual from multiple sources, the two versions of the ability are generally considered to be the same ability.
-            When you cast the spell or perform the ritual, you choose which source you are using for the ability.
-
-        \subsubsection{Mystic Spheres}
-            A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
-            Each \glossterm{mystic sphere} can be associated with any number of \glossterm{magic sources}.
-            The mystic spheres are listed at \pcref{Mystic Spheres}.
-
-    \subsection{Ability Tags}
-        All spells and rituals are \magical.
-        In addition, all spells have the \abilitytag{Spell} \glossterm{ability tag}, and all rituals have the \abilitytag{Ritual} ability tag.
-        Since spells and rituals are already clearly indicated in the Mystic Spheres chapter, the tags are omitted here to avoid unnecessary repetition.
-        In some other places, such as monster descriptions, those tags may be used to indicate that specific abilities are considered spells or rituals despite not appearing in this chapter.
-
-    \subsection{Casting Components}\label{Casting Components}
-        Unless otherwise noted, all spells and rituals require \glossterm{verbal components} to cast or perform.
-        In addition, spells and rituals from arcane and pact mystic sources require \glossterm{somatic components}.
-        You cannot start casting a spell or performing a ritual without all required components.
-        If you lose those components before the ability resolves, the spell fails with no effect.
-
-        To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
-        To provide the somatic component for a spell or ritual, you must make a precise series of movements with at least one free hand.
-        These movements involve your whole arm in addition to gestures with your fingers.
-
-        \subsubsection{Somatic Component Failure}\label{Somatic Component Failure}
-            Encumbrance from armor interferes with the \glossterm{somatic components} required to perform arcane spells, pact spells, and all rituals.
-            When you cast a spell or perform a ritual that requires \glossterm{somatic components} while you have an \glossterm{encumbrance}, you must roll 1d10.
-            If your result is less than or equal to your \glossterm{encumbrance}, the spell fails with no effect.
-            When you perform a ritual, this roll must be repeated at the end of each round during the ritual.
-
-    \subsection{Dismissal}\label{Dismissal}
-        Many abilities can intentionally be ended early if you \glossterm{dismiss} it.
-        When an ability is dismissed, all of its lingering effects immediately end.
-        Unless otherwise noted, all \magical abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-        This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
-        You can dismiss abilities as a \glossterm{free action} that requires only mental effort.
-
-    \subsection{Resurrecting the Dead}\label{Resurrecting the Dead}
-        Several rituals have the power to restore dead characters to life.
-
-        When a living creature dies, its soul departs its body, travels through the Astral Plane, and goes to abide on the appropriate plane or Divine Realm.
-        This process is enforced by the Reapers, who escort souls to ensure they reach their intended destinations.
-        Bringing a creature back from the dead means retrieving their soul and returning it to their body.
-
-        \parhead{Deterioration of the Soul} While dead, souls gradually lose their cohesion and independent sense of self.
-        A typical creature can maintain its existence in the afterlife for a number of years equal to 5 times the sum of its level and Willpower.
-        This can vary significantly for individual creatures, and being tormented in the afterlife can significantly reduce this time.
-
-        \parhead{Preventing Resurrection} Enemies can take steps to make it more difficult for a character to be returned from the dead.
-        Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent.
-        The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
-
-        \parhead{Involuntary Resurrection} A soul cannot be returned to life if it does not wish to be.
-        A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
-
-    \subsection{Functioning Like Other Spells}\label{Functioning Like Other Spells}
-        Many spells and rituals say they ``function like'' some other spell or ritual, often with some noted changes.
-        Except as otherwise noted, they retain all of the original effects and targets of the spell.
-        However, they do not have the same rank upgrades as the original spell or ritual.
-
-    \subsection{Impossible Spells and Rituals}
-        When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
-        This most commonly happens if you attempt to declare an invalid target for a spell.
-
     \subsection{Spells}\label{Spells}
         % TODO: better description
         A \glossterm{spell} is a discrete magical effect with a name, a \glossterm{rank}, and an effect.
@@ -614,6 +503,81 @@ To run combat scenarios, see \pcref{Combat}.
             Each writer uses this universal system regardless of their native language or culture.
             However, each character uses the system in their own way.
             Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+
+    % TODO: description
+    \subsection{Categories of Magic}
+
+        \subsubsection{Magic Sources}
+            There are four \glossterm{magic sources} that characters can use to cast spells and perform rituals: arcane (cast by sorcerers and wizards), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
+            Each magic source has a set of associated \glossterm{mystic spheres} (see Mystic Spheres, below).
+            % TODO: more description
+
+            \parhead{Characters with Multiple Magic Sources}
+                A character can have access to multiple sources of magic through the use of abilities like the Hybrid Training ability (see \pcref{Half-Elves}).
+                The \glossterm{mystic spheres}, spells, and rituals that character knows are tracked separately for each source of magic that character has access to.
+                If you have access to the same spell or ritual from multiple sources, the two versions of the ability are generally considered to be the same ability.
+                When you cast the spell or perform the ritual, you choose which source you are using for the ability.
+
+        \subsubsection{Mystic Spheres}
+            A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
+            Each \glossterm{mystic sphere} can be associated with any number of \glossterm{magic sources}.
+            The mystic spheres are listed at \pcref{Mystic Spheres}.
+
+    \subsection{Ability Tags}
+        All spells and rituals are \magical.
+        In addition, all spells have the \abilitytag{Spell} \glossterm{ability tag}, and all rituals have the \abilitytag{Ritual} ability tag.
+        Since spells and rituals are already clearly indicated in the Mystic Spheres chapter, the tags are omitted here to avoid unnecessary repetition.
+        In some other places, such as monster descriptions, those tags may be used to indicate that specific abilities are considered spells or rituals despite not appearing in this chapter.
+
+    \subsection{Casting Components}\label{Casting Components}
+        Unless otherwise noted, all spells and rituals require \glossterm{verbal components} to cast or perform.
+        In addition, spells and rituals from arcane and pact mystic sources require \glossterm{somatic components}.
+        You cannot start casting a spell or performing a ritual without all required components.
+        If you lose those components before the ability resolves, the spell fails with no effect.
+
+        To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
+        To provide the somatic component for a spell or ritual, you must make a precise series of movements with at least one free hand.
+        These movements involve your whole arm in addition to gestures with your fingers.
+
+        \subsubsection{Somatic Component Failure}\label{Somatic Component Failure}
+            Encumbrance from armor interferes with the \glossterm{somatic components} required to perform arcane spells, pact spells, and all rituals.
+            When you cast a spell or perform a ritual that requires \glossterm{somatic components} while you have an \glossterm{encumbrance}, you must roll 1d10.
+            If your result is less than or equal to your \glossterm{encumbrance}, the spell fails with no effect.
+            When you perform a ritual, this roll must be repeated at the end of each round during the ritual.
+
+    \subsection{Dismissal}\label{Dismissal}
+        Many abilities can intentionally be ended early if you \glossterm{dismiss} it.
+        When an ability is dismissed, all of its lingering effects immediately end.
+        Unless otherwise noted, all \magical abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+        This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
+        You can dismiss abilities as a \glossterm{free action} that requires only mental effort.
+
+    \subsection{Resurrecting the Dead}\label{Resurrecting the Dead}
+        Several rituals have the power to restore dead characters to life.
+
+        When a living creature dies, its soul departs its body, travels through the Astral Plane, and goes to abide on the appropriate plane or Divine Realm.
+        This process is enforced by the Reapers, who escort souls to ensure they reach their intended destinations.
+        Bringing a creature back from the dead means retrieving their soul and returning it to their body.
+
+        \parhead{Deterioration of the Soul} While dead, souls gradually lose their cohesion and independent sense of self.
+        A typical creature can maintain its existence in the afterlife for a number of years equal to 5 times the sum of its level and Willpower.
+        This can vary significantly for individual creatures, and being tormented in the afterlife can significantly reduce this time.
+
+        \parhead{Preventing Resurrection} Enemies can take steps to make it more difficult for a character to be returned from the dead.
+        Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent.
+        The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
+
+        \parhead{Involuntary Resurrection} A soul cannot be returned to life if it does not wish to be.
+        A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+
+    \subsection{Functioning Like Other Spells}\label{Functioning Like Other Spells}
+        Many spells and rituals say they ``function like'' some other spell or ritual, often with some noted changes.
+        Except as otherwise noted, they retain all of the original effects and targets of the spell.
+        However, they do not have the same rank upgrades as the original spell or ritual.
+
+    \subsection{Impossible Spells and Rituals}
+        When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
+        This most commonly happens if you attempt to declare an invalid target for a spell.
 
 \section{Common Magical Effects}
     \subsection{Delayed and Repeated Effects}\label{Delayed and Repeated Effects}
@@ -790,3 +754,98 @@ To run combat scenarios, see \pcref{Combat}.
             Some items are explicitly \glossterm{loose equipment}.
             Loose equipment does not gain the protections listed above while worn as equipment.
             It can be individually targeted by attackers, and is affected by area effects just like any other object in the area.
+
+\section{Poison}\label{Poison}
+    Poisons are organic substances that are dangerous to living creatures.
+    They can deal damage or inflict debilitating effects.
+    Some effects which are not literally poisonous, such as animal venom or fungal spores, are considered poisons.
+    Poisons are not \glossterm{conditions}, and cannot be removed by abilities that remove conditions (see \pcref{Conditions}).
+    Common poisons are listed in \tref{Consumable Tools}.
+
+    \subsection{Poison Effects}\label{Poison Effects}
+        When you come in contact with a poison, you become \glossterm{poisoned}.
+        As soon as you become poisoned, and at the end of each subsequent round, the poison makes an attack against your Fortitude defense.
+        On a hit, the poison progresses to its next stage.
+        On a critical hit, the poison progresses by two stages at once, to a maximum of the third stage.
+        On a miss, you make progress towards removing the poison entirely.
+        Once the poison misses you three times, you stop being poisoned.
+
+        If you become poisoned again by the same poison, it does not intensify the effects of the poison.
+        However, it cancels any progress you had made towards removing the poison.
+        A poison is considered the same if it has the same name.
+        If you are affected by multiple different poisons with the same name, but different accuracy bonuses, use the highest accuracy bonus.
+
+        Poisons have no effect on non-living creatures.
+
+        \subsubsection{Poison Stages}
+            Poison effects are divided into stages.
+            Becoming poisoned does not have any ill effects until the poison progresses to its first stage.
+
+            Many poisons have a Stage 1 effect.
+            This effect happens as soon as the poison's attack first succeeds against you.
+            Some poisons also have a Stage 3 effect.
+
+        \subsubsection{Poison Accuracy}
+            A poison's accuracy depends on the way it was applied.
+            Item-based poisons have a specific accuracy listed in their description.
+            This accuracy does not depend on the skill of the creature inflicting the poison.
+
+            Poisons inflicted by creature abilities use the creature's \glossterm{accuracy}.
+            They may also have additional modifiers listed in the ability's description.
+            For monsters, the poison's accuracy will be listed in the monster description.
+
+    \subsection{Poison Transmission}\label{Poison Transmission}\label{Transmission}
+
+        There are three ways that poisons can be contracted.
+
+        \parhead{Contact} A contact poison affects any creature that touches it with bare skin.
+        \parhead{Ingestion} An ingestion poison affects any creature that eats, drinks, or breathes it, depending on the type of poison.
+        Ingestion poisons have no effect when touched or used to coat weapons.
+        \parhead{Injury} An injury poison affects any creature that loses \glossterm{hit points} from something bearing the poison.
+        Almost all injury poisons take liquid form, and are typically used to coat weapons.
+
+    \subsection{Poison Forms}\label{Poison Forms}
+
+        There are four forms of poison.
+
+        \parhead{Gas} Gaseous poisons are difficult to store, but easy to affect foes with.
+        Unless otherwise noted, a gas poison can be thrown within \shortrange, and affects a \tinyarea radius.
+        \parhead{Liquid} Liquid poisons are the most common type of poison.
+        Liquid poisons can be used to coat weapons, slipped into food, or simply thrown at foes.
+        A dose of a liquid poison is usually about one ounce of the poison.
+        \parhead{Pellet} Some rare poisons come in small, solid pellets or cubes.
+        Typically, these pellets contain a powerful liquid poison that becomes inert quickly after being exposed.
+        Pellet poisons are typically applied by being slipped into food.
+        \parhead{Powder} Poison in powder form cannot be used to coat weapons, but can be slipped into food or thrown at foes.
+        Unless otherwise noted, a powder poison functions as a \glossterm{thrown weapon} with \glossterm{range limits} of 5/15.
+
+    \subsection{Coating Weapons with Poison}\label{Coating Weapons with Poison}
+        As a standard action, you can coat a weapon with a single dose of a liquid contact-based or injury-based poison.
+        The next time a creature takes damage from a \glossterm{strike} using that weapon, the struck creature comes in contact with the poison.
+        This removes one dose of the poison from the weapon.
+        Coated poisons expire and lose their effectiveness after ten minutes.
+
+        An injury-based poison has no effect if the strike does not cause the struck creature to lose \glossterm{hit points}, but the dose is still removed from the weapon.
+        For this reason, injury-based poisons are typically applied to secondary weapons that can be used after the subject is already weakened.
+
+        A weapon can hold up to three poison doses of the same poison.
+        Mixing different poison types on the same weapon is ineffective, as each poison dilutes the others.
+        Only the highest rank poison on the weapon has any effect.
+
+    \subsection{Creating Poisons}\label{Creating Poisons}
+
+        You can use the Craft (poison) skill to create poisons.
+        To create a poison, you must make a Craft (poison) check against a \glossterm{difficulty value} equal to 10 \add the poison's base accuracy.
+        For every 2 points by which you beat this \glossterm{difficulty value}, the created poison's accuracy gains a \plus1 bonus, up to a maximum bonus of \plus10 more than the poison's base accuracy.
+
+        Creating a poison requires special materials.
+        The type of materials required, and how those materials can be acquired, depend on the type of poison.
+
+        \begin{itemize}
+            \itemhead{Plant} Plant-based poisons can typically be harvested by making a Survival check to search in appropriate terrain.
+                The \glossterm{difficulty value} of this check is usually equal to 10 \add twice the poison's \glossterm{rank}.
+            \itemhead{Venom} Venom requires an appropriate body part from a creature -- often, poison it naturally produces.
+            \itemhead{Alchemical} Alchemical poisons require alchemical materials.
+                These normally can't be found in nature.
+                In unusual circumstances, these components can be synthesized from natural chemicals or magical materials with a Craft (alchemy) check equal to 10 \add the base accuracy of the poison.
+        \end{itemize}
