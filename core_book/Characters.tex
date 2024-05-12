@@ -1,30 +1,61 @@
 \chapter{Characters}
 
-There are five major customization systems in Rise that all characters share.
-In rough order of how much they affect your character's play style, they are your class archetypes, attributes, skills, insight points, and species.
-At the GM's discretion, you may also have one or more feats, which can have a strong impact on your character's identity (see \pcref{Feats}).
-
-This chapter explains those five fundamental elements.
+This chapter describes how individual characters in Rise are defined, including their statistics.
 If you plan on playing a premade character, the information in this chapter will still be useful so you can understand how your character works, but you can skip the Character Creation section at the end.
+For context about how characters act in combat, see \pcref{Combat}.
+For context about how characters act more generally, see \pcref{Playing the Game}.
+
 Some of the information in this chapter won't fully make sense until you've read future chapters.
 You can either skim past terms you don't yet understand or look them up as you go along.
 
 \section{General Overview}
+
+    \subsection{Species}
+        Each character has a species.
+        The eight common species are human, dwarf, elf, gnome, half-elf, half-orc, halfling, and orc.
+        For details, see \pcref{Species}.
 
     \subsection{Attributes}
         There are six fundamental attributes: Strength, Dexterity, Constitution, Intelligence, Perception, and Willpower.
         These have broad effects on many aspects of your character's statistics.
         For details, see \pcref{Attributes}.
 
-    \subsection{Species}
-        Each character has a species.
-        The eight common species are human, dwarf, elf, gnome, half-elf, half-orc, halfling, and orc.
+    \subsection{Combat Statistics}
+        There are five main combat statistics: accuracy, defenses, hit points, and damage resistance.
+        For details about these statistics are calculated and used, see \pcref{Combat Statistics}.
+        \begin{raggeditemize}
+            \item Accuracy: This affects how likely you are to hit with attacks.
+            \item Damage resistance: This affects how much damage you can shrug off easily.
+            \item Defenses: These affects how likely you are to avoid being hit by attacks.
+            \item Hit points: This affects how much damage you can take without vital injury.
+                Some special abilities have detrimental effects on you if they make you to lose hit points, but not if they only make you lose damage resistance.
+            \item Power: This affects how much damage you deal with attacks.
+                You have two types of power: \magical power and \glossterm{mundane} power.
+        \end{raggeditemize}
+
+    \subsection{Resources}
+        There are four main resources: attunement points, encumbrance, fatigue, and insight points.
+        For details about these resources are calculated and used, see \pcref{Resources}.
+        \begin{raggeditemize}
+            \item Attunement points: This affects how many spells and items you can benefit from simultaneously.
+            \item Encumbrance: This affects your Strength-based and Dexterity-based checks.
+                It typically comes from wearing armor.
+            \item Fatigue: This affects your accuracy and checks.
+                It typically comes from using special abilities.
+            \item Insight points: This affects how many special abilities you know, such as spells and maneuvers.
+        \end{raggeditemize}
+
+    \subsection{Size and Weight}
+        A character's size category has a variety of implications on their statistics.
+        The limits of a character's carrying capacity are similarly measured in similar weight categories.
+        For details, see \pcref{Size and Weight}.
 
     \subsection{Classes}
         Each character has at least one class.
         A character's class has a significant influence on their special abilities and narrative style.
         The eleven classes are briefly summarized below.
-        For details about how classes work, see \pcref{Classes}.
+        For details about classes, see the Classes chapter, \pref{Classes}.
+
         \begin{raggeditemize}
             \item Barbarians are primal warriors who draw power from their physical prowess and unfettered emotions.
             \item Clerics are divine spellcasters who draw power from their veneration of a single deity.
@@ -44,7 +75,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         Each character is trained in a certain number of skills from their class and Intelligence.
 
         The twenty-six skills are summarized below.
-        For full details about how each skill works, see \pcref{Skills}.
+        For details about skills, see the Skills chapter, \pref{Skills}.
 
         \begin{raggeditemize}
             \item Awareness: This represents your ability to observe things which you might otherwise fail to notice.
@@ -72,31 +103,6 @@ You can either skim past terms you don't yet understand or look them up as you g
             \item Survival: This represents your ability to take care of yourself and others in the wilderness, including the ability to follow tracks.
             \item Swim: This represents your ability to swim.
         \end{raggeditemize}
-
-        \subsection{Combat Statistics}
-            There are five main combat statistics: accuracy, defenses, hit points, and damage resistance.
-            For details about these statistics are calculated and used, see \pcref{Combat Statistics}.
-            \begin{raggeditemize}
-                \item Accuracy: This affects how likely you are to hit with attacks.
-                \item Damage resistance: This affects how much damage you can shrug off easily.
-                \item Defenses: These affects how likely you are to avoid being hit by attacks.
-                \item Hit points: This affects how much damage you can take without vital injury.
-                    Some special abilities have detrimental effects on you if they make you to lose hit points, but not if they only make you lose damage resistance.
-                \item Power: This affects how much damage you deal with attacks.
-                    You have two types of power: \magical power and \glossterm{mundane} power.
-            \end{raggeditemize}
-
-        \subsection{Resources}
-            There are four main resources: attunement points, encumbrance, fatigue, and insight points.
-            For details about these resources are calculated and used, see \pcref{Resources}.
-            \begin{raggeditemize}
-                \item Attunement points: This affects how many spells and items you can benefit from simultaneously.
-                \item Encumbrance: This affects your Strength-based and Dexterity-based checks.
-                    It typically comes from wearing armor.
-                \item Fatigue: This affects your accuracy and checks.
-                    It typically comes from using special abilities.
-                \item Insight points: This affects how many special abilities you know, such as spells and maneuvers.
-            \end{raggeditemize}
 
 \section{Attributes}\label{Attributes}
 
@@ -187,50 +193,6 @@ You can either skim past terms you don't yet understand or look them up as you g
                 \item You add your Willpower to your Mental defense.
             \end{raggeditemize}
         }
-
-    \subsection{Determining Attributes}\label{Determining Attributes}
-        There are two common ways for you to determine your attribute scores: using a predefined set of scores, or using a point buy system.
-        Once you have chosen your attributes and applied your species modifer to attributes (if any), you should record in your character sheets the various effects that your attributes have on your statistics.
-
-        \subsubsection{Predefined Attribute Scores}
-            This is the simplest method.
-            Choose one of the following sets of attribute scores and distribute them as you choose among your attributes:
-            \begin{raggeditemize}
-                % 5 + 5 + 3 + 1 = 14
-                \item Standard: 3, 3, 2, 1, 0, 0
-                % 8 + 3 + 3 = 14
-                \item Specialized: 4, 2, 2, 0, 0, 0
-                % 3 + 3 + 3 + 3 + 1 + 1 = 14
-                \item Balanced: 2, 2, 2, 2, 1, 1
-            \end{raggeditemize}
-
-
-        \subsubsection{Attribute Point Buy}\label{Attribute Point Buy}
-            With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
-            All your attribute scores start at 0.
-            You get 14 points to distribute among your attributes.
-            Attributes can be bought according to the costs on \trefnp{Attribute Point Costs}.
-            The listed cost is the total cost required to gain the listed attribute.
-
-            \begin{dtable}
-                \tablebookmark{Attribute Point Costs}{attributepoints}
-                \lcaption{Attribute Point Costs}
-                \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
-                    0              & 0                          \\
-                    1              & 1                          \\
-                    2              & 3                          \\
-                    3              & 5                          \\
-                    4              & 8                          \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Attribute Penalties}\label{Attribute Penalties}
-            You can voluntarily take penalties to your attributes.
-            If you reduce an attribute by a total of \minus1, you gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-            If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
-            You cannot gain these benefits from reducing more than two attributes below 0 in this way.
-            In addition, you can never reduce an attribute below \minus2 in this way, including any attribute modifiers from your species.
 
 \section{Species}\label{Species}
     Each character has a species.
@@ -417,6 +379,72 @@ You can either skim past terms you don't yet understand or look them up as you g
         \end{raggeditemize}
         \parhead{Automatic Languages} Common, Orcish.
 
+\section{Combat Statistics}
+
+    \subsection{Accuracy}\label{Accuracy}
+        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll} (see \pcref{Attack Rolls}).
+        Your accuracy is equal to half the sum of your level and Perception.
+        Many abilities can also modify your accuracy.
+
+        \subsubsection{Brawling Accuracy}\label{Brawling Accuracy}
+            Some abilities have the \abilitytag{Brawling} tag.
+            Your accuracy with those abilities is equal to half the sum of your level and Strength.
+            Most Brawling abilities are listed at \pcref{Special Combat Abilities}.
+
+    \subsection{Damage Resistance}\label{Damage Resistance}
+        Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
+        For details about how damage resistance is used, see \pcref{Taking Damage}.
+
+        You do not intrinsically have any damage resistance.
+        Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
+        In addition, some class abilities and magic items can also increase it.
+
+    \subsection{Defenses}\label{Defenses}
+        When you are attacked, your defenses determine the value that the attacker needs to get on the attack roll in order to hit you (see \pcref{Attack Rolls}).
+        The four defenses are described below.
+        \begin{itemize}
+            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
+                It is the most commonly used defense.
+            \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
+            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
+            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
+        \end{itemize}
+
+        Your defenses are calculated in the following way:
+        \begin{itemize}
+            \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add defense bonuses from equipped body armor and shield
+            \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
+            \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
+            \itemhead{Mental} Half level \add Willpower \add class defense bonus
+        \end{itemize}
+        Each defense may also have various bonuses or penalties applied by special abilities.
+
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
+        For details about how hit points are used, see \pcref{Taking Damage}.
+
+        The way you calculate your hit points is defined by your class (see \pcref{Classes}).
+        Increasing your level and Constitution will increase your hit points.
+
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+    \subsection{Power}\label{Power}
+        Your \glossterm{power} is a general representation of how strong your abilities are.
+        You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities.
+        If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
+
+        Your mundane power is equal to your Strength \add half your level.
+        Similarly, your magical power is equal to your Willpower \add half your level.
+        If this total is negative, you subtract that value from the damage you deal, ignoring the stated power scaling on the ability.
+        For example, a strike with a broadsword would normally deal 1d6 damage \plus1 per 2 power.
+        A level 1 character with a \minus2 Strength would deal 1d6 \sub 2 damage, to a minimum of 0.
+
+        Many abilities have stronger effects depending on your \glossterm{power}, especially damaging abilities.
+        % TODO: weapon damage wording
+        For example, you gain a \plus1 bonus to your \glossterm{weapon damage} for every 2 power you have (see \pcref{Strikes}).
+
 \section{Resources}\label{Resources}
 
     \subsection{Attunement Points}\label{Attunement Points}
@@ -487,6 +515,200 @@ You can either skim past terms you don't yet understand or look them up as you g
             \item Wizard: Metamagic, mystic spheres, and spells
         \end{itemize}
 
+\section{Size and Weight}\label{Size and Weight}
+
+    \subsection{Size Categories}\label{Size Categories}
+        Your size affects your \glossterm{space} in combat, your speed with any \glossterm{movement modes} that depend on your size category's \glossterm{base speed}, your attributes, and how noticeable you are (see \pcref{Stealth}).
+        These effects are shown on \trefnp{Size Categories}.
+        Size categories are also relevant for determining weight (see \pcref{Weight Limits}).
+
+        \begin{dtable*}
+            \lcaption{Size Categories}
+            \begin{dtabularx}{\textwidth}{l l l l l l l X}
+                \tb{Size}   & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex} & \tb{Stealth} & \tb{Weapons}             & \tb{Example Creature} \tableheaderrule
+                Fine        & 1/4 ft.          & 10 ft.          & \minus4 Str              & \plus4      & \plus20      & \tdash                   & Fly                   \\
+                Diminuitive & 1/2 ft.          & 10 ft.          & \minus3 Str              & \plus3      & \plus15      & \tdash                   & Mouse                 \\
+                Tiny        & 1 ft.            & 20 ft.          & \minus2 Str              & \plus2      & \plus10      & \tdash                   & Rat                   \\
+                Small       & 2-1/2 ft.        & 20 ft.          & \minus1 Str              & \plus1      & \plus5       & \tdash                   & Cat                   \\
+                Medium      & 5 ft.            & 30 ft.          & \tdash                   & \tdash      & \tdash       & \tdash                   & Human                 \\
+                Large       & 10 ft.           & 40 ft.          & \plus1 Str               & \minus1     & \minus5      & \tdash                   & Ogre                  \\
+                Huge        & 20 ft.           & 50 ft.          & \plus2 Str               & \minus2     & \minus10     & \weapontag{Massive} (10) & Hill giant            \\
+                Gargantuan  & 40 ft.           & 60 ft.          & \plus3 Str               & \minus3     & \minus15     & \weapontag{Massive} (15) & Roc                   \\
+                Colossal    & 80\add ft.       & 80 ft.          & \plus4 Str               & \minus4     & \minus20     & \weapontag{Massive} (20) & Great wyrm red dragon \\
+            \end{dtabularx}
+            1 Creatures can vary in space. These are simply typical values. \\
+            2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
+        \end{dtable*}
+
+        \subsubsection{Space}\label{Space}
+            A creature's \glossterm{space} is the area its body occupies while fighting.
+            All humanoid species take up a 5-ft.\ by 5-ft.\ space in combat, which is a single \glossterm{square}.
+            Normally, other creatures can't be in the space you occupy.
+            Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
+
+            Exceptionally large creatures can often attack at some distance from their core body thanks to long arms or other appendages.
+            This is represented by making their space larger than their body alone would require.
+            Even Colossal creatures can still only make melee attacks against adjacent foes - or more often, against smaller creatures sharing space with them.
+
+        \subsubsection{Base Speed}\label{Base Speed}
+            Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
+            Most \glossterm{movement modes} use a speed equal to the base speed for a creature's size category.
+            For context about movement in combat, see \pcref{Movement and Positioning}.
+
+        \subsubsection{Other Effects}
+            % TODO: record all of these and add them here
+            A creature's size affects some additional skills and abilities.
+            For example, larger creatures have a penalty to the Stealth skill (see \pcref{Common Stealth Modifiers}).
+            The effects of unusual size are described in those skills and abilities.
+            Unusually large or small creatures also have other special rules apply to them, as described below.
+
+        \subsubsection{Very Small Creatures}
+            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square.
+            Ignoring flight, you can fit four Small creatures in a square, twenty-five Tiny creatures, 100 Diminuitive creatures, or 400 Fine creatures.
+            If the creatures can fly, the number of creatures that can fit into a space increases drastically.
+
+            \parhead{Movement} Creatures two size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+        \subsubsection{Very Large Creatures}\label{Very Large Creatures}
+            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
+
+            \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
+
+            \parhead{Massive Weapons} Creatures that are Huge or larger have \weapontag{Massive} weapons, as shown in \trefnp{Size Categories}.
+
+    \subsection{Weight Limits}\label{Weight Limits}
+
+        \begin{dtable}
+            \lcaption{Weight Limits by Strength}
+            \setlength{\tabcolsep}{4pt}
+            \begin{dtabularx}{\columnwidth}{X X X}
+                \tb{Strength} & \tb{Carrying Capacity} & \tb{Push/Drag} \tableheaderrule
+                -9            & Fine x8                & Tiny          \\
+                -8            & Diminuitive x2         & Tiny x2       \\
+                -7            & Diminuitive x4         & Tiny x4       \\
+                -6            & Diminuitive x8         & Tiny x8       \\
+                -5            & Tiny x2                & Small x2      \\
+                -4            & Tiny x4                & Small x4      \\
+                -3            & Tiny x8                & Small x8      \\
+                -2            & Small x2               & Medium x2     \\
+                -1            & Small x4               & Medium x4     \\
+                0             & Small x8               & Medium x8     \\
+                1             & Medium x2              & Large x2      \\
+                2             & Medium x4              & Large x4      \\
+                3             & Medium x8              & Large x8      \\
+                4             & Large x2               & Huge x2       \\
+                5             & Large x4               & Huge x4       \\
+                6             & Large x8               & Huge x8       \\
+                7             & Huge x2                & Gargantuan x2 \\
+                8             & Huge x4                & Gargantuan x4 \\
+                9             & Huge x8                & Gargantuan x8 \\
+                10            & Gargantuan x2          & Colossal x2   \\
+                11            & Gargantuan x4          & Colossal x4   \\
+                12            & Gargantuan x8          & Colossal x8   \\
+                13            & Colossal x2            & Colossal x16  \\
+                14\plus\fn{1} & \tdash                 & \tdash        \\
+            \end{dtabularx}
+            1 To calculate the weight limits for a creature with epic Strength, double the number of objects it can carry and drag for every point of Strength beyond 13.
+        \end{dtable}
+
+        Your Strength determines how much you can carry or push, as shown in \trefnp{Weight Limits by Strength}.
+        Your weight limits are measured in terms of how many objects or creatures of a given \glossterm{weight category} that you can carry or push at once (see \pcref{Weight Categories}).
+        The limit of how much you can hold in your hands or on your body is called your \glossterm{carrying capacity}.
+        If you need to move more weight than that, you can push or drag objects or creatures up your pushing and dragging limit as a standard action.
+        When you do, you move the weight 5 feet.
+
+        In general, it is not meaningful to consider the weight of any objects with a weight category lighter than your maximum weight category.
+        If it matters, you can treat eight objects of one weight category as having an equivalent weight to a single object that is one weight category heavier.
+
+        \parhead{Large Creatures} Unusually large or small creatures gain a bonus to their Strength for the purpose of determining their weight limits.
+        For details, see \tref{Size Categories}.
+
+        \parhead{Multi-Legged Creatures} The figures on \trefnp{Weight Limits by Strength} are for bipedal creatures.
+        A creature with four or more legs can carry, push, or drag twice as many objects as a bipedal creature of the same Strength.
+
+        \subsubsection{Weight Categories}\label{Weight Categories}
+            Weight is generally measured in \glossterm{weight categories} rather than pounds or kilograms.
+            Weight categories use the same terms as \glossterm{size categories}, as shown in \tref{Weight Categories}.
+            In general, a creature's weight category is the same as its size category.
+
+            Objects and creatures can also be either \glossterm{lightweight} or \glossterm{heavyweight}.
+            Lightweight objects and creatures have a weight category that is one category lighter than their size category.
+            Heavyweight objects and creatures have a weight category that is one category heavier than their size category.
+
+            Objects that occupy only a small percentage of the space appropriate for their size category, such as swords, are usually lightweight.
+            Objects that fully occupy the space appropriate for their size category, like boulders, are usually heavyweight.
+
+            \begin{dtable}
+                \lcaption{Weight Categories}
+                \begin{dtabularx}{\textwidth}{l X}
+                    \tb{Weight Category} & \tb{Average Weight} \tableheaderrule
+                    Fine        & 1 oz.       \\
+                    Diminuitive & 1/2 lb.     \\
+                    Tiny        & 2 lb.       \\
+                    Small       & 15 lb.      \\
+                    Medium      & 125 lb.     \\
+                    Large       & 1,000 lb.   \\
+                    Huge        & 8,000 lb.   \\
+                    Gargantuan  & 64,000 lb.  \\
+                    Colossal    & 512,000 lb. \\
+                \end{dtabularx}
+            \end{dtable}
+
+\section{Calculation Guidelines}
+    This explains some general guidelines to follow when calculating character statistics.
+
+    \subsection{Stacking Rules}\label{Stacking Rules}
+        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
+        However, some modifiers do not stack with each other, as described below.
+        When bonuses don't stack with each other, you only apply the largest bonus.
+        Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
+
+        \parhead{Special Exceptions}
+
+        \begin{itemize}
+            \item Effects from the same source do not stack. Any ability with the same name has the same source.
+            \item Enhancement bonuses do not stack with each other.
+            \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
+                The creature must remove all instances of the condition before the effects are removed.
+            \item Multiple \magical effects that change a creature's \glossterm{size category} do not stack.
+                If multiple magical effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+            \item If you have two separate abilities which grant you a special sense with a particular range, such as \trait{darkvision} or \trait{blindsight}, you sum the range from both abilities to find your total range with that sense.
+        \end{itemize}
+
+    \subsection{Minimum and Maximum Modifiers}\label{Minimum and Maximum Modifiers}
+        Some bonuses specify that they cannot increase the value beyond a given point.
+        These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
+        If multiple bonuses specify different maximum values, use the lower maximum value.
+        If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
+
+        Similarly, some abilities have a minimum total modifier.
+        The minimum is applied after all other modifiers.
+
+    \subsection{Doubling and Halving}\label{Doubling and Halving}
+        If you double any in-game value twice, it becomes three times as large.
+        An additional doubling would make it four times as large, and so on.
+        Likewise, if you halve any in-game value twice, it becomes one-third as large.
+        For example, if you have two different abilities that double your \glossterm{power} with an attack, you triple your power with that attack.
+
+        This also applies to calculations using real-world values, such as movement and distance, as long as you're calculating the effects of abilities.
+        For example, if you have two different abilities that double your range with a spell, your total range with that spell is three times the spell's normal range.
+
+        \subsubsection{Doubling Damage}
+            If you double your damage with a dice pool, you roll the same number of dice and modify the result.
+            This is different from a \glossterm{critical hit}, which changes the number of dice you roll.
+            As a result, if you get a \glossterm{critical hit} with a double-damage attack, you roll twice as many dice and then double the result, which typically means you deal 4x your normal damage.
+
+    \subsection{Changing Statistics}
+
+        Your modifiers and defenses can change for many reasons.
+        In general, all changes take effect immediately.
+
+        It is not normally possible for a character to lose access to resources that require them to make choices, such as insight points or trained skills.
+        If a character does somehow lose the prerequisites for choices they have made, such as if their Intelligence is permanently reduced, they immediately lose relevant abilities until they are within their new limits.
+
+    \subsection{Rounding}
+        In general, if you encounter a fractional number, you round it down.
+
 \section{Character Creation}\label{Character Creation}
 
     Creating a charcter involves a mixture of thematic and mechanical decisions that will work together to create a fun character that is rewarding to play.
@@ -496,7 +718,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     These decisions are described below in a order that makes sense for many characters, and full details for each decision are given after this initial list.
     It is essentially a sandwich, with narrative decisions wrapped around a central core of your character's mechanical components.
     However, you can make several of these decisions in any order, and you may find it easier to create a character in a different way.
-    The only real limitation is that your skills must be the last mechanical choice you make, since they are strongly affected by all of your other choices.
+    The only real limitation is that your skills should generally we the last mechanical choice you make, since they are strongly affected by your class and attributes.
 
     \begin{enumerate}
         \item Character concept: Describe your character with a short, simple phrase that captures their essence.
@@ -562,7 +784,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your species can have a strong effect on your personality and narrative, but it has a relatively small effect on your character's play style.
         It's also easier to know your species before you choose your attributes, since your species can slightly modify your attributes.
 
-        Choose one of the seven common species options, or talk with your GM about choosing an uncommon species (see \pcref{Uncommon Species}).
+        Choose one of the eight common species options, or talk with your GM about choosing an uncommon species (see \pcref{Uncommon Species}).
         Record any specific abilities the species gives you on your character sheet, but if this is your first mechanical choice, you won't be able to finalize any of your statistics yet.
         You should also choose the languages that you can speak, since that is influenced by your species (see \pcref{Communication and Languages}).
 
@@ -570,7 +792,48 @@ You can either skim past terms you don't yet understand or look them up as you g
         Your attributes are a good option for your second mechanically relevant choice.
         They have a large impact on your character's strengths and weaknesses, so it's useful to know them as soon as possible.
         They're also much easier to understand and finalize than your class archetypes.
-        For details, see \pcref{Determining Attributes}.
+
+        There are two common ways for you to determine your attribute scores: using a predefined set of scores, or using a point buy system.
+        Once you have chosen your attributes and applied your species modifer to attributes (if any), you should record in your character sheets the various effects that your attributes have on your statistics.
+
+        \subsubsection{Predefined Attribute Scores}
+            This is the simplest method.
+            Choose one of the following sets of attribute scores and distribute them as you choose among your attributes:
+            \begin{raggeditemize}
+                % 5 + 5 + 3 + 1 = 14
+                \item Standard: 3, 3, 2, 1, 0, 0
+                % 8 + 3 + 3 = 14
+                \item Specialized: 4, 2, 2, 0, 0, 0
+                % 3 + 3 + 3 + 3 + 1 + 1 = 14
+                \item Balanced: 2, 2, 2, 2, 1, 1
+            \end{raggeditemize}
+
+        \subsubsection{Attribute Point Buy}\label{Attribute Point Buy}
+            With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
+            All your attribute scores start at 0.
+            You get 14 points to distribute among your attributes.
+            Attributes can be bought according to the costs on \trefnp{Attribute Point Costs}.
+            The listed cost is the total cost required to gain the listed attribute.
+
+            \begin{dtable}
+                \tablebookmark{Attribute Point Costs}{attributepoints}
+                \lcaption{Attribute Point Costs}
+                \begin{dtabularx}{\columnwidth}{X X}
+                    \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
+                    0              & 0                          \\
+                    1              & 1                          \\
+                    2              & 3                          \\
+                    3              & 5                          \\
+                    4              & 8                          \\
+                \end{dtabularx}
+            \end{dtable}
+
+        \subsubsection{Attribute Penalties}\label{Attribute Penalties}
+            You can voluntarily take penalties to your attributes.
+            If you reduce an attribute by a total of \minus1, you gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+            If you reduce an attribute by a total of \minus2, you instead gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
+            You cannot gain these benefits from reducing more than two attributes below 0 in this way.
+            In addition, you can never reduce an attribute below \minus2 in this way, including any attribute modifiers from your species.
 
     \subsection{Step 5: Class and Class Archetypes}
         This is the most complicated choice you have to make for your character.
@@ -703,7 +966,6 @@ You can either skim past terms you don't yet understand or look them up as you g
                 \tb{Chaotic}   & 6.25\%    & 12.5\%       & 6.25\% \\
             \end{dtabularx}
         \end{dtable}
-
 
     \subsection{Good vs. Evil}
         Distinguishing good from evil is a deeply complex task.
