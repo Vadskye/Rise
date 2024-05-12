@@ -127,7 +127,7 @@
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Taking On Water}
+    \subsection{Taking On Water}\label{Taking On Water}
         Damaged ships can begin taking on water through leaks.
         This will eventually sink the ship without intervention by its crew.
         However, even a hole in the hull is not necessarily fatal to a ship.
@@ -478,6 +478,31 @@
         For example, a weapon with Slow Reload (1) could be fired every other round.
         Only rounds where the weapon is being fully crewed count towards this reload time.
         The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
+
+% This replaces the automatic monster progression
+\section{Ship Enhancements}
+    Ships can have enhancements to improve their functionality other than weapons and armor.
+    These enhancements are listed in \trefnp{Ship Enhancements}.
+
+    A ship can have a total number of enhancements equal to its item rank.
+    It can have any number of enhancements with the same name.
+    However, all bonuses from ship enhancements are \glossterm{enhancement bonuses}, so bonuses to the same statistic do not stack.
+
+    \begin{dtable!*}
+        \lcaption{Ship Enhancements}
+        \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+            \tb{Name}            & \tb{Effect}                  & \tb{Item Rank (Cost)} \tableheaderrule
+            Improved attribute   & \plus1 to any attribute      & 2 (200 gp)     \\
+            Reinforced hull      & \plus1 to Armor defense      & 2 (200 gp)     \\
+            Mystic shielding     & \plus1 to non-Armor defenses & 3 (1,000 gp)   \\
+            Improved attribute+  & \plus2 to any attribute      & 4 (5,000 gp)   \\
+            Reinforced hull+     & \plus2 to Armor defense      & 4 (5,000 gp)   \\
+            Mystic shielding+    & \plus2 to non-Armor defenses & 5 (25,000 gp)  \\
+            Improved attribute++ & \plus3 to any attribute      & 6 (125,000 gp) \\
+            Reinforced hull++    & \plus3 to Armor defense      & 6 (125,000 gp) \\
+            Mystic shielding++   & \plus3 to non-Armor defenses & 7 (625,000 gp) \\
+        \end{compresseddtabularx}
+    \end{dtable!*}
 
 \section{Ships Fighting Non-Ships}
     In some cases, ships might enter combat against non-ship foes.
