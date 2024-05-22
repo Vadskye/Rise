@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility, StrikeAbility};
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    Attribute, DamageType, FlightManeuverability, HasAttributes, MovementMode, MovementSpeed,
+    Attribute, DamageType, HasAttributes, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
@@ -36,7 +36,7 @@ pub fn undeads() -> Vec<MonsterEntry> {
                 Modifier::Attack(StandardAttack::InflictWound(1).attack()),
             ]),
             movement_speeds: Some(vec![
-                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+                MovementSpeed::new(MovementMode::Fly(None), SpeedCategory::Normal)
             ]),
             senses: vec![
                 Sense::Darkvision(60),
@@ -200,7 +200,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 description: r"
                     As a standard action, a vampire can \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
                     While in its bat form, it gains \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
-                    While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit and perfect maneuverability.
+                    While in its mist form, it becomes \trait{incorporeal}, and gains a 20 foot fly speed with a 60 ft. height limit.
 
                     In either non-humanoid form, the vampire is unable to use any standard action other than to resume its humanoid form.
                     This ability is almost exclusively used for mobility rather than combat.

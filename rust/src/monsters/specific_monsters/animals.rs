@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility};
 use crate::core_mechanics::{
-    FlightManeuverability, MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
+    MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
 };
 use crate::creatures::{ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -293,7 +293,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: Some(vec![
-                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Fast)
+                MovementSpeed::new(MovementMode::Fly(Some(120)), SpeedCategory::Fast)
             ]),
             senses: vec![Sense::Scent],
             trained_skills: vec![
@@ -605,7 +605,7 @@ pub fn animals() -> Vec<MonsterEntry> {
     //     knowledge: None,
     //     modifiers: None,
     //     movement_speeds: Some(vec![MovementSpeed::new(
-    //         MovementMode::Fly(FlightManeuverability::Normal),
+    //         MovementMode::Fly(None),
     //         SpeedCategory::Normal,
     //     )]),
     //     role: Role::Skirmisher,

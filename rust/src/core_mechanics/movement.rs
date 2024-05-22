@@ -13,18 +13,10 @@ pub struct MovementSpeed {
 pub enum MovementMode {
     Burrow,
     Climb,
-    // TODO: all fly speeds should have a height limit
-    Fly(FlightManeuverability),
+    Fly(Option<i32>),
     Glide,
     Land,
     Swim,
-}
-
-#[derive(Clone, Debug, PartialEq)]
-pub enum FlightManeuverability {
-    Poor,
-    Normal,
-    Perfect,
 }
 
 #[derive(Clone, Debug)]
@@ -35,24 +27,6 @@ pub enum SpeedCategory {
     Fast,
     Double,
     Special(i32),
-}
-
-impl FlightManeuverability {
-    pub fn name(&self) -> &str {
-        match self {
-            Self::Poor => "poor",
-            Self::Normal => "normal",
-            Self::Perfect => "perfect",
-        }
-    }
-
-    pub fn speed_suffix(&self) -> String {
-        match self {
-            Self::Poor => format!("~({})", self.name()),
-            Self::Normal => "".to_string(),
-            Self::Perfect => format!("~({})", self.name()),
-        }
-    }
 }
 
 impl SpeedCategory {
@@ -128,11 +102,15 @@ impl MovementSpeed {
     // Creature.
     pub fn description(&self, speed_in_feet: i32) -> String {
         match self.mode {
-            MovementMode::Fly(ref maneuverability) => format!(
+            MovementMode::Fly(maybe_height_limit) => format!(
                 "{}~{}~ft.{}",
                 self.mode.name(),
                 speed_in_feet,
-                maneuverability.speed_suffix()
+                if let Some(height_limit) = maybe_height_limit {
+                    format!(" ({} ft. up)", height_limit)
+                } else {
+                    "".to_string()
+                },
             ),
             _ => format!("{}~{}~ft.", self.mode.name(), speed_in_feet),
         }
@@ -149,7 +127,7 @@ fn calc_speed_in_feet(speed_category: &SpeedCategory, size: &Size) -> i32 {
 }
 
 // It's not really meaningful to have a "calc all speeds in feet" because that misses important
-// context about things like flight maneuverability.
+// context about things like height limits?
 pub trait HasMovement {
     // This includes all movement modes, but not skills.
     fn calc_movement_mode_descriptions(&self) -> Vec<String>;
@@ -260,7 +238,7 @@ mod tests {
                     speed: SpeedCategory::Slow,
                 },
                 MovementSpeed {
-                    mode: MovementMode::Fly(FlightManeuverability::Poor),
+                    mode: MovementMode::Fly(Some(30)),
                     speed: SpeedCategory::Fast,
                 },
                 MovementSpeed {
@@ -284,10 +262,7 @@ mod tests {
         fn can_calc_modified_base_speed() {
             let mut creature = sample_creature();
             creature.add_modifier(Modifier::BaseSpeed(10), None, None);
-            assert_eq!(
-                creature.calc_speed_in_feet(&MovementMode::Land),
-                Some(40)
-            );
+            assert_eq!(creature.calc_speed_in_feet(&MovementMode::Land), Some(40));
         }
 
         #[test]
@@ -321,10 +296,7 @@ mod tests {
                 None,
                 None,
             );
-            assert_eq!(
-                creature.calc_speed_in_feet(&MovementMode::Land),
-                Some(30)
-            );
+            assert_eq!(creature.calc_speed_in_feet(&MovementMode::Land), Some(30));
         }
 
         #[test]

@@ -3,7 +3,7 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense,
+    DamageType, Debuff, MovementMode, MovementSpeed, PassiveAbility, Sense,
     Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
@@ -128,7 +128,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
         if def.abilities.movement_speeds.is_none() {
             def.abilities.movement_speeds = Some(vec![
                 MovementSpeed::new(
-                    MovementMode::Fly(FlightManeuverability::Perfect),
+                    MovementMode::Fly(None),
                     SpeedCategory::Fast,
                 ),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
@@ -274,7 +274,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     ],
                     movement_speeds: Some(vec![
                         MovementSpeed::new(
-                            MovementMode::Fly(FlightManeuverability::Perfect),
+                            MovementMode::Fly(None),
                             SpeedCategory::Fast,
                         ),
                         MovementSpeed::new(MovementMode::Land, SpeedCategory::Fast),
