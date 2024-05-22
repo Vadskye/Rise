@@ -14,20 +14,21 @@ export const verdamancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Fertile Patch',
+      name: 'Bramblepatch',
 
       effect: `
-        Choose one \\glossterm{unattended}, nonmagical 1-ft.\\ square of earth.
-        The soil in the target becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
-        This effect lasts for one year.
+        Choose one \\glossterm{unattended}, nonmagical 5-ft.\\ square of earth within \\medrange.
+        Brambles and similar small plants grow in the area, making it \\glossterm{light undergrowth}.
+        If it was already light undergrowth, it becomes \\glossterm{heavy undergrowth} instead.
       `,
       scaling: {
-        2: 'You can choose to affect a 2-ft. square instead.',
-        4: 'You can choose to affect a 5-ft. square instead.',
-        6: 'You can choose to affect a 10-ft. square instead.',
+        2: `The area increases to a \\tinyarea radius.`,
+        4: `The area increases to a \\smallarea radius.`,
+        6: `The area increases to a \\medarea radius.`,
       },
+      type: 'Sustain (minor)',
+      tags: ['Manifestation'],
     },
-
     {
       name: 'Rapid Growth',
 
@@ -667,6 +668,41 @@ export const verdamancy: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Fertile Patch',
+
+      castingTime: 'one hour',
+      effect: `
+        Choose one \\glossterm{unattended}, nonmagical 5-ft.\\ square of earth.
+        The soil in the target becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
+        This effect lasts for one year.
+      `,
+      rank: 1,
+    },
+    {
+      name: 'Sense Plants',
+
+      castingTime: 'ten minutes',
+      effect: `
+        You learn the general pattern of where natural, nonmagical plants exist within a one mile radius from your location.
+        The detail of your mental picture is limited to roughly knowing whether plants do or do not exist in each hundred-foot square in the area.
+        Since this is a \\abilitytag{Detection} ability, it can penetrate some solid objects (see \\pcref{Detection}).
+        This ritual can only sense plants that are Small or larger, or closely packed clusters of smaller plants that reach a similar  combined size (such as dense grass).
+      `,
+      rank: 2,
+      tags: ['Detection'],
+    },
+    {
+      name: 'Distant Sense Plants',
+
+      functionsLike: {
+        exceptThat: 'the range increases to ten miles.',
+        name: 'sense plants',
+      },
+      rank: 4,
+      tags: ['Detection'],
+      castingTime: 'one hour',
+    },
     {
       name: 'Fertility',
 

@@ -702,7 +702,7 @@ export const aeromancy: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        If it uses a \\glossterm{standard action} to do anything other than make a \\glossterm{movement}, this effect ends.
       `,
       // narrative: '',
       rank: 4,
@@ -720,31 +720,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       type: 'Attune (target)',
-    },
-    {
-      name: 'Detect Air',
-
-      castingTime: 'one minute',
-      effect: `
-        You learn the approximate distance and direction to any air within \\distrange of you.
-        Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
-        This ritual can detect air pockets with a minimum size of Fine.
-      `,
-      // narrative: '',
-      rank: 1,
-      tags: ['Detection'],
-    },
-    {
-      name: 'Distant Detect Air',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        exceptThat: 'the range increases to 2,000 feet.',
-        name: 'detect air',
-      },
-      // narrative: '',
-      rank: 4,
-      tags: ['Detection'],
     },
   ],
 };
