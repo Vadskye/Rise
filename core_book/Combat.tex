@@ -402,6 +402,8 @@
         You can spend your \glossterm{standard action} during the \glossterm{action phase} to make another movement.
 
         When a creature makes a movement, it travels a distance in feet equal to its \glossterm{speed} with one \glossterm{movement mode}.
+        Almost all creatures have a land speed, which represents their ability to move across mostly flat terrain.
+        For details about other forms of movement, such as flying and swimming, see \pcref{Movement Modes}.
 
     \subsection{Movement Modes}\label{Movement Modes}
         A \glossterm{movement mode} is a method of moving from one location to another.
@@ -418,68 +420,30 @@
         Some effects can still prevent a creature from using their movement modes at all, such as being \immobilized.
 
         \parhead{Burrowing}
-        A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
+        A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically.
+        Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances.
+        It does not leave behind a usable tunnel for other creatures.
 
         \parhead{Climbing}
-        A creature with a \glossterm{climb speed} can move a distance equal to its climb speed with a successful Climb check (see \pcref{Climb}).
-        In addition, it gains a \plus10 bonus to any Climb checks it makes.
+        A creature with a \glossterm{climb speed} can move a distance equal to its climb speed while climbing.
+        It must still make a Climb check to move in challenging conditions, such as slippery walls (see \pcref{Climb}).
 
         \parhead{Flying}
         A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
-        Flying is more complicated than some other movement speeds.
-        For details, see \pcref{Flight}.
+        Flying is more complicated than some other movement modes.
+        For details, see \pcref{Aerial Movement}.
 
         \parhead{Gliding}\label{Gliding}
-        A creature with a glide speed can glide through the air at the indicated speed
-        It must not be carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
-        Whenever a creature glides, it takes a \minus2 penalty to Armor and Reflex defenses until it reaches solid ground.
-
-        While in the air, a creature with a glide speed can control its fall as a \glossterm{movement}. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
+        A creature with a glide speed can glide through the air at the indicated speed.
+        Gliding is more complicated than some other movement modes.
+        For details, see \pcref{Aerial Movement}.
 
         \parhead{Land}
         A creature with a land speed can move across the ground at the indicated speed.
 
-    \subsection{Flight}\label{Flight}
-        A creature with a fly speed cannot fly while it is carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
-        In addition, it cannot fly while it has any \glossterm{encumbrance}.
-
-        \parhead{Height Limit}\label{Height Limit} Some abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
-        This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
-        You can fly above surfaces like water as long as they are thick enough to support your weight.
-
-        While you are above your maximum height with a fly speed, you have a \glossterm{glide speed} equal to your fly speed.
-
-        \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
-
-        \subsubsection{Flying Maneuverability}\label{Flying Maneuverability}
-        Each creature with a fly speed also has a maneuverability: good, average, or poor.
-        Unless otherwise specified, a creature with a fly speed has average maneuverability.
-
-            \parhead{Good Maneuverability}
-            \begin{itemize}
-                \item Minimum speed: The creature does not need to move horizontally to maintain its flight, allowing it to hover.
-                \item Vertical movement: The creature can move up at the same speed as it moves horizontally, and it can fly down twice as fast.
-            \end{itemize}
-
-            \parhead{Average Maneuverability}
-            \begin{itemize}
-                \item Defense penalties: Whenever the creature flies, it takes a \minus2 penalty to Armor and Reflex defenses until it reaches solid ground.
-                \item Minimum speed: The creature must move horizontally by at least a quarter of its fly speed each round. If it does not, it falls.
-                \item Vertical movement: The creature can fly up at half speed, but can fly down twice as fast.
-            \end{itemize}
-
-            \parhead{Poor Maneuverability}
-            \begin{itemize}
-                \item Defense penalties: Whenever the creature flies, it takes a \minus4 penalty to Armor and Reflex defenses until it reaches solid ground.
-                \item Minimum speed: The creature must move horizontally by at least half its fly speed each round. If it does not, it falls.
-                \item Vertical movement: The creature can move up or down by only one square vertically per square traveled horizontally.
-                    The creature can fly up at half speed, but can fly down twice as fast.
-            \end{itemize}
-
-        \subsubsection{Size-Based Abilities While Flying}
-            You can reach a creature's weak spots more easily while flying than while trying to attack its feet from the ground.
-            While flying, you are treated as one size category larger than normal for the purpose of determing the effects of your \abilitytag{Size-Based} abilities.
-            This cannot be combined with other effects that increase your effective size for the purpose of Size-Based abilities, such as climbing on creatures (see \pcref{Creature Climb}).
+        \parhead{Swimming}
+        A creature with a \glossterm{swim speed} can move a distance equal to its swim speed while climbing.
+        It must still make a Swim check to move in challenging conditions, such as stormy seas (see \pcref{Swim}).
 
     \subsection{Combining Movement Modes}
         You can move using multiple different movement modes in the same phase in any order.
@@ -509,7 +473,7 @@
         If your jump distance would be less than 5 feet, you normally cannot jump meaningfully at all.
         The GM can decide whether that makes sense in a particular situation.
 
-        If your destination square is in midair, you begin falling at the end of the round.
+        If your destination square is in midair, you do not start falling until the next phase (see \pcref{Falling Damage}).
         This allows you to jump during the movement phase and act in midair during the action phase.
         Narratively, this represents you timing your jump so you can take a useful action while jumping.
         You don't just hover in midair.
@@ -656,6 +620,44 @@
             If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage per 10 feet of movement remaining.
             A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
             This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
+
+\section{Aerial Movement}\label{Aerial Movement}
+    Creatures with a fly speed or glide speed can move in midair to some degree.
+    In order to use a fly speed or glide speed, a creature must not be carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
+    In addition, it must not have any \glossterm{encumbrance} (see \pcref{Encumbrance}).
+
+    While in midair, land-based creatures cannot move to defend themselves effectively.
+    Whenever a creature moves with a fly speed or glide speed, it takes a \minus4 penalty to its Armor and Reflex defenses until it lands on solid ground.
+    This penalty does not apply to creatures who are native to the air, such as birds and creatures with no defined land speed.
+
+    A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during both the \glossterm{movement phase} and the \glossterm{action phase}.
+    If it does not move during a phase, it falls by 300 feet at the end of that phase (see \pcref{Falling Damage}).
+    \trait{Incorporeal} creatures do not fall in this way.
+
+    \subsection{Gliding}\label{Gliding}
+        A creature with a glide speed use a \glossterm{movement} to fall slowly while controlling its direction.
+        When it glides, it moves up to its glide speed in any horizontal direction.
+        It also must descend 10 feet.
+        This descent does not count against its distance moved during the movement.
+
+        In order to glide, a creature must be able to fall.
+        Since \trait{incorporeal} creatures cannot fall, they also cannot glide.
+        Gliding is impossible in areas without gravity, such as the Astral Plane (see \pcref{Planes}).
+
+    \subsection{Flight}\label{Flight}
+        A creature with a fly speed can use a \glossterm{movement} to move up to its fly speed in any direction, even vertically.
+        It can also remain in place, though it must still make a \glossterm{movement} each phase to avoid falling.
+
+        \parhead{Height Limit}\label{Height Limit} Most abilities that grant a fly speed also have a height limit for the maximum height you can reach with that fly speed.
+        This height measures your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+        You can fly above surfaces like water as long as they are thick enough to support your weight.
+
+        While you are above your maximum height with a fly speed, you have a \glossterm{glide speed} equal to your fly speed.
+
+    \subsection{Size-Based Abilities In Midair}
+        You can reach a creature's weak spots more easily while flying than while trying to attack its feet from the ground.
+        While flying, you are treated as one size category larger than normal for the purpose of determing the effects of your \abilitytag{Size-Based} abilities.
+        This cannot be combined with other effects that increase your effective size for the purpose of Size-Based abilities, such as climbing on creatures (see \pcref{Creature Climb}).
 
 \section{Universal Abilities}\label{Universal Abilities}
     All creatures can use the following abilities.
@@ -917,6 +919,7 @@
 
             You can immediately take another \glossterm{movement}.
             For the duration of that movement, you double your \glossterm{land speed}.
+            This does not affect your speed with other movement modes.
         \end{activeability}
 
         If you sprint during both the movement phase and the action phase, you can move at up to four times your normal speed.
@@ -1152,8 +1155,8 @@
 
         In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
 
-        \parhead{Flying Mounts} Flying mounts are harder to ride and control than terrestrial mounts, especially mounts that can change directions rapidly.
-        The \glossterm{difficulty value} for all Ride checks on a mount using a fly speed is increased by 10 if the mount has poor or average maneuverability, or by 15 if it has perfect maneuverability.
+        \parhead{Flying Mounts} Flying mounts are harder to ride and control than terrestrial mounts.
+        The \glossterm{difficulty value} for all Ride checks on a mount using a fly speed is increased by 10.
 
         \parhead{Combat while Mounted} With a \glossterm{difficulty value} 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 

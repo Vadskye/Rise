@@ -22,7 +22,7 @@ pub use damage_types::{DamageType, DamageTypeEffect};
 pub use debuffs::Debuff;
 pub use defenses::{Defense, HasDefenses, SpecialDefenseType, SpecialDefenses};
 pub use dice_pool::{DicePool, Die, PowerScaling};
-pub use movement::{FlightManeuverability, MovementMode, MovementSpeed, SpeedCategory, HasMovement};
+pub use movement::{MovementMode, MovementSpeed, SpeedCategory, HasMovement};
 pub use passive_abilities::{PassiveAbility, StandardPassiveAbility};
 pub use resources::{HasResources, Resource};
 pub use senses::Sense;

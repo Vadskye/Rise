@@ -120,8 +120,9 @@
 
             \parhead{Rank 1 -- Energetic Soul} Whenever you deal damage, you can treat at as energy damage in addition to its other types.
             In addition, whenever you take or deal energy damage while not \trait{incorporeal}, you and your equipment \glossterm{briefly} become incorporeal.
-            While you are incorporeal in this way, you gain a \glossterm{fly speed} equal to your base speed with a \glossterm{height limit} of 60 feet (see \pcref{Flight}).
-            Your \glossterm{maneuverability} with this fly speed is perfect (see \pcref{Flying Maneuverability}).
+            While you are incorporeal in this way, all of your other movement modes are replaced with a \glossterm{fly speed} equal to your base speed (see \pcref{Flight}).
+            This flight has a \glossterm{height limit} of 60 feet.
+            Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
 
             \parhead{Rank 2 -- See Through the Weave} You can see everything within 120 feet of you perfectly, regardless of obstacles of any kind or light levels.
             This is similar to \trait{blindsight}, except that it also ignores solid obstacles of any kind, allowing you to have \glossterm{line of sight} through walls.
@@ -685,7 +686,7 @@
             You also gain a tail slam \glossterm{natural weapon}.
             It deals 1d10 bludgeoning damage and has the \weapontag{Impact} weapon tag (see \pcref{Weapon Tags}).
             % TODO: too fast?
-            In addition, you gain a \plus20 foot bonus to your fly speed with your \textit{draconic flight} ability, but your maneuverability drops to poor maneuverability (see \pcref{Flying Maneuverability}).
+            In addition, you gain a \plus10 foot bonus to your fly speed with your \textit{draconic flight} ability.
 
         \subsubsection{Base Class Abilities}
             If you choose dragon as your base class, you gain the following abilities.
@@ -1007,7 +1008,7 @@
                 \rank{7} The area increases to a \largearea radius.
             \end{magicalsustainability}
 
-            \cf{Hrp}[6]{Agile Flight} Your flight improves to have good maneuverability (see \pcref{Flying Maneuverability}).
+            \cf{Hrp}[6]{Agile Flight} Using your fly speed no longer penalizes your Armor and Reflex defenses.
             In addition, your maximum height increases to 30 feet.
 
             \magicalcf{Hrp}[7]{Mythic Siren} You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
@@ -1636,10 +1637,17 @@
             \begin{magicalattuneability}{Creature of the Night}{\abilitytag{Attune}}
                 \rankline
                 You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
-                While in your bat form, you gain \trait{blindsense} (120 ft.) and a 40 foot fly speed with a 60 ft. height limit.
-                While in your mist form, you become \trait{incorporeal} and gain a 20 foot fly speed with a 30 ft. height limit and perfect maneuverability.
+                \begin{raggeditemize}
+                    \item Bat: While in your bat form, you gain \trait{blindsense} (120 ft.) and \trait{blindsight} (30 ft.).
+                        You cannot speak and have no \glossterm{free hands}.
+                        All of your normal movement modes are replaced with a 40 foot fly speed with a 60 ft. height limit.
+                    \item Mist: While in your mist form, you become \trait{incorporeal}.
+                        You cannot speak and have no \glossterm{free hands}.
+                        All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+                \end{raggeditemize}
 
                 In either non-humanoid form, you are unable to take any standard action other than \glossterm{movement}.
+                Since you have no land speed, flying in those forms does not penalize your Armor or Reflex defenses.
                 You cannot use this ability while \paralyzed.
             \end{magicalattuneability}
 

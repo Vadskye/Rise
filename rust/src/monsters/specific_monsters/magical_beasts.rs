@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    DamageType, FlightManeuverability, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    DamageType, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
     SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
@@ -437,7 +437,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: Some(vec![
-                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
+                MovementSpeed::new(MovementMode::Fly(Some(60)), SpeedCategory::Fast),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             ]),
             senses: vec![Sense::LowLightVision],
@@ -503,7 +503,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ),
             ]),
             movement_speeds: Some(vec![
-                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Poor), SpeedCategory::Fast),
+                MovementSpeed::new(MovementMode::Fly(Some(90)), SpeedCategory::Fast),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             ]),
             senses: vec![Sense::Blindsight(120), Sense::Blindsense(240)],

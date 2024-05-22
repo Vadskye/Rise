@@ -2,7 +2,7 @@ use crate::core_mechanics::abilities::{
     AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, DicePool, FlightManeuverability, MovementMode, MovementSpeed,
+    DamageType, Debuff, Defense, DicePool, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
@@ -55,7 +55,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                 Modifier::immune_debuff(Debuff::Prone),
             ]),
             movement_speeds: Some(vec![
-                MovementSpeed::new(MovementMode::Fly(FlightManeuverability::Perfect), SpeedCategory::Normal)
+                MovementSpeed::new(MovementMode::Fly(Some(30)), SpeedCategory::Normal)
             ]),
             senses: vec![Sense::Darkvision(120)],
             trained_skills: vec![
