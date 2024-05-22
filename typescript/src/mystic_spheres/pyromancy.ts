@@ -663,28 +663,28 @@ export const pyromancy: MysticSphere = {
     },
 
     {
-      name: 'Detect Flame',
+      name: 'Sense Flame',
 
       castingTime: 'one minute',
       effect: `
-          You learn the approximate distance and direction to any active fires within \\longrange \\glossterm{range} of you.
-          Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
-          This spell can sense fires as small as a candle flame, but no smaller.
+          You learn the general pattern of where active fires exist within a one mile radius from your location.
+          The detail of your mental picture is limited to roughly knowing whether fire does or does not exist in each hundred-foot square in the area.
+          Since this is a \\abilitytag{Detection} ability, it can penetrate some solid objects (see \\pcref{Detection}).
+          This ritual can sense fires as small as a candle flame, but no smaller.
       `,
-      rank: 1,
+      rank: 2,
       tags: ['Detection'],
     },
 
     {
-      name: 'Distant Detect Flame',
+      name: 'Distant Sense Flame',
 
-      castingTime: 'one minute',
-
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          the range increases to 2,000 feet.
+          the range increases to a ten mile radius from your location.
         `,
-        name: 'detect flame',
+        name: 'sense flame',
       },
       rank: 4,
       tags: ['Detection'],
