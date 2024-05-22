@@ -748,27 +748,30 @@ export const aquamancy: MysticSphere = {
       type: 'Attune (target)',
     },
     {
-      name: 'Detect Water',
+      name: 'Sense Water',
 
-      effect: `
-        You learn the approximate distance and direction to any bodies of water within \\distrange of you.
-        Since this is a \\abilitytag{Detection} ability, its range can penetrate some solid objects (see \\pcref{Detection}).
-        This spell can detect bodies of water with a minimum size of Fine.
-      `,
-      rank: 1,
-      tags: ['Detection'],
       castingTime: 'one minute',
+      effect: `
+          You learn the general pattern of where water exists within a one mile radius from your location.
+          The detail of your mental picture is limited to roughly knowing whether water does or does not exist in each hundred-foot square in the area.
+          Since this is a \\abilitytag{Detection} ability, it can penetrate some solid objects (see \\pcref{Detection}).
+          This ritual can sense water as small as a gallon, but no smaller.
+      `,
+      rank: 2,
+      tags: ['Detection'],
     },
     {
-      name: 'Distant Detect Water',
+      name: 'Distant Sense Water',
 
       functionsLike: {
-        exceptThat: 'the range increases to 2,000 feet.',
-        name: 'detect water',
+        exceptThat: `
+          the range increases to a ten mile radius from your location.
+        `,
+        name: 'sense water',
       },
       rank: 4,
       tags: ['Detection'],
-      castingTime: 'one minute',
+      castingTime: 'one hour',
     },
     {
       name: 'Swimmers',

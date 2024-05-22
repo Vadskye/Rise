@@ -8,20 +8,23 @@ export const toxicology: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Intensify Poison',
+      name: 'Detect Poison',
 
-      attack: {
-        crit: `As above, except that the poison progresses by two stages instead of one.`,
-        hit: `Choose a poison affecting the target.
-        The poison progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref{Poison}).`,
-        targeting: `
-        Make an attack vs. Fortitude with a +4 \\glossterm{accuracy} bonus against one living creature within \\medrange.
-        If the target is not currently poisoned, this ability has no effect.
+      castingTime: 'one minute',
+      effect: `
+          Choose a \\arealarge \\glossterm{cone} from you.
+          You identify the presence or absence of any poisoned, poisonous, or venomous creatures and objects in the area.
+          This does not provide any other information, such as location or type of poison.
+      `,
+      scaling: {
+        2: `
+          You also learn the number of poisons in the area.
         `,
+        4: 'You also learn the location of each poison in the area.',
+        6: `This ability can be used as a \\glossterm{minor action}.`,
       },
-      scaling: 'accuracy',
+      tags: ['Detection'],
     },
-
     {
       name: 'Neutralize Poison',
 
@@ -66,6 +69,25 @@ export const toxicology: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfive{acid}.',
       },
       rank: 4,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Intensify Poison',
+
+      attack: {
+        crit: `As above, except that the poison progresses by two stages instead of one.`,
+        hit: `
+          Choose a poison affecting the target.
+          The poison immediately progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref{Poison}).
+          In addition, that poison gains a +4 accuracy bonus on all of its future attack rolls against the target until it is removed.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a +4 \\glossterm{accuracy} bonus against one living creature within \\medrange.
+          If the target is not currently poisoned, this ability has no effect.
+        `,
+      },
+      rank: 1,
       scaling: 'accuracy',
     },
 
@@ -492,5 +514,61 @@ export const toxicology: MysticSphere = {
       scaling: 'accuracy',
     },
   ],
-  rituals: [],
+  rituals: [
+    {
+      name: 'Bitter Remedy',
+
+      castingTime: 'ten minutes',
+      effect: `
+        Choose one ritual participant.
+        The target can remove one of its \\glossterm{vital wounds}.
+        Then, it increases its \\glossterm{fatigue level} by two and gains a \\glossterm{vital wound} that imposes a \minus2 penalty to its Fortitude defense (see \tref{Vital Wound Effects}).
+      `,
+      // narrative: '',
+      rank: 1,
+      tags: ['Poison'],
+    },
+    {
+      name: 'Bitter Remedy+',
+
+      castingTime: 'ten minutes',
+      functionsLike: {
+        name: 'bitter remedy',
+        exceptThat: `the vital wound created by this ritual has no vital wound effect.`,
+      },
+      // narrative: '',
+      rank: 3,
+      tags: ['Poison'],
+    },
+    {
+      name: 'Restful Draught',
+
+      castingTime: 'ten minutes',
+      effect: `
+        Choose one ritual participant.
+        The target immediately falls asleep, and cannot be awoken unless it loses hit points or gains a vital wound.
+        If it finishes a long rest while asleep in this way, it removes an additional vital wound.
+      `,
+      // narrative: '',
+      rank: 2,
+      tags: ['Poison'],
+    },
+    {
+      name: 'Poisoncraft',
+
+      castingTime: 'one hour',
+      effect: `
+        You can create a rank 1 poison.
+        This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \pcref{Creating Poisons}).
+        Instead, you must supply ritual components equal to a rank 1 consumable item (5 gp).
+
+        You can perform this ritual at a higher rank.
+        This increases the cost of the ritual components to be equal to a consumable item of the ritual's rank (see \pcref{Wealth and Item Ranks}).
+        The maximum rank of a poison you can craft with this ritual is equal to this ritual's rank.
+      `,
+      // narrative: '',
+      rank: 1,
+      tags: ['Poison'],
+    },
+  ],
 };
