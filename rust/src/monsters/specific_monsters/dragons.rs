@@ -4,7 +4,7 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{AttackEffectDuration, DebuffEffect};
 use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, FlightManeuverability, MovementMode, MovementSpeed,
+    DamageType, Debuff, Defense, MovementMode, MovementSpeed,
     PassiveAbility, Size, SpecialDefenseType, SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
@@ -523,7 +523,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
                 MovementSpeed::new(
-                    MovementMode::Fly(FlightManeuverability::Poor),
+                    // TODO: Should this scale with size category?
+                    MovementMode::Fly(Some(90)),
                     SpeedCategory::Double,
                 ),
             ]),

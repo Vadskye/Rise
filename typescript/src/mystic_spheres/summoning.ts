@@ -216,7 +216,7 @@ export const summoning: MysticSphere = {
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception, plus any accuracy modifier for the chosen weapon.
-          \\item It has a 30 foot \\glossterm{fly speed} and no \\glossterm{land speed}, with good \\glossterm{maneuverability} and a maximum height of 5 feet.
+          \\item It has a 30 foot \\glossterm{fly speed} and no \\glossterm{land speed}, with a maximum height of 5 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
@@ -313,7 +313,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature appears to be an air elemental.
           Its attacks deal \\damagerankthree{bludgeoning}.
-          It has a 30 foot \\glossterm{fly speed} with good \\glossterm{maneuverability} and a 30 foot \\glossterm{height limit}.
+          It has a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit}.
         `,
         name: 'summon monster',
       },

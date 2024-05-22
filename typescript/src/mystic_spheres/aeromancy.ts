@@ -296,7 +296,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
-        Your \\glossterm{maneuverability} with this fly speed is perfect (see \\pcref{Flying Maneuverability}).
+        Unlike normal, flying with this fly speed does not penalize your Armor and Reflex defenses.
       `,
       // narrative: '',
       rank: 6,
@@ -307,7 +307,6 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flight}).
-        Your \\glossterm{maneuverability} with this fly speed is poor (see \\pcref{Flying Maneuverability}).
       `,
       // narrative: '',
       rank: 7,
@@ -645,8 +644,9 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You \\glossterm{shapeshift} into a cloud of mist.
-        You become \\trait{incorporeal}, but you cannot speak and have no \\glossterm{free hands}.
-        You have a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} and perfect \\glossterm{maneuverability} (see \\pcref{Flight}).
+        This makes you \\trait{incorporeal}, but you cannot speak and have no \\glossterm{free hands}.
+        All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
       `,
       rank: 5,
       tags: [],
@@ -711,11 +711,11 @@ export const aeromancy: MysticSphere = {
     {
       name: 'Rapid Overland Flight',
 
-      castingTime: 'one minute',
+      castingTime: 'one hour',
       effect: `
         Choose up to six ritual participants.
-        Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} and poor \\glossterm{maneuverability} (see \\pcref{Flight}).
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        If it uses a \\glossterm{standard action} to do anything other than make a \\glossterm{movement}, this effect ends.
       `,
       // narrative: '',
       rank: 6,
