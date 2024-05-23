@@ -475,6 +475,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             let rank = calculate_standard_rank(self.level);
             let mut modifiers = vec![];
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
+            modifiers.push(Modifier::PassiveAbility(PassiveAbility::floating()));
             modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
                 DamageType::Electricity,
             )));
@@ -511,7 +512,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
                     ],
                     modifiers,
                     movement_speeds: Some(vec![MovementSpeed::new(
-                        MovementMode::Land,
+                        MovementMode::Fly(None),
                         SpeedCategory::Fast,
                     )]),
                     senses: vec![],

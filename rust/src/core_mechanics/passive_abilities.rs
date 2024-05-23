@@ -11,16 +11,26 @@ impl PassiveAbility {
     pub fn to_latex(&self) -> String {
         format!(
             "
-                \\parhead<{name}>{magical} {description}
+                \\parhead<{name}{magical}> {description}
             ",
             description = self.description,
-            magical = if self.is_magical { "[\\sparkle]" } else { "" },
+            magical = if self.is_magical { "\\sparkle" } else { "" },
             name = self.name,
         )
     }
 
     pub fn construct() -> Self {
         StandardPassiveAbility::Construct.ability()
+    }
+
+    pub fn floating() -> Self {
+        Self {
+            description: r"
+                The $name does not fall while in midair.
+            ".to_string(),
+            is_magical: true,
+            name: "Floating".to_string(),
+        }
     }
 
     pub fn indwelt() -> Self {
