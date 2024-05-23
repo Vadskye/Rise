@@ -166,6 +166,8 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     active_abilities: vec![],
                     modifiers: vec![
                         Modifier::Attack(StandardAttack::Combustion(6).attack()),
+                        // TODO: Ram doesn't really match the art. No natural weapon matches
+                        // particularly well...
                         Modifier::Attack(
                             Maneuver::Tenderize
                                 .attack(StandardWeapon::MonsterRam.weapon(), 6)
