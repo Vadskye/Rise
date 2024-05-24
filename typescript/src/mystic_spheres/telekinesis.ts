@@ -180,25 +180,13 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Rapid Reload',
+      name: 'Mental Reload',
 
       effect: `
-        You can reload weapons from the crossbow weapon group as a \\glossterm{minor action} instead of as a standard action, and without requiring any \\glossterm{free hands}.
-        Whenever you reload a crossbow in this way, you \\glossterm{briefly} cannot do so again.
+        You can reload projectile weapons without requiring any \\glossterm{free hands}.
       `,
       rank: 2,
       type: 'Attune',
-    },
-
-    {
-      name: 'Greater Rapid Reload',
-
-      functionsLike: {
-        name: 'rapid reload',
-        exceptThat: 'using this ability does not prevent you from using it again.'
-      },
-      rank: 6,
-      type: 'Attune (deep)',
     },
 
     {
