@@ -820,6 +820,8 @@ Items are divided into five broad categories, described below.
 
         \parhead{Damage Resistance} This value indicates how much the armor increases your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
 
+        \parhead{Vital Rolls} This value indicates how much the armor increases your \glossterm{vital rolls} (see \pcref{Vital Rolls}).
+
         \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks and skills.
         For details, see \pcref{Encumbrance}.
@@ -839,25 +841,25 @@ Items are divided into five broad categories, described below.
         \begin{dtable!*}
             \tablebookmark{Armor and Shields}{armor}
             \lcaption{Armor and Shields}
-            \begin{dtabularx}{\textwidth}{l c c c c c >{\lcol}X c}
-                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material} & \tb{Item Rank (Cost)}  \tableheaderrule
-                Light armor           &              &                        &                  &              &                &               &              \\
-                \tind Padded          & \plus2       & \plus3                 & \tdash           & \tdash       & \tdash         & Leather       & 0 (10 gp)    \\
-                \tind Buff leather    & \plus2       & \plus4                 & \plus1           & \tdash       & \tdash         & Leather       & 1 (40 gp)    \\
-                \tind Mail shirt      & \plus2       & \plus4                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
-                \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash       & \tdash         & Metal or wood & 0 (10 gp)    \\
-                Medium armor          &              &                        &                  &              &                &               &              \\
-                \tind Rawhide         & \plus4       & \plus4                 & \plus2           & \tdash       & \mult1/2       & Leather       & 1 (40 gp)    \\
-                \tind Scale           & \plus4       & \plus5                 & \plus4           & \tdash       & \mult1/2       & Metal         & 1 (40 gp)    \\
-                \tind Brigandine      & \plus4       & \plus6                 & \plus4           & \tdash       & \mult1/2       & Metal         & 2 (200 gp)   \\
-                \tind Standard shield & \plus2       & \tdash                 & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 0 (10 gp)    \\
-                Heavy armor           &              &                        &                  &              &                &               &              \\
-                \tind Layered hide    & \plus5       & \plus6                 & \plus4           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
-                \tind Half plate      & \plus5       & \plus8                 & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
-                \tind Full plate      & \plus5       & \plus10                & \plus6           & \minus10 ft. & \mult0         & Metal         & 3 (1,000 gp) \\
-                \tind Tower shield    & \plus3\fn{2} & \tdash                 & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood & 1 (40 gp)    \\
-                Extras                &              &                        &                  &              &                &               &              \\
-                \tind Shield spikes   & \tdash       & \tdash                 & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
+            \begin{dtabularx}{\textwidth}{l c c c c c c >{\lcol}X c}
+                \tb{Armor}            & \tb{Defense} & \tb{Damage Resistance} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material} & \tb{Item Rank (Cost)}  \tableheaderrule
+                Light armor           &              &                        &                  &                  &              &                &               &              \\
+                \tind Padded          & \plus2       & \plus3                 & \tdash           & \tdash           & \tdash       & \tdash         & Leather       & 0 (10 gp)    \\
+                \tind Buff leather    & \plus2       & \plus4                 & \tdash           & \plus1           & \tdash       & \tdash         & Leather       & 1 (40 gp)    \\
+                \tind Mail shirt      & \plus2       & \plus4                 & \tdash           & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
+                \tind Buckler         & \plus1       & \tdash                 & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood & 0 (10 gp)    \\
+                Medium armor          &              &                        &                  &                  &              &                &               &              \\
+                \tind Rawhide         & \plus4       & \plus4                 & \plus1           & \plus2           & \tdash       & \mult1/2       & Leather       & 1 (40 gp)    \\
+                \tind Scale           & \plus4       & \plus5                 & \plus1           & \plus4           & \tdash       & \mult1/2       & Metal         & 1 (40 gp)    \\
+                \tind Brigandine      & \plus4       & \plus6                 & \plus1           & \plus4           & \tdash       & \mult1/2       & Metal         & 2 (200 gp)   \\
+                \tind Standard shield & \plus2       & \tdash                 & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood & 0 (10 gp)    \\
+                Heavy armor           &              &                        &                  &                  &              &                &               &              \\
+                \tind Layered hide    & \plus5       & \plus6                 & \plus2           & \plus4           & \minus10 ft. & \mult0         & Leather       & 1 (40 gp)    \\
+                \tind Half plate      & \plus5       & \plus8                 & \plus2           & \plus6           & \minus10 ft. & \mult0         & Metal         & 2 (200 gp)   \\
+                \tind Full plate      & \plus5       & \plus10                & \plus2           & \plus6           & \minus10 ft. & \mult0         & Metal         & 3 (1,000 gp) \\
+                \tind Tower shield    & \plus3\fn{2} & \tdash                 & \tdash           & \plus2\fn{1}     & \tdash       & \mult0         & Metal or wood & 1 (40 gp)    \\
+                Extras                &              &                        &                  &                  &              &                &               &              \\
+                \tind Shield spikes   & \tdash       & \tdash                 & \tdash           & \plus1           & \tdash       & \tdash         & Metal         & 1 (40 gp)    \\
             \end{dtabularx}
             1 The hand holding the shield is not free, which may limit your actions. \\
             2 Tower shields improve your ability to take the \textit{total defense} action. See the description.
