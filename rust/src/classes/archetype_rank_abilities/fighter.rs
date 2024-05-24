@@ -153,8 +153,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 You reduce the \glossterm{encumbrance} of body armor you wear by 1, and you gain a special ability based on the usage class of your body armor.
                 \begin{itemize}
                     \item Light: You gain a \plus10 foot bonus to your land speed.
-                    \item Medium: You gain a \plus1 bonus to all defenses.
-                    \item Heavy: You add half your Dexterity to your Armor defense.
+                    \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
+                        Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still removes it entirely.
+                    \item Heavy: You gain a \plus1 bonus to your Armor, Fortitude, and Mental defenses.
                 \end{itemize}
             ",
             // Assume light armor, since it's the easiest to represent
@@ -171,7 +172,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-                    \item Medium: The bonus increases to \plus2.
+                    \item Medium: You gain a \plus2 bonus to your Fortitude, Reflex, and Mental defenses, up to a maximum equal to your Armor defense.
                     \item Heavy: Your armor's bonus to your damage resistance also applies to your hit points.
                         This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
                 \end{itemize}
