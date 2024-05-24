@@ -314,6 +314,25 @@
     :
 }
 
+\DeclareDocumentCommand{\magicalitemhead}{s m o}
+{
+    \IfBooleanTF{#1}
+    {
+        \IfValueTF{#3}{
+            \itemhead*{#2 \sparkle}[#3]
+        }{
+            \itemhead*{#2 \sparkle}
+        }
+    }
+    {
+        \IfValueTF{#3}{
+            \itemhead{#2 \sparkle}[#3]
+        }{
+            \itemhead{#2 \sparkle}
+        }
+    }
+}
+
 \DeclareDocumentCommand{\featref}{s m}
 {
     \hyperlink{feat:#2}{#2}
