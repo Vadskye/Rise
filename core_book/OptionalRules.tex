@@ -443,9 +443,9 @@
                 \item Light armor: You gain a \plus3 bonus to your Armor defense, and a damage resistance bonus equal to three times your rank in this archetype.
                     You can wear body armor on top of this carapace.
                     Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and damage resistance bonus from either armor.
-                \item Medium armor: You gain a \plus4 bonus to your Armor defense, and a damage resistance bonus equal to four times your rank in this archetype.
+                \item Medium armor: You gain a \plus4 bonus to your Armor defense, a \plus1 bonus to \glossterm{vital rolls}, and a damage resistance bonus equal to four times your rank in this archetype.
                     However, your Dexterity bonus to your Armor defense is halved, and you cannot wear body armor.
-                \item Heavy armor: You gain a \plus5 bonus to your Armor defense, and a damage resistance bonus equal to five times your rank in this archetype.
+                \item Heavy armor: You gain a \plus5 bonus to your Armor defense, a \plus2 bonus to \glossterm{vital rolls}, and a damage resistance bonus equal to five times your rank in this archetype.
                     However, your Dexterity bonus to your Armor defense is removed, you take a \minus10 foot penalty to your speed with all movement modes, and you cannot wear body armor.
             \end{itemize}
 
@@ -1053,6 +1053,107 @@
                 \item \subparhead{Other} Intimidate.
             \end{itemize}
 
+    \subsection{Incarnation}
+
+        An incarnation is a physical embodiment of an element or form of energy, like an elemental.
+        Unlike elementals, incarnations are alive and have souls.
+        Most incarnations are created on the plane associated with their element or energy and never leave that plane.
+        However, in rare circumstances involving powerful magic, incarnations can sometimes be created in other planes.
+
+        \parhead{Creature Type} Unlike most other playable species, incarnations are planeforged instead of humanoids.
+        \parhead{Size} Medium.
+        \parhead{Attributes} One attribute gains a \plus1 bonus and another takes a \minus1 penalty, depending on the chosen element or energy.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Essence Affinity} Each incarnation is \impervious to a damage type and \vulnerable to a different damage type.
+            For each damage type, it can choose any subtype of physical damage, any subtype of energy damage, or psychic damage.
+            This choice is made independently of its choice of \textit{essence infusion}.
+            \magicalitemhead{Essence Infusion} Each incarnation chooses one damage type as its essence infusion.
+            It can choose any subtype of physical damage, any subtype of energy damage, or psychic damage.
+            All of the incarnation's \glossterm{strikes} automatically deal damage of that type in addition to their other damage types.
+            This damage type is called the incarnation's essential damage type.
+            \itemhead{Glowing} If appropriate to an incarnation's associated element or energy, it may naturally shed light as a torch.
+            An incarnation cannot willingly disable this light, though the light can be covered by thick clothing.
+        \end{itemize}
+        \parhead{Automatic Languages} Common.
+
+        Incarnations can come in two forms: tethered or untethered.
+        Tethered incarnations are bipedal, with two legs and two arms.
+        They have the same basic body shape and functionality as a human, though they may have unusual proportions.
+
+        Untethered incarnations have no arms or legs.
+        They may appear as a perfect sphere, as intricate shifting arcane glyphs, or any other appearance depending on their nature.
+        The appearance of any individual untethered incarnation is consistent.
+        They are not shapeshifters or masters of disguise, simply unbound by ordinary conceptions of a ``normal'' body shape.
+        An untethered incarnation has the following special abilities:
+        \begin{raggeditemize}
+            \itemhead{Esoteric Body} The incarnation has no arms, legs, or \glossterm{free hands}.
+                This means it is unable to use manufactured weapons or \glossterm{somatic components}.
+                It can wear armor, but the armor is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
+                It has no land speed.
+            \magicalitemhead{Flight} The incarnation's only movement mode is a \glossterm{fly speed} equal to its base speed, with a 5 foot height limit (see \pcref{Aerial Movement}).
+                Since it has no land speed, flying does not penalize its Armor or Reflex defenses.
+                It is also \trait{floating}, so it does not need to fly every phase to avoid falling.
+            \itemhead{Ram} The incarnation gains a ram \glossterm{natural weapon}.
+                It deals 1d6 bludgeoning damage and has the \weapontag{Resonating} weapon tag (see \pcref{Weapon Tags}).
+        \end{raggeditemize}
+
+        \subsubsection{Incarnation Archetype}
+
+        \cf{Inc}[1]{Essence Pulse} You can use the \textit{essence pulse} ability as a standard action.
+        \begin{magicalactiveability}{Essence Spike}
+            \rankline
+            Make an attack against all \glossterm{enemies} within a \smallarea radius from you.
+            The damage type and defense against this attack depends on your essential damage type.
+            \begin{raggeditemize}
+                \item Armor defense: Bludgeoning, piercing, and slashing damage
+                \item Fortitude defense: Acid, cold, and electricity damage
+                \item Reflex defense: Fire damage
+                \item Mental defense: Psychic damage
+            \end{raggeditemize}
+            \hit Each target takes \damagerankone{}.
+
+            \rankline
+            \rank{2} The damage increases to \damageranktwo{}.
+            \rank{3} The damage increases to \damagerankthree{}.
+            \rank{4} The damage increases to \damagerankfour{}.
+            \rank{5} The damage increases to \damagerankfive{}.
+            \rank{6} The damage increases to \damageranksix{}.
+            \rank{7} The damage increases to \damagerankseven{}.
+        \end{magicalactiveability}
+
+        \cf{Inc}[2]{Essence Flare} Whenever you use the \ability{total defense} or \ability{recover} abilities, you \glossterm{briefly} become \impervious to all damage types other than your vulnerability from the \textit{essence affinity} ability.
+        This effect has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+
+        \cf{Inc}[3]{Deep Tether} You gain a special ability depending on whether you are tethered or untethered.
+        \begin{raggeditemize}
+            \item Tethered: You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
+                In addition, whenever you use the \ability{sprint} ability, you leave a damaging wall in the path you traveled.
+                Whenever a creature or object passes through the wall, you make an attack against its Reflex defense.
+                You can only attack a given target with this ability once per \glossterm{phase}.
+                On a hit, the target takes damage as if you hit it with your \ability{essence pulse} ability.
+            \item Untethered: The height limit of your fly speed increases to 15 feet.
+                In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+        \end{raggeditemize}
+
+        \cf{Inc}[4]{Essence Exemplar} The bonus to an attribute that you gain from being an incarnate increases to \plus2.
+
+        \cf{Inc}[5]{Essence Affinity+} You become \glossterm{immune} instead of impervious to the damage type from your \textit{essence affinity} ability.
+
+        \cf{Inc}[5]{Essence Infusion+} You gain a \plus1 accuracy bonus with all abilities that deal damage of your essential damage type.
+
+        \cf{Inc}[6]{Deep Tether+} You gain a special ability depending on whether you are tethered or untethered.
+        \begin{raggeditemize}
+            \item Tethered: The fatigue tolerance bonus increases to \plus2.
+                In addition, when you use the \ability{desperate exertion} ability to affect an attack that deals damage of your essential damge type, you can use this ability.
+                If you do, you only increase your fatigue level by one instead of by two.
+                After using this ability, you \glossterm{briefly} cannot use it again.
+            \item Untethered: The height limit of your fly speed increases to 30 feet.
+                In addition, the defense bonus against critical hits from strikes increases to \plus10.
+        \end{raggeditemize}
+
+        \cf{Inc}[7]{Essence Flare+} This ability can also make you \glossterm{briefly} \trait{incorporeal}.
+
     \subsection{Kit}
 
         Kit are humanoid creatures that have noticeable foxlike characteristics.
@@ -1065,10 +1166,9 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Foxlike Agility} Kit gain a \plus2 bonus to the Balance and Stealth skills.
-            \itemhead{Illusory Guise} As a standard action, a kit can magically disguise its physical appearance in minor ways.
+            \itemhead{Illusory Guise \sparkle} As a standard action, a kit can magically disguise its physical appearance in minor ways.
                 This functions like the \textit{change appearance} ability with a \plus4 bonus, except that a kit cannot change the appearance of its equipment, creature type, or number of limbs, including any tails it may have (see \pcref{Change Appearance}).
-                This is a \magical ability.
-                It lasts until the kit \glossterm{dismisses} it as a free action or uses this ability again.
+                This ability lasts until the kit \glossterm{dismisses} it as a free action or uses this ability again.
             \itemhead{Instictive Trickster} Kit gain a \plus2 bonus to the Deception and Social Insight skills.
             \itemhead{Low-light Vision} Kit have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
         \end{itemize}
@@ -1190,24 +1290,25 @@
             Anything you absorb in this way takes a single point of \glossterm{environmental} acid damage during each of your actions while it remains absorbed.
             This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
 
-            \cf{Ooz}[3]{Greater Amorphous Form} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+            \cf{Ooz}[3]{Amorphous Form+} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
             In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
             Instead, it lasts until you choose to \glossterm{dismiss} it as a \glossterm{free action}.
             This allows you to maintain your shape while unconscious.
 
-            \cf{Ooz}[3]{Greater Compressible Body} You reduce your penalties for \squeezing by 1.
+            \cf{Ooz}[3]{Compressible Body+} You reduce your penalties for \squeezing by 1.
 
             \cf{Ooz}[4]{Acidic Body+} You are \trait{immune} to acid damage and poisons.
 
-            \cf{Ooz}[5]{Greater Darkborn Senses} The range of your \trait{blindsense} increases by 60 feet.
+            \cf{Ooz}[5]{Darkborn Senses+} The range of your \trait{blindsense} increases by 60 feet.
             In addition, the range of your \trait{blindsight} increases by 15 feet.
 
-            \cf{Ooz}[5]{Greater Ingest Object} The maximum number of objects you can absorb with your \textit{ingest object} ability increases to 2.
+            \cf{Ooz}[5]{Ingest Object+} The maximum number of objects you can absorb with your \textit{ingest object} ability increases to 2.
             In addition, you may absorb \glossterm{allies} with that ability in addition to unattended objects.
 
-            \cf{Ooz}[6]{Supreme Amorphous Form} The bonus from your \textit{greater amorphous form} ability increases to \plus8.
+            \cf{Ooz}[6]{Amorphous Form++} The defense bonus against critical hits from strikes increases to \plus10.
 
-            \cf{Ooz}[6]{Supreme Compressible Body} You reduce your penalties for squeezing by 2, which means you take no penalties for squeezing unless you use the \ability{tight squeeze} ability (see \pcref{Flexibility}).
+            \cf{Ooz}[6]{Compressible Body++} The reduction of squeezing penalties increases to 2.
+            This means you take no penalties for squeezing unless you use the \ability{tight squeeze} ability (see \pcref{Flexibility}).
 
             \cf{Ooz}[7]{Third Arm} When you use your \ability{mold body} ability, you can create three arms instead of two.
             You can use all three hands as free hands.
@@ -1312,8 +1413,7 @@
             In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
 
             \cf{Tre}[3]{Animate Plants} You can use the \textit{animate plants} ability as a standard action.
-            \begin{activeability}{Animate Plants}
-                \spelltwocol{}{\abilitytag{Manifestation}}
+            \begin{activeability}{Animate Plants}[\abilitytag{Manifestation}]
                 \rankline
                 Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
                 You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
