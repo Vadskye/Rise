@@ -245,7 +245,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 1,
         short_description: String::from(r"Can change into similar weapons"),
         description: String::from(r"
-             You can activate this weapon as a standard action.
+             You can activate this weapon as a \glossterm{minor action}.
              When you do, it changes shape into a new weapon of your choice from the weapon's original weapon group.
              If the weapon's original form belongs to multiple weapon groups, this property only applies to one of those weapon groups.
              The new shape lasts until you activate the weapon again.
