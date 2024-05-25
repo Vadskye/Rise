@@ -152,7 +152,7 @@ export const dirtyFighting: CombatStyle = {
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           % TODO: clarify that this doesn't work with "move through enemies freely" abilities
-          In addition, creatures cannot choose to avoid you, and each creature that you move through takes \\damageranktwo{bludgeoning}.
+          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo{bludgeoning}.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: 'overrun',
