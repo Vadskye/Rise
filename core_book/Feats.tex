@@ -192,6 +192,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \magicalfeatref{Wardweaver}          & \abilitytag{Barrier} spell known          & Create more powerful barriers        & Magical & \featpref{Wardweaver}          \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Arbalist}                 & Dex 2, Per 1        & Use crossbows more quickly and easily    & \tdash  & \featpref{Arbalist}            \\
         \featref{Battle Armory}            & Str 1, Dex 2        & Switch between different weapons easily    & \tdash  & \featpref{Battle Armory}            \\
         \featref{Blindfighter}             & Per 2               & Fight unseen foes better                   & \tdash  & \featpref{Blindfighter}             \\
         \featref{Brawler}                  & Str 1, Dex 1        & Fight better unarmed and in close quarters & \tdash  & \featpref{Brawler}                  \\
@@ -206,6 +207,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Martial Training}         & \tdash              & Improve combat abilities                   & \tdash  & \featpref{Martial Training}         \\
         \featref{Shieldbearer}             & Str 2               & Defend better with shields                 & \tdash  & \featpref{Shieldbearer}             \\
         \featref{Sniper}                   & Per 2               & Aim precisely at distant foes              & \tdash  & \featpref{Sniper}                   \\
+        \featref{Trickshot}                & Dex 2, Int 1        & Use alchemical items with arrows               & \tdash  & \featpref{Trickshot}                   \\
         \featref{Twin-Weapon Fighting}      & Dex 2               & Fight better with two weapons at once      & \tdash  & \featpref{Twin-Weapon Fighting}      \\
         \featref{Weapon Focus}             & \tdash              & Fight better with a single type of weapon  & \tdash  & \featpref{Weapon Focus}             \\
         \featref{Whirlwind Warrior}        & Dex 2               & Fight hordes with agile ease               & \tdash  & \featpref{Whirlwind Warrior}        \\
@@ -218,6 +220,22 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Some feats also have specific requirements that a character must meet before taking the feat.
         These are listed under a \textbf{Prerequisites} heading.
         If a character loses the prerequisites for a feat, they lose all benefits of the feat until they meet the prerequisites again.
+
+    \begin{feat}{Arbalist}{Combat}
+        \featpre Dexterity 2, Perception 1.
+
+        \ff[1]{Rapid Reload} Crossbows that would normally take a \glossterm{minor action} for you to reload instead take no action at all.
+        This allows you to reload them any number of times per round.
+        You must still have a free hand, if one would normally be required.
+
+        \ff[6]{Multiload} Whenever you load a non-repeating crossbow, you can load it with two bolts instead of one.
+        When you fire a multiloaded crossbow, you take a \minus1 accuracy penalty, but the strike has an additional \glossterm{secondary target} within 10 feet of the primary target.
+
+        \ff[12]{Rapid Reload+} You can reload crossbows that would normally require a standard action as a \glossterm{free action}.
+        When you do, you increase your \glossterm{fatigue level} by one.
+
+        \ff[18]{Multiload+} The number of secondary targets increases to two, and the maximum distance between the primary target and each secondary target increases to 20 feet.
+    \end{feat}
 
     \begin{feat}{Ascetic}{General}
         \featpre Willpower 1.
@@ -2275,6 +2293,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This does not reduce the time required for you to take a \glossterm{long rest}.
 
         \ff[18]{Durable+} The hit point bonus increases to twice your level.
+    \end{feat}
+
+    \begin{feat}{Trickshot}{Combat}
+        \featpre Dexterity 2, Intelligence 1.
+
+        \ff[1]{Alchemical Arrow} As a standard action, you can apply a consumable alchemical item to an arrow.
+        The item does not have its normal area or any other immediate effect.
+        When you hit or \glossterm{glance} a target with a \glossterm{strike} using that arrow, the alchemical item has its normal effect on that target.
+        The alchemical item makes its own attack roll separately from the attack roll for the strike.
+        It only affects one target of the strike, even if the strike would normally affect multiple creatures or objects.
+        If the alchemical item would normally affect an area, that area is centered on the target of the strike.
+        Then, the alchemical item and the arrow are destroyed.
+
+        At the end of the next round after you use this ability, the arrow and alchemical item are destroyed.
+
+        \ff[6]{Combo Expertise} Whenever you use a consumable alchemical item, you \glossterm{briefly} gain a \plus1 accuracy bonus with strikes.
+        Whenever you make a strike, you briefly gain a \plus1 accuracy bonus with consumable alchemical items.
+
+        \ff[12]{Alchemical Arrow+} When you make a strike with the arrow, the alchemical item takes effect on the target even if the strike misses.
+        You can also intentionally miss with the arrow while still delivering the alchemical item to its intended target, allowing you to apply healing potions and similar effects from a distance.
+
+        \ff[18]{Combo Expertise+} Both accuracy bonuses increase to \plus2.
     \end{feat}
 
     \begin{magicalfeat}{Twinhand Spellcaster}{Casting, Magical}
