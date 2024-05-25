@@ -8,8 +8,8 @@ export const verdamancy: MysticSphere = {
   specialRules: `
     Some spells from this mystic sphere can create undergrowth.
     The spellcaster can customize the appearance of the undergrowth in minor ways, but it is always composed of living plants.
-    // Adding brief light undergrowth adds +2 area tiers to a reasonably sized area.
-    // Target's space + adjacent spaces is only +1 rank.
+    % Adding brief light undergrowth adds +2 area tiers to a reasonably sized area.
+    % Target's space + adjacent spaces is only +1 rank.
   `,
 
   cantrips: [
