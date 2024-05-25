@@ -132,7 +132,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Volley Fire',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\smallarea radius within \\medrange.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\smallarea radius within \\medrange.
         This strike costs five projectiles.
         On a miss, you still deal half damage.
       `,
@@ -144,7 +144,7 @@ export const flurryOfBlows: CombatStyle = {
 
       // Technically t6 area instead of t7, but whatever
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against each creature in a \\medarea radius within \\distrange.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\medarea radius within \\distrange.
         The strike deals \\glossterm{extra damage} equal to your power.
         This strike costs ten projectiles.
         On a miss, you still deal half damage.
@@ -207,7 +207,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit Make an additional strike against each creature that lost hit points from the first strike.
+        \\hit Make an additional strike against all creatures that lost hit points from the first strike.
         The second strike cannot target any other creatures.
       `,
       rank: 3,
