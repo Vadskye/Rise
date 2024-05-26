@@ -298,7 +298,7 @@ fn amulets() -> Vec<Apparel> {
         description: String::from(r"
             You take a -1 penalty to power with spells you cast using the \ability{wildspell} sorcerer ability.
             However, you gain a +1 bonus to your wild magic rolls.
-            If your result is 11 or more, the spell deals maximum damage.
+            A result of 11 or more is treated as a 10.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Reduces power and chaos with \ability{wild magic}", r"
