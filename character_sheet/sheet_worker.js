@@ -2654,7 +2654,7 @@ function handleVitalWounds() {
 
 function handleWeaponDamageDice() {
 
-  for (const weaponIndex of [0, 1, 2]) {
+  for (const weaponIndex of [0, 1, 2, 3]) {
     const heavyKey = `weapon_${weaponIndex}_heavy`;
     const versatileGripKey = `weapon_${weaponIndex}_versatile_grip`;
     const ignorePowerKey = `weapon_${weaponIndex}_ignore_power`;
