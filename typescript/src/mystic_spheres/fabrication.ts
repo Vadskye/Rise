@@ -268,7 +268,8 @@ export const fabrication: MysticSphere = {
         You create a normal item of that type in your hand.
         If the item stops touching you, it disappears, and this effect ends.
 
-        If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you can fire it without ammunition by creating projectiles as you fire.
+        If you create a \\weapontag{Projectile} weapon, it is created in an unloaded state.
+        Loading the weapon takes the normal amount of time, though you can load it by creating projectiles out of thin air rather than using regular projectiles.
         The projectiles disappear after the attack is complete.
         Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
 
