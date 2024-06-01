@@ -46,6 +46,7 @@ impl SimpleDamageEffect {
             "$dr7h" => Self::dr7h(damage_types),
             "$dr8h" => Self::dr8h(damage_types),
             "$dr9h" => Self::dr9h(damage_types),
+            "$dr0l" => Self::dr0l(damage_types),
             "$dr1l" => Self::dr1l(damage_types),
             "$dr2l" => Self::dr2l(damage_types),
             "$dr3l" => Self::dr3l(damage_types),
