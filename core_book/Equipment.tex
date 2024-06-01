@@ -129,11 +129,45 @@ Items are divided into five broad categories, described below.
 
 \section{Using Items}
 
-    \subsection{Manipulating Ordinary Objects}
-        In general, using a small object in a simple way requires a \glossterm{minor action}.
-        For example, you can draw or sheathe a weapon as a minor action.
-        Using complex objects, large objects, or inconveniently stored objects generally requires a \glossterm{standard action}.
-        For example, drinking a potion requires a standard action.
+    \subsection{Manipulating Objects}\label{Manipulating Objects}
+        There are three ways to determine how difficult an object is to interact with: its weight, its size, and how it is contained.
+        Use the slowest action type from among the three methods.
+        As normal, you cannot use the same free action twice in a single round, so you can typically manipulate one object in a meaningful way each round.
+        You can use a standard action instead of a free action to manipulate two objects in the same round.
+
+        These object manipulation rules are intended to cover interactions that take some amount of time and effort, such as drawing a weapon or opening a door.
+        Simply dropping an object in your hands is not an action at all, and you can do that any number of times per round.
+        Other similarly trivial interactions may not be considered actions at the GM's discretion.
+
+        \begin{raggeditemize}
+            \itemhead{Containment} If the item is freely accessible, interacting with that item is a \glossterm{free action}.
+                Drawing or sheathing an item from a dedicated container for that item, such as a weapon sheath, is normally a \glossterm{minor action}.
+                Withdrawing an item from a disorganized heap, such as a bag or backpack, requires a \glossterm{standard action}.
+            \itemhead{Size} If an item's size category is no larger than your size category, interacting with that item is a \glossterm{free action} (see \pcref{Size Categories}).
+                If it exceeds your size category, the interaction requires a \glossterm{standard action}.
+            \itemhead{Weight} If an item's weight category is no heavier than your \glossterm{carrying capacity}, interacting with that item is a \glossterm{free action} (see \pcref{Weight Limits}).
+                Pushing or dragging something that exceeds your carrying capacity requires a \glossterm{standard action}.
+        \end{raggeditemize}
+
+    \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
+        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
+        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
+        As a \glossterm{minor action}, you can draw or sheathe a single non-\weapontag{Heavy} weapon, assuming it is easy to access.
+        You can also draw or sheathe a single \weapontag{Light} weapon as a separate free action.
+        As a standard action, you can draw or sheathe any weapon, even if it is \weapontag{Heavy}, concealed, or otherwise difficult to access.
+        Since you can only take any individual free action once per round, you can't draw or sheathe two weapons in the same round unless one of them is Light, or you spend a standard action.
+
+        A character can only store a limited number of weapons in locations that are easy to access in combat.
+        Generally, a humanoid creature can carry no more than five ordinary weapons or shields.
+        A Heavy weapon takes up twice the space of an ordinary weapon, and a Light weapon takes up half that space.
+        This means it would be reasonable to carry up to ten Light weapons, or two Heavy weapons plus a normal weapon.
+        At the GM's discretion, characters with an excessive number of weapons or similar items readily available may increase their \glossterm{encumbrance}.
+
+    \subsection{Moving Items Between Hands}\label{Moving Items Between Hands}
+        In general, you can move weapons and similar handheld objects around between your hands freely, without spending an action.
+        For example, if you were holding two short swords, you could quickly hold them both in one hand so you could open a door or cast a spell, and then return to holding one in each hand.
+        Likewise, you can reload a longbow without worrying about when you are holding the longbow (and string) with both hands or holding it in one hand while retrieving an arrow from a quiver with the other hand.
+        Since shields are more cumbersome to don and remove, this does not allow you to use your shield hand as a free hand in the same way.
 
     \subsection{Magic Item Activation}
 
@@ -275,31 +309,15 @@ Items are divided into five broad categories, described below.
         Attacks at long range have a \minus4 accuracy penalty.
         This is called a \glossterm{longshot penalty}, and some abilities can reduce this penalty.
 
-    \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
-        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
-        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-        As a \glossterm{minor action}, you can draw or sheathe a single non-\weapontag{Heavy} weapon, assuming it is easy to access.
-        You can also draw or sheathe a single \weapontag{Light} weapon as a separate free action.
-        As a standard action, you can draw or sheathe any weapon, even if it is \weapontag{Heavy}, concealed, or otherwise difficult to access.
-        Since you can only take any individual free action once per round, you can't draw or sheathe two weapons in the same round unless one of them is Light, or you spend a standard action.
-
-        A character can only store a limited number of weapons in locations that are easy to access in combat.
-        Generally, a humanoid creature can carry no more than five ordinary weapons or shields.
-        A Heavy weapon takes up twice the space of an ordinary weapon, and a Light weapon takes up half that space.
-        This means it would be reasonable to carry up to ten Light weapons, or two Heavy weapons plus a normal weapon.
-        At the GM's discretion, characters with an excessive number of weapons or similar items readily available may increase their \glossterm{encumbrance}.
-
-    \subsection{Moving Weapons Between Hands}\label{Moving Weapons Between Hands}
-        In general, you can move weapons and similar handheld objects around between your hands freely, without spending an action.
-        For example, if you were holding two short swords, you could quickly hold them both in one hand so you could open a door or cast a spell, and then return to holding one in each hand.
-        Likewise, you can reload a longbow without worrying about when you are holding the longbow (and string) with both hands or holding it in one hand while retrieving an arrow from a quiver with the other hand.
-        Since shields are more cumbersome to don and remove, this does not allow you to use your shield hand as a free hand in the same way.
-
     \subsection{Weapon Tags}\label{Weapon Tags}
         Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
         \weapontagdef{Ammunition} When you hit with a strike using this weapon, it becomes \glossterm{broken}.
         It cannot have magic weapon properties.
         However, whenever you buy or craft this weapon, you receive multiple copies, as indicated in the table below.
+        \weapontagdef{Bow} This weapon is a bow used to fire arrows.
+        You need both hands to fire a bow.
+        Drawing an arrow from a quiver and notching it into a bow requires one \glossterm{free hand} while holding the bow in another hand.
+        This is not considered an independent action, so you can fire a longbow any number of times per round.
         \weapontagdef{Compact} This weapon is unusually small.
         It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for), though it is not \glossterm{lightweight} for that size.
         This makes it easier to conceal (see \pcref{Sleight of Hand}).
@@ -307,6 +325,7 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
         \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
         You normally need two hands to use a Heavy weapon.
+        Drawing a Heavy item from a sheath, or returning it to a sheath, requires a \glossterm{standard action}.
         If you have a Strength of 3 or higher, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
         If your Strength is 6 or higher, this accuracy penalty is removed.
         This cannot be used if the weapon always requires two hands to fire, such as a titanbow.
@@ -317,6 +336,7 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Impact} You reduce your \glossterm{explosion target} for strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
         \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         \weapontagdef{Light} Light weapons are smaller and easier to handle than other weapons.
+        Drawing a Light item from a sheath, or returning it to a sheath, is not considered an action, allowing you to do it any number of times on your turn.
         Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Wielding}).
         In addition, Light weapons are easier to draw or sheathe (see \pcref{Drawing and Sheathing Weapons}).
         \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
@@ -421,8 +441,8 @@ Items are divided into five broad categories, described below.
                 \tind Smallsword                  & \plus1        & 1d4         & Piercing                 & 0 (10 gp)                   & Keen, Light                                 \\
 
                 Bows                              &               &             &                          &                             &                                             \\
-                \tind Longbow\fn{2}               & \plus0        & 1d6         & \tdash                   & 1 (40 gp)                   & Projectile (90/270)                         \\
-                \tind Shortbow\fn{2}              & \plus0        & 1d4         & \tdash                   & 0 (10 gp)                   & Projectile (60/180)                         \\
+                \tind Longbow\fn{2}               & \plus0        & 1d6         & \tdash                   & 1 (40 gp)                   & Bow, Projectile (90/270)                         \\
+                \tind Shortbow\fn{2}              & \plus0        & 1d4         & \tdash                   & 0 (10 gp)                   & Bow, Projectile (60/180)                         \\
                 \tind Arrows (20)                 & \plus0        & \tdash      & Piercing                 & 0 (2 gp)                    & Ammunition                                  \\
                 \tind Blunted arrows (20)         & \minus1       & \tdash      & Bludgeoning              & 0 (2 gp)                    & Ammunition, Subdual                         \\
                 \tind Fire arrows (20)\fn{2}      & \minus1       & \tdash      & Piercing and fire        & 2 (40 gp)                   & Ammunition                                  \\
@@ -532,11 +552,11 @@ Items are divided into five broad categories, described below.
                 \tind Kukri                       & \plus2        & 1d4         & Slashing                 & 0 (10 gp)                   & Light, Sweeping (1)                         \\
                 \tind Parrying dagger             & \plus2        & 1d4         & Piercing                 & 0 (10 gp)                   & Parrying, Light                             \\
                 Bows                              &               &             &                          &                             &                                             \\
-                \tind Flatbow\fn{2}               & \plus1        & 1d6         & \tdash                   & 2 (200 gp)                  & Projectile (90/270)                         \\
+                \tind Flatbow\fn{2}               & \plus1        & 1d6         & \tdash                   & 2 (200 gp)                  & Bow, Projectile (90/270)                         \\
                 \tind Heartseeker arrows (20)     & \plus0        & \tdash      & Piercing                 & 2 (40 gp)                   & Ammunition, Impact                          \\
-                \tind Recurve bow\fn{2}           & \plus0        & 1d8         & \tdash                   & 2 (200 gp)                  & Projectile (90/270)                         \\
-                \tind Takedown bow\fn{2}          & \plus0        & 1d6/1d4     & \tdash                   & 2 (200 gp)                  & Projectile (90/270 or 60/180)               \\
-                \tind Titanbow\fn{2}              & \minus1        & 1d8         & \tdash                  & 2 (200 gp)                  & Heavy, Projectile (60/180)                         \\
+                \tind Recurve bow\fn{2}           & \plus0        & 1d8         & \tdash                   & 2 (200 gp)                  & Bow, Projectile (90/270)                         \\
+                \tind Takedown bow\fn{2}          & \plus0        & 1d6/1d4     & \tdash                   & 2 (200 gp)                  & Bow, Projectile (90/270 or 60/180)               \\
+                \tind Titanbow\fn{2}              & \minus1        & 1d8         & \tdash                  & 2 (200 gp)                  & Bow, Heavy, Projectile (60/180)                         \\
                 Club-like weapons                 &               &             &                          &                             &                                             \\
                 \tind Culacula                    & \plus0        & 1d10        & Bludgeoning              & 0 (10 gp)                   & Heavy, Impact, Parrying                     \\
                 \tind Gnomish trick mace          & \plus2        & 1d4         & Bludgeoning              & 0 (10 gp)                   & Light, Tripping                             \\
@@ -627,10 +647,7 @@ Items are divided into five broad categories, described below.
         Claw sheaths are made for claws, but an equivalent can be made for any natural weapon that requires a free hand to use, such as a slam.
         % TODO: split up punch/kick into two natural weapons to make this more intuitive?
         A claw sheath for a punch/kick natural weapon is made for one hand and only affects punches with that hand.
-        \parhead{Flatbow} You need both hands to fire a flatbow.
-        Notching an arrow in a flatbow requires one \glossterm{free hand} while holding the flatbow in another hand.
-        This is not considered an independent action, so you can fire a flatbow any number of times per round.
-        A flatbow is too unwieldy to use while you are mounted.
+        \parhead{Flatbow} A flatbow is too unwieldy to use while you are mounted.
         Unlike a longbow, a flatbow is flat when not under tension and has approximately rectangular limbs.
         This spreads stress more evenly over the bow's structure, allowing more precise shots, though the firing technique is different and less commonly known.
         A flatbow is the same size category as the creature it is sized for.
@@ -645,10 +662,7 @@ Items are divided into five broad categories, described below.
         Loading a light crossbow is a \glossterm{minor action} that requires one \glossterm{free hand} while holding the crossbow in another hand.
         \parhead{Lightning Arrows} These arrows are treated with a reactive alchemical substance so they deal electricity damage on contact.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
-        \parhead{Longbow} You need both hands to fire a longbow.
-        Notching an arrow in a longbow requires one \glossterm{free hand} while holding the longbow in another hand.
-        This is not considered an independent action, so you can fire a longbow any number of times per round.
-        A longbow is the same size category as the creature it is sized for.
+        \parhead{Longbow} A longbow is the same size category as the creature it is sized for.
         \parhead{Net} A net is used to entangle enemies. When you throw a net, you make an attack vs. Reflex against your target. If you hit, the target is \slowed.
         \par A netted creature can escape with a \glossterm{difficulty value} 10 Flexibility check (normally a standard action). The net has 10 hit points and can be burst with a \glossterm{difficulty value} 10 Strength check as a standard action.
         \par A net has no effect on creatures that are Tiny or smaller, or Huge or larger. It must be folded to be thrown effectively, which takes a minute of work. You take a \minus4 accuracy penalty with an unfolded net.
@@ -661,7 +675,7 @@ Items are divided into five broad categories, described below.
         \parhead{Pistol Crossbow} You can draw a pistol crossbow back by hand.
         Loading a pistol crossbow is a \glossterm{minor action} that requires one \glossterm{free hand} while holding the crossbow in another hand.
         You can hold two pistol crossbows in one hand for reloading purposes, and reload them both with a single minor action.
-        This makes them easy to dual wield (see \pcref{Moving Weapons Between Hands}).
+        This makes them easy to dual wield (see \pcref{Moving Items Between Hands}).
         \parhead{Punch/Kick} All bipedal creatures have access to the punch/kick \glossterm{natural weapon}.
         Normally, this represents a punch, which requires a \glossterm{free hand}.
         If you are trained in the Balance skill, have a Dexterity of at least 3, or are currently flying or gliding, you can make it a kick instead.
@@ -669,10 +683,7 @@ Items are divided into five broad categories, described below.
         \parhead{Repeating Crossbow} The repeating crossbow holds 5 crossbow bolts.
         As long as it holds bolts, you can fire it without reloading, allowing you to use it entirely one-handed.
         Loading a new case of 5 bolts is a \glossterm{standard action} that requires one \glossterm{free hand} while holding the crossbow in another hand.
-        \parhead{Shortbow} You need both hands to fire a shortbow.
-        Notching an arrow in a shortbow requires one \glossterm{free hand} while holding the shortbow in another hand.
-        This is not considered an independent action, so you can fire a shortbow any number of times per round.
-        Unlike most \weapontag{Projectile} weapons, your range limits are not penalized when firing a shortbow while riding a moving mount, and the accuracy penalty is reduced to \minus2 instead of \minus4.
+        \parhead{Shortbow} Unlike most \weapontag{Projectile} weapons, your range limits are not penalized when firing a shortbow while riding a moving mount, and the accuracy penalty is reduced to \minus2 instead of \minus4.
         \parhead{Sling} Loading a sling is a \glossterm{minor action} that requires one \glossterm{free hand} while holding the sling in another hand.
         \par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1 accuracy penalty with ordinary stones.
         \parhead{Spiked Knee} This weapon is not held in a hand.
@@ -680,13 +691,10 @@ Items are divided into five broad categories, described below.
         If you are not proficient with this weapon, you increase your \glossterm{encumbrance} by 2 when wearing armor with a spiked knee.
         \parhead{Takedown Bow} A takedown bow is a bow assembled from multiple independent components that can be reconfigured into two different combinations.
         In its longbow configuration, it functions like a longbow, and in its shortbow configuration, it functions like a shortbow.
-        In addition, when it is fully disassembled, it takes up space equivalent to a light usage class weapon, making it easier to transport and conceal.
+        In addition, when it is fully disassembled, it takes up space equivalent to a Compact weapon, making it easier to transport and conceal.
         \parhead{Talon} A talon is always attached to a foot.
         In order to attack with a talon, you must be trained in the Balance skill, have a Dexterity of at least 3, or be currently flying or gliding.
-        \parhead{Titanbow} You need both hands to fire a titanbow.
-        Notching an arrow in a longbow requires one \glossterm{free hand} while holding the longbow in another hand.
-        This is not considered an independent action, so you can fire a longbow any number of times per round.
-        A titanbow is too unwieldy to use while you are mounted.
+        \parhead{Titanbow} A titanbow is too unwieldy to use while you are mounted.
         It is the same size category as the creature it is sized for.
         \parhead{Tower Shield} Although you can hold a tower shield in one hand, it is considered a \weapontag{Heavy} weapon because of its weight.
         You would typically have to support it with your other hand to effectively smash it into an enemy.
