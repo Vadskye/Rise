@@ -14,37 +14,38 @@ fn poison() -> Tool {
 // "Every poison stage" is worse than "this round and next round" because it isn't
 // guaranteed to deal damage next round, but it's better because it can deal damage three times
 // total instead of twice, so call it equivalent.
+//
+// Pure debuff "debuff while poisoned, remove at stage 3" poisons are the same rank as a spell which inflicts that
+// debuff as a condition.
+// They gain +1 rank if their stage 3 instead escalates the debuff.
 
-// Liquid and Powder poisons are difficult to apply, so call them a Short range spell.
-// That gives them drX-1 baseline.
-// Gas poisons are like a Medium range spell.
-// Injury poisons require losing HP, so they get +4 ranks as usual for conditions.
+// A powder poison typically requires a standard action to apply to an adjacent creature.
+// Its effective spell rank is (item rank)+3 for contact/ingestion, never injury
+// A liquid contact poison typically requires a non-action to apply with a weapon.
+// Its effective spell rank is (item rank) for contact, +3 for ingestion, +4 for injury.
+// A gas poison typically requires a standard action to apply to a creature within Short range.
+// Its effective spell rank is (item rank)+2 for contact, +1 for ingestion.
 pub fn poisons() -> Vec<Tool> {
     let mut poisons = vec![];
 
+    // Contact powder means this is effective spell rank 3
     poisons.push(Tool {
-        name: "Telepath's Bane".to_string(),
-        rank: 1,
-        magical: true,
-        short_description: "Imposes -2 Intelligence penalty".to_string(),
+        name: "Poison, Nightshade".to_string(),
+        rank: 0,
+        short_description: "Stuns with each stage".to_string(),
         description: poison_description(
-            Ingestion,
-            Liquid,
+            Contact,
+            Powder,
             r"
-                The poison's accuracy is $accuracy+1.
-                Its stage 1 effect gives the target a -2 Intelligence penalty, to a minimum of -9.
+                The poison's accuracy is $accuracy.
+                It inflicts $dr1l poison damage per \glossterm<poison stage>.
+                Its stage 3 effect also ends the poison.
             ",
         ),
-        upgrades: vec![ItemUpgrade::new(
-            4,
-            "Imposes -4 Intelligence penalty",
-            r"
-                The accuracy increases to $accuracy+2, and the Intelligence penalty increases to -4.
-            ",
-        )],
         ..poison()
     });
 
+    // Stun per poison stage is very similar to stun as a condition. Maybe -1 rank?
     poisons.push(Tool {
         name: "Poison, Nitharit".to_string(),
         rank: 1,
@@ -54,93 +55,99 @@ pub fn poisons() -> Vec<Tool> {
             Powder,
             r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \glossterm<briefly> stunned.
-                Its stage 3 effect makes the target stunned while the poison lasts.
-            ",
-        ),
-        ..poison()
-    });
-
-    poisons.push(Tool {
-        name: "Poison, Sassone Leaf".to_string(),
-        rank: 1,
-        short_description: "Deals $dr0 damage per stage".to_string(),
-        description: poison_description(
-            Contact,
-            Powder,
-            r"
-                The poison's accuracy is $accuracy.
-                It inflicts $dr0 poison damage per \glossterm<poison stage>.
+                Each poison stage makes the target \glossterm<briefly> \stunned.
                 Its stage 3 effect also ends the poison.
             ",
         ),
         ..poison()
     });
 
+    // Contact powder means this is effective spell rank 4
     poisons.push(Tool {
-        name: "Poison, Jellyfish Extract".to_string(),
+        name: "Poison, Sassone Leaf".to_string(),
         rank: 1,
-        short_description: "Deals $dr0 damage per stage".to_string(),
+        short_description: "Deals $dr2l damage per stage".to_string(),
         description: poison_description(
             Contact,
-            Liquid,
+            Powder,
             r"
                 The poison's accuracy is $accuracy.
-                Its stage 1 effect makes the target \glossterm<briefly> stunned.
-                Its stage 3 effect makes the target stunned while the poison lasts.
+                It inflicts $dr2l poison damage per \glossterm<poison stage>.
+                Its stage 3 effect also ends the poison.
             ",
         ),
         ..poison()
     });
 
+    // Contact liquid means this is effective spell rank 2.
+    poisons.push(Tool {
+        name: "Poison, Jellyfish Extract".to_string(),
+        rank: 2,
+        short_description: "Deals $dr0l damage per stage".to_string(),
+        description: poison_description(
+            Contact,
+            Liquid,
+            r"
+                The poison's accuracy is $accuracy.
+                It inflicts $dr0l poison damage per \glossterm<poison stage>.
+                Its stage 3 effect also ends the poison.
+            ",
+        ),
+        ..poison()
+    });
+
+    // Contact powder means this is effective spell rank 5
     // +1 rank for +1 accuracy
     poisons.push(Tool {
         name: "Poison, Bloodroot".to_string(),
         rank: 2,
-        short_description: "Stuns with each stage".to_string(),
+        short_description: "Slows with each stage".to_string(),
         description: poison_description(
             Contact,
             Powder,
             r"
                 The poison's accuracy is $accuracy+1.
-                Its stage 1 effect makes the target \glossterm<briefly> stunned.
-                Its stage 3 effect makes the target stunned while the poison lasts.
-            ",
-        ),
-        ..poison()
-    });
-
-    poisons.push(Tool {
-        name: "Poison, Arsenic".to_string(),
-        rank: 3,
-        short_description: "Deals $dr2 damage per stage".to_string(),
-        description: poison_description(
-            Ingestion,
-            Powder,
-            r"
-                The poison's accuracy is $accuracy.
-                It inflicts $dr2 poison damage per \glossterm<poison stage>.
+                Each poison stage makes the target \glossterm<briefly> \slowed.
                 Its stage 3 effect also ends the poison.
             ",
         ),
         ..poison()
     });
 
+    // Ingestion powder means this is effective spell rank 6
     poisons.push(Tool {
-        name: "Poison, Dragon Bile".to_string(),
-        rank: 5,
-        short_description: "Deals $dr4 damage endlessly".to_string(),
+        name: "Poison, Arsenic".to_string(),
+        rank: 3,
+        short_description: "Deals $dr4l damage per stage".to_string(),
         description: poison_description(
             Ingestion,
-            Liquid,
+            Powder,
             r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr4 poison damage per \glossterm<poison stage>.
+                It inflicts $dr4l poison damage per \glossterm<poison stage>.
+                Its stage 3 effect also ends the poison.
             ",
         ),
         ..poison()
     });
 
+    // Contact liquid means this is effective spell rank 5
+    poisons.push(Tool {
+        name: "Poison, Dragon Bile".to_string(),
+        rank: 5,
+        short_description: "Deals $dr3l damage endlessly".to_string(),
+        description: poison_description(
+            Contact,
+            Liquid,
+            r"
+                The poison's accuracy is $accuracy.
+                It inflicts $dr3l poison damage per \glossterm<poison stage>.
+            ",
+        ),
+        ..poison()
+    });
+
+    // Ingestion gas means this is effective spell rank 6
     poisons.push(Tool {
         name: "Poison, Insanity Mist".to_string(),
         rank: 5,
@@ -157,16 +164,17 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
+    // Contact liquid means this is effective spell rank 7
     poisons.push(Tool {
         name: "Poison, Black Lotus".to_string(),
-        rank: 6,
-        short_description: "Deals $dr5 damage endlessly".to_string(),
+        rank: 7,
+        short_description: "Deals $dr5l damage endlessly".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
                 The poison's accuracy is $accuracy.
-                It inflicts $dr5 poison damage per \glossterm<poison stage>.
+                It inflicts $dr5l poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -183,6 +191,7 @@ pub fn poisons() -> Vec<Tool> {
 fn injury_poisons() -> Vec<Tool> {
     let mut poisons = vec![];
     
+    // TODO: update injury liquids to match new poison balance
     poisons.push(Tool {
         name: "Poison, Asp Venom".to_string(),
         rank: 1,
