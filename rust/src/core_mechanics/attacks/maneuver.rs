@@ -28,8 +28,8 @@ pub enum Maneuver {
     GraspingStrike,
     GraspingStrikePlus,
     Hamstring,
-    Headshot,
-    HeadshotPlus,
+    ConcussingStrike,
+    ConcussingStrikePlus,
     PowerStrike,
     PowerStrikePlus,
     DoubleStrike,
@@ -178,7 +178,7 @@ impl Maneuver {
                         }));
                     })
             },
-            Self::Headshot => weapon
+            Self::ConcussingStrike => weapon
                 .attack()
                 .except_hit_damage(|d| {
                     d.base_dice = d.base_dice.weak();
@@ -188,7 +188,7 @@ impl Maneuver {
                         immune_after_effect_ends: false,
                     }));
                 }),
-            Self::HeadshotPlus => weapon
+            Self::ConcussingStrikePlus => weapon
                 .attack()
                 .except_hit_damage(|d| {
                     d.base_dice = d.base_dice.multiply(2);
@@ -349,10 +349,10 @@ impl Maneuver {
             Self::GenericExtraDamage(_) => "Extra Damage Strike",
             Self::GenericTripleDamage => "Generic Triple Damage",
             Self::GraspingStrike => "Grasping Strike",
-            Self::GraspingStrikePlus => "Grasping StrikePlus",
+            Self::GraspingStrikePlus => "Grasping Strike+",
             Self::Hamstring => "Hamstring",
-            Self::Headshot => "Headshot",
-            Self::HeadshotPlus => "Headshot+",
+            Self::ConcussingStrike => "Concussing Strike",
+            Self::ConcussingStrikePlus => "Concussing Strike+",
             Self::PowerStrike => "Power Strike",
             Self::PowerStrikePlus => "Power Strike+",
             Self::DoubleStrike => "Double Strike",
@@ -374,6 +374,8 @@ impl Maneuver {
             Self::ArmorpiercerPlus => 3,
             Self::CertainStrike => 1,
             Self::CertainStrikePlus => 5,
+            Self::ConcussingStrike => 3,
+            Self::ConcussingStrikePlus => 7,
             Self::ElementalStrike(r) => *r,
             Self::GenericAccuracy => 1,
             Self::GenericDoubleDamage => 5,
@@ -382,8 +384,6 @@ impl Maneuver {
             Self::GraspingStrike => 1,
             Self::GraspingStrikePlus => 5,
             Self::Hamstring => 3,
-            Self::Headshot => 3,
-            Self::HeadshotPlus => 7,
             Self::PowerStrike => 1,
             Self::PowerStrikePlus => 5,
             Self::DoubleStrike => 5,
