@@ -409,11 +409,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
                 Your \textit{battle tactics} affect yourself and your \glossterm{allies} who can either see or hear your chosen communication style.
 
-                All \textit{battle tactics} have the \abilitytag{Sustain} (minor) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
+                All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
                 {
-                    \begin{sustainability}{Break Through}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Break Through}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
@@ -423,7 +423,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus4.
                     \end{sustainability}
 
-                    \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target gains a \plus2 bonus to \glossterm{accuracy} with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Special Combat Abilities}).
 
@@ -433,7 +433,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus5.
                     \end{sustainability}
 
-                    \begin{sustainability}{Duck and Cover}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Duck and Cover}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target gains a \plus1 bonus to its Armor defense against ranged \glossterm{strikes}.
 
@@ -443,7 +443,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus4.
                     \end{sustainability}
 
-                    \begin{sustainability}{Group Up}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Group Up}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
 
@@ -453,7 +453,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The Mental defense bonus increases to \plus3.
                     \end{sustainability}
 
-                    \begin{sustainability}{Hold The Line}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Hold The Line}{\abilitytag{Sustain} (free)}
                         \rankline
                         Your \glossterm{enemies} move at half speed while adjacent to any two targets.
 
@@ -463,7 +463,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The extra length increases to 15 feet.
                     \end{sustainability}
 
-                    \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                             gains a \plus1 bonus to its Armor defense this round.
@@ -474,7 +474,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The Reflex defense bonus increases to \plus3.
                     \end{sustainability}
 
-                    \begin{sustainability}{Rush}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Rush}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
 
@@ -484,7 +484,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The speed bonus increases to \plus20 feet.
                     \end{sustainability}
 
-                    \begin{sustainability}{Stand Your Ground}{\abilitytag{Sustain} (minor)}
+                    \begin{sustainability}{Stand Your Ground}{\abilitytag{Sustain} (free)}
                         \rankline
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
@@ -521,7 +521,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to one of the following statistics: \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
-                As a \glossterm{minor action}, you can change which of these bonuses you gain.
+                You can change which of these bonuses you gain as a \glossterm{minor action} once per round.
                 This ability has the \abilitytag{Swift} tag, so changing your stance affects attacks against you during the current phase.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
