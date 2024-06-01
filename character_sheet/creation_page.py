@@ -126,7 +126,7 @@ def creation_guidance():
                     [
                         option({"value": ""}, ""),
                         option({"value": "fine"}, "Fine"),
-                        option({"value": "diminuitive"}, "Diminuitive"),
+                        option({"value": "diminutive"}, "Diminutive"),
                         option({"value": "tiny"}, "Tiny"),
                         option({"value": "small"}, "Small"),
                         option({"value": "medium"}, "Medium"),
