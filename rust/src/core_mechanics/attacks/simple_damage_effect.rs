@@ -344,6 +344,15 @@ impl SimpleDamageEffect {
 
 // This lists all the low power scaling effects for each rank.
 impl SimpleDamageEffect {
+    pub fn dr0l(damage_types: Vec<DamageType>) -> DamageEffect {
+        Self {
+            base_dice: DicePool::d6(),
+            damage_types,
+            power_scalings: vec![],
+        }
+        .damage_effect()
+    }
+
     pub fn dr1l(damage_types: Vec<DamageType>) -> DamageEffect {
         Self {
             base_dice: DicePool::d10(),
@@ -427,6 +436,7 @@ impl SimpleDamageEffect {
 
     pub fn drl(rank: i32, damage_types: Vec<DamageType>) -> DamageEffect {
         match rank {
+            0 => Self::dr0l(damage_types),
             1 => Self::dr1l(damage_types),
             2 => Self::dr2l(damage_types),
             3 => Self::dr3l(damage_types),
