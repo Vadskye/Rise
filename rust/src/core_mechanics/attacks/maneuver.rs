@@ -28,8 +28,8 @@ pub enum Maneuver {
     GraspingStrike,
     GraspingStrikePlus,
     Hamstring,
-    ConcussingStrike,
-    ConcussingStrikePlus,
+    ConcussiveStrike,
+    ConcussiveStrikePlus,
     PowerStrike,
     PowerStrikePlus,
     DoubleStrike,
@@ -178,7 +178,7 @@ impl Maneuver {
                         }));
                     })
             },
-            Self::ConcussingStrike => weapon
+            Self::ConcussiveStrike => weapon
                 .attack()
                 .except_hit_damage(|d| {
                     d.base_dice = d.base_dice.weak();
@@ -188,7 +188,7 @@ impl Maneuver {
                         immune_after_effect_ends: false,
                     }));
                 }),
-            Self::ConcussingStrikePlus => weapon
+            Self::ConcussiveStrikePlus => weapon
                 .attack()
                 .except_hit_damage(|d| {
                     d.base_dice = d.base_dice.multiply(2);
@@ -351,8 +351,8 @@ impl Maneuver {
             Self::GraspingStrike => "Grasping Strike",
             Self::GraspingStrikePlus => "Grasping Strike+",
             Self::Hamstring => "Hamstring",
-            Self::ConcussingStrike => "Concussing Strike",
-            Self::ConcussingStrikePlus => "Concussing Strike+",
+            Self::ConcussiveStrike => "Concussive Strike",
+            Self::ConcussiveStrikePlus => "Concussive Strike+",
             Self::PowerStrike => "Power Strike",
             Self::PowerStrikePlus => "Power Strike+",
             Self::DoubleStrike => "Double Strike",
@@ -374,8 +374,8 @@ impl Maneuver {
             Self::ArmorpiercerPlus => 3,
             Self::CertainStrike => 1,
             Self::CertainStrikePlus => 5,
-            Self::ConcussingStrike => 3,
-            Self::ConcussingStrikePlus => 7,
+            Self::ConcussiveStrike => 3,
+            Self::ConcussiveStrikePlus => 7,
             Self::ElementalStrike(r) => *r,
             Self::GenericAccuracy => 1,
             Self::GenericDoubleDamage => 5,
