@@ -226,12 +226,12 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Nitharit',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
-        The stage 1 effect makes the target \\glossterm{briefly} \\stunned.
-        The stage 3 effect makes the target \\stunned while the poison lasts.
+        Each poison stage makes the target \glossterm<briefly> \stunned.
+        Its stage 3 effect also ends the poison.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'poison',
       tags: ['Manifestation'],
     },
@@ -271,12 +271,12 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Poison -- Sassone Leaf',
+      name: 'Poison -- Nightshade',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts 1d6 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \damagerankonelow poison damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
@@ -285,15 +285,29 @@ export const verdamancy: MysticSphere = {
     },
 
     {
+      name: 'Poison -- Sassone Leaf',
+
+      effect: `
+        Choose one living creature adjacent to you.
+        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
+        The poison inflicts \damageranktwolow poison damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
+      `,
+      rank: 2,
+      scaling: 'poison',
+      tags: ['Manifestation'],
+    },
+
+    {
       name: 'Poison -- Arsenic',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
-        The poison inflicts 2d6 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \damagerankfourlow poison damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
-      rank: 3,
+      rank: 4,
       scaling: 'poison',
       tags: ['Manifestation'],
     },
@@ -304,9 +318,9 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
-        The poison inflicts 4d8 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \damagerankfivelow poison damage per \\glossterm{poison stage}.
       `,
-      rank: 6,
+      rank: 7,
       scaling: 'poison',
       tags: ['Manifestation'],
     },
