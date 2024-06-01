@@ -446,7 +446,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     let mut weapons = vec![];
 
     weapons.push(Unrestricted(StandardItem {
-        name: String::from("Concussive"),
+        name: String::from("Vibrating"),
         rank: 1,
         short_description: String::from(r"Deals bludgeoning damage"),
         description: String::from(r"
