@@ -54,10 +54,10 @@ fn belts() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Impervious to poisons"),
         description: String::from(r"
-            You are \impervious to \glossterm{poison}.
+            You are \impervious to \glossterm{poisons} and poison damage.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Immune to form-altering attacks", r"
+            ItemUpgrade::new(5, "Immune to poisons", r"
                 You become immune instead of impervious.
             "),
         ],
