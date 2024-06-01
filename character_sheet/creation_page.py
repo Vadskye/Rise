@@ -105,7 +105,6 @@ def creation_guidance():
                         option({"value": "incarnation"}, "(Incarnation)"),
                         option({"value": "kit"}, "(Kit)"),
                         option({"value": "naiadi"}, "(Naiadi)"),
-                        option({"value": "orc"}, "(Orc)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
                         option({"value": "sapling"}, "(Sapling)"),
                         option({"value": "tiefling"}, "(Tiefling)"),
