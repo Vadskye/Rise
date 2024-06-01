@@ -70,7 +70,9 @@ export const photomancy: MysticSphere = {
       name: 'Prismatic Spray',
 
       attack: {
-        crit: CONDITION_CRIT,
+        crit: `
+          Each condition must be removed an additional time before the effect ends.
+        `,
         hit: `
           Each target is \\dazzled and \\stunned as two separate conditions.
         `,
@@ -285,6 +287,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
+      scaling: 'accuracy',
       tags: [],
     },
 
