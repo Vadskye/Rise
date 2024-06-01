@@ -1424,6 +1424,7 @@ impl Class {
 
                     \subsubsection{Air Domain}
                         If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        In addition, you add the Jump skill to your list of class skills.
 
                         \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
                         This increases your maximum vertical jump distance normally.
