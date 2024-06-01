@@ -716,7 +716,7 @@ export const vivimancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose one Diminuitive or larger piece of a humanoid corpse.
+        Choose one Diminutive or larger piece of a humanoid corpse.
         It must have been part of the original creature's body at the time of death.
         The creature the corpse belongs to is \\glossterm{resurrected}.
         A new healthy body is created for it, so the corpse does not need to be fully intact.

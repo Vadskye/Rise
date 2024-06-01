@@ -2019,7 +2019,7 @@ function handleSize() {
       // Size modifiers are repetitive, so multiplying this value is easier.
       const stepsFromMedium = {
         fine: -4,
-        diminuitive: -3,
+        diminutive: -3,
         tiny: -2,
         small: -1,
         medium: 0,
