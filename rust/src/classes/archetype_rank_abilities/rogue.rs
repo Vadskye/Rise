@@ -451,6 +451,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 Once per round, you can \glossterm{sustain} two bardic performances as a single \glossterm{minor action}.
+                This can allow you to sustain instances of the same performance, or two different performance.
             ",
             modifiers: None,
         },
