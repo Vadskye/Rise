@@ -379,6 +379,66 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Psionic"),
+        rank: 2,
+        short_description: String::from(r"Can attack Mental defense for psychic damage"),
+        description: String::from(r"
+            As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with psychic power.
+            The strike is made against the target's Mental defense instead of its Armor defense, and it only affects creatures with a mind.
+            Its minimum accuracy is $accuracy.
+            Damage dealt by the strike is psychic damage instead of the weapon's normal damage type.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Attacks Mental defense and deals psychic damage", r"
+                All damage dealt by this weapon is psychic damage instead of its normal damage types.
+                Strikes with this weapon are made against the target's Mental defense instead of its Armor defense.
+                When imbue this weapon with psychic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Toxic"),
+        rank: 2,
+        short_description: String::from(r"Can attack Fortitude defense for poison damage"),
+        description: String::from(r"
+            As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to poison.
+            The strike is made against the target's Fortitude defense instead of its Armor defense, and it only affects living creatures.
+            Its minimum accuracy is $accuracy.
+            Damage dealt by the strike is poison damage instead of the weapon's normal damage type.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Attacks Fortitude defense and deals poison damage", r"
+                All damage dealt by this weapon is poison damage instead of its normal damage types.
+                Strikes with this weapon are made against the target's Fortitude defense instead of its Armor defense, and they only affect living creatures.
+                When imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Prismatic"),
+        rank: 4,
+        short_description: String::from(r"Can attack Reflex defense for energy damage"),
+        description: String::from(r"
+            As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to elemental energy.
+            The strike is made against the target's Reflex defense instead of its Armor defense.
+            Its minimum accuracy is $accuracy.
+            Damage dealt by the strike is cold, electricity, and fire damage instead of the weapon's normal damage type.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, "Attacks Reflex defense and deals energy damage", r"
+                All damage dealt by this weapon is cold, electricity, and fire damage instead of its normal damage types.
+                Strikes with this weapon are made against the target's Reflex defense instead of its Armor defense.
+                When imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
     weapons
 }
 
