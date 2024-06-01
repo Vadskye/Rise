@@ -215,8 +215,8 @@ mod tests {
         }
 
         #[test]
-        fn calculate_diminuitive_speeds() {
-            let size = &Size::Diminuitive;
+        fn calculate_diminutive_speeds() {
+            let size = &Size::Diminutive;
             assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Half, size));
             assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Slow, size));
             assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Normal, size));

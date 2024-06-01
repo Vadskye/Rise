@@ -754,7 +754,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose one Diminuitive or larger piece of a corpse.
+        Choose one Diminutive or larger piece of a corpse.
         It must have been part of the original creature's body at the time of death.
         The creature the corpse belongs to is \\glossterm{resurrected}.
         The corpse is completely restored to a healthy state, so it does not need to be fully intact.

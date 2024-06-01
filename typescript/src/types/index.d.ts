@@ -47,7 +47,7 @@ declare namespace Creature {
 
   type Size =
     | "fine"
-    | "diminuitive"
+    | "diminutive"
     | "tiny"
     | "small"
     | "medium"

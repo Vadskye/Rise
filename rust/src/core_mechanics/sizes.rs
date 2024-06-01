@@ -4,7 +4,7 @@ use crate::equipment::WeaponTag;
 #[derive(Clone, Debug, Default)]
 pub enum Size {
     Fine,
-    Diminuitive,
+    Diminutive,
     Tiny,
     Small,
     #[default]
@@ -19,7 +19,7 @@ impl Size {
     pub fn base_speed(&self) -> i32 {
         match self {
             Size::Fine => 5,
-            Size::Diminuitive => 10,
+            Size::Diminutive => 10,
             Size::Tiny => 15,
             Size::Small => 20,
             Size::Medium => 30,
@@ -33,7 +33,7 @@ impl Size {
     pub fn name(&self) -> &str {
         match self {
             Size::Fine => "Fine",
-            Size::Diminuitive => "Diminuitive",
+            Size::Diminutive => "Diminutive",
             Size::Tiny => "Tiny",
             Size::Small => "Small",
             Size::Medium => "Medium",
@@ -47,7 +47,7 @@ impl Size {
     pub fn reflex_modifier(&self) -> i32 {
         match self {
             Size::Fine => 4,
-            Size::Diminuitive => 3,
+            Size::Diminutive => 3,
             Size::Tiny => 2,
             Size::Small => 1,
             Size::Medium => 0,
@@ -62,7 +62,7 @@ impl Size {
     pub fn stealth_modifier(&self) -> i32 {
         match self {
             Size::Fine => 20,
-            Size::Diminuitive => 15,
+            Size::Diminutive => 15,
             Size::Tiny => 10,
             Size::Small => 5,
             Size::Medium => 0,
@@ -76,7 +76,7 @@ impl Size {
     pub fn space(&self) -> f64 {
         match self {
             Size::Fine => 0.25,
-            Size::Diminuitive => 0.5,
+            Size::Diminutive => 0.5,
             Size::Tiny => 1.0,
             Size::Small => 2.5,
             Size::Medium => 5.0,
