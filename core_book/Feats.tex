@@ -527,18 +527,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Combat Style Versatility}{Combat}
-        \featpre Intelligence 1, access to at least one \glossterm{combat style}.
+        \featpre Intelligence 2, access to at least one \glossterm{combat style}.
 
-        \ff[1]{Combat Styles} You gain access to two additional \glossterm{combat styles}.
+        \ff[1]{Combat Styles} You gain access to all \glossterm{combat styles}.
 
-        \ff[6]{Maneuver} You learn two additional \glossterm{maneuvers}.
+        \ff[6]{Maneuvers} You learn two additional \glossterm{maneuvers}.
         When you gain access to new maneuver ranks, you can change which maneuvers you know.
 
-        \ff[12]{Precise Maneuvers} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes}.
+        \ff[12]{Maneuver Fusion} You can use the \textit{maneuver fusion} ability as a \glossterm{standard action}.
+        \begin{activeability}{Maneuver Fusion}
+            \rankline
+            Choose two maneuvers that you know.
+            You use both maneuvers simultaneously.
+            Roll the attack roll and damage for each strike separately.
+            You cannot use the \ability{desperate exertion} ability to affect either strike.
 
-        \ff[18]{Combat Styles+} You gain access to all combat styles.
+            After you use this ability, you are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
+        \end{activeability}
 
-        \ff[18]{Maneuvers+} You learn two additional \glossterm{maneuvers}.
+        \ff[18]{Combat Styles+} You can treat all weapons you wield as dealing slashing, piercing, and bludgeoning damage for the purpose of determining their eligibility for maneuvers.
+        This does not change the damage type that your attacks actually deal.
+
+        \ff[18]{Maneuvers+} The number of additional maneuvers you learn increases to four.
     \end{feat}
 
     \begin{feat}{Craft Specialization}{Skill}
@@ -1107,7 +1117,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This bonus increases by 1 at 9th level, and every 3 levels thereafter.
 
         \ff[9]{Maneuver Rank} You become a rank 3 combat style user.
-        This gives you access to maneuvers that require a minimum rank of 3 and can improve the effectiveness of your existing maneuvers.
+        This gives you access to maneuvers that require a minimum rank of 3.
 
         \ff[12]{Maneuver Expertise+} You gain a \plus1 accuracy bonus with your rank 3 maneuvers from this feat.
         This bonus increases by 1 at 15th level, and every 3 levels thereafter.
@@ -1115,7 +1125,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[12]{Maneuver Knowledge} You learn one maneuver.
 
         \ff[15]{Maneuver Rank} You become a rank 5 combat style user.
-        This gives you access to maneuvers that require a minimum rank of 5 and can improve the effectiveness of your existing maneuvers.
+        This gives you access to maneuvers that require a minimum rank of 5.
 
         \ff[18]{Maneuver Expertise+} You gain a \plus1 accuracy bonus with your rank 5 maneuvers from this feat.
         This bonus increases by 1 at 21st level.
@@ -1123,7 +1133,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[18]{Maneuver Knowledge+} You learn one maneuver.
 
         \ff[21]{Maneuver Rank} You become a rank 7 combat style user.
-        This gives you access to maneuvers that require a minimum rank of 7 and can improve the effectiveness of your existing maneuvers.
+        This gives you access to maneuvers that require a minimum rank of 7.
     \end{feat}
 
     \begin{feat}{Martial Training}{Combat}
