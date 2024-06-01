@@ -90,7 +90,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: 'Headshot',
+      name: 'Concussing Strike',
 
       effect: `
         Make a melee \\glossterm{weak strike} using a bludgeoning weapon.
@@ -100,7 +100,7 @@ export const bluntForce: CombatStyle = {
     },
 
     {
-      name: 'Headshot+',
+      name: 'Concussing Strike+',
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a bludgeoning weapon.
