@@ -234,8 +234,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): Grappling, Mounted, Thrown (30/60), or Tripping.
+                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): \weapontag{Grappling}, \weapontag{Mounted}, \weapontag{Thrown} (30/60), or \weapontag{Tripping}.
                 You may treat all non-projectile weapons you use as if they had the chosen weapon tag.
+                If you choose the Thrown weapon tag, it does not affect any of your \glossterm{natural weapons}.
                 Whenever your rank in this archetype increases, you can change which weapon tag you chose with this ability.
             ",
             modifiers: None,
