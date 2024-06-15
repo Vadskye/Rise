@@ -387,7 +387,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
                         \rank{5} The accuracy bonus increases to \plus4.
-                        \rank{7} When you push a creature with the the \textit{shove} ability, the pushed creature also takes \glossterm{weapon damage} from your gore natural weapon.
+                        \rank{7} When you push a creature with the \textit{shove} ability, the pushed creature also takes \glossterm{weapon damage} from your gore natural weapon.
                         This damage cannot be combined with other effects that deal damage with a shove.
                     \end{magicalactiveability}
 

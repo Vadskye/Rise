@@ -503,7 +503,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         Choose one magical sensor within \\medrange.
-        A \\glossterm{scrying sensor} appears at the location of the source of the the ability that created the chosen sensor.
+        A \\glossterm{scrying sensor} appears at the location of the source of the ability that created the chosen sensor.
         At the start of each round, you choose whether you see and hear from this sensor or from your body.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
@@ -821,7 +821,7 @@ export const revelation: MysticSphere = {
         You send the target a short verbal message.
         The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
 
-        After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
+        After the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
         Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm{dismissed}.
         `,
 
