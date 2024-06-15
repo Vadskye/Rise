@@ -106,9 +106,8 @@ To run combat scenarios, see \pcref{Combat}.
 
     When you have a moment to relax, you can rest to regain some of your expended resources.
     There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
-    Resting is not actually an ability in the same sense as most other abilities.
-    You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
     The benefits of taking a short rest or long rest happen automatically after you spend enough time avoiding strenuous activity.
+    You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
     Resting at night is often combined with sleeping, but you can rest at any time without sleeping.
 
     % TODO: clarify interrupted rests
@@ -120,7 +119,7 @@ To run combat scenarios, see \pcref{Combat}.
             \item Your \glossterm{hit points} become equal to your maximum hit points.
             \item Your current \glossterm{damage resistance} becomes equal to your maximum damage resistance.
             \item You regain any \glossterm{attunement points} you released from \glossterm{deep attunement} effects (see \pcref{Deep Attunement}).
-            \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
+            \item You remove all \glossterm{conditions} affecting you.
             \item Some other abilities have specific effects that last until you finish a short rest.
         \end{itemize}
 
@@ -408,95 +407,90 @@ To run combat scenarios, see \pcref{Combat}.
 
     Spells and rituals share many common properties, defined here.
 
-    \subsection{Spells}\label{Spells}
-        % TODO: better description
-        A \glossterm{spell} is a discrete magical effect with a name, a \glossterm{rank}, and an effect.
-        Each \glossterm{mystic sphere} has a number of spells associated with it.
-        An ability that gives you access to \glossterm{mystic spheres} will define how many spells you know.
-        A spell's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and cast the spell.
+    \subsection{Spells and Rituals}
+        Spells and rituals are \magical abilities.
+        Each spell and ritual has a name, a rank, and a specific effect.
+        Spells are easy to use once they have been memorized, while rituals are complex magical ceremonies that must be followed precisely.
+        Every spell requires no more than a standard action to cast, and they can be used without limit (other than ordinary physical exertion).
+        Rituals are slow, and they always increase the \glossterm{fatigue level} of their participants by some amount (see \pcref{Performing Rituals}).
+        In general, spells are useful in combat, while rituals tend to have more narrative effects.
 
-        \subsubsection{Cantrips}\label{Cantrips}
-            Some \glossterm{mystic spheres} have minor spells called cantrips.
-            Anyone who has access to a mystic sphere knows all cantrips from that sphere.
+        Every spell and ritual belongs to a specific \glossterm{mystic sphere} (see \pcref{Mystic Spheres}).
+        Mystic spheres are thematically related collections of spells and rituals.
 
-    \subsection{Rituals}\label{Rituals}
+        Although they are similar, spells and rituals are not the same.
+        Abilities which only affect spells do not affect rituals, and vice versa.
+
+    \subsection{Learning Spells}\label{Learning Spells}
+        Most characters gain access to spells through a class archetype.
+        Each spellcasting class has an archetype which grants the ability to cast spells.
+        The archetype will define a specific number of mystic spheres that you gain access to, and spells that you learn.
+        Your rank in that archetype determines the maximum rank of spells and rituals that you can learn and use.
+
+        When you gain access to a mystic sphere, you also automatically learn all \glossterm{cantrips} from that mystic sphere.
+        Cantrips are minor spells which are easy to learn.
+
+    \subsection{Learning Rituals}
         \includegraphics[width=\columnwidth]{core mechanics/rituals}
 
-        Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.
-        Some spellcasting characters can learn and perform rituals.
-        Rituals are ceremonies that create magical effects.
-        Like spells, each ritual has a name, a \glossterm{rank}, and an effect.
-        Although rituals are similar to spells, abilities that affect spells do not affect rituals unless they say they do in their descriptions.
-        % Oddly located
-        A ritual's \glossterm{rank} is the minimum \glossterm{archetype rank} you must have in the relevant spellcasting archetype to be able to learn and perform the ritual.
+        Rituals are too complex to be memorized like spells.
+        Instead, you scribe them into a ritual book which you physically carry with you.
+        The spellcasting archetype of a class does not intrinsically grant access to rituals.
+        Instead, most spellcasting classes can grant access to rituals through a second archetype, and only if you choose that ability.
 
-        You don't memorize a ritual as you would a normal spell.
-        Rituals are too complex for all but the most knowledgeable sages to commit to memory.
-        To perform a ritual, you need to read from a book or a scroll containing it.
+        The number of rituals you know is not as rigidly defined as the number of spells.
+        When you learn how to perform rituals, that ability will also allow you to scribe some rituals into your ritual book for free.
+        However, you can also scribe new rituals into your ritual book.
+        This expends precious magical ink with a value equal to a permanent item of the ritual's rank (see \tref{Item Ranks}).
+        Typically, scribing a new ritual requires access to another ritual book containing that ritual.
 
-        \subsubsection{Rituals and Mystic Spheres}
-            You must have access to the \glossterm{mystic sphere} a ritual is from in order to learn and perform the ritual efficiently.
-            It is possible to learn and perform rituals from mystic spheres you do not have access to, but this comes with several requirements and limitations:
-            \begin{itemize}
-                \item Your \glossterm{magic source} must include the mystic sphere that the ritual belongs to.
-                \item You treat the ritual as if it was one rank higher than its actual rank.
-                    This means you must have access to higher rank spells to perform it, and the scribing cost is five times more expensive.
-                \item The ritual requires double the normal \glossterm{fatigue level} to perform.
-            \end{itemize}
+        It is easiest to learn and perform rituals from \glossterm{mystic spheres} that you have access to.
+        You can learn and perform rituals from mystic spheres that you do not have access to, but this comes with several requirements and limitations:
+        \begin{itemize}
+            \item Your \glossterm{magic source} must include the mystic sphere that the ritual belongs to.
+            \item You treat the ritual as if it was one rank higher than its actual rank.
+                This means you must have access to higher rank spells to perform it, and scribing the ritual requires more expensive magical inks (see \pcref{Scribing Rituals}).
+            \item The ritual requires double the normal \glossterm{fatigue level} to perform.
+        \end{itemize}
 
-        \subsubsection{Ritual Descriptions}
-            % TODO: proper chapter references
-            Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
+    % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
+    % Should this be specified explicitly?
+    \subsection{Performing Rituals}
+            To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual, if any.
+            All rituals require both \glossterm{verbal components} and \glossterm{somatic components}.
+            Unlike spells, rituals can be performed as a group, with any number of ritual participants.
 
-        \subsubsection{Scribing Rituals}
-            A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{fatigue level} to perform the ritual.
-            Scribing a ritual costs precious magical ink with a value equal to an item of the ritual's rank (see \tref{Item Ranks}).
+            \subsubsection{Ritual Participants}
+                Creatures can participate in rituals even if they are unable to perform rituals themselves.
+                A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
 
-        \subsubsection{Performing Rituals}
-            To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
-            Some rituals cause the creatures performing them to increase their \glossterm{fatigue level}, as indicated in their descriptions.
-            Other creatures can suffer this fatigue to help you perform rituals; see Ritual Participants, below.
+                Each ritual imposes some number of \glossterm{fatigue levels} on its participants.
+                The ritual leader can allocate those fatigue levels among the participants.
+                Normally, a ritual participant can only contribute \glossterm{fatigue levels} up to a maximum of their \glossterm{fatigue tolerance}.
+                If a participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue levels} (until they drop unconscious).
+                Creatures willing to fatigue themselves generally tire at a rate no faster than one fatigue level per ten minutes spent performing the ritual.
 
-            % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
-            % Should this be specified explicitly?
+                The steps required to participate in rituals can be complex.
+                Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
+                A creature cannot participate in rituals unless it can speak at least one language and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
 
-        \subsubsection{Ritual Participants}
-            Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
-            A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
-            A ritual participant may increase their \glossterm{fatigue level} in place of or in addition to the fatigue level gained by the creature performing the ritual.
-            If multiple creatures are willing to increase their fatigue level or attune to effects, the ritual leader decides which creatures increase their fatigue level or attune to the ritual's effects.
+            \subsubsection{Changing Ritual Participation}
+                Non-leading participants can freely start or stop participating in a ritual in progress.
+                However, the ritual as a whole cannot be paused and restarted once in progress.
+                If a ritual stops having a leader, it ends with no effect.
+                The ritual leader can transfer their leadership to another creature.
+                The new leader must also meet all requirements to perform the ritual themselves.
+                Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
 
-            The steps required to participate in rituals can be complex.
-            Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
-            This instruction generally takes one tenth of the time required to perform the ritual.
-            A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the \glossterm{somatic components} of rituals.
-
-            Normally, a ritual participant can only contribute \glossterm{fatigue levels} up to a maximum of their \glossterm{fatigue tolerance}.
-            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of \glossterm{fatigue levels} (until they drop unconscious).
-            Creatures willing to fatigue themselves generally tire at a rate no faster than one fatigue level per ten minutes spent performing the ritual.
-
-            \parhead{Changing Ritual Participation}
-            Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
-            If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
-            However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
-
-            In order to transfer ritual participation, the new creature must be able to participate in the ritual.
-            Similarly, the ritual leader can transfer their leadership to another creature.
-            In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
-
-            Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
-
-            \parhead{Attunement Rituals}
+            \subsubsection{Attunement Rituals}
                 Rituals with the \abilitytag{Attune} tag require a single ritual participant to \glossterm{attune} to the ritual's effect.
                 Any ritual participant can attune to the effect, but only one ritual participant can attune to the effect unless otherwise noted in the ritual's description.
                 For details, see \pcref{Attuned Abilities}.
 
-        \subsubsection{Magical Writings}
-            To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
-            The notation constitutes a universal language that spellcasters have discovered, not invented.
-            Each writer uses this universal system regardless of their native language or culture.
-            However, each character uses the system in their own way.
-            Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+            \subsubsection{Performing Rituals From Other Books}
+                You can perform rituals from ritual books that you did not originally write, assuming the ritual is written in a language you understand.
+                However, this is more difficult than performing rituals that you scribed yourself.
+                Both the time requirement and \glossterm{fatigue level} requirement to perform a ritual in this way are doubled.
 
     % TODO: description
     \subsection{Categories of Magic}
