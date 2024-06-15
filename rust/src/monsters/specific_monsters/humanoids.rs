@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{DamageType, DicePool};
 use crate::core_mechanics::{
@@ -167,7 +167,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ".to_string(),
                             is_magical: true,
                             name: "Drain Life".to_string(),
-                            tags: vec![AbilityTag::Spell],
+                            tags: vec![],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Sickle.weapon())),
@@ -205,7 +205,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ".to_string(),
                             is_magical: true,
                             name: "Burning Grasp".to_string(),
-                            tags: vec![AbilityTag::Spell],
+                            tags: vec![],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
@@ -217,7 +217,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ".to_string(),
                             is_magical: true,
                             name: "Pyrohemia".to_string(),
-                            tags: vec![AbilityTag::Spell],
+                            tags: vec![],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
@@ -229,7 +229,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ".to_string(),
                             is_magical: true,
                             name: "Pyroclasm".to_string(),
-                            tags: vec![AbilityTag::Spell],
+                            tags: vec![],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(2, StandardWeapon::Club.weapon())),
