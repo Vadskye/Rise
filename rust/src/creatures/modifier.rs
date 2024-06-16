@@ -108,7 +108,7 @@ impl Modifier {
             Self::ActiveAbility(a) => format!("active ability {}", a.name()),
             Self::AllDefenses(_) => "all defenses".to_string(),
             Self::Attack(a) => format!("attack {}", a.name),
-            Self::Attribute(a, _) => format!("base attribute {}", a.name()),
+            Self::Attribute(a, _) => format!("attribute {}", a.name()),
             Self::BaseSpeed(_) => "base speed".to_string(),
             Self::DamageResistance(_) => "DR".to_string(),
             Self::Defense(d, _) => format!("defense {}", d.name()),
