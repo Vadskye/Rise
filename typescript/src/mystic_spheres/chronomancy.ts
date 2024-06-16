@@ -263,7 +263,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -2 accuracy penalty.
-        You cannot \\glossterm{dual wield} with this strike.
+        This strike cannot be a \\glossterm{dual strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 4,

@@ -563,7 +563,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain a +2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
-                In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to dual-wield with it more easily (see \pcref{Dual Wielding}).
+                In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
             // from this archetype weapons
