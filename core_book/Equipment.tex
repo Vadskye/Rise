@@ -130,44 +130,35 @@ Items are divided into five broad categories, described below.
 \section{Using Items}
 
     \subsection{Manipulating Objects}\label{Manipulating Objects}
-        There are three ways to determine how difficult an object is to interact with: its weight, its size, and how it is contained.
-        Use the slowest action type from among the three methods.
-        As normal, you cannot use the same free action twice in a single round, so you can typically manipulate one object in a meaningful way each round.
-        You can use a standard action instead of a free action to manipulate two objects in the same round.
+        There are two ways to determine how difficult an object is to interact with: its weight, and how it is contained.
+        Use the slowest action type from among the both methods.
+        You can only manipulate objects as a free action once per round.
+        However, you can use a minor action or a standard action in place of a free action, allowing you to manipulate up to three objects per round.
 
         These object manipulation rules are intended to cover interactions that take some amount of time and effort, such as drawing a weapon or opening a door.
-        Simply dropping an object in your hands is not an action at all, and you can do that any number of times per round.
-        Other similarly trivial interactions may not be considered actions at the GM's discretion.
+        Simply dropping an object in your hands is so trivial that it does not count against your one free action object manipulation per round.
+        Other similarly simple interactions may not count against that limit at the GM's discretion.
 
         \begin{raggeditemize}
             \itemhead{Containment} If the item is freely accessible, interacting with that item is a \glossterm{free action}.
                 Drawing or sheathing an item from a dedicated container for that item, such as a weapon sheath, is normally a \glossterm{minor action}.
                 Withdrawing an item from a disorganized heap, such as a bag or backpack, requires a \glossterm{standard action}.
-            \itemhead{Size} If an item's size category is no larger than your size category, interacting with that item is a \glossterm{free action} (see \pcref{Size Categories}).
-                If it exceeds your size category, the interaction requires a \glossterm{standard action}.
             \itemhead{Weight} If an item's weight category is no heavier than your \glossterm{carrying capacity}, interacting with that item is a \glossterm{free action} (see \pcref{Weight Limits}).
                 Pushing or dragging something that exceeds your carrying capacity requires a \glossterm{standard action}.
         \end{raggeditemize}
 
-    \subsection{Drawing and Sheathing Weapons}\label{Drawing and Sheathing Weapons}
-        Drawing and sheathing weapons always requires the hand or hands used to hold the weapon.
-        The time it takes to draw and sheathe a weapon depends on how encumbering the weapon is.
-        As a \glossterm{minor action}, you can draw or sheathe a single non-\weapontag{Heavy} weapon, assuming it is easy to access.
-        You can also draw or sheathe a single \weapontag{Light} weapon as a separate free action.
-        As a standard action, you can draw or sheathe any weapon, even if it is \weapontag{Heavy}, concealed, or otherwise difficult to access.
-        Since you can only take any individual free action once per round, you can't draw or sheathe two weapons in the same round unless one of them is Light, or you spend a standard action.
-
-        A character can only store a limited number of weapons in locations that are easy to access in combat.
-        Generally, a humanoid creature can carry no more than five ordinary weapons or shields.
-        A Heavy weapon takes up twice the space of an ordinary weapon, and a Light weapon takes up half that space.
-        This means it would be reasonable to carry up to ten Light weapons, or two Heavy weapons plus a normal weapon.
-        At the GM's discretion, characters with an excessive number of weapons or similar items readily available may increase their \glossterm{encumbrance}.
-
     \subsection{Moving Items Between Hands}\label{Moving Items Between Hands}
-        In general, you can move weapons and similar handheld objects around between your hands freely, without spending an action.
+        In general, you can move weapons and similar handheld objects around between your hands freely, as long as you are strong enough to hold their combined weight in one hand.
         For example, if you were holding two short swords, you could quickly hold them both in one hand so you could open a door or cast a spell, and then return to holding one in each hand.
         Likewise, you can reload a longbow without worrying about when you are holding the longbow (and string) with both hands or holding it in one hand while retrieving an arrow from a quiver with the other hand.
         Since shields are more cumbersome to don and remove, this does not allow you to use your shield hand as a free hand in the same way.
+
+    \subsection{Storing Items}\label{Storing Items}
+        A character can only store a limited number of weapons in locations that are easy to access in combat.
+        Generally, a humanoid creature can carry no more than five ordinary weapons or shields on their body.
+        A Heavy weapon takes up twice the space of an ordinary weapon, and a Light weapon takes up half that space.
+        This means it would be reasonable to carry up to ten Light weapons, or two Heavy weapons plus a normal weapon.
+        At the GM's discretion, characters with an excessive number of weapons or similar items readily available may increase their \glossterm{encumbrance}.
 
     \subsection{Magic Item Activation}
 
@@ -336,9 +327,8 @@ Items are divided into five broad categories, described below.
         \weapontagdef{Impact} You reduce your \glossterm{explosion target} for strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
         \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         \weapontagdef{Light} Light weapons are smaller and easier to handle than other weapons.
-        Drawing a Light item from a sheath, or returning it to a sheath, is not considered an action, allowing you to do it any number of times on your turn.
+        Drawing a Light item from a sheath, or returning it to a sheath, is a \glossterm{free action} rather than a minor action (see \pcref{Manipulating Objects}).
         Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Wielding}).
-        In addition, Light weapons are easier to draw or sheathe (see \pcref{Drawing and Sheathing Weapons}).
         \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
         If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
         In addition, you can inflict \glossterm{critical hits} with melee \glossterm{strikes} using a Long weapon against creatures up to two size categories larger than you (see \pcref{Very Large Creatures}).
@@ -653,7 +643,7 @@ Items are divided into five broad categories, described below.
         A flatbow is the same size category as the creature it is sized for.
         \parhead{Fire Arrows} These arrows are treated with alchemist's fire so they can be ignited before being shot.
         The process requires thickening the arrow shaft, reducing the precision of the arrow.
-        It takes a \glossterm{free action} to ignite a fire arrow assuming you have access to an active flame the size of a torch or larger.
+        It takes a \glossterm{free action} to ignite a fire arrow, assuming you have access to an active flame the size of a torch or larger.
         \parhead{Heavy Crossbow} You draw a heavy crossbow back by turning a small winch.
         Loading a heavy crossbow is a standard action that requires one \glossterm{free hand} while holding the crossbow in another hand.
         \parhead{Lance} A lance can only be used effectively while mounted.

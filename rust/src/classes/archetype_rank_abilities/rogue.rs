@@ -221,7 +221,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \par \noindent Usage time: \glossterm{Minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
                         For the duration of your performance, the target gains a \plus1 \glossterm{accuracy} bonus.
@@ -233,7 +233,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \par \noindent Usage time: \glossterm{Minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \medrange.
                         For the duration of your performance, the target gains a \plus1 bonus to its Armor and Reflex defenses.
@@ -331,7 +331,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Intonation of Ingenuity}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \par \noindent Usage time: \glossterm{Minor action}.
                         \rankline
                         Choose yourself or one \glossterm{ally} within \rngmed range.
                         For the duration of your performance, the target gains a \plus1 bonus to \glossterm{checks}.
@@ -367,7 +367,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Serenade of Serenity}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \par \noindent Usage time: \glossterm{Minor action}.
                         \rankline
                         For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
@@ -393,7 +393,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Vigorous Verse}[\abilitytag{Auditory}]
-                        \par \noindent Usage time: One \glossterm{minor action}.
+                        \par \noindent Usage time: \glossterm{Minor action}.
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
                         For the duration of your performance, the target gains a \plus4 bonus to its maximum \glossterm{hit points}.

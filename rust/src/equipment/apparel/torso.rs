@@ -127,7 +127,7 @@ fn belts() -> Vec<Apparel> {
         description: String::from(r"
             You can activate this belt as a standard action.
             When you do, your size increases by one \glossterm<size category>, to a maximum of Huge.
-            This effect lasts until you activate the belt again, which returns you to your original size.
+            This effect lasts until you \glossterm{dismiss} it.
 
             Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
             It also increases your \glossterm<base speed> (see \pcref<Size Categories>).
@@ -144,7 +144,7 @@ fn belts() -> Vec<Apparel> {
         description: String::from(r"
             You can activate this belt as a standard action.
             When you do, your size decreases by one \glossterm<size category>, to a minimum of Tiny.
-            This effect lasts until you activate the belt again, which returns you to your original size.
+            This effect lasts until you \glossterm{dismiss} it.
 
             Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
             It also reduces your \glossterm<base speed> (see \pcref<Size Categories>).
@@ -332,20 +332,13 @@ fn cloaks() -> Vec<Apparel> {
 
     apparel.push(Cloak(StandardItem {
         name: String::from("Assassin's Cloak"),
-        rank: 3,
-        short_description: String::from("Grants invisibility while inactive"),
+        rank: 5,
+        short_description: String::from("Grants brief invisibility"),
         description: String::from(r"
-            At the end of each round, if you took no actions that round, you become \trait<invisible> (see \pcref<Invisible>).
-            This invisibility ends after you take any action, including \glossterm{movement}.
+            You can activate this cloak as a standard action.
+            When you do, you \glossterm{briefly} become \trait<invisible> (see \pcref<Invisible>).
+            After you activate this cloak, you \glossterm<briefly> cannot do so again.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Grants invisibility while mostly inactive", "
-                Making a movement during the movement phase does not prevent you from becoming invisible.
-            "),
-            ItemUpgrade::new(7, "Grants invisibility while partially inactive", "
-                Free actions and minor actions also do not prevent you from becoming invisible.
-            "),
-        ],
         ..Apparel::default()
     }));
 

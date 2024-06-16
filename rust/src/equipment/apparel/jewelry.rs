@@ -364,8 +364,8 @@ fn rings() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can exert to breathe briefly"),
         description: String::from(r"
-            You can activate this item as a \glossterm<free action>.
-            When you do, you increase your \glossterm<fatigue level> by one, and you can \glossterm<briefly> breathe in clean, fresh air regardless of your environment.
+            You can activate this item as a \glossterm<minor action>.
+            When you do, you increase your \glossterm<fatigue level> by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         "),
         tags: vec![AbilityTag::Exertion],

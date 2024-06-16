@@ -72,7 +72,7 @@ fn bracers() -> Vec<Apparel> {
         description: String::from(r"
             You can activate these bracers as a \glossterm{free action}.
             When you do, you increase your \glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
-            After you activate this item, you \glossterm{briefly} cannot activate it again.
+            After you activate this item, you \glossterm{briefly} cannot do so again.
         "),
         tags: vec![AbilityTag::Exertion, AbilityTag::Swift],
         upgrades: vec![
@@ -349,13 +349,13 @@ fn gloves() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can create daggers"),
         description: String::from(r"
-            You can activate these gloves as a \glossterm<free action>.
-            When you do, a dagger \glossterm<briefly> appears in one of your free hands.
-            The dagger disappears when this effect ends.
+            Once per round, you can activate these gloves as a \glossterm<free action>.
+            When you do, a dagger \glossterm<briefly> appears in each of your free hands.
+            The daggers disappear when this effect ends.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can create daggers with special materials", r"
-                The dagger be made from a special material of your choice.
+                The daggers be made from a special material of your choice.
                 You can create an adamantine, pure diamondsteel, mithral, or silvered dagger (see \pcref<Weapon Special Materials>).
             "),
         ],

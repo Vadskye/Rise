@@ -23,8 +23,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 First, you do not require any raw materials or an alchemist's lab.
                 Second, you can create up to five items with this ability with 5 minutes of work.
                 Third, you can only maintain the existence of five items with this ability at once.
-                If you try to create a sixth item, you must stop maintaining the existence of another item created.
-                You can do this as a \glossterm{free action} regardless of distance.
+                If you try to create a sixth item, you must first dismiss another item created.
                 This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
             ",
             modifiers: None,
@@ -213,7 +212,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
                     Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
 
-                    This ability lasts until you use it again or until you \glossterm{dismiss} it as a free action.
+                    This ability lasts until you use it again or until you \glossterm{dismiss} it.
                     In addition, it is automatically dismissed if you wear other body armor of any kind.
                 \end{magicalactiveability}
             ",
@@ -510,6 +509,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
+                    This ability has the \abilitytag{Swift} tag, so it protects you from attacks during the current phase.
 
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
@@ -555,7 +555,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Illusion} The accuracy bonus increases to \plus3.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
-                    In addition, you can change which defense the bonus applies to as a \glossterm{free action}.
+                    In addition, you can change which defense the bonus applies to as a \glossterm{free action} instead of as a minor action.
 
                     \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
                 }

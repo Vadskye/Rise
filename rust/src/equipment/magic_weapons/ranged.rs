@@ -26,7 +26,6 @@ pub fn ranged() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can be thrown to strike three nearby foes"),
         description: String::from(r"
             After being thrown, this weapon flies back into your hand immediately after attacking all targets.
-            Catching a boomerang weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
 
             As a standard action, you can throw this weapon in a spinning arc.
@@ -52,7 +51,6 @@ pub fn ranged() -> Vec<MagicWeapon> {
         short_description: String::from(r"Flies back to you after being thrown"),
         description: String::from(r"
             After being thrown, this weapon flies back into your hand at the end of the current round as long as it is still \glossterm<unattended>.
-            Catching a returning weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         "),
         ..MagicWeapon::default()
@@ -67,7 +65,6 @@ pub fn ranged() -> Vec<MagicWeapon> {
             This allows you to ignore any intervening \glossterm<cover> with the attack, as long as you still have \glossterm{line of effect}.
 
             The weapon teleports back into your hand immediately after hitting or missing all targets of the strike.
-            Catching a jaunting weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         "),
         upgrades: vec![

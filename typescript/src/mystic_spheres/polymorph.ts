@@ -400,7 +400,7 @@ export const polymorph: MysticSphere = {
         A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
         You cannot absorb only part of a larger object.
 
-        This effect lasts until you use it again, \\glossterm{dismiss} it as a \\glossterm{free action}, or fall unconscious.
+        This effect lasts until you use it again or \\glossterm{dismiss} it.
         When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
       `,
       rank: 3,
