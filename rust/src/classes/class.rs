@@ -769,10 +769,8 @@ impl Class {
         match self {
             Self::Automaton => String::from(""),
             Self::Barbarian => r"
-                Barbarians are primal warriors that draw power from their physical prowess and unfettered emotions.
-                They fight with a raw, untamed aggression.
-
-                Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
+                Barbarians are primal warriors who fight using raw physical prowess and unfettered emotions.
+                Most barbarians originate from the outskirts of civilization, where the societal constraints of civilization are less present.
                 Of course, becoming a barbarian is no secret rite.
                 The only thing that is required is a willingness to fully experience one's emotions and channel them into physical betterment.
                 This path evokes ancient memories from a time when physical supremacy was sufficient for victory, before the complexity of organized warfare.
@@ -792,11 +790,11 @@ impl Class {
                 Rangers and druids are natural allies of barbarians, since all three groups prefer to live at the edges of civilization.
                 However, each has different reasons for their preference.
                 Barbarians enjoy the freedom of the frontier.
-                However, they are often too social to prefer life as a hermit in the deep wilderness.
+                However, they are often too social to live as hermits in the deep wilderness.
                 Druids prefer nature to civilization ideologically, and rangers are best able to fulfill their responsibilities on the frontier.
             ".to_string(),
             Self::Cleric => r"
-                Clerics are divine spellcasters who draw power from their veneration of a single deity.
+                Clerics are divine spellcasters who draw power from their worship of a single deity.
                 The powers of any individual cleric can vary greatly depending on their deity, and the specific aspects of that deity they choose to emulate.
                 Many clerics have exceptional healing or oratory talents, which are powerful tools in spreading the influence of their deity.
 
@@ -841,12 +839,13 @@ impl Class {
                 Some druids treat all forms of life as equal.
                 Others draw distinctions between different forms of life, such as prioritizing the needs of highly sentient or highly complex life over others.
                 Of course, many druids don't dwell on philosophical questions about the precise value of Nature's various aspects. 
-                They focus more on practical maintenance of nature in the world around them according to their own instincts.
+                They focus more on practical maintenance of the natural world according to their own instincts.
                 Nature's domain is immense, and her guidance is virtually nonexistent.
 
                 Many druids avoid or actively reject overly developed civilization.
                 The details and causes of this aversion can be source of great disagreement between different druids.
-                Civilization tends to displace or kill natural life, and replaces the vibrant diversity of a forest or jungle with a the smaller subset of life that can exist in cities and cultivated farms.
+                Civilization tends to displace or kill natural life.
+                It replaces the vibrant diversity of life in a forest with a comparatively bland and homogeneous subset of species.
                 In general, druids who value all forms of life equally and consider diversity to be intrinsically valuable tend to reject civilization most strongly.
                 On the other hand, druids who value life according to its sentience or complexity are typically more tolerant of civilization.
 
@@ -987,7 +986,7 @@ impl Class {
                 They maintain a level of plausible deniability, but would-be rogues can often discover the truth and complete their training there.
             ".to_string(),
             Self::Sorcerer => r"
-                Sorcerers are arcane spellcasters who draw power from their inherently magical nature.
+                Sorcerers are arcane spellcasters who are inherently magical.
                 They require no training or external sources to access their magical abilities.
                 Many sorcerers intuitively used their magic to influence their surroundings long before they understood exactly what they were doing, or that they were tapping into powers others could not.
 
@@ -1003,7 +1002,7 @@ impl Class {
 
                 The true cause of a sorcerer's magic has more consistency than its expression.
                 Sorcerers do not draw power from their life energy or any internal storage, like monks do.
-                Instead, they steal power from the primal forces of the universe, as wizards do.
+                Instead, they directly manipulate the primal forces of the universe, as wizards do.
                 Sorcerers are intrinsic conduits for that raw power, and they can deepen their connection with experience.
                 A sorcerer's nature is fundamentally their birthright, and it cannot be learned.
 
@@ -1016,7 +1015,7 @@ impl Class {
             ".to_string(),
             Self::Treant => String::from(""),
             Self::Warlock => r"
-                Warlocks are pact spellcasters who draw their power from a sinister deal made with infernal creatures.
+                Warlocks are pact spellcasters who draw power from a sinister deal made with infernal creatures.
                 Their soulkeeper grants them access to great magical power.
                 However, they must content with the whispers of demonic influence throughout their life, and they risk losing their immortal soul.
 
