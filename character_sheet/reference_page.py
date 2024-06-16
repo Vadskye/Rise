@@ -192,7 +192,7 @@ def skill_modifiers():
                                 {"class": "skill-modifier-reminder-header"},
                                 "Modifier",
                             ),
-                            div("Base attribute"),
+                            div("Attribute"),
                             div("3 + half level + attribute"),
                         ]
                     ),

@@ -8,8 +8,8 @@ use numerics::Numerics;
 pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
     format!(
         "
-            \\subsection<Base Class Abilities>
-            If you are a {name}, you gain the following abilities.
+            \\subsection<Base Class Effects>
+            If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
 
             {defenses}
 
@@ -37,7 +37,7 @@ fn generate_latex_resources(class: &Class) -> String {
             \\cf<{shorthand_name}><Resources>
             You have the following \\glossterm<resources>:
             \\begin<itemize>
-                \\item {attunement_points}, which you can use to attune to items and abilities that affect you (see \\pcref<Attunement Points>).
+                \\item {attunement_points}, which are required to use some items and abilities (see \\pcref<Attunement Points>).
                 \\item A \\glossterm<fatigue tolerance> equal to {fatigue_tolerance}.
                     Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
                 \\item A number of \\glossterm<insight points> equal to {insight_points}.
