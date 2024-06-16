@@ -86,7 +86,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+                    \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
