@@ -355,7 +355,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                 As a \glossterm{standard action}, you can gain the effects of one wild aspect that you know.
                 You cannot change your wild aspect more than once per round.
-                That effect lasts until you activate a different wild aspect you know or until you dismiss it as a \glossterm{free action}.
+                That effect lasts until you activate a different wild aspect you know or until you dismiss it.
 
                 The abilities in the list below describe the effects of the aspect.
                 Your appearance also changes to match the aspect's effects, but the nature of this change is not described.

@@ -225,8 +225,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
                 \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
                     \rankline
-                    Choose a creature within \extrange.
-                    The target becomes your quarry.
+                    Choose a creature you can see.
+                    That creature becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
                 \end{attuneability}

@@ -13,8 +13,11 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
                 You constantly radiate an aura in a \areamed radius \glossterm{emanation} from you.
-                You can suppress or resume the aura as a \glossterm{free action}.
-                Whenever you resume the aura, you can choose which creatures within the area are affected by aura as any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
+                You can create the aura as a \glossterm{free action}, and it lasts until it is dismissed.
+                Creating the aura has the \abilitytag{Swift} ability tag.
+
+                Whenever you create the aura, you can choose which creatures within the area are affected by the aura.
+                You can choose whether it affects any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
                 % 20% chance of +5.5a, 70% chance of -1a, so 1.1a - 0.7a = 0.4a per ally
@@ -420,14 +423,14 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Pass Judgment}
-                    \par \noindent Usage time: One \glossterm{minor action}
+                    \par \noindent Usage time: \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
                     You always gain the benefit of your \textit{zealous fixation} ability against that creature.
                     In addition, the target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities.
                     This only affects its alignment along the alignment axis your devoted alignment is on.
                     For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-                    This effect lasts until you treat that creature as an \glossterm{ally}, or until you \glossterm{dismiss} this ability as a \glossterm{free action}.
+                    This effect lasts until you treat that creature as an \glossterm{ally}, or until you \glossterm{dismiss} this ability.
 
                     You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
@@ -451,7 +454,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Zealous Pursuit}
-                    \par \noindent Usage time: One \glossterm{minor action}
+                    \par \noindent Usage time: \glossterm{Minor action}.
                     \rankline
                     You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \textit{zealous fixation} ability.
                     You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.

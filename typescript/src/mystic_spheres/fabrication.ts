@@ -16,7 +16,7 @@ export const fabrication: MysticSphere = {
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
         At the end of each round, this spell ends if you are not within \\medrange of the item.
 
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
         2: `The maximum size of the object increases to Small.`,
@@ -274,7 +274,7 @@ export const fabrication: MysticSphere = {
         Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
 
         % Strange duration for a spell
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       rank: 1,
       tags: ['Manifestation'],

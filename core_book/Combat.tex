@@ -243,14 +243,15 @@
         % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
 
         \subsubsection{Standard Actions}\label{Standard Actions}
-            Most common activities require a \glossterm{standard action}, such as attacking with a weapon, casting a \glossterm{spell}, and using many special abilities.
+            Most significant activities require a \glossterm{standard action}.
+            This includes attacking with a weapon, casting a \glossterm{spell}, and using many special abilities.
             Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
 
             You can take one standard action during the \glossterm{action phase} of each round.
 
         \subsubsection{Minor Actions}\label{Minor Actions}
-            Some special abilities require a \glossterm{minor action}.
-            Using a minor action does not take much time or attention, and it can be done at the same time as any other actions.
+            Some special abilities that take a small amount of time or attention require a \glossterm{minor action}.
+            You can take a minor action in the middle of other actions.
             You cannot use a \glossterm{minor action} during the \glossterm{movement phase}.
 
             You can take one minor action during the \glossterm{action phase} of each round.
@@ -258,11 +259,13 @@
             However, you cannot use the same minor action twice in a single round unless an ability specifies otherwise.
 
         \subsubsection{Free Actions}\label{Free Actions}
-            Some activities that take little time or attention require a \glossterm{free action}.
-            You can take any number of free actions per round.
-            However, you cannot use the same free action twice in a single round unless an ability specifies otherwise.
-            This restriction is intended to limit the power of specific special abilities that require a free action to use.
-            At the GM's discretion, you may take the same simple free action multiple times.
+            Some activities that take very little time or attention require a \glossterm{free action}.
+            You can take a free action in the middle of other actions.
+
+            You can take any number of free actions per round, within reason.
+            There is no intrinsic distinction between a free action and something that isn't listed as requiring an action at all.
+            However, some free action abilities specify a limit on how often they can be used.
+            For example, manipulating objects is a free action, but you can only manipulate an object as a free action once per round (see \pcref{Manipulating Objects}).
 
     \subsection{Phases}\label{Phases}
 
@@ -558,19 +561,6 @@
             If you can see its destination, such as if it teleported to a different location within your \glossterm{line of sight}, you must beat the target on an opposed \glossterm{initiative} check.
             Success means that you can follow its movement normally.
             If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
-        \end{activeability}
-
-        \parhead{React}\label{React} As a \glossterm{free action}, you can use the \textit{react} ability to try to choose your movement after seeing what another creature is going to do.
-
-        \begin{activeability}{React}
-            \abilitytag{Swift}
-            \rankline
-            Choose a creature that you can see.
-            Make an opposed \glossterm{initiative} check against that creature.
-            If you beat it on the initiative check, you learn whether it is going to take a \glossterm{movement} during the current phase, and if so, what that movement will be.
-            This does not give you any information about actions other than movements, so using this ability during the action phase is often pointless.
-            If you fail, you learn nothing about that creature's movement, and that creature automatically beats you on any other opposed initiative checks during the current phase.
-            This represents you wasting time trying to watch the creature, giving it extra time to beat you in any sort of opposed contest or race.
         \end{activeability}
 
         \parhead{Withdraw}\label{Withdraw} As a \glossterm{movement}, you can use the \textit{withdraw} ability to keep away from creatures as they move.

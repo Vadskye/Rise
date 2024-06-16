@@ -52,7 +52,7 @@ export const cryomancy: MysticSphere = {
         You cannot reduce the temperature below 0 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
 
-        This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
         3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
