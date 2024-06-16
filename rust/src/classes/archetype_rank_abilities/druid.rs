@@ -199,7 +199,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You can only learn nature spells from nature mystic spheres that you have access to.
 
-                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                You automatically learn all \glossterm{cantrips} from each of your mystic spheres.
                 In addition, you learn two rank 1 nature \glossterm{spells}.
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 

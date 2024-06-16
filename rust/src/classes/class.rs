@@ -803,13 +803,13 @@ impl Class {
 
                 Deities are a constant background presence in the world of Rise.
                 Commoners acknowledge the influence of many deities on their life, and offer gifts or prayers to each deity according to their purview.
-                Clerics are the primary means by which deities answer these prayers.
+                Clerics are the primary conduits through which deities answer these prayers.
                 In exchange for their mighty divine power, clerics are charged with serving the deity's interests in the world.
 
                 Clerics are the most common spellcasting class in the world.
                 The path to becoming a cleric is easier than for any other spellcasting class except for sorcerers, and unlike sorcerers, clerics require no special birthright.
-                Many clerics have specific responsibilities to their deity that preclude adventuring.
-                The most well-known example of this would be clerics who offer divine healing to anyone who enters their temple, but similar responsibilities exist for all deities.
+                Many clerics have responsibilities to their deity that preclude adventuring.
+                For example, some clerics provide healing services to anyone who enters their temple.
 
                 Adventuring clerics can exist for a variety of reasons.
                 They may be charged to help spread knowledge of their deity, and becoming well-known as an adventurer can serve that end.
@@ -818,12 +818,14 @@ impl Class {
 
                 Paladins and druids are closely related to clerics, since all three draw power from their veneration of external entities.
                 However, the specific nature of each connection is quite different.
-                From the perspective of clerics, the largest difference is that paladins and druids have no oversight and unclear responsibilities.
-                Clerics can always be confident that they are serving their deity's best interest, while paladins and druids simply act as they see fit.
+                Clerics can always be confident that they are serving their deity's best interest.
+                In contrast, paladins and druids have no oversight and unclear responsibilities.
                 This makes them unreliable allies at best and ideological foes at worst.
-                In particular, clerics and druids have some intrinsic tension.
-                Clerics want to expand the worship of their specific deity, which is easiest in civilized areas where many potential worshippers can be found.
-                This runs opposite to the typical druidic preference against civilization.
+
+                Druids and clerics have a degree of intrinsic tension.
+                Clerics generally want to expand the worship of their specific deity.
+                That task is easiest in civilized areas where many potential worshippers can be found.
+                However, it is contrary to the typical druidic preference against civilization.
             ".to_string(),
             Self::Dragon => r"".to_string(),
             Self::Druid => r"
@@ -1343,9 +1345,8 @@ impl Class {
                     For details, see \tref{Deities}.
 
                     \magicalcf{Clr}{Seek Guidance}
-                    You can ask your deity for guidance about how best to serve your deity's interests.
-                    This requires a ritual or prayer lasting ten minutes, with the details depending on the deity.
-                    By the end, you will have received a vision, emotional instinct, or other guidance.
+                    You can seek guidance from your deity through a ten minute ritual or prayer.
+                    This provides a vision, emotional instinct, or other guidance on how you can best serve your deity's interests.
                     You cannot ask specific questions of your deity, and this is not a general method for sharing information.
                     Deities tend to disapprove of clerics who seek guidance to solve mortal problems that they should be able to deal with themselves.
                     You are generally informed what your current responsibilities are, such as ``tend to the wounded who enter my temple'' or ``do battle with those who serve evil''.
