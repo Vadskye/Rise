@@ -45,8 +45,8 @@ To run combat scenarios, see \pcref{Combat}.
         \begin{itemize}
             \item DV 0 - Easy: Only an exceptionally incompetent or impaired person could possibly fail a DV 0 check. For example, this includes walking on rough ground without tripping (Balance) or noticing that a yelling, red-faced person is angry (Social Insight).
             \item DV 5 - Average: A typical human with no relevant skills should still succeed at a DV 5 check without much issue. However, it would be possible to fail in a stressful situation where time is limited if the person had no relevant training. For example, this includes climbing a ladder (Climb) or hearing the topic of a nearby conversation in a crowded bar (Awareness).
-            \item DV 10 - Hard: A typical human with no relevant skills might succeed at a DV 10 check, but only if they were very lucky or had a lot of time on their hands. An experienced practioner might fail infrequently in stressful circumstances, but a world-class expert would never fail. For example, this includes swimming in fast-moving water (Swim) or providing first aid to mitigate a barely lethal wound (Medicine).
-            \item DV 15 - Very Hard: Only an experienced practioner could succeed at a DV 15 check, and they would still need to get lucky if they were in a rush. Even a world-class expert at the peak of real-world human potential could fail, but only rarely. For example, this includes picking a well-made lock (Devices) or holding your breath for eight minutes while staying still (Endurance).
+            \item DV 10 - Hard: A typical human with no relevant skills might succeed at a DV 10 check, but only if they were very lucky or had a lot of time on their hands. An experienced practicioner might fail infrequently in stressful circumstances, but a world-class expert would never fail. For example, this includes swimming in fast-moving water (Swim) or providing first aid to mitigate a barely lethal wound (Medicine).
+            \item DV 15 - Very Hard: Only an experienced practicioner could succeed at a DV 15 check, and they would still need to get lucky if they were in a rush. Even a world-class expert at the peak of real-world human potential could fail, but only rarely. For example, this includes picking a well-made lock (Devices) or holding your breath for eight minutes while staying still (Endurance).
             \item DV 20 - Almost Impossible: A world-class expert like an Olympic medalist could succeed at a DV 20 check if they were lucky or patient. Succeeding consistently at tasks of this difficulty requires superhuman capabilities. For example, this includes climbing a weathered natural rock wall without equipment (Climb) or squeezing through a space with a diameter of only half a foot (Flexibility).
             \item DV 25\add - Impossible: No real-world human can succeed at a DV 25 check. This sort of feat is only possible for high-level Rise characters who have explicitly surpassed ordinary limitations. For example, this includes running at full speed along a slack rope (Balance) or climbing a sheer glass pane (Climb).
         \end{itemize}
@@ -107,7 +107,7 @@ To run combat scenarios, see \pcref{Combat}.
     When you have a moment to relax, you can rest to regain some of your expended resources.
     There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
     The benefits of taking a short rest or long rest happen automatically after you spend enough time avoiding strenuous activity.
-    You do not declare that you are using the ``short rest'' ability, and you do not have to differentiate between whether you intend to take a short rest or a long rest.
+    You do not have to declare that you are using the ``short rest'' or ``long rest'' ability.
     Resting at night is often combined with sleeping, but you can rest at any time without sleeping.
 
     % TODO: clarify interrupted rests
@@ -229,21 +229,11 @@ To run combat scenarios, see \pcref{Combat}.
             Some abilities that affect multiple targets distinguish between their primary and secondary targets.
             For example, the \spell{chain lightning} spell affects secondary targets within a small radius around a primary target.
             If an ability does not mention secondary targets, all of its targets are primary targets.
+
             Unless otherwise specified, abilities have the same effect on their primary and secondary targets.
-            However, some targeting rules are different between the two.
-
-            First, \glossterm{line of effect} for secondary targets is always measured from the primary target, rather than from the ability's source.
-            However, \glossterm{line of sight} is still measured from the ability's source.
-            This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no wall separating from the primary target.
-
-            Second, secondary targets use the same \glossterm{longshot penalty} as the primary target, even if they are farther away.
-            
-    \subsection{Range}\label{Range}
-        Many abilities can only affect targets or areas within a given \glossterm{range} of you.
-        For abilities that affect specific targets, all targets must be within the range.
-        For abilities that affect an area within a range, the area's \glossterm{point of origin} must be within the range (see \pcref{Point of Origin}).
-        There are five common ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
-        Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+            However, \glossterm{line of effect} for secondary targets is always measured from the primary target, rather than from the ability's source.
+            \glossterm{Line of sight} is still measured from the ability's source.
+            This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no obstacle separating from the primary target.
 
     \subsection{Touch}\label{Touch}
         Some abilities specify that you must touch a target.
@@ -264,7 +254,6 @@ To run combat scenarios, see \pcref{Combat}.
             \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
             Cylinders also have a specific height.
             Unless otherwise specified, a cylinder's height is the same as its radius.
-            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the ability's area.
 
             \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
             Lines also have a specific width and height.
@@ -326,8 +315,8 @@ To run combat scenarios, see \pcref{Combat}.
             Unless otherwise noted, it does not move after being created.
 
             When casting an area ability, you select the point where the ability originates.
-            The point of origin of a ability is always a grid intersection.
-            When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+            The point of origin of an ability is always a grid intersection.
+            When determining whether a given creature is within the area of an ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
             The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
 
             % This seems like an unnecessary complication, and is easily forgotten.
@@ -360,6 +349,7 @@ To run combat scenarios, see \pcref{Combat}.
             You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
             There are several other abilities that can also remove conditions.
 
+        % TODO: clean up wording
         \subsubsection{Sustained Abilities}\label{Sustained Abilities}
             Sustained abilities have the \abilitytag{Sustain} tag.
             They last as long as you take an action to sustain them each round.
