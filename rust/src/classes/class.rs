@@ -1524,10 +1524,13 @@ impl Class {
 
                     \subsubsection{Evil Domain}
                         % intentionally adjacent rather than touch
-                        \magicaldomainability{Gift} As a \glossterm{free action}, you may choose an adjacent \glossterm{ally}.
-                        Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
-                        You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
-                        This ability has the \abilitytag{Swift} tag.
+                        \magicaldomainability{Gift} Once per round, you can use the \ability{willing sacrifice} ability as a \glossterm{free action}.
+                        \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
+                            \rankline
+                            Choose an \glossterm{ally} adjacent to you.
+                            Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
+                            You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
+                        \end{magicalactiveability}
                         \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \magicaldomainability{Essence} You can use the \textit{compel evil} ability as a standard action.
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
@@ -1650,7 +1653,7 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \magicaldomainability{Gift} You can use the \textit{divine protection} ability as a \glossterm{free action}.
+                        \magicaldomainability{Gift} Once per round, you can use the \textit{divine protection} ability as a \glossterm{free action}.
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \rankline
                             % Intentionally adjacent rather than touch

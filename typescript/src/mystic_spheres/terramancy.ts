@@ -484,7 +484,7 @@ export const terramancy: MysticSphere = {
       name: 'Personal Gravitation',
 
       effect: `
-        Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can take a \\glossterm{free action} to adjust your personal gravity.
+        Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
         When you do, gravity pulls you towards that surface instead of in the normal direction.
         This allows you to walk normally on walls or even ceilings.
 

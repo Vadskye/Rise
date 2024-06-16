@@ -34,11 +34,12 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Can exert to move through creatures"),
         description: String::from(r"
             You can activate these boots as a free action.
-            After you activate the boots, you \glossterm<briefly> cannot do so again.
             When you do, you increase your \glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
             This does not allow you to move through inanimate objects.
             If you end your movement in spaces occupied by other creatures, both of you are still \squeezing.
             If you are not able to move normally, such as if you are \grappled, these boots do not help you.
+
+            After you activate these boots, you \glossterm<briefly> cannot do so again.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes move through creatures", "
@@ -91,7 +92,7 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Redirects personal gravity to adjacent objects"),
         description: String::from(r"
-            Once per phase, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can take a \glossterm<free action> to adjust your personal gravity.
+            Once per round, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can activate these boots as a \glossterm<free action>.
             When you do, gravity pulls you towards that surface instead of in the normal direction.
             This allows you to walk normally on walls or even ceilings.
 

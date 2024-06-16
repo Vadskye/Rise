@@ -54,7 +54,7 @@ export const pyromancy: MysticSphere = {
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
         On a hit, you deal the target 2 fire damage.
 
-        This effect lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        This effect lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
         2: `The damage increases to 5.`,
@@ -71,7 +71,7 @@ export const pyromancy: MysticSphere = {
         You cannot increase the temperature above 100 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
 
-        This ability lasts until you use it again or until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        This ability lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
         3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
