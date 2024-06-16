@@ -775,11 +775,12 @@ impl Class {
                 Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
                 Of course, becoming a barbarian is no secret rite.
                 The only thing that is required is a willingness to fully experience one's emotions and channel them into physical betterment.
-                This path evokes an ancient memory of times before the complexity of organized warfare, where physical supremacy was sufficient for victory.
+                This path evokes ancient memories from a time when physical supremacy was sufficient for victory, before the complexity of organized warfare.
                 Anyone can discover that path for themselves.
 
-                Barbarians are famous for their furious battle-rage.
-                Anger is one of the easiest emotions to access and channel into the violence of battle, and it is a common starting point for new barbarians who are still learning how to tap into their emotions.
+                Barbarians are famous for their furious battlerage.
+                Anger is one of the easiest emotions to channel into the violence of battle.
+                It is a common starting point for new barbarians.
                 However, any emotion can be used as a source of primal power, as long as it is sufficiently intense.
 
                 Barbarians and monks have a curious relationship.
@@ -787,12 +788,10 @@ impl Class {
                 However, a typical monk sees emotions as a tool at best and an obstacle at worst.
                 They value serenity and control over their mind and body.
                 From the perspective of a barbarian, monks completely surrender to civilization's taming and placating influences, and abandon their primal heritage.
-                Barbarian-monk multiclass characters are exceptionally rare, but not impossible.
-                Typically, they control all of their emotions in the style of monks except for a single emotion, which they unleash in the style of barbarians.
 
                 Rangers and druids are natural allies of barbarians, since all three groups prefer to live at the edges of civilization.
                 However, each has different reasons for their preference.
-                Barbarians enjoy the emotional and societal freedom of the frontier.
+                Barbarians enjoy the freedom of the frontier.
                 However, they are often too social to prefer life as a hermit in the deep wilderness.
                 Druids prefer nature to civilization ideologically, and rangers are best able to fulfill their responsibilities on the frontier.
             ".to_string(),
@@ -818,7 +817,7 @@ impl Class {
 
                 Paladins and druids are closely related to clerics, since all three draw power from their veneration of external entities.
                 However, the specific nature of each connection is quite different.
-                Clerics can always be confident that they are serving their deity's best interest.
+                Clerics can always be confident that they serve their deity's best interests.
                 In contrast, paladins and druids have no oversight and unclear responsibilities.
                 This makes them unreliable allies at best and ideological foes at worst.
 

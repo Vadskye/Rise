@@ -105,7 +105,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     When you use this ability, you gain \glossterm{damage resistance} equal to half your maximum hit points.
                     In addition, for the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item Your current damage resistance can increase beyond your normal maximum without being reduced.
+                        \item Your current damage resistance can increase beyond your normal maximum.
                         \item You gain a +2 accuracy bonus with melee and thrown \glossterm{strikes}.
                         \item You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
@@ -250,7 +250,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Savage Rush}
                     \rankline
                     Move up to your movement speed.
-                    During this movement, you can move through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
+                    During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
                     At the end of this movement, you may make a melee \glossterm{strike}.
 
                     \rankline
