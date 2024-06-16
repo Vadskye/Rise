@@ -383,7 +383,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
-                    If the target has your devoted alignment, you take energy damage equal to your power with this strike.
+                    If the target has your devoted alignment, you take energy damage equal to half your power with this strike (minimum 1).
 
                     \rankline
                     \rank{2} You add your full Strength instead of half your Strength.
