@@ -254,7 +254,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                 The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum rank of arcane spell that you can cast.
                 In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
             ",
@@ -396,7 +396,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                         Whenever you learn a new spell, you may change which of your spells this ability affects.
-                    \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                    \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum \glossterm{rank} of arcane spell that you can cast.
                         In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
