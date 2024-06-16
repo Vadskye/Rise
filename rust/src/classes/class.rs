@@ -770,7 +770,7 @@ impl Class {
             Self::Automaton => String::from(""),
             Self::Barbarian => r"
                 Barbarians are primal warriors that draw power from their physical prowess and unfettered emotions.
-                They fight with a raw, untamed aggression that draws inspiration from more primitive times.
+                They fight with a raw, untamed aggression.
 
                 Most barbarians originate from to the outskirts of civilization, where the societal constraints of civilization are less present.
                 Of course, becoming a barbarian is no secret rite.
@@ -782,8 +782,8 @@ impl Class {
                 Anger is one of the easiest emotions to access and channel into the violence of battle, and it is a common starting point for new barbarians who are still learning how to tap into their emotions.
                 However, any emotion can be used as a source of primal power, as long as it is sufficiently intense.
 
-                Barbarians and monks are, in some ways, two sides of the same coin.
-                Both groups develop their physical body to its peak, and believe that the mind and body must work together to maximize their potential.
+                Barbarians and monks have a curious relationship.
+                Members of both classes place a great importance on physical excellence, and believe that the mind and body must work together to maximize potential.
                 However, a typical monk sees emotions as a tool at best and an obstacle at worst.
                 They value serenity and control over their mind and body.
                 From the perspective of a barbarian, monks completely surrender to civilization's taming and placating influences, and abandon their primal heritage.
@@ -792,7 +792,8 @@ impl Class {
 
                 Rangers and druids are natural allies of barbarians, since all three groups prefer to live at the edges of civilization.
                 However, each has different reasons for their preference.
-                Barbarians enjoy the emotional and societal freedom of the frontier, but are typically too social to prefer life as a hermit in the deep wilderness.
+                Barbarians enjoy the emotional and societal freedom of the frontier.
+                However, they are often too social to prefer life as a hermit in the deep wilderness.
                 Druids prefer nature to civilization ideologically, and rangers are best able to fulfill their responsibilities on the frontier.
             ".to_string(),
             Self::Cleric => r"
