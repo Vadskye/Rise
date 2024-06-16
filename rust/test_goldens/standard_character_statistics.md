@@ -65,8 +65,8 @@ fighter: resource attunement point by 2
 fighter: resource fatigue tolerance by 4
 fighter: resource insight point by 1
 fighter: resource trained skill by 3
-attribute scaling with level: base attribute strength by 2
-attribute scaling with level: base attribute constitution by 2
+attribute scaling with level: attribute strength by 2
+attribute scaling with level: attribute constitution by 2
 magic: strike damage dice 1
 magic: DR 8
 magic: HP 4
@@ -113,8 +113,8 @@ fighter: resource attunement point by 2
 fighter: resource fatigue tolerance by 4
 fighter: resource insight point by 1
 fighter: resource trained skill by 3
-attribute scaling with level: base attribute strength by 3
-attribute scaling with level: base attribute constitution by 3
+attribute scaling with level: attribute strength by 3
+attribute scaling with level: attribute constitution by 3
 magic: strike damage dice 2
 magic: DR 16
 magic: HP 16
