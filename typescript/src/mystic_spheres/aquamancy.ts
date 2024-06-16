@@ -408,7 +408,7 @@ export const aquamancy: MysticSphere = {
 
         Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
         This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
-        Alternately, you can \\glossterm{dual wield} with the tentacles.
+        Alternately, you can make \\glossterm{dual strikes} with the tentacles.
         If you do, your attacks have \\weapontag{Sweeping} (3) instead of \\weapontag{Sweeping} (7).
       `,
       rank: 4,

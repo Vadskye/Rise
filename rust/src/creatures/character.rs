@@ -272,7 +272,7 @@ impl Character {
         character
     }
 
-    // TODO: add dual wielding
+    // TODO: add dual strikes
     pub fn monk_kama(level: i32) -> Self {
         let mut character = Self::new(
             Class::Monk,
@@ -370,7 +370,7 @@ impl Character {
         character
     }
 
-    // TODO: add dual wielding
+    // TODO: add dual strikes
     pub fn rogue_smallsword(level: i32) -> Self {
         let mut character = Self::new(
             Class::Rogue,
