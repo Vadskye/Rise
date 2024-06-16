@@ -5,7 +5,7 @@ export const chronomancy: MysticSphere = {
   name: 'Chronomancy',
   hasImage: true,
   shortDescription: 'Manipulate the passage of time to inhibit foes and aid allies.',
-  sources: ['arcane', 'pact'],
+  sources: ['arcane'],
   specialRules: `
     Some spells from this mystic sphere can create a time lock on creatures.
     \\spheredef{time lock} A time lock causes an aspect of a creature to be frozen in time.
