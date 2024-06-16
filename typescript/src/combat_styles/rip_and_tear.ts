@@ -71,7 +71,7 @@ export const ripAndTear: CombatStyle = {
       // 1d6 +1 per 2 power is about the same damage as an extra strike, so about 50%
       // more damage compared to hitting with two weapons.
       effect: `
-        Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
+        Make a melee \\glossterm{dual strike} using two slashing weapons (see \\pcref{Dual Wielding}).
         \\hit If the target takes damage from both weapons, it bleeds.
         A bleeding creature takes 1d6 slashing damage +1 per two \\glossterm{power} during your next action.
       `,
@@ -83,7 +83,7 @@ export const ripAndTear: CombatStyle = {
 
       // Unclear if correct damage
       effect: `
-        Make a melee strike using two slashing weapons (see \\pcref{Dual Wielding}).
+        Make a melee \\glossterm{dual strike} using two slashing weapons (see \\pcref{Dual Wielding}).
         \\hit Each target that takes damage from both weapons bleeds.
         A bleeding creature takes 1d6 slashing damage per 2 \\glossterm{power} during your next action.
       `,

@@ -147,7 +147,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                 animal(MonsterDef {
                     abilities: MonsterAbilities {
                         active_abilities: vec![
-                            // TODO: remove this once dual wielding accuracy is autocalculated
+                            // TODO: remove this once dual strike accuracy is autocalculated
                             ActiveAbility::Strike(StrikeAbility::dual_strike(1, StandardWeapon::Claw.weapon()).plus_accuracy(-1)),
                             ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::MonsterBite.weapon()).except_elite()),
                         ],
