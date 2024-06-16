@@ -417,7 +417,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                 You may spend \glossterm{insight points} to gain access to one additional pact \glossterm{mystic sphere} per two \glossterm{insight points}.
                 You can only learn pact spells from pact mystic spheres that you have access to.
 
-                You automatically learn all \glossterm{cantrips} from each mystic sphere you have access to.
+                You automatically learn all \glossterm{cantrips} from each of your mystic spheres.
                 In addition, you learn two rank 1 pact \glossterm{spells}.
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
