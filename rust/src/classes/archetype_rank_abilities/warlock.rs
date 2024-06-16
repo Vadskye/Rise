@@ -462,29 +462,29 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Armor Tolerance",
+            name: "Survival Pact",
             is_magical: true,
             rank: 1,
             description: r"
-                You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+                You gain a bonus to your \glossterm{damage resistance} equal to your rank in this archetype.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Armor Tolerance+",
+            name: "Survival Pact+",
             is_magical: true,
             rank: 3,
-            description: r"
-                The encumbrance reduction increases to 3.
+            description: r"        
+                The bonus increases to twice your rank in this archetype.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Armor Tolerance+",
+            name: "Survival Pact+",
             is_magical: true,
             rank: 6,
             description: r"
-                The encumbrance reduction increases to 4.
+                The bonus increases to three times your rank in this archetype.
             ",
             modifiers: None,
         },

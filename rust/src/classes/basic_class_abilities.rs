@@ -99,7 +99,6 @@ fn generate_latex_armor_proficiencies(class: &Class) -> String {
     if armor_proficiencies.usage_classes.is_empty() {
         proficiences_text = "
             You are not proficient with any type of armor.
-            Encumbrance from armor interferes with the gestures you make to cast spells, which can cause your spells with \\glossterm{somatic components} to fail (see \\pcref{Somatic Component Failure}).
         ".to_string();
     } else if let Some(specific_armors) = armor_proficiencies.specific_armors {
         let usage_classes: Vec<&str> = armor_proficiencies
