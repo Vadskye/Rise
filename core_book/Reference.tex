@@ -271,19 +271,24 @@
         For example, if you are immune to being \stunned, you still take full damage from an attack that deals damage and stuns you.
 
     \traitdef{Incorporeal}{incorporeal}
-        An incorporeal creature does not have a tangible body.
+        An incorporeal creature does not have a physical body.
+        It is both \trait{intangible} and \trait{floating}.
+        In addition, it can enter or pass through solid objects.
+        It must remain adjacent to the object's exterior at all times.
+
+        While an incorporeal creature is inside of an object, it can choose whether it is completely enveloped or partially contained.
+        If it is completely enveloped, it does not have \glossterm{line of sight} or \glossterm{line of effect} outside of the object, limiting its ability to attack.
+        If it is partially contained, it has \glossterm{cover}, but can otherwise attack and be attacked normally.
+
+    \traitdef{Intangible}{intangible}
+        An intangible creature has a physical body that is gaseous or otherwise untouchable.
         It is \trait{immune} to \glossterm{physical damage} and is never considered to be \squeezing.
-        It moves silently and ignores the effects of abilities that only work if it has a corporeal body, such as \glossterm{difficult terrain} and the \textit{grapple} or \textit{shove} abilities.
-        This includes being \grappled, detected by \trait{tremorsense}, setting off pressure plates, and so on.
-        It never falls or takes \glossterm{falling damage}.
+        It moves silently and ignores the effects of abilities that only work if it has a corporeal body.
+        This includes all \abilitytag{Brawling} abilities, \glossterm{difficult terrain}, being detected by \trait{tremorsense}, setting off pressure plates, and so on.
 
-        Many incorporeal creatures have no Strength attribute.
-        If an incorporeal creature has a Strength attribute, it has some ability to manipulate the physical world despite being incorporeal.
-        Unless otherwise noted, an incorporeal creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
-
-        An incorporeal creature can enter or pass through solid objects, but it must remain adjacent to the object's exterior at all times.
-        If it is completely inside an object, it cannot see out or attack.
-        It can fight while partially inside an object, which grants it \glossterm{cover} and allows it to attack and see normallly.
+        Many intangible creatures have no Strength attribute.
+        If an intangible creature has a Strength attribute, it has some ability to manipulate the physical world despite being intangible.
+        Unless otherwise noted, an intangible creature with a Strength attribute may selectively choose whether it wants to interact with physical objects.
 
     \traitdef{Invisible}{invisible}
         An invisible creature or object cannot be seen with light.
