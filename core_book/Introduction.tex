@@ -208,7 +208,7 @@ This chapter explains what that means, and how Rise is different from other exis
 
         The start of each phase still requires a general assessment from all acting players about the current state of the battlefield, which takes just as much time as the assessment in a classic initiative system.
         However, the time required for this tactical analysis only increases marginally as the number of players and enemies in the game increases.
-        This makes Rise scale much better to large player counts or large enemy hordes.
+        This allows Rise to handle large player counts or large enemy hordes without becoming glacially slow.
         Combat in Rise flows by quickly, making it much easier to balance time between combat and non-combat encounters within the same game session - or to run through multiple separate, individually challenging combats without sacrificing the pace and energy of the game.
 
     \subsection{Optional Complexity}
@@ -219,50 +219,74 @@ This chapter explains what that means, and how Rise is different from other exis
 
         Rise is designed to allow players to choose their own level of complexity.
         This broadens its potential audience by allowing people with very different play styles or tolerances for complexity to enjoy the same game together.
-        This goal is manifested in several key ways in Rise's design.
-        First, simplicity is the default.
-        Second, complexity is centralized around the character creation and leveling process, rather than gameplay.
-        Third, complexity is only loosely connected to narrative and storytelling roles.
-        Fourth, gameplay complexity is unconnected to character power.
+        This goal is manifested in several key ways in Rise's design:
+        \begin{itemize}
+            \item Core gameplay is designed to be simple.
+            \item Character creation is deeply interconnected.
+            \item Complexity is not tied to narrative roles.
+            \item Character power does not require complexity.
+        \end{itemize}
 
-        In order for complexity to be truly optional, simplicity must be the default.
-        The fundamental infrastructure of the game must be easy to pick up and understand.
-        Complexity must be isolated to specific areas where people can choose to interact with it if they enjoy that process.
+        \subsubsection{Simple Core Gameplay}
+            The core gameplay loop must be simple.
+            You can contribute in combat by relying on one or two standard attacks that you use in all circumstances.
+            In narrative situations, you can just roll the skills you have trained, and ignore other options.
+            Engaging with the system more deeply than that is a choice, not a requirement.
 
-        As a necessary consequence of making simplicity the default, the gameplay in a session for a typical character must not be overly complex.
-        You should be able to pick up a typical character and figure out how to play as them without extensive study.
-        If gameplay is simple by default, and complexity must live somewhere, then the complexity must be located in the process of character creation.
-        Building a perfectly optimized Rise character is designed to be an difficult and rewarding challenge for people who enjoy it.
-        The core systems - attributes, classes, attunements, and feats - interact with each other in nuanced ways.
-        However, building a Rise character driven solely by narrative concerns is only moderately difficult, since you can make each decision independently.
+        \subsubsection{Interconnected Character Creation}
+            Character creation and build optimization is a better place to store complexity.
+            Creating a Rise character involves a number of decisions, each of which can have nuanced ramifications on other aspects of the system.
+            If you are just trying to build a character that matches a desired narrative, you can generally approach each decision in isolation.
 
-        Even for simple characters, the process of character creation is still one of the most complicated aspects of Rise.
-        That is why Rise provides (or will provide, once that section is done) an extensive selection of premade characters for a wide variety of narrative archetypes.
-        Each premade character includes advice for how to play that character and level them up.
-        The premade characters make the system more accessible to people who don't want to to deal with the complexity of creating a character from scratch.
+            For example, you can decide that your character is intelligent and agile but not very strong or durable, because that is the concept you want.
+            That decision has consequences, such as changing how many trained skills you have and what your defenses are.
+            If you approach each decision sequentially, each one is relatively easy to make, and doesn't require deep system knowledge.
+            On the other hand, trying to mathematically optimize a character requires thinking about many aspects of the system at once.
+            This results in a system that is easy to learn but hard to master.
 
-        Not all complexity is contained within the character creation process.
-        Characters are allowed to have significant gameplay complexity.
-        What's important is that players intentionally opt in to playing a more complex character, and don't feel forced to.
+            Even for simple characters, the process of character creation is still one of the most complicated aspects of Rise.
+            That is why Rise provides (or will provide, once that section is done) an extensive selection of premade characters for a wide variety of narrative archetypes.
+            Each premade character includes advice for how to play that character and level them up.
+            The premade characters make the system more accessible to people who don't want to to deal with the complexity of creating a character from scratch.
 
-        If players must never feel compelled to take on more complexity than they enjoy, then complexity should be mostly separate from narrative concerns.
-        For example, it would be a bad idea to define a system where martial characters are simple and spellcasters are complicated.
-        Both of those are rich and evocative narrative constructs.
-        Many people who don't enjoy complexity will want to play spellcasters, and many people who enjoy complexity will want to play martial characters.
-        Gameplay complexity must be more finely tuned and localized than those sweeping strokes.
+        \subsubsection{Complexity and Narrative}
+            Complexity and simplicity should not be directly connected to a character's concept or narrative.`
+            For example, it would be a bad idea to define a system where martial characters are simple and spellcasters are complicated.
+            Both of those are rich and evocative narrative constructs.
+            Many people who don't enjoy complexity will want to play spellcasters, and many people who enjoy complexity will want to play martial characters.
+            Gameplay complexity must be more finely tuned and localized than those sweeping strokes.
 
-        In Rise, gameplay complexity is generally generated by acquiring a large number of increasingly situational abilities.
-        Every class has some archetypes that grant additional abilities known and some archetypes that grant additional passive abilities.
-        If you like having a lot of unique abilities, you can be a human with a high Intelligence to maximize your insight points, and focus on learning spells and maneuvers that attack your enemies or have situational effects.
-        If you like minimizing complexity, you can instead choose archetypes or learn spells that simply grant you passive benefits, and focus on one or two standard attacks that you specialize in.
-        Some feats give you new abilities and new circumstances to pay attention to that make you more effective, while others simply increase your passive statistics and defenses.
+            In Rise, gameplay complexity is generally generated by acquiring a large number of increasingly situational abilities.
+            Every class has some archetypes that grant additional abilities known and some archetypes that grant additional passive abilities.
+            If you like having a lot of unique abilities, you can have a high Intelligence to maximize your insight points, and focus on learning spells and maneuvers that attack your enemies or have situational effects.
+            If you like minimizing complexity, you can instead choose archetypes or learn spells that simply grant you passive benefits, and focus on one or two standard attacks that you specialize in.
+            Some feats give you new abilities and new circumstances to pay attention to that make you more effective, while others simply increase your passive statistics and defenses.
 
-        Of course, all of this customization of complexity would be mostly pointless if complexity was strongly correlated with character power.
-        If exceptionally complicated or hyper-specialized characters were obviously and consistently more effective than other characters, it would push everyone to use those characters.
-        Rise makes the tradeoffs between gaining raw power and gaining additional options balanced enough that neither is always superior.
-        There will always be specific contexts where one character's mechanics are superior to another's.
-        For example, a specialized defensive melee character may excel in a campaign that consists of entirely of series of duels in confined spaces, while being exceptionally weak in a campaign that consists entirely of large-scale battles against cavalry archers on open fields.
-        However, each character's strengths and weaknesses are well defined, and their raw power is close to each other, so a GM should not have great difficulty designing a campaign where everyone feels relevant and useful.
+            Rise specifically handles complexity for martial characters and spellcasters slightly differently.
+            Martial characters in Rise typically have fairly simple individual abilities.
+            However, they can use those abilities with a variety of meaningfully different weapons.
+            A martial character with four unique attacks and three different weapons has twelve different options in combat.
+            In addition, martial characters can typically make better use of universal abilities, such as shoving and grappling.
+
+            Spellcasters have more complex and varied individual abilities.
+            They also tend to have more abilities that have significant narrative effects.
+            However, their abilities are more isolated.
+            There is no spellcaster equivalent of martial weapons that would multiply their number of distinct abilities in combat.
+            The result of this design is that both martial characters and spellcasters can be very simple or very complicated.
+            However, they approach complexity in different ways, ensuring that they feel narratively distinct.
+
+        \subsubsection{Complexity and Power}
+            All of this customization of complexity would be mostly pointless if complexity was strongly correlated with character power.
+            If exceptionally complicated or hyper-specialized characters were obviously and consistently more effective than other characters, it would push everyone to use those characters.
+            Rise structures the tradeoffs between gaining raw power and gaining additional options balanced enough that neither is always superior.
+
+            There will always be some benefit from build optimization and system mastery.
+            Players who are deeply familiar with Rise will be able to build characters with more relevant strengths and fewer relevant weaknesses.
+            However, the gap between optimized characters and ``normal'' characters is limited.
+            There will always be specific contexts where one character's mechanics are superior to another's.
+            For example, a specialized defensive melee character may excel in a duel in a confined space.
+            However, it may be irrelevant against cavalry archers on an open field.
+            Characters in Rise cannot drastically change their capabilities each day, so they will always have moments to shine and moments of weakness.
 
     \subsection{Unbounded Scaling}
         \includegraphics[width=\columnwidth]{introduction/unbounded scaling}
