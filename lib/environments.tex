@@ -80,10 +80,6 @@
     \IfBooleanF{#1}{
         \lowercase{\hypertargetraised{ability:#3}{}}
         \hypertargetraised{ability:#3}{}
-        \lowercase{\hypertargetraised{spell:#3}{}}
-        \hypertargetraised{spell:#3}{}
-        \lowercase{\hypertargetraised{maneuver:#3}{}}
-        \hypertargetraised{maneuver:#3}{}
     }
     \spelltwocol{
         {\normalsize \textbf{#3}}
@@ -118,10 +114,6 @@
     \IfBooleanF{#1}{
         \lowercase{\hypertargetraised{ability:#3}{}}
         \hypertargetraised{ability:#3}{}
-        \lowercase{\hypertargetraised{spell:#3}{}}
-        \hypertargetraised{spell:#3}{}
-        \lowercase{\hypertargetraised{maneuver:#3}{}}
-        \hypertargetraised{maneuver:#3}{}
     }
     \spelltwocol{
         {\normalsize \textbf{#3}}
@@ -156,10 +148,6 @@
     \IfBooleanF{#1}{
         \lowercase{\hypertargetraised{ability:#3}{}}
         \hypertargetraised{ability:#3}{}
-        \lowercase{\hypertargetraised{spell:#3}{}}
-        \hypertargetraised{spell:#3}{}
-        \lowercase{\hypertargetraised{maneuver:#3}{}}
-        \hypertargetraised{maneuver:#3}{}
     }
     \spelltwocol{
         {\normalsize \textbf{#3}}
@@ -257,40 +245,6 @@
     \endtabularx
 }
 \surroundwithmdframed{compresseddtabularx}
-
-\DeclareDocumentEnvironment{spellsection}{o m o}
-{
-    \begin{thesamepage}
-    \setlength{\multicolsep}{0pt}
-    \begin{multicols}{2}
-        \IfValueTF{#1}
-        {
-            \lowercase{\hypertarget{spell:#1~#2}{}}\label{spell:#1~#2}
-            \hypertarget{spell:#1~#2}
-                {\subsubsection{#2,~#1}}
-        }
-        {
-            \lowercase{\hypertarget{spell:#2}{}}\label{spell:#2}
-            \hypertarget{spell:#2}
-                {\subsection{#2}}
-        }
-        \IfValueTF{#3}
-        {
-            \columnbreak
-            \begin{flushright}
-                \large\textbf{\nth{#3}~Level}
-            \end{flushright}
-        }
-        {
-            \columnbreak
-            \begin{flushright}
-            \end{flushright}
-        }
-    \end{multicols}
-}
-{
-    \end{thesamepage}
-}
 
 \DeclareDocumentEnvironment{thesamepage}{}
 {
