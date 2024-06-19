@@ -395,6 +395,8 @@ export const revelation: MysticSphere = {
     // If the target has a vulnerability, this is like a r2 debuff. But that's pretty
     // unlikely, and it's useless if you can *already* take advantage of the
     // vulnerability, so it's closer to a r1 debuff?
+    // This also bypasses many forms of immunity, including incorporeal, so it should be
+    // nerfed. TODO: Nerf once people stop paying attention.
     {
       name: 'Reveal Vulnerability',
 

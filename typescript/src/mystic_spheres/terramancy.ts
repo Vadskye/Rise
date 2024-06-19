@@ -17,6 +17,8 @@ export const terramancy: MysticSphere = {
     {
       name: 'Shape Earth',
 
+      // TODO: nerf crafting efficiency, clarify how long it typically takes to dig
+      // through dirt
       effect: `
         Choose one unattended, nonmagical body of earth or unworked stone you touch.
         You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
