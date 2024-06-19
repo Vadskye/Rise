@@ -5,7 +5,6 @@ use crate::core_mechanics::{
     SpecialDefenseType,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
-use crate::equipment::StandardWeapon;
 use crate::equipment::Weapon;
 use crate::latex_formatting;
 use crate::monsters::{ChallengeRating, CreatureType, Knowledge, Role};
