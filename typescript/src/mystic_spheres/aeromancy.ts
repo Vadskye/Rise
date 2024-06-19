@@ -402,6 +402,9 @@ export const aeromancy: MysticSphere = {
         You cannot change the intensity of the weather beyond what would be possible without magic during this time frame.
         For example, you can change a clear sky into a light thunderstorm, but you cannot create a hurricane or tornado from untroubled air.
 
+        At any time during this spell's effect, you can choose a new weather pattern as a \\glossterm{standard action}.
+        When you do, the weather transitions from your original pattern to your new pattern over a five minute period.
+
         You can control the general tendencies of the weather, such as the direction and intensity of the wind.
         You cannot control specific applications of the weather, such as the location of lightning strikes.
         Contradictory weather conditions are not possible simultaneously.
