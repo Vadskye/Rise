@@ -409,7 +409,7 @@ export const aeromancy: MysticSphere = {
         You cannot control specific applications of the weather, such as the location of lightning strikes.
         Contradictory weather conditions are not possible simultaneously.
 
-        After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+        After the spell's effect ends, the weather continues on its natural course, which typically causes your chosen weather pattern to end.
         % TODO: This should be redundant with generic spell mechanics
         If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
       `,
