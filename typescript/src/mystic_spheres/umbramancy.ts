@@ -571,10 +571,22 @@ export const umbramancy: MysticSphere = {
 
       castingTime: 'one hour',
       effect: `
-        One ritual participant is never considered to be in natural sunlight.
-        This does not impair its vision, but protects it if it would otherwise suffer negative consequences for being in natural sunlight.
+        One ritual participant is never considered to be in \\glossterm{mundane} natural sunlight.
+        This does not impair its vision, but protects it if it would otherwise suffer negative consequences from sunlight.
+        Powerful \magical effects that mimic sunlight, such as \spell{solar flare}, still affect the target normally.
       `,
       rank: 3,
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Sunlight Ward+',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        name: "sunlight ward",
+        exceptThat: "the target is also protected from \magical effects that mimic sunlight.",
+      },
+      rank: 6,
       type: 'Attune (target)',
     },
 
