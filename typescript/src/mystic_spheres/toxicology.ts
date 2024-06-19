@@ -559,7 +559,7 @@ export const toxicology: MysticSphere = {
       castingTime: 'one hour',
       effect: `
         You can create a rank 1 poison.
-        This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \pcref{Creating Poisons}).
+        This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \pcref{Crafting Items}).
         Instead, you must supply ritual components equal to a rank 1 consumable item (5 gp).
 
         You can perform this ritual at a higher rank.
