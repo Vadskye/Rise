@@ -11,7 +11,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You carry materials necessary to refine low-grade alchemical items wherever you are.
+                You carry materials necessary to refine low-grade \glossterm{alchemical items} wherever you are.
                 This includes any item created using Craft (alchemy), such as potions, elixirs, and alchemist's fire.
                 Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
                 The items are just as effective when used as items created normally.
