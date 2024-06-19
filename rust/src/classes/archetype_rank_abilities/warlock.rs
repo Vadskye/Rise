@@ -212,7 +212,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 You learn one secret of your choice from the following list.
                 Each secret grants great power at a cost.
                 {
-                    \subcf{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace of armor around you.
+                    \subcf{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
                     This functions like light body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
                     It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
                     However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
@@ -739,7 +739,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You reduce the fatigue you gain from using your \ability{exchange soul conduit} and \ability{exchange vitality} abilities by one.
+                You reduce the fatigue you gain from using your \ability{exchange soul fragment} and \ability{exchange vitality} abilities by one.
             ",
             modifiers: Some(vec![Modifier::Power(8)]),
         },
