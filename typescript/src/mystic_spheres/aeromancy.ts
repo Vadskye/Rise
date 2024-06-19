@@ -647,7 +647,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         You \\glossterm{shapeshift} into a cloud of mist.
-        This makes you \\trait{incorporeal}, but you cannot speak and have no \\glossterm{free hands}.
+        This makes you \\trait{floating} and \\trait{intangible}, but you cannot speak and have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
       `,
