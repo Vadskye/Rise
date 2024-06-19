@@ -7,7 +7,7 @@ export const telekinesis: MysticSphere = {
   sources: ['arcane', 'pact'],
   specialRules: `
     All \\abilitytag{Barrier} effects from this mystic sphere are made of telekinetic force, not physical objects.
-    They can still be destroyed normally, but this makes them especially effective against \\glossterm{incorporeal} creatures.
+    They can still be destroyed normally, but this makes them especially effective against \\trait{incorporeal} creatures.
     Incorporeal creatures cannot enter or pass through the barriers, and must move around them in the same way that any other creature does.
     This allows a telekinetic barrier to completely block passage in a hallway for an incorporeal creature as long as the surrounding walls are too thick for it to pass through.
   `,
