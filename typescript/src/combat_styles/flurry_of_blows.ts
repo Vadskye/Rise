@@ -77,7 +77,7 @@ export const flurryOfBlows: CombatStyle = {
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you still deal half damage.
         \\hit Each damaged creature falls \\prone if your attack result beats its Fortitude defense.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
     },
