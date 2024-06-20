@@ -125,10 +125,10 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target takes damage and your attack result beats its Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+        \\hit If your attack result also beats its Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
-      tags: ['Size-Based'],
     },
 
     {
@@ -200,7 +200,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        \\hit If your attack beats the target's Fortitude defense, it falls \\prone.
+        \\hit If your attack also beats the target's Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
