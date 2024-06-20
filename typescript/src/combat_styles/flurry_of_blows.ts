@@ -76,7 +76,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you still deal half damage.
-        \\hit Each damaged creature falls \\prone if your attack result beats its Fortitude defense.
+        \\damaginghit If your attack also hits the target's Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
@@ -219,7 +219,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -230,7 +230,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
         Damage dealt by the strike is electricity damage in addition to its normal damage types.
-        \\hit If the target takes damage, it becomes \\stunned as a \\glossterm{condition}.
+        \\damaginghit The target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -243,7 +243,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a strike.
         You may reroll the accuracy roll and take the highest result.
-        \\hit If the target takes damage, it becomes \\dazzled as a \\glossterm{condition}.
+        \\damaginghit The target becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -254,7 +254,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
-        \\hit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },

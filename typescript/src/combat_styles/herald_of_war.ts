@@ -158,7 +158,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        \\damaginghit The target becomes \\goaded by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
@@ -169,7 +169,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target loses \\glossterm{hit points}, it becomes \\frightened by you.
+        \\damaginghit If the target loses \\glossterm{hit points}, it becomes \\frightened by you.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 1,
@@ -181,7 +181,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\hit If the target takes damage, it becomes \\frightened by you.
+        \\damaginghit The target becomes \\frightened by you.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
@@ -196,7 +196,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        \\hit If the target takes damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
+        \\damaginghit Compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
         On a hit, each target is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 3,
