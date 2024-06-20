@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        \\hit If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -40,7 +40,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        \\hit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -50,7 +50,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage} using a slashing weapon.
-        \\hit If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -60,7 +60,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike} using a slashing weapon.
-        \\hit If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -72,7 +72,7 @@ export const ripAndTear: CombatStyle = {
       // more damage compared to hitting with two weapons.
       effect: `
         Make a melee \\glossterm{dual strike} using two slashing weapons (see \\pcref{Dual Wielding}).
-        \\hit If the target takes damage from both weapons, it bleeds.
+        \\damaginghit If the target takes damage from both weapons, it bleeds.
         A bleeding creature takes 1d6 slashing damage +1 per two \\glossterm{power} during your next action.
       `,
       rank: 1,
@@ -96,7 +96,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        \\hit If the target takes damage and your attack result beats its Reflex defense, it takes fire damage equal to your power during your next action.
+        \\damaginghit If your attack also beats the target's Reflex defense, it takes fire damage equal to your power during your next action.
       `,
       rank: 3,
     },
@@ -107,7 +107,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike with double \\glossterm{weapon damage} using a slashing weapon.
         Damage dealt by the strike is fire damage in addition to its normal damage types.
-        \\hit If the target takes damage and your attack result beats its Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
+        \\damaginghit If your attack also beats the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
       `,
       rank: 7,
     },
@@ -178,7 +178,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{weak strike} using a slashing weapon.
-        \\hit If the target loses hit points, it takes damage from the strike again during your next action.
+        \\damaginghit If the target loses hit points, it takes damage from the strike again during your next action.
       `,
       rank: 1,
     },
@@ -188,7 +188,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike using a slashing weapon.
-        \\hit If the target loses hit points, it takes damage from the strike again during each of your next two actions.
+        \\damaginghit If the target loses hit points, it takes damage from the strike again during each of your next two actions.
       `,
       rank: 5,
     },

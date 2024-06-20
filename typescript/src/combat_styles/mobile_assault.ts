@@ -62,7 +62,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
+        \\damaginghit You can \\glossterm{briefly} move through the target's space as if it was not there.
       `,
       rank: 1,
     },
@@ -190,7 +190,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        \\hit If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
@@ -202,7 +202,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\hit If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
+        \\damaginghit The target is \\frightened by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,

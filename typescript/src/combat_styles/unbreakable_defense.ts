@@ -134,7 +134,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\damaginghit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -237,7 +237,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target takes damage and your attack result beats its Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
+        \\damaginghit If your attack also hits the target's Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
@@ -249,7 +249,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
-        \\hit If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        \\damaginghit The target becomes \\goaded by you as a \\glossterm{condition}.
         This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,
