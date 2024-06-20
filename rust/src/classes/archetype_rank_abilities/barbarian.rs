@@ -490,16 +490,15 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
                     % 50% chance of +5.5 accuracy, so almost +3 accuracy
-                    You reduce your \glossterm{explosion target} by 5 (see \pcref{Exploding Attacks}).
-
-                    If you reduce your explosion target below 1 with this attack, your second attack roll benefits from the excess reduction.
-                    For example, if you reduce your explosion target by 10, your first attack roll would always explode and your second attack roll would explode on a 9 or 10.
+                    You reduce your \glossterm{explosion target} with the attack by 5, which makes it much more likely to \glossterm{explode} (see \pcref{Exploding Attacks}).
 
                     \rankline
-                    \rank{4} The explosion target reduction increases to 7.
-                    \rank{5} The explosion target reduction increases to 9.
-                    \rank{6} The explosion target reduction increases to 11.
-                    \rank{7} Your \glossterm{weapon damage} with the attack is doubled.
+                    % This strike is basically just used for crit-fishing, which only matters when you explode.
+                    % So this is roughly +1-2 accuracy, but doesn't strictly require explosion.
+                    \rank{4} You also get a +2 accuracy bonus for the purpose of determining whether you get a \glossterm{critical hit} with the strike.
+                    \rank{5} The accuracy bonus increases to +4.
+                    \rank{6} If you get a \glossterm{critical hit}, your \glossterm{weapon damage} with the attack is doubled.
+                    \rank{7} Your weapon damage with the attack is always doubled.
                 \end{activeability}
             ",
             modifiers: None,
