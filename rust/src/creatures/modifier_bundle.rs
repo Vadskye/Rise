@@ -65,6 +65,7 @@ impl ModifierBundle {
                     name: "Incorporeal".to_string(),
                 }),
             ],
+            // TODO: mark as unable to jump
             Self::Legless => vec![
                 Modifier::Immune(SpecialDefenseType::Debuff(Debuff::Prone)),
                 // Don't give this a named callout, because "legless" is an awkward name and it
