@@ -2525,13 +2525,14 @@ function handleVitalRolls() {
   onGet(
     {
       miscName: "vital_rolls",
-      numeric: ["vital_wound_count"],
+      numeric: ["vital_wound_count", "body_armor_vital_rolls"],
     },
     (v) => {
-      const totalValue = v.misc - v.vital_wound_count * 2;
+      const totalValue = v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
       setAttrs({
         vital_rolls: totalValue,
         vital_rolls_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: "body armor", value: v.body_armor_vital_rolls },
           { name: "2x vital wound count", value: -v.vital_wound_count * 2 },
         ]),
       });
