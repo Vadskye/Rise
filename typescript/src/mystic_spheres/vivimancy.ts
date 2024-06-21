@@ -109,12 +109,14 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Restoration',
 
+      // dr2 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr1
-        The target regains 1d8 \\glossterm{hit points} +1 per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{hit points} +1 per power and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
+      // standard rank 2 power would be 3, so 7.5 at dr3 or 9 at dr4
       scaling: { special: 'The healing increases by +2 for each rank beyond 1.' },
       tags: ['Swift'],
     },
@@ -122,25 +124,25 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Empowered Restoration',
 
+      // dr5 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        % dr4h
-        The target regains 1d6 hit points plus 1d6 per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d8 hit points plus 1d8 per 3 power and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
-      // At rank 5, expected power is about 10, so dr5h is 6d6 = 21, and dr6h would be
-      // 22.5.
-      scaling: { special: 'The healing increases by 1d6 for each rank beyond 4.' },
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
       tags: ['Swift'],
     },
 
     {
       name: 'Total Restoration',
 
+      // dr8 for short range, +1dr from healing bonus. Use drh to really reward
+      // investment.
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr7h
-        The target regains 1d6 \\glossterm{hit points} per power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{hit points} per power and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
       tags: ['Swift'],
@@ -149,14 +151,14 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Circle of Life',
 
-      // TODO: unclear rank
+      // TODO: unclear rank. Currently using dr4.
       effect: `
         You create a zone of life energy in a \\smallarea radius around your location.
-        When you cast this spell, and during each of your subsequent actions, each living creature in the area regains 1d8 hit points +1 per power.
+        When you cast this spell, and during each of your subsequent actions, each living creature in the area regains 1d10 hit points plus 1d6 per 3 power.
         This cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 4,
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 4.' },
       tags: ['Sustain (standard)', 'Swift'],
     },
 
@@ -301,7 +303,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Wellspring of Life',
 
-      // This has a larger effect on large healing values, so it's not as obvious of a
+      // This has a larger effect on large healing values, so it's not a great 
       // combo with incremental regeneration-style healing. 
       effect: `
         Whenever you regain hit points, you regain the maximum possible number instead of rolling.

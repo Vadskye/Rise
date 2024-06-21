@@ -453,9 +453,10 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mending',
 
+      // dr3 from short range. No healing buff since this is more versatile and in an odd
+      // sphere for healing.
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
-        % d2
         The target regains 1d8 \\glossterm{damage resistance} \\plus1 per \\glossterm{power} if it is a creature, or that many hit points if it is an object.
         If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
@@ -469,7 +470,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'mending',
-        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
+        exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
@@ -479,11 +480,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Brief Regeneration',
 
-      // At rank 4, expected power is about 9. Normal healing would be dr4, which is
-      // 1d10+3d6 = 16, so 8 per round is good.
+      // At rank 4, expected power is about 9. Normal healing would be dr5, which is
+      // 1d8+3d8 = 18. This is 27 instead, which is a big buff, but healing is generally
+      // best as an emergency button and this requires planning.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per 2 \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 3,
@@ -493,11 +495,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Empowered Brief Regeneration',
 
-      // At rank 6, expected power is about 12. Normal healing would be dr7, which is
-      // 8d8 = 36, so 18 per round is good.
+      // At rank 6, expected power is about 12. Normal healing would be dr8, which is
+      // 10d8 = 45. This is 6d10 each = 66 instead, which is about 50% more like the rank
+      // 3 version.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d8 per 3 \\glossterm{power} at the end of each round.
+        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
         When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,

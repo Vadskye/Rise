@@ -638,9 +638,10 @@ export const enchantment: MysticSphere = {
     {
       name: 'Restore Bravado',
 
+      // dr3l
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 2d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
+        The target regains 3d6 \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
@@ -651,9 +652,10 @@ export const enchantment: MysticSphere = {
     {
       name: 'Empowered Restore Bravado',
 
+      // dr7l
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 7d10 \\glossterm{damage resistance}, and increases its \\glossterm{fatigue level} by one.
+        The target regains 7d10 \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +4 bonus to its Mental defense this round.
       `,
       rank: 6,
