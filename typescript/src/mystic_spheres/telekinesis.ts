@@ -424,10 +424,11 @@ export const telekinesis: MysticSphere = {
       name: 'Mind Arrow',
 
       effect: `
-        Make a \\glossterm{strike} using a projectile as if you were firing it from a longbow.
-        You do not have to be proficient with bows, and you do not have to manually draw the arrow.
-        It must be easily accessible on your person, such as in a quiver.
+        Make a \\glossterm{strike} using an arrow as if you were firing it from a longbow.
         As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
+
+        The arrow must be easily accessible on your person, such as in a quiver.
+        You do not have to be proficient with bows, and you do not have to manually draw the arrow.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 1,
