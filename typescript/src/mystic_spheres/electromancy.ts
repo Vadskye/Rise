@@ -203,9 +203,10 @@ export const electromancy: MysticSphere = {
     {
       name: 'Energize',
 
+      // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 per 3 power \\glossterm{damage resistance} and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \glossterm{damage resistance} + 1d8 per 3 power and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 3,
@@ -216,9 +217,10 @@ export const electromancy: MysticSphere = {
     {
       name: 'Empowered Energize',
 
+      // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d10 \\glossterm{damage resistance} plus 1d10 per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 4d8 \\glossterm{damage resistance} plus 1d8 per 2 power and increases its \\glossterm{fatigue level} by one.
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,
