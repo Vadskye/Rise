@@ -20,59 +20,37 @@
 
         \subsubsection{Glancing Blows}\label{Glancing Blows}
             When you would miss on a damaging attack by 2 or less, you instead get a \glossterm{glancing blow}.
+            A glancing blow deals half damage.
+            It also does not have any special effects other than immediate damage, unless those effects would also happen on a miss.
             Non-damaging attacks cannot cause glancing blows.
-
-            All damaging attacks have a standard glancing blow effect.
-            When you get a glancing blow against a target, you roll damage as if you had hit, but you halve the result to determine your total damage dealt.
-            The attack also does not have any other special effects other than immediate damage, unless those effects would also happen on a miss.
-            For example, an attack that inflicts a condition if the target loses hit points from the attack would not inflict that condition on a glancing blow, even if the target lost hit points.
 
             A glancing blow is neither a hit nor a miss.
             However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
             When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
-            When an attack roll \glossterm{explodes}, you roll it again and add the second result to the original result before applying your \glossterm{accuracy}.
-            If you roll a 10 on the extra roll, you keep rolling until you stop rolling a 10 and add all of the rolls together.
+            That means you roll it again and add both values to determine your total.
+            If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
 
             The number you need to roll to explode is called your \glossterm{explosion target}.
-            Some effects can reduce your explosion target.
+            It is normally 10, but some effects can reduce your explosion target.
             For example, if your explosion target is reduced by 2, you explode when you roll an 8, 9, or 10.
-            All effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
-            In addition, some effects can cause your roll to \glossterm{explode} without rolling a 10.
+            Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
 
         \subsubsection{Critical Hits}\label{Critical Hits}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
-            Some attacks have specific effects when you get a critical hit.
-
-            All damaging attacks roll double damage dice on a critical hit unless otherwise stated.
-            This includes any damage dice from \glossterm{extra damage}.
-            Any flat modifiers to damage are also doubled.
-            If this would cause you to roll an unreasonably large number of dice, you can just multiply the result from your normal damage dice instead at the GM's discretion.
-            This is a separate damage multiplier from all others, so getting a critical hit with an attack that already deals double damage would deal four times normal damage.
+            Damaging attacks normally deal double damage on a critical hit.
+            Some non-damaging attacks also have special effects on a critical hit.
 
             For every additional increment of 10 by which you beat the target's defense, the effect of a critical hit is repeated, if applicable.
             For example, if you get a double critical with attack that has a critical hit effect of ``The condition must be removed an additional time.'', the condition must be removed two additional times.
             As normal, two doublings become a tripling, so a double critical hit with a damaging attack would roll triple the damage dice.
 
+            The damage multiplier from a critical hit is multiplicative with all other damage modifiers, including attacks that say they deal double damage.
+            Typically, you roll damage dice twice for a critical hit and sum both results, along with doubling any flat modifiers.
+            If this would require you to roll an inconveniently large number of dice, you can just multiply the result from your normal damage dice instead.
+
             Objects are not normally subject to critical hits.
-
-    \subsection{Dealing Damage}\label{Dealing Damage}
-        Many \glossterm{attacks} deal damage to their targets.
-        When a creature is dealt damage, it gets closer to death (see \pcref{Taking Damage}).
-        Damaging attacks roll some number of dice and sum up the result to determine their damage.
-        The details are given in each attack's description.
-
-        \subsubsection{Dice Pools}\label{Dice Pools}
-            All attacks deal damage based on a \glossterm{dice pool}.
-            Likewise, healing abilities usually heal hit points based on a dice pool.
-            Dice pools are written with the number of dice, followed by ``d'', followed by the size of dice to roll.
-            For example, 2d6 means you roll two six-sided dice.
-            You always sum the roll of all dice rolled in a dice pool to determine the total result.
-
-            Some dice pools also have fixed numeric modifiers.
-            For example, a normal weapon strike rolls dice based on the weapon used, and adds a fixed damage modifier based on your \glossterm{mundane power}.
-            You sum the die roll with the extra modifier to determine the total.
 
     \subsection{Weapon Damage}\label{Weapon Damage}
         Some abilities deal damage based on the weapon you use the ability with.
@@ -83,10 +61,50 @@
         Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
         However, you might use your \glossterm{magical power} instead for \magical strikes.
 
-        \subsubsection{Weak Strikes}
-            Some abilities make weak strikes, which deal less damage than normal strikes.
-            When you make a weak strike, you halve flat damage bonuses, such as from your \glossterm{power}.
-            Weak strikes do not halve flat damage penalties, such as if you have a negative power.
+    \subsection{Extra Damage}\label{Extra Damage}
+        Some abilities add \glossterm{extra damage} to your damaging attacks.
+        Extra damage generally works in the same way as damage that is inherently part of the attack.
+        It is halved on a glancing blow, doubled on critical hits, and so on.
+
+        There are two main differences between extra damage and an attack's base damage.
+        First, extra damage is not \glossterm{weapon damage}.
+        Second, any individual target of an attack can only take \glossterm{extra damage} once from that attack.
+
+        For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
+        Because both of those damage instances are caused by a single attack roll, extra damage only applies to the first damage instance.
+        However, a \spell{wall of fire} would apply extra damage each time a creature passes through it, since a separate attack is made for each instance of damage.
+
+        Most sources of extra damage do not have a specific damage type.
+        The extra damage normally has the same damage type as the attack's base damage.
+        If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
+
+    \subsection{Weak Strikes}
+        Some abilities make weak strikes, which deal less damage than normal strikes.
+        When you make a weak strike, you halve flat damage bonuses, such as from your \glossterm{power}.
+        Weak strikes do not halve flat damage penalties, such as if you have a negative power.
+
+\section{Taking Damage}\label{Taking Damage}
+    Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
+    To calculate your damage resistance and hit points, see \pcref{Combat Statistics}.
+    This section explains those concepts in more detail.
+
+    When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+    Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
+    Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
+    If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+
+    Monsters typically do not gain vital wounds like player characters do.
+    Instead, they simply die or fall unconscious when they reach 0 hit points.
+
+    \subsection{Negative Hit Points}\label{Negative Hit Points}
+        You can have negative hit points, but only briefly.
+        When your hit points drop below 0, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+        You gain an additional vital wound for each increment of your full maximum hit points that you reach in negative hit points.
+
+        If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
+        In addition, your hit points are reset to 0 at the end of the round if they are still negative.
+        This is checked after applying all healing and damage that takes place at the end of the round.
+        This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
 
     \subsection{Damage Types}\label{Damage Types}
         \includegraphics[width=\columnwidth]{core mechanics/damage types}
@@ -130,56 +148,6 @@
             If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
             Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
             If you do, you deal half damage with the strike.
-
-        \subsection{Extra Damage}\label{Extra Damage}
-            Some abilities add \glossterm{extra damage} to your damaging attacks.
-            Extra damage applies when damaging attacks hit or get a \glossterm{glancing blow}.
-            Extra damage is halved on a glancing blow and doubled on a critical hit in the same way as the attack's base damage.
-
-            Extra damage is applied equally to all targets that are damaged simultaneously.
-            A \spell{fireball} spell would apply extra damage to all targets, not just one target in the area.
-            Similarly, a \spell{chain lightning} spell would apply the extra damage to the primary target and each secondary target.
-
-            Most sources of extra damage do not have a specific damage type.
-            The extra damage normally has the same damage type as the attack's base damage.
-            If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
-
-            Some damaging abilities affect extra damage differently.
-            For example, the \ability{enraged strike} ability doubles the \glossterm{weapon damage} of the attack, but does not double any extra damage applied to the attack.
-
-            \subsubsection{Multiple Extra Damage Instances}
-                Normally, extra damage only applies once to an individual ability.
-                It is added the first time the ability deals damage.
-                For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
-                Any extra damage would only be added to the immediate damage, and would not be added to the damage next round.
-                Effects that make multiple strikes, and \glossterm{dual strikes} which make multiple attacks, still only apply extra damage on the first hit or glance.
-
-                \glossterm{Deep attunement} abilities are an exception to this rule.
-                A damaging deep attunement ability applies extra damage whenever it deals damage.
-                For example, the \spell{retributive spikes} spell applies extra damage individually to each reactive attack.
-
-\section{Taking Damage}\label{Taking Damage}
-    Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
-    To calculate your damage resistance and hit points, see \pcref{Combat Statistics}.
-    This section explains those concepts in more detail.
-
-    When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-    Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
-    Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
-    If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
-
-    Monsters typically do not gain vital wounds like player characters do.
-    Instead, they simply die or fall unconscious when they reach 0 hit points.
-
-    \subsection{Negative Hit Points}\label{Negative Hit Points}
-        You can have negative hit points, but only briefly.
-        When your hit points drop below 0, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
-        You gain an additional vital wound for each increment of your full maximum hit points that you reach in negative hit points.
-
-        If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
-        In addition, your hit points are reset to 0 at the end of the round if they are still negative.
-        This is checked after applying all healing and damage that takes place at the end of the round.
-        This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
 
 \section{Vital Wounds}\label{Vital Wounds}
     \includegraphics[width=\columnwidth]{core mechanics/vital wounds}
@@ -364,19 +332,19 @@
             That's a natural consequence of not coordinating effectively.
 
         \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-            Most healing abilities are used as a standard action and are \abilitytag{Swift}, so they resolve before you take any incoming damage.
-            However, some healing abilities trigger based on actions you take, such as healing if you hit an enemy, or at specific times.
             If you regain hit points or damage resistance and take damage simultaneously, apply all damaging effects before applying any healing effects.
             This means you gain and apply the effects of any vital wounds before you are healed.
+            Most healing abilities are \abilitytag{Swift}, so this situation should be uncommon.
 
-    % This may be too complicated
     \subsection{Conflicting Actions}\label{Conflicting Actions}
         Sometimes, actions that occur in the same phase can be mutually impossible.
         Almost all conflicting actions are the result of competing movements.
-        When actions conflict, each creature involved rolls an \glossterm{initiative} check (see \pcref{Initiative}).
+        When actions conflict, each creature involved rolls an \glossterm{initiative} check.
+        Your initiative modifier is equal to your Dexterity.
+
+        % This may be too complicated?
         Starting from the highest check result and continuing to the lowest, each creature immediately resolves its chosen action.
         Creatures that resolve their action afterward accomplish as much of their intended action as possible before being blocked or otherwise prevented.
-
         For example, if three different creatures attempt to move into the same space, only the creature with the highest initiative check would actually enter that space.
         The other two creatures would take their intended path, but they would interrupt their movement when they cannot proceed farther, generally because they run into the space occupied by the first creature.
 
@@ -389,16 +357,6 @@
         Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
         This can help prevents melee characters from feeling stuck or useless.
         In addition, the \ability{charge} universal ability can be helpful in such cases.
-
-        \subsubsection{Initiative}\label{Initiative}
-            When multiple creatures take mutually impossible actions simultaneously they must roll an \glossterm{opposed check} with their initiative modifier.
-            For details, see \pcref{Conflicting Actions}.
-            Your initiative modifier is equal to your movement speed that you are using to take the action.
-            In the unusual situation that no movement speed is relevant, just roll without applying a modifier.
-
-            For example, if a dwarf and a human are racing to be the first one to a door, they would both roll d10.
-            The dwarf would add 20 to their roll, and the human would add 30, assuming neither has any extra movement speed modifiers.
-            The winner would reach the door first, and the loser would stop in the last open space before they reach the door.
 
 \section{Movement and Positioning}\label{Movement and Positioning}
     This section describes how creatures move and position themselves when time and location are important to measure precisely.
@@ -458,14 +416,11 @@
 
     \subsection{Combining Movement Modes}
         You can move using multiple different movement modes in the same phase in any order.
-        When you do, you must obey two restrictions.
-        First, your movement using any individual mode must not exceed your speed with that mode.
-        % This means that having a high land speed can improve your ability to other movement modes, which is weird.
-        Second, your total distance moved across all modes must not exceed your maximum speed with any individual mode.
+        For every 5 feet of speed that you use, you reduce your remaining speed with that movement mode and all movement modes that have an equal or greater remaining speed.
 
         For example, assume you have a 10 foot climb speed, a 20 foot swim speed, and a 40 foot land speed.
-        You could climb 10 feet, swim 20 feet, and move on land for 10 feet all in the same phase.
-        However, if you climb 10 feet, but are unable to swim or move on land, such as if you are partway up a cliff, you cannot move any farther.
+        If you swim 10 feet, you could still climb 10 feet, swim 10 feet, or walk 30 feet as part of the same movement.
+        Swimming an additional 10 feet would prevent you from climbing, but you could still walk 20 feet.
 
     \subsection{Jumping}\label{Jumping}
         Creatures with legs can jump as part of movement.
@@ -663,57 +618,38 @@
         Many abilities allow you to make one or more strikes.
         Whenever you make a strike, you can choose which kind of strike to make.
 
-        Your \glossterm{accuracy} with a strike is the same as your accuracy with most other abilities (see \pcref{Accuracy}).
+        Your \glossterm{accuracy} with a strike adds the accuracy modifier from the weapon you are attacking with.
         Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
-        Most strikes are \glossterm{mundane} abilities.
-        If a \magical ability causes you to make a strike, you use your \magical power to determine your weapon damage.
 
-        Whenever you make a strike, you must choose one or two weapons to make the strike with.
-        Attacking with two weapons at once has specific restrictions and additional effects (see \pcref{Dual Strikes}).
+        There are many special rules that can modify how you make strikes.
+        For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
+        The rules for strikes listed here simply define the normal behavior.
 
         \begin{activeability}{Basic Strike -- Melee}
             \label{Melee Strike}
             \rankline
-            Choose one or two weapons you are wielding and are able to attack with.
-            For each chosen weapon, make an attack vs. Armor with that weapon against anything adjacent to you.
+            Make an attack vs. Armor using a weapon against anything adjacent to you.
             You must have \glossterm{line of effect} to the target.
-            If you are using a \weapontag{Long} weapon, you can instead attack anything within 10 feet of you.
-
-            You must have a Dexterity of at least 2 to attack with two weapons at once.
-            When you do, you take a \minus1 accuracy penalty to both attacks for each non-\weapontag{Light} weapon you attack with in this way.
-
-            \hit You deal the target \glossterm{weapon damage} from each weapon you hit with (see \pcref{Weapon Damage}).
-            If you hit with two weapons, \glossterm{extra damage} only applies once.
-            \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
+            \hit You deal the target \glossterm{weapon damage} from the weapo.
         \end{activeability}
 
         \begin{activeability}{Basic Strike -- Projectile}
             \label{Projectile Strike}
             \rankline
-            Choose one weapon with the Projectile \glossterm{weapon tag} that you are wielding and are able to attack with (see \pcref{Weapon Tags}).
-            Make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
-            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
-
-            \hit You deal the target \glossterm{weapon damage} from the weapon (see \pcref{Weapon Damage}).
-            \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
+            Make an attack vs. Armor using a \weapontag{Projectile} weapon against anything that you have \glossterm{line of effect} to.
+            If the target is adjacent to you, you take a \minus4 accuracy penalty.
+            If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
+            \hit You deal the target \glossterm{weapon damage} from the weapo.
         \end{activeability}
 
         \begin{activeability}{Basic Strike -- Thrown}
             \label{Thrown Strike}
             \rankline
-            Choose one or two non-\weapontag{Projectile} weapons that you are wielding and are able to attack with.
-            For each chosen weapon, make an attack vs. Armor with that weapon against anything that you have \glossterm{line of effect} to.
-            You suffer a \glossterm{longshot penalty} if the target is at \glossterm{long range} from you with that weapon (see \pcref{Weapon Range Limits}).
-
-            You must have a Dexterity of at least 2 to attack with two weapons at once.
-            When you do, you take a \minus1 accuracy penalty to both attacks for each non-\weapontag{Light} weapon you attack with in this way.
-
-            You can throw a weapon that does not have the \weapontag{Thrown} weapon tag.
-            When you do, your \glossterm{range limits} are 10/30, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
-
-            \hit You deal the target \glossterm{weapon damage} from each weapon you hit with (see \pcref{Weapon Damage}).
-            If you hit with two weapons, \glossterm{extra damage} only applies once.
-            \crit You roll twice as many damage dice with the attack, as normal for critical hits (see \pcref{Critical Hits}).
+            Make an attack vs. Armor using a non-\weapontag{Projectile} weapon against anything that you have \glossterm{line of effect} to.
+            If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
+            Otherwise, your range limits are 10/20, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
+            If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
+            \hit You deal the target \glossterm{weapon damage} from the weapon.
         \end{activeability}
 
         \subsubsection{Dual Strikes}\label{Dual Strikes}
@@ -726,21 +662,19 @@
             Each attack deals its full \glossterm{weapon damage} if it hits.
             You make the attacks sequentially, so you can direct the second attack at a different target depending on the results of the first attack.
 
-            Both attacks in a dual strike are still considered part of a single strike.
-            Any special effects from the strike, such as conditions or extra damage, apply equally to all targets of both attacks.
-            Likewise, hitting the same target with both attacks only inflicts a single instance of any conditions.
+            Although a dual strike make two attack rolls, it is still considered to be a single attack.
+            Even if you hit a target with both weapons, you still only apply special effects of the attack once.
+            This includes \glossterm{extra damage}, any \glossterm{conditions} caused by the strike, and so on.
+            Each target hit by either weapon still suffers those full special effects, just like other attacks that can hit multiple targets.
 
-            Dual-wielding has four downsides.
+            Dual-wielding has three downsides.
             \begin{itemize}
                 \item You cannot get a \glossterm{glancing blow} with either weapon while attacking with two weapons at once (see \pcref{Glancing Blows}).
                     If you would miss by 1 or 2, it is considered a full miss instead of a glancing blow.
                 \item You take a \minus1 accuracy penalty with both attacks.
                     If your Dexterity is 4 or higher, this penalty is removed.
                 \item For each non-\weapontag{Light} weapon you dual-wield with, you take an additional \minus1 accuracy penalty with both attacks.
-                    This penalty increases to \minus2 for each \weapontag{Heavy} weapon.
-                \item Any \glossterm{extra damage} never applies more than once to a single strike.
-                    Extra damage applies if you hit with either weapon, but you don't double extra damage if you hit with both weapons.
-                    If it matters, extra damage always comes from the first weapon you successfully hit a target with.
+                    Each \weapontag{Heavy} weapon instead imposes a \minus2 penalty.
             \end{itemize}
 
             Some abilities check if you hit or miss with a \glossterm{strike}.
