@@ -233,7 +233,7 @@ def armor(destination, armor_type):
             ),
             (
                 labeled_number_input(
-                    "Speed modifier",
+                    "Speed mod",
                     {"class": "armor-speed"},
                     input_attributes={"name": parseable_type + "_speed"},
                 )
