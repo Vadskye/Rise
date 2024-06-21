@@ -1859,6 +1859,7 @@ function handleNonArmorDefense(defense, attribute) {
           [
             { name: "level", value: levelModifier },
             { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
+            { name: "size", value: v.size_reflex_modifier },
             { name: "vital", value: v.all_defenses_vital_wound_modifier },
             { name: "CR", value: crModifier },
           ]
