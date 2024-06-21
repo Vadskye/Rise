@@ -52,10 +52,12 @@ def create_page(_destination):
     )
 
 
-def stat_row(statistic_name, display_name=None, is_hideable=False):
+def stat_row(statistic_name, display_name=None, is_hideable=False, explanation_key=None):
     if display_name is None:
         display_name = statistic_name
     parseable = get_modifier_key(statistic_name)
+    if explanation_key is None:
+        explanation_key = parseable + "_explanation"
     statistic_row = flex_row(
         {"class": "statistic-row"},
         [
@@ -70,7 +72,7 @@ def stat_row(statistic_name, display_name=None, is_hideable=False):
             textarea(
                 {
                     "class": "statistic-explanation",
-                    "name": parseable + "_explanation",
+                    "name": explanation_key,
                     "readonly": True,
                 }
             ),
@@ -107,7 +109,7 @@ def non_attribute():
         [
             div({"class": "section-header"}, "Non-Attribute Statistics"),
             stat_row("Attunement points"),
-            stat_row("Damage resistance"),
+            stat_row("damage_resistance_max", display_name="Damage resistance", explanation_key="damage_resistance_explanation"),
             stat_row("Land speed"),
             stat_row("Vital rolls"),
         ]
@@ -139,7 +141,7 @@ def constitution_based():
             div({"class": "section-header"}, "Constitution-Based"),
             stat_row("Fatigue tolerance"),
             stat_row("Fortitude"),
-            stat_row("Hit points"),
+            stat_row("hit_points_max", display_name="Hit points", explanation_key="hit_points_explanation"),
         ]
     )
 

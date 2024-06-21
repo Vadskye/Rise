@@ -902,7 +902,10 @@ function handleArmorDefense() {
     (v) => {
       // calculate attributeModifier
       let attributeModifier = 0;
-      let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class, BASE_CLASS_MODIFIERS[v.base_class].armor_usage_class];
+      let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class]
+      if (v.base_class) {
+        all_usage_classes.push(BASE_CLASS_MODIFIERS[v.base_class].armor_usage_class);
+      }
       const worstUsageClass =
         all_usage_classes.find((u) => u === "heavy") || all_usage_classes.find((u) => u === "medium") || "light";
       if (worstUsageClass === "medium") {
@@ -1841,16 +1844,14 @@ function handleNonArmorDefense(defense, attribute) {
     (v) => {
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
+      const sizeModifier = defense === "reflex" ? v.size_reflex_modifier : 0;
       let totalValue =
         levelModifier +
         crModifier +
+        sizeModifier +
         v[attribute] +
         v.misc +
         v.all_defenses_vital_wound_modifier;
-
-      if (defense === "reflex") {
-        totalValue += v.size_reflex_modifier;
-      }
 
       setAttrs({
         [defense]: totalValue,
@@ -1859,7 +1860,7 @@ function handleNonArmorDefense(defense, attribute) {
           [
             { name: "level", value: levelModifier },
             { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
-            { name: "size", value: v.size_reflex_modifier },
+            { name: "size", value: sizeModifier },
             { name: "vital", value: v.all_defenses_vital_wound_modifier },
             { name: "CR", value: crModifier },
           ]
