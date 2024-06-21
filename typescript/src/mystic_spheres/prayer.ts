@@ -301,8 +301,9 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
+      // dr2, +1dr for healing buff
       effect: `
-        Choose an \\glossterm{ally} within \\shortrange.
+        Choose an \\glossterm{ally} within \\medrange.
         The target regains 1d8 \\glossterm{damage resistance} +1 per \\glossterm{power} and increases its \\glossterm{fatigue level} by one.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
@@ -314,9 +315,10 @@ export const prayer: MysticSphere = {
     {
       name: 'Empowered Boon of Shielding',
 
+      // dr5, +1dr for healing buff
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
+        exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
       },
       rank: 5,
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
