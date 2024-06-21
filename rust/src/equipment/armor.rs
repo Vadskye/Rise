@@ -11,7 +11,7 @@ pub enum Armor {
     Buckler,
 
     // Medium armor
-    Rawhide(Option<ArmorMaterial>),
+    LeatherLamellar(Option<ArmorMaterial>),
     Scale(Option<ArmorMaterial>),
     Brigandine(Option<ArmorMaterial>),
     StandardShield,
@@ -249,14 +249,14 @@ impl Armor {
             },
 
             // Medium armor
-            Self::Rawhide(m) => ArmorDefinition {
+            Self::LeatherLamellar(m) => ArmorDefinition {
                 accuracy_modifier: 0,
                 damage_resistance: calc_dr(4, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 2,
                 item_rank: 1,
-                name: "rawhide".to_string(),
+                name: "leather lamellar".to_string(),
                 speed_modifier: 0,
             },
             Self::Scale(m) => ArmorDefinition {
@@ -348,7 +348,7 @@ impl Armor {
             Self::Buckler => &None,
 
             // Medium armor
-            Self::Rawhide(m) => m,
+            Self::LeatherLamellar(m) => m,
             Self::Scale(m) => m,
             Self::Brigandine(m) => m,
             Self::StandardShield => &None,
