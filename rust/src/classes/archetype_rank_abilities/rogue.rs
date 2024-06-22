@@ -774,7 +774,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} You can target an additional creature within range.
-                    \rank{5} If the target has no remaining damage resistance, it does not become immune to this effect.
+                    \rank{5} The range increases to \longrange.
                     \rank{7} The maximum number of targets increases to 3.
                 \end{activeability}
             ",
