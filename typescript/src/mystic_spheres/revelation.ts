@@ -733,31 +733,14 @@ export const revelation: MysticSphere = {
     {
       name: 'Locate Object',
 
-      castingTime: 'one minute',
-
+      castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-        it locates objects instead of creatures.
-        Objects currently being worn or carried by creatures cannot be found by this ritual.
+          it locates \\glossterm{unattended} objects instead of creatures.
         `,
         name: 'locate creature',
       },
       rank: 3,
-    },
-
-    {
-      name: 'Read Magic',
-
-      // original targets: yourself
-      castingTime: 'one minute',
-      effect: `
-        You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
-        This can allow you to read ritual books and similar objects created by other creatures.
-        After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
-        `,
-
-      rank: 1,
-      type: 'Attune',
     },
 
     {
@@ -812,11 +795,11 @@ export const revelation: MysticSphere = {
     {
       name: 'Sending',
 
-      // original targets: any creature within 100 miles of you
       castingTime: 'one hour',
       effect: `
+        Choose a creature within 100 miles of you.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
-        However,  must specify your target with a precise mental image of its appearance.
+        However, you must specify your target with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the target.
         If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
 
@@ -824,19 +807,31 @@ export const revelation: MysticSphere = {
         The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
 
         After the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
-        Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm{dismissed}.
+        Once it speaks twenty-five words, or you stop sustaining the effect, effect ends.
         `,
 
-      rank: 3,
+      rank: 2,
+      type: 'Sustain (standard)',
+    },
+
+    {
+      name: 'Rapid Sending',
+
+      castingTime: 'one minute',
+      functionsLike: {
+        exceptThat: `
+          the casting time is much shorter.
+        `,
+        name: 'sending',
+      },
+      rank: 4,
       type: 'Sustain (standard)',
     },
 
     {
       name: 'Distant Sending',
 
-      // original targets: any creature on the same plane as you
       castingTime: 'one hour',
-
       functionsLike: {
         exceptThat: `
         there is no distance limitation.
@@ -844,23 +839,21 @@ export const revelation: MysticSphere = {
         `,
         name: 'sending',
       },
-      rank: 5,
+      rank: 4,
       type: 'Sustain (standard)',
     },
 
     {
       name: 'Interplanar Sending',
 
-      // original targets: any creature
       castingTime: 'one hour',
-
       functionsLike: {
         exceptThat: `
-        the target does not have to be on the same plane as you.
+          there is no distance limitation, and the target does not have to be on the same plane as you.
         `,
-        name: 'distant sending',
+        name: 'sending',
       },
-      rank: 7,
+      rank: 6,
       type: 'Sustain (standard)',
     },
 
@@ -883,14 +876,14 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Long-Distance Bond',
+      name: 'Distant Telepathic Bond',
 
       castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
-        the effect works at any distance.
-        The communication still does not function across planes.
+          the effect works at any distance.
+          The communication still does not function across planes.
         `,
         name: 'telepathic bond',
       },
@@ -899,13 +892,13 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Planar Bond',
+      name: 'Interplanar Telepathic Bond',
 
       castingTime: 'one minute',
 
       functionsLike: {
         exceptThat: `
-        the effect works at any distance and across planes.
+          the effect works at any distance and across planes.
         `,
         name: 'telepathic bond',
       },
@@ -933,7 +926,7 @@ export const revelation: MysticSphere = {
         Instead, it automatically tries to follow the target to stay in its space.
         At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
         targeting: `
-        Make an attack vs. Mental against one creature on the same plane as you.
+        Make an attack vs. Mental against one creature within 100 miles of you.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
         However,  must specify your target with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the target.
@@ -941,7 +934,21 @@ export const revelation: MysticSphere = {
         This attack roll cannot \\glossterm{explode}.
         `,
       },
-      rank: 4,
+      rank: 3,
+      tags: ['Scrying'],
+    },
+
+    {
+      name: 'Distant Scry Creature',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        exceptThat: `
+          there is no distance limit.
+        `,
+        name: 'scry creature',
+      },
+      rank: 5,
       tags: ['Scrying'],
     },
 
@@ -951,11 +958,11 @@ export const revelation: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-        the target does not have to be on the same plane as you.
+          there is no distance limit, and the target does not have to be on the same plane as you.
         `,
         name: 'scry creature',
       },
-      rank: 6,
+      rank: 7,
       tags: ['Scrying'],
     },
     {
@@ -979,7 +986,7 @@ export const revelation: MysticSphere = {
       castingTime: '24 hours',
       effect: `
         This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{zone} centered on your location.
-        This effect is permanent.
+        This effect lasts for one year.
         Everything in the area is completely imperceptible from outside the area.
         Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
         In addition, all \\abilitytag{Scrying} effects fail to function in the area.
@@ -994,9 +1001,9 @@ export const revelation: MysticSphere = {
       effect: `
         This ritual creates a ward against scrying in a \\medarea radius \\glossterm{zone} centered on your location.
         All \\abilitytag{Scrying} effects fail to function in the area.
-        This effect is permanent.
-        `,
-      rank: 3,
+        This effect lasts for one year.
+      `,
+      rank: 2,
     },
     {
       name: 'Find the Path',
