@@ -25,6 +25,7 @@ export const terramancy: MysticSphere = {
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
         % should be longer than polymorph's alter object ability
+        % TODO: nerf all magical crafting times
         Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
       `,
       scaling: {

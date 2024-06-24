@@ -15,7 +15,7 @@ export const polymorph: MysticSphere = {
         You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
-        % too short?
+        % TODO: nerf all magical crafting times
         Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
       `,
       scaling: {
