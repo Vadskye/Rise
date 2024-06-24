@@ -174,6 +174,18 @@ pub fn objects() -> Vec<Tool> {
         ..Tool::permanent("textiles")
     });
 
+    objects.push(Tool {
+        name: "Sending Stones".to_string(),
+        rank: 3,
+        short_description: "Allows distant communication".to_string(),
+        description: r"
+            This is a set of two paired stones.
+            Each stone is about six inches in diameter and perfectly smooth.
+            Whenever a creature speaks while touching one of the stones, their voice is also audible from the other stone, as long as both stones are on the same plane.
+        ".to_string(),
+        ..Tool::permanent("stone")
+    });
+
     objects
 }
 
