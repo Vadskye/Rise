@@ -442,7 +442,7 @@ export const revelation: MysticSphere = {
         hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
         targeting: `
           You create a field of hallucinatory visions in a \\medarea radius \\glossterm{zone} within \\medrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
       rank: 4,
