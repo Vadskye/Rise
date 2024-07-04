@@ -427,7 +427,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Pass Judgment}
-                    \\abilityusagetime \glossterm{Minor action}.
+                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
                     You always gain the benefit of your \textit{zealous fixation} ability against that creature.
@@ -458,7 +458,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Zealous Pursuit}
-                    \\abilityusagetime \glossterm{Minor action}.
+                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \textit{zealous fixation} ability.
                     You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.
