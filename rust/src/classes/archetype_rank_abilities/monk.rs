@@ -475,7 +475,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{invested strike} ability as a standard action.
                 \begin{magicalactiveability}{Invested Strike}
                     \abilityusagetime Standard action.
-                    \abilitycost One \glossterm{fatigue level}.
+                    \abilitycost Two \glossterm{fatigue levels} (see text).
                     \rankline
                     Make a \glossterm{strike} that deals double \glossterm{weapon damage}.
                     The strike must target a single creature within \shortrange, with no secondary targets.
@@ -483,7 +483,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     Whether or not the target takes damage, it becomes invested with your ki.
                     This does not cause it any ill effects.
                     If it dies or falls unconscious, or you take a \glossterm{short rest}, your ki returns to you.
-                    When it does, you reduce your \glossterm{fatigue level} by one.
+                    When it does, you reduce your \glossterm{fatigue level} by two.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
