@@ -102,17 +102,17 @@ fn belts() -> Vec<Apparel> {
     apparel.push(Belt(StandardItem {
         name: String::from("Healing Belt"),
         rank: 2,
-        short_description: String::from("Exert to heal $dr3 hit points"),
+        short_description: String::from("Exert to heal $dr3l hit points"),
         description: String::from(r"
             You can activate this belt as a standard action.
-            When you do, you regain $dr3 hit points and increase your \glossterm<fatigue level> by one.
+            When you do, you regain $dr3l hit points and increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Exert to heal $dr5 hit points", "
-                The healing increases to $dr5.
+            ItemUpgrade::new(4, "Exert to heal $dr5l hit points", "
+                The healing increases to $dr5l.
             "),
-            ItemUpgrade::new(6, "Exert to heal $dr7 hit points", "
-                The healing increases to $dr7.
+            ItemUpgrade::new(6, "Exert to heal $dr7l hit points", "
+                The healing increases to $dr7l.
             "),
         ],
         tags: vec![AbilityTag::Swift],
@@ -289,14 +289,14 @@ fn cloaks() -> Vec<Apparel> {
     apparel.push(Cloak(StandardItem {
         name: String::from("Quilled Cloak"),
         rank: 2,
-        short_description: String::from("Deals $dr4 damage when grappled"),
+        short_description: String::from("Deals $dr4l damage when grappled"),
         description: String::from(r"
-            Whenever a creature grapples you, you immediately deal it $dr4 piercing damage.
+            Whenever a creature grapples you, you immediately deal it $dr4l piercing damage.
             This does not affect creatures that you initiate a grapple with.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Deals $dr7 damage when grappled", "
-                The damage increases to $dr7.
+            ItemUpgrade::new(5, "Deals $dr7l damage when grappled", "
+                The damage increases to $dr7l.
             "),
         ],
         ..Apparel::default()
@@ -307,8 +307,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants a glide speed"),
         description: String::from(r"
-            Whenever a creature grapples you, you immediately deal it $dr3 piercing damage.
-            This does not affect creatures that you initiate a grapple with.
+            You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Aerial Movement}).
         "),
         ..Apparel::default()
     }));

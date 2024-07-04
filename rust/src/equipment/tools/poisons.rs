@@ -227,13 +227,13 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Black Adder Venom".to_string(),
         rank: 2,
-        short_description: "Deals $dr4 damage endlessly".to_string(),
+        short_description: "Deals $dr4l damage endlessly".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr4 poison damage per \glossterm<poison stage>.
+                It inflicts $dr4l poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -242,13 +242,13 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Wyvern Venom".to_string(),
         rank: 3,
-        short_description: "Deals $dr5 damage endlessly".to_string(),
+        short_description: "Deals $dr5l damage endlessly".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr5 poison damage per \glossterm<poison stage>.
+                It inflicts $dr5l poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()
@@ -257,13 +257,13 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Purple Worm Venom".to_string(),
         rank: 4,
-        short_description: "Deals $dr6 damage endlessly".to_string(),
+        short_description: "Deals $dr6l damage endlessly".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
                 The poison's accuracy is $accuracy+1.
-                It inflicts $dr6 poison damage per \glossterm<poison stage>.
+                It inflicts $dr6l poison damage per \glossterm<poison stage>.
             ",
         ),
         ..poison()

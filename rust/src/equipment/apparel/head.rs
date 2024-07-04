@@ -145,22 +145,22 @@ fn crowns() -> Vec<Apparel> {
     apparel.push(Crown(StandardItem {
         name: String::from("Crown of Flame"),
         rank: 3,
-        short_description: String::from("Can deal $dr3 damage around you"),
+        short_description: String::from("Can deal $dr3l damage around you"),
         description: String::from(r"
             This crown constantly burns harmlessly, emitting \glossterm{bright illumination} in a \smallarea radius.
             You can touch the crown as a standard action to activate it.
             When you do, a burst of flame erupts around you.
             Make an attack vs. Reflex against everything in a \smallarea radius from you.
             Your minimum accuracy is $accuracy.
-            \hit $dr3 fire damage.
+            \hit $dr3l fire damage.
             \miss Half damage.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can deal $dr5 damage around you", r"
-                The minimum accuracy increases to $accuracy, and the damage increases to $dr5.
+            ItemUpgrade::new(5, "Can deal $dr5l damage around you", r"
+                The minimum accuracy increases to $accuracy, and the damage increases to $dr5l.
             "),
-            ItemUpgrade::new(7, "Can deal $dr7 damage around you", r"
-                The minimum accuracy increases to $accuracy, and the damage increases to $dr7.
+            ItemUpgrade::new(7, "Can deal $dr7l damage around you", r"
+                The minimum accuracy increases to $accuracy, and the damage increases to $dr7l.
             "),
         ],
         ..Apparel::default()
