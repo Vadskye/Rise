@@ -629,6 +629,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons \glossterm{weapon group}, natural weapons, and to any attack using one or more \glossterm{free hands}.
                 This does not include abilities that simply use \glossterm{somatic components}.
+                In addition, you can use your Dexterity instead of your Strength to determine your base accuracy with \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },

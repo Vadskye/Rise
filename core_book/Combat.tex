@@ -696,6 +696,10 @@
 
     \subsection{Special Combat Abilities}\label{Special Combat Abilities}
 
+        This section lists combat abilities that all characters can use.
+        Many of these abilities are \abilitytag{Brawling} abilities.
+        You use your Strength instead of your Perception to determine your base accuracy with Brawling abilities (see \pcref{Accuracy}).
+
         \begin{dtable}
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{p{5.5em} l X}
@@ -712,7 +716,7 @@
                 Sprint                   & \tdash                                         & Move at double speed                \\
                 Total Defense            & \abilitytag{Swift}                             & Gain \plus2 to defenses             \\
                 Throw                    & \tdash                                         & Throw a held object                 \\
-                Trip                     & \abilitytag{Size-Based}                        & Trip a foe                          \\
+                Trip                     & \abilitytag{Brawling}, \abilitytag{Size-Based} & Trip a foe                          \\
             \end{dtabularx}
         \end{dtable}
 
@@ -884,11 +888,11 @@
             Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current round.
         \end{activeability}
 
-        \begin{activeability}{Trip}[\abilitytag{Size-Based}]
+        \begin{activeability}{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
             \label{Trip}
             \abilityusagetime Standard action.
             \rankline
-            Make a melee attack using a free hand or a weapon with the Tripping tag against an creature's Fortitude and Reflex defenses (see \pcref{Weapon Tags}).
+            Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Fortitude and Reflex defenses (see \pcref{Weapon Tags}).
             If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
             However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
 

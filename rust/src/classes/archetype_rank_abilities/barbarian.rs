@@ -211,8 +211,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You have exceptional skill with the \textit{dirty trick} and \textit{trip} abilities, as well as with all \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
-                Your \glossterm{accuracy} with those abilities is equal to the higher of your Strength and Dexterity, plus half your level.
+                Your base accuracy with \abilitytag{Brawling} abilities is equal to the higher of your Strength and Dexterity, plus half your level (see \pcref{Special Combat Abilities}).
             ",
             modifiers: None,
         },
