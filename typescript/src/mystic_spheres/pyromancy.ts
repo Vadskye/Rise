@@ -461,6 +461,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `\\damagerankone{fire}.`,
+        missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
           Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
