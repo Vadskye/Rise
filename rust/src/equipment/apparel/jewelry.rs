@@ -513,10 +513,10 @@ fn rings() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants many defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +8, and the bonus to vital rolls increases to +2.
+                The bonuses to hit points and damage resistance increase to +8.
             "),
             ItemUpgrade::new(7, "Grants many large defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +16, and the bonus to vital rolls increases to +3.
+                The bonuses to hit points and damage resistance increase to +16.
             "),
         ],
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
