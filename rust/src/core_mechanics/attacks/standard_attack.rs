@@ -147,6 +147,7 @@ impl StandardAttack {
                 }),
                 hit: AttackEffect::Custom(AbilityType::Normal, r"
                     Each target is \grappled by the $name.
+                    The $name automatically controls the grapple.
                 ".to_string()),
                 is_magical: false,
                 is_strike: false,

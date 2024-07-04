@@ -116,6 +116,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                         The $name moves up to its speed in a straight line.
                         Whenever it shares space with anything Medium or smaller during this movement, it makes a $accuracy+2 attack vs. Fortitude against that creature or object.
                         \hit The target is \grappled by the $name.
+                        The $name automatically controls the grapple.
                     ".to_string(),
                     is_magical: false,
                     name: "Engulf".to_string(),
