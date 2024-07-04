@@ -313,16 +313,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Hexbite Staff"),
         rank: 2,
-        short_description: String::from(r"Deals $dr3 damage when foes remove conditions"),
+        short_description: String::from(r"Deals $dr3l damage when foes remove conditions"),
         description: String::from(r"
-            Whenever a creature removes a \glossterm<condition> that you inflicted on it, it takes $dr3 \glossterm<energy damage>.
+            Whenever a creature removes a \glossterm<condition> that you inflicted on it, it takes $dr3l \glossterm<energy damage>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Deals $dr5 damage when foes remove conditions", r"
-                The damage increases to $dr5.
+            ItemUpgrade::new(4, "Deals $dr5l damage when foes remove conditions", r"
+                The damage increases to $dr5l.
             "),
-            ItemUpgrade::new(6, "Deals $dr7 damage when foes remove conditions", r"
-                The damage increases to $dr7.
+            ItemUpgrade::new(6, "Deals $dr7l damage when foes remove conditions", r"
+                The damage increases to $dr7l.
             "),
         ],
         ..Implement::default()

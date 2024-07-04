@@ -173,19 +173,19 @@ fn gauntlets() -> Vec<Apparel> {
     apparel.push(Gauntlets(StandardItem {
         name: String::from("Slinging Gauntlets"),
         rank: 2,
-        short_description: String::from("Can deal $dr3 damage"),
+        short_description: String::from("Can deal $dr3l damage"),
         description: String::from(r"
             You can activate these gauntlets as a standard action.
             When you do, a rock appears in one \glossterm{free hand}, and you can immediately throw it at anything within \shortrange.
             Make an attack against the target's Armor defense.
-            \hit $dr3 bludgeoning damage.
+            \hit $dr3l bludgeoning damage.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Can deal $dr5 bludgeoning damage", r"
-                The damage increases to $dr5.
+            ItemUpgrade::new(4, "Can deal $dr5l bludgeoning damage", r"
+                The damage increases to $dr5l.
             "),
-            ItemUpgrade::new(6, "Can deal $dr7 bludgeoning damage", r"
-                The damage increases to $dr7.
+            ItemUpgrade::new(6, "Can deal $dr7l bludgeoning damage", r"
+                The damage increases to $dr7l.
             "),
         ],
         ..Apparel::default()

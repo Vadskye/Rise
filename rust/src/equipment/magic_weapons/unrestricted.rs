@@ -327,15 +327,15 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             The strike's minimum accuracy is $accuracy.
             The strike deals 1d4 \glossterm{extra damage}, and damage dealt by the strike is energy damage in addition to its other types.
             If a living creature loses \glossterm{hit points} from this strike, you can increase your \glossterm{fatigue level} by one.
-            When you do, you regain $dr3 hit points at the end of the round.
+            When you do, you regain $dr3l hit points at the end of the round.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can attack with +2d8 damage to steal HP", r"
-                The extra damage increases to 2d8, and the healing increases to $dr5.
+                The extra damage increases to 2d8, and the healing increases to $dr5l.
                 In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             ItemUpgrade::new(7, "Can attack with +5d10 damage to steal HP", r"
-                The extra damage increases to 5d10, and the healing increases to $dr7.
+                The extra damage increases to 5d10, and the healing increases to $dr7l.
                 In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
