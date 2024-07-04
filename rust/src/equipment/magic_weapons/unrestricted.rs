@@ -13,9 +13,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Frenzy"),
         rank: 3,
-        short_description: String::from(
-            "Grants +1 accuracy with continuous strikes",
-        ),
+        short_description: String::from("Grants +1 accuracy with continuous strikes"),
         description: String::from(
             r"
                 Whenever you make a \glossterm<strike> with this weapon, you \glossterm<briefly> gain a +1 bonus to \glossterm<accuracy> with all \glossterm<strikes>.
@@ -213,19 +211,19 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Fixating"),
         rank: 3,
-        short_description: String::from(r"Grants stacking +1 accuracy bonus"),
+        short_description: String::from(r"Gradually increase focus on one creature"),
         description: String::from(r"
             Once per round, when you make a \glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with future strikes using this weapon.
             If the strike had multiple targets, you choose which target you gain the bonus against.
+            You also take a -1 penalty to accuracy and defenses against all other creatures.
             This effect lasts until you make a strike with this weapon that does not include that creature as a target.
-            It stacks with itself, up to a maximum of a +4 bonus.
+            It stacks with itself, up to a maximum of a +3 bonus and a -3 penalty.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Grants stacking +2 accuracy bonus", r"
-                The bonus increases to +2 per strike.
+            ItemUpgrade::new(6, "Quickly increase focus on one creature", r"
+                The modifiers increases to a +2 bonus and -2 penalty per strike, to a maximum of a +4 bonus and a -4 penalty.
             "),
         ],
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicWeapon::default()
     }));
 

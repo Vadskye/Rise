@@ -75,9 +75,9 @@ HP/DR/Total: 26 / 12 / 38
 Points / Self-hit: 36 / 60%
 
 ### Monk Kama
-A/F/R/M: 10 / 6 / 12 / 5
+A/F/R/M: 10 / 6 / 11 / 5
 HP/DR/Total: 18 / 8 / 26
-Points / Self-hit: 43 / 50%
+Points / Self-hit: 42 / 50%
 
 ### Paladin Shield
 A/F/R/M: 9 / 9 / 4 / 7
@@ -127,9 +127,9 @@ HP/DR/Total: 45 / 38 / 83
 Points / Self-hit: 53 / 60%
 
 ### Monk Kama
-A/F/R/M: 15 / 9 / 17 / 8
+A/F/R/M: 15 / 9 / 16 / 8
 HP/DR/Total: 32 / 20 / 52
-Points / Self-hit: 64 / 30%
+Points / Self-hit: 63 / 30%
 
 ### Paladin Shield
 A/F/R/M: 12 / 13 / 7 / 10
@@ -179,9 +179,9 @@ HP/DR/Total: 90 / 48 / 138
 Points / Self-hit: 65 / 70%
 
 ### Monk Kama
-A/F/R/M: 19 / 11 / 20 / 10
+A/F/R/M: 19 / 11 / 19 / 10
 HP/DR/Total: 63 / 33 / 96
-Points / Self-hit: 79 / 20%
+Points / Self-hit: 78 / 20%
 
 ### Paladin Shield
 A/F/R/M: 14 / 16 / 9 / 12
@@ -231,9 +231,9 @@ HP/DR/Total: 168 / 96 / 264
 Points / Self-hit: 80 / 80%
 
 ### Monk Kama
-A/F/R/M: 23 / 15 / 24 / 13
+A/F/R/M: 23 / 15 / 22 / 13
 HP/DR/Total: 126 / 46 / 172
-Points / Self-hit: 98 / 10%
+Points / Self-hit: 96 / 10%
 
 ### Paladin Shield
 A/F/R/M: 17 / 19 / 12 / 15

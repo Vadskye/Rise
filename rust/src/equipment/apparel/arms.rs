@@ -115,7 +115,7 @@ fn bracers() -> Vec<Apparel> {
 
     apparel.push(Bracers(StandardItem {
         name: String::from("Bracers of Blessed Protection"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Can protect against one critical hit"),
         description: String::from(r"
             Whenever you are hit by a \glossterm<critical hit>, this item automatically activates.
@@ -125,8 +125,8 @@ fn bracers() -> Vec<Apparel> {
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
-            ItemUpgrade::new(5, "Can protect against one critical hit", "
-                The attacker also takes a -5 accuracy penalty against you with the reroll.
+            ItemUpgrade::new(4, "Can protect against two critical hits", "
+                This item can activate twice before you stop being attuned to it.
             "),
         ],
         ..Apparel::default()
