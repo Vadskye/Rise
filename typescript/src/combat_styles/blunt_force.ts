@@ -240,9 +240,8 @@ export const bluntForce: CombatStyle = {
     {
       name: 'Desperate Smash',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make a \\glossterm{strike} using a bludgeoning weapon.
         The strike deals \\glossterm{extra damage} equal to your power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
@@ -253,9 +252,8 @@ export const bluntForce: CombatStyle = {
     {
       name: 'Desperate Smash+',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make a \\glossterm{strike} using a bludgeoning weapon with double \\glossterm{weapon damage}.
         The strike deals 1d8 \\glossterm{extra damage} per 3 power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.

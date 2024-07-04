@@ -507,10 +507,17 @@
 \section{Ships Fighting Non-Ships}
     In some cases, ships might enter combat against non-ship foes.
     Ships take one tenth of the normal damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
-    In addition, ships deal double damage to non-ship targets.
+    Ship weapons deal double damage to non-ship targets, and gain the \abilitytag{Massive} weapon tag based on the ship's size:
+    \begin{itemize}
+        \item Huge: \weapontag{Massive} (10)
+        \item Gargantuan \weapontag{Massive} (15)
+        \item Colossal \weapontag{Massive} (20)
+        \item Galleon \weapontag{Massive} (25)
+        \item Titan \weapontag{Massive} (30)
+    \end{itemize}
+
     Since ships are not creatures and are not alive, many special attacks have no effect on them.
     They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
-    When used against non-ship targets, weapons on Huge or larger ships have the \weapontag{Massive} tag, just like attacks from Huge or larger creatures (see \pcref{Very Large Creatures}).
 
 \section{Ships and Gunpowder}
     In general, Rise avoids the use of guns and gunpowder.

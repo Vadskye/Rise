@@ -15,6 +15,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{abyssal rebuke} ability as a standard action.
                 \begin{magicalactiveability}{Abyssal Rebuke}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Armor against one creature or object within \rngmed range.
                     You gain a \plus2 accuracy bonus with this attack against any creature that attacked you during the previous round.
@@ -134,6 +135,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{banish to the abyss} ability as a standard action.
                 \begin{magicalactiveability}{Banish to the Abyss}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     \hit \damagerankthree{fire}.
@@ -179,6 +181,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{abyssal curse} ability as a standard action.
                 \begin{magicalactiveability}{Abyssal Curse}[\abilitytag{Curse}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
                     \hit The target is \stunned until it finishes a \glossterm{short rest}.
@@ -613,7 +616,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
-                \begin{magicalsustainability}{Possession}{\abilitytag{Exertion}, \abilitytag{Sustain} (free), \abilitytag{Swift}}
+                \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                    \abilityusagetime \glossterm{Free action}.
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
@@ -693,10 +697,10 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 You can use the \textit{exchange soul fragment} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Exertion}, \abilitytag{Swift}]
+                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
+                    \abilityusagetime Standard action.
+                    \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by one.
-
                     You regain 1d10 \glossterm{damage resistance} plus 1d6 per 3 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
@@ -725,10 +729,10 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 You can use the \textit{exchange vitality} ability as a standard action.
-                \begin{magicalactiveability}{Exchange Vitality}[\abilitytag{Exertion}]
+                \begin{magicalactiveability}{Exchange Vitality}
+                    \abilityusagetime Standard action.
+                    \abilitycost Three \glossterm{fatigue levels}.
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by three.
-
                     Remove one of your \glossterm{vital wounds}.
                 \end{magicalactiveability}
             ",

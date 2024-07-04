@@ -208,8 +208,7 @@ fn blindfolds() -> Vec<Apparel> {
         description: String::from(r"
             While you wear this blindfold covering your eyes, you gain \trait<blindsight> with a 15 foot range and \trait<blindsense> with a 60 foot range.
             You are also blind, as normal for wearing a blindfold.
-
-            You can shift this blindfold to cover or stop covering your eyes as a \glossterm<free action> that requires a \glossterm<free hand>.
+            Shifting this blindfold to cover or stop covering your eyes requires a \glossterm<free hand> (see \pcref{Manipulating Objects}).
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants blindsight, blindsense, and blindness", r"

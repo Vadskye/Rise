@@ -276,6 +276,7 @@
         \cf{Dgn}[1]{Draconic Breath} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
         % +1r damage to compensate for cooldown... ish. Kind of awkward scaling right now.
         \begin{activeability}{Breath Weapon}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Reflex against everything in the area defined by your dragon type (see Dragon Types, above).
             After you use this ability, you \glossterm{briefly} cannot use it again.
@@ -388,11 +389,12 @@
         \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
         \itemhead{Deep Darkness}[\sparkle] A drow can use the \textit{deep darkness} ability as a \glossterm{standard action}.
             \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (minor)}
+                \abilityusagetime Standard action.
                 \rankline
                 \target{One \glossterm{zone} within \rngmed range}
                 You can choose this ability's radius, up to a maximum of a \areamed radius.
                 Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
-                Any object or effect which blocks light also blocks this spell's effect.
+                Any object or effect which blocks light also blocks this ability's effect.
             \end{magicalsustainability}
         \itemhead{Drow Prejudice} Almost all surface-dwellers have negative associations with drow.
             Drow have an Opposition relationship with most people that they meet, which influences people's behavior and makes Persuasion checks harder (see \pcref{Persuasion}).
@@ -458,9 +460,8 @@
 
         \cf{Dry}[4]{Fey Charm} You can use the \ability{fey charm} ability as a \glossterm{minor action}.
         \begin{magicalsustainability}{Fey Charm}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime \glossterm{Minor action}.
             \rankline
-            \noindent
-
             Make an attack vs. Mental against a creature within \medrange that is an animal, plant, or humanoid.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
             \hit The target is \charmed by you.
@@ -538,6 +539,7 @@
     \begin{raggeditemize}
         \itemhead{Fae Step} As a standard action, you can use the \ability{fae step} ability.
         \begin{magicalactiveability}{Fae Step}
+            \abilityusagetime Standard action.
             \rankline
             You \glossterm{teleport} horizontally to a location within \shortrange.
 
@@ -606,6 +608,7 @@
 
         \magicalcf{Hrp}[2]{Luring Song} You can use the \textit{luring song} ability as a standard action.
         \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
+            \abilityusagetime Standard action.
                 \rankline
                 Make an attack vs. Mental against a creature within \longrange.
                 \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
@@ -634,6 +637,7 @@
         % TODO: define correct rank
         \magicalcf{Hrp}[5]{Siren Song} You can use the \textit{siren song} ability as a standard action.
         \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
             \hit Each target is both \charmed by you and \stunned as long as it can still hear you sing.
@@ -742,6 +746,7 @@
 
     \cf{Inc}[1]{Essence Pulse} You can use the \textit{essence pulse} ability as a standard action.
     \begin{magicalactiveability}{Essence Spike}
+        \abilityusagetime Standard action.
         \rankline
         Make an attack against all \glossterm{enemies} within a \smallarea radius from you.
         The damage type and defense against this attack depends on your essential damage type.
@@ -896,6 +901,7 @@
             Since they have no legs, they are immune to being \prone, but they also cannot jump.
             They can use the \ability{mold body} ability as a standard action to adopt a particular shape.
             \begin{sustainability}{Mold Body}{\abilitytag{Sustain} (free)}
+                \abilityusagetime Standard action.
                 \rankline
                 You make a Disguise check to alter your appearance (see \pcref{Change Appearance}).
                 This physically changes your body to match the results of your disguise.
@@ -1020,7 +1026,9 @@
         \itemhead{Barkskin} A sapling gains a \plus2 bonus to Armor defense.
         \itemhead{Ingrain} A sapling can use the \textit{ingrain} ability as a \glossterm{minor action} while it is \glossterm{grounded}.
             \begin{activeability}{Ingrain}
+                \abilityusagetime Standard action.
                 \rankline
+                This ability can only be used if the sapling is \glossterm{grounded}.
                 The sapling's land speed becomes 5 feet, regardless of any modifiers that normally apply.
                 It cannot voluntarily stop being \glossterm{grounded} while this ability lasts.
                 It gains a \plus4 bonus to Fortitude defense and a \plus2 bonus to Armor defense.
@@ -1061,6 +1069,7 @@
 
         \cf{Tre}[3]{Animate Plants} You can use the \textit{animate plants} ability as a standard action.
         \begin{activeability}{Animate Plants}[\abilitytag{Manifestation}]
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
             You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
@@ -1163,6 +1172,7 @@
     \subsection{Tiefling Archetype}
         \magicalcf{Tif}[1]{Abyssal Hop} You can use the \ability{abyssal hop} ability as a standard action.
         \begin{magicalactiveability}{Abyssal Hop}
+            \abilityusagetime Standard action.
             \rankline
             You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
             If the destination is invalid, this spell fails with no effect.
@@ -1188,6 +1198,7 @@
         \begin{itemize}
             \item Infernal Rebuke: You can use the \textit{infernal rebuke} ability as a standard action.
                 \begin{magicalactiveability}{Infernal Rebuke}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Fortitude against one creature within \shortrange.
                     You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
@@ -1204,6 +1215,7 @@
             \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
                 In addition, you can use the \ability{charming temptation} ability as a standard action.
                 \begin{magicalsustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+                    \abilityusagetime Standard action.
                     \rankline
                     \noindent
 
@@ -1234,6 +1246,7 @@
             \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
                 In addition, you can use the \ability{dominating temptation} ability as a standard action.
                 \begin{magicalactiveability}{Dominating Temptation}{\abilitytag{Emotion}}
+                    \abilityusagetime Standard action.
                     \rankline
                     \noindent
                     Make an attack vs. Mental against a humanoid creature within \shortrange.%
@@ -1249,6 +1262,7 @@
                 \end{magicalactiveability}
             \item Unholy Might: You can use the \ability{unholy strength} ability as a standard action.
                 \begin{magicalattuneability}{Unholy Strength}{\abilitytag{Attune}}
+                    \abilityusagetime Standard action.
                     \rankline
                     You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                 \end{magicalattuneability}
@@ -1367,6 +1381,7 @@
 
         \magicalcf{Vmp}[3]{Charming Gaze} You can use the \ability{charming gaze} ability as a standard action.
         \begin{magicalsustainability}{Charming Gaze}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against all humanoid creatures in a \largearea cone from you.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
@@ -1382,6 +1397,7 @@
 
         \magicalcf{Vmp}[4]{Creature of the Night} You can use the \ability{creature of the night} ability as a standard action.
         \begin{magicalattuneability}{Creature of the Night}{\abilitytag{Attune}}
+            \abilityusagetime Standard action.
             \rankline
             You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
             \begin{raggeditemize}
@@ -1406,6 +1422,7 @@
 
         \magicalcf{Vmp}[6]{Dominating Gaze} You can use the \ability{dominating gaze} ability as a standard action.
         \begin{magicalactiveability}{Dominating Gaze}{\abilitytag{Emotion}, \abilitytag{Visual}}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against a humanoid creature within \shortrange.
             \hit The target is \stunned as a \glossterm{condition}.

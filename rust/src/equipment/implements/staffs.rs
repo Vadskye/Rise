@@ -26,7 +26,6 @@ pub fn staffs() -> Vec<Implement> {
             In addition, you increase your \glossterm<fatigue level> by one.
             This ability has the \abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
         "),
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -183,11 +182,10 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can cast spells without verbal components", r"
-                The staff no longer needs to be activated, and it no longer has the \abilitytag{Exertion} tag.
+                The staff no longer needs to be activated.
                 You can passively cast spells without using \glossterm<verbal components>.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -202,11 +200,10 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can cast spells without verbal components", r"
-                The staff no longer needs to be activated, and it no longer has the \abilitytag{Exertion} tag.
+                The staff no longer needs to be activated.
                 You can passively cast spells without using \glossterm<somatic components>.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -237,13 +234,12 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes use abilities from a short distance away", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level.
             "),
             ItemUpgrade::new(7, "Can use abilities from a short distance away", r"
                 The staff no longer has a brief cooldown after being activated.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -258,10 +254,9 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes double range", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -277,10 +272,9 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes double area", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -295,10 +289,9 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can sometimes add an extra target", r"
-                Activating the staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating the staff does not increase your fatigue level.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -314,7 +307,6 @@ pub fn staffs() -> Vec<Implement> {
             The echo uses the same choices for all decisions, such as targets.
             You cannot use the \ability<desperate exertion> ability to affect the ability used to activate this staff or its echo.
         "),
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 
@@ -372,10 +364,9 @@ pub fn staffs() -> Vec<Implement> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can remove a condition to gain +2 accuracy", r"
-                Activating this staff does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating this staff does not increase your fatigue level.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Implement::default()
     }));
 

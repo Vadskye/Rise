@@ -183,6 +183,7 @@ The $name makes a +0 attack vs. Mental against anything within \\medrange.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Basic Strike>
+\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
 
 \rankline
@@ -243,6 +244,7 @@ The $name makes a +3 \glossterm{strike} vs. Reflex.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Double Damage>
+\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
 
 \rankline
@@ -273,6 +275,7 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Triple Damage>
+\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
 
 \rankline

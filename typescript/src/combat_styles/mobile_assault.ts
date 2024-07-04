@@ -70,11 +70,11 @@ export const mobileAssault: CombatStyle = {
     {
       name: 'Sprinting Charge',
 
+      cost: "One \\glossterm{fatigue level}.",
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
           you can move up to twice your speed instead of up to your speed, and the defense penalty is removed.
-          When you use this ability, you increase your \\glossterm{fatigue level} by one.
         `,
         name: 'charge',
       },

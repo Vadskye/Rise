@@ -368,7 +368,6 @@ fn rings() -> Vec<Apparel> {
             When you do, you increase your \glossterm<fatigue level> by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         "),
-        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -480,10 +479,9 @@ fn rings() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can remove a condition", r"
-                Activating this item does not increase your fatigue level, and it no longer has the \abilitytag{Exertion} tag.
+                Activating this item does not increase your fatigue level.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 
@@ -502,7 +500,6 @@ fn rings() -> Vec<Apparel> {
                 Activating this item only increases your fatigue level by one.
             "),
         ],
-        tags: vec![AbilityTag::Exertion],
         ..Apparel::default()
     }));
 

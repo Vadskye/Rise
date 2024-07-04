@@ -28,6 +28,7 @@ export const penetratingPrecision: CombatStyle = {
     {
       name: 'Desperate Pierce',
 
+      cost: "See text.",
       effect: `
         Make a \\glossterm{strike}.
         If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +4 accuracy bonus.
