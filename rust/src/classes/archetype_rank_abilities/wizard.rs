@@ -293,7 +293,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
                     \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
 
-                    \parhead{Sphere Specialization}\label{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
+                    \parhead{Sphere Specialization}\nonsectionlabel{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
                     You gain a +2 \glossterm{magical power} bonus and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
                     This power bonus increases to +3 at rank 4, and to +4 at rank 7.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
