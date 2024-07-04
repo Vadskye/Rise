@@ -594,7 +594,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +1 bonus to your Armor and Reflex defenses while you have no \glossterm{encumbrance}.
+                You gain a +1 bonus to your Armor defense while you have no \glossterm{encumbrance}.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -615,7 +615,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The defense bonuses increase to +2.
+                The defense bonus increases to +2.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
