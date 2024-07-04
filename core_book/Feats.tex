@@ -319,7 +319,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{magicalactiveability}{Ancestral Battlecry}
             \abilityusagetime Standard action.
             \rankline
-            Three ghostly spirits of your ancestors appear around you.
+            Four ghostly spirits of your ancestors appear around you.
             They cannot be attacked or interacted with.
             Whenever you make a melee \glossterm{strike}, each spirit mimics you.
             For each spirit that mimics you, the strike can affect an additional secondary target of your choice within 15 foot \glossterm{range} of you, even if you are not adjacent to it.
@@ -354,16 +354,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Strength 1, Dexterity 2.
 
         \ff[1]{Overburdened Quickdraw} You can draw or sheathe any weapon or shield other than a tower shield as a \glossterm{free action}.
-        This still counts against your one free object manipulation per round (see \pcref{Manipulating Objects}).
+        This still counts against your one free action object manipulation per round (see \pcref{Manipulating Objects}).
         In addition, you can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
 
         \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
         Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all nonmagical weapons you wield.
         If you attune to a magical weapon, it keeps its own magical effects instead of your chosen legacy item properties.
 
+        \ff[6]{Rapid Attunement} You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
+
         \ff[12]{Versatile Force} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
 
-        \ff[18]{Versatile Force+} The bonus from your \textit{versatile force} ability increases to \plus2.
+        \ff[18]{Fast Hands} You get two free action object manipulations each round, rather than only one (see \pcref{Manipulating Objects}).
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -388,7 +390,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
         When you do, you lose \glossterm{hit points} equal to your maximum spell rank.
-        In exchange, you gain a \plus2 power bonus with the spell, and the spell does not require \glossterm{casting components}.
+        In exchange, you gain a \plus2 power bonus with the spell, and the spell does not require \glossterm{verbal components} or \glossterm{somatic components}.
 
         \magicalff[6]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
         While the target is bound, you are always considered to have \glossterm{line of sight} to it.
@@ -453,25 +455,22 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Ancestry feat.
 
-        \magicalff[1]{Celestial Benevolence} When you cause an \glossterm{ally} to regain hit points, you can choose to lose any number of hit points, to a minimum of 0 remaining hit points.
-        If you do, that ally regains that many hit points, up to their normal maximum.
-        When you cause an ally to regain damage resistance, you can transfer your own damage resistance to them in the same way.
-        You can only use this ability once per round.
-        If this ability is triggered by a \abilitytag{Swift} effect, the transfer is also Swift.
+        \magicalff[1]{Celestial Benevolence} Whenever an adjacent \glossterm{ally} is attacked by a \glossterm{targeted} ability, the attack is made against you instead.
+        If that ability would already target you, it affects you twice, rolling separately for each attack.
+        You can suppress or resume this ability as a \glossterm{free action} with the \abilitytag{Swift} ability tag.
 
-        \magicalff[6]{Healing Radiance} When you use the \textit{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
+        \magicalff[6]{Healing Radiance} When you use the \ability{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you, and \glossterm{shadowy illumination} in twice that radius.
         % TODO: unclear scaling
-        At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to your \glossterm{power}.
+        At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to half the hit points you regained with that \ability{recover} ability.
 
         \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
         The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
-        \magicalff[18]{Angel Wings+} The height limit increases to 60 feet.
+        \magicalff[12]{Celestial Benevolence+} This ability affects all allies within a \medarea radius \glossterm{emanation} from you.
 
-        % TODO: unclear scaling
-        \magicalff[18]{Healing Radiance+} The healing provided by your \textit{healing light} ability increases to twice your power.
+        \magicalff[18]{Angel Wings+} The height limit increases to 60 feet.
     \end{magicalfeat}
 
     \begin{feat}{Chameleon}{General}
@@ -720,8 +719,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[18]{Scales+} The Armor defense bonus from your \textit{draconic scales} ability increases to \plus2.
 
-        \ff[18]{Draconic Wings+} The height limit from your \textit{draconic wings} ability increases to 60 feet.
-        In addition, you gain a \plus10 foot bonus to the fly speed.
+        \ff[18]{Draconic Wings+} You gain a \plus10 foot bonus to the fly speed.
     \end{feat}
 
     \begin{dtable}
@@ -856,7 +854,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You must use this ability before rolling.
         If this result does not cause you to hit the target, you roll the attack roll normally.
 
-        % Average of +1.5 accuracy, so worse than a typical "-2 defenses" condition. A typical t1.5 debuff would be r3, requiring 9th level.
+        % Average of +1.5 accuracy, so worse than a typical "-2 defenses" condition. A typical t1.5 debuff would be r3, requiring 7th level.
         % If this gets a one rank discount for being a feat ability, this is reasonably balanced.
         \magicalff[6]{Fateseal} You can use the \textit{fateseal} ability as a standard action.
         \begin{magicalactiveability}{Fateseal}
@@ -866,7 +864,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \hit The target is fatesealed as a \glossterm{condition}.
             Whenever you or one of your \glossterm{allies} make an attack roll against it, if the roll would be less than a 6, treat it as a 6 instead.
             This does not affect extra dice from exploding attacks.
-            \crit The minimum roll is instead 8.
+            \crit This condition must be removed an additional time before the effect ends.
 
             \rankline
             You gain a \plus2 accuracy bonus for every 3 levels beyond 6.
@@ -948,9 +946,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Strength 3.
 
         \ff[1]{Cleave} Whenever you make a \glossterm{melee} \glossterm{strike} with a weapon you use with two hands, it gains the Sweeping (1) tag (see \pcref{Sweeping}).
-        If the weapon already has the Sweeping tag, you increase the tag's value by 1, allowing you to choose an additional secondary target.
         In addition, you can choose secondary targets within 15 feet of the primary target instead of the normal 10 feet.
         Each secondary target must still be adjacent to you unless you are using a \weapontag{Long} weapon (see \pcref{Weapon Tags}).
+        If the weapon already has the Sweeping tag, you increase the tag's value by 1, allowing you to choose an additional secondary target.
 
         \ff[6]{Power Attack} Once per round, when you make a \glossterm{melee} strike with a weapon that you use with two hands, you may take a \minus2 accuracy penalty.
         If you do, the strike deals \glossterm{extra damage} equal to your power.
@@ -1020,8 +1018,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Iron Will}{General}
         \featpre Willpower 2.
 
-        \ff[1]{Mental Discipline} You gain a \plus2 bonus to your Mental defense.
-        In addition, you are \impervious to psychic damage.
+        \ff[1]{Mental Discipline} You gain a \plus2 bonus to your Mental defense, and you are \impervious to psychic damage.
+        In addition, you automatically detect any \abilitytag{Compulsion} or \abilitytag{Emotion} effects on you which are \abilitytag{Subtle}.
+        This does not make you immune to those effects, but it may help you control your reactions.
 
         \ff[6]{Unclouded Mind} You are immune to being \stunned and \confused.
 
@@ -1100,7 +1099,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Either Intelligence 2 or Willpower 2.
 
         \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
-        \begin{activeability}{Battle Command}[\abilitytag{Swift}]
+        \begin{activeability}{Battle Command}
             \abilityusagetime Standard action.
             \rankline
             Choose an \glossterm{ally} within \rngmed range.
@@ -1322,7 +1321,6 @@ w
         You cannot use \glossterm{potions} or other similar magic items or abilities that affect you personally, even if they do not require attunement.
         In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
 
-        % Much stronger than Spellbreaker because this is a huge part of the whole Null thing
         \ff[6]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
         \begin{activeability}{Sever Magic}
             \abilityusagetime Standard action.
@@ -1337,6 +1335,7 @@ w
             You gain a \plus2 accuracy bonus with the strike for every 3 levels beyond 6.
         \end{activeability}
 
+        % TODO: does this really need to grant fatigue tolerance?
         \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
         Instead, you gain a \plus1 bonus to your \glossterm{accuracy}, your \glossterm{fatigue tolerance}, and all \glossterm{defenses}.
         These bonuses increase to \plus2 at level 12 and to \plus3 at level 18.
@@ -1404,6 +1403,9 @@ w
 
     \begin{feat}{Precognition}{General}
         \featpre Intelligence 3.
+
+        \ff[1]{Foresight} You gain a \plus2 bonus to Awareness checks.
+        In addition, you are never fully \unaware, though you can still be \partiallyunaware.
 
         \ff[1]{Precognitive Offense} You can add your Intelligence to your \glossterm{mundane power} instead of your Strength (see \pcref{Power}).
 
@@ -1531,12 +1533,13 @@ w
         \featpre Strength 2.
 
         \ff[1]{Shield Expertise} You gain a \plus1 bonus to Armor defense while you wield a shield.
+        This bonus is doubled for the current round when you take the \ability{total defense} action.
 
         \ff[6]{Forceful Block} Whenever a creature misses or \glossterm{glances} you with a melee \glossterm{strike}, if you are wielding a shield, that creature \glossterm{briefly} takes a \minus2 penalty to Armor defense.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
         \ff[12]{Arrow Deflection} While you wield a shield, you and each \glossterm{ally} adjacent to you gain a \plus2 bonus to Armor defense against ranged \glossterm{strikes}.
-        This bonus is doubled when you take the \ability{total defense} action.
+        This bonus is doubled for the current round when you take the \ability{total defense} action.
 
         \ff[18]{Forceful Block+} The penalty from your \textit{forceful block} ability increases to \minus4.
 
@@ -2334,17 +2337,17 @@ w
     \begin{feat}{Toughness}{General}
         \featpre Constitution 2.
 
-        \ff[1]{Fortified Body} You gain a \plus2 bonus to Fortitude defense.
-        In addition, you reduce your \glossterm{encumbrance} by 1.
-
-        \ff[6]{Durable} You gain a bonus equal to your level to your \glossterm{hit points}.
-
-        \ff[12]{Fortified Body+} The defense bonus from your \textit{fortified body} ability increases to \plus4.
+        \ff[1]{Fortified Body} You gain a \plus2 bonus to your Fortitude defense.
         In addition, you need half the normal amount of rest and sleep each day to function normally.
         For example, a human would only need four hours of sleep per night.
         This does not reduce the time required for you to take a \glossterm{long rest}.
 
-        \ff[18]{Durable+} The hit point bonus increases to twice your level.
+        \ff[6]{Durable} You gain a bonus equal to your level to your \glossterm{hit points} and \glossterm{damage resistance}.
+
+        \ff[12]{Fortified Body+} The defense bonus from your \textit{fortified body} ability increases to \plus4.
+        In addition, you also only need half the normal amount of time to complete a \glossterm{long rest}.
+
+        \ff[18]{Durable+} The bonuses increase to twice your level.
     \end{feat}
 
     \begin{feat}{Trickshot}{Combat}
@@ -2453,9 +2456,9 @@ w
 
         \ff[6]{Enhanced Legacy} If you choose your focused weapon as your \glossterm{legacy item}, you can choose an additional magic item property with a maximum rank of 3.
 
-        \ff[12]{Precise Focus+} The accuracy bonus increases to \plus2.
+        \ff[12]{Mighty Focus} You gain a \plus2 bonus to \glossterm{power} with attacks using your focused weapon.
 
-        \ff[12]{Mighty Focus} You gain a \plus2 bonus to \glossterm{weapon damage} with your focused weapon.
+        \ff[12]{Precise Focus+} The accuracy bonus increases to \plus2.
 
         \ff[18]{Enhanced Legacy+} You can change the item property, and the maximum rank increases to 7.
     \end{feat}
