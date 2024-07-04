@@ -64,6 +64,7 @@ export interface MysticSphere {
 export interface BaseSpellLike {
   attack?: StandardAttack;
   castingTime?: string;
+  cost?: string;
   effect?: string;
   functionsLike?: FunctionsLike;
   name: string;

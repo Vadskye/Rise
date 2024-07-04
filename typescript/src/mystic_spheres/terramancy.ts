@@ -527,7 +527,7 @@ export const terramancy: MysticSphere = {
 
       // 1d10 plus Impact is one upgrade above a normal weapon
       effect: `
-        Choose yourself or an \\glossterm{ally} within \medrange.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
         The target gains a stonefist \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
         It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
         The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
@@ -581,7 +581,7 @@ export const terramancy: MysticSphere = {
 
       castingTime: "one hour",
       effect: `
-        Choose yourself or an \\glossterm{ally} within \medrange.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
 
         This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
         The body targeted must be at least as large as the largest item you create.

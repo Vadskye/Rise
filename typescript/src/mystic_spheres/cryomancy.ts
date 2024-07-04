@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const cryomancy: MysticSphere = {
   name: 'Cryomancy',
@@ -468,10 +468,8 @@ export const cryomancy: MysticSphere = {
     {
       name: 'Chillwind Dash',
 
+      cost: SWIFT_FATIGUE,
       effect: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
         You teleport into an unoccupied destination on a stable surface within \\shortrange.
         In addition, everything in a 5 ft.\\ wide line between your starting location and your ending location \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
       `,

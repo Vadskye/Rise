@@ -464,13 +464,11 @@ export const photomancy: MysticSphere = {
     {
       name: 'Lightbeam Dash',
 
+      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
         hit: `\\damagerankone{energy}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -483,13 +481,11 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
+      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
         hit: `\\damagerankfour{energy}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.

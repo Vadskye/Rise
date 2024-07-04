@@ -200,7 +200,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-        All creatures with no remaining \\glossterm{damage resistance} are \slowed while they are in the area.
+        All creatures with no remaining \\glossterm{damage resistance} are \\slowed while they are in the area.
       `,
       rank: 2,
       type: 'Sustain (minor)',
@@ -211,7 +211,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-        All creatures are \slowed while they are in the area.
+        All creatures are \\slowed while they are in the area.
       `,
       rank: 6,
       type: 'Sustain (minor)',
@@ -275,8 +275,8 @@ export const chronomancy: MysticSphere = {
       name: 'Temporal Duplicate',
 
       castingTime: 'minor action',
+      cost: "One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.",
       effect: `
-        When you cast this spell, you increase your \\glossterm{fatigue level} by one, and you \\glossterm{briefly} cannot cast this spell again.
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
         The duplicate is identical in all ways to the target when the spell resolves.
@@ -546,9 +546,10 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Rewind Damage',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per power, and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per power.
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 2,
@@ -662,8 +663,18 @@ export const chronomancy: MysticSphere = {
 
         % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
       `,
-      rank: 2,
+      rank: 1,
       type: 'Attune',
+    },
+    {
+      name: 'Persistent Gentle Repose',
+
+      castingTime: 'one minute',
+      functionsLike: {
+        name: "gentle repose",
+        exceptThat: "the effect lasts for one year.",
+      },
+      rank: 3,
     },
     {
       name: 'Ripen',

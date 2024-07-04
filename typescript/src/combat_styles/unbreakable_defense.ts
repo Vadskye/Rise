@@ -107,9 +107,8 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Second Wind',
 
+      cost: "Two \\glossterm{fatigue levels}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by two.
-
         You regain all of your hit points.
         After you use this ability, you cannot use it again until you finish a \\glossterm{short rest}.
       `,
@@ -163,9 +162,8 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Cleansing Strike',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Remove a \\glossterm{condition} affecting you.
         Then, make a \\glossterm{strike}.
       `,
@@ -175,11 +173,10 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Strike',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make a strike.
-        In addition, you regain 1d6 hit points per 3 power (minimum 1d6) at the end of the round.
+        In addition, you regain 1d6 hit points plus 1d6 per 3 power at the end of the round.
       `,
       rank: 3,
     },
@@ -187,11 +184,10 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Strike+',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        In addition, you regain 1d8 hit points per 2 power at the end of the round.
+        In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.
       `,
       rank: 7,
     },

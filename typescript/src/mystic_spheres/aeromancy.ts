@@ -23,7 +23,7 @@ export const aeromancy: MysticSphere = {
           If you already have a glide speed, you gain a +10 foot \\glossterm{enhancement bonus} to your glide speed.
         `,
         4: 'You also become immune to \\glossterm{falling damage}.',
-        6: 'The jump distance bonus increases to \plus10 feet.',
+        6: 'The jump distance bonus increases to \\plus10 feet.',
       },
       type: 'Attune',
     },
@@ -50,7 +50,7 @@ export const aeromancy: MysticSphere = {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
-        That creature treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
+        The target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
       `,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
@@ -101,10 +101,8 @@ export const aeromancy: MysticSphere = {
     {
       name: 'Propulsion',
 
+      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.",
       effect: `
-        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-        If you do, it becomes \\abilitytag{Swift}, and you can only target yourself with it.
-
         Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
         The target must have a \\glossterm{weight category} of Medium or less.
 

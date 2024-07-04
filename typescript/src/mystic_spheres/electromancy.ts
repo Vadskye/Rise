@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { CONDITION_CRIT, SWIFT_FATIGUE  } from './constants';
 
 export const electromancy: MysticSphere = {
   name: 'Electromancy',
@@ -203,10 +203,11 @@ export const electromancy: MysticSphere = {
     {
       name: 'Energize',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \glossterm{damage resistance} + 1d8 per 3 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{damage resistance} + 1d8 per 3 power.
         In addition, it is \\glossterm{impervious} to electricity damage this round.
       `,
       rank: 3,
@@ -217,10 +218,11 @@ export const electromancy: MysticSphere = {
     {
       name: 'Empowered Energize',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 4d8 \\glossterm{damage resistance} plus 1d8 per 2 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 4d8 \\glossterm{damage resistance} plus 1d8 per 2 power.
         In addition, it is \\glossterm{immune} to electricity damage this round.
       `,
       rank: 6,
@@ -516,13 +518,11 @@ export const electromancy: MysticSphere = {
     {
       name: 'Thunderdash',
 
+      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damagerankone{electricity}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -555,16 +555,14 @@ export const electromancy: MysticSphere = {
     {
       name: 'Distant Thunderdash',
 
+      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damagerankfour{electricity}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
-        You teleport into an unoccupied destination on a stable surface within \\distrange.
-        Both your departure and arrival with this spell sound like a clap of thunder.
-        In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
+          You teleport into an unoccupied destination on a stable surface within \\distrange.
+          Both your departure and arrival with this spell sound like a clap of thunder.
+          In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
 

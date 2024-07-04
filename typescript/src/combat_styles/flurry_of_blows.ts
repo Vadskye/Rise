@@ -37,9 +37,8 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Desperate Double Strike',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make two \\glossterm{weak strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
@@ -49,9 +48,8 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Desperate Triple Strike',
 
+      cost: "Two \\glossterm{fatigue levels}.",
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by two.
-
         Make three \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,

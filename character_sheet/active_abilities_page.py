@@ -645,7 +645,6 @@ def universal_abilities():
                     You reroll any attack or check you just made and gain a +2 bonus.
                     After you use this ability, you increase your fatigue level by two.
                 """,
-                tags=["Exertion"],
             ),
             universal_ability_button(
                 "Dirty Trick",
@@ -700,7 +699,7 @@ def universal_abilities():
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain half your maximum hit points and all of your damage resistance. In addition, you remove all conditions affecting you.
                 """,
-                tags=["Exertion", "Swift"],
+                tags=["Swift"],
             ),
             universal_ability_button(
                 "Shove",
@@ -715,9 +714,8 @@ def universal_abilities():
                 """
                     You move up to double your normal land speed.
                     After you use this ability during the movement phase, you increase your fatigue level by one.
-                    Using this ability during the action phase is free.
+                    Using this ability during the action phase does not cost fatigue.
                 """,
-                tags=["Exertion"],
             ),
             universal_ability_button(
                 "Total Defense",

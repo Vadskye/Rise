@@ -50,7 +50,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
                 The encumbrance reduction improves to 2.
             "),
             ItemUpgrade::new(5, "Reduces encumbrance by 3", "
-                The encumbrance reduction improves to 2.
+                The encumbrance reduction improves to 3.
             "),
         ],
         ..MagicArmor::default()
@@ -121,6 +121,22 @@ pub fn body_armor() -> Vec<MagicArmor> {
         upgrades: vec![
             ItemUpgrade::new(7, "Grants +2 AD if you have 5 Dex", "
                 The bonus increases to +2 if your Dexterity is at least 5.
+            "),
+        ],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Body(StandardItem {
+        name: String::from("Trimmed Armor"),
+        rank: 2,
+        short_description: String::from("Reduces Dex penalty from non-light armor"),
+        description: String::from(r"
+            If your Dexterity bonus to your Armor is reduced by at least 2 due to your body armor, you gain a \plus1 \glossterm{enhancement bonus} to your Armor defense.
+            This typically requires a Dexterity of 3 for medium armor, or a Dexterity of 2 for heavy armor.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Greatly Dex penalty from non-light armor", "
+                The Armor defense bonus increases to +2 if your Dexterity bonus to Armor is reduced by at least 3.
             "),
         ],
         ..MagicArmor::default()

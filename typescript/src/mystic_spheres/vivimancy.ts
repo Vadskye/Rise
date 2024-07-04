@@ -40,6 +40,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifesteal Grasp',
 
+      cost: "One optional \\glossterm{fatigue level} (see text).",
       // baseline for multi-defense grasp is dr4, drop to dr3 for healing
       attack: {
         hit: `
@@ -76,6 +77,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifesteal',
 
+      cost: "One optional \\glossterm{fatigue level} (see text).",
       // +1r for HP theft
       attack: {
         hit: `
@@ -109,11 +111,12 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Restoration',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // dr2 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr1
-        The target regains 1d8 \\glossterm{hit points} +1 per power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{hit points} +1 per power.
       `,
       rank: 1,
       // standard rank 2 power would be 3, so 7.5 at dr3 or 9 at dr4
@@ -124,10 +127,11 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Empowered Restoration',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // dr5 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 2d8 hit points plus 1d8 per 3 power and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d8 hit points plus 1d8 per 3 power.
       `,
       rank: 4,
       scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
@@ -137,12 +141,13 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Total Restoration',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // dr8 for short range, +1dr from healing bonus. Use drh to really reward
       // investment.
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr7h
-        The target regains 1d8 \\glossterm{hit points} per power and increases its \\glossterm{fatigue level} by one.
+        The target regains 1d8 \\glossterm{hit points} per power.
       `,
       rank: 7,
       tags: ['Swift'],
@@ -165,13 +170,16 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Cure Vital Wound',
 
+      cost: "Three \\glossterm{fatigue levels} from the target.",
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
         The target removes one \\glossterm{vital wound}.
-        It increases its \\glossterm{fatigue level} by three for each vital wound removed this way.
       `,
       rank: 5,
-      scaling: { 7: `The target can remove two \\glossterm{vital wounds}.` },
+      scaling: { 7: `
+        The target can remove two \\glossterm{vital wounds}.
+        If it does, the cost increases to six fatigue levels from the target.
+      `},
     },
 
     {

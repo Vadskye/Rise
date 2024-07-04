@@ -9,14 +9,14 @@ Rounds 14.50/B 6.00/R 6.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 
 ## Fighter shield vs fighter greataxe
 Rounds  7.00/B 4.25/R 5.25 Blue 0 ( 0.00%) Red 2 ( 0.28%)
-Rounds 14.25/B 5.75/R 6.25 Blue 0 ( 0.00%) Red 1 ( 0.00%)
+Rounds 13.25/B 5.75/R 6.25 Blue 0 ( 0.00%) Red 1 ( 0.00%)
 Rounds 12.50/B 5.75/R 6.50 Blue 0 ( 0.00%) Red 1 ( 0.12%)
-Rounds 16.25/B 7.00/R 7.50 Blue 0 ( 0.00%) Red 1 ( 0.05%)
-Rounds 16.50/B 6.50/R 6.75 Blue 0 ( 0.00%) Red 1 ( 0.00%)
+Rounds 13.00/B 6.00/R 7.00 Blue 0 ( 0.00%) Red 1 ( 0.17%)
+Rounds 13.75/B 5.75/R 6.50 Blue 0 ( 0.00%) Red 1 ( 0.09%)
 
 ### Fighter shield vs fighter shield
 Rounds 15.00/B 6.50/R 6.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 21.75/B 9.25/R 9.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 20.75/B 9.25/R 9.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds 20.00/B 8.50/R 8.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 23.00/B 9.50/R 9.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds 20.50/B 8.25/R 8.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 18.50/B 7.25/R 7.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)

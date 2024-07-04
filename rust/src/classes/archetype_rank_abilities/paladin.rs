@@ -261,6 +261,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{lay on hands} ability as a standard action.
                 % dr2 for close range, +1dr for touch or healing bonus idk, free poison/disease because class feature
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
                     The target regains 1d8 \glossterm{hit points} +1 per power.
@@ -361,6 +362,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{detect anathema} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
+                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
                     This does not give you any specific information about the location of those creatures.
@@ -381,6 +383,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{smite} ability as a standard action.
                 \begin{magicalactiveability}{Smite}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
@@ -424,7 +427,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{pass judgment} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Pass Judgment}
-                    \par \noindent Usage time: \glossterm{Minor action}.
+                    \\abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
                     You always gain the benefit of your \textit{zealous fixation} ability against that creature.
@@ -455,7 +458,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{zealous pursuit} ability as a \glossterm{minor action}.
                 \begin{magicalactiveability}{Zealous Pursuit}
-                    \par \noindent Usage time: \glossterm{Minor action}.
+                    \\abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \textit{zealous fixation} ability.
                     You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.

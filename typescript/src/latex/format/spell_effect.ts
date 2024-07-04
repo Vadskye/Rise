@@ -30,7 +30,7 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
 }
 
 function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
-  const dealsAoeDamage = /Each target.*\\damage/.test(attack.hit)
+  const dealsAoeDamage = /(ach target|verything).*\\damage/.test(attack.hit)
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
   // false, which probably means the omission is intentional.
   if (dealsAoeDamage && attack.missGlance === undefined) {

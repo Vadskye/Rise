@@ -99,7 +99,7 @@
 \DeclareDocumentCommand{\spelltwocol}{m m}
 {
     \par\noindent
-    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~l~@{}}
+    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~>{\rcol}X~@{}}
         \renewcommand{\arraystretch}{0.5}
         #1 & #2
     \end{tabularx}
@@ -108,7 +108,7 @@
 % The HTML version of threecol has to put its tabularx inside of a figure
 \DeclareDocumentCommand{\sectiontwocol}{m m}
 {
-    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~l~@{}}
+    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~>{\lcol}X~@{}}
         \renewcommand{\arraystretch}{0.5}
         #1 & #2
     \end{tabularx}

@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -106,7 +106,7 @@ export const umbramancy: MysticSphere = {
       name: 'Deep Darkness',
 
       effect: `
-        You create a void of darkness in a \medarea radius \\glossterm{zone} within \medrange.
+        You create a void of darkness in a \\medarea radius \\glossterm{zone} within \\medrange.
         \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are dimmed to be no brighter than \\glossterm{shadowy illumination}.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
@@ -119,7 +119,7 @@ export const umbramancy: MysticSphere = {
       name: 'Absolute Darkness',
 
       effect: `
-        You create a void of darkness in a \medarea radius \\glossterm{zone} within \medrange.
+        You create a void of darkness in a \\medarea radius \\glossterm{zone} within \\medrange.
         \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are removed, making no light possible in the area.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
@@ -397,10 +397,9 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowstep',
 
+      cost: SWIFT_FATIGUE,
       effect: `
         This spell has no \\glossterm{verbal components}.
-        When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-        If you do, it becomes \\abilitytag{Swift}.
 
         You teleport into an unoccupied location within \\shortrange on a stable surface that can support your weight.
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
@@ -420,7 +419,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \abilitytag{Swift}, even if you make the teleportation Swift.
+          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
@@ -436,7 +435,7 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \abilitytag{Swift}, even if you make the teleportation Swift.
+          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
 
@@ -573,7 +572,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         One ritual participant is never considered to be in \\glossterm{mundane} natural sunlight.
         This does not impair its vision, but protects it if it would otherwise suffer negative consequences from sunlight.
-        Powerful \magical effects that mimic sunlight, such as \spell{solar flare}, still affect the target normally.
+        Powerful \\magical effects that mimic sunlight, such as \\spell{solar flare}, still affect the target normally.
       `,
       rank: 3,
       type: 'Attune (target)',
@@ -584,7 +583,7 @@ export const umbramancy: MysticSphere = {
       castingTime: 'one hour',
       functionsLike: {
         name: "sunlight ward",
-        exceptThat: "the target is also protected from \magical effects that mimic sunlight.",
+        exceptThat: "the target is also protected from \\magical effects that mimic sunlight.",
       },
       rank: 6,
       type: 'Attune (target)',

@@ -36,6 +36,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // TODO: This doesn't pay enough of a damage penalty for its incredible defenses. Also it
+        // encourages high-defense barbarians, which is weird; barbarians should generally be more
+        // low-defense than fighters, but higher survivability.
         RankAbility {
             name: "Resilient Strike",
             is_magical: false,
@@ -43,6 +46,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \textit{resilient strike} ability.
                 \begin{activeability}{Resilient Strike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
                     You also \glossterm{briefly} gain a \plus4 bonus to defenses against damaging attacks.
@@ -100,7 +104,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{rage} ability as a \glossterm{free action}.
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Exertion}, \abilitytag{Sustain} (free)}
+                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Sustain} (free)}
+                    \abilityusagetime \glossterm{Free action} while not already in a rage.
                     \rankline
                     When you use this ability, you gain \glossterm{damage resistance} equal to half your maximum hit points.
                     In addition, for the duration of this ability, you gain the following benefits and drawbacks:
@@ -139,6 +144,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \textit{enraged strike} ability.
                 \begin{activeability}{Enraged Strike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike}.
                     The strike deals double \glossterm{weapon damage} against each creature that dealt damage to you during the previous round.
@@ -248,6 +254,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \textit{savage rush} ability.
                 \begin{activeability}{Savage Rush}
+                    \abilityusagetime Standard action.
                     \rankline
                     Move up to your movement speed.
                     During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
@@ -487,6 +494,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \textit{feral strike} ability.
                 \begin{activeability}{Feral Strike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
                     % 50% chance of +5.5 accuracy, so almost +3 accuracy
