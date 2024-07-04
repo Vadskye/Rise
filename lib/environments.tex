@@ -73,14 +73,17 @@
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
 ]{activeabilitymdframed}
+% #1 = if true, include \label{#3}
+% #2 = Suffix after the name not used for label/targets/etc. Not bold.
+% #3 = Name of the ability
+% #4 = Right-aligned section to the right of the ability name. Usually tags, sometimes rank.
 \DeclareDocumentEnvironment{activeability}{s o m o}
 {
     \begin{activeabilitymdframed}
     \RaggedRight
-    \IfBooleanF{#1}{
-        \lowercase{\hypertargetraised{ability:#3}{}}
-        \hypertargetraised{ability:#3}{}
-    }
+    \lowercase{\hypertargetraised{ability:#3}{}}
+    \hypertargetraised{ability:#3}{}
+    \IfBooleanT{#1}{\label{#3}}
     \spelltwocol{
         {\normalsize \textbf{#3}}
         \IfValueT{#2}{#2}
