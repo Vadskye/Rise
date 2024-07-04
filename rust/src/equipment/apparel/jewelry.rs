@@ -168,7 +168,7 @@ fn amulets() -> Vec<Apparel> {
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Perfect Equality"),
-        rank: 5,
+        rank: 4,
         short_description: String::from(r"Improves \ability<perfect body> on your lowest attribute"),
         description: String::from(r"
             If you have the \ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
@@ -451,7 +451,7 @@ fn rings() -> Vec<Apparel> {
             You can activate this ring as a standard action.
             When you do, you cause the effect of the last spell invested in the ring.
             You choose the area and targets affected by the spell at this time.
-            This does not require \glossterm<casting components>, even if they would normally be required to cast the spell.
+            This does not require \glossterm<verbal components> or \glossterm<somatic components>, even if they would normally be required to cast the spell.
             The spell's effect is determined based on the \glossterm<power> and other abilities of the original caster who invested the spell into the ring, not yours.
             You do not have to have the ability to cast the spell to activate a spell in this way.
 

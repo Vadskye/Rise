@@ -437,7 +437,7 @@ export const polymorph: MysticSphere = {
           \\begin{itemize}
             \\item Its exposed flesh makes it \\vulnerable to all damage.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-            \\item It is unable to speak normally or use verbal or somatic \\glossterm{casting components}.
+            \\item It is unable to speak normally or use \\glossterm{verbal components} or \\glossterm{somatic components}.
           \\end{itemize}
 
           % There must be text between an itemize block and the end of a mdframed env
