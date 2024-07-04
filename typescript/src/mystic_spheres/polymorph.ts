@@ -340,7 +340,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `\\damagerankone{piercing}.`,
-        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -358,7 +357,6 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `\\damagerankfour{piercing}.`,
-        missGlance: true,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,

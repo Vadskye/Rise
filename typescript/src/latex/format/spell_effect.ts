@@ -30,12 +30,13 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
 }
 
 function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
-  const dealsAoeDamage = /(ach target|verything).*\\damage/.test(attack.hit)
+  const isArea = /(\bwall\b|against all|ach target|verything)/.test(attack.targeting);
+  const dealsDamage = /damagerank/.test(attack.hit);
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
   // false, which probably means the omission is intentional.
-  if (dealsAoeDamage && attack.missGlance === undefined) {
+  if (isArea && dealsDamage && attack.missGlance === undefined && attack.miss === undefined) {
     console.error(`Attack from ${effectName} should probably have missGlance = true`);
-  } else if (attack.missGlance && !dealsAoeDamage) {
+  } else if (attack.missGlance && dealsDamage && !isArea) {
     console.error(`Attack from ${effectName} should probably have missGlance = false`);
   }
 }

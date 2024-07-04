@@ -212,6 +212,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `\\damagerankone{slashing}.`,
+        missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.

@@ -389,7 +389,7 @@ export const aquamancy: MysticSphere = {
 
       functionsLike: {
         name: 'aqueous tentacle',
-        exceptThat: 'the damage dealt by the weapon increases to 2d6. However, you can only target yourself',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6. However, you can only target yourself.',
       },
       narrative: `
         You grow a massive watery tentacle that extends from your body.
