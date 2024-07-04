@@ -691,6 +691,11 @@
 \fi
 }
 
+\DeclareDocumentCommand{\nonsectionlabel}{m}
+{
+    \phantomsection \label{#1}
+}
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
