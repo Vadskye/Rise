@@ -15,6 +15,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
                 \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune} (deep), \abilitytag{Emotion}}
+                    \abilityusagetime 8 hours of training, which the target must actively participate in.
                     \rankline
                     Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} that you \glossterm{touch}.
                     Its level must not exceed your level.
@@ -30,7 +31,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
-                        \item It has no \glossterm{resources}, and it cannot use \abilitytag{Exertion} abilities.
+                        \item It has no \glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
                         \item Its \glossterm{hit points} are equal to the standard value for your level, base class, and Constitution (see Base Class Abilities, above).
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
@@ -82,6 +83,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 As a standard action, you can use the \ability{tag-team takedown} ability.
                 When you use this ability, your animal companion generally waits until after you attack to make its own attack.
                 \begin{activeability}{Tag-Team Takedown}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} with 1d4 \glossterm{extra damage}.
                     Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
@@ -198,6 +200,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{banestrike} ability.
                 \begin{activeability}{Banestrike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
                     If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double \glossterm{weapon damage}.
@@ -224,6 +227,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
             \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
                 \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
+                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
@@ -267,6 +271,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
                     \begin{magicalactiveability}{Anchoring}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \glossterm{teleportation} effects.
@@ -277,6 +282,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{activeability}{Coordinated Stealth}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
@@ -286,6 +292,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Cover Weaknesses}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         The accuracy bonus against your quarry is replaced with a \plus1 bonus to Armor and Reflex defenses against your quarry's attacks.
 
@@ -295,6 +302,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Decoy}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         If you are adjacent to your quarry, it takes a \minus2 accuracy penalty on attacks against members of your hunting party other than you.
 
@@ -304,6 +312,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{magicalactiveability}{Lifeseal}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
 
@@ -313,6 +322,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{activeability}{Martial Suppression}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 accuracy penalty with \glossterm{mundane} attacks.
 
@@ -322,6 +332,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Mystic Suppression}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \magical attacks.
 
@@ -331,6 +342,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Solo Hunter}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         Your hunting party other than you gains no benefit from your \textit{quarry} ability.
                         In exchange, you gain a \plus1 bonus to your defenses against your quarry.
@@ -341,6 +353,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Swarm Hunter}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
@@ -350,6 +363,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
+                        \abilityusagetime Automatic when you use \ability{quarry}.
                         \rankline
                         While your quarry is adjacent to at least three members of your hunting party, those adjacent members gain an additional \plus1 accuracy bonus against it.
 
@@ -448,6 +462,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{ambush} ability.
                 \begin{activeability}{Ambush}
+                    \abilityusagetime Standard action.
                     \rankline
                     Move up to your speed and make a \glossterm{strike} with a +2 accuracy bonus.
                     The strike deals double damage to \unaware targets.

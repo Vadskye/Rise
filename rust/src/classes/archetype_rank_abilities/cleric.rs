@@ -123,6 +123,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{turn undead} ability.
                 \begin{magicalactiveability}{Turn Undead}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
                     \hit Each target is turned by you as a \glossterm{condition}.
@@ -245,10 +246,11 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can request a \textit{miracle} as a standard action.
-                \begin{magicalactiveability}{Miracle}[\abilitytag{Exertion})]
+                \begin{magicalactiveability}{Miracle}
+                    \abilityusagetime Standard action.
+                    \abilitycost Three \glossterm{fatigue levels}, and you cannot use it again for a week.
                     You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
                     At your deity's discretion, this can emulate the effects of any divine spell or ritual, or have any other effect of a similar power level.
-                    After you use this ability, you increase your \glossterm{fatigue level} by three, and you cannot request another miracle for a week.
 
                     Miracles are most effective when your request is directly related to your deity's domains and general purview.
                     They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
@@ -264,7 +266,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                Your \ability{miracle} ability loses the \abilitytag{Exertion} tag and does not increase your fatigue level.
+                Your \ability{miracle} ability does not increase your fatigue level.
                 In addition, you can perform two miracles per week instead of only one.
             ",
             modifiers: None,
@@ -292,6 +294,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{divine aid} ability as a standard action.
                 % dr2 for close range, +1dr for touch or healing bonus idk, free defense bonus because class feature
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
                     The target regains 1d8 \glossterm{hit points} +1 per \glossterm{power}.
@@ -341,10 +344,10 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{vital restoration} ability as a standard action.
-                \begin{magicalactiveability}{Vital Restoration}[\abilitytag{Exertion}]
+                \begin{magicalactiveability}{Vital Restoration}
+                    \abilityusagetime Standard action.
+                    \abilitycost Three \glossterm{fatigue levels}.
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by three (see \pcref{Fatigue}).
-
                     Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
                     The target removes one of its \glossterm{vital wounds}.
 
@@ -382,10 +385,10 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can use the \textit{revivify} ability as a standard action.
-                \begin{magicalactiveability}{Revivify}[\abilitytag{Exertion}]
+                \begin{magicalactiveability}{Revivify}
+                    \abilityusagetime Standard action.
+                    \abilitycost Four \glossterm{fatigue levels}.
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by four (see \pcref{Fatigue}).
-
                     Choose one intact corpse you \glossterm{touch}.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
                     After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
@@ -407,6 +410,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{denounce the heathens} ability as a standard action.
                 \begin{activeability}{Denounce the Heathens}[\abilitytag{Emotion}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -442,10 +446,10 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You can use the \textit{bless the worthy} ability as a standard action.
-                \begin{activeability}{Bless the Worthy}[\abilitytag{Emotion}, \abilitytag{Exertion}, \abilitytag{Swift}]
+                \begin{activeability}{Bless the Worthy}[\abilitytag{Emotion}, \abilitytag{Swift}]
+                    \abilityusagetime Standard action.
+                    \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    When you use this ability, you increase your \glossterm{fatigue level} by one.
-
                     You and all \glossterm{allies} within a \largearea radius from you each regain 2d6 \glossterm{damage resistance}.
                     In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
 
@@ -486,6 +490,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{activeability}{Condemn the Fearful}[\abilitytag{Emotion}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \hugearea radius from you.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -504,6 +509,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{convert the irresolute} ability as a standard action.
                 \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
                     Your \glossterm{accuracy} is equal to your Persuasion skill.

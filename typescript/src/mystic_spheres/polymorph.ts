@@ -453,12 +453,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mending',
 
+      cost: "One \\glossterm{fatigue level} from the target if it is a creature.",
       // dr3 from short range. No healing buff since this is more versatile and in an odd
       // sphere for healing.
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
         The target regains 1d8 \\glossterm{damage resistance} \\plus1 per \\glossterm{power} if it is a creature, or that many hit points if it is an object.
-        If it is a creature, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 2,
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
@@ -480,13 +480,13 @@ export const polymorph: MysticSphere = {
     {
       name: 'Brief Regeneration',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // At rank 4, expected power is about 9. Normal healing would be dr5, which is
       // 1d8+3d8 = 18. This is 27 instead, which is a big buff, but healing is generally
       // best as an emergency button and this requires planning.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
         The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
-        When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 3,
       scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
@@ -495,13 +495,13 @@ export const polymorph: MysticSphere = {
     {
       name: 'Empowered Brief Regeneration',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // At rank 6, expected power is about 12. Normal healing would be dr8, which is
       // 10d8 = 45. This is 6d10 each = 66 instead, which is about 50% more like the rank
       // 3 version.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
         The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
-        When this effect ends, the target increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
       scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
@@ -510,9 +510,10 @@ export const polymorph: MysticSphere = {
     {
       name: 'Vital Regeneration',
 
+      cost: "See text.",
       effect: `
         At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
-        It can choose to stop this regeneration if you are conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
+        It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,

@@ -20,7 +20,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} using a slashing weapon.
-        The strike deals 1d6 \\glossterm{extra damage} \plus1 per 2 power if the target is not wearing metal body armor.
+        The strike deals 1d6 \\glossterm{extra damage} \\plus1 per 2 power if the target is not wearing metal body armor.
       `,
       rank: 3,
     },
@@ -161,9 +161,8 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Desperate Bloodwhirl',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        After you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         Make a melee \\glossterm{strike} using a slashing weapon.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you still deal half damage.

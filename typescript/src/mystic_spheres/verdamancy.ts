@@ -207,7 +207,7 @@ export const verdamancy: MysticSphere = {
       name: 'Vine Tentacle',
 
       effect: `
-        Choose yourself or an \\glossterm{ally} within \medrange.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
         The target gains a vine \\glossterm{natural weapon}.
         It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
         The weapon deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
@@ -234,7 +234,7 @@ export const verdamancy: MysticSphere = {
 
       // +2 over normal, but Versatile Grip is more of a sidegrade
       effect: `
-        Choose yourself or an \\glossterm{ally} within \medrange.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
         The target gains a vine \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
         It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
         The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
@@ -250,7 +250,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
-        Each poison stage makes the target \glossterm<briefly> \stunned.
+        Each poison stage makes the target \\glossterm{briefly} \\stunned.
         Its stage 3 effect also ends the poison.
       `,
       rank: 2,
@@ -298,7 +298,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \damagerankonelow poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankonelow{poison} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
@@ -312,7 +312,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \damageranktwolow poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damageranktwolow{poison} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 2,
@@ -326,7 +326,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
-        The poison inflicts \damagerankfourlow poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankfourlow{poison} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 4,
@@ -340,7 +340,7 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
-        The poison inflicts \damagerankfivelow poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankfivelow{poison} per \\glossterm{poison stage}.
       `,
       rank: 7,
       scaling: 'poison',

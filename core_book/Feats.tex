@@ -317,6 +317,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
         \magicalff[1]{Ancestral Battlecry} You can use the \ability{ancestral battlecry} ability as a standard action.
         \begin{magicalactiveability}{Ancestral Battlecry}
+            \abilityusagetime Standard action.
+            \rankline
             Three ghostly spirits of your ancestors appear around you.
             They cannot be attacked or interacted with.
             Whenever you make a melee \glossterm{strike}, each spirit mimics you.
@@ -328,6 +330,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[6]{Ancestral Totem} You can use the \ability{ancestral totem} ability as a standard action.
         \begin{magicalsustainability}{Ancestral Totem}{\abilitytag{Manifestation}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime Standard action.
+            \rankline
             Choose an unoccupied location on solid ground within \shortrange of you.
             A Medium totem representing your ancestors appears in that location.
             The totem is a creature that cannot take actions of any kind, including \glossterm{movement}.
@@ -407,6 +411,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[1]{Share Boon} When you cast a spell with the \abilitytag{Attune} tag, you can use the \textit{share boon} ability.
         \begin{magicalactiveability}{Share Boon}
+            \abilityusagetime Can be triggered when you cast a spell with the \abilitytag{Attune} tag.
             \rankline
             The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
             Choose one \glossterm{ally} within \rngmed range.
@@ -537,6 +542,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Maneuver Fusion} You can use the \textit{maneuver fusion} ability as a \glossterm{standard action}.
         \begin{activeability}{Maneuver Fusion}
+            \abilityusagetime Standard action.
             \rankline
             Choose two maneuvers that you know.
             You use both maneuvers simultaneously.
@@ -607,6 +613,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[6]{Forked Tongue} When you speak, you can use the \textit{forked tongue} ability.
         \begin{sustainability}{Forked Tongue}{\abilitytag{Sustain} (minor)}
+            \abilityusagetime \glossterm{Minor action}.
             \rankline
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group. 
@@ -624,6 +631,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[18]{Deceive Reality} Once per \glossterm{long rest}, you can use the \ability{deceive reality} ability as a standard action.
         \begin{magicalactiveability}{Deceive Reality}
+            \abilityusagetime Standard action once per \glossterm{long rest}.
             \rankline
             You tell a lie that becomes true.
             The lie must not directly affect any creatures.
@@ -678,6 +686,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % that would normally be appropriate for a d(R-1) spell.
         \ff[6]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
         \begin{activeability}{Breath Weapon}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
             After you use this ability, you \glossterm{briefly} cannot use it again.
@@ -740,6 +749,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Duelist Strike} You can use the \textit{duelist strike} ability as a standard action.
         \begin{activeability}{Duelist Strike}
+            \abilityusagetime Standard action.
             \rankline
             Make a melee \glossterm{strike} with a non-\weapontag{Heavy} weapon.
             This strikes only targets a single creature, even if your weapon would normally have the Sweeping tag.
@@ -774,6 +784,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         You can only delay one of your conditions in this way.
         If you gain a new condition, you can choose to either delay the new condition or continue delaying the old condition.
+        If some other effect would delay the effects of the condition, such as a fighter's \ability{disciplined reaction} ability, you do not have to start Endurance checks with this ability until after that delay ends.
 
         \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -788,6 +799,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \magicalff[1]{Sudden Entropy} You can use the \textit{sudden entropy} ability as a standard action.
         \begin{magicalactiveability}{Sudden Entropy}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Fortitude against one creature or object within \shortrange.
             \hit \damageranktwo{}.
@@ -848,6 +860,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % If this gets a one rank discount for being a feat ability, this is reasonably balanced.
         \magicalff[6]{Fateseal} You can use the \textit{fateseal} ability as a standard action.
         \begin{magicalactiveability}{Fateseal}
+            \abilityusagetime Standard action.
+            \rankline
             Make an attack vs. Mental against one creature within \medrange of you.
             \hit The target is fatesealed as a \glossterm{condition}.
             Whenever you or one of your \glossterm{allies} make an attack roll against it, if the roll would be less than a 6, treat it as a 6 instead.
@@ -905,6 +919,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % as rank 3 maneuver, except for hitting Reflex defense
         \magicalff[6]{Spectral Strike} You can use the \textit{spectral strike} ability as a standard action.
         \begin{magicalactiveability}{Spectral Strike}
+            \abilityusagetime Standard action.
             \rankline
             Make a melee \glossterm{strike}.
             The attack is made against the target's Reflex defense instead of its Armor defense.
@@ -967,6 +982,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Tempting Concoction} You can use the \textit{tempting concoction} ability as a \glossterm{standard action}.
         \begin{magicalattuneability}{Tempting Concoction}{\abilitytag{Attune}, \abilitytag{Emotion}, \abilitytag{Subtle}}
+            \abilityusagetime Standard action.
             \rankline
             Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
             Whenever an \glossterm{enemy} notices the chosen object, make a \glossterm{reactive attack} vs. Mental against it.
@@ -1025,6 +1041,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Trample} You can use the \textit{trample} ability as a standard action.
         \begin{activeability}{Trample}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
+            \abilityusagetime Standard action.
             \rankline
             This ability functions like the \textit{overrun} ability, except that creatures may not choose to avoid you.
             In addition, the attack deals \damageranktwo{bludgeoning} damage.
@@ -1084,6 +1101,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
         \begin{activeability}{Battle Command}[\abilitytag{Swift}]
+            \abilityusagetime Standard action.
             \rankline
             Choose an \glossterm{ally} within \rngmed range.
             During the current phase, the target gains a \plus2 bonus to \glossterm{accuracy} and rolls twice for any attacks it makes, keeping the better result.
@@ -1093,6 +1111,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[12]{Bolster} You can use the \textit{bolster} ability as a standard action.
         \begin{activeability}{Bolster}[\abilitytag{Emotion}, \abilitytag{Swift}]
+            \abilityusagetime Standard action.
             \rankline
             One \glossterm{ally} who can see or hear you gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
@@ -1156,6 +1175,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[6]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
         \begin{activeability}{Trained Strike}
+            \abilityusagetime Standard action.
             \rankline
             Make a \glossterm{strike} and choose either precision or power.
             If you choose precision, you gain a \plus2 accuracy bonus.
@@ -1182,9 +1202,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % rank 3 equivalent, so dr5 healing
         \ff[6]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
         \begin{activeability}{Healing Touch}[\abilitytag{Swift}]
+            \abilityusagetime Standard action.
+            \abilitycost One \glossterm{fatigue level} from the target.
             \rankline
             Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
-            The target regains 6d6 \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
+            The target regains 6d6 \glossterm{hit points}.
             In addition, make a Medicine check.
             For each poison and disease on the target, if your check result beats a \glossterm{difficulty value} equal to 10 \add twice its \glossterm{rank}, the effect is removed.
 
@@ -1234,6 +1256,7 @@ w
 
         \magicalff[12]{Spell Fusion} You can use the \textit{spell fusion} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Spell Fusion}
+            \abilityusagetime Standard action.
             \rankline
             Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
             You cast both spells simultaneously.
@@ -1258,6 +1281,7 @@ w
 
         \magicalff[1]{Imbue Projectile} You can use the \textit{imbue projectile} ability as a standard action.
         \begin{magicalattuneability}{Imbue Projectile}{\abilitytag{Attune}}
+            \abilityusagetime Standard action.
             \rankline
             Choose a spell you know that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
             The spell's power is imbued in a \glossterm{projectile} you hold.
@@ -1301,6 +1325,7 @@ w
         % Much stronger than Spellbreaker because this is a huge part of the whole Null thing
         \ff[6]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
         \begin{activeability}{Sever Magic}
+            \abilityusagetime Standard action.
             \rankline
             Make a \glossterm{strike}.
             If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect of its choice that it is currently attuned to.
@@ -1361,6 +1386,7 @@ w
 
         \magicalff[18]{Suggestion} You can use the \textit{suggestion} ability as a standard action.
         \begin{sustainability}{Suggestion}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -1383,6 +1409,7 @@ w
 
         \ff[6]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
         \begin{sustainability}{Combat Prediction}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime Standard action.
             \rankline
             Choose a creature within \medrange of you.
             That creature's intentions become obvious to you as long as you sustain this ability.
@@ -1454,19 +1481,19 @@ w
 
         \ff[1]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
         \begin{activeability}{Regenerative Recovery}[\abilitytag{Swift}]
+            \abilityusagetime Standard action.
+            \abilitycost One \glossterm{fatigue level}.
             \rankline
-            When you use this ability, you increase your \glossterm{fatigue level} by one.
-
-            You regain 2d6 \glossterm{hit points}.
+            You regain 3d6 \glossterm{hit points}.
             If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
 
             \rankline
-            \featlevel{3} The healing increases to 2d10.
-            \featlevel{6} The healing increases to 4d6.
-            \featlevel{9} The healing increases to 6d6.
-            \featlevel{12} The healing increases to 5d10.
-            \featlevel{15} The healing increases to 7d10.
-            \featlevel{18} The healing increases to 10d10.
+            \featlevel{3} The healing increases to 4d6.
+            \featlevel{6} The healing increases to 6d6.
+            \featlevel{9} The healing increases to 5d10.
+            \featlevel{12} The healing increases to 7d10.
+            \featlevel{15} The healing increases to 10d10.
+            \featlevel{18} The healing increases to 14d10.
         \end{activeability}
 
         \ff[6]{Diehard} You gain a \plus3 bonus to \glossterm{vital rolls}.
@@ -1530,6 +1557,7 @@ w
 
         \magicalff[18]{Extradimensional Pocket} When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
         \begin{magicalattuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
+            \abilityusagetime Can be triggered when you use the \ability{conceal object} ability (see \pcref{Sleight of Hand}).
             \rankline
             You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
             When your attunement to this ability ends, the object appears in a free hand.
@@ -1542,6 +1570,7 @@ w
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
         \begin{sustainability}{Aim}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+            \abilityusagetime Standard action.
             \rankline
             Choose a creature or object you can see.
             You gain a \plus2 accuracy bonus against the target.
@@ -1565,6 +1594,7 @@ w
 
         \magicalff[6]{Read Emotions} You can use the \textit{read emotions} ability as a standard action.
         \begin{sustainability}{Read Emotions}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against a creature within \rngshort range.
             Your \glossterm{accuracy} is equal to your Social Insight skill.
@@ -1595,9 +1625,9 @@ w
 
         \magicalff[6]{Spellstrike} You can use the \ability{spellstrike} ability as a standard action.
         \begin{magicalactiveability}{Spellstrike}
+            \abilityusagetime Standard action.
+            \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
             \rankline
-            After you use this ability, you increase your \glossterm{fatigue level} by one, and you \glossterm{briefly} cannot use it again.
-
             You cast a spell and make a melee \glossterm{strike}, in either order.
             Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
             The spell and the strike must affect completely different targets, with no overlap between their targets or areas (if any).
@@ -1901,6 +1931,8 @@ w
 
         \magicalff[1]{Augmented Body} You can use the \textit{augmented body} ability whenever you finish a \glossterm{short rest}.
         \begin{magicalattuneability}{Augmented Body}{\abilitytag{Attune} (deep)}
+            \abilityusagetime Can be triggered when you finish a \glossterm{short rest}.
+            \rankline
             Choose a physical attribute: Strength, Dexterity, or Constitution.
             You gain a \plus1 \glossterm{enhancement bonus} to that attribute.
         \end{magicalattuneability}
@@ -1987,15 +2019,17 @@ w
 
         \magicalff[1]{Empower Summon} You can use the \textit{empower summon} ability as a \glossterm{minor action}.
         \begin{magicalactiveability}{Empower Summon}[\abilitytag{Swift}]
+            \abilityusagetime \glossterm{Minor action}.
+            \rankline
             Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
             That creature gains a \plus2 bonus to its \glossterm{accuracy} and \glossterm{defenses} this round.
         \end{magicalactiveability}
 
         \magicalff[6]{Resummon} You can use the \textit{resummon} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Resummon}
+            \abilityusagetime Standard action.
+            \abilitycost One \glossterm{fatigue level}.
             \rankline
-            After you use this ability, you increase your \glossterm{fatigue level} by one.
-
             Choose a spell from the \sphere{Summoning} mystic sphere that you are still \glossterm{attuned} to, even if all creatures created by that spell are dead.
             All effects of that spell, including any active creatures, immediately end.
             Then, you recreate all creatures from that spell as if you had just cast it.
@@ -2020,6 +2054,7 @@ w
 
         \magicalff[6]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
         \begin{magicalactiveability}{Telekinetic Strike}
+            \abilityusagetime Standard action.
             \rankline
             Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
             Make a melee \glossterm{strike} with a \plus2 accuracy bonus using that weapon.
@@ -2077,6 +2112,8 @@ w
 
         \magicalff[12]{Countermagic} You can use the \textit{countermagic} ability as a standard action.
         \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
+            \abilityusagetime Standard action.
+            \abilitycost See text.
             \rankline
             Choose a creature within \rngmed range of you.
             If the target uses a \magical ability as a standard action this round, that ability has no effect.
@@ -2246,6 +2283,7 @@ w
 
         \magicalff[6]{Mental Assault} You can use the \textit{mental assault} ability as a standard action.
         \begin{magicalactiveability}{Mental Assault}[\abilitytag{Compulsion}]
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
             You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
@@ -2265,6 +2303,7 @@ w
 
         \magicalff[12]{Read Mind} You can use the \textit{read mind} ability as a standard action.
         \begin{magicalsustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
+            \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
             You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
@@ -2342,9 +2381,10 @@ w
 
         \magicalff[12]{Twinspell} You can use the \textit{twinspell} ability as a \glossterm{standard action}.
         \begin{magicalactiveability}{Twinspell}
+            \abilityusagetime Standard action.
+            \abilitycost Two \glossterm{fatigue levels}.
             \rankline
             You can only use this ability if you have two \glossterm{free hands}.
-            After you use this ability, you increase your \glossterm{fatigue level} by two.
 
             Choose two spells that you know.
             You cast both spells simultaneously, one with each hand.
@@ -2427,6 +2467,7 @@ w
 
         \ff[6]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
         \begin{sustainability}{Cyclone}{\abilitytag{Sustain} (standard)}
+            \abilityusagetime Standard action.
             \rankline
             When you use this ability, make a melee \glossterm{strike} with a slashing weapon.
             The strike targets all \glossterm{enemies} adjacent to you.

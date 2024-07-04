@@ -64,7 +64,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Roar',
 
       attack: {
-        hit: `Each target with no remaining \\glossterm{damage resistance} is \\frightened by you as a \\glossterm{condition}.`,
+        hit: `
+          Each target with no remaining \\glossterm{damage resistance} is \\frightened by you as a \\glossterm{condition}.
+        `,
+        crit: CONDITION_CRIT,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -78,6 +81,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
+        crit: CONDITION_CRIT,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -207,9 +211,8 @@ export const heraldOfWar: CombatStyle = {
 
       // We have to use a power scaling here because maneuvers don't have rank scaling, so
       // this would fall behind quickly otherwise
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d6 per 3 power \\glossterm{damage resistance}.
       `,
       rank: 3,
@@ -219,9 +222,8 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry+',
 
+      cost: "One \\glossterm{fatigue level}.",
       effect: `
-        When you use this ability, you increase your \\glossterm{fatigue level} by one.
-
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
       `,
       rank: 7,

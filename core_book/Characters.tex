@@ -120,6 +120,9 @@ You can either skim past terms you don't yet understand or look them up as you g
     Player characters have an average attribute higher than 0 because they are exceptional individuals.
     For details about determining your attributes, see Step 4 of Character creation, \pref{Step 4: Attributes}.
 
+    Your attributes can increase after character creation, such as by reaching level 3 (see \pcref{Character Advancement and Gaining Levels}).
+    Increasing your attributes generally changes all of their effects appropriately.
+
     \subsection{Strength (Str)}\label{Strength}
         {
             Strength measures your muscle and physical power.
@@ -177,6 +180,10 @@ You can either skim past terms you don't yet understand or look them up as you g
             \par Creatures incapable of complex cognition and speech, like animals, have an Intelligence of \minus6 or lower.
             Creatures capable of speech have an Intelligence of at least \minus5.
         }
+
+        \subsubsection{Changing Intelligence}\label{Changing Intelligence}
+            When your Intelligence permanently increases, you also permanently gain an additional insight point and trained skill.
+            Temporary Intelligence modifiers, such as from magic items, do not affect your insight points or trained skills.
 
     \subsection{Perception (Per)}\label{Perception}
         {
@@ -299,6 +306,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \begin{raggeditemize}
             \magicalitemhead{Fae Light} A gnome can use the \textit{fae light} ability as a standard action.
                 \begin{activeability}{Fae Light}
+                    \abilityusagetime Standard action.
                     \rankline
                     A Tiny glowing orb appears at a location within \rngmed range.
                     It sheds pale, \glossterm{bright illumination} in a \areasmall radius, and \glossterm{shadowy illumination} in a \areamed radius.
@@ -517,6 +525,12 @@ You can either skim past terms you don't yet understand or look them up as you g
         \subsubsection{Recovering From Fatigue}
             When you finish a \glossterm{long rest}, your \glossterm{fatigue level} is restored to 0 (see \pcref{Resting}).
             There are no other ways to reduce your fatigue level.
+
+        \subsubsection{Paying Fatigue Costs}
+            Some abilities indicate that they cost a certain number of fatigue levels.
+            That means that you increase your fatigue level by the given amount after the ability resolves.
+            This means you do not suffer a \glossterm{fatigue penalty} from that extra fatigue while using the ability.
+            You can even use abilities that cause you to drop unconscious from fatigue.
 
     \subsection{Insight Points}\label{Insight Points}
         You can spend \glossterm{insight points} to gain new special abilities.

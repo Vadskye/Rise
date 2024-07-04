@@ -132,7 +132,7 @@ Items are divided into five broad categories, described below.
         There are two ways to determine how difficult an object is to interact with: its weight, and how it is contained.
         Use the slowest action type from among the both methods.
         You can only manipulate objects as a free action once per round.
-        However, you can use a minor action or a standard action in place of a free action, allowing you to manipulate up to three objects per round.
+        However, you can use a minor action or a standard action in place of a free action for this purpose, allowing you to manipulate up to three objects per round.
 
         These object manipulation rules are intended to cover interactions that take some amount of time and effort, such as drawing a weapon or opening a door.
         Simply dropping an object in your hands is so trivial that it does not count against your one free action object manipulation per round.
@@ -155,9 +155,15 @@ Items are divided into five broad categories, described below.
     \subsection{Storing Items}\label{Storing Items}
         A character can only store a limited number of weapons in locations that are easy to access in combat.
         Generally, a humanoid creature can carry no more than five ordinary weapons or shields on their body.
+        For each additional weapon or similar item stored in a convenient location, you increase your \glossterm{encumbrance} by 1.
+        Items carried outside of easy reach in combat, such as in a backpack, are ignored for this purpose.
+
         A Heavy weapon takes up twice the space of an ordinary weapon, and a Light weapon takes up half that space.
-        This means it would be reasonable to carry up to ten Light weapons, or two Heavy weapons plus a normal weapon.
-        For each additional weapon or similar item, you increase your \glossterm{encumbrance} by 1.
+        Compact weapons do not take up a meaningful amount of space, and can be ignored for this purpose.
+        Ammunition is typically stored in a quiver or pouch.
+        Treat ammunition storage as a separate Light item that can hold an unlimited quantity of any ammunition other than lances.
+
+        For example, you could carry up to ten Light weapons, four normal weapons and a standard shield, or two Heavy weapons plus a normal weapon.
 
     \subsection{Magic Item Activation}
 
@@ -200,6 +206,7 @@ Items are divided into five broad categories, described below.
             This is a \magical ability.
 
             \begin{attuneability}{Item Attunement}{\abilitytag{Attune}}
+                \abilityusagetime Standard action.
                 \rankline
                 Choose a magic item you are touching.
                 Any abilities the target has that require attunement become active, allowing you to use its full potential.
@@ -562,7 +569,7 @@ Items are divided into five broad categories, described below.
                 Crossbows                         &               &             &                          &                             &                                             \\
                 \tind Arbalest\fn{2}              & \plus1        & 1d10        & \tdash                   & 2 (200 gp)                  & Heavy, Impact, Projectile (90/270)                 \\
                 \tind Pellet crossbow\fn{3}       & \plus1        & 1d4         & \tdash                   & 2 (200 gp)                  & Projectile (120/360)                 \\
-                \tind Pistol crossbow\fn{2}         & \plus1        & 1d4         & \tdash                   & 1 (40 gp)                 & Compact, Light, Projectile (30/90)                 \\
+                \tind Pistol crossbow\fn{2}       & \plus1        & 1d4         & \tdash                   & 1 (40 gp)                 & Compact, Light, Projectile (30/90)                 \\
                 \tind Repeating crossbow\fn{2}    & \plus0        & 1d8         & \tdash                   & 2 (200 gp)                  & Projectile (90/270)                 \\
                 \tind Repeating bolts (5)         & \plus0        & \tdash      & Piercing                 & 1 (10 gp)                   & Ammunition                                  \\
                 Flexible weapons                  &               &             &                          &                             &                                             \\
@@ -755,11 +762,19 @@ Items are divided into five broad categories, described below.
 
         \parhead{Dragonfang} Damage dealt by a dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
 
-        \parhead{Dragonfang, Ancient} Damage dealt by a pure dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
-        In addition, as a standard action, you can make a \glossterm{strike} using the weapon that takes the form of a breath weapon emitted from the weapon.
-        If the dragon's breath weapon is normally a line, the strike targets everything in a \arealarge, 10 ft. wide line from you.
-        Otherwise, the strike targets everything in a \areamed cone from you.
-        After you use this ability, you \glossterm{briefly} cannot use it again.
+        \parhead{Dragonfang, Ancient} Damage dealt by an ancient dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
+        \begin{activeability}{Dragonfang Breath}
+            \abilityusagetime Standard action.
+            \rankline
+            % TODO: math to make sure this is right? It's probably right, especially with the brief cooldown.
+            Make a \glossterm{strike} with double \glossterm{weapon damage} using one ancient dragonfang weapon.
+            It cannot be a \glossterm{dual strike}.
+            If the dragon's breath weapon is normally a line, the strike targets everything in a \arealarge, 10 ft. wide line from you.
+            Otherwise, the strike targets everything in a \areamed cone from you.
+            On a miss, you still deal half damage.
+
+            After you use this ability, you \glossterm{briefly} cannot use it again.
+        \end{activeability}
 
         \parhead{Mithral} A non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
         A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.

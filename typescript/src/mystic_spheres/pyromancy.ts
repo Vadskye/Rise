@@ -582,13 +582,11 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Flame Dash',
 
+      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
         hit: `\\damagerankone{fire}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
@@ -600,13 +598,11 @@ export const pyromancy: MysticSphere = {
     {
       name: 'Distant Flame Dash',
 
+      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
         hit: `\\damagerankfour{fire}.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you can increase your \\glossterm{fatigue level} by one.
-          If you do, it becomes \\abilitytag{Swift}.
-
           You teleport into an unoccupied destination on a stable surface within \\distrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,

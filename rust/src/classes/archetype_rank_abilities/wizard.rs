@@ -203,6 +203,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{mage armor} ability as a standard action.
                 \begin{magicalactiveability}{Mage Armor}
+                    \abilityusagetime Standard action.
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.

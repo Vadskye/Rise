@@ -6,9 +6,18 @@ use crate::creatures::Modifier;
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            name: "Enduring Discipline",
+            name: "Disciplined Reaction",
             is_magical: false,
             rank: 1,
+            description: r"
+                Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Enduring Discipline",
+            is_magical: false,
+            rank: 2,
             description: r"
                 You gain a \plus1 bonus to your Mental defense, \glossterm{vital rolls}, and \glossterm{fatigue tolerance}.
             ",
@@ -32,37 +41,13 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Cleansing Discipline",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You can use the \textit{cleansing discipline} ability as a \glossterm{standard action}.
-                \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
-                    \rankline
-                    Remove one \glossterm{condition} affecting you.
-                    Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
-                    In addition, you \glossterm{briefly} cannot gain any new conditions.
-                \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Cleansing Discipline+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You can use your \ability{cleansing discipline} ability as a \glossterm{minor action}.
-                When you do, you increase your \glossterm{fatigue level} by one.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Disciplined Strike",
             is_magical: false,
             rank: 3,
             description: r"
                 As a standard action, you can use the \textit{disciplined strike} ability.
                 \begin{activeability}{Disciplined Strike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} with 1d6 \glossterm{extra damage}.
                     You cannot get a \glossterm{critical hit} with this strike.
@@ -78,21 +63,36 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Disciplined Reaction",
+            name: "Cleansing Discipline",
             is_magical: false,
             rank: 4,
             description: r"
-                Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
+                \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
+                    \abilityusagetime Standard action. You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action} instead.
+                    \rankline
+                    Remove all \glossterm{conditions} affecting you.
+                    Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
+                    In addition, you \glossterm{briefly} become immune to all conditions.
+                \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
             name: "Vital Discipline",
             is_magical: false,
-            rank: 7,
+            rank: 6,
             description: r"
                 You \glossterm{briefly} ignore the vital wound effect of each vital wound you gain.
                 While a vital wound is delayed in this way, you do not suffer any effects from its specific vital wound effect, but you still consider it when calculating your penalties to \glossterm{vital rolls}.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Inevitable Discipline",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                Your \glossterm{strikes} get a \glossterm{glancing blow} if they miss by 5 or less, rather than only if they miss by 2 or less.
             ",
             modifiers: None,
         },
@@ -106,13 +106,14 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \textit{weapon training} ability by spending an hour training with a weapon.
-                You cannot use this ability with an \glossterm{exotic weapon} that is from a \glossterm{weapon group} you are not proficient with.
                 \begin{activeability}{Weapon Training}
+                    \abilityusagetime One hour of training with a weapon.
                     \rankline
-                    You become proficient with the weapon you trained with.
-                    You gain a \plus1 bonus to \glossterm{accuracy} with that weapon unless it is an \glossterm{exotic weapon} that you would not be proficient with without this ability.
-                    This ability's effect lasts until you use this ability again.
+                    You become proficient with the specific weapon you trained with.
+                    This does not grant you proficiency with its weapon group, or with other weapons of its type.
+                    If you would already be proficient with that weapon without this ability, you gain a \plus1 accuracy bonus with it.
+                    If the weapon is an exotic weapon from a weapon group that you are not proficient with, you take a \minus1 accuracy penalty with it.
+                    This ability's effect is permanent.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -120,11 +121,15 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Weapon Training+",
             is_magical: false,
-            rank: 4,
+            rank: 6,
             description: r"
-                The effect of your \ability{weapon training} ability is permanent.
+                Whenever you use this ability, you can choose one of the following weapon tags: \weapontag{Impact}, \weapontag{Keen}, \weapontag{Long}, \weapontag{Parrying}, \weapontag{Resonating}, or \weapontag{Sweeping} (1).
+                You treat that weapon as if it had the chosen weapon tag.
+
+                If you use this ability to train with the same weapon again, you can change its weapon tag, but it loses the previous weapon tag.
+                If you would add Sweeping (1) to a weapon that already has the Sweeping weapon tag, you increase its Sweeping value instead.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             name: "Equipment Efficiency",
@@ -182,7 +187,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Weapon Expertise",
             is_magical: false,
-            rank: 6,
+            rank: 4,
             description: r"
                 While you are wielding a weapon, you gain a \plus1 bonus to your \glossterm{accuracy}.
             ",
@@ -310,6 +315,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per round, you can use the \textit{protect} ability as a \glossterm{free action}.
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
+                    \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or an \glossterm{ally} adjacent to you.
                     The target gains a bonus to its Armor defense this round.
@@ -357,6 +363,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{guarding strike} ability as a standard action.
                 \begin{activeability}{Guarding Strike}
+                    \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike}.
                     \hit The target is \goaded by you as a \glossterm{condition}.
@@ -414,84 +421,94 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                 {
                     \begin{sustainability}{Break Through}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus2 bonus to \glossterm{accuracy} with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
+                        Each target gains a \plus2 accuracy bonus with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus3.
-                        \rank{5} The bonus increases to \plus4.
+                        \rank{4} The bonus increases to \plus3.
                         \rank{7} The bonus increases to \plus4.
                     \end{sustainability}
 
                     \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus2 bonus to \glossterm{accuracy} with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Special Combat Abilities}).
+                        Each target gains a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Special Combat Abilities}).
 
                         \rankline
-                        \rank{3} The bonus increases to \plus3.
-                        \rank{5} The bonus increases to \plus4.
-                        \rank{7} The bonus increases to \plus5.
+                        \rank{4} The bonus increases to \plus3.
+                        \rank{7} The bonus increases to \plus4.
                     \end{sustainability}
 
                     \begin{sustainability}{Duck and Cover}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Each target gains a \plus1 bonus to its Armor defense against ranged \glossterm{strikes}.
 
                         \rankline
-                        \rank{3} The bonus increases to \plus2.
-                        \rank{5} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
+                        \rank{4} The bonus also applies against any attacks that a target has \glossterm{cover} from.
+                        \rank{7} The bonus increases to \plus2.
                     \end{sustainability}
 
                     \begin{sustainability}{Group Up}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Mental defense.
-                        \rank{5} The Mental defense bonus increases to \plus2.
-                        \rank{7} The Mental defense bonus increases to \plus3.
+                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Mental defense.
+                        \rank{7} The bonuses increase to \plus2.
                     \end{sustainability}
 
                     \begin{sustainability}{Hold The Line}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Your \glossterm{enemies} move at half speed while adjacent to any two targets.
 
                         \rankline
-                        \rank{3} The effect persists for an additional five feet of the enemy's movement.
-                        \rank{5} The extra length increases to 10 feet.
-                        \rank{7} The extra length increases to 15 feet.
+                        \rank{4} The effect persists for an additional five feet of the enemy's movement after they stop being adjacent to two targets.
+                        \rank{7} The extra length increases to 10 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
                             gains a \plus1 bonus to its Armor defense this round.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
-                        \rank{5} The Reflex defense bonus increases to \plus2.
-                        \rank{7} The Reflex defense bonus increases to \plus3.
+                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
+                        \rank{7} The bonuses increase to \plus2.
+                    \end{sustainability}
+
+                    \begin{sustainability}{Lead From the Front}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
+                        \rankline
+                        Each target other than you gains a \plus1 accuracy bonus against creatures that you are adjacent to.
+
+                        \rankline
+                        \rank{4} The bonus also applies against creatures within \shortrange of you.
+                        \rank{7} The bonus increases to \plus2.
                     \end{sustainability}
 
                     \begin{sustainability}{Rush}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
 
                         \rankline
-                        \rank{3} The speed bonus increases to \plus10 feet.
-                        \rank{5} The speed bonus increases to \plus15 feet.
-                        \rank{7} The speed bonus increases to \plus20 feet.
+                        \rank{4} The speed bonus increases to \plus10 feet.
+                        \rank{7} The speed bonus increases to \plus15 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Stand Your Ground}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
                         \rankline
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
-                        \rank{3} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Fortitude defense.
-                        \rank{5} The Fortitude defense bonus increases to \plus2.
-                        \rank{7} The Fortitude defense bonus increases to \plus3.
+                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Fortitude defense.
+                        \rank{7} The bonuses increase to \plus2.
                     \end{sustainability}
                 }
             ",
@@ -542,6 +559,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \textit{coordinated assault} ability.
                 \begin{activeability}{Coordinated Assault}
+                    \abilityusagetime Standard action.
                     \rankline
                     You can move up to half your land speed.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.

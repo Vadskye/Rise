@@ -432,10 +432,11 @@ export const toxicology: MysticSphere = {
     {
       name: 'Healing Salve',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       // Stronger secondary effect due to touch range
       effect: `
         Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
-        The target regains 2d6 hit points and increases its \\glossterm{fatigue level} by one.
+        The target regains 2d6 hit points.
         In addition, it gains a +2 bonus to its Fortitude defense and \\glossterm{vital rolls} this round.
       `,
       rank: 1,
@@ -458,9 +459,9 @@ export const toxicology: MysticSphere = {
     {
       name: 'Cleansing Draught',
 
+      cost: "One \\glossterm{fatigue level} from the target.",
       effect: `
-        You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
-        The target increases its \\glossterm{fatigue level} by one if it removes a condition in this way.
+        You or a living \\glossterm{ally} you \\glossterm{touch} removes a \\glossterm{condition}.
       `,
       rank: 4,
     },
@@ -518,11 +519,13 @@ export const toxicology: MysticSphere = {
     {
       name: 'Bitter Remedy',
 
+      cost: "Two \\glossterm{fatigue levels} from the target.",
       castingTime: 'ten minutes',
       effect: `
         Choose one ritual participant.
-        The target can remove one of its \\glossterm{vital wounds}.
-        Then, it increases its \\glossterm{fatigue level} by two and gains a \\glossterm{vital wound} that imposes a \minus2 penalty to its Fortitude defense (see \tref{Vital Wound Effects}).
+        The target removes one of its \\glossterm{vital wounds}.
+        If it is unconscious, you choose which vital wound is removed.
+        Then, it gains a \\glossterm{vital wound} that imposes a -2 penalty to its Fortitude defense (see \\tref{Vital Wound Effects}).
       `,
       // narrative: '',
       rank: 1,
@@ -559,11 +562,11 @@ export const toxicology: MysticSphere = {
       castingTime: 'one hour',
       effect: `
         You can create a rank 1 poison.
-        This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \pcref{Crafting Items}).
+        This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \\pcref{Crafting Items}).
         Instead, you must supply ritual components equal to a rank 1 consumable item (5 gp).
 
         You can perform this ritual at a higher rank.
-        This increases the cost of the ritual components to be equal to a consumable item of the ritual's rank (see \pcref{Wealth and Item Ranks}).
+        This increases the cost of the ritual components to be equal to a consumable item of the ritual's rank (see \\pcref{Wealth and Item Ranks}).
         The maximum rank of a poison you can craft with this ritual is equal to this ritual's rank.
       `,
       // narrative: '',
