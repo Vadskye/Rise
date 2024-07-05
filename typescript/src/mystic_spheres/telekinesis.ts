@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -443,20 +443,30 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in a single hand.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 3,
-      tags: [],
+      rank: 2,
       type: 'Attune (deep)',
     },
 
     {
-      name: 'Greater Floating Armament',
+      name: 'Efficient Floating Armament',
+
+      functionsLike: {
+        name: "floating armament",
+        exceptThat: EXCEPT_NOT_DEEP,
+      },
+      rank: 6,
+      type: 'Attune',
+    },
+
+    {
+      name: 'Heavy Floating Armament',
 
       effect: `
         You can hold any weapon or shield other than a tower shield without using a free hand.
         It functions as if you were holding it in two hands if possible, or one hand otherwise.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 7,
+      rank: 5,
       tags: [],
       type: 'Attune (deep)',
     },
@@ -489,20 +499,6 @@ export const telekinesis: MysticSphere = {
         7: `The bonus increases to +16.`,
       },
       type: 'Attune (target)',
-    },
-
-    {
-      name: 'Retributive Kinetic Shield',
-
-      effect: `
-        You gain a +16 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
-        In addition, whenever you resist damage, the attacker takes bludgeoning damage equal to half the damage resisted this way.
-        If the attacker is beyond \\shortrange of you, this reflection fails.
-        Any effect which increases this spell's range increases the range of this effect by the same amount.
-      `,
-      rank: 5,
-      scaling: { 7: `The bonus increases to +32.` },
-      type: 'Attune (deep)',
     },
 
     {

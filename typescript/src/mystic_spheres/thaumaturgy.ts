@@ -236,6 +236,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Whenever you are targeted by a spell cast by another creature, before determining if it hits you, you absorb the spell.
         It has no effect on you.
+        This does not prevent the spell from affecting other creatures.
         You cannot voluntarily allow spells cast by other creatures to affect you while this effect lasts.
         After you absorb three spells in this way, this effect ends.
       `,
@@ -328,7 +329,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Absorb Magic',
 
       effect: `
-        You gain a +2 bonus to your defenses against \\magical effects.
+        You gain a +1 bonus to your defenses against \\magical effects.
         In addition, the next time a \\magical attack beats your defenses, it has no effect on you.
         After you negate two attacks in this way, this spell's effect ends.
       `,

@@ -252,7 +252,6 @@ export const chronomancy: MysticSphere = {
       effect: `
         You gain a +10 foot \\glossterm{enhancement bonus} to speed with all movement modes.
         In addition, you can take two \\glossterm{minor actions} each round instead of one.
-        As normal, you cannot use the same ability twice in the same round.
       `,
       rank: 7,
       type: 'Attune (deep)',
@@ -432,14 +431,24 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Evasion',
+      name: 'Accelerated Evasion',
 
       effect: `
         You take no damage from \\glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
-      rank: 3,
+      rank: 2,
       type: 'Attune (deep)',
+    },
+    {
+      name: 'Efficient Accelerated Evasion',
+
+      functionsLike: {
+        name: "accelerated evasion",
+        exceptThat: "it has the \abilitytag{Attune} tag instead of \abilitytag{Attune} (deep)",
+      },
+      rank: 6,
+      type: 'Attune',
     },
 
     {

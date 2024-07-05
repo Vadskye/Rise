@@ -164,11 +164,7 @@ export const prayer: MysticSphere = {
         Whenever each target would gain a \\glossterm{condition}, it can choose to negate that condition.
         After a creature negates a condition in this way, this spell ends for that creature.
       `,
-      rank: 2,
-      scaling: {
-        4: `The spell can negate two conditions before ending.`,
-        6: `The spell can negate three conditions before ending.`,
-      },
+      rank: 1,
       type: 'Attune (deep, target)',
     },
 
@@ -263,11 +259,9 @@ export const prayer: MysticSphere = {
       scaling: {
         4: `
           The bonuses to hit points and damage resistance increase to +8.
-          In addition, the bonus to vital rolls increases to +2.
         `,
         6: `
           The bonuses to hit points and damage resistance increase to +16.
-          In addition, the bonus to vital rolls increases to +3.
         `,
       },
       type: 'Attune (deep, target)',
@@ -293,10 +287,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each target would gain a \\glossterm{vital wound}, it can choose to negate that vital wound.
+        Whenever each target would gain a \\glossterm{vital wound}, that vital wound is automatically negated.
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
-      rank: 6,
+      rank: 5,
       type: 'Attune (deep, target)',
     },
 

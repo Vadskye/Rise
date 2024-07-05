@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP, SWIFT_FATIGUE } from './constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -532,16 +532,15 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Deep Shadowform',
+      name: 'Efficient Shadowform',
 
       functionsLike: {
-        exceptThat:
-          'bright illumination does not suppress the effect. It is still suppressed by \\glossterm{brilliant illumination}.',
         name: 'Shadowform',
+        exceptThat: EXCEPT_NOT_DEEP,
       },
       // narrative: '',
-      rank: 7,
-      type: 'Attune (deep)',
+      rank: 6,
+      type: 'Attune',
     },
 
     {

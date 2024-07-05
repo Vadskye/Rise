@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
@@ -316,23 +316,24 @@ export const polymorph: MysticSphere = {
           \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
+          \\item You take a -1 penalty to your Armor defense.
         \\end{itemize}
 
         You can suppress or resume this effect as a \\glossterm{free action}.
       `,
-      rank: 3,
+      rank: 2,
       type: 'Attune (deep)',
     },
 
     {
-      name: 'Greater Malleable Body',
+      name: 'Efficient Malleable Body',
 
       functionsLike: {
         name: 'malleable body',
-        exceptThat: 'you also become \\glossterm{immune} to critical hits from strikes.',
+        exceptThat: EXCEPT_NOT_DEEP,
       },
-      rank: 7,
-      type: 'Attune (deep)',
+      rank: 6,
+      type: 'Attune',
     },
 
     {

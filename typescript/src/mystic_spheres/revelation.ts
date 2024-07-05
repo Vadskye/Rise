@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -154,18 +154,18 @@ export const revelation: MysticSphere = {
       narrative: `
         You intuitively perceive gaps in your foes' armor.
       `,
-      rank: 4,
-      type: 'Attune',
+      rank: 2,
+      type: 'Attune (deep)',
     },
 
     {
-      name: 'Greater Armorbreak Sight',
+      name: 'Efficient Armorbreak Sight',
 
       functionsLike: {
         name: 'armorbreak sight',
-        exceptThat: 'using it does not prevent you from immediately using it again.',
+        exceptThat: EXCEPT_NOT_DEEP,
       },
-      rank: 7,
+      rank: 6,
       type: 'Attune (deep)',
     },
 
@@ -531,10 +531,10 @@ export const revelation: MysticSphere = {
       name: 'Empowered Distant Sight',
 
       effect: `
-        You reduce your \\glossterm{longshot penalty} by 3.
+        You reduce your \\glossterm{longshot penalty} by 2.
       `,
       rank: 6,
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
 
     {
