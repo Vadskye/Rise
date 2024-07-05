@@ -860,8 +860,8 @@ export const astromancy: MysticSphere = {
       rank: 3,
       effect: `
         Choose any number of Medium or smaller ritual participants.
-        Each target can \\glossterm{teleport} up to 60 feet as a movement.
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
+        If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       tags: [],
       castingTime: 'one minute',

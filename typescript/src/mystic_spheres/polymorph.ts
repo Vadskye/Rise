@@ -852,7 +852,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       tags: [],
       castingTime: 'one minute',
@@ -865,7 +865,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       // narrative: '',
       rank: 5,
