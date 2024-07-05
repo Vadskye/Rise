@@ -776,8 +776,10 @@
             Whenever a creature or object passes through the wall, you make an attack against its Reflex defense.
             You can only attack a given target with this ability once per \glossterm{phase}.
             On a hit, the target takes damage as if you hit it with your \ability{essence pulse} ability.
+            On a miss, the target takes half damage.
         \item Untethered: The height limit of your fly speed increases to 15 feet.
-            In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
+            In addition, whenever you use the \ability{sprint} ability, you can become \trait{intangible} during that phase.
+            This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
     \end{raggeditemize}
 
     \cf{Inc}[4]{Essence Exemplar} The bonus to an attribute that you gain from being an incarnate increases to \plus2.
@@ -789,11 +791,10 @@
     \cf{Inc}[6]{Deep Tether+} You gain a special ability depending on whether you are tethered or untethered.
     \begin{raggeditemize}
         \item Tethered: The fatigue tolerance bonus increases to \plus2.
-            In addition, when you use the \ability{desperate exertion} ability to affect an attack that deals damage of your essential damge type, you can use this ability.
+            In addition, when you use the \ability{desperate exertion} ability to affect an attack that deals damage of your essential damage type, you can use this ability.
             If you do, you only increase your fatigue level by one instead of by two.
             After using this ability, you \glossterm{briefly} cannot use it again.
-        \item Untethered: The height limit of your fly speed increases to 30 feet.
-            In addition, the defense bonus against critical hits from strikes increases to \plus10.
+        \item Untethered: You gain a \plus10 foot bonus to your fly speed.
     \end{raggeditemize}
 
     \cf{Inc}[7]{Essence Incarnate}
@@ -805,6 +806,8 @@
         \begin{raggeditemize}
             \item Tethered: You \glossterm{briefly} make attack and damage rolls twice with all abilities that deal damage of your essential damage type, keeping the higher result.
             \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
+            If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
+            You take 5d10 bludgeoning damage for every 5 feet that you are pushed in this way.
         \end{raggeditemize}
 
         % don't end with an itemize right before an ability closes
@@ -904,8 +907,9 @@
         \itemhead{Acidic Body} Ooozeborn are \trait{impervious} to acid damage and poisons.
         \itemhead{Amorphous Form} An oozeborn's natural form is a loosely spherical blob.
             They have a \minus10 foot penalty to their \glossterm{land speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
-            Since they have no legs, they are immune to being \prone, but they also cannot jump.
-            They can use the \ability{mold body} ability to adopt a particular shape.
+            Since they have no legs, they are immune to being \prone.
+            Most legless creatures cannot jump, but oozeborn can jump without penalty.
+            They can also use the \ability{mold body} ability to adopt a particular shape.
             \begin{sustainability}{Mold Body}{\abilitytag{Sustain} (free)}
                 \abilityusagetime Standard action.
                 \rankline
