@@ -545,12 +545,12 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Permanent Bless Water',
+      name: 'Persistent Bless Water',
 
       castingTime: 'one hour',
       functionsLike: {
         exceptThat: `
-          it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
+          the effect lasts for one year.
         `,
         name: 'bless water',
       },

@@ -92,7 +92,7 @@ export interface Spell extends BaseSpellLike {
 }
 
 export interface Ritual extends Spell {
-  castingTime: string;
+  castingTime: "24 hours" | "one minute" | "one hour" | "minor action" | "special" | "one week";
   materialCost?: boolean;
 }
 
@@ -116,5 +116,6 @@ export interface FunctionsLike {
   abilityType?: "cantrip" | "spell" | "maneuver" | "ability" | "ritual";
   exceptThat?: string;
   mass?: boolean;
+  oneYear?: boolean;
   name: string;
 }

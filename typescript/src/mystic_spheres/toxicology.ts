@@ -520,7 +520,7 @@ export const toxicology: MysticSphere = {
       name: 'Bitter Remedy',
 
       cost: "Two \\glossterm{fatigue levels} from the target.",
-      castingTime: 'ten minutes',
+      castingTime: 'one minute',
       effect: `
         Choose one ritual participant.
         The target removes one of its \\glossterm{vital wounds}.
@@ -534,7 +534,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Bitter Remedy+',
 
-      castingTime: 'ten minutes',
+      castingTime: 'one minute',
       functionsLike: {
         name: 'bitter remedy',
         exceptThat: `the vital wound created by this ritual has no vital wound effect.`,
@@ -546,7 +546,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Restful Draught',
 
-      castingTime: 'ten minutes',
+      castingTime: 'one minute',
       effect: `
         Choose one ritual participant.
         The target immediately falls asleep, and cannot be awoken unless it loses hit points or gains a vital wound.

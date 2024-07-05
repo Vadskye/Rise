@@ -845,6 +845,33 @@ export const polymorph: MysticSphere = {
   ],
   rituals: [
     {
+      name: 'Overland Runner',
+      rank: 4,
+      // Worse than Overland Teleportation in rough terrain, but can be comparable on
+      // smooth ground depending on party composition and size.
+      effect: `
+        Choose up to six ritual participants.
+        Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
+        If it takes any action other than movement or is dealt damage, this effect ends.
+      `,
+      tags: [],
+      castingTime: 'one minute',
+      type: 'Attune (target)',
+    },
+    {
+      name: 'Overland Wings',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose up to six ritual participants.
+        Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        If it takes any action other than movement or is dealt damage, this effect ends.
+      `,
+      // narrative: '',
+      rank: 5,
+      type: 'Attune (target)',
+    },
+    {
       name: 'Sensory Enhancement',
 
       castingTime: 'one hour',

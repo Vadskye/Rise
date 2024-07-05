@@ -1,4 +1,4 @@
-import { Rank, SpellLike, StandardAttack } from "@src/mystic_spheres";
+import { Rank, SpellLike, StandardAttack, FunctionsLike } from "@src/mystic_spheres";
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemizespace}{}"))) {
@@ -85,14 +85,10 @@ export function spellEffect(
         `.trim()
         : spell.effect.trim();
     } else if (spell.functionsLike) {
-      const exceptThat = spell.functionsLike.mass
-        ? "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange."
-        : spell.functionsLike.exceptThat;
+      const exceptThat = deriveExceptThat(spell.functionsLike);
+
       assertEndsWithPeriod(exceptThat, spell.name);
       assertStartsWithLowercase(exceptThat, spell.name);
-      if (!exceptThat) {
-        throw new Error(`Must have a defined 'exceptThat' in a 'functionsLike'`);
-      }
 
       const referencedCategory = spell.functionsLike.abilityType || spellCategory;
 
@@ -108,6 +104,20 @@ export function spellEffect(
       err.message += `Error converting spell ${spell.name} to LaTeX: ${err.message}`;
     }
     throw err;
+  }
+}
+
+function deriveExceptThat(
+  functionsLike: FunctionsLike,
+) {
+  if (functionsLike.mass) {
+    return "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.";
+  } else if (functionsLike.oneYear) {
+    return "the effect lasts for one year.";
+  } else if (functionsLike.exceptThat) {
+    return functionsLike.exceptThat;
+  } else {
+    throw new Error(`Cannot derive exceptThat from functionsLike: ${functionsLike}`);
   }
 }
 
