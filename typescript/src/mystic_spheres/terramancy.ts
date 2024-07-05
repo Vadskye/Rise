@@ -430,7 +430,7 @@ export const terramancy: MysticSphere = {
     },
 
     {
-      name: 'Greater Earthglide',
+      name: 'Rapid Earthglide',
 
       effect: `
         You can move through earth and unworked stone at a rate equal to your \\glossterm{base speed}.
