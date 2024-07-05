@@ -45,7 +45,6 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{disciplined strike} ability.
                 \begin{activeability}{Disciplined Strike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -556,7 +555,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{coordinated assault} ability.
                 \begin{activeability}{Coordinated Assault}
                     \abilityusagetime Standard action.
                     \rankline

@@ -562,7 +562,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You can use the \textit{shift body} ability whenever you finish a \glossterm{long rest}.
                 \begin{magicalattuneability}{Shift Body}{\abilitytag{Attune}}
                     \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
                     \rankline
