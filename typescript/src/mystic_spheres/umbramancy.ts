@@ -107,7 +107,7 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         You create a void of darkness in a \\medarea radius \\glossterm{zone} within \\medrange.
-        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through that area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
       rank: 4,

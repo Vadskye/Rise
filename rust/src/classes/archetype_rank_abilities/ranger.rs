@@ -225,8 +225,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-            \label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
-                \begin{attuneability}{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
+                \begin{attuneability}*{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose a creature you can see.

@@ -32,7 +32,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
-                You can use the \textit{elemental strike} ability as a standard action.
                 \begin{magicalactiveability}{Elemental Strike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -86,7 +85,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You can use the \textit{elemental influence} ability as a standard action.
                 \begin{magicalsustainability}{Elemental Influence}{\abilitytag{Sustain} (standard)}
                     \abilityusagetime Standard action.
                     \rankline
@@ -593,7 +591,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You can use the \textit{shifting strike} ability as a standard action.
                 % Assume that choosing defense is worth about +3 accuracy, which is roughly 50% more damage
                 \begin{magicalactiveability}{Shifting Strike}
                     \abilityusagetime Standard action.
@@ -738,7 +735,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You can use the \textit{animal speech} ability as a standard action.
                 \begin{magicalsustainability}{Animal Speech}{\abilitytag{Sustain} (minor)}
                     \abilityusagetime Standard action.
                     \rankline
