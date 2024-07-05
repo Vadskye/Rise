@@ -101,17 +101,17 @@ fn belts() -> Vec<Apparel> {
 
     apparel.push(Belt(StandardItem {
         name: String::from("Healing Belt"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Exert to heal $dr3l hit points"),
         description: String::from(r"
             You can activate this belt as a standard action.
             When you do, you regain $dr3l hit points and increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Exert to heal $dr5l hit points", "
+            ItemUpgrade::new(3, "Exert to heal $dr5l hit points", "
                 The healing increases to $dr5l.
             "),
-            ItemUpgrade::new(6, "Exert to heal $dr7l hit points", "
+            ItemUpgrade::new(5, "Exert to heal $dr7l hit points", "
                 The healing increases to $dr7l.
             "),
         ],
