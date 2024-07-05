@@ -461,8 +461,8 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
                         7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
                         8 & The spell deals maximum damage, but it deals no damage on a miss or glancing blow \\
-                        9 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
-                        10 & The spell gains a \plus10 accuracy bonus, but you \glossterm{briefly} cannot cast that spell again \\
+                        9 & The spell gains a \plus10 accuracy bonus, but you \glossterm{briefly} cannot cast that spell again \\
+                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
             ",
