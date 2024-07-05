@@ -273,7 +273,7 @@
 
     \subsection{Dragon Archetype}
 
-        \cf{Dgn}[1]{Draconic Breath} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
+        \cf{Dgn}[1]{Draconic Breath}
         % +1r damage to compensate for cooldown... ish. Kind of awkward scaling right now.
         \begin{activeability}{Breath Weapon}
             \abilityusagetime Standard action.
@@ -387,13 +387,12 @@
     \parhead{Special Abilities}
     \begin{itemize}
         \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
-        \itemhead{Deep Darkness}[\sparkle] A drow can use the \textit{deep darkness} ability as a \glossterm{standard action}.
-            \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (minor)}
+        \magicalitemhead{Deep Darkness}
+            \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (standard)}
                 \abilityusagetime Standard action.
                 \rankline
-                \target{One \glossterm{zone} within \rngmed range}
-                You can choose this ability's radius, up to a maximum of a \areamed radius.
-                Light within or passing through the area is dimmed to be no brighter than \glossterm{shadowy illumination}
+                You create a void of darkness in a \medarea radius \glossterm{zone} within \medrange.
+                \glossterm{Bright illumination} and \glossterm{brilliant illumination} within or passing through that area is dimmed to be no brighter than \glossterm{shadowy illumination}.
                 Any object or effect which blocks light also blocks this ability's effect.
             \end{magicalsustainability}
         \itemhead{Drow Prejudice} Almost all surface-dwellers have negative associations with drow.
@@ -458,7 +457,7 @@
         Teleporting a given distance costs movement equal to half that distance.
         If this teleportation fails for any reason, you still expend that movement.
 
-        \cf{Dry}[4]{Fey Charm} You can use the \ability{fey charm} ability as a \glossterm{minor action}.
+        \cf{Dry}[4]{Fey Charm}
         \begin{magicalsustainability}{Fey Charm}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
             \abilityusagetime \glossterm{Minor action}.
             \rankline
@@ -606,7 +605,7 @@
         You must land at the end of the phase, and you can only use this ability once per round.
         This brief hovering does not cause you to suffer penalties for flying.
 
-        \magicalcf{Hrp}[2]{Luring Song} You can use the \textit{luring song} ability as a standard action.
+        \magicalcf{Hrp}[2]{Luring Song}
         \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
             \abilityusagetime Standard action.
                 \rankline
@@ -635,7 +634,7 @@
         You must still land at the end of each phase.
 
         % TODO: define correct rank
-        \magicalcf{Hrp}[5]{Siren Song} You can use the \textit{siren song} ability as a standard action.
+        \magicalcf{Hrp}[5]{Siren Song}
         \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
             \abilityusagetime Standard action.
             \rankline
@@ -744,7 +743,7 @@
 
     \subsection{Incarnation Archetype}
 
-    \cf{Inc}[1]{Essence Pulse} You can use the \textit{essence pulse} ability as a standard action.
+    \cf{Inc}[1]{Essence Spike}
     \begin{magicalactiveability}{Essence Spike}
         \abilityusagetime Standard action.
         \rankline
@@ -797,13 +796,20 @@
             In addition, the defense bonus against critical hits from strikes increases to \plus10.
     \end{raggeditemize}
 
-    \cf{Inc}[7]{Essence Incarnate} You can use this ability as a \glossterm{minor action}.
-    When you do, you increase your \glossterm{fatigue level} by one, and you gain a benefit depending on whether you are tethered or untethered.
-    This ability has the \abilitytag{Swift} tag.
-    \begin{raggeditemize}
-        \item Tethered: You \glossterm{briefly} make attack and damage rolls twice with all abilities that deal damage of your essential damage type, keeping the higher result.
-        \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
-    \end{raggeditemize}
+    \cf{Inc}[7]{Essence Incarnate}
+    \begin{magicalactiveability}{Essence Incarnate}[\abilitytag{Swift}]
+        \abilityusagetime \glossterm{Minor action}.
+        \abilitycost One \glossterm{fatigue level}.
+        \rankline
+        You gain a benefit depending on whether you are tethered or untethered:
+        \begin{raggeditemize}
+            \item Tethered: You \glossterm{briefly} make attack and damage rolls twice with all abilities that deal damage of your essential damage type, keeping the higher result.
+            \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
+        \end{raggeditemize}
+
+        % don't end with an itemize right before an ability closes
+        {}
+    \end{magicalactiveability}
 
 \section{Kit}
 
@@ -899,7 +905,7 @@
         \itemhead{Amorphous Form} An oozeborn's natural form is a loosely spherical blob.
             They have a \minus10 foot penalty to their \glossterm{land speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
             Since they have no legs, they are immune to being \prone, but they also cannot jump.
-            They can use the \ability{mold body} ability as a standard action to adopt a particular shape.
+            They can use the \ability{mold body} ability to adopt a particular shape.
             \begin{sustainability}{Mold Body}{\abilitytag{Sustain} (free)}
                 \abilityusagetime Standard action.
                 \rankline
@@ -1024,9 +1030,9 @@
     \parhead{Special Abilities}
     \begin{itemize}
         \itemhead{Barkskin} A sapling gains a \plus2 bonus to Armor defense.
-        \itemhead{Ingrain} A sapling can use the \textit{ingrain} ability as a \glossterm{minor action} while it is \glossterm{grounded}.
+        \itemhead{Ingrain} A sapling can bury its roots into the ground.
             \begin{activeability}{Ingrain}
-                \abilityusagetime Standard action.
+                \abilityusagetime \glossterm{Minor action}.
                 \rankline
                 This ability can only be used if the sapling is \glossterm{grounded}.
                 The sapling's land speed becomes 5 feet, regardless of any modifiers that normally apply.
@@ -1067,7 +1073,7 @@
         \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
         In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
 
-        \cf{Tre}[3]{Animate Plants} You can use the \textit{animate plants} ability as a standard action.
+        \cf{Tre}[3]{Animate Plants}
         \begin{activeability}{Animate Plants}[\abilitytag{Manifestation}]
             \abilityusagetime Standard action.
             \rankline
@@ -1170,7 +1176,7 @@
     \parhead{Automatic Languages} Abyssal, Common, any one \glossterm{common language}.
 
     \subsection{Tiefling Archetype}
-        \magicalcf{Tif}[1]{Abyssal Hop} You can use the \ability{abyssal hop} ability as a standard action.
+        \magicalcf{Tif}[1]{Abyssal Hop}
         \begin{magicalactiveability}{Abyssal Hop}
             \abilityusagetime Standard action.
             \rankline
@@ -1196,7 +1202,7 @@
         Choose one of the following infernal ancestries: hellfire conduit, tempting allure, or unholy might.
         You gain a benefit based on your chosen ancestry.
         \begin{itemize}
-            \item Infernal Rebuke: You can use the \textit{infernal rebuke} ability as a standard action.
+            \item Infernal Rebuke: You can set fire to your foes.
                 \begin{magicalactiveability}{Infernal Rebuke}
                     \abilityusagetime Standard action.
                     \rankline
@@ -1213,24 +1219,19 @@
                     \rank{7} The base damage increases to 4d8.
                 \end{magicalactiveability}
             \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
-                In addition, you can use the \ability{charming temptation} ability as a standard action.
+                In addition, you can charm creatures.
                 \begin{magicalsustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
                     \abilityusagetime Standard action.
                     \rankline
-                    \noindent
-
                     Make an attack vs. Mental against a humanoid creature within \medrange.
                     You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
-                    \vspace{0.25em}
                     \hit The target is \charmed by you.
                     Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                     Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
                     An observant target may interpret overt threats to its allies as a threat to itself.
 
                     \rankline
-
-                    \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 2.
-                    \vspace{0.1em}
+                    The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 2.
                 \end{magicalsustainability}
             \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
                 In addition, you gain a \plus1 bonus to your \glossterm{mundane power}.
@@ -1244,13 +1245,11 @@
             \item Infernal Conduit: You gain a \plus1 bonus to your \glossterm{magical power}.
                 In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
             \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
-                In addition, you can use the \ability{dominating temptation} ability as a standard action.
-                \begin{magicalactiveability}{Dominating Temptation}{\abilitytag{Emotion}}
+                In addition, you can dominate creatures.
+                \begin{magicalactiveability}{Dominating Temptation}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
-                    \noindent
-                    Make an attack vs. Mental against a humanoid creature within \shortrange.%
-                    \vspace{0.25em}
+                    Make an attack vs. Mental against a humanoid creature within \shortrange.
                     \hit The target is \stunned as a \glossterm{condition}.
                     \crit The target is \confused instead of stunned.
                     In addition, if the target is humanoid and was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
@@ -1258,11 +1257,10 @@
 
                     \rankline
                     \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
-                    \vspace{0.1em}
                 \end{magicalactiveability}
-            \item Unholy Might: You can use the \ability{unholy strength} ability as a standard action.
+            \item Unholy Might: You can increase your strength.
                 \begin{magicalattuneability}{Unholy Strength}{\abilitytag{Attune}}
-                    \abilityusagetime Standard action.
+                    \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
                     \rankline
                     You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                 \end{magicalattuneability}
@@ -1379,7 +1377,7 @@
         You can only be resurrected in this way if you were killed by a vital wound with a \glossterm{vital roll} of \minus3 or higher.
         If you were killed by a more severe vital wound, or by some other effect, even your home coffin cannot save you.
 
-        \magicalcf{Vmp}[3]{Charming Gaze} You can use the \ability{charming gaze} ability as a standard action.
+        \magicalcf{Vmp}[3]{Charming Gaze}
         \begin{magicalsustainability}{Charming Gaze}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}}
             \abilityusagetime Standard action.
             \rankline
@@ -1391,11 +1389,10 @@
             An observant target may interpret overt threats to its allies as a threat to itself.
 
             \rankline
-
-            \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 3.
+            The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 3.
         \end{magicalsustainability}
 
-        \magicalcf{Vmp}[4]{Creature of the Night} You can use the \ability{creature of the night} ability as a standard action.
+        \magicalcf{Vmp}[4]{Creature of the Night}
         \begin{magicalattuneability}{Creature of the Night}{\abilitytag{Attune}}
             \abilityusagetime Standard action.
             \rankline
@@ -1420,7 +1417,7 @@
         \cf{Vmp}[5]{Unholy Perfection} Choose any two attributes other than Constitution.
         You gain a \plus1 bonus to those two attributes.
 
-        \magicalcf{Vmp}[6]{Dominating Gaze} You can use the \ability{dominating gaze} ability as a standard action.
+        \magicalcf{Vmp}[6]{Dominating Gaze}
         \begin{magicalactiveability}{Dominating Gaze}{\abilitytag{Emotion}, \abilitytag{Visual}}
             \abilityusagetime Standard action.
             \rankline
