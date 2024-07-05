@@ -155,10 +155,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You reduce the \glossterm{encumbrance} of body armor you wear by 1, and you gain a special ability based on the usage class of your body armor.
+                You reduce the \glossterm{encumbrance} of body armor you wear by 1, and you gain a special ability based on the \glossterm{usage class} of your body armor.
                 \begin{itemize}
                     \item Light: You gain a \plus10 foot bonus to your land speed.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
+                        However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
                         Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still removes it entirely.
                     \item Heavy: You gain a \plus1 bonus to your Armor, Fortitude, and Mental defenses.
                 \end{itemize}
