@@ -66,7 +66,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{mage armor} ability as a standard action.
                 \begin{magicalactiveability}{Mage Armor}
                     \abilityusagetime Standard action.
                     \rankline

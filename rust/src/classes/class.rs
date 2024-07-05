@@ -1430,7 +1430,7 @@ impl Class {
                         This increases your maximum vertical jump distance normally.
                         In addition, you take half damage from \glossterm{falling damage}.
                         \magicaldomainability{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
-                        \magicaldomainability{Essence} You can use the \textit{speak with air} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1450,7 +1450,7 @@ impl Class {
                     \subsubsection{Chaos Domain}
                         \magicaldomainability{Gift} You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \domainability{Aspect} You are immune to \abilitytag{Compulsion} attacks.
-                        \magicaldomainability{Essence} You can use the \textit{twist of fate} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Twist of Fate}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1465,7 +1465,7 @@ impl Class {
                         \domainability{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
                         You can also automatically identify whether creatures you see are below their maximum hit points.
                         \domainability{Aspect} The bonus from this domain's gift increases to \plus2.
-                        \magicaldomainability{Essence} You can use the \textit{speak with dead} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Dead}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1480,7 +1480,7 @@ impl Class {
 
                     \subsubsection{Destruction Domain}
                         \domainability{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
-                        \magicaldomainability{Aspect} You can use the \textit{destructive strike} ability as a standard action.
+                        \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Destructive Strike}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1496,7 +1496,7 @@ impl Class {
                             \rank{6} The extra damage increases to 1d8 per 3 power.
                             \rank{7} The extra damage increases to 1d8 per 2 power.
                         \end{magicalactiveability}
-                        \magicaldomainability{Essence} You can use the \textit{lay waste} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Lay Waste}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1514,7 +1514,7 @@ impl Class {
 
                         \domainability{Gift} You gain a \plus2 bonus to your Fortitude defense.
                         \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance}.
-                        \magicaldomainability{Essence} You can use the \textit{speak with earth} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1530,7 +1530,7 @@ impl Class {
 
                     \subsubsection{Evil Domain}
                         % intentionally adjacent rather than touch
-                        \magicaldomainability{Gift} Once per round, you can use the \ability{willing sacrifice} ability as a \glossterm{free action}.
+                        \magicaldomainability{Gift}
                         \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
                             \rankline
@@ -1539,7 +1539,7 @@ impl Class {
                             You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
                         \end{magicalactiveability}
                         \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
-                        \magicaldomainability{Essence} You can use the \textit{compel evil} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
                             \abilityusagetime Standard action.
                             \rankline
@@ -1561,7 +1561,7 @@ impl Class {
 
                         \domainability{Gift} You are \trait{impervious} to fire damage.
                         \magicaldomainability{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
-                        \magicaldomainability{Essence} You can use the \textit{speak with fire} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Fire}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1588,7 +1588,7 @@ impl Class {
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
                         \magicaldomainability{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
-                        \magicaldomainability{Essence} You can use the \textit{compel good} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Good}[\abilitytag{Compulsion}]
                             \abilityusagetime Standard action.
                             \rankline
@@ -1610,7 +1610,7 @@ impl Class {
 
                         \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \domainability{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
-                        \magicaldomainability{Essence} You can use the \textit{share knowledge} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Share Knowledge}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1630,7 +1630,7 @@ impl Class {
                         \magicaldomainability{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                         \domainability{Aspect} You gain a \plus2 bonus to your Mental defense.
-                        \magicaldomainability{Essence} You can use the \textit{compel law} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \abilityusagetime Standard action.
                             \rankline
@@ -1665,7 +1665,7 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \magicaldomainability{Gift} Once per round, you can use the \textit{divine protection} ability as a \glossterm{free action}.
+                        \magicaldomainability{Gift}
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
                             \rankline
@@ -1704,9 +1704,10 @@ impl Class {
                         \domainability{Gift} You gain a \plus10 foot bonus to your \glossterm{land speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
                         This speed bonus is doubled as normal from sprinting.
                         \magicaldomainability{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-                        \magicaldomainability{Essence} You can use the \textit{dimensional travel} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Dimensional Travel}
                             \abilityusagetime Standard action.
+                            \abilitycost One optional \\glossterm{fatigue level}. If you pay this cost, the ability becomes \\abilitytag{Swift}.
                             \rankline
                             You teleport up to 1 mile in any direction.
                             You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
@@ -1728,7 +1729,7 @@ impl Class {
                         \magicaldomainability{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
                         In addition, \magical \abilitytag{Compulsion} effects cannot affect your speech in any way.
                         This means you can still talk and lie normally even while \dominated, though you cannot control the rest of your body.
-                        \magicaldomainability{Essence} You can use the \textit{compel belief} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1763,7 +1764,7 @@ impl Class {
 
                         \domainability{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
                         \magicaldomainability{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \magicaldomainability{Essence} You can use the \textit{speak with water} ability as a standard action.
+                        \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Water}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
                             \rankline

@@ -232,7 +232,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 You can channel your ki to temporarily enhance your abilities.
                 Choose two \textit{ki manifestations} from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
-                You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
 
                 After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
                 {
@@ -472,7 +471,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You can use the \textit{invested strike} ability as a standard action.
                 \begin{magicalactiveability}{Invested Strike}
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level} (see text).

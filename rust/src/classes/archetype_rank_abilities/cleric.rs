@@ -291,7 +291,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{divine aid} ability as a standard action.
                 % dr2 for close range, +1dr for touch or healing bonus idk, free defense bonus because class feature
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \abilityusagetime Standard action.
@@ -343,7 +342,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You can use the \textit{vital restoration} ability as a standard action.
                 \begin{magicalactiveability}{Vital Restoration}
                     \abilityusagetime Standard action.
                     \abilitycost Three \glossterm{fatigue levels}.
@@ -384,7 +382,6 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You can use the \textit{revivify} ability as a standard action.
                 \begin{magicalactiveability}{Revivify}
                     \abilityusagetime Standard action.
                     \abilitycost Four \glossterm{fatigue levels}.
@@ -408,7 +405,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \textit{denounce the heathens} ability as a standard action.
                 \begin{activeability}{Denounce the Heathens}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -445,7 +441,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You can use the \textit{bless the worthy} ability as a standard action.
                 \begin{activeability}{Bless the Worthy}[\abilitytag{Emotion}, \abilitytag{Swift}]
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
@@ -488,7 +483,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You can use the \textit{condemn the fearful} ability as a standard action.
                 \begin{activeability}{Condemn the Fearful}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -507,7 +501,6 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \textit{convert the irresolute} ability as a standard action.
                 \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline

@@ -13,7 +13,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{abyssal rebuke} ability as a standard action.
                 \begin{magicalactiveability}{Abyssal Rebuke}
                     \abilityusagetime Standard action.
                     \rankline
@@ -133,7 +132,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You can use the \textit{banish to the abyss} ability as a standard action.
                 \begin{magicalactiveability}{Banish to the Abyss}
                     \abilityusagetime Standard action.
                     \rankline
@@ -179,7 +177,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You can use the \textit{abyssal curse} ability as a standard action.
                 \begin{magicalactiveability}{Abyssal Curse}[\abilitytag{Curse}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -615,7 +612,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper a greater influence over your actions.
+                Your can allow your soulkeeper to possess you temporarily.
+                This increases your power, but pushing yourself too hard can allow your soulkeeper to control you directly.
                 \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \abilityusagetime \glossterm{Free action}.
                     \rankline
@@ -696,7 +694,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
-                You can use the \textit{exchange soul fragment} ability as a standard action.
                 \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
@@ -728,7 +725,6 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
-                You can use the \textit{exchange vitality} ability as a standard action.
                 \begin{magicalactiveability}{Exchange Vitality}
                     \abilityusagetime Standard action.
                     \abilitycost Three \glossterm{fatigue levels}.

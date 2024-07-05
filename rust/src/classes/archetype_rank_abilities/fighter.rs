@@ -314,9 +314,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Once per round, you can use the \textit{protect} ability as a \glossterm{free action}.
                 \begin{activeability}{Protect}[\abilitytag{Swift}]
-                    \abilityusagetime Standard action.
+                    \abilityusagetime \glossterm{Free action} once per round.
                     \rankline
                     Choose yourself or an \glossterm{ally} adjacent to you.
                     The target gains a bonus to its Armor defense this round.
@@ -362,7 +361,6 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You can use the \textit{guarding strike} ability as a standard action.
                 \begin{activeability}{Guarding Strike}
                     \abilityusagetime Standard action.
                     \rankline
