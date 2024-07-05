@@ -909,7 +909,7 @@ export const astromancy: MysticSphere = {
         At the end of each round during this continuation, if the anchor has room for your group, the teleportation succeeds and the ritual ends.
       `,
       tags: [],
-      castingTime: '1 hour',
+      castingTime: 'one hour',
     },
     {
       name: 'Intraplanar Teleportation',

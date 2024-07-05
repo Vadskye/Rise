@@ -697,7 +697,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Corpse Communion',
 
-      castingTime: '1 hour',
+      castingTime: 'one hour',
       effect: `
         You ask a corpse a single yes or no question.
         In its afterlife, the soul that inhabited the corpse becomes aware of your question and can answer yes or no as it chooses.
@@ -711,7 +711,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Greater Corpse Communion',
 
-      castingTime: '1 hour',
+      castingTime: 'one hour',
       functionsLike: {
         name: 'corpse communion',
         exceptThat: `

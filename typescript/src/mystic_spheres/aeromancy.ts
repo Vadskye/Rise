@@ -704,7 +704,7 @@ export const aeromancy: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        If it uses a \\glossterm{standard action} to do anything other than make a \\glossterm{movement}, this effect ends.
+        If it takes any action other than movement or is dealt damage, this effect ends.
       `,
       // narrative: '',
       rank: 4,
@@ -717,7 +717,7 @@ export const aeromancy: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        If it uses a \\glossterm{standard action} to do anything other than make a \\glossterm{movement}, this effect ends.
+        If it takes any action other than movement or is dealt damage, this effect ends.
       `,
       // narrative: '',
       rank: 6,

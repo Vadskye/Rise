@@ -718,7 +718,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Sense Plants',
 
-      castingTime: 'ten minutes',
+      castingTime: 'one minute',
       effect: `
         You learn the general pattern of where natural, nonmagical plants exist within a one mile radius from your location.
         The detail of your mental picture is limited to roughly knowing whether plants do or do not exist in each hundred-foot square in the area.
