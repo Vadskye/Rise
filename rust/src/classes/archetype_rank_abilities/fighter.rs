@@ -364,9 +364,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Guarding Strike}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike}.
-                    \hit The target is \goaded by you as a \glossterm{condition}.
-                    On a \glossterm{critical hit}, the penalty from the condition increases to -4.
+                    Make a \glossterm{strike}.
+                    \damaginghit The target is \goaded by you as a \glossterm{condition}.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
@@ -382,7 +381,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your Armor defense, and a \plus1 bonus to vital rolls.
+                You gain a \plus1 bonus to your Armor defense and \glossterm{vital rolls}.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
