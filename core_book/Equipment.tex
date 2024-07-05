@@ -726,23 +726,26 @@ Items are divided into five broad categories, described below.
         \begin{dtable!*}
             \lcaption{Weapon Special Materials}
             \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
-                \tb{Material}             & \tb{Special Effect}                           & \tb{Item Rank (Cost)}              \tableheaderrule
-                % object damage
-                \tind Adamantine          & \plus2 damage, double damage to objects, extra weight & 5 (25,000 gp)   \\
-                \tind Adamantine, pure    & \plus1d8 damage, double damage to objects, extra weight & 7 (625,000 gp) \\
+                \tb{Material}             & \tb{Special Effect}                                               & \tb{Item Rank (Cost)}              \tableheaderrule
+                % bonus weapon damage, object damage
+                \tind Adamantine          & \plus2 damage, double damage to objects, extra weight             & 5 (25,000 gp)  \\
+                \tind Adamantine, pure    & \plus1d8 damage, double damage to objects, extra weight           & 7 (625,000 gp) \\
                 % just vulnerabilities
-                \tind Cold iron           & Common vulnerabilities                        & 2 (200 gp)     \\
+                \tind Cold iron           & Common vulnerabilities                                            & 2 (200 gp)     \\
                 % crit accuracy
-                \tind Diamondsteel        & \plus2 accuracy with critical hits            & 3 (1,000 gp)   \\
-                \tind Diamondsteel, pure  & \plus4 accuracy with critical hits            & 5 (25,000 gp)  \\
+                \tind Diamondsteel        & \plus3 accuracy with critical hits                                & 3 (1,000 gp)   \\
+                \tind Diamondsteel, pure  & \plus5 accuracy with critical hits                                & 5 (25,000 gp)  \\
                 % energy damage
-                \tind Dragonfang          & Deals energy damage                           & 3 (1,000 gp)   \\
-                \tind Dragonfang, ancient & Deals energy damage, grants breath attack     & 5 (25,000 gp)  \\
+                \tind Dragonfang          & Deals energy damage                                               & 3 (1,000 gp)   \\
+                \tind Dragonfang, ancient & Deals energy damage, grants breath attack                         & 5 (25,000 gp)  \\
                 % trade damage for accuracy
-                \tind Mithral             & Lighter, \minus1 damage                      & 3 (1,000 gp)   \\
-                \tind Mithral, pure       & \plus1 accuracy, lighter, \minus2 damage     & 5 (25,000 gp)  \\
+                \tind Mithral             & Lighter, \minus1 damage                                           & 3 (1,000 gp)   \\
+                \tind Mithral, pure       & \plus1 accuracy, lighter, \minus2 damage                          & 5 (25,000 gp)  \\
                 % just vulnerabilities  
-                \tind Silvered            & Common vulnerabilities                        & 2 (200 gp)     \\
+                \tind Silvered            & Common vulnerabilities                                            & 2 (200 gp)     \\
+                % extra damage
+                \tind Starmetal           & \plus2 \glossterm{extra damage}, \minus1 accuracy, extra weight   & 2 (200 gp)     \\
+                \tind Starmetal, pure     & \plus1d8 \glossterm{extra damage}, \minus1 accuracy, extra weight & 4 (5,000 gp)   \\
             \end{dtabularx}
         \end{dtable!*}
 
@@ -752,13 +755,13 @@ Items are divided into five broad categories, described below.
 
         \parhead{Adamantine, Pure} A pure adamantine weapon deals \plus1d8 \glossterm{weapon damage}.
         In addition, \glossterm{strikes} with it deal double damage to objects that are not made of pure adamantine.
-        Unlike other weapons, adamantine weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
+        Unlike other weapons, pure adamantine weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
 
         \parhead{Cold Iron} Many fey creatures and some demons are \glossterm{vulnerable} to cold iron weapons.
 
-        \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+        \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus3 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
-        \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+        \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus5 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
         \parhead{Dragonfang} Damage dealt by a dragonfang weapon is damage of the type dealt by that dragon's breath weapon in addition to its normal damage types (see \tref{Dragon Types}).
 
@@ -786,6 +789,14 @@ Items are divided into five broad categories, described below.
         However, pure mithral weapons deal \minus2 \glossterm{weapon damage}.
 
         \parhead{Silvered} Lycanthropes and some undead are \glossterm{vulnerable} to silvered weapons.
+
+        \parhead{Starmetal} A starmetal weapon deals \plus1d4 \glossterm{extra damage}.
+        However, it also has a \minus1 accuracy penalty.
+        Unlike other weapons, starmetal weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
+
+        \parhead{Pure Starmetal} A pure starmetal weapon deals \plus1d8 \glossterm{extra damage}.
+        However, it also has a \minus1 accuracy penalty.
+        Unlike other weapons, pure starmetal weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 1 to wield.
 
 % Magic weapons are a highly limited slot.
 % They have the same power level as self-attune spells.
