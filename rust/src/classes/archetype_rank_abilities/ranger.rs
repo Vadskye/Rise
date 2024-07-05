@@ -557,7 +557,8 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the ability to customize your wild maneuvers.
                 For each rank 1 wild maneuver you know, choose one augment from the list below and apply it to that maneuver.
-                Augments scale in power with your excess rank with that maneuver, which is equal to your rank in this archetype minus the rank of the maneuver.
+                Augments scale in power with your ``excess rank''.
+                Your excess rank with a maneuver is equal to your rank in this archetype minus the rank of the maneuver.
 
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 wild maneuvers.
