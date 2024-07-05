@@ -270,7 +270,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Guarding Maneuver} You gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
+                    \parhead{Defensive Maneuver} You gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
