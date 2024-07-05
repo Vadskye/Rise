@@ -269,7 +269,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
                     \begin{magicalactiveability}{Anchoring}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \glossterm{teleportation} effects.
@@ -280,7 +280,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{activeability}{Coordinated Stealth}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
@@ -290,7 +290,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Cover Weaknesses}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         The accuracy bonus against your quarry is replaced with a \plus1 bonus to Armor and Reflex defenses against your quarry's attacks.
 
@@ -300,7 +300,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Decoy}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         If you are adjacent to your quarry, it takes a \minus2 accuracy penalty on attacks against members of your hunting party other than you.
 
@@ -310,7 +310,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{magicalactiveability}{Lifeseal}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
 
@@ -320,7 +320,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{activeability}{Martial Suppression}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 accuracy penalty with \glossterm{mundane} attacks.
 
@@ -330,7 +330,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Mystic Suppression}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \magical attacks.
 
@@ -340,7 +340,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Solo Hunter}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         Your hunting party other than you gains no benefit from your \textit{quarry} ability.
                         In exchange, you gain a \plus1 bonus to your defenses against your quarry.
@@ -351,7 +351,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Swarm Hunter}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
@@ -361,7 +361,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
-                        \abilityusagetime Automatic when you use \ability{quarry}.
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         While your quarry is adjacent to at least three members of your hunting party, those adjacent members gain an additional \plus1 accuracy bonus against it.
 
