@@ -1685,9 +1685,9 @@ impl Class {
                         If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
-                        \magicaldomainability{Aspect} You can use the \textit{divine strength} ability whenever you finish a \glossterm{long rest}.
+                        \magicaldomainability{Aspect} You can increase your Strength.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
-                            \abilityusagetime Can be triggered when you finish a long rest.
+                            \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
                             \rankline
                             You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
                         \end{magicalattuneability}

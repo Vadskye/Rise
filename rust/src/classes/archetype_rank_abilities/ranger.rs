@@ -198,7 +198,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \ability{banestrike} ability.
                 \begin{activeability}{Banestrike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -459,7 +458,6 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \ability{ambush} ability.
                 \begin{activeability}{Ambush}
                     \abilityusagetime Standard action.
                     \rankline

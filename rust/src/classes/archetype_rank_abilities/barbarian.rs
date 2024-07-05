@@ -44,7 +44,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{resilient strike} ability.
                 \begin{activeability}{Resilient Strike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -141,7 +140,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{enraged strike} ability.
                 \begin{activeability}{Enraged Strike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -250,7 +248,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{savage rush} ability.
                 \begin{activeability}{Savage Rush}
                     \abilityusagetime Standard action.
                     \rankline
@@ -491,7 +488,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                As a standard action, you can use the \textit{feral strike} ability.
                 \begin{activeability}{Feral Strike}
                     \abilityusagetime Standard action.
                     \rankline

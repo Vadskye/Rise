@@ -82,7 +82,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             // Expected jump height: 15 from speed, so can reliably jump completely
             // over Medium creatures.
             description: r"
-                As a standard action, you can use the \textit{aerial strike} ability.
                 \begin{activeability}{Aerial Strike}
                     \abilityusagetime Standard action.
                     \rankline
