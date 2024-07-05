@@ -342,14 +342,11 @@ export const electromancy: MysticSphere = {
     {
       name: 'Chain Lightning',
 
-      // not obvious what correct damage scaling would be
+      // Not obvious what correct damage scaling would be.
       attack: {
-        hit: `
-          You deal the primary target \\damagerankthree{electricity}.
-          You deal each secondary target \\damageranktwo{electricity}.
-        `,
+        hit: `damagerankthree{electricity}.`,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
           This attack can \\glossterm{chain} five times.
         `,
       },
