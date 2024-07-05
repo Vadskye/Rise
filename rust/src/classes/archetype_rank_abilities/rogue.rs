@@ -12,7 +12,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \textit{sneak attack} ability as a standard action.
                 \begin{activeability}{Sneak Attack}
                     \abilityusagetime Standard action.
                     \rankline
@@ -56,7 +55,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You can use the \textit{darkstalker} ability as a standard action.
                 \begin{attuneability}{Darkstalker}{\abilitytag{Attune}}
                     \abilityusagetime Standard action.
                     \rankline
@@ -110,7 +108,6 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You can use the \textit{assassination} ability as a \glossterm{minor action}.
                 \begin{activeability}{Assassination}
                     \abilityusagetime Standard action.
                     \rankline
@@ -178,7 +175,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn two \textit{bardic performances} from the list below.
                 You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
-                You can use any bardic performance you know as a \glossterm{standard action} unless it specifies that it requires a different type of action to activate.
 
                 All \textit{bardic performances} have the \abilitytag{Auditory} tag.
                 When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
@@ -469,7 +465,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             // performance as a free action.
             description: r"
                 Once per round, you can \glossterm{sustain} one bardic performance as a \glossterm{free action} if it would normally require a \glossterm{minor action}.
-                This can allow you to sustain instances of the same performance, or two different performance.
+                You cannot sustain multiple instances of the same performance, but you can sustain two different performances.
             ",
             modifiers: None,
         },
@@ -785,7 +781,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \textit{confound} ability as a standard action.
                 \begin{activeability}{Confound}[\abilitytag{Compulsion}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -831,7 +826,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You can use the \textit{exploit distraction} ability as a standard action.
                 \begin{activeability}{Exploit Distraction}
                     \abilityusagetime Standard action.
                     \rankline
@@ -853,7 +847,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You can use the \textit{what's that over there} ability as a standard action.
                 \begin{activeability}{What's That Over There}[\abilitytag{Compulsion}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -883,7 +876,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \textit{nothing is real} ability as a standard action.
                 \begin{activeability}{Nothing Is Real}[\abilitytag{Compulsion}]
                     \abilityusagetime Standard action.
                     \rankline
