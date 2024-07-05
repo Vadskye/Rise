@@ -404,24 +404,28 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
                 When you do, you gain a +2 bonus to your \glossterm{magical power} with the spell.
                 In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wildspell Effects}.
+
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
                 Any wildspell effects that do not make sense for a particular spell have no effect.
                 The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
+
+                All wild magic effects only change the spell during the current round.
+                In subsequent rounds, the spell has its normal effect.
 
                 \begin{dtable}
                     \lcaption{Wildspell Effects}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell fails with no effect \\
-                        2 & When you attack with the spell this round, you roll twice and take the lower result \\
-                        3 & When you attack with the spell this round, you are a target of the attack in addition to any other targets \\
-                        4 & The spell's area is halved this round \\
-                        5 & The spell's area is doubled this round \\
-                        6 & Each target that resists damage from the spell this round takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
-                        7 & Each target that loses hit points from the spell this round takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
-                        8 & When you deal damage with the spell this round, you roll twice for the damage and take the higher result \\
-                        9 & When you attack with the spell this round, you roll twice for the attack roll and take the higher result \\
+                        2 & When you attack with the spell, you roll twice and take the lower result \\
+                        3 & When you attack with the spell, you are a target of the attack in addition to any other targets \\
+                        4 & The spell's area is halved \\
+                        5 & The spell's area is doubled \\
+                        6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
+                        7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
+                        8 & When you deal damage with the spell, you roll twice for the damage and take the higher result \\
+                        9 & When you attack with the spell, you roll twice for the attack roll and take the higher result \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
@@ -444,21 +448,21 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You replace your normal wild magic effects with the effects from the \trefnp{Epic Wildspell Effects} table.
+                You replace your normal wild magic effects with the effects from the \trefnp{Wildspell+ Effects} table.
                 \begin{dtable}
-                    \lcaption{Epic Wildspell Effects}
+                    \lcaption{Wildspell+ Effects}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & The spell has its normal effect \\
-                        2 & All damage dealt by the spell is considered to be all damage types \\
-                        3 & When you deal damage with the spell this round, you roll twice for the spell and take the higher result \\
-                        4 & When you attack with the spell this round, you roll twice and take the higher result \\
-                        5 & Any \glossterm{conditions} inflicted by the spell this round become a \abilitytag{Curse} instead of a condition, and are removed when the target finishes a \glossterm{short rest} \\
-                        6 & When the spell would cause a creature to lose hit points this round, that creature loses twice as many hit points \\
-                        7 & The spell's area is tripled this round \\
-                        8 & Each target that loses hit points from the spell this round is also \glossterm{briefly} \stunned \\
-                        9 & You gain a \plus4 bonus to \glossterm{accuracy} with the spell this round, but you take the minimum possible result when the spell would deal damage \\
-                        10 & During each of your next two actions, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        1 & When you attack with the spell, you are a target of the attack in addition to any other targets \\
+                        2 & The spell deals half damage on a miss, but it takes a \minus2 accuracy penalty \\
+                        3 & The spell gains a \plus4 accuracy bonus, but it cannot get a critical hit \\
+                        4 & The spell's area is quadrupled, but you take a \minus2 accuracy penalty \\
+                        5 & The spell's area is doubled \\
+                        6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
+                        7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
+                        8 & The spell deals maximum damage, but it deals no damage on a miss or glancing blow \\
+                        9 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & The spell gains a \plus10 accuracy bonus, but you \glossterm{briefly} cannot cast that spell again \\
                     \end{dtabularx}
                 \end{dtable}
             ",
