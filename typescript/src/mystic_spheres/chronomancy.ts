@@ -695,7 +695,7 @@ export const chronomancy: MysticSphere = {
         Choose one Medium or smaller container.
         Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis at the end of the round.
         While in stasis, an object cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
-        If the container is destroyed, the stasis effect ends.
+        If the container is destroyed, this effect ends.
       `,
       rank: 3,
       type: 'Attune',
@@ -718,7 +718,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Choose up to six ritual participants.
         Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
-        If it takes any action other than movement or is dealt damage, this effect ends.
+        If it attacks or is dealt damage, this effect ends, and it is \\glossterm{briefly} unable to take any actions.
       `,
       tags: [],
       castingTime: 'one minute',
