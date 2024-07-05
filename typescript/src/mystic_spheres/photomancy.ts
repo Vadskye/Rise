@@ -127,8 +127,8 @@ export const photomancy: MysticSphere = {
       effect: `
         If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +2 bonus to Armor defense until the end of that round.
       `,
-      rank: 6,
-      type: 'Attune (deep)',
+      rank: 7,
+      type: 'Attune',
     },
 
     {
@@ -424,7 +424,7 @@ export const photomancy: MysticSphere = {
         This spell has no \\glossterm{verbal components}.
 
         You become \\trait{invisible}.
-        This invisibility ends if you take damage.
+        This invisibility ends if you attack or take damage.
       `,
       rank: 6,
       tags: ['Attune (deep)'],

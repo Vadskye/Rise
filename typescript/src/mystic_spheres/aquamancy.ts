@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import {CONDITION_CRIT} from './constants';
+import {CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
 export const aquamancy: MysticSphere = {
   name: 'Aquamancy',
@@ -428,6 +428,7 @@ export const aquamancy: MysticSphere = {
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
+          \\item You take a -1 penalty to your Armor defense. 
         \\end{itemize}
 
         % There must be text between an itemize block and the end of a mdframed env
@@ -435,6 +436,16 @@ export const aquamancy: MysticSphere = {
       `,
       rank: 3,
       type: 'Attune (deep)',
+    },
+    {
+      name: 'Efficient Aqueous Form',
+
+      functionsLike: {
+        name: "aqueous form",
+        exceptThat: EXCEPT_NOT_DEEP,
+      },
+      rank: 6,
+      type: 'Attune',
     },
     {
       name: 'Fog Cloud',
