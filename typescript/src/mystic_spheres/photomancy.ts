@@ -563,7 +563,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Disguise Image',
 
-      castingTime: "ten minutes",
+      castingTime: "one minute",
       effect: `
         You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
@@ -576,7 +576,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Mass Disguise Image',
 
-      castingTime: "ten minutes",
+      castingTime: "one minute",
       functionsLike: {
         mass: true,
         name: 'Disguise Image',
@@ -589,7 +589,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Malleable Disguise',
 
-      castingTime: "ten minutes",
+      castingTime: "one hour",
       functionsLike: {
         exceptThat: `
           you can change the nature of the disguise as a \\glossterm{minor action}.
@@ -605,9 +605,73 @@ export const photomancy: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
-        The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
+        The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius.
       `,
       rank: 1,
+      tags: [],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Massive Continuous Light',
+
+      castingTime: 'one minute',
+      functionsLike: {
+        name: "continuous light",
+        exceptThat: "the area increases to a \\largearea radius.",
+      },
+      rank: 3,
+      tags: [],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Brilliant Light',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
+        The target glows like a torch, emitting \\glossterm{brilliant illumination} in a \\smallarea radius.
+      `,
+      rank: 5,
+      tags: [],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Massive Brilliant Light',
+
+      castingTime: 'one minute',
+      functionsLike: {
+        name: "brilliant light",
+        exceptThat: "the area increases to a \\largearea radius.",
+      },
+      rank: 7,
+      tags: [],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Permanent Light',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        name: "continuous light",
+        exceptThat: "the effect lasts for one year.",
+      },
+      rank: 2,
+      tags: [],
+    },
+
+    {
+      name: 'Massive Permanent Light',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        name: "continuous light",
+        exceptThat: "the area increases to a \\largearea radius, and the effect lasts for one year.",
+      },
+      rank: 4,
       tags: [],
       type: 'Attune',
     },
@@ -624,19 +688,6 @@ export const photomancy: MysticSphere = {
       rank: 1,
       tags: [],
       type: 'Attune',
-    },
-
-    {
-      name: 'Permanent Light',
-
-      castingTime: '24 hours',
-      effect: `
-        Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
-        The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius and shadowy illumination for an additional 15 feet.
-        This effect is permanent.
-      `,
-      rank: 2,
-      tags: [],
     },
   ],
 };

@@ -417,13 +417,23 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Divine Seal',
 
-      castingTime: "ten minutes",
+      castingTime: "one minute",
       effect: `
         The area within an \\largearea radius \\glossterm{zone} from your location becomes sealed by your deity.
         Whenever a creature casts a divine spell in the area, if that creature does not share your deity, the spell has a 50\\% chance to fail with no effect.
       `,
       rank: 3,
       type: 'Attune',
+    },
+    {
+      name: 'Persistent Divine Seal',
+
+      castingTime: "24 hours",
+      functionsLike: {
+        name: "divine seal",
+        exceptThat: "the effect lasts for one year.",
+      },
+      rank: 3,
     },
     {
       name: 'Consecrated Ground',

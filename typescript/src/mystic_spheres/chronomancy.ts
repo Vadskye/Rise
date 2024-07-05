@@ -693,13 +693,22 @@ export const chronomancy: MysticSphere = {
       castingTime: 'one hour',
       effect: `
         Choose one Medium or smaller container.
-        Anything placed into the container enters a state of temporal stasis at the end of the round.
-        While in stasis, it cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
-        Creatures in stasis are \\glossterm{unconscious} and cannot take any actions.
+        Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis at the end of the round.
+        While in stasis, an object cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
         If the container is destroyed, the stasis effect ends.
       `,
       rank: 3,
       type: 'Attune',
+    },
+    {
+      name: 'Persistent Stasis Chamber',
+
+      castingTime: '24 hours',
+      functionsLike: {
+        name: "stasis chamber",
+        exceptThat: "the effect lasts for one year.",
+      },
+      rank: 5,
     },
     {
       name: 'Overland Haste',
@@ -716,7 +725,7 @@ export const chronomancy: MysticSphere = {
       type: 'Attune (target)',
     },
     {
-      name: 'Greater Overland Haste',
+      name: 'Rapid Overland Haste',
       rank: 5,
       functionsLike: {
         exceptThat: `
@@ -725,7 +734,7 @@ export const chronomancy: MysticSphere = {
         name: 'overland haste',
       },
       tags: [],
-      castingTime: 'one minute',
+      castingTime: 'one hour',
       type: 'Attune (target)',
     },
     {

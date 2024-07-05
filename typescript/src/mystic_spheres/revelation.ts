@@ -1008,7 +1008,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Find the Path',
 
-      castingTime: '1 hour',
+      castingTime: 'one hour',
       effect: `
         When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
         You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.

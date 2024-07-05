@@ -498,13 +498,13 @@ export const thaumaturgy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Permanent Suppress Magic Aura',
+      name: 'Persistent Suppress Magic Aura',
 
       castingTime: '24 hours',
       effect: `
         Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
         All magical effects on the target are undetectable with abilities that detect magic.
-        This effect is permanent.
+        This effect lasts for one year.
       `,
       rank: 4,
     },

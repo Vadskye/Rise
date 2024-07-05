@@ -661,7 +661,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can use the \textit{natural servant} ability.
-                This ability requires spending 1 hour performing rituals in a natural area.
+                This ability requires spending one hour performing rituals in a natural area.
                 \begin{magicalattuneability}{Natural Servant}{\abilitytag{Attune} (deep)}
                     \abilityusagetime One hour of rituals in a natural area.
                     \rankline
