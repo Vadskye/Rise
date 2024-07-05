@@ -121,7 +121,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                As a standard action, you can use the \ability{turn undead} ability.
                 \begin{magicalactiveability}{Turn Undead}
                     \abilityusagetime Standard action.
                     \rankline
