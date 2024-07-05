@@ -147,7 +147,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike}.
-                    The strike deals double \glossterm{weapon damage} against each creature that dealt damage to you during the previous round.
+                    The strike deals double \glossterm{weapon damage} against any creature that dealt damage to you during the previous round.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
