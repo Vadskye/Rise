@@ -99,10 +99,10 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Momentum Strike',
 
+      cost: "You \\glossterm{briefly} cannot use this ability again.",
       effect: `
         Make a melee \\glossterm{strike}.
         If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
-        After using this maneuver, you \\glossterm{briefly} cannot use it again.
       `,
       rank: 3,
     },
