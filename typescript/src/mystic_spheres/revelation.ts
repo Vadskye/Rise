@@ -807,7 +807,7 @@ export const revelation: MysticSphere = {
         The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
 
         After the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
-        Once it speaks twenty-five words, or you stop sustaining the effect, effect ends.
+        Once it speaks twenty-five words, or you stop sustaining the effect, the effect ends.
         `,
 
       rank: 2,
