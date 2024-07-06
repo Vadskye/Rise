@@ -740,7 +740,7 @@ def universal_abilities():
                     On a hit, the target becomes prone.
                     If you used a Tripping weapon and beat the target's Armor defense, it also takes damage from the weapon.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Size-Based"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Brawling", "Size-Based"]},
             ),
         ],
     )
