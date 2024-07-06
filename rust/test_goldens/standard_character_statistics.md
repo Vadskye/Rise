@@ -80,7 +80,7 @@ DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 ### Description
 HP 168, DR 96
 AD 17, Fort 19, Ref 12, Ment 15
-Generic Accuracy Broadsword +20 (1d6+10 slashing damage.); Certain Broadsword +22 (1d6+5 slashing damage.); Powerful Broadsword +16 (2d6+20 slashing damage.); Certain Strike+ -- Broadsword +22 (1d6+10 slashing damage.); Power Strike+ -- Broadsword +13 (3d6+30 slashing damage.); Extra Damage Broadsword +14 (1d6+8d8+10 slashing damage.); Generic Triple Damage -- Broadsword +14 (3d6+30 slashing damage.); Broadsword +14 (1d6+10 slashing damage.)
+Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Generic Triple Damage -- Broadsword +13 (3d6+30 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 10✨/17
 
@@ -103,7 +103,6 @@ Maneuvers: maneuver Power Strike+
 Enduring Discipline+: defense mental by 1
 Enduring Discipline+: vital roll 1
 Enduring Discipline+: resource fatigue tolerance by 1
-Weapon Training+: accuracy 1
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Generic Triple Damage
 fighter: defense armor by 0
