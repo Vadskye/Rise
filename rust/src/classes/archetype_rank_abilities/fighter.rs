@@ -535,9 +535,18 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to one of the following statistics: \glossterm{accuracy} against adjacent enemies, Armor defense, or \glossterm{vital rolls}.
-                You can change which of these bonuses you gain as a \glossterm{minor action} once per round.
-                This ability has the \abilitytag{Swift} tag, so changing your stance affects attacks against you during the current phase.
+                \begin{sustainability}{Shifting Stance}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                    \abilityusagetime \glossterm{Minor action}.
+                    \rankline
+                    You gain one of the following benefits:
+                    \begin{itemize}
+                        \item Offense: You gain \plus1 accuracy against adjacent enemies.
+                        \item Defense: You gain a \plus1 bonus to your Armor defense.
+                        \item Support: One adjacent \glossterm{ally} gains a \plus1 accuracy bonus.
+                    \end{itemize}
+
+                    This effect immediately ends if you use this ability again.
+                \end{sustainability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
