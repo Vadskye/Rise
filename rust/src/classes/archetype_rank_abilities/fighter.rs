@@ -111,7 +111,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     You become proficient with the specific weapon you trained with.
                     This does not grant you proficiency with its weapon group, or with other weapons of its type.
                     If you would already be proficient with that weapon without this ability, you gain a \plus1 accuracy bonus with it.
-                    If the weapon is an exotic weapon from a weapon group that you are not proficient with, you take a \minus1 accuracy penalty with it.
+                    If the weapon is an exotic weapon that you are not already proficient with, you take a \minus1 accuracy penalty with it.
                     This ability's effect is permanent.
                 \end{activeability}
             ",
@@ -128,7 +128,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 If you use this ability to train with the same weapon again, you can change its weapon tag, but it loses the previous weapon tag.
                 If you would add Sweeping (1) to a weapon that already has the Sweeping weapon tag, you increase its Sweeping value instead.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Equipment Efficiency",
@@ -555,7 +555,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                The bonus increases to \plus2.
+                The bonus for each stance increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
