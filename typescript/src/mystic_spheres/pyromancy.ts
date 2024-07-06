@@ -572,11 +572,11 @@ export const pyromancy: MysticSphere = {
         If you die, your body and equipment catch fire and are instantly burned to ash.
         At the end of the next round after you died, you return to life with all of your equipment intact.
         Your return in the same state in which you died, with three exceptions:
-        \begin{itemize}
-          \item You return at full \\glossterm{hit points} and \\glossterm{damage resistance}, with all of your conditions removed.
-          \item All of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
-          \item You increase your \\glossterm{fatigue level} by three.
-        \end{itemize}
+        \\begin{itemize}
+          \\item You return at full \\glossterm{hit points} and \\glossterm{damage resistance}, with all of your conditions removed.
+          \\item All of your \\glossterm{vital rolls} for your vital rolls that were 0 or lower become 1, preventing you from dying again immediately.
+          \\item You increase your \\glossterm{fatigue level} by three.
+        \\end{itemize}
 
         After you are restored to life in this way, this spell ends.
       `,
