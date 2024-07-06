@@ -416,88 +416,28 @@ Power+       : 36.19 = (34.5 dph * 0.90 hpr) + (34.5 dpc * 0.10 cpr) + (17.2 dpg
 
 ## Level 20
 
-Generic Accuracy Broadsword +20 (1d6+10 slashing damage.)
-Certain Broadsword +22 (1d6+5 slashing damage.)
-Powerful Broadsword +16 (2d6+20 slashing damage.)
-Certain Strike+ -- Broadsword +22 (1d6+10 slashing damage.)
-Power Strike+ -- Broadsword +13 (3d6+30 slashing damage.)
-Extra Damage Broadsword +14 (1d6+8d8+10 slashing damage.)
-Generic Triple Damage -- Broadsword +14 (3d6+30 slashing damage.)
-Broadsword +14 (1d6+10 slashing damage.)
+Generic Accuracy Broadsword +19 (1d6+10 slashing damage.)
+Certain Broadsword +21 (1d6+5 slashing damage.)
+Powerful Broadsword +15 (2d6+20 slashing damage.)
+Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.)
+Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.)
+Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.)
+Generic Triple Damage -- Broadsword +13 (3d6+30 slashing damage.)
+Broadsword +13 (1d6+10 slashing damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
-Accuracy     : 26.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 1.00 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 13.49 cdpr + 0.00 gdpr
+Accuracy     : 25.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.89 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 11.99 cdpr + 0.00 gdpr
 Certain      : 17.94 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 1.11 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 9.44 cdpr + 0.00 gdpr
-Extra        : 65.98 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.33 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 16.48 cdpr + 0.00 gdpr
-Power        : 41.98 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.56 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 14.99 cdpr + 0.00 gdpr
-Certain+     : 28.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 1.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 15.00 cdpr + 0.00 gdpr
-Power+       : 49.49 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.22 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 8.99 cdpr + 0.00 gdpr
-Triple       : 53.99 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.33 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 13.49 cdpr + 0.00 gdpr
+Extra        : 60.49 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.22 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 10.99 cdpr + 0.00 gdpr
+Power        : 38.99 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.44 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 11.99 cdpr + 0.00 gdpr
+Certain+     : 28.48 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 1.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 14.99 cdpr + 0.00 gdpr
+Power+       : 45.00 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.11 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Triple       : 49.49 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.22 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 8.99 cdpr + 0.00 gdpr
 
 ### Defender: Barbarian Shield
-Best attack: Extra Damage Broadsword
-
-#### Detailed attack results
-Accuracy     : 19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 5.99 cdpr + 0.00 gdpr
-Certain      : 14.16 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.67 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 5.66 cdpr + 0.00 gdpr
-Extra        : 48.91 = (49.5 dph * 0.80 hpr) + (49.5 dpc * 0.09 cpr) + (24.8 dpg * 0.20 gpr) = 39.60 hdpr + 4.36 cdpr + 4.95 gdpr
-Power        : 29.97 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.11 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 2.97 cdpr + 0.00 gdpr
-Certain+     : 22.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.67 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 8.99 cdpr + 0.00 gdpr
-Power+       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
-Triple       : 40.01 = (40.5 dph * 0.80 hpr) + (40.5 dpc * 0.09 cpr) + (20.2 dpg * 0.20 gpr) = 32.40 hdpr + 3.56 cdpr + 4.05 gdpr
-
-### Defender: Fighter Greatmace
-Best attack: Extra Damage Broadsword
-
-#### Detailed attack results
-Accuracy     : 22.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.67 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 8.99 cdpr + 0.00 gdpr
-Certain      : 16.05 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.89 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 7.55 cdpr + 0.00 gdpr
-Extra        : 54.95 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.11 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 5.45 cdpr + 0.00 gdpr
-Power        : 32.99 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.22 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 5.99 cdpr + 0.00 gdpr
-Certain+     : 25.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.89 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 11.99 cdpr + 0.00 gdpr
-Power+       : 42.48 = (40.5 dph * 0.90 hpr) + (40.5 dpc * 0.10 cpr) + (20.2 dpg * 0.10 gpr) = 36.45 hdpr + 4.01 cdpr + 2.02 gdpr
-Triple       : 44.95 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.11 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 4.46 cdpr + 0.00 gdpr
-
-### Defender: Fighter Shield
-Best attack: Extra Damage Broadsword
-
-#### Detailed attack results
-Accuracy     : 19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 5.99 cdpr + 0.00 gdpr
-Certain      : 14.16 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.67 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 5.66 cdpr + 0.00 gdpr
-Extra        : 48.91 = (49.5 dph * 0.80 hpr) + (49.5 dpc * 0.09 cpr) + (24.8 dpg * 0.20 gpr) = 39.60 hdpr + 4.36 cdpr + 4.95 gdpr
-Power        : 29.97 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.11 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 2.97 cdpr + 0.00 gdpr
-Certain+     : 22.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.67 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 8.99 cdpr + 0.00 gdpr
-Power+       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
-Triple       : 40.01 = (40.5 dph * 0.80 hpr) + (40.5 dpc * 0.09 cpr) + (20.2 dpg * 0.20 gpr) = 32.40 hdpr + 3.56 cdpr + 4.05 gdpr
-
-### Defender: Monk Kama
-Best attack: Extra Damage Broadsword
-
-#### Detailed attack results
-Accuracy     : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
-Certain      : 9.44 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.11 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 0.94 cdpr + 0.00 gdpr
-Extra        : 15.94 = (49.5 dph * 0.20 hpr) + (49.5 dpc * 0.02 cpr) + (24.8 dpg * 0.20 gpr) = 9.90 hdpr + 1.09 cdpr + 4.95 gdpr
-Power        : 14.69 = (27.0 dph * 0.40 hpr) + (27.0 dpc * 0.04 cpr) + (13.5 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 2.70 gdpr
-Certain+     : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.49 cdpr + 0.00 gdpr
-Power+       : 8.55 = (40.5 dph * 0.10 hpr) + (40.5 dpc * 0.01 cpr) + (20.2 dpg * 0.20 gpr) = 4.05 hdpr + 0.45 cdpr + 4.05 gdpr
-Triple       : 13.04 = (40.5 dph * 0.20 hpr) + (40.5 dpc * 0.02 cpr) + (20.2 dpg * 0.20 gpr) = 8.10 hdpr + 0.89 cdpr + 4.05 gdpr
-
-### Defender: Paladin Shield
-Best attack: Extra Damage Broadsword
-
-#### Detailed attack results
-Accuracy     : 19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 5.99 cdpr + 0.00 gdpr
-Certain      : 14.16 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.67 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 5.66 cdpr + 0.00 gdpr
-Extra        : 48.91 = (49.5 dph * 0.80 hpr) + (49.5 dpc * 0.09 cpr) + (24.8 dpg * 0.20 gpr) = 39.60 hdpr + 4.36 cdpr + 4.95 gdpr
-Power        : 29.97 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.11 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 2.97 cdpr + 0.00 gdpr
-Certain+     : 22.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.67 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 8.99 cdpr + 0.00 gdpr
-Power+       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
-Triple       : 40.01 = (40.5 dph * 0.80 hpr) + (40.5 dpc * 0.09 cpr) + (20.2 dpg * 0.20 gpr) = 32.40 hdpr + 3.56 cdpr + 4.05 gdpr
-
-### Defender: Ranger Longbow
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
@@ -509,7 +449,55 @@ Certain+     : 20.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.56 cpr) + (6.8 dpg 
 Power+       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
 Triple       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
 
-### Defender: Rogue Smallsword
+### Defender: Fighter Greatmace
+Best attack: Extra Damage Broadsword
+
+#### Detailed attack results
+Accuracy     : 20.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.56 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 7.49 cdpr + 0.00 gdpr
+Certain      : 15.10 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.78 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 6.60 cdpr + 0.00 gdpr
+Extra        : 51.93 = (49.5 dph * 0.90 hpr) + (49.5 dpc * 0.10 cpr) + (24.8 dpg * 0.10 gpr) = 44.55 hdpr + 4.90 cdpr + 2.47 gdpr
+Power        : 30.00 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.11 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 3.00 cdpr + 0.00 gdpr
+Certain+     : 23.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.78 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 10.49 cdpr + 0.00 gdpr
+Power+       : 40.01 = (40.5 dph * 0.80 hpr) + (40.5 dpc * 0.09 cpr) + (20.2 dpg * 0.20 gpr) = 32.40 hdpr + 3.56 cdpr + 4.05 gdpr
+Triple       : 42.48 = (40.5 dph * 0.90 hpr) + (40.5 dpc * 0.10 cpr) + (20.2 dpg * 0.10 gpr) = 36.45 hdpr + 4.01 cdpr + 2.02 gdpr
+
+### Defender: Fighter Shield
+Best attack: Extra Damage Broadsword
+
+#### Detailed attack results
+Accuracy     : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Certain      : 13.22 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.56 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 4.72 cdpr + 0.00 gdpr
+Extra        : 43.41 = (49.5 dph * 0.70 hpr) + (49.5 dpc * 0.08 cpr) + (24.8 dpg * 0.20 gpr) = 34.65 hdpr + 3.81 cdpr + 4.95 gdpr
+Power        : 28.32 = (27.0 dph * 0.90 hpr) + (27.0 dpc * 0.10 cpr) + (13.5 dpg * 0.10 gpr) = 24.30 hdpr + 2.67 cdpr + 1.35 gdpr
+Certain+     : 20.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.56 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 7.49 cdpr + 0.00 gdpr
+Power+       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
+Triple       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
+
+### Defender: Monk Kama
+Best attack: Certain Strike+ -- Broadsword
+
+#### Detailed attack results
+Accuracy     : 11.84 = (13.5 dph * 0.70 hpr) + (13.5 dpc * 0.08 cpr) + (6.8 dpg * 0.20 gpr) = 9.45 hdpr + 1.04 cdpr + 1.35 gdpr
+Certain      : 8.92 = (8.5 dph * 0.90 hpr) + (8.5 dpc * 0.10 cpr) + (4.2 dpg * 0.10 gpr) = 7.65 hdpr + 0.84 cdpr + 0.42 gdpr
+Extra        : 10.44 = (49.5 dph * 0.10 hpr) + (49.5 dpc * 0.01 cpr) + (24.8 dpg * 0.20 gpr) = 4.95 hdpr + 0.54 cdpr + 4.95 gdpr
+Power        : 11.69 = (27.0 dph * 0.30 hpr) + (27.0 dpc * 0.03 cpr) + (13.5 dpg * 0.20 gpr) = 8.10 hdpr + 0.89 cdpr + 2.70 gdpr
+Certain+     : 14.16 = (13.5 dph * 0.90 hpr) + (13.5 dpc * 0.10 cpr) + (6.8 dpg * 0.10 gpr) = 12.15 hdpr + 1.34 cdpr + 0.67 gdpr
+Power+       : 6.48 = (40.5 dph * 0.10 hpr) + (40.5 dpc * 0.01 cpr) + (20.2 dpg * 0.10 gpr) = 4.05 hdpr + 0.41 cdpr + 2.02 gdpr
+Triple       : 8.55 = (40.5 dph * 0.10 hpr) + (40.5 dpc * 0.01 cpr) + (20.2 dpg * 0.20 gpr) = 4.05 hdpr + 0.45 cdpr + 4.05 gdpr
+
+### Defender: Paladin Shield
+Best attack: Extra Damage Broadsword
+
+#### Detailed attack results
+Accuracy     : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Certain      : 13.22 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.56 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 4.72 cdpr + 0.00 gdpr
+Extra        : 43.41 = (49.5 dph * 0.70 hpr) + (49.5 dpc * 0.08 cpr) + (24.8 dpg * 0.20 gpr) = 34.65 hdpr + 3.81 cdpr + 4.95 gdpr
+Power        : 28.32 = (27.0 dph * 0.90 hpr) + (27.0 dpc * 0.10 cpr) + (13.5 dpg * 0.10 gpr) = 24.30 hdpr + 2.67 cdpr + 1.35 gdpr
+Certain+     : 20.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.56 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 7.49 cdpr + 0.00 gdpr
+Power+       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
+Triple       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
+
+### Defender: Ranger Longbow
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
@@ -521,26 +509,38 @@ Certain+     : 19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg 
 Power+       : 26.53 = (40.5 dph * 0.50 hpr) + (40.5 dpc * 0.06 cpr) + (20.2 dpg * 0.20 gpr) = 20.25 hdpr + 2.23 cdpr + 4.05 gdpr
 Triple       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
 
+### Defender: Rogue Smallsword
+Best attack: Extra Damage Broadsword
+
+#### Detailed attack results
+Accuracy     : 15.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.50 cdpr + 0.00 gdpr
+Certain      : 11.33 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.33 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 2.83 cdpr + 0.00 gdpr
+Extra        : 32.42 = (49.5 dph * 0.50 hpr) + (49.5 dpc * 0.06 cpr) + (24.8 dpg * 0.20 gpr) = 24.75 hdpr + 2.72 cdpr + 4.95 gdpr
+Power        : 23.68 = (27.0 dph * 0.70 hpr) + (27.0 dpc * 0.08 cpr) + (13.5 dpg * 0.20 gpr) = 18.90 hdpr + 2.08 cdpr + 2.70 gdpr
+Certain+     : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Power+       : 22.03 = (40.5 dph * 0.40 hpr) + (40.5 dpc * 0.04 cpr) + (20.2 dpg * 0.20 gpr) = 16.20 hdpr + 1.78 cdpr + 4.05 gdpr
+Triple       : 26.53 = (40.5 dph * 0.50 hpr) + (40.5 dpc * 0.06 cpr) + (20.2 dpg * 0.20 gpr) = 20.25 hdpr + 2.23 cdpr + 4.05 gdpr
+
 ### Defender: Sorcerer Dexterity
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
-Accuracy     : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
-Certain      : 13.22 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.56 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 4.72 cdpr + 0.00 gdpr
-Extra        : 43.41 = (49.5 dph * 0.70 hpr) + (49.5 dpc * 0.08 cpr) + (24.8 dpg * 0.20 gpr) = 34.65 hdpr + 3.81 cdpr + 4.95 gdpr
-Power        : 28.32 = (27.0 dph * 0.90 hpr) + (27.0 dpc * 0.10 cpr) + (13.5 dpg * 0.10 gpr) = 24.30 hdpr + 2.67 cdpr + 1.35 gdpr
-Certain+     : 20.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.56 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 7.49 cdpr + 0.00 gdpr
-Power+       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
-Triple       : 35.52 = (40.5 dph * 0.70 hpr) + (40.5 dpc * 0.08 cpr) + (20.2 dpg * 0.20 gpr) = 28.35 hdpr + 3.12 cdpr + 4.05 gdpr
+Accuracy     : 16.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.22 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 3.00 cdpr + 0.00 gdpr
+Certain      : 12.27 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.44 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 3.77 cdpr + 0.00 gdpr
+Extra        : 37.92 = (49.5 dph * 0.60 hpr) + (49.5 dpc * 0.07 cpr) + (24.8 dpg * 0.20 gpr) = 29.70 hdpr + 3.27 cdpr + 4.95 gdpr
+Power        : 26.68 = (27.0 dph * 0.80 hpr) + (27.0 dpc * 0.09 cpr) + (13.5 dpg * 0.20 gpr) = 21.60 hdpr + 2.38 cdpr + 2.70 gdpr
+Certain+     : 19.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.44 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 5.99 cdpr + 0.00 gdpr
+Power+       : 26.53 = (40.5 dph * 0.50 hpr) + (40.5 dpc * 0.06 cpr) + (20.2 dpg * 0.20 gpr) = 20.25 hdpr + 2.23 cdpr + 4.05 gdpr
+Triple       : 31.02 = (40.5 dph * 0.60 hpr) + (40.5 dpc * 0.07 cpr) + (20.2 dpg * 0.20 gpr) = 24.30 hdpr + 2.67 cdpr + 4.05 gdpr
 
 ### Defender: Wizard Perception
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
-Accuracy     : 25.49 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.89 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 11.99 cdpr + 0.00 gdpr
-Certain      : 17.94 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 1.11 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 9.44 cdpr + 0.00 gdpr
-Extra        : 60.49 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.22 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 10.99 cdpr + 0.00 gdpr
-Power        : 38.99 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.44 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 11.99 cdpr + 0.00 gdpr
-Certain+     : 28.48 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 1.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 14.99 cdpr + 0.00 gdpr
-Power+       : 45.00 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.11 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 4.50 cdpr + 0.00 gdpr
-Triple       : 49.49 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.22 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 8.99 cdpr + 0.00 gdpr
+Accuracy     : 23.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.78 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 10.49 cdpr + 0.00 gdpr
+Certain      : 16.99 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 1.00 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 8.49 cdpr + 0.00 gdpr
+Extra        : 54.99 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.11 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 5.49 cdpr + 0.00 gdpr
+Power        : 35.99 = (27.0 dph * 1.00 hpr) + (27.0 dpc * 0.33 cpr) + (13.5 dpg * 0.00 gpr) = 27.00 hdpr + 8.99 cdpr + 0.00 gdpr
+Certain+     : 26.99 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 1.00 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 13.49 cdpr + 0.00 gdpr
+Power+       : 44.95 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.11 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 4.46 cdpr + 0.00 gdpr
+Triple       : 45.00 = (40.5 dph * 1.00 hpr) + (40.5 dpc * 0.11 cpr) + (20.2 dpg * 0.00 gpr) = 40.50 hdpr + 4.50 cdpr + 0.00 gdpr
