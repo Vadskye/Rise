@@ -321,7 +321,7 @@ export const polymorph: MysticSphere = {
 
         You can suppress or resume this effect as a \\glossterm{free action}.
       `,
-      rank: 2,
+      rank: 3,
       type: 'Attune (deep)',
     },
 
