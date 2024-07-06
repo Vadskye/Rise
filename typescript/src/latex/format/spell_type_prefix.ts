@@ -55,6 +55,6 @@ function generateUsageAndTags(castingTime: string | undefined, name: string, tag
   } else if (tagsText) {
     return `\\spelltwocol{Casting time: Standard action.}{${tagsText}}`;
   } else {
-    return '\abilityusagetime Standard action.';
+    return '\\abilityusagetime Standard action.';
   }
 }
