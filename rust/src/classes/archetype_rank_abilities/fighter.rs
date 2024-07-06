@@ -101,6 +101,15 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
 pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            name: "Exotic Weapon Training",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Weapon Training",
             is_magical: false,
             rank: 1,
