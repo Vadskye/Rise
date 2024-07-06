@@ -146,6 +146,15 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            name: "Know Your Weaponry",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Know Your Enemy+",
             is_magical: false,
             rank: 4,
@@ -160,7 +169,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The accuracy bonus increases to \plus3.
+                You also gain a \plus1 bonus to all defenses against creatures of your chosen types.
                 In addition, you can choose three creature types instead of two.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -190,6 +199,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You gain a \plus2 bonus to your Fortitude defense.
+                In addition, your \glossterm{allies} who can see or hear you gain a \plus1 bonus to their Fortitude defense.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
