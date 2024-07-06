@@ -223,12 +223,12 @@ Points / Self-hit: 85 / 70%
 ### Fighter Greatmace
 A/F/R/M: 15 / 19 / 12 / 15
 HP/DR/Total: 168 / 96 / 264
-Points / Self-hit: 76 / 100%
+Points / Self-hit: 76 / 90%
 
 ### Fighter Shield
 A/F/R/M: 17 / 19 / 12 / 15
 HP/DR/Total: 168 / 96 / 264
-Points / Self-hit: 80 / 80%
+Points / Self-hit: 80 / 70%
 
 ### Monk Kama
 A/F/R/M: 23 / 15 / 22 / 13
