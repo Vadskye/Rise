@@ -17,12 +17,12 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \rngshort range (see \pcref{Weapon Tags}).
 
-                    The strike deals 1d4 \glossterm{extra damage} against each creature that is \unaware or \partiallyunaware of your attack.
+                    The strike deals 1d6 \glossterm{extra damage} against each creature that is \unaware or \partiallyunaware of your attack.
                     You do not gain this damage against creatures that you are unable to score a \glossterm{critical hit} against.
 
                     \rankline
                     \rank{2} The extra damage also applies if the target is adjacent to one of your \glossterm{allies}.
-                    \rank{3} The extra damage increases to 1d8.
+                    \rank{3} The extra damage increases to 1d10.
                     \rank{4} The extra damage increases to 2d8.
                     \rank{5} The extra damage increases to 4d8.
                     \rank{6} The extra damage increases to 6d8.
