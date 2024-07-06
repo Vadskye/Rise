@@ -146,7 +146,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Know Your Weaponry",
+            name: "Know Your Weapons",
             is_magical: false,
             rank: 1,
             description: r"
