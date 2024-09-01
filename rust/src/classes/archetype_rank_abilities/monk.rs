@@ -128,7 +128,6 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                 You learn two rank 1 esoteric \glossterm{maneuvers}.
                 You may spend \glossterm{insight points} to learn one additional maneuver per insight point.
-                Unless otherwise noted in an ability's description, using a maneuver requires a \glossterm{standard action}.
 
                 When you gain access to a new \glossterm{rank} in this archetype,
                     you can exchange any number of maneuvers you know for other maneuvers,
