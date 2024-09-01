@@ -133,11 +133,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Whenever you use this ability, you can choose one of the following weapon tags: \weapontag{Impact}, \weapontag{Keen}, \weapontag{Long}, \weapontag{Parrying}, \weapontag{Resonating}, or \weapontag{Sweeping} (1).
-                You treat that weapon as if it had the chosen weapon tag.
+                Whenever you use your \textit{weapon training} ability, you can choose one of the following weapon tags: \weapontag{Impact}, \weapontag{Keen}, \weapontag{Long}, \weapontag{Parrying}, \weapontag{Resonating}, or \weapontag{Sweeping} (1).
+                You treat the weapon you trained with as if it had the chosen weapon tag.
 
                 If you use this ability to train with the same weapon again, you can change its weapon tag, but it loses the previous weapon tag.
-                If you would add Sweeping (1) to a weapon that already has the Sweeping weapon tag, you increase its Sweeping value instead.
+                If you would add Sweeping (1) to a weapon that already has the Sweeping weapon tag, you increase its Sweeping value by one instead.
             ",
             modifiers: None,
         },
@@ -200,7 +200,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                While you are wielding a weapon, you gain a \plus1 bonus to your \glossterm{accuracy}.
+                You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
