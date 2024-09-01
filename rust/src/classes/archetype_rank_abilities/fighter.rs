@@ -215,8 +215,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can channel your martial prowess into dangerous attacks.
-                You gain access to one of the following \glossterm{combat styles}: \textit{blunt force}, \textit{penetrating precision}, or \textit{rip and tear}.
-                In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
+                You gain access to any two combat styles of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
                 You can only learn martial \glossterm{maneuvers} from martial combat styles that you have access to.
 
