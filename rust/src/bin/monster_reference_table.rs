@@ -15,13 +15,13 @@ fn main() {
     }
     let table_text = format!(
         "
-            \\begin<dtable*>
+            \\begin<dtable!*>
                 \\lcaption<Quick Monster Creation>
                 \\begin<dtabularx><\\textwidth><l l l l l l X>
                     \\tb<Level> & {role_headers} \\tableheaderrule
                     {level_rows}
                 \\end<dtabularx>
-            \\end<dtable*>
+            \\end<dtable!*>
         ",
         role_headers = role_headers,
         level_rows = level_rows.join("\n"),
