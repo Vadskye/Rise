@@ -501,7 +501,8 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Rush}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus5 foot bonus to its land speed during any phase that it takes the \textit{sprint} action.
+                        Each target gains a \plus5 foot bonus to its land speed during any phase that it uses the \textit{sprint} ability.
+                        This bonus is doubled as normal by the sprint ability.
 
                         \rankline
                         \rank{4} The speed bonus increases to \plus10 feet.
