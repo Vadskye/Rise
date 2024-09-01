@@ -1707,7 +1707,7 @@ impl Class {
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Dimensional Travel}
                             \abilityusagetime Standard action.
-                            \abilitycost One optional \\glossterm{fatigue level}. If you pay this cost, the ability becomes \\abilitytag{Swift}.
+                            \abilitycost One optional \glossterm{fatigue level}. If you pay this cost, the ability becomes \abilitytag{Swift}.
                             \rankline
                             You teleport up to 1 mile in any direction.
                             You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
