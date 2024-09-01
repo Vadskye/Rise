@@ -252,7 +252,7 @@ fn amulets() -> Vec<Apparel> {
             If you have the shark \textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \medrange instead of \shortrange.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
+            ItemUpgrade::new(5, r"Greatly increases range with shark \ability<totem animal>", r"
                 The range increases to \distrange.
             "),
         ],
