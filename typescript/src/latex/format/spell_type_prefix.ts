@@ -53,7 +53,7 @@ function generateUsageAndTags(castingTime: string | undefined, name: string, tag
         : sentenceCase(castingTime) + '.';
     return `\\spelltwocol{Casting time: ${castingText}}{${tagsText}}`;
   } else if (tagsText) {
-    return `\\spelltwocol{Casting time: Standard action.}{${tagsText}}`;
+    return `\\spelltwocol{Usage time: Standard action.}{${tagsText}}`;
   } else {
     return '\\abilityusagetime Standard action.';
   }
