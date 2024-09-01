@@ -168,7 +168,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \item Light: You gain a \plus10 foot bonus to your land speed.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
                         However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
-                        Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still removes it entirely.
+                        Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still halves it.
                     \item Heavy: You gain a \plus1 bonus to your Armor, Fortitude, and Mental defenses.
                 \end{itemize}
             ",
