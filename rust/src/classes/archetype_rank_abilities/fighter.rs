@@ -119,8 +119,10 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You become proficient with the specific weapon you trained with.
                     This does not grant you proficiency with its weapon group, or with other weapons of its type.
+
                     If you would already be proficient with that weapon without this ability, you gain a \plus1 accuracy bonus with it.
                     If the weapon is an exotic weapon that you are not already proficient with, you take a \minus1 accuracy penalty with it.
+
                     This ability's effect is permanent.
                 \end{activeability}
             ",
@@ -163,7 +165,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You reduce the \glossterm{encumbrance} of body armor you wear by 1, and you gain a special ability based on the \glossterm{usage class} of your body armor.
+                You gain a special ability based on the \glossterm{usage class} of your body armor.
                 \begin{itemize}
                     \item Light: You gain a \plus10 foot bonus to your land speed.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
@@ -182,7 +184,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The encumbrance reduction increases to 2, and you gain an additional special ability based on the usage class of your body armor.
+                You gain an additional special ability based on the usage class of your body armor.
                 \begin{itemize}
                     \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
