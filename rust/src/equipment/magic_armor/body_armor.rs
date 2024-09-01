@@ -132,10 +132,10 @@ pub fn body_armor() -> Vec<MagicArmor> {
         short_description: String::from("Reduces Dex penalty from non-light armor"),
         description: String::from(r"
             If your Dexterity bonus to your Armor is reduced by at least 2 due to your body armor, you gain a \plus1 \glossterm{enhancement bonus} to your Armor defense.
-            This typically requires a Dexterity of 3 for medium armor, or a Dexterity of 2 for heavy armor.
+            This typically requires a Dexterity of 3.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Greatly Dex penalty from non-light armor", "
+            ItemUpgrade::new(4, "Greatly reduces Dex penalty from non-light armor", "
                 The Armor defense bonus increases to +2 if your Dexterity bonus to Armor is reduced by at least 3.
             "),
         ],
@@ -182,7 +182,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
     
     armor.push(Body(StandardItem {
         name: String::from("Swiftstep Armor"),
-        rank: 5,
+        rank: 4,
         short_description: String::from("Removes armor speed penalty"),
         description: String::from(r"
             This armor does not penalize your movement speed for being heavy (see \pcref<Armor Usage Classes>).
