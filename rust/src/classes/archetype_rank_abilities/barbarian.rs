@@ -208,7 +208,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Your base accuracy with \abilitytag{Brawling} abilities is equal to the higher of your Strength and Dexterity, plus half your level (see \pcref{Special Combat Abilities}).
+                You gain a +2 \glossterm{accuracy} bonus with \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
             ",
             modifiers: None,
         },
@@ -217,7 +217,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus2 \glossterm{accuracy} bonus with those abilities.
+                The accuracy bonus increases to +4.
             ",
             modifiers: None,
         },
