@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@stylistic/eslint-plugin": "^2.7.2",
     "@types/chai": "^4.2.12",
     "@types/lodash": "^4.14.136",
     "@types/mocha": "^8.0.3",
@@ -8,12 +10,14 @@
     "@typescript-eslint/parser": "^4.13.0",
     "chai": "^4.2.0",
     "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "tap": "^21.0.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "tslint": "^5.20.1",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   },
   "dependencies": {
     "change-case": "^3.1.0",
@@ -28,6 +32,7 @@
   "scripts": {
     "clean": "rm src/*.js && rm src/**/*.js",
     "script": "tsc --incremental && node -r tsconfig-paths/register",
-    "test": "tap"
+    "tap": "NODE_OPTIONS='--import tsx' tap",
+    "test": "NODE_OPTIONS='--import tsx' tap"
   }
 }
