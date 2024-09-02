@@ -221,8 +221,11 @@ performance.log
 *.css
 *.html
 character_sheet/roll20.less
+
+# Typescript
 typescript/node_modules/
 typescript/tsconfig.tsbuildinfo
+typescript/.tap
 core_book/generated
 html_book/generated
 
