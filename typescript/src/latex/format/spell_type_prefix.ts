@@ -42,7 +42,7 @@ export function spellTypePrefix(
   }
 }
 
-function generateUsageAndTags(castingTime: string | undefined, name: string, tagsText: string) {
+export function generateUsageAndTags(castingTime: string | undefined, name: string, tagsText: string) {
   if (castingTime) {
     if (castingTime.slice(-1) === ".") {
       console.error(`Spell '${name}' casting time should not end in a period.`);
@@ -51,7 +51,11 @@ function generateUsageAndTags(castingTime: string | undefined, name: string, tag
       castingTime === "minor action"
         ? `\\glossterm{Minor action}.`
         : sentenceCase(castingTime) + '.';
-    return `\\spelltwocol{Casting time: ${castingText}}{${tagsText}}`;
+    if (tagsText) {
+      return `\\spelltwocol{Casting time: ${castingText}}{${tagsText}}`;
+    } else {
+      return `Casting time: ${castingText}`;
+    }
   } else if (tagsText) {
     return `\\spelltwocol{Usage time: Standard action.}{${tagsText}}`;
   } else {
