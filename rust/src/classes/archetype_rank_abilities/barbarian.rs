@@ -47,7 +47,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Strike}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
+                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.AAAAA
                     You also \glossterm{briefly} gain a \plus4 bonus to defenses against damaging attacks.
 
                     \rankline
@@ -79,12 +79,13 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Unbloodied Resilience",
+            name: "Unbreakable",
             is_magical: false,
             rank: 7,
             description: r"
-                While you have at least half your maximum hit points remaining, you cannot gain \glossterm{conditions}.
-                Recovering hit points above this value does not automatically remove any conditions you already have.
+                You cannot lose more than 100 hit points per round.
+                Any excess damage beyond that point does not reduce your hit points.
+                This includes losing hit points below 0, which can give you extra \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
             ",
             modifiers: None,
         },
