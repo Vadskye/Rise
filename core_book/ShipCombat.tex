@@ -1,770 +1,770 @@
 \chapter{Ship Combat}
-    Normally, combat that happens on ships is resolved through local-scale combat rules.
-    These rules work best if boarding actions are common, and if the main threat comes from other characters.
-    If you aren't running a full naval campaign, these rules are generally fine, and most GMs will just handwave the initial exchange of fire between ships before they get in range for boarding actions.
-    However, it can be useful to have more comprehensive rules for ship combat, where ships themselves frequently deal and suffer damage.
+Normally, combat that happens on ships is resolved through local-scale combat rules.
+These rules work best if boarding actions are common, and if the main threat comes from other characters.
+If you aren't running a full naval campaign, these rules are generally fine, and most GMs will just handwave the initial exchange of fire between ships before they get in range for boarding actions.
+However, it can be useful to have more comprehensive rules for ship combat, where ships themselves frequently deal and suffer damage.
 
-    This chapter presents optional rules to govern ship-based combat.
-    They are designed to still emphasize the importance of individual player actions.
-    It is primarily intended for naval campaigns where the players are important crew members and ship combat is expected to be common.
-    These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
+This chapter presents optional rules to govern ship-based combat.
+They are designed to still emphasize the importance of individual player actions.
+It is primarily intended for naval campaigns where the players are important crew members and ship combat is expected to be common.
+These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
 
 \section{Ship Statistics}
-    Ships use the same basic framework for calculating their statistics as characters and monsters.
-    A ship has a level that indicates its general power.
-    This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
-    A ship's level determines its hit points, damage resistance, accuracy, defenses, and power, as indicated in the table below.
-    These values change based on the ship's attributes, as indicated in \pcref{Ship Attributes}.
+  Ships use the same basic framework for calculating their statistics as characters and monsters.
+  A ship has a level that indicates its general power.
+  This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
+  A ship's level determines its hit points, damage resistance, accuracy, defenses, and power, as indicated in the table below.
+  These values change based on the ship's attributes, as indicated in \pcref{Ship Attributes}.
 
-    % NOTE: Keep in sync with Monster Advancement in Monsters
-    \begin{dtable}
-        \lcaption{Ship Statistics}
-        \begin{compresseddtabularx}{\columnwidth}{l l l l l >{\lcol}X}
-            \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy, Power} & \tb{Item Rank (Cost)} \tableheaderrule
-            1st        & 8       & 4       & 3             & \tdash               & 1 (40 gp)      \\
-            2nd        & 10      & 5       & 4             & \plus1               & 1 (40 gp)      \\
-            3rd        & 12      & 6       & 4             & \plus1               & 1 (40 gp)      \\
-            4th        & 14      & 7       & 5             & \plus2               & 2 (200 gp)     \\
-            5th        & 16      & 8       & 5             & \plus2               & 2 (200 gp)     \\
-            6th        & 18      & 9       & 6             & \plus3               & 2 (200 gp)     \\
-            7th        & 20      & 10      & 6             & \plus3               & 3 (1,000 gp)   \\
-            8th        & 23      & 11      & 7             & \plus4               & 3 (1,000 gp)   \\
-            9th        & 26      & 13      & 7             & \plus4               & 3 (1,000 gp)   \\
-            10th       & 29      & 14      & 8             & \plus5               & 4 (5,000 gp)   \\
-            11th       & 32      & 16      & 8             & \plus5               & 4 (5,000 gp)   \\
-            12th       & 35      & 17      & 9             & \plus6               & 4 (5,000 gp)   \\
-            13th       & 40      & 20      & 9             & \plus6               & 5 (25,000 gp)  \\
-            14th       & 46      & 23      & 10            & \plus7               & 5 (25,000 gp)  \\
-            15th       & 52      & 26      & 10            & \plus7               & 5 (25,000 gp)  \\
-            16th       & 58      & 29      & 11            & \plus8               & 6 (125,000 gp) \\
-            17th       & 64      & 32      & 11            & \plus8               & 6 (125,000 gp) \\
-            18th       & 70      & 35      & 12            & \plus9               & 6 (125,000 gp) \\
-            19th       & 80      & 40      & 12            & \plus9               & 7 (625,000 gp) \\
-            20th       & 92      & 46      & 13            & \plus10              & 7 (625,000 gp) \\
-            21st       & 104     & 52      & 13            & \plus10              & 7 (625,000 gp) \\
-        \end{compresseddtabularx} 
-    \end{dtable}
+  % NOTE: Keep in sync with Monster Advancement in Monsters
+  \begin{dtable}
+    \lcaption{Ship Statistics}
+    \begin{compresseddtabularx}{\columnwidth}{l l l l l >{\lcol}X}
+      \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy, Power} & \tb{Item Rank (Cost)} \tableheaderrule
+      1st        & 8       & 4       & 3             & \tdash               & 1 (40 gp)      \\
+      2nd        & 10      & 5       & 4             & \plus1               & 1 (40 gp)      \\
+      3rd        & 12      & 6       & 4             & \plus1               & 1 (40 gp)      \\
+      4th        & 14      & 7       & 5             & \plus2               & 2 (200 gp)     \\
+      5th        & 16      & 8       & 5             & \plus2               & 2 (200 gp)     \\
+      6th        & 18      & 9       & 6             & \plus3               & 2 (200 gp)     \\
+      7th        & 20      & 10      & 6             & \plus3               & 3 (1,000 gp)   \\
+      8th        & 23      & 11      & 7             & \plus4               & 3 (1,000 gp)   \\
+      9th        & 26      & 13      & 7             & \plus4               & 3 (1,000 gp)   \\
+      10th       & 29      & 14      & 8             & \plus5               & 4 (5,000 gp)   \\
+      11th       & 32      & 16      & 8             & \plus5               & 4 (5,000 gp)   \\
+      12th       & 35      & 17      & 9             & \plus6               & 4 (5,000 gp)   \\
+      13th       & 40      & 20      & 9             & \plus6               & 5 (25,000 gp)  \\
+      14th       & 46      & 23      & 10            & \plus7               & 5 (25,000 gp)  \\
+      15th       & 52      & 26      & 10            & \plus7               & 5 (25,000 gp)  \\
+      16th       & 58      & 29      & 11            & \plus8               & 6 (125,000 gp) \\
+      17th       & 64      & 32      & 11            & \plus8               & 6 (125,000 gp) \\
+      18th       & 70      & 35      & 12            & \plus9               & 6 (125,000 gp) \\
+      19th       & 80      & 40      & 12            & \plus9               & 7 (625,000 gp) \\
+      20th       & 92      & 46      & 13            & \plus10              & 7 (625,000 gp) \\
+      21st       & 104     & 52      & 13            & \plus10              & 7 (625,000 gp) \\
+    \end{compresseddtabularx}
+  \end{dtable}
 
-    \begin{dtable}
-        \lcaption{Elite Ship Statistics}
-        \begin{compresseddtabularx}{\columnwidth}{l l l l l l >{\lcol}X}
-            \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} & \tb{Item Rank (Cost)} \tableheaderrule
-            1st        & 24      & 12      & 5             & \tdash        & \plus2     & 1 (40 gp)      \\
-            2nd        & 30      & 15      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-            3rd        & 36      & 18      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-            4th        & 42      & 21      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-            5th        & 48      & 24      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-            6th        & 54      & 27      & 8             & \plus3        & \plus5     & 2 (200 gp)     \\
-            7th        & 60      & 30      & 8             & \plus3        & \plus5     & 3 (1,000 gp)   \\
-            8th        & 69      & 34      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-            9th        & 78      & 39      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-            10th       & 87      & 43      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-            11th       & 96      & 48      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-            12th       & 105     & 52      & 11            & \plus6        & \plus8     & 4 (5,000 gp)   \\
-            13th       & 120     & 60      & 11            & \plus6        & \plus8     & 5 (25,000 gp)  \\
-            14th       & 138     & 69      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-            15th       & 156     & 78      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-            16th       & 174     & 87      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-            17th       & 192     & 96      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-            18th       & 210     & 105     & 14            & \plus9        & \plus11    & 6 (125,000 gp) \\
-            19th       & 240     & 120     & 14            & \plus9        & \plus11    & 7 (625,000 gp) \\
-            20th       & 276     & 138     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
-            21st       & 312     & 156     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
-        \end{compresseddtabularx} 
-    \end{dtable}
+  \begin{dtable}
+    \lcaption{Elite Ship Statistics}
+    \begin{compresseddtabularx}{\columnwidth}{l l l l l l >{\lcol}X}
+      \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} & \tb{Item Rank (Cost)} \tableheaderrule
+      1st        & 24      & 12      & 5             & \tdash        & \plus2     & 1 (40 gp)      \\
+      2nd        & 30      & 15      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
+      3rd        & 36      & 18      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
+      4th        & 42      & 21      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
+      5th        & 48      & 24      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
+      6th        & 54      & 27      & 8             & \plus3        & \plus5     & 2 (200 gp)     \\
+      7th        & 60      & 30      & 8             & \plus3        & \plus5     & 3 (1,000 gp)   \\
+      8th        & 69      & 34      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
+      9th        & 78      & 39      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
+      10th       & 87      & 43      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
+      11th       & 96      & 48      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
+      12th       & 105     & 52      & 11            & \plus6        & \plus8     & 4 (5,000 gp)   \\
+      13th       & 120     & 60      & 11            & \plus6        & \plus8     & 5 (25,000 gp)  \\
+      14th       & 138     & 69      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
+      15th       & 156     & 78      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
+      16th       & 174     & 87      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
+      17th       & 192     & 96      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
+      18th       & 210     & 105     & 14            & \plus9        & \plus11    & 6 (125,000 gp) \\
+      19th       & 240     & 120     & 14            & \plus9        & \plus11    & 7 (625,000 gp) \\
+      20th       & 276     & 138     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
+      21st       & 312     & 156     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
+    \end{compresseddtabularx}
+  \end{dtable}
 
-    \subsection{Ship HP and DR}
-        Ships have hit points and damage resistance, just like characters.
-        A ship's base hit points and damage resistance are based on its level, as listed in \tref{Ship Statistics}.
-        In addition, a ship gains a bonus based on its Constitution, as listed in \pcref{Ship Attributes}.
-        Armor can also give ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
+  \subsection{Ship HP and DR}
+    Ships have hit points and damage resistance, just like characters.
+    A ship's base hit points and damage resistance are based on its level, as listed in \tref{Ship Statistics}.
+    In addition, a ship gains a bonus based on its Constitution, as listed in \pcref{Ship Attributes}.
+    Armor can also give ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
 
-    \subsection{Elite Ships}\label{Elite Ships}
-        Some ships are designated ``elite'' ships.
-        Elite ships are approximately four times as strong as an ordinary ships.
-        They have a number of benefits and modifiers which make them superior to ordinary ships:
-        % NOTE: Keep in sync with elite monsters
-        \begin{itemize}
-            \item Elite ships gain a \plus2 bonus to their \glossterm{power} and all \glossterm{defenses}.
-            \item Elite ships have three times the \glossterm{hit points} and \glossterm{damage resistance} of standard ships.
-            % \item Elite ships have 50\% more \glossterm{damage resistance} than standard ships. This is applied after the bonus they get from having higher hit points, since ship damage resistance is based on their hit points.
-            % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
-            % elite actions should be about as strong as regular actions, so 2x more damage
-            \item Elite ships can take an additional \glossterm{elite action} each round (see \pcref{Ship Actions}).
-        \end{itemize}
+  \subsection{Elite Ships}\label{Elite Ships}
+    Some ships are designated ``elite'' ships.
+    Elite ships are approximately four times as strong as an ordinary ships.
+    They have a number of benefits and modifiers which make them superior to ordinary ships:
+    % NOTE: Keep in sync with elite monsters
+    \begin{itemize}
+      \item Elite ships gain a \plus2 bonus to their \glossterm{power} and all \glossterm{defenses}.
+      \item Elite ships have three times the \glossterm{hit points} and \glossterm{damage resistance} of standard ships.
+        % \item Elite ships have 50\% more \glossterm{damage resistance} than standard ships. This is applied after the bonus they get from having higher hit points, since ship damage resistance is based on their hit points.
+        % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
+        % elite actions should be about as strong as regular actions, so 2x more damage
+      \item Elite ships can take an additional \glossterm{elite action} each round (see \pcref{Ship Actions}).
+    \end{itemize}
 
 \section{Ship Resources and Strain}
-    Ships do not have normal resources like characters do, such as fatigue and insight points.
-    However, ships do have a strain level.
-    This functions similarly to a character's fatigue level.
-    Some crew roles have special abilities that can increase a ship's strain level in exchange for beneficial effects (see \pcref{Crew Roles}).
+  Ships do not have normal resources like characters do, such as fatigue and insight points.
+  However, ships do have a strain level.
+  This functions similarly to a character's fatigue level.
+  Some crew roles have special abilities that can increase a ship's strain level in exchange for beneficial effects (see \pcref{Crew Roles}).
 
-    A ship's strain tolerance is equal to its Strength \add its Willpower.
-    Ships take a penalty to their accuracy and defenses equal to their strain level \sub their strain tolerance.
+  A ship's strain tolerance is equal to its Strength \add its Willpower.
+  Ships take a penalty to their accuracy and defenses equal to their strain level \sub their strain tolerance.
 
 \section{Taking Ship Damage}
-    Ships suffer damage and vital wounds much like characters do.
+  Ships suffer damage and vital wounds much like characters do.
 
-    \subsection{Ship Vital Wounds}
-        Ships gain vital wounds just like characters (see \pcref{Vital Wounds}).
-        However, ships have different vital wound effects.
+  \subsection{Ship Vital Wounds}
+    Ships gain vital wounds just like characters (see \pcref{Vital Wounds}).
+    However, ships have different vital wound effects.
 
-        \begin{dtable}
-            \lcaption{Ship Vital Wound Effects}
-            \begin{dtabularx}{\textwidth}{l X}
-                \tb{Vital Roll} & \tb{Effect} \tableheaderrule
-                0 or less  & The ship gains a leak (see \pcref{Taking on Water})             \\
-                1          & The ship takes a \minus2 penalty to future vital rolls                    \\
-                2          & The ship's weapons take a \minus1 penalty to \glossterm{accuracy}         \\
-                3          & The ship has a \minus10 foot penalty to its speed with all movement modes \\
-                4          & The ship's turning cost increases by 10 feet                              \\
-                5          & The ship's maximum \glossterm{damage resistance} is halved                \\
-                6          & The ship takes a \minus1 penalty to all \glossterm{defenses}              \\
-                7          & The ship takes a \minus2 penalty to its Fortitude defense                \\
-                8          & The ship takes a \minus2 penalty to its Reflex defense                   \\
-                9          & The ship takes a \minus2 penalty to its Mental defense                   \\
-                10 or more & No extra vital wound effect                                               \\
-            \end{dtabularx}
-        \end{dtable}
+    \begin{dtable}
+      \lcaption{Ship Vital Wound Effects}
+      \begin{dtabularx}{\textwidth}{l X}
+        \tb{Vital Roll} & \tb{Effect} \tableheaderrule
+        0 or less  & The ship gains a leak (see \pcref{Taking on Water})             \\
+        1          & The ship takes a \minus2 penalty to future vital rolls                    \\
+        2          & The ship's weapons take a \minus1 penalty to \glossterm{accuracy}         \\
+        3          & The ship has a \minus10 foot penalty to its speed with all movement modes \\
+        4          & The ship's turning cost increases by 10 feet                              \\
+        5          & The ship's maximum \glossterm{damage resistance} is halved                \\
+        6          & The ship takes a \minus1 penalty to all \glossterm{defenses}              \\
+        7          & The ship takes a \minus2 penalty to its Fortitude defense                \\
+        8          & The ship takes a \minus2 penalty to its Reflex defense                   \\
+        9          & The ship takes a \minus2 penalty to its Mental defense                   \\
+        10 or more & No extra vital wound effect                                               \\
+      \end{dtabularx}
+    \end{dtable}
 
-    \subsection{Taking On Water}\label{Taking On Water}
-        Damaged ships can begin taking on water through leaks.
-        This will eventually sink the ship without intervention by its crew.
-        However, even a hole in the hull is not necessarily fatal to a ship.
-        With constant effort to remove excess water, a crew can often keep a ship afloat long enough to repair it or reach dry land.
+  \subsection{Taking On Water}\label{Taking On Water}
+    Damaged ships can begin taking on water through leaks.
+    This will eventually sink the ship without intervention by its crew.
+    However, even a hole in the hull is not necessarily fatal to a ship.
+    With constant effort to remove excess water, a crew can often keep a ship afloat long enough to repair it or reach dry land.
 
-        \subsubsection{Time to Sink}
-            A Medium ship with a leak becomes unusable after one minute.
-            After that point, the crew cannot perform any ship tasks, and the ship is immobile in the water except for natural drifting.
-            It generally takes another minute for the ship to fully sink.
-            For each size category larger than Medium, the time required for the ship to become unusable and sink increases, as described below:
-            \begin{itemize}
-                \item Medium: Ten minutes
-                \item Large: Thirty minutes
-                \item Huge: One hour
-                \item Gargantuan: Two hours
-                \item Colossal: Four hours
-                \item Galleon: Eight hours
-                \item Titan: One day
-            \end{itemize}
+    \subsubsection{Time to Sink}
+      A Medium ship with a leak becomes unusable after one minute.
+      After that point, the crew cannot perform any ship tasks, and the ship is immobile in the water except for natural drifting.
+      It generally takes another minute for the ship to fully sink.
+      For each size category larger than Medium, the time required for the ship to become unusable and sink increases, as described below:
+      \begin{itemize}
+        \item Medium: Ten minutes
+        \item Large: Thirty minutes
+        \item Huge: One hour
+        \item Gargantuan: Two hours
+        \item Colossal: Four hours
+        \item Galleon: Eight hours
+        \item Titan: One day
+      \end{itemize}
 
-            Each additional leak multiplies the rate that the ship sinks.
-            For example, a ship with three leaks would sink three times faster.
+      Each additional leak multiplies the rate that the ship sinks.
+      For example, a ship with three leaks would sink three times faster.
 
-        \subsubsection{Bailing the Ship}
-            A ship's crew can remove water from the ship to keep it from sinking.
-            In general, it takes one quarter of the ship's minimum crew, working constantly, to counteract incoming water from one leak.
-            This simply maintains the amount of water currently in the ship.
-            With twice that many crew dedicated to the task of bailing, existing water in the ship can be removed at the same rate that a leak would add water in, allowing the crew to catch up on existing leaks.
+    \subsubsection{Bailing the Ship}
+      A ship's crew can remove water from the ship to keep it from sinking.
+      In general, it takes one quarter of the ship's minimum crew, working constantly, to counteract incoming water from one leak.
+      This simply maintains the amount of water currently in the ship.
+      With twice that many crew dedicated to the task of bailing, existing water in the ship can be removed at the same rate that a leak would add water in, allowing the crew to catch up on existing leaks.
 
 \section{Repairing Ships}
-    Unlike characters, ships do not automatically heal over time.
-    Significant ship damage can be both time-consuming and expensive to repair.
+  Unlike characters, ships do not automatically heal over time.
+  Significant ship damage can be both time-consuming and expensive to repair.
 
-    Ships are assumed to have one repair crew that can only perform one repair task a time.
-    For large ships, that repair crew may have many members, but they can still only perform one repair task at a time.
-    A skilled fixer can reduce repair times (see \pcref{Crew Roles}).
-    At the GM's discretion, a relevant Craft skill check by a crew member can also reduce repair times.
+  Ships are assumed to have one repair crew that can only perform one repair task a time.
+  For large ships, that repair crew may have many members, but they can still only perform one repair task at a time.
+  A skilled fixer can reduce repair times (see \pcref{Crew Roles}).
+  At the GM's discretion, a relevant Craft skill check by a crew member can also reduce repair times.
 
-    \subsection{Short Repair}
-        The repair crew of a ship can execute a short repair with one hour of work and no significant material cost.
-        This fully restores the ship's damage resistance and sets its strain level to zero.
+  \subsection{Short Repair}
+    The repair crew of a ship can execute a short repair with one hour of work and no significant material cost.
+    This fully restores the ship's damage resistance and sets its strain level to zero.
 
-    \subsection{Long Repair}
-        The repair crew of a ship can execute a long repair with eight hours of work.
-        This requires a relevant Craft check with a difficulty value equal to 5 \add the ship's item rank.
-        If the ship is docked for repair, the repair crew automatically rolls a 10 on this check.
-        A successful long repair fully restores the ship's hit points and damage resistance, and sets its strain level to zero.
+  \subsection{Long Repair}
+    The repair crew of a ship can execute a long repair with eight hours of work.
+    This requires a relevant Craft check with a difficulty value equal to 5 \add the ship's item rank.
+    If the ship is docked for repair, the repair crew automatically rolls a 10 on this check.
+    A successful long repair fully restores the ship's hit points and damage resistance, and sets its strain level to zero.
 
-        A long repair costs materials worth one consumable item with a rank that is two ranks lower than the ship's item rank.
-        If you are using gold pieces, this roughly translates to a repair cost equal to one hundredth of the ship's total value.
-        These repair materials can be prepurchased so they are available on the ship when it needs to be repaired.
-        Ships that do not have these repair materials on hand must find a dock.
+    A long repair costs materials worth one consumable item with a rank that is two ranks lower than the ship's item rank.
+    If you are using gold pieces, this roughly translates to a repair cost equal to one hundredth of the ship's total value.
+    These repair materials can be prepurchased so they are available on the ship when it needs to be repaired.
+    Ships that do not have these repair materials on hand must find a dock.
 
-    \subsection{Vital Repair}
-        The repair crew of a ship can execute a vital repair with 24 hours of work.
-        This requires a relevant Craft check with a difficulty value equal to 10 \add the ship's item rank.
-        If the ship is docked for repair, the repair crew automatically rolls a 10 on this check.
-        A successful vital repair removes one vital wound.
+  \subsection{Vital Repair}
+    The repair crew of a ship can execute a vital repair with 24 hours of work.
+    This requires a relevant Craft check with a difficulty value equal to 10 \add the ship's item rank.
+    If the ship is docked for repair, the repair crew automatically rolls a 10 on this check.
+    A successful vital repair removes one vital wound.
 
-        A vital repair costs materials worth one consumable item with a rank that is one rank lower than the ship's item rank.
-        If you are using gold pieces, this roughly translates to a repair cost equal to one twentieth of the ship's total value.
-        These repair materials can be prepurchased so they are available on the ship when it needs to be repaired.
-        Ships that do not have these repair materials on hand must find a dock.
+    A vital repair costs materials worth one consumable item with a rank that is one rank lower than the ship's item rank.
+    If you are using gold pieces, this roughly translates to a repair cost equal to one twentieth of the ship's total value.
+    These repair materials can be prepurchased so they are available on the ship when it needs to be repaired.
+    Ships that do not have these repair materials on hand must find a dock.
 
 \section{Ship Attributes}
-    Unlike characters, ships normally have no Intelligence attribute.
-    However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
-    These represent slightly different narrative concepts than they do for characters.
+  Unlike characters, ships normally have no Intelligence attribute.
+  However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
+  These represent slightly different narrative concepts than they do for characters.
 
-    In general, a ship's attributes represent a combination of its physical properties and the effectiveness of its crew.
-    A highly advanced ship may still have low attributes when its crew is inexperienced or incompetent.
+  In general, a ship's attributes represent a combination of its physical properties and the effectiveness of its crew.
+  A highly advanced ship may still have low attributes when its crew is inexperienced or incompetent.
 
-    Extremely rare magical ships may have an animating mind that can control the ship.
-    For details, see \pcref{Intelligent Ships}.
+  Extremely rare magical ships may have an animating mind that can control the ship.
+  For details, see \pcref{Intelligent Ships}.
 
-    \subsection{Attribute Descriptions}
+  \subsection{Attribute Descriptions}
 
-        \subsubsection{Strength}
-            Strength measures the power of a ship's physical weapons.
-            Ships with a high Strength have more damaging weapons, and a crew capable of keeping those weapons working effectively.
-            Ships with a low Strength have ineffective weaponry, or a crew that services those weapons poorly.
-            Strength has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Strength to their \glossterm{mundane power}.
-                \item Ships add their Strength to their strain tolerance.
-            \end{raggeditemize}
+    \subsubsection{Strength}
+      Strength measures the power of a ship's physical weapons.
+      Ships with a high Strength have more damaging weapons, and a crew capable of keeping those weapons working effectively.
+      Ships with a low Strength have ineffective weaponry, or a crew that services those weapons poorly.
+      Strength has the following effects on ships:
+      \begin{raggeditemize}
+        \item Ships add their Strength to their \glossterm{mundane power}.
+        \item Ships add their Strength to their strain tolerance.
+      \end{raggeditemize}
 
-            Unlike characters, a ship's Strength does not affect its carrying capacity.
-            That is calculated entirely from its physical size and shape.
+      Unlike characters, a ship's Strength does not affect its carrying capacity.
+      That is calculated entirely from its physical size and shape.
 
-        \subsubsection{Dexterity}
-            Dexterity measures a ship's agility.
-            Ships with a high Dexterity can turn more sharply to avoid incoming fire and may be faster in short bursts.
-            Ships with a low Dexterity are lumbering and slow to change direction, making them easy targets.
-            Dexterity has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Dexterity to their Armor defense.
-                    This bonus can be reduced if the ship has medium or heavy armor (see \pcref{Ship Armor}).
-                \item Ships add their Dexterity to their Reflex defense.
-            \end{raggeditemize}
+    \subsubsection{Dexterity}
+      Dexterity measures a ship's agility.
+      Ships with a high Dexterity can turn more sharply to avoid incoming fire and may be faster in short bursts.
+      Ships with a low Dexterity are lumbering and slow to change direction, making them easy targets.
+      Dexterity has the following effects on ships:
+      \begin{raggeditemize}
+        \item Ships add their Dexterity to their Armor defense.
+          This bonus can be reduced if the ship has medium or heavy armor (see \pcref{Ship Armor}).
+        \item Ships add their Dexterity to their Reflex defense.
+      \end{raggeditemize}
 
-            As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
+      As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
 
-        \subsubsection{Constitution}
-            Constitution measures a ship's durability.
-            Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
-            Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
-            Constitution has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add twice their Constitution to their hit points.
-                    At level 7, this bonus increases to three times the ship's Constitution.
-                    At level 13, this bonus increases to six times the ship's Constitution.
-                    At level 19, this bonus increases to twelve times the ship's Constitution.
-                \item Ships add their Constitution to their Fortitude defense.
-            \end{raggeditemize}
+    \subsubsection{Constitution}
+      Constitution measures a ship's durability.
+      Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
+      Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
+      Constitution has the following effects on ships:
+      \begin{raggeditemize}
+        \item Ships add twice their Constitution to their hit points.
+          At level 7, this bonus increases to three times the ship's Constitution.
+          At level 13, this bonus increases to six times the ship's Constitution.
+          At level 19, this bonus increases to twelve times the ship's Constitution.
+        \item Ships add their Constitution to their Fortitude defense.
+      \end{raggeditemize}
 
-        \subsubsection{Perception}
-            Perception measures a ship's awareness and precision.
-            Ships with a high Perception have effective lookouts, excellent gunners, and weapons which are capable of swiftly repositioning for precise attacks.
-            Ships with a low Perception are either unable to effectively observe their surroundings or unable to react effectively to those observations.
-            Perception has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Perception to their level to determine their \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
-            \end{raggeditemize}
+    \subsubsection{Perception}
+      Perception measures a ship's awareness and precision.
+      Ships with a high Perception have effective lookouts, excellent gunners, and weapons which are capable of swiftly repositioning for precise attacks.
+      Ships with a low Perception are either unable to effectively observe their surroundings or unable to react effectively to those observations.
+      Perception has the following effects on ships:
+      \begin{raggeditemize}
+        \item Ships add their Perception to their level to determine their \glossterm{accuracy} with almost all attacks (see \pcref{Accuracy}).
+      \end{raggeditemize}
 
-        \subsubsection{Willpower}
-            Willpower measures the morale and emotional steadiness of a ship's crew.
-            Ships with a high Willpower are better able to resist setbacks and frightening encounters.
-            Ships with a low Willpower may panic and be driven off easily.
-            Willpower has the following effects on ships:
-            \begin{raggeditemize}
-                \item Ships add their Willpower to their Mental defense.
-                \item Ships add their Willpower to their strain tolerance.
-            \end{raggeditemize}
+    \subsubsection{Willpower}
+      Willpower measures the morale and emotional steadiness of a ship's crew.
+      Ships with a high Willpower are better able to resist setbacks and frightening encounters.
+      Ships with a low Willpower may panic and be driven off easily.
+      Willpower has the following effects on ships:
+      \begin{raggeditemize}
+        \item Ships add their Willpower to their Mental defense.
+        \item Ships add their Willpower to their strain tolerance.
+      \end{raggeditemize}
 
-            Willpower is the attribute which is most affected by a ship's current crew.
+      Willpower is the attribute which is most affected by a ship's current crew.
 
-    % Keep in sync with character attributes
-    \subsection{Determining Ship Attributes}
-        As with characters, ships can use a predefined attribute array or use point buy to calculate attributes.
-        Ships start with 7 attribute points instead of 8 (see \pcref{Attribute Point Buy}).
-        However, a ship's attributes can be increased by crew roles and ship enhancements (see \pcref{Crew Roles}, and \pcref{Ship Enhancements}).
+      % Keep in sync with character attributes
+  \subsection{Determining Ship Attributes}
+    As with characters, ships can use a predefined attribute array or use point buy to calculate attributes.
+    Ships start with 7 attribute points instead of 8 (see \pcref{Attribute Point Buy}).
+    However, a ship's attributes can be increased by crew roles and ship enhancements (see \pcref{Crew Roles}, and \pcref{Ship Enhancements}).
 
-        \subsubsection{Predefined Attribute Scores}
-            If you don't want to individually allocate a ship's attribute points, simply one of the following sets of attribute values and distribute them as you choose among the ship's attributes, ignoring Intelligence:
-            \begin{raggeditemize}
-                % 3 + 2 + 1 + 1 = 7
-                \item Standard: 3, 2, 1, 1, 0
-                % 5 + 1 + 1 = 7
-                \item Specialized: 4, 1, 1, 0, 0
-                % 2 + 2 + 2 + 1 = 7
-                \item Balanced: 2, 2, 2, 1, 0
-            \end{raggeditemize}
+    \subsubsection{Predefined Attribute Scores}
+      If you don't want to individually allocate a ship's attribute points, simply one of the following sets of attribute values and distribute them as you choose among the ship's attributes, ignoring Intelligence:
+      \begin{raggeditemize}
+        % 3 + 2 + 1 + 1 = 7
+        \item Standard: 3, 2, 1, 1, 0
+          % 5 + 1 + 1 = 7
+        \item Specialized: 4, 1, 1, 0, 0
+          % 2 + 2 + 2 + 1 = 7
+        \item Balanced: 2, 2, 2, 1, 0
+      \end{raggeditemize}
 
-    \subsection{Intelligent Ships}
-        Intelligence measures a ship's capability for thought and internal control.
-        Normal ships have no Intelligence, and a ship's crew does not affect its Intelligence.
+  \subsection{Intelligent Ships}
+    Intelligence measures a ship's capability for thought and internal control.
+    Normal ships have no Intelligence, and a ship's crew does not affect its Intelligence.
 
-        Intelligent ships have a number of skill points equal to 3 \add their Intelligence.
-        These trained skills apply to any ship-related checks that the ship might make.
-        Ships cannot make skill checks for skills that they are not trained in.
-        For example, a ship that was trained in Awareness could be its own lookout, but a ship without Awareness trained would not be able to independenlty perceive its external surroundings.
+    Intelligent ships have a number of skill points equal to 3 \add their Intelligence.
+    These trained skills apply to any ship-related checks that the ship might make.
+    Ships cannot make skill checks for skills that they are not trained in.
+    For example, a ship that was trained in Awareness could be its own lookout, but a ship without Awareness trained would not be able to independenlty perceive its external surroundings.
 
-        In addition, each point of intelligence above \minus5 contributes a number of effective crew members to the ship's operation equal to a quarter of the ship's minimum crew requirements.
-        For example, a ship with an Intelligence of 0 would require no crew members to meet its minimum for navigation.
-        A ship with an Intelligence of 4 would have a total automatic crew count equal to twice its minimum crew.
+    In addition, each point of intelligence above \minus5 contributes a number of effective crew members to the ship's operation equal to a quarter of the ship's minimum crew requirements.
+    For example, a ship with an Intelligence of 0 would require no crew members to meet its minimum for navigation.
+    A ship with an Intelligence of 4 would have a total automatic crew count equal to twice its minimum crew.
 
 \section{Ship Size}\label{Ship Size}
 
-        \begin{dtable*}
-            \lcaption{Ship Size}
-            \begin{compresseddtabularx}{\textwidth}{l l l l l l >{\lcol}X >{\lcol}X l l l}
-                \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Weapons} & \tb{Space} & \tb{Speed} & \tb{Turning Cost} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
-                Medium     & 1              & No          & 1               & Light           & \tdash       & 5 ft.      & 30 ft.     & 10 ft.            & Small x2      & \tdash       \\
-                Large      & 1              & No          & 1---2           & Light           & 1            & 10 ft.     & 30 ft.     & 15 ft.            & Medium x2     & \tdash       \\
-                Huge       & 4              & Either      & 1---5           & Light or medium & 2            & 20 ft.     & 40 ft.     & 20 ft.            & Large x2      & \plus1\fn{2} \\
-                Gargantuan & 7              & Either      & 2---20          & Any             & 3            & 40 ft.     & 50 ft.     & 30 ft.            & Huge x2       & \plus1\fn{2} \\
-                Colossal   & 10             & Yes         & 10---100        & Any             & 4            & 80 ft.     & 60 ft.     & 40 ft.            & Gargantuan x2 & \plus3       \\
-                Galleon    & 13             & Yes         & 50---500        & Any             & 6            & 160 ft.    & 80 ft.     & 60 ft.            & Colossal x2   & \plus3       \\
-                Titan      & 16             & Yes         & 100---1000      & Any             & 8            & 320 ft.    & 100 ft.    & 80 ft.            & Galleon x2    & \plus4       \\
-            \end{compresseddtabularx}
-            1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
-            It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
-            Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion. \\
-            2. If the ship is Elite, increase its item rank by an additional \plus1.
-        \end{dtable*}
+  \begin{dtable*}
+    \lcaption{Ship Size}
+    \begin{compresseddtabularx}{\textwidth}{l l l l l l >{\lcol}X >{\lcol}X l l l}
+      \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Weapons} & \tb{Space} & \tb{Speed} & \tb{Turning Cost} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
+      Medium     & 1              & No          & 1               & Light           & \tdash       & 5 ft.      & 30 ft.     & 10 ft.            & Small x2      & \tdash       \\
+      Large      & 1              & No          & 1---2           & Light           & 1            & 10 ft.     & 30 ft.     & 15 ft.            & Medium x2     & \tdash       \\
+      Huge       & 4              & Either      & 1---5           & Light or medium & 2            & 20 ft.     & 40 ft.     & 20 ft.            & Large x2      & \plus1\fn{2} \\
+      Gargantuan & 7              & Either      & 2---20          & Any             & 3            & 40 ft.     & 50 ft.     & 30 ft.            & Huge x2       & \plus1\fn{2} \\
+      Colossal   & 10             & Yes         & 10---100        & Any             & 4            & 80 ft.     & 60 ft.     & 40 ft.            & Gargantuan x2 & \plus3       \\
+      Galleon    & 13             & Yes         & 50---500        & Any             & 6            & 160 ft.    & 80 ft.     & 60 ft.            & Colossal x2   & \plus3       \\
+      Titan      & 16             & Yes         & 100---1000      & Any             & 8            & 320 ft.    & 100 ft.    & 80 ft.            & Galleon x2    & \plus4       \\
+    \end{compresseddtabularx}
+    1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
+    It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
+    Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion. \\
+    2. If the ship is Elite, increase its item rank by an additional \plus1.
+  \end{dtable*}
 
-        A ship's size does not directly affect its statistics.
-        However, it has many effects on the ship's functionality.
-        Larger ships are much more capable than smaller ships.
-        Some of these effects are listed below in \trefnp{Ship Size}.
-        In addition, advanced ship weapons often require a minimum ship size (see \pcref{Ship Weapons}).
+  A ship's size does not directly affect its statistics.
+  However, it has many effects on the ship's functionality.
+  Larger ships are much more capable than smaller ships.
+  Some of these effects are listed below in \trefnp{Ship Size}.
+  In addition, advanced ship weapons often require a minimum ship size (see \pcref{Ship Weapons}).
 
-        Some ships can be larger than most creatures and objects are usually defined.
-        To track ship size beyond the limits of Colossal, additional Galleon and Titan categories are listed below.
-        As usual, each size category represents a doubling of each dimension, and an eightfold increase in weight.
-        Titan ships are unlikely to be present at all in many universes, and they require extensive magical reinforcement to function.
-        The GM can decide whether their world is advanced enough to construct such monstrosities.
+  Some ships can be larger than most creatures and objects are usually defined.
+  To track ship size beyond the limits of Colossal, additional Galleon and Titan categories are listed below.
+  As usual, each size category represents a doubling of each dimension, and an eightfold increase in weight.
+  Titan ships are unlikely to be present at all in many universes, and they require extensive magical reinforcement to function.
+  The GM can decide whether their world is advanced enough to construct such monstrosities.
 
-        Some examples of ships of a given size are given below.
-        Since ships are typically named for their function and structure, not their size, this is only a rough guide.
-        \begin{raggeditemize}
-            \item Medium: Single-person kayak
-            \item Large: Canoe, lifeboat
-            \item Huge: Dinghy, outrigger canoe, punt, skiff
-            \item Gargantuan: Felucca, small longship
-            \item Colossal: Keelboat, large longship
-        \end{raggeditemize}
+  Some examples of ships of a given size are given below.
+  Since ships are typically named for their function and structure, not their size, this is only a rough guide.
+  \begin{raggeditemize}
+    \item Medium: Single-person kayak
+    \item Large: Canoe, lifeboat
+    \item Huge: Dinghy, outrigger canoe, punt, skiff
+    \item Gargantuan: Felucca, small longship
+    \item Colossal: Keelboat, large longship
+  \end{raggeditemize}
 
 \section{Ship Movement}
-    This section defines the rules that ships use to move, which are not identical to character movement.
-    Real ships have a great deal of momentum, and their movement speed and direction cannot be quickly adjusted.
-    This is too much of a hassle to represent fully, so Rise uses significantly simplified ship movement mechanics.
-    However, ships still have more movement constraints than characters, including a concept of ship heading.
+  This section defines the rules that ships use to move, which are not identical to character movement.
+  Real ships have a great deal of momentum, and their movement speed and direction cannot be quickly adjusted.
+  This is too much of a hassle to represent fully, so Rise uses significantly simplified ship movement mechanics.
+  However, ships still have more movement constraints than characters, including a concept of ship heading.
 
-    \subsection{Ship Heading}
-        A ship's heading always points in one of the eight standard cardinal directions: north, northeast, east, and so on.
-        Forward-moving ships can only move within a 90 degree cone centered on their heading.
-        For example, a ship with a heading of north could travel northwest or northeast, but not west or east.
-        
-        \subsubsection{Turning}
-            A ship can change its heading by turning.
-            Each ship has a turning cost based on its size.
-            That cost is the number of feet that a ship must spend out of its movement to turn by 45 degrees.
-            A ship can pay its turning cost twice, allowing it to rotate more quickly while typically making little or no forward progress.
+  \subsection{Ship Heading}
+    A ship's heading always points in one of the eight standard cardinal directions: north, northeast, east, and so on.
+    Forward-moving ships can only move within a 90 degree cone centered on their heading.
+    For example, a ship with a heading of north could travel northwest or northeast, but not west or east.
 
-        \subsubsection{Reversing}
-            A ship can travel in reverse, allowing it to move within a 90 degree cone centered around the opposite direction of its heading.
-            This has two restrictions.
-            First, the ship must have not used more than half its movement during the previous round to travel forward.
-            Second, the ship's speed is halved while travelling in reverse.
+    \subsubsection{Turning}
+      A ship can change its heading by turning.
+      Each ship has a turning cost based on its size.
+      That cost is the number of feet that a ship must spend out of its movement to turn by 45 degrees.
+      A ship can pay its turning cost twice, allowing it to rotate more quickly while typically making little or no forward progress.
 
-    \subsection{Movement Timing}
-        Ships automatically move up to their movement speed during the \glossterm{movement phase}.
-        They cannot move during the \glossterm{action phase}.
+    \subsubsection{Reversing}
+      A ship can travel in reverse, allowing it to move within a 90 degree cone centered around the opposite direction of its heading.
+      This has two restrictions.
+      First, the ship must have not used more than half its movement during the previous round to travel forward.
+      Second, the ship's speed is halved while travelling in reverse.
+
+  \subsection{Movement Timing}
+    Ships automatically move up to their movement speed during the \glossterm{movement phase}.
+    They cannot move during the \glossterm{action phase}.
 
 \section{Ship Armor}
-    Like characters, ships can have varying degrees of armor.
-    Typically, even a heavily armored ship will not be literally covered in metal sheets.
-    Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
+  Like characters, ships can have varying degrees of armor.
+  Typically, even a heavily armored ship will not be literally covered in metal sheets.
+  Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
 
-    There are three types of ship armor.
-    \begin{raggeditemize}
-        \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
-        \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
-            In addition, they have 50\% more damage resistance than a normal ship.
-            However, they add only half their Dexterity bonus to their Armor defense.
-            In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
-            Only Huge and larger ships can have medium armor.
-        \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
-            In addition, they have twice the damage resistance of a normal ship.
-            % Note that this doesn't perfectly match character heavy armor
-            However, they do not add their Dexterity bonus to their armor defense.
-            In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
-            Only Gargantuan and larger ships can have heavy armor.
-    \end{raggeditemize}
+  There are three types of ship armor.
+  \begin{raggeditemize}
+    \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
+    \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
+      In addition, they have 50\% more damage resistance than a normal ship.
+      However, they add only half their Dexterity bonus to their Armor defense.
+      In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
+      Only Huge and larger ships can have medium armor.
+    \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
+      In addition, they have twice the damage resistance of a normal ship.
+      % Note that this doesn't perfectly match character heavy armor
+      However, they do not add their Dexterity bonus to their armor defense.
+      In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
+      Only Gargantuan and larger ships can have heavy armor.
+  \end{raggeditemize}
 
-%         \subsubsection{Customized Ship Armor}
-%             Individual ships can have different configurations that change their defenses.
-%             With customization, a ship can gain a \plus1 bonus to Armor defense, a \plus2 bonus to any other defense, or become \impervious to one of the following damage types: acid, cold, electricity, or fire.
-%             In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
-%             Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
+  %         \subsubsection{Customized Ship Armor}
+  %             Individual ships can have different configurations that change their defenses.
+  %             With customization, a ship can gain a \plus1 bonus to Armor defense, a \plus2 bonus to any other defense, or become \impervious to one of the following damage types: acid, cold, electricity, or fire.
+  %             In exchange, it must take a \minus1 penalty to Armor defense or a \minus2 penalty to any other defense.
+  %             Some rare and valuable ships may have unusual properties that grant additional benefits, at the GM's discretion.
 
 \section{Ship Weapons}\label{Ship Weapons}
-    Ships depend on having powerful weapons even more than martial characters do.
-    They use weapon upgrades as their primary method of scaling damage rather than maneuvers or other special attacks.
-    The number of weapons a ship can have is limited based on its size, as seen in \tref{Ship Size}.
+  Ships depend on having powerful weapons even more than martial characters do.
+  They use weapon upgrades as their primary method of scaling damage rather than maneuvers or other special attacks.
+  The number of weapons a ship can have is limited based on its size, as seen in \tref{Ship Size}.
 
-    There are two ways that a GM can choose to use ship weapons.
-    Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
-    In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
-    For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
-    For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
+  There are two ways that a GM can choose to use ship weapons.
+  Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
+  In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
+  For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
+  For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
 
-    The simplified ship weapons listed in the table normally attack Armor defense.
-    Magical simplified ship weapons use the same statistics as regular ship weapons, except that that they have the \weapontag{Fixed} (200) and \weapontag{Mystic} tags instead of \weapontag{Projectile} (200/600).
-    In addition, they can attack Fortitude, Reflex, or Mental defense instead of Armor defense.
+  The simplified ship weapons listed in the table normally attack Armor defense.
+  Magical simplified ship weapons use the same statistics as regular ship weapons, except that that they have the \weapontag{Fixed} (200) and \weapontag{Mystic} tags instead of \weapontag{Projectile} (200/600).
+  In addition, they can attack Fortitude, Reflex, or Mental defense instead of Armor defense.
 
-    % Baseline weapon is dr = rank - 1 with Projectile (200/600).
-    \begin{dtable!*}
-        \lcaption{Simplified Ship Weapons}
-        \begin{dtabularx}{\textwidth}{l X l l l l}
-            \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-            Rock sling & 1d6 bludgeoning \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
-            Scorpion   & 1d8 piercing \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
-            Ballista   & 1d8 piercing \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
-            Catapult   & 1d10 bludgeoning plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
-            Mangonel   & 1d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
-            Trebuchet  & 2d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
-        \end{dtabularx}
-    \end{dtable!*}
+  % Baseline weapon is dr = rank - 1 with Projectile (200/600).
+  \begin{dtable!*}
+  \lcaption{Simplified Ship Weapons}
+  \begin{dtabularx}{\textwidth}{l X l l l l}
+    \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+    Rock sling & 1d6 bludgeoning \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
+    Scorpion   & 1d8 piercing \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
+    Ballista   & 1d8 piercing \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+    Catapult   & 1d10 bludgeoning plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+    Mangonel   & 1d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+    Trebuchet  & 2d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+  \end{dtabularx}
+  \end{dtable!*}
 
-    % Baseline weapon is dr = rank with Projectile (90/270) and Slow Reload (1).
-    % Removing Slow Reload (1) is -2dr.
-    % Dropping to Projectile (60/180) gives +1dr.
-    % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
-    \begin{dtable!*}
-        \lcaption{Realistic Ship Weapons}
-        \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-            \tb{Name}                & \tb{Damage}                          & \tb{Defense} & \tb{Tags}                                   & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-            % +1dr for -1 range
-            Rock sling               & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (60/180), Slow Reload (1)        & 1         & Medium         & 2 (200 gp)     \\
-            % -1dr for +1 range
-            Springald                & 1d6 piercing \add 1 per 2 power      & Armor        & Projectile (120/360), Slow Reload (1)       & 1         & Large          & 2 (200 gp)     \\
-            % +1dr for reload -> load, -1dr for range
-            Lightning caller\sparkle & 3d6 electricity                      & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
-            % +2dr for slow reload, -2dr for range
-            Scorpion                 & 1d8 piercing \add 1 per power        & Armor        & Projectile (200/600), Slow Reload (2)       & 1         & Huge           & 3 (1,000 gp)   \\
-            % +3dr for slow reload, -3dr for range
-            Onager                   & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (300/900), Slow Reload (3)       & 8         & Gargantuan     & 3 (1,000 gp)   \\
-            % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
-            Torsion ballista         & 1d8 piercing per 3 power             & Armor        & Projectile (300/900), Slow Load (2)         & 3         & Huge           & 4 (5,000 gp)   \\
-            % +1dr for reload -> load, -1dr for range
-            Flame caller\sparkle     & 4d6 fire                             & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 4 (5,000 gp)   \\
-            % +1dr for reload -> load, -1dr for range
-            Acid caller\sparkle      & 5d10 acid                            & Fortitude    & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 5 (25,000 gp)  \\
-            % -2dr for removing reload
-            Polybolos                & 1d8 piercing \add 1 per power        & Armor        & Projectile (90/270)                         & 3         & Huge           & 5 (25,000 gp)  \\
-            % +2dr for slow reload, -2dr for range
-            Mangonel                 & 1d8 bludgeoning plus 1d8 per 3 power & Armor        & Projectile (300/900), Slow Reload (2)       & 20        & Gargantuan     & 5 (25,000 gp)  \\
-            % +1dr for reload -> load, -1dr for range
-            Storm caller\sparkle     & 5d10 electricity                     & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
-            % +3dr for slow reload, -4dr for range
-            Trebuchet                & 1d6 bludgeoning plus 1d6 per 2 power & Armor        & Projectile (400/1200), Slow Reload (3)      & 10        & Gargantuan     & 6 (125,000 gp) \\
-            % +1dr for reload -> load, -1dr for range
-            Meteor caller\sparkle    & 7d10 bludgeoning and fire            & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 7 (625,000 gp) \\
-        \end{compresseddtabularx}
-    \end{dtable!*}
+  % Baseline weapon is dr = rank with Projectile (90/270) and Slow Reload (1).
+  % Removing Slow Reload (1) is -2dr.
+  % Dropping to Projectile (60/180) gives +1dr.
+  % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
+  \begin{dtable!*}
+  \lcaption{Realistic Ship Weapons}
+  \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+    \tb{Name}                & \tb{Damage}                          & \tb{Defense} & \tb{Tags}                                   & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+    % +1dr for -1 range
+    Rock sling               & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (60/180), Slow Reload (1)        & 1         & Medium         & 2 (200 gp)     \\
+    % -1dr for +1 range
+    Springald                & 1d6 piercing \add 1 per 2 power      & Armor        & Projectile (120/360), Slow Reload (1)       & 1         & Large          & 2 (200 gp)     \\
+    % +1dr for reload -> load, -1dr for range
+    Lightning caller\sparkle & 3d6 electricity                      & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
+    % +2dr for slow reload, -2dr for range
+    Scorpion                 & 1d8 piercing \add 1 per power        & Armor        & Projectile (200/600), Slow Reload (2)       & 1         & Huge           & 3 (1,000 gp)   \\
+    % +3dr for slow reload, -3dr for range
+    Onager                   & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (300/900), Slow Reload (3)       & 8         & Gargantuan     & 3 (1,000 gp)   \\
+    % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
+    Torsion ballista         & 1d8 piercing per 3 power             & Armor        & Projectile (300/900), Slow Load (2)         & 3         & Huge           & 4 (5,000 gp)   \\
+    % +1dr for reload -> load, -1dr for range
+    Flame caller\sparkle     & 4d6 fire                             & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 4 (5,000 gp)   \\
+    % +1dr for reload -> load, -1dr for range
+    Acid caller\sparkle      & 5d10 acid                            & Fortitude    & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 5 (25,000 gp)  \\
+    % -2dr for removing reload
+    Polybolos                & 1d8 piercing \add 1 per power        & Armor        & Projectile (90/270)                         & 3         & Huge           & 5 (25,000 gp)  \\
+    % +2dr for slow reload, -2dr for range
+    Mangonel                 & 1d8 bludgeoning plus 1d8 per 3 power & Armor        & Projectile (300/900), Slow Reload (2)       & 20        & Gargantuan     & 5 (25,000 gp)  \\
+    % +1dr for reload -> load, -1dr for range
+    Storm caller\sparkle     & 5d10 electricity                     & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
+    % +3dr for slow reload, -4dr for range
+    Trebuchet                & 1d6 bludgeoning plus 1d6 per 2 power & Armor        & Projectile (400/1200), Slow Reload (3)      & 10        & Gargantuan     & 6 (125,000 gp) \\
+    % +1dr for reload -> load, -1dr for range
+    Meteor caller\sparkle    & 7d10 bludgeoning and fire            & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 7 (625,000 gp) \\
+  \end{compresseddtabularx}
+  \end{dtable!*}
 
-    \subsection{Ship Weapon Tags}\label{Ship Weapon Tags}
-        Some weapon tags only apply to ship weapons.
+  \subsection{Ship Weapon Tags}\label{Ship Weapon Tags}
+    Some weapon tags only apply to ship weapons.
 
-        \weapontagdef{Fixed} This weapon has a single fixed range limit.
-        That number is given in parentheses, such as Fixed (200), and represents a number of feet of range.
-        The weapon never suffers a \glossterm{longshot penalty}, but it cannot be used at all outside of its listed range.
+    \weapontagdef{Fixed} This weapon has a single fixed range limit.
+    That number is given in parentheses, such as Fixed (200), and represents a number of feet of range.
+    The weapon never suffers a \glossterm{longshot penalty}, but it cannot be used at all outside of its listed range.
 
-        \weapontagdef{Mystic} This weapon can only be crewed by creatures capable of casting spells.
-        The minimum spell rank of each creature must be no more than two ranks lower than this weapon's item rank.
+    \weapontagdef{Mystic} This weapon can only be crewed by creatures capable of casting spells.
+    The minimum spell rank of each creature must be no more than two ranks lower than this weapon's item rank.
 
-        % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent round
-        \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
-        The number of rounds required to finish loading before it can be fired is indicated in its description.
-        For example, a weapon with Slow Load (1) could be fired every other round.
-        Only rounds where the weapon is being fully crewed count towards this load time.
-        If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
+    % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent round
+    \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
+    The number of rounds required to finish loading before it can be fired is indicated in its description.
+    For example, a weapon with Slow Load (1) could be fired every other round.
+    Only rounds where the weapon is being fully crewed count towards this load time.
+    If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
-        % +2dr for (1) to (2), then +1dr for each subsequent round
-        \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
-        The number of rounds required to finish reloading is indicated in its description.
-        For example, a weapon with Slow Reload (1) could be fired every other round.
-        Only rounds where the weapon is being fully crewed count towards this reload time.
-        The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
+    % +2dr for (1) to (2), then +1dr for each subsequent round
+    \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
+    The number of rounds required to finish reloading is indicated in its description.
+    For example, a weapon with Slow Reload (1) could be fired every other round.
+    Only rounds where the weapon is being fully crewed count towards this reload time.
+    The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
 
-% This replaces the automatic monster progression
+    % This replaces the automatic monster progression
 \section{Ship Enhancements}
-    Ships can have enhancements to improve their functionality other than weapons and armor.
-    These enhancements are listed in \trefnp{Ship Enhancements}.
+  Ships can have enhancements to improve their functionality other than weapons and armor.
+  These enhancements are listed in \trefnp{Ship Enhancements}.
 
-    A ship can have a total number of enhancements equal to its item rank.
-    It can have any number of enhancements with the same name.
-    However, all bonuses from ship enhancements are \glossterm{enhancement bonuses}, so bonuses to the same statistic do not stack.
+  A ship can have a total number of enhancements equal to its item rank.
+  It can have any number of enhancements with the same name.
+  However, all bonuses from ship enhancements are \glossterm{enhancement bonuses}, so bonuses to the same statistic do not stack.
 
-    \begin{dtable!*}
-        \lcaption{Ship Enhancements}
-        \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-            \tb{Name}           & \tb{Effect}                  & \tb{Item Rank (Cost)} \tableheaderrule
-            Reinforced hull     & \plus1 to Armor defense      & 2 (200 gp)     \\
-            Improved attribute  & \plus1 to any attribute      & 3 (1,000 gp)   \\
-            Mystic shielding    & \plus1 to non-Armor defenses & 3 (1,000 gp)   \\
-            Reinforced hull+    & \plus2 to Armor defense      & 4 (5,000 gp)   \\
-            Mystic shielding+   & \plus2 to non-Armor defenses & 5 (25,000 gp)  \\
-            Improved attribute+ & \plus2 to any attribute      & 6 (125,000 gp) \\
-            Reinforced hull++   & \plus3 to Armor defense      & 6 (125,000 gp) \\
-            Mystic shielding++  & \plus3 to non-Armor defenses & 7 (625,000 gp) \\
-        \end{compresseddtabularx}
-    \end{dtable!*}
+  \begin{dtable!*}
+  \lcaption{Ship Enhancements}
+  \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+    \tb{Name}           & \tb{Effect}                  & \tb{Item Rank (Cost)} \tableheaderrule
+    Reinforced hull     & \plus1 to Armor defense      & 2 (200 gp)     \\
+    Improved attribute  & \plus1 to any attribute      & 3 (1,000 gp)   \\
+    Mystic shielding    & \plus1 to non-Armor defenses & 3 (1,000 gp)   \\
+    Reinforced hull+    & \plus2 to Armor defense      & 4 (5,000 gp)   \\
+    Mystic shielding+   & \plus2 to non-Armor defenses & 5 (25,000 gp)  \\
+    Improved attribute+ & \plus2 to any attribute      & 6 (125,000 gp) \\
+    Reinforced hull++   & \plus3 to Armor defense      & 6 (125,000 gp) \\
+    Mystic shielding++  & \plus3 to non-Armor defenses & 7 (625,000 gp) \\
+  \end{compresseddtabularx}
+  \end{dtable!*}
 
 \section{Ships Fighting Non-Ships}
-    In some cases, ships might enter combat against non-ship foes.
-    Ships take one tenth of the normal damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
-    Ship weapons deal double damage to non-ship targets, and gain the \abilitytag{Massive} weapon tag based on the ship's size:
-    \begin{itemize}
-        \item Huge: \weapontag{Massive} (10)
-        \item Gargantuan \weapontag{Massive} (15)
-        \item Colossal \weapontag{Massive} (20)
-        \item Galleon \weapontag{Massive} (25)
-        \item Titan \weapontag{Massive} (30)
-    \end{itemize}
+  In some cases, ships might enter combat against non-ship foes.
+  Ships take one tenth of the normal damage from non-ship attacks, rounded down as usual, so minor attacks will not even scratch them.
+  Ship weapons deal double damage to non-ship targets, and gain the \abilitytag{Massive} weapon tag based on the ship's size:
+  \begin{itemize}
+    \item Huge: \weapontag{Massive} (10)
+    \item Gargantuan \weapontag{Massive} (15)
+    \item Colossal \weapontag{Massive} (20)
+    \item Galleon \weapontag{Massive} (25)
+    \item Titan \weapontag{Massive} (30)
+  \end{itemize}
 
-    Since ships are not creatures and are not alive, many special attacks have no effect on them.
-    They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
+  Since ships are not creatures and are not alive, many special attacks have no effect on them.
+  They also cannot gain \glossterm{conditions} from non-ship attacks by any means.
 
 \section{Ships and Gunpowder}
-    In general, Rise avoids the use of guns and gunpowder.
-    Those inventions do not fit into the traditional fantasy setting that Rise is built on, which emphasizes swords and bows and magic.
-    For similar reasons, the ranged weapons of ships can be defined entirely with non-gunpowder weaponry common in the ancient world.
-    These would include ballistas, catapults, scorpions, and similar siege weaponry.
+  In general, Rise avoids the use of guns and gunpowder.
+  Those inventions do not fit into the traditional fantasy setting that Rise is built on, which emphasizes swords and bows and magic.
+  For similar reasons, the ranged weapons of ships can be defined entirely with non-gunpowder weaponry common in the ancient world.
+  These would include ballistas, catapults, scorpions, and similar siege weaponry.
 
-    However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
-    These stories tend to draw inspiration from the Age of Sail and Golden Age of Piracy rather than medieval folklore.
-    It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
+  However, narrative tropes for ships and naval campaigns often have a more technology-heavy basis, with cannons and full broadsides.
+  These stories tend to draw inspiration from the Age of Sail and Golden Age of Piracy rather than medieval folklore.
+  It can feel intuitively plausible to have cannons used as ship weaponry even when guns are never used by individuals.
 
-    The default names for ship weapons assume that gunpowder is not being used.
-    If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
-    All the GM has to do for ship vs ship combat is change the name of the weapons to match their preferred technology level.
-    More advanced weaponry is more generally effective against non-ship targets, however.
-    If you use gunpowder-based ship weapons, they deal double damage against non-ship targets.
+  The default names for ship weapons assume that gunpowder is not being used.
+  If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
+  All the GM has to do for ship vs ship combat is change the name of the weapons to match their preferred technology level.
+  More advanced weaponry is more generally effective against non-ship targets, however.
+  If you use gunpowder-based ship weapons, they deal double damage against non-ship targets.
 
 \section{Crew Roles}
-    Ships depend on their crew to function.
-    There are many jobs that are necessary to make large ships function, including sailors, rowers, cooks, pages, and more.
-    Fully defining life on a ship is outside the scope of this brief introduction to ship combat.
-    However, some roles have outsized influence on the ship's effectiveness, such as the ship's captain and pilot.
-    These roles provide a way for player characters to meaningfully influence the outcome of ship battles, even if their personal combat talents are irrelevant at those scales.
+  Ships depend on their crew to function.
+  There are many jobs that are necessary to make large ships function, including sailors, rowers, cooks, pages, and more.
+  Fully defining life on a ship is outside the scope of this brief introduction to ship combat.
+  However, some roles have outsized influence on the ship's effectiveness, such as the ship's captain and pilot.
+  These roles provide a way for player characters to meaningfully influence the outcome of ship battles, even if their personal combat talents are irrelevant at those scales.
 
-    Each crew role defined here functions like a class archetype, with seven progression ranks.
-    A character can have any number of crew roles, but they can only fulfill one role at a time on a ship.
-    In general, your highest crew role rank should not be significantly higher or lower than your highest rank in a class archetype, but they do not have to be kept exactly in sync.
-    The GM can decide whether your crew role rank increases in lockstep with your class archetype rank, or whether it increases based on other factors.
-    This could include practice and time spent on a ship, or money spent to buy ship improvements necessary to improve your crew role rank.
+  Each crew role defined here functions like a class archetype, with seven progression ranks.
+  A character can have any number of crew roles, but they can only fulfill one role at a time on a ship.
+  In general, your highest crew role rank should not be significantly higher or lower than your highest rank in a class archetype, but they do not have to be kept exactly in sync.
+  The GM can decide whether your crew role rank increases in lockstep with your class archetype rank, or whether it increases based on other factors.
+  This could include practice and time spent on a ship, or money spent to buy ship improvements necessary to improve your crew role rank.
 
-    Crew role ranks are limited by ship quality.
-    Even the best pilot cannot dodge incoming fire with ease on a lifeboat.
-    The maximum crew role rank for all crew on a ship is equal to the ship's item rank (see \pcref{Wealth and Item Ranks}).
+  Crew role ranks are limited by ship quality.
+  Even the best pilot cannot dodge incoming fire with ease on a lifeboat.
+  The maximum crew role rank for all crew on a ship is equal to the ship's item rank (see \pcref{Wealth and Item Ranks}).
 
-    A sufficiently large ship can have more than one member of each crew role.
-    This does not mean that the ship literally has multiple captains or pilots.
-    Instead, the ship would have a hierarchy.
-    It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
-    Colossal ships can have two people for each crew role, Galleon ships can have three, and Titan ships can have four.
+  A sufficiently large ship can have more than one member of each crew role.
+  This does not mean that the ship literally has multiple captains or pilots.
+  Instead, the ship would have a hierarchy.
+  It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
+  Colossal ships can have two people for each crew role, Galleon ships can have three, and Titan ships can have four.
 
-    % TODO: do "ship-related" effects need to be defined in more detail?
+  % TODO: do "ship-related" effects need to be defined in more detail?
 
-    \subsection{Boatswain}
-        This role is responsible for coordinating the ship's crew.
-        It involves tracking everything that is happening on the ship and knowing where and how to intervene.
+  \subsection{Boatswain}
+    This role is responsible for coordinating the ship's crew.
+    It involves tracking everything that is happening on the ship and knowing where and how to intervene.
 
-        \cf{Bsn}[1]{Ensure Competence} Whenever a crew member on the ship makes a ship-related check that you are aware of, you can increase your fatigue level by two.
-        If you do, that creature gains the benefit of the \ability{desperate exertion} ability on that check (see \pcref{Desperate Exertion}).
-        It still cannot apply that ability twice to the same check.
+    \cf{Bsn}[1]{Ensure Competence} Whenever a crew member on the ship makes a ship-related check that you are aware of, you can increase your fatigue level by two.
+      If you do, that creature gains the benefit of the \ability{desperate exertion} ability on that check (see \pcref{Desperate Exertion}).
+      It still cannot apply that ability twice to the same check.
 
-        \cf{Bsn}[2]{Specialized Encouragement}
-        \begin{activeability}{Specialized Encouragement}
-            \abilityusagetime Standard action.
-            \rankline
+    \cf{Bsn}[2]{Specialized Encouragement}
+      \begin{activeability}{Specialized Encouragement}
+        \abilityusagetime Standard action.
+        \rankline
 
-            You choose one of the following benefits:
-            \begin{raggeditemize}
-                \item Evasion: The ship \glossterm{briefly} gains a \plus1 bonus to all defenses.
-                \item Travel: The ship \glossterm{briefly} gains a \plus10 foot bonus to its movement speed.
-                \item Weapons: Attacks with the ship's weapons \glossterm{briefly} gain a \plus1 accuracy bonus.
-                \item Desperate Rally: The ship \glossterm{briefly} gains the Evasion, Travel, and Weapons benefits from this ability.
-                    However, it increases its strain level by one.
-            \end{raggeditemize}
-
-            You can only use this ability while you are in an appropriate location so that relevant crew can see or hear you.
-            Changing which your location to be able to provide a different benefit with this ability typically takes one full round of movement for each size category by which the ship is larger than Huge.
-            Specific ships may be easier or more difficult to navigate, at the GM's discretion.
-            You cannot provide more than one benefit with this ability at once, even if you are perfectly located on the ship.
-        \end{activeability}
-
-        \cf{Bsn}[3]{Collective Effort} Each other crew member who can see or hear you gains a \plus1 bonus to ship-related checks.
-        If you are trained in a skill that a crew member is using to make a check, they gain a \plus2 bonus from this ability instead of \plus1.
-
-        \cf{Bsn}[4]{Encouraging Presence} The ship gains a \plus1 bonus to its Willpower.
-
-        \cf{Bsn}[5]{Ensure Competence+} When you use this ability to affect a creature other than yourself, you only increase your fatigue level by one.
-
-        \cf{Bsn}[6]{Specialized Encouragement+} The bonuses you provide from this ability increase:
+        You choose one of the following benefits:
         \begin{raggeditemize}
-            \item Evasion: The defense bonus increases to \plus2.
-            \item Travel: The ship's turning cost is reduced by 10 feet, to a minimum of 10 feet.
-            \item Weapons: The accuracy bonus increases to \plus2.
+          \item Evasion: The ship \glossterm{briefly} gains a \plus1 bonus to all defenses.
+          \item Travel: The ship \glossterm{briefly} gains a \plus10 foot bonus to its movement speed.
+          \item Weapons: Attacks with the ship's weapons \glossterm{briefly} gain a \plus1 accuracy bonus.
+          \item Desperate Rally: The ship \glossterm{briefly} gains the Evasion, Travel, and Weapons benefits from this ability.
+            However, it increases its strain level by one.
         \end{raggeditemize}
 
-        \cf{Bsn}[7]{Collective Effort+} The bonus increases to \plus2, or to \plus4 for skills that you are trained in.
+        You can only use this ability while you are in an appropriate location so that relevant crew can see or hear you.
+        Changing which your location to be able to provide a different benefit with this ability typically takes one full round of movement for each size category by which the ship is larger than Huge.
+        Specific ships may be easier or more difficult to navigate, at the GM's discretion.
+        You cannot provide more than one benefit with this ability at once, even if you are perfectly located on the ship.
+      \end{activeability}
 
-    \subsection{Fixer}
-        This role is responsible for maintaining the ship's physical infrastructure.
-        It represents a combination of carpentry, caulking, and similar repair jobs.
-        In order to take this role on a ship, you must have at least one Craft skill relevant to the ship's construction.
+    \cf{Bsn}[3]{Collective Effort} Each other crew member who can see or hear you gains a \plus1 bonus to ship-related checks.
+      If you are trained in a skill that a crew member is using to make a check, they gain a \plus2 bonus from this ability instead of \plus1.
 
-        \cf{Fix}[1]{Quick Patch} As a standard action, you can attempt to patch the ship's defenses.
-        This requires a Craft check relevant to the ship.
-        The difficulty value is equal to 5 \add 5 for each time that you have used that same Craft skill with this ability since the ship's last short repair.
-        Success means that the ship regains damage resistance equal to three times your rank in this crew role.
+    \cf{Bsn}[4]{Encouraging Presence} The ship gains a \plus1 bonus to its Willpower.
 
-        \cf{Fix}[2]{Temporary Seal} You can make a Craft check relevant to the ship to temporarily stop a leak in a ship without expensive materials.
-        The difficulty value is equal to 10 \add 10 for each time that you have used that same Craft skill with this ability since the ship's last vital repair.
-        Success means that the leak is stopped for one hour.
-        This does not remove the vital wound, and you can only use this ability to affect one leak on the ship.
-        Normally, this check requires one minute of work.
-        For every 5 points by which you succeed, the time required is halved.
+    \cf{Bsn}[5]{Ensure Competence+} When you use this ability to affect a creature other than yourself, you only increase your fatigue level by one.
 
-        \cf{Fix}[3]{Rapid Repair} When you participate in repairing a ship, the repairs take half the normal time.
-        This affects short repairs, long repairs, and vital repairs.
+    \cf{Bsn}[6]{Specialized Encouragement+} The bonuses you provide from this ability increase:
+      \begin{raggeditemize}
+        \item Evasion: The defense bonus increases to \plus2.
+        \item Travel: The ship's turning cost is reduced by 10 feet, to a minimum of 10 feet.
+        \item Weapons: The accuracy bonus increases to \plus2.
+      \end{raggeditemize}
 
-        \cf{Fix}[4]{Sturdy Reinforcement} The ship gains a \plus1 bonus to its Constitution.
+    \cf{Bsn}[7]{Collective Effort+} The bonus increases to \plus2, or to \plus4 for skills that you are trained in.
 
-        \cf{Fix}[5]{Quick Patch+} The damage resistance regained increases to four times your rank in this crew role.
+  \subsection{Fixer}
+    This role is responsible for maintaining the ship's physical infrastructure.
+    It represents a combination of carpentry, caulking, and similar repair jobs.
+    In order to take this role on a ship, you must have at least one Craft skill relevant to the ship's construction.
 
-        \cf{Fix}[6]{Temporary Seal+} You can use this ability to affect two leaks on the ship, rather than only one.
+    \cf{Fix}[1]{Quick Patch} As a standard action, you can attempt to patch the ship's defenses.
+      This requires a Craft check relevant to the ship.
+      The difficulty value is equal to 5 \add 5 for each time that you have used that same Craft skill with this ability since the ship's last short repair.
+      Success means that the ship regains damage resistance equal to three times your rank in this crew role.
 
-        \cf{Fix}[7]{Efficient Repair} When you participate in repairing a ship, the cost of that repair is reduced by one item rank.
-        If you are using gold pieces, this roughly translates to a repair cost that is one fifth of the normal price.
+    \cf{Fix}[2]{Temporary Seal} You can make a Craft check relevant to the ship to temporarily stop a leak in a ship without expensive materials.
+      The difficulty value is equal to 10 \add 10 for each time that you have used that same Craft skill with this ability since the ship's last vital repair.
+      Success means that the leak is stopped for one hour.
+      This does not remove the vital wound, and you can only use this ability to affect one leak on the ship.
+      Normally, this check requires one minute of work.
+      For every 5 points by which you succeed, the time required is halved.
 
-    \subsection{Gunner}
-        This role is responsible for aiming and firing ship weaponry.
-        For complex weapons such as ballistas, they also direct the work of other crew members who are physically loading and aiming the weapons.
+    \cf{Fix}[3]{Rapid Repair} When you participate in repairing a ship, the repairs take half the normal time.
+      This affects short repairs, long repairs, and vital repairs.
 
-        \cf{Gun}[1]{Skilled Shot} Ship weapons you fire gain a \plus1 accuracy bonus.
+    \cf{Fix}[4]{Sturdy Reinforcement} The ship gains a \plus1 bonus to its Constitution.
 
-        \cf{Gun}[2]{Customized Shot} Whenever you fire a ship weapon, you can choose one of the following effects.
-        \begin{itemize}
-            \item Arcing Shot: The \glossterm{longshot penalty} for the attack is reduced by 2.
-            \item Desperate Shot: The attack rolls accuracy twice, and it gains a \plus2 accuracy bonus.
-                However, the ship's \glossterm{strain level} increases by one.
-            \item Direct Shot: The attack deals double damage.
-                However, the attack suffers a \minus1 accuracy penalty, and its range limits are halved.
-            \item Overloaded: The attack deals double damage.
-                This can only be used with ship weapons that do not have the \weapontag{Slow Load} weapon tag (see \pcref{Ship Weapon Tags}).
-                If the weapon has the \weapontag{Slow Reload} weapon tag, it takes twice as long to reload after this attack.
-                Otherwise, it gains \weapontag{Slow Reload} (1) until it has been reloaded.
-        \end{itemize}
+    \cf{Fix}[5]{Quick Patch+} The damage resistance regained increases to four times your rank in this crew role.
 
-        \cf{Gun}[3]{Weapons Coordination} As a \glossterm{minor action}, you can choose one ship weapon whose crew can see or hear you.
-        That weapon gains your benefits from this crew role this round as if you were the one firing it.
-        You cannot apply this ability to a weapon that is already benefiting from another gunner's effects.
-        This ability has the \abilitytag{Swift} tag.
+    \cf{Fix}[6]{Temporary Seal+} You can use this ability to affect two leaks on the ship, rather than only one.
 
-        \cf{Gun}[4]{Mighty Weaponry} The ship gains a \plus1 bonus to its Strength.
+    \cf{Fix}[7]{Efficient Repair} When you participate in repairing a ship, the cost of that repair is reduced by one item rank.
+      If you are using gold pieces, this roughly translates to a repair cost that is one fifth of the normal price.
 
-        \cf{Gun}[5]{Skilled Shot+} The accuracy bonus increases to \plus2.
+  \subsection{Gunner}
+    This role is responsible for aiming and firing ship weaponry.
+    For complex weapons such as ballistas, they also direct the work of other crew members who are physically loading and aiming the weapons.
 
-        \cf{Gun}[6]{Customized Shot+} The benefits from this ability improve.
-        \begin{itemize}
-            \item Arcing Shot: The longshot penalty is fully removed.
-            \item Desperate Shot: You roll accuracy three times instead of twice.
-            \item Direct Shot: The accuracy penalty is removed.
-            \item Overloaded: The attack also rolls damage twice, keeping the higher result.
-        \end{itemize}
+    \cf{Gun}[1]{Skilled Shot} Ship weapons you fire gain a \plus1 accuracy bonus.
 
-        \cf{Gun}[7]{Weapons Coordination+} When you use this ability, you can choose any number of ship weapons whose crew can see or hear you.
+    \cf{Gun}[2]{Customized Shot} Whenever you fire a ship weapon, you can choose one of the following effects.
+      \begin{itemize}
+        \item Arcing Shot: The \glossterm{longshot penalty} for the attack is reduced by 2.
+        \item Desperate Shot: The attack rolls accuracy twice, and it gains a \plus2 accuracy bonus.
+          However, the ship's \glossterm{strain level} increases by one.
+        \item Direct Shot: The attack deals double damage.
+          However, the attack suffers a \minus1 accuracy penalty, and its range limits are halved.
+        \item Overloaded: The attack deals double damage.
+          This can only be used with ship weapons that do not have the \weapontag{Slow Load} weapon tag (see \pcref{Ship Weapon Tags}).
+          If the weapon has the \weapontag{Slow Reload} weapon tag, it takes twice as long to reload after this attack.
+          Otherwise, it gains \weapontag{Slow Reload} (1) until it has been reloaded.
+      \end{itemize}
 
-    \subsection{Lookout}
-        This role is responsible for observing and reporting the ship's surroundings.
-        It includes watching out for hazardous terrain, enemy ships, and similar dangers or opportunities.
+    \cf{Gun}[3]{Weapons Coordination} As a \glossterm{minor action}, you can choose one ship weapon whose crew can see or hear you.
+      That weapon gains your benefits from this crew role this round as if you were the one firing it.
+      You cannot apply this ability to a weapon that is already benefiting from another gunner's effects.
+      This ability has the \abilitytag{Swift} tag.
 
-        \cf{Lok}[1]{Vantage Point} You gain a \plus3 bonus to Awareness and Survival checks while in a crow's nest, or other equivalent location on the ship designed for a lookout.
+    \cf{Gun}[4]{Mighty Weaponry} The ship gains a \plus1 bonus to its Strength.
 
-        \cf{Lok}[2]{Detailed Scouting} If you look at a ship for one minute, you can make an Awareness check.
-        The difficulty value is normally equal to 5, modified as normal for distance and vision conditions.
-        If the ship is specifically designed to conceal its true nature, the difficulty value can increase to 10 or higher, at the GM's discretion.
-        Success means you learn whether one of the following things is true.
-        For every 5 points by which you succeed, you learn an additional piece of information.
-        \begin{itemize}
-            \item If the ship's item rank is greater than your ship's item rank.
-            \item If the highest item rank among the ship's weapons is greater than the highest item rank among your ship's weapons.
-            \item If the ship is elite.
-            \item If the ship is mostly full of cargo.
-            \item If the ship has more than half its maximum crew.
-            \item If the ship has any vital wounds.
-        \end{itemize}
+    \cf{Gun}[5]{Skilled Shot+} The accuracy bonus increases to \plus2.
 
-        \cf{Lok}[3]{Far-Sighted Weapons} All ship weapons that can see or hear you reduce their \glossterm{longshot penalty} by 1.
+    \cf{Gun}[6]{Customized Shot+} The benefits from this ability improve.
+      \begin{itemize}
+        \item Arcing Shot: The longshot penalty is fully removed.
+        \item Desperate Shot: You roll accuracy three times instead of twice.
+        \item Direct Shot: The accuracy penalty is removed.
+        \item Overloaded: The attack also rolls damage twice, keeping the higher result.
+      \end{itemize}
 
-        \cf{Lok}[4]{Clear Sighted} The ship gains a \plus1 bonus to its Perception.
+    \cf{Gun}[7]{Weapons Coordination+} When you use this ability, you can choose any number of ship weapons whose crew can see or hear you.
 
-        \cf{Lok}[5]{Vantage Point+} The skill bonuses increase to \plus6.
+  \subsection{Lookout}
+    This role is responsible for observing and reporting the ship's surroundings.
+    It includes watching out for hazardous terrain, enemy ships, and similar dangers or opportunities.
 
-        \cf{Lok}[6]{Far-Sighted Weapons+} The longshot penalty reduction increases to 2.
+    \cf{Lok}[1]{Vantage Point} You gain a \plus3 bonus to Awareness and Survival checks while in a crow's nest, or other equivalent location on the ship designed for a lookout.
 
-        \cf{Lok}[7]{Detailed Scouting+} Using this ability does not take any time.
-        It happens automatically whenever you see a ship.
-        In addition, you automatically learn all pieces of information if the check succeeds, regardless of how much you succeed by.
+    \cf{Lok}[2]{Detailed Scouting} If you look at a ship for one minute, you can make an Awareness check.
+      The difficulty value is normally equal to 5, modified as normal for distance and vision conditions.
+      If the ship is specifically designed to conceal its true nature, the difficulty value can increase to 10 or higher, at the GM's discretion.
+      Success means you learn whether one of the following things is true.
+      For every 5 points by which you succeed, you learn an additional piece of information.
+      \begin{itemize}
+        \item If the ship's item rank is greater than your ship's item rank.
+        \item If the highest item rank among the ship's weapons is greater than the highest item rank among your ship's weapons.
+        \item If the ship is elite.
+        \item If the ship is mostly full of cargo.
+        \item If the ship has more than half its maximum crew.
+        \item If the ship has any vital wounds.
+      \end{itemize}
 
-    \subsection{Pilot}
-        This role is responsible for steering the ship.
-        They generally stay at the ship's wheel, but they may also direct the cut of sails or the direction of rowing.
+    \cf{Lok}[3]{Far-Sighted Weapons} All ship weapons that can see or hear you reduce their \glossterm{longshot penalty} by 1.
 
-        \cf{Pil}[1]{Desperate Sprint} As a standard action, you can increase the ship's strain level by one.
-        If you do, the ship moves up to its speed during this action phase.
-        Any ship can only be affected by this ability once per round.
+    \cf{Lok}[4]{Clear Sighted} The ship gains a \plus1 bonus to its Perception.
 
-        \cf{Pil}[2]{Evasive Maneuvers} As a standard action, you can choose one enemy ship you are aware of.
-        Your ship gains a \plus1 bonus to its Armor and Reflex defenses against that enemy ship this round.
-        This ability has the \ability{Swift} tag.
+    \cf{Lok}[5]{Vantage Point+} The skill bonuses increase to \plus6.
 
-        \cf{Pil}[3]{Hard Turn} The ship's turning speed is reduced by 10 feet, to a minimum of 10 feet.
-        In addition, whenever the ship moves, you can increase the ship's strain level by one.
-        If you do, the ship turns up to 90 degrees without spending any movement.
+    \cf{Lok}[6]{Far-Sighted Weapons+} The longshot penalty reduction increases to 2.
 
-        \cf{Pil}[4]{Agile Pilot} The ship gains a \plus1 bonus to its Dexterity.
+    \cf{Lok}[7]{Detailed Scouting+} Using this ability does not take any time.
+      It happens automatically whenever you see a ship.
+      In addition, you automatically learn all pieces of information if the check succeeds, regardless of how much you succeed by.
 
-        \cf{Pil}[5]{Evasive Maneuvers+} You can choose a second enemy ship at the same time.
+  \subsection{Pilot}
+    This role is responsible for steering the ship.
+    They generally stay at the ship's wheel, but they may also direct the cut of sails or the direction of rowing.
 
-        \cf{Pil}[6]{Hard Turn+} The turning speed reduction increases to 20 feet.
+    \cf{Pil}[1]{Desperate Sprint} As a standard action, you can increase the ship's strain level by one.
+      If you do, the ship moves up to its speed during this action phase.
+      Any ship can only be affected by this ability once per round.
 
-        \cf{Pil}[7]{Desperate Sprint+} When you use this ability, the ship also doubles its movement speed during the next movement phase.
+    \cf{Pil}[2]{Evasive Maneuvers} As a standard action, you can choose one enemy ship you are aware of.
+      Your ship gains a \plus1 bonus to its Armor and Reflex defenses against that enemy ship this round.
+      This ability has the \ability{Swift} tag.
 
-    \subsection{Warder}
-        This role is responsible for directly protecting the ship from danger with magic.
+    \cf{Pil}[3]{Hard Turn} The ship's turning speed is reduced by 10 feet, to a minimum of 10 feet.
+      In addition, whenever the ship moves, you can increase the ship's strain level by one.
+      If you do, the ship turns up to 90 degrees without spending any movement.
 
-        In order to take this role on a ship, you must be able to cast spells.
-        At the GM's discretion, you may also need to have access to mystic spheres that can plausibly be used to protect the ship.
-        Most mystic spheres which have spells that affect objects can be used to justify this role.
-        However, highly specialized mystic spheres like \sphere{enchantment} or \sphere{vivimancy} may not be sufficient.
+    \cf{Pil}[4]{Agile Pilot} The ship gains a \plus1 bonus to its Dexterity.
 
-        \cf{Wrd}[1]{Active Defense} As a standard action, you can give the ship a \plus2 bonus to all defenses during the current round.
-        This ability has the \pcref{Swift} tag.
-        It has no effect if the ship is already protected by another warder using this ability.
+    \cf{Pil}[5]{Evasive Maneuvers+} You can choose a second enemy ship at the same time.
 
-        \cf{Wrd}[2]{Specialized Ward} As a standard action, you can activate one of the following effects.
-        This ability has the \abilitytag{Sustain} (minor) tag.
-        \begin{raggeditemize}
-            \item Desperate Fortification: Whenever the ship would take damage, that damage is halved.
-                At the end of each round, if the ship took damage in excess of your rank in this crew role that round, it increases its strain level by two.
-            \item Enhance Armor: The ship gains a \plus1 \glossterm{enhancement bonus} to its Armor defense.
-            \item Enhance Resilience: The ship gains a \plus2 \glossterm{enhancement bonus} to its Fortitude defense and \glossterm{vital rolls}.
-            \item Mystic Ward: The ship gains a \plus2 \glossterm{enhancement bonus} to all defenses against \magical attacks.
-        \end{raggeditemize}
+    \cf{Pil}[6]{Hard Turn+} The turning speed reduction increases to 20 feet.
 
-        \cf{Wrd}[3]{Ship of Magic} You gain a \plus1 accuracy with \magical abilities, including magical ship weapons, while on the ship.
-        In addition, whenever you participate in a ritual on the ship, you can increase the ship's strain level by one.
-        If you do, the fatigue cost required to perform the ritual is reduced by an amount equal to twice your rank in this crew role.
+    \cf{Pil}[7]{Desperate Sprint+} When you use this ability, the ship also doubles its movement speed during the next movement phase.
 
-        \cf{Wrd}[4]{Permanent Ward} The ship gains a bonus to its damage resistance equal to four times your rank in this crew role.
+  \subsection{Warder}
+    This role is responsible for directly protecting the ship from danger with magic.
 
-        \cf{Wrd}[5]{Active Defense+} The defense bonus increases to \plus3.
+    In order to take this role on a ship, you must be able to cast spells.
+    At the GM's discretion, you may also need to have access to mystic spheres that can plausibly be used to protect the ship.
+    Most mystic spheres which have spells that affect objects can be used to justify this role.
+    However, highly specialized mystic spheres like \sphere{enchantment} or \sphere{vivimancy} may not be sufficient.
 
-        \cf{Wrd}[6]{Ship of Magic+} The accuracy bonus increases to \plus2.
-        In addition, the fatigue cost reduction increases to three times your rank in this crew role.
+    \cf{Wrd}[1]{Active Defense} As a standard action, you can give the ship a \plus2 bonus to all defenses during the current round.
+      This ability has the \pcref{Swift} tag.
+      It has no effect if the ship is already protected by another warder using this ability.
 
-        \cf{Wrd}[7]{Specialized Ward} The benefits from this ability improve.
-        \begin{raggeditemize}
-            \item Desperate Fortification: The threshold for gaining fatigue increases to three times your rank in this crew role.
-            \item Enhance Armor: The bonus increases to \plus2.
-            \item Enhance Resilience: The bonuses increase to \plus4.
-            \item Mystic Ward: The bonus increases to \plus4.
-        \end{raggeditemize}
+    \cf{Wrd}[2]{Specialized Ward} As a standard action, you can activate one of the following effects.
+      This ability has the \abilitytag{Sustain} (minor) tag.
+      \begin{raggeditemize}
+        \item Desperate Fortification: Whenever the ship would take damage, that damage is halved.
+          At the end of each round, if the ship took damage in excess of your rank in this crew role that round, it increases its strain level by two.
+        \item Enhance Armor: The ship gains a \plus1 \glossterm{enhancement bonus} to its Armor defense.
+        \item Enhance Resilience: The ship gains a \plus2 \glossterm{enhancement bonus} to its Fortitude defense and \glossterm{vital rolls}.
+        \item Mystic Ward: The ship gains a \plus2 \glossterm{enhancement bonus} to all defenses against \magical attacks.
+      \end{raggeditemize}
+
+    \cf{Wrd}[3]{Ship of Magic} You gain a \plus1 accuracy with \magical abilities, including magical ship weapons, while on the ship.
+      In addition, whenever you participate in a ritual on the ship, you can increase the ship's strain level by one.
+      If you do, the fatigue cost required to perform the ritual is reduced by an amount equal to twice your rank in this crew role.
+
+    \cf{Wrd}[4]{Permanent Ward} The ship gains a bonus to its damage resistance equal to four times your rank in this crew role.
+
+    \cf{Wrd}[5]{Active Defense+} The defense bonus increases to \plus3.
+
+    \cf{Wrd}[6]{Ship of Magic+} The accuracy bonus increases to \plus2.
+      In addition, the fatigue cost reduction increases to three times your rank in this crew role.
+
+    \cf{Wrd}[7]{Specialized Ward} The benefits from this ability improve.
+      \begin{raggeditemize}
+        \item Desperate Fortification: The threshold for gaining fatigue increases to three times your rank in this crew role.
+        \item Enhance Armor: The bonus increases to \plus2.
+        \item Enhance Resilience: The bonuses increase to \plus4.
+        \item Mystic Ward: The bonus increases to \plus4.
+      \end{raggeditemize}
