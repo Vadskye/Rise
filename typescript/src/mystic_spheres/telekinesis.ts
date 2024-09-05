@@ -19,11 +19,14 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
         You can telekinetically control the target object as if you were holding it in a single extra hand.
-        Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm{power}.
+        Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your rank with this cantrip.
         At the end of each round, if the target is outside of this ability's range, this ability ends.
 
+        Although you can control the object's motion, you do not have it equipped.
+        This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
+
         During the movement phase, you can move the target up to 5 feet in any direction.
-        You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}).
+        You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}), to a maximum Willpower equal to your rank with this cantrip.
       `,
       scaling: {
         2: `The distance moved increases to 15 feet.`,
