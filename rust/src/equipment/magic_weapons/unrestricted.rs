@@ -389,7 +389,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             ItemUpgrade::new(5, "Attacks Mental defense and deals psychic damage", r"
                 All damage dealt by this weapon is psychic damage instead of its normal damage types.
                 Strikes with this weapon are made against the target's Mental defense instead of its Armor defense.
-                When imbue this weapon with psychic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+                When you imbue this weapon with psychic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -409,7 +409,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             ItemUpgrade::new(5, "Attacks Fortitude defense and deals poison damage", r"
                 All damage dealt by this weapon is poison damage instead of its normal damage types.
                 Strikes with this weapon are made against the target's Fortitude defense instead of its Armor defense, and they only affect living creatures.
-                When imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+                When you imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -429,7 +429,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             ItemUpgrade::new(7, "Attacks Reflex defense and deals energy damage", r"
                 All damage dealt by this weapon is cold, electricity, and fire damage instead of its normal damage types.
                 Strikes with this weapon are made against the target's Reflex defense instead of its Armor defense.
-                When imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+                When you imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
         ..MagicWeapon::default()
