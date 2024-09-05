@@ -1693,7 +1693,7 @@ impl Class {
                         \end{magicalattuneability}
                         \magicaldomainability{Essence} You gain a \plus1 bonus to your Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
                         In addition, when you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
-                        For example, you could pick up an entire house if you had enough Strength, even though a house would normally fall apart under the strain if you tried to pick it up.
+                        For example, you could pick up an entire house if your Strength was high enough, even though a house would normally fall apart under the strain if you tried to pick it up.
                         \domainability{Mastery} You lose access to the \textit{divine strength} ability.
                         Instead, you simply gain a \plus1 bonus to your Strength.
 
