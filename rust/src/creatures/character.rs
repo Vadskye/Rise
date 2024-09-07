@@ -3,6 +3,7 @@ use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
 use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, Weapon, StandardWeapon};
+use titlecase::titlecase;
 
 pub struct Character {
     // archetypes: [ClassArchetype; 3],
@@ -454,26 +455,19 @@ impl Character {
     }
 
     pub fn description(&self) -> String {
-        // let mut attacks = self.calc_all_attacks();
-        // attacks.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));
         format!(
             "
-                {creature_latex}
-                {class_name} {level}
-                AP {ap}, FT {ft}, IP {ip}, SP {sp}
+            {class_name} {level}
+            AP {ap}, FT {ft}, IP {ip}, Skills {skills}
+            {creature_latex}
             ",
-            creature_latex = latex::format_creature(&self.creature),
-            class_name = self.class.name(),
+            creature_latex = latex::format_creature(&self.creature).trim(),
+            class_name = titlecase(self.class.name()),
             level = self.creature.level,
             ap = self.creature.calc_resource(&Resource::AttunementPoint),
             ft = self.creature.calc_resource(&Resource::FatigueTolerance),
             ip = self.creature.calc_resource(&Resource::InsightPoint),
-            sp = self.creature.calc_resource(&Resource::TrainedSkill),
-            // attacks = attacks
-            //     .iter()
-            //     .map(|a| a.shorthand_description(self))
-            //     .collect::<Vec<String>>()
-            //     .join("\n"),
+            skills = self.creature.calc_resource(&Resource::TrainedSkill),
         )
     }
 }
