@@ -50,7 +50,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         // +1.5 damage
         name: String::from("Brutish"),
-        rank: 1,
+        rank: 3,
         short_description: String::from(r"Deals +1d6-2 damage if you have 3 Str"),
         description: String::from(r"
             If your Strength is at least 3, this weapon deals +1d6 damage, but the damage is also reduced by 2.
@@ -58,8 +58,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         "),
         upgrades: vec![
             // +2.5 damage
-            ItemUpgrade::new(4, "Deals +1d8-2 damage if you have 4 Str", r"
-                The damage die increases to 1d8 if your Strength is at least 4.
+            ItemUpgrade::new(5, "Deals +1d8-2 damage if you have 4 Str", r"
+                If your Strength is at least 4, the damage die increases to 1d8.
             "),
             // +4 damage
             ItemUpgrade::new(7, "Deals +2d6-3 damage if you have 5 Str", r"
@@ -71,18 +71,18 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Educated"),
-        rank: 1,
+        rank: 2,
         short_description: String::from(r"Deals +1 damage if you have 3 Int"),
         description: String::from(r"
-            If your Intelligence is at least 3, this weapon deals +1 damage.
-            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
+            If your Intelligence is at least 3, this weapon gains a +1 bonus to its \glossterm{weapon damage}.
+            This is not considered \glossterm{extra damage}.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Deals +2 damage if you have 4 Int", r"
-                The damage bonus increases to +2 if your Intelligence is at least 4.
+                If your Intelligence is at least 4, the damage bonus increases to +2.
             "),
-            ItemUpgrade::new(7, "Deals +4 damage if you have 5 Int", r"
-                The damage bonus increases to +4 if your Intelligence is at least 5.
+            ItemUpgrade::new(6, "Deals +4 damage if you have 5 Int", r"
+                If your Intelligence is at least 5, the damage bonus increases to +4.
             "),
         ],
         ..MagicWeapon::default()
