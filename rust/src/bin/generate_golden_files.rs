@@ -12,6 +12,8 @@ fn main() -> io::Result<()> {
     write_character_goldens().expect("Should write character goldens");
     write_monster_goldens().expect("Should write monster goldens");
 
+    golden_file_generation::write_attribute_statistics_golden()
+        .expect("Should write attribute statistics golden");
     golden_file_generation::write_run_pve_combat_golden().expect("Should write PVE combat golden");
     golden_file_generation::write_run_pvp_combat_golden().expect("Should write PVP combat golden");
     golden_file_generation::write_pve_accuracy_golden().expect("Should write PVE accuracy golden");
@@ -21,6 +23,8 @@ fn main() -> io::Result<()> {
 }
 
 fn write_character_goldens() -> io::Result<()> {
+    golden_file_generation::write_class_statistics_golden()
+        .expect("Should write class statistics golden");
     golden_file_generation::write_fighter_greatmace_attacks_golden()
         .expect("Should write fighter greatmace attacks");
     golden_file_generation::write_fighter_shield_attacks_golden()
@@ -41,10 +45,8 @@ fn write_character_goldens() -> io::Result<()> {
 }
 
 fn write_monster_goldens() -> io::Result<()> {
-    golden_file_generation::write_mystic_attacks_golden()
-        .expect("Should write mystic attacks");
-    golden_file_generation::write_brute_attacks_golden()
-        .expect("Should write brute attacks");
+    golden_file_generation::write_mystic_attacks_golden().expect("Should write mystic attacks");
+    golden_file_generation::write_brute_attacks_golden().expect("Should write brute attacks");
     golden_file_generation::write_monster_attacks_golden().expect("Should write monster attacks");
     golden_file_generation::write_monster_to_section_golden().expect("Should write to_section");
     golden_file_generation::write_monster_defenses_golden().expect("Should write monster defenses");
