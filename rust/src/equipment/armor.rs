@@ -414,6 +414,7 @@ fn calc_dr(base_dr: i32, material: &Option<ArmorMaterial>) -> i32 {
             .dr_multiplier()) as i32;
 }
 
+#[derive(Eq, PartialEq)]
 pub enum ArmorUsageClass {
     Light,
     Medium,

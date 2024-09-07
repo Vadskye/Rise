@@ -65,7 +65,7 @@ impl PartialEq for Attribute {
 
 pub trait HasAttributes {
     fn get_base_attribute(&self, attribute: &Attribute) -> i32;
-    fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]);
+    fn set_attribute_scaling(&mut self, level: i32, attributes: Vec<Attribute>);
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
     fn set_base_attributes(&mut self, attributes: [i32; 6]);
 }
@@ -83,7 +83,7 @@ where
         value + self.calc_total_modifier(ModifierType::Attribute(*attribute))
     }
 
-    fn set_attribute_scaling(&mut self, level: i32, attributes: [Attribute; 2]) {
+    fn set_attribute_scaling(&mut self, level: i32, attributes: Vec<Attribute>) {
         let value = (level + 3) / 6;
         if value > 0 {
             for attribute in attributes.iter() {

@@ -496,7 +496,7 @@ mod tests {
         assert_multiline_eq(
             r"\begin<magicalactiveability>*<Torchlight>
                 \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)
-\par \noindent Usage: Minor action.
+\abilityusagetime Minor action.
                 \rankline
                 The $name glows like a torch for a minute.
             \end<magicalactiveability>",

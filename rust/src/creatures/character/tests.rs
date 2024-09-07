@@ -40,10 +40,11 @@ fn it_calculates_rank_abilities() {
             "Armor Expertise",
             "Augmented Maneuvers",
             "Augmented Maneuvers+",
-            "Cleansing Discipline",
+            "Disciplined Reaction",
             "Disciplined Strike",
             "Enduring Discipline",
             "Equipment Efficiency",
+            "Exotic Weapon Training",
             // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
             "Maneuvers",

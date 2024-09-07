@@ -92,7 +92,7 @@ impl Character {
         character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -129,7 +129,7 @@ impl Character {
         character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -156,7 +156,7 @@ impl Character {
         character.creature.set_base_attributes([2, 0, 2, 0, 4, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Strength]);
+            .set_attribute_scaling(level, vec![Attribute::Perception, Attribute::Strength]);
         character.creature.set_name("Fighter Perception");
         character
     }
@@ -197,7 +197,7 @@ impl Character {
         character.creature.set_base_attributes([3, 2, 2, 0, 2, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -230,7 +230,7 @@ impl Character {
         character.creature.set_base_attributes([3, 2, 2, 0, 2, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -263,7 +263,7 @@ impl Character {
         character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Perception]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Perception]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -296,7 +296,7 @@ impl Character {
         character.creature.set_base_attributes([2, 4, 2, 0, 0, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Strength]);
+            .set_attribute_scaling(level, vec![Attribute::Dexterity, Attribute::Strength]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -329,7 +329,7 @@ impl Character {
         character.creature.set_base_attributes([4, 0, 2, 0, 0, 2]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
 
         for modifier in calc_self_attune_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -361,7 +361,7 @@ impl Character {
         character.creature.set_base_attributes([1, 3, 2, 0, 3, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+            .set_attribute_scaling(level, vec![Attribute::Dexterity, Attribute::Perception]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -394,7 +394,7 @@ impl Character {
         character.creature.set_base_attributes([0, 4, 0, 1, 3, 0]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+            .set_attribute_scaling(level, vec![Attribute::Dexterity, Attribute::Perception]);
 
         for modifier in calc_standard_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -419,7 +419,7 @@ impl Character {
         character.creature.set_base_attributes([0, 2, 0, 0, 2, 4]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Willpower]);
+            .set_attribute_scaling(level, vec![Attribute::Dexterity, Attribute::Willpower]);
 
         for modifier in calc_self_attune_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -444,7 +444,7 @@ impl Character {
         character.creature.set_base_attributes([0, 2, 0, 0, 2, 4]);
         character
             .creature
-            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Willpower]);
+            .set_attribute_scaling(level, vec![Attribute::Perception, Attribute::Willpower]);
 
         for modifier in calc_self_attune_magic_modifiers(level) {
             character.creature.add_magic_modifier(modifier);
@@ -539,7 +539,7 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
 }
 
 // Use a relatively smooth level progression for a rank-appropriate item
-fn standard_body_armor_for_level(level: i32, max_usage_class: ArmorUsageClass) -> Armor {
+pub fn standard_body_armor_for_level(level: i32, max_usage_class: ArmorUsageClass) -> Armor {
     let magic_item_rank = (level + 2) / 3;
     match max_usage_class {
         ArmorUsageClass::Heavy => {

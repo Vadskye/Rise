@@ -286,7 +286,7 @@ impl Monster {
         monster.creature.set_base_attributes([4, 2, 2, 0, 0, 0]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
         monster.creature.add_standard_maneuvers();
         monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Brute");
@@ -300,7 +300,7 @@ impl Monster {
         monster.creature.set_base_attributes([2, 2, 2, 2, 2, 2]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Constitution, Attribute::Willpower]);
+            .set_attribute_scaling(level, vec![Attribute::Constitution, Attribute::Willpower]);
         monster.creature.add_standard_maneuvers();
         monster.creature.add_standard_spells();
         monster.creature.weapons = vec![Weapon::bite()];
@@ -314,7 +314,7 @@ impl Monster {
         monster.creature.set_base_attributes([0, 0, 2, 0, 2, 4]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Perception, Attribute::Willpower]);
+            .set_attribute_scaling(level, vec![Attribute::Perception, Attribute::Willpower]);
         monster.creature.add_standard_spells();
         monster.creature.weapons = vec![];
         monster.creature.set_name("Mystic");
@@ -327,7 +327,7 @@ impl Monster {
         monster.creature.set_base_attributes([2, 4, 0, 0, 2, 0]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Dexterity, Attribute::Perception]);
+            .set_attribute_scaling(level, vec![Attribute::Dexterity, Attribute::Perception]);
         monster.creature.add_standard_maneuvers();
         monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Skirmisher");
@@ -340,7 +340,7 @@ impl Monster {
         monster.creature.set_base_attributes([2, 0, 4, 0, 0, 2]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Constitution]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);
         monster.creature.add_standard_maneuvers();
         monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Warrior");
@@ -353,7 +353,7 @@ impl Monster {
         monster.creature.set_base_attributes([2, 2, 0, 0, 4, 0]);
         monster
             .creature
-            .set_attribute_scaling(level, [Attribute::Strength, Attribute::Perception]);
+            .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Perception]);
         monster.creature.add_standard_maneuvers();
         monster.creature.weapons = vec![Weapon::longbow()];
         monster.creature.set_name("Sniper");
@@ -368,7 +368,7 @@ impl Monster {
         // We use Intelligence because it doesn't affect any monster statistics
         monster
             .creature
-            .set_attribute_scaling(level, [attribute, Attribute::Intelligence]);
+            .set_attribute_scaling(level, vec![attribute, Attribute::Intelligence]);
         monster
             .creature
             .set_name(&format!("Pure {}", attribute.name()));
@@ -407,7 +407,7 @@ impl Monster {
 
         monster
             .creature
-            .set_attribute_scaling(level, [Strength, Willpower]);
+            .set_attribute_scaling(level, vec![Strength, Willpower]);
 
         monster
     }
