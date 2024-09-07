@@ -7,14 +7,13 @@ HP: 12 = (High progression: 8 <level> + 4 <con> + 0 <modifier>) * 0 <elite multi
 DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
+Fighter 1
+AP 2, FT 6, IP 1, Skills 3
 HP 12, DR 6
 AD 7, Fort 6, Ref 2, Ment 3
 Generic Accuracy Broadsword +1 (1d6+2 slashing damage.); Certain Broadsword +3 (1d6+1 slashing damage.); Extra Damage Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -3 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
 Attr: Str 4, Dex 0, Con 2, Int 0, Per 2, Wil 0
 Power: 0✨/4
-
-fighter 1
-AP 2, FT 6, IP 1, SP 3
 
 ### Modifiers
 Maneuvers: maneuver Generic Accuracy
@@ -37,14 +36,13 @@ HP: 45 = (High progression: 29 <level> + 12 <con> + 4 <modifier>) * 0 <elite mul
 DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
+Fighter 10
+AP 5, FT 9, IP 3, Skills 3
 HP 45, DR 38
 AD 12, Fort 13, Ref 7, Ment 9
 Generic Accuracy Broadsword +10 (1d6+6 slashing damage.); Certain Broadsword +12 (1d6+3 slashing damage.); Powerful Broadsword +6 (2d6+12 slashing damage.); Extra Damage Broadsword +8 (1d6+11 slashing damage.); Broadsword +7 (1d6+6 slashing damage.)
 Attr: Str 6, Dex 0, Con 4, Int 0, Per 2, Wil 0
 Power: 5✨/11
-
-fighter 10
-AP 5, FT 9, IP 3, SP 3
 
 ### Modifiers
 Maneuvers: maneuver Generic Accuracy
@@ -78,14 +76,13 @@ HP: 168 = (High progression: 92 <level> + 60 <con> + 16 <modifier>) * 0 <elite m
 DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
+Fighter 20
+AP 5, FT 11, IP 3, Skills 3
 HP 168, DR 96
 AD 17, Fort 19, Ref 12, Ment 15
 Generic Accuracy Broadsword +19 (1d6+10 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+20 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+10 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+30 slashing damage.); Extra Damage Broadsword +13 (1d6+8d8+10 slashing damage.); Generic Triple Damage -- Broadsword +13 (3d6+30 slashing damage.); Broadsword +13 (1d6+10 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 10✨/17
-
-fighter 20
-AP 5, FT 11, IP 3, SP 3
 
 ### Modifiers
 Maneuvers: maneuver Generic Accuracy

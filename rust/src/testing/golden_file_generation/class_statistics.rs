@@ -112,6 +112,6 @@ fn format_class_detailed(class: Class, level: i32) -> String {
         "#### {name}
             {statistics}",
         name = titlecase(class.name()).to_string(),
-        statistics = character.creature.to_latex().trim()
+        statistics = character.description().trim()
     )
 }
