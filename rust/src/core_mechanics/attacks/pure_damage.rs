@@ -120,7 +120,7 @@ mod tests {
                 "
 \\begin<magicalactiveability>*<Mystic Bolt>
 
-
+\\abilityusagetime Standard action.
 \\rankline
 
 The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
@@ -150,7 +150,7 @@ The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
                 "
 \\begin<magicalactiveability>*<Mighty Mystic Bolt>
 
-
+\\abilityusagetime Standard action.
 \\rankline
 
 The $name makes a +0 attack vs. Mental against anything within \\medrange.
@@ -183,9 +183,8 @@ The $name makes a +0 attack vs. Mental against anything within \\medrange.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Basic Strike>
-\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-
+\abilityusagetime Standard action.
 \rankline
 
 The $name makes a +0 \glossterm{strike} vs. Armor.
@@ -215,7 +214,7 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
                 r"
 \begin<activeability>*<+3 Accuracy>
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-
+\abilityusagetime Standard action.
 \rankline
 
 The $name makes a +3 \glossterm{strike} vs. Reflex.
@@ -244,9 +243,8 @@ The $name makes a +3 \glossterm{strike} vs. Reflex.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Double Damage>
-\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-
+\abilityusagetime Standard action.
 \rankline
 
 The $name makes a +0 \glossterm{strike} vs. Armor.
@@ -275,9 +273,8 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
             assert_multiline_eq(
                 r"
 \begin<activeability>*<Triple Damage>
-\abilityusagetime Standard action.
 \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-
+\abilityusagetime Standard action.
 \rankline
 
 The $name makes a +0 \glossterm{strike} vs. Armor.

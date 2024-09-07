@@ -212,7 +212,7 @@ impl Attack {
         let usage_time = if let Targeting::CausedHpLoss(_) = self.targeting {
             Some(UsageTime::Triggered)
         } else {
-            None
+            Some(UsageTime::Standard)
         };
         latex_ability_block(
             self.hit.ability_type(),

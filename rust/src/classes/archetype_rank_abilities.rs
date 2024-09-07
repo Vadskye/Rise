@@ -45,6 +45,7 @@ impl RankAbility<'_> {
 
 pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> {
     match archetype {
+        ClassArchetype::Blank => vec![],
         // Barbarian
         ClassArchetype::BattleforgedResilience => barbarian::battleforged_resilience(),
         ClassArchetype::Battlerager => barbarian::battlerager(),

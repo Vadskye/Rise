@@ -2,6 +2,7 @@ use crate::classes::{archetype_rank_abilities, Class, RankAbility};
 use titlecase::titlecase;
 
 pub enum ClassArchetype {
+    Blank, // For testing purposes
     // Barbarian
     BattleforgedResilience,
     Battlerager,
@@ -73,6 +74,7 @@ pub enum ClassArchetype {
 impl ClassArchetype {
     pub fn class(&self) -> Class {
         match self {
+            Self::Blank => Class::Fighter,
             // Barbarian
             Self::BattleforgedResilience => Class::Barbarian,
             Self::Battlerager => Class::Barbarian,
@@ -144,6 +146,7 @@ impl ClassArchetype {
 
     pub fn name(&self) -> &str {
         match self {
+            Self::Blank => "Blank",
             // Barbarian
             Self::BattleforgedResilience => "Battleforged Resilience",
             Self::Battlerager => "Battlerager",
@@ -236,6 +239,7 @@ impl ClassArchetype {
 
     pub fn short_description(&self) -> String {
         let description = match self {
+            Self::Blank => "For testing purposes",
             // Barbarian
             Self::BattleforgedResilience => "This archetype improves your durability in combat.",
             Self::Battlerager => "This archetype grants you a devastating rage, improving your combat prowess.",
@@ -533,7 +537,7 @@ mod tests {
     #[test]
     fn it_calculates_abilities_at_rank() {
         assert_eq!(
-            vec!["Weapon Training"],
+            vec!["Exotic Weapon Training", "Weapon Training"],
             ClassArchetype::EquipmentTraining
                 .abilities_at_rank(1)
                 .iter()

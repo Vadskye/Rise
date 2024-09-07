@@ -143,39 +143,17 @@ fn generate_latex_weapon_proficiencies(class: &Class) -> String {
     let proficiences_text: String;
     if !weapon_proficiencies.simple_weapons {
         proficiences_text = "
-            You are not proficient with any weapon groups, even simple weapons.
+            You are not proficient with any manufactured weapons, even simple weapons.
             You are still proficient with your natural weapons.
         "
         .to_string();
     } else {
         let mut components = vec![String::from("simple weapons")];
-        if let Some(specific_weapon_groups) = weapon_proficiencies.specific_weapon_groups {
-            if specific_weapon_groups.len() == 1 {
-                components.push(specific_weapon_groups[0].name_plural().to_string());
-            } else {
-                let specific_groups_text = specific_weapon_groups
-                    .iter()
-                    .map(|g| g.name_plural().to_string())
-                    .collect::<Vec<String>>();
-                components.push(format!(
-                    "any one of {}",
-                    latex_formatting::join_string_list(&specific_groups_text).unwrap()
-                ));
-            }
+        if let Some(custom_weapons) = weapon_proficiencies.custom_weapons {
+            components.push(custom_weapons)
         }
-        if weapon_proficiencies.custom_weapon_groups > 0 {
-            let custom_weapon_groups = generate_labeled_english_number(
-                weapon_proficiencies.custom_weapon_groups,
-                "other weapon group",
-                "other weapon groups",
-            );
-            let custom_weapon_groups = format!("any {}", custom_weapon_groups);
-            components.push(custom_weapon_groups);
-        }
-        if let Some(specific_weapons) = weapon_proficiencies.specific_weapons {
-            for w in specific_weapons {
-                components.push(w.plural_name());
-            }
+        if weapon_proficiencies.non_exotic_weapons {
+            components.push("all non-exotic weapons".to_string())
         }
         proficiences_text = format!(
             "
