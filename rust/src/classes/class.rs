@@ -1,7 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::{HitPointProgression, Defense, Resource};
-use crate::equipment::{Armor, ArmorUsageClass, StandardWeapon, Weapon, WeaponGroup};
+use crate::core_mechanics::{Defense, HitPointProgression, Resource};
+use crate::equipment::{Armor, ArmorUsageClass};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
 use std::fmt;
@@ -13,12 +13,12 @@ pub struct ArmorProficiencies {
 }
 
 pub struct WeaponProficiencies {
-    pub custom_weapon_groups: i32,
-    pub specific_weapon_groups: Option<Vec<WeaponGroup>>,
-    pub specific_weapons: Option<Vec<Weapon>>,
+    pub custom_weapons: Option<String>,
     pub simple_weapons: bool,
+    pub non_exotic_weapons: bool,
 }
 
+#[derive(Eq, PartialEq)]
 pub enum Class {
     Automaton,
     Barbarian,
@@ -82,22 +82,27 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 32;
+        let expected_points = 33;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
-            if actual_points != expected_points {
+            let class_expected_points =
+                expected_points + if class.is_uncommon_class() { 2 } else { 0 };
+            if actual_points != class_expected_points {
                 eprintln!(
                     "Class {} has {} points; expected {}",
                     class.name(),
                     actual_points,
-                    expected_points
+                    class_expected_points
                 )
             }
         }
     }
 
-    fn calculate_point_total(&self) -> i32 {
-        let custom_modifier = 0;
+    fn is_uncommon_class(&self) -> bool {
+        return !Self::core_classes().contains(self);
+    }
+
+    pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 5
             // 2 points per fatigue tolerance
             + self.fatigue_tolerance() * 2
@@ -108,12 +113,10 @@ impl Class {
             + self.trained_skills()
             // 1 point per armor proficiency
             + (self.armor_proficiencies().usage_classes.len() as i32)
-            // 1 point for each weapon proficiency
-            + self.weapon_proficiencies().custom_weapon_groups
-            // 1 extra point for a specific weapon group
-            + if self.weapon_proficiencies().specific_weapon_groups.is_some() { 1 } else { 0 }
-            // Arbitrary class-specific modifiers
-            + custom_modifier
+            // 1 point for custom weapons
+            + if self.weapon_proficiencies().custom_weapons.is_some() { 1 } else { 0 }
+            // 2 points for all nonexotics
+            + if self.weapon_proficiencies().non_exotic_weapons { 2 } else { 0 }
     }
 
     pub fn attunement_points(&self) -> i32 {
@@ -125,7 +128,7 @@ impl Class {
             Self::Druid => 3,
             Self::Dryaidi => 3,
             Self::Fighter => 2,
-            Self::Harpy => 2,
+            Self::Harpy => 3,
             Self::Monk => 3,
             Self::Oozeborn => 2,
             Self::Paladin => 2,
@@ -242,10 +245,7 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Jump,
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Arcana,
-                    KnowledgeSubskill::Nature,
-                ]),
+                Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Nature]),
                 Skill::Medicine,
                 Skill::Perform,
                 Skill::Persuasion,
@@ -550,16 +550,16 @@ impl Class {
             Self::Druid => 3,
             Self::Dryaidi => 3,
             Self::Fighter => 4,
-            Self::Harpy => 4,
+            Self::Harpy => 3,
             Self::Monk => 4,
             Self::Oozeborn => 4,
             Self::Paladin => 4,
             Self::Ranger => 4,
             Self::Rogue => 2,
-            Self::Sorcerer => 2,
+            Self::Sorcerer => 3,
             Self::Treant => 4,
             Self::Warlock => 3,
-            Self::Wizard => 1,
+            Self::Wizard => 2,
             Self::Vampire => 3,
         }
     }
@@ -598,7 +598,7 @@ impl Class {
             Self::Fighter => 1,
             Self::Harpy => 2,
             Self::Monk => 1,
-            Self::Oozeborn => 1,
+            Self::Oozeborn => 2,
             Self::Paladin => 1,
             Self::Ranger => 1,
             Self::Rogue => 2,
@@ -1076,120 +1076,93 @@ impl Class {
     pub fn weapon_proficiencies(&self) -> WeaponProficiencies {
         match self {
             Self::Automaton => WeaponProficiencies {
-                custom_weapon_groups: 1,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Barbarian => WeaponProficiencies {
-                custom_weapon_groups: 2,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Cleric => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Dragon => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: false,
             },
             Self::Druid => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: Some(vec![
-                    StandardWeapon::Scimitar.weapon(),
-                    StandardWeapon::Sickle.weapon(),
-                ]),
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Dryaidi => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: Some(vec![WeaponGroup::Bows]),
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Fighter => WeaponProficiencies {
-                custom_weapon_groups: 2,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Harpy => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Monk => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: Some(vec![WeaponGroup::Monk]),
-                specific_weapons: None,
+                custom_weapons: Some("monk weapons".to_string()),
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Oozeborn => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Paladin => WeaponProficiencies {
-                custom_weapon_groups: 2,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Ranger => WeaponProficiencies {
-                custom_weapon_groups: 1,
-                specific_weapon_groups: Some(vec![
-                    WeaponGroup::Bows,
-                    WeaponGroup::Crossbows,
-                    WeaponGroup::Thrown,
-                ]),
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Rogue => WeaponProficiencies {
-                custom_weapon_groups: 1,
-                specific_weapon_groups: None,
-                specific_weapons: Some(vec![StandardWeapon::Sap.weapon()]),
+                custom_weapons: Some(r"weapons with the \weapontag{Compact} and \weapontag{Light} weapon tags (see \pcref{Weapon Tags})".to_string()),
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Sorcerer => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Treant => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: Some(vec![
-                    WeaponGroup::Clublike,
-                ]),
-                specific_weapons: None,
+                custom_weapons: Some(r"club-like weapons".to_string()),
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Warlock => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Wizard => WeaponProficiencies {
-                custom_weapon_groups: 0,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: false,
                 simple_weapons: true,
             },
             Self::Vampire => WeaponProficiencies {
-                custom_weapon_groups: 1,
-                specific_weapon_groups: None,
-                specific_weapons: None,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
         }
