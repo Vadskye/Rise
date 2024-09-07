@@ -1,4 +1,3 @@
-use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::Apparel::Boots;
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 

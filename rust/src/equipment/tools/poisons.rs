@@ -1,7 +1,7 @@
 use crate::equipment::poison::poison_description;
 use crate::equipment::poison::Exposure::{Contact, Ingestion, Injury};
 use crate::equipment::poison::Form::{Gas, Liquid, Powder};
-use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
+use crate::equipment::{Tool, ToolCategory};
 
 fn poison() -> Tool {
     return Tool {
