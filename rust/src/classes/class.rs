@@ -18,7 +18,7 @@ pub struct WeaponProficiencies {
     pub non_exotic_weapons: bool,
 }
 
-#[derive(Eq, PartialEq)]
+#[derive(Clone, Eq, PartialEq)]
 pub enum Class {
     Automaton,
     Barbarian,
