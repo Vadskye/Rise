@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Defense, MovementMode};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode};
 use crate::creatures::Modifier;
 
 use super::standard_modifiers::{add_standard_maneuver_modifiers, add_dr_scaling};
@@ -136,6 +136,17 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \advancement Some esoteric maneuvers also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Esoteric Weaponry",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                If you spend an \glossterm{insight point}, you can become proficient with the sai and three-section staff \glossterm{exotic weapons} (see \pcref{Exotic Weapons}).
+                You must already be proficient with non-exotic monk weapons.
+            ",
+            // This is an abstraction of the effect of exotic weapons being better
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             name: "Esoteric Maneuvers+",
