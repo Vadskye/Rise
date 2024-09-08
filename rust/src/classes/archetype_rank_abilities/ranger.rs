@@ -1,6 +1,6 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, MovementMode, Resource};
+use crate::core_mechanics::{DamageDice, Defense, MovementMode, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -150,9 +150,11 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You must already be proficient with non-exotic weapons from that weapon group.
             ",
-            modifiers: None,
+            // This is an abstraction of the effect of exotic weapons being better
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             name: "Know Your Enemy+",

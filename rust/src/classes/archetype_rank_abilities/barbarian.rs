@@ -227,7 +227,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You must already be proficient with non-exotic weapons from that weapon group.
             ",
             // This is an abstraction of the effect of exotic weapons being better
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
