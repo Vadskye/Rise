@@ -85,7 +85,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You cannot lose more than 100 hit points per round.
                 Any excess damage beyond that point does not reduce your hit points.
-                This includes losing hit points below 0, which can give you extra \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+                This includes hit point loss below 0 hit points.
+                Attacks with special effects, such as inflicting conditions on you, still treat you as if you lost hit points from the attack.
             ",
             modifiers: None,
         },
