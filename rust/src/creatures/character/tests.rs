@@ -74,39 +74,40 @@ fn it_calculates_level_21_fighter_defenses() {
     // Note that this fighter doesn't have any items, so armor defense is lower than the standard
     // character.
     assert_eq!(
-        "Armor b10 f10",
+        "Armor b10 f11",
         format!(
             "Armor b{} f{}",
             baseline.calc_defense(&Defense::Armor),
             fighter.calc_defense(&Defense::Armor)
         ),
+        "10 level scaling + 1 class",
     );
     assert_eq!(
-        "Fort b10 f14",
+        "Fort b13 f14",
         format!(
             "Fort b{} f{}",
             baseline.calc_defense(&Defense::Fortitude),
             fighter.calc_defense(&Defense::Fortitude)
         ),
-        "10 level scaling + 4 class",
+        "3 base + 10 level scaling + 1 con",
     );
     assert_eq!(
-        "Ref b10 f12",
+        "Ref b13 f13",
         format!(
             "Ref b{} f{}",
             baseline.calc_defense(&Defense::Reflex),
             fighter.calc_defense(&Defense::Reflex)
         ),
-        "10 level scaling + 2 class",
+        "3 base + 10 level scaling",
     );
     assert_eq!(
-        "Ment b10 f15",
+        "Ment b13 f15",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "10 level scaling + 3 class + 1 CD1 + 1 CD5",
+        "3 base + 10 level scaling + 1 CD1 + 1 CD5",
     );
 }
 
@@ -172,31 +173,31 @@ fn it_calculates_level_21_fighter_resources() {
     )
     .creature;
     assert_eq!(
-        "AP b2 f5",
+        "AP b4 f5",
         format!(
             "AP b{} f{}",
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "2 class + 2 level + 1 equipment training"
+        "2 base + 2 level + 1 equipment training"
     );
     assert_eq!(
-        "FT b0 f6",
+        "FT b3 f6",
         format!(
             "FT b{} f{}",
             baseline.calc_resource(&Resource::FatigueTolerance),
             fighter.calc_resource(&Resource::FatigueTolerance)
         ),
-        "4 class + 2 combat discipline",
+        "3 base + 2 combat discipline + 1 con",
     );
     assert_eq!(
-        "Insight b2 f3",
+        "Insight b3 f3",
         format!(
             "Insight b{} f{}",
             baseline.calc_resource(&Resource::InsightPoint),
             fighter.calc_resource(&Resource::InsightPoint)
         ),
-        "2 level + 1 class",
+        "1 base + 2 level",
     );
     assert_eq!(
         "Skills b0 f3",
