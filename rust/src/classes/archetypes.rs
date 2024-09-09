@@ -69,6 +69,8 @@ pub enum ClassArchetype {
     Alchemist,
     ArcaneScholar,
     SchoolSpecialist,
+    // Uncommon species
+    Automaton,
 }
 
 impl ClassArchetype {
@@ -141,6 +143,8 @@ impl ClassArchetype {
             Self::WizardArcaneSpellMastery => Class::Wizard,
             Self::ArcaneScholar => Class::Wizard,
             Self::SchoolSpecialist => Class::Wizard,
+            // Uncommon species
+            Self::Automaton => Class::Automaton,
         }
     }
 
@@ -213,6 +217,8 @@ impl ClassArchetype {
             Self::WizardArcaneSpellMastery => "Arcane Spell Mastery",
             Self::ArcaneScholar => "Arcane Scholar",
             Self::SchoolSpecialist => "School Specialist",
+            // Uncommon species
+            Self::Automaton => "Automaton",
         }
     }
 
@@ -417,6 +423,8 @@ impl ClassArchetype {
                 This archetype improves your ability to cast spells from a particular school of magic while sacrificing some versatility.
                 You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
+            // Uncommon species
+            Self::Automaton => "",
         };
         format!(
             "{} {}",

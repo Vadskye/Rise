@@ -2,6 +2,7 @@ use crate::classes::ClassArchetype;
 use crate::creatures::Modifier;
 use titlecase::titlecase;
 
+mod automaton;
 mod barbarian;
 mod cleric;
 mod druid;
@@ -112,6 +113,8 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
         ClassArchetype::WizardArcaneSpellMastery => wizard::arcane_spell_mastery(),
         ClassArchetype::ArcaneScholar => wizard::arcane_scholar(),
         ClassArchetype::SchoolSpecialist => wizard::school_specialist(),
+        // Uncommon species
+        ClassArchetype::Automaton => automaton::automaton(),
     }
 }
 
