@@ -646,7 +646,7 @@ impl Class {
             Self::Fighter => 3,
             Self::Harpy => 4,
             Self::Monk => 4,
-            Self::Oozeborn => 3,
+            Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 5,
             Self::Rogue => 6,

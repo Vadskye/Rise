@@ -21,7 +21,7 @@ fn barbarian_party(level: i32) -> Vec<Creature> {
 }
 
 fn standard_character_party(level: i32) -> Vec<Creature> {
-    four_stack(Character::fighter_shield(level).creature)
+    four_stack(Character::barbarian_shield(level).creature)
 }
 
 fn mixed_character_party(level: i32) -> Vec<Creature> {
