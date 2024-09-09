@@ -28,6 +28,15 @@ impl Defense {
         }
     }
 
+    pub fn title(&self) -> &str {
+        match self {
+            Self::Armor => "Armor",
+            Self::Fortitude => "Fortitude",
+            Self::Mental => "Mental",
+            Self::Reflex => "Reflex",
+        }
+    }
+
     pub fn shorthand_name(&self) -> &str {
         match self {
             Self::Armor => "AD",
@@ -160,7 +169,10 @@ where
             return self.calc_defense(&Defense::Fortitude);
         }
 
-        self.level / 2
+        let base_defense = if defense == &Defense::Armor { 0 } else { 3 };
+
+        base_defense
+            + self.level / 2
             + self.calc_defense_modifier_attribute(defense)
             + self.calc_defense_modifier_armor(defense)
             + self.calc_defense_modifier_size(defense)
