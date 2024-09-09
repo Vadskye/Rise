@@ -87,7 +87,7 @@ fn generate_latex_resources(class: &Class) -> String {
     format!(
         "
             \\cf<{shorthand_name}><Resources>
-            You learn {trained_skills} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence (see \\pcref<Skills>). {modifier_text}
+            You learn {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>). {modifier_text}
         ",
         shorthand_name = class.shorthand_name(),
         trained_skills = generate_labeled_english_number(
@@ -122,9 +122,15 @@ fn generate_latex_defenses(class: &Class) -> Option<String> {
 
 fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
     if modifier > 0 {
-        Some(format!("a +{modifier} bonus to your {defense} defense"))
+        Some(format!(
+            "a +{modifier} bonus to your {} defense",
+            defense.title()
+        ))
     } else if modifier < 0 {
-        Some(format!("a {modifier} penalty to your {defense} defense"))
+        Some(format!(
+            "a {modifier} penalty to your {} defense",
+            defense.title()
+        ))
     } else {
         None
     }
@@ -132,31 +138,31 @@ fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
 
 fn generate_latex_attributes(class: &Class) -> String {
     let optional_count = class.optional_attributes().len();
-    let optional = if optional_count == 5 {
-        "any other attribute".to_string()
-    } else if optional_count > 2 {
-        format!(
-            "any one of {}",
-            join_attributes(class.optional_attributes(), "or").unwrap()
-        )
-    } else if optional_count == 2 {
-        format!(
-            "either {} or {}",
-            class.optional_attributes()[0].title(),
-            class.optional_attributes()[1].title()
-        )
+    let optional = if optional_count == 0 {
+        "".to_string()
     } else {
-        panic!(
-            "Confusing optional attribute count: {}",
-            join_attributes(class.optional_attributes(), "and")
-                .unwrap_or("no attributes".to_string()),
-        )
+        let suffix = if optional_count == 5 {
+            "any other attribute".to_string()
+        } else if optional_count == 2 {
+            format!(
+                "either your {} or your {}",
+                class.optional_attributes()[0].title(),
+                class.optional_attributes()[1].title()
+            )
+        } else {
+            panic!(
+                "Confusing optional attribute count: {}",
+                join_attributes(class.optional_attributes(), "and")
+                    .unwrap_or("no attributes".to_string()),
+            )
+        };
+
+        format!("In addition, you gain a +1 bonus to {}.", suffix)
     };
     format!(
         "
             \\cf<{shorthand_name}><Attributes>
-            You gain a +1 bonus to your {mandatory}.
-            In addition, you gain a +1 bonus to {optional}.
+            You gain a +1 bonus to your {mandatory}. {optional}
         ",
         shorthand_name = class.shorthand_name(),
         mandatory = join_attributes(class.mandatory_attributes(), "and").unwrap(),
