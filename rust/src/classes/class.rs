@@ -93,7 +93,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 22;
+        let expected_points = 28;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -115,9 +115,9 @@ impl Class {
 
     pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 4
+            + self.hit_point_progression().creation_point_cost()
             // 2 points per insight point
             + self.insight_points() * 2
-            + self.hit_point_progression().creation_point_cost()
             // 1 point per trained skill
             + self.trained_skills()
             // 1 point per 8 class skills
@@ -131,28 +131,30 @@ impl Class {
             + if self.weapon_proficiencies().non_exotic_weapons { 2 } else { 0 }
             // 1 point per non-Armor defense
             + self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental)
-            // 2 points per Armor defense
-            + self.defense_bonus(&Defense::Armor) * 2
-            // 7 points per mandatory attribute
-            + self.mandatory_attributes().len() as i32 * 7
+            // 3 points per Armor defense
+            + self.defense_bonus(&Defense::Armor) * 3
+            // 6 points per mandatory attribute
+            + self.mandatory_attributes().len() as i32 * 6
+            // 7 points if optional attributes exist
+            + if self.optional_attributes().len() == 0 { 0 } else { 7 }
     }
 
     pub fn mandatory_attributes(&self) -> Vec<Attribute> {
         match self {
-            Self::Automaton => vec![Constitution],
+            Self::Automaton => vec![Constitution, Intelligence],
             Self::Barbarian => vec![Strength],
             Self::Cleric => vec![Willpower],
             Self::Dragon => vec![Strength, Constitution],
             Self::Druid => vec![Perception],
             Self::Dryaidi => vec![Dexterity, Perception],
             Self::Fighter => vec![Constitution],
-            Self::Harpy => vec![Dexterity, Perception],
+            Self::Harpy => vec![Strength, Dexterity, Perception],
             Self::Monk => vec![Dexterity, Willpower],
-            Self::Oozeborn => vec![Constitution],
+            Self::Oozeborn => vec![Strength, Dexterity, Constitution],
             Self::Paladin => vec![Willpower],
-            Self::Ranger => vec![Perception],
+            Self::Ranger => vec![Dexterity, Perception],
             Self::Rogue => vec![Dexterity],
-            Self::Sorcerer => vec![Willpower],
+            Self::Sorcerer => vec![Constitution, Willpower],
             Self::Treant => vec![Constitution],
             Self::Warlock => vec![Willpower],
             Self::Wizard => vec![Intelligence],
@@ -163,20 +165,20 @@ impl Class {
     // Put the "expected" attribute first, since we use that for statistics calculations
     pub fn optional_attributes(&self) -> Vec<Attribute> {
         match self {
-            Self::Automaton => vec![Intelligence, Strength],
+            Self::Automaton => vec![],
             Self::Barbarian => vec![Constitution, Dexterity],
             Self::Cleric => vec![Perception, Intelligence],
             Self::Dragon => vec![Intelligence, Willpower],
             Self::Druid => vec![Dexterity, Strength, Constitution, Intelligence, Willpower],
             Self::Dryaidi => vec![Intelligence, Willpower],
             Self::Fighter => vec![Strength, Dexterity],
-            Self::Harpy => vec![Strength, Willpower],
+            Self::Harpy => vec![],
             Self::Monk => vec![Perception, Intelligence],
-            Self::Oozeborn => vec![Strength, Dexterity],
+            Self::Oozeborn => vec![],
             Self::Paladin => vec![Constitution, Strength],
-            Self::Ranger => vec![Dexterity, Constitution],
+            Self::Ranger => vec![],
             Self::Rogue => vec![Intelligence, Perception],
-            Self::Sorcerer => vec![Constitution, Perception],
+            Self::Sorcerer => vec![],
             Self::Treant => vec![Strength, Willpower],
             Self::Warlock => vec![Intelligence, Perception],
             Self::Wizard => vec![Perception, Willpower],
@@ -191,17 +193,17 @@ impl Class {
             Self::Cleric => 1,
             Self::Dragon => 0,
             Self::Druid => 1,
-            Self::Dryaidi => 0,
+            Self::Dryaidi => 1,
             Self::Fighter => 0,
-            Self::Harpy => 0,
+            Self::Harpy => 1,
             Self::Monk => 0,
-            Self::Oozeborn => 1,
+            Self::Oozeborn => 0,
             Self::Paladin => 1,
-            Self::Ranger => 0,
+            Self::Ranger => 1,
             Self::Rogue => 1,
             Self::Sorcerer => 2,
             Self::Treant => 0,
-            Self::Warlock => 1,
+            Self::Warlock => 2,
             Self::Wizard => 2,
             Self::Vampire => 1,
         }
@@ -415,6 +417,7 @@ impl Class {
                 Skill::Jump,
                 Skill::Knowledge(vec![
                     KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Items,
                     KnowledgeSubskill::Nature,
                 ]),
                 Skill::Medicine,
@@ -466,11 +469,13 @@ impl Class {
             Self::Treant => vec![
                 Skill::Awareness,
                 Skill::Balance,
+                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Endurance,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Nature]),
                 Skill::Survival,
+                Skill::Swim,
             ],
             Self::Warlock => vec![
                 Skill::Awareness,
@@ -520,6 +525,22 @@ impl Class {
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
+            Self::Automaton => match defense {
+                Defense::Fortitude => 2,
+                _ => 0,
+            },
+            Self::Cleric => match defense {
+                Defense::Mental => 2,
+                _ => 0,
+            },
+            Self::Fighter => match defense {
+                Defense::Armor => 1,
+                _ => 0,
+            },
+            Self::Sorcerer => match defense {
+                Defense::Mental => 2,
+                _ => 0,
+            },
             Self::Treant => match defense {
                 Defense::Fortitude => 2,
                 _ => 0,
@@ -534,8 +555,8 @@ impl Class {
             Self::Barbarian => HitPointProgression::VeryHigh,
             Self::Cleric => HitPointProgression::Medium,
             Self::Dragon => HitPointProgression::High,
-            Self::Druid => HitPointProgression::Medium,
-            Self::Dryaidi => HitPointProgression::Medium,
+            Self::Druid => HitPointProgression::High,
+            Self::Dryaidi => HitPointProgression::Low,
             Self::Fighter => HitPointProgression::High,
             Self::Harpy => HitPointProgression::Medium,
             Self::Monk => HitPointProgression::Medium,
@@ -543,9 +564,9 @@ impl Class {
             Self::Paladin => HitPointProgression::High,
             Self::Ranger => HitPointProgression::High,
             Self::Rogue => HitPointProgression::Medium,
-            Self::Sorcerer => HitPointProgression::Low,
+            Self::Sorcerer => HitPointProgression::Medium,
             Self::Treant => HitPointProgression::VeryHigh,
-            Self::Warlock => HitPointProgression::Medium,
+            Self::Warlock => HitPointProgression::Low,
             Self::Wizard => HitPointProgression::Low,
             Self::Vampire => HitPointProgression::High,
         }
@@ -553,24 +574,9 @@ impl Class {
 
     pub fn insight_points(&self) -> i32 {
         match self {
-            Self::Automaton => 0,
-            Self::Barbarian => 0,
-            Self::Cleric => 1,
-            Self::Dragon => 0,
-            Self::Druid => 1,
-            Self::Dryaidi => 1,
-            Self::Fighter => 1,
-            Self::Harpy => 0,
-            Self::Monk => 0,
-            Self::Oozeborn => 0,
-            Self::Paladin => 0,
-            Self::Ranger => 1,
-            Self::Rogue => 0,
-            Self::Sorcerer => 1,
-            Self::Treant => 0,
             Self::Warlock => 1,
             Self::Wizard => 1,
-            Self::Vampire => 0,
+            _ => 0,
         }
     }
 
@@ -631,23 +637,23 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Automaton => 4,
+            Self::Automaton => 3,
             Self::Barbarian => 4,
             Self::Cleric => 4,
-            Self::Dragon => 4,
+            Self::Dragon => 5,
             Self::Druid => 5,
-            Self::Dryaidi => 4,
+            Self::Dryaidi => 5,
             Self::Fighter => 3,
-            Self::Harpy => 6,
+            Self::Harpy => 4,
             Self::Monk => 4,
-            Self::Oozeborn => 4,
+            Self::Oozeborn => 3,
             Self::Paladin => 3,
             Self::Ranger => 5,
             Self::Rogue => 6,
             Self::Sorcerer => 3,
             Self::Treant => 4,
-            Self::Warlock => 4,
-            Self::Wizard => 3,
+            Self::Warlock => 3,
+            Self::Wizard => 4,
             Self::Vampire => 5,
         }
     }
@@ -700,7 +706,7 @@ impl Class {
             },
             Self::Oozeborn => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Paladin => ArmorProficiencies {
                 specific_armors: None,
