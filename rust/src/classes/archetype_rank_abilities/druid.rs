@@ -159,7 +159,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
+                    \item Earth: The Fortitude bonus increases to \plus2.
                     \item Fire: You are immune to fire damage.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
@@ -368,13 +368,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Bear}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your vital rolls.
+                        You gain a \plus1 bonus to your Fortitude defense and vital rolls.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The Fortitude defense bonus increases to \plus3.
+                        \rank{3} The Fortitude defense bonus increases to \plus2.
                         \rank{5} The vital roll bonus increases to \plus2.
-                        \rank{7} The Fortitude defense bonus increases to \plus4.
+                        \rank{7} The Fortitude defense bonus increases to \plus3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}
@@ -393,7 +393,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Constrictor}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
+                        You gain a \plus2 accuracy bonus with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
