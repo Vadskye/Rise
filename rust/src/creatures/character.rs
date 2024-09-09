@@ -2,7 +2,7 @@ use super::creature::CreatureCategory;
 use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
-use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, Weapon, StandardWeapon};
+use crate::equipment::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor, StandardWeapon, Weapon};
 use titlecase::titlecase;
 
 pub struct Character {
@@ -31,15 +31,32 @@ impl Character {
         }
 
         for defense in Defense::all() {
-            creature.add_modifier(
-                Modifier::Defense(defense, class.defense_bonus(&defense)),
-                Some(class.name()),
-                None,
-            );
+            let bonus = class.defense_bonus(&defense);
+            if bonus != 0 {
+                creature.add_modifier(
+                    Modifier::Defense(defense, bonus),
+                    Some(class.name()),
+                    None,
+                );
+            }
         }
         for resource in Resource::all() {
+            let bonus = class.resource_bonus(&resource);
+            if bonus != 0 {
+                creature.add_modifier(
+                    Modifier::Resource(resource, bonus),
+                    Some(class.name()),
+                    None,
+                );
+            }
+        }
+        for attribute in class.mandatory_attributes() {
+            creature.add_modifier(Modifier::Attribute(attribute, 1), Some(class.name()), None);
+        }
+        // Arbitrarily take the first attribute option
+        if class.optional_attributes().len() > 0 {
             creature.add_modifier(
-                Modifier::Resource(resource, class.resource_bonus(&resource)),
+                Modifier::Attribute(class.optional_attributes()[0], 1),
                 Some(class.name()),
                 None,
             );
@@ -144,10 +161,7 @@ impl Character {
         character.creature.remove_armor(Armor::StandardShield);
         // Replace existing weapons with a greatmace
         character.creature.weapons.retain(|_| false);
-        character
-            .creature
-            .weapons
-            .push(Weapon::greatmace());
+        character.creature.weapons.push(Weapon::greatmace());
         character.creature.set_name("Fighter Greatmace");
         character
     }
@@ -186,13 +200,11 @@ impl Character {
             ],
         );
 
-        character
-            .creature
-            .weapons
-            .push(Weapon::greatmace());
-        character
-            .creature
-            .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Medium));
+        character.creature.weapons.push(Weapon::greatmace());
+        character.creature.add_armor(standard_body_armor_for_level(
+            level,
+            ArmorUsageClass::Medium,
+        ));
         character.creature.name = Some("Barbarian Greatmace".to_string());
 
         character.creature.set_base_attributes([3, 2, 2, 0, 2, 0]);
@@ -222,9 +234,10 @@ impl Character {
             .creature
             .weapons
             .push(StandardWeapon::Broadsword.weapon());
-        character
-            .creature
-            .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Medium));
+        character.creature.add_armor(standard_body_armor_for_level(
+            level,
+            ArmorUsageClass::Medium,
+        ));
         character.creature.add_armor(Armor::StandardShield);
         character.creature.name = Some("Barbarian Shield".to_string());
 
@@ -252,13 +265,11 @@ impl Character {
             ],
         );
 
-        character
-            .creature
-            .weapons
-            .push(Weapon::greatmace());
-        character
-            .creature
-            .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Medium));
+        character.creature.weapons.push(Weapon::greatmace());
+        character.creature.add_armor(standard_body_armor_for_level(
+            level,
+            ArmorUsageClass::Medium,
+        ));
         character.creature.name = Some("Barbarian Glass".to_string());
 
         character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
@@ -285,10 +296,7 @@ impl Character {
             ],
         );
 
-        character
-            .creature
-            .weapons
-            .push(Weapon::kama());
+        character.creature.weapons.push(Weapon::kama());
         // No armor; using ki barrier
         character.creature.name = Some("Monk Kama".to_string());
 
@@ -350,10 +358,7 @@ impl Character {
             ],
         );
 
-        character
-            .creature
-            .weapons
-            .push(Weapon::longbow());
+        character.creature.weapons.push(Weapon::longbow());
         character
             .creature
             .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Light));
@@ -383,10 +388,7 @@ impl Character {
             ],
         );
 
-        character
-            .creature
-            .weapons
-            .push(Weapon::smallsword());
+        character.creature.weapons.push(Weapon::smallsword());
         character
             .creature
             .add_armor(standard_body_armor_for_level(level, ArmorUsageClass::Light));
