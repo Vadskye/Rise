@@ -416,18 +416,28 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // TODO: this is a little weak
         RankAbility {
             name: "Persuasive Certainty",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus3 bonus to the Persuasion skill.
-                In addition, you gain a \plus1 bonus to your Mental defense.
+                You gain a \plus2 bonus to the Persuasion skill.
+                In addition, you are immune to being \stunned.
             ",
             modifiers: Some(vec![
-                Modifier::Skill(Skill::Persuasion, 3),
-                Modifier::Defense(Defense::Mental, 1),
+                Modifier::Skill(Skill::Persuasion, 2),
+            ]),
+        },
+        RankAbility {
+            name: "Persuasive Certainty+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The Persuasion bonus increases to \plus4.
+                In addition, you are immune to being \confused.
+            ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Persuasion, 2),
             ]),
         },
         // Assume that it typically affects two people, and anything more than that is a
@@ -458,19 +468,10 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
+                Your \glossterm{allies} who can hear you in a fight are immune to being \stunned and \confused.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
             // TODO: figure out allies-only buffs
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Inspiring Oration+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The defense bonus increases to \plus2.
-            ",
             modifiers: None,
         },
         // t1.5 debuff in t5 area is a r6 effect
