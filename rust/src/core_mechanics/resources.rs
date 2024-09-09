@@ -53,25 +53,26 @@ where
         let value = match resource {
             Resource::AttunementPoint => {
                 if self.level >= 8 {
-                    2
+                    4
                 } else if self.level >= 5 {
-                    1
+                    3
                 } else {
-                    0
+                    2
                 }
             }
             Resource::FatigueTolerance => {
-                self.get_base_attribute(&Attribute::Constitution)
+                3 + self.get_base_attribute(&Attribute::Constitution)
+                    // TODO: remove Willpower from calcs
                     + (self.get_base_attribute(&Attribute::Willpower) / 2)
             }
             Resource::InsightPoint => {
                 self.get_base_attribute(&Attribute::Intelligence)
                     + if self.level >= 7 {
-                        2
+                        3
                     } else if self.level >= 4 {
-                        1
+                        2
                     } else {
-                        0
+                        1
                     }
             }
             Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
