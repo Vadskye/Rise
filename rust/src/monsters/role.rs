@@ -49,23 +49,17 @@ impl Role {
     }
 
     pub fn defense(&self, defense: &Defense) -> i32 {
-        // order: Armor, Fort, Ref, Ment
-        let defenses = match self {
-            Role::Brute => [4, 4, 3, 2],
-            Role::Skirmisher => [4, 2, 4, 3],
-            Role::Warrior => [6, 4, 2, 3],
-            Role::Sniper => [3, 2, 4, 3],
-            Role::Mystic => [3, 2, 3, 4],
-            Role::Leader => [4, 3, 3, 3],
-        };
-
-        let i = match defense {
-            Defense::Armor => 0,
-            Defense::Fortitude => 1,
-            Defense::Reflex => 2,
-            Defense::Mental => 3,
-        };
-        defenses[i]
+        match defense {
+            &Defense::Armor => match self {
+                Role::Brute => 4,
+                Role::Skirmisher => 4,
+                Role::Warrior => 6,
+                Role::Sniper => 3,
+                Role::Mystic => 3,
+                Role::Leader => 4,
+            },
+            _ => 0,
+        }
     }
 
     // Multiply HP by this value to determine the monster's total DR.

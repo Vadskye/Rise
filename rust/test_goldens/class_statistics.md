@@ -3,64 +3,64 @@
 ## Brief
 
 ### Level 1: Class/Character
- * Barbarian:  33 /  84
- *    Cleric:  33 /  82
- *     Druid:  33 /  80
- *   Fighter:  32 /  83
- *      Monk:  34 /  81
- *   Paladin:  32 /  83
- *    Ranger:  32 /  81
- *     Rogue:  33 /  80
- *  Sorcerer:  33 /  79
- *   Warlock:  32 /  79
- *    Wizard:  33 /  79
- * Automaton:  34 /  83
- *    Dragon:  34 /  85
- *   Dryaidi:  33 /  80
- *     Harpy:  35 /  84
- *  Oozeborn:  35 /  86
- *    Treant:  34 /  85
- *   Vampire:  35 /  84
+ * Barbarian:  29 /  96
+ *    Cleric:  28 /  92
+ *     Druid:  28 /  92
+ *   Fighter:  29 /  96
+ *      Monk:  28 /  87
+ *   Paladin:  29 /  97
+ *    Ranger:  29 /  94
+ *     Rogue:  28 /  89
+ *  Sorcerer:  28 /  91
+ *   Warlock:  28 /  90
+ *    Wizard:  28 /  88
+ * Automaton:  30 /  99
+ *    Dragon:  30 /  91
+ *   Dryaidi:  30 /  88
+ *     Harpy:  30 /  89
+ *  Oozeborn:  30 /  93
+ *    Treant:  30 /  97
+ *   Vampire:  30 /  92
 
 ### Level 10: Class/Character
- * Barbarian:  33 / 152
- *    Cleric:  33 / 148
- *     Druid:  33 / 146
- *   Fighter:  32 / 149
- *      Monk:  34 / 147
- *   Paladin:  32 / 149
- *    Ranger:  32 / 147
- *     Rogue:  33 / 146
- *  Sorcerer:  33 / 146
- *   Warlock:  32 / 145
- *    Wizard:  33 / 146
- * Automaton:  34 / 149
- *    Dragon:  34 / 151
- *   Dryaidi:  33 / 146
- *     Harpy:  35 / 150
- *  Oozeborn:  35 / 154
- *    Treant:  34 / 153
- *   Vampire:  35 / 150
+ * Barbarian:  29 / 166
+ *    Cleric:  28 / 157
+ *     Druid:  28 / 157
+ *   Fighter:  29 / 164
+ *      Monk:  28 / 152
+ *   Paladin:  29 / 165
+ *    Ranger:  29 / 159
+ *     Rogue:  28 / 158
+ *  Sorcerer:  28 / 160
+ *   Warlock:  28 / 160
+ *    Wizard:  28 / 154
+ * Automaton:  30 / 167
+ *    Dragon:  30 / 159
+ *   Dryaidi:  30 / 154
+ *     Harpy:  30 / 154
+ *  Oozeborn:  30 / 163
+ *    Treant:  30 / 167
+ *   Vampire:  30 / 161
 
 ### Level 20: Class/Character
- * Barbarian:  33 / 206
- *    Cleric:  33 / 204
- *     Druid:  33 / 202
- *   Fighter:  32 / 204
- *      Monk:  34 / 203
- *   Paladin:  32 / 204
- *    Ranger:  32 / 202
- *     Rogue:  33 / 202
- *  Sorcerer:  33 / 202
- *   Warlock:  32 / 201
- *    Wizard:  33 / 202
- * Automaton:  34 / 204
- *    Dragon:  34 / 206
- *   Dryaidi:  33 / 202
- *     Harpy:  35 / 205
- *  Oozeborn:  35 / 208
- *    Treant:  34 / 207
- *   Vampire:  35 / 205
+ * Barbarian:  29 / 225
+ *    Cleric:  28 / 218
+ *     Druid:  28 / 217
+ *   Fighter:  29 / 223
+ *      Monk:  28 / 213
+ *   Paladin:  29 / 224
+ *    Ranger:  29 / 219
+ *     Rogue:  28 / 219
+ *  Sorcerer:  28 / 221
+ *   Warlock:  28 / 221
+ *    Wizard:  28 / 215
+ * Automaton:  30 / 226
+ *    Dragon:  30 / 218
+ *   Dryaidi:  30 / 215
+ *     Harpy:  30 / 215
+ *  Oozeborn:  30 / 222
+ *    Treant:  30 / 226
+ *   Vampire:  30 / 221
 
 ## Detailed
 
@@ -68,490 +68,490 @@
 
 #### Barbarian
             Barbarian 1
-            AP 2, FT 7, IP 2, Skills 6
-            HP 14, DR 5
-            AD 5, Fort 6, Ref 5, Ment 4
+            AP 2, FT 7, IP 3, Skills 6
+            HP 16, DR 5
+            AD 5, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 2✨/3
 
 #### Cleric
             Cleric 1
-            AP 3, FT 6, IP 4, Skills 6
+            AP 3, FT 6, IP 3, Skills 6
             HP 10, DR 5
-            AD 5, Fort 5, Ref 4, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            AD 5, Fort 5, Ref 5, Ment 8
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
+            Power: 3✨/2
 
 #### Druid
             Druid 1
-            AP 3, FT 6, IP 4, Skills 7
-            HP 10, DR 4
-            AD 4, Fort 5, Ref 4, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            AP 3, FT 6, IP 3, Skills 7
+            HP 12, DR 4
+            AD 5, Fort 5, Ref 6, Ment 5
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
 
 #### Fighter
             Fighter 1
             AP 2, FT 7, IP 3, Skills 5
-            HP 12, DR 5
-            AD 5, Fort 6, Ref 4, Ment 5
+            HP 14, DR 5
+            AD 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 2✨/3
 
 #### Monk
             Monk 1
-            AP 3, FT 7, IP 3, Skills 7
+            AP 2, FT 6, IP 3, Skills 6
             HP 10, DR 4
-            AD 4, Fort 4, Ref 6, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            AD 5, Fort 5, Ref 6, Ment 6
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
+            Power: 3✨/2
 
 #### Paladin
             Paladin 1
-            AP 2, FT 7, IP 3, Skills 5
-            HP 12, DR 5
-            AD 5, Fort 6, Ref 4, Ment 5
+            AP 3, FT 7, IP 3, Skills 5
+            HP 14, DR 5
+            AD 5, Fort 6, Ref 5, Ment 6
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 3✨/2
 
 #### Ranger
             Ranger 1
-            AP 2, FT 7, IP 3, Skills 7
+            AP 3, FT 6, IP 3, Skills 7
             HP 12, DR 4
-            AD 4, Fort 5, Ref 6, Ment 4
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            AD 5, Fort 5, Ref 6, Ment 5
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
 
 #### Rogue
             Rogue 1
-            AP 3, FT 5, IP 4, Skills 8
+            AP 3, FT 6, IP 4, Skills 9
             HP 10, DR 4
-            AD 4, Fort 4, Ref 6, Ment 5
+            AD 5, Fort 5, Ref 6, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 2✨/2
 
 #### Sorcerer
             Sorcerer 1
-            AP 4, FT 6, IP 4, Skills 5
-            HP 8, DR 4
-            AD 4, Fort 5, Ref 4, Ment 6
+            AP 4, FT 7, IP 3, Skills 5
+            HP 11, DR 4
+            AD 4, Fort 6, Ref 5, Ment 8
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 3✨/2
 
 #### Warlock
             Warlock 1
-            AP 3, FT 6, IP 4, Skills 6
-            HP 10, DR 4
-            AD 4, Fort 5, Ref 4, Ment 6
+            AP 4, FT 6, IP 5, Skills 6
+            HP 8, DR 5
+            AD 5, Fort 5, Ref 5, Ment 6
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
+            Power: 3✨/2
 
 #### Wizard
             Wizard 1
-            AP 4, FT 5, IP 5, Skills 5
+            AP 4, FT 6, IP 5, Skills 7
             HP 8, DR 4
-            AD 4, Fort 4, Ref 5, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            AD 4, Fort 5, Ref 5, Ment 5
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
 
 #### Automaton
             Automaton 1
-            AP 3, FT 7, IP 3, Skills 5
-            HP 12, DR 4
-            AD 4, Fort 6, Ref 4, Ment 5
+            AP 3, FT 7, IP 4, Skills 6
+            HP 14, DR 5
+            AD 5, Fort 8, Ref 5, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/2
 
 #### Dragon
             Dragon 1
-            AP 3, FT 6, IP 4, Skills 5
-            HP 12, DR 5
-            AD 5, Fort 6, Ref 4, Ment 5
+            AP 2, FT 7, IP 4, Skills 8
+            HP 14, DR 4
+            AD 4, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
+            Power: 2✨/3
 
 #### Dryaidi
             Dryaidi 1
-            AP 3, FT 6, IP 4, Skills 7
-            HP 10, DR 4
-            AD 4, Fort 4, Ref 5, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            AP 3, FT 6, IP 4, Skills 8
+            HP 8, DR 4
+            AD 5, Fort 5, Ref 6, Ment 5
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
 
 #### Harpy
             Harpy 1
-            AP 3, FT 6, IP 4, Skills 7
-            HP 12, DR 4
-            AD 4, Fort 4, Ref 6, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            AP 3, FT 6, IP 3, Skills 6
+            HP 10, DR 4
+            AD 5, Fort 5, Ref 6, Ment 5
+            Club +2 (1d8+1 bludgeoning damage.)
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
+            Power: 2✨/3
 
 #### Oozeborn
             Oozeborn 1
-            AP 2, FT 7, IP 4, Skills 6
-            HP 14, DR 5
-            AD 5, Fort 6, Ref 4, Ment 5
+            AP 2, FT 7, IP 3, Skills 6
+            HP 16, DR 4
+            AD 5, Fort 6, Ref 6, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
+            Power: 2✨/3
 
 #### Treant
             Treant 1
-            AP 2, FT 7, IP 3, Skills 5
-            HP 14, DR 5
-            AD 5, Fort 6, Ref 4, Ment 5
+            AP 2, FT 7, IP 3, Skills 6
+            HP 16, DR 5
+            AD 5, Fort 8, Ref 5, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 2✨/3
 
 #### Vampire
             Vampire 1
             AP 3, FT 6, IP 3, Skills 7
             HP 12, DR 4
-            AD 4, Fort 4, Ref 5, Ment 6
+            AD 5, Fort 5, Ref 6, Ment 5
             Club +1 (1d8+1 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 2✨/2
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
+            Power: 2✨/3
 
 ### Level 10
 
 #### Barbarian
             Barbarian 10
-            AP 4, FT 7, IP 4, Skills 6
-            HP 44, DR 18
-            AD 10, Fort 11, Ref 10, Ment 9
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AP 4, FT 7, IP 5, Skills 6
+            HP 48, DR 18
+            AD 10, Fort 11, Ref 10, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 7✨/8
 
 #### Cleric
             Cleric 10
-            AP 5, FT 6, IP 6, Skills 6
+            AP 5, FT 6, IP 5, Skills 6
             HP 28, DR 18
-            AD 10, Fort 10, Ref 9, Ment 11
+            AD 10, Fort 10, Ref 10, Ment 13
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
+            Power: 8✨/7
 
 #### Druid
             Druid 10
-            AP 5, FT 6, IP 6, Skills 7
-            HP 28, DR 12
-            AD 9, Fort 10, Ref 9, Ment 11
+            AP 5, FT 6, IP 5, Skills 7
+            HP 35, DR 12
+            AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
 
 #### Fighter
             Fighter 10
             AP 4, FT 7, IP 5, Skills 5
-            HP 35, DR 18
-            AD 10, Fort 11, Ref 9, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            HP 38, DR 18
+            AD 11, Fort 11, Ref 10, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 7✨/8
 
 #### Monk
             Monk 10
-            AP 5, FT 7, IP 5, Skills 7
+            AP 4, FT 6, IP 5, Skills 6
             HP 28, DR 12
-            AD 9, Fort 9, Ref 11, Ment 10
+            AD 10, Fort 10, Ref 11, Ment 11
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
+            Power: 8✨/7
 
 #### Paladin
             Paladin 10
-            AP 4, FT 7, IP 5, Skills 5
-            HP 35, DR 18
-            AD 10, Fort 11, Ref 9, Ment 10
+            AP 5, FT 7, IP 5, Skills 5
+            HP 38, DR 18
+            AD 10, Fort 11, Ref 10, Ment 11
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 8✨/7
 
 #### Ranger
             Ranger 10
-            AP 4, FT 7, IP 5, Skills 7
+            AP 5, FT 6, IP 5, Skills 7
             HP 35, DR 12
-            AD 9, Fort 10, Ref 11, Ment 9
+            AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
 
 #### Rogue
             Rogue 10
-            AP 5, FT 5, IP 6, Skills 8
+            AP 5, FT 6, IP 6, Skills 9
             HP 28, DR 12
-            AD 9, Fort 9, Ref 11, Ment 10
+            AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 7✨/7
 
 #### Sorcerer
             Sorcerer 10
-            AP 6, FT 6, IP 6, Skills 5
-            HP 24, DR 12
-            AD 9, Fort 10, Ref 9, Ment 11
+            AP 6, FT 7, IP 5, Skills 5
+            HP 30, DR 12
+            AD 9, Fort 11, Ref 10, Ment 13
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 8✨/7
 
 #### Warlock
             Warlock 10
-            AP 5, FT 6, IP 6, Skills 6
-            HP 28, DR 12
-            AD 9, Fort 10, Ref 9, Ment 11
+            AP 6, FT 6, IP 7, Skills 6
+            HP 24, DR 18
+            AD 10, Fort 10, Ref 10, Ment 11
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
+            Power: 8✨/7
 
 #### Wizard
             Wizard 10
-            AP 6, FT 5, IP 7, Skills 5
+            AP 6, FT 6, IP 7, Skills 7
             HP 24, DR 12
-            AD 9, Fort 9, Ref 10, Ment 11
+            AD 9, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
 
 #### Automaton
             Automaton 10
-            AP 5, FT 7, IP 5, Skills 5
-            HP 35, DR 12
-            AD 9, Fort 11, Ref 9, Ment 10
+            AP 5, FT 7, IP 6, Skills 6
+            HP 38, DR 18
+            AD 10, Fort 13, Ref 10, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/7
 
 #### Dragon
             Dragon 10
-            AP 5, FT 6, IP 6, Skills 5
-            HP 35, DR 18
-            AD 10, Fort 11, Ref 9, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AP 4, FT 7, IP 6, Skills 8
+            HP 38, DR 12
+            AD 9, Fort 11, Ref 10, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
+            Power: 7✨/8
 
 #### Dryaidi
             Dryaidi 10
-            AP 5, FT 6, IP 6, Skills 7
-            HP 28, DR 12
-            AD 9, Fort 9, Ref 10, Ment 11
+            AP 5, FT 6, IP 6, Skills 8
+            HP 24, DR 12
+            AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
 
 #### Harpy
             Harpy 10
-            AP 5, FT 6, IP 6, Skills 7
-            HP 35, DR 12
-            AD 9, Fort 9, Ref 11, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AP 5, FT 6, IP 5, Skills 6
+            HP 28, DR 12
+            AD 10, Fort 10, Ref 11, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
+            Power: 7✨/8
 
 #### Oozeborn
             Oozeborn 10
-            AP 4, FT 7, IP 6, Skills 6
-            HP 44, DR 18
-            AD 10, Fort 11, Ref 9, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AP 4, FT 7, IP 5, Skills 6
+            HP 48, DR 12
+            AD 10, Fort 11, Ref 11, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
+            Power: 7✨/8
 
 #### Treant
             Treant 10
-            AP 4, FT 7, IP 5, Skills 5
-            HP 44, DR 18
-            AD 10, Fort 11, Ref 9, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AP 4, FT 7, IP 5, Skills 6
+            HP 48, DR 18
+            AD 10, Fort 13, Ref 10, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 7✨/8
 
 #### Vampire
             Vampire 10
             AP 5, FT 6, IP 5, Skills 7
             HP 35, DR 12
-            AD 9, Fort 9, Ref 10, Ment 11
-            Club +6 (1d8+3 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 7✨/7
+            AD 10, Fort 10, Ref 11, Ment 10
+            Club +6 (1d8+4 bludgeoning damage.)
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
+            Power: 7✨/8
 
 ### Level 20
 
 #### Barbarian
             Barbarian 20
-            AP 4, FT 7, IP 4, Skills 6
-            HP 145, DR 48
-            AD 15, Fort 16, Ref 15, Ment 14
+            AP 4, FT 7, IP 5, Skills 6
+            HP 160, DR 48
+            AD 15, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 12✨/13
 
 #### Cleric
             Cleric 20
-            AP 5, FT 6, IP 6, Skills 6
+            AP 5, FT 6, IP 5, Skills 6
             HP 100, DR 48
-            AD 15, Fort 15, Ref 14, Ment 16
+            AD 15, Fort 15, Ref 15, Ment 18
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
+            Power: 13✨/12
 
 #### Druid
             Druid 20
-            AP 5, FT 6, IP 6, Skills 7
-            HP 100, DR 32
-            AD 14, Fort 15, Ref 14, Ment 16
+            AP 5, FT 6, IP 5, Skills 7
+            HP 116, DR 32
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
 
 #### Fighter
             Fighter 20
             AP 4, FT 7, IP 5, Skills 5
-            HP 116, DR 48
-            AD 15, Fort 16, Ref 14, Ment 15
+            HP 128, DR 48
+            AD 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 12✨/13
 
 #### Monk
             Monk 20
-            AP 5, FT 7, IP 5, Skills 7
+            AP 4, FT 6, IP 5, Skills 6
             HP 100, DR 32
-            AD 14, Fort 14, Ref 16, Ment 15
+            AD 15, Fort 15, Ref 16, Ment 16
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
+            Power: 13✨/12
 
 #### Paladin
             Paladin 20
-            AP 4, FT 7, IP 5, Skills 5
-            HP 116, DR 48
-            AD 15, Fort 16, Ref 14, Ment 15
+            AP 5, FT 7, IP 5, Skills 5
+            HP 128, DR 48
+            AD 15, Fort 16, Ref 15, Ment 16
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 13✨/12
 
 #### Ranger
             Ranger 20
-            AP 4, FT 7, IP 5, Skills 7
+            AP 5, FT 6, IP 5, Skills 7
             HP 116, DR 32
-            AD 14, Fort 15, Ref 16, Ment 14
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
 
 #### Rogue
             Rogue 20
-            AP 5, FT 5, IP 6, Skills 8
+            AP 5, FT 6, IP 6, Skills 9
             HP 100, DR 32
-            AD 14, Fort 14, Ref 16, Ment 15
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 12✨/12
 
 #### Sorcerer
             Sorcerer 20
-            AP 6, FT 6, IP 6, Skills 5
-            HP 84, DR 32
-            AD 14, Fort 15, Ref 14, Ment 16
+            AP 6, FT 7, IP 5, Skills 5
+            HP 110, DR 32
+            AD 14, Fort 16, Ref 15, Ment 18
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 13✨/12
 
 #### Warlock
             Warlock 20
-            AP 5, FT 6, IP 6, Skills 6
-            HP 100, DR 32
-            AD 14, Fort 15, Ref 14, Ment 16
+            AP 6, FT 6, IP 7, Skills 6
+            HP 84, DR 48
+            AD 15, Fort 15, Ref 15, Ment 16
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
+            Power: 13✨/12
 
 #### Wizard
             Wizard 20
-            AP 6, FT 5, IP 7, Skills 5
+            AP 6, FT 6, IP 7, Skills 7
             HP 84, DR 32
-            AD 14, Fort 14, Ref 15, Ment 16
+            AD 14, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
 
 #### Automaton
             Automaton 20
-            AP 5, FT 7, IP 5, Skills 5
-            HP 116, DR 32
-            AD 14, Fort 16, Ref 14, Ment 15
+            AP 5, FT 7, IP 6, Skills 6
+            HP 128, DR 48
+            AD 15, Fort 18, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/12
 
 #### Dragon
             Dragon 20
-            AP 5, FT 6, IP 6, Skills 5
-            HP 116, DR 48
-            AD 15, Fort 16, Ref 14, Ment 15
+            AP 4, FT 7, IP 6, Skills 8
+            HP 128, DR 32
+            AD 14, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
+            Power: 12✨/13
 
 #### Dryaidi
             Dryaidi 20
-            AP 5, FT 6, IP 6, Skills 7
-            HP 100, DR 32
-            AD 14, Fort 14, Ref 15, Ment 16
+            AP 5, FT 6, IP 6, Skills 8
+            HP 84, DR 32
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
 
 #### Harpy
             Harpy 20
-            AP 5, FT 6, IP 6, Skills 7
-            HP 116, DR 32
-            AD 14, Fort 14, Ref 16, Ment 15
+            AP 5, FT 6, IP 5, Skills 6
+            HP 100, DR 32
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
+            Power: 12✨/13
 
 #### Oozeborn
             Oozeborn 20
-            AP 4, FT 7, IP 6, Skills 6
-            HP 145, DR 48
-            AD 15, Fort 16, Ref 14, Ment 15
+            AP 4, FT 7, IP 5, Skills 6
+            HP 160, DR 32
+            AD 15, Fort 16, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
+            Power: 12✨/13
 
 #### Treant
             Treant 20
-            AP 4, FT 7, IP 5, Skills 5
-            HP 145, DR 48
-            AD 15, Fort 16, Ref 14, Ment 15
+            AP 4, FT 7, IP 5, Skills 6
+            HP 160, DR 48
+            AD 15, Fort 18, Ref 15, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 12✨/13
 
 #### Vampire
             Vampire 20
             AP 5, FT 6, IP 5, Skills 7
             HP 116, DR 32
-            AD 14, Fort 14, Ref 15, Ment 16
+            AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
-            Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
-            Power: 12✨/12
+            Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
+            Power: 12✨/13
