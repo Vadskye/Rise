@@ -1,5 +1,6 @@
 use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
 use std::cmp::PartialEq;
+use titlecase::titlecase;
 
 #[derive(Clone, Copy, Debug, Eq, Hash)]
 pub enum Attribute {
@@ -21,6 +22,10 @@ impl Attribute {
             Self::Perception => "perception",
             Self::Willpower => "willpower",
         }
+    }
+
+    pub fn title(&self) -> String {
+        titlecase(self.name())
     }
 
     pub fn shorthand_name(&self) -> &str {
