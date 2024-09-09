@@ -43,14 +43,11 @@ mod character_tests {
         assert_eq!(
             vec![
                 "attack Abyssal Rebuke",
-                "defense armor by 0",
-                "defense fortitude by 3",
-                "defense mental by 4",
-                "defense reflex by 2",
-                "resource attunement point by 3",
-                "resource fatigue tolerance by 3",
-                "resource insight point by 2",
-                "resource trained skill by 4"
+                "attribute intelligence by 1",
+                "attribute willpower by 1",
+                "resource attunement point by 2",
+                "resource insight point by 1",
+                "resource trained skill by 3"
             ],
             modifier_descriptions,
             "Should match expected names"
