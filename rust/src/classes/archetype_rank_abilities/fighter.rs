@@ -1,7 +1,8 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Resource};
 use crate::creatures::Modifier;
+use crate::skills::Skill;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -19,12 +20,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to your Mental defense, \glossterm{vital rolls}, and \glossterm{fatigue tolerance}.
+                You gain a \plus2 bonus to the Endurance skill and to your \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 1),
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
         RankAbility {
@@ -32,12 +32,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                The bonuses increase to \plus2.
+                The bonuses increase to \plus4.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 1),
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
         RankAbility {
@@ -390,10 +389,10 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your Armor defense and \glossterm{vital rolls}.
+                You gain a \plus1 bonus to your Constitution.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Attribute(Attribute::Constitution, 1),
             ]),
         },
         RankAbility {
@@ -550,7 +549,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain one of the following benefits:
                     \begin{itemize}
-                        \item Offense: You gain \plus1 accuracy against adjacent enemies.
+                        \item Offense: You gain a \plus1 accuracy bonus against adjacent enemies.
                         \item Defense: You gain a \plus1 bonus to your Armor defense.
                         \item Support: One adjacent \glossterm{ally} gains a \plus1 accuracy bonus.
                     \end{itemize}
