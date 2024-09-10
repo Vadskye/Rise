@@ -1,9 +1,8 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_standard_spell_modifiers, add_dr_scaling};
+use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
@@ -81,9 +80,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
         },
         RankAbility {
             name: "Mage Armor+",
@@ -127,6 +124,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Dragonbreath Spell} Choose an arcane \glossterm{spell} you know that has a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                        It must not have a \glossterm{range}, and it must not create an \glossterm{emanation}.
+                        The spell's area becomes a cone instead of its normal shape.
+                        You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
@@ -169,22 +170,13 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -194,6 +186,15 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }

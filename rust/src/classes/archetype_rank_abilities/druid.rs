@@ -260,21 +260,27 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
-                    \parhead{Distant Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
+                    \parhead{Airborne Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-                        You cannot choose this ability multiple times.
-                    \parhead{Precise Spell} Choose a nature \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                    \parhead{Flooding Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Grounded Spell} Choose a nature \glossterm{spell} you know.
+                        You gain a \plus1 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Incendiary Spell} Choose a nature \glossterm{spell} you know.
+                        If you hit a target with that spell, you repeat the spell's effects against that target during the next round, making a new attack roll.
+                        That spell can only repeat against a single target of your choice in this way.
+                        In addition, any damage dealt by the spell is fire damage in addition to its normal damage types.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                         In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Widened Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
-                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
-                        You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
             modifiers: None,
@@ -310,22 +316,13 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Perception.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -335,6 +332,15 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
