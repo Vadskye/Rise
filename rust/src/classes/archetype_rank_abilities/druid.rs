@@ -462,7 +462,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Mouse}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus3 bonus to the Flexibility and Stealth skills.
+                        You gain a \plus2 bonus to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
