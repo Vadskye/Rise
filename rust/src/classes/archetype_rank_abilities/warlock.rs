@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::attacks::StandardAttack;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -507,11 +507,13 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
+                    \parhead{Desperate Spell} Choose a pact \glossterm{spell} you know.
+                        When you cast the spell, you may choose to increase your \glossterm{fatigue level} by one.
+                        If you do, you gain a +2 accuracy bonus with the spell that round and roll accuracy twice, keeping the higher result.
+                        However, you cannot use the \ability{desperate exertion} ability to affect the spell that round.
+                        You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
-                        You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Precise Spell} Choose a pact \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
                         You gain a +2 bonus to your \glossterm{magical power} with that spell.
@@ -552,29 +554,20 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{desperate exertion} ability without increasing your fatigue level.
                 When you do, you suffer no immediate negative consequences.
-                After 10 minutes, your maximum \glossterm{hit points} will be reduced by a quarter until you complete a \glossterm{long rest}.
-                Each time this penalty takes effect, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
+                After 10 minutes, your maximum \glossterm{hit points} are be reduced to three-quarters of normal until you complete a \glossterm{long rest}.
+                Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it four times would reduce your maximum hit points to 0.
                 If your hit points are reduced below 0 in this way, you die.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -584,6 +577,15 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
