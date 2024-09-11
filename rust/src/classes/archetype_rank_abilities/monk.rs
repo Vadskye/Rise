@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_standard_maneuver_modifiers, add_dr_scaling};
+use super::standard_modifiers::{add_dr_scaling, add_standard_maneuver_modifiers};
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -143,7 +143,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 If you spend an \glossterm{insight point}, you can become proficient with the sai and three-section staff \glossterm{exotic weapons} (see \pcref{Exotic Weapons}).
-                You must already be proficient with non-exotic monk weapons.
+                You must already be proficient with all non-exotic monk weapons.
             ",
             // This is an abstraction of the effect of exotic weapons being better
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
@@ -236,6 +236,56 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
+        RankAbility {
+            name: "Ki Energy",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                Whenever you make a \glossterm{strike}, you can choose to treat it as a \magical ability.
+                This allows you to use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
+                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
+                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
+                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
+                You can still use \glossterm{maneuvers} that require specific damage types, as long as you meet the requirements before this damage type conversion.
+            ",
+            // TODO: use higher of Str/Wil for strikes
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Ki Barrier",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                While you are not wearing other body armor, you gain a ki barrier around your body.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
+                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
+
+                You can also use a \glossterm{free hand} to wield the barrier as a shield.
+                This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
+                Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
+            ",
+            // This only works if everyone with this archetype doesn't equip actual armor, since
+            // the system won't know not to stack the effects
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
+        },
+        RankAbility {
+            name: "Ki Barrier+",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
+            ",
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+        },
+        RankAbility {
+            name: "Ki Barrier++",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                The damage resistance bonus increases to seven times your rank in this archetype.
+            ",
+            modifiers: None,
+        },
         RankAbility {
             name: "Ki Manifestations",
             is_magical: true,
@@ -416,61 +466,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Ki Energy",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                Whenever you make a \glossterm{strike}, you can choose to treat it as a \magical ability.
-                This allows you to use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
-                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
-                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
-                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
-                You can still use \glossterm{maneuvers} that require specific damage types, as long as you meet the requirements before this damage type conversion.
-            ",
-            // TODO: use higher of Str/Wil for strikes
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Ki Barrier",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
-
-                You can also use a \glossterm{free hand} to wield the barrier as a shield.
-                This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
-                Since this bonus comes from a shield, it does not stack with the benefits of using any other shield.
-            ",
-            // This only works if everyone with this archetype doesn't equip actual armor, since
-            // the system won't know not to stack the effects
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 2),
-            ]),
-        },
-        RankAbility {
-            name: "Ki Barrier+",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
-            ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
-        },
-        RankAbility {
-            name: "Ki Barrier++",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to seven times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Ki Manifestation+",
+            name: "Ki Manifestation",
             is_magical: true,
             rank: 5,
             description: r"
@@ -505,13 +501,13 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Ki Power",
+            name: "Ki-Focused Mind",
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{magical power}.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::MagicalPower(1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Endless Ki",
@@ -531,38 +527,32 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 fn add_ki_barrier(abilities: &mut Vec<RankAbility<'_>>) {
     // 4x rank
     for rank in 1..4 {
-        abilities.append(&mut vec![
-            RankAbility {
-                name: "Ki Barrier Scaling",
-                rank,
-                modifiers: Some(vec![Modifier::DamageResistance(rank * 4)]),
-                ..Default::default()
-            },
-        ]);
+        abilities.append(&mut vec![RankAbility {
+            name: "Ki Barrier Scaling",
+            rank,
+            modifiers: Some(vec![Modifier::DamageResistance(rank * 4)]),
+            ..Default::default()
+        }]);
     }
 
     // 5x rank
     for rank in 4..7 {
-        abilities.append(&mut vec![
-            RankAbility {
-                name: "Ki Barrier Scaling",
-                rank,
-                modifiers: Some(vec![Modifier::DamageResistance(rank * 5)]),
-                ..Default::default()
-            },
-        ]);
+        abilities.append(&mut vec![RankAbility {
+            name: "Ki Barrier Scaling",
+            rank,
+            modifiers: Some(vec![Modifier::DamageResistance(rank * 5)]),
+            ..Default::default()
+        }]);
     }
 
     // 7x rank
     for rank in 7..8 {
-        abilities.append(&mut vec![
-            RankAbility {
-                name: "Ki Barrier Scaling",
-                rank,
-                modifiers: Some(vec![Modifier::DamageResistance(rank * 7)]),
-                ..Default::default()
-            },
-        ]);
+        abilities.append(&mut vec![RankAbility {
+            name: "Ki Barrier Scaling",
+            rank,
+            modifiers: Some(vec![Modifier::DamageResistance(rank * 7)]),
+            ..Default::default()
+        }]);
     }
 }
 
@@ -606,9 +596,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a +1 bonus to your Armor defense while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Unhindered Freedom",
@@ -626,9 +614,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to +2.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
             name: "Perfect Precision",
@@ -642,13 +628,13 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Perfect Precision+",
+            name: "Brawling Precision",
             is_magical: false,
             rank: 5,
             description: r"
-                The accuracy bonus increases to \plus2.
+                You gain a \plus2 accuracy bonus with \abilitytag{Brawling} abilities.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
             name: "Perfect Body",

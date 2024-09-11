@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
 use super::standard_modifiers::add_dr_scaling;
@@ -107,7 +107,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{power} with all abilities.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             name: "Paragon Power+",
@@ -116,7 +116,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The power bonus increases to +2.
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
     ]
 }
@@ -215,28 +215,18 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You can target any number of creatures adjacent to you with this ability instead of only one additional creature.
+                You can target any number of creatures within 10 feet of you with this ability instead of only one adjacent creature.
             ",
             modifiers: None,
         },
-        // Should this be a universal accuracy bonus instead of only spells?
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -246,6 +236,15 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -326,25 +325,21 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your Armor, Fortitude, and Mental defenses.
+                You gain a \plus1 bonus to your Armor and Fortitude defenses.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
                 Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Mental, 1),
             ]),
         },
         RankAbility {
-            name: "Stalwart Defense+",
+            name: "Stalwart Core",
             is_magical: false,
             rank: 6,
             description: r"
-                The bonus to Fortitude and Mental defense increases to +2.
+                You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![
-                Modifier::Defense(Defense::Fortitude, 1),
-                Modifier::Defense(Defense::Mental, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
     ];
     add_dr_scaling(&mut abilities, 2, 6, None);
