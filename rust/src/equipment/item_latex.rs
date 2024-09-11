@@ -21,7 +21,7 @@ impl StandardItem {
     pub fn attribute_item(name: &str, attribute: &Attribute) -> Self {
         Self {
             name: String::from(name),
-            rank: 5,
+            rank: 3,
             short_description: format!("Grants +1 {}", attribute.name()),
             description: format!(
                 "
@@ -30,7 +30,11 @@ impl StandardItem {
                 attribute.name(),
             ),
             magical: true,
-            upgrades: vec![],
+            upgrades: vec![ItemUpgrade::new(
+                7,
+                &format!("Grants +2 {}", attribute.name()),
+                "The bonus increases to +2.",
+            )],
             tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         }
     }
