@@ -104,7 +104,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The accuracy bonus increases to +3.
+                The accuracy bonus increases to +2.
             ",
             modifiers: None,
         },
@@ -123,10 +123,10 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The defense bonus increases to +2.
+                You gain a \plus1 bonus to your Constitution.
                 In addition, you are immune to acid damage.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Experienced Quaffing",
@@ -504,6 +504,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
 
+                % TODO: this shouldn't scale to +3 accuracy
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
 
@@ -547,6 +548,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school reaches its full potential.
                 {
+                    % TODO: this seems weaker than the other schools
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.

@@ -258,29 +258,20 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Draconic Scales",
+            name: "Draconic Body",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your Armor defense.
+                You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Draconic Precision",
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with any spell that either deals damage of your dragon's damage type or is from your dragon's \glossterm{mystic sphere}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Draconic Precision+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The accuracy bonus increases to +2.
+                You gain a \plus1 accuracy bonus with any ability that either deals damage of your dragon's damage type or is a spell from your dragon's \glossterm{mystic sphere}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -292,6 +283,18 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 You become immune to your dragon's damage type.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Draconic Mind",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You gain a \plus1 bonus to your Intelligence and Willpower.
+            ",
+            modifiers: Some(vec![
+                Modifier::Attribute(Attribute::Intelligence, 1),
+                Modifier::Attribute(Attribute::Willpower, 1),
+            ]),
         },
     ];
     add_dr_scaling(&mut abilities, 2, 6, None);
@@ -449,16 +452,16 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \lcaption{Wildspell+ Effects}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & When you attack with the spell, you are a target of the attack in addition to any other targets \\
-                        2 & The spell deals half damage on a miss, but it takes a \minus2 accuracy penalty \\
-                        3 & The spell gains a \plus4 accuracy bonus, but it cannot get a critical hit \\
-                        4 & The spell's area is quadrupled, but you take a \minus2 accuracy penalty \\
-                        5 & The spell's area is doubled \\
+                        1 & No special effect \\
+                        2 & When you attack with the spell, you roll twice and take the higher result \\
+                        3 & When you deal damage with the spell, you roll twice and take the higher result \\
+                        4 & The spell's area is doubled \\
+                        5 & The spell's area is tripled \\
                         6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
                         7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
-                        8 & The spell deals maximum damage, but it deals no damage on a miss or glancing blow \\
-                        9 & The spell gains a \plus10 accuracy bonus, but you \glossterm{briefly} cannot cast that spell again \\
-                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        8 & The spell deals full damage even on a miss or glancing blow \\
+                        9 & The spell deals maximum damage if it hits \\
+                        10 & At the end of this round, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
                 \end{dtable}
             ",

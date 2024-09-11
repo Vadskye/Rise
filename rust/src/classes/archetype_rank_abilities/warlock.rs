@@ -112,7 +112,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                If you do not have access to pact magic, you gain a +2 bonus to your Mental defense.
+                If you do not have access to pact magic, you gain a +1 bonus to your Willpower.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -122,7 +122,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                If you do not have access to pact magic, you gain a +1 bonus to your Willpower.
+                If you do not have access to pact magic, you become immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -258,7 +258,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen secret reaches its full potential.
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus6.
+                    In addition, the defense bonus increases to \plus5.
 
                     \parhead{Secret of Bloodsharing} The healing increases to 1d8 plus 1d8 per 3 power.
 
@@ -397,10 +397,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                If you chose the power bonus, it increases to +4.
+                If you chose the power bonus, it increases to +3.
                 Otherwise, the defense bonus increases to +4.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
     ]
 }
@@ -653,7 +653,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point} (see \pcref{Trained Skills}).
 
-                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
+                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} against that creature.
                     As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
 
                     \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
@@ -673,15 +673,16 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of the whispers you hear improves.
                 {
-                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
+                    \subcf{Mentoring Whispers} You gain a \plus1 bonus to your Intelligence.
 
-                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
+                    \subcf{Spiteful Whispers} The accuracy bonus increases to \plus4.
 
-                    \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
+                    % TODO: seems weak
+                    \subcf{Sycophantic Whispers} You are immune to being \frightened and \panicked.
 
-                    \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
+                    \subcf{Warning Whispers} You gain a \plus1 bonus to your Perception.
 
-                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to \glossterm{vital rolls}.
+                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to your Constitution.
                 }
             ",
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
