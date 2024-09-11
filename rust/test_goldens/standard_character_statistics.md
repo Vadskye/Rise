@@ -33,9 +33,9 @@ DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
 Fighter 10
-AP 5, FT 9, IP 3, Skills 3
+AP 4, FT 10, IP 3, Skills 3
 HP 48, DR 38
-AD 13, Fort 13, Ref 8, Ment 9
+AD 13, Fort 13, Ref 8, Ment 8
 Generic Accuracy Broadsword +10 (1d6+7 slashing damage.); Certain Broadsword +12 (1d6+3 slashing damage.); Powerful Broadsword +6 (2d6+14 slashing damage.); Extra Damage Broadsword +8 (1d6+13 slashing damage.); Broadsword +7 (1d6+7 slashing damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 5✨/12
@@ -45,12 +45,10 @@ Maneuvers: maneuver Generic Accuracy
 Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Weapon Training: accuracy 1
-Equipment Efficiency: resource attunement point by 1
-Enduring Discipline: defense mental by 1
-Enduring Discipline: vital roll 1
-Enduring Discipline: resource fatigue tolerance by 1
-Maneuvers: maneuver Extra Damage Strike
 Armor Expertise: base speed 10
+Enduring Discipline: skill endurance by 2
+Enduring Discipline: resource fatigue tolerance by 2
+Maneuvers: maneuver Extra Damage Strike
 fighter: defense armor by 1
 fighter: resource trained skill by 3
 fighter: attribute constitution by 1
@@ -69,10 +67,10 @@ DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
 
 ### Description
 Fighter 20
-AP 5, FT 11, IP 3, Skills 3
+AP 5, FT 13, IP 3, Skills 3
 HP 180, DR 96
-AD 18, Fort 19, Ref 13, Ment 15
-Generic Accuracy Broadsword +19 (1d6+11 slashing damage.); Certain Broadsword +21 (1d6+5 slashing damage.); Powerful Broadsword +15 (2d6+22 slashing damage.); Certain Strike+ -- Broadsword +21 (1d6+11 slashing damage.); Power Strike+ -- Broadsword +12 (3d6+33 slashing damage.); Extra Damage Broadsword +13 (1d6+9d8+11 slashing damage.); Generic Triple Damage -- Broadsword +13 (3d6+33 slashing damage.); Broadsword +13 (1d6+11 slashing damage.)
+AD 18, Fort 19, Ref 13, Ment 13
+Generic Accuracy Broadsword +18 (1d6+11 slashing damage.); Certain Broadsword +20 (1d6+5 slashing damage.); Powerful Broadsword +14 (2d6+22 slashing damage.); Certain Strike+ -- Broadsword +20 (1d6+11 slashing damage.); Power Strike+ -- Broadsword +11 (3d6+33 slashing damage.); Extra Damage Broadsword +12 (1d6+9d8+11 slashing damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 slashing damage.); Broadsword +12 (1d6+11 slashing damage.)
 Attr: Str 8, Dex 0, Con 6, Int 0, Per 2, Wil 0
 Power: 10✨/18
 
@@ -81,17 +79,14 @@ Maneuvers: maneuver Generic Accuracy
 Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Weapon Training: accuracy 1
-Equipment Efficiency: resource attunement point by 1
-Enduring Discipline: defense mental by 1
-Enduring Discipline: vital roll 1
-Enduring Discipline: resource fatigue tolerance by 1
 Armor Expertise: base speed 10
-Weapon Expertise: accuracy 1
+Enduring Discipline: skill endurance by 2
+Enduring Discipline: resource fatigue tolerance by 2
+Equipment Efficiency: resource attunement point by 1
 Maneuvers: maneuver Certain Strike+
 Maneuvers: maneuver Power Strike+
-Enduring Discipline+: defense mental by 1
-Enduring Discipline+: vital roll 1
-Enduring Discipline+: resource fatigue tolerance by 1
+Enduring Discipline+: skill endurance by 2
+Enduring Discipline+: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Generic Triple Damage
 fighter: defense armor by 1
