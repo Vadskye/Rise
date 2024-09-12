@@ -495,7 +495,6 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   "attunement_points",
   "class_skill_count",
   "dexterity",
-  "fatigue_tolerance",
   "fortitude",
   "insight_points",
   "intelligence",
@@ -1071,18 +1070,22 @@ function handleAttunementPoints() {
       numeric: ["level"],
     },
     (v) => {
+      const base = 2;
       let fromLevel = 0;
       if (v.level >= 8) {
         fromLevel = 2;
       } else if (v.level >= 5) {
         fromLevel = 1;
       }
-      const ap = v.misc + fromLevel;
+      const ap = base + v.misc + fromLevel;
       setAttrs({
         attunement_points: ap,
         attunement_points_explanation: formatCombinedExplanation(
           v.miscExplanation,
-          [{ name: "level", value: fromLevel }]
+          [
+            { name: "base", value: base },
+            { name: "level", value: fromLevel },
+          ]
         ),
         attunement_points_max: ap,
         attunement_points_maximum: ap,
@@ -1609,13 +1612,15 @@ function handleFatigueTolerance() {
       numeric: ["constitution"],
     },
     (v) => {
-      const totalValue = Math.max(0, v.constitution + v.misc);
+      const base = 3;
+      const totalValue = base + Math.max(0, v.constitution + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: v.constitution,
         fatigue_tolerance: totalValue,
         fatigue_tolerance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
+            { name: "base", value: base },
             { name: "Con", value: v.constitution },
           ]
         ),
@@ -1703,18 +1708,23 @@ function handleInsightPoints() {
       numeric: ["intelligence", "level"],
     },
     (v) => {
+      const base = 1;
       let fromLevel = 0;
       if (v.level >= 7) {
         fromLevel = 2;
       } else if (v.level >= 4) {
         fromLevel = 1;
       }
-      const totalValue = v.intelligence + v.misc + fromLevel;
+      const totalValue = base + v.intelligence + v.misc + fromLevel;
       setAttrs({
         insight_points: totalValue,
         insight_points_explanation: formatCombinedExplanation(
           v.miscExplanation,
-          [{ name: "Int", value: v.intelligence }, { name: "level", value: fromLevel }]
+          [
+            { name: "base", value: base },
+            { name: "Int", value: v.intelligence },
+            { name: "level", value: fromLevel },
+          ]
         ),
       });
     }
@@ -1825,10 +1835,12 @@ function handleNonArmorDefense(defense, attribute) {
       ],
     },
     (v) => {
+      const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
       const sizeModifier = defense === "reflex" ? v.size_reflex_modifier : 0;
       let totalValue =
+        base +
         levelModifier +
         crModifier +
         sizeModifier +
@@ -1841,6 +1853,7 @@ function handleNonArmorDefense(defense, attribute) {
         [`${defense}_explanation`]: formatCombinedExplanation(
           v.miscExplanation,
           [
+            { name: "base", value: base },
             { name: "level", value: levelModifier },
             { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
             { name: "size", value: sizeModifier },
