@@ -25,7 +25,7 @@ export const telekinesis: MysticSphere = {
         Although you can control the object's motion, you do not have it equipped.
         This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
 
-        During the movement phase, you can move the target up to 5 feet in any direction.
+        During the movement phase, you can move the target up to 5 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
         You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}), to a maximum Willpower equal to your rank with this cantrip.
       `,
       scaling: {
