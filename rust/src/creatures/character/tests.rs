@@ -38,12 +38,12 @@ fn it_calculates_rank_abilities() {
     assert_eq!(
         vec![
             "Armor Expertise",
+            "Armored Strike",
             "Augmented Maneuvers",
             "Augmented Maneuvers+",
             "Disciplined Reaction",
             "Disciplined Strike",
             "Enduring Discipline",
-            "Equipment Efficiency",
             "Exotic Weapon Training",
             // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
@@ -101,13 +101,13 @@ fn it_calculates_level_21_fighter_defenses() {
         "3 base + 10 level scaling",
     );
     assert_eq!(
-        "Ment b13 f15",
+        "Ment b13 f13",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "3 base + 10 level scaling + 1 CD1 + 1 CD5",
+        "3 base + 10 level scaling",
     );
 }
 
@@ -125,13 +125,13 @@ fn it_calculates_level_21_fighter_attacks() {
     )
     .creature;
     assert_eq!(
-        "Accuracy b10 f12",
+        "Accuracy b10 f11",
         format!(
             "Accuracy b{} f{}",
             baseline.calc_accuracy(),
             fighter.calc_accuracy(),
         ),
-        "10 level scaling + 2 equipment training",
+        "10 level scaling + 1 equipment training",
     );
     assert_eq!(
         0,
@@ -141,14 +141,14 @@ fn it_calculates_level_21_fighter_attacks() {
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
         vec![
-            "Generic Accuracy Battleaxe +19 (1d6+5 slashing damage.)",
-            "Certain Battleaxe +21 (1d6+2 slashing damage.)",
-            "Powerful Battleaxe +15 (2d6+10 slashing damage.)",
-            "Certain Strike+ -- Battleaxe +21 (1d6+5 slashing damage.)",
-            "Power Strike+ -- Battleaxe +12 (3d6+15 slashing damage.)",
-            "Extra Damage Battleaxe +13 (1d6+5d8+5 slashing damage.)",
-            "Generic Triple Damage -- Battleaxe +13 (3d6+15 slashing damage.)",
-            "Battleaxe +13 (1d6+5 slashing damage.)"
+            "Generic Accuracy Battleaxe +18 (1d6+5 slashing damage.)",
+            "Certain Battleaxe +20 (1d6+2 slashing damage.)",
+            "Powerful Battleaxe +14 (2d6+10 slashing damage.)",
+            "Certain Strike+ -- Battleaxe +20 (1d6+5 slashing damage.)",
+            "Power Strike+ -- Battleaxe +11 (3d6+15 slashing damage.)",
+            "Extra Damage Battleaxe +12 (1d6+5d8+5 slashing damage.)",
+            "Generic Triple Damage -- Battleaxe +12 (3d6+15 slashing damage.)",
+            "Battleaxe +12 (1d6+5 slashing damage.)"
         ],
         fighter
             .calc_all_attacks()
@@ -182,13 +182,13 @@ fn it_calculates_level_21_fighter_resources() {
         "2 base + 2 level + 1 equipment training"
     );
     assert_eq!(
-        "FT b3 f6",
+        "FT b3 f8",
         format!(
             "FT b{} f{}",
             baseline.calc_resource(&Resource::FatigueTolerance),
             fighter.calc_resource(&Resource::FatigueTolerance)
         ),
-        "3 base + 2 combat discipline + 1 con",
+        "3 base + 4 enduring discipline+ + 1 con",
     );
     assert_eq!(
         "Insight b3 f3",
