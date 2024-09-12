@@ -1,6 +1,7 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, DamageDice, Defense};
 use crate::creatures::Modifier;
+use crate::skills::Skill;
 
 use super::standard_modifiers::{add_hp_scaling, add_standard_maneuver_modifiers};
 
@@ -47,7 +48,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Strike}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.AAAAA
+                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
                     You also \glossterm{briefly} gain a \plus4 bonus to defenses against damaging attacks.
 
                     \rankline
@@ -85,7 +86,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You cannot lose more than 100 hit points per round.
                 Any excess damage beyond that point does not reduce your hit points.
-                This includes losing hit points below 0, which can give you extra \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+                This includes hit point loss below 0 hit points.
+                Attacks with special effects, such as inflicting conditions on you, still treat you as if you lost hit points from the attack.
             ",
             modifiers: None,
         },
@@ -227,7 +229,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You must already be proficient with all non-exotic weapons from that weapon group.
             ",
             // This is an abstraction of the effect of exotic weapons being better
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
@@ -416,8 +419,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 You choose a totem animal that represents you.
                 Each totem animal grants you abilities that are associated with that animal.
 
-                \subcf{Bear} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
-                In addition, you gain a \plus1 bonus to your Fortitude defense.
+                \subcf{Bear} Whenever you take damage from a creature other than yourself, you \glossterm{briefly} gain a \plus2 accuracy bonus.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
                 This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
@@ -429,8 +431,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
 
-                \subcf{Wolf} At the start of each round, you may choose one of your \glossterm{allies}.
-                That ally gains a \plus1 bonus to \glossterm{accuracy} during that round as long as it is adjacent to you.
+                \subcf{Wolf} At the start of each \glossterm{action phase}, you may choose one \glossterm{ally} adjacent to you.
+                That ally gains a \plus1 bonus to \glossterm{accuracy} during that action phase.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -442,21 +444,18 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves.
 
-                \subcf{Bear} The hit point bonus increases to four times your rank in this archetype.
-                In addition, the Fortitude bonus increases to \plus2.
+                \subcf{Bear} The accuracy bonus also applies whenever you are below half your maximum hit points.
 
                 \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
                 This is a \abilitytag{Size-Based} ability.
 
-                % TODO: The narrative connection here is loose
-                \subcf{Eagle} You gain a \plus3 bonus to the Awareness skill.
-                In addition, you are immune to being \dazzled and \blinded.
+                \subcf{Eagle} You gain a \plus1 bonus to your Perception.
 
                 \subcf{Lion} The accuracy bonus applies as long as an ally is within \shortrange of you.
 
-                \subcf{Shark} The accuracy bonus increases to \plus4.
+                \subcf{Shark} The accuracy bonus increases to \plus3.
 
-                \subcf{Wolf} The accuracy bonus applies as long as the ally is within \shortrange of you.
+                \subcf{Wolf} You can choose an ally within \shortrange of you, rather than only an adjacent ally.
             ",
             modifiers: None,
         },
@@ -467,17 +466,16 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves further.
 
-                \subcf{Bear} The hit point bonus increases to five times your rank in this archetype.
-                In addition, the Fortitude bonus increases to \plus3.
+                \subcf{Bear} The accuracy bonus increases to \plus3.
 
                 \subcf{Crocodile} The creature does not have to lose hit points for you to knock it prone or grapple it.
 
-                \subcf{Eagle} The longshot penalty reduction increases to 2.
-                In addition, the Awareness bonus increases to \plus6.
+                % Too much?
+                \subcf{Eagle} The Perception bonus increases to \plus2.
 
                 \subcf{Lion} The accuracy bonus increases to \plus2.
 
-                \subcf{Shark} The accuracy bonus increases to \plus6.
+                \subcf{Shark} The accuracy bonus increases to \plus4.
 
                 \subcf{Wolf} The accuracy bonus increases to \plus2.
             ",
@@ -525,19 +523,34 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus2 bonus to your Reflex defense.
-                In addition, you gain a +1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+                You gain a \plus2 bonus to the Creature Handling skill, and a \plus2 bonus to one skill based on your choice of totem animal:
+                \begin{raggeditemize}
+                    \itemhead{Bear} Endurance
+                    \itemhead{Crocodile} Stealth
+                    \itemhead{Eagle} Awareness
+                    \itemhead{Lion} Intimidate
+                    \itemhead{Shark} Swim
+                    \itemhead{Wolf} Survival
+                \end{raggeditemize}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::CreatureHandling, 2),
+                // Arbitrarily stick with Lion
+                Modifier::Skill(Skill::Intimidate, 2),
+            ]),
         },
         RankAbility {
             name: "Animal Instincts+",
             is_magical: false,
             rank: 6,
             description: r"
-                The defense bonus increases to \plus4.
+                The skill bonuses increase to \plus4.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Reflex, 2)]),
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::CreatureHandling, 2),
+                // Arbitrarily stick with Lion
+                Modifier::Skill(Skill::Intimidate, 2),
+            ]),
         },
     ]
 }

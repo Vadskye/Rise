@@ -245,21 +245,6 @@ fn amulets() -> Vec<Apparel> {
     }));
 
     apparel.push(Amulet(StandardItem {
-        name: String::from("Amulet of Distant Blood"),
-        rank: 2,
-        short_description: String::from(r"Increases range with shark \ability<totem animal>"),
-        description: String::from(r"
-            If you have the shark \textit<totem animal> barbarian ability, you gain its accuracy bonus against creatures within \medrange instead of \shortrange.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, r"Greatly increases range with shark \ability<totem animal>", r"
-                The range increases to \distrange.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
         name: String::from("Exemplar's Amulet"),
         rank: 2,
         short_description: String::from(r"Increase \ability<skill exemplar> bonus with untrained skills by 1"),

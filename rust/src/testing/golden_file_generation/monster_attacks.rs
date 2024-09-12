@@ -10,7 +10,7 @@ use super::write_golden_file;
 pub fn write_monster_attacks_golden() -> io::Result<()> {
     fn explain_monster_attacks(level: i32, elite: bool) -> String {
         let attacker = Monster::example_monster(elite, level).creature;
-        let defender = Character::fighter_shield(level).creature;
+        let defender = Character::paladin_shield(level).creature;
 
         format!(
             "### Attacks

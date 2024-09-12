@@ -231,8 +231,8 @@ You can either skim past terms you don't yet understand or look them up as you g
     \begin{raggeditemize}
       \itemhead{Skilled} Humans gain an additional \glossterm{trained skill} (see \pcref{Skills}).
       \itemhead{Versatile} Humans gain a \plus1 bonus to any attribute.
-        This cannot increase that attribute above 4 when attributes are initially determined (see \pcref{Attributes}).
-        That attribute can later be increased above 4, such as by the attribute bonus at level 3 (see \pcref{Character Advancement and Gaining Levels}).
+        This cannot increase that attribute above 3 when attributes are initially determined (see \pcref{Attributes}).
+        That attribute be increased above 3 by other means, such as by your \glossterm{base class} or by the attribute bonus at level 3 (see \pcref{Character Advancement and Gaining Levels}).
     \end{raggeditemize}
     \parhead{Automatic Language} Common, any two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
 
@@ -427,9 +427,9 @@ You can either skim past terms you don't yet understand or look them up as you g
     Your defenses are calculated in the following way:
     \begin{itemize}
       \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add defense bonuses from equipped body armor and shield
-      \itemhead{Fortitude} Half level \add Constitution \add class defense bonus
-      \itemhead{Reflex} Half level \add Dexterity \add class defense bonus
-      \itemhead{Mental} Half level \add Willpower \add class defense bonus
+      \itemhead{Fortitude} 3 \add Half level \add Constitution \add class defense bonus
+      \itemhead{Reflex} 3 \add Half level \add Dexterity \add class defense bonus
+      \itemhead{Mental} 3 \add Half level \add Willpower \add class defense bonus
     \end{itemize}
     Each defense may also have various bonuses or penalties applied by special abilities.
 
@@ -465,9 +465,9 @@ You can either skim past terms you don't yet understand or look them up as you g
     Many special abilities and magic items only function as long as a creature attunes to them.
     For details, see Attunement, below.
 
-    Your \glossterm{class} gives you a certain number of attunement points.
+    You start with two attunement points.
     You gain additional attunement points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
-    A small number of abilities can also grant additional \glossterm{attunement points}.
+    Some classes and abilities can grant additional attunement points.
 
     \subsubsection{Attunement}\label{Attunement}
       Abilities that require attunement to function have the \abilitytag{Attune} tag.
@@ -510,9 +510,9 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
       Becoming slightly fatigued is not immediately detrimental.
-      Your fatigue level can be as high as your Constitution without suffering any consequences (minimum 0).
+      Your fatigue level can be as high as 3 \add your Constitution without suffering any consequences (minimum 0).
       This value is called your \glossterm{fatigue tolerance}.
-      Your \glossterm{class} gives you a bonus to your fatigue tolerance, and some abilities can also modify it.
+      Some abilities can increase your fatigue tolerance.
 
     \subsubsection{Fatigue Penalty}\label{Fatigue Penalty}
       You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance} (minimum 0).
@@ -534,9 +534,9 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   \subsection{Insight Points}\label{Insight Points}
     You can spend \glossterm{insight points} to gain new special abilities.
-    Your \glossterm{class} gives you a certain number of insight points, and you gain a bonus (or penalty) to that number of insight points equal to your Intelligence.
+    Your base insight points are equal to 1 \add your Intelligence (minimum 0).
     You gain additional insight points as you gain levels (see \pcref{Character Advancement and Gaining Levels}).
-    Some abilities can also grant insight points.
+    Some classes and abilities can also grant insight points.
 
     Every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
     These options are listed below.
@@ -545,7 +545,7 @@ You can either skim past terms you don't yet understand or look them up as you g
       \item Cleric: Mystic spheres and spells
       \item Druid: Mystic spheres, spells, and wild aspects
       \item Fighter: Battle tactics, combat styles, and maneuvers
-      \item Fighter: Combat styles, ki manifestations, and maneuvers
+      \item Monk: Combat styles, ki manifestations, and maneuvers
       \item Paladin: Mystic spheres and spells
       \item Ranger: Combat styles, hunting styles, and maneuvers
       \item Rogue: Bardic performances, combat styles, maneuvers, and trained skills
@@ -554,9 +554,14 @@ You can either skim past terms you don't yet understand or look them up as you g
       \item Wizard: Metamagic, mystic spheres, and spells
     \end{itemize}
 
-    In addition, there are two ways that every character can spend insight points.
-    First, you can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
-    Second, you can spend two \glossterm{insight points} to gain proficiency with \glossterm{exotic weapons} from a single \glossterm{weapon group} that you are already proficient with.
+    In addition, you can spend two \glossterm{insight points} to become a \glossterm{multiclass} character (see \pcref{Multiclass Characters}).
+
+  \subsection{Trained Skills}\label{Trained Skills}
+    You are trained in certain skills, which increases your bonus with those skills (see \pcref{Skills}).
+    Your \glossterm{class} grants you a certain number of \glossterm{trained skills} from among the \glossterm{class skills} for that class.
+    When you gain trained skills by any other means, you can choose any skill, not just your class skills.
+    If your Intelligence is positive, you gain a number of trained skills equal to your Intelligence.
+    Some abilities can also grant additional trained skills.
 
 \section{Size and Weight}\label{Size and Weight}
 
@@ -850,40 +855,20 @@ You can either skim past terms you don't yet understand or look them up as you g
     They have a large impact on your character's strengths and weaknesses, so it's useful to know them as soon as possible.
     They're also much easier to understand and finalize than your class archetypes.
 
-    There are two common ways for you to determine your attribute scores: using a predefined set of scores, or using a point buy system.
-    Once you have chosen your attributes and applied your species modifer to attributes (if any), you should record in your character sheets the various effects that your attributes have on your statistics.
-
-    \subsubsection{Predefined Attribute Scores}
-      This is the simplest method.
-      Choose one of the following sets of attribute values and distribute them as you choose among your attributes:
+    You have 8 points to distribute among your attributes.
+    Increasing an attribute by 1 costs 1 point, and you can increase each attribute up to a maximum of 3.
+    Instead of allocating points yourself, you can use one of the following three common attribute arrays:
       \begin{raggeditemize}
         % 3 + 2 + 2 + 1 = 8
         \item Standard: 3, 2, 2, 1, 0, 0
-          % 5 + 2 + 1 = 8
-        \item Specialized: 4, 2, 1, 0, 0, 0
+          % 3 + 3 + 2 = 8
+        \item Specialized: 3, 3, 2, 0, 0, 0
           % 2 + 2 + 2 + 1 + 1 = 8
         \item Balanced: 2, 2, 2, 1, 1, 0
       \end{raggeditemize}
 
-    \subsubsection{Attribute Point Buy}\label{Attribute Point Buy}
-      With this method, you can fully control your attribute scores to precisely match what you want to be able to do.
-      All your attribute scores start at 0.
-      You get 8 points to distribute among your attributes.
-      Attributes can be bought according to the costs on \trefnp{Attribute Point Costs}.
-      The listed cost is the total cost required to gain the listed attribute.
-
-      \begin{dtable}
-        \tablebookmark{Attribute Point Costs}{attributepoints}
-        \lcaption{Attribute Point Costs}
-        \begin{dtabularx}{\columnwidth}{X X}
-          \tb{Attribute} & \tb{Cumulative Point Cost} \tableheaderrule
-          0              & 0                          \\
-          1              & 1                          \\
-          2              & 2                          \\
-          3              & 3                          \\
-          4              & 5                          \\
-        \end{dtabularx}
-      \end{dtable}
+    Once you have chosen your attributes, add your species modifier to your attributes (if any).
+    Then, record in your character sheet the various effects that your attributes have on your statistics.
 
     \subsubsection{Attribute Penalties}\label{Attribute Penalties}
       You can voluntarily take penalties to your attributes.

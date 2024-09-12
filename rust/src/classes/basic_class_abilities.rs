@@ -6,10 +6,14 @@ use numerics::Numerics;
 // Generate the whole "Base Class Abilities" subsection used to explain a class in the
 // Classes chapter.
 pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
-    format!(
+    latex_formatting::latexify(format!(
         "
             \\subsection<Base Class Effects>
             If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
+
+            {attributes}
+
+            {hit_points}
 
             {defenses}
 
@@ -21,69 +25,170 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
             {class_skills}
         ",
-        defenses = generate_latex_defenses(class).trim(),
+        attributes = generate_latex_attributes(class).trim(),
+        hit_points = generate_latex_hit_points(class).trim(),
+        defenses = generate_latex_defenses(class)
+            .unwrap_or("".to_string())
+            .trim(),
         name = class.name(),
         resources = generate_latex_resources(class).trim(),
         armor_proficiencies = generate_latex_armor_proficiencies(class).trim(),
         class_skills = generate_latex_class_skills(class).trim(),
         weapon_proficiencies = generate_latex_weapon_proficiencies(class).trim(),
-    )
+    ))
 }
 
 // Generate the Resources section of the basic class abilities.
 fn generate_latex_resources(class: &Class) -> String {
+    let mut modifiers = vec![];
+    if class.attunement_points() > 0 {
+        modifiers.push(format!(
+            "{modifier} additional \\glossterm<attunement point{s}>",
+            modifier = if class.attunement_points() == 1 {
+                "an"
+            } else if class.attunement_points() == 2 {
+                "two"
+            } else {
+                panic!(
+                    "Confusing attunement point count: {}",
+                    class.attunement_points()
+                )
+            },
+            s = if class.attunement_points() > 1 {
+                "s"
+            } else {
+                ""
+            },
+        ));
+    }
+    if class.insight_points() > 0 {
+        modifiers.push(format!(
+            "{modifier} additional \\glossterm<insight point{s}>",
+            modifier = if class.insight_points() == 1 {
+                "an"
+            } else if class.insight_points() == 2 {
+                "two"
+            } else {
+                panic!(
+                    "Confusing attunement point count: {}",
+                    class.insight_points()
+                )
+            },
+            s = if class.insight_points() > 1 { "s" } else { "" },
+        ));
+    }
+    let maybe_modifier_text = latex_formatting::join_string_list(&modifiers);
+    let modifier_text = if let Some(t) = maybe_modifier_text {
+        format!("You also gain {t}.")
+    } else {
+        "".to_string()
+    };
+
     format!(
         "
             \\cf<{shorthand_name}><Resources>
-            You have the following \\glossterm<resources>:
-            \\begin<itemize>
-                \\item {attunement_points}, which are required to use some items and abilities (see \\pcref<Attunement Points>).
-                \\item A \\glossterm<fatigue tolerance> equal to {fatigue_tolerance}.
-                    Your fatigue tolerance makes it easier for you to use powerful abilities that fatigue you (see \\pcref<Fatigue>).
-                \\item A number of \\glossterm<insight points> equal to {insight_points}.
-                    You can spend insight points to gain additional abilities (see \\pcref<Insight Points>).
-                \\item {trained_skills} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence (see \\pcref<Skills>).
-            \\end<itemize>
+            You learn {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>). {modifier_text}
         ",
-        attunement_points = latex_formatting::uppercase_first_letter(&
-            generate_labeled_english_number(
-                class.attunement_points(),
-                "\\glossterm<attunement point>",
-                "\\glossterm<attunement points>",
-            )
-        ),
-        fatigue_tolerance = format!("{} + your Constitution", class.fatigue_tolerance()),
-        insight_points = if class.insight_points() > 0 {
-            format!("{} + your Intelligence", class.insight_points())
-        } else {
-            "your Intelligence".to_string()
-        },
         shorthand_name = class.shorthand_name(),
-        trained_skills = latex_formatting::uppercase_first_letter(&
-            generate_labeled_english_number(
-                class.trained_skills(),
-                "\\glossterm<trained skill>",
-                "\\glossterm<trained skills>",
-            )
-        ),
+        trained_skills = generate_labeled_english_number(
+            class.trained_skills(),
+            "\\glossterm<trained skill>",
+            "\\glossterm<trained skills>",
+        )
     )
 }
 
-fn generate_latex_defenses(class: &Class) -> String {
-    latex_formatting::latexify(format!(
-        "
-            \\cf<{shorthand_name}><Defenses>
-            You gain the following bonuses to your \\glossterm<defenses>: \\plus{fortitude} Fortitude, \\plus{reflex} Reflex, \\plus{mental} Mental.
+fn generate_latex_defenses(class: &Class) -> Option<String> {
+    let modifiers = Defense::all()
+        .iter()
+        .map(|d| format_defense(d, class.defense_bonus(d)))
+        .filter(|t| t.is_some())
+        .map(|t| t.unwrap())
+        .collect::<Vec<String>>();
+    let maybe_modifier_text = latex_formatting::join_string_list(&modifiers);
+    if let Some(modifier_text) = maybe_modifier_text {
+        Some(latex_formatting::latexify(format!(
+            "
+                \\cf<{shorthand_name}><Defenses>
+                You gain {defenses}.
+            ",
+            defenses = modifier_text,
+            shorthand_name = class.shorthand_name(),
+        )))
+    } else {
+        None
+    }
+}
 
+fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
+    if modifier > 0 {
+        Some(format!(
+            "a +{modifier} bonus to your {} defense",
+            defense.title()
+        ))
+    } else if modifier < 0 {
+        Some(format!(
+            "a {modifier} penalty to your {} defense",
+            defense.title()
+        ))
+    } else {
+        None
+    }
+}
+
+fn generate_latex_attributes(class: &Class) -> String {
+    let optional_count = class.optional_attributes().len();
+    let optional = if optional_count == 0 {
+        "".to_string()
+    } else {
+        let suffix = if optional_count == 5 {
+            "any other attribute".to_string()
+        } else if optional_count == 2 {
+            format!(
+                "either your {} or your {}",
+                class.optional_attributes()[0].title(),
+                class.optional_attributes()[1].title()
+            )
+        } else {
+            panic!(
+                "Confusing optional attribute count: {}",
+                join_attributes(class.optional_attributes(), "and")
+                    .unwrap_or("no attributes".to_string()),
+            )
+        };
+
+        format!("In addition, you gain a +1 bonus to {}.", suffix)
+    };
+    format!(
+        "
+            \\cf<{shorthand_name}><Attributes>
+            You gain a +1 bonus to your {mandatory}. {optional}
+        ",
+        shorthand_name = class.shorthand_name(),
+        mandatory = join_attributes(class.mandatory_attributes(), "and").unwrap(),
+        optional = optional
+    )
+}
+
+fn join_attributes(attributes: Vec<Attribute>, conjunction: &str) -> Option<String> {
+    latex_formatting::join_string_list_custom(
+        &attributes
+            .into_iter()
+            .map(|a| a.title())
+            .collect::<Vec<String>>(),
+        conjunction,
+    )
+}
+
+fn generate_latex_hit_points(class: &Class) -> String {
+    format!(
+        "
             \\cf<{shorthand_name}><Hit Points>
             {hp_text}
         ",
-        fortitude=class.defense_bonus(&Defense::Fortitude),
-        reflex=class.defense_bonus(&Defense::Reflex),
-        mental=class.defense_bonus(&Defense::Mental),
-        shorthand_name=class.shorthand_name(),
-        hp_text=class.hit_point_progression().to_class_text(),
-    ))
+        shorthand_name = class.shorthand_name(),
+        hp_text = class.hit_point_progression().to_class_text(),
+    )
 }
 
 fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
@@ -99,7 +204,8 @@ fn generate_latex_armor_proficiencies(class: &Class) -> String {
     if armor_proficiencies.usage_classes.is_empty() {
         proficiences_text = "
             You are not proficient with any type of armor.
-        ".to_string();
+        "
+        .to_string();
     } else if let Some(specific_armors) = armor_proficiencies.specific_armors {
         let usage_classes: Vec<&str> = armor_proficiencies
             .usage_classes

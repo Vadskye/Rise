@@ -63,24 +63,33 @@ pub fn join_formattable_list<T: Display>(strings: &Vec<T>) -> Option<String> {
 }
 
 pub fn join_string_list(strings: &Vec<String>) -> Option<String> {
-    let strings: Vec<&str> = strings.iter().map(|c| c.as_str()).collect();
-    join_str_list(&strings)
+    join_string_list_custom(strings, "and")
 }
 
-pub fn join_str_list(strings: &Vec<&str>) -> Option<String> {
+pub fn join_string_list_custom(strings: &Vec<String>, conjunction: &str) -> Option<String> {
+    let strings: Vec<&str> = strings.iter().map(|c| c.as_str()).collect();
+    join_str_list_custom(&strings, conjunction)
+}
+
+pub fn join_str_list_custom(strings: &Vec<&str>, conjunction: &str) -> Option<String> {
     if strings.is_empty() {
         None
     } else if strings.len() == 1 {
         return Some(strings[0].to_string());
     } else if strings.len() == 2 {
-        return Some(format!("{} and {}", strings[0], strings[1]));
+        return Some(format!("{} {} {}", strings[0], conjunction, strings[1]));
     } else {
         return Some(format!(
-            "{}, and {}",
+            "{}, {} {}",
             strings[..strings.len() - 1].join(", "),
+            conjunction,
             strings[strings.len() - 1]
         ));
     }
+}
+
+pub fn join_str_list(strings: &Vec<&str>) -> Option<String> {
+    join_str_list_custom(strings, "and")
 }
 
 pub fn uppercase_first_letter(text: &str) -> String {
