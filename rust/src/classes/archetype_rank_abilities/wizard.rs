@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
 use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
@@ -104,7 +104,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The accuracy bonus increases to +3.
+                The accuracy bonus increases to +2.
             ",
             modifiers: None,
         },
@@ -123,10 +123,10 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The defense bonus increases to +2.
+                You gain a \plus1 bonus to your Constitution.
                 In addition, you are immune to acid damage.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Experienced Quaffing",
@@ -386,13 +386,17 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
+                    \parhead{Calculated Spell} Choose an arcane \glossterm{spell} you know.
+                        As a \glossterm{minor action}, you can calculate the effect that the spell would have.
+                        When you do, roll 1d10.
+                        If you cast that spell that round, you use that die result as your accuracy roll for any attacks that round, exploding as normal if the die result was a 10.
+                        After calculating in this way, you \glossterm{briefly} cannot do so again, whether or not you cast the spell.
+                        You cannot choose this ability multiple times.
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Mystic Sphere} You gain access to an additional arcane \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-                        You cannot choose this ability multiple times.
-                    \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                    \parhead{Researched Spell} Choose an arcane \glossterm{spell} you know.
+                        You use your Intelligence in place of your Willpower to determine your \glossterm{power} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum \glossterm{rank} of arcane spell that you can cast.
@@ -449,22 +453,13 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Intelligence.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -474,6 +469,15 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -500,6 +504,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
 
+                % TODO: this shouldn't scale to +3 accuracy
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
 
@@ -543,6 +548,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school reaches its full potential.
                 {
+                    % TODO: this seems weaker than the other schools
                     \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.

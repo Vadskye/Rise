@@ -152,7 +152,7 @@ def creation_guidance():
 
                     As you level up, your attributes increase.
                     You can add those improvements in the second row.
-                    If you have special abilities that modify your attributes, such as from your species, you can add those on the <b>Modifiers</b> tab.
+                    If you have special abilities that modify your attributes, such as from your base class or species, you can add those on the <b>Modifiers</b> tab.
                 """,
                 [
                     flex_row(
@@ -211,7 +211,8 @@ def creation_guidance():
                 "Base class",
                 """
                     Choose your character's base class.
-                    This automatically modifies your defenses, hit points, and resources, so you shouldn't need to add any custom modifiers to represent your base class.
+                    The sheet automatically calculates all effects of your base class other than attribute changes.
+                    You should add a custom modifier on the <b>Modifier</b> tab to represent the attribute changes from your base class.
                 """,
                 select(
                     {"class": "base-class", "name": "base_class"},
@@ -241,7 +242,7 @@ def creation_guidance():
                         option({"value": "naiadi"}, "(Naiadi)"),
                         option({"value": "oozeborn"}, "(Oozeborn)"),
                         option({"value": "orc"}, "(Orc)"),
-                        option({"value": "sapling"}, "(Sapling)"),
+                        option({"value": "treant"}, "(Treant)"),
                         option({"value": "tiefling"}, "(Tiefling)"),
                         option({"value": "vampire"}, "(Vampire)"),
                         option({"value": "brute"}, "(Monster - Brute)"),

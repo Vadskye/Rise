@@ -4,6 +4,9 @@ set DIR (dirname $FILENAME)
 cd "$DIR/../../.."
 mkdir -p core_book/generated
 cd rust
+
+# TODO: Convert uncommon species to be Rust-generated
+# cargo run --bin uncommon_classes
 cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
 cargo run --bin monster_reference_table > ../core_book/generated/monster_reference_table.tex
 # cargo run --bin modules_chapter > ../core_book/generated/modules.tex

@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::attacks::StandardAttack;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -112,7 +112,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                If you do not have access to pact magic, you gain a +2 bonus to your Mental defense.
+                If you do not have access to pact magic, you gain a +1 bonus to your Willpower.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -122,7 +122,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                If you do not have access to pact magic, you gain a +1 bonus to your Willpower.
+                If you do not have access to pact magic, you become immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
             ",
             // Assume that the warlock has pact magic
             modifiers: None,
@@ -258,7 +258,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen secret reaches its full potential.
                 {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
-                    In addition, the defense bonus increases to \plus6.
+                    In addition, the defense bonus increases to \plus5.
 
                     \parhead{Secret of Bloodsharing} The healing increases to 1d8 plus 1d8 per 3 power.
 
@@ -397,10 +397,10 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                If you chose the power bonus, it increases to +4.
+                If you chose the power bonus, it increases to +3.
                 Otherwise, the defense bonus increases to +4.
             ",
-            modifiers: Some(vec![Modifier::Power(2)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
     ]
 }
@@ -507,11 +507,13 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
+                    \parhead{Desperate Spell} Choose a pact \glossterm{spell} you know.
+                        When you cast the spell, you may choose to increase your \glossterm{fatigue level} by one.
+                        If you do, you gain a +2 accuracy bonus with the spell that round and roll accuracy twice, keeping the higher result.
+                        However, you cannot use the \ability{desperate exertion} ability to affect the spell that round.
+                        You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
-                        You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Precise Spell} Choose a pact \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
                         You gain a +2 bonus to your \glossterm{magical power} with that spell.
@@ -552,29 +554,20 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \textit{desperate exertion} ability without increasing your fatigue level.
                 When you do, you suffer no immediate negative consequences.
-                After 10 minutes, your maximum \glossterm{hit points} will be reduced by a quarter until you complete a \glossterm{long rest}.
-                Each time this penalty takes effect, you lose a quarter of your original maximum hit points, so using it four times would reduce your maximum hit points to 0.
+                After 10 minutes, your maximum \glossterm{hit points} are be reduced to three-quarters of normal until you complete a \glossterm{long rest}.
+                Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it four times would reduce your maximum hit points to 0.
                 If your hit points are reduced below 0 in this way, you die.
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -584,6 +577,15 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -651,7 +653,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point} (see \pcref{Trained Skills}).
 
-                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus1 bonus to \glossterm{accuracy} against that creature.
+                    \subcf{Spiteful Whispers} Whenever you miss a creature with an attack, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} against that creature.
                     As normal, this bonus does not stack with itself, even if you miss the same creature multiple times.
 
                     \subcf{Sycophantic Whispers} You gain a \plus2 bonus to your Mental defense.
@@ -671,15 +673,16 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of the whispers you hear improves.
                 {
-                    \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
+                    \subcf{Mentoring Whispers} You gain a \plus1 bonus to your Intelligence.
 
-                    \subcf{Spiteful Whispers} The bonus from your \textit{empowering whispers} ability increases to \plus2.
+                    \subcf{Spiteful Whispers} The accuracy bonus increases to \plus4.
 
-                    \subcf{Sycophantic Whispers} You are immune to all \abilitytag{Emotion} attacks.
+                    % TODO: seems weak
+                    \subcf{Sycophantic Whispers} You are immune to being \frightened and \panicked.
 
-                    \subcf{Warning Whispers} You are never \unaware or \partiallyunaware.
+                    \subcf{Warning Whispers} You gain a \plus1 bonus to your Perception.
 
-                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to \glossterm{vital rolls}.
+                    \subcf{Whispers of the Mighty} You gain a \plus1 bonus to your Constitution.
                 }
             ",
             modifiers: Some(vec![Modifier::VitalRoll(1)]),

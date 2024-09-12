@@ -1,6 +1,6 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, MovementMode, Resource};
+use crate::core_mechanics::{Attribute, DamageDice, MovementMode, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -150,26 +150,28 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You must already be proficient with all non-exotic weapons from that weapon group.
             ",
-            modifiers: None,
+            // This is an abstraction of the effect of exotic weapons being better
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             name: "Know Your Enemy+",
             is_magical: false,
             rank: 4,
             description: r"
-                The accuracy bonus increases to \plus2.
+                You also gain a \plus1 bonus to all defenses against creatures of your chosen types.
                 In addition, you can choose two creature types instead of one.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             name: "Know Your Enemy+",
             is_magical: false,
             rank: 7,
             description: r"
-                You also gain a \plus1 bonus to all defenses against creatures of your chosen types.
+                The accuracy bonus increases to \plus2.
                 In addition, you can choose three creature types instead of two.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -198,10 +200,9 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You gain a \plus2 bonus to your Fortitude defense.
-                In addition, your \glossterm{allies} who can see or hear you gain a \plus1 bonus to their Fortitude defense.
+                You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             name: "Banestrike",
@@ -432,7 +433,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Keen Vision+",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
                 The longshot penalty reduction increases to 2.
                 In addition, the range of your darkvision increases by 120 feet.
@@ -493,13 +494,13 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
-            name: "Perceive Weakness",
+            name: "Experienced Scout",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy}.
+                You gain a \plus1 bonus to your Perception.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
     ]
 }

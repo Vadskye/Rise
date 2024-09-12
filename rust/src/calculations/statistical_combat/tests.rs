@@ -222,7 +222,7 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_vs_monsters_level_1() {
         let level = 1;
-        let attacker = Character::fighter_shield(level).creature;
+        let attacker = Character::barbarian_shield(level).creature;
         let attack = attacker
             .get_attack_by_name("Extra Damage Broadsword")
             .unwrap();
@@ -247,7 +247,7 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_vs_monsters_level_20() {
         let level = 20;
-        let attacker = Character::fighter_shield(level).creature;
+        let attacker = Character::barbarian_shield(level).creature;
         let attack = attacker
             .get_attack_by_name("Extra Damage Broadsword")
             .unwrap();
@@ -279,7 +279,7 @@ mod calculate_attack_outcome {
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
-                Character::fighter_shield(level)
+                Character::barbarian_shield(level)
                     .creature
                     .calc_defense(&Defense::Armor),
                 attacker.calc_explosion_target(),
@@ -298,7 +298,7 @@ mod calculate_attack_outcome {
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
-                Character::fighter_shield(level)
+                Character::barbarian_shield(level)
                     .creature
                     .calc_defense(&Defense::Armor),
                 attacker.calc_explosion_target(),
@@ -310,11 +310,11 @@ mod calculate_attack_outcome {
     #[test]
     fn standard_character_mirror_match() {
         fn calc_at_level(level: i32) -> String {
-            let attacker = Character::fighter_shield(level).creature;
+            let attacker = Character::barbarian_shield(level).creature;
             let attack = attacker
                 .get_attack_by_name("Extra Damage Broadsword")
                 .unwrap();
-            let defender = Character::fighter_shield(level).creature;
+            let defender = Character::barbarian_shield(level).creature;
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -357,12 +357,12 @@ mod calc_individual_dpr {
             "Attacker should have 0 accuracy",
         );
         assert_eq!(
-            vec![0, 0, 0, 0],
+            vec![0, 3, 3, 3],
             Defense::all()
                 .iter()
                 .map(|d| defender.calc_defense(d))
                 .collect::<Vec<i32>>(),
-            "Defender should have all defenses 0",
+            "Defender should have 0/3/3/3 defenses",
         );
 
         attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());

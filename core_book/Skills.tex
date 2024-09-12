@@ -8,52 +8,50 @@ This chapter describes each skill, including common uses for those skills.
   Most skills are used to make \glossterm{checks}.
   For details about how checks are made, see \pcref{Checks}.
 
-  \begin{dtable!*}
-  \lcaption{Class Skills}
-  \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
-    \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
-    Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-    Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-    Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
-    Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-    Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-    Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-    Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
-    Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-    Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
-    Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
-    Craft             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int          \\
-    Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
-    Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
-    Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
-    Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
-    Medicine          & C        & C        & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
-    Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
-    Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
-    Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
-    Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
-    Social Insight    & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
-    Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
-    Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
-    Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
-  \end{dtabularx}
-  C: class skill. \\
-  1. Any attribute could apply depending on how the skill is used. \\
-  \end{dtable!*}
-
-  \subsection{Trained Skills}\label{Trained Skills}
-    You are trained in certain skills.
-    Your \glossterm{class} gives you a certain number of \glossterm{trained skills} from among the \glossterm{class skills} for that class.
-    The class skills for each class are summarized in \tref{Class Skills}.
-    When you gain trained skills by any other means, you can choose any skill, not just your class skills.
-
-    If your Intelligence is positive, you gain additional trained skills equal to your Intelligence.
-    Some abilities can also grant additional trained skills.
-
   \subsection{Skill Modifiers}
+    You are either trained or untrained with each skill.
     If you are untrained in a skill, your bonus with that skill is equal to its associated attribute (if any).
     If you are trained in a skill, your bonus with that skill is equal to 3 \add half your level \add its associated attribute (if any).
     Many abilities can increase or decrease your bonus with particular skills.
+
+  \subsection{Class Skills}\label{Class Skills}
+    Each \glossterm{class} has an associated set of skills that members of that class often know.
+    These are called class skills.
+    Your \glossterm{base class} automatically grants you training with a specific number of skills from among your class skills.
+    The class skills from each class are summarized in \trefnp{Class Skills}.
+
+    \begin{dtable!*}
+    \lcaption{Class Skills}
+    \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
+      \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
+      Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
+      Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
+      Craft             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int          \\
+      Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
+      Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
+      Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
+      Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
+      Medicine          & C        & C        & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
+      Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
+      Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Social Insight    & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
+      Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
+      Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
+      Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
+    \end{dtabularx}
+    C: class skill. \\
+    1. Any attribute could apply depending on how the skill is used. \\
+    \end{dtable!*}
 
   \subsection{Tasks}\label{Tasks}
     Each skill contains a brief description of how the skill is usually used.

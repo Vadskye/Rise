@@ -159,7 +159,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The bonus to your Fortitude defense increases to \plus2.
+                    \item Earth: The Fortitude bonus increases to \plus2.
                     \item Fire: You are immune to fire damage.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
@@ -260,21 +260,27 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
-                    \parhead{Distant Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
+                    \parhead{Airborne Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-                        You cannot choose this ability multiple times.
-                    \parhead{Precise Spell} Choose a nature \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                    \parhead{Flooding Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Grounded Spell} Choose a nature \glossterm{spell} you know.
+                        You gain a \plus1 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
+                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Incendiary Spell} Choose a nature \glossterm{spell} you know.
+                        If you hit a target with that spell, you repeat the spell's effects against that target during the next round, making a new attack roll.
+                        That spell can only repeat against a single target of your choice in this way.
+                        In addition, any damage dealt by the spell is fire damage in addition to its normal damage types.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
                         In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Widened Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
-                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
-                        You can choose this ability multiple times, choosing a different spell each time.
                 }
             ",
             modifiers: None,
@@ -310,22 +316,13 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Perception.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -335,6 +332,15 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -368,13 +374,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Bear}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your vital rolls.
+                        You gain a \plus1 bonus to your Fortitude defense and vital rolls.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The Fortitude defense bonus increases to \plus3.
+                        \rank{3} The Fortitude defense bonus increases to \plus2.
                         \rank{5} The vital roll bonus increases to \plus2.
-                        \rank{7} The Fortitude defense bonus increases to \plus4.
+                        \rank{7} The Fortitude defense bonus increases to \plus3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}
@@ -393,7 +399,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Constrictor}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
+                        You gain a \plus2 accuracy bonus with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
@@ -462,7 +468,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Mouse}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus3 bonus to the Flexibility and Stealth skills.
+                        You gain a \plus2 bonus to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
