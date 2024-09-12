@@ -77,7 +77,7 @@
 
 #### Cleric
             Cleric 1
-            AP 3, FT 6, IP 3, Skills 6
+            AP 3, FT 6, IP 4, Skills 5
             HP 10, DR 5
             AD 5, Fort 5, Ref 5, Ment 8
             Club +2 (1d8+1 bludgeoning damage.)
@@ -86,7 +86,7 @@
 
 #### Druid
             Druid 1
-            AP 3, FT 6, IP 3, Skills 7
+            AP 3, FT 6, IP 3, Skills 6
             HP 12, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 bludgeoning damage.)
@@ -241,7 +241,7 @@
 
 #### Cleric
             Cleric 10
-            AP 5, FT 6, IP 5, Skills 6
+            AP 5, FT 6, IP 6, Skills 5
             HP 28, DR 18
             AD 10, Fort 10, Ref 10, Ment 13
             Club +6 (1d8+3 bludgeoning damage.)
@@ -250,7 +250,7 @@
 
 #### Druid
             Druid 10
-            AP 5, FT 6, IP 5, Skills 7
+            AP 5, FT 6, IP 5, Skills 6
             HP 35, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 bludgeoning damage.)
@@ -405,7 +405,7 @@
 
 #### Cleric
             Cleric 20
-            AP 5, FT 6, IP 5, Skills 6
+            AP 5, FT 6, IP 6, Skills 5
             HP 100, DR 48
             AD 15, Fort 15, Ref 15, Ment 18
             Club +11 (1d8+6 bludgeoning damage.)
@@ -414,7 +414,7 @@
 
 #### Druid
             Druid 20
-            AP 5, FT 6, IP 5, Skills 7
+            AP 5, FT 6, IP 5, Skills 6
             HP 116, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 bludgeoning damage.)
