@@ -52,10 +52,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \miss Half damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The \glossterm{weapon damage} is doubled.
-                    \rank{6} The extra damage increases to 2d10.
-                    \rank{7} The \glossterm{weapon damage} is tripled.
+                    \rank{4} The extra damage increases to 2d6.
+                    \rank{5} The extra damage increases to 1d6 per 3 power (minimum 2d6).
+                    \rank{6} The extra damage increases to 1d6 per 2 power.
+                    \rank{7} The \glossterm{weapon damage} is doubled.
                 \end{activeability}
             ",
             modifiers: None,
