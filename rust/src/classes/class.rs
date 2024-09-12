@@ -574,6 +574,7 @@ impl Class {
 
     pub fn insight_points(&self) -> i32 {
         match self {
+            Self::Cleric => 1,
             Self::Warlock => 1,
             Self::Wizard => 1,
             _ => 0,
@@ -639,7 +640,7 @@ impl Class {
         match self {
             Self::Automaton => 3,
             Self::Barbarian => 4,
-            Self::Cleric => 4,
+            Self::Cleric => 3,
             Self::Dragon => 5,
             Self::Druid => 5,
             Self::Dryaidi => 5,
@@ -677,7 +678,6 @@ impl Class {
                 usage_classes: vec![
                     ArmorUsageClass::Light,
                     ArmorUsageClass::Medium,
-                    ArmorUsageClass::Heavy,
                 ],
             },
             Self::Dragon => ArmorProficiencies {
@@ -1074,7 +1074,7 @@ impl Class {
                 simple_weapons: false,
             },
             Self::Druid => WeaponProficiencies {
-                custom_weapons: None,
+                custom_weapons: Some("shepherd's axe, sickle, and scythe".to_string()),
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
