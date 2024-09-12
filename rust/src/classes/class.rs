@@ -642,7 +642,7 @@ impl Class {
             Self::Barbarian => 4,
             Self::Cleric => 3,
             Self::Dragon => 5,
-            Self::Druid => 5,
+            Self::Druid => 4,
             Self::Dryaidi => 5,
             Self::Fighter => 3,
             Self::Harpy => 4,
