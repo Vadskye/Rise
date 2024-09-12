@@ -1,7 +1,8 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Resource};
 use crate::creatures::Modifier;
+use crate::skills::Skill;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -19,12 +20,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to your Mental defense, \glossterm{vital rolls}, and \glossterm{fatigue tolerance}.
+                You gain a \plus2 bonus to the Endurance skill and to your \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 1),
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
         RankAbility {
@@ -32,12 +32,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                The bonuses increase to \plus2.
+                The bonuses increase to \plus4.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Mental, 1),
-                Modifier::VitalRoll(1),
-                Modifier::Resource(Resource::FatigueTolerance, 1),
+                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
         RankAbility {
@@ -53,10 +52,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \miss Half damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The \glossterm{weapon damage} is doubled.
-                    \rank{6} The extra damage increases to 2d10.
-                    \rank{7} The \glossterm{weapon damage} is tripled.
+                    \rank{4} The extra damage increases to 2d6.
+                    \rank{5} The extra damage increases to 1d6 per 3 power (minimum 2d6).
+                    \rank{6} The extra damage increases to 1d6 per 2 power.
+                    \rank{7} The \glossterm{weapon damage} is doubled.
                 \end{activeability}
             ",
             modifiers: None,
@@ -105,7 +104,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You can gain proficiency with \glossterm{exotic weapons} from \glossterm{weapon groups} that you are already proficient with at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You can gain proficiency with \glossterm{exotic weapons} at the cost of one \glossterm{insight point} per weapon group (see \pcref{Exotic Weapons}).
+                You must already be proficient with all non-exotic weapons from that weapon group.
             ",
             modifiers: None,
         },
@@ -117,8 +117,8 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Weapon Training}
                     \abilityusagetime One hour of training with a weapon.
                     \rankline
-                    You become proficient with the specific weapon you trained with.
-                    This does not grant you proficiency with its weapon group, or with other weapons of its type.
+                    You become proficient with the specific item you trained with.
+                    This does not grant you proficiency with any other similar weapons.
 
                     If you would already be proficient with that weapon without this ability, you gain a \plus1 accuracy bonus with it.
                     If the weapon is an exotic weapon that you are not already proficient with, you take a \minus1 accuracy penalty with it.
@@ -142,28 +142,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Equipment Efficiency",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            name: "Equipment Efficiency+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Armor Expertise",
             is_magical: false,
-            rank: 3,
+            rank: 2,
             description: r"
                 You gain a special ability based on the \glossterm{usage class} of your body armor.
                 \begin{itemize}
@@ -180,6 +161,46 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            name: "Armored Strike",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                \begin{activeability}{Armored Strike}
+                    \abilityusagetime Standard action.
+                    \rankline
+                    Make a \glossterm{strike}.
+                    If your Armor defense is higher than the target's Armor defense, the strike deals double \glossterm{weapon damage}.
+                    Otherwise, the strike deals 1d6 \glossterm{extra damage}.
+
+                    \rankline
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
+                    \rank{5} The accuracy bonus increases to \plus2.
+                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple weapon damage. Otherwise, it deals double weapon damage.
+                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple weapon damage. Otherwise, the extra damage increases to 2d8.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Equipment Efficiency",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
+            ",
+            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Equipment Efficiency+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             name: "Armor Expertise+",
             is_magical: false,
             rank: 7,
@@ -194,15 +215,6 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \end{itemize}
             ",
             modifiers: None,
-        },
-        RankAbility {
-            name: "Weapon Expertise",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -390,10 +402,10 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus1 bonus to your Armor defense and \glossterm{vital rolls}.
+                You gain a \plus1 bonus to your Constitution.
             ",
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Attribute(Attribute::Constitution, 1),
             ]),
         },
         RankAbility {
@@ -550,7 +562,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You gain one of the following benefits:
                     \begin{itemize}
-                        \item Offense: You gain \plus1 accuracy against adjacent enemies.
+                        \item Offense: You gain a \plus1 accuracy bonus against adjacent enemies.
                         \item Defense: You gain a \plus1 bonus to your Armor defense.
                         \item Support: One adjacent \glossterm{ally} gains a \plus1 accuracy bonus.
                     \end{itemize}

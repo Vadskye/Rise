@@ -73,9 +73,9 @@ mod creature_tests {
             "Should have 2 AD"
         );
         assert_eq!(
-            0,
+            3,
             creature.calc_defense(&Defense::Fortitude),
-            "Should have 0 Fort"
+            "Should have 3 Fort"
         );
         assert_eq!(3, creature.calc_damage_resistance(), "Should have 3 DR");
     }

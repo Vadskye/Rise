@@ -1,6 +1,6 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::Resource;
+use crate::core_mechanics::{Attribute, DamageDice, Resource};
 use crate::core_mechanics::attacks::Maneuver;
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -30,6 +30,17 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Exotic Assassination Tools",
+            is_magical: false,
+            rank: 1,
+            description: r"
+                If you spend an \glossterm{insight point}, you can become proficient with all \weapontag{Compact} and \weapontag{Light} exotic weapons (see \pcref{Exotic Weapons}).
+                You must already be proficient with all Compact and Light non-exotic weapons.
+            ",
+            // This is an abstraction of the effect of exotic weapons being better
+            modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
             name: "Evasion",
@@ -756,22 +767,24 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Versatile Attacker",
+            name: "Versatile Expertise",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 \glossterm{accuracy} bonus.
+                You gain a \plus1 bonus to an attribute of your choice.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            // Arbitrarily choose Dex, which should be good for rogues
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            name: "Versatile Attacker+",
+            name: "Versatile Expertise+",
             is_magical: false,
             rank: 6,
             description: r"
-                The accuracy bonus increases to \plus2.
+                You gain a \plus1 bonus to a different attribute of your choice.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            // Arbitrarily choose Intelligence
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
     ]
 }

@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -79,8 +79,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Distant Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Mystic Sphere} You gain access to an additional divine \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-                        You cannot choose this ability multiple times.
                     \parhead{Precise Spell} Choose a divine \glossterm{spell} you know.
                         You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
@@ -88,6 +86,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
+                    \parhead{Smiting Spell} Choose a divine \glossterm{spell} you know.
+                        All damage dealt by that spell becomes untyped damage resulting directly from divine power.
+                        Your \glossterm{allies} are also immune to damage from that spell.
+                        You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Widened Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
@@ -124,7 +126,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
                     \hit Each target is turned by you as a \glossterm{condition}.
                     This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
-                    Once this effect ends, the creature becomes immune to this effect until it finishes a \glossterm{short rest}.
+                    Once this effect ends, the creature cannot be frightened in this way until it finishes a \glossterm{short rest}.
                     \crit As above, and each target with no remaining \glossterm{damage resistance} takes energy damage equal to half its maximum hit points.
                     After taking this damage, it cannot take this damage again until it finishes a short rest.
 
@@ -135,22 +137,13 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Experienced Spellcaster",
+            name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with spells.
+                You gain a \plus1 bonus to your Willpower.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            name: "Experienced Spellcaster+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                The accuracy bonus increases to +2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(2)]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
             name: "Attunement Point",
@@ -160,6 +153,15 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You gain an additional \glossterm{attunement point}.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            name: "Experienced Spellcaster",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 accuracy bonus with spells.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
@@ -416,18 +418,28 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // TODO: this is a little weak
         RankAbility {
             name: "Persuasive Certainty",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus3 bonus to the Persuasion skill.
-                In addition, you gain a \plus1 bonus to your Mental defense.
+                You gain a \plus2 bonus to the Persuasion skill.
+                In addition, you are immune to being \stunned.
             ",
             modifiers: Some(vec![
-                Modifier::Skill(Skill::Persuasion, 3),
-                Modifier::Defense(Defense::Mental, 1),
+                Modifier::Skill(Skill::Persuasion, 2),
+            ]),
+        },
+        RankAbility {
+            name: "Persuasive Certainty+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The Persuasion bonus increases to \plus4.
+                In addition, you are immune to being \confused.
+            ",
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Persuasion, 2),
             ]),
         },
         // Assume that it typically affects two people, and anything more than that is a
@@ -458,19 +470,10 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Your \glossterm{allies} who can hear you in a fight gain a \plus1 bonus to their Mental defense.
+                Your \glossterm{allies} who can hear you in a fight are immune to being \stunned and \confused.
                 You must generally say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
             // TODO: figure out allies-only buffs
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Inspiring Oration+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The defense bonus increases to \plus2.
-            ",
             modifiers: None,
         },
         // t1.5 debuff in t5 area is a r6 effect
