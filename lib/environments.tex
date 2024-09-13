@@ -318,7 +318,7 @@
 
   % https://tex.stackexchange.com/questions/94699/absolutely-definitely-preventing-page-break
   \newenvironment{forcesamepage}
-  {\par\nobreak\vfil\penalty0\vfilneg\vtop\bgroup}
+  {\vspace{-0.8em}\par\nobreak\penalty0\vfilneg\vtop\bgroup}
   {\par\xdef\tpd{\the\prevdepth}\egroup\prevdepth=\tpd}
 
   \ExplSyntaxOff
