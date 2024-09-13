@@ -696,6 +696,41 @@
     \phantomsection \label{#1}
 }
 
+% Create a section with a graphic after the section title,
+% ensuring that the graphic and the section title stay on the same page.
+% Args:
+%   *: if provided, create \label{sectiontitle}
+%   sectiontitle: Title of the section
+%   graphicsargs: Generally, \width=columnwidth
+%   graphicspath: Path to the graphic
+\DeclareDocumentCommand{\sectiongraphic}{s m m m}
+{
+  \begin{forcesamepage}
+  \section{#2}
+  \IfBooleanT{#1}{\label{#2}}
+  \includegraphics[#3]{#4}
+  \end{forcesamepage}
+}
+
+\DeclareDocumentCommand{\subsectiongraphic}{s m m m}
+{
+  \begin{forcesamepage}
+  \subsection{#2}
+  \IfBooleanT{#1}{\label{#2}}
+  \includegraphics[#3]{#4}
+  \end{forcesamepage}
+}
+
+\DeclareDocumentCommand{\subsubsectiongraphic}{s m m m}
+{
+  \begin{forcesamepage}
+  \subsubsection{#2}
+  \IfBooleanT{#1}{\label{#2}}
+  \includegraphics[#3]{#4}
+  \end{forcesamepage}
+}
+
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
