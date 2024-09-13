@@ -1,12 +1,12 @@
 %Set the spacing of lists
 \newenvironment{enumerate*}
 {\begin{enumerate}
-  \setlength{\leftmargin}{0em}
-  \setlength{\topsep}{1pt}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}}
-{\end{enumerate}}
+    \setlength{\leftmargin}{0em}
+    \setlength{\topsep}{1pt}
+    \setlength{\itemsep}{1pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\parsep}{0pt}}
+      {\end{enumerate}}
 
 \ExplSyntaxOn
 
@@ -15,21 +15,21 @@
 {\begin{table}[htb!]
     \small
     \rowcolors{1}{white}{tbrown}
-}
-{\end{table}}
+    }
+    {\end{table}}
 %Plus a custom table that takes up two columns
 \newenvironment{dtable*}
 {\begin{table*}[htb!]
-  \small
-  \rowcolors{1}{white}{tbrown}}
-{\end{table*}}
+    \small
+    \rowcolors{1}{white}{tbrown}}
+    {\end{table*}}
 %And one more for two-column tables that need fewer restrictions
 \newenvironment{dtable!*}
 {\begin{table*}[htb!]
     \small
     \rowcolors{1}{white}{tbrown}
-}{
-    \end{table*}
+    }{
+  \end{table*}
 }
 
 \newenvironment{columntable}{\small\rowcolors{1}{white}{tbrown}}{}
@@ -37,41 +37,41 @@
 %A list for normal spells
 \newenvironment{spelllist}
 {\begin{description}[nosep,font=\normalfont,leftmargin=2.25em,style=nextline,itemindent=-1em]}
-{\end{description}}
+    {\end{description}}
 
 \DeclareDocumentEnvironment{fakehang}{}
 {
-    \setlength{\parindent}{2em}
-    \everypar{\hangindent=1em}
+  \setlength{\parindent}{2em}
+  \everypar{\hangindent=1em}
 }
 {
-    \par
+  \par
 }
 
 \DeclareDocumentEnvironment{spellheader}{s}
 {
-    %\IfBooleanF{#1}{\spellline}
+  %\IfBooleanF{#1}{\spellline}
 }
 {
-    %\IfBooleanF{#1}{\spellline}
+  %\IfBooleanF{#1}{\spellline}
 }
 
 \definecolor{cosmiclatte}{rgb}{1.0, 0.97, 0.91}
 
 \newmdenv[
-    backgroundcolor=MintCream,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.5em,
-    skipbelow=0.5em,
-    leftmargin=0pt,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=0.5em,
-    innerbottommargin=0.25em,
+  backgroundcolor=MintCream,
+  leftline=true,
+  topline=true,
+  rightline=true,
+  bottomline=true,
+  roundcorner=4pt,
+  skipabove=0.5em,
+  skipbelow=0.5em,
+  leftmargin=0pt,
+  innerleftmargin=0.25em,
+  innerrightmargin=0.5em,
+  innertopmargin=0.5em,
+  innerbottommargin=0.25em,
 ]{activeabilitymdframed}
 % #1 = if true, include \label{#3}
 % #2 = Suffix after the name not used for label/targets/etc. Not bold.
@@ -79,221 +79,221 @@
 % #4 = Right-aligned section to the right of the ability name. Usually tags, sometimes rank.
 \DeclareDocumentEnvironment{activeability}{s o m o}
 {
-    \begin{activeabilitymdframed}
+  \begin{activeabilitymdframed}
     \RaggedRight
     \lowercase{\hypertargetraised{ability:#3}{}}
     \hypertargetraised{ability:#3}{}
     \IfBooleanT{#1}{\nonsectionlabel{#3}}
     \spelltwocol{
-        {\normalsize \textbf{#3}}
-        \IfValueT{#2}{#2}
+      {\normalsize \textbf{#3}}
+      \IfValueT{#2}{#2}
     }{
-        \IfValueT{#4}{#4}
+      \IfValueT{#4}{#4}
     }
-}
-{
-    \end{activeabilitymdframed}
+    }
+    {
+  \end{activeabilitymdframed}
 }
 
 \newmdenv[
-    backgroundcolor=cosmiclatte,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.5em,
-    skipbelow=0.5em,
-    leftmargin=0pt,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=0.5em,
-    innerbottommargin=0.25em,
+  backgroundcolor=cosmiclatte,
+  leftline=true,
+  topline=true,
+  rightline=true,
+  bottomline=true,
+  roundcorner=4pt,
+  skipabove=0.5em,
+  skipbelow=0.5em,
+  leftmargin=0pt,
+  innerleftmargin=0.25em,
+  innerrightmargin=0.5em,
+  innertopmargin=0.5em,
+  innerbottommargin=0.25em,
 ]{sustainabilitymdframed}
 \DeclareDocumentEnvironment{sustainability}{s o m m}
 {
-    \begin{sustainabilitymdframed}
+  \begin{sustainabilitymdframed}
     \RaggedRight
     \lowercase{\hypertargetraised{ability:#3}{}}
     \hypertargetraised{ability:#3}{}
     \IfBooleanT{#1}{\nonsectionlabel{#3}}
     \spelltwocol{
-        {\normalsize \textbf{#3}}
-        \IfValueTF{#2}{#2}{}
+      {\normalsize \textbf{#3}}
+      \IfValueTF{#2}{#2}{}
     }{
-        #4
+      #4
     }
-}
-{
-    \end{sustainabilitymdframed}
+    }
+    {
+  \end{sustainabilitymdframed}
 }
 
 \newmdenv[
-    backgroundcolor=brown!8,
-    leftline=true,
-    topline=true,
-    rightline=true,
-    bottomline=true,
-    roundcorner=4pt,
-    skipabove=0.5em,
-    skipbelow=0.5em,
-    leftmargin=0pt,
-    innerleftmargin=0.25em,
-    innerrightmargin=0.5em,
-    innertopmargin=0.5em,
-    innerbottommargin=0.25em,
+  backgroundcolor=brown!8,
+  leftline=true,
+  topline=true,
+  rightline=true,
+  bottomline=true,
+  roundcorner=4pt,
+  skipabove=0.5em,
+  skipbelow=0.5em,
+  leftmargin=0pt,
+  innerleftmargin=0.25em,
+  innerrightmargin=0.5em,
+  innertopmargin=0.5em,
+  innerbottommargin=0.25em,
 ]{attuneabilitymdframed}
 \DeclareDocumentEnvironment{attuneability}{s o m m}
 {
-    \begin{attuneabilitymdframed}
+  \begin{attuneabilitymdframed}
     \RaggedRight
     \lowercase{\hypertargetraised{ability:#3}{}}
     \hypertargetraised{ability:#3}{}
     \IfBooleanT{#1}{\nonsectionlabel{#3}}
     \spelltwocol{
-        {\normalsize \textbf{#3}}
-        \IfValueTF{#2}{#2}{}
+      {\normalsize \textbf{#3}}
+      \IfValueTF{#2}{#2}{}
     }{
-        #4
+      #4
     }
-}
-{
-    \end{attuneabilitymdframed}
+    }
+    {
+  \end{attuneabilitymdframed}
 }
 
 \DeclareDocumentEnvironment{magicalactiveability}{s m o}
 {
-    \IfValueTF{#1}{
-        \begin{activeability}*[\sparkle]{#2}[#3]
-    }{
-        \begin{activeability}[\sparkle]{#2}[#3]
+\IfValueTF{#1}{
+  \begin{activeability}*[\sparkle]{#2}[#3]
+}{
+  \begin{activeability}[\sparkle]{#2}[#3]
     }
-}
-{
-    \end{activeability}
+    }
+    {
+  \end{activeability}
 }
 
 \DeclareDocumentEnvironment{magicalsustainability}{s m m}
 {
-    \IfValueTF{#1}{
-        \begin{sustainability}*[\sparkle]{#2}{#3}
-    }{
-        \begin{sustainability}[\sparkle]{#2}{#3}
+\IfValueTF{#1}{
+  \begin{sustainability}*[\sparkle]{#2}{#3}
+}{
+  \begin{sustainability}[\sparkle]{#2}{#3}
     }
-}
-{
-    \end{sustainability}
+    }
+    {
+  \end{sustainability}
 }
 
 
 \DeclareDocumentEnvironment{magicalattuneability}{s m m o}
 {
-    \IfValueTF{#1}{
-        \begin{attuneability}*[\sparkle]{#2}{#3}
-    }{
-        \begin{attuneability}[\sparkle]{#2}{#3}
+\IfValueTF{#1}{
+  \begin{attuneability}*[\sparkle]{#2}{#3}
+}{
+  \begin{attuneability}[\sparkle]{#2}{#3}
     }
-}
-{
-    \end{attuneability}
+    }
+    {
+  \end{attuneability}
 }
 
 \DeclareDocumentEnvironment{attuneitem}{s m m}
 {
-    \begin{attuneabilitymdframed}
+  \begin{attuneabilitymdframed}
     \IfValueTF{#1}{
-        \itemabilityheader*{#2}{#3}
+      \itemabilityheader*{#2}{#3}
     }{
-        \itemabilityheader{#2}{#3}
+      \itemabilityheader{#2}{#3}
     }
-}
-{ \end{attuneabilitymdframed} }
+    }
+    { \end{attuneabilitymdframed} }
 
 \DeclareDocumentEnvironment{magicalattuneitem}{m m}
 { \begin{attuneitem}*{#1}{#2} }
-{ \end{attuneitem} }
+    { \end{attuneitem} }
 
 \DeclareDocumentEnvironment{passiveitem}{s m m}
 {
-    \begin{activeabilitymdframed}
+  \begin{activeabilitymdframed}
     \IfBooleanTF{#1}{
-        \itemabilityheader*{#2}{#3}
+      \itemabilityheader*{#2}{#3}
     }{
-        \itemabilityheader{#2}{#3}
+      \itemabilityheader{#2}{#3}
     }
-}
-{ \end{activeabilitymdframed} }
+    }
+    { \end{activeabilitymdframed} }
 
 \DeclareDocumentEnvironment{magicalpassiveitem}{m m}
 { \begin{passiveitem}*{#1}{#2} }
-{ \end{passiveitem} }
+    { \end{passiveitem} }
 
 \DeclareDocumentEnvironment{dtabularx}{m m}
 {
-    \tabularx{#1}{#2}%
+  \tabularx{#1}{#2}%
 }
 {
-    \endtabularx
+  \endtabularx
 }
 \surroundwithmdframed{dtabularx}
 
 \DeclareDocumentEnvironment{compresseddtabularx}{m m}
 {
-    \setlength{\tabcolsep}{4pt}
-    \tabularx{#1}{#2}%
+  \setlength{\tabcolsep}{4pt}
+  \tabularx{#1}{#2}%
 }
 {
-    \endtabularx
+  \endtabularx
 }
 \surroundwithmdframed{compresseddtabularx}
 
 \DeclareDocumentEnvironment{thesamepage}{}
 {
-    \par\nobreak\vfil\penalty0\vfilneg
-    \vtop{}
+  \par\nobreak\vfil\penalty0\vfilneg
+  \vtop{}
 }
 {
-    \par\xdef\tpd{\the\prevdepth}
-    \prevdepth=\tpd
+  \par\xdef\tpd{\the\prevdepth}
+  \prevdepth=\tpd
 }
 
 \DeclareDocumentEnvironment{feat}{m o m}
 {
-    \subsection[#1~#3]{
-        \protect
-        \hypertargetraised{feat:#1}{
-            \protect
-            \hyperlink{ft:#1}{#1\IfValueT{#2}{#2}~[#3]}
-        }
-    }
-    \label{feat:#1}
-}
-{}
+\subsection[#1~#3]{
+  \protect
+  \hypertargetraised{feat:#1}{
+  \protect
+  \hyperlink{ft:#1}{#1\IfValueT{#2}{#2}~[#3]}
+  }
+  }
+  \label{feat:#1}
+  }
+  {}
 
-\DeclareDocumentEnvironment{magicalfeat}{m m}
-{
+  \DeclareDocumentEnvironment{magicalfeat}{m m}
+  {
     \begin{feat}{#1}[\sparkle]{#2}
-}
-{
+      }
+      {
     \end{feat}
-}
+  }
 
-\DeclareDocumentEnvironment{indentedminipage}{m}
-{
+  \DeclareDocumentEnvironment{indentedminipage}{m}
+  {
     \noindent
     \begin{minipage}{#1}
-        \setlength{\parindent}{\RaggedRightParindent}
-}
-{
+      \setlength{\parindent}{\RaggedRightParindent}
+      }
+      {
     \end{minipage}
-}
+  }
 
-\DeclareDocumentEnvironment{raggeditemize}{}
-{\begin{itemize}\RaggedRight}
-{\end{itemize}}
+  \DeclareDocumentEnvironment{raggeditemize}{}
+  {\begin{itemize}\RaggedRight}
+      {\end{itemize}}
 
-\definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
-\newmdenv[
+  \definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
+  \newmdenv[
     backgroundcolor=floralwhite,
     leftline=false,
     topline=true,
@@ -307,13 +307,18 @@
     innerrightmargin=0.5em,
     innertopmargin=0.5em,
     innerbottommargin=0.25em,
-]{descriptionmdframed}
-\DeclareDocumentEnvironment{description}{}
-{
+  ]{descriptionmdframed}
+  \DeclareDocumentEnvironment{description}{}
+  {
     \begin{descriptionmdframed}
-}
-{
+      }
+      {
     \end{descriptionmdframed}
-}
+  }
 
-\ExplSyntaxOff
+  % https://tex.stackexchange.com/questions/94699/absolutely-definitely-preventing-page-break
+  \newenvironment{forcesamepage}
+  {\par\nobreak\vfil\penalty0\vfilneg\vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup\prevdepth=\tpd}
+
+  \ExplSyntaxOff
