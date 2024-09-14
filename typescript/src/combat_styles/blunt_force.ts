@@ -67,11 +67,9 @@ export const bluntForce: CombatStyle = {
     {
       name: 'Ground Slam+',
 
-      // Should be a med cone instead of a large cone, but the grounded limitation cancels
-      // that out?
       effect: `
         Make a melee \\glossterm{strike} using a bludgeoning weapon against a stable surface.
-        It targets everything supported by that surface in a \\largearea cone from you.
+        It targets everything supported by that surface in a \\medarea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
         On a miss, you still deal half damage.
         All damage dealt by this attack is bludgeoning damage instead of its normal types.
