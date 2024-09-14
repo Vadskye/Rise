@@ -80,7 +80,7 @@ const BASE_CLASS_MODIFIERS = {
     reflex: 0,
     mental: 2,
     hit_points: 'medium',
-    attunement_points: 2,
+    attunement_points: 1,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: "Light and medium armor",
