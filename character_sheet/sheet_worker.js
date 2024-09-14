@@ -96,7 +96,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor, leather lamellar armor, shepherd's axe, scimitars, and sickles",
   },
   fighter: {
-    armor: 1,
+    armor_defense: 1,
     fortitude: 0,
     reflex: 0,
     mental: 0,
