@@ -6,6 +6,36 @@ pub fn melee() -> Vec<MagicWeapon> {
     let mut weapons = vec![];
 
     weapons.push(Melee(StandardItem {
+        name: String::from("Aquatic"),
+        rank: 1,
+        short_description: String::from("No accuracy penalty while swimming"),
+        description: String::from(
+            r"
+                You do not take an accuracy penalty with attacks using this weapon while \swimming.
+            ",
+        ),
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Melee(StandardItem {
+        name: String::from("Eager"),
+        rank: 2,
+        short_description: String::from("Can be drawn quickly, +1 accuracy when drawn"),
+        description: String::from(
+            r"
+                You can draw this weapon as a \glossterm{free action} that does not count as an object manipulation (see \pcref{Manipulating Objects}).
+                When you draw this weapon, if you did not also sheathe it this round, you gain a \plus1 accuracy bonus to strikes using it this round.
+            ",
+        ),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Can be drawn quickly, +2 accuracy when drawn", r"
+                The accuracy bonus increases to +2.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Melee(StandardItem {
         name: String::from("Reckless"),
         rank: 3,
         short_description: String::from(
