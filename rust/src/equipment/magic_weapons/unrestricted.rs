@@ -33,7 +33,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 1,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus against that creature.
+            Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
@@ -61,9 +61,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             ItemUpgrade::new(5, "Deals +1d8-2 damage if you have 4 Str", r"
                 If your Strength is at least 4, the damage die increases to 1d8.
             "),
-            // +4 damage
-            ItemUpgrade::new(7, "Deals +2d6-3 damage if you have 5 Str", r"
-                If your Strength is at least 5, the damage dice increase to 2d6 and the damage penalty increases to -3.
+            // +5 damage
+            ItemUpgrade::new(7, "Deals +2d6-2 damage if you have 5 Str", r"
+                If your Strength is at least 5, the damage dice increase to 2d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -136,20 +136,23 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // 1d6 at rank 3 is approximately 25-30% more damage, or more for people using weak attacks.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfuel"),
-        rank: 4,
-        short_description: String::from(r"Can spend 4 HP for double damage"),
+        rank: 3,
+        // Expected HP at rank 3 is approximately 25.
+        short_description: String::from(r"Can spend 4 HP for +1d6 damage"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon that uses your own blood to fuel its power.
-            When you do, you lose 4 \glossterm<hit points>.
-            The strike's minimum accuracy is $accuracy.
-            The strike deals double weapon damage.
+            You can feed this weapon your blood as a \glossterm{minor action}.
+            When you do, you lose 4 \glossterm{hit points}.
+            In exchange, you deal 1d6 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Can spend 8 HP for triple damage", r"
-                Your weapon damage is tripled instead of doubled, but the hit point loss increases to 8.
-                In addition, the strike's minimum accuracy increases to $accuracy.
+            ItemUpgrade::new(5, "Can spend 8 HP for +2d6 damage", r"
+                The HP loss increases to 8, and the extra damage increases to 2d6.
+            "),
+            ItemUpgrade::new(7, "Can spend 16 HP for +4d6 damage", r"
+                The HP loss increases to 16, and the extra damage increases to 4d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -209,25 +212,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     }));
 
     weapons.push(Unrestricted(StandardItem {
-        name: String::from("Fixating"),
-        rank: 3,
-        short_description: String::from(r"Gradually increase focus on one creature"),
-        description: String::from(r"
-            Once per round, when you make a \glossterm<strike> with this weapon, you gain a +1 accuracy bonus against one target of the strike with future strikes using this weapon.
-            If the strike had multiple targets, you choose which target you gain the bonus against.
-            You also take a -1 penalty to accuracy and defenses against all other creatures.
-            This effect lasts until you make a strike with this weapon that does not include that creature as a target.
-            It stacks with itself, up to a maximum of a +3 bonus and a -3 penalty.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(6, "Quickly increase focus on one creature", r"
-                The modifiers increases to a +2 bonus and -2 penalty per strike, to a maximum of a +4 bonus and a -4 penalty.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
         name: String::from("Merciful"),
         rank: 1,
         short_description: String::from(r"Deals subdual damage"),
@@ -244,15 +228,45 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
              You can activate this weapon as a \glossterm{minor action}.
              When you do, it changes shape into a new weapon of your choice from the weapon's original weapon group.
-             If the weapon's original form belongs to multiple weapon groups, this property only applies to one of those weapon groups.
+             If the weapon's original form belongs to multiple weapon groups, the weapon can only change into weapons from one of those weapon groups.
              The new shape lasts until you activate the weapon again.
 
              When this effect ends for any reason, the weapon returns to its original form.
         "),
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Anchoring"),
+        rank: 2,
+        short_description: String::from(r"Can prevent teleportation"),
+        description: String::from(r"
+            As a standard action, you can make a \glossterm<strike> using this weapon.
+            On a damaging hit from this strike, the target \glossterm{briefly} cannot be \glossterm{teleported}.
+            An object subject to this effect is left behind if it is carried by a creature that teleports.
+        "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Can change into any weapon", r"
-                 The weapon can change shape into any weapon of your choice that you are proficient with, not just weapons from a single weapon group.
-                 This can only change into existing manufactured weapons, not improvised weapons.
+            // TODO: awkward wording
+            ItemUpgrade::new(5, "Prevents teleportation", r"
+                This effect no longer requires a special attack.
+                It automatically affects the target whenever you get a damaging hit with a strike using this weapon.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Cursebite"),
+        rank: 3,
+        short_description: String::from(r"Can inflict a curse"),
+        description: String::from(r"
+            Whenever you would inflict a \glossterm{condition} on a non-cursed creature with a strike using this weapon, that condition becomes a curse instead.
+            The curse cannot be removed by effects that remove conditions, and lasts until the target takes a \glossterm{short rest}.
+            If the effect has a special method of being removed, such as the \spell{entangle} spell, that removal method still functions normally.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Can inflict multiple curses", r"
+                The target does not have to be non-cursed, allowing you to apply multiple curses to the same creature.
             "),
         ],
         ..MagicWeapon::default()
@@ -342,18 +356,18 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Surestrike"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Can attack with +3 accuracy"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> with a +3 accuracy bonus using this weapon.
             Your minimum accuracy with the strike is $accuracy+3.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can attack with +6 accuracy", r"
+            ItemUpgrade::new(4, "Can attack with +6 accuracy", r"
                 The accuracy bonus increases to +6, and the minimum accuracy increases to $accuracy+6.
             "),
-            ItemUpgrade::new(7, "Can attack with +10 accuracy" , r"
-                The accuracy bonus increases to +10, and the minimum accuracy increases to $accuracy+10.
+            ItemUpgrade::new(6, "Can attack with +12 accuracy" , r"
+                The accuracy bonus increases to +12, and the minimum accuracy increases to $accuracy+12.
             "),
         ],
         ..MagicWeapon::default()
@@ -415,31 +429,31 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    weapons
+}
+
+fn energy_weapons() -> Vec<MagicWeapon> {
+    let mut weapons = vec![];
+
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Prismatic"),
-        rank: 4,
+        rank: 3,
         short_description: String::from(r"Can attack Reflex defense for energy damage"),
         description: String::from(r"
+            This weapon glows with gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
             As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to elemental energy.
             The strike is made against the target's Reflex defense instead of its Armor defense.
             Its minimum accuracy is $accuracy.
             Damage dealt by the strike is cold, electricity, and fire damage instead of the weapon's normal damage type.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, "Attacks Reflex defense and deals energy damage", r"
+            ItemUpgrade::new(7, "Deals energy damage and can attack Reflex defense", r"
                 All damage dealt by this weapon is cold, electricity, and fire damage instead of its normal damage types.
-                Strikes with this weapon are made against the target's Reflex defense instead of its Armor defense.
-                When you imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+                When you imbue this weapon with energy as a standard action, the strike deals triple \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
         ..MagicWeapon::default()
     }));
-
-    weapons
-}
-
-fn energy_weapons() -> Vec<MagicWeapon> {
-    let mut weapons = vec![];
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
