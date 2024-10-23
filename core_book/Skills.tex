@@ -374,6 +374,20 @@ This chapter describes each skill, including common uses for those skills.
     If you do not have a proper set of tools, you may be able to improvise from your surroundings.
     Generally, this imposes a penalty of at least \minus5 to the Devices check.
 
+    \begin{dtable}
+      \lcaption{Devices Difficulty Values}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
+        \tb{Device Type}                          & \tb{Difficulty Value} \tableheaderrule
+        Simple device (wagon wheel, typical knot) & 5                              \\
+        Average device (door hinge, complex knot) & 10                             \\
+        Difficult device (typical lock)           & 15                             \\
+        Extraordinary device (expert lock)        & 20                             \\
+        Impossible device (magically sealed lock) & 25                             \\
+        Mundane trap                              & 10 \add twice \glossterm{rank} \\
+        Magic trap                                & 15 \add twice \glossterm{rank} \\
+      \end{dtabularx}
+    \end{dtable}
+
   \subsection{Common Devices Tasks}
     \parhead{Activate Device} You can make a Devices check using thieves' tools to make a device perform a function it was designed to do, even if you lack the normal requirements.
     For example, you could tie or untie a knot, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
@@ -433,16 +447,19 @@ This chapter describes each skill, including common uses for those skills.
     If you stay still, you can hold your breath for a number of minutes equal to half your Endurance modifier with no risk of failure.
     \parhead{Maintain Exertion}\nonsectionlabel{Maintain Exertion}
     Some activities are difficult to maintain indefinitely.
-    For example, running at a dead sprint typically exhausts a creature in less than a minute.
+    For example, sprinting typically exhausts a creature in a minute or less.
     Even walking at a steady pace can become exhausting after hours without rest.
     You can make an Endurance check to continue performing a strenuous activity without rest.
 
-    Generally, this requires a \glossterm{difficulty value} 5 Endurance check when you reach the point where an ordinary human might be forced to rest.
-    If you succeed, you can maintain the exertion for the same length of time.
-    At the end of that time, you must make another check with a difficulty value that is 5 higher.
-    Each time you succeed, the difficulty value increases by 5.
-    If you fail, you must rest.
+    Generally, this requires a \glossterm{difficulty value} 10 Endurance check when you have performed the task for as long as a normal human can do it without rest.
+    Each time you succeed at this check, you can maintain the exertion for half that length of time.
+    At the end of that time, you must repeat this check to continue the activity, but the difficulty value increases by 5.
+    If you fail the check, you must rest.
     The details of how long you have to rest depends on the activity you were performing, at the GM's discretion.
+
+    For example, a human can normally sprint for 10 rounds without rest.
+    If they pass a DV 10 Endurance check, they could sprint for an additional 5 rounds.
+    After that time, they would need to make a DV 15 Endurance check for the next 5 rounds, then DV 20, and so on.
 
     \parhead{Stay Awake}\nonsectionlabel{Stay Awake} You can make an Endurance check to stay awake beyond healthy limits.
     A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
@@ -464,6 +481,22 @@ This chapter describes each skill, including common uses for those skills.
     \skill{Flexibility}{Dex}
     The Flexibility skill represents your ability to escape bindings and move through small areas by contorting your body.
 
+    \begin{dtable}
+      \lcaption{Flexibility Difficulty Values}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
+        \tb{Restraint}         & \tb{Difficulty Value} \tableheaderrule
+        Net                    & 8  \\
+        Common manacles        & 15 \\
+        High-quality manacles  & 20 \\
+        Extraordinary manacles & 25 \\
+        \tb{Tight Space}       & \tb{Difficulty Value} \tableheaderrule
+        Can fit with outstretched elbows & 5 \\
+        Can fit one outstretched elbow & 10 \\
+        Can fit head and shoulders only & 15 \\
+        Can fit head only & 25 \\
+      \end{dtabularx}
+    \end{dtable}
+
   \subsection{Common Flexibility Tasks}
 
     \parhead{Escape Bindings} As a standard action, you can make an Flexibility check to escape physical bindings.
@@ -472,9 +505,6 @@ This chapter describes each skill, including common uses for those skills.
     \parhead{Escape Grapple} As a standard action, you can make a Flexibility check to escape a grapple.
     For details, see \pcref{Escape Grapple}.
     \parhead{Tight Squeeze} You can make a Flexibility check to squeeze into spaces too small to normally fit you (see \pcref{Squeezing}).
-    A \glossterm{difficulty value} 15 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling.
-    For a typical human, this means squeezing through a space about a foot and a half in diameter.
-    A \glossterm{difficulty value} 25 check allows you to move in a space that can fit your head, but not your shoulders.
 
     \newpage
     \skill{Intimidate}{Varies}
