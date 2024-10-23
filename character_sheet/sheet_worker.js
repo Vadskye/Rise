@@ -28,7 +28,7 @@ const BASE_CLASS_MODIFIERS = {
     mental: 0,
   },
   warrior: {
-    armor_defense: 6,
+    armor_defense: 5,
     armor_usage_class: "heavy",
     damage_resistance: 1.0,
     hit_points: 'high',
@@ -890,7 +890,7 @@ function handleArmorDefense() {
       }
       const worstUsageClass =
         all_usage_classes.find((u) => u === "heavy") || all_usage_classes.find((u) => u === "medium") || "light";
-      if (worstUsageClass === "medium") {
+      if (worstUsageClass === "medium" || worstUsageClass === "heavy") {
         attributeModifier += Math.floor(v.dexterity / 2);
       } else if (worstUsageClass === "light") {
         attributeModifier += v.dexterity;
