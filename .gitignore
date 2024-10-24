@@ -227,6 +227,7 @@ typescript/node_modules/
 typescript/tsconfig.tsbuildinfo
 typescript/.tap
 core_book/generated
+tome_of_creation/generated
 html_book/generated
 
 #Rust
