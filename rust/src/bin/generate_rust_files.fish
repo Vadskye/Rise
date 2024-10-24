@@ -3,6 +3,7 @@ set FILENAME (status filename)
 set DIR (dirname $FILENAME)
 cd "$DIR/../../.."
 mkdir -p core_book/generated
+mkdir -p tome_of_creation/generated
 cd rust
 
 # TODO: Convert uncommon species to be Rust-generated
@@ -10,7 +11,7 @@ cd rust
 cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
 cargo run --bin monster_reference_table > ../core_book/generated/monster_reference_table.tex
 # cargo run --bin modules_chapter > ../core_book/generated/modules.tex
-cargo run --bin classes_chapter > ../core_book/generated/classes.tex
+cargo run --bin classes_chapter > ../tome_of_creation/generated/classes.tex
 
 cargo run --bin item_latex -- --category 'apparel' --descriptions > ../core_book/generated/apparel.tex
 cargo run --bin item_latex -- --category 'apparel' --table > ../core_book/generated/apparel_table.tex

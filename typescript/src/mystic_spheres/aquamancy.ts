@@ -672,7 +672,7 @@ export const aquamancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
-          You gain a \plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
+          You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
       // narrative: '',
@@ -688,7 +688,7 @@ export const aquamancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
-          You gain a \plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
+          You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
       // narrative: '',
