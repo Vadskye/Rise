@@ -445,7 +445,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: "accelerated evasion",
-        exceptThat: "it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep)",
+        exceptThat: "it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).",
       },
       rank: 6,
       type: 'Attune',
