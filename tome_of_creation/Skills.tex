@@ -95,6 +95,10 @@ This chapter describes each skill, including common uses for those skills.
     \parhead{Notice Subtle Effect} If you succeed at an Awareness check, you can notice the general effects of a \abilitytag{Subtle} ability affecting you.
     The \glossterm{difficulty value} to notice the effect when it is first applied to you is 15 \add twice the \glossterm{rank} of the ability.
     In addition, you can make another check when the ability ends to notice that you feel normal again.
+    \parhead{Read Lips} When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
+    The \glossterm{difficulty value} is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
+    You must be able to understand the language spoken.
+    Success means you can understand what is being said.
 
   \subsection{Common Awareness Modifiers}\label{Common Awareness Modifiers}
     While sleeping, you take a \minus10 penalty to the Awareness skill.
@@ -112,9 +116,10 @@ This chapter describes each skill, including common uses for those skills.
 
 \newpage
 \skill{Balance}{Dex}
-  The Balance skill represents your ability to maintain your balance and poise on unsteady surfaces.
-  The base \glossterm{difficulty value} to balance on a normal surface is 0.
-  Generally, creatures only have to roll Balance checks if the surface is unsteady for some reason.
+  % TODO: should "unsteady terrain" be a standard glossterm?
+  The Balance skill represents your ability to maintain your balance and poise on unsteady terrain.
+  It also represents your ability to precisely position your movements, such as to avoid touching traps that you are aware of.
+  Generally, creatures only have to roll Balance checks if the terrain is unsteady for some reason.
 
   \subsection{Common Balance Tasks}
     \parhead{Agile Charge}\nonsectionlabel{Agile Charge} You can make a \glossterm{difficulty value} 10 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
@@ -130,20 +135,43 @@ This chapter describes each skill, including common uses for those skills.
     Success means you move along the surface.
 
   \subsection{Common Balance Modifiers}
+
+    The base \glossterm{difficulty value} to balance on a normal terrain is 0.
     There are four common circumstances that make Balance checks more difficult: slippery, mobile, narrow, and uneven surfaces.
     Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
     Significantly impaired surfaces increase the DV by 5 or more.
-    If a surface is impaired for multiple reasons, the difficulty modifiers stack.
+    If a surface is impaired for multiple reasons, add all relevant modifiers.
+    Some specific examples are listed below.
 
-  \subsection{Balance Difficulty Value Examples}
     \begin{columntable}
       \begin{dtabularx}{\columnwidth}{l X}
-        \tb{DV} & \tb{Examples} \tableheaderrule
-        0  & Sandy beach, typical forest floor, city street after rain                         \\
-        5  & Support beam almost a foot wide, rope bridge, ankle-deep rapid river, frozen lake \\
-        10 & Support beam four inches wide, knee-deep rapid river, oil spill                   \\
-        15 & Support beam one inch wide, slack rope, waist-deep rapid river                    \\
-        20 & Oil-covered slack rope                                                            \\
+        \tb{Ice}                                  & \tb{DV} \tableheaderrule
+        Rough, hardpacked ice, like a frozen lake & \plus2  \\
+        Typical ice                               & \plus5  \\
+        Recently frozen or ultra-smooth ice       & \plus10 \\
+        \tb{Liquid}                               & \tb{DV} \tableheaderrule
+        Water-covered ground, such as from rain   & \plus2  \\
+        Ankle-deep moving stream                  & \plus5  \\
+        Knee-deep static water                    & \plus5  \\
+        Oil-coated ground                         & \plus5  \\
+        Knee-deep moving stream                   & \plus10 \\
+        \tb{Narrow Surface}                       & \tb{DV} \tableheaderrule
+        About two feet wide                       & \plus2  \\
+        About one foot wide                       & \plus5  \\
+        About six inches wide                     & \plus10 \\
+        About two inches wide                     & \plus15 \\
+        Less than than two inches wide            & \plus20 \\
+        \tb{Sand}                                 & \tb{DV} \tableheaderrule
+        Water-logged beach sand                   & \plus2  \\
+        Hard-packed desert sand                   & \plus2  \\
+        Typical beach or desert sand              & \plus5  \\
+        Quicksand                                 & \plus10 \\
+        Unusually smooth, wind-tossed desert sand & \plus10 \\
+        \tb{Uneven Ground}                        & \tb{DV} \tableheaderrule
+        Infrequent ankle-high bumps and dips      & \plus2  \\
+        Constant ankle-high bumps and dips        & \plus5  \\
+        Infrequent knee-high bumps and dips       & \plus5  \\
+        Constant knee-high bumps and dips         & \plus10 \\
       \end{dtabularx}
     \end{columntable}
 
@@ -226,6 +254,9 @@ This chapter describes each skill, including common uses for those skills.
   \subsection{Common Craft Tasks}\label{Common Craft Tasks}
     \parhead{Create Item} You can make a Craft check to create an item.
     For details, see \pcref{Crafting Items}.
+    \parhead{Create Disguised Item} You can craft an item that superficially appears to function like a similar, but different, item.
+    This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one higher than it actually is.
+    A creature studying the item with the Identify Item task only identifies the item's false purpose unless they get a \glossterm{critical success} on the check.
     \parhead{Create Forgery} You can make a Craft check to create a false or defective version of an item.
     This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one lower than it actually is (to a minimum of 0).
     Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for sustained usage.
@@ -301,6 +332,12 @@ This chapter describes each skill, including common uses for those skills.
       If the target is damaged or feels that it is in danger, this effect is automatically ended.
     \end{sustainability}
     \parhead{Perform Trained Action} You can make a \glossterm{difficulty value} 5 Creature Handling check to convince an \glossterm{ally} to perform an action it is already trained to perform.
+    \parhead{Rear a Wild Creature} You can make a Creature Handling check to raise a wild creature from infancy so that it becomes domesticated.
+    The time required depends on how long it takes the creature in question to reach adulthood.
+    The \glossterm{difficulty value} for this check is equal to 5 \add twice the creature's level in its adult form.
+    This check must be repeated once per year during the process of raising the creature, and when that process is complete.
+    Failure means that an additional year of training is required.
+    A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
     \parhead{Teach Trick} You can make a Creature Handling check to teach an \glossterm{ally} a trick.
     A trick is a specific behavior that generally requires a single-word command, like ``fetch'' or ``stay''.
     A creature can learn a maximum of two tricks per point of Intelligence it has above \minus10.
@@ -310,6 +347,40 @@ This chapter describes each skill, including common uses for those skills.
   \subsection{Common Creature Handling Modifiers}
     Animals are easier to handle than other kinds of creatures.
     You take a \minus5 penalty to your Creature Handling skill when using it to affect non-animals.
+
+  \subsection{Teaching Tricks}
+    Generally speaking, teaching a creature a new trick requires spending at least four hours a day in training over the course of a week.
+    It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior.
+    If a creature is taught more tricks than its Intelligence allows it to retain, it will forget one of its old tricks during the course of learning the new trick.
+    The trainer can choose which old trick will be replaced in this way.
+
+    A list of specific tricks that creatures can be taught is given below.
+    Of course, players should feel free to define new tricks to accomplish more specific goals.
+    However, complicated tricks are probably more difficult for an animal to learn, so the difficulty value to teach a custom trick might be 15 or higher.
+
+    \parhead{Attack (DV 10)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. This trick includes teaching the creature how to stop attacking if you give it a command to relent.
+    \parhead{Come (DV 5)} The creature comes to you.
+    \parhead{Defend (DV 10)} The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
+    \parhead{Down (DV 5)} The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
+    \parhead{Fetch (DV 5)} The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
+    \parhead{Guard (DV 10)} The creature stays in place and prevents others from approaching.
+    \parhead{Heel (DV 5)} The creature follows you closely, even to places where it normally wouldn't go.
+    \parhead{Messenger (DV 15)} The creature carries a small item to a destination.
+    Once it arrives, it waits for up to 24 hours for someone to take the item from it.
+    The destination must be known to the creature.
+    \par When you instruct the creature to deliver the item, you must communicate the destination to the creature.
+    This normally requires a DV 20 Creature Handling check as a standard action.
+    The DV of this check is lowered to 15 for locations the creature is extremely familiar with, such as its home.
+    If you have other means of communicating the destination to the creature, such as the \textit{animal speech} druid ability (see Animal Speech, page \pref{Drd:Animal Speech}), that check is unnecessary.
+    \parhead{Perform (DV 10)} The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
+    \parhead{Seek (DV 5)} The creature moves into an area and looks around for anything that is obviously alive or animate.
+    \parhead{Stay (DV 5)} The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
+    \parhead{Track (DV 10)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
+    \parhead{Work (DV 5)} The creature pulls or pushes a medium or heavy load.
+
+    \subsubsection{Bonus Tricks}\label{Bonus Tricks}
+      Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
+      Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by a trainer who does not have the same ability to grant bonus tricks.
 
   \subsection{Training Non-Domesticated Creatures}
     Although non-domesticated creatures of any type can be taught tricks with patience and training, they are not naturally obedient.
@@ -432,6 +503,28 @@ This chapter describes each skill, including common uses for those skills.
     \parhead{Emulate Appearance} You can make a creature look like a different specific creature.
     This functions like the \textit{change appearance} task, except that the result of your Disguise check can't exceed the result of an Awareness check you or someone helping you made to observe the creature you are trying to emulate.
 
+  \subsection{Common Disguise Modifiers}
+    It is generally easier to enlarge a creature or add new features than it is to shrink a creature or remove existing features.
+    You can use the table below a guide, and the GM can improvise penalties for more unusual disguises if necessary.
+    If you make multiple alterations, the penalties stack.
+
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X}
+        \tb{Age Change}                              & \tb{Disguise Penalty} \\
+        Per age category of difference & \minus2 \\
+        \tb{Body Shape Change}                              & \tb{Disguise Penalty} \\
+        To a different gender                               & \minus2               \\
+        Per removed arm                                     & \minus2               \\
+        Per removed leg                                     & \minus5               \\
+        Per additional arm or leg                           & \minus5               \\
+        \tb{Species Change}                                 & \tb{Disguise Penalty} \tableheaderrule
+        To a similar-size species (human to elf)            & \minus2               \\
+        To a noticeably larger species (halfling to human)  & \minus5               \\
+        To a noticeably smaller species (human to halfling) & \minus15              \\
+        To a larger size category (human to ogre)           & \minus15              \\
+      \end{dtabularx}
+    \end{columntable}
+
 \newpage
 \skill{Endurance}{Con}
   The Endurance skill represents your ability to persevere through physical trials.
@@ -460,6 +553,10 @@ This chapter describes each skill, including common uses for those skills.
     For example, a human can normally sprint for 10 rounds without rest.
     If they pass a DV 10 Endurance check, they could sprint for an additional 5 rounds.
     After that time, they would need to make a DV 15 Endurance check for the next 5 rounds, then DV 20, and so on.
+    \parhead{Overland Exertion} You can make an Endurance check while travelling overland to cover more round (see \pcref{Overland Movement}).
+    This is a special use of the Maintain Exertion ability described in the core rulebook.
+    There are two ways that you can exert yourself: hustling, which doubles your distance travelled during a given hour, and making a forced march, which allows you to travel for an extra hour beyond the normal travel time.
+    Making a forced march only increases the \glossterm{difficulty value} of the check by 2 for each additional hour, instead of the normal 5.
 
     \parhead{Stay Awake}\nonsectionlabel{Stay Awake} You can make an Endurance check to stay awake beyond healthy limits.
     A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
@@ -884,7 +981,7 @@ This chapter describes each skill, including common uses for those skills.
 
   \subsection{Common Survival Tasks}
     \parhead{Find Sustenance} You can make a Survival check to hunt or forage for food and water.
-    This generally takes a few hours of work to find enough food for you and a small group of allies.
+    This generally takes a few hours of work to find enough sustenance for you and a small group of allies.
     The \glossterm{difficulty value} and details of what you find depend on the terrain.
     \parhead{Follow Tracks} You can make a Survival check to follow tracks at up to half your normal movement speed.
     You can move at full speed if you accept a \minus5 penalty to the check.
@@ -892,7 +989,71 @@ This chapter describes each skill, including common uses for those skills.
     You must repeat this check whenever the trail changes significantly, such as when it crosses other tracks or passes through a different environment.
     \parhead{Navigate Wilderness} You can make a Survival check while moving overland to avoid natural terrain hazards and getting lost.
     The \glossterm{difficulty value} and consequences of failure depend on the terrain.
+    Overland travel often follows standard roads or paths, which may make this check unnecessary depending on the quality of the road.
     \parhead{Predict Weather} You can make a \glossterm{difficulty value} 10 Survival check to predict the local weather for the next day.
+
+  \subsection{Terrain Difficulty Values}
+    These are general guidelines, not exact rules.
+    The GM can tell you more about the specific landscape you are traversing.
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X X}
+        \tb{Terrain} & \tb{Navigation Difficulty Value} & \tb{Sustenance Difficulty Value} \tableheaderrule
+        Desert       & 10                                & 20 \\
+        Forest       & 10                                & 10 \\
+        Jungle       & 15                                & 5 \\
+        Mountains    & 10                                & 15 \\
+        Hills        & 5                                 & 10 \\
+        Plains       & 5                                 & 10 \\
+        Swamp        & 15                                & 15 \\
+      \end{dtabularx}
+    \end{columntable}
+
+  \subsection{Tracking}
+    One of the key uses for the Survival skill is to follow tracks left by creatures.
+    You can use the Awareness skill to notice signs of passage, but the Survival skill is necessary to follow tracks for any distance.
+    Some suggestions for determining the difficulty of following a trail can be found in \trefnp{Example Tracking Difficulty Values} and \trefnp{Example Tracking Difficulty Modifiers}.
+    The GM may also apply other circumstantial modifiers not listed here.
+
+    \begin{dtable}
+      \lcaption{Example Tracking Difficulty Values}
+      \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
+        \tb{Surface}     & \tb{Description}                                                                                                                                                     & \tb{Difficulty Value} \tableheaderrule
+        Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints.                                                                      & 0                                 \\
+        Soft ground      & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints                      & 5                                                                                  \\
+        Firm ground      & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 10                                                                                          \\
+        Hard ground      & Any surface that doesn't hold footprints at all, such as bare rock or a streambed                                                                                    & 15                    \\
+        Scent            & Tracking using the \trait{scent} ability instead of vision                                                                                                           & 5 \\
+      \end{dtabularx}
+    \end{dtable}
+
+    \begin{dtable}
+      \lcaption{Example Tracking Difficulty Modifiers}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
+        \tb{Condition}                                      & \tb{Difficulty Modifier} \tableheaderrule
+        Every three creatures in the group being tracked    & \minus1      \\
+        Size of creature or creatures being tracked:\fn{1}  &              \\
+        Fine                                                & \plus20      \\
+        Diminutive                                          & \plus15      \\
+        Tiny                                                & \plus10       \\
+        Small                                               & \plus5       \\
+        Medium                                              & \plus0       \\
+        Large                                               & \minus5      \\
+        Huge                                                & \minus10      \\
+        Gargantuan                                          & \minus15     \\
+        Colossal                                            & \minus20     \\
+        Every 24 hours since the trail was made             & \plus1\fn{3} \\
+        Every hour of rain since the trail was made         & \plus1       \\
+        Fresh snow cover since the trail was made           & \plus10      \\
+        \tb{Poor visibility:\fn{2}}                         &              \\
+        Overcast or moonless night                          & \plus6       \\
+        Moonlight                                           & \plus3       \\
+        Fog or precipitation                                & \plus3       \\
+        Tracked party hides trail (and moves at half speed) & \plus5
+      \end{dtabularx}
+      1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
+      2 Apply only the largest modifier from this category. \\
+      3 With scent-based tracking, apply this modifier per hour since the trail was made. \\
+    \end{dtable}
 
 \newpage
 \skill{Swim}{Str}
@@ -920,3 +1081,15 @@ This chapter describes each skill, including common uses for those skills.
     Some creatures have a listed swim speed.
     A creature with a passive swim speed must still make a Swim check to move in liquid.
     However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success.
+
+  \subsection{Swim Difficulty Values}
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+        \tb{Liquid}                                                       & \tb{Difficulty Value} \tableheaderrule
+        Calm water                                                        & 5  \\
+        Rough water                                                       & 10 \\
+        Viscous liquid, like a muddy swamp                                & 10 \\
+        Stormy water                                                      & 15 \\
+        Extremely stormy water                                            & 20 \\
+      \end{dtabularx}
+    \end{columntable}
