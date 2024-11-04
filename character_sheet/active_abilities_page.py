@@ -647,13 +647,6 @@ def universal_abilities():
                 """,
             ),
             universal_ability_button(
-                "Dirty Trick",
-                """
-                    Make a melee attack with a free hand against the Fortitude or Reflex defense of an adjacent creature. On a hit, the target suffers a -2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
-                 """,
-                attack={"accuracy": "@{accuracy}", "defense": "Fort or Ref", "tags": ["Size-Based"]},
-            ),
-            universal_ability_button(
                 "Escape Grapple",
                 """
                     Make a brawling attack against any number of creatures that you are grappled by. The defense of each creature is equal to the result of its maintain grapple ability. If a creature did not use that ability during the current round, its defense against this ability is 0.

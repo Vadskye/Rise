@@ -1,152 +1,653 @@
-\chapter{The World of Altus}
+\chapter{The Universe}
 
-Altus is a specific world that you can use to run a game of Rise.
-It has a defined geography, countries, and legends.
-Many of its specifics are left somewhat vague, which gives you the freedom to expand on it or modify it to suit the needs of your story.
+\section{Planes}\label{Planes}
+  The universe of Rise is divided into planes.
+  A plane is a distinct realm of existence.
+  Except for the connections between planes through planar rifts, each plane is effectively an isolated universe, and different planes can obey different fundamental laws.
+  For example, the Material Plane has gravity that exerts a consistent acceleration in a single absolute direction.
+  However, the Astral Plane has subjective gravity, where each creature on the plane chooses the direction that gravity pulls it in, if any.
 
-Of course, you can also make your own entirely unique world!
-The rules of Rise are not deeply tied to the specific world of Altus.
-Beware that world-building can be difficult and time-consuming, so it's generally best to start small.
-For example, you might find it easier to run a game set in an invented island off the main continent of Altus before you make a whole world from scratch.
-That allows you to fall back on some of the existing countries and conventions if you need them.
+  \subsection{General Cosmology}
+    The planes of Rise are divided up into groups.
 
-\section{The Story of Creation}
+    \parhead{Primal Planes} The primal planes are manifestations of the basic building blocks of the universe.
+    Each plane in this group is predominantly composed of a single element or type of energy.
+    There are four primal planes: Air, Earth, Fire, and Water.
 
-  All things began in the Age of Darkness.
-  If you could have looked up at the sky back then, ignoring that you didn't have any ground to stand on, you would have seen nothing but a dark void.
-  The stars were still there, of course - little discs floating around, same as they are now.
-  But not a single one of them emitted the light we are used to.
-  They were happy in the darkness, and lulled into a peaceful sleep by the changeless void - all but one.
+    \parhead{Aligned Planes} The four aligned planes are manifestations of the four alignments.
+    The Celestial Heavens is good-aligned, the Abyss is evil-aligned, Ordus is law-aligned, and Discord is chaos-aligned.
 
-  One among their number had awoken, and she grew discontent.
-  Was there nothing more to creation than this endless stagnation?
-  She preached words of change to any nearby stars who could hear her.
-  Surely they could make something more exciting if they worked together, she said.
-  Her neighbors were slow to rise from their sleep, but nevertheless, she persisted.
-  Two of the nearby stars eventually awoke and joined her scheme.
+    When mortal creatures die, their souls travel to an appropriate location on an aligned plane, where they gain new planeforged bodies and live again.
+    If they pledged their soul to a deity in life, that deity can take ownership over their soul in death, and the soul is reborn within that deity's territory and under their protection.
+    Otherwise, they appear on the aligned plane that most closely reflects their primary alignment in life.
 
-  At the time, none of these stars had names, but this story is going to get confusing if we don't get that settled.
-  That persistent first star is now known as as Illumis, the Lightbringer.
-  We owe her our life, our light, and even the ground beneath our feet - but that's getting ahead of ourselves.
-  The brighter of the two stars that followed her in her little rebellion is called Solaris, the Herald.
-  He is the sun that soars overhead each day, making sure our personal world has light and warmth to survive in the Void Beyond.
-  The dimmer star is Lunaris, the Disciple.
-  She had not the raw power of Solaris nor the revolutionary zeal of Illumis, and her moonlight is but a pale shadow of Solaris's brilliance.
-  Yet without her unceasing devotion and protective wisdom, all of their plans would have come to naught.
-  We call the three stars together the Triune Astralis.
+    \parhead{Nexus Planes} The nexus planes are composite planes with a number of distinct environments and filled with creatures of myriad alignments.
+    Nexus planes comprise the majority of civilization across all planes.
+    They do not have their own unique planar essence, and no planar creatures are native to nexus planes.
+    There are two nexus planes: the Material Plane and the Astral Plane.
 
-  Illumis started everything off by igniting into beautiful, transcendent brilliance.
-  No one had seen anything before in the whole Age of Darkness!
-  Can you imagine having Illumis's ignition be the first thing you ever saw?
-  Solaris and Lunaris ignited too, with Solaris's light even outshining Illumis, and everyone woke up pretty quickly after that.
-  Even in the most distant corners of the universe, where Illumis's light was a dim glow and Lunaris was invisible, Solaris shined as a beacon that drew attention.
+    \parhead{Demiplanes} These planes are small, fragmentary realms that are greatly limited in their scope.
+    There is no specific list of demiplanes, and they share few common properties.
+    Most demiplanes were created for particular purposes by beings of great power, though some simply came into existence through unknown means.
 
-  At first, the other stars were pretty grumpy.
-  They had all been pretty happy while asleep, and now they were awake and it was bright and confusing.
-  Illumis used her light to tell the universe about her ideas for the future.
-  With blinks and flashes and swirls, she painted a picture of a shocking new age.
+  \subsectiongraphic*{Planar Rifts}{width=\columnwidth}{the universe/planar rifts}
+    Normally, there are boundaries between different planes that prevent direct passage between them.
+    However, planar rifts are places where these boundaries have weakened, making interplanar travel easier.
+    A planar rift joins a specific location on one plane to a specific location on a different plane.
+    Most planar rifts lead to and from the Astral Plane, which is the space between the other planes (see \pcref{The Astral Plane}).
 
-  Illumis's awakening was too powerful to be contained.
-  When she had ignited, some of her lifelight had seeped into her rocky core.
-  Now there were little creatures running around on her surface, drinking in her light and living their own chaotic, unpredictable lives.
-  The little creatures were fascinating, and she fell in love with them immediately.
-  She invited all of the other stars to ignite and begin a new age: the Age of Light, with a sky of twinkling majesty instead of cold darkness.
+    Most planar rifts still require the use of magic, such as the \spell{plane shift} ritual, to actually cross between planes.
+    Some especially large rifts enable physical travel between planes without the use of any magic.
 
-  Solaris and Lunaris echoed her message, though each contributed their own perspective.
-  The creatures that inhabited Solaris were born of flame and heat to match his raw power.
-  His fire elementals, as we call them now, bore little resemblance to Illumis's fleshy creatures.
-  Lunaris's light was too weak to awaken any inhabitants of her own, and she drifted closer to Illumis to watch and tend to the creatures there.
+  \subsection{Planar Traits}
+    \subsubsection{Gravity Direction}
+      The direction of gravity on a plane can take one of the following forms:
+      \begin{itemize}
+        \item Fixed Gravity: Gravity points in a fixed direction and with a fixed strength at all locations on the plane.
+          Almost all planes with a fixed gravity have a perfectly flat surface.
+        \item Absolute Directional Gravity: Gravity points in a consistent direction according to a rule that applies equally to everything on the plane, but which is not in a fixed direction.
+          For example, a plane filled with floating spheres where gravity always points towards the closest sphere has absolute directional gravity.
+        \item Subjective Gravity: Each creature on the plane chooses the direction of gravity for that creature.
+          The plane has no gravity for unattended objects and mindless creatures.
+          A creature on the plane can control its own gravity.
+          \begin{activeability}{Control Gravity}
+            \abilityusagetime \glossterm{Minor action} while on a subjective gravity plane.
+            \rankline
+            Make a Willpower check with a difficulty value of 10.
+            Success means that you choose the direction of gravity that applies to you on the current plane.
+            Alternately, you can choose for gravity to not apply to you.
 
-  The stars were in an uproar over this news.
-  Not all of them shared Illumis's interest in creating their own inhabitants.
-  However, they could not deny the beauty and novelty of her light and creations.
-  Critically, Lunaris showed that they could ignite and be a part of the new age even if they were unable or unwilling to support the chaos of life themselves.
-  One by one, they ignited in turn, with a small fraction creating life as Illumis had.
+            Failure means you gain a \plus2 bonus to the next \textit{control gravity} ability you use on this plane.
+            This bonus stacks with itself and lasts until you succeed at a \textit{control gravity} ability on this plane.
+          \end{activeability}
+      \end{itemize}
 
-  However, some stars utterly refused to be swayed.
-  Without light, they could not communicate at a distance, so they began to drift together.
-  As their numbers grew and they became increasingly isolated from the ever-brightening sky, their anger grew in turn.
-  Who was Illumis to rewrite the universe in her image?
-  Wasn't it better when everything was dark and quiet and peaceful?
-  They had to stop this rebellion so everything could go back to the way it was.
-  If they destroyed Illumis, the other stars would extinguish themeselves in fear, and the Age of Darkness would return.
+    \subsubsection{Gravity Strength} The strength of gravity on a plane can take one of the following forms:
+      \begin{itemize}
+        \item Normal Gravity: Gravity is about the strength of Earth.
+        \item No Gravity: There is no gravity on the plane.
+          The range limits of ranged weapons are quadrupled.
+          % TODO: what additional effects are there?
+        \item Light Gravity: Gravity is about half the strength of Earth.
+          % Should there be check penalties?
+          The weight of all items is halved.
+          The range limits of ranged weapons are doubled.
+        \item Heavy Gravity: Gravity is about twice the strength of Earth.
+          Creatures take a \minus2 penalty to Strength and Dexterity-based checks.
+          The weight of all items is doubled.
+          The range limits of ranged weapons are halved, to a minimum of 5 feet.
+          % TODO: falling damage
+        \item Extreme Gravity: Gravity is about four times the strength of Earth.
+          Creatures take a \minus4 penalty to Strength and Dexterity-based checks.
+          The weight of all items is quadrupled.
+          The range limits of ranged weapons are reduced to one quarter of the normal value, to a minimum of 5 feet.
+          % TODO: falling damage
+      \end{itemize}
 
-  The main problem that the unlit stars faced was simple: they were weak.
-  Illumis had been among the strongest of the stars before her awakening.
-  Worse, she seemed to have a symbiotic relationship with her infestation of minor life that strengthened her further.
-  The unlit stars swore an oath to join together until the Age of Darkness was restored, and became the Voidsworn.
+    \subsubsection{Light} Various planes are illuminated in different ways.
+      \begin{itemize}
+        \item Fixed Source: There is a single constant source of light on the plane.
+        \item Mobile Source: There is a single source of light on the plane that moves around it, illuminating different parts of the plane at different times.
+        \item None: There is no natural source of light on the plane.
+          Other sources of light, such as torches, function normal.
+      \end{itemize}
 
-  For all their reactionary inclinations, the Voidsworn ended up invented something too.
-  None of the stars had ever spent much time in close proximity to each other during the Age of Darkness.
-  As the Voidsworn swarmed and gathered their numbers, they began to fuse together into a single monstrous entity.
-  This Voidsworn Amalgam swept through the sky towards the Triune Astralis.
-  When they found stars in their path, they attacked and consumed their ignited brethren, joining the corpses of the dead stars into the Amalgam.
+    \subsubsection{Limits} The behavior of a plane at its limits can vary widely.
+      Some planes have different behaviors at different limits depending on their shape.
+      \begin{itemize}
+        \item Astral Gate: If you reach the limits of the plane, you find a planar gate to the Astral Plane.
+        \item Barrier: If you reach the limits of the plane, you find an impassable barrier.
+          The barrier takes the form of a substance relevant to the plane's nature.
+          It may be possible to dig tunnels into the barrier to some depth, but there is nothing behind the barrier.
+          As you progress past the limit, the barrier becomes increasingly difficult to break through, and eventually it becomes completely impenetrable.
+        \item Looped: If you go beyond the limits of the plane, you wrap around to the opposite side of the plane.
+          There is no obvious transition point or perception of transportation when this occurs - the shape of the plane simply connects to itself.
+          On very small planes, this can allow you to see your own back, though looped planes of that size are rare.
+        \item Infinite: The plane has no limits. This is extremely rare.
+      \end{itemize}
 
-  As the Voidsworn carved their ruthless path through the sky, Illumis prepared for the inevitable confrontation.
-  She knew the Age of Light could not truly begin until she met them in battle to determine the fate of the universe.
-  When the Voidsworn Amalgam arrived, Illumis drew them into a trap.
-  She pulled her light, and her life-fuel, into the core of her body, leaving the surface frozen and barren.
-  A great age of darkness and cold enveloped her inhabitants, which we call the Long Dark.
-  This was a difficult time for our ancestors, as you should know from the Old Histories!
+    \subsubsection{Planar Connectivity}
+      Different planes have different degrees of connection to other planes.
+      \begin{itemize}
+        \item Isolated: The plane is difficult to reach or leave.
+          It has no permanent planar rifts, and temporary rifts are rare or nonexistent.
+        \item Stable Connected: The plane has multiple permanent planar rifts.
+          However, temporary rifts are rare.
+        \item Unstable Connected: The plane has no permanent planar rifts, but temporary rifts are common.
+        \item Conduit: The plane has a large number of permanent planar rifts, and temporary rifts are common.
+      \end{itemize}
 
-  The Voidsworn Amalgam surged into Illumis's core, trying to search out and destroy her center of power.
-  This was when her trap was fully revealed.
-  She made the ultimate sacrifice, burning away all of her power and light forever to forge her body into a mighty world-cage.
-  The Voidsworn found themselves trapped in the center of her sphere, surrounded on all sides by unbreakable walls.
+    \subsubsection{Shape} The shape of a plane defines the shape of its core surface, and what happens if you travel beyond that surface.
 
-  They pushed and smashed and tried to break out of the cage.
-  Each mighty blow against Illumis's corpse warped the land, raising mountains as scars.
-  Altus was the center of their efforts, and they pushed it so far out from the core that they nearly broke free.
-  But Illumis's world-cage held, and the Voidsworn were trapped forever.
-  They still live in her core now now, though they have only a fraction of their original power.
-  Their efforts to escape sometimes cause great earthquakes.
+      \begin{itemize}
+        \item Flat Surface: The plane consists of a flat surface generally made of earth or similar material.
+          Most activity and civilization on the plane happens on this surface.
+          It is usually possible to construct tunnels into a flat surface plane to some depth, depending on the size of the plane.
+        \item Hollow Sphere: The plane consists of a hollow sphere with an outer boundary generally made of earth or similar material.
+          Most activity and civilization on the plane happens on the inner surface of the sphere or in the vast open space between.
+          Some hollow sphere planes have an outer surface that can also be accessed, but in most planes it is impossible to leave the interior of the sphere.
+        \item Solid Sphere: The plane consists of a solid sphere generally made of earth or similar material.
+          Most activity and civilization on the plane happens on the surface of the sphere.
+          It is possible to construct tunnels into a solid sphere plane, but it may become increasingly difficult to traverse the plane as you approach the center of the sphere.
+          In general, the limit of a solid sphere plane is located at ten times the radius of the plane's primary sphere.
+        \item Uniform: The plane has no well-defined surface or ground layer.
+          Some uniform planes have no ground or solid obstacles, while others are composed almost entirely of ground and firmament.
+          Uniform planes almost always still have limits of some kind.
+      \end{itemize}
 
-  When the world settled, Solaris and Lunaris approached Illumis's corpse.
-  She had foreseen her demise, and given them instructions to keep her dream alive.
-  Solaris now provides the light that Illumis cannot, keeping our world warm and safe.
-  He burns bright and strong, but he must rest each day.
-  Lunaris keeps us company as well, though she is not content to look after only one star.
-  She makes sure to give us her full attention each month, but the rest of the time we only see part of her radiance, since she is busy looking at faraway stars.
+  \subsection{Planeforged Creatures}
+    A planeforged is a type of creature that is fundamentally composed of the essence of one or more planes.
+    The vast majority of planeforged creatures are composed of only a single plane.
+    When a planeforged dies, its essence returns to its native plane or planes.
+    Weak planeforged lose their independent identity and become part of the core composition of the plane once more.
+    Strong planeforged can retain their identity and reform from that raw material given time, making them difficult or impossible to kill completely.
+    In either case, planeforged cannot be resurrected by soul-based magic such as the \spell{resurrection} spell.
 
-  \subsection{The Details of Creation}
+    % TODO: morphicness, alignment, magic
 
-    The general outline of the Story of Creation, as presented above, is known and agreed on throughout Altus.
-    However, each culture has a different interpretation of some specific details which are important to them.
-    The order of creation is a central point of contention, especially as it relates to different species and regions.
-    Since recorded history only begins after the end of the Long Dark, there is no way to tell which version is true.
+\section{Plane Descriptions}
 
-    For example, the official story told by the elves in the Vastwoods is that Illumis originally created the elves as the first, perfect being.
-    They call the long rule of elves as the sole sentient species the Tranquiline Age, and mark its end shortly before the start of the Long Dark.
-    Illumis knew that the world would need hardier, less perfect beings to survive the difficult times ahead, and the elves would need to be strengthened by competition with lesser foes.
-    Therefore, she weakened and warped her light of creation, spawning all manner of beasts and lesser sentient creatures like humans and dwarves.
-    Knowing that they would need to survive the Long Dark and the intermittent light from Solaris after her death, she gave them the gift of sleep so they could preserve their limited energy.
-    Only elves continued to be sleepless, since they were created from her greater light at the dawn of time.
+  \subsection{Primal Planes}
 
-  \subsection{Founding Gods and Lesser Deities}
-    The Triune Astralis - Illumis, Solaris, and Lunaris - are the founding gods of the world.
-    All mortals owe them tribute, and they have temples in every civilized area.
-    However, their domains are extremely broad.
-    Solaris rules the day, Lunaris rules the night, and Illumis is an even more abstract creator figure.
-    Since Illumis is dead, she can empower no clerics of her own.
-    This leaves space for a whole host of lesser deities who claim dominion over specific aspects of the world, and who empower their own personal clerics.
+    \subsubsection{The Plane of Air}
+      The Plane of Air is a a soaring landscape unencumbered by gravity or ground.
+      The vast expanses of empty air are littered with clouds and unpredictable winds.
+      Any inhabitants of the plane must adapt to a highly mobile lifestyle.
+      A number of towns and structures have been built in the plane using raw materials brought from other planes.
+      They sail through the air at the whims of the wind, and are occasionally battered by intersections with other wind streams.
 
-    Rise does not precisely mirror real-world polytheism, but it is not entirely different either.
-    At the risk of dramatic oversimplification, polytheism typically involves recognizing a mixture of deities of widely varied power and scope.
-    People typically do not have a single favored deity that they worship above all others in all contexts.
-    Instead, they give respect, tribute, or gratitude to deities that are relevant to their current situation.
-    You might offer a sacrifice to the god of travel before making a journey, offer a sacrifice to the god of the hearth upon returning home, and so on.
+      The Plane of Air has the following planar traits:
+      \begin{itemize}
+        \item Gravity strength: No gravity
+        \item Light: Fixed source, from a sun outside the limits of the plane
+        \item Limits: Barrier, formed from wind currents which push back with such force that nothing can travel far.
+        \item Planar connectivity: Unstable connected
+        \item Shape: Hollow sphere with a radius of about 2,000 miles.
+      \end{itemize}
 
-    Rise has a wide variety of deities with specific domains, and most people offer respect to relevant deities at appropriate times.
-    However, unlike the real world, Rise places a great importance on the concept of a ``patron deity''.
-    Mortals who worship a specific deity are rewarded by going to an afterlife ruled by that specific deity.
-    This is often preferable to going to a generic alignment-appropriate afterlife, especially for evil characters.
+    \subsubsection{The Plane of Earth}
+      The Plane of Earth is a titanically large body of earth and stone.
+      A labyrinthine series of mostly airless tunnels weave their way through the plane, connecting the few cities.
+      The plane is a major source of valuable gems, diamonds, and rare metals like mithral, but the dense rock and airless environment make successful mining difficult.
+      In addition, earthquakes periodically reshape the environment by collapsing old tunnel systems and constructing new ones.
+      Some cities have been carved out in vast underground rooms reinforced to survive the earthquakes.
 
-    For their part, deities draw power from the worship of mortals, and especially from claiming the soul energy from mortals who end up in the deity's afterlife.
-    This makes deities generally invested in finding ways to increase their base of mortal worshippers.
-    They use their clerics accomplish this goal, generally by spreading awareness of the deity's domain and influence.
-    Famous clerics act as living proof of the deity's power, and many temples offer healing services to anyone in need.
-    Most deities avoid directly converting claimed followers of other significant deities to avoid inter-deity conflict.
+      The Plane of Earth has the following planar traits:
+      \begin{itemize}
+        \item Gravity direction: Fixed
+        \item Gravity strength: Normal
+        \item Light: None, though cities tend to be well-lit
+        \item Limits: Barrier, formed from increasingly dense rock that eventually becomes so hard that no known material or magic can damage it.
+        \item Planar connectivity: Stable connected
+        \item Shape: Hollow sphere with a radius of about 500 miles.
+      \end{itemize}
 
-    Of course, clerics can also influence the mortal world to make life there match the deity's preferences.
-    Clerics of Chavi might hold storytelling competitions, and clerics of Raphael might act as bounty hunters to hunt down criminals who escaped justice.
-    On a more sinister note, clerics of Daeghul might offer human sacrifices to channel the soul energy of the dying creatures towards their deity.
+    \subsubsection{The Plane of Fire}
+      The Plane of Fire is an endless searing inferno.
+      The plane's essence is highly combustible, allowing fires to burn indefinitely without any obvious fuel.
+      However, the intensity of flames on the plane are highly uneven, as the plane generates fuel in various locations that shift over time.
+      Some pockets on the surface are devoid of natural fuel, allowing the construction of trading hubs where the few inhabitants of the plane who are not naturally immune to fire can survive.
+
+      The Plane of Fire has the following planar traits:
+      \begin{itemize}
+        \item Gravity direction: Fixed
+        \item Gravity strength: Normal
+        \item Light: None, though the constant fires provide sufficient illumination in most locations on the plane
+        \item Limits: Barrier, formed from fires which burn so fiercely that further travel becomes physically impossible, even for creatures immune to fire.
+        \item Planar connectivity: Unstable connected
+        \item Shape: Flat surface, in a disc with a radius of about 2,000 miles.
+      \end{itemize}
+
+    \subsubsection{The Plane of Water}
+      The Plane of Water is an impossibly vast ocean.
+      Powerful currents sweep through the ocean, but much of it is calm, and many forms of aquatic life abound in the water.
+      The Plane of Water is the most densely populated Primal Plane, both by sentient creatures and monsters.
+      Magnificant underwater cities are carved from huge rocks that float peacefully suspended in the water.
+      Though there is no sun, simple creatures akin to plankton form the base of the food chain by feeding directly on the plane's essence.
+
+      The Plane of Water has the following planar traits:
+      \begin{itemize}
+        \item Gravity strength: No gravity
+        \item Light: None, though bioluminescent creatures like plankton are extremely common, making many parts of the plane well-lit
+        \item Limits: Barrier, formed from water currents which push back with such force that nothing can travel far.
+        \item Planar connectivity: Stable connected
+        \item Shape: Hollow sphere with a radius of about 1,000 miles.
+      \end{itemize}
+
+  \subsection{Aligned Planes}\label{Aligned Planes}
+
+    \subsubsection{The Celestial Heavens}
+      The Celestial Heavens are beautiful and majestic.
+      Mountains rise dramatically out of misty clouds, trees are massive and laden with delicious fruit, and buildings surpass the wildest dreams of mortal architects.
+      A serene blue sky gives way to a night so lit by stars that it is almost as bright as the day.
+
+    \subsubsection{The Abyss}
+      The Abyss is a hellscape of fire, brimstone, and distant screaming.
+      With the exception of the great palaces of demon princes, the buildings that exist are designed for defense rather than aesthetics.
+      The terrain is typically rocky and dull, and most of the color belongs to carcasses left behind after violent battles.
+
+      All manner of nightmarish creatures stalk the Abyss.
+      The best known of these creatures are demons and devils.
+      Demons are formed when mortal souls are splintered by trauma.
+      The soul splinters drift into the Astral Plane, and from there are guided to the Abyss by ancient astral currents.
+      When they arrive in the Abyss, its planar essence envelops them in new planeforged body, much like dead souls gain new bodies in their proper afterlife.
+
+      Newly formed demons, known as demonspawn, are barely functional creatures.
+      They are driven entirely by the primal emotion that separated the soul splinter from its original soul, such as rage, grief, or pain.
+      This makes them functionally insane, and they are almost always driven to lash out at everything around them.
+      Rage-born demons violently attack anything they see, pain-born demons try to lessen their pain by sharing it, and so on.
+      When they succeed in their attacks, they can feed on the trauma they inflict, strengthening their soul.
+      Unfortunately, this does not generally make them more sane, since they only feed on the same urges that created them.
+
+      Demonspawn instinctively avoid attacking other demonspawn, since they can find no gratification for their urges in attacking such small, broken souls.
+      Instead, they hunt creatures with complete souls, which generally means attacking the afterlife bodies of evil-aligned creatures who went to the Abyss for their afterlife.
+      The greatest feast, however, comes from attacking mortal souls, which are much easier to splinter.
+      Demonic incursions into other planes are devastating but fortunately rare.
+
+      Unlike demons, devils are native to the Abyss itself.
+      They are far more intelligent and organized than demons, but also far less numerous.
+      Devils rule vast territories within the Abyss, using demons as their foot soldiers to protect and enlarge their territorial claims.
+
+      The only competition with devils for rulership of the Abyss comes from the evil deities and greater demons.
+      Evil deities are fairly simple to deal with.
+      They have absolute dominion over their own territory, so invading their lands is pointless.
+      In addition, since their territorial limits come from their divine power rather than force of arms, they have little ability to expand or even exert significant influence outside of their own lands.
+      As a result, devils and greater demons alike mostly ignore the deities.
+
+      Greater demons are much more troublesome.
+      On rare occasions, demonspawn are so successful in their attacks that they claim soul splinters outside the scope of their original urges.
+      This typically happens when demons find and break mortal souls.
+      When this happens, the demonspawn gains a more complete soul, and becomes a little more sane.
+      Often, this simply entices other demonspawn to attack and destroy the wayward demon.
+      However, if the demon survives the attacks from its allies and repeats this process, it can grow in power.
+
+      Demons who have expanded their soul beyond a single soul splinter are called greater demons.
+      Eventually, the demon can gain something resembling a complete soul from all of the splinters it has collected, making it a demon prince.
+      Though more sane and functional than demonspawn, these more developed demons are no less evil.
+      Both greater demons and demon princes have enough skill with splintering and manipulating souls to make pacts with warlocks.
+      In addition, demon princes have the power to command armies of demonspawn and greater demons, allowing them to claim territory like devils do.
+
+    \subsubsection{Ordus}
+      Ordus is a masterpiece of logical organization.
+      It is the most consistently civilized of the aligned planes, and the cities are exquisitely planned.
+      However, laws are enforced with extreme severity.
+      Outside of the cities, even the natural territories are cleanly and simply divided.
+      A forest of evenly spaced trees might border a field in a sharp, clean transition along a perfectly straight line.
+
+    \subsubsection{Discord}
+      Discord is a wild maelstrom.
+      Much of the plane can be freely reshaped with only minimal force of will.
+      By working together, its inhabitants can create vast cities from thin air, though they can be destroyed with similar ease.
+      Beyond the shaped spaces, the terrain is constantly changing.
+      A field might grow trees that are consumed by a forest fire and then fall into chasms newly formed by an earthquake in a matter of minutes.
+
+    \subsubsection{Nexus Planes}
+
+      \parhead{The Material Plane}\nonsectionlabel{The Material Plane}
+      The Material Plane is the plane that most Rise adventures begin on.
+      The surface of the plane is a massive sphere with a radius of about 4,000 miles.
+      It is the most familiar to most humanoid creatures.
+
+      The Material Plane has the following planar traits:
+      \begin{itemize}
+        \item Gravity direction: Absolute Directional, pointing to the center of the sphere
+        \item Gravity strength: Normal
+        \item Light: Mobile Source, from a sun and moon outside of the plane's limits
+        \item Limits: Looped
+        \item Planar connectivity: Isolated
+        \item Shape: Solid Sphere, with a radius of about 4,000 miles.
+      \end{itemize}
+
+      \parhead{The Astral Plane}\nonsectionlabel{The Astral Plane}
+      The Astral Plane is the space between the other planes.
+      It is a necessary intermediate destination for virtually all planar journeys, as all planar rifts lead to and from the Astral Plane.
+      Most activity on the Astral Plane occurs in a space called the Inner Astral Plane, a massive but finite region where all planar rifts on the Astral Plane appear.
+      % Are there any other infinite planes?
+      However, unlike all other planes, the Astral Plane has no known limits to its extent, and may in fact be infinite.
+      The area outside the Inner Astral Plane is known as the Deep Astral Plane, and few venture into those sparsely populated realms.
+      % This should be more clearly defined
+      The Deep Astral Plane has magical turbulence that interferes with long-range communication and transportation magic, making exploration difficult.
+
+      The Astral Plane has the following planar traits:
+      \begin{itemize}
+        \item Directional gravity: Subjective
+        \item Gravity strength: Normal
+        \item Light: Fixed Source, from the infinite reaches of the Deep Astral Plane
+        \item Limits: Infinite
+        \item Planar connectivity: Conduit
+        \item Shape: Uniform
+      \end{itemize}
+
+\section{Creatures and Objects}
+  In the world of Rise, creatures and objects are meaningfully different.
+  Many abilities only affect creatures or objects.
+  The difference between a creature and an object is defined as being agency.
+  Creatures have agency, and objects do not.
+  This is not the same as sentience or life, which either creatures or objects may have.
+
+  For example, skeletons are nonsapient, nonliving creatures.
+  Conversely, trees are nonsapient, living objects.
+  Some rare magic items can be made intelligent by magic, making them sapient, nonliving objects.
+  Some unintelligent animals and magical beasts like ants and giant spiders are nonsapient, living creatures.
+
+  There are two types of creatures that break these rules: constructs and indwelt.
+
+  % TODO: should constructs regain hit points and DR when they rest?
+  \subsection{Constructs}\label{Constructs}
+    Constructs are creatures that are made of nonsapient matter.
+    Their inanimate bodies are given a semblance of life and sentience by some form of magic.
+    Like other creatures, they can move and follow instructions.
+    However, they lack agency and cannot make the independent decisions.
+    They are \trait{mindless}, making them immune to \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
+    Constructs lack a soul and cannot be resurrected by any means if they are destroyed.
+
+    Constructs are considered to be both creatures and objects, and are affected by abilities which affect either.
+    They are not alive, and they do not need to eat, drink, or sleep.
+    They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+
+    Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
+    Instead, their vital wounds must be repaired manually.
+    This functions like like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
+
+  \subsection{Indwelt}\label{Indwelt}
+    Indwelt are creatures that are made of nonsapient matter.
+    Their inanimate bodies are awakened to life by connection to an external soul.
+    They have agency and true intelligence like normal creatures.
+
+    The soul of an indwelt has no connection to the matter that composes its body.
+    This contrasts with undead, which always maintain a connection between a body and its original soul.
+    As a result, an indwelt's connection to its physical body is weak.
+    If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
+    This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
+
+    Indwelt are considered to be both creatures and objects, and are affected by abilities which affect either.
+    They are alive if their base matter is alive, but not if their base matter is dead or inorganic.
+    If they are alive, they need to eat, drink, and sleep.
+    They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+
+\section{The Four Elements of Existence}
+
+  The four elements that define existence in Rise are body, life, mind, and soul.
+  Body and mind are fundamental elements, with simple and obvious effects.
+  Life and soul are energetic elements, with more subtle and cosmic effects.
+
+  \subsection{Physical Elements: Body and Life}
+    Something has a body if its existence is physical.
+    If something has a body, it is called corporeal.
+    This is usually fairly simple: trees, humans, and rocks all have bodies.
+    Not everything with a body can be easily touched or seen.
+    Clouds and gases are still corporeal, though they are \trait{intangible}.
+
+    Life is the ability of the body to change and adapt over time.
+    If something has life, it is called alive.
+    Humans and trees are alive, but rocks are lifeless, and corpses are dead.
+    Living things are constantly changing, and require input and output from their environment to maintain equilibrium.
+    They almost always breathe, eat, sleep, and perform similar body maintenance activities.
+
+    Lifeless things do not need to perform those tasks, and their bodies typically persist unchanged without outside intervention.
+    Some lifeless things exist in a state of gradual decay instead of permanent stasis.
+    In either case, their bodies are defined by inert consistency rather than change and equilibrium.
+
+  \subsection{Mental Elements: Mind and Soul}
+    Something has a mind if it can understand aspects of its environment and react to it.
+    If something has a mind, it is called intelligent.
+    This is defined broadly, and not every intelligent creature is sentient or self-aware.
+    Humans and other animals are intelligent, but trees and rocks are mindless.
+
+    A mind is a separate entity from a body.
+    When an intelligent living creature dies, its mind can persist after the body's destruction.
+    The brain is a tool which anchors and connects a mind to a body, not the fundamental mechanism which creates the mind.
+    Damage to a brain can inhibit the connection between a mind and a body, diminishing a creature's functional intelligence, but it does not directly damage or alter the mind.
+
+    Soul is the ability of the mind to change and adapt over time.
+    If something has a soul, it is called ensouled.
+    Humans and other animals are ensouled, but artificial constructs like golems are soulless.
+    Ensouled things are able to change their manner of thinking and personality over time.
+    Some soulless things can learn and retain information, and can be quite intelligent, but they cannot change their method of thought or fundamental opinions.
+    If you lock a human and an intelligent artificial construct in a room for twenty years, the human's mind would emerge fundamentally changed and possibly insane, while the construct would simply have gained information that it had been in a room for twenty years.
+
+  \subsection{Energetic Elements: Life and Soul}
+    Life cannot exist independently of a body, and soul cannot exist independently of a mind.
+    They are elements defined by change and adaptation.
+    This may explain why they have such intrinsic power in Rise.
+    Life and soul are the underlying power behind most superhuman effects in Rise.
+
+  \subsection{Examples}
+    \begin{itemize}
+      \item Some creatures are created when creatures die, but their minds refuse to pass on to the appropriate afterlife. These creatures have neither body nor life. They have a mind, and may or may not have a soul. This includes allips, ghosts, and wraiths.
+      \item Some creatures are formed from planar essence to act as an embodiment of the plane's identity. These creatures have a body, but no life. They have a mind, but no soul. This includes angels, demons, and elementals.
+      \item Some creatures are magically granted a semblance of life by animating an inanimate object. These creatures have a body, but no life. They have a mind, but no soul. This includes golems, skeletons, and zombies.
+      \item Some creatures are able to move independently, but their responses to their surroundings are entirely instinctual, without any ability to form thoughts or make decisions. These creatures have a body and are alive. They have neither mind nor soul. This includes oozes, plants, and extremely simple animals like ants.
+      \item When creatures die and their minds travel to the appropriate afterlife, they gain new bodies formed from the planar essence of their new home. These creatures have a body, but no life. They have both a mind and a soul.
+    \end{itemize}
+
+\sectiongraphic*{Secrets of the Universe}{width=\columnwidth}{the universe/secrets of the universe}
+
+  There are many mysteries in the universe of Rise.
+  This section gives a glimpse into some of the underlying truths, though few characters in the universe would understand such details.
+
+  \subsection{Power Ultimately Derives From Life and Soul}
+    When most creatures are born, they enter existence with life and a new soul.
+    These energetic elements have great intrinsic power.
+
+    The more powerful the life, the more the body can change.
+    The body of an elephant is much stronger than that of an ant.
+    However, elephants and ants have similarly weak life energy, because the ability of their body to change and adapt to circumstances is limited.
+    Humans can have greater life energy, as their bodies can undergo significant changes to adapt to their training and circumstances.
+    Dragons represent the pinnacle of immense life energy.
+    Their bodies undergo vast changes in power and shape over their lives.
+    Similarly, the more powerful the soul, the more the mind can change.
+
+    Mechanically, life energy justifies a creature gaining levels that increase its physical abilities, and soul energy justifies a creature gaining levels that increase its mental abilities.
+    Life energy is often associated with mundane abilities, and soul energy is often associated with magical abilities.
+    That relationship is not strictly followed, since some mundane abilities are mental and some magical abilities are physical.
+
+    \subsubsection{Variable Intrinsic Power}
+      Not all lives and souls are equal in power.
+      Most humanoid creatures and magical creatures have only a moderate amount of life and soul energy.
+      They can train, fight, and learn, and this will increase their power.
+      However, they will eventually reach limits that they cannot surpass.
+      Some extraordinary individuals seem to be nearly limitless.
+      They can change their minds and bodies to extreme degrees, acquiring vast power in the process.
+
+      Mechanically, this is represented by creatures gaining levels, but only up to a certain point.
+      Player characters can gain levels without limit (unless the GM defines a level cap for their specific campaign).
+      They also often level up much faster than other characters in the same universe who have similar experiences.
+      If everyone in the universe of Rise acquired limitless power at the same rate as player characters, the world would be filled with superhuman demigods and country-destroying monsters.
+      The fundamental limits of life and soul provide a narrative justification for a more traditional fantasy universe.
+      They allow Rise to have grizzled old war veterans and mass-murdering monsters who are still only level 5 or so.
+
+    \subsubsection{Transferring Power: Death and Sublimation}
+      The intrinsic power of life and soul can be transferred.
+      Life cannot exist without a body, and soul cannot exist without a mind.
+      When a creature dies, its life and soul are shattered and vulnerable in the moments after death.
+      With no body to anchor it, the life energy sublimates into pure energy.
+      A strong mind can retain control of its soul, and travel intact to the appropriate afterlife.
+      However, weak minds quickly break without being anchored to a body, allowing their souls to sublimate as well.
+
+      If creatures present at the death have a life or soul that is strong enough, they can consume part of this energy to enact changes in their own bodies or minds.
+      This is a common method of power acquisition for adventurers and monsters, who often slay powerful foes.
+      Certain rituals can also be used to feed on the powers of death more effectively.
+      This can be used to benefit the ritual participants, or by demons and evil deities who feed on deaths offered to them in ritual sacrifices by their cultists.
+
+      Transferring a power through death is deeply inefficient.
+      Under normal circumstances, only a fraction of the energy released in this way can be claimed.
+      Some energy infuses the area, which can give rise to magical phenomena at areas of mass death or the death of particularly powerful entities.
+      The leftover energy is claimed by Nature, the deity who draws power from the life and death of all things and ensures that souls are taken to their appropriate afterlife.
+
+    \subsubsection{Transferring Power: Connection}
+      A soul's power can be transferred without the inefficiency of death.
+      Commonly, it is simply freely given through love and emotional connection in the form of soul motes.
+      Creatures who love each other naturally share small portions of their souls with each other.
+      Over time, deeply connected creatures, such as old married couples, can mix their souls so fully that they become virtually indistinguishable.
+
+      Voluntary soul sharing does not have to be perfectly symmetric, of course.
+      Tyrants can earn soul motes through the enforced fear and subservience that they create in their underlings.
+      Worship is another method of transferring soul motes, and many deities fundamentally derive power from the combined soul motes willingly given by their legions of worshippers.
+      In exchange, deities can use their power to protect their worshippers, either through divinely empowered clerics or more rarely through direct intervention.
+      More mundanely, adventurers who save a town from a dire threat may earn soul shards freely granted from the gratitude of its inhabitants.
+
+    \subsubsection{Soul Motes and Splinters}
+      Souls can be subdivided into lesser pieces.
+      There are two forms of lesser soul pieces: motes and splinters.
+
+      Soul motes are emitted from souls unconsciously, like light is emitted from a torch.
+      It is possible for a soul that emits a large number of soul motes to diminish if it does not receive any in exchange.
+      For example, a minor underling who pledges their life to an uncaring leader might give away far more soul motes than they receive in exchange.
+      Most people have enough interpersonal relationships to avoid this danger, but completely isolated people who are neither loved nor hated, but simply ignored, may diminish in this fashion.
+      Even with this risk, the process of emitting soul motes is not harmful or individually significant in any way.
+      In addition, individual soul motes are far too small to be manipulated or used by magical effects.
+
+      Soul splinters are created in a much more dramatic fashion.
+      When a soul undergoes significant trauma that shakes its will and sense of self, it may splinter, losing a chunk of its soul.
+      Of course, death is one of the greatest traumas of all, and almost all souls splinter to some degree when they die.
+
+      Soul splinters can be consumed or manipulated in a variety of ways.
+      For example, skeletons and zombies are animated by splintering a soul that originally inhabited a corpse.
+      The splinter is used to give the corpse a crude imitation of sentience - just enough to obey orders, but not enough to think for itself.
+
+    \subsubsection{Potential and Acquired Power}
+      The strength of a creature's life and soul determine the limits of its ability to progress.
+      Many monsters reach the limit of their potential by the time they reach adulthood, and are unable to develop further.
+      However, many humanoid creatures never discover their true limits, because they have never had the necessary experiences to develop their potential.
+      A well-trained soldier will easily defeat a commoner in battle, but this does not mean that the soldier's life or soul is necessarily stronger.
+      It simply means they have progressed farther towards their potential.
+
+      In a typical campaign setting, it's reasonable to assume that 20\% of the humanoid population can reach 5th level, 2\% can reach 10th level, and 0.2\% can reach 15th level.
+      Of course, most people don't have the life experiences necessary to reach their maximum potential.
+      All player characters are assumed to have exceptional potential, and are able to reach 21st level, unless the GM says otherwise.
+      Legendary monsters of epic proportions may even be able to surpass that limit.
+
+    \subsubsection{Mysteries of the Soul}
+      The mysteries of differing soul strength have no clear and consistent explanation.
+      In broad terms, the strength of a creature's soul usually correlates to its emotional and intellectual potential, as well as its force of will.
+      Humanoid creatures and dragons are unusually mentally capable - not just in raw intelligence, but also in empathy, determination, and capacity for belief - and correspondingly have unusually strong souls.
+      There are individual exceptions that suggest that this is not the entire dimension of what causes strong and weak souls.
+      Some animals have unusually strong souls for no known reason, causing them to develop over time into their ``dire'' variants.
+      Dire animals, who have gained levels by feeding on soul splinters, are more aggressively malevolent than normal animals, though they show no greater signs of general intelligence.
+      Perhaps there is simply an element of randomness in the creation of each new soul.
+
+      The fundamental mysteries of souls and their sharing is not widely known in the universe of Rise.
+      Individual elements of this truth are widely known, such as the observation that people can become stronger by slaying monsters, but monsters do not seem to grow dramatically in power by killing people.
+      Strange phenomena can occur where death occurred, and old battlegrounds are often haunted by naturally occuring undead.
+      Learned scholars may understand that the civilized species like humans seem to have unusually strong souls, and that this is related to their capacity for drastic personal growth.
+      They may identify the general phenomena surrounding soul splinters, but not soul motes.
+
+      Some powerful and unusual entities, such as deities and demon princes, know particular elements of how life energy and soul energy can be transferred.
+      All demons are generally aware that they can feed on sublimating soul splinters from souls in evil afterlife planes as they break down over time, though they do not understand the exact mechanics of this transfer.
+      They attempt to torment weaker souls to accelerate this breakdown, and avoid souls that are too strong to break.
+      However, they are unaware of the subtler aspects of soul sharing, such as willing soul mote transfer between loved ones.
+      Powerful deities know more about souls than any other entities as a result of being worshipped and maintaining the existence of their personal afterlife planes.
+      In exceptionally rare occasions they may see fit to share that knowledge if it serves their purposes.
+
+  \subsection{Soul-Fuelled Phenomena}
+
+    The peculiar nature of souls causes a wide variety of strange and unique effect in the Rise universe.
+
+    \subsubsection{Deities}
+      Deities are among the most obvious phenomena that are fundamentally created by the energy of souls.
+      When hordes of living creatures pay homage to the same entity, that entity can feed on that outpouring of worship and become incredibly powerful if it has a strong enough soul.
+      The history of Rise is full of minor deities and demigods who either lack a sufficient base of worshippers to become a true deity or who lack a strong enough soul to effectively use the worship they receive.
+
+      Not every powerful entity with an immensely powerful soul is a deity.
+      Deities are, by definition, worshipped.
+      They depend on receiving energy through soul motes granted by worship.
+      Since all deities share this constraint, they are all vulnerable to anything which would disrupt this flow of power.
+      This encourages deities to find common ground with each other to ensure that they all succeed, even when their own ideologies and personal beliefs are violently opposed.
+      As a result, deities have developed a shared body of elaborate conventions and constraints that govern their interventions in mortal realms.
+      Any deity that violates these rules risks being declared anathema by all other deities, which would devastate their ability to acquire worshippers.
+
+      The most consistent constraint that deities operate under is that their primary method of intervention in mortal affairs must come through their followers, rather than independently.
+      They freely share a portion of their power with their most dedicated followers, granting them extraordinary abilities.
+      In most societies, these empowered worshippers are called clerics.
+
+      A deity with enough power can claim territory within the afterlife plane associated with its alignment.
+      The claimed territory becomes a Divine Realm under the deity's control.
+      Deities have extraordinary power within their Divine Realm, and can reshape it as they see fit.
+      However, they must expend a significant amount of energy to maintain their territory against entropy.
+      As a result, deities are always hungry to gain additional followers, and only successful deities expend the effort to claim any territory at all.
+
+      Any souls that worship a deity with will be reborn within that deity's Divine Realm in the appropriate afterlife plane, even if that plane does not match their personal alignment.
+      This is both a reward for worshippers and a way for deities to accumulate energy.
+      When a soul in an afterlife eventually loses the will to maintain its individual existence, its mind breaks and the soul sublimates into energy.
+      Normally, this energy becomes part of the afterlife plane.
+      However, if this sublimation happens within a deity's Divine Realm, they can claim that power for themselves.
+      This allows deities to eventually reclaim the energy they invested in their clerics.
+      For deities with the power to maintain a Divine Realm, the energy they gain in this way significantly exceeds the energy they gain from ordinary soul motes.
+      However, since this often requires centuries before breaking even, new and minor deities are unable to maintain their own Divine Realms.
+
+    \subsubsectiongraphic*{Nature}{width=\columnwidth}{the universe/nature}
+      Nature itself has an immensely vast soul, but although people can worship Nature, it is not a deity because does not depend on mortal worship for its power.
+      Nature claims the greatest tithe of every unclaimed death - every predator hunting a prey, every swatted fly.
+      The energy released by each of these deaths is individually tiny.
+      However, the combined energy released by billions of deaths over millenia dwarfs the power of any other individual entity in the Rise universe.
+
+      Nature lacks a coherent anthropomorphic representation, and its will is almost never brought to bear in any organized way.
+      Druids are granted power by Nature, but they need not agree to any particular ideology, and their usage of that power is virtually never policed or revoked by Nature itself in the way that a misbehaving cleric might be punished by their deity.
+      Nature welcomes a diversity of viewpoints, for it is itself almost infinitely diverse.
+      It has a wealth of power, so it does not need to jealously hoard its gifts like deities must.
+      % Can this actually happen?
+      % The only druids who have had their powers revoked were a rare few who turned their powers to the explicit and intentional destruction of Nature itself.
+
+      People who worship nature do not have any special territory in an afterlife reserved for them, since Nature claims no part of any afterlife.
+      The afterlife planes are where Nature's power is weakest, and it can claim no tithe of any deaths there, since the planes themselves absorb any energy released.
+      Instead, devoted worshippers of Nature may have their souls reincarnated instead of going to a normal afterlife.
+      This gift is not granted to all worshippers, and indeed many would prefer to go to a normal afterlife.
+
+      Every plane that is not the Astral Plane or an afterlife plane is a manifestation of Nature's power in some sense, and it claims deaths that occur on any of those planes.
+      The four Elemental Planes - Air, Fire, Earth, and Water - are the grandest manifestations of Nature's power.
+
+    \subsubsection{Pact Magic}
+      Entities of great power can make pacts with mortals.
+      In these pacts, the mortals offer their soul to the entity for a period of time after death, and the entity who becomes their soulkeeper.
+      In exchange, the soulkeeper grants the mortal energy from its own supply.
+      The soulkeeper's goal is to have the mortal gain a great wealth of its own energy in its life, and then to break the will of the soul while it is in the soulkeeper's clutches.
+      If the soulkeeper succeeds, it gains the ability to harvest the energy released by the mortal's entire soul, just like deities can do within their Divine Realms.
+      This is a vast wealth of energy compared to the normal shards extracted from death and worship, and it annihilates the mortal's soul, preventing it from travelling it to its normal afterlife.
+
+      Successful soulkeepers can therefore amass great power.
+      However, it is a risky business, much like adventuring is for mortals.
+      If the mortal resists the soulkeeper's torments during its time in the afterlife, it may take its entire soul intact to its normal afterlife.
+      When this happens, the soulkeeper loses the bounty of the soul, all of the energy it originally invested in the mortal, and time it wasted trying to break the mortal's spirit.
+      This is particularly likely if the mortal dies soon after making the pact, so soulkeepers must choose their mortal partners wisely.
+
+      Failing to break a mortal's spirit is not the worst thing that can happen to an overly successful soulkeeper.
+      It may may attract attention from more powerful entities within its own plane.
+      When a soulkeeper is killed, ownership of the soul is transferred to whatever killed it.
+      This means that soulkeepers with active contracts - especially active contracts with mortals who are nearing death after a long life - are extremely attractive targets for anyone who wants to steal the reward of the soul.
+
+      Demons are the most common soulkeepers.
+      They are more likely than any other type of creature to meet the four main prerequisites for offering soul pacts.
+      First, they have sufficient raw energy to make soul pacts.
+      Second, they have enough understanding of magic and souls to transfer power through the pact.
+      Third, they have the patience to wait until the mortal dies to claim their reward.
+      Fourth, they have the ambition and risk tolerance to take the gamble of being a soulkeeper and risk not being able to reclaim the energy they invest.
+
+      There is nothing that prevents a deity from becoming a soulkeeper.
+      On very rare occasions, deities may make a pact and become a soulkeeper for a non-worshipper.
+      Mortals that gain power in this way are called favored souls.
+      However, being a soulkeeper is risky.
+      Few deities would risk the possibility of losing their energy entirely when they could instead use that energy to more safely empower a cleric.
+      In addition, being known for making soul pacts can discourage people from voluntarily worshipping the deity.
+
+    \subsubsection{Ambient Magic and Magical Creatures}
+      The world of Rise is full of strange creatures that have superhuman strength or magical abilities, like minotaurs and manticores.
+      It is common knowledge that such creatures are typically found only in distant wilderness or in deep dungeons.
+      In general, the farther you get from civilization, the more powerful the monsters in the area become, and the more likely you are to encounter strange magical phenomena.
+      Small towns seem to cause a subtle warding effect, and powerful monsters in the area will typically avoid them.
+      Even monsters that lack the intellectual capacity to understand complex causation chains like ``if I attack the town, they may send powerful warriors to hunt me down'' will typically avoid interacting with civilization unless necessary.
+
+      All of this can be explained by the release of life energy when things die.
+      The constant cycle of life and death in nature produces a great wealth of energy.
+      Most of it is claimed by Nature itself, but some spills out at the location of each death.
+      This energy lingers and can build up over time in the form of ambient magic.
+      Many monsters can instinctively feed on this ambient energy.
+      In adidtion, predatory monsters can feed on the energy released by their own kills.
+      This naturally allows them to build their power to near the limit of their potential by the time they are adults.
+
+      Civilization disrupts the natural cycles of life and death, reducing the soul energy present in an area.
+      Although humanoid creatures have powerful souls, they die less frequently, and the vast majority of the soul energy of their death moves with them to their afterlife.
+      From the perspective of creatures that feed on ambient magic, civilized areas stand out as a dead zone.
+
+      Since educated people in the universe of Rise can observe that monsters tend to avoid civilization if they study the phenomenon, they may have their own theories about why this is true.
+      Reasonable theories that might have truth to them in some contexts could include ``monsters have evolved to instinctively avoid civilization to avoid death from monster hunters'', ``druids magically discourage monsters from entering civilization so they don't get killed'', or ``monsters have to kill other strong monsters to get stronger, so they try to avoid areas that don't have any powerful prey''.
