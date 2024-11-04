@@ -801,6 +801,48 @@ impl Class {
                 Clerics generally want to expand the worship of their specific deity.
                 That task is easiest in civilized areas where many potential worshippers can be found.
                 However, it is contrary to the typical druidic preference against civilization.
+
+                The standard pantheon of deities is listed below.
+                You can also talk to your GM about worshipping an unusual deity.
+
+                % Keep in sync with the list in core_book/TheUniverse.tex
+                \begin{dtable!*}
+                \lcaption{Deities}
+                \begin{dtabularx}{\textwidth}{X l X}
+                \tb{Deity} & \tb{Alignment} & \tb{Domains} \tableheaderrule
+                    Gregory, warrior god of mundanity     & Lawful good     & Law, Protection, Strength, War         \\
+                    Guftas, horse god of justice          & Lawful good     & Good, Law, Strength, Travel            \\
+                    Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Protection, War     \\
+                    Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, War        \\
+                    Ayala, naiad god of water             & Neutral good    & Life, Magic, Water, Wild               \\
+                    Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Life, Strength, Wild             \\
+                    Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel          \\
+                    Vanya, centaur god of nature          & Neutral good    & Good, Strength, Travel, Wild           \\
+                    Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild            \\
+                    Camilla, tiefling god of fire         & Chaotic good    & Fire, Good, Magic, Protection          \\
+                    Chavi, wandering god of stories       & Chaotic good    & Chaos, Knowledge, Trickery             \\
+                    Chort, dwarf god of optimism          & Chaotic good    & Good, Life, Travel, Wild               \\
+                    Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Strength, War, Wild             \\
+                    Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Good, Strength, War       \\
+                    Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Strength                  \\
+                    Mikolash, scholar god of knowledge    & Lawful neutral  & Knowledge, Law, Magic, Protection      \\
+                    Raphael, monk god of retribution      & Lawful neutral  & Death, Law, Protection, Travel         \\
+                    Declan, god of fire                   & True neutral    & Destruction, Fire, Knowledge, Magic    \\
+                    Mammon, golem god of endurance        & True neutral    & Knowledge, Magic, Protection, Strength \\
+                    Kurai, shaman god of nature           & True neutral    & Air, Earth, Fire, Water                \\
+                    Amanita, druid god of decay           & Chaotic neutral & Chaos, Destruction, Life, Wild         \\
+                    Antimony, elf god of necromancy       & Chaotic neutral & Death, Knowledge, Life, Magic          \\
+                    Clockwork, elf god of time            & Chaotic neutral & Chaos, Magic, Trickery, Travel         \\
+                    Diplo, doll god of destruction        & Chaotic neutral & Chaos, Destruction, Strength, War      \\
+                    Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Strength, War                   \\
+                    Celeano, sorcerer god of deception    & Chaotic neutral & Chaos, Magic, Protection, Trickery     \\
+                    Murdoc, god of mercenaries            & Chaotic neutral & Destruction, Knowledge, Travel, War    \\
+                    Ribo, halfling god of trickery        & Chaotic neutral & Chaos, Trickery, Water                 \\
+                    Tak, orc god of war                   & Lawful evil     & Law, Strength, Trickery, War           \\
+                    Theodolus, sorcerer god of ambition   & Neutral evil    & Evil, Knowledge, Magic, Trickery       \\
+                    Daeghul, demon god of slaughter       & Chaotic evil    & Destruction, Evil, Magic, War          \\
+                \end{dtabularx}
+                \end{dtable!*}
             ".to_string(),
             Self::Dragon => r"".to_string(),
             Self::Druid => r"

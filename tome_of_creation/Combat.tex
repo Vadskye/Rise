@@ -1,9 +1,4 @@
 \chapter{Combat}\label{Combat}
-\includegraphics[width=\columnwidth]{combat/combat}
-The world of Rise can be a harsh one, and not all disagreements can be resolved peacefully.
-At some point, you will be forced to enter combat.
-This chapter explains how combat works in Rise.
-The combat rules also generally cover situations where time and precise positioning are important, even if they do not involve violence.
 
 \sectiongraphic*{Making Attacks}{width=\columnwidth}{core mechanics/making attacks}
 
@@ -37,7 +32,7 @@ The combat rules also generally cover situations where time and precise position
       Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
 
     \subsubsection{Critical Hits}\label{Critical Hits}
-      If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
+      If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit} against that target.
       Damaging attacks normally deal double damage on a critical hit.
       Some non-damaging attacks also have special effects on a critical hit.
 
@@ -50,6 +45,14 @@ The combat rules also generally cover situations where time and precise position
       If this would require you to roll an inconveniently large number of dice, you can just multiply the result from your normal damage dice instead.
 
       Objects are not normally subject to critical hits.
+
+  \subsection{Dealing Damage}
+    When you deal damage, you roll the damage dice appropriate for that ability.
+    Whatever you hit will track that damage appropriately.
+
+\section{Calculating Damage}
+  Normally, dealing damage is fairly simple.
+  This section explains some special circumstances which can change how your damage is calculated.
 
   \subsection{Weapon Damage}\label{Weapon Damage}
     Some abilities deal damage based on the weapon you use the ability with.
@@ -83,14 +86,10 @@ The combat rules also generally cover situations where time and precise position
     Weak strikes do not halve flat damage penalties, such as if you have a negative power.
 
 \section{Taking Damage}\label{Taking Damage}
-  Taking damage from attacks reduces your \glossterm{damage resistance}, and then your \glossterm{hit points}, before finally inflicting \glossterm{vital wounds}.
-  To calculate your damage resistance and hit points, see \pcref{Combat Statistics}.
-  This section explains those concepts in more detail.
-
-  When you are dealt damage, the damage first reduces your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-  Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points} (see \pcref{Hit Points}).
+  When you take damage, the damage first reduces your \glossterm{damage resistance}.
+  Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points}.
   Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
-  If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds} (see \pcref{Negative Hit Points}).
+  If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
 
   Monsters typically do not gain vital wounds like player characters do.
   Instead, they simply die or fall unconscious when they reach 0 hit points.
@@ -104,48 +103,6 @@ The combat rules also generally cover situations where time and precise position
     In addition, your hit points are reset to 0 at the end of the round if they are still negative.
     This is checked after applying all healing and damage that takes place at the end of the round.
     This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
-
-  \subsectiongraphic*{Damage Types}{width=\columnwidth}{core mechanics/damage types}
-    There are four main damage types: energy, physical, poison, and psychic.
-    Energy and physical damage have additional subtypes, and are much more common than poison or psychic damage.
-
-    \subsubsection{Damage Subtypes}\label{Damage Subtypes}
-      Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
-      Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
-      Psychic damage has no subtypes.
-
-      Damage of a particular subtype is also considered damage of its primary type.
-      For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
-
-      Some damage types have special properties, as described below.
-      \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-      \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-      \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
-      % TODO: what does this actually mean
-      Abilities without a duration create a \glossterm{brief} burst of torchlight.
-      While underwater, they deal half damage and have no nondamaging effects.
-
-    \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
-      Some attacks deal damage that has multiple damage types.
-      Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
-
-  \subsection{Special Damage Types}\label{Special Damage Types}
-
-    Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
-    It is possible for damage to be both environmental damage and subdual damage.
-
-    \subsubsection{Environmental Damage}\label{Environmental Damage}
-      Some abilities and environmental effects deal environmental damage.
-      Environmental damage is never dealt as the result of a successful attack roll.
-      Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-      Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
-
-    \subsubsection{Subdual Damage}\label{Subdual Damage}
-      Some attacks and environmental effects deal subdual damage.
-      Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-      If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
-      Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-      If you do, you deal half damage with the strike.
 
 \sectiongraphic*{Vital Wounds}{width=\columnwidth}{core mechanics/vital wounds}
 
@@ -167,7 +124,7 @@ The combat rules also generally cover situations where time and precise position
 
     \begin{dtable}
       \lcaption{Vital Wound Effects}
-      \begin{dtabularx}{\textwidth}{l X}
+      \begin{dtabularx}{\columnwidth}{l X}
         \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
         \minus6 or less  & You immediately die                                                   \\
         0--\minus5       & You are unconscious, and you die after one minute                     \\
@@ -189,6 +146,49 @@ The combat rules also generally cover situations where time and precise position
     Whenever you finish a \glossterm{long rest}, you remove one of your vital wounds.
     If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
 
+    % TODO: remove damage types
+\sectiongraphic*{Damage Types}{width=\columnwidth}{core mechanics/damage types}
+  There are four main damage types: energy, physical, poison, and psychic.
+  Energy and physical damage have additional subtypes, and are much more common than poison or psychic damage.
+
+  \subsection{Damage Subtypes}\label{Damage Subtypes}
+    Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
+    Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
+    Psychic damage has no subtypes.
+
+    Damage of a particular subtype is also considered damage of its primary type.
+    For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+
+    Some damage types have special properties, as described below.
+    \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+    \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+    \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
+    % TODO: what does this actually mean
+    Abilities without a duration create a \glossterm{brief} burst of torchlight.
+    While underwater, they deal half damage and have no nondamaging effects.
+
+  \subsection{Multiple Damage Types}\label{Multiple Damage Types}
+    Some attacks deal damage that has multiple damage types.
+    Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
+
+  \subsection{Special Damage Types}\label{Special Damage Types}
+
+    Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
+    It is possible for damage to be both environmental damage and subdual damage.
+
+    \subsubsection{Environmental Damage}\label{Environmental Damage}
+      Some abilities and environmental effects deal environmental damage.
+      Environmental damage is never dealt as the result of a successful attack roll.
+      Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+      Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+
+    \subsubsection{Subdual Damage}\label{Subdual Damage}
+      Some attacks and environmental effects deal subdual damage.
+      Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
+      If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
+      Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
+      If you do, you deal half damage with the strike.
+
 \section{Combat Time}\label{Combat Time}
   This section explains how time passes in combat.
 
@@ -197,6 +197,26 @@ The combat rules also generally cover situations where time and precise position
     Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
     Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase (see \pcref{Phases}).
     After both phases are complete, the round ends and the next round begins.
+
+  \subsection{Phases}\label{Phases}
+
+    There are two \glossterm{phases} in each round: a \glossterm{movement phase} and an \glossterm{action phase}.
+    Each phase specifies the types of actions that can be taken during that phase.
+    As a special case, \glossterm{free actions} may be taken during any phase.
+
+    Phases does not represent a specific amount of time.
+    In the narrative universe of Rise, movements and actions are intertwined and can happen simultaneously, just as in real life.
+    Phases are simply a useful abstraction to keep combat organized.
+
+    \subsubsection{The Movement Phase}\label{The Movement Phase}
+      During the \glossterm{movement phase}, you can make one \glossterm{movement}.
+      The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
+      For details, see \pcref{Movement and Positioning}.
+
+    \subsubsection{The Action Phase}\label{The Action Phase}
+      During the \glossterm{action phase}, you can take one \glossterm{minor action} and one \glossterm{standard action}.
+      Alternately, you can make a \glossterm{movement} or take an additional \glossterm{minor action} in place of your standard action.
+      Most of the time, you will simply take a single standard action.
 
   \subsection{Actions}\label{Actions}
 
@@ -229,26 +249,6 @@ The combat rules also generally cover situations where time and precise position
       There is no intrinsic distinction between a free action and something that isn't listed as requiring an action at all.
       However, some free action abilities specify a limit on how often they can be used.
       For example, manipulating objects is a free action, but you can only manipulate an object as a free action once per round (see \pcref{Manipulating Objects}).
-
-  \subsection{Phases}\label{Phases}
-
-    There are two \glossterm{phases} in each round: a \glossterm{movement phase} and an \glossterm{action phase}.
-    Each phase specifies the types of actions that can be taken during that phase.
-    As a special case, \glossterm{free actions} may be taken during any phase.
-
-    Phases does not represent a specific amount of time.
-    In the narrative universe of Rise, movements and actions are intertwined and can happen simultaneously, just as in real life.
-    Phases are simply a useful abstraction to keep combat organized.
-
-    \subsubsection{The Movement Phase}\label{The Movement Phase}
-      During the \glossterm{movement phase}, you can make one \glossterm{movement}.
-      The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
-      For details, see \pcref{Movement and Positioning}.
-
-    \subsubsection{The Action Phase}\label{The Action Phase}
-      During the \glossterm{action phase}, you can take one \glossterm{minor action} and one \glossterm{standard action}.
-      Alternately, you can make a \glossterm{movement} or take an additional \glossterm{minor action} in place of your standard action.
-      Most of the time, you will simply take a single standard action.
 
   \subsection{Resolving Actions}\label{Resolving Actions}
 
@@ -690,31 +690,32 @@ The combat rules also generally cover situations where time and precise position
 
       Multiple abilities that cause a strike to affect secondary targets stack normally unless noted otherwise.
 
+      % TODO: rename to "Universal Combat Abilities"?
   \subsection{Special Combat Abilities}\label{Special Combat Abilities}
 
     This section lists combat abilities that all characters can use.
     Many of these abilities are \abilitytag{Brawling} abilities.
     You use your Strength instead of your Perception to determine your base accuracy with Brawling abilities (see \pcref{Accuracy}).
 
-    \begin{dtable}
-      \lcaption{Special Combat Abilities}
-      \begin{compresseddtabularx}{\columnwidth}{l X p{6em}}
-        \tb{Ability}       & \tb{Brief Description}              & \tb{Tags}                                      \tableheaderrule
-        Charge             & Move and attack                     & \tdash                                         \\
-        Desperate Exertion & Reroll with a \plus2 bonus          & \tdash                                         \\
-        Dirty Trick        & Impose penalty on a foe             & \abilitytag{Size-Based}                        \\
-        Escape Grapple     & Stop being grappled                 & \abilitytag{Brawling}                          \\
-        Grapple            & Start grappling with a foe          & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Maintain Grapple   & Continue grappling with a foe       & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-        Overrun            & Move through foe's space            & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Recover            & Regain HP and DR, remove conditions & \abilitytag{Swift}                             \\
-        Shove              & Move a foe                          & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Sprint             & Move at double speed                & \tdash                                         \\
-        Total Defense      & Gain \plus2 to defenses             & \abilitytag{Swift}                             \\
-        Throw              & Throw a held object                 & \tdash                                         \\
-        Trip               & Trip a foe                          & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      \end{compresseddtabularx}
-    \end{dtable}
+    % Keep in sync with BasicCombat.tex
+  \begin{dtable}
+    \lcaption{Special Combat Abilities}
+    \begin{dtabularx}{\textwidth}{l l X l}
+      \tb{Ability}       & \tb{Usage Time}      & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
+      Charge             & Standard             & Move and make a strike                        & \tdash                                         \\
+      Desperate Exertion & Non-action           & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
+      Escape Grapple     & Standard             & Stop being grappled                           & \abilitytag{Brawling}                          \\
+      Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+      Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
+      Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
+      Total Defense      & Standard             & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
+      Throw              & Standard             & Throw a held object                           & \tdash                                         \\
+      Trip               & Standard             & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+    \end{dtabularx}
+  \end{dtable}
 
     \begin{activeability}*{Charge}
       \abilityusagetime Standard action.
@@ -737,19 +738,6 @@ The combat rules also generally cover situations where time and precise position
 
       You cannot use this to affect rolls that are not attacks or checks, such as \glossterm{vital rolls}.
       You cannot use this ability multiple times to affect the same roll.
-    \end{activeability}
-
-    \begin{activeability}*{Dirty Trick}[\abilitytag{Size-Based}]
-      \abilityusagetime Standard action.
-      \rankline
-      When you use this ability, you must describe the kind of dirty trick you are performing.
-      For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
-      The same creature can be affected by multiple dirty tricks, but each must apply a different penalty.
-
-      Make a attack with a free hand against the Reflex defense of one creature you \glossterm{touch}.
-
-      On a hit, the target \glossterm{briefly} suffers a \minus2 penalty to one defense of your choice: Armor, Fortitude, Reflex, or Mental.
-      You choose the defense, which must be appropriate for the action you described.
     \end{activeability}
 
     \begin{activeability}*{Escape Grapple}[\abilitytag{Brawling}]
@@ -970,6 +958,7 @@ The combat rules also generally cover situations where time and precise position
 
     If an area attack has a defined range, the point of origin is a single grid intersection of your choice within that range.
     Cones, lines, and walls without a range use a grid intersection of your choice that is touching your space, just like targeted attacks.
+    % TODO: this should probably be unique to emanations, not just rangeless
     Cylinders and spheres without a range are unusual, since they radiate from your whole body instead of a single point.
     When determining their total size, treat every grid intersection touching your space as a point of origin.
     When determining cover and similar effects, only use the grid intersection that is closest to the target.
@@ -1112,3 +1101,158 @@ The combat rules also generally cover situations where time and precise position
     \parhead{Neutral Parties} A neutral party is any creature who is neither an ally nor an enemy.
     You treat all creatures you have not declared an opinion of as neutral parties.
     Neutral parties can move through your \glossterm{space}.
+
+    % These also want to be organized in some way that makes sense
+\section{Special Ability Mechanics}\label{Special Ability Mechanics}
+
+  \subsection{Touch Range}
+    Some abilities affect creatures or objects that you touch.
+    You can only touch creatures that are adjacent to you.
+    Touching a creature that is not an \glossterm{ally} requires an attack against the target's Reflex defense, which is usually mentioned as part of the ability's description.
+    Some creatures cannot be touched, such as \trait{incorporeal} and \trait{intangible} creatures.
+
+  \subsection{Noticing Abilities}
+    Using an ability normally requires some obvious effort or action on your character's part.
+    You can decide how your character uses abilities to fit their style and the tone of the game you are in.
+    For example, one character might dramatically shout the names of their attacks, while another character might make trace runes in the air to cast their spells.
+    A single character could also have multiple styles for their different abilities.
+    The only general requirement is that it must be obvious to a casual observer that you are doing something, unless the ability is specifically \abilitytag{Subtle}.
+
+    Similarly, abilities normally have visual and/or auditory effects when used.
+    You can also decide the style of these effects, with the requirement that they must obviously be the result of your character using an ability.
+
+    Spells and rituals have additional requirements that make them easier to notice and harder to use (see \pcref{Spells and Rituals}).
+
+  \subsection{Invalid Targets}
+    You can always attempt to use a \glossterm{targeted} ability on an invalid target.
+    For example, you can try to cast a healing spell on a rock if you want, even if the healing spell only affects living creatures.
+    If the target is still invalid when the ability resolves, the ability has no effect on that target.
+    However, it still affects any other targets of the ability normally.
+
+  \subsection{Targets In Unknown Locations}
+    You can try to use a \glossterm{targeted} ability even if you don't know exactly where your intended target is.
+    To do so, describe your intended target, such as ``the creature hiding somewhere in those bushes'', and choose a 5-foot square.
+    If your chosen square contains your intended target, your ability has a 50\% \glossterm{miss chance}.
+    At the GM's discretion, choosing the wrong square or missing due to the miss chance may have unintended consequences, such as affecting a different valid target.
+
+  \subsection{Primary and Secondary Targets}\label{Primary and Secondary Targets}
+    Some abilities that affect multiple targets distinguish between their primary and secondary targets.
+    For example, the \spell{chain lightning} spell affects secondary targets within a small radius around a primary target.
+    If an ability does not mention secondary targets, all of its targets are primary targets.
+
+    Unless otherwise specified, abilities have the same effect on their primary and secondary targets.
+    However, \glossterm{line of effect} for secondary targets is always measured from the primary target, rather than from the ability's source.
+    \glossterm{Line of sight} is still measured from the ability's source.
+    This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no obstacle separating from the primary target.
+
+  \subsection{Measuring Area Shapes}\label{Area Shapes}
+
+    \parhead{Cone} A cone extends from the point of origin in a quarter-hemisphere, up to the given length.
+    A square is affected by a cone if it is within the cone's 90 degree arc and all of the square's points of intersection are no more than the cone's length away from the cone's point of origin.
+
+    \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
+    Cylinders also have a specific height.
+    Unless otherwise specified, a cylinder's height is the same as its radius.
+
+    \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
+    Lines also have a specific width and height.
+    Unless otherwise specified, a line-shaped ability affects an area 5 feet wide and 5 feet high.
+    The affected squares are chosen such that they stay close to the chosen line as possible.
+    All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+
+    If a line-shaped effect has its area increased, only the length of the line increases unless otherwise noted.
+
+    \parhead{Sphere} A sphere extends from the point of origin in all directions.
+    Any ability which only specifies a radius for its area is sphere-shaped.
+
+    \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
+    Narratively, all walls have a nonzero width.
+    Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
+    Like lines, some walls are shapeable.
+
+    All walls share the following common properties unless their description says otherwise.
+    A wall's height is equal to half its length for straight walls, or half its radius for circular walls, to a minimum of 5 feet high.
+    The entire wall is considered to be a single object, and is attacked and destroyed as a single unit.
+    All of a wall's defenses are 0, but like other objects, they are immune to \glossterm{critical hits}.
+    Most abilities that create walls indicate how many hit points the wall has.
+    If an ability does not specify a wall's hit points, it does not have hit points and cannot be destroyed with damage.
+
+    If you create a wall within a space too small to hold it, it fills as much of the space as possible, starting from the middle of the chosen space.
+    This can allow you to completely block off small tunnels.
+
+    Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
+    If a wall has hit points, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
+
+  \subsection{Functioning Like Other Spells}\label{Functioning Like Other Spells}
+    Many spells and rituals say they ``function like'' some other spell or ritual, often with some noted changes.
+    Except as otherwise noted, they retain all of the original effects and targets of the spell.
+    However, they do not have the same rank upgrades as the original spell or ritual.
+
+  \subsection{Impossible Spells and Rituals}
+    When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
+    This most commonly happens if you attempt to declare an invalid target for a spell.
+
+  \subsection{Ability Durations}\label{Ability Durations}
+
+    An ability's duration determines how long its effect lasts.
+    Abilities can have one of several different kinds of durations.
+
+    % TODO: Is this necessary?
+    % Should this clarify interactions with bursts/zones/emanations?
+    If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
+    If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+    Such effects can sometimes be destroyed prior to when their duration ends.
+
+    \subsubsection{Attuned Abilities}
+      Many abilities last as long as a creature \glossterm{attunes} to them.
+      For details, see \pcref{Attunement}.
+
+    \subsubsection{Conditions}\label{Conditions}
+      Many abilities impose \glossterm{conditions} on their targets.
+      A condition lasts until it is removed.
+      You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+      There are several other abilities that can also remove conditions.
+
+      % TODO: clean up wording
+    \subsubsection{Sustained Abilities}\label{Sustained Abilities}
+      Sustained abilities have the \abilitytag{Sustain} tag.
+      They last as long as you take an action to sustain them each round.
+      The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
+
+      At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
+      This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
+
+      Some sustained abilities include ``attuneable'' in the tag before the action type.
+      When you use or sustain that ability, you can choose to \glossterm{attune} to it.
+      If you do, it gains the \abilitytag{Attune} tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
+
+      Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+      However, you can sustain multiple separate abilities at once if you have available actions.
+      You can never sustain the same ability more than once.
+
+      You can normally only sustain an ability for up to 5 minutes.
+      Sustaining an ability beyond that point is strenuous, and requires an Endurance check (see \pcref{Endurance}).
+
+    \subsubsection{Permanent Abilities}
+      Some abilities last permanently.
+      Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+
+  \subsection{Combining Effects}
+    Abilities do not generally affect the way another abilities function.
+    However, sometimes multiple effects can be in conflict on a creature.
+    If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+    If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+    Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+
+    All abilities will still have as much of their effect as possible.
+    It is possible for an ability to be partially effective in this way.
+
+  \subsection{Suppressing Abilities}\label{Suppressing Abilities}
+    Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
+    While an ability is suppressed, it has no effect.
+    However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+
+  \subsection{Ability Tags}
+    Many abilities have tags that describe the nature of the ability.
+    Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+    For a list of ability tags, see \pcref{Ability Tags}.
