@@ -64,6 +64,16 @@ The combat rules also generally cover situations where time and precise position
   Their actions resolve simultaneously with your actions.
   The GM will typically tell you what your enemies did after all of the players have finished their actions.
 
+  \subsection{Action Types}
+    Most abilities require a \glossterm{standard action} to use.
+    You can take one standard action during each action phase.
+
+    Some less common abilities require a \glossterm{minor action}.
+    You can take one minor action during each action phase in addition to your standard action.
+
+    There are also \glossterm{free actions}, which aren't generally used for specific player abilities.
+    You can take any number of free actions during both the movement and action phase.
+
 \section{Movement}
   During the movement phase, your character move up to their speed along the ground.
   Most characters have a movement speed of 30 feet, but your character sheet will tell you your speed.
@@ -83,24 +93,20 @@ The combat rules also generally cover situations where time and precise position
   If you find yourself using one of these abilities often, consider adding it to your character sheet.
 
   % Keep in sync with ToC/Combat.tex
-  \begin{dtable!*}
-    \lcaption{Special Combat Abilities}
-    \begin{dtabularx}{\textwidth}{l l X l}
-      \tb{Ability}       & \tb{Usage Time}      & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
-      Charge             & Standard             & Move and make a strike                        & \tdash                                         \\
-      Desperate Exertion & Non-action           & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-      Escape Grapple     & Standard             & Stop being grappled                           & \abilitytag{Brawling}                          \\
-      Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-      Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
-      Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
-      Total Defense      & Standard             & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
-      Throw              & Standard             & Throw a held object                           & \tdash                                         \\
-      Trip               & Standard             & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-    \end{dtabularx}
-  \end{dtable!*}
+  \begin{itemize}
+    \item Charge: Move and make a strike with a weapon, but suffer a brief \minus2 penalty to defenses afterwards.
+    \item Desperate Exertion: Reroll any attack or check with a \plus2 bonus, but you gain two \glossterm{fatigue levels}.
+    \item Escape Grapple: Stop being grappled.
+    \item Grapple: Start grappling with a foe.
+    \item Maintain Grapple: Continue grappling with a foe as a \glossterm{free action}.
+    \item Overrun: Move through spaces occupied by enemies. Costs one fatigue during the movement phase, but is free during the action phase.
+    \item Recover: Regain half your hit points, all your damage resistance, and remove all conditions. However, you gain two fatigue levels, and you can only do it once per fight.
+    \item Shove: Push a foe up to half your speed.
+    \item Sprint: Move at double speed. Costs one fatigue during the movement phase, but is free during the action phase.
+    \item Total Defense: Gain a \plus2 bonus to all defenses this round.
+    \item Throw: Throw something you're holding.
+    \item Trip: Knock a foe \prone.
+  \end{itemize}
 
 \section{Using Abilities}\label{Using Abilities}
   % TODO: narrative text explaining how you talk about using abilities as a player.
@@ -120,13 +126,21 @@ The combat rules also generally cover situations where time and precise position
   \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
     Every ability is either \magical or mundane.
     Magical abilities use Willpower to determine their \glossterm{power}, while mundane abilities use Strength.
-    If an ability has a \sparkle next to its name, it is magical.
+    If an ability has a \sparkle{} next to its name, it is magical.
     Otherwise, it is mundane.
 
   \subsection{Ability Range}\label{Ability Range}
     Many abilities only work within a particular distance from you.
     This maximum distance is called the ability's \glossterm{range}.
     There are five common ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
+
+  \subsubsection{Line of Sight}
+    You have \glossterm{line of sight} to something if you can see it.
+    Glass does not block line of sight, but darkness and fog can.
+
+  \subsubsection{Line of Effect}
+    You have \glossterm{line of effect} to something if you could touch it with a really long pole.
+    Glass blocks line of effect, but darkness and fog do not.
 
   \subsection{Targeted Abilities}\label{Targeted Abilities}
     If an ability affects a specific number of creatures or objects, it is called a \glossterm{targeted} ability.
