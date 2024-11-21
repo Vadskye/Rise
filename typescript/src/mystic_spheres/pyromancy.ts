@@ -450,7 +450,7 @@ export const pyromancy: MysticSphere = {
 
       effect: `
         The target's \\glossterm{manufactured weapons} shed light like a torch.
-        All damage they deal with \\glossterm{strikes} using those weapons becomes fire damage in addition to the attack's normal damage types.
+        Their strikes with those weapons gain the \atFire tag.
       `,
       rank: 1,
       type: 'Attune (target)',

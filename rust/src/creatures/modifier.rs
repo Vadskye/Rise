@@ -1,7 +1,7 @@
-use crate::core_mechanics::abilities::ActiveAbility;
+use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility};
 use crate::core_mechanics::attacks::{Attack, Maneuver};
 use crate::core_mechanics::{
-    Attribute, DamageDice, DamageType, Debuff, Defense, MovementMode, PassiveAbility, Resource,
+    Attribute, DamageDice, Debuff, Defense, MovementMode, PassiveAbility, Resource,
     SpecialDefenseType,
 };
 use crate::skills::Skill;
@@ -226,22 +226,22 @@ impl Modifier {
         Self::Defense(Defense::Armor, 1)
     }
     pub fn reptile() -> Self {
-        Self::vulnerable_damage(DamageType::Cold)
+        Self::vulnerable_tag(AbilityTag::Cold)
     }
     pub fn shield() -> Self {
         Self::Defense(Defense::Armor, 2)
     }
-    pub fn immune_damage(dt: DamageType) -> Self {
-        Self::Immune(SpecialDefenseType::Damage(dt))
+    pub fn immune_tag(at: AbilityTag) -> Self {
+        Self::Immune(SpecialDefenseType::AbilityTag(at))
     }
     pub fn immune_debuff(d: Debuff) -> Self {
         Self::Immune(SpecialDefenseType::Debuff(d))
     }
-    pub fn impervious_damage(dt: DamageType) -> Self {
-        Self::Impervious(SpecialDefenseType::Damage(dt))
+    pub fn impervious_tag(at: AbilityTag) -> Self {
+        Self::Impervious(SpecialDefenseType::AbilityTag(at))
     }
-    pub fn vulnerable_damage(dt: DamageType) -> Self {
-        Self::Vulnerable(SpecialDefenseType::Damage(dt))
+    pub fn vulnerable_tag(at: AbilityTag) -> Self {
+        Self::Vulnerable(SpecialDefenseType::AbilityTag(at))
     }
 }
 

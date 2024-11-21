@@ -1,11 +1,10 @@
 use crate::core_mechanics::abilities::{Range, Targeting};
 use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
-use crate::core_mechanics::{DamageType, Defense};
+use crate::core_mechanics::Defense;
 use crate::equipment::Weapon;
 
 // TODO: what is the generic name for "non-strike attack"?
 pub struct PureDamageAbility {
-    pub damage_types: Vec<DamageType>,
     pub defense: Defense,
     pub is_magical: bool,
     pub name: String,
@@ -32,7 +31,7 @@ impl PureDamageAbility {
             crit: None,
             defense: self.defense,
             extra_context: None,
-            hit: AttackEffect::Damage(SimpleDamageEffect::dr(self.rank, self.damage_types.clone())),
+            hit: AttackEffect::Damage(SimpleDamageEffect::dr(self.rank)),
             is_magical: self.is_magical,
             is_strike: false,
             name: self.name.clone(),
@@ -109,7 +108,6 @@ mod tests {
             // but it's still useful to think about the specific variants of mystic bolt for different
             // defense and damage values.
             let mystic_bolt = PureDamageAbility {
-                damage_types: vec![DamageType::Fire],
                 defense: Defense::Fortitude,
                 is_magical: true,
                 name: "Mystic Bolt".to_string(),
@@ -139,7 +137,6 @@ The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
         #[test]
         fn it_generates_channel_divinity_mighty_mystic_bolt() {
             let mystic_bolt = PureDamageAbility {
-                damage_types: vec![DamageType::Energy],
                 defense: Defense::Mental,
                 is_magical: true,
                 name: "Mighty Mystic Bolt".to_string(),

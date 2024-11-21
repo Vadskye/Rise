@@ -1,10 +1,9 @@
 use crate::core_mechanics::attacks::DamageEffect;
-use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
+use crate::core_mechanics::{DicePool, PowerScaling};
 
 #[derive(Clone, Debug)]
 pub struct SimpleDamageEffect {
     pub base_dice: DicePool,
-    pub damage_types: Vec<DamageType>,
     pub power_scalings: Vec<PowerScaling>,
 }
 
@@ -13,7 +12,6 @@ impl SimpleDamageEffect {
         DamageEffect {
             // from self
             base_dice: self.base_dice.clone(),
-            damage_types: self.damage_types.clone(),
             power_scalings: self.power_scalings.clone(),
 
             // default values
@@ -24,38 +22,38 @@ impl SimpleDamageEffect {
         }
     }
 
-    pub fn from_string(text: &str, damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn from_string(text: &str) -> DamageEffect {
         // TODO: remove the leading $
         match text {
-            "$dr0" => Self::dr0(damage_types),
-            "$dr1" => Self::dr1(damage_types),
-            "$dr2" => Self::dr2(damage_types),
-            "$dr3" => Self::dr3(damage_types),
-            "$dr4" => Self::dr4(damage_types),
-            "$dr5" => Self::dr5(damage_types),
-            "$dr6" => Self::dr6(damage_types),
-            "$dr7" => Self::dr7(damage_types),
-            "$dr8" => Self::dr8(damage_types),
-            "$dr9" => Self::dr9(damage_types),
-            "$dr1h" => Self::dr1h(damage_types),
-            "$dr2h" => Self::dr2h(damage_types),
-            "$dr3h" => Self::dr3h(damage_types),
-            "$dr4h" => Self::dr4h(damage_types),
-            "$dr5h" => Self::dr5h(damage_types),
-            "$dr6h" => Self::dr6h(damage_types),
-            "$dr7h" => Self::dr7h(damage_types),
-            "$dr8h" => Self::dr8h(damage_types),
-            "$dr9h" => Self::dr9h(damage_types),
-            "$dr0l" => Self::dr0l(damage_types),
-            "$dr1l" => Self::dr1l(damage_types),
-            "$dr2l" => Self::dr2l(damage_types),
-            "$dr3l" => Self::dr3l(damage_types),
-            "$dr4l" => Self::dr4l(damage_types),
-            "$dr5l" => Self::dr5l(damage_types),
-            "$dr6l" => Self::dr6l(damage_types),
-            "$dr7l" => Self::dr7l(damage_types),
-            "$dr8l" => Self::dr8l(damage_types),
-            "$dr9l" => Self::dr9l(damage_types),
+            "$dr0" => Self::dr0(),
+            "$dr1" => Self::dr1(),
+            "$dr2" => Self::dr2(),
+            "$dr3" => Self::dr3(),
+            "$dr4" => Self::dr4(),
+            "$dr5" => Self::dr5(),
+            "$dr6" => Self::dr6(),
+            "$dr7" => Self::dr7(),
+            "$dr8" => Self::dr8(),
+            "$dr9" => Self::dr9(),
+            "$dr1h" => Self::dr1h(),
+            "$dr2h" => Self::dr2h(),
+            "$dr3h" => Self::dr3h(),
+            "$dr4h" => Self::dr4h(),
+            "$dr5h" => Self::dr5h(),
+            "$dr6h" => Self::dr6h(),
+            "$dr7h" => Self::dr7h(),
+            "$dr8h" => Self::dr8h(),
+            "$dr9h" => Self::dr9h(),
+            "$dr0l" => Self::dr0l(),
+            "$dr1l" => Self::dr1l(),
+            "$dr2l" => Self::dr2l(),
+            "$dr3l" => Self::dr3l(),
+            "$dr4l" => Self::dr4l(),
+            "$dr5l" => Self::dr5l(),
+            "$dr6l" => Self::dr6l(),
+            "$dr7l" => Self::dr7l(),
+            "$dr8l" => Self::dr8l(),
+            "$dr9l" => Self::dr9l(),
             _ => panic!("Unable to parse damage string: '{}'", text),
         }
     }
@@ -67,10 +65,9 @@ impl SimpleDamageEffect {
 // These return `DamageEffect` instead of `SimpleDamageEffect` because that's basically what we
 // always want anyway.
 impl SimpleDamageEffect {
-    pub fn dr0(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr0() -> DamageEffect {
         Self {
             base_dice: DicePool::d4(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
@@ -80,10 +77,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr1(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr1() -> DamageEffect {
         Self {
             base_dice: DicePool::d6(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
@@ -93,10 +89,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr2(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr2() -> DamageEffect {
         Self {
             base_dice: DicePool::d8(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
@@ -106,10 +101,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr3(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr3() -> DamageEffect {
         Self {
             base_dice: DicePool::d8(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
@@ -119,10 +113,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr4(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr4() -> DamageEffect {
         Self {
             base_dice: DicePool::d10(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 3,
@@ -132,10 +125,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr5(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr5() -> DamageEffect {
         Self {
             base_dice: DicePool::d8(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 3,
@@ -145,10 +137,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr6(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr6() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(2, 8),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 3,
@@ -158,10 +149,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr7(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr7() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(2, 8),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 2,
@@ -171,10 +161,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr8(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr8() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(4, 8),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 2,
@@ -184,10 +173,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr9(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr9() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(5, 6),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 1,
@@ -197,18 +185,18 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr(rank: i32, damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr(rank: i32) -> DamageEffect {
         match rank {
-            0 => Self::dr0(damage_types),
-            1 => Self::dr1(damage_types),
-            2 => Self::dr2(damage_types),
-            3 => Self::dr3(damage_types),
-            4 => Self::dr4(damage_types),
-            5 => Self::dr5(damage_types),
-            6 => Self::dr6(damage_types),
-            7 => Self::dr7(damage_types),
-            8 => Self::dr8(damage_types),
-            9 => Self::dr9(damage_types),
+            0 => Self::dr0(),
+            1 => Self::dr1(),
+            2 => Self::dr2(),
+            3 => Self::dr3(),
+            4 => Self::dr4(),
+            5 => Self::dr5(),
+            6 => Self::dr6(),
+            7 => Self::dr7(),
+            8 => Self::dr8(),
+            9 => Self::dr9(),
             _ => panic!("Unable to find equivalent dr() for rank {}", rank),
         }
     }
@@ -217,14 +205,13 @@ impl SimpleDamageEffect {
 // This lists all the high power scaling effects for each rank.
 impl SimpleDamageEffect {
     // Same scaling, unfortunately
-    pub fn dr1h(damage_types: Vec<DamageType>) -> DamageEffect {
-        Self::dr1(damage_types)
+    pub fn dr1h() -> DamageEffect {
+        Self::dr1()
     }
 
-    pub fn dr2h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr2h() -> DamageEffect {
         Self {
             base_dice: DicePool::empty(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 3,
@@ -234,10 +221,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr3h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr3h() -> DamageEffect {
         Self {
             base_dice: DicePool::d6(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 3,
@@ -247,10 +233,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr4h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr4h() -> DamageEffect {
         Self {
             base_dice: DicePool::empty(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 3,
@@ -260,10 +245,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr5h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr5h() -> DamageEffect {
         Self {
             base_dice: DicePool::d6(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 2,
@@ -273,10 +257,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr6h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr6h() -> DamageEffect {
         Self {
             base_dice: DicePool::empty(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d8()),
                 power_per_dice: 2,
@@ -286,10 +269,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr7h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr7h() -> DamageEffect {
         Self {
             base_dice: DicePool::d10(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d10()),
                 power_per_dice: 2,
@@ -299,10 +281,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr8h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr8h() -> DamageEffect {
         Self {
             base_dice: DicePool::empty(),
-            damage_types,
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::d6()),
                 power_per_dice: 1,
@@ -312,10 +293,9 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn dr9h(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr9h() -> DamageEffect {
         Self {
             base_dice: DicePool::empty(),
-            damage_types,
             power_scalings: vec![
                 PowerScaling {
                     dice: Some(DicePool::d8()),
@@ -327,17 +307,17 @@ impl SimpleDamageEffect {
         .damage_effect()
     }
 
-    pub fn drh(rank: i32, damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn drh(rank: i32) -> DamageEffect {
         match rank {
-            1 => Self::dr1h(damage_types),
-            2 => Self::dr2h(damage_types),
-            3 => Self::dr3h(damage_types),
-            4 => Self::dr4h(damage_types),
-            5 => Self::dr5h(damage_types),
-            6 => Self::dr6h(damage_types),
-            7 => Self::dr7h(damage_types),
-            8 => Self::dr8h(damage_types),
-            9 => Self::dr9h(damage_types),
+            1 => Self::dr1h(),
+            2 => Self::dr2h(),
+            3 => Self::dr3h(),
+            4 => Self::dr4h(),
+            5 => Self::dr5h(),
+            6 => Self::dr6h(),
+            7 => Self::dr7h(),
+            8 => Self::dr8h(),
+            9 => Self::dr9h(),
             _ => panic!("Unable to find equivalent drh() for rank {}", rank),
         }
     }
@@ -345,108 +325,98 @@ impl SimpleDamageEffect {
 
 // This lists all the low power scaling effects for each rank.
 impl SimpleDamageEffect {
-    pub fn dr0l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr0l() -> DamageEffect {
         Self {
             base_dice: DicePool::d6(),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr1l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr1l() -> DamageEffect {
         Self {
             base_dice: DicePool::d10(),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr2l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr2l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(2, 6),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr3l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr3l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(2, 10),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr4l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr4l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(4, 6),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr5l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr5l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(6, 6),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr6l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr6l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(5, 10),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr7l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr7l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(7, 10),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr8l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr8l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(10, 10),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn dr9l(damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn dr9l() -> DamageEffect {
         Self {
             base_dice: DicePool::xdy(14, 10),
-            damage_types,
             power_scalings: vec![],
         }
         .damage_effect()
     }
 
-    pub fn drl(rank: i32, damage_types: Vec<DamageType>) -> DamageEffect {
+    pub fn drl(rank: i32) -> DamageEffect {
         match rank {
-            0 => Self::dr0l(damage_types),
-            1 => Self::dr1l(damage_types),
-            2 => Self::dr2l(damage_types),
-            3 => Self::dr3l(damage_types),
-            4 => Self::dr4l(damage_types),
-            5 => Self::dr5l(damage_types),
-            6 => Self::dr6l(damage_types),
-            7 => Self::dr7l(damage_types),
-            8 => Self::dr8l(damage_types),
-            9 => Self::dr9l(damage_types),
+            0 => Self::dr0l(),
+            1 => Self::dr1l(),
+            2 => Self::dr2l(),
+            3 => Self::dr3l(),
+            4 => Self::dr4l(),
+            5 => Self::dr5l(),
+            6 => Self::dr6l(),
+            7 => Self::dr7l(),
+            8 => Self::dr8l(),
+            9 => Self::dr9l(),
             _ => panic!("Unable to find equivalent drl() for rank {}", rank),
         }
     }

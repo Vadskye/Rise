@@ -274,15 +274,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit \damagerankonelow{bludgeoning}.
+                        \hit \damagerankonelow{}.
                         \miss Half damage.
 
                         \rankline
-                        \rank{2} The damage increases to \damageranktwolow{bludgeoning}.
+                        \rank{2} The damage increases to \damageranktwolow{}.
                         \rank{3} The area increases to a \smallarea radius.
-                        \rank{4} The damage increases to \damagerankthreelow{bludgeoning}.
+                        \rank{4} The damage increases to \damagerankthreelow{}.
                         \rank{5} The area increases to a \medarea radius.
-                        \rank{6} The damage increases to \damagerankfivelow{bludgeoning}.
+                        \rank{6} The damage increases to \damagerankfivelow{}.
                         \rank{7} The area increases to a \largearea radius.
                     \end{magicalactiveability}
 

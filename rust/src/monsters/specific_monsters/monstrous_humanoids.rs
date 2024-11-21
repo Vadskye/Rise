@@ -1,5 +1,5 @@
-use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility};
-use crate::core_mechanics::{DamageType, PassiveAbility, Sense, Size};
+use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility, CustomAbility, StrikeAbility};
+use crate::core_mechanics::{PassiveAbility, Sense, Size};
 use crate::creatures::{Modifier, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponTag};
 use crate::monsters::creature_type::CreatureType;
@@ -387,14 +387,14 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                         ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::spear()).except_name("Dragonflame Spear")),
                         ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::sling()).except_name("Dragonflame Sling")),
                     ],
-                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    modifiers: vec![Modifier::impervious_tag(AbilityTag::Fire)],
                     ..Default::default()
                 },
                 narrative: Some(MonsterNarrative {
                     alignment: "Usually lawful evil".to_string(),
                     description: Some("
                         These statistics represent a kobold who has sworn service to a red or gold dragon.
-                        Kobolds who swear service to dragons with different damage types may have different abilities.
+                        Kobolds who swear service to different types of dragons may have different abilities.
                     ".to_string()),
                     ..Default::default()
                 }),
@@ -412,7 +412,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::flintspark_strike(Weapon::longbow()).except_name("Dragonflame Bow")),
                     ],
-                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    modifiers: vec![Modifier::impervious_tag(AbilityTag::Fire)],
                     ..Default::default()
                 },
                 narrative: Some(MonsterNarrative {
@@ -435,7 +435,7 @@ fn add_kobolds(monsters: &mut Vec<MonsterEntry>) {
                         ActiveAbility::Custom(CustomAbility::flame_breath(3)),
                         ActiveAbility::Custom(CustomAbility::ignition(3)),
                     ],
-                    modifiers: vec![Modifier::impervious_damage(DamageType::Fire)],
+                    modifiers: vec![Modifier::impervious_tag(AbilityTag::Fire)],
                     ..Default::default()
                 },
                 narrative: Some(MonsterNarrative {

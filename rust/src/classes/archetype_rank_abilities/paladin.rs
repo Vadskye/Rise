@@ -377,17 +377,16 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    You add half your Strength to your \glossterm{magical power} to determine your total power with this strike (see \pcref{Power}).
-                    If the target has your devoted alignment, you take energy damage equal to half your power with this strike (minimum 1).
+                    You add half your Strength to your \glossterm{magical power} to determine your total power with this ability (see \pcref{Power}).
+                    If the target has your devoted alignment, you take energy damage equal to half your power (minimum 1).
 
                     \rankline
                     \rank{2} You add your full Strength instead of half your Strength.
-                    \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
-                    Instead, you gain 1d4 extra damage per 3 power (minimum 1d4).
-                    \rank{4} The extra damage increases to 1d6 per 3 power.
-                    \rank{5} The \glossterm{weapon damage} is doubled.
-                    \rank{6} The extra damage increases to 1d8 per 3 power.
-                    \rank{7} The extra damage increases to 1d8 per 2 power.
+                    \rank{3} You deal \glossterm{extra damage} equal to half your power.
+                    \rank{4} If you miss, the target still takes the extra damage.
+                    \rank{5} Your \glossterm{weapon damage} is doubled.
+                    \rank{6} The extra damage increases to be equal to your power.
+                    \rank{7} The extra damage increases to twice your power.
                 \end{magicalactiveability}
             ",
             // TODO: represent special attacks

@@ -8,7 +8,7 @@ use crate::core_mechanics::attacks::attack_effect::{
 use crate::core_mechanics::attacks::{
     Attack, AttackEffect, SimpleDamageEffect,
 };
-use crate::core_mechanics::{DamageType, Debuff, Defense, SpeedCategory, Tag};
+use crate::core_mechanics::{Debuff, Defense, SpeedCategory, Tag};
 use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
@@ -27,8 +27,8 @@ pub enum StandardAttack {
 
     // Character/shared abilities
     AbyssalRebuke(i32),
-    BreathWeaponCone(i32, DamageType, Defense),
-    BreathWeaponLine(i32, DamageType, Defense),
+    BreathWeaponCone(i32, AbilityTag, Defense),
+    BreathWeaponLine(i32, AbilityTag, Defense),
     Combustion(i32),
     DarkGrasp(i32),
     DarkMiasma(i32),
@@ -110,7 +110,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Armor,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Piercing])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank)),
                 is_magical: false,
                 is_strike: false,
                 name: "Retributive Spikes".to_string(),
@@ -123,12 +123,12 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Acid])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank)),
                 is_magical: false,
                 is_strike: false,
                 name: "Dissolve".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Acid)]),
                 targeting: Targeting::SharingSpace,
             },
             Self::OozeEngulf(rank) => Attack {
@@ -174,12 +174,12 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 extra_context: None,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Bludgeoning])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l()),
                 is_magical: false,
                 is_strike: false,
                 name: "Thundering Hide".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Auditory)]),
                 targeting: Targeting::CausedDamage(AreaSize::Tiny),
             },
 
@@ -190,12 +190,12 @@ impl StandardAttack {
                 defense: Defense::Armor,
                 // This isn't really accurate, but it's close enough for a first lazy
                 // pass.
-                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank)),
                 name: "Abyssal Rebuke".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
-            Self::BreathWeaponCone(rank, damage_type, defense) => Attack {
+            Self::BreathWeaponCone(rank, ability_tag, defense) => Attack {
                 accuracy: 0,
                 crit: None,
                 defense: *defense,
@@ -206,12 +206,12 @@ impl StandardAttack {
                 }),
                 // Normally a full AOE would be (rank - 2), but breath attacks get (rank - 1) to
                 // compensate for the cooldown.
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1, vec![*damage_type])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1)),
                 is_magical: false,
                 is_strike: false,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(ability_tag.clone())]),
                 targeting: Targeting::Cone(
                     match rank {
                         1 => AreaSize::Small,
@@ -226,7 +226,7 @@ impl StandardAttack {
                     AreaTargets::Everything,
                 ),
             },
-            Self::BreathWeaponLine(rank, damage_type, defense) => Attack {
+            Self::BreathWeaponLine(rank, ability_tag, defense) => Attack {
                 accuracy: 0,
                 crit: None,
                 defense: *defense,
@@ -235,12 +235,12 @@ impl StandardAttack {
                     movement: None,
                     suffix: None,
                 }),
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1, vec![*damage_type])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank - 1)),
                 is_magical: false,
                 is_strike: false,
                 name: "Breath Weapon".to_string(),
                 replaces_weapon: None,
-                tags: None,
+                tags: Some(vec![Tag::Ability(ability_tag.clone())]),
                 targeting: match rank {
                     1 => Targeting::Line(5, AreaSize::Medium, AreaTargets::Everything),
                     2 => Targeting::Line(5, AreaSize::Large, AreaTargets::Everything),
@@ -257,9 +257,9 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank)),
                 name: "Combustion".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             // TODO: add descriptive text for +accuracy vs non-bright illumination
@@ -268,9 +268,9 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Reflex,
                 // TODO: add debuff on damage + Ment defense
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(2, vec![DamageType::Cold])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(2)),
                 name: "Dark Grasp".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Cold)]),
                 targeting: Targeting::Anything(Range::Adjacent),
             }.attack(),
             // TODO: add "shadowed" requirement
@@ -278,9 +278,9 @@ impl StandardAttack {
                 accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(1, vec![DamageType::Cold])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(1)),
                 name: "Dark Miasma".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Cold), Tag::Ability(AbilityTag::Visual)]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Enemies),
             }.attack(),
             // TODO: replace with "Retributive Judgment" and add retributive accuracy
@@ -288,7 +288,7 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank)),
                 name: "Divine Judgment".to_string(),
                 tags: None,
                 targeting: Targeting::Anything(Range::Short),
@@ -298,7 +298,7 @@ impl StandardAttack {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2()),
                 name: "Lifesteal Grasp".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Adjacent),
@@ -308,7 +308,7 @@ impl StandardAttack {
                 accuracy: *rank - 4,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr3h(vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr3h()),
                 name: "Lifesteal".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
@@ -329,9 +329,9 @@ impl StandardAttack {
                 accuracy: *rank - 4,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2(vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2()),
                 name: "Fireball".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Radius(
                     Some(Range::Medium),
                     AreaSize::Medium,
@@ -343,9 +343,9 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank, vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::drh(*rank)),
                 name: "Firebolt".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::Ignition(rank) => SimpleSpell {
@@ -354,12 +354,12 @@ impl StandardAttack {
                 defense: Defense::Fortitude,
                 hit: AttackEffect::DamageOverTime(DamageOverTimeEffect {
                     can_remove_with_dex: true,
-                    damage: SimpleDamageEffect::dr1(vec![DamageType::Fire]),
+                    damage: SimpleDamageEffect::dr1(),
                     duration: AttackEffectDuration::Condition,
                     narrative_text: "catches on fire".to_string(),
                 }),
                 name: "Ignition".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Creature(Range::Short),
             }.attack(),
             Self::InflictWound(rank) => SimpleSpell {
@@ -367,7 +367,7 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(
-                    SimpleDamageEffect::dr1(vec![DamageType::Energy])
+                    SimpleDamageEffect::dr1()
                         .except(|effect| effect.lose_hp_effect = Some(AttackTriggeredEffect::RepeatDamage))
                 ),
                 name: "Inflict Wound".to_string(),
@@ -378,7 +378,7 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank)),
                 name: "Armor Bolt".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
@@ -387,7 +387,7 @@ impl StandardAttack {
                 accuracy: 0,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank, vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr(*rank)),
                 name: "Fort Bolt".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
@@ -397,9 +397,9 @@ impl StandardAttack {
                 accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1()),
                 name: "Pyroclasm".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Radius(None, AreaSize::Medium, AreaTargets::Everything),
             }.attack(),
             // TODO: add Int-based +2 accuracy, add subdual damage
@@ -407,18 +407,18 @@ impl StandardAttack {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Psychic])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l()),
                 name: "Mind Crush".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Emotion)]),
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
             Self::PersonalIgnition(rank) => SimpleSpell {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Reflex,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Fire])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1()),
                 name: "Personal Ignition".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 // TODO: replace with "grappled by or natural weapon attack"
                 targeting: Targeting::MadeMeleeAttack,
             }.attack(),
@@ -428,18 +428,18 @@ impl StandardAttack {
                 crit: None,
                 defense: Defense::Fortitude,
                 hit: AttackEffect::Damage(
-                    SimpleDamageEffect::dr1(vec![DamageType::Fire])
+                    SimpleDamageEffect::dr1()
                         .except(|effect| effect.lose_hp_effect = Some(AttackTriggeredEffect::RepeatDamage))
                 ),
                 name: "Pyrohemia".to_string(),
-                tags: None,
+                tags: Some(vec![Tag::Ability(AbilityTag::Fire)]),
                 targeting: Targeting::Creature(Range::Short),
             }.attack(),
             Self::RetributiveLifebond(rank) => SimpleSpell {
                 accuracy: *rank - 1,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1l(vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1l()),
                 name: "Retributive Lifebond".to_string(),
                 tags: None,
                 targeting: Targeting::CausedHpLoss(AreaSize::Medium),
@@ -448,7 +448,7 @@ impl StandardAttack {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Piercing])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1()),
                 name: "Spikeform".to_string(),
                 tags: None,
                 targeting: Targeting::MadeMeleeAttack,
@@ -458,7 +458,7 @@ impl StandardAttack {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Slashing])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1()),
                 name: "Windslash".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
@@ -467,7 +467,7 @@ impl StandardAttack {
                 accuracy: *rank - 3,
                 crit: None,
                 defense: Defense::Armor,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l(vec![DamageType::Bludgeoning])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr2l()),
                 name: "Windsnipe".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Distant),
@@ -476,7 +476,7 @@ impl StandardAttack {
                 accuracy: *rank - 2,
                 crit: None,
                 defense: Defense::Mental,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr1(vec![DamageType::Energy])),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr1()),
                 name: "Word of Faith".to_string(),
                 tags: None,
                 targeting: Targeting::Radius(

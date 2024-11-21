@@ -44,6 +44,7 @@ export const umbramancy: MysticSphere = {
         4: `The range increases to \\longrange.`,
         6: `The maximum area increases to a \\largearea radius.`,
       },
+      tags: ['Visual'],
       type: 'Sustain (minor)',
     },
   ],
@@ -63,7 +64,7 @@ export const umbramancy: MysticSphere = {
         5: `The maximum area increases to a \\largearea radius.`,
         7: `The maximum area increases to a \\hugearea radius.`,
       },
-      tags: [],
+      tags: ['Visual'],
       type: 'Sustain (minor)',
     },
 
@@ -78,7 +79,7 @@ export const umbramancy: MysticSphere = {
         Darkvision and similar abilities which do not require light still function within the area.
       `,
       rank: 6,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -98,7 +99,7 @@ export const umbramancy: MysticSphere = {
         5: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
         7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
       },
-      tags: [],
+      tags: ['Visual'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -124,7 +125,7 @@ export const umbramancy: MysticSphere = {
         Any object or effect which blocks light also blocks this spell's effect.
       `,
       rank: 7,
-      tags: [],
+      tags: ['Visual'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -164,13 +165,14 @@ export const umbramancy: MysticSphere = {
 
       // -2r for shadowed requirement
       attack: {
-        hit: `\\damagerankonelow{cold}.`,
+        hit: `\\damagerankonelow{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 1,
+      tags: ['Cold'],
       scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
     },
 
@@ -180,7 +182,7 @@ export const umbramancy: MysticSphere = {
       // -2r for shadowed requirement. Enemies-only large radius is t4. Spend the 2r on
       // damage instead of area.
       attack: {
-        hit: `\\damagerankfourlow{cold}.`,
+        hit: `\\damagerankfourlow{}.`,
         missGlance: true,
         targeting: `
           You create a field of miasma centered on your location.
@@ -191,7 +193,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 4,
       scaling: { special: 'The damage increases by 2d6 for each rank beyond 4.' },
-      tags: ['Sustain (standard)'],
+      tags: ['Cold', 'Sustain (standard)'],
     },
 
     {
@@ -199,13 +201,14 @@ export const umbramancy: MysticSphere = {
 
       // Spend the 2r from shadowed on damage instead of area
       attack: {
-        hit: `\\damagerankeightlow{cold}.`,
+        hit: `\\damagerankeightlow{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 7,
+      tags: ['Cold'],
       scaling: 'accuracy',
     },
 
@@ -215,7 +218,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranktwo{cold}.
+          \\damageranktwo{}.
           If the target loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -227,6 +230,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
+      tags: ['Cold'],
     },
 
     {
@@ -235,7 +239,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranksixlow{cold}.
+          \\damageranksixlow{}.
           If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -246,6 +250,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 6,
+      tags: ['Cold'],
       scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.'},
     },
 
@@ -254,7 +259,7 @@ export const umbramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `\\damagerankthreelow{cold}.`,
+        hit: `\\damagerankthreelow{}.`,
         missGlance: true,
         targeting: `
           You create a field of darkness at a \\glossterm{shadowed} location within \\shortrange.
@@ -266,7 +271,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 5,
       scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.'},
-      tags: ['Sustain (minor)'],
+      tags: ['Cold', 'Sustain (minor)'],
     },
 
     {
@@ -285,6 +290,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Emotion', 'Visual'],
     },
 
     {
@@ -303,6 +309,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
+      tags: ['Emotion', 'Visual'],
     },
 
     {
@@ -327,6 +334,7 @@ export const umbramancy: MysticSphere = {
         This invisibility ends after you take any action, or if you stop being shadowed.
       `,
       rank: 2,
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -338,6 +346,7 @@ export const umbramancy: MysticSphere = {
         This invisibility ends after you take a standard action, or if you stop being shadowed.
       `,
       rank: 6,
+      tags: ['Visual'],
       type: 'Attune (deep)',
     },
 
@@ -358,6 +367,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 6,
       scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
@@ -365,7 +375,6 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Damage dealt by the strike is cold damage in addition to its normal damage types.
         The attack is made against each target's Reflex defense instead of its Armor defense.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -374,7 +383,7 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 3,
       scaling: 'accuracy',
-      tags: ['Visual'],
+      tags: ['Cold'],
     },
 
     {
@@ -492,7 +501,7 @@ export const umbramancy: MysticSphere = {
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          \\damagerankfive{cold}.
+          \\damagerankfive{}.
           If the target loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           It cannot move on its own.
           As a \\glossterm{movement}, you can control its movement instead of your own.
@@ -504,6 +513,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 7,
+      tags: ['Cold'],
     },
 
     {
@@ -559,7 +569,7 @@ export const umbramancy: MysticSphere = {
         4: 'You can choose to create a \\largearealong wall instead.',
         6: 'You can choose to create a \\hugearealong wall instead.',
       },
-      tags: ['Barrier'],
+      tags: ['Barrier', 'Visual'],
       type: 'Sustain (attuneable, minor)',
     },
   ],

@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    latex_ability_block, AbilityExtraContext, Range, Targeting, UsageTime,
+    latex_ability_block, AbilityTag, AbilityExtraContext, Range, Targeting, UsageTime,
 };
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
@@ -96,6 +96,10 @@ impl Attack {
             tags.push(tag);
             a.tags = Some(tags);
         })
+    }
+
+    pub fn except_with_ability_tag(&self, ability_tag: AbilityTag) -> Attack {
+        self.except_with_tag(Tag::Ability(ability_tag))
     }
 
     // This allows passing in a closure to modify damage dealt on hit, which is harder than it

@@ -1,5 +1,5 @@
 use crate::core_mechanics::attacks::{DamageEffect, HasAttacks, SimpleDamageEffect};
-use crate::core_mechanics::{DamageType, DicePool, PowerScaling};
+use crate::core_mechanics::{DicePool, PowerScaling};
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 use regex::Match;
@@ -14,14 +14,13 @@ pub fn replace_attack_terms(
     let mut replaced_effect = effect.to_string();
 
     // Generally, $fullweapondamage is the easiest way to indicate strike damage. However, the
-    // individual $damage and $damagetypes terms are available to make it easier to write
+    // individual $damage terms are available to make it easier to write
     // special weapon effects.
     replaced_effect = replace_full_weapon_damage_terms(&replaced_effect);
     replaced_effect = replace_accuracy_terms(&replaced_effect, creature, weapon);
     replaced_effect = replace_brawling_accuracy_terms(&replaced_effect, creature);
     replaced_effect = replace_damage_terms(&replaced_effect, creature, is_magical, weapon);
     replaced_effect = replace_damage_rank_terms(&replaced_effect, creature, is_magical);
-    replaced_effect = replace_damage_type_terms(&replaced_effect, weapon);
     replaced_effect = replace_power_terms(&replaced_effect, creature);
     replaced_effect = replace_weapon_name_terms(&replaced_effect, &weapon);
     replaced_effect = replace_extra_damage_terms(&replaced_effect, creature, is_magical);
@@ -32,7 +31,7 @@ pub fn replace_attack_terms(
 fn replace_full_weapon_damage_terms(effect: &str) -> String {
     let full_weapon_damage_pattern = Regex::new(r"\$fullweapondamage").unwrap();
     return full_weapon_damage_pattern
-        .replace_all(effect, "$$damage $$damagetypes damage")
+        .replace_all(effect, "$$damage damage")
         .to_string();
 }
 
@@ -102,22 +101,6 @@ fn replace_damage_rank_terms(effect: &str, creature: &Creature, is_magical: bool
     replaced_effect
 }
 
-fn replace_damage_type_terms(effect: &str, weapon: Option<&Weapon>) -> String {
-    let mut replaced_effect = effect.to_string();
-
-    let damage_type_pattern = Regex::new(r"\$damagetypes\b").unwrap();
-    for _ in damage_type_pattern.find_iter(&replaced_effect.clone()) {
-        // Unwrap the weapon here. If we found a $damagetypes match but we don't have a weapon,
-        // crashing is appropriate.
-        let damage_type_text = DamageType::format_damage_types(&weapon.unwrap().damage_types);
-        replaced_effect = damage_type_pattern
-            .replacen(&replaced_effect, 1, damage_type_text)
-            .to_string();
-    }
-
-    replaced_effect
-}
-
 fn replace_power_terms(effect: &str, creature: &Creature) -> String {
     let mundane_power_pattern = Regex::new(r"\$mundanepower").unwrap();
     let replaced_effect =
@@ -157,7 +140,6 @@ fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: boo
     {
         let damage_effect = SimpleDamageEffect {
             base_dice: DicePool::empty(),
-            damage_types: vec![],
             power_scalings: vec![PowerScaling {
                 dice: Some(DicePool::xdy(1, die_size.parse::<i32>().unwrap())),
                 power_per_dice: per_power.parse::<i32>().unwrap(),
@@ -274,7 +256,7 @@ mod tests {
         #[test]
         fn replaces_one_term() {
             assert_eq!(
-                "takes $damage $damagetypes damage.",
+                "takes $damage damage.",
                 replace_full_weapon_damage_terms("takes $fullweapondamage."),
             );
         }
@@ -282,7 +264,7 @@ mod tests {
         #[test]
         fn replaces_two_terms() {
             assert_eq!(
-                "takes $damage $damagetypes damage and $damage $damagetypes damage.",
+                "takes $damage damage and $damage damage.",
                 replace_full_weapon_damage_terms("takes $fullweapondamage and $fullweapondamage."),
             );
         }
@@ -536,33 +518,6 @@ mod tests {
         }
     }
 
-    mod replace_damage_type_terms {
-        use super::*;
-        use crate::equipment::StandardWeapon;
-
-        #[test]
-        fn replaces_broadsword_types() {
-            assert_eq!(
-                "Deals some slashing damage",
-                replace_damage_type_terms(
-                    "Deals some $damagetypes damage",
-                    Some(&StandardWeapon::Broadsword.weapon()),
-                ),
-            );
-        }
-
-        #[test]
-        fn replaces_morning_star_types() {
-            assert_eq!(
-                "Deals some bludgeoning and piercing damage",
-                replace_damage_type_terms(
-                    "Deals some $damagetypes damage",
-                    Some(&StandardWeapon::MorningStar.weapon()),
-                ),
-            );
-        }
-    }
-
     mod replace_weapon_name_terms {
         use super::*;
         use crate::equipment::StandardWeapon;
@@ -650,7 +605,7 @@ mod tests {
             assert_multiline_eq(
                 r"
                     The $name makes a +5 melee strike with a tentacle.
-                    \hit 1d8+3 bludgeoning damage.
+                    \hit 1d8+3 damage.
                     Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
                     Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
@@ -661,7 +616,7 @@ mod tests {
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy melee strike with a $weapon.
-                    \hit $damage $damagetypes damage.
+                    \hit $damage damage.
                     Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
                     Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).

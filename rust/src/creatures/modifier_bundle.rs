@@ -1,6 +1,7 @@
 use crate::core_mechanics::{
-    abilities::AbilityTag, DamageType, Debuff, MovementMode, PassiveAbility, SpecialDefenseType, Attribute,
+    abilities::AbilityTag, Debuff, MovementMode, PassiveAbility, SpecialDefenseType, Attribute,
 };
+use crate::equipment::WeaponMaterial;
 use crate::skills::Skill;
 
 use super::Modifier;
@@ -44,7 +45,9 @@ impl ModifierBundle {
                 }),
             ],
             Self::Incorporeal => vec![
-                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Physical)),
+                Modifier::Immune(SpecialDefenseType::Mundane),
+                Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Brawling)),
+                Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(WeaponMaterial::Silver)),
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"
                       The $name is \trait{incorporeal} (see \pcref{Incorporeal}).
@@ -55,7 +58,8 @@ impl ModifierBundle {
                 }),
             ],
             Self::Intangible => vec![
-                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Physical)),
+                Modifier::Immune(SpecialDefenseType::Mundane),
+                Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Brawling)),
                 Modifier::PassiveAbility(PassiveAbility {
                     description: r"
                       The $name is \trait{intangible} (see \pcref{Intangible}).
@@ -80,7 +84,6 @@ impl ModifierBundle {
             Self::Mindless => vec![
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
-                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
                 Modifier::Attribute(Attribute::Intelligence, -99),
                 Modifier::Attribute(Attribute::Willpower, -99),
                 Modifier::PassiveAbility(PassiveAbility::mindless()),
@@ -104,7 +107,6 @@ impl ModifierBundle {
             Self::SimpleMinded => vec![
                 Modifier::Vulnerable(SpecialDefenseType::AbilityTag(AbilityTag::Compulsion)),
                 Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Emotion)),
-                Modifier::Immune(SpecialDefenseType::Damage(DamageType::Psychic)),
                 Modifier::PassiveAbility(PassiveAbility::simple_minded()),
             ],
             Self::SimpleMindedConstruct => Self::SimpleMinded.plus_modifiers(vec![

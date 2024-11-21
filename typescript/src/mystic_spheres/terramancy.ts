@@ -41,7 +41,7 @@ export const terramancy: MysticSphere = {
 
       // +1r for +1acc
       attack: {
-        hit: `\\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -49,7 +49,7 @@ export const terramancy: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Earth', 'Manifestation'],
     },
 
     {

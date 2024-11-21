@@ -46,8 +46,7 @@ export const summoning: MysticSphere = {
         There are only two actions it can take.
         As a \\glossterm{movement}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
-        If it hits, it deals \\damagerankzero{physical}.
-        The subtypes of damage dealt by this attack depend on the creature's appearance, but are limited to bludgeoning, piercing, and slashing damage.
+        If it hits, it deals \\damagerankzero{}.
 
         If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
         Summoned creatures have no mind or independent agency, and will not act on their own even if attacked.
@@ -129,7 +128,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -149,7 +148,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
           If the target takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -169,7 +168,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -187,7 +186,7 @@ export const summoning: MysticSphere = {
       name: 'Massive Trampling Summon',
 
       attack: {
-        hit: `\\damageranktwo{bludgeoning}.`,
+        hit: `\\damageranktwo{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\hugearealong, 10 ft. wide line from you.
@@ -260,7 +259,7 @@ export const summoning: MysticSphere = {
           The ballista functions like any other weapon, with the following exceptions.
 
           The ballista cannot move, and it makes projectile \\glossterm{strikes} instead of melee strikes.
-          Its attacks deal \\damageranktwo{piercing} and have \\glossterm{range limits} of 90/270.
+          Its attacks deal \\damageranktwo{} and have \\glossterm{range limits} of 90/270.
           The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
         name: 'summon weapon',
@@ -276,15 +275,16 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the summoned creature appears to be an earth elemental.
-        Its attacks deal \\damagerankfour{bludgeoning}.
-        It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
+          the summoned creature appears to be an earth elemental.
+          Its attacks deal \\damagerankfour{}, and have that \atEarth tag.
+          It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
+          In addition, it is immune to \atEarth attacks.
         `,
         name: 'summon monster',
       },
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Earth', 'Manifestation'],
       type: 'Attune (deep)',
     },
 
@@ -294,9 +294,10 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an water elemental.
-          Its attacks deal \\damagerankone{bludgeoning}.
+          Its attacks deal \\damagerankone{}, and have the \atWater tag.
           It has a 30 foot \\glossterm{swim speed}.
-          However, it is \\glossterm{vulnerable} to electricity damage.
+          In addition, it is immune to \atWater attacks.
+          However, it is \\glossterm{vulnerable} to \atElectricity attacks.
         `,
         name: 'summon monster',
       },
@@ -312,14 +313,15 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an air elemental.
-          Its attacks deal \\damagerankthree{bludgeoning}.
+          Its attacks deal \\damagerankthree{}, and have the \atAir tag.
           It has a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit}.
+          In addition, it is immune to \atAir attacks.
         `,
         name: 'summon monster',
       },
       rank: 4,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Air', 'Manifestation'],
       type: 'Attune (deep)',
     },
 
@@ -331,14 +333,14 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal \\damageranktwo{fire}.
-        In addition, it is immune to fire damage.
+        Its attacks deal \\damageranktwo{}, and have the \atFire tag.
+        In addition, it is immune to \atFire attacks.
         `,
         name: 'summon monster',
       },
       rank: 3,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Fire', 'Manifestation'],
       type: 'Attune (deep)',
     },
 
@@ -349,10 +351,10 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-        the creature appears to be a Medium bear.
-        Its attacks deal \\damageranktwo{bludgeoning and slashing}.
-        As a standard action, it can use the \\ability{grapple} ability against a creature adjacent to it (see \\pcref{Grapple}).
-        While grappling, the manifested creature will automatically use the \\ability{maintain grapple} ability (see \\pcref{Maintain Grapple}).
+          the creature appears to be a Medium bear.
+          Its attacks deal \\damageranktwo{}.
+          As a standard action, it can use the \\ability{grapple} ability against a creature adjacent to it (see \\pcref{Grapple}).
+          While grappling, the manifested creature will automatically use the \\ability{maintain grapple} ability (see \\pcref{Maintain Grapple}).
         `,
         name: 'summon monster',
       },
@@ -367,7 +369,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{piercing}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -428,7 +430,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour{piercing}
+          \\damagerankfour{}
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
         `,
         missGlance: true,

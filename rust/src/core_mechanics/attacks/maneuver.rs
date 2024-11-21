@@ -5,7 +5,7 @@ use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DebuffEffect,
 };
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
+    Debuff, Defense, DicePool, Die, PowerScaling, SpecialDefenseType, SpeedCategory,
 };
 use crate::equipment::Weapon;
 use titlecase::titlecase;
@@ -86,10 +86,6 @@ impl Maneuver {
             // TODO: figure out how to use the higher of two powers
             Self::ElementalStrike(rank) => weapon
                 .attack()
-                .except_hit_damage(|d| {
-                    d.damage_types
-                        .append(&mut vec![DamageType::Bludgeoning, DamageType::Fire])
-                })
                 .except_hit_damage(|d| match rank {
                     3 => d.base_dice = d.base_dice.add_die(Die::d4()),
                     4 => d.power_scalings.push(PowerScaling {

@@ -127,14 +127,16 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Dragonbreath Spell} Choose an arcane \glossterm{spell} you know that has a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         It must not have a \glossterm{range}, and it must not create an \glossterm{emanation}.
                         The spell's area becomes a cone instead of its normal shape.
+                        In addition, its area increases to to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+                        You gain a \plus2 accuracy bonus with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Powerful Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{magical power} with that spell.
+                        You gain a \plus3 bonus to your \glossterm{magical power} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                        The spell cannot also be affected by the Dragonbreath Spell metamagic.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
@@ -208,22 +210,22 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Choose a type of dragon from among the dragons on \trefnp{Draconic Bloodline Types}.
                 You have the blood of that type of dragon in your veins.
-                You are \trait{impervious} to damage of the type dealt by that dragon's breath weapon.
+                You are \trait{impervious} to attacks with that dragon's associated ability tag.
 
                 \begin{dtable}
                     \lcaption{Draconic Bloodline Types}
                     \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-                        \tb{Dragon} & \tb{Damage Type} & \tb{Mystic Sphere} \tableheaderrule
-                        Black       & Acid             & Vivimancy    \\
-                        Blue        & Electricity      & Electromancy \\
-                        Brass       & Fire             & Enchantment  \\
-                        Bronze      & Electricity      & Revelation   \\
-                        Copper      & Acid             & Terramancy   \\
-                        Gold        & Fire             & Photomancy   \\
-                        Green       & Acid             & Compulsion   \\
-                        Red         & Fire             & Pyromancy    \\
-                        Silver      & Cold             & Telekinesis  \\
-                        White       & Cold             & Cryomancy    \\
+                        \tb{Dragon} & \tb{Tag} & \tb{Mystic Sphere} \tableheaderrule
+                        Black       & \atAcid             & Vivimancy    \\
+                        Blue        & \atElectricity      & Electromancy \\
+                        Brass       & \atFire             & Enchantment  \\
+                        Bronze      & \atElectricity      & Revelation   \\
+                        Copper      & \atAcid             & Terramancy   \\
+                        Gold        & \atFire             & Photomancy   \\
+                        Green       & \atAcid             & Compulsion   \\
+                        Red         & \atFire             & Pyromancy    \\
+                        Silver      & \atCold             & Telekinesis  \\
+                        White       & \atCold             & Cryomancy    \\
                     \end{dtabularx}
                 \end{dtable}
             ",
@@ -271,7 +273,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain a \plus1 accuracy bonus with any ability that either deals damage of your dragon's damage type or is a spell from your dragon's \glossterm{mystic sphere}.
+                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -280,7 +282,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You become immune to your dragon's damage type.
+                You become immune to attacks that have your dragon's associated ability tag.
             ",
             modifiers: None,
         },

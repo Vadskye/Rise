@@ -411,12 +411,12 @@ These rules could also be used for other types of vehicles, such as flying ships
   \lcaption{Simplified Ship Weapons}
   \begin{dtabularx}{\textwidth}{l X l l l l}
     \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-    Rock sling & 1d6 bludgeoning \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
-    Scorpion   & 1d8 piercing \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
-    Ballista   & 1d8 piercing \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
-    Catapult   & 1d10 bludgeoning plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
-    Mangonel   & 1d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
-    Trebuchet  & 2d8 bludgeoning plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+    Rock sling & 1d6 \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
+    Scorpion   & 1d8 \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
+    Ballista   & 1d8 \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+    Catapult   & 1d10 plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+    Mangonel   & 1d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+    Trebuchet  & 2d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
   \end{dtabularx}
   \end{dtable!*}
 
@@ -427,33 +427,33 @@ These rules could also be used for other types of vehicles, such as flying ships
   \begin{dtable!*}
   \lcaption{Realistic Ship Weapons}
   \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-    \tb{Name}                & \tb{Damage}                          & \tb{Defense} & \tb{Tags}                                   & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+    \tb{Name}                & \tb{Damage}              & \tb{Defense}          & \tb{Tags}                                          & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
     % +1dr for -1 range
-    Rock sling               & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (60/180), Slow Reload (1)        & 1         & Medium         & 2 (200 gp)     \\
+    Rock sling               & 1d8 \add 1 per power     & Armor                 & Projectile (60/180), Slow Reload (1)               & 1         & Medium         & 2 (200 gp)     \\
     % -1dr for +1 range
-    Springald                & 1d6 piercing \add 1 per 2 power      & Armor        & Projectile (120/360), Slow Reload (1)       & 1         & Large          & 2 (200 gp)     \\
+    Springald                & 1d6 \add 1 per 2 power   & Armor                 & Projectile (120/360), Slow Reload (1)              & 1         & Large          & 2 (200 gp)     \\
     % +1dr for reload -> load, -1dr for range
-    Lightning caller\sparkle & 3d6 electricity                      & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
+    Lightning caller\sparkle & 3d6                      & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
     % +2dr for slow reload, -2dr for range
-    Scorpion                 & 1d8 piercing \add 1 per power        & Armor        & Projectile (200/600), Slow Reload (2)       & 1         & Huge           & 3 (1,000 gp)   \\
+    Scorpion                 & 1d8 \add 1 per power     & Armor                 & Projectile (200/600), Slow Reload (2)              & 1         & Huge           & 3 (1,000 gp)   \\
     % +3dr for slow reload, -3dr for range
-    Onager                   & 1d8 bludgeoning \add 1 per power     & Armor        & Projectile (300/900), Slow Reload (3)       & 8         & Gargantuan     & 3 (1,000 gp)   \\
+    Onager                   & 1d8 \add 1 per power     & Armor                 & Projectile (300/900), Slow Reload (3)              & 8         & Gargantuan     & 3 (1,000 gp)   \\
     % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
-    Torsion ballista         & 1d8 piercing per 3 power             & Armor        & Projectile (300/900), Slow Load (2)         & 3         & Huge           & 4 (5,000 gp)   \\
+    Torsion ballista         & 1d8 per 3 power          & Armor                 & Projectile (300/900), Slow Load (2)                & 3         & Huge           & 4 (5,000 gp)   \\
     % +1dr for reload -> load, -1dr for range
-    Flame caller\sparkle     & 4d6 fire                             & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 4 (5,000 gp)   \\
+    Flame caller\sparkle     & 4d6                      & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 4 (5,000 gp)   \\
     % +1dr for reload -> load, -1dr for range
-    Acid caller\sparkle      & 5d10 acid                            & Fortitude    & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 5 (25,000 gp)  \\
+    Acid caller\sparkle      & 5d10                     & Fortitude    \atAcid, & Fixed (200), Mystic, Slow Load (1)                 & 3         & Large          & 5 (25,000 gp)  \\
     % -2dr for removing reload
-    Polybolos                & 1d8 piercing \add 1 per power        & Armor        & Projectile (90/270)                         & 3         & Huge           & 5 (25,000 gp)  \\
+    Polybolos                & 1d8 \add 1 per power     & Armor                 & Projectile (90/270)                                & 3         & Huge           & 5 (25,000 gp)  \\
     % +2dr for slow reload, -2dr for range
-    Mangonel                 & 1d8 bludgeoning plus 1d8 per 3 power & Armor        & Projectile (300/900), Slow Reload (2)       & 20        & Gargantuan     & 5 (25,000 gp)  \\
+    Mangonel                 & 1d8 plus 1d8 per 3 power & Armor                 & Projectile (300/900), Slow Reload (2)              & 20        & Gargantuan     & 5 (25,000 gp)  \\
     % +1dr for reload -> load, -1dr for range
-    Storm caller\sparkle     & 5d10 electricity                     & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
+    Storm caller\sparkle     & 5d10                     & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
     % +3dr for slow reload, -4dr for range
-    Trebuchet                & 1d6 bludgeoning plus 1d6 per 2 power & Armor        & Projectile (400/1200), Slow Reload (3)      & 10        & Gargantuan     & 6 (125,000 gp) \\
+    Trebuchet                & 1d6 plus 1d6 per 2 power & Armor                 & Projectile (400/1200), Slow Reload (3)             & 10        & Gargantuan     & 6 (125,000 gp) \\
     % +1dr for reload -> load, -1dr for range
-    Meteor caller\sparkle    & 7d10 bludgeoning and fire            & Reflex       & Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 7 (625,000 gp) \\
+    Meteor caller\sparkle    & 7d10                     & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 7 (625,000 gp) \\
   \end{compresseddtabularx}
   \end{dtable!*}
 

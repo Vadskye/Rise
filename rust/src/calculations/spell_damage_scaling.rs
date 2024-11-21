@@ -1,4 +1,4 @@
-fn ideal_damage(rank: i32, damage_type: &DamageType, high_attribute: bool) -> f64 {
+fn ideal_damage(rank: i32, damage_scope: &DamageScope, high_attribute: bool) -> f64 {
     let base = match rank {
         1 => 3.5,
         2 => 5.0,
@@ -13,7 +13,7 @@ fn ideal_damage(rank: i32, damage_type: &DamageType, high_attribute: bool) -> f6
     };
     let with_attribute = if high_attribute { base * 1.6 } else { base };
 
-    if matches!(damage_type, DamageType::Area) {
+    if matches!(damage_scope, DamageScope::Area) {
         with_attribute * 0.6
     } else {
         with_attribute
@@ -90,12 +90,12 @@ fn power_at_rank(rank: i32, high_attribute: bool) -> f64 {
 }
 
 #[derive(Clone, Copy)]
-pub enum DamageType {
+pub enum DamageScope {
     Area,
     SingleTarget,
 }
 
-impl DamageType {
+impl DamageScope {
     pub fn name(&self) -> &str {
         match self {
             Self::Area => "area",
@@ -166,13 +166,13 @@ impl SolutionAnalysis {
     }
 }
 
-fn analyze_solution(rank: i32, damage_type: &DamageType, ps: &ParameterSet) -> SolutionAnalysis {
+fn analyze_solution(rank: i32, damage_scope: &DamageScope, ps: &ParameterSet) -> SolutionAnalysis {
     let low_power = power_at_rank(rank, false);
-    let low_ideal_damage = ideal_damage(rank, damage_type, false);
+    let low_ideal_damage = ideal_damage(rank, damage_scope, false);
     let low_actual_damage = calc_damage(low_power, ps);
 
     let high_power = power_at_rank(rank, true);
-    let high_ideal_damage = ideal_damage(rank, damage_type, true);
+    let high_ideal_damage = ideal_damage(rank, damage_scope, true);
     let high_actual_damage = calc_damage(high_power, ps);
 
     let matches_low = is_kinda_close(low_ideal_damage, low_actual_damage);
@@ -214,13 +214,13 @@ fn is_approximately_equal(expected: f64, actual: f64, approximation_factor: f64)
 
 type ParameterSet = [i32; 8];
 
-pub fn calc_valid_scaling_options(rank: i32, damage_type: &DamageType) -> Vec<ParameterSet> {
+pub fn calc_valid_scaling_options(rank: i32, damage_scope: &DamageScope) -> Vec<ParameterSet> {
     let dice_parameters: ParameterSet = [0, 0, 0, 0, 0, 0, 0, 0];
     let mut valid_solutions: Vec<ParameterSet> = vec![];
 
     calc_valid_scaling_options_recursive(
         rank,
-        damage_type,
+        damage_scope,
         &mut valid_solutions,
         dice_parameters,
         0,
@@ -260,7 +260,7 @@ pub fn explain_parameter_set(ps: &ParameterSet) -> String {
 
 pub fn explain_solutions(
     rank: i32,
-    damage_type: &DamageType,
+    damage_scope: &DamageScope,
     solutions: Vec<ParameterSet>,
 ) -> String {
     let prefix = "\n  * ";
@@ -269,39 +269,39 @@ pub fn explain_solutions(
         prefix,
         solutions
             .iter()
-            .map(|s| explain_solution(rank, damage_type, s))
+            .map(|s| explain_solution(rank, damage_scope, s))
             .collect::<Vec<String>>()
             .join(prefix)
     )
 }
 
-pub fn explain_solution(rank: i32, damage_type: &DamageType, solution: &ParameterSet) -> String {
+pub fn explain_solution(rank: i32, damage_scope: &DamageScope, solution: &ParameterSet) -> String {
     format!(
         "{} {}; low {:.1} vs {:.1}, high {:.1} vs {:.1}",
-        analyze_solution(rank, damage_type, solution).validity_type(),
+        analyze_solution(rank, damage_scope, solution).validity_type(),
         explain_parameter_set(solution),
         calc_damage(power_at_rank(rank, false), solution),
-        ideal_damage(rank, damage_type, false),
+        ideal_damage(rank, damage_scope, false),
         calc_damage(power_at_rank(rank, true), solution),
-        ideal_damage(rank, damage_type, true),
+        ideal_damage(rank, damage_scope, true),
     )
 }
 
 fn calc_valid_scaling_options_recursive(
     rank: i32,
-    damage_type: &DamageType,
+    damage_scope: &DamageScope,
     valid_solutions: &mut Vec<ParameterSet>,
     parameter_set: ParameterSet,
     parameter_index: usize,
 ) {
-    if analyze_solution(rank, damage_type, &parameter_set).is_valid() {
+    if analyze_solution(rank, damage_scope, &parameter_set).is_valid() {
         valid_solutions.push(parameter_set);
     }
     for i in parameter_index..parameter_set.len() {
         let mut new_set = parameter_set;
         new_set[i] += 1;
         if new_set[i] <= limit_for_parameter_index(i, rank, parameter_set) {
-            calc_valid_scaling_options_recursive(rank, damage_type, valid_solutions, new_set, i)
+            calc_valid_scaling_options_recursive(rank, damage_scope, valid_solutions, new_set, i)
         }
     }
 }

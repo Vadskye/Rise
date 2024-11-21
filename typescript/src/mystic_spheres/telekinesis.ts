@@ -111,10 +111,8 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          The target and the thrown object each take 1d6 bludgeoning damage.
+          The target and the thrown object each take 1d6 damage.
           If you fling a Small object, the damage increases by +1 per 2 \\glossterm{power}.
-          Specific objects may add additional damage types appropriately.
-          For example, flinging a sharp spear would also deal piercing damage.
         `,
         targeting: `
           Choose a Tiny or Small unattended object within \\medrange of you.
@@ -146,8 +144,6 @@ export const telekinesis: MysticSphere = {
         hit: `
           The target and the thrown object each take 2d8 bludgeoning damage.
           If you fling a Medium object, the damage increases by an amount equal to your \\glossterm{power}.
-          Specific objects may add additional damage types appropriately.
-          For example, flinging a sharp spear would also deal piercing damage.
         `,
         targeting: `
           Choose a Small or Medium unattended object within \\medrange of you.

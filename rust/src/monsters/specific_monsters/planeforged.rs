@@ -3,8 +3,8 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    DamageType, Debuff, MovementMode, MovementSpeed, PassiveAbility, Sense,
-    Size, SpecialDefenseType, SpeedCategory,
+    Debuff, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};
@@ -40,16 +40,17 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 active_abilities: vec![ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                             The $name makes two $accuracy strikes vs. armor with its $weapons.
-                            \hit $damage bludgeoning and fire damage.
+                            \hit $damage.
                         "
                     .to_string(),
                     name: "Flaming Flurry".to_string(),
+                    tags: vec![AbilityTag::Fire],
                     weapon: Weapon::fist(),
                     ..Default::default()
                 })],
                 modifiers: vec![
                     Modifier::PassiveAbility(PassiveAbility::soulless()),
-                    Modifier::vulnerable_damage(DamageType::Cold),
+                    Modifier::vulnerable_tag(AbilityTag::Cold),
                 ],
                 movement_speeds: None,
                 senses: vec![],
@@ -127,10 +128,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 
         if def.abilities.movement_speeds.is_none() {
             def.abilities.movement_speeds = Some(vec![
-                MovementSpeed::new(
-                    MovementMode::Fly(None),
-                    SpeedCategory::Fast,
-                ),
+                MovementSpeed::new(MovementMode::Fly(None), SpeedCategory::Fast),
                 MovementSpeed::new(MovementMode::Land, SpeedCategory::Normal),
             ])
         }
@@ -169,9 +167,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                         // TODO: Ram doesn't really match the art. No natural weapon matches
                         // particularly well...
                         Modifier::Attack(
-                            Maneuver::Tenderize
-                                .attack(StandardWeapon::MonsterRam.weapon(), 6)
-                                .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
+                            Maneuver::Tenderize.attack(StandardWeapon::MonsterRam.weapon(), 6)
                         ),
                     ],
                     movement_speeds: None,
@@ -269,9 +265,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
                     modifiers: vec![
                         Modifier::Attack(StandardAttack::Pyroclasm(5).attack()),
                         Modifier::Attack(
-                            Maneuver::Whirlwind
-                                .attack(Weapon::ram(), 5)
-                                .except_hit_damage(|w| w.damage_types.push(DamageType::Fire)),
+                            Maneuver::Whirlwind.attack(Weapon::ram(), 5)
                         ),
                     ],
                     movement_speeds: Some(vec![
@@ -312,7 +306,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
 }
 
 fn add_demons(monsters: &mut Vec<MonsterEntry>) {
-    let _fire_immunity = Modifier::Immune(SpecialDefenseType::Damage(DamageType::Fire));
+    let fire_immunity = Modifier::Immune(SpecialDefenseType::AbilityTag(AbilityTag::Fire));
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
         name: "Demonspawn".to_string(),
@@ -338,6 +332,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     //     StandardWeapon::Claws.weapon(),
                     // ],
                     modifiers: vec![
+                        fire_immunity,
                         Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Attack(StandardAttack::Enrage(2).attack()),
                         Modifier::Maneuver(Maneuver::PowerStrike),
@@ -386,7 +381,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                             effect: r"
                                 Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.
                                 The $name makes an $accuracy \glossterm{reactive attack} vs. Armor against the creature that attacked it.
-                                \hit $dr1 piercing damage.
+                                \hit $dr1 damage.
                             ".to_string(),
                             is_magical: false,
                             name: "Spiked Body".to_string(),
@@ -395,6 +390,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         }),
                     ],
                     modifiers: vec![
+                        fire_immunity,
                         Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                             AbilityTag::Compulsion,
@@ -432,9 +428,11 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 },
             }),
             planeforged(MonsterDef {
+                name: "Soulfire Demon".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     modifiers: vec![
+                        fire_immunity,
                         Modifier::Attack(StandardAttack::Combustion(6).attack()),
                         Modifier::Attack(StandardAttack::Pyroclasm(6).attack()),
                         Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),
@@ -458,7 +456,6 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     role: Role::Sniper,
                     size: Size::Large,
                 },
-                name: "Soulfire Demon".to_string(),
             }),
         ],
     }));
@@ -478,8 +475,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             let mut modifiers = vec![];
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::floating()));
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
-                DamageType::Electricity,
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                AbilityTag::Electricity,
             )));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: "
@@ -601,7 +598,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             let rank = calculate_standard_rank(self.level);
             let mut modifiers = vec![];
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
-            modifiers.push(Modifier::vulnerable_damage(DamageType::Cold));
+            modifiers.push(Modifier::vulnerable_tag(AbilityTag::Cold));
             modifiers.push(Modifier::Attack(StandardAttack::Combustion(rank).attack()));
             modifiers.push(Modifier::Attack(StandardAttack::Firebolt(rank).attack()));
             if rank >= 3 {
@@ -706,11 +703,10 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             self.modifiers
                 .push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             self.modifiers
-                .push(Modifier::vulnerable_damage(DamageType::Piercing));
+                .push(Modifier::impervious_tag(AbilityTag::Earth));
             self.modifiers
-                .push(Modifier::impervious_damage(DamageType::Cold));
+                .push(Modifier::impervious_tag(AbilityTag::Cold));
 
-            let _ram = Weapon::ram().except(|w| w.damage_types.push(DamageType::Fire));
             planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
@@ -737,14 +733,35 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
         }
     }
 
+    fn generate_punch(rank: i32) -> Modifier {
+        // TODO: use less lazy attack?
+        Modifier::Attack(
+            Maneuver::GenericExtraDamage(rank)
+                .attack(Weapon::ram(), rank)
+                .except_with_ability_tag(AbilityTag::Earth),
+        )
+    }
+
     fn generate_magma_throw(rank: i32) -> Modifier {
         Modifier::Attack(
             StandardAttack::Firebolt(rank)
                 .attack()
                 .except(|a| a.name = "Magma Throw".to_string())
                 .except(|a| a.is_magical = false)
-                .except_hit_damage(|d| d.damage_types.push(DamageType::Bludgeoning)),
+                .except_with_ability_tag(AbilityTag::Earth),
         )
+    }
+
+    fn generate_modifiers(rank: i32) -> Vec<Modifier> {
+        vec![
+            Modifier::immune_tag(AbilityTag::Earth),
+            Modifier::immune_tag(AbilityTag::Fire),
+            Modifier::impervious_tag(AbilityTag::Cold),
+            Modifier::vulnerable_tag(AbilityTag::Water),
+            Modifier::Attack(StandardAttack::Combustion(rank).attack()),
+            generate_magma_throw(rank),
+            generate_punch(rank),
+        ]
     }
 
     monsters.push(MonsterEntry::MonsterGroup(MonsterGroup {
@@ -762,18 +779,15 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             5,
             "
                 Magma elementals lack the usual weaknesses of both fire elementals and earth elementals.
-                Their massive internal heat, shielded from outside attack, actually makes them less vulnerable to cold.
-                However, piercing attacks can penetrate their outer shell, causing the magma inside to spew out until it cools.
+                Their massive internal heat, steadied by their rocky core, makes them resistant to cold.
+                However, they fear and avoid water, as it reacts explosively with their bodies.
             ",
         )])),
         monsters: vec![
             MagmaElemental {
                 attributes: vec![4, 4, 7, -4, 0, 0],
                 level: 6,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Combustion(2).attack()),
-                    generate_magma_throw(2),
-                ],
+                modifiers: generate_modifiers(2),
                 name: "Volcanite".to_string(),
                 size: Size::Medium,
             }
@@ -781,10 +795,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             MagmaElemental {
                 attributes: vec![5, 5, 8, -3, 0, 0],
                 level: 12,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Combustion(4).attack()),
-                    generate_magma_throw(4),
-                ],
+                modifiers: generate_modifiers(4),
                 name: "Volcano".to_string(),
                 size: Size::Large,
             }
@@ -792,10 +803,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             MagmaElemental {
                 attributes: vec![5, 5, 9, -3, 0, 0],
                 level: 18,
-                modifiers: vec![
-                    Modifier::Attack(StandardAttack::Combustion(6).attack()),
-                    generate_magma_throw(6),
-                ],
+                modifiers: generate_modifiers(6),
                 name: "Volcanic Titan".to_string(),
                 size: Size::Huge,
             }
@@ -834,9 +842,7 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
             is_magical: true,
             name: "Hive Mind".to_string(),
         }));
-        modifiers.push(Modifier::Immune(SpecialDefenseType::Damage(
-            DamageType::Fire,
-        )));
+        modifiers.push(Modifier::impervious_tag(AbilityTag::Earth));
         modifiers.append(&mut ModifierBundle::Multipedal.modifiers());
 
         planeforged(def)
