@@ -148,7 +148,7 @@ export const photomancy: MysticSphere = {
         5: 'You can choose to create a \\hugearealong wall instead.',
         7: 'You can choose to create a \\gargarealong wall instead.',
       },
-      tags: ['Barrier'],
+      tags: ['Barrier', 'Visual'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -167,7 +167,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Visual'],
     },
 
     {
@@ -185,7 +185,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Visual'],
     },
 
     {
@@ -207,7 +207,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
-      tags: ['Subtle', 'Sustain (minor)'],
+      tags: ['Subtle', 'Sustain (minor)', 'Visual'],
     },
 
     {
@@ -225,7 +225,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
-      tags: [],
     },
 
     {
@@ -234,7 +233,7 @@ export const photomancy: MysticSphere = {
       // No rank modifier for true sunlight
       attack: {
         hit: `
-          \\damagerankfivelow{energy}.
+          \\damagerankfivelow{}.
           If this attack beats a creature's Fortitude defense, it deals maximum damage.
           If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
@@ -246,19 +245,17 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: { special: 'The damage increases by 2d6 for each rank beyond 5.'},
-      tags: [],
     },
 
     {
       name: 'Solar Flare',
 
-      // +2r for delay, +2r for Fortitude and Reflex. Base rank is 8? Call it 7 to avoid
-      // stacking too high. That allows a t3.5 area, dr5 damage, and t1.25 debuff. Use a
-      // t4 area and a t1 debuff.
+      // +2r for delay, +2r for Fortitude and Reflex. Base rank is 8? But the delay is
+      // less of a penalty when the area is so large, so call it +1r, total rank 7.
+      // That allows a t4 area and dr6 damage.
       attack: {
         hit: `
-          \\damagerankfivelow{energy}.
-          Each damaged creature is \\dazzled as a \\glossterm{condition}.
+          \\damageranksixlow{}.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         missGlance: true,
@@ -268,8 +265,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: { special: 'The damage increases by 2d6 for each rank beyond 4.'},
-      tags: [],
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.'},
     },
 
     {
@@ -277,7 +273,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{energy}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -288,7 +284,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       scaling: 'accuracy',
-      tags: [],
     },
 
     {
@@ -297,10 +292,9 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour{energy}.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour{}.',
       },
       rank: 7,
-      tags: [],
     },
 
     {
@@ -308,7 +302,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{energy}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -320,7 +314,6 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Visual'],
     },
 
     {
@@ -437,7 +430,7 @@ export const photomancy: MysticSphere = {
         // random effect is bad, but the sphere can't normally do most of those and you
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          \\damagerankone{energy}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
@@ -446,6 +439,8 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       scaling: 'accuracy',
+      tags: ['Visual'],
+      // Should this have the Emotion tag?
     },
 
     {
@@ -454,11 +449,12 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'chromatic orb',
         exceptThat: `
-          the damage increases to \\damagerankfive{energy}, and damaged creatures suffer a condition even if they did not lose hit points.
+          the damage increases to \\damagerankfive{}, and damaged creatures suffer a condition even if they did not lose hit points.
         `,
       },
       rank: 7,
       scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
@@ -466,7 +462,7 @@ export const photomancy: MysticSphere = {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankone{energy}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -483,7 +479,7 @@ export const photomancy: MysticSphere = {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankfour{energy}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -528,7 +524,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune (deep)',
     },
 
@@ -608,7 +604,7 @@ export const photomancy: MysticSphere = {
         The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius.
       `,
       rank: 1,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -621,7 +617,7 @@ export const photomancy: MysticSphere = {
         exceptThat: "the area increases to a \\largearea radius.",
       },
       rank: 3,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -634,7 +630,7 @@ export const photomancy: MysticSphere = {
         The target glows like a torch, emitting \\glossterm{brilliant illumination} in a \\smallarea radius.
       `,
       rank: 5,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -647,7 +643,7 @@ export const photomancy: MysticSphere = {
         exceptThat: "the area increases to a \\largearea radius.",
       },
       rank: 7,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -660,7 +656,7 @@ export const photomancy: MysticSphere = {
         exceptThat: "the effect lasts for one year.",
       },
       rank: 2,
-      tags: [],
+      tags: ['Visual'],
     },
 
     {
@@ -672,7 +668,7 @@ export const photomancy: MysticSphere = {
         exceptThat: "the area increases to a \\largearea radius, and the effect lasts for one year.",
       },
       rank: 4,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -686,7 +682,7 @@ export const photomancy: MysticSphere = {
         It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
       `,
       rank: 1,
-      tags: [],
+      tags: ['Visual'],
       type: 'Attune',
     },
   ],
