@@ -1,8 +1,10 @@
-use crate::core_mechanics::abilities::{ActiveAbility, CustomAbility, StrikeAbility, UsageTime};
+use crate::core_mechanics::abilities::{
+    AbilityTag, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+};
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    DamageType, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory,
+    MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType,
+    SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};
@@ -24,15 +26,16 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
         name: "Ankheg".to_string(),
         abilities: MonsterAbilities {
             active_abilities: vec![
-                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite().except(|w| w.damage_types.push(DamageType::Acid)))),
+                ActiveAbility::Strike(StrikeAbility::grappling_strike(Weapon::bite()).with_tag(AbilityTag::Acid)),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
-                        \hit $dr1 acid damage.
+                        \hit $dr1 damage.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Spew Acid".to_string(),
+                    tags: vec![AbilityTag::Acid],
                     ..Default::default()
                 }),
             ],
@@ -83,16 +86,17 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
 
     monsters.push(MonsterEntry::Monster(magical_beast(MonsterDef {
         abilities: MonsterAbilities {
-            active_abilities: vec![
+            active_abilities: [
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
-                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
-                        \hit $fullweapondamage physical and cold damage.
+                        \hit $fullweapondamage*2.
                         If the target loses hit points, it becomes poisoned by frostweb spider venom.
                     ".to_string(),
                     is_magical: false,
-                    name: "Frostbite".to_string(),
+                    name: "Venomous Bite".to_string(),
+                    // Doesn't have the Cold tag; it should still be able to bite people immune to
+                    // Cold attacks.
                     weapon: Weapon::bite(),
                     ..Default::default()
                 }),
@@ -100,15 +104,16 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         Frostweb spider venom is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+1.
-                        Its stage 1 effect makes the target \vulnerable to cold damage while the poison lasts.
+                        Its stage 1 effect makes the target \vulnerable to \atCold attacks while the poison lasts.
                         Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
                         Instead of making a \glossterm{vital roll} for the \glossterm{vital wound}, the target's blood freezes.
                         It is \paralyzed while the temperature is below freezing, and \slowed while the temperature is below 100 degrees Fahrenheit.
-                        Whenever it takes fire damage, it can ignore this effect for one minute.
+                        Whenever it takes damage from a \atFire ability, it can ignore this effect for one minute.
                         This effect lasts until the vital wound is removed.
                     ".to_string(),
                     is_magical: true,
                     name: "Frostweb Spider Venom".to_string(),
+                    tags: vec![AbilityTag::Cold, AbilityTag::Poison],
                     usage_time: UsageTime::Triggered,
                     ..Default::default()
                 }),
@@ -116,11 +121,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against anything within \medrange.
                         Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
-                        \hit $dr1 cold damage.
+                        \hit $dr1 damage.
                         If the attack result beats the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
                     ".to_string(),
                     is_magical: true,
                     name: "Iceweb".to_string(),
+                    tags: vec![AbilityTag::Cold],
                     usage_time: UsageTime::Elite,
                     ..Default::default()
                 }),
@@ -129,14 +135,15 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearea cone from it.
                         In addition, the area \glossterm{briefly} becomes \sphereterm{icy terrain}.
                         After it uses this ability, it \glossterm{briefly} cannot use it again.
-                        \hit $dr3 cold damage.
+                        \hit $dr3 damage.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: true,
+                    tags: vec![AbilityTag::Cold],
                     name: "Frost Breath".to_string(),
                     ..Default::default()
                 }),
-            ],
+            ].to_vec(),
             // In theory, this could have an ability specifying that it is unaffected by icy
             // terrain. Since its Balance bonus is so high, this isn't really necessary.
             modifiers: ModifierBundle::Multipedal.modifiers(),
@@ -185,21 +192,23 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
                         If the target is \glossterm{shadowed}, this attack deals double damage.
-                        \hit $damage physical and cold damage.
+                        \hit $damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Umbral Bite".to_string(),
+                    tags: vec![AbilityTag::Cold],
                     weapon: Weapon::bite(),
                     ..Default::default()
                 }),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes an attack vs. Mental against all \glossterm{shadowed} \glossterm{enemies} in a \medarea radius from it.
-                        \hit $dr3 cold damage.
+                        \hit $dr3 damage.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Crawling Darkness".to_string(),
+                    tags: vec![AbilityTag::Cold],
                     ..Default::default()
                 }),
             ],
@@ -310,11 +319,11 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
                         \hit $fullweapondamage.
-                        At the end of the round, the $name regains hit points equal to the hit points that the target lost from this attack.
+                        At the end of the round, the $name regains hit points equal to the hit points that the target lost from this attack if the target is living.
                     ".to_string(),
                     is_magical: false,
                     name: "Leech Life".to_string(),
-                    weapon: Weapon::bite().except(|w| w.damage_types.push(DamageType::Energy)),
+                    weapon: Weapon::bite(),
                     ..Default::default()
                 }),
             ],
@@ -415,7 +424,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                         The $name makes two $accuracy strikes vs. Armor with its $weapons.
                         \hit $fullweapondamage.
                         If the target takes damage from both claws, it bleeds.
-                        A bleeding creature takes $dr1 slashing damage during the $name's next action.
+                        A bleeding creature takes $dr1 damage during the $name's next action.
                     ".to_string(),
                     name: "Bloodletting Claws".to_string(),
                     weapon: Weapon::claw(),
@@ -479,11 +488,12 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearealong, 5 ft. wide line from it.
-                        \hit $dr2 bludgeoning damage.
+                        \hit $dr2 damage.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Sonic Lance".to_string(),
+                    tags: vec![AbilityTag::Auditory],
                     usage_time: UsageTime::Elite,
                     ..Default::default()
                 }),
@@ -558,8 +568,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     ".to_string(),
                 })
             );
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::Damage(
-                DamageType::Fire,
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
+                AbilityTag::Fire,
             )));
             modifiers.push(Modifier::Immune(SpecialDefenseType::CriticalHits));
             magical_beast(MonsterDef {

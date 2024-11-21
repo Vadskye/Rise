@@ -1,7 +1,6 @@
 use super::add_accuracy_to_effect::add_accuracy_to_effect;
 use super::replace_attack_terms::replace_attack_terms;
 use crate::core_mechanics::abilities::{latex_ability_block, AbilityTag, AbilityType, UsageTime};
-use crate::core_mechanics::DamageType;
 use crate::creatures::Creature;
 use crate::equipment::Weapon;
 
@@ -37,6 +36,13 @@ impl StrikeAbility {
 
     pub fn except_name(mut self, name: &str) -> Self {
         self.name = name.to_string();
+
+        self
+    }
+
+    pub fn with_tag(mut self, tag: AbilityTag) -> Self {
+        // TODO: should this check uniqueness?
+        self.tags.push(tag);
 
         self
     }
@@ -169,7 +175,7 @@ impl StrikeAbility {
             effect: format!(
                 "
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \\hit $damage{damage_multiplier} $damagetypes damage.
+                \\hit $damage{damage_multiplier} damage.
             "
             ),
             name: weapon.name.clone(),
@@ -310,7 +316,7 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $damage*2 $damagetypes damage.
+                \hit $damage*2 damage.
                 If the target takes damage, it is \glossterm{knocked back} 15 feet.
                 This is a \abilitytag{Size-Based} effect.
             "
@@ -489,7 +495,7 @@ impl StrikeAbility {
                 The $name moves up to its movement speed in a straight line.
                 It can also make a $accuracy strike vs. Armor with its $weapon.
                 The strike targets all \glossterm{enemies} adjacent to it at any point during its movement.
-                \hit $damage*2 $damagetypes damage.
+                \hit $damage*2 damage.
                 \miss Half damage.
             "
             .to_string(),
@@ -598,11 +604,12 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
-                If the target takes damage and the attack result beats its Reflex defense, it takes $mundanepower fire damage during the $name's next action.
+                If the target takes damage and the attack result beats its Reflex defense, it takes $mundanepower damage during the $name's next action.
             "
             .to_string(),
             name: weapon.name.clone(),
-            weapon: weapon.except(|w| w.damage_types.push(DamageType::Fire)),
+            tags: vec![AbilityTag::Fire],
+            weapon,
             ..Default::default()
         }
     }

@@ -73,7 +73,7 @@ Remove "dazed" and "shaken". New debuff tiers:
   * Instant: knockback 15', push 30', teleport 30'
 * T1.5: Frightened, difficult terrain (zone only)
   * Instant: prone, repeat
-* T2: goaded, slowed, stunned, vulnerable to one rare damage type??? (electricity)
+* T2: goaded, slowed, stunned
   * Instant: knockback 30', push 60', teleport 60'
 * T2.5: submerged (swimming penalties), treat you as invisible
   * Instant: stop existing briefly / banishment, skip standard action

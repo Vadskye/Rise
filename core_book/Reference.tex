@@ -7,6 +7,7 @@
 
   \abilitytagdef{Auditory} Auditory abilities use sound to cause their effects.
   Creatures and objects that cannot hear the effect are immune to it.
+  Plugging or covering your ears makes you \impervious to Auditory effects.
 
   \abilitytagdef{Barrier} Barrier abilities create obstacles that block or punish passage through them.
   They create a powerful magical resonance around themselves that inhibits other barriers from being formed.
@@ -76,8 +77,9 @@
 
   \abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
   Creatures and objects that cannot see the effect are immune to it.
+  Simply closing your eyes only makes you \impervious to Visual effects.
+  Completely covering your eyes, such as with your hands or with a blindfold, makes you immune.
   Special vision abilities that replace normal vision entirely, such as \trait{blindsight} and \trait{tremorsense}, are unable to perceive Visual effects.
-  A creature that exclusively perceives its surroundings without normal sight, such as by closing its eyes and relying on its blindsight, is unaffected.
 
   \newpage
 \section{Circumstances and Debuffs}\label{Circumstances and Debuffs}
@@ -362,6 +364,7 @@
   A creature can be vulnerable to a particular damage type or ability tag.
   It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or from abilities with that tag.
   For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
+  If a creature would be both vulnerable and \impervious to an ability, it is treated as vulnerable and not impervious.
 
   \traitdef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.

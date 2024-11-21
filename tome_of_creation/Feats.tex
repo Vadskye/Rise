@@ -552,8 +552,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
       You cannot use the \ability{desperate exertion} ability to affect either strike.
     \end{activeability}
 
-    \ff[18]{Combat Styles+} You can treat all weapons you wield as dealing slashing, piercing, and bludgeoning damage for the purpose of determining their eligibility for maneuvers.
-    This does not change the damage type that your attacks actually deal.
+    % \ff[18]{Combat Styles+} You can treat all weapons you wield as dealing slashing, piercing, and bludgeoning damage for the purpose of determining their eligibility for maneuvers.
+    % This does not change the damage type that your attacks actually deal.
 
     \ff[18]{Maneuvers+} The number of additional maneuvers you learn increases to four.
   \end{feat}
@@ -676,7 +676,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
     \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
     You have the blood of that type of dragon in your veins.
-    You are \glossterm{impervious} to that dragon's damage type.
+    You are \glossterm{impervious} to that dragon's associated tag.
 
     \ff[1]{Scales} You gain a \plus1 bonus to your Armor defense.
 
@@ -690,9 +690,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
       \abilityusagetime Standard action.
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
+      This ability's tag matches your dragon's associated tag.
       Make an attack vs. Reflex against everything in the area defined by the type of dragon from your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
       \hit \damagerankthree{}.
-      The damage type is defined by your \textit{draconic ancestry} ability.
       \miss Half damage.
 
       \rankline
@@ -727,17 +727,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
   \begin{dtable}
     \lcaption{Dragon Types}
     \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-      \tb{Dragon} & \tb{Damage Type} & \tb{Breath Weapon} \tableheaderrule
-      Black       & Acid             & \areamed, 5 ft. wide line \\
-      Blue        & Electricity      & \areamed, 5 ft. wide line \\
-      Brass       & Fire             & \areamed, 5 ft. wide line \\
-      Bronze      & Electricity      & \areamed, 5 ft. wide line \\
-      Copper      & Acid             & \areamed, 5 ft. wide line \\
-      Gold        & Fire             & \areasmall cone           \\
-      Green       & Acid             & \areasmall cone           \\
-      Red         & Fire             & \areasmall cone           \\
-      Silver      & Cold             & \areasmall cone           \\
-      White       & Cold             & \areasmall cone           \\
+      \tb{Dragon} & \tb{Tag} & \tb{Breath Weapon} \tableheaderrule
+      Black       & \atAcid             & \areamed, 5 ft. wide line \\
+      Blue        & \atElectricity      & \areamed, 5 ft. wide line \\
+      Brass       & \atFire             & \areamed, 5 ft. wide line \\
+      Bronze      & \atElectricity      & \areamed, 5 ft. wide line \\
+      Copper      & \atAcid             & \areamed, 5 ft. wide line \\
+      Gold        & \atFire             & \areasmall cone           \\
+      Green       & \atAcid             & \areasmall cone           \\
+      Red         & \atFire             & \areasmall cone           \\
+      Silver      & \atCold             & \areasmall cone           \\
+      White       & \atCold             & \areasmall cone           \\
     \end{dtabularx}
   \end{dtable}
 
@@ -802,8 +802,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
       \abilityusagetime Standard action.
       \rankline
       Make an attack vs. Fortitude against one creature or object within \shortrange.
+      If the target is \vulnerable to any ability tags, there is a 50\% chance that this ability has that tag.
       \hit \damageranktwo{}.
-      The damage is of a random damage type from among the following options: physical damage, energy damage, or all damage types simultaneously.
       \miss 50\% of the time, you still deal half damage.
 
       % Prefer d10s for high variance
@@ -821,7 +821,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     % If you do, you must keep the second result.
     \magicalff[6]{Friend of Chaos} Whenever you roll to determine a random effect, such as a \glossterm{miss chance} or a sorcerer's \textit{wild magic} ability, you may roll twice and keep whichever result you prefer.
     This includes random effects for that do not explicitly tell you to roll, such as your behavior while \confused.
-    However, \glossterm{vital rolls} and the damage type of your \ability{sudden entropy} ability are unaffected by this ability.
+    However, \glossterm{vital rolls} and your \ability{sudden entropy} ability are unaffected by this ability.
 
     \magicalff[12]{Entropic Defense} Whenever you are hit by a \glossterm{critical hit}, there is a 50\% chance that the attack is treated as a regular hit against you instead of a critical hit.
     This is not affected by your \textit{friend of chaos} ability, since the attacker rolls this chance instead of you.
@@ -829,7 +829,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \magicalff[18]{Master of Chaos} Whenever you roll to determine a random effect, you can use this ability.
     When you do, you increase your \glossterm{fatigue level} by one, and you may freely choose the random result.
     You can use this ability after seeing what your result would have been.
-    \glossterm{Vital rolls} and the damage type of your \ability{sudden entropy} ability cannot be affected by this ability.
+    \glossterm{Vital rolls} and your \ability{sudden entropy} ability cannot be affected by this ability.
   \end{magicalfeat}
 
   \begin{feat}{Executioner}{Combat}
@@ -847,8 +847,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     In addition, you do not need \glossterm{line of sight} or \glossterm{line of effect} to see creatures that are marked for execution with lifesight.
     This allows you to see them through solid objects, but grants you no special ability to attack through solid objects, so your attacks are still affected normally by \glossterm{cover}.
 
-    \ff[12]{Death is Inescapable} When you deal damage to a creature that is marked for execution, the damage is treated as damage of all types.
-    This can bypass many forms of immunity and special defenses against specific damage types.
+    \ff[12]{Death is Inescapable} Whenever you deal damage to a creature that is marked for execution, it \glossterm{briefly} becomes \slowed.
 
     \ff[18]{Finishing Blow+} The accuracy bonus increases to \plus2, or to \plus4 if you are adjacent.
   \end{feat}
@@ -917,8 +916,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
     After using this ability, you \glossterm{briefly} cannot use it again.
 
     \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
-    If you chose a weapon, all damage dealt with it is cold damage in addition to its other types.
-    If you chose body armor or a shield, you are \trait{impervious} to cold damage.
+    If you chose a weapon, it is treated as cold iron, and attacks with it have the \atCold tag.
+    If you chose body armor or a shield, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Strike}
@@ -1049,7 +1048,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
       \abilityusagetime Standard action.
       \rankline
       This ability functions like the \textit{overrun} ability, except that creatures may not choose to avoid you.
-      In addition, the attack deals \damageranktwo{bludgeoning} damage.
+      In addition, the attack deals \damageranktwo{}.
       % TODO: wording
       Creatures only take this damage if you move into their space during your movement with this ability.
       On a miss or glance, creatures still take half damage if you are somehow able to move into their space despite failing to overrun them.
@@ -1624,11 +1623,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
   \begin{magicalfeat}{Spellsword}{Magical, Spell}
     \featpre Access to a \glossterm{mystic sphere}.
 
+    % TODO: it would be nice if spellswords didn't dump Strength
     \magicalff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
     When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
-    \magicalff[1]{Energized Weaponry} Whenever you deal damage with a spell, your melee \glossterm{strikes} \glossterm{briefly} deal damage of that type in addition to their normal damage types.
-    In addition, you can cast spells using a non-\weapontag{Projectile} weapon as if it were an implement (see \pcref{Magic Implements}).
+    \ff[1]{Martial Implement} You can cast spells using a non-\weapontag{Projectile} weapon as if it were an implement (see \pcref{Magic Implements}).
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}
@@ -1648,9 +1647,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{magicalactiveability}
 
     \magicalff[12]{Spellsword Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus2 accuracy bonus with spells against each damaged creature.
-
-    \magicalff[18]{Energized Weaponry+} You can also make a single damage type permanent with this ability.
-    Whenever you deal damage with a spell, you can replace the permanent damage type.
 
     \magicalff[18]{Spellsword Conduit+} The accuracy bonus increases to \plus4.
   \end{magicalfeat}
@@ -1823,12 +1819,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
   \begin{magicalfeat}{Sphere Focus: Cryomancy}{Casting, Magical}
     \featpre Access to the \sphere{Cryomancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Frozen Blood} You are \glossterm{impervious} to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
+    \magicalff[1]{Frozen Blood} You are \glossterm{impervious} to \atCold and \atPoison attacks.
 
     \magicalff[6]{Icy Carapace} You learn the \spell{icy shell} spell, or another spell from the \sphere{Cryomancy} mystic sphere if you already know that spell.
     In addition, the number of layers you can create with \spell{icy shell} increases by one.
 
-    \magicalff[12]{Frozen Blood+} You are immune to cold damage, \glossterm{poisons}, and \glossterm{diseases}.
+    \magicalff[12]{Frozen Blood+} You are immune to \atCold and \atPoison attacks.
 
     \magicalff[18]{Icy Carapace+} The number of bonus layers you gain from your \textit{icy carapace} ability increases to two.
   \end{magicalfeat}
@@ -1836,7 +1832,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
   \begin{magicalfeat}{Sphere Focus: Electromancy}{Casting, Magical}
     \featpre Access to the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Electricity Tolerance} You are \trait{impervious} to electricity damage.
+    \magicalff[1]{Electricity Tolerance} You are \trait{impervious} to \atElectricity attacks.
 
     \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} is increased to 30 feet instead of 15 feet.
 
@@ -1846,7 +1842,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-    \magicalff[12]{Electricity Immunity} You are \trait{immune} to electricity damage.
+    \magicalff[12]{Electricity Immunity} You are \trait{immune} to \atElectricity attacks.
 
     \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus2 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
     This bonus disappears if not used before the end of the next round.
@@ -1914,8 +1910,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     When you cast the spell, you can spend a \glossterm{minor action} to solidify the spell's light.
 
-    If you do, any damage dealt by the spell is bludgeoning damage in addition to its other damage types.
-    In addition, the edges of any areas of \glossterm{brilliant illumination} created by the spell become physical barriers.
+    If you do, the edges of any areas of \glossterm{brilliant illumination} created by the spell become physical barriers.
     These barriers provide \glossterm{cover} against attacks made across them, though they cannot be destroyed by damage.
     Moving through the barriers costs an additional ten feet of movement.
     The barriers are only at the edges of the brilliant illumination, so this does not affect movement or attacks entirely within or entirely outside of the illuminated area.
@@ -1979,19 +1974,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
     If you do, the spell deals no damage against targets that it misses, even if it would normally deal half damage.
     The standard area categories are: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 
-    \magicalff[1]{Fire Tolerance} You are \trait{impervious} to fire damage.
+    \magicalff[1]{Fire Tolerance} You are \trait{impervious} to \atFire attacks.
 
     \magicalff[6]{Overheated Pyromancy} You learn an additional spell from the \sphere{Pyromancy} mystic sphere.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     When you cast the spell, you can spend a \glossterm{minor action} to \glossterm{briefly} overheat the spell.
     You roll all attacks for an overheated spell twice, keeping the higher result.
-    After using this ability, you \glossterm{briefly} cannot use it again and are \vulnerable to cold damage.
+    After using this ability, you \glossterm{briefly} cannot use it again and are \vulnerable to \atCold attacks.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-    \magicalff[12]{Friendly Fire} Whenever you deal fire damage to your \glossterm{allies}, you deal half damage.
+    \magicalff[12]{Friendly Fire} Whenever you deal damage to your \glossterm{allies} with a \atFire ability, you deal half damage.
 
-    \magicalff[12]{Fire Immunity} You are \trait{immune} to fire damage.
+    \magicalff[12]{Fire Immunity} You are \trait{immune} to \atFire attacks.
 
     \magicalff[18]{Spreading Flame+} When you use your \textit{spreading flame} ability, you can still get a glancing blow with the spell.
   \end{magicalfeat}
@@ -2080,8 +2075,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \magicalff[12]{Kinetic Spell} You learn an additional spell.
     The spell can be up to rank 5, even if you do not have access to rank 5 spells.
     Whenever you cast that spell, you can spend a \glossterm{minor action} to \glossterm{briefly} imbue it with kinetic force.
-    All damage dealt by a kinetic spell is bludgeoning damage in addition to its other types.
-    In addition, when the spell deals damage to a Huge or smaller target, you \glossterm{knockback} that target 15 feet away from you.
+    When the spell deals damage to a Huge or smaller target, you \glossterm{knockback} that target 15 feet away from you.
     You can only knockback any individual creature or object once per round.
     After using this ability, you \glossterm{briefly} cannot use it again.
 
@@ -2113,7 +2107,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
     \magicalff[6]{Invented Spell} You learn an additional spell from any mystic sphere, even a mystic sphere you do not have access to.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you learn the spell, you can replace one damage type dealt by the spell with energy damage or any energy damage subtype: cold, electricity, or fire.
+    When you learn the spell, you can remove one of the following tags from that spell: \atAcid, \atAuditory, \atCold, \atCompulsion, \atEmotion, \atElectricity, \atFire, or \atVisual.
+    You can also add one of those tags to the spell.
     In addition, you can replace one defense that the spell attacks with any one other defense not already referenced by the spell.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
@@ -2477,9 +2472,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{sustainability}{Cyclone}{\abilitytag{Sustain} (standard)}
       \abilityusagetime Standard action.
       \rankline
-      When you use this ability, make a melee \glossterm{strike} with a slashing weapon.
+      When you use this ability, make a melee \glossterm{strike}.
       The strike targets all \glossterm{enemies} adjacent to you.
-      Whenever you sustain this ability, you can move up to half your \glossterm{land speed} and make a melee \glossterm{strike} with a slashing weapon.
+      Whenever you sustain this ability, you can move up to half your \glossterm{land speed} and make a melee \glossterm{strike}.
       The strike targets all \glossterm{enemies} adjacent to you at any point during your movement.
       \miss Half damage.
 

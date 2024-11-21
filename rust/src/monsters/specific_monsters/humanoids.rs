@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{
-    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
-use crate::core_mechanics::{DamageType, DicePool};
+use crate::core_mechanics::DicePool;
 use crate::core_mechanics::{
     MovementMode, MovementSpeed, Sense, Size, SpeedCategory, StandardPassiveAbility,
 };
@@ -96,10 +96,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             effect: r"
                                 The $name makes a $accuracy+1 attack vs. Fortitude against anything within \shortrange.
                                 This attack \glossterm{chains} once.
-                                \hit $dr1 electricity damage.
+                                \hit $dr1 damage.
                             ".to_string(),
                             is_magical: true,
-                            tags: vec![],
+                            tags: vec![AbilityTag::Electricity],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
@@ -107,10 +107,10 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Reflex against everything in a \largearealong, 5 ft. wide line from it.
-                                \hit $dr1 electricity damage.
+                                \hit $dr1 damage.
                             ".to_string(),
                             is_magical: true,
-                            tags: vec![],
+                            tags: vec![AbilityTag::Electricity],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
@@ -122,7 +122,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                                 \critcondition
                             ".to_string(),
                             is_magical: true,
-                            tags: vec![],
+                            tags: vec![AbilityTag::Electricity],
                             usage_time: UsageTime::Standard,
                         }),
                     ],
@@ -201,23 +201,23 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                                 The $name must have a free hand to cast this spell.
 
                                 The $name makes a $accuracy attack vs. Reflex against something it \glossterm{touches}.
-                                \hit $dr1 fire damage immediately, and again during the $name's next action.
+                                \hit $dr1 damage immediately, and again during the $name's next action.
                             ".to_string(),
                             is_magical: true,
                             name: "Burning Grasp".to_string(),
-                            tags: vec![],
+                            tags: vec![AbilityTag::Fire],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Fortitude against one creature within \medrange.
-                                \hit $dr1 fire damage.
-                                If the target loses hit points, it takes $dr1 fire damage again during the $name's next action.
+                                \hit $dr1 damage.
+                                If the target loses hit points, it takes $dr1 damage again during the $name's next action.
                             ".to_string(),
                             is_magical: true,
                             name: "Pyrohemia".to_string(),
-                            tags: vec![],
+                            tags: vec![AbilityTag::Fire],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Custom(CustomAbility {
@@ -225,11 +225,11 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             effect: r"
                                 The $name makes a $accuracy attack vs. Reflex against everything in a \medarea radius from it.
                                 In addition, it suffers a glancing blow from this attack.
-                                \hit $dr1 fire damage.
+                                \hit $dr1 damage.
                             ".to_string(),
                             is_magical: true,
                             name: "Pyroclasm".to_string(),
-                            tags: vec![],
+                            tags: vec![AbilityTag::Fire],
                             usage_time: UsageTime::Standard,
                         }),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(2, StandardWeapon::Club.weapon())),
@@ -569,7 +569,6 @@ pub fn add_orcs(monsters: &mut Vec<MonsterEntry>) {
     let cleaver = Weapon {
         accuracy: 0,
         damage_dice: DicePool::d8(),
-        damage_types: vec![DamageType::Slashing],
         name: "Butcher's Cleaver".to_string(),
         tags: vec![WeaponTag::Heavy, WeaponTag::Sweeping(2)],
     };

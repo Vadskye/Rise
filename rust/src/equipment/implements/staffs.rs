@@ -423,12 +423,12 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Energy Conversion"),
-        rank: 4,
-        short_description: String::from(r"Changes energy damage types"),
+        rank: 3,
+        short_description: String::from(r"Changes energy type"),
         description: String::from(r"
-            Whenever you use a \magical ability that deals a subtype of \glossterm<energy damage>, you may choose to convert that damage to a different subtype of energy damage.
-            If the damage also other specific types, those damage types are unchanged.
-            Any non-damaging effects of the attack are also unchanged.
+            Whenever you use a \magical ability that has a \abilitytag{Cold}, \abilitytag{Electricity}, or \abilitytag{Fire} tag, you can remove that tag.
+            If you do, you must add a different one of those tags to the ability.
+            All of the attack's effects are unchanged.
         "),
         ..Implement::default()
     }));

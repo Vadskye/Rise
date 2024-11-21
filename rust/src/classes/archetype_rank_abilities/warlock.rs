@@ -13,13 +13,13 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Abyssal Rebuke}
+                \begin{magicalactiveability}{Abyssal Rebuke}[\atFire]
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Armor against up to two creatures or object within \shortrange.
                     You gain a \plus2 accuracy bonus with this attack against any creature that attacked you during the previous round.
                     If you suffered a vital wound from that attack, this bonus increases to \plus10.
-                    \hit \damagerankone{fire}.
+                    \hit \damagerankone{}.
 
                     \rankline
                     \rank{2} The base damage increases to 1d8.
@@ -132,11 +132,11 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Banish to the Abyss}
+                \begin{magicalactiveability}{Banish to the Abyss}[\atFire]
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit \damagerankthree{fire}.
+                    \hit \damagerankthree{}.
                     If the target loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it finishes a \glossterm{short rest}.
@@ -156,8 +156,9 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You gain a \plus1 bonus to your \glossterm{magical power}.
-                In addition, whenever you use an ability that deals fire damage, you can change the type of the damage to be energy damage instead of fire damage.
-                Any other aspects of the ability, including damage types other than fire, remain unchanged.
+                In addition, whenever you use a \atFire ability, you can choose to remove the \atFire tag from it.
+                This can allow it to have its normal effect on creatures that resist fire effects.
+                Any other aspects of the ability remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
@@ -166,8 +167,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The power bonus increases to +2.
-                In addition, whenever you use an ability that deals fire damage, you can change that ability to deal damage of all types.
+                The power bonus increases to +3.
                 Any other aspects of the ability remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(3)]),

@@ -4,8 +4,8 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{AttackEffectDuration, DebuffEffect};
 use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, MovementMode, MovementSpeed,
-    PassiveAbility, Size, SpecialDefenseType, SpeedCategory, Tag,
+    Debuff, Defense, MovementMode, MovementSpeed, PassiveAbility, Size, SpecialDefenseType,
+    SpeedCategory, Tag,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
@@ -209,18 +209,18 @@ impl DragonType {
         }
     }
 
-    fn damage_type(&self) -> DamageType {
+    fn ability_tag(&self) -> AbilityTag {
         match self {
-            Self::Black => DamageType::Acid,
-            Self::Blue => DamageType::Electricity,
-            Self::Brass => DamageType::Fire,
-            Self::Bronze => DamageType::Electricity,
-            Self::Copper => DamageType::Acid,
-            Self::Gold => DamageType::Fire,
-            Self::Green => DamageType::Acid,
-            Self::Red => DamageType::Fire,
-            Self::Silver => DamageType::Cold,
-            Self::White => DamageType::Cold,
+            Self::Black => AbilityTag::Acid,
+            Self::Blue => AbilityTag::Electricity,
+            Self::Brass => AbilityTag::Fire,
+            Self::Bronze => AbilityTag::Electricity,
+            Self::Copper => AbilityTag::Acid,
+            Self::Gold => AbilityTag::Fire,
+            Self::Green => AbilityTag::Acid,
+            Self::Red => AbilityTag::Fire,
+            Self::Silver => AbilityTag::Cold,
+            Self::White => AbilityTag::Cold,
         }
     }
 
@@ -477,10 +477,7 @@ fn breath_weapon(dragon_type: &DragonType, age_category: &AgeCategory) -> Attack
             movement: None,
             suffix: None,
         }),
-        hit: AttackEffect::Damage(SimpleDamageEffect::dr(
-            damage_rank,
-            vec![dragon_type.damage_type()],
-        )),
+        hit: AttackEffect::Damage(SimpleDamageEffect::dr(damage_rank)),
         is_magical: false,
         is_strike: false,
         name: "Breath Weapon".to_string(),
@@ -502,8 +499,8 @@ fn dragon(dragon_type: &DragonType, age_category: &AgeCategory) -> Monster {
     }
 
     let mut modifiers: Vec<Modifier> =
-        ModifierBundle::Multipedal.plus_modifiers(vec![Modifier::Immune(
-            SpecialDefenseType::Damage(dragon_type.damage_type()),
+        ModifierBundle::Multipedal.plus_modifiers(vec![Modifier::immune_tag(
+            AbilityTag::dragon_type.ability_tag(),
         )]);
     if let Some(passive_abilities) = dragon_type.passive_abilities() {
         for p in passive_abilities {

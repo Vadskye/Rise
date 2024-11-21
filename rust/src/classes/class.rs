@@ -1552,8 +1552,8 @@ impl Class {
                     \subsubsection{Fire Domain}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \domainability{Gift} You are \trait{impervious} to fire damage.
-                        \magicaldomainability{Aspect} Your abilities cannot deal fire damage to your \glossterm{allies}.
+                        \domainability{Gift} You are \trait{impervious} to \atFire attacks.
+                        \magicaldomainability{Aspect} Your \atFire abilities cannot deal damage to your \glossterm{allies}.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Fire}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
@@ -1570,10 +1570,10 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \magicaldomainability{Mastery} Whenever you deal fire damage, you also treat that damage as being pure energy damage.
-                        This can help you deal damage to enemies that are highly resistant to fire damage.
-                        Your \glossterm{allies} are still immune to fire damage that you convert in this way.
-                        In addition, you become immune to fire damage.
+                        \magicaldomainability{Mastery} You are immune to \atFire attacks.
+                        In addition, whenever you hit a creature with a \atFire attack, you repeat that ability's effects against that target during the next round.
+                        You must make a new attack roll for the repeat with a \minus4 accuracy penalty.
+                        Hitting with the repeated attack causes another repeat during the next round, though the accuracy penalty increases by \minus4 with each repeat.
 
                     \subsubsection{Good Domain}
                         % intentionally adjacent rather than touch

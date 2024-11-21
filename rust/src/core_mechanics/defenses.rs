@@ -1,4 +1,4 @@
-use crate::core_mechanics::{Attribute, DamageType, Debuff, HasSize};
+use crate::core_mechanics::{Attribute, Debuff, HasSize};
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
@@ -74,10 +74,11 @@ impl fmt::Display for Defense {
 pub enum SpecialDefenseType {
     AllDamage,
     AbilityTag(AbilityTag),
-    Damage(DamageType),
     Debuff(Debuff),
     Disease,
     CriticalHits,
+    Magical,
+    Mundane,
     Poison,
     WeaponMaterial(WeaponMaterial),
 }
@@ -101,12 +102,13 @@ impl SpecialDefenses {
 impl SpecialDefenseType {
     pub fn description(&self) -> String {
         match self {
-            Self::AllDamage => "all damage".to_string(),
+            Self::AllDamage => "damaging attacks".to_string(),
             Self::AbilityTag(tag) => tag.latex(),
-            Self::Damage(damage_type) => format!("{} damage", damage_type.name()),
             Self::Debuff(debuff) => debuff.name().to_string(),
             Self::Disease => "disease".to_string(),
             Self::CriticalHits => "critical hits".to_string(),
+            Self::Magical => r"\magical attacks".to_string(),
+            Self::Mundane => "mundane attacks".to_string(),
             Self::Poison => "poison".to_string(),
             Self::WeaponMaterial(material) => format!("{} weapons", material.name()),
         }

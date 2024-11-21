@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility, StrikeAbility};
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    Attribute, DamageType, HasAttributes, MovementMode, MovementSpeed,
+    Attribute, HasAttributes, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
@@ -229,7 +229,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
                     \parhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
                     The vampire becomes \paralyzed until the stake is removed.
-                    A wooden stake is a light improvised weapon that deals 1d4 piercing damage.
+                    A wooden stake is a light improvised weapon that deals 1d4 damage.
                 ".to_string(),
                 is_magical: true,
                 name: "Unholy Creature of the Night".to_string(),
@@ -377,7 +377,6 @@ fn add_skeletons(monsters: &mut Vec<MonsterEntry>) {
                 Skeletons retain all of the \glossterm{mundane} abilities of the reanimated creature, but lose all \magical abilities.
                 They retain the ability to wield the same weapons and armor as the original creature, but they become simple-minded.
                 In addition, skeletons are always more agile and less strong than the original creature.
-                All skeletons are vulnerable to bludgeoning damage thanks to their exposed and easily crumpled bones.
             "),
             (10, "
                 Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.
@@ -434,9 +433,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         0,
     ];
 
-    let mut modifiers = ModifierBundle::SimpleMinded.plus_modifiers(vec![Modifier::Vulnerable(
-        SpecialDefenseType::Damage(DamageType::Bludgeoning),
-    )]);
+    let mut modifiers = ModifierBundle::SimpleMinded.modifiers();
     for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
@@ -459,7 +456,7 @@ fn convert_to_skeleton(monster: &Monster) -> Monster {
         abilities: MonsterAbilities {
             active_abilities: vec![],
             // weapons: creature.weapons.clone(),
-            modifiers: ModifierBundle::SimpleMinded.plus_modifiers(modifiers),
+            modifiers,
             movement_speeds: Some(creature.movement_speeds.clone()),
             senses,
             trained_skills: vec![],
@@ -499,9 +496,7 @@ fn convert_to_zombie(monster: &Monster) -> Monster {
         0,
     ];
 
-    let mut modifiers = ModifierBundle::SimpleMinded.plus_modifiers(vec![Modifier::Vulnerable(
-        SpecialDefenseType::Damage(DamageType::Slashing),
-    )]);
+    let mut modifiers = ModifierBundle::SimpleMinded.modifiers();
     for im in &creature.identified_modifiers {
         if im.source == "FullMonsterDefinition" && !im.modifier.is_magical() {
             modifiers.push(im.modifier.clone());
@@ -572,7 +567,6 @@ fn add_zombies(monsters: &mut Vec<MonsterEntry>) {
                 They lose the ability to wield any weapons, though they can sometimes be found wearing the same armor as the original creature.
                 Instead of using weapons, zombies prefer to bite their foes.
                 In addition, zombies are always stronger and less agile than the original creature.
-                All zombies are vulnerable to slashing damage thanks to their exposed and easily torn skin and muscles.
             "),
             (10, "
                 Creating a zombie from a corpse requires splintering the soul of the creature the corpse belonged to.

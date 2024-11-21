@@ -313,12 +313,13 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Converts \ability{abyssal rebuke} to cold"),
         description: String::from(r"
-            When you use the \ability<abyssal rebuke> warlock ability, you may choose to convert all damage dealt by that ability to cold damage instead of any other damage types.
-            If you do, you attack the target's Fortitude defense instead of its Armor defense.
+            When you use your \ability<abyssal rebuke> warlock ability, you can choose to draw on the icy depths of the Abyss.
+            If you do, it loses the loses the \abilitytag{Fire} tag and gains the \abilitytag{Cold} tag.
+            In addition, you attack the target's Fortitude defense instead of its Armor defense.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Converts \ability{abyssal rebuke} to slowing cold", r"
-                When you make a creature lose \glossterm{hit points} from an abyssal rebuke converted to cold damage in this way, it becomes \slowed as a \glossterm{condition}.
+                When you make a creature lose \glossterm{hit points} from a abyssal rebuke converted to cold in this way, it becomes \slowed as a \glossterm{condition}.
             "),
         ],
         ..Apparel::default()

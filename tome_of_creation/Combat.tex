@@ -8,32 +8,22 @@
     There are four defenses: Armor, Fortitude, Reflex, and Mental.
     Most attacks are made against exactly one defense, which is indicated in the attack's description.
 
-    If the result of your attack roll meets or exceeds the defense of the creature or object you are attacking, the attack hits.
-    If your result is 1 or 2 lower than the defender's defense, you get a \glossterm{glancing blow} (see below).
-    Otherwise, the attack misses.
+  \subsubsection{Exploding Attacks}\label{Exploding Attacks}
+    When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
+    That means you roll it again and add both values to determine your total.
+    If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
 
-    \subsubsection{Glancing Blows}\label{Glancing Blows}
-      When you would miss on a damaging attack by 2 or less, you instead get a \glossterm{glancing blow}.
-      A glancing blow deals half damage.
-      It also does not have any special effects other than immediate damage, unless those effects would also happen on a miss.
-      Non-damaging attacks cannot cause glancing blows.
+    The number you need to roll to explode is called your \glossterm{explosion target}.
+    It is normally 10, but some effects can reduce your explosion target.
+    For example, if your explosion target is reduced by 2, you explode when you roll an 8, 9, or 10.
+    Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
 
-      A glancing blow is neither a hit nor a miss.
-      However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
-
-    \subsubsection{Exploding Attacks}\label{Exploding Attacks}
-      When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
-      That means you roll it again and add both values to determine your total.
-      If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
-
-      The number you need to roll to explode is called your \glossterm{explosion target}.
-      It is normally 10, but some effects can reduce your explosion target.
-      For example, if your explosion target is reduced by 2, you explode when you roll an 8, 9, or 10.
-      Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
+  \subsection{Attack Results}
+    There are four possible outcomes for an attack: a critical hit, a regular hit, a glancing blow, and a miss.
 
     \subsubsection{Critical Hits}\label{Critical Hits}
-      If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit} against that target.
-      Damaging attacks normally deal double damage on a critical hit.
+      If your attack result is at least 10 higher than the target's defense, your attack is a \glossterm{critical hit} against that target.
+      Unless otherwise specified, all damaging attacks deal double damage on a critical hit.
       Some non-damaging attacks also have special effects on a critical hit.
 
       For every additional increment of 10 by which you beat the target's defense, the effect of a critical hit is repeated, if applicable.
@@ -44,11 +34,18 @@
       Typically, you roll damage dice twice for a critical hit and sum both results, along with doubling any flat modifiers.
       If this would require you to roll an inconveniently large number of dice, you can just multiply the result from your normal damage dice instead.
 
-      Objects are not normally subject to critical hits.
+    \subsubsection{Regular Hits}
+      If your attack result is at least as high as the target's defense, but less than 10 higher than that defense, your attack is a regular hit against that target.
+      It has its normal effect.
 
-  \subsection{Dealing Damage}
-    When you deal damage, you roll the damage dice appropriate for that ability.
-    Whatever you hit will track that damage appropriately.
+    \subsubsection{Glancing Blows}\label{Glancing Blows}
+      If your attack result is 1 or 2 lower than the target's defense with a damaging attack, your attack is a \glossterm{glancing blow} against that target.
+      Unless otherwise specified, all damaging attacks deal half damage on a glancing blow.
+      They also do not have any special effects other than immediate damage, unless those effects would also happen on a miss.
+      Non-damaging attacks cannot cause glancing blows.
+
+      A glancing blow is neither a hit nor a miss.
+      However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
 
 \section{Calculating Damage}
   Normally, dealing damage is fairly simple.
@@ -76,10 +73,6 @@
     Because both of those damage instances are caused by a single attack roll, extra damage only applies to the first damage instance.
     However, a \spell{wall of fire} would apply extra damage each time a creature passes through it, since a separate attack is made for each instance of damage.
 
-    Most sources of extra damage do not have a specific damage type.
-    The extra damage normally has the same damage type as the attack's base damage.
-    If extra damage has a specific damage type, it uses that damage type instead of any of the attack's normal damage types.
-
   \subsection{Weak Strikes}
     Some abilities make weak strikes, which deal less damage than normal strikes.
     When you make a weak strike, you halve flat damage bonuses, such as from your \glossterm{power}.
@@ -103,6 +96,19 @@
     In addition, your hit points are reset to 0 at the end of the round if they are still negative.
     This is checked after applying all healing and damage that takes place at the end of the round.
     This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
+
+  \subsection{Environmental Damage}\label{Environmental Damage}
+    Some abilities and environmental effects deal environmental damage.
+    Environmental damage is never dealt as the result of a successful attack roll.
+    Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
+    Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+
+  \subsection{Subdual Damage}\label{Subdual Damage}
+    Some attacks and environmental effects deal subdual damage.
+    Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
+    If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
+    Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
+    If you do, you deal half damage with the strike.
 
 \sectiongraphic*{Vital Wounds}{width=\columnwidth}{core mechanics/vital wounds}
 
@@ -145,49 +151,6 @@
     Vital wounds take time to heal.
     Whenever you finish a \glossterm{long rest}, you remove one of your vital wounds.
     If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
-
-    % TODO: remove damage types
-\sectiongraphic*{Damage Types}{width=\columnwidth}{core mechanics/damage types}
-  There are four main damage types: energy, physical, poison, and psychic.
-  Energy and physical damage have additional subtypes, and are much more common than poison or psychic damage.
-
-  \subsection{Damage Subtypes}\label{Damage Subtypes}
-    Physical damage has four subtypes: acid damage, bludgeoning damage, piercing damage, and slashing damage.
-    Energy damage has three subtypes: cold damage, electricity damage, and fire damage.
-    Psychic damage has no subtypes.
-
-    Damage of a particular subtype is also considered damage of its primary type.
-    For example, if you are \trait{impervious} to \glossterm{physical damage}, that applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
-
-    Some damage types have special properties, as described below.
-    \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
-    \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
-    \parhead{Fire} Abilities that deal fire damage provide light equivalent to a torch for their duration.
-    % TODO: what does this actually mean
-    Abilities without a duration create a \glossterm{brief} burst of torchlight.
-    While underwater, they deal half damage and have no nondamaging effects.
-
-  \subsection{Multiple Damage Types}\label{Multiple Damage Types}
-    Some attacks deal damage that has multiple damage types.
-    Defensive abilities such as defense bonuses or damage immunities apply against an attack only if they apply to all damage types dealt by the attack.
-
-  \subsection{Special Damage Types}\label{Special Damage Types}
-
-    Subdual damage and environmental damage are separate from the standard damage types, like fire damage or energy damage.
-    It is possible for damage to be both environmental damage and subdual damage.
-
-    \subsubsection{Environmental Damage}\label{Environmental Damage}
-      Some abilities and environmental effects deal environmental damage.
-      Environmental damage is never dealt as the result of a successful attack roll.
-      Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-      Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
-
-    \subsubsection{Subdual Damage}\label{Subdual Damage}
-      Some attacks and environmental effects deal subdual damage.
-      Subdual damage works in the same way as normal damage, except it cannot inflict \glossterm{vital wounds}.
-      If an attack that deals subdual damage would inflict a vital wound, the target increases its \glossterm{fatigue level} by three instead.
-      Whenever you make a \glossterm{strike}, you can choose to deal subdual damage instead of normal damage.
-      If you do, you deal half damage with the strike.
 
 \section{Combat Time}\label{Combat Time}
   This section explains how time passes in combat.
@@ -698,24 +661,24 @@
     You use your Strength instead of your Perception to determine your base accuracy with Brawling abilities (see \pcref{Accuracy}).
 
     % Keep in sync with BasicCombat.tex
-  \begin{dtable}
-    \lcaption{Special Combat Abilities}
-    \begin{dtabularx}{\textwidth}{l l X l}
-      \tb{Ability}       & \tb{Usage Time}      & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
-      Charge             & Standard             & Move and make a strike                        & \tdash                                         \\
-      Desperate Exertion & Non-action           & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-      Escape Grapple     & Standard             & Stop being grappled                           & \abilitytag{Brawling}                          \\
-      Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-      Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
-      Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
-      Total Defense      & Standard             & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
-      Throw              & Standard             & Throw a held object                           & \tdash                                         \\
-      Trip               & Standard             & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-    \end{dtabularx}
-  \end{dtable}
+    \begin{dtable}
+      \lcaption{Special Combat Abilities}
+      \begin{dtabularx}{\textwidth}{l l X l}
+        \tb{Ability}       & \tb{Usage Time}      & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
+        Charge             & Standard             & Move and make a strike                        & \tdash                                         \\
+        Desperate Exertion & Non-action           & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
+        Escape Grapple     & Standard             & Stop being grappled                           & \abilitytag{Brawling}                          \\
+        Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+        Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
+        Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
+        Total Defense      & Standard             & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
+        Throw              & Standard             & Throw a held object                           & \tdash                                         \\
+        Trip               & Standard             & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      \end{dtabularx}
+    \end{dtable}
 
     \begin{activeability}*{Charge}
       \abilityusagetime Standard action.

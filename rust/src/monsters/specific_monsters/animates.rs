@@ -1,8 +1,8 @@
 use crate::core_mechanics::abilities::{
-    AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
+    AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{
-    DamageType, Debuff, Defense, DicePool, MovementMode, MovementSpeed,
+    Debuff, Defense, DicePool, MovementMode, MovementSpeed,
     PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
@@ -29,30 +29,31 @@ pub fn animates() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against one creature it \glossterm{touches}.
                         It gains a +2 accuracy bonus if the target is \glossterm{shadowed}.
-                        \hit $dr2 cold damage.
+                        \hit $dr2 damage.
                         If the target loses hit points, it is \frightened by the $name as a \glossterm{condition}.
                         This is an \abilitytag{Emotion} effct.
                     ".to_string(),
                     is_magical: true,
                     name: "Dark Grasp".to_string(),
-                    tags: vec![],
+                    tags: vec![AbilityTag::Cold, AbilityTag::Visual],
                     usage_time: UsageTime::Standard,
                 }),
                 ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against all \glossterm{shadowed} creatures within a \largearea radius of it.
-                        \hit $dr1 cold damage.
+                        \hit $dr1 damage.
                     ".to_string(),
                     is_magical: true,
                     name: "Umbral Aura".to_string(),
-                    tags: vec![],
+                    tags: vec![AbilityTag::Cold, AbilityTag::Visual],
                     usage_time: UsageTime::Elite,
                 }),
             ],
             modifiers: ModifierBundle::SimpleMindedConstruct.plus_modifiers(vec![
-                Modifier::immune_damage(DamageType::Cold),
+                Modifier::immune_tag(AbilityTag::Cold),
                 Modifier::immune_debuff(Debuff::Prone),
+                // Should this be vulnerable to Visual?
             ]),
             movement_speeds: Some(vec![
                 MovementSpeed::new(MovementMode::Fly(Some(30)), SpeedCategory::Normal)
@@ -102,12 +103,12 @@ pub fn animates() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything in its space.
-                        \hit $dr2 acid damage.
+                        \hit $dr2 damage.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: false,
                     name: "Dissolve".to_string(),
-                    tags: vec![],
+                    tags: vec![AbilityTag::Acid],
                     usage_time: UsageTime::Elite,
                 }),
                 ActiveAbility::Custom(CustomAbility {
@@ -120,7 +121,7 @@ pub fn animates() -> Vec<MonsterEntry> {
                     ".to_string(),
                     is_magical: false,
                     name: "Engulf".to_string(),
-                    tags: vec![],
+                    tags: vec![AbilityTag::Brawling],
                     usage_time: UsageTime::Standard,
                 }),
             ],
@@ -321,6 +322,8 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
         size: Size,
     }
 
+    let fire_vulnerability = Modifier::vulnerable_tag(AbilityTag::Fire);
+
     // TODO: make movement slow
     // TODO: add "Unhurried and Unfaltering" from dryaidi?
     impl TreantDefinition {
@@ -365,7 +368,6 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             weapon: Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d10(),
-                damage_types: vec![DamageType::Bludgeoning],
                 name: "Treeclub".to_string(),
                 tags: vec![WeaponTag::Impact, WeaponTag::Heavy],
             },
@@ -393,7 +395,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 Birch treants tend to be shy, and they to avoid conflict if at all possible.
             ")]),
             level: 5,
-            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            modifiers: vec![fire_vulnerability],
             name: "Birch Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -426,7 +428,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 They like playing small tricks on interesting creatures that pass by.
             ")]),
             level: 6,
-            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            modifiers: vec![fire_vulnerability],
             name: "Chestnut Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -460,7 +462,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 Their attitudes tend to be similarly flexible, and they can be easily persuadable.
             ")]),
             level: 7,
-            modifiers: vec![Modifier::vulnerable_damage(DamageType::Fire)],
+            modifiers: vec![fire_vulnerability],
             name: "Willow Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -531,7 +533,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             modifiers: vec![
                 // All Huge treants get +2 armor
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::vulnerable_damage(DamageType::Fire),
+                fire_vulnerability,
             ],
             name: "Pine Treant".to_string(),
             size: Size::Huge,
@@ -567,7 +569,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             level: 10,
             modifiers: vec![
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::vulnerable_damage(DamageType::Fire),
+                fire_vulnerability,
             ],
             name: "Oak Treant".to_string(),
             size: Size::Huge,

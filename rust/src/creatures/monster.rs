@@ -1,7 +1,7 @@
 use crate::core_mechanics::attacks::{HasAttacks, PureDamageAbility};
 use crate::core_mechanics::Attribute::{Intelligence, Strength, Willpower};
 use crate::core_mechanics::{
-    Attribute, DamageType, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasMovement,
+    Attribute, Defense, HasAttributes, HasDamageAbsorption, HasDefenses, HasMovement,
     SpecialDefenseType,
 };
 use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier};
@@ -91,7 +91,6 @@ impl Monster {
         self.creature.add_modifier(
             Modifier::Attack(
                 PureDamageAbility {
-                    damage_types: vec![DamageType::Energy],
                     defense: Defense::Armor,
                     is_magical: true,
                     name: "Generic Monster Damage".to_string(),

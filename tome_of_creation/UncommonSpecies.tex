@@ -93,11 +93,11 @@
       \begin{itemize}
         % Two improvements over baseline
         \item Blade: You convert one of your arms into a blade natural weapon.
-          It has a \plus1 accuracy bonus, deals 1d8 slashing damage, and has the \weapontag{Keen} and \weapontag{Sweeping} (1) weapon tags (see \pcref{Weapon Tags}).
+          It has a \plus1 accuracy bonus, deals 1d8 damage, and has the \weapontag{Keen} and \weapontag{Sweeping} (1) weapon tags (see \pcref{Weapon Tags}).
           However, that arm no longer has a \glossterm{free hand}.
           % Two improvements over baseline
         \item Bulk: You convert one of your arms into a bulky, overburdened slam natural weapon.
-          It deals 1d10 bludgeoning damage and has the \weapontag{Impact} and \weapontag{Resonating} weapon tags.
+          It deals 1d10 damage and has the \weapontag{Impact} and \weapontag{Resonating} weapon tags.
           However, that arm no longer has a \glossterm{free hand}.
         \item Fortified: You add additional protective plating to your arms.
           You gain a \plus1 bonus to your Armor defense.
@@ -166,7 +166,7 @@
       You gain a \plus2 bonus to your Fortitude defense.
 
     \cf{Aut}{Resources}
-    You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
+      You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
 
     \cf{Aut}{Weapon Proficiencies}
       You are proficient with all non-exotic weapons.
@@ -243,7 +243,7 @@
       These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
       The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
     \itemhead{Dragon Type} Each dragon has a single type from among the dragon types on \trefnp{Dragon Types}.
-      They are immune to the damage type dealt by their type's breath weapon.
+      They are immune to attacks with their associated tag.
     \itemhead{Limited Equipment} A dragon's claws are not able to effectively wield shields or manufactured weapons.
       They can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
   \end{itemize}
@@ -253,17 +253,17 @@
     % Don't use lcaption because there is already a Dragon Types table with a label
     \caption[]{Dragon Types}
     \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
-      \tb{Dragon} & \tb{Damage Type} & \tb{Breath Weapon} \tableheaderrule
-      Black       & Acid             & \areamed, 5 ft. wide line \\
-      Blue        & Electricity      & \areamed, 5 ft. wide line \\
-      Brass       & Fire             & \areamed, 5 ft. wide line \\
-      Bronze      & Electricity      & \areamed, 5 ft. wide line \\
-      Copper      & Acid             & \areamed, 5 ft. wide line \\
-      Gold        & Fire             & \areasmall cone           \\
-      Green       & Acid             & \areasmall cone           \\
-      Red         & Fire             & \areasmall cone           \\
-      Silver      & Cold             & \areasmall cone           \\
-      White       & Cold             & \areasmall cone           \\
+      \tb{Dragon} & \tb{Tag} & \tb{Breath Weapon} \tableheaderrule
+      Black       & \atAcid             & \areamed, 5 ft. wide line \\
+      Blue        & \atElectricity      & \areamed, 5 ft. wide line \\
+      Brass       & \atFire             & \areamed, 5 ft. wide line \\
+      Bronze      & \atElectricity      & \areamed, 5 ft. wide line \\
+      Copper      & \atAcid             & \areamed, 5 ft. wide line \\
+      Gold        & \atFire             & \areasmall cone           \\
+      Green       & \atAcid             & \areasmall cone           \\
+      Red         & \atFire             & \areasmall cone           \\
+      Silver      & \atCold             & \areasmall cone           \\
+      White       & \atCold             & \areasmall cone           \\
     \end{dtabularx}
   \end{dtable}
 
@@ -275,9 +275,9 @@
         \abilityusagetime Standard action.
         \abilitycost You \glossterm{briefly} cannot use this ability again.
         \rankline
-        Make an attack vs. Reflex against everything in the area defined by your dragon type (see Dragon Types, above).
+        This ability's tag depends on your dragon type (see Dragon Types, above).
+        Make an attack vs. Reflex against everything in the area defined by your dragon type.
         \hit \damageranktwo{}.
-        The damage type is defined by your dragon type.
         \miss Half damage.
 
         \rankline
@@ -316,7 +316,7 @@
       In addition, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
       % Natural dragons treat their tail slam as heavy, but that may not work for a PC? They also treat their Bite as heavy, which these dragons don't do.
       You also gain a tail slam \glossterm{natural weapon}.
-      It deals 1d10 bludgeoning damage and has the \weapontag{Impact} weapon tag (see \pcref{Weapon Tags}).
+      It deals 1d10 damage and has the \weapontag{Impact} weapon tag (see \pcref{Weapon Tags}).
       % TODO: too fast?
       In addition, you gain a \plus10 foot bonus to your fly speed with your \textit{draconic flight} ability.
 
@@ -375,7 +375,7 @@
   \parhead{Special Abilities}
   \begin{itemize}
     \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
-      \magicalitemhead{Deep Darkness}
+    \magicalitemhead{Deep Darkness}
       \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (standard)}
         \abilityusagetime Standard action.
         \rankline
@@ -467,8 +467,8 @@
 
     \cf{Dry}[6]{Tree Union} When you meld with a tree using your \textit{tree stride} ability, you can fully unite with it.
       When you do, you have \glossterm{line of sight} and \glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree's body.
-      Attacks against the tree simultaneously affect both you and the tree, but both you and the tree are \impervious to all damage except for fire damage and damage from cold iron weapons.
-      You and the tree are instead \vulnerable to fire damage and damage from cold iron weapons.
+      Attacks against the tree simultaneously affect both you and the tree.
+      You and the tree are both \impervious to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
 
     \cf{Dry}[7]{Acorns of Life} Whenever you visit a tree you are bonded to with your \textit{tree bond} ability, you can gather acorns of life.
       You can have up to ten acorns of life at once.
@@ -638,13 +638,13 @@
     \cf{Hrp}{Attributes} You gain a \plus1 bonus to your Strength, Dexterity, and Perception.
 
     \cf{Hrp}{Hit Points}
-        You have 8 hit points \add  your Constitution, plus 1 hit points per level beyond 1.
-        This increases as your level increases, as indicated below.
-        \begin{itemize}
-            \itemhead{Level 7} 18 hit points \add twice your Constitution, plus 2 hit points per level beyond 7.
-            \itemhead{Level 13} 35 hit points \add five times your Constitution, plus 5 hit points per level beyond 13.
-            \itemhead{Level 19} 70 hit points \add ten times your Constitution, plus 10 hit points per level beyond 19.
-        \end{itemize}
+      You have 8 hit points \add  your Constitution, plus 1 hit points per level beyond 1.
+      This increases as your level increases, as indicated below.
+      \begin{itemize}
+        \itemhead{Level 7} 18 hit points \add twice your Constitution, plus 2 hit points per level beyond 7.
+        \itemhead{Level 13} 35 hit points \add five times your Constitution, plus 5 hit points per level beyond 13.
+        \itemhead{Level 19} 70 hit points \add ten times your Constitution, plus 10 hit points per level beyond 19.
+      \end{itemize}
 
     \cf{Hrp}{Resources}
       You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
@@ -676,16 +676,13 @@
   \parhead{Attributes} One attribute gains a \plus1 bonus and another takes a \minus1 penalty, depending on the chosen element or energy.
   \parhead{Special Abilities}
   \begin{itemize}
-    \itemhead{Essence Affinity} Each incarnation is \impervious to a damage type and \vulnerable to a different damage type.
-      For each damage type, it can choose any subtype of physical damage, any subtype of energy damage, or psychic damage.
-      This choice is made independently of its choice of \textit{essence infusion}.
-      \magicalitemhead{Essence Infusion} Each incarnation chooses one damage type as its essence infusion.
-      It can choose any subtype of physical damage, any subtype of energy damage, or psychic damage.
-      All of the incarnation's \glossterm{strikes} automatically deal damage of that type in addition to their other damage types.
-      This damage type is called the incarnation's essential damage type.
+    \magicalitemhead{Essence Infusion} Each incarnation chooses one of the following tags as its essence infusion: \atAcid, \atAir, \atAuditory, \atCold, \atCompulsion, \atEarth, \atEmotion, \atElectricity, \atFire, \atVisual, or \atWater.
+      All of the incarnation's \glossterm{strikes} gain that tag, and it is \impervious to attacks with that tag.
+    \magicalitemhead{Essence Vulnerability} Each incarnation chooses a tag to be \vulnerable to.
+      It can choose any of the valid tags for an \textit{essence infusion}, including the tag it chose as its essence infusion.
     \itemhead{Glowing} If appropriate to an incarnation's essence, it may naturally shed light as a torch.
       An incarnation cannot willingly disable this light, though the light can be covered by thick clothing.
-    \itemhead{Poison Resistance} An incarnation is \impervious to poisons and poison damage.
+    \itemhead{Poison Resistance} An incarnation is \impervious to \atPoison attacks.
     \itemhead{Unusual Body} An incarnation's body can be unusually light or heavy compared to an ordinary creature's body.
       It can be \glossterm{lightweight} or \glossterm{heavyweight}, depending on its essence.
   \end{itemize}
@@ -706,11 +703,11 @@
       It can wear armor, but the armor is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
       It has no land speed.
       Since it has no legs, it is immune to being \prone, but it also cannot jump.
-      \magicalitemhead{Flight} The incarnation's only movement mode is a \glossterm{fly speed} equal to its base speed, with a 5 foot height limit (see \pcref{Aerial Movement}).
+    \magicalitemhead{Flight} The incarnation's only movement mode is a \glossterm{fly speed} equal to its base speed, with a 5 foot height limit (see \pcref{Aerial Movement}).
       Since it is native to the air, flying does not penalize its Armor or Reflex defenses.
       It is also \trait{floating}, so it does not need to fly every phase to avoid falling.
     \itemhead{Ram} The incarnation gains a ram \glossterm{natural weapon}.
-      It deals 1d6 bludgeoning damage and has the \weapontag{Resonating} weapon tag (see \pcref{Weapon Tags}).
+      It deals 1d6 damage and has the \weapontag{Resonating} weapon tag (see \pcref{Weapon Tags}).
     \itemhead{Uniform Composition} The incarnation is immune to \glossterm{critical hits} from strikes.
   \end{raggeditemize}
 
@@ -721,14 +718,15 @@
         \abilityusagetime Standard action.
         \rankline
         Make an attack against all \glossterm{enemies} within a \smallarea radius from you.
-        The damage type and defense against this attack depends on your essential damage type.
+        The defense against this attack depends on your \textit{essence infusion}.
         \begin{raggeditemize}
-          \item Armor defense: Bludgeoning, piercing, and slashing damage
-          \item Fortitude defense: Acid, cold, and electricity damage
-          \item Reflex defense: Fire damage
-          \item Mental defense: Psychic damage
+          \item Armor defense: \atAir, \atEarth, \atWater.
+          \item Fortitude defense: \atAcid, \atAuditory, \atCold, \atElectricity.
+          \item Reflex defense: \atFire, \atVisual.
+          \item Mental defense: \atCompulsion, \atEmotion.
         \end{raggeditemize}
         \hit Each target takes \damagerankone{}.
+        \miss Half damage.
 
         \rankline
         \rank{2} The damage increases to \damageranktwo{}.
@@ -739,7 +737,7 @@
         \rank{7} The damage increases to \damagerankseven{}.
       \end{magicalactiveability}
 
-    \cf{Inc}[2]{Essence Flare} Whenever you use the \ability{total defense} or \ability{recover} abilities, you \glossterm{briefly} become \impervious to all damage types other than your vulnerability from the \textit{essence affinity} ability.
+    \cf{Inc}[2]{Essence Flare} Whenever you use the \ability{total defense} or \ability{recover} abilities, you \glossterm{briefly} become \impervious to damaging attacks.
       This effect has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
 
     \cf{Inc}[3]{Deep Tether} You gain a special ability depending on whether you are tethered or untethered.
@@ -757,14 +755,13 @@
 
     \cf{Inc}[4]{Essence Exemplar} The bonus to an attribute that you gain from being an incarnate increases to \plus2.
 
-    \cf{Inc}[5]{Essence Affinity+} You become \glossterm{immune} instead of impervious to the damage type from your \textit{essence affinity} ability.
-
-    \cf{Inc}[5]{Essence Infusion+} You gain a \plus1 accuracy bonus with all abilities that deal damage of your essential damage type.
+    \cf{Inc}[5]{Essence Infusion+} You become \glossterm{immune} instead of impervious to attacks with the tag from your \textit{essence infusion} ability.
+    In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
 
     \cf{Inc}[6]{Deep Tether+} You gain a special ability depending on whether you are tethered or untethered.
       \begin{raggeditemize}
         \item Tethered: The fatigue tolerance bonus increases to \plus2.
-          In addition, when you use the \ability{desperate exertion} ability to affect an attack that deals damage of your essential damage type, you can use this ability.
+          In addition, when you use the \ability{desperate exertion} ability to affect an attack with your \textit{essential infusion} tag, you can use this ability.
           If you do, you only increase your fatigue level by one instead of by two.
           After using this ability, you \glossterm{briefly} cannot use it again.
         \item Untethered: You gain a \plus10 foot bonus to your fly speed.
@@ -777,10 +774,10 @@
         \rankline
         You gain a benefit depending on whether you are tethered or untethered:
         \begin{raggeditemize}
-          \item Tethered: You \glossterm{briefly} make attack and damage rolls twice with all abilities that deal damage of your essential damage type, keeping the higher result.
+          \item Tethered: You \glossterm{briefly} make attack and damage rolls twice, keeping the higher result, with abilities that have your \textit{essence infusion} tag.
           \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
             If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
-            You take 5d10 bludgeoning damage for every 5 feet that you are pushed in this way.
+            You take 5d10 damage for every 5 feet that you are pushed in this way.
         \end{raggeditemize}
 
         % don't end with an itemize right before an ability closes
@@ -876,7 +873,7 @@
   \parhead{Attributes} \minus1 Intelligence, \plus1 Constitution.
   \parhead{Special Abilities}
   \begin{itemize}
-    \itemhead{Acidic Body} Ooozeborn are \trait{impervious} to acid damage and poisons.
+    \itemhead{Acidic Body} Ooozeborn are \trait{impervious} to \atAcid and \atPoison attacks.
     \itemhead{Amorphous Form} An oozeborn's natural form is a loosely spherical blob.
       They have a \minus10 foot penalty to their \glossterm{land speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
       Since they have no legs, they are immune to being \prone.
@@ -909,10 +906,10 @@
   \subsection{Oozeborn Archetype}
 
     \cf{Ooz}[1]{Acidic Pseudopod} One of your arms becomes a pseudopod \glossterm{natural weapon}.
-      It deals 1d10 bludgeoning and acid damage and has the \weapontag{Long} weapon tag (see \pcref{Weapon Tags}).
+      It deals 1d10 damage and has the \atAcid and \weapontag{Long} tags (see \pcref{Weapon Tags}).
       You do not have a \glossterm{free hand} on that arm while using it as a weapon in this way.
 
-      In addition, all damage you deal with natural weapons is acid damage in addition to its other types.
+      In addition, all of your attacks with natural weapons have the \atAcid tag.
       This does not affect damage you deal with manufactured weapons.
 
     \cf{Ooz}[2]{Darkborn Senses} You gain \trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
@@ -920,10 +917,14 @@
       In addition, you gain \trait{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
       If you already have the blindsight ability, you increase its range by 15 feet.
 
-    \cf{Ooz}[2]{Ingest Object} You can use the \textit{ingest object} ability as a standard action.
-      This functions like the \spell{absorb object} spell, except that the maximum size of the object is equal to your size.
-      Anything you absorb in this way takes a single point of \glossterm{environmental} acid damage during each of your actions while it remains absorbed.
+    \cf{Ooz}[2]{Ingest Object} 
+    \begin{activeability}{Ingest Object}[\atAcid]
+      \abilityusagetime Standard action.
+      \rankline
+      This ability functions like the \spell{absorb object} spell, except that the maximum size of the object is equal to your size.
+      Anything you absorb in this way takes a single point of \glossterm{environmental} damage during each of your actions while it remains absorbed.
       This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
+    \end{activeability}
 
     \cf{Ooz}[3]{Amorphous Form+} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
       In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
@@ -932,7 +933,7 @@
 
     \cf{Ooz}[3]{Compressible Body+} You reduce your penalties for \squeezing by 1.
 
-    \cf{Ooz}[4]{Acidic Body+} You are \trait{immune} to acid damage and poisons.
+    \cf{Ooz}[4]{Acidic Body+} You are \trait{immune} to \atAcid and \atPoison attacks.
 
     \cf{Ooz}[5]{Darkborn Senses+} The range of your \trait{blindsense} increases by 60 feet.
       In addition, the range of your \trait{blindsight} increases by 15 feet.
@@ -1012,7 +1013,7 @@
         This ability lasts until the sapling ends it as a standard action, or until it stops being \glossterm{grounded}.
       \end{activeability}
     \itemhead{Limited Equipment} Saplings can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
-    \itemhead{Made of Wood} Saplings are \vulnerable to fire damage. In addition, they are both creatures and plants.
+    \itemhead{Made of Wood} Saplings are \vulnerable to \atFire attacks. In addition, they are both creatures and plants.
     \itemhead{Treant Archetype} Saplings only gain two class archetypes instead of three.
       Instead, they treat the Treant archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
     \itemhead{Tree Appearance} When a sapling stays perfectly still, observers must make a DV 15 Awareness check to recognize that it is not an ordinary tree.
@@ -1050,19 +1051,19 @@
         You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
 
         \hit The target is \slowed as a \glossterm{condition}.
-        In addition, it takes 1d8 bludgeoning damage immediately, and during each of your subsequent actions while this condition lasts.
+        In addition, it takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
 
         This condition can be removed if the target makes a \glossterm{difficulty value} 10 Strength check as a \glossterm{movement} to break the plants.
         If the target makes this check as a standard action, it gains a \plus5 bonus.
-        In addition, this condition is removed if the target takes fire damage.
+        In addition, this condition is removed if the target takes damage from a \atFire ability.
         \crit The condition must be removed an additional time before the effect ends.
         \rankline
         For each rank beyond 3, the attack's \glossterm{accuracy} increases by \plus2 and the \glossterm{difficulty value} to break the plants increases by 2.
         In addition, the damage increases at each rank as described below.
-        \rank{4} 1d10 bludgeoning damage.
-        \rank{5} 2d6 bludgeoning damage.
-        \rank{6} 2d8 bludgeoning damage.
-        \rank{7} 2d10 bludgeoning damage.
+        \rank{4} 1d10 damage.
+        \rank{5} 2d6 damage.
+        \rank{6} 2d8 damage.
+        \rank{7} 2d10 damage.
       \end{activeability}
 
     \cf{Tre}[4]{Tall as the Noble Pine} Your size category increases to Large.
@@ -1131,7 +1132,7 @@
     \itemhead{Demonic Prejudice} Most people have negative associations with tieflings thanks to the malign influence that demons have on the world.
       Tieflings have an Opposition relationship with most people that they meet, which influences people's behavior and makes Persuasion checks harder (see \pcref{Persuasion}).
       People in some locations, such as the Abyss, do not have this attitude.
-    \itemhead{Hellfire Tolerance} Tieflings are \trait{impervious} to fire damage.
+    \itemhead{Hellfire Tolerance} Tieflings are \trait{impervious} to \atFire attacks.
     \itemhead{Infernal Presence} Tieflings gain a \plus2 bonus to the Deception and Intimidate skills.
     \itemhead{Tiefling Archetype} You may choose three class archetypes, as normal.
       However, you may choose the Tiefling archetype in place of one of your class archetypes.
@@ -1142,13 +1143,13 @@
 
   \subsection{Tiefling Archetype}
     \magicalcf{Tif}[1]{Abyssal Hop}
-    \begin{magicalactiveability}{Abyssal Hop}
+    \begin{magicalactiveability}{Abyssal Hop}[\atFire]
       \abilityusagetime Standard action.
       \rankline
       You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
       If the destination is invalid, this spell fails with no effect.
       In addition, make an attack vs. Reflex against each \glossterm{enemy} adjacent to your location after you arrive.
-      \hit \damagerankzero{fire}.
+      \hit \damagerankzero{}.
       \miss Half damage.
 
       \rankline
@@ -1168,12 +1169,12 @@
       You gain a benefit based on your chosen ancestry.
       \begin{itemize}
         \item Infernal Rebuke: You can set fire to your foes.
-          \begin{magicalactiveability}{Infernal Rebuke}
+          \begin{magicalactiveability}{Infernal Rebuke}[\atFire]
             \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Fortitude against one creature within \shortrange.
             You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target attacked you during the previous round.
-            \hit \damagerankthree{fire}.
+            \hit \damagerankthree{}.
 
             \rankline
             % Stay at rank+1 damage
@@ -1203,7 +1204,7 @@
       \end{itemize}
 
       \magicalcf{Tif}[3]{Abysswalker} You can use your \ability{abyssal hop} ability to teleport as a \glossterm{movement} instead of as a standard action.
-      When you do, you do not deal fire damage at your destination, and you \glossterm{briefly} cannot use that ability as a movement again.
+      When you do, you do not deal damage at your destination, and you \glossterm{briefly} cannot use that ability as a movement again.
 
       \magicalcf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
       \begin{itemize}
@@ -1231,7 +1232,7 @@
           \end{magicalattuneability}
       \end{itemize}
 
-    \cf{Tif}[5]{Greater Hellfire Tolerance} You become \trait{immune} to fire damage.
+    \cf{Tif}[5]{Greater Hellfire Tolerance} You become \trait{immune} to \atFire attacks.
 
     \cf{Tif}[5]{Greater Infernal Resilience}  The bonus from your \ability{infernal resilience} ability increases to three times your rank in this archetype.
 
@@ -1309,22 +1310,22 @@
       This penalty is removed as soon as the vampire drinks a pint of blood.
       A vampire can can enter a torpor to survive indefinitely without blood.
       While in a torpor, it is unconscious until it smells blood nearby.
-    \itemhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and becomes \frightened by any creatures bearing garlic as a condition.
+    \itemhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 damage and becomes \frightened by any creatures bearing garlic as a condition.
       This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
     \itemhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
-    \itemhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
+    \itemhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 damage and \glossterm{briefly} becomes \immobilized.
       This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
       It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
       This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
     \itemhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
-    \itemhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 20 energy damage and becomes \blinded as a condition.
+    \itemhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 20 damage and becomes \blinded as a condition.
       If it suffers a \glossterm{vital wound} from this damage, it immediately dies and dissolves into a pile of ash.
       This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
     \itemhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
       This can allow careful observers to identify vampires.
     \itemhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
       The vampire becomes \paralyzed until the stake is removed.
-      A wooden stake is a light improvised weapon that deals 1d4 piercing damage.
+      A wooden stake is a light improvised weapon that deals 1d4 damage.
   \end{itemize}
 
   \subsection{Vampire Archetype}
