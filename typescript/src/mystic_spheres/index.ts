@@ -21,6 +21,7 @@ import { umbramancy } from "./umbramancy";
 import { verdamancy } from "./verdamancy";
 import { vivimancy } from "./vivimancy";
 import { universal } from "./universal";
+export { add_tag_to_sphere} from "./add_tag";
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,

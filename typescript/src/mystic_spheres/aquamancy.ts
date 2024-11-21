@@ -1,7 +1,7 @@
-import { MysticSphere } from '.';
-import {CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
+import { add_tag_to_sphere, MysticSphere } from '.';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
-export const aquamancy: MysticSphere = {
+export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
   name: 'Aquamancy',
   hasImage: true,
   shortDescription: 'Command water to crush and drown foes.',
@@ -797,4 +797,4 @@ export const aquamancy: MysticSphere = {
       type: 'Attune (target)',
     },
   ],
-};
+});
