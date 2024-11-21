@@ -25,7 +25,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // Like Smite, but only adds half Str instead of full Str and has extra damage types
+        // Like Smite, but only adds half Str instead of full Str and has extra tags
         RankAbility {
             name: "Elemental Strike",
             is_magical: true,
@@ -36,26 +36,25 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    Damage dealt by the strike is bludgeoning and fire damage in addition to its normal damage types.
+                    When you use this ability, it has one of the following tags of your choice: \atAir, \atEarth, \atFire, or \atWater.
 
                     \rankline
                     \rank{2} You add half your Strength to your \glossterm{magical power} to determine your total power with this strike.
-                    \rank{3} You no longer gain the normal weapon damage bonus of +1 per two power.
-                    Instead, you gain 1d4 extra damage per 3 power (minimum 1d4).
-                    \rank{4} The extra damage increases to 1d6 per 3 power.
-                    \rank{5} The \glossterm{weapon damage} is doubled.
-                    \rank{6} The extra damage increases to 1d8 per 3 power.
-                    \rank{7} The extra damage increases to 1d8 per 2 power.
+                    \rank{3} You deal \glossterm{extra damage} equal to half your power.
+                    \rank{4} If you miss, the target still takes the extra damage.
+                    \rank{5} Your \glossterm{weapon damage} is doubled.
+                    \rank{6} The extra damage increases to be equal to your power.
+                    \rank{7} The extra damage increases to twice your power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
         RankAbility {
-            name: "Elemental Strike+",
+            name: "Elemental Tranquility",
             is_magical: true,
             rank: 4,
             description: r"
-                If you do not have access to nature magic, your melee strikes with the \textit{elemental strike} ability gain the \weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
+                If you do not have access to nature magic, you become \impervious to \atAir, \atEarth, and \atWater attacks.
             ",
             modifiers: None,
         },
@@ -143,7 +142,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a \glossterm{glide speed} 10 feet slower than the \glossterm{base speed} for your size.
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
-                    \item Fire: You are \trait{impervious} to fire damage.
+                    \item Fire: You are \trait{impervious} to \atFire attacks.
                     \item Water: You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
                 \end{itemize}
             ",
@@ -160,7 +159,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The Fortitude bonus increases to \plus2.
-                    \item Fire: You are immune to fire damage.
+                    \item Fire: You are immune to \atFire attacks.
                     \item Water: You gain a \plus10 foot bonus to your swim speed.
                 \end{itemize}
             ",
@@ -261,21 +260,21 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Airborne Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
-                        You increase that spell's range to the next standard range category, to a maximum of Extreme range.
-                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        It gains the \atAir tag.
+                        In addition, you increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Flooding Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
-                        You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
-                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        It gains the \atWater tag.
+                        In addition, you increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Grounded Spell} Choose a nature \glossterm{spell} you know.
-                        You gain a \plus1 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
-                        In addition, any damage dealt by the spell is bludgeoning damage in addition to its normal damage types.
+                        It gains the \atEarth tag.
+                        In addition, you gain a \plus2 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Incendiary Spell} Choose a nature \glossterm{spell} you know.
-                        If you hit a target with that spell, you repeat the spell's effects against that target during the next round, making a new attack roll.
-                        That spell can only repeat against a single target of your choice in this way.
-                        In addition, any damage dealt by the spell is fire damage in addition to its normal damage types.
+                        It gains the \atFire tag.
+                        In addition, if you hit a target with that spell, you repeat the spell's effects against that target during the next round.
+                        You must make a new attack roll for the repeat with a \minus2 accuracy penalty.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.

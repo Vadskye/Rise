@@ -1,7 +1,7 @@
-use crate::core_mechanics::abilities::{ActiveAbility, StrikeAbility};
-use crate::core_mechanics::{
-    MovementMode, MovementSpeed, Sense, Size, SpeedCategory,
+use crate::core_mechanics::abilities::{
+    AbilityTag, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
+use crate::core_mechanics::{MovementMode, MovementSpeed, Sense, Size, SpeedCategory};
 use crate::creatures::{ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon};
 use crate::monsters::creature_type::CreatureType;
@@ -278,16 +278,23 @@ pub fn animals() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
-                        \hit $damage $damagetypes damage.
+                        \hit $damage damage.
                         Each creature that loses hit points from this damage is poisoned by giant wasp venom.
-
-                        \par Giant wasp venom is an injury-based liquid \glossterm{poison}.
+                    ".to_string(),
+                    name: "Venomous Stinger".to_string(),
+                    weapon: StandardWeapon::MonsterStinger.weapon(),
+                    ..Default::default()
+                }),
+                ActiveAbility::Custom(CustomAbility {
+                    name: "Giant Wasp Venom".to_string(),
+                    effect: r"
+                        Giant wasp venom is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+1.
                         Its stage 1 effect makes the target \slowed while the poison lasts.
                         Its stage 3 effect makes the target \immobilized while the poison lasts.
                     ".to_string(),
-                    name: "Venomous Stinger".to_string(),
-                    weapon: StandardWeapon::MonsterStinger.weapon(),
+                    tags: vec![AbilityTag::Poison],
+                    usage_time: UsageTime::Triggered,
                     ..Default::default()
                 }),
             ],
@@ -506,7 +513,10 @@ pub fn animals() -> Vec<MonsterEntry> {
         abilities: MonsterAbilities {
             active_abilities: vec![
                 // Ponies use a weak bite.
-                ActiveAbility::Strike(StrikeAbility::normal_strike(1, StandardWeapon::Bite.weapon())),
+                ActiveAbility::Strike(StrikeAbility::normal_strike(
+                    1,
+                    StandardWeapon::Bite.weapon(),
+                )),
             ],
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,

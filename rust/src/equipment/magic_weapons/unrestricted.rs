@@ -3,7 +3,7 @@ use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 
 // Standard weapon templates:
-// * Grant minor passive effect (damage type) and appropriately leveled maneuver
+// * Grant minor passive effect (energy tag) and appropriately leveled maneuver
 // * Grant damage or accuracy with various conditions
 pub fn unrestricted() -> Vec<MagicWeapon> {
     let mut weapons = vec![];
@@ -392,17 +392,15 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Psionic"),
         rank: 2,
-        short_description: String::from(r"Can attack Mental defense for psychic damage"),
+        short_description: String::from(r"Can attack Mental defense"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with psychic power.
-            The strike is made against the target's Mental defense instead of its Armor defense, and it only affects creatures with a mind.
+            The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atEmotion tag.
             Its minimum accuracy is $accuracy.
-            Damage dealt by the strike is psychic damage instead of the weapon's normal damage type.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Attacks Mental defense and deals psychic damage", r"
-                All damage dealt by this weapon is psychic damage instead of its normal damage types.
-                Strikes with this weapon are made against the target's Mental defense instead of its Armor defense.
+                All strikes with this weapon are made against the target's Mental defense instead of its Armor defense, and they have the \atEmotion tag.
                 When you imbue this weapon with psychic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
@@ -412,17 +410,15 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Toxic"),
         rank: 2,
-        short_description: String::from(r"Can attack Fortitude defense for poison damage"),
+        short_description: String::from(r"Can attack Fortitude defense"),
         description: String::from(r"
             As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to poison.
-            The strike is made against the target's Fortitude defense instead of its Armor defense, and it only affects living creatures.
+            The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \atPoison tag.
             Its minimum accuracy is $accuracy.
-            Damage dealt by the strike is poison damage instead of the weapon's normal damage type.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Attacks Fortitude defense and deals poison damage", r"
-                All damage dealt by this weapon is poison damage instead of its normal damage types.
-                Strikes with this weapon are made against the target's Fortitude defense instead of its Armor defense, and they only affect living creatures.
+                Strikes with this weapon are made against the target's Fortitude defense instead of its Armor defense, and they have the \atPoison tag.
                 When you imbue this weapon with poison as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
@@ -438,17 +434,16 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Prismatic"),
         rank: 3,
-        short_description: String::from(r"Can attack Reflex defense for energy damage"),
+        short_description: String::from(r"Can attack Reflex defense"),
         description: String::from(r"
             This weapon glows with gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
             As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to elemental energy.
-            The strike is made against the target's Reflex defense instead of its Armor defense.
+            The strike is made against the target's Reflex defense instead of its Armor defense, and it has the \atCold, \atElectricity, and \atFire tags.
             Its minimum accuracy is $accuracy.
-            Damage dealt by the strike is cold, electricity, and fire damage instead of the weapon's normal damage type.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Deals energy damage and can attack Reflex defense", r"
-                All damage dealt by this weapon is cold, electricity, and fire damage instead of its normal damage types.
+                All strikes with this weapon have the \atCold, \atElectricity, and \atFire tags.
                 When you imbue this weapon with energy as a standard action, the strike deals triple \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
@@ -457,17 +452,14 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
-        rank: 1,
-        short_description: String::from(r"Deals bludgeoning damage"),
+        rank: 4,
+        short_description: String::from(r"Deals 1d4 extra damage"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-            All damage dealt with it is bludgeoning damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
+            Strikes with it deal 1d4 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Deals 1d4 bludgeoning extra damage", r"
-                The weapon also deals 1d4 bludgeoning \glossterm{extra damage}.
-            "),
-            ItemUpgrade::new(6, "Deals 1d10 bludgeoning extra damage", r"
+            ItemUpgrade::new(6, "Deals 1d10 extra damage", r"
                 The extra damage increases to 1d10.
             "),
         ],
@@ -483,7 +475,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon is on fire.
             It sheds light in a 15 foot radius of \glossterm{bright illumination}.
-            All damage dealt with it is fire damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
+            All strikes with it have the \atFire tag.
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with fiery energy.
             The strike's minimum accuracy is $accuracy.
@@ -510,12 +502,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon continuously crackles with electricity.
             It sheds light in a 5 foot radius of \glossterm{bright illumination}.
-            All damage dealt with it is electricity damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
+            All strikes with it have the \atElectricity tag.
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with electrical energy.
             The strike's minimum accuracy is $accuracy.
             It \glossterm<chains> once.
-            Damage dealt to the secondary target is exclusively electricity damage, regardless of the strike's normal damage types.
         "),
         // The baseline r3 strike deals (71%/69%) single-target damage.
         // At higher levels, the multi-target becomes slightly less exciting since people have
@@ -542,17 +533,16 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals cold damage and can slow"),
         description: String::from(r"
             This weapon is bitterly cold to the touch.
-            All damage dealt with it is cold damage in addition to its normal damage types (see \pcref<Multiple Damage Types>).
+            All strikes with it have the \atCold tag.
 
             As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with frigid energy.
             The strike's minimum accuracy is $accuracy.
-            % TODO: wording? Creatures immune to cold damage should not be slowed.
-            If the target loses hit points from cold damage, it is \slowed as a \glossterm{condition}.
+            If the target loses hit points from the strike, it is \slowed as a \glossterm{condition}.
         "),
         upgrades: vec![
             // At this point, the strike deals (59%/56%) damage.
             ItemUpgrade::new(4, "Deals cold damage and can slow", r"
-                The target of the strike is slowed if it takes cold damage, even if it does not lose hit points.
+                The target of the strike is slowed if it takes damage, even if it does not lose hit points.
                 In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             // With 2d10, it deals (92%/69%) damage, which is about on par with "double weapon

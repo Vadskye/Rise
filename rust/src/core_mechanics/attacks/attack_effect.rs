@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::AbilityType;
 use crate::core_mechanics::attacks::HasAttacks;
-use crate::core_mechanics::{DamageDice, DamageType, Debuff, Defense, DicePool, PowerScaling};
+use crate::core_mechanics::{DamageDice, Debuff, Defense, DicePool, PowerScaling};
 use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::Weapon;
 use crate::latex_formatting;
@@ -28,7 +28,6 @@ pub struct DamageEffect {
     pub extra_defense_effect: Option<(Defense, AttackTriggeredEffect)>,
     pub base_dice: DicePool,
     pub power_scalings: Vec<PowerScaling>,
-    pub damage_types: Vec<DamageType>,
     pub lose_hp_effect: Option<AttackTriggeredEffect>,
     pub take_damage_effect: Option<AttackTriggeredEffect>,
     pub vampiric_healing: Option<HealingEffect>,
@@ -112,18 +111,14 @@ impl DamageEffect {
             "".to_string()
         };
 
-        let mut damage_types: Vec<DamageType> = self.damage_types.clone();
-        damage_types.sort_by_key(|a| a.name().to_lowercase());
         return format!(
             "
-                {dice_pool} {damage_types} damage.
+                {dice_pool} damage.
                 {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
             ",
             dice_pool = self
                 .calc_damage_dice(attacker, is_magical, is_strike)
                 .to_string(),
-            damage_types =
-                latex_formatting::join_formattable_list(&damage_types).unwrap_or(String::from("")),
             extra_defense_effect = extra_defense_effect.trim(),
             take_damage_effect = take_damage_effect.trim(),
             lose_hp_effect = lose_hp_effect.trim(),
@@ -143,7 +138,6 @@ impl DamageEffect {
         Self {
             extra_defense_effect: None,
             base_dice: weapon.damage_dice.clone(),
-            damage_types: weapon.damage_types.clone(),
             lose_hp_effect: None,
             power_scalings: weapon.power_scalings().clone(),
             take_damage_effect: None,

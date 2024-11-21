@@ -392,27 +392,22 @@ export const revelation: MysticSphere = {
       rank: 7,
     },
 
-    // If the target has a vulnerability, this is like a r2 debuff. But that's pretty
-    // unlikely, and it's useless if you can *already* take advantage of the
-    // vulnerability, so it's closer to a r1 debuff?
-    // This also bypasses many forms of immunity, including incorporeal, so it should be
-    // nerfed. TODO: Nerf once people stop paying attention.
     {
       name: 'Reveal Vulnerability',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target's vulnerabilities become clear for all to see.
-          Anyone looking at it intuitively knows whether it is \\vulnerable to any specific damage types or ability tags.
-          In addition, damage against it is treated as damage of all types, which can bypass many forms of immunity and special defenses against specific damage types.
+          As a \\glossterm{condition}, the target's vulnerabilities become clear for all to see.
+          Anyone looking at it intuitively knows everything that it is \\vulnerable, \\impervious, and immune to.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental with a +4 accuracy bonus against one creature or object within \\longrange.
+          This attack automatically succeeds against \\glossterm{unattended} objects.
         `,
       },
-      rank: 2,
-      scaling: 'accuracy',
+      rank: 1,
+      scaling: 'double_accuracy',
     },
 
     {

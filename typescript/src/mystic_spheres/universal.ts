@@ -12,7 +12,7 @@ export const universal: MysticSphere = {
     Whenever you learn a spell or ritual from the universal mystic sphere, you must choose a different mystic sphere that you have access to.
     Treat that spell or ritual as if it belonged to your chosen mystic sphere instead of this one.
     This allows you to gain the benefits of any sphere-specific effects when you use the spell or ritual, such as a wizard's \\textit{specialization} ability (see \\pcref{Sphere Specialization}).
-    In addition, the chosen mystic sphere determines the spell's damage type and which targets are valid, as listed in \\tref{Universal Mystic Spheres}.
+    In addition, the chosen mystic sphere determines which targets are valid and may add an ability tag, as listed in \\tref{Universal Mystic Spheres}.
     If the spell is \\spell{mystic bolt}, your chosen mystic sphere also determines the spell's defense.
     You can learn the same spell from this mystic sphere any number of times, choosing different base mystic spheres for that spell each time.
 
@@ -23,29 +23,29 @@ export const universal: MysticSphere = {
     \\begin{dtable!*}
       \\lcaption{Universal Mystic Spheres}
       \\begin{dtabularx}{\\textwidth}{l >{\\lcol}X >{\\lcol}X >{\\lcol}X}
-        \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Damage Type} \\tableheaderrule
-        Aeromancy       & Creatures and objects & Armor     & Bludgeoning \\\\
-        Aquamancy       & Creatures and objects & Armor     & Bludgeoning \\\\
-        Astromancy      & Creatures and objects & Mental    & Physical    \\\\
-        Channel Divinity & Creatures            & Mental    & Energy      \\\\
-        Chronomancy     & Creatures and objects & Fortitude & Energy      \\\\
-        Cryomancy       & Creatures and objects & Fortitude & Cold        \\\\
-        Electromancy    & Creatures and objects & Fortitude & Electricity \\\\
-        Enchantment     & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
-        Fabrication     & Creatures and objects & Armor     & Physical    \\\\
-        Photomancy      & Creatures and objects & Fortitude & Energy      \\\\
-        Polymorph       & Creatures and objects & Fortitude & Physical    \\\\
-        Prayer          & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
-        Pyromancy       & Creatures and objects & Fortitude & Fire        \\\\
-        Revelation      & Creatures             & Mental    & Psychic and \\glossterm{subdual} \\\\
-        Summoning       & Creatures and objects & Armor     & Physical    \\\\
-        Telekinesis     & Creatures and objects & Fortitude & Bludgeoning \\\\
-        Terramancy      & Creatures and objects & Armor     & Bludgeoning \\\\
-        Thaumaturgy     & Creatures and objects & Fortitude & Energy      \\\\
-        Toxicology      & Creatures and objects & Fortitude & Acid        \\\\
-        Umbramancy      & Creatures and objects & Fortitude & Cold        \\\\
-        Verdamancy      & Creatures and objects & Armor     & Physical    \\\\
-        Vivimancy       & Living creatures      & Fortitude & Energy      \\\\
+        \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Tag} \\tableheaderrule
+        Aeromancy       & Creatures and objects & Armor     & \\atAir \\\\
+        Aquamancy       & Creatures and objects & Armor     & \\atWater \\\\
+        Astromancy      & Creatures and objects & Mental    & \\tdash    \\\\
+        Channel Divinity & Creatures            & Mental    & \\tdash      \\\\
+        Chronomancy     & Creatures and objects & Fortitude & \\tdash      \\\\
+        Cryomancy       & Creatures and objects & Fortitude & \\atCold        \\\\
+        Electromancy    & Creatures and objects & Fortitude & \\atElectricity \\\\
+        Enchantment     & Creatures             & Mental    & \\atEmotion \\\\
+        Fabrication     & Creatures and objects & Armor     & \\atManifestation    \\\\
+        Photomancy      & Creatures and objects & Fortitude & \\atVisual      \\\\
+        Polymorph       & Creatures and objects & Fortitude & \\tdash    \\\\
+        Prayer          & Creatures             & Mental    & \\tdash \\\\
+        Pyromancy       & Creatures and objects & Fortitude & \\atFire        \\\\
+        Revelation      & Creatures             & Mental    & \\tdash \\\\
+        Summoning       & Creatures and objects & Armor     & \\atManifestation    \\\\
+        Telekinesis     & Creatures and objects & Fortitude & \\tdash \\\\
+        Terramancy      & Creatures and objects & Armor     & \\atEarth \\\\
+        Thaumaturgy     & Creatures and objects & Fortitude & \\tdash      \\\\
+        Toxicology      & Creatures and objects & Fortitude & \\atPoison        \\\\
+        Umbramancy      & Creatures and objects & Fortitude & \\atCold, \\atVisual        \\\\
+        Verdamancy      & Creatures and objects & Armor     & \\tdash    \\\\
+        Vivimancy       & Living creatures      & Fortitude & \\tdash      \\\\
       \\end{dtabularx}
     \\end{dtable!*}
   `,

@@ -243,10 +243,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you make a \glossterm{strike}, you can choose to treat it as a \magical ability.
                 This allows you to use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
-                In addition, that strike does not deal \glossterm{physical damage} or any physical damage subtypes.
-                If the strike would normally deal one or more subtype of energy damage, the damage is of those types.
-                Otherwise, all damage dealt by the strike is \glossterm{energy damage}.
-                You can still use \glossterm{maneuvers} that require specific damage types, as long as you meet the requirements before this damage type conversion.
             ",
             // TODO: use higher of Str/Wil for strikes
             modifiers: None,
@@ -378,7 +374,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Kindle the Living Flame}
                         \abilityusagetime Free action.
                         \rankline
-                        Your \glossterm{strikes} deal fire damage in addition to their other damage types this round.
+                        Your \glossterm{strikes} have the \atFire tag this round.
 
                         \rankline
                         \rank{4} You also gain +1d4 extra damage with strikes.
