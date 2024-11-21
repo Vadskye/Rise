@@ -1,7 +1,7 @@
-import { MysticSphere } from '.';
+import { add_tag_to_sphere, MysticSphere } from '.';
 import { CONDITION_CRIT } from './constants';
 
-export const aeromancy: MysticSphere = {
+export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
   name: 'Aeromancy',
   hasImage: true,
   shortDescription: 'Command air to protect allies and blast foes.',
@@ -25,7 +25,6 @@ export const aeromancy: MysticSphere = {
         4: 'You also become immune to \\glossterm{falling damage}.',
         6: 'The jump distance bonus increases to \\plus10 feet.',
       },
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -44,7 +43,6 @@ export const aeromancy: MysticSphere = {
         5: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
         7: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
       },
-      tags: ['Air'],
       type: 'Sustain (minor)',
     },
     {
@@ -62,7 +60,6 @@ export const aeromancy: MysticSphere = {
         4: 'The distance reduction increases to 100 feet.',
         6: 'The distance reduction increases to 200 feet.',
       },
-      tags: ['Air'],
     },
   ],
   spells: [
@@ -84,7 +81,6 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
 
     {
@@ -99,7 +95,6 @@ export const aeromancy: MysticSphere = {
       `,
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Propulsion',
@@ -119,7 +114,6 @@ export const aeromancy: MysticSphere = {
         5: 'The maximum distance increases to 120 feet.',
         7: 'The maximum distance increases to 150 feet.',
       },
-      tags: ['Air'],
     },
     {
       name: 'Wind Screen',
@@ -129,7 +123,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: "",
       rank: 1,
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -141,7 +134,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      tags: ['Air'],
       type: 'Attune (target)',
     },
     {
@@ -159,7 +151,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 2,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Mighty Windslash',
@@ -176,7 +167,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Windsnipe',
@@ -190,7 +180,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
-      tags: ['Air'],
     },
     {
       name: 'Distant Windsnipe',
@@ -204,7 +193,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       scaling: { special: 'The damage increases by 2d6 for each rank beyond 6.' },
-      tags: ['Air'],
     },
     {
       name: 'Windseal Grasp',
@@ -223,7 +211,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Windseal',
@@ -240,7 +227,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 4,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Skyseal',
@@ -259,7 +245,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 6,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Buffet',
@@ -276,7 +261,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Intense Buffet',
@@ -292,7 +276,6 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Air'],
     },
     {
       name: 'Flight',
@@ -302,7 +285,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 4,
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -314,7 +296,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 6,
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -325,7 +306,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 7,
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -348,7 +328,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 2,
       scaling: 'accuracy',
-      tags: ['Air', 'Sustain (minor)'],
+      tags: ['Sustain (minor)'],
     },
     {
       name: 'Intense Wind Tunnel',
@@ -361,7 +341,7 @@ export const aeromancy: MysticSphere = {
       // narrative: '',
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Air', 'Sustain (minor)'],
+      tags: ['Sustain (minor)'],
     },
     {
       name: 'Windblade',
@@ -371,7 +351,6 @@ export const aeromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 3,
-      tags: ['Air'],
       type: 'Attune',
     },
     {
@@ -383,7 +362,6 @@ export const aeromancy: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
-      tags: ['Air'],
       type: 'Attune (target)',
     },
     {
@@ -391,7 +369,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning}.
+          \\damagerankthree{}.
         `,
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -439,7 +417,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwo{bludgeoning}.
+          \\damageranktwo{}.
         `,
         missGlance: true,
         targeting: `
@@ -455,7 +433,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -473,7 +451,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning}.
+          \\damagerankthree{}.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -632,7 +610,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -648,7 +626,7 @@ export const aeromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -743,4 +721,4 @@ export const aeromancy: MysticSphere = {
       type: 'Attune (target)',
     },
   ],
-};
+});

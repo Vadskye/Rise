@@ -148,7 +148,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -164,7 +164,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning}.
+          \\damagerankthree{}.
         `,
         missGlance: true,
         targeting: `
@@ -181,7 +181,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // 1 rank for movement
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -199,7 +199,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          \\damagerankfourhigh{bludgeoning}.
+          \\damagerankfourhigh{}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -216,7 +216,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -232,7 +232,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfivehigh{bludgeoning}.
+          \\damagerankfivehigh{}.
         `,
         missGlance: true,
         targeting: `
@@ -273,7 +273,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
         hit: `
-          \\damageranktwo{bludgeoning}.
+          \\damageranktwo{}.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -294,7 +294,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // -1r for reflex single target area, -1r for sustain minor in tiny area?
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -311,7 +311,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfour{bludgeoning}.
+          \\damagerankfour{}.
         `,
         missGlance: true,
         targeting: `
@@ -375,7 +375,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target gains an aqueous \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
         It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
-        The weapon deals 1d8 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
+        The weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Sweeping} (1) tags (see \\pcref{Weapon Tags}).
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
@@ -389,7 +389,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       functionsLike: {
         name: 'aqueous tentacle',
-        exceptThat: 'the damage dealt by the weapon increases to 2d6. However, you can only target yourself.',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6. However, you can only target yourself with this spell.',
       },
       narrative: `
         You grow a massive watery tentacle that extends from your body.
@@ -403,7 +403,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       effect: `
         You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles.
-        Each natural weapon deals 1d6 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Light} weapon tags (see \\pcref{Weapon Tags}).
+        Each natural weapon deals 1d6 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Light} tags (see \\pcref{Weapon Tags}).
         Strikes using the tentacles are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
 
         Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
@@ -428,7 +428,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
-          \\item You take a -1 penalty to your Armor defense. 
+          \\item You take a -1 penalty to your Armor defense.
         \\end{itemize}
 
         % There must be text between an itemize block and the end of a mdframed env
@@ -517,7 +517,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
           If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
@@ -533,7 +533,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       functionsLike: {
         name: 'forceful aquajet',
         exceptThat:
-          'the damage increases to \\damagerankfivehigh{bludgeoning}, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankfivehigh{}, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 7,
@@ -668,7 +668,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damageranktwo{bludgeoning}.
+          \\damageranktwo{}.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
@@ -684,7 +684,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
