@@ -1,7 +1,7 @@
-import { MysticSphere } from '.';
+import { add_tag_to_sphere, MysticSphere } from '.';
 import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
-export const cryomancy: MysticSphere = {
+export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   name: 'Cryomancy',
   hasImage: true,
   shortDescription: 'Drain heat to injure and freeze foes.',
@@ -19,11 +19,11 @@ export const cryomancy: MysticSphere = {
     The ice is similar to natural ice, but since it was created recently by a spell, the effects of icy terrain do not have as much variance as natural terrain.
 
     Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
-    When a Large or smaller creature takes physical damage while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
+    When a Large or smaller creature takes damage from a non-\\atCold ability while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
     Any individual creature only has to make his check once per \\glossterm{phase}.
     At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
 
-    If an area of icy terrain takes any fire damage, it is destroyed and becomes normal ground or water again.
+    If an area of icy terrain takes any damage from a \\atFire ability, it is destroyed and becomes normal ground or water again.
   `,
 
   cantrips: [
@@ -32,7 +32,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          2 cold damage.
+          2 damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -68,7 +68,7 @@ export const cryomancy: MysticSphere = {
       // -2 ranks for delayed onset
       attack: {
         hit: `
-          \\damagerankone{cold}.
+          \\damagerankone{}.
           If the target loses hit points, it slowly begins freezing as a \\glossterm{condition}.
           After your action next round, it becomes \\slowed.
         `,
@@ -87,7 +87,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour{cold}.
+          \\damagerankfour{}.
           If the target takes damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -105,7 +105,7 @@ export const cryomancy: MysticSphere = {
 
       // This is cheating a bit to get icy terrain
       attack: {
-        hit: `\\damagerankone{cold}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
@@ -121,7 +121,7 @@ export const cryomancy: MysticSphere = {
 
       // 2 ranks for larger area, 1 rank for icy terrain
       attack: {
-        hit: `\\damagerankthree{cold}.`,
+        hit: `\\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
@@ -138,7 +138,7 @@ export const cryomancy: MysticSphere = {
       // -3r for removed if damaged, for a total of r+5
       attack: {
         hit: `
-          \\damagerankfive{cold}.
+          \\damagerankfive{}.
           If the target loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
           This condition is automatically removed if the target takes damage.
         `,
@@ -156,7 +156,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{piercing and cold}.
+          \\damagerankthree{}.
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
@@ -173,7 +173,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix{piercing and cold}.
+          \\damageranksix{}.
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
@@ -190,7 +190,7 @@ export const cryomancy: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        1 cold damage.
+        1 damage.
         In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
       `,
       rank: 1,
@@ -250,7 +250,8 @@ export const cryomancy: MysticSphere = {
       effect: `
         You cover your body with two layers of ice that crumple when they take damage.
         The ice does not cover your joints, allowing you to move freely.
-        Whenever you would take physical damage or fire damage, you reduce that damage by 5, and one layer of ice is destroyed.
+        Whenever you would take damage from a non-\\atFire ability, you reduce that damage by 5, and one layer of ice is destroyed.
+        If you take damage from a \\atFire ability, you do not reduce that damage, and all layers of ice are destroyed.
         When the last layer of ice is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
@@ -270,7 +271,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthreehigh{cold}.
+          \\damagerankthreehigh{}.
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
@@ -287,7 +288,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksevenhigh{cold}.
+          \\damageranksevenhigh{}.
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
@@ -303,7 +304,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning and cold}.
+          \\damagerankthree{}.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
@@ -323,7 +324,7 @@ export const cryomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix{bludgeoning and cold}.
+          \\damageranksix{}.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
@@ -403,7 +404,7 @@ export const cryomancy: MysticSphere = {
       attack: {
         // icy terrain for attune + every other round
         hit: `
-          \\damagerankone{cold}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -424,7 +425,7 @@ export const cryomancy: MysticSphere = {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{cold}.
+          the damage increases to \\damagerankfive{}.
         `,
       },
       rank: 6,
@@ -437,7 +438,7 @@ export const cryomancy: MysticSphere = {
 
       // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `\\damagerankfour{piercing and cold}.`,
+        hit: `\\damagerankfour{}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -453,7 +454,7 @@ export const cryomancy: MysticSphere = {
       name: 'Mighty Icicle Carapace',
 
       attack: {
-        hit: `\\damagerankseven{piercing and cold}.`,
+        hit: `\\damagerankseven{}.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -559,7 +560,6 @@ export const cryomancy: MysticSphere = {
 
         Make a melee or thrown \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Damage dealt by the strike is cold damage in addition to its normal damage types.
       `,
       rank: 1,
       scaling: 'accuracy',
@@ -600,7 +600,6 @@ export const cryomancy: MysticSphere = {
 
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Damage dealt by the strike is cold damage in addition to its normal damage types.
         Each damaged creature is \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -685,4 +684,4 @@ export const cryomancy: MysticSphere = {
       type: 'Attune',
     },
   ],
-};
+});

@@ -68,7 +68,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwo{piercing}.
+          \\damageranktwo{}.
           If the target is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
@@ -85,7 +85,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{piercing}.
+          \\damagerankone{}.
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
@@ -103,7 +103,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'mystic artillery',
-        exceptThat: 'the damage increases to \\damagerankfourhigh{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfourhigh{}.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -116,7 +116,7 @@ export const fabrication: MysticSphere = {
       // Melee single-target attack would normally be d4. Drop to d3h for multitarget.
       attack: {
         hit: `
-          \\damagerankthreehigh{slashing}.
+          \\damagerankthreehigh{}.
         `,
         missGlance: false,
         targeting: `
@@ -133,7 +133,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "executioner's axe",
-        exceptThat: "the damage increases to \\damageranksevenhigh{slashing}.",
+        exceptThat: "the damage increases to \\damageranksevenhigh{}.",
       },
       rank: 6,
       tags: ['Manifestation'],
@@ -143,7 +143,7 @@ export const fabrication: MysticSphere = {
       name: 'Whirlwind of Blades',
 
       attack: {
-        hit: `\\damagerankone{slashing}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
@@ -158,7 +158,7 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `\\damagerankfour{slashing}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
@@ -174,7 +174,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{piercing}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -193,7 +193,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour{piercing}.
+          \\damagerankfour{}.
         `,
         missGlance: true,
         targeting: `
@@ -211,7 +211,7 @@ export const fabrication: MysticSphere = {
       name: 'Blade Barrier',
 
       attack: {
-        hit: `\\damagerankone{slashing}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
@@ -235,7 +235,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          the damage increases to \\damagerankfive{slashing}.
+          the damage increases to \\damagerankfive{}.
         `,
         name: 'blade barrier',
       },
@@ -251,7 +251,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
-          In addition, the damage increases to \\damageranktwo{slashing}.
+          In addition, the damage increases to \\damageranktwo{}.
         `,
         name: 'blade barrier',
       },
@@ -302,7 +302,7 @@ export const fabrication: MysticSphere = {
       name: 'Caltrops',
 
       attack: {
-        hit: `\\damagerankone{piercing}.`,
+        hit: `\\damagerankone{}.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
           Whenever a creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
@@ -322,7 +322,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'caltrops',
-        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfour{}.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -352,7 +352,7 @@ export const fabrication: MysticSphere = {
       name: 'Dagger Cloud',
 
       attack: {
-        hit: `\\damagerankone{piercing}.`,
+        hit: `\\damagerankone{}.`,
         targeting: `
           When you cast this spell, a cloud of flying daggers appears in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Whenever anything passes through the cloud, you make a \\glossterm{reactive attack} vs. Armor against it.
@@ -369,7 +369,7 @@ export const fabrication: MysticSphere = {
       name: 'Blade Cloud',
 
       attack: {
-        hit: `\\damagerankfour{slashing}.`,
+        hit: `\\damagerankfour{}.`,
         targeting: `
           When you cast this spell, a cloud of flying swords appears in a \\smallarea radius \\glossterm{zone} within \\medrange.
           Whenever anything passes through the cloud, you make a \\glossterm{reactive attack} vs. Armor against it.
@@ -386,7 +386,7 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `\\damagerankthree{piercing}.`,
+        hit: `\\damagerankthree{}.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
@@ -572,9 +572,9 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-            Each object in the path of the wall takes \\damagerankthree{bludgeoning}.
-            Any object destroyed in this way does not block the barrier's area of effect.
-            This does no damage to creatures, who block the path of the barrier like normal.
+          Each object in the path of the wall takes \\damagerankthree{}.
+          Any object destroyed in this way does not block the barrier's area of effect.
+          This does no damage to creatures, who block the path of the barrier like normal.
         `,
         name: 'mystic barrier',
       },
@@ -709,7 +709,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{piercing}.
+          \\damagerankthree{}.
         `,
         missGlance: true,
         targeting: `
@@ -725,7 +725,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix{piercing}.
+          \\damageranksix{}.
         `,
         missGlance: true,
         targeting: `
@@ -742,7 +742,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{piercing and fire}.
+          \\damagerankthree{}.
         `,
         missGlance: true,
         targeting: `
@@ -754,7 +754,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 3,
       scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Fire', 'Manifestation', 'Sustain (minor)'],
     },
   ],
   rituals: [
@@ -798,7 +798,7 @@ export const fabrication: MysticSphere = {
         You must create a minimum of one ounce of water in each location.
       `,
       rank: 1,
-      tags: ['Creation'],
+      tags: ['Creation', 'Water'],
     },
 
     {
@@ -811,7 +811,7 @@ export const fabrication: MysticSphere = {
         The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
       `,
       rank: 2,
-      tags: ['Creation'],
+      tags: ['Creation', 'Water'],
     },
 
     {
@@ -824,7 +824,7 @@ export const fabrication: MysticSphere = {
         The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
       `,
       rank: 3,
-      tags: ['Creation'],
+      tags: ['Creation', 'Water'],
     },
 
     {
@@ -883,6 +883,7 @@ export const fabrication: MysticSphere = {
       `,
       // narrative: '',
       rank: 2,
+      tags: ['Manifestation'],
       type: 'Attune',
     },
   ],

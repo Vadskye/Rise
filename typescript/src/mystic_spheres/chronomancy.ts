@@ -138,7 +138,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          \\damagerankthree{energy}.
+          \\damagerankthree{}.
           If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -620,10 +620,10 @@ export const chronomancy: MysticSphere = {
       name: 'Unstable Aging',
       attack: {
         hit: `
-          \\damageranktwolow{energy}.
+          \\damageranktwolow{}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
@@ -635,10 +635,10 @@ export const chronomancy: MysticSphere = {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          \\damageranksixlow{energy}.
+          \\damageranksixlow{}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
           You gain a +4 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
