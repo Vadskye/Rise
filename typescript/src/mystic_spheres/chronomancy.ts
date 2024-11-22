@@ -628,7 +628,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 2.'},
+      scaling: { special: 'The damage increases by 1d8 for each rank beyond 2.'},
     },
     // d6l instead of d6 for accuracy
     {
@@ -643,7 +643,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.'},
+      scaling: { special: 'The damage increases by 3d8 for each rank beyond 6.'},
     },
 
     {

@@ -244,7 +244,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: { special: 'The damage increases by 2d6 for each rank beyond 5.'},
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.'},
     },
 
     {
@@ -265,7 +265,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.'},
+      scaling: { special: 'The damage increases by 3d8 for each rank beyond 4.'},
     },
 
     {
@@ -551,7 +551,7 @@ export const photomancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfivelow{energy}.',
       },
       rank: 6,
-      scaling: { special: 'The damage increases by 2d6 for each rank beyond 6.'},
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.'},
     },
   ],
   rituals: [

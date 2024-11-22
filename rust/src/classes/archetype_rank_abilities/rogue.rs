@@ -305,15 +305,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against anything within \medrange.
-                        \hit 1d10 psychic damage.
+                        \hit \damagerankonelow{}.
 
                         \rankline
-                        \rank{2} The damage increases to 2d6.
-                        \rank{3} The damage increases to 2d10.
-                        \rank{4} The damage increases to 4d6.
-                        \rank{5} The damage increases to 6d6.
-                        \rank{6} The damage increases to 5d10.
-                        \rank{7} The damage increases to 7d10.
+                        \rank{2} The damage increases to \damageranktwolow{}.
+                        \rank{3} The damage increases to \damagerankthreelow{}.
+                        \rank{4} The damage increases to \damagerankfourlow{}.
+                        \rank{5} The damage increases to \damagerankfivelow{}.
+                        \rank{6} The damage increases to \damageranksixlow{}.
+                        \rank{7} The damage increases to \damageranksevenlow{}.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
