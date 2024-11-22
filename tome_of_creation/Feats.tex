@@ -757,7 +757,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
       If that creature is not adjacent to any of its \glossterm{allies}, you gain an additional \plus2 accuracy bonus.
 
       \rankline
-      % Use same initial scaling as Ambush ranger ability
       \featlevel{9} If either accuracy bonus applies, the strike deals 1d4 \glossterm{extra damage}.
       \featlevel{12} The extra damage increases to 1d8.
       \featlevel{15} The extra damage increases to 2d8.
@@ -806,14 +805,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
       \hit \damageranktwo{}.
       \miss 50\% of the time, you still deal half damage.
 
-      % Prefer d10s for high variance
       \rankline
-      \featlevel{3} The base damage increases to 1d10.
+      \featlevel{3} The base damage increases to 1d8.
       \featlevel{6} The damage bonus from your \glossterm{power} increases to 1d6 per 3 power.
-      \featlevel{9} The base damage increases to 2d6.
-      \featlevel{12} The damage bonus from your \glossterm{power} increases to 1d10 per 3 power.
-      \featlevel{15} The base damage increases to 2d10.
-      \featlevel{18} The damage bonus from your \glossterm{power} increases to 1d10 per 2 power.
+      \featlevel{9} The damage bonus increases to 1d6 per 2 power.
+      \featlevel{12} The damage bonus increases to 1d8 per 2 power.
+      \featlevel{15} The damage bonus increases to 1d10 per 2 power.
+      \featlevel{18} The damage bonus increases to 1d6 per power.
     \end{magicalactiveability}
 
     % TODO once people stop paying attention:
@@ -931,9 +929,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
       \rankline
       \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
-      \featlevel{12} The extra damage increases to 1d6 \plus1 per 2 power.
-      \featlevel{15} The extra damage increases to 2d8 \plus1 per 2 power.
-      \featlevel{18} The extra damage increases to 2d8 \add 1d8 per 3 power.
+      \featlevel{12} The extra damage increases to 1d6 \add 1 per 2 power.
+      \featlevel{15} The extra damage increases to 1d6 \add 1 per power.
+      \featlevel{18} The \glossterm{weapon damage} is doubled.
     \end{magicalactiveability}
 
     \magicalff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
@@ -1054,10 +1052,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
       On a miss or glance, creatures still take half damage if you are somehow able to move into their space despite failing to overrun them.
 
       \rankline
-      \featlevel{9} The damage bonus from your \glossterm{power} increases to be equal to your power.
-      \featlevel{12} The base damage increases to 1d10.
-      \featlevel{15} The damage bonus increases to 1d8 per 3 power.
-      \featlevel{18} The base damage increases to 2d8.
+      \featlevel{9} The damage bonus from your \glossterm{power} increases to 1d6 per 3 power.
+      \featlevel{12} The damage bonus increases to 1d6 per 2 power.
+      \featlevel{15} The damage bonus increases to 1d8 per 2 power.
+      \featlevel{18} The damage bonus increases to 1d6 per power.
     \end{activeability}
 
     \ff[12]{Unblockable} Your attacks deal double damage to walls, doors, and similar vertical obstructions that block passage.
@@ -2295,11 +2293,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
       \rankline
       % increase to d2
-      \featlevel{9} The base damage increases to 1d8.
-      % increase to d3
-      \featlevel{12} The damage bonus from your power increases to be equal to your power.
+      \featlevel{9} The damage bonus from your power increases to be equal to your power.
+      % increase to d3ish
+      \featlevel{12} The base damage increases to 1d10.
       % increase to d4ish
-      \featlevel{15} The base damage increases to 2d6.
+      \featlevel{15} The damage bonus increases to 1d6 per 3 power.
       % at r7, can upgrade condition
       \featlevel{18} The target becomes \confused instead of stunned.
     \end{magicalactiveability}
@@ -2472,16 +2470,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{sustainability}{Cyclone}{\abilitytag{Sustain} (standard)}
       \abilityusagetime Standard action.
       \rankline
-      When you use this ability, make a melee \glossterm{strike}.
+      When you use this ability, make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
       The strike targets all \glossterm{enemies} adjacent to you.
       Whenever you sustain this ability, you can move up to half your \glossterm{land speed} and make a melee \glossterm{strike}.
       The strike targets all \glossterm{enemies} adjacent to you at any point during your movement.
       \miss Half damage.
 
       \rankline
-      \featlevel{9} The strike deals 1d4 \glossterm{extra damage}.
-      \featlevel{12} The extra damage increases to 1d4 per 3 power (minimum 1d4).
-      \featlevel{15} The extra damage increases to 1d6 per 3 power.
+      \featlevel{9} The extra damage increases to be equal to half your power.
+      \featlevel{12} The extra damage increases to be equal to your power.
+      \featlevel{15} The extra damage increases to 1d8 \add your power.
       \featlevel{18} The strike deals double \glossterm{weapon damage}.
     \end{sustainability}
 

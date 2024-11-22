@@ -179,7 +179,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       },
       // narrative: '',
       rank: 3,
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
+      scaling: { special: 'The damage increases by 1d8 for each rank beyond 3.' },
     },
     {
       name: 'Distant Windsnipe',
@@ -192,7 +192,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       },
       // narrative: '',
       rank: 6,
-      scaling: { special: 'The damage increases by 2d6 for each rank beyond 6.' },
+      scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.' },
     },
     {
       name: 'Windseal Grasp',

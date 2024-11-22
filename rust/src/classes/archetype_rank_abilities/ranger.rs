@@ -89,10 +89,10 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d8.
-                    \rank{5} The extra damage increases to 2d8.
-                    \rank{6} The extra damage increases to 3d10.
-                    \rank{7} The extra damage increases to 5d10.
+                    \rank{4} The extra damage increases to 1d10.
+                    \rank{5} The extra damage increases to 3d6.
+                    \rank{6} The \glossterm{weapon damage} is doubled.
+                    \rank{7} The extra damage increases to 4d8.
                 \end{activeability}
             ",
             modifiers: None,
@@ -472,14 +472,14 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Ambush}
                     \abilityusagetime Standard action.
                     \rankline
-                    Move up to your speed and make a \glossterm{strike} with a +2 accuracy bonus.
+                    Move up to your speed and make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
                     The strike deals double damage to \unaware targets.
 
                     \rankline
-                    \rank{4} The strike deals 1d4 \glossterm{extra damage}.
-                    \rank{5} The extra damage increases to 1d8.
-                    \rank{6} The accuracy bonus increases to +4.
-                    \rank{7} The extra damage increases to 2d10.
+                    \rank{4} The extra damage increases to 1d10.
+                    \rank{5} The extra damage increases to 2d10.
+                    \rank{6} The extra damage increases to 4d8.
+                    \rank{7} The \glossterm{weapon damage} is doubled.
                 \end{activeability}
             ",
             modifiers: None,

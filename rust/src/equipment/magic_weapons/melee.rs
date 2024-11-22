@@ -62,7 +62,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can deal damage in a cone"),
         description: String::from(r"
             You can activate this weapon as a standard action.
-            When you do, you make a melee \glossterm<strike> using this weapon that spawns a swarm of blades.
+            When you do, you make a mundane melee \glossterm<strike> using this weapon that spawns a swarm of blades.
             The strike targets all creatures in a \smallarea cone from you.
             For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
             On a miss, you deal half damage.
@@ -85,12 +85,14 @@ pub fn melee() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can dazzle"),
         description: String::from(r"
             This weapon shimmers with a chaotic pattern of colors, shedding multicolored \glossterm{bright illumination} in a \smallarea radius.
-            As a standard action, you can make a flashy melee \glossterm{strike} using this weapon that accentuates its bewildering effect.
+            As a standard action, you can make a mundane melee \glossterm{strike} using this weapon that accentuates its bewildering effect.
+            This attack has the \atVisual tag.
             If your attack result beats the target's Reflex defense, it is \dazzled as a \glossterm{condition}.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Can dazzle in an area", r"
                 When you make the strike, you also make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius of the strike's target.
+                This attack has the \atVisual tag.
                 Your minimum accuracy is $accuracy.
                 \hit Each target is \dazzled as a \glossterm{condition}.
             "),
@@ -104,7 +106,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         rank: 7,
         short_description: String::from(r"Can decapitate foes"),
         description: String::from(r"
-            As a standard action, you can make a melee \glossterm<strike> using this weapon that can decapitate enemies.
+            As a standard action, you can make a mundane melee \glossterm<strike> using this weapon that can decapitate enemies.
             The strike deals triple \glossterm<weapon damage>.
             If you get a critical hit against a creature and it loses hit points, it immediately dies.
             Creatures that do not have a head are immune to this death effect.
@@ -119,7 +121,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         description: String::from(r"
             You can activate this weapon as a standard action.
             When you do, you \glossterm{teleport} horizontally to a location within \shortrange.
-            Then, you can make a melee \glossterm{strike} at your destination.
+            Then, you can make a mundane melee \glossterm{strike} at your destination.
             Unlike most teleportation effects, both your departure and arrival with this effect are silent.
 
             After you activate this item, you \glossterm{briefly} cannot activate it again.

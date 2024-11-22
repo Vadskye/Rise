@@ -16,7 +16,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Abyssal Rebuke}[\atFire]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make an attack vs. Armor against up to two creatures or object within \shortrange.
+                    Make an attack vs. Armor against up to two creatures or objects within \shortrange.
                     You gain a \plus2 accuracy bonus with this attack against any creature that attacked you during the previous round.
                     If you suffered a vital wound from that attack, this bonus increases to \plus10.
                     \hit \damagerankone{}.
@@ -24,10 +24,10 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} The damage bonus from your \glossterm{power} increases to be equal to your power.
                     \rank{3} The base damage increases to 1d8.
-                    \rank{4} The damage bonus from your power increases to 1d6 per 3 power.
-                    \rank{5} The damage bonus from your power increases to 1d6 per 2 power.
-                    \rank{6} The damage bonus from your power increases to 1d8 per 2 power.
-                    \rank{7} The damage bonus from your power increases to 1d6 per power.
+                    \rank{4} The damage bonus increases to 1d6 per 3 power.
+                    \rank{5} The damage bonus increases to 1d6 per 2 power.
+                    \rank{6} The damage bonus increases to 1d8 per 2 power.
+                    \rank{7} The damage bonus increases to 1d6 per power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(
