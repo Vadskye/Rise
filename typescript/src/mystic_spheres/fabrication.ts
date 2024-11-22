@@ -103,7 +103,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'mystic artillery',
-        exceptThat: 'the damage increases to \\damagerankfourhigh{}.',
+        exceptThat: 'the damage increases to \\damagerankfour{}.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -116,7 +116,7 @@ export const fabrication: MysticSphere = {
       // Melee single-target attack would normally be d4. Drop to d3h for multitarget.
       attack: {
         hit: `
-          \\damagerankthreehigh{}.
+          \\damagerankthree{}.
         `,
         missGlance: false,
         targeting: `
@@ -133,7 +133,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "executioner's axe",
-        exceptThat: "the damage increases to \\damageranksevenhigh{}.",
+        exceptThat: "the damage increases to \\damagerankseven{}.",
       },
       rank: 6,
       tags: ['Manifestation'],

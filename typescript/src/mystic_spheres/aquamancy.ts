@@ -70,7 +70,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // The accuracy bonus drops damage from d3 to d2h
       attack: {
         hit: `
-          \\damageranktwohigh{physical}.
+          \\damageranktwo{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -86,7 +86,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // This accuracy bonus is high enough to drop from d7 to d6h
       attack: {
         hit: `
-          \\damageranksixhigh{physical}.
+          \\damageranksix{physical}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -199,7 +199,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          \\damagerankfourhigh{}.
+          \\damagerankfour{}.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -232,7 +232,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfivehigh{}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -533,7 +533,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       functionsLike: {
         name: 'forceful aquajet',
         exceptThat:
-          'the damage increases to \\damagerankfivehigh{}, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankfive{}, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 7,

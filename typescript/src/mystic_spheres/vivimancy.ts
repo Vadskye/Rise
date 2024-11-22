@@ -44,7 +44,7 @@ export const vivimancy: MysticSphere = {
       // baseline for multi-defense grasp is dr4, drop to dr3 for healing
       attack: {
         hit: `
-          \\damagerankthree{energy}.
+          \\damagerankthree{}.
           If the target loses \\glossterm{hit points}, you can increase your \\glossterm{fatigue level} by one. 
           % dr1
           When you do, you regain 1d6 hit points +1 per 2 power at the end of the round.
@@ -67,7 +67,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal grasp',
         // healing is dr4h
-        exceptThat: 'the damage increases to \\damageranksix{energy}, and the healing increases to 1d8 per 3 power.',
+        exceptThat: 'the damage increases to \\damageranksix{}, and the healing increases to 1d6 per 2 power.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -81,7 +81,7 @@ export const vivimancy: MysticSphere = {
       // +1r for HP theft
       attack: {
         hit: `
-          \\damagerankone{energy}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
           % dr2
           When you do, you regain 1d8 hit points +1 per 2 power at the end of the round.
@@ -102,7 +102,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal',
         // healing is dr6h
-        exceptThat: 'the damage increases to \\damagerankfivehigh{energy}, and the healing increases to 1d8 per 2 power.',
+        exceptThat: 'the damage increases to \\damagerankfive{}, and the healing increases to 1d8 per 2 power.',
       },
       rank: 6,
       tags: [],
@@ -187,7 +187,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{energy}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
         `,
         targeting: `
@@ -203,7 +203,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'inflict wound',
-        exceptThat: 'the damage increases to \\damagerankfivehigh{energy}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -244,7 +244,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwo{energy}.
+          \\damageranktwo{}.
         `,
         missGlance: true,
         targeting: `
@@ -262,7 +262,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfivehigh{energy}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -375,7 +375,7 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damagerankthreehigh{slashing}.`,
+        hit: `\\damagerankthree{}.`,
         targeting: `
           You must be alive to cast this spell.
 
@@ -394,7 +394,7 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damageranksixhigh{slashing}.`,
+        hit: `\\damageranksix{}.`,
         targeting: `
           You must be alive to cast this spell.
 
@@ -413,7 +413,7 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damagerankthreehigh{bludgeoning}.`,
+        hit: `\\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           You must be alive to cast this spell.
@@ -433,7 +433,7 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damageranksixhigh{bludgeoning}.`,
+        hit: `\\damageranksix{}.`,
         missGlance: true,
         targeting: `
           You must be alive to cast this spell.
@@ -468,7 +468,7 @@ export const vivimancy: MysticSphere = {
       name: 'Corpse Explosion',
 
       attack: {
-        hit: `\\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Choose one Small or larger corpse within \\medrange.
@@ -488,7 +488,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to \\damagerankfivehigh{bludgeoning}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -519,7 +519,7 @@ export const vivimancy: MysticSphere = {
       name: 'Retributive Lifebond',
 
       attack: {
-        hit: `\\damagerankonelow{energy}.`,
+        hit: `\\damagerankonelow{}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -533,7 +533,7 @@ export const vivimancy: MysticSphere = {
       name: 'Massive Retributive Lifebond',
 
       attack: {
-        hit: `\\damagerankthreelow{energy}.`,
+        hit: `\\damagerankthreelow{}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -547,7 +547,7 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Retributive Lifebond',
 
       attack: {
-        hit: `\\damageranksixlow{energy}.`,
+        hit: `\\damageranksixlow{}.`,
         targeting: `
           Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
@@ -635,7 +635,7 @@ export const vivimancy: MysticSphere = {
       name: 'Wall of Death',
 
       attack: {
-        hit: `\\damagerankone{energy}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of death within \\medrange.
@@ -659,7 +659,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'wall of death',
         exceptThat: `
-          the damage increases to \\damagerankfourhigh{energy}.
+          the damage increases to \\damagerankfour{}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },

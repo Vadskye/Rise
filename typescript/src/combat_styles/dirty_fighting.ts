@@ -167,7 +167,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'maneuver',
         exceptThat: `
-          the damage increases to \\damageranksixhigh{bludgeoning}.
+          the damage increases to \\damageranksix{bludgeoning}.
         `,
         name: 'battering ram',
       },

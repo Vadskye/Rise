@@ -476,27 +476,6 @@ mod tests {
         }
 
         #[test]
-        fn replaces_high_scaling() {
-            // dr3h is 1d6 + (1d6 per 3 power)
-            assert_eq!(
-                "Deals 2d6 electricity damage",
-                replace_damage_rank_terms(
-                    "Deals $dr3h electricity damage",
-                    &dr_sample_creature(),
-                    true
-                ),
-            );
-            assert_eq!(
-                "Deals 4d6 electricity damage",
-                replace_damage_rank_terms(
-                    "Deals $dr3h electricity damage",
-                    &dr_sample_creature(),
-                    false
-                ),
-            );
-        }
-
-        #[test]
         fn replaces_low_scaling() {
             // dr4l is 4d6
             assert_eq!(

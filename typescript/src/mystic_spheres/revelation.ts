@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
+import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MINOR_FATIGUE } from './constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -90,6 +90,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Purge Invisibility',
 
+      cost: MINOR_FATIGUE,
       effect: `
         Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
         Any effects that would cause them to be invisible are \\glossterm{suppressed}.
@@ -395,6 +396,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Reveal Vulnerability',
 
+      cost: MINOR_FATIGUE,
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -425,6 +427,7 @@ export const revelation: MysticSphere = {
       `,
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     // TODO: should spells be penalized for being sustain (standard) instead of immediate?
@@ -442,7 +445,7 @@ export const revelation: MysticSphere = {
       },
       rank: 4,
       scaling: 'accuracy',
-      tags: ['Sustain (attuneable, standard)'],
+      tags: ['Sustain (attuneable, standard)', 'Visual'],
     },
 
     {
