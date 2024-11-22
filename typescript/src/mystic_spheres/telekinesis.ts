@@ -195,7 +195,7 @@ export const telekinesis: MysticSphere = {
       // kinetic charge mechanic.
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -216,7 +216,7 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'kinetic discharge',
-        exceptThat: 'the damage increases to \\damagerankfivehigh{bludgeoning}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 6,
       scaling: 'accuracy',
@@ -228,7 +228,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning}.
+          \\damagerankthree{}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         missGlance: true,
@@ -245,7 +245,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix{bludgeoning}.
+          \\damageranksix{}.
           You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
         `,
         missGlance: true,
@@ -546,7 +546,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{bludgeoning} immediately, and again during your next action.
+          \\damagerankone{} immediately, and again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange from you.
@@ -562,7 +562,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfivehigh{bludgeoning} immediately, and again during your next action.
+          \\damagerankfive{} immediately, and again during your next action.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,

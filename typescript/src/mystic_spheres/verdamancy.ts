@@ -114,7 +114,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
           If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
         `,
         targeting: `
@@ -132,7 +132,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
           If the target takes damage, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
@@ -151,7 +151,7 @@ export const verdamancy: MysticSphere = {
       // +1 area tier for undergrowth
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -171,7 +171,7 @@ export const verdamancy: MysticSphere = {
       // with +1t from undergrowth, t3 area
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -190,7 +190,7 @@ export const verdamancy: MysticSphere = {
 
       // with +2t from undergrowth, t5 area
       attack: {
-        hit: `\\damagerankthree{bludgeoning}.`,
+        hit: `\\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
@@ -264,7 +264,7 @@ export const verdamancy: MysticSphere = {
       // -1dr from undergrowth effect
       attack: {
         hit: `
-          \\damageranktwo{piercing}.
+          \\damageranktwo{}.
         `,
         missGlance: true,
         targeting: `
@@ -285,7 +285,7 @@ export const verdamancy: MysticSphere = {
       // -1dr from undergrowth effect
       functionsLike: {
         name: "erupting spikefruit",
-        exceptThat: "the damage increases to \\damagerankfive{piercing}, and the area increases to a \\medarea radius within \\longrange.",
+        exceptThat: "the damage increases to \\damagerankfive{}, and the area increases to a \\medarea radius within \\longrange.",
       },
       rank: 5,
       scaling: 'accuracy',
@@ -298,12 +298,12 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \\damagerankonelow{poison} per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankonelow{} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -312,12 +312,12 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \\damageranktwolow{poison} per \\glossterm{poison stage}.
+        The poison inflicts \\damageranktwolow{} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 2,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -326,25 +326,26 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature adjacent to you.
         It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
-        The poison inflicts \\damagerankfourlow{poison} per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankfourlow{} per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 4,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
       name: 'Poison -- Black Lotus',
 
+      // TODO: why is this the only non-adjacent poison?
       effect: `
         Choose one living creature within \\medrange.
         It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
-        The poison inflicts \\damagerankfivelow{poison} per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankfivelow{} per \\glossterm{poison stage}.
       `,
       rank: 7,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -401,7 +402,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{piercing} damage immediately, and again during your next action.
+          \\damagerankone{} damage immediately, and again during your next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
         `,
         targeting: `
@@ -420,7 +421,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'embedded growth',
-        exceptThat: 'the damage increases to \\damagerankfour{piercing}.',
+        exceptThat: 'the damage increases to \\damagerankfour{}.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
@@ -434,7 +435,7 @@ export const verdamancy: MysticSphere = {
 
       // +1r for sharing
       attack: {
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
@@ -448,6 +449,7 @@ export const verdamancy: MysticSphere = {
       },
       rank: 3,
       scaling: 'accuracy',
+      tags: ['Fire'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -456,10 +458,11 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankthree{fire}. In addition, you can create up to six seeds at once instead of only three.',
+        exceptThat: 'the damage increases to \\damagerankthree{}. In addition, you can create up to six seeds at once instead of only three.',
       },
       rank: 5,
       scaling: 'accuracy',
+      tags: ['Fire'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -468,10 +471,11 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankfive{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 6,
       scaling: 'accuracy',
+      tags: ['Fire'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -479,7 +483,7 @@ export const verdamancy: MysticSphere = {
       name: 'Wall of Thorns',
 
       attack: {
-        hit: `\\damagerankone{piercing}.`,
+        hit: `\\damagerankone{}.`,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of thorns within \\medrange.
           The base of at least half of the wall must be in arable earth.
@@ -509,7 +513,7 @@ export const verdamancy: MysticSphere = {
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
-          the damage increases to \\damagerankfour{piercing}.
+          the damage increases to \\damagerankfour{}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
         `,
       },
@@ -547,7 +551,7 @@ export const verdamancy: MysticSphere = {
       // Short range instead of med range for the two weird effects
       attack: {
         hit: `
-          \\damagerankone{physical}.
+          \\damagerankone{}.
           This damage is doubled if the target is a plant, including plant creatures.
         `,
         targeting: `
@@ -564,7 +568,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damagerankfive{physical}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 5,
       scaling: 'accuracy',

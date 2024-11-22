@@ -308,7 +308,7 @@ impl StandardAttack {
                 accuracy: *rank - 4,
                 crit: None,
                 defense: Defense::Fortitude,
-                hit: AttackEffect::Damage(SimpleDamageEffect::dr3h()),
+                hit: AttackEffect::Damage(SimpleDamageEffect::dr3()),
                 name: "Lifesteal".to_string(),
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),

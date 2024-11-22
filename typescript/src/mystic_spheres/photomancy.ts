@@ -483,7 +483,6 @@ export const photomancy: MysticSphere = {
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
-          Both your departure and arrival with this spell sound like a clap of thunder.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },

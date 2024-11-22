@@ -129,11 +129,12 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The spell's area becomes a cone instead of its normal shape.
                         In addition, its area increases to to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
+                    \parhead{Energetic Spell} Choose an arcane \glossterm{spell} you know.
+                        You gain a \plus2 bonus to your \glossterm{magical power} with that spell.
+                        In addition, you add any one of the following tags to that spell: \atCold, \atFire, or \atElectricity.
+                        You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a \plus2 accuracy bonus with that spell.
-                        You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Powerful Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a \plus3 bonus to your \glossterm{magical power} with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         The spell cannot also be affected by the Dragonbreath Spell metamagic.

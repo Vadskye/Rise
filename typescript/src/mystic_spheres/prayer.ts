@@ -369,7 +369,7 @@ export const prayer: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Curse'],
+      tags: ['Curse', 'Visual'],
     },
     {
       name: 'Curse of Sloth',
@@ -437,7 +437,7 @@ export const prayer: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Curse'],
+      tags: ['Curse', 'Visual'],
     },
     {
       name: 'Curse of Bewilderment',

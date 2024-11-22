@@ -126,7 +126,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Massive Lightning Bolt',
 
       attack: {
-        hit: `\\damagerankthreehigh{}.`,
+        hit: `\\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
@@ -156,7 +156,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Grasp',
 
       attack: {
-        hit: `\\damagerankfourhigh{}.`,
+        hit: `\\damagerankfour{}.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -254,7 +254,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // short range for one chain
       attack: {
         hit: `
-          \\damageranktwohigh{}.
+          \\damageranktwo{}.
         `,
         missGlance: false,
         targeting: `
@@ -271,7 +271,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // short range for one chain
       attack: {
-        hit: `\\damagerankfivehigh{}.`,
+        hit: `\\damagerankfive{}.`,
         missGlance: false,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -396,7 +396,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'call lightning',
-        exceptThat: 'the damage increases to \\damagerankfivehigh{}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 6,
       scaling: 'accuracy',
@@ -500,7 +500,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         // add trivial extra benefit for fun
         hit: `
-          \\damagerankfourhigh{}.
+          \\damagerankfour{}.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `

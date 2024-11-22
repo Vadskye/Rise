@@ -48,7 +48,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo{acid} damage immediately, and again during your next action.
+          \\damageranktwo{} damage immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -59,6 +59,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Acid'],
     },
 
     {
@@ -66,10 +67,11 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'caustic grasp',
-        exceptThat: 'the damage increases to \\damagerankfive{acid}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 4,
       scaling: 'accuracy',
+      tags: ['Acid'],
     },
 
     {
@@ -89,6 +91,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Poison'],
     },
 
     {
@@ -102,7 +105,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -118,7 +121,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -131,7 +134,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 2,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -144,7 +147,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 3,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -157,7 +160,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -172,7 +175,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -186,7 +189,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -199,7 +202,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       scaling: 'poison',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -217,6 +220,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
@@ -244,7 +248,7 @@ export const toxicology: MysticSphere = {
       name: 'Acidic Blood',
 
       attack: {
-        hit: `\\damagerankone{acid}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against everything adjacent to you.
@@ -256,6 +260,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       scaling: 'accuracy',
+      tags: ['Acid'],
       type: 'Attune (deep)',
     },
 
@@ -263,7 +268,7 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Acidic Blood',
 
       attack: {
-        hit: `\\damagerankfour{acid}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -275,6 +280,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       scaling: 'accuracy',
+      tags: ['Acid'],
       type: 'Attune (deep)',
     },
 
@@ -284,7 +290,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{acid} immediately, and again during your next action.
+          \\damagerankone{} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -293,7 +299,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Acid'],
     },
 
     {
@@ -302,7 +308,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfivehigh{acid} immediately, and again during your next action.
+          \\damagerankfive{} immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -311,7 +317,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 6,
       scaling: 'accuracy',
-      tags: [],
+      tags: ['Acid'],
     },
 
     {
@@ -335,7 +341,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{acid}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -345,7 +351,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 4,
       scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Acid', 'Manifestation', 'Sustain (minor)'],
     },
 
     {
@@ -353,11 +359,11 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'acid pool',
-        exceptThat: 'the damage increases to \\damagerankfive{acid}.',
+        exceptThat: 'the damage increases to \\damagerankfive{}.',
       },
       rank: 7,
       scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Acid', 'Manifestation', 'Sustain (minor)'],
     },
 
     {
@@ -366,7 +372,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{acid} immediately, and again during your next action.
+          \\damagerankone{} immediately, and again during your next action.
         `,
         missGlance: true,
         targeting: `
@@ -377,6 +383,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 4,
       scaling: 'accuracy',
+      tags: ['Acid'],
       type: 'Attune',
     },
 
@@ -386,11 +393,12 @@ export const toxicology: MysticSphere = {
       functionsLike: {
         name: 'acid breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{acid}.
+          the damage increases to \\damagerankfive{}.
         `,
       },
       rank: 7,
       scaling: 'accuracy',
+      tags: ['Acid'],
       type: 'Attune',
     },
 
@@ -401,7 +409,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree{acid} immediately, and again during your next action.
+          \\damagerankthree{} immediately, and again during your next action.
         `,
         missGlance: true,
         targeting: `
@@ -414,7 +422,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 3,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Acid', 'Manifestation'],
     },
 
     {
@@ -422,11 +430,11 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'acid rain',
-        exceptThat: 'it affects a \\largearea radius within \\longrange, and the damage increases to \\damageranksix{acid}.',
+        exceptThat: 'it affects a \\largearea radius within \\longrange, and the damage increases to \\damageranksix{}.',
       },
       rank: 6,
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Acid', 'Manifestation'],
     },
 
     {
@@ -492,7 +500,7 @@ export const toxicology: MysticSphere = {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
           The target becomes covered in devouring fungus as a \\glossterm{condition}.
-          It takes \\damagerankone{acid} immediately and during each of your subsequent actions.
+          It takes \\damagerankone{} immediately and during each of your subsequent actions.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -503,16 +511,18 @@ export const toxicology: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
+      tags: ['Acid'],
     },
     {
       name: 'Mighty Devouring Fungus',
 
       functionsLike: {
         name: "fungal growth",
-        exceptThat: "the damage increases to \\damagerankfour{acid}.",
+        exceptThat: "the damage increases to \\damagerankfour{}.",
       },
       rank: 5,
       scaling: 'accuracy',
+      tags: ['Acid'],
     },
   ],
   rituals: [

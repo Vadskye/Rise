@@ -158,7 +158,7 @@ export const channelDivinity: MysticSphere = {
       // close range and d5h for accuracy
       attack: {
         hit: `
-          \\damagerankfivehigh{}.
+          \\damagerankfive{}.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\shortrange.
@@ -388,7 +388,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `{
-          \\damagerankthreehigh{}.
+          \\damagerankthree{}.
           If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -404,7 +404,7 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksevenhigh{}.
+          \\damagerankseven{}.
           If the target loses hit points, it is \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `
