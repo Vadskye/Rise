@@ -22,12 +22,12 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \hit \damagerankone{}.
 
                     \rankline
-                    \rank{2} The base damage increases to 1d8.
-                    \rank{3} The damage bonus from your \glossterm{power} increases to be equal to your power.
-                    \rank{4} The base damage increases to 2d6.
+                    \rank{2} The damage bonus from your \glossterm{power} increases to be equal to your power.
+                    \rank{3} The base damage increases to 1d8.
+                    \rank{4} The damage bonus from your power increases to 1d6 per 3 power.
                     \rank{5} The damage bonus from your power increases to 1d6 per 2 power.
-                    \rank{6} The base damage increases to 2d10.
-                    \rank{7} The damage bonus from your power increases to 1d10 per 2 power.
+                    \rank{6} The damage bonus from your power increases to 1d8 per 2 power.
+                    \rank{7} The damage bonus from your power increases to 1d6 per power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Attack(
@@ -144,7 +144,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the attack.
                     \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The damage bonus from your power increases to 1d6 per 3 power.
+                    \rank{6} The damage bonus from your power increases to 1d6 per 2 power.
                     \rank{7} The accuracy bonus increases to +3.
                 \end{magicalactiveability}
             ",
@@ -260,7 +260,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Secret of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
                     In addition, the defense bonus increases to \plus5.
 
-                    \parhead{Secret of Bloodsharing} The healing increases to 1d8 plus 1d8 per 3 power.
+                    \parhead{Secret of Bloodsharing} The healing increases to 1d6 plus 1d6 per 2 power.
 
                     \parhead{Secret of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }

@@ -1477,17 +1477,15 @@ impl Class {
                         \begin{magicalactiveability}{Destructive Strike}
                             \abilityusagetime Standard action.
                             \rankline
-                            Make a \glossterm{strike}.
-                            You do not gain the normal weapon damage bonus of +1 per two power.
-                            Instead, you gain \glossterm{extra damage} equal to 1d4 per 3 power (minimum 1d4).
+                            Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your power.
                             You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
                             This strike deals double damage to objects.
 
                             \rankline
-                            \rank{4} The extra damage increases to 1d6 per 3 power.
+                            \rank{4} If you miss, the target still takes the extra damage.
                             \rank{5} Your \glossterm{weapon damage} is doubled.
-                            \rank{6} The extra damage increases to 1d8 per 3 power.
-                            \rank{7} The extra damage increases to 1d8 per 2 power.
+                            \rank{6} The extra damage increases to be equal to your power.
+                            \rank{7} The extra damage increases to twice your power.
                         \end{magicalactiveability}
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Lay Waste}
