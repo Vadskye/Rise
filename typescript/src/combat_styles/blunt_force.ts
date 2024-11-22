@@ -111,7 +111,7 @@ export const bluntForce: CombatStyle = {
       name: 'Leap Slam',
 
       attack: {
-        hit: `\\damageranktwohigh{bludgeoning}.`,
+        hit: `\\damageranktwo{bludgeoning}.`,
         missGlance: true,
         targeting: `
           You jump and move as normal for the jump (see \\pcref{Jumping}).

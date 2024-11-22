@@ -16,6 +16,7 @@ export const heraldOfWar: CombatStyle = {
         You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
       `,
       rank: 1,
+      tags: ['Auditory'],
     },
 
     {
@@ -28,7 +29,7 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Compulsion'],
+      tags: ['Auditory', 'Compulsion'],
       rank: 3,
     },
 
@@ -42,7 +43,7 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Compulsion'],
+      tags: ['Auditory', 'Compulsion'],
       rank: 7,
     },
 
@@ -56,7 +57,7 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
-      tags: ['Emotion'],
+      tags: ['Auditory', 'Emotion'],
       rank: 5,
     },
 
@@ -72,7 +73,7 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Emotion'],
+      tags: ['Auditory', 'Emotion'],
       rank: 1,
     },
 
@@ -86,7 +87,7 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Emotion'],
+      tags: ['Auditory', 'Emotion'],
       rank: 5,
     },
 
@@ -101,19 +102,21 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 1,
+      tags: ['Auditory'],
     },
 
     {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `\\damagerankfourhigh{bludgeoning}.`,
+        hit: `\\damagerankfour{bludgeoning}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
         `,
       },
       rank: 5,
+      tags: ['Auditory'],
     },
 
     {
@@ -129,6 +132,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 1,
+      tags: ['Auditory'],
     },
 
     {
@@ -136,7 +140,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          \\damagerankthreehigh{bludgeoning}.
+          \\damagerankthree{bludgeoning}.
           If the target takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -144,6 +148,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 3,
+      tags: ['Auditory'],
     },
 
     {
@@ -163,9 +168,9 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         \\damaginghit The target becomes \\goaded by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
+      tags: ['Emotion'],
     },
 
     {
@@ -174,10 +179,9 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         \\damaginghit If the target loses \\glossterm{hit points}, it becomes \\frightened by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 1,
-      tags: [],
+      tags: ['Emotion'],
     },
 
     {
@@ -186,10 +190,9 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
         \\damaginghit The target becomes \\frightened by you.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 5,
-      tags: [],
+      tags: ['Emotion'],
     },
 
     // The rank here is pretty ambiguous. The baseline for a small radius enemies-only
@@ -204,6 +207,7 @@ export const heraldOfWar: CombatStyle = {
         On a hit, each target is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 3,
+      tags: ['Emotion'],
     },
 
     {

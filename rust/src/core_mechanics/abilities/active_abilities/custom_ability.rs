@@ -350,7 +350,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
-                \\hit $dr2h fire damage.
+                \\hit $dr2 fire damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
@@ -364,7 +364,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
                 After it uses this ability, it \\glossterm{briefly} cannot use it again.
-                \\hit $dr2h fire damage.
+                \\hit $dr2 fire damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,

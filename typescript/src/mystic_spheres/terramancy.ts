@@ -1,7 +1,7 @@
-import { MysticSphere } from '.';
+import { add_tag_to_sphere, MysticSphere } from '.';
 import { CONDITION_CRIT } from './constants';
 
-export const terramancy: MysticSphere = {
+export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
   shortDescription: 'Manipulate earth to crush foes.',
   sources: ['arcane', 'domain', 'nature'],
@@ -49,14 +49,14 @@ export const terramancy: MysticSphere = {
       },
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Earth', 'Manifestation'],
+      tags: ['Manifestation'],
     },
 
     {
       name: 'Mighty Rock Throw',
 
       attack: {
-        hit: `\\damagerankfourhigh{bludgeoning}.`,
+        hit: `\\damagerankfour{}.`,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
@@ -71,7 +71,7 @@ export const terramancy: MysticSphere = {
       name: 'Boulder Heave',
 
       attack: {
-        hit: `\\damagerankthree{bludgeoning}.`,
+        hit: `\\damagerankthree{}.`,
         targeting: `
           When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
           If the area above you is occupied, this spell fails without effect.
@@ -87,9 +87,10 @@ export const terramancy: MysticSphere = {
     {
       name: 'Meteor',
 
-      // dX+1 for delay, +1dr for open area requirement
+      // +2r for delay, +1r for open area requirement, so effective rank 7.
+      // That allows a t3.5 area and dr6; this uses a t4 area.
       attack: {
-        hit: `\\damageranksix{bludgeoning}.`,
+        hit: `\\damageranksix{}.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you choose a \\medarea radius within \\medrange.
@@ -110,7 +111,7 @@ export const terramancy: MysticSphere = {
         name: 'meteor',
         exceptThat: `
           you can choose up to four separate areas within \\distrange, creating one meteor per area.
-          In addition, the damage increases to \\damageranknine{bludgeoning}.
+          In addition, the damage increases to \\damageranknine{}.
           Any individual creature can only be attacked by one meteor, even if it occupies multiple areas, and overlapping the areas has no benefit.
         `,
       },
@@ -125,7 +126,7 @@ export const terramancy: MysticSphere = {
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
@@ -146,7 +147,7 @@ export const terramancy: MysticSphere = {
       name: 'Rockshard Blast',
 
       attack: {
-        hit: `\\damageranktwo{bludgeoning and piercing}.`,
+        hit: `\\damageranktwo{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
@@ -162,7 +163,7 @@ export const terramancy: MysticSphere = {
       name: 'Mighty Rockshard Blast',
 
       attack: {
-        hit: `\\damagerankfourhigh{bludgeoning and piercing}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
@@ -204,7 +205,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{piercing}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -221,7 +222,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour{piercing}.
+          \\damagerankfour{}.
           If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
@@ -282,7 +283,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -302,7 +303,7 @@ export const terramancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{bludgeoning}.
+          \\damagerankfive{}.
         `,
         missGlance: true,
         targeting: `
@@ -325,7 +326,7 @@ export const terramancy: MysticSphere = {
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
-          During each of your subsequent actions, it takes \\damagerankfive{bludgeoning} as the earth grinds it into paste.
+          During each of your subsequent actions, it takes \\damagerankfive{} as the earth grinds it into paste.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
           Special movement abilities such as teleportation can also remove the target from the fissure.
         `,
@@ -466,7 +467,7 @@ export const terramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `\\damagerankthree{bludgeoning and fire}.`,
+        hit: `\\damagerankthree{}.`,
         missGlance: true,
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
@@ -598,4 +599,4 @@ export const terramancy: MysticSphere = {
       type: 'Attune (target)',
     },
   ],
-};
+});

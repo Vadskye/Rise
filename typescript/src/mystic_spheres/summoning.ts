@@ -63,7 +63,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranktwo{physical}.
+          Its strikes deal \\damageranktwo{}.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -80,7 +80,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranksix{physical}.
+          Its strikes deal \\damageranksix{}.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -389,7 +389,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{physical}.
+          \\damagerankone{}.
         `,
         missGlance: true,
         targeting: `
@@ -409,7 +409,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{physical}.
+          \\damagerankthree{}.
           Each Large or smaller creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
         missGlance: true,
@@ -452,7 +452,7 @@ export const summoning: MysticSphere = {
       // +2r for large, +2r for +1dr?
       attack: {
         hit: `
-          \\damageranksix{physical}.
+          \\damageranksix{}.
         `,
         missGlance: true,
         targeting: `
@@ -492,7 +492,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be a snake.
-          Its attacks deal \\damagerankthree{physical}.
+          Its attacks deal \\damagerankthree{}.
           Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
           Its stage 1 effect makes the target \\stunned while the poison lasts.
           Its stage 3 effect makes the target \\blinded while the poison lasts.

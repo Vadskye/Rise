@@ -1,7 +1,7 @@
-import { MysticSphere } from '.';
+import { add_tag_to_sphere, MysticSphere } from '.';
 import {MULTIHIT_CRIT} from './constants';
 
-export const pyromancy: MysticSphere = {
+export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
   sources: ['arcane', 'domain', 'nature', 'pact'],
@@ -87,7 +87,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{fire} immediately, and again during your next action.
+          \\damagerankone{} immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -105,7 +105,7 @@ export const pyromancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfourhigh{fire} immediately, and again during your next action.
+          \\damagerankfour{fire} immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -123,7 +123,7 @@ export const pyromancy: MysticSphere = {
       // +1dr for full self-targeting
       attack: {
         hit: `
-          \\damageranktwohigh{fire}.
+          \\damageranktwo{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -143,7 +143,7 @@ export const pyromancy: MysticSphere = {
       // +1dr for full self-targeting
       attack: {
         hit: `
-          \\damagerankfivehigh{fire}.
+          \\damagerankfive{fire}.
         `,
         missGlance: true,
         targeting: `
@@ -161,7 +161,7 @@ export const pyromancy: MysticSphere = {
       name: 'Fireball',
 
       attack: {
-        hit: `\\damageranktwohigh{fire}.`,
+        hit: `\\damageranktwo{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
@@ -176,7 +176,7 @@ export const pyromancy: MysticSphere = {
       name: 'Massive Fireball',
 
       attack: {
-        hit: `\\damagerankthreehigh{fire}.`,
+        hit: `\\damagerankthree{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\medrange.
@@ -191,7 +191,7 @@ export const pyromancy: MysticSphere = {
       name: 'Delayed Fireball',
 
       attack: {
-        hit: `\\damagerankfivehigh{fire}.`,
+        hit: `\\damagerankfive{fire}.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\medrange.
@@ -209,7 +209,7 @@ export const pyromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksixhigh{fire}.
+          \\damageranksix{fire}.
           If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
@@ -243,7 +243,7 @@ export const pyromancy: MysticSphere = {
       name: 'Mighty Burning Hands',
 
       attack: {
-        hit: `\\damagerankthreehigh{fire}.`,
+        hit: `\\damagerankthree{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
@@ -278,7 +278,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: "ignition",
-        exceptThat: "the damage increases to \\damagerankfourhigh{fire}.",
+        exceptThat: "the damage increases to \\damagerankfour{fire}.",
       },
       rank: 4,
       scaling: 'accuracy',
@@ -288,7 +288,7 @@ export const pyromancy: MysticSphere = {
       name: 'Flame Breath',
 
       attack: {
-        hit: `\\damageranktwohigh{fire}.`,
+        hit: `\\damageranktwo{fire}.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -307,7 +307,7 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankfivehigh{fire}.
+          the damage increases to \\damagerankfive{fire}.
           In addition, the area increases to a \\gargarea cone.
         `,
       },
@@ -340,7 +340,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: "eyes of flame",
-        exceptThat: "the damage increases to \\damageranksevenhigh{fire}.",
+        exceptThat: "the damage increases to \\damagerankseven{fire}.",
       },
       rank: 5,
       scaling: 'accuracy',
@@ -370,7 +370,7 @@ export const pyromancy: MysticSphere = {
       name: 'Flame Serpent',
 
       attack: {
-        hit: `\\damagerankthreehigh{fire}.`,
+        hit: `\\damagerankthree{fire}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -484,7 +484,7 @@ export const pyromancy: MysticSphere = {
       functionsLike: {
         name: 'wall of fire',
         exceptThat: `
-          the damage increases to \\damagerankfourhigh{fire}.
+          the damage increases to \\damagerankfour{fire}.
           In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
       },
@@ -516,7 +516,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'pyrohemia',
-        exceptThat: 'the damage increases to \\damagerankfourhigh{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -526,7 +526,7 @@ export const pyromancy: MysticSphere = {
       name: 'Kindled Fireburst',
 
       attack: {
-        hit: `\\damageranktwohigh{fire}.`,
+        hit: `\\damageranktwo{fire}.`,
         missGlance: true,
         targeting: `
           Choose one Tiny or larger active fire within \\medrange.
@@ -545,7 +545,7 @@ export const pyromancy: MysticSphere = {
 
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damageranksixhigh{fire}, and the area increases to a \\medarea radius.',
+        exceptThat: 'the damage increases to \\damageranksix{fire}, and the area increases to a \\medarea radius.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
@@ -724,4 +724,4 @@ export const pyromancy: MysticSphere = {
       type: 'Attune',
     },
   ],
-};
+});
