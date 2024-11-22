@@ -29,7 +29,7 @@ pub fn ranged() -> Vec<MagicWeapon> {
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
 
             As a standard action, you can throw this weapon in a spinning arc.
-            When you do, make a thrown \glossterm<strike> against up to three targets within \shortrange.
+            When you do, make a mundane thrown \glossterm<strike> against up to three targets within \shortrange.
             The targets must still be within your \glossterm<range limits>, and you take any \glossterm<longshot penalty> as normal.
         "),
         upgrades: vec![

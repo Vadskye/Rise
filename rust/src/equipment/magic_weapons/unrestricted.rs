@@ -136,22 +136,21 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // 1d6 at rank 3 is approximately 25-30% more damage, or more for people using weak attacks.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfuel"),
         rank: 3,
         // Expected HP at rank 3 is approximately 25.
-        short_description: String::from(r"Can spend 4 HP for +1d6 damage"),
+        short_description: String::from(r"Can spend 4 HP for +1d8 damage"),
         description: String::from(r"
             You can feed this weapon your blood as a \glossterm{minor action}.
             When you do, you lose 4 \glossterm{hit points}.
-            In exchange, you deal 1d6 \glossterm{extra damage} with strikes using this weapon during the current round.
+            In exchange, you deal 1d8 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can spend 8 HP for +2d6 damage", r"
+            ItemUpgrade::new(5, "Can spend 8 HP for +2d8 damage", r"
                 The HP loss increases to 8, and the extra damage increases to 2d6.
             "),
-            ItemUpgrade::new(7, "Can spend 16 HP for +4d6 damage", r"
+            ItemUpgrade::new(7, "Can spend 16 HP for +4d8 damage", r"
                 The HP loss increases to 16, and the extra damage increases to 4d6.
             "),
         ],
@@ -241,8 +240,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Can prevent teleportation"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon.
-            On a damaging hit from this strike, the target \glossterm{briefly} cannot be \glossterm{teleported}.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon.
+            On a damaging hit, the target \glossterm{briefly} cannot be \glossterm{teleported}.
             An object subject to this effect is left behind if it is carried by a creature that teleports.
         "),
         upgrades: vec![
@@ -335,9 +334,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Can attack with +1d4 damage to steal HP"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon.
             The strike's minimum accuracy is $accuracy.
-            The strike deals 1d4 \glossterm{extra damage}, and damage dealt by the strike is energy damage in addition to its other types.
+            The strike deals 1d4 \glossterm{extra damage}.
             If a living creature loses \glossterm{hit points} from this strike, you can increase your \glossterm{fatigue level} by one.
             When you do, you regain $dr3l hit points at the end of the round.
         "),
@@ -359,7 +358,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Can attack with +3 accuracy"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> with a +3 accuracy bonus using this weapon.
+            As a standard action, you can make a mundane \glossterm<strike> with a +3 accuracy bonus using this weapon.
             Your minimum accuracy with the strike is $accuracy+3.
         "),
         upgrades: vec![
@@ -394,7 +393,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Can attack Mental defense"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with psychic power.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
             The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atEmotion tag.
             Its minimum accuracy is $accuracy.
         "),
@@ -412,7 +411,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Can attack Fortitude defense"),
         description: String::from(r"
-            As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to poison.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that transforms the striking surface to poison.
             The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \atPoison tag.
             Its minimum accuracy is $accuracy.
         "),
@@ -437,7 +436,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can attack Reflex defense"),
         description: String::from(r"
             This weapon glows with gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
-            As a standard action, you can make a \glossterm<strike> using this weapon that transforms the striking surface to elemental energy.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that transforms the striking surface to elemental energy.
             The strike is made against the target's Reflex defense instead of its Armor defense, and it has the \atCold, \atElectricity, and \atFire tags.
             Its minimum accuracy is $accuracy.
         "),
@@ -477,7 +476,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             It sheds light in a 15 foot radius of \glossterm{bright illumination}.
             All strikes with it have the \atFire tag.
 
-            As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with fiery energy.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with fiery energy.
             The strike's minimum accuracy is $accuracy.
             Each damaged creature burns if your attack result beats its Reflex defense.
             A burning creature takes 2d6 fire damage during your next action.
@@ -504,7 +503,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             It sheds light in a 5 foot radius of \glossterm{bright illumination}.
             All strikes with it have the \atElectricity tag.
 
-            As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with electrical energy.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with electrical energy.
             The strike's minimum accuracy is $accuracy.
             It \glossterm<chains> once.
         "),
@@ -535,7 +534,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             This weapon is bitterly cold to the touch.
             All strikes with it have the \atCold tag.
 
-            As a standard action, you can make a \glossterm<strike> using this weapon that is imbued with frigid energy.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with frigid energy.
             The strike's minimum accuracy is $accuracy.
             If the target loses hit points from the strike, it is \slowed as a \glossterm{condition}.
         "),

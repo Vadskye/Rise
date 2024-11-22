@@ -47,14 +47,14 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Disciplined Strike}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a \glossterm{strike} with 1d6 \glossterm{extra damage}.
+                    Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
                     You cannot get a \glossterm{critical hit} with this strike.
                     \miss Half damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 2d6.
-                    \rank{5} The extra damage increases to 1d6 per 3 power (minimum 2d6).
-                    \rank{6} The extra damage increases to 1d6 per 2 power.
+                    \rank{4} The extra damage increases to 1d6 \add half your power.
+                    \rank{5} The extra damage increases to 1d6 \add your power.
+                    \rank{6} The extra damage increases to 3d6 \add your power.
                     \rank{7} The \glossterm{weapon damage} is doubled.
                 \end{activeability}
             ",
