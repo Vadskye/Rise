@@ -184,6 +184,8 @@ pub fn objects() -> Vec<Tool> {
             Whenever a creature touches one of the stones, they can magically channel their voice through it.
             If they do, their voice is also audible from the other stone, as long as both stones are on the same plane.
         ".to_string(),
+        // Is that the right tag?
+        tags: vec![AbilityTag::Scrying],
         ..Tool::permanent("stone")
     });
 

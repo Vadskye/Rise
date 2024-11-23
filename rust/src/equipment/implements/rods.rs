@@ -15,6 +15,7 @@ pub fn rods() -> Vec<Implement> {
             \hit $dr1l fire damage.
             \miss Half damage.
         "),
+        tags: vec![AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(4, "Deals $dr3l damage in a cone", r"
                 The minimum accuracy increases to $accuracy and the damage increases to $dr3l.
@@ -34,6 +35,7 @@ pub fn rods() -> Vec<Implement> {
             \hit $dr5l fire damage.
             \miss Half damage.
         "),
+        tags: vec![AbilityTag::Fire],
         ..Implement::default()
     }));
 
@@ -70,6 +72,7 @@ pub fn rods() -> Vec<Implement> {
             \hit $dr2l energy damage.
             If this attack beats a creature's Fortitude defense, it deals maximum damage.
         "),
+        tags: vec![AbilityTag::Visual],
         upgrades: vec![
             ItemUpgrade::new(4, "Can deal $dr4l damage", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr4l.

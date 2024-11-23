@@ -592,6 +592,7 @@ export const chronomancy: MysticSphere = {
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\smallarea cone.
           In addition, you choose to focus the aging effects of the cone on either sight or hearing.
+          This ability has the \\atVisual tag if you focus on sight, and the \\atAuditory tag if you focus on hearing.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
@@ -609,6 +610,7 @@ export const chronomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\largearea cone.
+          This ability has the \\atVisual tag if you focus on sight, and the \\atAuditory tag if you focus on hearing.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },

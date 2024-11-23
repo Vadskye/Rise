@@ -30,18 +30,15 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfrenzy"),
-        rank: 1,
+        rank: 2,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
             Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +4 accuracy when you injure a foe", r"
+            ItemUpgrade::new(5, "Grants +4 accuracy when you injure a foe", r"
                 The accuracy bonus increases to +4.
-            "),
-            ItemUpgrade::new(7, "Grants +6 accuracy when you injure a foe", r"
-                The accuracy bonus increases to +6.
             "),
         ],
         ..MagicWeapon::default()
