@@ -98,7 +98,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `\\damagerankone{bludgeoning}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against all creatures in a \\smallarea cone from you.
         `,
       },
       rank: 1,
@@ -112,7 +112,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `\\damagerankfour{bludgeoning}.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
         `,
       },
       rank: 5,
@@ -128,7 +128,7 @@ export const heraldOfWar: CombatStyle = {
           If the target loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange of you.
+          Make an attack vs. Fortitude against a creature within \\shortrange of you.
         `,
       },
       rank: 1,
@@ -144,7 +144,7 @@ export const heraldOfWar: CombatStyle = {
           If the target takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange of you.
+          Make an attack vs. Fortitude against a creature within \\shortrange of you.
         `,
       },
       rank: 3,
